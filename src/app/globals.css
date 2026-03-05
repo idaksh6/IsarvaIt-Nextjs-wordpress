@@ -1,26 +1,291 @@
-@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-dark: #162c46;
+  --bg-lighter: #1f6021;
+
+  --accent-primary: #00ff88;
+  --accent-secondary: #adff2f;
+  --accent-glow: rgba(0, 255, 136, 0.4);
+
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+
+  --text-main: #ffffff;
+  --text-muted: #94a3b8;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-behavior: smooth;
+  background: var(--bg-dark);
+  /* Premium interpolated scroll feel */
+  scroll-snap-type: none;
+}
+
+/* ─── Premium Smooth Scroll Feel ───────────────── */
+/* Each major section gets will-change so GPU handles compositing */
+section {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Smooth fade+rise for every section as it enters viewport */
+@keyframes sectionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
+.section-animate {
+  animation: sectionReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Slow down native momentum scroll on macOS / iOS for a heavier, premium feel */
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Smooth deceleration on trackpad / momentum scroll */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Outfit", "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-main);
+  overflow-x: hidden;
+  line-height: 1.5;
+  /* Smooth content rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ─── Grid Background ──────────────────────────────────── */
+.bg-grid {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* ─── Custom Scrollbar ─────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
+  border-radius: 10px;
+}
+
+/* ─── Typography ───────────────────────────────────────── */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.hero_heading {
+  font-family: "Space Grotesk", "Outfit", sans-serif;
+  letter-spacing: -0.04em;
+}
+
+.text-gradient-primary {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-green-glow {
+  color: var(--accent-primary);
+  text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+}
+
+/* ─── Glassmorphism ────────────────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: radial-gradient(circle at 50% 20%, #163a5f, #0b1220);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* ─── Buttons (Use <Button /> component where possible) ──── */
+.btn-primary {
+  background: #ffffff;
+  color: #111111;
+  padding: 10px 24px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 13px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
+}
+
+.btn-outline {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 9px 20px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.badge {
+  background: linear-gradient(90deg, #ff4c00, #ff8c00);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(255, 76, 0, 0.3);
+}
+
+/* ─── Section Spacing ───────────────────────────────────── */
+.section-padding {
+  padding: 120px 0;
+}
+
+/* ─── Ellipse Custom Architecture ───────────────────────── */
+.ellipse-architecture {
+  position: absolute;
+  bottom: -300px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140%;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ellipse-layer {
+  position: absolute;
+  border-radius: 100%;
+}
+
+.ellipse-1 {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top, #00ff88 0%, transparent 70%);
+  opacity: 0.25;
+  /* Visible but soft */
+  filter: blur(80px);
+}
+
+.ellipse-2 {
+  width: 80%;
+  height: 80%;
+  border: 1px solid rgba(0, 255, 136, 0.4);
+  background: radial-gradient(circle at top, #00ff88 0%, transparent 60%);
+  opacity: 0.45;
+  filter: blur(40px);
+}
+
+.ellipse-3 {
+  width: 60%;
+  height: 60%;
+  border: 2px solid rgba(173, 255, 47, 0.6);
+  background: radial-gradient(circle at top, #adff2f 0%, transparent 50%);
+  opacity: 0.75;
+  filter: blur(20px);
+}
+
+.top-glow {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 500px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 255, 136, 0.5) 0%,
+    transparent 70%
+  );
+  filter: blur(100px);
+  z-index: 10;
+  opacity: 0.8;
+}
+
+/* ─── CTA Button override (hero section only) ──────────── */
+.btn-primary-hero {
+  position: relative;
+  z-index: 20;
+  padding: 12px 32px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  background: #ffffff;
+  color: #111;
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-primary-hero:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 36px rgba(0, 255, 136, 0.5);
+  background: #00ff88;
+}
+
+/* Home Page External CSS */
+
+.hero_heading strong {
+  color: #00fd11;
+}
+
+/* ─── Hide Scrollbar (for testimonials drag) ──────────── */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
