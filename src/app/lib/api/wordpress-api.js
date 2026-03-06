@@ -3,14 +3,51 @@
  * Generic API functions for fetching data from WordPress
  */
 
-const WORDPRESS_API_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL || 'http://reactwordpress.local';
+// Remove trailing slash if present to avoid double slashes
+const cleanUrl = (url) => url.endsWith('/') ? url.slice(0, -1) : url;
+const WORDPRESS_API_URL = cleanUrl(process.env.NEXT_PUBLIC_WORDPRESS_URL || 'http://reactwordpress.local');
 
 // Check if WordPress is available
 // Simply verify that a URL has been configured via the environment variable
 const isWordPressAvailable = () => {
   return !!process.env.NEXT_PUBLIC_WORDPRESS_URL;
 };
+/**
+ * Test WordPress API connectivity
+ */
+export async function testWordPressConnection() {
+  if (!isWordPressAvailable()) {
+    return { success: false, error: 'WordPress URL not configured' };
+  }
 
+  try {
+    const response = await fetch(`${WORDPRESS_API_URL}/wp-json/wp/v2/`, {
+      method: 'HEAD',
+      cache: 'no-store'
+    });
+
+    if (response.status === 401) {
+      return { 
+        success: false, 
+        error: 'WordPress REST API is restricted. Please enable public API access in WordPress settings.' 
+      };
+    }
+
+    if (!response.ok) {
+      return { 
+        success: false, 
+        error: `WordPress API returned ${response.status}: ${response.statusText}` 
+      };
+    }
+
+    return { success: true };
+  } catch (error) {
+    return { 
+      success: false, 
+      error: `Cannot reach WordPress API: ${error.message}` 
+    };
+  }
+}
 /**
  * Fetch WordPress page by slug
  * @param {string} slug - Page slug
@@ -35,15 +72,21 @@ export async function fetchPageBySlug(slug, options = {}) {
       }
     );
 
+    if (response.status === 401) {
+      console.error(`WordPress API Unauthorized for "${slug}". Please check WordPress REST API permissions.`);
+      console.info('Solutions: 1) Enable REST API in WordPress 2) Install "Application Passwords" plugin 3) Check .htaccess restrictions');
+      return null;
+    }
+
     if (!response.ok) {
-      console.warn(`Failed to fetch page "${slug}": ${response.statusText}`);
+      console.warn(`Failed to fetch page "${slug}": ${response.status} ${response.statusText}`);
       return null;
     }
 
     const pages = await response.json();
     return pages.length > 0 ? pages[0] : null;
   } catch (error) {
-    console.warn(`WordPress API unavailable for slug "${slug}". Using fallback data.`);
+    console.warn(`WordPress API unavailable for slug "${slug}": ${error.message}`);
     return null;
   }
 }
@@ -112,14 +155,20 @@ export async function fetchPages(options = {}) {
       }
     );
 
+    if (response.status === 401) {
+      console.error(`WordPress API Unauthorized for pages. Please check WordPress REST API permissions.`);
+      console.info('Solutions: 1) Enable REST API in WordPress 2) Install "Application Passwords" plugin 3) Check .htaccess restrictions');
+      return [];
+    }
+
     if (!response.ok) {
-      console.warn(`Failed to fetch pages: ${response.statusText}`);
+      console.warn(`Failed to fetch pages: ${response.status} ${response.statusText}`);
       return [];
     }
 
     return await response.json();
   } catch (error) {
-    console.warn('WordPress API unavailable. Using fallback data.');
+    console.warn(`WordPress API unavailable for pages: ${error.message}`);
     return [];
   }
 }
@@ -257,6 +306,18 @@ export async function fetchCustomPostType(postType, options = {}) {
  * @returns {Promise<Object|null>} Front page data
  */
 export async function getFrontPage() {
+  if (!isWordPressAvailable()) {
+    console.warn('WordPress is not configured. Using fallback data.');
+    return null;
+  }
+
+  // Test API connection first
+  const connectionTest = await testWordPressConnection();
+  if (!connectionTest.success) {
+    console.error(`WordPress API Connection Failed: ${connectionTest.error}`);
+    return null;
+  }
+
   // Try fetching by slug 'home' first (most common)
   let page = await fetchPageBySlug('home');
   
