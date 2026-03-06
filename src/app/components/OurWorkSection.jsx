@@ -4,6 +4,7 @@ import { useRef, memo, useState } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Link from 'next/link';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -215,12 +216,12 @@ function OurWorkSection() {
           linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)
         `,
         backgroundSize: '52px 52px',
-      }}/>
+      }} />
 
       {/* Ambient glows */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div style={{ position:'absolute', top:'5%', left:'10%', width:500, height:500, borderRadius:'50%', background:'radial-gradient(circle, rgba(102,126,234,0.04) 0%, transparent 70%)', filter:'blur(60px)' }}/>
-        <div style={{ position:'absolute', bottom:'5%', right:'10%', width:400, height:400, borderRadius:'50%', background:'radial-gradient(circle, rgba(118,75,162,0.04) 0%, transparent 70%)', filter:'blur(60px)' }}/>
+        <div style={{ position: 'absolute', top: '5%', left: '10%', width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, rgba(102,126,234,0.04) 0%, transparent 70%)', filter: 'blur(60px)' }} />
+        <div style={{ position: 'absolute', bottom: '5%', right: '10%', width: 400, height: 400, borderRadius: '50%', background: 'radial-gradient(circle, rgba(118,75,162,0.04) 0%, transparent 70%)', filter: 'blur(60px)' }} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -228,16 +229,16 @@ function OurWorkSection() {
         {/* ── Header ── */}
         <div className="ow-header text-center mb-12">
           <div className="inline-flex items-center gap-2 mb-4">
-            <span style={{ display:'block', height:1, width:32, background:'linear-gradient(90deg, transparent, #6366f1)' }}/>
-            <span style={{ fontSize:11, fontWeight:700, letterSpacing:'0.22em', color:'#3b8d4d', textTransform:'uppercase' }}>
+            <span style={{ display: 'block', height: 1, width: 32, background: 'linear-gradient(90deg, transparent, #6366f1)' }} />
+            <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.22em', color: '#3b8d4d', textTransform: 'uppercase' }}>
               Our Products
             </span>
-            <span style={{ display:'block', height:1, width:32, background:'linear-gradient(90deg, #6366f1, transparent)' }}/>
+            <span style={{ display: 'block', height: 1, width: 32, background: 'linear-gradient(90deg, #6366f1, transparent)' }} />
           </div>
 
           <h2 className="text-4xl md:text-5xl font-extrabold text-[#0a0d14] mb-4 tracking-tight">
             Software Built for{' '}
-            <span style={{ background:'linear-gradient(135deg, #4f46e5, #7c3aed)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent' }}>
+            <span style={{ background: 'linear-gradient(135deg, #4f46e5, #7c3aed)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
               Every Industry
             </span>
           </h2>
@@ -269,7 +270,7 @@ function OurWorkSection() {
         {/* ── Product Grid ── */}
         <div
           ref={gridRef}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
         >
           {filtered.map((product) => (
             <ProductCard key={product.id} product={product} />
@@ -281,12 +282,15 @@ function OurWorkSection() {
           <p className="text-gray-500 text-sm mb-5 font-medium">
             Need a custom solution for your industry?
           </p>
-          <a href="/contact" className="btn-primary px-8 py-3 text-lg inline-flex items-center space-x-2">
+          <Link
+            href="/contact"
+            className="press-illusion-btn bg-green-400 text-black w-fit mx-auto font-bold px-6 py-2 text-base  items-center space-x-2  md:flex"
+          >
             <span>Request a Demo</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 9" className="h-2 w-4">
               <path fill="currentColor" fillRule="evenodd" d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z" clipRule="evenodd"></path>
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -304,12 +308,12 @@ function ProductCard({ product }) {
     >
       {/* Real Image Header */}
       <div className="relative h-52 overflow-hidden bg-gray-100 flex-shrink-0">
-        <img 
-          src={product.image} 
+        <img
+          src={product.image}
           alt={product.name}
           className="w-full h-full object-cover opacity-90"
         />
-        
+
         {/* Subtle gradient overlay to make image blend into white card */}
         <div className="absolute inset-0 bg-gradient-to-t from-white via-white/5 to-transparent opacity-100" />
 
@@ -323,7 +327,7 @@ function ProductCard({ product }) {
                 color: 'white',
               }}
             >
-              <svg className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clipRule="evenodd"/></svg>
+              <svg className="w-3 h-3 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clipRule="evenodd" /></svg>
               {product.badge}
             </span>
           )}
@@ -346,12 +350,17 @@ function ProductCard({ product }) {
 
         {/* Bottom Action Row (Purchase Focused) */}
         <div className="mt-6 flex items-center justify-between pt-4 border-t border-gray-100">
-          <a href="/contact" className="btn-primary px-4 py-2 text-sm inline-flex items-center space-x-1">
+
+
+          <Link
+            href="/contact"
+            className="press-illusion-btn bg-green-400 text-white w-fit  font-bold px-6 py-2 text-sm  items-center space-x-2  md:flex"
+          >
             <span>Get Pricing & Demo</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 9" className="h-1.5 w-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 9" className="h-2 w-4">
               <path fill="currentColor" fillRule="evenodd" d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z" clipRule="evenodd"></path>
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

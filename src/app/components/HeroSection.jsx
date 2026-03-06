@@ -4,6 +4,7 @@ import { useRef, memo } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Link from 'next/link';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -74,7 +75,7 @@ function HeroSection({ data }) {
       delay: 0.8,
       ease: 'power2.out',
     });
-    
+
     // Animate top glow
     gsap.from('.top-glow', {
       opacity: 0,
@@ -86,8 +87,8 @@ function HeroSection({ data }) {
   }, { scope: container });
 
   return (
-    <section 
-      ref={container} 
+    <section
+      ref={container}
       className="relative min-h-[100vh] flex flex-col items-center pt-32 pb-0 overflow-hidden bg-no-repeat bg-grid"
       style={{
         backgroundImage: heroData.backgroundImage ? `url("${heroData.backgroundImage}")` : undefined,
@@ -108,15 +109,15 @@ function HeroSection({ data }) {
 
         {/* Main Headline */}
         {heroData.heading && (
-          <h1 
-            className="text-[70px] hero_heading font-bold text-white mb-10 tracking-tighter max-w-6xl mx-auto  drop-shadow-2xl"
+          <h1
+            className="text-[70px] hero_heading font-bold leading-tight text-white mb-10 tracking-tighter max-w-6xl mx-auto  drop-shadow-2xl"
             dangerouslySetInnerHTML={{ __html: heroData.heading }}
           />
         )}
 
         {/* Subtext */}
         {heroData.description && (
-          <div 
+          <div
             className="text-white/60 text-lg md:text-2xl max-w-4xl mx-auto mb-16 font-medium leading-relaxed prose prose-invert"
             dangerouslySetInnerHTML={{ __html: heroData.description }}
           />
@@ -125,54 +126,54 @@ function HeroSection({ data }) {
         {/* CTA Button */}
         {heroData.hasButton && (
           <div className="relative z-30 mb-20">
-            <a 
+            <Link
               href={heroData.buttonLink}
-              className="btn-primary text-lg px-8 py-3 inline-flex items-center space-x-2"
+              className="press-illusion-btn bg-green-400 text-black w-fit  font-bold px-6 py-2 text-base mx-auto items-center space-x-2  md:flex"
             >
-              <span>{heroData.buttonText}</span>
+              <span>Get In Touch</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 9" className="h-2 w-4">
                 <path fill="currentColor" fillRule="evenodd" d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z" clipRule="evenodd"></path>
               </svg>
-            </a>
+            </Link>
           </div>
         )}
         {/* Floating Cards Mockup */}
         <div className="-mt-40 relative h-[600px] w-full max-w-6xl mx-auto hidden lg:block">
-           {/* Web Platforms Card */}
-           <div className="floating-card absolute left-[-150px] top-0 w-80 glass-card p-8 rounded-[2.5rem] border border-white/10 text-left shadow-2xl z-10">
-              <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-inner ring-1 ring-white/10">🌐</div>
-              <h3 className="text-white font-bold text-xl mb-4 flex items-center justify-between">
-                Web Platforms <span className="w-5 h-5 rounded-md border-2 border-white/20"></span>
-              </h3>
-              <p className="text-white/40 text-[13px] leading-relaxed font-medium">
-                We design and build high-performance website solutions applied basically for speed, scalability, and user experience.
-              </p>
-           </div>
+          {/* Web Platforms Card */}
+          <div className="floating-card absolute left-[-150px] top-0 w-80 glass-card p-8 rounded-[2.5rem] border border-white/10 text-left shadow-2xl z-10">
+            <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-inner ring-1 ring-white/10">🌐</div>
+            <h3 className="text-white font-bold text-xl mb-4 flex items-center justify-between">
+              Web Platforms <span className="w-5 h-5 rounded-md border-2 border-white/20"></span>
+            </h3>
+            <p className="text-white/40 text-[13px] leading-relaxed font-medium">
+              We design and build high-performance website solutions applied basically for speed, scalability, and user experience.
+            </p>
+          </div>
 
-           {/* Custom Software Card */}
-           <div className="floating-card absolute right-[-150px] top-0 w-80 glass-card p-8 rounded-[2.5rem] border border-white/10 text-left shadow-2xl z-10">
-              <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-inner ring-1 ring-white/10">💻</div>
-              <h3 className="text-white font-bold text-xl mb-4 flex items-center justify-between">
-                Custom Software <span className="w-5 h-5 rounded-md border-2 border-white/20"></span>
-              </h3>
-              <p className="text-white/40 text-[13px] leading-relaxed font-medium">
-                Tailored digital solutions built to solve complex business challenges and support long-term growth.
-              </p>
-           </div>
+          {/* Custom Software Card */}
+          <div className="floating-card absolute right-[-150px] top-0 w-80 glass-card p-8 rounded-[2.5rem] border border-white/10 text-left shadow-2xl z-10">
+            <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-inner ring-1 ring-white/10">💻</div>
+            <h3 className="text-white font-bold text-xl mb-4 flex items-center justify-between">
+              Custom Software <span className="w-5 h-5 rounded-md border-2 border-white/20"></span>
+            </h3>
+            <p className="text-white/40 text-[13px] leading-relaxed font-medium">
+              Tailored digital solutions built to solve complex business challenges and support long-term growth.
+            </p>
+          </div>
 
-           {/* E-commerce Solutions Card (Center Bottom) */}
-           <div className="floating-card absolute left-1/2 -translate-x-1/2 bottom-[150px] w-96 glass-card p-10 rounded-[3rem] border border-white/10 text-left shadow-[0_45px_100px_rgba(0,0,0,0.9)] z-20">
-              <div className="flex items-center gap-6 mb-8">
-                 <div className="w-16 h-16 bg-[#adff2f]/30 rounded-[1.5rem] flex items-center justify-center text-4xl text-[#adff2f] shadow-glow ring-1 ring-[#adff2f]/40">💰</div>
-                 <h3 className="text-white font-bold text-2xl">E-commerce Solutions</h3>
-              </div>
-              <p className="text-white/40 text-[15px] leading-relaxed mb-8 font-bold">
-                Launch powerful online stores with secure payments, optimized performance, and conversion-focused design.
-              </p>
-              <div className="w-8 h-8 rounded-lg border-2 border-white/20 ml-auto flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
-                <span className="text-[10px] opacity-20">GO</span>
-              </div>
-           </div>
+          {/* E-commerce Solutions Card (Center Bottom) */}
+          <div className="floating-card absolute left-1/2 -translate-x-1/2 bottom-[150px] w-96 glass-card p-10 rounded-[3rem] border border-white/10 text-left shadow-[0_45px_100px_rgba(0,0,0,0.9)] z-20">
+            <div className="flex items-center gap-6 mb-8">
+              <div className="w-16 h-16 bg-[#adff2f]/30 rounded-[1.5rem] flex items-center justify-center text-4xl text-[#adff2f] shadow-glow ring-1 ring-[#adff2f]/40">💰</div>
+              <h3 className="text-white font-bold text-2xl">E-commerce Solutions</h3>
+            </div>
+            <p className="text-white/40 text-[15px] leading-relaxed mb-8 font-bold">
+              Launch powerful online stores with secure payments, optimized performance, and conversion-focused design.
+            </p>
+            <div className="w-8 h-8 rounded-lg border-2 border-white/20 ml-auto flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
+              <span className="text-[10px] opacity-20">GO</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

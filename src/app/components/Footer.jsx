@@ -37,7 +37,7 @@ export default function Footer() {
           <div className="flex flex-col items-start lg:items-end gap-6 mt-4 lg:mt-0">
             <Link
               href="/contact"
-              className="btn-primary px-8 py-3 text-sm flex items-center space-x-2"
+              className="press-illusion-btn bg-green-400 text-black w-fit mx-auto font-bold px-6 py-2 text-base  items-center space-x-2  md:flex"
             >
               <span>Start a Project</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 9" className="h-2 w-4">

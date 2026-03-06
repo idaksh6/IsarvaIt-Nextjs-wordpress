@@ -45,6 +45,7 @@ section {
     opacity: 0;
     transform: translateY(28px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -95,11 +96,9 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    180deg,
-    var(--accent-primary),
-    var(--accent-secondary)
-  );
+  background: linear-gradient(180deg,
+      var(--accent-primary),
+      var(--accent-secondary));
   border-radius: 10px;
 }
 
@@ -143,25 +142,27 @@ h6,
 }
 
 /* ─── Buttons (Use <Button /> component where possible) ──── */
-.btn-primary {
-  background: #ffffff;
-  color: #111111;
-  padding: 10px 24px;
-  border-radius: 100px;
-  font-weight: 700;
-  font-size: 13px;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+
+
+.press-illusion-btn {
   border: none;
+  box-shadow: 0 6px 0 #27ae60;
+  transition: all 0.1s ease;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
+.press-illusion-btn:hover {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #27ae60;
 }
+
 
 .btn-outline {
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -242,11 +243,9 @@ h6,
   transform: translateX(-50%);
   width: 1000px;
   height: 500px;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(0, 255, 136, 0.5) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(ellipse at center,
+      rgba(0, 255, 136, 0.5) 0%,
+      transparent 70%);
   filter: blur(100px);
   z-index: 10;
   opacity: 0.8;

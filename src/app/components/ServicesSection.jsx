@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { memo } from 'react';
 
 function ServicesSection({ data }) {
@@ -54,7 +55,7 @@ function ServicesSection({ data }) {
   const subheading = data?.subheading || 'Comprehensive Digital Solutions';
 
   return (
-    <section 
+    <section
       className="relative py-24 lg:py-32 overflow-hidden"
       style={{
         background: 'linear-gradient(180deg, #d4f4dd 0%, #b8f2c6 50%, #d4f4dd 100%)',
@@ -96,7 +97,7 @@ function ServicesSection({ data }) {
             >
               {/* Glass Effect Inner Glow */}
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-100 group-hover:opacity-70 transition-opacity duration-500"></div>
-              
+
               {/* Content */}
               <div className="relative">
                 {/* Icon */}
@@ -119,15 +120,15 @@ function ServicesSection({ data }) {
                   <ul className="space-y-2.5">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-sm text-gray-600">
-                        <svg 
-                          className="w-4 h-4 text-emerald-600 flex-shrink-0" 
-                          fill="currentColor" 
+                        <svg
+                          className="w-4 h-4 text-emerald-600 flex-shrink-0"
+                          fill="currentColor"
                           viewBox="0 0 20 20"
                         >
-                          <path 
-                            fillRule="evenodd" 
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" 
-                            clipRule="evenodd" 
+                          <path
+                            fillRule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clipRule="evenodd"
                           />
                         </svg>
                         {feature}
@@ -136,7 +137,7 @@ function ServicesSection({ data }) {
                   </ul>
                 )}
               </div>
-       
+
             </div>
           ))}
         </div>
@@ -146,9 +147,16 @@ function ServicesSection({ data }) {
           <p className="text-gray-700 mb-6 text-lg font-medium">
             Can't find what you're looking for?
           </p>
-          <button className="btn-primary text-lg px-8 py-3">
-            Get Custom Solution
-          </button>
+
+          <Link
+            href="#contact"
+            className="press-illusion-btn bg-green-400 text-black font-bold px-6 py-2 text-base w-fit mx-auto items-center space-x-2  md:flex"
+          >
+            <span>Get Custom Solution</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 9" className="h-2 w-4">
+              <path fill="currentColor" fillRule="evenodd" d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z" clipRule="evenodd"></path>
+            </svg>
+          </Link>
         </div>
       </div>
     </section>
