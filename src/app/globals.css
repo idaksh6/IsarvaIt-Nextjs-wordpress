@@ -78,6 +78,52 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* ─── Scrollbar Hiding ─────────────────────────── */
+.scrollbar-hide {
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── Modal Animations ─────────────────────────── */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0.8;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-slide-up {
+  animation: slideUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ─── Button Styles ─────────────────────────────── */
+.btn-primary {
+  @apply bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-medium px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-emerald-500/25;
+}
+
+/* ─── Professional Mobile Interactions ──────────── */
+.hover\:scale-102:hover {
+  transform: scale(1.02);
+}
+
+.active\:scale-95:active {
+  transform: scale(0.95);
+}
+
+.scale-105 {
+  transform: scale(1.05);
+}
+
 /* ─── Grid Background ──────────────────────────────────── */
 .bg-grid {
   background-size: 40px 40px;
@@ -156,6 +202,7 @@ h6,
   position: relative;
   overflow: hidden;
   text-align: center;
+  display: inline-flex;
 }
 
 .press-illusion-btn:hover {
@@ -287,4 +334,26 @@ h6,
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* ─── Line Clamp Utilities ──────────────────────────── */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }

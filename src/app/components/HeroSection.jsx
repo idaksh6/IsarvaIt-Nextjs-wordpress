@@ -130,7 +130,7 @@ function HeroSection({ data }) {
               href={heroData.buttonLink}
               className="press-illusion-btn bg-green-400 text-black w-fit  font-bold px-6 py-2 text-base mx-auto items-center space-x-2  md:flex"
             >
-              <span>Get In Touch</span>
+              Get In Touch
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 9" className="h-2 w-4">
                 <path fill="currentColor" fillRule="evenodd" d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z" clipRule="evenodd"></path>
               </svg>

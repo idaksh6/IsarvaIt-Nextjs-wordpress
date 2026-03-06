@@ -4,7 +4,7 @@ import { useRef, memo, useState } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Link from 'next/link';
+import ProductDesktop from './ProductDesktop';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -165,41 +165,14 @@ const categories = ['All', 'HR & Workforce', 'E-Commerce & Retail', 'Fleet & Log
 
 function OurWorkSection() {
   const sectionRef = useRef(null);
-  const [activeCategory, setActiveCategory] = useState('All');
+  // Removed unused state variables
 
-  const filtered = activeCategory === 'All'
-    ? products
-    : products.filter((p) => p.category === activeCategory);
+  // Removed unused filter logic
 
   useGSAP(() => {
     gsap.from('.ow-header > *', {
       scrollTrigger: { trigger: '.ow-header', start: 'top 85%' },
       y: 36, opacity: 0, duration: 0.9, stagger: 0.1, ease: 'power3.out',
-    });
-  }, { scope: sectionRef });
-
-  // Animate cards whenever filter changes
-  const gridRef = useRef(null);
-  const animateGrid = () => {
-    if (!gridRef.current) return;
-    const cards = gridRef.current.querySelectorAll('.ow-card');
-    gsap.fromTo(cards,
-      { opacity: 0, y: 20, scale: 0.97 },
-      { opacity: 1, y: 0, scale: 1, duration: 0.55, stagger: 0.05, ease: 'power3.out', clearProps: 'all' }
-    );
-  };
-
-  const handleFilter = (cat) => {
-    setActiveCategory(cat);
-    setTimeout(animateGrid, 10);
-  };
-
-  // Initial animation on scroll
-  useGSAP(() => {
-    ScrollTrigger.create({
-      trigger: gridRef.current,
-      start: 'top 82%',
-      onEnter: animateGrid,
     });
   }, { scope: sectionRef });
 
@@ -245,53 +218,15 @@ function OurWorkSection() {
           <p className="text-gray-500 text-base max-w-xl mx-auto leading-relaxed">
             18 battle-tested products helping businesses across industries run smarter, faster, and leaner.
           </p>
+          
         </div>
 
-        {/* ── Category Filters ── */}
-        <div className="flex flex-wrap justify-center gap-2.5 mb-14">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => handleFilter(cat)}
-              className="px-5 py-2 rounded-full text-xs font-bold tracking-wide transition-all duration-300"
-              style={{
-                background: activeCategory === cat ? 'linear-gradient(135deg, #4f46e5, #7c3aed)' : '#ffffff',
-                border: activeCategory === cat ? '1px solid transparent' : '1px solid #e5e7eb',
-                color: activeCategory === cat ? '#fff' : '#6b7280',
-                boxShadow: activeCategory === cat ? '0 8px 24px rgba(79,70,229,0.3)' : '0 2px 8px rgba(0,0,0,0.02)',
-                transform: activeCategory === cat ? 'scale(1.05)' : 'scale(1)',
-              }}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        {/* ── Product Grid ── */}
-        <div
-          ref={gridRef}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
-        >
-          {filtered.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
-
-        {/* ── Bottom CTA ── */}
-        <div className="text-center mt-14">
-          <p className="text-gray-500 text-sm mb-5 font-medium">
-            Need a custom solution for your industry?
-          </p>
-          <Link
-            href="/contact"
-            className="press-illusion-btn bg-green-400 text-black w-fit mx-auto font-bold px-6 py-2 text-base  items-center space-x-2  md:flex"
-          >
-            <span>Request a Demo</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 9" className="h-2 w-4">
-              <path fill="currentColor" fillRule="evenodd" d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z" clipRule="evenodd"></path>
-            </svg>
-          </Link>
-        </div>
+        {/* Desktop Interface */}
+        <ProductDesktop 
+          products={products} 
+          categories={categories}
+          onClose={() => {}}
+        />
       </div>
     </section>
   );
@@ -350,17 +285,12 @@ function ProductCard({ product }) {
 
         {/* Bottom Action Row (Purchase Focused) */}
         <div className="mt-6 flex items-center justify-between pt-4 border-t border-gray-100">
-
-
-          <Link
-            href="/contact"
-            className="press-illusion-btn bg-green-400 text-white w-fit  font-bold px-6 py-2 text-sm  items-center space-x-2  md:flex"
-          >
+          <a href="/contact" className="btn-primary px-4 py-2 text-sm inline-flex items-center space-x-1">
             <span>Get Pricing & Demo</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 9" className="h-2 w-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 9" className="h-1.5 w-3">
               <path fill="currentColor" fillRule="evenodd" d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z" clipRule="evenodd"></path>
             </svg>
-          </Link>
+          </a>
         </div>
       </div>
     </div>
