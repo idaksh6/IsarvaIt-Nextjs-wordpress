@@ -3,7 +3,6 @@
 import { useRef, memo } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import Button from './Button';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 if (typeof window !== 'undefined') {
@@ -126,13 +125,15 @@ function HeroSection({ data }) {
         {/* CTA Button */}
         {heroData.hasButton && (
           <div className="relative z-30 mb-20">
-            <Button 
-              variant="primary" 
+            <a 
               href={heroData.buttonLink}
-              size="lg"
+              className="btn-primary text-lg px-8 py-3 inline-flex items-center space-x-2"
             >
-              {heroData.buttonText}
-            </Button>
+              <span>{heroData.buttonText}</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 9" className="h-2 w-4">
+                <path fill="currentColor" fillRule="evenodd" d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z" clipRule="evenodd"></path>
+              </svg>
+            </a>
           </div>
         )}
         {/* Floating Cards Mockup */}

@@ -1,81 +1,12 @@
 'use client';
 
-import { useRef, memo, useEffect, useState } from 'react';
+import { useRef, memo, useEffect } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
-}
-
-// Fancy Button Component for Testimonials
-function TestimonialButton({ children, href, color = 'purple' }) {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const buttonRef = useRef(null);
-
-  const handleMouseMove = (e) => {
-    if (!buttonRef.current) return;
-    
-    const rect = buttonRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    
-    setMousePosition({ x: x * 0.5, y: y * 0.5 });
-  };
-
-  const handleMouseLeave = () => {
-    setMousePosition({ x: 0, y: 0 });
-  };
-
-  // Color schemes for different button colors
-  const colorSchemes = {
-    purple: {
-      bg: '#ddd6fe',
-      border: 'border-purple-300/60',
-      textColor: 'text-[#581c87]',
-      gradient1: 'bg-[radial-gradient(50%_50%_at_50%_50%,#ede9fe_3.5%,_#c4b5fd_26.5%,#ddd6fe_37.5%,rgba(196,181,253,0.50)_49%,rgba(147,51,234,0.00)_92.5%)]',
-      gradient2: 'bg-[radial-gradient(43.3%_44.23%_at_50%_49.51%,_#ede9fe_29%,_#ddd6fe_48.5%,_#c4b5fd_60.71%,rgba(147,51,234,0.00)_100%)]'
-    },
-    blue: {
-      bg: '#bfdbfe',
-      border: 'border-blue-300/60',
-      textColor: 'text-[#1e3a8a]',
-      gradient1: 'bg-[radial-gradient(50%_50%_at_50%_50%,#dbeafe_3.5%,_#93c5fd_26.5%,#bfdbfe_37.5%,rgba(147,197,253,0.50)_49%,rgba(59,130,246,0.00)_92.5%)]',
-      gradient2: 'bg-[radial-gradient(43.3%_44.23%_at_50%_49.51%,_#dbeafe_29%,_#bfdbfe_48.5%,_#93c5fd_60.71%,rgba(59,130,246,0.00)_100%)]'
-    }
-  };
-
-  const currentScheme = colorSchemes[color] || colorSchemes.purple;
-
-  return (
-    <a 
-      href={href} 
-      ref={buttonRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className={`relative inline-flex items-center justify-center font-bold uppercase -tracking-[0.015em] rounded-full ${currentScheme.border} text-black space-x-1 overflow-hidden transition-all duration-200 z-10 h-12 px-16 text-[12px] sm:pl-[59px] sm:pr-[52px]`}
-      style={{ backgroundColor: currentScheme.bg }}
-    >
-      <div className="absolute left-1/2 top-1/2 h-[calc(100%+9px)] w-[calc(100%+9px)] -translate-x-1/2 -translate-y-1/2 rounded-full will-change-transform" style={{opacity: 1}}>
-        <div className="relative h-full w-full rounded-full border border-white/20 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm"></div>
-      </div>
-      <div className="absolute left-1/2 top-1/2 h-[calc(100%+9px)] w-[calc(100%+9px)] -translate-x-1/2 -translate-y-1/2 scale-x-[-1] transform rounded-full will-change-transform" style={{opacity: 0}}>
-        <div className="relative h-full w-full rounded-full border border-white/20 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-sm"></div>
-      </div>
-      <div 
-        className="absolute -z-10 flex w-[204px] items-center justify-center transition-transform duration-300 ease-out" 
-        style={{transform: `translateX(${mousePosition.x}px) translateY(${mousePosition.y}px) translateZ(0px)`}}
-      >
-        <div className={`absolute top-1/2 h-[121px] w-[121px] -translate-y-1/2 ${currentScheme.gradient1}`}></div>
-        <div className={`absolute top-1/2 h-[103px] w-[204px] -translate-y-1/2 ${currentScheme.gradient2} blur-[5px]`}></div>
-      </div>
-      <span className={`${currentScheme.textColor} relative z-10`}>{children}</span>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 9" className={`h-[9px] w-[17px] ${currentScheme.textColor} relative z-10`}>
-        <path fill="currentColor" fillRule="evenodd" d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z" clipRule="evenodd"></path>
-      </svg>
-    </a>
-  );
 }
 
 const defaultTestimonials = [
@@ -494,9 +425,12 @@ function TestimonialsSection({ data }) {
         <p className="text-gray-400 text-sm mb-6 font-medium">
           Join 500+ businesses that trust us with their digital growth
         </p>
-        <TestimonialButton href="/contact" color="purple">
-          Start Your Project Today
-        </TestimonialButton>
+        <a href="/contact" className="btn-primary px-8 py-3 text-lg inline-flex items-center space-x-2">
+          <span>Start Your Project Today</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 9" className="h-2 w-4">
+            <path fill="currentColor" fillRule="evenodd" d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z" clipRule="evenodd"></path>
+          </svg>
+        </a>
       </div>
     </section>
   );

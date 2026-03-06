@@ -1,7 +1,6 @@
 'use client';
 
 import { memo } from 'react';
-import Button from './Button';
 
 function ServicesSection({ data }) {
   // Default placeholder data (will be replaced with WordPress data)
@@ -147,9 +146,9 @@ function ServicesSection({ data }) {
           <p className="text-gray-700 mb-6 text-lg font-medium">
             Can't find what you're looking for?
           </p>
-          <Button color='blue'  variant="secondary" size="lg">
+          <button className="btn-primary text-lg px-8 py-3">
             Get Custom Solution
-          </Button>
+          </button>
         </div>
       </div>
     </section>
