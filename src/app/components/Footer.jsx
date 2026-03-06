@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="relative pt-24 pb-12 overflow-hidden border-t border-white/5 bg-[#0A0D14] bg-[url('/get-started-bg.webp')] bg-cover bg-center bg-no-repeat">
+    <footer className="relative pt-24 pb-12 overflow-hidden border-t  text-center lg:text-left border-white/5 bg-[#0A0D14] bg-[url('/get-started-bg.webp')] bg-cover bg-center bg-no-repeat">
       <div className="absolute inset-0 bg-[#0A0D14]/10 backdrop-blur-sm pointer-events-none" />
 
       {/* Background Ambient Glows */}
@@ -15,12 +15,12 @@ export default function Footer() {
 
         {/* Top Section: Brand & Description */}
         <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-20 pb-16 border-b border-white/5">
-          <div className="max-w-2xl">
-            <Link href="/" className="flex items-center">
+          <div className="max-w-2xl ">
+            <Link href="/" className="flex items-center lg:justify-start justify-center">
               <img
                 src="/Screenshot_2.png"
                 alt="Isarva Logo"
-                className="w-[100px] h-auto object-contain drop-shadow-sm"
+                className="w-[100px]  h-auto object-contain drop-shadow-sm"
               />
               <span
                 className="font-bold text-[46px] tracking-tight text-white"
@@ -34,7 +34,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="flex flex-col items-start lg:items-end gap-6 mt-4 lg:mt-0">
+          <div className="flex flex-col items-start lg:items-end gap-6 mt-4 lg:mt-0 lg:ml-0 lg:mr-0 ml-auto mr-auto">
             <Link
               href="/contact"
               className="press-illusion-btn bg-green-400 text-black w-fit mx-auto font-bold px-6 py-2 text-base  items-center space-x-2  inline-flex"
@@ -51,7 +51,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           {/* Services */}
           <div>
-            <h4 className="text-white font-extrabold mb-8 text-[13px] uppercase tracking-[0.2em] flex items-center gap-3">
+            <h4 className="text-white font-extrabold mb-8 text-[13px] uppercase tracking-[0.2em] flex items-center gap-3 lg:justify-start justify-center">
               <span className="w-1.5 h-1.5 rounded-full bg-[#00ff88] shadow-[0_0_10px_#00ff88]"></span>
               Services
             </h4>
@@ -68,7 +68,7 @@ export default function Footer() {
 
           {/* Products */}
           <div>
-            <h4 className="text-white font-extrabold mb-8 text-[13px] uppercase tracking-[0.2em] flex items-center gap-3">
+            <h4 className="text-white font-extrabold mb-8 text-[13px] uppercase tracking-[0.2em] flex items-center gap-3 lg:justify-start justify-center">
               <span className="w-1.5 h-1.5 rounded-full bg-[#adff2f] shadow-[0_0_10px_#adff2f]"></span>
               Products
             </h4>
@@ -85,7 +85,7 @@ export default function Footer() {
 
           {/* Industries */}
           <div>
-            <h4 className="text-white font-extrabold mb-8 text-[13px] uppercase tracking-[0.2em] flex items-center gap-3">
+            <h4 className="text-white font-extrabold mb-8 text-[13px] uppercase tracking-[0.2em] flex items-center gap-3 lg:justify-start justify-center">
               <span className="w-1.5 h-1.5 rounded-full bg-[#ff4c00] shadow-[0_0_10px_#ff4c00]"></span>
               Industries
             </h4>
@@ -102,7 +102,7 @@ export default function Footer() {
 
           {/* Useful Links */}
           <div className="p-8 rounded-3xl bg-white/[0.02] border border-white/5 backdrop-blur-md">
-            <h4 className="text-white font-extrabold mb-8 text-[13px] uppercase tracking-[0.2em] flex items-center gap-3">
+            <h4 className="text-white font-extrabold mb-8 text-[13px] uppercase tracking-[0.2em] flex items-center gap-3 lg:justify-start justify-center">
               <span className="w-1.5 h-1.5 rounded-full bg-[#60a5fa] shadow-[0_0_10px_#60a5fa]"></span>
               Useful Links
             </h4>
@@ -120,7 +120,7 @@ export default function Footer() {
 
         {/* Huge Background Text Watermark */}
         <div className="absolute top-10 left-0 right-0 text-center select-none pointer-events-none opacity-[0.02] z-[1]">
-          <h2 className="text-[16rem] md:text-[24rem] font-black tracking-tighter text-white uppercase leading-none">
+          <h2 className="lg:text-[24rem] text-[10rem]  font-black tracking-tighter text-white uppercase leading-none">
             Isarva
           </h2>
         </div>

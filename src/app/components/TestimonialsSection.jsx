@@ -1,4 +1,5 @@
 'use client';
+// Fixed: Removed momentumRef references
 
 import { useRef, memo, useEffect } from 'react';
 import gsap from 'gsap';
@@ -97,18 +98,12 @@ function TestimonialsSection({ data }) {
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
   const stRef = useRef(null);       // ScrollTrigger instance
-  const drag = useRef({ on: false, startX: 0, startSL: 0, lastX: 0, lastT: 0, vel: 0 });
-  const momentumRef = useRef(null);       // GSAP momentum tween
 
   const testimonials = data?.testimonials || defaultTestimonials;
   const sectionTitle = data?.title || 'What Our Clients Say';
   const sectionSub = data?.subtitle || 'Trusted by industry leaders across the globe';
 
   // ── helpers ─────────────────────────────────────────────────────────────────
-  const killMomentum = () => {
-    if (momentumRef.current) { momentumRef.current.kill(); momentumRef.current = null; }
-  };
-
   const pauseST = () => { if (stRef.current) stRef.current.disable(); };
   const resumeST = () => {
     setTimeout(() => { if (stRef.current) stRef.current.enable(); }, 800);
@@ -119,66 +114,67 @@ function TestimonialsSection({ data }) {
     const track = trackRef.current;
     if (!track) return;
 
+    let isDragging = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+
     // -- Down
     const onDown = (e) => {
-      killMomentum();
+      isDragging = true;
       pauseST();
+      
       const x = e.touches ? e.touches[0].clientX : e.clientX;
-      drag.current = { on: true, startX: x, startSL: track.scrollLeft, lastX: x, lastT: performance.now(), vel: 0 };
+      startX = x;
+      startScrollLeft = track.scrollLeft;
+      
       track.style.cursor = 'grabbing';
+      track.style.scrollBehavior = 'auto';
+      track.style.userSelect = 'none';
     };
 
-    // -- Move
+    // -- Move - Simple, clean drag without sticking
     const onMove = (e) => {
-      if (!drag.current.on) return;
+      if (!isDragging) return;
+      
       const x = e.touches ? e.touches[0].clientX : e.clientX;
-      const now = performance.now();
-      const dt = now - drag.current.lastT;
-      if (dt > 0) drag.current.vel = (drag.current.lastX - x) / dt; // px/ms
-      drag.current.lastX = x;
-      drag.current.lastT = now;
-
-      const rawTarget = drag.current.startSL + (drag.current.startX - x) * 1.1;
-      // Live smooth update via GSAP (not JS scroll) for buttery feel
-      gsap.to(track, { scrollLeft: rawTarget, duration: 0.05, ease: 'none', overwrite: true });
+      const deltaX = x - startX;
+      
+      // Simple, direct scroll without complex calculations
+      track.scrollLeft = startScrollLeft - deltaX;
     };
 
-    // -- Up / Cancel — apply momentum inertia
+    // -- Up - Release with natural momentum
     const onUp = () => {
-      if (!drag.current.on) return;
-      drag.current.on = false;
+      if (!isDragging) return;
+      
+      isDragging = false;
       track.style.cursor = 'grab';
-
-      const vel = drag.current.vel; // px/ms, positive = moving left
-      if (Math.abs(vel) > 0.05) {
-        // Coast: travel = vel * coastMs (capped)
-        const coastMs = 900;
-        const targetSL = Math.max(0, Math.min(track.scrollWidth - track.clientWidth, track.scrollLeft + vel * coastMs));
-        momentumRef.current = gsap.to(track, {
-          scrollLeft: targetSL,
-          duration: coastMs / 1000,
-          ease: 'power2.out',
-          onComplete: resumeST,
-        });
-      } else {
-        resumeST();
-      }
+      track.style.scrollBehavior = 'smooth';
+      track.style.userSelect = '';
+      
+      // Let native scroll snap handle the rest
+      resumeST();
     };
 
+    // Add event listeners
     track.addEventListener('mousedown', onDown);
     track.addEventListener('touchstart', onDown, { passive: true });
-    window.addEventListener('mousemove', onMove);
-    window.addEventListener('touchmove', onMove, { passive: true });
-    window.addEventListener('mouseup', onUp);
-    window.addEventListener('touchend', onUp);
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('touchmove', onMove, { passive: true });
+    document.addEventListener('mouseup', onUp);
+    document.addEventListener('touchend', onUp);
+
+    // Prevent context menu on long press
+    track.addEventListener('contextmenu', e => e.preventDefault());
 
     return () => {
       track.removeEventListener('mousedown', onDown);
       track.removeEventListener('touchstart', onDown);
-      window.removeEventListener('mousemove', onMove);
-      window.removeEventListener('touchmove', onMove);
-      window.removeEventListener('mouseup', onUp);
-      window.removeEventListener('touchend', onUp);
+      document.removeEventListener('mousemove', onMove);
+      document.removeEventListener('touchmove', onMove);
+      document.removeEventListener('mouseup', onUp);
+      document.removeEventListener('touchend', onUp);
+      track.removeEventListener('contextmenu', e => e.preventDefault());
     };
   }, []);
 
@@ -203,29 +199,42 @@ function TestimonialsSection({ data }) {
       ease: 'power2.out',
     });
 
-    // Scroll-driven slide (SLOW & smooth — large scrub value)
+    // Scroll-driven slide (ONLY on desktop - disable on mobile)
     const track = trackRef.current;
     if (!track) return;
 
-    const st = ScrollTrigger.create({
-      trigger: sectionRef.current,
-      start: 'top 55%',
-      end: 'bottom 10%',
-      scrub: 4,                 // ← high = very slow / smooth lag
-      onUpdate: (self) => {
-        if (drag.current.on) return;
-        const max = track.scrollWidth - track.clientWidth;
-        gsap.to(track, {
-          scrollLeft: max * self.progress,
-          duration: 0.6,       // extra smoothing on top of scrub lag
-          ease: 'power1.out',
-          overwrite: true,
+    // Only enable auto-scroll on desktop (768px and above)
+    const mediaQuery = window.matchMedia('(min-width: 768px)');
+    
+    const createScrollTrigger = () => {
+      if (mediaQuery.matches) {
+        const st = ScrollTrigger.create({
+          trigger: sectionRef.current,
+          start: 'top 55%',
+          end: 'bottom 10%',
+          scrub: 4,                 // ← high = very slow / smooth lag
+          onUpdate: (self) => {
+            // Don't interfere with native scroll behavior
+            const max = track.scrollWidth - track.clientWidth;
+            gsap.to(track, {
+              scrollLeft: max * self.progress,
+              duration: 0.6,       // extra smoothing on top of scrub lag
+              ease: 'power1.out',
+              overwrite: true,
+            });
+          },
         });
-      },
-    });
+        stRef.current = st;
+      }
+    };
 
-    stRef.current = st;
-    return () => st.kill();
+    createScrollTrigger();
+    mediaQuery.addListener(createScrollTrigger);
+
+    return () => {
+      if (stRef.current) stRef.current.kill();
+      mediaQuery.removeListener(createScrollTrigger);
+    };
   }, { scope: sectionRef });
 
   return (
@@ -287,13 +296,13 @@ function TestimonialsSection({ data }) {
 
       {/* ── Row wrapper with edge fades ── */}
       <div className="relative z-10">
-        {/* Left fade */}
-        <div style={{
+        {/* Left fade - hide on mobile */}
+        <div className="hidden md:block" style={{
           position: 'absolute', left: 0, top: 0, bottom: 0, width: 120, zIndex: 20, pointerEvents: 'none',
           background: 'linear-gradient(90deg, #f0f4ff 0%, transparent 100%)',
         }} />
-        {/* Right fade */}
-        <div style={{
+        {/* Right fade - hide on mobile */}
+        <div className="hidden md:block" style={{
           position: 'absolute', right: 0, top: 0, bottom: 0, width: 120, zIndex: 20, pointerEvents: 'none',
           background: 'linear-gradient(270deg, #f0f4ff 0%, transparent 100%)',
         }} />
@@ -301,21 +310,25 @@ function TestimonialsSection({ data }) {
         {/* ── The scrollable track ── */}
         <div
           ref={trackRef}
-          className="flex gap-7 overflow-x-scroll py-10 px-20"
+          className="flex gap-7 overflow-x-scroll py-10 px-6 md:px-20 snap-x snap-proximity md:snap-none"
           style={{
             cursor: 'grab',
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',
             WebkitOverflowScrolling: 'touch',
-            scrollBehavior: 'auto',
+            scrollBehavior: 'smooth',
+            touchAction: 'pan-x',
+            overscrollBehaviorX: 'contain',
+            willChange: 'scroll-position',
           }}
         >
           {testimonials.map((t) => (
             <article
               key={t.id}
-              className="ts-card flex-shrink-0 select-none"
+              className="ts-card flex-shrink-0 select-none snap-center"
               style={{
-                width: 380,
+                width: 'calc(100vw - 4rem)', // Slightly more padding for mobile
+                maxWidth: 380, // Max width on desktop
                 background: '#ffffff',
                 borderRadius: 28,
                 padding: '36px 36px 32px',
