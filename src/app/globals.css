@@ -202,7 +202,6 @@ h6,
   position: relative;
   overflow: hidden;
   text-align: center;
-  display: inline-flex;
 }
 
 .press-illusion-btn:hover {

@@ -110,7 +110,7 @@ function HeroSection({ data }) {
         {/* Main Headline */}
         {heroData.heading && (
           <h1
-            className="text-[70px] hero_heading font-bold leading-tight text-white mb-10 tracking-tighter max-w-6xl mx-auto  drop-shadow-2xl"
+            className="lg:text-[70px] text-[40px] hero_heading font-bold leading-tight text-white mb-10 tracking-tighter max-w-6xl mx-auto  drop-shadow-2xl"
             dangerouslySetInnerHTML={{ __html: heroData.heading }}
           />
         )}
@@ -128,7 +128,7 @@ function HeroSection({ data }) {
           <div className="relative z-30 mb-20">
             <Link
               href={heroData.buttonLink}
-              className="press-illusion-btn bg-green-400 text-black w-fit  font-bold px-6 py-2 text-base mx-auto items-center space-x-2  md:flex"
+              className="press-illusion-btn bg-green-400 text-black w-fit  font-bold px-6 py-2 text-base mx-auto items-center space-x-2 gap-2 inline-flex"
             >
               Get In Touch
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 9" className="h-2 w-4">

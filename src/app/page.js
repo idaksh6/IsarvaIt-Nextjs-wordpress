@@ -1,7 +1,7 @@
 import HeroSection from "./components/HeroSection";
 import ClientsSection from "./components/ClientsSection";
 import ServicesSection from "./components/ServicesSection";
-import OurWorkSection from "./components/OurWorkSection";
+import ProductDesktop from "./components/ProductDesktop";
 import TestimonialsSection from "./components/TestimonialsSection";
 import { getHomePageData, getHeroSectionData, getServicesSectionData } from "./lib/services/home-page-service";
 
@@ -26,7 +26,7 @@ export default async function HomePage() {
         <HeroSection data={heroData} />
         <ClientsSection />
         <ServicesSection data={servicesData} />
-        <OurWorkSection />
+        <ProductDesktop />
         <TestimonialsSection />
       </main>
     </div>

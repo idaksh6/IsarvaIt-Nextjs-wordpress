@@ -179,7 +179,7 @@ function OurWorkSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-28 overflow-hidden"
+      className="relative py-10 overflow-hidden"
       style={{ backgroundColor: '#fcfdfd' }}
     >
       {/* Subtle grid */}

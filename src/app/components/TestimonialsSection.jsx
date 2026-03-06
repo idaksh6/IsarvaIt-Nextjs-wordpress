@@ -428,7 +428,7 @@ function TestimonialsSection({ data }) {
         </p>
         <Link
           href="/contact"
-          className="press-illusion-btn bg-green-400 text-black w-fit mx-auto font-bold px-6 py-2 text-base  items-center space-x-2  md:flex"
+          className="press-illusion-btn bg-green-400 text-black w-fit mx-auto font-bold px-6 py-2 text-base  items-center space-x-2  inline-flex"
         >
           <span>Start Your Project Today</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 9" className="h-2 w-4">
