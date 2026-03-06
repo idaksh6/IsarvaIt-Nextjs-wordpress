@@ -56,7 +56,7 @@ function ServicesSection({ data }) {
 
   return (
     <section
-      className="relative py-24 lg:py-32 overflow-hidden"
+      className="relative py-10 lg:py-24 overflow-hidden"
       style={{
         background: 'linear-gradient(180deg, #d4f4dd 0%, #b8f2c6 50%, #d4f4dd 100%)',
       }}
