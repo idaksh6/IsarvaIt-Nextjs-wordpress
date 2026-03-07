@@ -46,6 +46,21 @@ section {
     transform: none;
   }
   
+  /* Optimize service cards for mobile scrolling */
+  .service-card {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    -webkit-perspective: 1000;
+    -webkit-transform-style: preserve-3d;
+  }
+  
+  .services-grid {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+  
   /* Disable heavy effects on mobile for better scrolling performance */
   .glass,
   .glass-card,

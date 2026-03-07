@@ -55,28 +55,7 @@ function ServicesSection({ data }) {
   const subheading = data?.subheading || 'Comprehensive Digital Solutions';
 
   return (
-    <>
-      {/* Inline styles for mobile performance optimization */}
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .service-card {
-            transform: translateZ(0);
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-            -webkit-transform: translateZ(0);
-            -webkit-perspective: 1000;
-            -webkit-transform-style: preserve-3d;
-            will-change: transform;
-          }
-          
-          .services-grid {
-            transform: translateZ(0);
-            -webkit-transform: translateZ(0);
-          }
-        }
-      `}</style>
-      
-      <section
+    <section
         className="relative py-10 lg:py-24 overflow-hidden"
         style={{
           background: 'linear-gradient(180deg, #d4f4dd 0%, #b8f2c6 50%, #d4f4dd 100%)',
@@ -112,11 +91,7 @@ function ServicesSection({ data }) {
           {services.map((service, index) => (
             <div
               key={service.id || index}
-              className="service-card group relative rounded-3xl p-8 transition-all duration-300 hover:scale-[1.03] 
-                // Mobile: solid background for performance
-                bg-white/90 border border-white/60 shadow-lg
-                // Desktop: glass effect
-                md:bg-white/40 md:backdrop-blur-md md:shadow-[0_8px_32px_0_rgba(0,255,136,0.15)]"
+              className="service-card group relative rounded-3xl p-8 transition-all duration-300 hover:scale-[1.03] bg-white/90 border border-white/60 shadow-lg md:bg-white/40 md:backdrop-blur-md md:shadow-[0_8px_32px_0_rgba(0,255,136,0.15)]"
               style={{
                 transform: 'translate3d(0, 0, 0)',
                 backfaceVisibility: 'hidden',
@@ -129,14 +104,7 @@ function ServicesSection({ data }) {
               {/* Content */}
               <div className="relative">
                 {/* Icon - Simplified for mobile performance */}
-                <div className="service-icon w-16 h-16 rounded-2xl 
-                  // Mobile: solid gradient
-                  bg-gradient-to-br from-emerald-400 to-green-500 border border-emerald-300
-                  // Desktop: glass effect
-                  md:from-emerald-400/60 md:to-green-500/60 md:backdrop-blur-sm md:border-white/50 
-                  flex items-center justify-center text-4xl mb-6 
-                  group-hover:from-emerald-500/70 group-hover:to-green-600/70 
-                  transition-all duration-300 shadow-lg will-change-transform">
+                <div className="service-icon w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-green-500 border border-emerald-300 md:from-emerald-400/60 md:to-green-500/60 md:backdrop-blur-sm md:border-white/50 flex items-center justify-center text-4xl mb-6 group-hover:from-emerald-500/70 group-hover:to-green-600/70 transition-all duration-300 shadow-lg">
                   {service.icon}
                 </div>
 
@@ -195,7 +163,6 @@ function ServicesSection({ data }) {
         </div>
       </div>
     </section>
-    </>
   );
 }
 
