@@ -78,15 +78,6 @@ function HeroSection({ data }) {
         delay: 0.8,
         ease: "power2.out",
       });
-
-      // Animate top glow
-      gsap.from(".top-glow", {
-        opacity: 0,
-        scale: 0.5,
-        duration: 2,
-        delay: 1.2,
-        ease: "power3.out",
-      });
     },
     { scope: container },
   );
@@ -94,8 +85,27 @@ function HeroSection({ data }) {
   return (
     <section
       ref={container}
-      className="relative min-h-[100vh] flex flex-col items-center pt-32 pb-0 overflow-hidden bg-no-repeat bg-grid"
+      className="relative min-h-[100vh] flex flex-col items-center pt-32 pb-0 overflow-hidden"
     >
+      {/* Background Decorations */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none translate-z-0">
+        {/* 1. Base Grid Layer (Softer Checkboxes) */}
+        <div className="absolute inset-0 bg-checkbox-grid opacity-[0.35] mask-hero-fade"></div>
+        <div className="absolute inset-0 bg-dots opacity-[0.20] mask-hero-fade"></div>
+
+        {/* 2. Glass Depth Blur (The "Screenblur" effect) */}
+        <div className="absolute inset-0 backdrop-blur-[1px] opacity-30"></div>
+
+        {/* 3. The "Brand Aura" / Glow Mask (Bron Shaddy Musk) */}
+        <div className="top-glow"></div>
+
+        {/* 4. Bottom Transition Shadow */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/95 z-[2]"></div>
+
+        {/* 5. The "Shaky" Screen Texture (High Fidelity Noise) */}
+        <div className="hero-noise-overlay"></div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 relative z-20 text-center hero-content">
         {heroData.stripTag && (
           <div className="inline-flex mb-12">
@@ -148,7 +158,6 @@ function HeroSection({ data }) {
             </div>
             <h3 className="text-gray-900 font-bold text-xl mb-4 flex items-center justify-between">
               Web Platforms{" "}
-              <span className="w-5 h-5 rounded-md border-2 border-gray-200"></span>
             </h3>
             <p className="text-gray-500 text-[13px] leading-relaxed font-medium">
               We design and build high-performance website solutions applied
@@ -163,7 +172,6 @@ function HeroSection({ data }) {
             </div>
             <h3 className="text-gray-900 font-bold text-xl mb-4 flex items-center justify-between">
               Custom Software{" "}
-              <span className="w-5 h-5 rounded-md border-2 border-gray-200"></span>
             </h3>
             <p className="text-gray-500 text-[13px] leading-relaxed font-medium">
               Tailored digital solutions built to solve complex business
@@ -185,9 +193,6 @@ function HeroSection({ data }) {
               Launch powerful online stores with secure payments, optimized
               performance, and conversion-focused design.
             </p>
-            <div className="w-8 h-8 rounded-lg border-2 border-gray-200 ml-auto flex items-center justify-center group-hover:bg-gray-900 group-hover:text-white transition-all">
-              <span className="text-[10px] opacity-20">GO</span>
-            </div>
           </div>
         </div>
       </div>

@@ -168,12 +168,56 @@ body {
   transform: scale(1.05);
 }
 
-/* ─── Grid Background ──────────────────────────────────── */
+/* ─── Grid Backgrounds ──────────────────────────────────── */
 .bg-grid {
   background-size: 40px 40px;
   background-image:
-    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+}
+
+.bg-checkbox-grid {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='8' y='8' width='24' height='24' rx='4' fill='none' stroke='rgba(0,0,0,0.03)' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-size: 40px 40px;
+}
+
+.bg-dots {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+
+.radial-mask-hero {
+  mask-image: radial-gradient(
+    circle at 50% 30%,
+    black 0%,
+    transparent 70%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle at 50% 30%,
+    black 0%,
+    transparent 70%
+  );
+}
+
+.mask-hero-fade {
+  /* Ultra-compatible spotlight mask */
+  -webkit-mask-image: radial-gradient(
+    circle at 50% 30%,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,0.5) 40%,
+    rgba(0,0,0,0) 80%
+  );
+  mask-image: radial-gradient(
+    circle at 50% 30%,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,0.5) 40%,
+    rgba(0,0,0,0) 80%
+  );
+}
+
+.mask-fade-bottom {
+  -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
 }
 
 /* ─── Custom Scrollbar ─────────────────────────────────── */
@@ -373,19 +417,32 @@ h6,
 
 .top-glow {
   position: absolute;
-  top: -80px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1000px;
-  height: 500px;
+  top: -250px;
+  right: -250px;
+  width: 950px;
+  height: 950px;
   background: radial-gradient(
-    ellipse at center,
-    rgba(0, 255, 136, 0.5) 0%,
+    circle at center,
+    rgba(16, 185, 129, 0.7) 0%,
+    rgba(96, 250, 178, 0.5) 25%,
+    rgba(12, 226, 22, 0.3) 50%,
     transparent 70%
   );
-  filter: blur(100px);
+  filter: blur(160px);
   z-index: 10;
-  opacity: 0.8;
+  opacity: 1;
+  pointer-events: none;
+}
+
+/* Shaky/Grainy Texture Effect */
+.hero-noise-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.18;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 5;
 }
 
 /* ─── CTA Button override (hero section only) ──────────── */
@@ -413,7 +470,7 @@ h6,
 /* Home Page External CSS */
 
 .hero_heading strong {
-  color: #00fd11;
+  color: #2bc735;
 }
 
 /* ─── Hide Scrollbar (for testimonials drag) ──────────── */
