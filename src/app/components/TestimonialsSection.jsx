@@ -109,6 +109,10 @@ function TestimonialsSection({ data }) {
     setTimeout(() => { if (stRef.current) stRef.current.enable(); }, 800);
   };
 
+  let startY = 0;
+  let dragStarted = false;
+  const DRAG_THRESHOLD = 10; // pixels to determine intent
+
   // ── pointer drag ────────────────────────────────────────────────────────────
   useEffect(() => {
     const track = trackRef.current;
@@ -120,47 +124,76 @@ function TestimonialsSection({ data }) {
 
     // -- Down
     const onDown = (e) => {
-      isDragging = true;
-      pauseST();
-      
+      // Store initial touch position
       const x = e.touches ? e.touches[0].clientX : e.clientX;
+      const y = e.touches ? e.touches[0].clientY : e.clientY;
       startX = x;
+      startY = y;
       startScrollLeft = track.scrollLeft;
       
-      track.style.cursor = 'grabbing';
-      track.style.scrollBehavior = 'auto';
+      // Don't immediately set dragging - wait to determine intent
+      dragStarted = false;
+      isDragging = false;
       track.style.userSelect = 'none';
     };
 
-    // -- Move - Simple, clean drag without sticking
+    // -- Move - Enhanced logic for mobile vertical scroll support
     const onMove = (e) => {
+      const x = e.touches ? e.touches[0].clientX : e.clientX;
+      const y = e.touches ? e.touches[0].clientY : e.clientY;
+      const deltaX = Math.abs(x - startX);
+      const deltaY = Math.abs(y - startY);
+      
+      // If we haven't determined drag intent yet
+      if (!dragStarted) {
+        // Only start dragging if horizontal movement is significant AND greater than vertical
+        if (deltaX > DRAG_THRESHOLD) {
+          if (deltaX > deltaY * 1.5) { // Horizontal intent
+            isDragging = true;
+            dragStarted = true;
+            pauseST();
+            track.style.cursor = 'grabbing';
+            track.style.scrollBehavior = 'auto';
+          } else { // Vertical intent or unclear - allow native scroll
+            return; // Exit early, let native scroll handle it
+          }
+        } else {
+          return; // Not enough movement yet
+        }
+      }
+      
+      // Only proceed if we're in horizontal drag mode
       if (!isDragging) return;
       
-      const x = e.touches ? e.touches[0].clientX : e.clientX;
-      const deltaX = x - startX;
+      // Prevent default only when we're sure we're dragging horizontally
+      if (e.cancelable) {
+        e.preventDefault();
+      }
       
       // Simple, direct scroll without complex calculations
-      track.scrollLeft = startScrollLeft - deltaX;
+      track.scrollLeft = startScrollLeft - (x - startX);
     };
 
     // -- Up - Release with natural momentum
     const onUp = () => {
-      if (!isDragging) return;
+      if (isDragging) {
+        track.style.cursor = 'grab';
+        track.style.scrollBehavior = 'smooth';
+        // Let native scroll snap handle the rest
+        resumeST();
+      }
       
+      // Reset all states
       isDragging = false;
-      track.style.cursor = 'grab';
-      track.style.scrollBehavior = 'smooth';
+      dragStarted = false;
       track.style.userSelect = '';
-      
-      // Let native scroll snap handle the rest
-      resumeST();
     };
 
-    // Add event listeners
+    // Add event listeners - Use passive: false for touchmove to allow preventDefault when needed
     track.addEventListener('mousedown', onDown);
     track.addEventListener('touchstart', onDown, { passive: true });
     document.addEventListener('mousemove', onMove);
-    document.addEventListener('touchmove', onMove, { passive: true });
+    document.addEventListener('touchmove', onMove, { passive: false }); // Allow preventDefault
     document.addEventListener('mouseup', onUp);
     document.addEventListener('touchend', onUp);
 
@@ -310,15 +343,16 @@ function TestimonialsSection({ data }) {
         {/* ── The scrollable track ── */}
         <div
           ref={trackRef}
-          className="flex gap-7 overflow-x-scroll py-10 px-6 md:px-20 snap-x snap-proximity md:snap-none"
+          className="flex gap-7 overflow-x-scroll py-10 px-6 md:px-20 snap-x snap-proximity md:snap-none testimonials-touch-optimized"
           style={{
             cursor: 'grab',
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',
             WebkitOverflowScrolling: 'touch',
             scrollBehavior: 'smooth',
-            touchAction: 'pan-x',
+            touchAction: 'pan-x pan-y',
             overscrollBehaviorX: 'contain',
+            overscrollBehaviorY: 'auto',
             willChange: 'scroll-position',
           }}
         >
