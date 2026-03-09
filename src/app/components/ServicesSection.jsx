@@ -1,75 +1,85 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { memo } from 'react';
+import Link from "next/link";
+import { memo } from "react";
 
 function ServicesSection({ data }) {
   // Default placeholder data (will be replaced with WordPress data)
   const defaultServices = [
     {
       id: 1,
-      icon: '🌐',
-      title: 'Web Development',
-      description: 'Custom web applications built with cutting-edge technologies for optimal performance and scalability.',
-      features: ['React & Next.js', 'Full-Stack Solutions', 'API Integration'],
+      icon: "🌐",
+      title: "Web Development",
+      description:
+        "Custom web applications built with cutting-edge technologies for optimal performance and scalability.",
+      features: ["React & Next.js", "Full-Stack Solutions", "API Integration"],
     },
     {
       id: 2,
-      icon: '📱',
-      title: 'Mobile Apps',
-      description: 'Native and cross-platform mobile applications designed for seamless user experiences.',
-      features: ['iOS & Android', 'React Native', 'Progressive Web Apps'],
+      icon: "📱",
+      title: "Mobile Apps",
+      description:
+        "Native and cross-platform mobile applications designed for seamless user experiences.",
+      features: ["iOS & Android", "React Native", "Progressive Web Apps"],
     },
     {
       id: 3,
-      icon: '☁️',
-      title: 'Cloud Solutions',
-      description: 'Scalable cloud infrastructure and deployment solutions for modern applications.',
-      features: ['AWS & Azure', 'DevOps', 'Serverless Architecture'],
+      icon: "☁️",
+      title: "Cloud Solutions",
+      description:
+        "Scalable cloud infrastructure and deployment solutions for modern applications.",
+      features: ["AWS & Azure", "DevOps", "Serverless Architecture"],
     },
     {
       id: 4,
-      icon: '🎨',
-      title: 'UI/UX Design',
-      description: 'Beautiful, intuitive interfaces that enhance user engagement and satisfaction.',
-      features: ['User Research', 'Prototyping', 'Design Systems'],
+      icon: "🎨",
+      title: "UI/UX Design",
+      description:
+        "Beautiful, intuitive interfaces that enhance user engagement and satisfaction.",
+      features: ["User Research", "Prototyping", "Design Systems"],
     },
     {
       id: 5,
-      icon: '🛒',
-      title: 'E-Commerce',
-      description: 'Complete e-commerce solutions with secure payment processing and inventory management.',
-      features: ['Shopping Cart', 'Payment Gateway', 'Admin Dashboard'],
+      icon: "🛒",
+      title: "E-Commerce",
+      description:
+        "Complete e-commerce solutions with secure payment processing and inventory management.",
+      features: ["Shopping Cart", "Payment Gateway", "Admin Dashboard"],
     },
     {
       id: 6,
-      icon: '🔧',
-      title: 'Maintenance & Support',
-      description: 'Ongoing support and maintenance to keep your applications running smoothly.',
-      features: ['24/7 Monitoring', 'Bug Fixes', 'Performance Optimization'],
+      icon: "🔧",
+      title: "Maintenance & Support",
+      description:
+        "Ongoing support and maintenance to keep your applications running smoothly.",
+      features: ["24/7 Monitoring", "Bug Fixes", "Performance Optimization"],
     },
   ];
 
   const services = data?.services || defaultServices;
-  const heading = data?.heading || 'Our Services';
-  const subheading = data?.subheading || 'Comprehensive Digital Solutions';
+  const heading = data?.heading || "Our Services";
+  const subheading = data?.subheading || "Comprehensive Digital Solutions";
 
   return (
     <section
-        className="relative py-10 lg:py-24 overflow-hidden"
-        style={{
-          background: 'linear-gradient(180deg, #d4f4dd 0%, #b8f2c6 50%, #d4f4dd 100%)',
-          contain: 'layout style paint',
-        }}
-      >
-      {/* Decorative Elements - Optimized for Mobile */}
-      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#00ff88]/20 rounded-full hidden md:block md:blur-[100px] -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#adff2f]/20 rounded-full hidden md:block md:blur-[100px] translate-x-1/2 translate-y-1/2"></div>
-      <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-white/30 rounded-full hidden lg:block lg:blur-[80px] -translate-x-1/2 -translate-y-1/2"></div>
-      
-      {/* Mobile fallback decorative elements */}
-      <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-[#00ff88]/10 rounded-full block md:hidden -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-[#adff2f]/10 rounded-full block md:hidden translate-x-1/2 translate-y-1/2"></div>
+      className="relative py-10 lg:py-24 overflow-hidden bg-gradient-to-b from-[#d4f4dd] via-[#defae4] to-[#f2fff5]"
+      style={{
+        contain: "layout style paint",
+      }}
+    >
+      {/* Premium Background Layers */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none translate-z-0">
+        {/* 1. Large Subtle Technical Mesh */}
+        <div className="absolute inset-0 bg-mesh-green opacity-40"></div>
+
+        {/* 2. Brand Auras (Glows) */}
+        <div className="services-glow-left"></div>
+        <div className="services-glow-right"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/30 blur-[130px] rounded-full"></div>
+
+        {/* 3. The "Shaky" High-Fidelity Noise Texture */}
+        <div className="hero-noise-overlay opacity-[0.15]"></div>
+      </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Heading */}
@@ -93,9 +103,9 @@ function ServicesSection({ data }) {
               key={service.id || index}
               className="service-card group relative rounded-3xl p-8 transition-all duration-300 hover:scale-[1.03] bg-white/90 border border-white/60 shadow-lg md:bg-white/40 md:backdrop-blur-md md:shadow-[0_8px_32px_0_rgba(0,255,136,0.15)]"
               style={{
-                transform: 'translate3d(0, 0, 0)',
-                backfaceVisibility: 'hidden',
-                WebkitBackfaceVisibility: 'hidden',
+                transform: "translate3d(0, 0, 0)",
+                backfaceVisibility: "hidden",
+                WebkitBackfaceVisibility: "hidden",
               }}
             >
               {/* Glass Effect Inner Glow - Desktop only */}
@@ -122,7 +132,10 @@ function ServicesSection({ data }) {
                 {service.features && service.features.length > 0 && (
                   <ul className="space-y-2.5">
                     {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-sm text-gray-600">
+                      <li
+                        key={idx}
+                        className="flex items-center gap-2 text-sm text-gray-600"
+                      >
                         <svg
                           className="w-4 h-4 text-emerald-600 flex-shrink-0"
                           fill="currentColor"
@@ -140,7 +153,6 @@ function ServicesSection({ data }) {
                   </ul>
                 )}
               </div>
-
             </div>
           ))}
         </div>
@@ -156,8 +168,18 @@ function ServicesSection({ data }) {
             className="press-illusion-btn bg-green-400 text-black font-bold px-6 py-2 text-base w-fit mx-auto items-center space-x-2  inline-flex"
           >
             <span>Get Custom Solution</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 9" className="h-2 w-4">
-              <path fill="currentColor" fillRule="evenodd" d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z" clipRule="evenodd"></path>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 9"
+              className="h-2 w-4"
+            >
+              <path
+                fill="currentColor"
+                fillRule="evenodd"
+                d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+                clipRule="evenodd"
+              ></path>
             </svg>
           </Link>
         </div>

@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -12,11 +12,13 @@ export default function Footer() {
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#00ff88]/10 blur-[150px] rounded-full pointer-events-none transform -translate-x-1/2 translate-y-1/2" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-
         {/* Top Section: Brand & Description */}
         <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-20 pb-16 border-b border-white/5">
           <div className="max-w-2xl ">
-            <Link href="/" className="flex items-center lg:justify-start justify-center">
+            <Link
+              href="/"
+              className="flex items-center lg:justify-start justify-center"
+            >
               <img
                 src="/Screenshot_2.png"
                 alt="Isarva Logo"
@@ -24,13 +26,19 @@ export default function Footer() {
               />
               <span
                 className="font-bold text-[46px] tracking-tight text-white"
-                style={{ height: "39px", color: "#21ef60d9", marginLeft: "-32px" }}
+                style={{
+                  height: "39px",
+                  color: "#38984b",
+                  marginLeft: "-32px",
+                }}
               >
                 Isarva
               </span>
             </Link>
             <p className="text-white/60 text-lg md:text-xl leading-relaxed font-medium max-w-xl mt-3">
-              We design and deliver precision-engineered technology solutions that enable global enterprises and startups to innovate, scale, and succeed in the digital age.
+              We design and deliver precision-engineered technology solutions
+              that enable global enterprises and startups to innovate, scale,
+              and succeed in the digital age.
             </p>
           </div>
 
@@ -40,8 +48,18 @@ export default function Footer() {
               className="press-illusion-btn bg-green-400 text-black w-fit mx-auto font-bold px-6 py-2 text-base  items-center space-x-2  inline-flex"
             >
               <span>Start a Project</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 9" className="h-2 w-4">
-                <path fill="currentColor" fillRule="evenodd" d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z" clipRule="evenodd"></path>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 17 9"
+                className="h-2 w-4"
+              >
+                <path
+                  fill="currentColor"
+                  fillRule="evenodd"
+                  d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+                  clipRule="evenodd"
+                ></path>
               </svg>
             </Link>
           </div>
@@ -56,9 +74,19 @@ export default function Footer() {
               Services
             </h4>
             <ul className="space-y-4">
-              {['Cloud Services', 'Consulting Services', 'Digital Marketing', 'ERP Services', 'GPS Tracking', 'Offshore Development'].map(link => (
+              {[
+                "Cloud Services",
+                "Consulting Services",
+                "Digital Marketing",
+                "ERP Services",
+                "GPS Tracking",
+                "Offshore Development",
+              ].map((link) => (
                 <li key={link}>
-                  <Link href="#" className="text-white/40 hover:text-white hover:translate-x-1.5 inline-block transition-all duration-300 text-sm font-medium">
+                  <Link
+                    href="#"
+                    className="text-white/40 hover:text-white hover:translate-x-1.5 inline-block transition-all duration-300 text-sm font-medium"
+                  >
                     {link}
                   </Link>
                 </li>
@@ -73,9 +101,18 @@ export default function Footer() {
               Products
             </h4>
             <ul className="space-y-4">
-              {['e Commerce', 'Petro Care', 'Retail Billing Software', 'HRMS Software', 'Document Management System'].map(link => (
+              {[
+                "e Commerce",
+                "Petro Care",
+                "Retail Billing Software",
+                "HRMS Software",
+                "Document Management System",
+              ].map((link) => (
                 <li key={link}>
-                  <Link href="#" className="text-white/40 hover:text-white hover:translate-x-1.5 inline-block transition-all duration-300 text-sm font-medium">
+                  <Link
+                    href="#"
+                    className="text-white/40 hover:text-white hover:translate-x-1.5 inline-block transition-all duration-300 text-sm font-medium"
+                  >
                     {link}
                   </Link>
                 </li>
@@ -90,9 +127,19 @@ export default function Footer() {
               Industries
             </h4>
             <ul className="space-y-4">
-              {['Media & Entertainment', 'Insurance', 'Manufacturing', 'Health Care & Life Sciences', 'Education', 'Banking and Financial Services'].map(link => (
+              {[
+                "Media & Entertainment",
+                "Insurance",
+                "Manufacturing",
+                "Health Care & Life Sciences",
+                "Education",
+                "Banking and Financial Services",
+              ].map((link) => (
                 <li key={link}>
-                  <Link href="#" className="text-white/40 hover:text-white hover:translate-x-1.5 inline-block transition-all duration-300 text-sm font-medium">
+                  <Link
+                    href="#"
+                    className="text-white/40 hover:text-white hover:translate-x-1.5 inline-block transition-all duration-300 text-sm font-medium"
+                  >
                     {link}
                   </Link>
                 </li>
@@ -107,9 +154,18 @@ export default function Footer() {
               Useful Links
             </h4>
             <ul className="space-y-4">
-              {['ABOUT US', 'TECHNOLOGY STACK', 'SERVICES', 'PRODUCTS', 'CONTACT US'].map(link => (
+              {[
+                "ABOUT US",
+                "TECHNOLOGY STACK",
+                "SERVICES",
+                "PRODUCTS",
+                "CONTACT US",
+              ].map((link) => (
                 <li key={link}>
-                  <Link href="#" className="text-white/60 hover:text-white hover:translate-x-1.5 inline-block transition-all duration-300 text-[12px] font-bold tracking-[0.1em]">
+                  <Link
+                    href="#"
+                    className="text-white/60 hover:text-white hover:translate-x-1.5 inline-block transition-all duration-300 text-[12px] font-bold tracking-[0.1em]"
+                  >
                     {link}
                   </Link>
                 </li>
@@ -131,9 +187,13 @@ export default function Footer() {
           <div className="absolute top-0 right-1/4 w-64 h-64 bg-white/5 blur-[60px] rounded-full pointer-events-none" />
 
           <div className="relative z-10 flex flex-wrap items-center justify-center md:justify-start gap-6 text-[13px] font-bold tracking-widest text-white/60 uppercase">
-            <Link href="#" className="hover:text-white transition-colors">Careers</Link>
+            <Link href="#" className="hover:text-white transition-colors">
+              Careers
+            </Link>
             <span className="w-1.5 h-1.5 rounded-full bg-white/20"></span>
-            <Link href="#" className="hover:text-white transition-colors">Support</Link>
+            <Link href="#" className="hover:text-white transition-colors">
+              Support
+            </Link>
           </div>
 
           <p className="relative z-10 text-white/40 text-[13px] font-medium text-center md:text-right">

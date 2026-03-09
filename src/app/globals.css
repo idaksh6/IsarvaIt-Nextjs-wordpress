@@ -186,6 +186,13 @@ body {
   background-size: 32px 32px;
 }
 
+.bg-mesh-green {
+  background-image: 
+    linear-gradient(rgba(16, 185, 129, 0.05) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1.5px, transparent 1.5px);
+  background-size: 60px 60px;
+}
+
 .radial-mask-hero {
   mask-image: radial-gradient(
     circle at 50% 30%,
@@ -443,6 +450,28 @@ h6,
   mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 5;
+}
+
+.services-glow-right {
+  position: absolute;
+  bottom: -20%;
+  right: -10%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.services-glow-left {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(132, 204, 22, 0.2) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
 }
 
 /* ─── CTA Button override (hero section only) ──────────── */
