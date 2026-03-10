@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="relative pt-24 pb-12 overflow-hidden border-t  text-center lg:text-left border-white/5 bg-[#0A0D14] bg-[url('/get-started-bg.webp')] bg-cover bg-center bg-no-repeat">
+    <footer className="relative pt-24 pb-12 overflow-hidden border-t  text-center lg:text-left border-white/5  bg-[url('/get-started-bg.webp')] bg-cover bg-center bg-no-repeat">
       <div className="absolute inset-0 bg-[#0A0D14]/10 backdrop-blur-sm pointer-events-none" />
 
       {/* Background Ambient Glows */}

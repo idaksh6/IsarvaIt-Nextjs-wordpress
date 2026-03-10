@@ -1173,10 +1173,6 @@ const MobileProductModal = ({ product, onClose }) => {
   return (
     <>
       {/* Backdrop */}
-      <div
-        className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
-        onClick={onClose}
-      />
 
       {/* Modal */}
       <div className="fixed inset-x-0 bottom-0 z-50 flex items-end">
@@ -1268,32 +1264,26 @@ const MobileProductModal = ({ product, onClose }) => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col gap-4 pt-4 border-t border-gray-100">
-              <Link
-                href="/contact"
-                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white text-center py-4 px-6 rounded-xl font-semibold hover:from-blue-700 hover:to-blue-800 transition-all shadow-lg hover:shadow-xl active:scale-[0.98] flex items-center justify-center gap-2"
+            <div className="flex flex-col gap-4 py-4 border-t border-gray-100">
+                    <Link
+                href="#contact"
+                className="press-illusion-btn bg-green-400 text-black w-fit  font-bold px-6 py-2 text-sm mx-auto  items-center space-x-2  inline-flex"
               >
+                <span>Get Pricing & Demo</span>
                 <svg
-                  className="w-5 h-5"
+                  xmlns="http://www.w3.org/2000/svg"
                   fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+                  viewBox="0 0 17 9"
+                  className="h-2 w-4"
                 >
                   <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                  />
+                    fill="currentColor"
+                    fillRule="evenodd"
+                    d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+                    clipRule="evenodd"
+                  ></path>
                 </svg>
-                Get Pricing & Demo
               </Link>
-              <button
-                onClick={onClose}
-                className="w-full border-2 border-gray-200 text-gray-700 text-center py-4 px-6 rounded-xl font-semibold hover:bg-gray-50 hover:border-gray-300 transition-all active:scale-[0.98]"
-              >
-                Close
-              </button>
             </div>
           </div>
         </div>

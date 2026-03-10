@@ -28,7 +28,6 @@ export default function Header() {
     } else {
       document.body.style.overflow = "unset";
     }
-
     return () => {
       document.body.style.overflow = "unset";
     };
@@ -36,11 +35,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        scrolled
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled
           ? "bg-white/80 backdrop-blur-xl py-3 shadow-sm border-b border-gray-100"
           : "bg-transparent py-5"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
@@ -71,28 +69,18 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Mobile Menu Button - Hidden on Desktop */}
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(true)}
-          className="md:hidden p-2 text-gray-900 hover:text-gray-700 transition-colors duration-200"
+          className="md:hidden relative w-8 h-8 flex flex-col justify-center items-center group"
           aria-label="Open mobile menu"
         >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
+          <div className="w-6 h-0.5 bg-gray-800 rounded-full transition-all duration-300 group-hover:bg-green-500"></div>
+          <div className="w-6 h-0.5 bg-gray-800 rounded-full mt-1.5 transition-all duration-300 group-hover:bg-green-500"></div>
+          <div className="w-6 h-0.5 bg-gray-800 rounded-full mt-1.5 transition-all duration-300 group-hover:bg-green-500"></div>
         </button>
 
-        {/* CTA - Hidden on Mobile */}
+        {/* CTA Button - Hidden on Mobile */}
         <Link
           href="#contact"
           className="press-illusion-btn bg-green-400 text-black w-fit font-bold px-6 py-2 text-base items-center space-x-2 hidden md:flex"
@@ -116,35 +104,21 @@ export default function Header() {
 
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
-        <>
-          {/* Backdrop */}
-          <div
-            className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
-            onClick={() => setIsMobileMenuOpen(false)}
-          />
+        <div className="fixed inset-0 z-[9999] md:hidden">
+          {/* Menu Panel */}
+          <div className="absolute right-0 top-0  max-w-[100vw] w-full bg-white h-[100vh] shadow-2xl transform transition-transform duration-300 ease-out translate-x-0">
+            {/* Header */}
+            <div className="bg-gradient-to-br from-green-400 via-green-500 to-emerald-600 p-6">
+              <div className="flex items-center justify-end">
 
-          {/* Mobile Menu Drawer */}
-          <div className="fixed top-0 right-0 z-50 w-80 max-w-[85vw] h-full bg-white shadow-2xl transform transition-transform duration-300 ease-out">
-            {/* Menu Header */}
-            <div className="bg-gradient-to-r from-green-400 to-emerald-500 p-6 pb-8">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-3">
-                  <img
-                    src="/Screenshot_2.png"
-                    alt="Isarva Logo"
-                    className="w-10 h-auto object-contain"
-                  />
-                  <div>
-                    <h3 className="text-black font-bold text-lg">Isarva</h3>
-                    <p className="text-black/80 text-sm">Navigation Menu</p>
-                  </div>
-                </div>
+                {/* Close Button */}
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="p-2 text-black/80 hover:text-black hover:bg-white/20 rounded-lg transition-all"
+                  className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-xl flex items-center justify-center transition-colors duration-200"
+                  aria-label="Close menu"
                 >
                   <svg
-                    className="w-5 h-5"
+                    className="w-5 h-5 text-white"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -160,150 +134,121 @@ export default function Header() {
               </div>
             </div>
 
-            {/* Menu Items */}
-            <div className="p-6 space-y-2">
-              {navLinks.map((link) => (
-                <MobileNavItem
+            {/* Navigation Links */}
+            <div className="p-6 space-y-1">
+              {navLinks.map((link, index) => (
+                <Link
                   key={link.label}
                   href={link.href}
-                  label={link.label}
                   onClick={() => setIsMobileMenuOpen(false)}
-                />
+                  className="flex items-center gap-4 p-4 rounded-2xl text-gray-700 hover:bg-green-50 hover:text-green-700 active:bg-green-100 transition-all duration-200 group opacity-0 animate-fade-in-up"
+                  style={{
+                    animationDelay: `${index * 100}ms`,
+                    animationFillMode: 'forwards'
+                  }}
+                >
+                  <div className="flex-1">
+                    <span className="font-semibold text-base">{link.label}</span>
+                  </div>
+                  <svg
+                    className="w-5 h-5 text-gray-400 group-hover:text-green-600 transition-colors duration-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </Link>
               ))}
             </div>
+
+            {/* CTA Section */}
+            <div className="p-6 border-t border-gray-100">
+              <Link
+                href="#contact"
+                className="press-illusion-btn bg-green-400 text-black w-fit  font-bold px-6 py-2 text-sm  items-center space-x-2  inline-flex"
+              >
+                <span>Get Pricing & Demo</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 17 9"
+                  className="h-2 w-4"
+                >
+                  <path
+                    fill="currentColor"
+                    fillRule="evenodd"
+                    d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+                    clipRule="evenodd"
+                  ></path>
+                </svg>
+              </Link>
+            </div>
           </div>
-        </>
+        </div>
       )}
     </header>
   );
 }
 
-// Mobile Navigation Item Component
-const MobileNavItem = ({ href, label, onClick }) => {
-  const getIcon = () => {
-    switch (label.toLowerCase()) {
-      case "home":
-        return (
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-            />
-          </svg>
-        );
-      case "features":
-        return (
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M13 10V3L4 14h7v7l9-11h-7z"
-            />
-          </svg>
-        );
-      case "services":
-        return (
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 11H5m14-7l2 7-2 7H5l2-7-2-7h14z"
-            />
-          </svg>
-        );
-      case "contact":
-        return (
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-            />
-          </svg>
-        );
-      case "pages":
-        return (
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-            />
-          </svg>
-        );
-      default:
-        return (
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        );
-    }
+// Menu Icon Component
+const MenuIcon = ({ label, className }) => {
+  const iconMap = {
+    home: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+      />
+    ),
+    features: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M13 10V3L4 14h7v7l9-11h-7z"
+      />
+    ),
+    services: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h8zM12 6.5v.01m0 4v.01m0 4V14.5"
+      />
+    ),
+    contact: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+      />
+    ),
+    pages: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M19 11H5m14-7l2 7-2 7H5l2-7-2-7h14z"
+      />
+    )
   };
 
   return (
-    <Link
-      href={href}
-      onClick={onClick}
-      className="flex items-center gap-4 p-3 rounded-xl text-gray-700 hover:bg-gray-50 active:bg-gray-100 transition-all duration-200"
+    <svg
+      className={className}
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
     >
-      <div className="p-2 rounded-lg bg-gray-100 text-gray-600">
-        {getIcon()}
-      </div>
-      <span className="font-medium text-base">{label}</span>
-      <svg
-        className="w-4 h-4 ml-auto text-gray-400"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M9 5l7 7-7 7"
-        />
-      </svg>
-    </Link>
+      {iconMap[label.toLowerCase()] || iconMap.pages}
+    </svg>
   );
 };

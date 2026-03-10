@@ -29,7 +29,7 @@ function HeroSection({ data }) {
   const heroData = data || DEFAULT_HERO_DATA;
 
   return (
-    <section className="relative min-h-[100vh] flex flex-col items-center pt-32 pb-0 overflow-hidden">
+    <section className="relative flex flex-col items-center pt-32 pb-0 overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none translate-z-0">
         {/* 1. Base Grid Layer (Softer Checkboxes) */}
