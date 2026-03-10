@@ -1,14 +1,7 @@
 "use client";
 
-import { useRef, memo } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { memo } from "react";
 import Link from "next/link";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 // Helper function to strip HTML tags from WYSIWYG content
 // Moved outside component to avoid recreation on every render
@@ -32,61 +25,11 @@ const DEFAULT_HERO_DATA = {
 };
 
 function HeroSection({ data }) {
-  const container = useRef(null);
-
   // Use fallback data when WordPress is not configured
   const heroData = data || DEFAULT_HERO_DATA;
 
-  useGSAP(
-    () => {
-      gsap.from(".hero-content > *", {
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.15,
-        ease: "power4.out",
-      });
-
-      gsap.from(".floating-card", {
-        y: 100,
-        opacity: 0,
-        duration: 1.5,
-        delay: 0.5,
-        stagger: 0.2,
-        ease: "elastic.out(1, 0.75)",
-      });
-
-      // Floating animation
-      gsap.to(".floating-card", {
-        y: "+=15",
-        duration: 2.5,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-        stagger: {
-          each: 0.5,
-          repeat: -1,
-          yoyo: true,
-        },
-      });
-
-      // Animate the new SVG architecture
-      gsap.from(".hero-architecture-img", {
-        scale: 0.8,
-        opacity: 0,
-        duration: 2,
-        delay: 0.8,
-        ease: "power2.out",
-      });
-    },
-    { scope: container },
-  );
-
   return (
-    <section
-      ref={container}
-      className="relative min-h-[100vh] flex flex-col items-center pt-32 pb-0 overflow-hidden"
-    >
+    <section className="relative min-h-[100vh] flex flex-col items-center pt-32 pb-0 overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none translate-z-0">
         {/* 1. Base Grid Layer (Softer Checkboxes) */}
