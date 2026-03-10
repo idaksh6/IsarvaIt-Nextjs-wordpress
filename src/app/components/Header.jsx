@@ -72,7 +72,7 @@ export default function Header() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(true)}
-          className="md:hidden relative w-8 h-8 flex flex-col justify-center items-center group"
+          className="md:hidden relative w-8 h-8 flex flex-col justify-center items-center group self-end"
           aria-label="Open mobile menu"
         >
           <div className="w-6 h-0.5 bg-gray-800 rounded-full transition-all duration-300 group-hover:bg-green-500"></div>
