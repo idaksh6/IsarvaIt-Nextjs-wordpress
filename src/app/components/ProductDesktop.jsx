@@ -1192,7 +1192,7 @@ const MobileProductModal = ({ product, onClose }) => {
                 <h2 className="font-bold text-xl text-gray-900 mb-2 line-clamp-2">
                   {product.name}
                 </h2>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 flex-wrap">
                   {product.badge && (
                     <span className="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-yellow-400 text-black">
                       {product.badge}
