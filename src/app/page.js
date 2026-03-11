@@ -5,7 +5,7 @@ import ProductDesktop from "./components/ProductDesktop";
 import TestimonialsSection from "./components/TestimonialsSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
-import { getHomePageData, getHeroSectionData, getServicesSectionData } from "./lib/services/home-page-service";
+import { getHomePageData, getHeroSectionData, getServicesSectionData, getTechStackSectionData } from "./lib/services/home-page-service";
 
 export const metadata = {
   title: "Isarva Infotech — Scalable IT Solutions for Global Enterprises",
@@ -21,12 +21,13 @@ export default async function HomePage() {
   const homePageData = await getHomePageData();
   const heroData = await getHeroSectionData(homePageData);
   const servicesData = await getServicesSectionData(homePageData);
+  const techStackData = await getTechStackSectionData(homePageData);
 
   return (
     <div className="relative min-h-screen">
       <main>
         <HeroSection data={heroData} />
-        <ClientsSection />
+        <ClientsSection data={techStackData} />
         <ServicesSection data={servicesData} />
         <ProductDesktop />
         <TestimonialsSection />

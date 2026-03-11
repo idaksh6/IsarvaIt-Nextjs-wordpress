@@ -2,26 +2,13 @@
 
 import { motion } from "framer-motion";
 
-const brands = [
-  {
-    name: "Tailwind CSS",
-    icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4",
-  },
-  { name: "Bootstrap", icon: "https://cdn.simpleicons.org/bootstrap/7952B3" },
-  { name: "Angular", icon: "https://cdn.simpleicons.org/angular/DD0031" },
-  { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
-  { name: ".NET", icon: "https://cdn.simpleicons.org/dotnet/512BD4" },
-  { name: "Laravel", icon: "https://cdn.simpleicons.org/laravel/FF2D20" },
-  { name: "PHP", icon: "https://cdn.simpleicons.org/php/777BB4" },
-  { name: "WordPress", icon: "https://cdn.simpleicons.org/wordpress/21759B" },
-  { name: "Statamic", icon: "https://cdn.simpleicons.org/statamic/FF269E" },
-  { name: "Forge", icon: "https://cdn.simpleicons.org/laravel/1DB954" },
-  { name: "MySQL", icon: "https://cdn.simpleicons.org/mysql/4479A1" },
-  { name: "SiteGround", icon: "https://cdn.simpleicons.org/sitecore/EA3D2F" },
-  { name: "cPanel", icon: "https://cdn.simpleicons.org/cpanel/FF6C2C" },
-];
-
-export default function ClientsSection() {
+export default function ClientsSection({ data }) {
+  // Use WordPress data only, no fallback to hardcoded brands
+  const techStackImages = data?.images || [];
+  const displayBrands = techStackImages.map(image => ({
+    name: image.title || image.alt,
+    icon: image.url
+  }));
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Radiant Glow under the row (Cool Blues/Purples to match professional vibe) */}
@@ -32,7 +19,7 @@ export default function ClientsSection() {
           Our Work Revolves Around
         </p>
         <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
-          {brands.map((brand, i) => (
+          {displayBrands.map((brand, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, scale: 0.8 }}

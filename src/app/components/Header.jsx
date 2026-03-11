@@ -44,16 +44,10 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <img
-            src="/Screenshot_2.png"
+            src="/isarva-logo.png"
             alt="Isarva Logo"
-            className="w-[100px] h-auto object-contain drop-shadow-sm"
+            className="w-auto h-auto object-contain drop-shadow-sm"
           />
-          <span
-            className="font-bold text-[46px] tracking-tight text-white"
-            style={{ height: "39px", color: "#38984b", marginLeft: "-32px" }}
-          >
-            Isarva
-          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -62,7 +56,7 @@ export default function Header() {
             <Link
               key={link.label}
               href={link.href}
-              className="text-gray-600 hover:text-black text-sm font-semibold tracking-wide transition-colors duration-200"
+              className="text-black text-base font-semibold tracking-wide transition-colors duration-200"
             >
               {link.label}
             </Link>
@@ -83,7 +77,7 @@ export default function Header() {
         {/* CTA Button - Hidden on Mobile */}
         <Link
           href="#contact"
-          className="press-illusion-btn bg-green-400 text-black w-fit font-bold px-6 py-2 text-base items-center space-x-2 hidden md:flex"
+          className="press-illusion-btn bg-green-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 hidden md:flex"
         >
           <span>Get In Touch</span>
           <svg

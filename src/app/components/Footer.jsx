@@ -45,7 +45,7 @@ export default function Footer() {
           <div className="flex flex-col items-start lg:items-end gap-6 mt-4 lg:mt-0 lg:ml-0 lg:mr-0 ml-auto mr-auto">
             <Link
               href="/contact"
-              className="press-illusion-btn bg-green-400 text-black w-fit mx-auto font-bold px-6 py-2 text-base  items-center space-x-2  inline-flex"
+              className="press-illusion-btn bg-green-400 text-white w-fit mx-auto font-bold px-6 py-2 text-base  items-center space-x-2  inline-flex"
             >
               <span>Start a Project</span>
               <svg
@@ -85,7 +85,7 @@ export default function Footer() {
                 <li key={link}>
                   <Link
                     href="#"
-                    className="text-white/40 hover:text-white hover:translate-x-1.5 inline-block transition-all duration-300 text-sm font-medium"
+                    className="text-white/60 hover:text-white hover:translate-x-1.5 inline-block transition-all duration-300 text-sm font-medium"
                   >
                     {link}
                   </Link>
@@ -111,7 +111,7 @@ export default function Footer() {
                 <li key={link}>
                   <Link
                     href="#"
-                    className="text-white/40 hover:text-white hover:translate-x-1.5 inline-block transition-all duration-300 text-sm font-medium"
+                    className="text-white/60 hover:text-white hover:translate-x-1.5 inline-block transition-all duration-300 text-sm font-medium"
                   >
                     {link}
                   </Link>
@@ -138,7 +138,7 @@ export default function Footer() {
                 <li key={link}>
                   <Link
                     href="#"
-                    className="text-white/40 hover:text-white hover:translate-x-1.5 inline-block transition-all duration-300 text-sm font-medium"
+                    className="text-white/60 hover:text-white hover:translate-x-1.5 inline-block transition-all duration-300 text-sm font-medium"
                   >
                     {link}
                   </Link>
@@ -186,7 +186,7 @@ export default function Footer() {
           {/* Subtle interior glow */}
           <div className="absolute top-0 right-1/4 w-64 h-64 bg-white/5 blur-[60px] rounded-full pointer-events-none" />
 
-          <div className="relative z-10 flex flex-wrap items-center justify-center md:justify-start gap-6 text-[13px] font-bold tracking-widest text-white/60 uppercase">
+          <div className="relative z-10 flex flex-wrap items-center justify-center md:justify-start gap-6 text-[13px] font-bold tracking-widest text-white/90 uppercase">
             <Link href="#" className="hover:text-white transition-colors">
               Careers
             </Link>
@@ -196,7 +196,7 @@ export default function Footer() {
             </Link>
           </div>
 
-          <p className="relative z-10 text-white/40 text-[13px] font-medium text-center md:text-right">
+          <p className="relative z-10 text-white/70 text-[13px] font-medium text-center md:text-right">
             Copyright © 2026 ISARVA INFOTECH PRIVATE LIMITED
           </p>
         </div>

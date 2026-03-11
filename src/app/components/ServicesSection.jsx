@@ -3,62 +3,29 @@
 import Link from "next/link";
 import { memo } from "react";
 
-function ServicesSection({ data }) {
-  // Default placeholder data (will be replaced with WordPress data)
-  const defaultServices = [
-    {
-      id: 1,
-      icon: "🌐",
-      title: "Web Development",
-      description:
-        "Custom web applications built with cutting-edge technologies for optimal performance and scalability.",
-      features: ["React & Next.js", "Full-Stack Solutions", "API Integration"],
-    },
-    {
-      id: 2,
-      icon: "📱",
-      title: "Mobile Apps",
-      description:
-        "Native and cross-platform mobile applications designed for seamless user experiences.",
-      features: ["iOS & Android", "React Native", "Progressive Web Apps"],
-    },
-    {
-      id: 3,
-      icon: "☁️",
-      title: "Cloud Solutions",
-      description:
-        "Scalable cloud infrastructure and deployment solutions for modern applications.",
-      features: ["AWS & Azure", "DevOps", "Serverless Architecture"],
-    },
-    {
-      id: 4,
-      icon: "🎨",
-      title: "UI/UX Design",
-      description:
-        "Beautiful, intuitive interfaces that enhance user engagement and satisfaction.",
-      features: ["User Research", "Prototyping", "Design Systems"],
-    },
-    {
-      id: 5,
-      icon: "🛒",
-      title: "E-Commerce",
-      description:
-        "Complete e-commerce solutions with secure payment processing and inventory management.",
-      features: ["Shopping Cart", "Payment Gateway", "Admin Dashboard"],
-    },
-    {
-      id: 6,
-      icon: "🔧",
-      title: "Maintenance & Support",
-      description:
-        "Ongoing support and maintenance to keep your applications running smoothly.",
-      features: ["24/7 Monitoring", "Bug Fixes", "Performance Optimization"],
-    },
-  ];
+// Helper function to decode HTML entities
+function decodeHTMLEntities(text) {
+  if (typeof window !== 'undefined' && text) {
+    const textarea = document.createElement('textarea');
+    textarea.innerHTML = text;
+    return textarea.value;
+  }
+  // Server-side fallback for common entities
+  return text?.replace(/&#038;/g, '&')
+             .replace(/&amp;/g, '&')
+             .replace(/&lt;/g, '<')
+             .replace(/&gt;/g, '>')
+             .replace(/&quot;/g, '"')
+             .replace(/&#039;/g, "'") || '';
+}
 
-  const services = data?.services || defaultServices;
-  const heading = data?.heading || "Our Services";
-  const subheading = data?.subheading || "Comprehensive Digital Solutions";
+function ServicesSection({ data }) {
+  const services = data?.services || [];
+  const heading = data?.heading || "";
+  const description = data?.description || "";
+  const stripData = data?.stripData || "";
+  const buttonText = data?.buttonText || "";
+  const buttonLink = data?.buttonLink || "";
 
   return (
     <section
@@ -84,16 +51,23 @@ function ServicesSection({ data }) {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Heading */}
         <div className="services-heading text-center mb-16 lg:mb-20">
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/40 backdrop-blur-md text-emerald-800 font-semibold text-sm mb-6 border border-white/60 shadow-lg">
-            <span className="w-2 h-2 bg-emerald-600 rounded-full animate-pulse"></span>
-            What We Offer
-          </div>
-          <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-4 tracking-tight">
-            {heading}
-          </h2>
-          <p className="text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto">
-            {subheading}
-          </p>
+          {stripData && (
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/40 backdrop-blur-md text-emerald-800 font-semibold text-sm mb-6 border border-white/60 shadow-lg">
+              <span className="w-2 h-2 bg-emerald-600 rounded-full animate-pulse"></span>
+              {decodeHTMLEntities(stripData)}
+            </div>
+          )}
+          {heading && (
+            <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-4 tracking-tight">
+              {decodeHTMLEntities(heading)}
+            </h2>
+          )}
+          {description && (
+            <div 
+              className="text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto prose prose-slate"
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
+          )}
         </div>
 
         {/* Services Grid */}
@@ -113,23 +87,81 @@ function ServicesSection({ data }) {
 
               {/* Content */}
               <div className="relative">
-                {/* Icon - Simplified for mobile performance */}
-                <div className="service-icon w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-green-500 border border-emerald-300 md:from-emerald-400/60 md:to-green-500/60 md:backdrop-blur-sm md:border-white/50 flex items-center justify-center text-4xl mb-6 group-hover:from-emerald-500/70 group-hover:to-green-600/70 transition-all duration-300 shadow-lg">
-                  {service.icon}
+                {/* Icon/Image - Display featured image or fallback to icon */}
+                <div className="service-icon w-16 h-16 rounded-2xl  border border-emerald-300 md:from-emerald-400/60 md:to-green-500/60 md:backdrop-blur-sm md:border-white/50 flex items-center justify-center mb-6 group-hover:from-emerald-500/70 group-hover:to-green-600/70 transition-all duration-300 shadow-lg overflow-hidden">
+                  {service.featuredImage ? (
+                    <img
+                      src={service.featuredImage}
+                      alt={`${service.title} icon`}
+                      className="w-full h-full object-contain rounded-xl"
+                      loading="lazy"
+                      onError={(e) => {
+                        // Fallback to emoji if image fails to load
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                  ) : null}
+                  <span 
+                    className={`text-4xl ${service.featuredImage ? 'hidden' : 'block'}`}
+                    style={{ display: service.featuredImage ? 'none' : 'flex' }}
+                  >
+                    {service.icon || "🔧"}
+                  </span>
                 </div>
 
                 {/* Title */}
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-emerald-700 transition-colors duration-300">
-                  {service.title}
+                  {decodeHTMLEntities(service.title)}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-700 mb-6 leading-relaxed">
-                  {service.description}
-                </p>
+                <div
+                  className="text-gray-700  leading-relaxed prose prose-slate max-w-none"
+                  dangerouslySetInnerHTML={{ __html: service.description }}
+                />
 
-                {/* Features */}
-                {service.features && service.features.length > 0 && (
+                {/* Technology Used - Handle both HTML and array formats */}
+                {service.technology_used && (
+                  <div className="space-y-2.5">
+                    {typeof service.technology_used === 'string' ? (
+                      <div
+                        className="prose prose-slate max-w-none [&>ul]:list-none [&>ul]:space-y-2.5 [&>ul>li]:flex [&>ul>li]:items-center [&>ul>li]:gap-2 [&>ul>li]:text-sm [&>ul>li]:text-gray-600"
+                        dangerouslySetInnerHTML={{ 
+                          __html: service.technology_used.replace(
+                            /<li>/g, 
+                            '<li><svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>'
+                          )
+                        }}
+                      />
+                    ) : Array.isArray(service.technology_used) ? (
+                      <ul className="space-y-2.5">
+                        {service.technology_used.map((tech, idx) => (
+                          <li
+                            key={idx}
+                            className="flex items-center gap-2 text-sm text-gray-600"
+                          >
+                            <svg
+                              className="w-4 h-4 text-emerald-600 flex-shrink-0"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                            {tech}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </div>
+                )}
+
+                {/* Fallback to features for default services */}
+                {!service.technology_used && service.features && service.features.length > 0 && (
                   <ul className="space-y-2.5">
                     {service.features.map((feature, idx) => (
                       <li
@@ -158,31 +190,34 @@ function ServicesSection({ data }) {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center mt-16 lg:mt-20">
-          <p className="text-gray-700 mb-6 text-lg font-medium">
-            Can't find what you're looking for?
-          </p>
+        {buttonText && buttonLink && (
+          <div className="text-center mt-16 lg:mt-20">
+            <p className="text-gray-700 mb-6 text-lg font-medium">
+              Can't find what you're looking for?
+            </p>
 
-          <Link
-            href="#contact"
-            className="press-illusion-btn bg-green-400 text-black font-bold px-6 py-2 text-base w-fit mx-auto items-center space-x-2  inline-flex"
-          >
-            <span>Get Custom Solution</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 9"
-              className="h-2 w-4"
+            <Link
+              href={buttonLink}
+              target={data?.buttonTarget || ""}
+              className="press-illusion-btn bg-green-400 text-white font-bold px-6 py-2 text-base w-fit mx-auto items-center space-x-2  inline-flex"
             >
-              <path
-                fill="currentColor"
-                fillRule="evenodd"
-                d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
-                clipRule="evenodd"
-              ></path>
-            </svg>
-          </Link>
-        </div>
+              <span>{decodeHTMLEntities(buttonText)}</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 17 9"
+                className="h-2 w-4"
+              >
+                <path
+                  fill="currentColor"
+                  fillRule="evenodd"
+                  d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

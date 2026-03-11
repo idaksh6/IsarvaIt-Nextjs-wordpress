@@ -22,6 +22,20 @@ const DEFAULT_HERO_DATA = {
   buttonText: "Start Your Project →",
   buttonLink: "/contact",
   buttonTarget: "_self",
+  floatingCards: [
+    {
+      heading: "Web Platforms",
+      description: "We design and build high-performance website solutions applied basically for speed, scalability, and user experience.",
+    },
+    {
+      heading: "Custom Software",
+      description: "Tailored digital solutions built to solve complex business challenges and support long-term growth.",
+    },
+    {
+      heading: "E-commerce Solutions",
+      description: "Launch powerful online stores with secure payments, optimized performance, and conversion-focused design.",
+    },
+  ],
 };
 
 function HeroSection({ data }) {
@@ -29,7 +43,7 @@ function HeroSection({ data }) {
   const heroData = data || DEFAULT_HERO_DATA;
 
   return (
-    <section className="relative flex flex-col items-center pt-32 pb-0 overflow-hidden">
+    <section className="relative flex flex-col items-center pt-36 pb-0 overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none translate-z-0">
         {/* 1. Base Grid Layer (Softer Checkboxes) */}
@@ -51,7 +65,7 @@ function HeroSection({ data }) {
 
       <div className="max-w-7xl mx-auto px-6 relative z-20 text-center hero-content">
         {heroData.stripTag && (
-          <div className="inline-flex mb-12">
+          <div className="inline-flex mb-8">
             <span className="badge">{stripHtml(heroData.stripTag)}</span>
           </div>
         )}
@@ -73,7 +87,7 @@ function HeroSection({ data }) {
           <div className="relative z-30 mb-20">
             <Link
               href={heroData.buttonLink}
-              className="press-illusion-btn bg-green-400 text-black w-fit  font-bold px-6 py-2 text-base mx-auto items-center space-x-2 gap-2 inline-flex"
+              className="press-illusion-btn bg-green-400 text-white w-fit  font-bold px-6 py-2 text-base mx-auto items-center space-x-2 gap-2 inline-flex"
             >
               Get In Touch
               <svg
@@ -100,11 +114,13 @@ function HeroSection({ data }) {
               🌐
             </div>
             <h3 className="text-gray-900 font-bold text-xl mb-4 flex items-center justify-between">
-              Web Platforms{" "}
+              {heroData.floatingCards && heroData.floatingCards[0] ? heroData.floatingCards[0].heading : "Web Platforms"}{" "}
             </h3>
             <p className="text-gray-500 text-[13px] leading-relaxed font-medium">
-              We design and build high-performance website solutions applied
-              basically for speed, scalability, and user experience.
+              {heroData.floatingCards && heroData.floatingCards[0] ? 
+                heroData.floatingCards[0].description.replace(/<[^>]*>/g, '') : 
+                "We design and build high-performance website solutions applied basically for speed, scalability, and user experience."
+              }
             </p>
           </div>
 
@@ -114,11 +130,13 @@ function HeroSection({ data }) {
               💻
             </div>
             <h3 className="text-gray-900 font-bold text-xl mb-4 flex items-center justify-between">
-              Custom Software{" "}
+              {heroData.floatingCards && heroData.floatingCards[1] ? heroData.floatingCards[1].heading : "Custom Software"}{" "}
             </h3>
             <p className="text-gray-500 text-[13px] leading-relaxed font-medium">
-              Tailored digital solutions built to solve complex business
-              challenges and support long-term growth.
+              {heroData.floatingCards && heroData.floatingCards[1] ? 
+                heroData.floatingCards[1].description.replace(/<[^>]*>/g, '') : 
+                "Tailored digital solutions built to solve complex business challenges and support long-term growth."
+              }
             </p>
           </div>
 
@@ -129,12 +147,14 @@ function HeroSection({ data }) {
                 💰
               </div>
               <h3 className="text-gray-900 font-bold text-2xl">
-                E-commerce Solutions
+                {heroData.floatingCards && heroData.floatingCards[2] ? heroData.floatingCards[2].heading : "E-commerce Solutions"}
               </h3>
             </div>
             <p className="text-gray-500 text-[15px] leading-relaxed mb-8 font-bold">
-              Launch powerful online stores with secure payments, optimized
-              performance, and conversion-focused design.
+              {heroData.floatingCards && heroData.floatingCards[2] ? 
+                heroData.floatingCards[2].description.replace(/<[^>]*>/g, '') : 
+                "Launch powerful online stores with secure payments, optimized performance, and conversion-focused design."
+              }
             </p>
           </div>
         </div>

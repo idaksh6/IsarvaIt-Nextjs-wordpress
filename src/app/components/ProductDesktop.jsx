@@ -1078,7 +1078,7 @@ const ProductDetailModal = ({ product, onClose }) => {
           <div className="flex gap-4">
             <Link
               href="#contact"
-              className="press-illusion-btn bg-green-400 text-black w-fit  font-bold px-6 py-2 text-sm  items-center space-x-2  md:flex"
+              className="press-illusion-btn bg-green-400 text-white w-fit  font-bold px-6 py-2 text-sm  items-center space-x-2  md:flex"
             >
               <span>Get Pricing & Demo</span>
               <svg

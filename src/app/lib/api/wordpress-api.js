@@ -329,3 +329,39 @@ export async function getFrontPage() {
   const pages = await fetchPages({ perPage: 1, orderby: 'id', order: 'asc' });
   return pages.length > 0 ? pages[0] : null;
 }
+
+/**
+ * Fetch posts by IDs
+ * @param {Array<number>} postIds - Array of post IDs
+ * @param {string} postType - Post type (default: 'posts')
+ * @param {Object} options - Additional options
+ * @returns {Promise<Array>} Array of posts
+ */
+export async function fetchPostsByIds(postIds, postType = 'posts', options = {}) {
+  if (!isWordPressAvailable() || !postIds || !postIds.length) {
+    return [];
+  }
+
+  try {
+    const { revalidate = 60, fields = 'id,title,content,acf' } = options;
+    const idsParam = postIds.join(',');
+    
+    const response = await fetch(
+      `${WORDPRESS_API_URL}/wp-json/wp/v2/${postType}?include=${idsParam}&_fields=${fields}`,
+      {
+        next: { revalidate },
+        cache: 'no-store',
+      }
+    );
+
+    if (!response.ok) {
+      console.warn(`Failed to fetch ${postType} by IDs: ${response.statusText}`);
+      return [];
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.warn(`WordPress API unavailable for ${postType} IDs. Using fallback data.`);
+    return [];
+  }
+}

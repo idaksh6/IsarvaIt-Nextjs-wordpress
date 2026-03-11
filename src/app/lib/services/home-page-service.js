@@ -3,7 +3,7 @@
  * Handles data fetching and transformation for the home page
  */
 
-import { getFrontPage, getMediaUrl } from '../api/wordpress-api';
+import { getFrontPage, getMediaUrl, fetchMediaById, fetchPostsByIds } from '../api/wordpress-api';
 import { cleanWysiwygContent, parseAcfLink, parseAcfImage } from '../utils/content-helpers';
 
 /**
@@ -55,6 +55,17 @@ export async function getHeroSectionData(homePageData) {
     getMediaUrl
   );
   
+  // Process floating cards from repeater field
+  const floatingCards = [];
+  if (heroSection.cards_section && Array.isArray(heroSection.cards_section)) {
+    for (const card of heroSection.cards_section) {
+      floatingCards.push({
+        heading: card.card_heading || '',
+        description: cleanWysiwygContent(card.card_description) || '',
+      });
+    }
+  }
+  
   return {
     stripTag: heroSection.hero_heading_strip_tag || '',
     heading: cleanWysiwygContent(heroSection.hero_heading),
@@ -64,6 +75,7 @@ export async function getHeroSectionData(homePageData) {
     buttonText: heroSection.button_text || 'Get Started',
     buttonLink: buttonLink.url,
     buttonTarget: buttonLink.target,
+    floatingCards,
   };
 }
 
@@ -79,45 +91,103 @@ export async function getServicesSectionData(homePageData) {
   
   const layouts = homePageData.acf.home_page_layout;
   
-  // Find the services section layout
+  // Find the services lists layout (try multiple possible names)
   const servicesSection = layouts.find(
-    (layout) => layout.acf_fc_layout === 'services_section'
+    (layout) => layout.acf_fc_layout === 'services_lists' ||
+                layout.acf_fc_layout === 'services_section' ||
+                layout.acf_fc_layout === 'services'
   );
   
   if (!servicesSection) {
+    console.warn('Services layout not found. Available layouts:', layouts.map(l => l.acf_fc_layout));
     return null;
   }
+
+  console.log('Found services layout:', servicesSection.acf_fc_layout);
   
-  // Process services items
+  // Parse button link
+  const buttonLink = parseAcfLink(servicesSection.button_link);
+  
+  // Fetch services posts from relationship field
   const services = [];
-  if (servicesSection.services && Array.isArray(servicesSection.services)) {
-    for (const service of servicesSection.services) {
-      const icon = await parseAcfImage(service.icon, getMediaUrl);
-      
-      // Parse features if it's a string (comma-separated) or array
-      let features = [];
-      if (service.features) {
-        if (typeof service.features === 'string') {
-          features = service.features.split(',').map(f => f.trim());
-        } else if (Array.isArray(service.features)) {
-          features = service.features;
+  if (servicesSection.choose_services_to_display_on_page && Array.isArray(servicesSection.choose_services_to_display_on_page)) {
+    const serviceIds = servicesSection.choose_services_to_display_on_page;
+    const servicePosts = await fetchPostsByIds(serviceIds, 'services', {
+      fields: 'id,title,content,acf,featured_media'
+    });
+    
+    // Preserve the order from the relationship field
+    for (const serviceId of serviceIds) {
+      const servicePost = servicePosts.find(post => post.id === serviceId);
+      if (servicePost) {
+        // Fetch featured image URL if featured_media exists
+        let featuredImageUrl = '';
+        if (servicePost.featured_media) {
+          featuredImageUrl = await getMediaUrl(servicePost.featured_media);
         }
+
+        services.push({
+          id: servicePost.id,
+          title: servicePost.title?.rendered || '',
+          description: cleanWysiwygContent(servicePost.content?.rendered) || '',
+          technology_used: servicePost.acf?.technology_used || [],
+          featuredImage: featuredImageUrl,
+        });
       }
-      
-      services.push({
-        id: service.id || services.length + 1,
-        icon: service.icon_emoji || icon || '🔧',
-        title: service.title || '',
-        description: cleanWysiwygContent(service.description),
-        features,
-      });
     }
   }
   
   return {
-    heading: cleanWysiwygContent(servicesSection.heading) || 'Our Services',
-    subheading: cleanWysiwygContent(servicesSection.subheading) || 'Comprehensive Digital Solutions',
+    stripData: servicesSection.section_strip_data || '',
+    heading: cleanWysiwygContent(servicesSection.services_section_heading) || 'Our Services',
+    description: cleanWysiwygContent(servicesSection.services_section_description) || '',
+    buttonText: servicesSection.button_text || 'View All Services',
+    buttonLink: buttonLink.url,
+    buttonTarget: buttonLink.target,
     services,
+  };
+}
+
+/**
+ * Extract Tech Stack Section data from home page ACF fields
+ * @param {Object} homePageData - Home page data with ACF fields
+ * @returns {Promise<Object|null>} Tech stack section data
+ */
+export async function getTechStackSectionData(homePageData) {
+  if (!homePageData?.acf?.home_page_layout) {
+    return null;
+  }
+  
+  const layouts = homePageData.acf.home_page_layout;
+  
+  // Find the tech stack section layout
+  const techStackSection = layouts.find(
+    (layout) => layout.acf_fc_layout === 'our_tech_stack'
+  );
+  
+  if (!techStackSection) {
+    return null;
+  }
+  
+  // Process tech stack images from gallery field
+  const techStackImages = [];
+  if (techStackSection.tech_stack_images && Array.isArray(techStackSection.tech_stack_images)) {
+    for (const imageId of techStackSection.tech_stack_images) {
+      // Fetch complete image data from WordPress media endpoint
+      const imageData = await fetchMediaById(imageId);
+      
+      if (imageData) {
+        techStackImages.push({
+          url: imageData.source_url,
+          alt: imageData.alt_text || '',
+          title: imageData.title?.rendered || ''
+        });
+      }
+    }
+  }
+  
+  return {
+    images: techStackImages,
   };
 }
 
@@ -144,6 +214,12 @@ export async function getAllHomePageSections(homePageData) {
   const servicesData = await getServicesSectionData(homePageData);
   if (servicesData) {
     sections.services = servicesData;
+  }
+  
+  // Extract tech stack section
+  const techStackData = await getTechStackSectionData(homePageData);
+  if (techStackData) {
+    sections.techStack = techStackData;
   }
   
   return sections;
