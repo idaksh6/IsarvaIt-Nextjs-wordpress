@@ -1,0 +1,362 @@
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { getProductBySlug, getAllProductSlugs, productsData } from "../../lib/data/products-data";
+
+export async function generateStaticParams() {
+  return getAllProductSlugs().map((slug) => ({
+    slug: slug,
+  }));
+}
+
+// Force static rendering for all product pages
+export const dynamic = 'force-static';
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const product = getProductBySlug(slug);
+  
+  if (!product) {
+    return {
+      title: 'Product Not Found',
+    };
+  }
+
+  return {
+    title: `${product.title} - Isarva Products`,
+    description: product.description,
+  };
+}
+
+export default async function ProductDetailPage({ params }) {
+  const { slug } = await params;
+  const product = getProductBySlug(slug);
+
+  if (!product) {
+    notFound();
+  }
+
+  // Get related products (3 random products excluding current, prioritizing same category)
+  const sameCategory = productsData.filter(p => p.slug !== product.slug && p.category === product.category);
+  const otherProducts = productsData.filter(p => p.slug !== product.slug && p.category !== product.category);
+  const relatedProducts = [...sameCategory, ...otherProducts]
+    .sort(() => 0.5 - Math.random())
+    .slice(0, 3);
+
+  return (
+    <div className="bg-white overflow-hidden">
+      {/* Hero Section */}
+      <section 
+        className={`relative pt-32 lg:pt-40 pb-20 overflow-hidden bg-gradient-to-b ${product.bgGradient}`}
+        style={{ contain: "layout style paint" }}
+      >
+        {/* Background Decorations */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none" style={{ transform: "translateZ(0)" }}>
+          <div className="absolute inset-0 opacity-20" style={{
+            backgroundImage: `radial-gradient(circle at 2px 2px, rgba(139, 92, 246, 0.3) 1px, transparent 0)`,
+            backgroundSize: '24px 24px'
+          }}></div>
+          <div className={`absolute top-20 left-10 w-[500px] h-[500px] bg-gradient-to-br ${product.color} opacity-20 blur-[100px] rounded-full`}></div>
+          <div className={`absolute bottom-0 right-0 w-[600px] h-[600px] bg-gradient-to-tl ${product.color} opacity-15 blur-[120px] rounded-full`}></div>
+          <div className="hero-noise-overlay opacity-[0.08]"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          {/* Breadcrumb */}
+          <div className="mb-8">
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <Link href="/" prefetch={true} className="hover:text-violet-600 transition-colors">
+                Home
+              </Link>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+              <Link href="/products" prefetch={true} className="hover:text-violet-600 transition-colors">
+                Products
+              </Link>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+              <span className="text-violet-600 font-medium">{product.title}</span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/60 backdrop-blur-md text-gray-800 font-semibold text-sm mb-6 border border-white/60 shadow-lg">
+                <span>{product.category}</span>
+              </div>
+              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
+                {product.title}
+              </h1>
+              <p className="text-2xl text-violet-600 font-semibold mb-6">
+                {product.tagline}
+              </p>
+              <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8">
+                {product.description}
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="/contact"
+                  prefetch={true}
+                  className="press-illusion-btn bg-gradient-to-r from-violet-500 to-purple-600 text-white font-bold px-8 py-4 text-lg items-center space-x-2 inline-flex shadow-lg hover:shadow-xl"
+                >
+                  <span>Request Demo</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 17 9"
+                    className="h-2 w-4"
+                  >
+                    <path
+                      fill="currentColor"
+                      fillRule="evenodd"
+                      d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
+                </Link>
+                <Link
+                  href="#features"
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-gray-700 bg-white/80 backdrop-blur-md border-2 border-gray-200 rounded-lg hover:border-violet-400 hover:text-violet-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+                >
+                  View Features
+                </Link>
+              </div>
+            </div>
+
+            <div>
+              <div className="relative">
+                <div className={`absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-br ${product.color} opacity-20 blur-[120px] rounded-full`}></div>
+                <div className={`relative rounded-3xl bg-gradient-to-br ${product.color} p-1 shadow-2xl`}>
+                  <div className="rounded-3xl bg-white/95 backdrop-blur-md p-12">
+                    <div className={`w-full aspect-square rounded-2xl bg-gradient-to-br ${product.color} opacity-10 flex items-center justify-center`}>
+                      <span className="text-9xl">{product.icon}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id="features" className="py-20 lg:py-32 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 hero-noise-overlay opacity-[0.02]"></div>
+        
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Key Features
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Powerful features designed to meet your business needs
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {product.features.map((feature, index) => (
+              <div 
+                key={index}
+                className="flex items-start gap-4 p-6 rounded-2xl bg-white border border-gray-100 hover:border-violet-200 hover:shadow-lg transition-all duration-200 group"
+              >
+                <div className="flex-shrink-0">
+                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${product.color} opacity-90 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-200`}>
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-1">{feature}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technologies Section */}
+      <section className={`py-20 lg:py-32 bg-gradient-to-b ${product.bgGradient} relative overflow-hidden`}>
+        <div className="absolute inset-0 hero-noise-overlay opacity-[0.05]"></div>
+        
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Technology Stack
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Built with modern, reliable technologies
+            </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-4">
+            {product.technologies.map((tech, index) => (
+              <div
+                key={index}
+                className={`px-6 py-3 rounded-full bg-white border-2 border-gray-200 hover:border-violet-400 hover:shadow-lg transition-all duration-200 font-semibold text-gray-700 hover:text-violet-700`}
+              >
+                {tech}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 hero-noise-overlay opacity-[0.02]"></div>
+        
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Business Benefits
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Real value that drives your business forward
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {product.benefits.map((benefit, index) => (
+              <div
+                key={index}
+                className="relative rounded-3xl p-8 bg-white border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 group"
+              >
+                <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${product.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
+                <div className="relative">
+                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${product.color} opacity-90 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-violet-700 transition-colors">
+                    {benefit}
+                  </h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related Products Section */}
+      <section className={`py-20 lg:py-32 bg-gradient-to-b ${product.bgGradient} relative overflow-hidden`}>
+        <div className="absolute inset-0 hero-noise-overlay opacity-[0.05]"></div>
+        
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Related Products
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Explore other solutions that might interest you
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {relatedProducts.map((relatedProduct) => (
+              <Link
+                key={relatedProduct.slug}
+                href={`/products/${relatedProduct.slug}`}
+                prefetch={true}
+                className="group"
+              >
+                <div className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 h-full">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${relatedProduct.color} opacity-90 group-hover:opacity-100 transition-opacity duration-300`}></div>
+                  <div className="absolute inset-0 hero-noise-overlay opacity-[0.1]"></div>
+                  
+                  <div className="relative p-8 h-full flex flex-col">
+                    <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 mb-6 border border-white/30">
+                      <span className="text-4xl">{relatedProduct.icon}</span>
+                    </div>
+
+                    <h3 className="text-2xl font-bold text-white mb-4">
+                      {relatedProduct.title}
+                    </h3>
+
+                    <p className="text-white/90 leading-relaxed mb-6 flex-grow">
+                      {relatedProduct.shortDescription}
+                    </p>
+
+                    <div className="flex items-center gap-2 text-white font-semibold group-hover:gap-3 transition-all duration-200">
+                      <span>Learn More</span>
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              href="/products"
+              prefetch={true}
+              className="inline-flex items-center gap-2 text-violet-600 font-semibold hover:gap-3 transition-all duration-200 text-lg"
+            >
+              View All Products
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 lg:py-32 bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10" style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+          backgroundSize: '32px 32px'
+        }}></div>
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-white/10 blur-[100px] rounded-full"></div>
+        
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/20 backdrop-blur-md text-white font-semibold text-sm mb-8 border border-white/30 shadow-lg">
+            <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+            Get Started Today
+          </div>
+          
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+            Ready to Transform Your Business with {product.title}?
+          </h2>
+          
+          <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+            Contact us for a personalized demo and discover how our solution can drive your business growth.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              prefetch={true}
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-violet-600 bg-white rounded-xl hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              <span>Request a Demo</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="w-5 h-5 ml-2"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+            
+            <Link
+              href="/products"
+              prefetch={true}
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-white/10 backdrop-blur-md border-2 border-white/30 rounded-xl hover:bg-white/20 transition-all duration-200 shadow-lg"
+            >
+              View All Products
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

@@ -1,22 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { memo } from "react";
 
-// Helper function to decode HTML entities
+// Server-side safe HTML entity decoder
 function decodeHTMLEntities(text) {
-  if (typeof window !== 'undefined' && text) {
-    const textarea = document.createElement('textarea');
-    textarea.innerHTML = text;
-    return textarea.value;
-  }
-  // Server-side fallback for common entities
-  return text?.replace(/&#038;/g, '&')
+  if (!text) return '';
+  return text.replace(/&#038;/g, '&')
              .replace(/&amp;/g, '&')
              .replace(/&lt;/g, '<')
              .replace(/&gt;/g, '>')
              .replace(/&quot;/g, '"')
-             .replace(/&#039;/g, "'") || '';
+             .replace(/&#039;/g, "'");
 }
 
 function ServicesSection({ data }) {
@@ -34,15 +30,15 @@ function ServicesSection({ data }) {
         contain: "layout style paint",
       }}
     >
-      {/* Premium Background Layers */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none translate-z-0">
+      {/* Premium Background Layers - Optimized */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none" style={{ transform: "translateZ(0)" }}>
         {/* 1. Large Subtle Technical Mesh */}
         <div className="absolute inset-0 bg-mesh-green opacity-40"></div>
 
-        {/* 2. Brand Auras (Glows) */}
+        {/* 2. Brand Auras (Glows) - Reduced blur for performance */}
         <div className="services-glow-left"></div>
         <div className="services-glow-right"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/30 blur-[130px] rounded-full"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/30 blur-[80px] rounded-full"></div>
 
         {/* 3. The "Shaky" High-Fidelity Noise Texture */}
         <div className="hero-noise-overlay opacity-[0.15]"></div>
