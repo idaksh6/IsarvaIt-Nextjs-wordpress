@@ -426,7 +426,7 @@ export default function AboutPage() {
             </Link>
             <Link
               href="/"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-gray-700 bg-white/80 backdrop-blur-md border-2 border-gray-200 rounded-lg hover:border-emerald-600 hover:text-emerald-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-black bg-white/80 backdrop-blur-md border-2 border-gray-200 rounded-lg hover:border-emerald-600 hover:text-emerald-700 transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               View Our Work
             </Link>

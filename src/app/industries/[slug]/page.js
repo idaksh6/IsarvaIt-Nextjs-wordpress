@@ -79,7 +79,7 @@ export default async function IndustryDetailPage({ params }) {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/60 backdrop-blur-md text-${industry.accentColor}-800 font-semibold text-sm mb-6 border border-white/60 shadow-lg`}>
+              <div className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full  backdrop-blur-md text-black font-semibold text-sm mb-6 border border-white/60 shadow-lg`}>
                 <span className="text-2xl">{industry.icon}</span>
                 <span>Industry Expertise</span>
               </div>
@@ -91,12 +91,6 @@ export default async function IndustryDetailPage({ params }) {
               </p>
               <div className="flex flex-wrap gap-4">
                 <IndustryDetailClient industry={industry} industriesData={industriesData} />
-                <Link
-                  href="#challenges"
-                  className={`inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-${industry.accentColor}-700 bg-white/80 backdrop-blur-md border-2 border-${industry.accentColor}-200 rounded-lg hover:border-${industry.accentColor}-300 transition-all duration-200 shadow-lg hover:shadow-xl`}
-                >
-                  Learn More
-                </Link>
               </div>
             </div>
 

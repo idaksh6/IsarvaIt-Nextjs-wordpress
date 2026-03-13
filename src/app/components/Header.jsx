@@ -91,7 +91,7 @@ export default function Header() {
           <Image
             src="/isarva-logo.png"
             alt="Isarva Logo"
-            width={120}
+            width={160}
             height={40}
             priority
             className="w-auto h-auto object-contain drop-shadow-sm"
