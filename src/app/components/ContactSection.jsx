@@ -48,7 +48,7 @@ export default function ContactSection() {
                 </svg>
               </div>
               <h3 className="text-white font-semibold text-lg mb-2">Email Us</h3>
-              <p className="text-gray-300">hello@isarva.com</p>
+              <p className="text-gray-300">info@isarvait.com</p>
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
@@ -58,7 +58,7 @@ export default function ContactSection() {
                 </svg>
               </div>
               <h3 className="text-white font-semibold text-lg mb-2">Call Us</h3>
-              <p className="text-gray-300">+1 (555) 123-4567</p>
+              <p className="text-gray-300">+91 9880606087</p>
             </div>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
@@ -69,7 +69,7 @@ export default function ContactSection() {
                 </svg>
               </div>
               <h3 className="text-white font-semibold text-lg mb-2">Visit Us</h3>
-              <p className="text-gray-300">Silicon Valley, CA</p>
+              <p className="text-gray-300">Bajpe, Mangalore, India</p>
             </div>
           </div>
 
