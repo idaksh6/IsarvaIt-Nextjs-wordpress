@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 
 export default function ContactFormModal({ 
   isOpen, 
@@ -82,7 +83,8 @@ export default function ContactFormModal({
 
   if (!isOpen) return null;
 
-  return (
+  // Use portal to render modal outside the DOM hierarchy
+  const modalContent = (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
       {/* Backdrop */}
       <div 
@@ -91,9 +93,9 @@ export default function ContactFormModal({
       ></div>
 
       {/* Modal */}
-      <div className="relative bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+      <div className="relative bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col">
         {/* Header */}
-        <div className="sticky top-0 bg-gradient-to-r from-green-400 to-emerald-500 px-8 py-6 rounded-t-3xl">
+        <div className="bg-gradient-to-r from-green-400 to-emerald-500 px-8 py-6 rounded-t-3xl flex-shrink-0">
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-3xl font-bold text-white mb-1">Request a Demo</h2>
@@ -121,16 +123,18 @@ export default function ContactFormModal({
           </div>
         </div>
 
-        {/* Form */}
-        <form onSubmit={handleSubmit} className="p-8">
-          <div className="space-y-6">
-            {/* Name */}
-            <div>
-              <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                Full Name *
-              </label>
-              <input
-                type="text"
+        {/* Scrollable Form Container */}
+        <div className="overflow-y-auto flex-1 scrollbar-thin">
+          {/* Form */}
+          <form onSubmit={handleSubmit} className="p-8">
+            <div className="space-y-6">
+              {/* Name */}
+              <div>
+                <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                  Full Name *
+                </label>
+                <input
+                  type="text"
                 id="name"
                 name="name"
                 value={formData.name}
@@ -296,7 +300,13 @@ export default function ContactFormModal({
             </button>
           </div>
         </form>
+        </div>
       </div>
     </div>
   );
+
+  // Render modal using portal to body element
+  return typeof window !== 'undefined' 
+    ? createPortal(modalContent, document.body)
+    : null;
 }

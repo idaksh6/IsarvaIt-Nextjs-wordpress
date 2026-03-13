@@ -43,11 +43,10 @@ export default async function IndustryDetailPage({ params }) {
     .slice(0, 3);
 
   return (
-    <div className="bg-white overflow-hidden">
+    <div className="bg-white">
       {/* Hero Section */}
       <section 
         className={`relative pt-32 lg:pt-40 pb-20 overflow-hidden bg-gradient-to-b ${industry.softColor}`}
-        style={{ contain: "layout style paint" }}
       >
         {/* Background Decorations - Soft with Noise */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none" style={{ transform: "translateZ(0)" }}>

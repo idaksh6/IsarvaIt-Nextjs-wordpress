@@ -43,11 +43,10 @@ export default async function ServiceDetailPage({ params }) {
     .slice(0, 3);
 
   return (
-    <div className="bg-white overflow-hidden">
+    <div className="bg-white">
       {/* Hero Section */}
       <section 
         className="relative pt-32 lg:pt-40 pb-20 overflow-hidden bg-gradient-to-b from-[#d4f4dd] via-[#defae4] to-white"
-        style={{ contain: "layout style paint" }}
       >
         {/* Background Decorations - Optimized */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none" style={{ transform: "translateZ(0)" }}>
@@ -278,7 +277,6 @@ export default async function ServiceDetailPage({ params }) {
       {/* CTA Section */}
       <section 
         className="py-20 lg:py-32 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden"
-        style={{ contain: "layout style paint" }}
       >
         <div className="absolute inset-0 bg-mesh-green opacity-30"></div>
         <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-emerald-200/40 blur-[80px] rounded-full"></div>
