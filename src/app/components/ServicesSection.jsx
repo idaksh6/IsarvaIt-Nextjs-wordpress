@@ -88,7 +88,7 @@ function ServicesSection({ data }) {
               {/* Content */}
               <div className="relative flex flex-col md:items-start items-center md:text-left text-center">
                 {/* Icon/Image and Title side by side */}
-                <div className="flex items-center gap-4 mb-6">
+                <div className="flex lg:flex-row flex-col items-center gap-4 mb-6">
                   {/* Icon/Image - Display featured image or fallback to icon */}
                   <div className="service-icon w-16 h-16 flex-shrink-0 rounded-2xl border border-emerald-300 md:from-emerald-400/60 md:to-green-500/60 md:backdrop-blur-sm md:border-white/50 flex items-center justify-center group-hover:from-emerald-500/70 group-hover:to-green-600/70 transition-all duration-300 shadow-lg overflow-hidden">
                     {service.featuredImage ? (
