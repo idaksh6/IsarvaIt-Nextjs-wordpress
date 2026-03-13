@@ -79,7 +79,7 @@ function HeroSection({ data }) {
         {/* Subtext */}
         {heroData.description && (
           <div
-            className="text-gray-600 text-lg md:text-2xl max-w-4xl mx-auto mb-16 font-medium leading-relaxed prose prose-slate"
+            className="text-gray-600 text-lg md:text-xl max-w-4xl mx-auto mb-16 font-medium leading-relaxed prose prose-slate"
             dangerouslySetInnerHTML={{ __html: heroData.description }}
           />
         )}
