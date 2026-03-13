@@ -110,12 +110,14 @@ function HeroSection({ data }) {
         <div className="-mt-40 relative h-[600px] w-full max-w-6xl mx-auto hidden lg:block">
           {/* Web Platforms Card */}
           <div className="floating-card absolute left-[-150px] top-0 w-80 glass-card p-8 rounded-[2.5rem] border border-gray-100 text-left shadow-2xl z-10">
-            <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-inner ring-1 ring-gray-100">
-              🌐
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-14 h-14 flex-shrink-0 bg-gray-50 rounded-2xl flex items-center justify-center text-3xl shadow-inner ring-1 ring-gray-100">
+                🌐
+              </div>
+              <h3 className="text-gray-900 font-bold text-xl">
+                {heroData.floatingCards && heroData.floatingCards[0] ? heroData.floatingCards[0].heading : "Web Platforms"}
+              </h3>
             </div>
-            <h3 className="text-gray-900 font-bold text-xl mb-4 flex items-center justify-between">
-              {heroData.floatingCards && heroData.floatingCards[0] ? heroData.floatingCards[0].heading : "Web Platforms"}{" "}
-            </h3>
             <p className="text-gray-500 text-[13px] leading-relaxed font-medium">
               {heroData.floatingCards && heroData.floatingCards[0] ? 
                 heroData.floatingCards[0].description.replace(/<[^>]*>/g, '') : 
@@ -126,12 +128,14 @@ function HeroSection({ data }) {
 
           {/* Custom Software Card */}
           <div className="floating-card absolute right-[-150px] top-0 w-80 glass-card p-8 rounded-[2.5rem] border border-gray-100 text-left shadow-2xl z-10">
-            <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-inner ring-1 ring-gray-100">
-              💻
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-14 h-14 flex-shrink-0 bg-gray-50 rounded-2xl flex items-center justify-center text-3xl shadow-inner ring-1 ring-gray-100">
+                💻
+              </div>
+              <h3 className="text-gray-900 font-bold text-xl">
+                {heroData.floatingCards && heroData.floatingCards[1] ? heroData.floatingCards[1].heading : "Custom Software"}
+              </h3>
             </div>
-            <h3 className="text-gray-900 font-bold text-xl mb-4 flex items-center justify-between">
-              {heroData.floatingCards && heroData.floatingCards[1] ? heroData.floatingCards[1].heading : "Custom Software"}{" "}
-            </h3>
             <p className="text-gray-500 text-[13px] leading-relaxed font-medium">
               {heroData.floatingCards && heroData.floatingCards[1] ? 
                 heroData.floatingCards[1].description.replace(/<[^>]*>/g, '') : 
