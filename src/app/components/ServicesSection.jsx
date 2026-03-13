@@ -86,7 +86,7 @@ function ServicesSection({ data }) {
               <div className="absolute inset-0 rounded-3xl bg-white group-hover:opacity-70 transition-opacity duration-300 hidden md:block"></div>
 
               {/* Content */}
-              <div className="relative flex flex-col">
+              <div className="relative flex flex-col md:items-start items-center md:text-left text-center">
                 {/* Icon/Image and Title side by side */}
                 <div className="flex items-center gap-4 mb-6">
                   {/* Icon/Image - Display featured image or fallback to icon */}

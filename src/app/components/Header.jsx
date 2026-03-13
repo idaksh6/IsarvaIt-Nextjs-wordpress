@@ -88,14 +88,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" prefetch={true} className="flex items-center">
-          <Image
-            src="/isarva-logo.png"
-            alt="Isarva Logo"
-            width={160}
-            height={40}
-            priority
-            className="w-auto h-auto object-contain drop-shadow-sm"
-          />
+        <img src="/isarva-logo.png" className="w-auto h-auto object-contain drop-shadow-sm" alt="" />
         </Link>
 
         {/* Desktop Navigation */}
