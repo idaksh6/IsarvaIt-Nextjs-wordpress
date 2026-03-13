@@ -1,4 +1,5 @@
 import HeroSection from "./components/HeroSection";
+import AboutSection from "./components/AboutSection";
 import ClientsSection from "./components/ClientsSection";
 import ServicesSection from "./components/ServicesSection";
 import ProductDesktop from "./components/ProductDesktop";
@@ -27,6 +28,7 @@ export default async function HomePage() {
     <div className="relative min-h-screen">
       <main>
         <HeroSection data={heroData} />
+        {/* <AboutSection /> */}
         <ClientsSection data={techStackData} />
         <ServicesSection data={servicesData} />
         <ProductDesktop />

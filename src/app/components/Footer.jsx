@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -15,26 +16,16 @@ export default function Footer() {
         {/* Top Section: Brand & Description */}
         <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-20 pb-16 border-b border-white/5">
           <div className="max-w-2xl ">
-            <Link
-              href="/"
-              className="flex items-center lg:justify-start justify-center"
-            >
-              <img
-                src="/Screenshot_2.png"
-                alt="Isarva Logo"
-                className="w-[100px]  h-auto object-contain drop-shadow-sm"
-              />
-              <span
-                className="font-bold text-[46px] tracking-tight text-white"
-                style={{
-                  height: "39px",
-                  color: "#38984b",
-                  marginLeft: "-32px",
-                }}
-              >
-                Isarva
-              </span>
-            </Link>
+             <Link href="/" prefetch={true} className="flex items-center">
+          <Image
+            src="/isarva-logo.png"
+            alt="Isarva Logo"
+            width={160}
+            height={40}
+            priority
+            className="w-auto h-auto object-contain drop-shadow-sm"
+          />
+        </Link>
             <p className="text-white/60 text-lg md:text-xl leading-relaxed font-medium max-w-xl mt-3">
               We design and deliver precision-engineered technology solutions
               that enable global enterprises and startups to innovate, scale,

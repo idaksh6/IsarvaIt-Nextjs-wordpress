@@ -6,13 +6,14 @@ import { memo } from "react";
 
 // Server-side safe HTML entity decoder
 function decodeHTMLEntities(text) {
-  if (!text) return '';
-  return text.replace(/&#038;/g, '&')
-             .replace(/&amp;/g, '&')
-             .replace(/&lt;/g, '<')
-             .replace(/&gt;/g, '>')
-             .replace(/&quot;/g, '"')
-             .replace(/&#039;/g, "'");
+  if (!text) return "";
+  return text
+    .replace(/&#038;/g, "&")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#039;/g, "'");
 }
 
 function ServicesSection({ data }) {
@@ -31,7 +32,10 @@ function ServicesSection({ data }) {
       }}
     >
       {/* Premium Background Layers - Optimized */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none" style={{ transform: "translateZ(0)" }}>
+      <div
+        className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none"
+        style={{ transform: "translateZ(0)" }}
+      >
         {/* 1. Large Subtle Technical Mesh */}
         <div className="absolute inset-0 bg-mesh-green opacity-40"></div>
 
@@ -59,7 +63,7 @@ function ServicesSection({ data }) {
             </h2>
           )}
           {description && (
-            <div 
+            <div
               className="text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto prose prose-slate"
               dangerouslySetInnerHTML={{ __html: description }}
             />
@@ -79,55 +83,58 @@ function ServicesSection({ data }) {
               }}
             >
               {/* Glass Effect Inner Glow - Desktop only */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-100 group-hover:opacity-70 transition-opacity duration-300 hidden md:block"></div>
+              <div className="absolute inset-0 rounded-3xl bg-white group-hover:opacity-70 transition-opacity duration-300 hidden md:block"></div>
 
               {/* Content */}
-              <div className="relative flex  lg:text-left text-center flex-col lg:justify-start justify-center lg:items-start items-center">
-                {/* Icon/Image - Display featured image or fallback to icon */}
-                <div className="service-icon w-16 h-16 rounded-2xl  border border-emerald-300 md:from-emerald-400/60 md:to-green-500/60 md:backdrop-blur-sm md:border-white/50 flex items-center justify-center mb-6 group-hover:from-emerald-500/70 group-hover:to-green-600/70 transition-all duration-300 shadow-lg overflow-hidden">
-                  {service.featuredImage ? (
-                    <img
-                      src={service.featuredImage}
-                      alt={`${service.title} icon`}
-                      className="w-full h-full object-contain rounded-xl"
-                      loading="lazy"
-                      onError={(e) => {
-                        // Fallback to emoji if image fails to load
-                        e.target.style.display = 'none';
-                        e.target.nextSibling.style.display = 'flex';
-                      }}
-                    />
-                  ) : null}
-                  <span 
-                    className={`text-4xl ${service.featuredImage ? 'hidden' : 'block'}`}
-                    style={{ display: service.featuredImage ? 'none' : 'flex' }}
-                  >
-                    {service.icon || "🔧"}
-                  </span>
-                </div>
+              <div className="relative flex flex-col">
+                {/* Icon/Image and Title side by side */}
+                <div className="flex items-center gap-4 mb-6">
+                  {/* Icon/Image - Display featured image or fallback to icon */}
+                  <div className="service-icon w-16 h-16 flex-shrink-0 rounded-2xl border border-emerald-300 md:from-emerald-400/60 md:to-green-500/60 md:backdrop-blur-sm md:border-white/50 flex items-center justify-center group-hover:from-emerald-500/70 group-hover:to-green-600/70 transition-all duration-300 shadow-lg overflow-hidden">
+                    {service.featuredImage ? (
+                      <img
+                        src={service.featuredImage}
+                        alt={`${service.title} icon`}
+                        className="w-full h-full object-contain rounded-xl"
+                        loading="lazy"
+                        onError={(e) => {
+                          // Fallback to emoji if image fails to load
+                          e.target.style.display = "none";
+                          e.target.nextSibling.style.display = "flex";
+                        }}
+                      />
+                    ) : null}
+                    <span
+                      className={`text-4xl ${service.featuredImage ? "hidden" : "block"}`}
+                      style={{ display: service.featuredImage ? "none" : "flex" }}
+                    >
+                      {service.icon || "🔧"}
+                    </span>
+                  </div>
 
-                {/* Title */}
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-emerald-700 transition-colors duration-300">
-                  {decodeHTMLEntities(service.title)}
-                </h3>
+                  {/* Title */}
+                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-emerald-700 transition-colors duration-300">
+                    {decodeHTMLEntities(service.title)}
+                  </h3>
+                </div>
 
                 {/* Description */}
                 <div
-                  className="text-gray-700  leading-relaxed prose prose-slate max-w-none"
+                  className="text-gray-700 leading-relaxed prose prose-slate max-w-none mb-4"
                   dangerouslySetInnerHTML={{ __html: service.description }}
                 />
 
                 {/* Technology Used - Handle both HTML and array formats */}
                 {service.technology_used && (
                   <div className="space-y-2.5">
-                    {typeof service.technology_used === 'string' ? (
+                    {typeof service.technology_used === "string" ? (
                       <div
                         className="prose prose-slate max-w-none [&>ul]:list-none [&>ul]:space-y-2.5 [&>ul>li]:flex [&>ul>li]:items-center [&>ul>li]:gap-2 [&>ul>li]:text-sm [&>ul>li]:text-gray-600"
-                        dangerouslySetInnerHTML={{ 
+                        dangerouslySetInnerHTML={{
                           __html: service.technology_used.replace(
-                            /<li>/g, 
-                            '<li><svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>'
-                          )
+                            /<li>/g,
+                            '<li><svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>',
+                          ),
                         }}
                       />
                     ) : Array.isArray(service.technology_used) ? (
@@ -157,29 +164,31 @@ function ServicesSection({ data }) {
                 )}
 
                 {/* Fallback to features for default services */}
-                {!service.technology_used && service.features && service.features.length > 0 && (
-                  <ul className="space-y-2.5">
-                    {service.features.map((feature, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-center gap-2 text-sm text-gray-600"
-                      >
-                        <svg
-                          className="w-4 h-4 text-emerald-600 flex-shrink-0"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
+                {!service.technology_used &&
+                  service.features &&
+                  service.features.length > 0 && (
+                    <ul className="space-y-2.5">
+                      {service.features.map((feature, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-center gap-2 text-sm text-gray-600"
                         >
-                          <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                          <svg
+                            className="w-4 h-4 text-emerald-600 flex-shrink-0"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
               </div>
             </div>
           ))}

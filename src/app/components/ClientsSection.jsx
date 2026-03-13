@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 export default function ClientsSection({ data }) {
   // Use WordPress data only, no fallback to hardcoded brands
   const techStackImages = data?.images || [];
-  const displayBrands = techStackImages.map(image => ({
+  const displayBrands = techStackImages.map((image) => ({
     name: image.title || image.alt,
-    icon: image.url
+    icon: image.url,
   }));
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden bg-gradient-to-br from-green-100 via-white to-green-100">
       {/* Radiant Glow under the row (Cool Blues/Purples to match professional vibe) */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[150px] bg-indigo-500/10 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[150px] rounded-full pointer-events-none" />
 
       <div className="max-w-9xl mx-auto px-6 text-center relative z-10">
         <p className="text-black text-sm font-bold uppercase tracking-[0.2em] mb-16">

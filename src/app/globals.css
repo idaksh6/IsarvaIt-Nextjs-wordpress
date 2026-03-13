@@ -97,6 +97,41 @@ section {
   animation: sectionReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+/* ── About section: heartbeat glow animations ── */
+/* Outer ring: slow, wide pulse */
+@keyframes glowPulseOuter {
+  0%,100% { opacity: 0.5; transform: scale(1);   }
+  50%      { opacity: 1;   transform: scale(1.08); }
+}
+
+/* Mid ring: double-beat (like a real heartbeat) */
+@keyframes glowPulseMid {
+  0%,100% { opacity: 0.4; transform: scale(1);    }
+  15%     { opacity: 1;   transform: scale(1.06);  }
+  30%     { opacity: 0.5; transform: scale(1);     }
+  45%     { opacity: 0.9; transform: scale(1.04);  }
+  60%     { opacity: 0.4; transform: scale(1);     }
+}
+
+/* Inner tight glow: quick sharp flash */
+@keyframes glowPulseInner {
+  0%,100% { opacity: 0.6; transform: scale(1);    }
+  20%     { opacity: 1;   transform: scale(1.05);  }
+  40%     { opacity: 0.5; transform: scale(1);     }
+  55%     { opacity: 1;   transform: scale(1.03);  }
+  70%     { opacity: 0.6; transform: scale(1);     }
+}
+
+.glow-pulse-outer {
+  animation: glowPulseOuter 3.2s ease-in-out infinite;
+}
+.glow-pulse-mid {
+  animation: glowPulseMid 3.2s ease-in-out infinite 0.15s;
+}
+.glow-pulse-inner {
+  animation: glowPulseInner 3.2s ease-in-out infinite 0.3s;
+}
+
 /* Slow down native momentum scroll on macOS / iOS for a heavier, premium feel */
 * {
   -webkit-overflow-scrolling: touch;
