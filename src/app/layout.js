@@ -29,6 +29,11 @@ export const metadata = {
   description:
     "We build stunning, high-performance websites, web apps, and eCommerce platforms that drive real business results. Next.js, React, WordPress specialists.",
   keywords: "web design agency, web development, Next.js, eCommerce, WordPress, React",
+  icons: {
+    icon: "/Favicon.png",
+    shortcut: "/Favicon.png",
+    apple: "/Favicon.png",
+  },
   openGraph: {
     title: "NexifyStudio — Premium Web Design & Development Agency",
     description: "We build stunning websites and web apps that drive results.",
