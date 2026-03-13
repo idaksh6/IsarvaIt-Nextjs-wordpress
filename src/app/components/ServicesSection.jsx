@@ -82,7 +82,7 @@ function ServicesSection({ data }) {
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-100 group-hover:opacity-70 transition-opacity duration-300 hidden md:block"></div>
 
               {/* Content */}
-              <div className="relative">
+              <div className="relative flex  lg:text-left text-center flex-col lg:justify-start justify-center lg:items-start items-center">
                 {/* Icon/Image - Display featured image or fallback to icon */}
                 <div className="service-icon w-16 h-16 rounded-2xl  border border-emerald-300 md:from-emerald-400/60 md:to-green-500/60 md:backdrop-blur-sm md:border-white/50 flex items-center justify-center mb-6 group-hover:from-emerald-500/70 group-hover:to-green-600/70 transition-all duration-300 shadow-lg overflow-hidden">
                   {service.featuredImage ? (
