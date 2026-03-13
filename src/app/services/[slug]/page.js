@@ -1,34 +1,14 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getServiceBySlug, getAllServiceSlugs, servicesData } from "../../lib/data/services-data";
+import ContactFormModal from "../../components/ContactFormModal";
 
-export async function generateStaticParams() {
-  return getAllServiceSlugs().map((slug) => ({
-    slug: slug,
-  }));
-}
-
-// Force static rendering for all service pages
-export const dynamic = 'force-static';
-
-export async function generateMetadata({ params }) {
-  const { slug } = await params;
-  const service = getServiceBySlug(slug);
-  
-  if (!service) {
-    return {
-      title: 'Service Not Found',
-    };
-  }
-
-  return {
-    title: `${service.title} - Isarva`,
-    description: service.description,
-  };
-}
-
-export default async function ServiceDetailPage({ params }) {
-  const { slug } = await params;
+export default function ServiceDetailPage({ params }) {
+  const { slug } = params;
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const service = getServiceBySlug(slug);
 
   if (!service) {
@@ -89,12 +69,11 @@ export default async function ServiceDetailPage({ params }) {
                 {service.description}
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/contact"
-                  prefetch={true}
-                  className="press-illusion-btn bg-green-400 text-black font-bold px-8 py-4 text-lg items-center space-x-2 inline-flex"
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="press-illusion-btn bg-green-400 text-white font-bold px-8 py-4 text-lg items-center space-x-2 inline-flex"
                 >
-                  <span>Get Started</span>
+                  <span>Request Demo</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -108,7 +87,7 @@ export default async function ServiceDetailPage({ params }) {
                       clipRule="evenodd"
                     ></path>
                   </svg>
-                </Link>
+                </button>
                 <Link
                   href="#features"
                   className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-gray-700 bg-white/80 backdrop-blur-md border-2 border-gray-200 rounded-lg hover:border-emerald-600 hover:text-emerald-700 transition-all duration-200 shadow-lg hover:shadow-xl"
@@ -344,6 +323,15 @@ export default async function ServiceDetailPage({ params }) {
           </div>
         </div>
       </section>
+      
+      {/* Contact Form Modal */}
+      <ContactFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        preSelectedType="Service"
+        preSelectedItem={service.title}
+        allItems={servicesData}
+      />
     </div>
   );
 }

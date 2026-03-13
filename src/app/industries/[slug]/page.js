@@ -1,34 +1,14 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getIndustryBySlug, getAllIndustrySlugs, industriesData } from "../../lib/data/industries-data";
+import ContactFormModal from "../../components/ContactFormModal";
 
-export async function generateStaticParams() {
-  return getAllIndustrySlugs().map((slug) => ({
-    slug: slug,
-  }));
-}
-
-// Force static rendering for all industry pages
-export const dynamic = 'force-static';
-
-export async function generateMetadata({ params }) {
-  const { slug } = await params;
-  const industry = getIndustryBySlug(slug);
-  
-  if (!industry) {
-    return {
-      title: 'Industry Not Found',
-    };
-  }
-
-  return {
-    title: `${industry.title} Solutions - Isarva`,
-    description: industry.description,
-  };
-}
-
-export default async function IndustryDetailPage({ params }) {
-  const { slug } = await params;
+export default function IndustryDetailPage({ params }) {
+  const { slug } = params;
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const industry = getIndustryBySlug(slug);
 
   if (!industry) {
@@ -89,12 +69,11 @@ export default async function IndustryDetailPage({ params }) {
                 {industry.description}
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/contact"
-                  prefetch={true}
-                  className="press-illusion-btn bg-gradient-to-r from-white to-white/90 text-gray-900 font-bold px-8 py-4 text-lg items-center space-x-2 inline-flex border-2 border-gray-200 hover:border-gray-300 shadow-lg"
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="press-illusion-btn bg-green-400 text-white font-bold px-8 py-4 text-lg items-center space-x-2 inline-flex"
                 >
-                  <span>Get Started</span>
+                  <span>Request Demo</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -108,7 +87,7 @@ export default async function IndustryDetailPage({ params }) {
                       clipRule="evenodd"
                     ></path>
                   </svg>
-                </Link>
+                </button>
                 <Link
                   href="#challenges"
                   className={`inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-${industry.accentColor}-700 bg-white/80 backdrop-blur-md border-2 border-${industry.accentColor}-200 rounded-lg hover:border-${industry.accentColor}-300 transition-all duration-200 shadow-lg hover:shadow-xl`}
@@ -387,6 +366,15 @@ export default async function IndustryDetailPage({ params }) {
           </div>
         </div>
       </section>
+      
+      {/* Contact Form Modal */}
+      <ContactFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        preSelectedType="Industry"
+        preSelectedItem={industry.title}
+        allItems={industriesData}
+      />
     </div>
   );
 }

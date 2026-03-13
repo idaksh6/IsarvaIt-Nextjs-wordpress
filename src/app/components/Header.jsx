@@ -36,13 +36,27 @@ const industriesData = [
   { label: "BPO Services – ITES", href: "/industries/bpo-services-ites", icon: "💼" },
 ];
 
+const productsData = [
+  { label: "HRMS Software", href: "/products/hrms-software", icon: "👥" },
+  { label: "WMS Software", href: "/products/wms-software", icon: "📦" },
+  { label: "WooCommerce Development", href: "/products/woocommerce-development", icon: "🛒" },
+  { label: "Petro Care", href: "/products/petro-care", icon: "⛽" },
+  { label: "Retail Billing Software", href: "/products/retail-billing-software", icon: "🏪" },
+  { label: "Retail Billing Multi Branch", href: "/products/retail-billing-multi-branch", icon: "🏬" },
+  { label: "Document Management System", href: "/products/document-management-system", icon: "📄" },
+  { label: "Time Attendance System", href: "/products/time-attendance-system", icon: "⏰" },
+  { label: "Ticket Management Software", href: "/products/ticket-management-software", icon: "🎫" },
+];
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const [isMobileIndustriesOpen, setIsMobileIndustriesOpen] = useState(false);
+  const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -279,14 +293,96 @@ export default function Header() {
             )}
           </div>
 
-          {/* Products Link */}
-          <Link
-            href="/products"
-            prefetch={true}
-            className="text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600"
+          {/* Products Mega Menu Trigger */}
+          <div
+            className="relative"
+            onMouseEnter={() => setIsProductsOpen(true)}
+            onMouseLeave={() => setIsProductsOpen(false)}
           >
-            Products
-          </Link>
+            <Link
+              href="/products"
+              prefetch={true}
+              className="text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1"
+            >
+              Products
+              <svg
+                className={`w-4 h-4 transition-transform duration-200 ${
+                  isProductsOpen ? "rotate-180" : ""
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </Link>
+
+            {/* Products Mega Menu Dropdown */}
+            {isProductsOpen && (
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[800px]">
+                <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-100 p-8">
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      Our Products
+                    </h3>
+                    <p className="text-gray-600">
+                      Innovative software solutions for your business
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-4">
+                    {productsData.map((product) => (
+                      <Link
+                        key={product.href}
+                        href={product.href}
+                        prefetch={true}
+                        onClick={() => setIsProductsOpen(false)}
+                        className="group flex items-start gap-3 p-4 rounded-xl hover:bg-violet-50 transition-all duration-200"
+                      >
+                        <span className="text-2xl mt-0.5 group-hover:scale-110 transition-transform duration-200">
+                          {product.icon}
+                        </span>
+                        <div>
+                          <h4 className="font-semibold text-gray-900 group-hover:text-violet-600 transition-colors text-sm">
+                            {product.label}
+                          </h4>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+
+                  <div className="mt-6 pt-6 border-t border-gray-200">
+                    <Link
+                      href="/products"
+                      prefetch={true}
+                      onClick={() => setIsProductsOpen(false)}
+                      className="inline-flex items-center gap-2 text-violet-600 font-semibold hover:gap-3 transition-all duration-200"
+                    >
+                      View All Products
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -485,32 +581,55 @@ export default function Header() {
                 )}
               </div>
 
-              {/* Products Link in Mobile */}
-              <Link
-                href="/products"
-                prefetch={true}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center gap-4 p-4 rounded-2xl text-gray-700 hover:bg-violet-50 hover:text-violet-700 active:bg-violet-100 transition-all duration-200 group"
-              >
-                <div className="flex-1">
-                  <span className="font-semibold text-base">
-                    Products
-                  </span>
-                </div>
-                <svg
-                  className="w-5 h-5 text-gray-400 group-hover:text-violet-600 transition-colors duration-200"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+              {/* Products Accordion in Mobile */}
+              <div className="border border-gray-200 rounded-2xl overflow-hidden">
+                <button
+                  onClick={() => setIsMobileProductsOpen(!isMobileProductsOpen)}
+                  className="flex items-center justify-between w-full p-4 text-gray-700 hover:bg-violet-50 transition-all duration-200"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </Link>
+                  <span className="font-semibold text-base">Products</span>
+                  <svg
+                    className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${
+                      isMobileProductsOpen ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+
+                {isMobileProductsOpen && (
+                  <div className="bg-gray-50 p-3 space-y-1">
+                    <Link
+                      href="/products"
+                      prefetch={true}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="block p-3 rounded-xl text-violet-600 hover:bg-white transition-all duration-200 font-semibold text-sm"
+                    >
+                      View All Products →
+                    </Link>
+                    {productsData.map((product) => (
+                      <Link
+                        key={product.href}
+                        href={product.href}
+                        prefetch={true}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="flex items-center gap-3 p-3 rounded-xl text-gray-700 hover:bg-white transition-all duration-200"
+                      >
+                        <span className="text-lg">{product.icon}</span>
+                        <span className="text-sm">{product.label}</span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* CTA Section */}
