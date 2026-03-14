@@ -1,0 +1,123 @@
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import AISummary from "../../components/blog/AISummary";
+import AuthorCard from "../../components/blog/AuthorCard";
+import NewsletterSection from "../../components/blog/NewsletterSection";
+import { getPostBySlug, getRelatedPosts } from "../../lib/services/blog-service";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
+  
+  if (!post) return { title: "Post Not Found" };
+
+  return {
+    title: `${post.title} | Isarva Blog`,
+    description: post.excerpt,
+  };
+}
+
+export default async function BlogPostPage({ params }) {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
+
+  if (!post) {
+    notFound();
+  }
+
+  const relatedPosts = await getRelatedPosts(post.categoryId, post.id);
+
+  return (
+    <div className="min-h-screen bg-white">
+      <Header />
+
+      <main className="pt-32">
+        {/* Article Header */}
+        <header className="max-w-4xl mx-auto px-6 mb-16">
+            <Link href="/blog" className="inline-flex items-center gap-2 text-emerald-600 font-black text-xs uppercase tracking-widest mb-10 hover:gap-3 transition-all">
+                <svg className="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+                Back to Blog
+            </Link>
+            <div className="flex items-center gap-3 text-xs font-black text-gray-400 uppercase tracking-widest mb-6">
+                <span>{post.categoryName}</span>
+                <span className="w-1 h-1 bg-gray-200 rounded-full"></span>
+                <span>{post.date}</span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-black text-gray-900 leading-tight mb-8 tracking-tighter">
+                {post.title}
+            </h1>
+            
+            {/* AI Summary Tool & Metadata */}
+            <AISummary postTitle={post.title} date={post.date} readTime={post.readTime} />
+            
+            <div className="flex items-center gap-4 mt-8">
+                <img src={post.author.avatar} className="w-12 h-12 rounded-full ring-2 ring-emerald-50" />
+                <div>
+                    <h4 className="font-bold text-gray-900">{post.author.name}</h4>
+                    <p className="text-xs text-gray-500 font-medium uppercase tracking-widest">{post.author.role}</p>
+                </div>
+            </div>
+        </header>
+
+        {/* Featured Image */}
+        <div className="max-w-6xl mx-auto px-6 mb-20">
+            <div className="aspect-[21/9] rounded-[3rem] overflow-hidden shadow-2xl">
+                <img src={post.featuredImage} className="w-full h-full object-cover" alt={post.title} />
+            </div>
+        </div>
+
+        {/* Article Body */}
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 pb-24">
+            <div className="lg:col-span-8">
+                <div 
+                    className="prose prose-lg prose-emerald max-w-none text-black prose-headings:font-black prose-headings:tracking-tighter prose-p:text-gray-600 prose-p:leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: post.content }}
+                />
+
+                <AuthorCard author={post.author} />
+            </div>
+
+            {/* Sidebar / Related Posts */}
+            <aside className="lg:col-span-4 space-y-12">
+                <div className="sticky top-32">
+                    <h3 className="text-xl font-black text-gray-900 uppercase tracking-tight mb-8 pl-4 border-l-4 border-emerald-500">
+                        Related Articles
+                    </h3>
+                    <div className="space-y-8">
+                        {relatedPosts.map(post => (
+                            <Link key={post.id} href={`/blog/${post.slug}`} className="group block">
+                                <div className="aspect-video rounded-2xl overflow-hidden mb-4">
+                                    <img src={post.featuredImage} className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                                </div>
+                                <h4 className="text-lg font-bold text-gray-900 group-hover:text-emerald-600 transition-colors leading-tight line-clamp-2">
+                                    {post.title}
+                                </h4>
+                                <p className="text-xs text-gray-400 mt-2 font-bold uppercase tracking-widest">{post.date}</p>
+                            </Link>
+                        ))}
+                    </div>
+
+                    <div className="mt-12 p-8 bg-emerald-600 rounded-[2rem] text-white">
+                        <h4 className="text-2xl font-black mb-4">Ready to Grow?</h4>
+                        <p className="text-emerald-100 text-sm mb-6 leading-relaxed">
+                            Discover why millions of businesses trust Isarva for their digital infrastructure.
+                        </p>
+                        <Link href="/contact" className="block text-center py-4 bg-white text-emerald-600 font-black rounded-xl hover:bg-emerald-50 transition-colors">
+                            GET STARTED
+                        </Link>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <NewsletterSection />
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
