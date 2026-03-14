@@ -7,7 +7,7 @@ export default function BlogSection({ posts }) {
   if (!posts || posts.length === 0) return null;
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-premium-noise gradient-bg-green">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
@@ -15,23 +15,35 @@ export default function BlogSection({ posts }) {
               Latest From <span className="text-green-500">Our Blog</span>
             </h2>
             <p className="text-xl text-gray-600">
-              Stay updated with the latest in web hosting, technology, and success stories from the Isarva team.
+              Stay updated with the latest in web hosting, technology, and
+              success stories from the Isarva team.
             </p>
           </div>
-          <Link 
-            href="/blog" 
-            className="group flex items-center gap-2 text-lg font-bold text-gray-900 hover:text-green-500 transition-colors"
+          <Link
+            href="/blog"
+            prefetch={true}
+            className="press-illusion-btn bg-green-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 hidden md:flex"
           >
-            View More Blog
-            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            <span>View More Blog</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 9"
+              className="h-2 w-4"
+            >
+              <path
+                fill="currentColor"
+                fillRule="evenodd"
+                d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+                clipRule="evenodd"
+              ></path>
             </svg>
           </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {posts.map((post, index) => (
-            <motion.article 
+            <motion.article
               key={post.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -41,8 +53,8 @@ export default function BlogSection({ posts }) {
             >
               <Link href={`/blog/${post.slug}`}>
                 <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-6 bg-gray-100">
-                  <img 
-                    src={post.featuredImage} 
+                  <img
+                    src={post.featuredImage}
                     alt={post.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />

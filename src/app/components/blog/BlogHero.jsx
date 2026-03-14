@@ -20,10 +20,10 @@ export default function BlogHero() {
   };
 
   return (
-    <section className="bg-white pt-32 pb-16 relative overflow-hidden">
+    <section className="bg-premium-noise blog-list-gradient pt-40 pb-16 relative overflow-hidden">
       {/* Decorative background elements */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-50/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4"></div>
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/4"></div>
+      <div className="floating-blob w-[500px] h-[500px] bg-emerald-100/40 top-0 right-0 -translate-y-1/2 translate-x-1/4"></div>
+      <div className="floating-blob w-[400px] h-[400px] bg-green-100/40 bottom-0 left-0 translate-y-1/2 -translate-x-1/4"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center text-center">
@@ -65,8 +65,8 @@ export default function BlogHero() {
               />
             </svg>
           </div>
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             className="absolute right-2 top-1/2 -translate-y-1/2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-2.5 rounded-[14px] transition-all duration-300 shadow-lg shadow-emerald-200 active:scale-95"
           >
             Search

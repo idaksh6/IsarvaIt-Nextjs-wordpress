@@ -28,7 +28,7 @@ export default async function HomePage() {
   const blogPosts = await getBlogPosts({ perPage: 4 });
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen bg-premium-noise gradient-bg-green">
       <main>
         <HeroSection data={heroData} />
         {/* <AboutSection /> */}

@@ -94,7 +94,7 @@ const posts = [
       </ul>
     `,
     date: 'March 8, 2026',
-    featuredImage: 'https://images.unsplash.com/photo-1664575185263-45ad122295eb?auto=format&fit=crop&q=80&w=1200',
+    featuredImage: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&q=80&w=1200',
     categoryId: 1,
     categoryName: 'Product Updates',
     categorySlug: 'product-updates',

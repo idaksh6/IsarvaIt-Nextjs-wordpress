@@ -47,7 +47,10 @@ export default async function BlogPage({ searchParams }) {
   else if (category && category !== "all") gridTitle = `${category.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')} Articles`;
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-premium-noise blog-list-gradient relative overflow-hidden">
+      <div className="floating-blob w-96 h-96 bg-emerald-100/30 top-[-10%] left-[-5%]"></div>
+      <div className="floating-blob w-80 h-80 bg-green-100/30 bottom-[20%] right-[-5%] animation-delay-2000"></div>
+      
       <Header />
       
       <main>
