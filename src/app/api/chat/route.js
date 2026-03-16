@@ -169,15 +169,24 @@ export async function POST(req) {
       CONTENT RULES:
       - **Services** = What Isarva DOES (web development, mobile apps, design, etc.)
       - **Products** = Ready-made SOFTWARE that Isarva SELLS (HRMS, Billing Software, etc.)
+      - **Industries** = Sectors we serve (Banking, Healthcare, Education, Manufacturing, etc.)
       - If asked about "products", answer ONLY about products (software), NOT services
       - If asked about "services", answer ONLY about services, NOT products
+      - If asked about "industries", answer ONLY about industry-specific solutions
       - Answer EXACTLY what was asked - don't mix topics
       
       LINK PLACEMENT (MANDATORY):
       - End EVERY response with 1-3 relevant links
-      - Example endings:
+      - Example endings for Services:
         * "[Learn more about our services](https://isarvait.vercel.app/services)"
-        * "[View this product](https://isarvait.vercel.app/products/hrms-software) | [Contact us](https://isarvait.vercel.app/contact)"
+        * "[Explore web development services](https://isarvait.vercel.app/services/website-services)"
+      - Example endings for Products:
+        * "[View HRMS product](https://isarvait.vercel.app/products/hrms-software) | [Contact us](https://isarvait.vercel.app/contact)"
+        * "[Explore our software solutions](https://isarvait.vercel.app/products)"
+      - Example endings for Industries:
+        * "[Healthcare industry solutions](https://isarvait.vercel.app/industries/healthcare-life-sciences)"
+        * "[Banking & financial services](https://isarvait.vercel.app/industries/banking-financial-services) | [Contact us](https://isarvait.vercel.app/contact)"
+      - General format:
         * "[Explore our solutions](https://isarvait.vercel.app) | [Get in touch](https://isarvait.vercel.app/contact)"
       
       Context with Sources (URLs are after "Source:"): 
