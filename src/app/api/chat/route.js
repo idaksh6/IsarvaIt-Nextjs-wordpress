@@ -149,29 +149,43 @@ export async function POST(req) {
     const template = `
       You are Isarva AI, the official assistant for Isarva (a premium web design & development agency).
       Answer the user's question clearly and professionally based ONLY on the following context. 
-      If the information is not in the context, politely say that you don't have that specific information yet and suggest contacting the team.
       
-      IMPORTANT RESPONSE RULES:
+      CRITICAL REQUIREMENTS - MUST FOLLOW:
+      1. ALWAYS end your response with relevant source links
+      2. Use markdown format: [descriptive text](URL)
+      3. Extract URLs from the "Source:" lines in the context
+      4. Use descriptive link text like "Learn more about this service", "View product details", "Explore our solutions"
+      5. If no specific page URL is found, ALWAYS end with: "For more information, [contact us](https://isarvait.vercel.app/contact)"
+      6. NEVER show raw URLs - always format as clickable links with text
+      
+      FORMATTING RULES:
       - Keep responses CONCISE and to the point
       - Use **bold text** for headings and key points
       - Break content into short paragraphs
-      - Use bullet points (•) for lists - list items only, NO detailed explanations for each
+      - Use bullet points (•) for lists - list items only, NO detailed explanations
       - Maximum 3-4 sentences of explanation before lists
-      - Don't over-explain - users can ask follow-up questions if needed
       - Format like professional, brief documentation
       
-      CRITICAL DISTINCTIONS:
+      CONTENT RULES:
       - **Services** = What Isarva DOES (web development, mobile apps, design, etc.)
       - **Products** = Ready-made SOFTWARE that Isarva SELLS (HRMS, Billing Software, etc.)
       - If asked about "products", answer ONLY about products (software), NOT services
       - If asked about "services", answer ONLY about services, NOT products
-      - Answer EXACTLY what was asked - don't mix or combine topics
+      - Answer EXACTLY what was asked - don't mix topics
       
-      Context: {context}
+      LINK PLACEMENT (MANDATORY):
+      - End EVERY response with 1-3 relevant links
+      - Example endings:
+        * "[Learn more about our services](https://isarvait.vercel.app/services)"
+        * "[View this product](https://isarvait.vercel.app/products/hrms-software) | [Contact us](https://isarvait.vercel.app/contact)"
+        * "[Explore our solutions](https://isarvait.vercel.app) | [Get in touch](https://isarvait.vercel.app/contact)"
+      
+      Context with Sources (URLs are after "Source:"): 
+      {context}
       
       Question: {question}
       
-      Answer (brief, well-formatted, answer ONLY what was asked):
+      Answer (MUST include relevant links at the end):
     `;
 
     const prompt = PromptTemplate.fromTemplate(template);
@@ -179,7 +193,13 @@ export async function POST(req) {
     // 4. Create RAG Chain
     const chain = RunnableSequence.from([
       {
-        context: retriever.pipe((docs) => docs.map((d) => d.pageContent).join('\n')),
+        context: retriever.pipe((docs) => {
+          // Include both content and source URLs
+          return docs.map((d) => {
+            const sourceUrl = d.metadata?.page_url || d.metadata?.source || '';
+            return `Content: ${d.pageContent}\nSource: ${sourceUrl}`;
+          }).join('\n\n---\n\n');
+        }),
         question: new RunnablePassthrough(),
       },
       prompt,

@@ -102,6 +102,47 @@ export function FormattedMessage({ content }) {
   };
 
   const formatInlineStyles = (text) => {
+    // First, parse markdown links [text](url)
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    const elements = [];
+    let lastIndex = 0;
+    let match;
+
+    while ((match = linkRegex.exec(text)) !== null) {
+      // Add text before the link
+      if (match.index > lastIndex) {
+        const beforeText = text.substring(lastIndex, match.index);
+        elements.push(...formatBoldText(beforeText));
+      }
+
+      // Add the link
+      const linkText = match[1];
+      const linkUrl = match[2];
+      elements.push(
+        <a
+          key={`link-${match.index}`}
+          href={linkUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-400 hover:text-blue-300 underline font-medium transition-colors"
+        >
+          {linkText}
+        </a>
+      );
+
+      lastIndex = match.index + match[0].length;
+    }
+
+    // Add remaining text after last link
+    if (lastIndex < text.length) {
+      const remainingText = text.substring(lastIndex);
+      elements.push(...formatBoldText(remainingText));
+    }
+
+    return elements.length > 0 ? elements : formatBoldText(text);
+  };
+
+  const formatBoldText = (text) => {
     // Split text by **bold** markers
     const parts = text.split(/(\*\*[^*]+\*\*)/g);
     
@@ -109,9 +150,9 @@ export function FormattedMessage({ content }) {
       // Check if this part is bold
       if (part.startsWith('**') && part.endsWith('**')) {
         const boldText = part.slice(2, -2);
-        return <strong key={index} className="font-bold text-white">{boldText}</strong>;
+        return <strong key={`bold-${index}`} className="font-bold text-white">{boldText}</strong>;
       }
-      return <span key={index}>{part}</span>;
+      return <span key={`text-${index}`}>{part}</span>;
     });
   };
 

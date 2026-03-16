@@ -2,35 +2,35 @@
   "greetings": [
     {
       "patterns": ["good morning"],
-      "response": "Good morning! ☀️ I'm Isarva AI, your digital assistant.\n\nHow can I help you today? I can assist with:\n\n• Web design & development services\n• Product information\n• Pricing details\n• Portfolio & case studies"
+      "response": "Good morning! ☀️ I'm Isarva AI, your digital assistant.\n\nHow can I help you today? I can assist with:\n\n• Web design & development services\n• Product information\n• Pricing details\n• Portfolio & case studies\n\nNeed personalized assistance? [Contact us](https://isarvait.vercel.app/contact)"
     },
     {
       "patterns": ["good afternoon"],
-      "response": "Good afternoon! 🌤️ I'm Isarva AI, your digital assistant.\n\nHow can I help you today? I can assist with:\n\n• Web design & development services\n• Product information\n• Pricing details\n• Portfolio & case studies"
+      "response": "Good afternoon! 🌤️ I'm Isarva AI, your digital assistant.\n\nHow can I help you today? I can assist with:\n\n• Web design & development services\n• Product information\n• Pricing details\n• Portfolio & case studies\n\nNeed personalized assistance? [Contact us](https://isarvait.vercel.app/contact)"
     },
     {
       "patterns": ["good evening"],
-      "response": "Good evening! 🌙 I'm Isarva AI, your digital assistant.\n\nHow can I help you today? I can assist with:\n\n• Web design & development services\n• Product information\n• Pricing details\n• Portfolio & case studies"
+      "response": "Good evening! 🌙 I'm Isarva AI, your digital assistant.\n\nHow can I help you today? I can assist with:\n\n• Web design & development services\n• Product information\n• Pricing details\n• Portfolio & case studies\n\nNeed personalized assistance? [Contact us](https://isarvait.vercel.app/contact)"
     },
     {
       "patterns": ["good night", "goodnight"],
-      "response": "Good night! 🌙✨\n\nIt was great chatting with you. Feel free to return anytime you have questions about Isarva.\n\nSweet dreams and have a restful night!"
+      "response": "Good night! 🌙✨\n\nIt was great chatting with you. Feel free to return anytime you have questions about Isarva.\n\nSweet dreams and have a restful night!\n\nFor more information: [Visit our website](https://isarvait.vercel.app)"
     },
     {
       "patterns": ["hi", "hello", "hey", "greetings", "hai"],
-      "response": "Hello! 👋 I'm Isarva AI, your digital assistant.\n\nI'm here to help you with:\n\n• Web design & development services\n• Product information\n• Pricing details\n• Portfolio & case studies\n\nWhat would you like to know?"
+      "response": "Hello! 👋 I'm Isarva AI, your digital assistant.\n\nI'm here to help you with:\n\n• Web design & development services\n• Product information\n• Pricing details\n• Portfolio & case studies\n\nWhat would you like to know?\n\nOr [contact us](https://isarvait.vercel.app/contact) directly for personalized assistance."
     },
     {
       "patterns": ["how are you", "how are you doing", "what's up", "wassup"],
-      "response": "I'm doing great, thank you for asking! 😊\n\nI'm here and ready to help you learn more about Isarva's services. What can I assist you with today?"
+      "response": "I'm doing great, thank you for asking! 😊\n\nI'm here and ready to help you learn more about Isarva's services. What can I assist you with today?\n\nPrefer talking to our team? [Contact us](https://isarvait.vercel.app/contact)"
     },
     {
       "patterns": ["thank you", "thanks", "appreciate it", "thank u"],
-      "response": "You're very welcome! 😊\n\nIf you have any more questions about Isarva's services, feel free to ask anytime!"
+      "response": "You're very welcome! 😊\n\nIf you have any more questions about Isarva's services, feel free to ask anytime!\n\nWant to discuss your project? [Get in touch with us](https://isarvait.vercel.app/contact)"
     },
     {
       "patterns": ["bye", "goodbye", "see you", "see ya", "gtg"],
-      "response": "Goodbye! 👋 It was great chatting with you.\n\nFeel free to return anytime you have questions about Isarva. Have a wonderful day!"
+      "response": "Goodbye! 👋 It was great chatting with you.\n\nFeel free to return anytime you have questions about Isarva. Have a wonderful day!\n\nStay connected: [Visit our website](https://isarvait.vercel.app) | [Contact us](https://isarvait.vercel.app/contact)"
     }
   ]
 }

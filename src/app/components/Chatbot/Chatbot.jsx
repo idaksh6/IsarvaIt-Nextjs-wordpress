@@ -26,7 +26,7 @@ const Chatbot = () => {
       id: Date.now(),
       role: "assistant",
       content:
-        "Hi there! I'm your Isarva AI assistant. I can help you with questions about our web design services, pricing, or past projects. What's on your mind?",
+        "Hi there! I'm your Isarva AI assistant. I can help you with questions about our web design services, pricing, or past projects.\n\nWhat's on your mind?\n\nPrefer to speak with our team? [Contact us](https://isarvait.vercel.app/contact)",
       timestamp: new Date().toISOString(),
     },
   ]);
