@@ -3,9 +3,21 @@
 import { useState } from "react";
 import Link from "next/link";
 import ContactFormModal from "../../components/ContactFormModal";
+import ProductDetailPremium from "../../components/products/ProductDetailPremium";
 
 export default function ProductDetailClient({ product, relatedProducts, allProducts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Use Premium View for HRMS Software
+  if (product.slug === 'hrms-software') {
+    return (
+      <ProductDetailPremium 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
 
   return (
     <>

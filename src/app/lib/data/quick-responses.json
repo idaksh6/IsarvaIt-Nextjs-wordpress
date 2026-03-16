@@ -1,0 +1,58 @@
+{
+  "greetings": [
+    {
+      "patterns": ["good morning"],
+      "response": "Good morning! ☀️ I'm Isarva AI, your digital assistant.\n\nHow can I help you today? I can assist with:\n\n• Web design & development services\n• Product information\n• Pricing details\n• Portfolio & case studies"
+    },
+    {
+      "patterns": ["good afternoon"],
+      "response": "Good afternoon! 🌤️ I'm Isarva AI, your digital assistant.\n\nHow can I help you today? I can assist with:\n\n• Web design & development services\n• Product information\n• Pricing details\n• Portfolio & case studies"
+    },
+    {
+      "patterns": ["good evening"],
+      "response": "Good evening! 🌙 I'm Isarva AI, your digital assistant.\n\nHow can I help you today? I can assist with:\n\n• Web design & development services\n• Product information\n• Pricing details\n• Portfolio & case studies"
+    },
+    {
+      "patterns": ["good night", "goodnight"],
+      "response": "Good night! 🌙✨\n\nIt was great chatting with you. Feel free to return anytime you have questions about Isarva.\n\nSweet dreams and have a restful night!"
+    },
+    {
+      "patterns": ["hi", "hello", "hey", "greetings", "hai"],
+      "response": "Hello! 👋 I'm Isarva AI, your digital assistant.\n\nI'm here to help you with:\n\n• Web design & development services\n• Product information\n• Pricing details\n• Portfolio & case studies\n\nWhat would you like to know?"
+    },
+    {
+      "patterns": ["how are you", "how are you doing", "what's up", "wassup"],
+      "response": "I'm doing great, thank you for asking! 😊\n\nI'm here and ready to help you learn more about Isarva's services. What can I assist you with today?"
+    },
+    {
+      "patterns": ["thank you", "thanks", "appreciate it", "thank u"],
+      "response": "You're very welcome! 😊\n\nIf you have any more questions about Isarva's services, feel free to ask anytime!"
+    },
+    {
+      "patterns": ["bye", "goodbye", "see you", "see ya", "gtg"],
+      "response": "Goodbye! 👋 It was great chatting with you.\n\nFeel free to return anytime you have questions about Isarva. Have a wonderful day!"
+    }
+  ],
+  "faqs": [
+    {
+      "patterns": ["what is isarva", "tell me about isarva", "who are you", "what do you do"],
+      "response": "**About Isarva**\n\nIsarva is a premium **digital transformation partner** specializing in:\n\n• **Web Design & Development** - Custom, high-performance websites\n• **Mobile Apps** - Native and cross-platform applications\n• **E-commerce Solutions** - Powerful online stores\n• **AI Tools** - Innovative solutions like AI Agent for WordPress\n• **Custom Software** - Tailored solutions for complex business needs\n\nWe've evolved from a hosting provider into a comprehensive growth partner helping businesses succeed in the digital landscape."
+    },
+    {
+      "patterns": ["what products", "tell me about products", "list products", "your products", "products you have", "show me products"],
+      "response": "**Isarva Products**\n\nWe offer ready-made software solutions:\n\n• **HRMS Software** - HR automation and employee management\n• **Petro Care** - Complete petrol bunk management system\n• **eCommerce Software** - Online store management platform\n• **Bill Soft** - Multi-branch billing and inventory system\n• **Retail Billing Software** - End-to-end retail billing\n\nThese are specialized software products designed for specific industries."
+    },
+    {
+      "patterns": ["what services", "tell me about services", "list services", "your services", "services you provide", "show me services"],
+      "response": "**Isarva Services**\n\nWe provide custom development services:\n\n• **React & Next.js Development** - Modern web applications\n• **WordPress Development** - CMS-based websites\n• **Laravel Development** - Robust backend solutions\n• **Mobile Apps** - iOS & Android applications\n• **Cloud Solutions** - AWS & Azure infrastructure\n• **UI/UX Design** - User research and design systems\n• **E-Commerce Development** - Custom online stores\n• **Maintenance & Support** - 24/7 monitoring\n\nThese are custom development services tailored to your needs."
+    },
+    {
+      "patterns": ["how can you help", "what can you help with", "what can you do"],
+      "response": "I can help you with:\n\n• **Services** - Learn about our web development, mobile apps, and e-commerce solutions\n• **Products** - Explore our HR, retail, logistics, and industry-specific software\n• **Pricing** - Get information about our packages and costs\n• **Portfolio** - View our past projects and success stories\n• **Contact** - Connect with our team for consultations\n\nWhat would you like to explore?"
+    },
+    {
+      "patterns": ["where are you located", "location", "address", "where is isarva"],
+      "response": "**Contact Isarva**\n\nFor specific location details and to get in touch with our team, please visit our contact page or website.\n\nYou can also ask me about our services, products, or pricing, and I'll be happy to help!"
+    }
+  ]
+}

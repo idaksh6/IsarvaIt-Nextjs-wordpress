@@ -10,8 +10,10 @@ export const productsData = [
     category: "Human Resources",
     icon: "👥",
     tagline: "Comprehensive HR Management Solution",
-    shortDescription: "Complete HRMS solution for employee management, payroll, attendance, and performance tracking.",
-    description: "Transform your HR operations with our comprehensive HRMS software. Manage employee lifecycle, payroll processing, attendance tracking, leave management, and performance evaluations all in one integrated platform.",
+    shortDescription:
+      "Complete HRMS solution for employee management, payroll, attendance, and performance tracking.",
+    description:
+      "Transform your HR operations with our comprehensive HRMS software. ",
     features: [
       "Employee Information Management",
       "Payroll Processing & Tax Compliance",
@@ -20,18 +22,24 @@ export const productsData = [
       "Recruitment & Onboarding",
       "Employee Self-Service Portal",
       "Reports & Analytics Dashboard",
-      "Mobile App for Employees"
+      "Mobile App for Employees",
     ],
-    technologies: ["React", "Node.js", "PostgreSQL", "Redis", "Cloud Infrastructure"],
+    technologies: [
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "Redis",
+      "Cloud Infrastructure",
+    ],
     benefits: [
       "Streamlined HR Operations",
       "Reduced Administrative Costs",
       "Improved Employee Satisfaction",
       "Data-Driven HR Decisions",
-      "Regulatory Compliance"
+      "Regulatory Compliance",
     ],
     color: "from-blue-500 to-indigo-600",
-    bgGradient: "from-blue-50 via-indigo-50 to-white"
+    bgGradient: "from-blue-50 via-indigo-50 to-white",
   },
   {
     slug: "wms-software",
@@ -39,8 +47,10 @@ export const productsData = [
     category: "Warehouse Management",
     icon: "📦",
     tagline: "Smart Warehouse Management System",
-    shortDescription: "Advanced warehouse management system for inventory control, order fulfillment, and logistics optimization.",
-    description: "Optimize your warehouse operations with our intelligent WMS. Track inventory in real-time, manage multi-location warehouses, automate picking and packing, and integrate seamlessly with your ERP.",
+    shortDescription:
+      "Advanced warehouse management system for inventory control, order fulfillment, and logistics optimization.",
+    description:
+      "Optimize your warehouse operations with our intelligent WMS. Track inventory in real-time, manage multi-location warehouses, automate picking and packing, and integrate seamlessly with your ERP.",
     features: [
       "Real-time Inventory Tracking",
       "Multi-Warehouse Management",
@@ -49,18 +59,24 @@ export const productsData = [
       "Order Management System",
       "Stock Level Optimization",
       "Integration with ERP & E-commerce",
-      "Mobile Warehouse Operations"
+      "Mobile Warehouse Operations",
     ],
-    technologies: ["Python", "React", "MongoDB", "IoT Integration", "Cloud Services"],
+    technologies: [
+      "Python",
+      "React",
+      "MongoDB",
+      "IoT Integration",
+      "Cloud Services",
+    ],
     benefits: [
       "Reduced Inventory Costs",
       "Improved Order Accuracy",
       "Faster Order Fulfillment",
       "Real-time Visibility",
-      "Scalable Operations"
+      "Scalable Operations",
     ],
     color: "from-orange-500 to-amber-600",
-    bgGradient: "from-orange-50 via-amber-50 to-white"
+    bgGradient: "from-orange-50 via-amber-50 to-white",
   },
   {
     slug: "woocommerce-development",
@@ -68,8 +84,10 @@ export const productsData = [
     category: "E-Commerce",
     icon: "🛒",
     tagline: "Custom E-Commerce Solutions",
-    shortDescription: "Professional WooCommerce development services for scalable online stores with custom features.",
-    description: "Build powerful online stores with our custom WooCommerce development services. We create feature-rich e-commerce platforms with seamless payment integration, inventory management, and mobile optimization.",
+    shortDescription:
+      "Professional WooCommerce development services for scalable online stores with custom features.",
+    description:
+      "Build powerful online stores with our custom WooCommerce development services. We create feature-rich e-commerce platforms with seamless payment integration, inventory management, and mobile optimization.",
     features: [
       "Custom Theme Development",
       "Plugin Development & Customization",
@@ -78,7 +96,7 @@ export const productsData = [
       "Product Management System",
       "SEO Optimization",
       "Mobile-Responsive Design",
-      "Performance Optimization"
+      "Performance Optimization",
     ],
     technologies: ["WordPress", "WooCommerce", "PHP", "JavaScript", "MySQL"],
     benefits: [
@@ -86,10 +104,10 @@ export const productsData = [
       "Enhanced User Experience",
       "Increased Conversion Rates",
       "Easy Content Management",
-      "Cost-Effective Solution"
+      "Cost-Effective Solution",
     ],
     color: "from-purple-500 to-pink-600",
-    bgGradient: "from-purple-50 via-pink-50 to-white"
+    bgGradient: "from-purple-50 via-pink-50 to-white",
   },
   {
     slug: "petro-care",
@@ -97,8 +115,10 @@ export const productsData = [
     category: "Petroleum & Gas",
     icon: "⛽",
     tagline: "Fuel Station Management System",
-    shortDescription: "Complete management solution for fuel stations including inventory, sales, and pump monitoring.",
-    description: "Comprehensive software solution for petrol pump management. Monitor fuel levels, track sales, manage inventory, handle customer transactions, and generate detailed reports for your fuel station operations.",
+    shortDescription:
+      "Complete management solution for fuel stations including inventory, sales, and pump monitoring.",
+    description:
+      "Comprehensive software solution for petrol pump management. Monitor fuel levels, track sales, manage inventory, handle customer transactions, and generate detailed reports for your fuel station operations.",
     features: [
       "Fuel Inventory Management",
       "Pump Monitoring & Control",
@@ -107,7 +127,7 @@ export const productsData = [
       "Customer Loyalty Program",
       "Multi-Pump Management",
       "Automated Reporting",
-      "Shift Management"
+      "Shift Management",
     ],
     technologies: ["Java", "Spring Boot", "MySQL", "IoT Sensors", "Android"],
     benefits: [
@@ -115,10 +135,10 @@ export const productsData = [
       "Accurate Inventory Control",
       "Improved Cash Flow",
       "Real-time Monitoring",
-      "Regulatory Compliance"
+      "Regulatory Compliance",
     ],
     color: "from-green-500 to-emerald-600",
-    bgGradient: "from-green-50 via-emerald-50 to-white"
+    bgGradient: "from-green-50 via-emerald-50 to-white",
   },
   {
     slug: "retail-billing-software",
@@ -126,8 +146,10 @@ export const productsData = [
     category: "Retail",
     icon: "🏪",
     tagline: "Point of Sale Solution",
-    shortDescription: "Fast and reliable billing software for retail stores with inventory management and customer tracking.",
-    description: "Streamline your retail operations with our comprehensive billing software. Fast checkout, inventory management, customer relationship management, and detailed sales analytics all in one solution.",
+    shortDescription:
+      "Fast and reliable billing software for retail stores with inventory management and customer tracking.",
+    description:
+      "Streamline your retail operations with our comprehensive billing software. Fast checkout, inventory management, customer relationship management, and detailed sales analytics all in one solution.",
     features: [
       "Quick Billing & Invoicing",
       "Inventory Management",
@@ -136,18 +158,24 @@ export const productsData = [
       "Sales Reports & Analytics",
       "Tax Calculation",
       "Multiple Payment Methods",
-      "Receipt Printing"
+      "Receipt Printing",
     ],
-    technologies: ["Electron", "React", "SQLite", "Node.js", "Thermal Printer API"],
+    technologies: [
+      "Electron",
+      "React",
+      "SQLite",
+      "Node.js",
+      "Thermal Printer API",
+    ],
     benefits: [
       "Faster Checkout Process",
       "Reduced Billing Errors",
       "Better Inventory Control",
       "Customer Insights",
-      "Easy GST Compliance"
+      "Easy GST Compliance",
     ],
     color: "from-teal-500 to-cyan-600",
-    bgGradient: "from-teal-50 via-cyan-50 to-white"
+    bgGradient: "from-teal-50 via-cyan-50 to-white",
   },
   {
     slug: "retail-billing-multi-branch",
@@ -155,8 +183,10 @@ export const productsData = [
     category: "Enterprise Retail",
     icon: "🏬",
     tagline: "Enterprise Retail Management",
-    shortDescription: "Advanced retail management for multiple branches and warehouses with centralized control.",
-    description: "Enterprise-grade retail solution for managing multiple store locations and warehouses. Centralized inventory control, inter-branch transfers, consolidated reporting, and real-time synchronization across all locations.",
+    shortDescription:
+      "Advanced retail management for multiple branches and warehouses with centralized control.",
+    description:
+      "Enterprise-grade retail solution for managing multiple store locations and warehouses. Centralized inventory control, inter-branch transfers, consolidated reporting, and real-time synchronization across all locations.",
     features: [
       "Multi-Branch Management",
       "Multi-Warehouse Support",
@@ -165,18 +195,25 @@ export const productsData = [
       "Consolidated Reporting",
       "Role-Based Access Control",
       "Real-time Data Sync",
-      "Cloud-Based Architecture"
+      "Cloud-Based Architecture",
     ],
-    technologies: ["React", "Node.js", "PostgreSQL", "Redis", "AWS", "WebSocket"],
+    technologies: [
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "Redis",
+      "AWS",
+      "WebSocket",
+    ],
     benefits: [
       "Centralized Control",
       "Improved Stock Distribution",
       "Branch Performance Analysis",
       "Reduced Stock-outs",
-      "Scalable Infrastructure"
+      "Scalable Infrastructure",
     ],
     color: "from-rose-500 to-red-600",
-    bgGradient: "from-rose-50 via-red-50 to-white"
+    bgGradient: "from-rose-50 via-red-50 to-white",
   },
   {
     slug: "document-management-system",
@@ -184,8 +221,10 @@ export const productsData = [
     category: "Enterprise Software",
     icon: "📄",
     tagline: "Digital Document Organization",
-    shortDescription: "Secure document storage, version control, and collaboration platform for enterprises.",
-    description: "Manage your organization's documents efficiently with our comprehensive DMS. Secure storage, version control, advanced search, workflow automation, and seamless collaboration features.",
+    shortDescription:
+      "Secure document storage, version control, and collaboration platform for enterprises.",
+    description:
+      "Manage your organization's documents efficiently with our comprehensive DMS. Secure storage, version control, advanced search, workflow automation, and seamless collaboration features.",
     features: [
       "Secure Document Storage",
       "Version Control & History",
@@ -194,7 +233,7 @@ export const productsData = [
       "Workflow Automation",
       "Digital Signatures",
       "OCR & Auto-Categorization",
-      "Audit Trail & Compliance"
+      "Audit Trail & Compliance",
     ],
     technologies: ["Angular", "Python", "Elasticsearch", "MinIO", "PostgreSQL"],
     benefits: [
@@ -202,10 +241,10 @@ export const productsData = [
       "Enhanced Security",
       "Faster Document Retrieval",
       "Improved Collaboration",
-      "Regulatory Compliance"
+      "Regulatory Compliance",
     ],
     color: "from-indigo-500 to-blue-600",
-    bgGradient: "from-indigo-50 via-blue-50 to-white"
+    bgGradient: "from-indigo-50 via-blue-50 to-white",
   },
   {
     slug: "time-attendance-system",
@@ -213,8 +252,10 @@ export const productsData = [
     category: "HR & Workforce",
     icon: "⏰",
     tagline: "Biometric Attendance Solution",
-    shortDescription: "Advanced time and attendance tracking with biometric integration and automated payroll sync.",
-    description: "Track employee attendance accurately with our biometric time attendance system. Support for fingerprint, face recognition, RFID cards, and mobile check-in with automatic integration to payroll systems.",
+    shortDescription:
+      "Advanced time and attendance tracking with biometric integration and automated payroll sync.",
+    description:
+      "Track employee attendance accurately with our biometric time attendance system. Support for fingerprint, face recognition, RFID cards, and mobile check-in with automatic integration to payroll systems.",
     features: [
       "Biometric Integration",
       "Face Recognition",
@@ -223,18 +264,24 @@ export const productsData = [
       "Overtime Calculation",
       "Leave Integration",
       "Real-time Notifications",
-      "Payroll System Integration"
+      "Payroll System Integration",
     ],
-    technologies: ["Java", "Spring Boot", "MySQL", "Biometric SDK", "Android/iOS"],
+    technologies: [
+      "Java",
+      "Spring Boot",
+      "MySQL",
+      "Biometric SDK",
+      "Android/iOS",
+    ],
     benefits: [
       "Eliminate Buddy Punching",
       "Accurate Work Hours",
       "Automated Payroll",
       "Remote Attendance Tracking",
-      "Compliance Reporting"
+      "Compliance Reporting",
     ],
     color: "from-yellow-500 to-orange-600",
-    bgGradient: "from-yellow-50 via-orange-50 to-white"
+    bgGradient: "from-yellow-50 via-orange-50 to-white",
   },
   {
     slug: "ticket-management-software",
@@ -242,8 +289,10 @@ export const productsData = [
     category: "Customer Support",
     icon: "🎫",
     tagline: "Helpdesk & Ticketing System",
-    shortDescription: "Comprehensive helpdesk solution for managing customer support tickets and service requests.",
-    description: "Deliver exceptional customer support with our ticket management system. Track, prioritize, and resolve customer issues efficiently with automated workflows, SLA management, and knowledge base integration.",
+    shortDescription:
+      "Comprehensive helpdesk solution for managing customer support tickets and service requests.",
+    description:
+      "Deliver exceptional customer support with our ticket management system. Track, prioritize, and resolve customer issues efficiently with automated workflows, SLA management, and knowledge base integration.",
     features: [
       "Ticket Creation & Tracking",
       "Multi-Channel Support",
@@ -252,7 +301,7 @@ export const productsData = [
       "Team Collaboration",
       "Knowledge Base Integration",
       "Customer Portal",
-      "Analytics & Reporting"
+      "Analytics & Reporting",
     ],
     technologies: ["React", "Node.js", "MongoDB", "Redis", "WebSocket"],
     benefits: [
@@ -260,10 +309,10 @@ export const productsData = [
       "Improved Customer Satisfaction",
       "Better Team Productivity",
       "SLA Compliance",
-      "Data-Driven Insights"
+      "Data-Driven Insights",
     ],
     color: "from-emerald-500 to-green-600",
-    bgGradient: "from-emerald-50 via-green-50 to-white"
+    bgGradient: "from-emerald-50 via-green-50 to-white",
   },
   {
     slug: "lodge-booking-software",
@@ -271,8 +320,10 @@ export const productsData = [
     category: "Hospitality",
     icon: "🏨",
     tagline: "Hotel & Lodge Management",
-    shortDescription: "Complete booking and property management system for hotels, lodges, and guest houses.",
-    description: "Manage your hospitality business with our comprehensive booking software. Handle reservations, room management, billing, housekeeping, and guest services all in one integrated platform.",
+    shortDescription:
+      "Complete booking and property management system for hotels, lodges, and guest houses.",
+    description:
+      "Manage your hospitality business with our comprehensive booking software. Handle reservations, room management, billing, housekeeping, and guest services all in one integrated platform.",
     features: [
       "Online Booking System",
       "Room Management",
@@ -281,7 +332,7 @@ export const productsData = [
       "Billing & Invoicing",
       "Housekeeping Management",
       "Channel Manager Integration",
-      "Guest Communication"
+      "Guest Communication",
     ],
     technologies: ["Vue.js", "Laravel", "MySQL", "Stripe API", "PWA"],
     benefits: [
@@ -289,10 +340,10 @@ export const productsData = [
       "Reduced No-Shows",
       "Streamlined Operations",
       "Better Guest Experience",
-      "Revenue Optimization"
+      "Revenue Optimization",
     ],
     color: "from-pink-500 to-rose-600",
-    bgGradient: "from-pink-50 via-rose-50 to-white"
+    bgGradient: "from-pink-50 via-rose-50 to-white",
   },
   {
     slug: "fleet-management-software",
@@ -300,8 +351,10 @@ export const productsData = [
     category: "Logistics & Transport",
     icon: "🚚",
     tagline: "Vehicle Fleet Tracking System",
-    shortDescription: "GPS-based fleet tracking, vehicle maintenance, and driver management solution.",
-    description: "Optimize your fleet operations with real-time GPS tracking, maintenance scheduling, fuel monitoring, and driver performance analytics. Reduce costs and improve fleet efficiency.",
+    shortDescription:
+      "GPS-based fleet tracking, vehicle maintenance, and driver management solution.",
+    description:
+      "Optimize your fleet operations with real-time GPS tracking, maintenance scheduling, fuel monitoring, and driver performance analytics. Reduce costs and improve fleet efficiency.",
     features: [
       "Real-time GPS Tracking",
       "Route Optimization",
@@ -310,18 +363,24 @@ export const productsData = [
       "Driver Management",
       "Geofencing & Alerts",
       "Trip Reports",
-      "Mobile Driver App"
+      "Mobile Driver App",
     ],
-    technologies: ["React Native", "Node.js", "PostgreSQL", "Google Maps API", "IoT"],
+    technologies: [
+      "React Native",
+      "Node.js",
+      "PostgreSQL",
+      "Google Maps API",
+      "IoT",
+    ],
     benefits: [
       "Reduced Fuel Costs",
       "Improved Vehicle Utilization",
       "Preventive Maintenance",
       "Better Driver Behavior",
-      "Enhanced Security"
+      "Enhanced Security",
     ],
     color: "from-cyan-500 to-blue-600",
-    bgGradient: "from-cyan-50 via-blue-50 to-white"
+    bgGradient: "from-cyan-50 via-blue-50 to-white",
   },
   {
     slug: "mobile-service-center",
@@ -329,8 +388,10 @@ export const productsData = [
     category: "Repair & Services",
     icon: "📱",
     tagline: "Mobile Repair Shop Management",
-    shortDescription: "Complete management solution for mobile service centers and repair shops.",
-    description: "Manage your mobile repair business efficiently with job tracking, inventory management, customer database, billing, and technician performance tracking.",
+    shortDescription:
+      "Complete management solution for mobile service centers and repair shops.",
+    description:
+      "Manage your mobile repair business efficiently with job tracking, inventory management, customer database, billing, and technician performance tracking.",
     features: [
       "Job Card Management",
       "Repair Tracking",
@@ -339,7 +400,7 @@ export const productsData = [
       "SMS Notifications",
       "Technician Management",
       "Billing & Invoicing",
-      "Warranty Management"
+      "Warranty Management",
     ],
     technologies: ["PHP", "Laravel", "MySQL", "SMS Gateway", "PWA"],
     benefits: [
@@ -347,10 +408,10 @@ export const productsData = [
       "Better Inventory Control",
       "Improved Customer Service",
       "Technician Performance Tracking",
-      "Reduced Lost Jobs"
+      "Reduced Lost Jobs",
     ],
     color: "from-violet-500 to-purple-600",
-    bgGradient: "from-violet-50 via-purple-50 to-white"
+    bgGradient: "from-violet-50 via-purple-50 to-white",
   },
   {
     slug: "3pl-wms-solution",
@@ -358,8 +419,10 @@ export const productsData = [
     category: "Third-Party Logistics",
     icon: "🏭",
     tagline: "Third-Party Logistics Management",
-    shortDescription: "Specialized warehouse management for 3PL providers with multi-client support.",
-    description: "Comprehensive WMS designed for third-party logistics providers. Manage multiple clients, handle complex billing, track inventory by client, and provide real-time visibility to your customers.",
+    shortDescription:
+      "Specialized warehouse management for 3PL providers with multi-client support.",
+    description:
+      "Comprehensive WMS designed for third-party logistics providers. Manage multiple clients, handle complex billing, track inventory by client, and provide real-time visibility to your customers.",
     features: [
       "Multi-Client Management",
       "Client-Wise Inventory",
@@ -368,7 +431,7 @@ export const productsData = [
       "Value-Added Services",
       "Cross-Docking",
       "Integration APIs",
-      "SLA Monitoring"
+      "SLA Monitoring",
     ],
     technologies: ["Java", "Spring Boot", "PostgreSQL", "Kafka", "Kubernetes"],
     benefits: [
@@ -376,10 +439,10 @@ export const productsData = [
       "Automated Billing",
       "Client Transparency",
       "Scalable Operations",
-      "Improved SLA Compliance"
+      "Improved SLA Compliance",
     ],
     color: "from-amber-500 to-yellow-600",
-    bgGradient: "from-amber-50 via-yellow-50 to-white"
+    bgGradient: "from-amber-50 via-yellow-50 to-white",
   },
   {
     slug: "marine-service-software",
@@ -387,8 +450,10 @@ export const productsData = [
     category: "Marine Industry",
     icon: "⚓",
     tagline: "Maritime Operations Management",
-    shortDescription: "Specialized software for marine services, vessel maintenance, and port operations.",
-    description: "Manage maritime operations with our specialized software. Track vessel maintenance, manage port operations, handle crew scheduling, and ensure compliance with maritime regulations.",
+    shortDescription:
+      "Specialized software for marine services, vessel maintenance, and port operations.",
+    description:
+      "Manage maritime operations with our specialized software. Track vessel maintenance, manage port operations, handle crew scheduling, and ensure compliance with maritime regulations.",
     features: [
       "Vessel Maintenance Tracking",
       "Crew Management",
@@ -397,18 +462,24 @@ export const productsData = [
       "Inventory & Spare Parts",
       "Voyage Planning",
       "Documentation Management",
-      "Safety & Inspection Reports"
+      "Safety & Inspection Reports",
     ],
-    technologies: ["React", "Node.js", "PostgreSQL", "GIS Integration", "Cloud"],
+    technologies: [
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "GIS Integration",
+      "Cloud",
+    ],
     benefits: [
       "Reduced Downtime",
       "Regulatory Compliance",
       "Optimized Operations",
       "Better Crew Management",
-      "Cost Control"
+      "Cost Control",
     ],
     color: "from-blue-600 to-cyan-600",
-    bgGradient: "from-blue-50 via-cyan-50 to-white"
+    bgGradient: "from-blue-50 via-cyan-50 to-white",
   },
   {
     slug: "order-picking-packing",
@@ -416,8 +487,10 @@ export const productsData = [
     category: "Warehouse Operations",
     icon: "📋",
     tagline: "Optimize Warehouse Fulfillment",
-    shortDescription: "Streamline order picking and packing processes with mobile-guided workflows.",
-    description: "Accelerate your warehouse fulfillment with our picking and packing tool. Mobile-guided picking, batch picking, wave picking, and automated packing slip generation.",
+    shortDescription:
+      "Streamline order picking and packing processes with mobile-guided workflows.",
+    description:
+      "Accelerate your warehouse fulfillment with our picking and packing tool. Mobile-guided picking, batch picking, wave picking, and automated packing slip generation.",
     features: [
       "Mobile-Guided Picking",
       "Batch Picking",
@@ -426,7 +499,7 @@ export const productsData = [
       "Packing Station Management",
       "Label Printing",
       "Quality Checking",
-      "Shipping Integration"
+      "Shipping Integration",
     ],
     technologies: ["React Native", "Node.js", "MongoDB", "Barcode Scanner API"],
     benefits: [
@@ -434,10 +507,10 @@ export const productsData = [
       "Reduced Picking Errors",
       "Improved Productivity",
       "Better Space Utilization",
-      "Real-time Tracking"
+      "Real-time Tracking",
     ],
     color: "from-lime-500 to-green-600",
-    bgGradient: "from-lime-50 via-green-50 to-white"
+    bgGradient: "from-lime-50 via-green-50 to-white",
   },
   {
     slug: "dispatcher-panel",
@@ -445,8 +518,10 @@ export const productsData = [
     category: "Logistics Coordination",
     icon: "🎯",
     tagline: "Delivery Dispatch Management",
-    shortDescription: "Real-time dispatch management for delivery and field service operations.",
-    description: "Coordinate your delivery fleet efficiently with our dispatcher panel. Real-time tracking, route optimization, driver assignment, and customer communication all in one dashboard.",
+    shortDescription:
+      "Real-time dispatch management for delivery and field service operations.",
+    description:
+      "Coordinate your delivery fleet efficiently with our dispatcher panel. Real-time tracking, route optimization, driver assignment, and customer communication all in one dashboard.",
     features: [
       "Real-time Driver Tracking",
       "Automated Driver Assignment",
@@ -455,18 +530,24 @@ export const productsData = [
       "Customer Notifications",
       "Delivery Proof Capture",
       "Performance Analytics",
-      "Mobile Driver App"
+      "Mobile Driver App",
     ],
-    technologies: ["React", "Node.js", "Socket.io", "Google Maps API", "PostgreSQL"],
+    technologies: [
+      "React",
+      "Node.js",
+      "Socket.io",
+      "Google Maps API",
+      "PostgreSQL",
+    ],
     benefits: [
       "Optimized Routes",
       "Faster Deliveries",
       "Better Resource Utilization",
       "Improved Customer Satisfaction",
-      "Cost Reduction"
+      "Cost Reduction",
     ],
     color: "from-red-500 to-orange-600",
-    bgGradient: "from-red-50 via-orange-50 to-white"
+    bgGradient: "from-red-50 via-orange-50 to-white",
   },
   {
     slug: "dealer-management-software",
@@ -474,8 +555,10 @@ export const productsData = [
     category: "Distribution Management",
     icon: "🤝",
     tagline: "Dealer Network Management",
-    shortDescription: "Comprehensive dealer management system with inventory, orders, and commission tracking.",
-    description: "Manage your dealer network efficiently with our comprehensive dealer management software. Track dealer inventory, process orders, manage commissions, and provide real-time access to product catalogs.",
+    shortDescription:
+      "Comprehensive dealer management system with inventory, orders, and commission tracking.",
+    description:
+      "Manage your dealer network efficiently with our comprehensive dealer management software. Track dealer inventory, process orders, manage commissions, and provide real-time access to product catalogs.",
     features: [
       "Dealer Registration & Onboarding",
       "Order Management",
@@ -484,7 +567,7 @@ export const productsData = [
       "Product Catalog Management",
       "Dealer Portal",
       "Performance Analytics",
-      "Credit Limit Management"
+      "Credit Limit Management",
     ],
     technologies: ["Vue.js", "Laravel", "MySQL", "Redis", "API Integration"],
     benefits: [
@@ -492,10 +575,10 @@ export const productsData = [
       "Automated Commission",
       "Better Visibility",
       "Improved Dealer Relations",
-      "Faster Order Processing"
+      "Faster Order Processing",
     ],
     color: "from-fuchsia-500 to-pink-600",
-    bgGradient: "from-fuchsia-50 via-pink-50 to-white"
+    bgGradient: "from-fuchsia-50 via-pink-50 to-white",
   },
   {
     slug: "expense-tracker",
@@ -503,8 +586,10 @@ export const productsData = [
     category: "Finance & Accounting",
     icon: "💰",
     tagline: "Smart Expense Management",
-    shortDescription: "Track business expenses, manage budgets, and generate financial reports effortlessly.",
-    description: "Keep your business expenses under control with our intelligent expense tracker. Capture receipts, categorize expenses, track budgets, and generate comprehensive financial reports.",
+    shortDescription:
+      "Track business expenses, manage budgets, and generate financial reports effortlessly.",
+    description:
+      "Keep your business expenses under control with our intelligent expense tracker. Capture receipts, categorize expenses, track budgets, and generate comprehensive financial reports.",
     features: [
       "Receipt Scanning & OCR",
       "Expense Categorization",
@@ -513,35 +598,43 @@ export const productsData = [
       "Approval Workflows",
       "Reimbursement Processing",
       "Financial Reports",
-      "Mobile Expense App"
+      "Mobile Expense App",
     ],
-    technologies: ["React", "Node.js", "PostgreSQL", "OCR API", "Cloud Storage"],
+    technologies: [
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "OCR API",
+      "Cloud Storage",
+    ],
     benefits: [
       "Better Budget Control",
       "Reduced Processing Time",
       "Accurate Financial Records",
       "Policy Compliance",
-      "Real-time Visibility"
+      "Real-time Visibility",
     ],
     color: "from-emerald-600 to-teal-600",
-    bgGradient: "from-emerald-50 via-teal-50 to-white"
-  }
+    bgGradient: "from-emerald-50 via-teal-50 to-white",
+  },
 ];
 
 // Helper functions
 export const getProductBySlug = (slug) => {
-  return productsData.find(product => product.slug === slug);
+  return productsData.find((product) => product.slug === slug);
 };
 
 export const getAllProductSlugs = () => {
-  return productsData.map(product => product.slug);
+  return productsData.map((product) => product.slug);
 };
 
 export const getProductsByCategory = (category) => {
-  return productsData.filter(product => product.category === category);
+  return productsData.filter((product) => product.category === category);
 };
 
 export const getAllCategories = () => {
-  const categories = [...new Set(productsData.map(product => product.category))];
+  const categories = [
+    ...new Set(productsData.map((product) => product.category)),
+  ];
   return categories.sort();
 };

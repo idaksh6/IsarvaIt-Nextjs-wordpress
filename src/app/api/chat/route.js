@@ -1,0 +1,298 @@
+import { NextResponse } from 'next/server';
+import { OpenAIEmbeddings, ChatOpenAI } from '@langchain/openai';
+import { SupabaseVectorStore } from '@langchain/community/vectorstores/supabase';
+import { createClient } from '@supabase/supabase-js';
+import { StringOutputParser } from '@langchain/core/output_parsers';
+import { PromptTemplate } from '@langchain/core/prompts';
+import { RunnableSequence, RunnablePassthrough } from '@langchain/core/runnables';
+import { Document } from '@langchain/core/documents';
+import quickResponses from '../../lib/data/quick-responses.json';
+
+// Helper function to check if message matches quick response patterns
+function findQuickResponse(message) {
+  const lowerMessage = message.toLowerCase().trim();
+  
+  // Check greetings
+  for (const greeting of quickResponses.greetings) {
+    if (greeting.patterns.some(pattern => {
+      // Exact match or message contains the pattern as a complete word
+      const regex = new RegExp(`\\b${pattern}\\b`, 'i');
+      return regex.test(lowerMessage) || lowerMessage === pattern;
+    })) {
+      return greeting.response;
+    }
+  }
+  
+  // Check FAQs
+  for (const faq of quickResponses.faqs) {
+    if (faq.patterns.some(pattern => {
+      // Check if message contains the pattern
+      return lowerMessage.includes(pattern.toLowerCase());
+    })) {
+      return faq.response;
+    }
+  }
+  
+  return null;
+}
+
+export async function POST(req) {
+  console.log('📥 Chat API called');
+  
+  try {
+    const { message, history } = await req.json();
+    console.log('💬 User message:', message);
+
+    if (!process.env.OPENAI_API_KEY) {
+      console.error('❌ OpenAI API Key missing');
+      return NextResponse.json({ response: "API Key is missing. Please configure OPENAI_API_KEY." }, { status: 500 });
+    }
+
+    if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
+      console.error('❌ Supabase credentials missing');
+      return NextResponse.json({ response: "Supabase credentials are missing." }, { status: 500 });
+    }
+
+    // PRIORITY 1: Check quick responses (greetings, FAQs) - INSTANT
+    console.log('🔍 Checking quick responses...');
+    const quickResponse = findQuickResponse(message);
+    
+    if (quickResponse) {
+      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+      console.log('⚡ QUICK RESPONSE! (Local JSON)');
+      console.log('📄 Pattern matched - instant response');
+      console.log('💰 Cost: $0.00 (no API calls)');
+      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+      
+      // Stream the quick response instantly
+      const encoder = new TextEncoder();
+      const stream = new ReadableStream({
+        async start(controller) {
+          // Send metadata about quick response
+          controller.enqueue(encoder.encode(`data: ${JSON.stringify({ metadata: { cached: true, quick: true } })}\n\n`));
+          
+          // Send all characters at once - instant
+          for (let i = 0; i < quickResponse.length; i++) {
+            controller.enqueue(encoder.encode(`data: ${JSON.stringify({ content: quickResponse[i] })}\n\n`));
+          }
+          controller.enqueue(encoder.encode('data: [DONE]\n\n'));
+          controller.close();
+        },
+      });
+
+      return new Response(stream, {
+        headers: {
+          'Content-Type': 'text/event-stream',
+          'Cache-Control': 'no-cache',
+          'Connection': 'keep-alive',
+        },
+      });
+    }
+
+    console.log('📊 No quick response found, checking database cache...');
+
+    // PRIORITY 2: Check Supabase cache
+    console.log('🔧 Initializing Supabase...');
+    // 1. Initialize Supabase and Vector Store
+    const client = createClient(
+      process.env.SUPABASE_URL,
+      process.env.SUPABASE_SERVICE_ROLE_KEY
+    );
+
+    // Check cache first - if similar question was asked before, return cached answer
+    console.log('🔍 Checking cache for similar questions...');
+    const embeddings = new OpenAIEmbeddings({
+      openAIApiKey: process.env.OPENAI_API_KEY,
+    });
+    
+    const questionEmbedding = await embeddings.embedQuery(message);
+    
+    // Search for similar cached questions
+    const { data: cachedAnswers, error: cacheError } = await client.rpc('search_qa_cache', {
+      query_embedding: questionEmbedding,
+      similarity_threshold: 0.85,
+      match_count: 1
+    });
+
+    if (cacheError) {
+      console.log('⚠️ Cache lookup error (will query OpenAI):', cacheError.message);
+    }
+
+    if (!cacheError && cachedAnswers && cachedAnswers.length > 0) {
+      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+      console.log('✅ CACHE HIT! Using cached response');
+      console.log('📊 Similarity Score:', (cachedAnswers[0].similarity * 100).toFixed(2) + '%');
+      console.log('❓ Cached Question:', cachedAnswers[0].question);
+      console.log('💰 Saved OpenAI API call - NO COST INCURRED');
+      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+      
+      const cachedResponse = cachedAnswers[0].answer;
+      
+      // Stream the cached response instantly
+      const encoder = new TextEncoder();
+      const stream = new ReadableStream({
+        async start(controller) {
+          // Send metadata about cache hit
+          controller.enqueue(encoder.encode(`data: ${JSON.stringify({ metadata: { cached: true, similarity: cachedAnswers[0].similarity } })}\n\n`));
+          
+          // Send all characters at once - instant
+          for (let i = 0; i < cachedResponse.length; i++) {
+            controller.enqueue(encoder.encode(`data: ${JSON.stringify({ content: cachedResponse[i] })}\n\n`));
+          }
+          controller.enqueue(encoder.encode('data: [DONE]\n\n'));
+          controller.close();
+        },
+      });
+
+      return new Response(stream, {
+        headers: {
+          'Content-Type': 'text/event-stream',
+          'Cache-Control': 'no-cache',
+          'Connection': 'keep-alive',
+        },
+      });
+    }
+
+    console.log('📊 No cached answer found, querying AI...');
+    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+    console.log('🤖 CALLING OPENAI API');
+    console.log('💰 This will use OpenAI credits');
+    console.log('📝 Response will be cached for future similar questions');
+    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+
+    const vectorStore = new SupabaseVectorStore(embeddings, {
+      client,
+      tableName: 'documents',
+      queryName: 'match_documents',
+    });
+
+    const retriever = vectorStore.asRetriever();
+
+    console.log('🤖 Initializing LLM...');
+    // 2. Initialize LLM
+    const llm = new ChatOpenAI({
+      modelName: 'gpt-4o',
+      temperature: 0.7,
+      openAIApiKey: process.env.OPENAI_API_KEY,
+    });
+
+    // 3. Define Prompt Template
+    const template = `
+      You are Isarva AI, the official assistant for Isarva (a premium web design & development agency).
+      Answer the user's question clearly and professionally based ONLY on the following context. 
+      If the information is not in the context, politely say that you don't have that specific information yet and suggest contacting the team.
+      
+      IMPORTANT RESPONSE RULES:
+      - Keep responses CONCISE and to the point
+      - Use **bold text** for headings and key points
+      - Break content into short paragraphs
+      - Use bullet points (•) for lists - list items only, NO detailed explanations for each
+      - Maximum 3-4 sentences of explanation before lists
+      - Don't over-explain - users can ask follow-up questions if needed
+      - Format like professional, brief documentation
+      
+      CRITICAL DISTINCTIONS:
+      - **Services** = What Isarva DOES (web development, mobile apps, design, etc.)
+      - **Products** = Ready-made SOFTWARE that Isarva SELLS (HRMS, Billing Software, etc.)
+      - If asked about "products", answer ONLY about products (software), NOT services
+      - If asked about "services", answer ONLY about services, NOT products
+      - Answer EXACTLY what was asked - don't mix or combine topics
+      
+      Context: {context}
+      
+      Question: {question}
+      
+      Answer (brief, well-formatted, answer ONLY what was asked):
+    `;
+
+    const prompt = PromptTemplate.fromTemplate(template);
+
+    console.log('⛓️ Creating RAG chain...');
+    // 4. Create RAG Chain
+    const chain = RunnableSequence.from([
+      {
+        context: retriever.pipe((docs) => docs.map((d) => d.pageContent).join('\n')),
+        question: new RunnablePassthrough(),
+      },
+      prompt,
+      llm,
+      new StringOutputParser(),
+    ]);
+
+    console.log('🚀 Executing chain with streaming...');
+    
+    // 5. Create a streaming response
+    const encoder = new TextEncoder();
+    let fullResponse = ''; // Collect full response for caching
+    
+    const stream = new ReadableStream({
+      async start(controller) {
+        try {
+          // Send metadata about OpenAI query
+          controller.enqueue(encoder.encode(`data: ${JSON.stringify({ metadata: { cached: false } })}\n\n`));
+          
+          const streamResponse = await chain.stream(message);
+          
+          for await (const chunk of streamResponse) {
+            fullResponse += chunk;
+            controller.enqueue(encoder.encode(`data: ${JSON.stringify({ content: chunk })}\n\n`));
+          }
+          
+          controller.enqueue(encoder.encode('data: [DONE]\n\n'));
+          controller.close();
+          
+          console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+          console.log('✅ OpenAI streaming completed successfully');
+          console.log('📝 Caching response for future use...');
+          console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+          
+          // Cache the Q&A pair in the background
+          if (fullResponse.trim()) {
+            client.from('qa_cache').insert({
+              question: message,
+              answer: fullResponse,
+              question_embedding: questionEmbedding,
+              created_at: new Date().toISOString(),
+            }).then(() => {
+              console.log('✅ Response successfully cached in database');
+              console.log('💡 Next similar question will be instant (from cache)');
+            }).catch(err => {
+              console.error('❌ Cache save error:', err);
+            });
+          }
+        } catch (error) {
+          console.error('Streaming error:', error);
+          controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: error.message })}\n\n`));
+          controller.close();
+        }
+      },
+    });
+
+    return new Response(stream, {
+      headers: {
+        'Content-Type': 'text/event-stream',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive',
+      },
+    });
+  } catch (error) {
+    console.error('❌ Chat API Error:', error);
+    console.error('Error details:', {
+      message: error.message,
+      stack: error.stack,
+      name: error.name,
+    });
+    
+    // Provide a helpful error if the table or function is missing
+    if (error.message?.includes('documents') || error.message?.includes('match_documents')) {
+      return NextResponse.json({ 
+        response: "I'm not quite ready yet! My database setup is incomplete. Please ensure you've run the SQL setup in your Supabase dashboard." 
+      }, { status: 500 });
+    }
+
+    // Return a more specific error message
+    return NextResponse.json({ 
+      response: `I encountered an issue: ${error.message}. Please try again or contact support if this persists.` 
+    }, { status: 500 });
+  }
+}

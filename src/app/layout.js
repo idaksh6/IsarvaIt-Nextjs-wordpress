@@ -2,6 +2,7 @@ import { Inter, Outfit, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Chatbot from "./components/Chatbot/Chatbot";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -25,7 +26,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata = {
-  title: "NexifyStudio — Premium Web Design & Development Agency",
+  title: "Isarva AI — Premium Web Design & Development Agency",
   description:
     "We build stunning, high-performance websites, web apps, and eCommerce platforms that drive real business results. Next.js, React, WordPress specialists.",
   keywords: "web design agency, web development, Next.js, eCommerce, WordPress, React",
@@ -35,7 +36,7 @@ export const metadata = {
     apple: "/Favicon.png",
   },
   openGraph: {
-    title: "NexifyStudio — Premium Web Design & Development Agency",
+    title: "Isarva AI — Premium Web Design & Development Agency",
     description: "We build stunning websites and web apps that drive results.",
     type: "website",
   },
@@ -48,6 +49,7 @@ export default function RootLayout({ children }) {
         <Header />
         <main>{children}</main>
         <Footer />
+        <Chatbot />
       </body>
     </html>
   );

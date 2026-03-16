@@ -575,6 +575,201 @@ h6,
   width: 6px;
 }
 
+.press-illusion-btn {
+  border: none;
+  box-shadow: 0 6px 0 #27ae60;
+  transition: all 0.1s ease;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.press-illusion-btn:hover {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #27ae60;
+}
+
+.btn-outline {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 9px 20px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.3s ease;
+}
+
+.badge {
+  background: linear-gradient(90deg, #ff4c00, #ff8c00);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(255, 76, 0, 0.3);
+}
+
+/* ─── Section Spacing ───────────────────────────────────── */
+.section-padding {
+  padding: 120px 0;
+}
+
+/* ─── Ellipse Custom Architecture ───────────────────────── */
+.ellipse-architecture {
+  position: absolute;
+  bottom: -300px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140%;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ellipse-layer {
+  position: absolute;
+  border-radius: 100%;
+}
+
+.ellipse-1 {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top, #00ff88 0%, transparent 70%);
+  opacity: 0.25;
+  /* Visible but soft */
+  filter: blur(80px);
+}
+
+.ellipse-2 {
+  width: 80%;
+  height: 80%;
+  border: 1px solid rgba(0, 255, 136, 0.4);
+  background: radial-gradient(circle at top, #00ff88 0%, transparent 60%);
+  opacity: 0.45;
+  filter: blur(40px);
+}
+
+.ellipse-3 {
+  width: 60%;
+  height: 60%;
+  border: 2px solid rgba(173, 255, 47, 0.6);
+  background: radial-gradient(circle at top, #adff2f 0%, transparent 50%);
+  opacity: 0.75;
+  filter: blur(20px);
+}
+
+.top-glow {
+  position: absolute;
+  top: -250px;
+  right: -250px;
+  width: 950px;
+  height: 950px;
+  background: radial-gradient(
+    circle at center,
+    rgba(16, 185, 129, 0.7) 0%,
+    rgba(96, 250, 178, 0.5) 25%,
+    rgba(12, 226, 22, 0.3) 50%,
+    transparent 70%
+  );
+  filter: blur(160px);
+  z-index: 10;
+  opacity: 1;
+  pointer-events: none;
+}
+
+/* Shaky/Grainy Texture Effect */
+.hero-noise-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.18;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.services-glow-right {
+  position: absolute;
+  bottom: -20%;
+  right: -10%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  will-change: filter;
+  transform: translateZ(0);
+}
+
+.services-glow-left {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(132, 204, 22, 0.2) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  will-change: filter;
+  transform: translateZ(0);
+}
+
+/* ─── CTA Button override (hero section only) ──────────── */
+.btn-primary-hero {
+  position: relative;
+  z-index: 20;
+  padding: 12px 32px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  background: #ffffff;
+  color: #111;
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-primary-hero:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 36px rgba(0, 255, 136, 0.5);
+  background: #00ff88;
+}
+
+/* Home Page External CSS */
+
+.hero_heading strong {
+  color: #2bc735;
+}
+
+/* ─── Hide Scrollbar (for testimonials drag) ──────────── */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── Thin Scrollbar for Modal ──────────────────────────── */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
 .scrollbar-thin::-webkit-scrollbar-track {
   background: transparent;
   margin: 8px 0;
@@ -603,6 +798,7 @@ h6,
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  line-clamp: 2; /* Compatibility */
 }
 
 .line-clamp-3 {
@@ -610,52 +806,27 @@ h6,
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
+  line-clamp: 3; /* Compatibility */
 }
 
 /* ─── Performance Optimizations ───────────────────────── */
-/* Optimize images for faster loading */
 img {
   content-visibility: auto;
   height: auto;
 }
 
-/* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  
-  section {
-    transform: none !important;
-  }
 }
 
-/* Optimize backdrop blur on mobile */
-@media (max-width: 768px) {
-  .backdrop-blur-md,
-  .backdrop-blur-lg,
-  .backdrop-blur-xl {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-  }
-}
-
-/* Force GPU acceleration for animations */
-.animate-spin,
-.animate-pulse {
+.animate-spin, .animate-pulse {
   transform: translateZ(0);
   will-change: transform;
-}
-
-/* Optimize service cards */
-.service-card,
-.service-icon {
-  contain: layout style paint;
 }
 
 /* ─── Premium Noise & Gradient Backgrounds ──────────────── */
@@ -672,46 +843,90 @@ img {
   opacity: 0.05;
   pointer-events: none;
   z-index: -1;
-  mix-blend-mode: overlay;
 }
 
-.gradient-bg-green {
-  background: radial-gradient(circle at 0% 0%, rgba(16, 185, 129, 0.12) 0%, transparent 60%),
-              radial-gradient(circle at 100% 100%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
-              radial-gradient(circle at 50% 50%, rgba(248, 250, 252, 1) 0%, rgba(255, 255, 255, 1) 100%);
+/* Zoho Hero Scrolling Animation - BIG SCALE */
+.hero-dashboard-wrapper {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  padding: 40px 0;
+  min-height: 700px;
 }
 
-.blog-list-gradient {
-  background: radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
-              radial-gradient(circle at 80% 80%, rgba(132, 204, 22, 0.08) 0%, transparent 40%),
-              radial-gradient(circle at 50% 10%, rgba(240, 253, 244, 1) 0%, white 100%);
-}
-
-.floating-blob {
+.dashboard-animation {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  z-index: -1;
-  opacity: 0.4;
-  animation: float-blob 20s infinite alternate ease-in-out;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(50% - 450px); 
+  height: 450px;
+  overflow: hidden;
+  opacity: 0.85; 
+  pointer-events: none;
+  z-index: 1;
 }
 
-@keyframes float-blob {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(50px, 50px) scale(1.1); }
+.dashboard-animation.left {
+  left: 0;
 }
 
-/* ─── Intelligent Sticky Sidebar ────────────────────── */
+.dashboard-animation.right {
+  right: 0;
+}
+
+.scroll-img {
+  width: 2400px; 
+  height: 650px;
+  background-size: 1200px 650px;
+  background-repeat: repeat-x;
+}
+
+.dashboard-animation.left .scroll-img {
+  animation: moveLeft 50s linear infinite;
+  background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=100');
+}
+
+.dashboard-animation.right .scroll-img {
+  animation: moveRight 50s linear infinite;
+  background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=100');
+}
+
+@keyframes moveLeft {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes moveRight {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.dashboard-main-img {
+  position: relative;
+  z-index: 10;
+  max-width: 1100px; /* BIG SCALE */
+  width: 100%;
+  filter: drop-shadow(0 40px 80px rgba(0,0,0,0.3));
+  padding: 0 40px;
+}
+
+/* Intelligent Sticky Sidebar Helpers */
 .sticky-sidebar-container {
-  display: block;
-  position: sticky;
-  top: 120px;
-  height: fit-content;
-  will-change: transform;
+  height: 100%;
 }
 
-/* Ensure no parent has overflow: hidden that might break sticky */
 .allow-sticky {
-  overflow: visible !important;
+  position: sticky;
+  top: 100px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 
+.allow-sticky::-webkit-scrollbar {
+  display: none;
+}
