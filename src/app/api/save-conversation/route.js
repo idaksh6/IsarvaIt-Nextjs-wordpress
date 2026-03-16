@@ -6,7 +6,6 @@ export async function POST(req) {
     const { conversationId, messages, timestamp } = await req.json();
 
     if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
-      console.error('Supabase credentials missing');
       return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
     }
 
@@ -26,13 +25,11 @@ export async function POST(req) {
       });
 
     if (error) {
-      console.error('Error saving conversation:', error);
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('Save conversation error:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

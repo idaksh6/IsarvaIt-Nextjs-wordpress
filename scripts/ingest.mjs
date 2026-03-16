@@ -16,8 +16,6 @@ async function discoverUrls(baseUrl) {
   const toVisit = [baseUrl];
   const allUrls = new Set();
   
-  console.log('🔍 Discovering all pages on the website...');
-  
   while (toVisit.length > 0 && visited.size < 100) { // Limit to 100 pages
     const currentUrl = toVisit.shift();
     
@@ -54,10 +52,8 @@ async function discoverUrls(baseUrl) {
           }
         }
       });
-      
-      console.log(`  ✓ Discovered: ${currentUrl} (${allUrls.size} pages found)`);
     } catch (error) {
-      console.log(`  ✗ Failed to crawl: ${currentUrl} (${error.message})`);
+      // Failed to crawl
     }
   }
   
@@ -66,19 +62,16 @@ async function discoverUrls(baseUrl) {
 
 async function ingest() {
   const baseUrl = process.env.WEBSITE_URL || "http://localhost:3000";
-  console.log(`🚀 Starting FULL WEBSITE ingestion for: ${baseUrl}`);
 
   try {
     // 1. Discover all URLs on the website
     const urls = await discoverUrls(baseUrl);
-    console.log(`\n📋 Found ${urls.length} pages to crawl\n`);
 
     // 2. Load data from all discovered URLs
     const allDocs = [];
     
     for (const url of urls) {
       try {
-        console.log(`📥 Scraping: ${url}`);
         const loader = new CheerioWebBaseLoader(url, {
           selector: "body",
         });
@@ -116,23 +109,16 @@ async function ingest() {
         });
         
         allDocs.push(...cleanedDocs);
-        console.log(`  ✓ Scraped ${cleanedDocs[0].pageContent.length} characters`);
       } catch (error) {
-        console.log(`  ✗ Failed to scrape: ${url} (${error.message})`);
+        // Failed to scrape
       }
     }
 
     if (allDocs.length === 0) {
-      console.warn(
-        "⚠️ No content found. Please ensure the local site is running.",
-      );
       return;
     }
 
     const totalChars = allDocs.reduce((sum, doc) => sum + doc.pageContent.length, 0);
-    console.log(
-      `\n✅ Loaded and cleaned content from ${allDocs.length} pages (${totalChars} total characters)`,
-    );
 
     // 2. Split into chunks for vector search
     const splitter = new RecursiveCharacterTextSplitter({
@@ -140,7 +126,6 @@ async function ingest() {
       chunkOverlap: 150,
     });
     const chunks = await splitter.splitDocuments(allDocs);
-    console.log(`✂️ Split into ${chunks.length} chunks from all pages`);
 
     // 3. Supabase Setup
     const supabaseUrl = process.env.SUPABASE_URL;
@@ -153,7 +138,6 @@ async function ingest() {
     const client = createClient(supabaseUrl, supabaseKey);
     
     // Clear existing documents before inserting new ones
-    console.log('🗑️ Clearing old data from database...');
     await client.from('documents').delete().neq('id', 0); // Delete all
 
     // 4. OpenAI Embeddings
@@ -162,8 +146,6 @@ async function ingest() {
     });
 
     // 5. Store Vectors in batches to avoid timeouts
-    console.log("📤 Sending vectors to Supabase in batches...");
-    
     const batchSize = 500; // Process 500 chunks at a time
     const totalBatches = Math.ceil(chunks.length / batchSize);
     
@@ -171,40 +153,14 @@ async function ingest() {
       const batch = chunks.slice(i, i + batchSize);
       const currentBatch = Math.floor(i / batchSize) + 1;
       
-      console.log(`  📦 Batch ${currentBatch}/${totalBatches}: Uploading ${batch.length} chunks...`);
-      
       await SupabaseVectorStore.fromDocuments(batch, embeddings, {
         client,
         tableName: "documents",
         queryName: "match_documents",
       });
-      
-      console.log(`  ✓ Batch ${currentBatch} complete`);
     }
-
-    console.log("\n✨ SUCCESS: Full website ingestion complete!");
-    console.log(`📊 Ingested ${urls.length} pages with ${chunks.length} searchable chunks`);
-    console.log("💡 Isarva AI now has complete knowledge of the entire website!");
   } catch (error) {
-    if (
-      error.message.includes("404") ||
-      error.message.includes("public.documents")
-    ) {
-      console.error(
-        "\n❌ DATABASE ERROR: The 'documents' table does not exist in your Supabase project.",
-      );
-      console.log("\n💡 TO FIX THIS:");
-      console.log("1. Open your Supabase Dashboard -> SQL Editor.");
-      console.log(
-        "2. Copy the content of 'H:\\AI Chatbot - Langchain\\supabase_setup.sql'.",
-      );
-      console.log(
-        "3. Paste and RUN it to create the table and vector functions.",
-      );
-      console.log("4. Then run 'npm run ingest' again.");
-    } else {
-      console.error("❌ Ingestion failed:", error.message);
-    }
+    throw error;
   }
 }
 

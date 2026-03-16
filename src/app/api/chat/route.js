@@ -37,33 +37,21 @@ function findQuickResponse(message) {
 }
 
 export async function POST(req) {
-  console.log('📥 Chat API called');
-  
   try {
     const { message, history } = await req.json();
-    console.log('💬 User message:', message);
 
     if (!process.env.OPENAI_API_KEY) {
-      console.error('❌ OpenAI API Key missing');
       return NextResponse.json({ response: "API Key is missing. Please configure OPENAI_API_KEY." }, { status: 500 });
     }
 
     if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
-      console.error('❌ Supabase credentials missing');
       return NextResponse.json({ response: "Supabase credentials are missing." }, { status: 500 });
     }
 
     // PRIORITY 1: Check quick responses (greetings, FAQs) - INSTANT
-    console.log('🔍 Checking quick responses...');
     const quickResponse = findQuickResponse(message);
     
     if (quickResponse) {
-      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-      console.log('⚡ QUICK RESPONSE! (Local JSON)');
-      console.log('📄 Pattern matched - instant response');
-      console.log('💰 Cost: $0.00 (no API calls)');
-      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-      
       // Stream the quick response instantly
       const encoder = new TextEncoder();
       const stream = new ReadableStream({
@@ -89,10 +77,7 @@ export async function POST(req) {
       });
     }
 
-    console.log('📊 No quick response found, checking database cache...');
-
     // PRIORITY 2: Check Supabase cache
-    console.log('🔧 Initializing Supabase...');
     // 1. Initialize Supabase and Vector Store
     const client = createClient(
       process.env.SUPABASE_URL,
@@ -100,7 +85,6 @@ export async function POST(req) {
     );
 
     // Check cache first - if similar question was asked before, return cached answer
-    console.log('🔍 Checking cache for similar questions...');
     const embeddings = new OpenAIEmbeddings({
       openAIApiKey: process.env.OPENAI_API_KEY,
     });
@@ -114,17 +98,7 @@ export async function POST(req) {
       match_count: 1
     });
 
-    if (cacheError) {
-      console.log('⚠️ Cache lookup error (will query OpenAI):', cacheError.message);
-    }
-
     if (!cacheError && cachedAnswers && cachedAnswers.length > 0) {
-      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-      console.log('✅ CACHE HIT! Using cached response');
-      console.log('📊 Similarity Score:', (cachedAnswers[0].similarity * 100).toFixed(2) + '%');
-      console.log('❓ Cached Question:', cachedAnswers[0].question);
-      console.log('💰 Saved OpenAI API call - NO COST INCURRED');
-      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
       
       const cachedResponse = cachedAnswers[0].answer;
       
@@ -153,13 +127,6 @@ export async function POST(req) {
       });
     }
 
-    console.log('📊 No cached answer found, querying AI...');
-    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-    console.log('🤖 CALLING OPENAI API');
-    console.log('💰 This will use OpenAI credits');
-    console.log('📝 Response will be cached for future similar questions');
-    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-
     const vectorStore = new SupabaseVectorStore(embeddings, {
       client,
       tableName: 'documents',
@@ -168,7 +135,6 @@ export async function POST(req) {
 
     const retriever = vectorStore.asRetriever();
 
-    console.log('🤖 Initializing LLM...');
     // 2. Initialize LLM
     const llm = new ChatOpenAI({
       modelName: 'gpt-4o',
@@ -207,7 +173,6 @@ export async function POST(req) {
 
     const prompt = PromptTemplate.fromTemplate(template);
 
-    console.log('⛓️ Creating RAG chain...');
     // 4. Create RAG Chain
     const chain = RunnableSequence.from([
       {
@@ -219,8 +184,6 @@ export async function POST(req) {
       new StringOutputParser(),
     ]);
 
-    console.log('🚀 Executing chain with streaming...');
-    
     // 5. Create a streaming response
     const encoder = new TextEncoder();
     let fullResponse = ''; // Collect full response for caching
@@ -241,11 +204,6 @@ export async function POST(req) {
           controller.enqueue(encoder.encode('data: [DONE]\n\n'));
           controller.close();
           
-          console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-          console.log('✅ OpenAI streaming completed successfully');
-          console.log('📝 Caching response for future use...');
-          console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-          
           // Cache the Q&A pair in the background
           if (fullResponse.trim()) {
             client.from('qa_cache').insert({
@@ -254,14 +212,12 @@ export async function POST(req) {
               question_embedding: questionEmbedding,
               created_at: new Date().toISOString(),
             }).then(() => {
-              console.log('✅ Response successfully cached in database');
-              console.log('💡 Next similar question will be instant (from cache)');
+              // Successfully cached
             }).catch(err => {
-              console.error('❌ Cache save error:', err);
+              // Cache save error
             });
           }
         } catch (error) {
-          console.error('Streaming error:', error);
           controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: error.message })}\n\n`));
           controller.close();
         }
@@ -276,13 +232,6 @@ export async function POST(req) {
       },
     });
   } catch (error) {
-    console.error('❌ Chat API Error:', error);
-    console.error('Error details:', {
-      message: error.message,
-      stack: error.stack,
-      name: error.name,
-    });
-    
     // Provide a helpful error if the table or function is missing
     if (error.message?.includes('documents') || error.message?.includes('match_documents')) {
       return NextResponse.json({ 
