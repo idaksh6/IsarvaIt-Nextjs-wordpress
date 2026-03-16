@@ -160,22 +160,31 @@ const Chatbot = () => {
       let isCached = false;
       let similarityScore = null;
 
+      console.log('🔷 FRONTEND: Starting to read stream...');
+
       while (true) {
         const { done, value } = await reader.read();
-        if (done) break;
+        if (done) {
+          console.log('🔷 FRONTEND: Stream done');
+          break;
+        }
 
         const chunk = decoder.decode(value);
+        console.log('🔷 FRONTEND: Received chunk:', chunk.substring(0, 100));
         const lines = chunk.split("\n");
 
         for (const line of lines) {
           if (line.startsWith("data: ")) {
             const data = line.slice(6);
+            console.log('🔷 FRONTEND: Data line:', data.substring(0, 50));
             if (data === "[DONE]") {
+              console.log('🔷 FRONTEND: Received [DONE]');
               break;
             }
 
             try {
               const parsed = JSON.parse(data);
+              console.log('🔷 FRONTEND: Parsed:', parsed);
               
               // Check for metadata about cache
               if (parsed.metadata) {
