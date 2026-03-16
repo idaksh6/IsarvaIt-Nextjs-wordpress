@@ -57,6 +57,34 @@
     {
       "patterns": ["ecommerce", "e-commerce", "retail", "online store", "woocommerce", "multi-vendor", "marketplace"],
       "response": "**E-Commerce & Retail Overview**\n\n**Services:**\n\n• **WooCommerce Development** - Build powerful online stores\n• **Custom E-Commerce Solutions** - Tailored platforms\n• **Multi-Vendor Marketplace Development** - Complete marketplace systems\n\n**Products:**\n\n• **Retail Billing Software** - End-to-end retail billing\n• **Enterprise Retail Management Software** - Complete retail operations\n\nFor further details, please contact the Isarva team."
+    },
+    {
+      "patterns": ["blog", "blogs", "tell me about blog", "what blogs", "latest blog", "blog posts", "articles"],
+      "response": "**Latest From Our Blog**\n\nThe Isarva blog keeps you updated with the latest in web hosting, technology, and success stories:\n\n• **Product Updates** - Details on new and improved services, including hosting and growth solutions\n• **AI & ML** - Insights into Isarva AI tools, such as the AI Agent for WordPress\n• **Success Stories** - Showcasing how businesses have thrived using Isarva's services\n\nFor more detailed information, visit the blog section on Isarva's website."
+    },
+    {
+      "patterns": ["gps tracking", "gps", "fleet management", "vehicle tracking", "fleet tracking", "gps service"],
+      "response": "**GPS Tracking**\n\nOptimize fleet operations through comprehensive GPS solutions:\n\n• **Real-Time Vehicle Tracking**\n• **Route Optimization**\n• **Geofencing & Alerts**\n• **Driver Behavior Monitoring**\n• **Fuel Management**\n• **Maintenance Scheduling**\n• **Custom Reports & Analytics**\n• **Mobile App Integration**\n\n**Technologies:** GPS Technology, IoT, Real-Time APIs, Mobile Apps, Cloud Infrastructure\n\nFor a demo, please contact our team."
+    },
+    {
+      "patterns": ["hrms", "hr software", "human resource", "hr management", "employee management"],
+      "response": "**HRMS Software**\n\nAutomate HR tasks and boost productivity:\n\n• **HR automation and employee management**\n• **Attendance tracking**\n• **Payroll management**\n• **Leave management**\n• **Performance tracking**\n\nDesigned for businesses to streamline workforce operations.\n\nFor pricing and demo, please contact the Isarva team."
+    },
+    {
+      "patterns": ["petro care", "petrol bunk", "fuel station", "petrol station management"],
+      "response": "**Petro Care**\n\nComplete petrol bunk management system:\n\n• **Fuel inventory management**\n• **Sales tracking**\n• **Pump operations**\n• **Customer management**\n• **Billing and invoicing**\n\nIndustry-specific solution for efficient petrol station operations.\n\nFor more details, please contact our team."
+    },
+    {
+      "patterns": ["cloud services", "cloud solutions", "aws", "azure", "cloud infrastructure"],
+      "response": "**Cloud Services**\n\nIsarva provides comprehensive cloud solutions:\n\n• **AWS & Azure Infrastructure**\n• **Cloud Migration**\n• **Cloud Architecture Design**\n• **Scalable Infrastructure**\n• **Cloud Optimization**\n• **DevOps & CI/CD**\n\nBuilt for performance, security, and scalability.\n\nContact our team for custom cloud solutions."
+    },
+    {
+      "patterns": ["erp", "erp services", "enterprise resource planning", "odoo"],
+      "response": "**ERP Services**\n\nStreamline business operations with ERP solutions:\n\n• **Odoo Implementation**\n• **Custom ERP Development**\n• **Business Process Automation**\n• **Integration Services**\n• **Support & Maintenance**\n\nTailored to your business needs for optimal efficiency.\n\nContact our team for consultation."
+    },
+    {
+      "patterns": ["digital marketing", "seo", "social media marketing", "marketing services"],
+      "response": "**Digital Marketing**\n\nGrow your online presence with our marketing services:\n\n• **SEO Optimization**\n• **Social Media Marketing**\n• **Content Marketing**\n• **PPC Campaigns**\n• **Email Marketing**\n• **Analytics & Reporting**\n\nDrive traffic, engagement, and conversions.\n\nContact our team for marketing strategies."
     }
   ]
 }
