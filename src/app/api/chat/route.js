@@ -52,16 +52,18 @@ export async function POST(req) {
     const quickResponse = findQuickResponse(message);
     
     if (quickResponse) {
-      // Stream the quick response instantly
+      // Stream the quick response with typing effect
       const encoder = new TextEncoder();
       const stream = new ReadableStream({
         async start(controller) {
           // Send metadata about quick response
           controller.enqueue(encoder.encode(`data: ${JSON.stringify({ metadata: { cached: true, quick: true } })}\n\n`));
           
-          // Send all characters at once - instant
+          // Send characters with typing delay
           for (let i = 0; i < quickResponse.length; i++) {
             controller.enqueue(encoder.encode(`data: ${JSON.stringify({ content: quickResponse[i] })}\n\n`));
+            // Add typing delay (15ms per character)
+            await new Promise(resolve => setTimeout(resolve, 15));
           }
           controller.enqueue(encoder.encode('data: [DONE]\n\n'));
           controller.close();
@@ -102,16 +104,18 @@ export async function POST(req) {
       
       const cachedResponse = cachedAnswers[0].answer;
       
-      // Stream the cached response instantly
+      // Stream the cached response with typing effect
       const encoder = new TextEncoder();
       const stream = new ReadableStream({
         async start(controller) {
           // Send metadata about cache hit
           controller.enqueue(encoder.encode(`data: ${JSON.stringify({ metadata: { cached: true, similarity: cachedAnswers[0].similarity } })}\n\n`));
           
-          // Send all characters at once - instant
+          // Send characters with typing delay
           for (let i = 0; i < cachedResponse.length; i++) {
             controller.enqueue(encoder.encode(`data: ${JSON.stringify({ content: cachedResponse[i] })}\n\n`));
+            // Add typing delay (15ms per character)
+            await new Promise(resolve => setTimeout(resolve, 15));
           }
           controller.enqueue(encoder.encode('data: [DONE]\n\n'));
           controller.close();
