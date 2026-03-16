@@ -33,58 +33,5 @@
       "response": "Goodbye! 👋 It was great chatting with you.\n\nFeel free to return anytime you have questions about Isarva. Have a wonderful day!"
     }
   ],
-  "faqs": [
-    {
-      "patterns": ["what is isarva", "tell me about isarva", "who are you", "what do you do"],
-      "response": "**About Isarva**\n\nIsarva is a premium **digital transformation partner** specializing in:\n\n• **Web Design & Development** - Custom, high-performance websites\n• **Mobile Apps** - Native and cross-platform applications\n• **E-commerce Solutions** - Powerful online stores\n• **AI Tools** - Innovative solutions like AI Agent for WordPress\n• **Custom Software** - Tailored solutions for complex business needs\n\nWe've evolved from a hosting provider into a comprehensive growth partner helping businesses succeed in the digital landscape."
-    },
-    {
-      "patterns": ["what products", "tell me about products", "list products", "your products", "products you have", "show me products"],
-      "response": "**Isarva Products**\n\nWe offer ready-made software solutions:\n\n• **HRMS Software** - HR automation and employee management\n• **Petro Care** - Complete petrol bunk management system\n• **eCommerce Software** - Online store management platform\n• **Bill Soft** - Multi-branch billing and inventory system\n• **Retail Billing Software** - End-to-end retail billing\n\nThese are specialized software products designed for specific industries."
-    },
-    {
-      "patterns": ["what services", "tell me about services", "list services", "your services", "services you provide", "show me services"],
-      "response": "**Isarva Services**\n\nWe provide custom development services:\n\n• **React & Next.js Development** - Modern web applications\n• **WordPress Development** - CMS-based websites\n• **Laravel Development** - Robust backend solutions\n• **Mobile Apps** - iOS & Android applications\n• **Cloud Solutions** - AWS & Azure infrastructure\n• **UI/UX Design** - User research and design systems\n• **E-Commerce Development** - Custom online stores\n• **Maintenance & Support** - 24/7 monitoring\n\nThese are custom development services tailored to your needs."
-    },
-    {
-      "patterns": ["how can you help", "what can you help with", "what can you do"],
-      "response": "I can help you with:\n\n• **Services** - Learn about our web development, mobile apps, and e-commerce solutions\n• **Products** - Explore our HR, retail, logistics, and industry-specific software\n• **Pricing** - Get information about our packages and costs\n• **Portfolio** - View our past projects and success stories\n• **Contact** - Connect with our team for consultations\n\nWhat would you like to explore?"
-    },
-    {
-      "patterns": ["where are you located", "location", "address", "where is isarva"],
-      "response": "**Contact Isarva**\n\nFor specific location details and to get in touch with our team, please visit our contact page or website.\n\nYou can also ask me about our services, products, or pricing, and I'll be happy to help!"
-    },
-    {
-      "patterns": ["ecommerce", "e-commerce", "retail", "online store", "woocommerce", "multi-vendor", "marketplace"],
-      "response": "**E-Commerce & Retail Overview**\n\n**Services:**\n\n• **WooCommerce Development** - Build powerful online stores\n• **Custom E-Commerce Solutions** - Tailored platforms\n• **Multi-Vendor Marketplace Development** - Complete marketplace systems\n\n**Products:**\n\n• **Retail Billing Software** - End-to-end retail billing\n• **Enterprise Retail Management Software** - Complete retail operations\n\nFor further details, please contact the Isarva team."
-    },
-    {
-      "patterns": ["blog", "blogs", "tell me about blog", "what blogs", "latest blog", "blog posts", "articles"],
-      "response": "**Latest From Our Blog**\n\nThe Isarva blog keeps you updated with the latest in web hosting, technology, and success stories:\n\n• **Product Updates** - Details on new and improved services, including hosting and growth solutions\n• **AI & ML** - Insights into Isarva AI tools, such as the AI Agent for WordPress\n• **Success Stories** - Showcasing how businesses have thrived using Isarva's services\n\nFor more detailed information, visit the blog section on Isarva's website."
-    },
-    {
-      "patterns": ["gps tracking", "gps", "fleet management", "vehicle tracking", "fleet tracking", "gps service"],
-      "response": "**GPS Tracking**\n\nOptimize fleet operations through comprehensive GPS solutions:\n\n• **Real-Time Vehicle Tracking**\n• **Route Optimization**\n• **Geofencing & Alerts**\n• **Driver Behavior Monitoring**\n• **Fuel Management**\n• **Maintenance Scheduling**\n• **Custom Reports & Analytics**\n• **Mobile App Integration**\n\n**Technologies:** GPS Technology, IoT, Real-Time APIs, Mobile Apps, Cloud Infrastructure\n\nFor a demo, please contact our team."
-    },
-    {
-      "patterns": ["hrms", "hr software", "human resource", "hr management", "employee management"],
-      "response": "**HRMS Software**\n\nAutomate HR tasks and boost productivity:\n\n• **HR automation and employee management**\n• **Attendance tracking**\n• **Payroll management**\n• **Leave management**\n• **Performance tracking**\n\nDesigned for businesses to streamline workforce operations.\n\nFor pricing and demo, please contact the Isarva team."
-    },
-    {
-      "patterns": ["petro care", "petrol bunk", "fuel station", "petrol station management"],
-      "response": "**Petro Care**\n\nComplete petrol bunk management system:\n\n• **Fuel inventory management**\n• **Sales tracking**\n• **Pump operations**\n• **Customer management**\n• **Billing and invoicing**\n\nIndustry-specific solution for efficient petrol station operations.\n\nFor more details, please contact our team."
-    },
-    {
-      "patterns": ["cloud services", "cloud solutions", "aws", "azure", "cloud infrastructure"],
-      "response": "**Cloud Services**\n\nIsarva provides comprehensive cloud solutions:\n\n• **AWS & Azure Infrastructure**\n• **Cloud Migration**\n• **Cloud Architecture Design**\n• **Scalable Infrastructure**\n• **Cloud Optimization**\n• **DevOps & CI/CD**\n\nBuilt for performance, security, and scalability.\n\nContact our team for custom cloud solutions."
-    },
-    {
-      "patterns": ["erp", "erp services", "enterprise resource planning", "odoo"],
-      "response": "**ERP Services**\n\nStreamline business operations with ERP solutions:\n\n• **Odoo Implementation**\n• **Custom ERP Development**\n• **Business Process Automation**\n• **Integration Services**\n• **Support & Maintenance**\n\nTailored to your business needs for optimal efficiency.\n\nContact our team for consultation."
-    },
-    {
-      "patterns": ["digital marketing", "seo", "social media marketing", "marketing services"],
-      "response": "**Digital Marketing**\n\nGrow your online presence with our marketing services:\n\n• **SEO Optimization**\n• **Social Media Marketing**\n• **Content Marketing**\n• **PPC Campaigns**\n• **Email Marketing**\n• **Analytics & Reporting**\n\nDrive traffic, engagement, and conversions.\n\nContact our team for marketing strategies."
-    }
-  ]
+  "faqs": []
 }
