@@ -50,7 +50,7 @@ const productsData = [
 ];
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
