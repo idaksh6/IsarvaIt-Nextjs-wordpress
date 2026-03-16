@@ -141,7 +141,7 @@ export async function POST(req) {
 
     // 2. Initialize LLM
     const llm = new ChatOpenAI({
-      modelName: 'gpt-4o',
+      modelName: 'gpt-4o-mini', // 15x cheaper than gpt-4o, perfect for RAG chatbots
       temperature: 0.7,
       openAIApiKey: process.env.OPENAI_API_KEY,
     });
