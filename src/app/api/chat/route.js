@@ -155,9 +155,9 @@ export async function POST(req) {
     console.log('✅ Vector store ready');
 
     // 2. Initialize LLM
-    console.log('🤖 Initializing LLM (gpt-4o)...');
+    console.log('🤖 Initializing LLM (gpt-4o-mini)...');
     const llm = new ChatOpenAI({
-      modelName: 'gpt-4o', // Using gpt-4o for now (gpt-4o-mini might not be available on your API key)
+      modelName: 'gpt-4o-mini', // 15x cheaper than gpt-4o!
       temperature: 0.7,
       openAIApiKey: process.env.OPENAI_API_KEY,
     });
