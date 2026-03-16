@@ -46,7 +46,7 @@ const Chatbot = () => {
       try {
         setMessages(JSON.parse(storedMessages));
       } catch (e) {
-        console.error('Failed to parse stored messages');
+        // Failed to parse stored messages
       }
     } else {
       // Generate new conversation ID
@@ -79,7 +79,7 @@ const Chatbot = () => {
           //   }),
           // });
         } catch (error) {
-          console.error('Failed to save conversation:', error);
+          // Failed to save conversation
         }
       }
     };
@@ -181,28 +181,6 @@ const Chatbot = () => {
               if (parsed.metadata) {
                 isCached = parsed.metadata.cached;
                 similarityScore = parsed.metadata.similarity;
-                const isQuickResponse = parsed.metadata.quick;
-                
-                if (isCached) {
-                  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-                  if (isQuickResponse) {
-                    console.log('⚡ FRONTEND: Quick Response (Local JSON)');
-                    console.log('🎯 Pattern-matched greeting/FAQ');
-                    console.log('💰 Cost: $0.00 (no API calls - instant)');
-                  } else {
-                    console.log('🚀 FRONTEND: Response from DATABASE CACHE');
-                    console.log('⚡ Instant response - No OpenAI API call made');
-                    console.log('📊 Similarity Score:', (similarityScore * 100).toFixed(2) + '%');
-                    console.log('💰 Cost: $0.00 (cached)');
-                  }
-                  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-                } else {
-                  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-                  console.log('🤖 FRONTEND: Response from OPENAI');
-                  console.log('💰 Using OpenAI credits');
-                  console.log('⏱️ Generating fresh response...');
-                  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-                }
               }
               
               if (parsed.content) {
@@ -242,8 +220,6 @@ const Chatbot = () => {
         )
       );
     } catch (error) {
-      console.error("Chat error:", error);
-      
       const errorMessage = error.message?.includes("Failed to fetch response")
         ? "I'm having a connection issue. Please make sure the server is running and try again."
         : error.message || "I'm having a brief connection issue. Could you please try again in a moment?";
