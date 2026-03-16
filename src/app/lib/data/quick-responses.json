@@ -32,6 +32,5 @@
       "patterns": ["bye", "goodbye", "see you", "see ya", "gtg"],
       "response": "Goodbye! 👋 It was great chatting with you.\n\nFeel free to return anytime you have questions about Isarva. Have a wonderful day!"
     }
-  ],
-  "faqs": []
+  ]
 }
