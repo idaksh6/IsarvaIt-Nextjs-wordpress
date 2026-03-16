@@ -13,6 +13,7 @@ import {
   Maximize2,
   Sparkles,
   RefreshCw,
+  ArrowDown,
 } from "lucide-react";
 import { FormattedMessage } from "./FormattedMessage";
 
@@ -31,7 +32,9 @@ const Chatbot = () => {
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [showScrollButton, setShowScrollButton] = useState(false);
   const messagesEndRef = useRef(null);
+  const messagesContainerRef = useRef(null);
 
   // Load conversation from localStorage on mount
   useEffect(() => {
@@ -88,9 +91,22 @@ const Chatbot = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  // Handle scroll to detect if user is at bottom
+  const handleScroll = () => {
+    if (messagesContainerRef.current) {
+      const { scrollTop, scrollHeight, clientHeight } = messagesContainerRef.current;
+      const isNearBottom = scrollHeight - scrollTop - clientHeight < 100;
+      setShowScrollButton(!isNearBottom);
+    }
+  };
+
+  // Auto-scroll to bottom when chatbot opens or messages change
   useEffect(() => {
     if (isOpen && !isMinimized) {
-      scrollToBottom();
+      // Delay to ensure DOM is ready
+      setTimeout(() => {
+        scrollToBottom();
+      }, 100);
     }
   }, [messages, isOpen, isMinimized]);
 
@@ -356,7 +372,11 @@ const Chatbot = () => {
             {!isMinimized && (
               <>
                 {/* Messages */}
-                <div className="flex-1 overflow-y-auto p-5 space-y-6 scrollbar-hide bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.03),transparent)]">
+                <div 
+                  ref={messagesContainerRef}
+                  onScroll={handleScroll}
+                  className="flex-1 overflow-y-auto p-5 space-y-6 scrollbar-hide bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.03),transparent)] relative"
+                >
                   {messages.map((msg, index) => (
                     <div
                       key={index}
@@ -391,6 +411,17 @@ const Chatbot = () => {
                     </div>
                   ))}
                   <div ref={messagesEndRef} />
+                  
+                  {/* Scroll to bottom button */}
+                  {showScrollButton && (
+                    <button
+                      onClick={scrollToBottom}
+                      className="fixed bottom-32 right-8 w-10 h-10 bg-emerald-500 hover:bg-emerald-400 rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/30 transition-all hover:scale-110 z-10"
+                      title="Scroll to bottom"
+                    >
+                      <ArrowDown size={18} className="text-white" />
+                    </button>
+                  )}
                 </div>
 
                 {/* Input Area */}

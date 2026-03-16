@@ -12,7 +12,7 @@ import quickResponses from '../../lib/data/quick-responses.json';
 function findQuickResponse(message) {
   const lowerMessage = message.toLowerCase().trim();
   
-  // Check greetings
+  // Check greetings only
   for (const greeting of quickResponses.greetings) {
     if (greeting.patterns.some(pattern => {
       // Exact match or message contains the pattern as a complete word
@@ -20,16 +20,6 @@ function findQuickResponse(message) {
       return regex.test(lowerMessage) || lowerMessage === pattern;
     })) {
       return greeting.response;
-    }
-  }
-  
-  // Check FAQs
-  for (const faq of quickResponses.faqs) {
-    if (faq.patterns.some(pattern => {
-      // Check if message contains the pattern
-      return lowerMessage.includes(pattern.toLowerCase());
-    })) {
-      return faq.response;
     }
   }
   
@@ -93,12 +83,22 @@ export async function POST(req) {
     
     const questionEmbedding = await embeddings.embedQuery(message);
     
-    // Search for similar cached questions
-    const { data: cachedAnswers, error: cacheError } = await client.rpc('search_qa_cache', {
-      query_embedding: questionEmbedding,
-      similarity_threshold: 0.85,
-      match_count: 1
-    });
+    // Search for similar cached questions (optional - skip if function doesn't exist)
+    let cachedAnswers = null;
+    let cacheError = null;
+    
+    try {
+      const result = await client.rpc('search_qa_cache', {
+        query_embedding: questionEmbedding,
+        similarity_threshold: 0.85,
+        match_count: 1
+      });
+      cachedAnswers = result.data;
+      cacheError = result.error;
+    } catch (err) {
+      // Cache function might not exist yet - that's okay, continue without cache
+      cacheError = err;
+    }
 
     if (!cacheError && cachedAnswers && cachedAnswers.length > 0) {
       
@@ -208,18 +208,18 @@ export async function POST(req) {
           controller.enqueue(encoder.encode('data: [DONE]\n\n'));
           controller.close();
           
-          // Cache the Q&A pair in the background
+          // Cache the Q&A pair in the background (optional - skip if table doesn't exist)
           if (fullResponse.trim()) {
-            client.from('qa_cache').insert({
-              question: message,
-              answer: fullResponse,
-              question_embedding: questionEmbedding,
-              created_at: new Date().toISOString(),
-            }).then(() => {
-              // Successfully cached
-            }).catch(err => {
-              // Cache save error
-            });
+            try {
+              await client.from('qa_cache').insert({
+                question: message,
+                answer: fullResponse,
+                question_embedding: questionEmbedding,
+                created_at: new Date().toISOString(),
+              });
+            } catch (err) {
+              // Cache save failed - that's okay, continue
+            }
           }
         } catch (error) {
           controller.enqueue(encoder.encode(`data: ${JSON.stringify({ error: error.message })}\n\n`));

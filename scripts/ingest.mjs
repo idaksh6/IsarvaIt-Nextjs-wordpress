@@ -23,15 +23,24 @@ async function discoverUrls(baseUrl) {
     visited.add(currentUrl);
     allUrls.add(currentUrl);
     
+    console.log(`  Crawling [${visited.size}/100]: ${currentUrl}`);
+    
     try {
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 10000); // 10 second timeout
       
-      const response = await fetch(currentUrl, { signal: controller.signal });
+      const response = await fetch(currentUrl, { 
+        signal: controller.signal,
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        }
+      });
       clearTimeout(timeout);
       
       const html = await response.text();
       const $ = cheerio.load(html);
+      
+      let linksFound = 0;
       
       // Find all internal links
       $('a[href]').each((_, element) => {
@@ -49,25 +58,36 @@ async function discoverUrls(baseUrl) {
           // Filter out common non-content URLs
           if (!href.match(/\.(jpg|jpeg|png|gif|pdf|svg|css|js)$/i)) {
             toVisit.push(href);
+            linksFound++;
           }
         }
       });
+      
+      console.log(`    → Found ${linksFound} new links`);
+      
+      // Small delay to avoid overwhelming the server
+      await new Promise(resolve => setTimeout(resolve, 100));
     } catch (error) {
-      // Failed to crawl
+      console.log(`  ⚠ Failed to crawl ${currentUrl}:`, error.message);
     }
   }
   
+  console.log(`  Found ${allUrls.size} unique URLs after crawling ${visited.size} pages`);
   return Array.from(allUrls);
 }
 
 async function ingest() {
   const baseUrl = process.env.WEBSITE_URL || "http://localhost:3000";
+  console.log(`🚀 Starting ingestion for: ${baseUrl}`);
 
   try {
     // 1. Discover all URLs on the website
+    console.log("📡 Discovering URLs...");
     const urls = await discoverUrls(baseUrl);
+    console.log(`✅ Found ${urls.length} URLs`);
 
     // 2. Load data from all discovered URLs
+    console.log("📄 Scraping pages...");
     const allDocs = [];
     
     for (const url of urls) {
@@ -79,7 +99,7 @@ async function ingest() {
         // Add timeout for loading
         const loadPromise = loader.load();
         const timeoutPromise = new Promise((_, reject) =>
-          setTimeout(() => reject(new Error('Timeout')), 15000)
+          setTimeout(() => reject(new Error('Timeout')), 30000) // 30 second timeout
         );
         
         const docs = await Promise.race([loadPromise, timeoutPromise]);
@@ -109,23 +129,28 @@ async function ingest() {
         });
         
         allDocs.push(...cleanedDocs);
+        console.log(`  ✓ Scraped: ${url}`);
       } catch (error) {
-        // Failed to scrape
+        console.log(`  ✗ Failed to scrape ${url}:`, error.message);
       }
     }
 
     if (allDocs.length === 0) {
+      console.log("❌ No documents scraped. Exiting.");
       return;
     }
 
     const totalChars = allDocs.reduce((sum, doc) => sum + doc.pageContent.length, 0);
+    console.log(`📊 Scraped ${allDocs.length} documents (${totalChars.toLocaleString()} characters)`);
 
     // 2. Split into chunks for vector search
+    console.log("✂️  Splitting into chunks...");
     const splitter = new RecursiveCharacterTextSplitter({
       chunkSize: 1000,
       chunkOverlap: 150,
     });
     const chunks = await splitter.splitDocuments(allDocs);
+    console.log(`✅ Created ${chunks.length} chunks`);
 
     // 3. Supabase Setup
     const supabaseUrl = process.env.SUPABASE_URL;
@@ -138,7 +163,9 @@ async function ingest() {
     const client = createClient(supabaseUrl, supabaseKey);
     
     // Clear existing documents before inserting new ones
+    console.log("🗑️  Clearing existing documents...");
     await client.from('documents').delete().neq('id', 0); // Delete all
+    console.log("✅ Database cleared");
 
     // 4. OpenAI Embeddings
     const embeddings = new OpenAIEmbeddings({
@@ -146,6 +173,7 @@ async function ingest() {
     });
 
     // 5. Store Vectors in batches to avoid timeouts
+    console.log("💾 Storing vectors in Supabase...");
     const batchSize = 500; // Process 500 chunks at a time
     const totalBatches = Math.ceil(chunks.length / batchSize);
     
@@ -153,15 +181,23 @@ async function ingest() {
       const batch = chunks.slice(i, i + batchSize);
       const currentBatch = Math.floor(i / batchSize) + 1;
       
+      console.log(`  Processing batch ${currentBatch}/${totalBatches}...`);
       await SupabaseVectorStore.fromDocuments(batch, embeddings, {
         client,
         tableName: "documents",
         queryName: "match_documents",
       });
     }
+    console.log("✅ All vectors stored successfully!");
   } catch (error) {
+    console.error("❌ Error during ingestion:", error);
     throw error;
   }
 }
 
-ingest();
+ingest().then(() => {
+  console.log("🎉 Ingestion complete!");
+}).catch((error) => {
+  console.error("💥 Ingestion failed:", error);
+  process.exit(1);
+});
