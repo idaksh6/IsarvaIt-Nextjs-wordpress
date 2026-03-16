@@ -17,6 +17,8 @@ import {
 } from "lucide-react";
 import { FormattedMessage } from "./FormattedMessage";
 
+console.log('🟢 CHATBOT COMPONENT LOADED - VERSION 2.0 - March 16, 2026 18:30');
+
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);

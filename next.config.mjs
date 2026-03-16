@@ -2,7 +2,8 @@
 const nextConfig = {
   // Enable compiler optimizations
   compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
+    // Temporarily keep console logs for debugging
+    removeConsole: false, // Changed from production check to allow debugging
   },
   
   // Optimize images
