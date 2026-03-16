@@ -53,6 +53,10 @@
     {
       "patterns": ["where are you located", "location", "address", "where is isarva"],
       "response": "**Contact Isarva**\n\nFor specific location details and to get in touch with our team, please visit our contact page or website.\n\nYou can also ask me about our services, products, or pricing, and I'll be happy to help!"
+    },
+    {
+      "patterns": ["ecommerce", "e-commerce", "retail", "online store", "woocommerce", "multi-vendor", "marketplace"],
+      "response": "**E-Commerce & Retail Overview**\n\n**Services:**\n\n• **WooCommerce Development** - Build powerful online stores\n• **Custom E-Commerce Solutions** - Tailored platforms\n• **Multi-Vendor Marketplace Development** - Complete marketplace systems\n\n**Products:**\n\n• **Retail Billing Software** - End-to-end retail billing\n• **Enterprise Retail Management Software** - Complete retail operations\n\nFor further details, please contact the Isarva team."
     }
   ]
 }
