@@ -1,8 +1,7 @@
 import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 import AISummary from "../../components/blog/AISummary";
 import AuthorCard from "../../components/blog/AuthorCard";
-import NewsletterSection from "../../components/blog/NewsletterSection";
+
 import {
   getPostBySlug,
   getRelatedPosts,
@@ -107,7 +106,6 @@ export default async function BlogPostPage({ params }) {
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
 
-            <AuthorCard author={post.author} />
           </div>
 
           {/* Sidebar / Related Posts */}
@@ -138,28 +136,10 @@ export default async function BlogPostPage({ params }) {
                   </Link>
                 ))}
               </div>
-
-              <div className="mt-12 p-8 bg-emerald-600 rounded-[2rem] text-white">
-                <h4 className="text-2xl font-black mb-4">Ready to Grow?</h4>
-                <p className="text-emerald-100 text-sm mb-6 leading-relaxed">
-                  Discover why millions of businesses trust Isarva for their
-                  digital infrastructure.
-                </p>
-                <Link
-                  href="/contact"
-                  className="block text-center py-4 bg-white text-emerald-600 font-black rounded-xl hover:bg-emerald-50 transition-colors"
-                >
-                  GET STARTED
-                </Link>
-              </div>
             </div>
           </aside>
         </div>
-
-        <NewsletterSection />
       </main>
-
-      <Footer />
     </div>
   );
 }

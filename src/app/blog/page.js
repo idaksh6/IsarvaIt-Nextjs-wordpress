@@ -1,10 +1,8 @@
 import Link from "next/link";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 import BlogCategoryNav from "../components/blog/BlogCategoryNav";
 import FeaturedSection from "../components/blog/FeaturedSection";
 import PostGrid from "../components/blog/PostGrid";
-import NewsletterSection from "../components/blog/NewsletterSection";
 import BlogHero from "../components/blog/BlogHero";
 import { getBlogPosts } from "../lib/services/blog-service";
 
@@ -53,7 +51,7 @@ export default async function BlogPage({ searchParams }) {
         <BlogHero />
         <BlogCategoryNav />
         
-        <div className="py-8 min-h-[400px]">
+        <div className="pt-8 min-h-[400px]">
             {posts.length > 0 ? (
               <>
                 {isFiltered ? (
@@ -81,11 +79,8 @@ export default async function BlogPage({ searchParams }) {
                 </Link>
               </div>
             )}
-            <NewsletterSection />
         </div>
       </main>
-      
-      <Footer />
     </div>
   );
 }
