@@ -48,8 +48,8 @@ export default function RootLayout({ children }) {
       <body className={`${inter.variable} ${outfit.variable} ${spaceGrotesk.variable} antialiased text-white`}>
         <Header />
         <main>{children}</main>
+         <Chatbot />
         <Footer />
-        <Chatbot />
       </body>
     </html>
   );
