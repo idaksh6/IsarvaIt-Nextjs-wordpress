@@ -441,10 +441,10 @@ const Chatbot = () => {
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(true)}
-            className="group relative flex items-center gap-3 bg-gradient-to-br from-emerald-500 to-emerald-700 pl-4 pr-6 py-3 rounded-2xl shadow-[0_10px_30px_rgba(16,185,129,0.3)] text-white transition-all overflow-hidden"
+            className="group relative flex items-center gap-3 bg-gradient-to-br from-emerald-500 to-emerald-700 md:pl-4 md:pr-6 md:py-3 p-3 rounded-2xl shadow-[0_10px_30px_rgba(16,185,129,0.3)] text-white transition-all overflow-hidden"
           >
             <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div className="relative z-10 w-11 h-11 rounded-xl  bg-white flex items-center justify-center overflow-hidden shadow-inner">
+            <div className="relative z-10 w-11 h-11 rounded-xl bg-white flex items-center justify-center overflow-hidden shadow-inner">
               <img
                 src="/Favicon.png"
                 alt="AI Avatar"
@@ -460,8 +460,12 @@ const Chatbot = () => {
               >
                 <Sparkles size={24} className="text-white" />
               </div>
+              {/* Chat Icon Overlay for Mobile */}
+              <div className="md:hidden absolute -bottom-0.5 -right-0.5 w-5 h-5 bg-emerald-600 rounded-full flex items-center justify-center border-2 border-white shadow-md">
+                <MessageSquare size={12} className="text-white" strokeWidth={2.5} />
+              </div>
             </div>
-            <div className="relative z-10 text-left">
+            <div className="relative z-10 text-left hidden md:block">
               <p className="text-sm font-bold leading-none tracking-tight">
                 Chat with Isarva AI
               </p>
