@@ -62,9 +62,22 @@ export default function ProductDetailPremium({
   return (
     <div className="bg-white font-sans selection:bg-red-100 selection:text-red-900">
       {/* 1. Centered Hero Section with Zoho Side-Animations */}
-      <section className="relative pt-40 lg:pb-32 pb-10 overflow-hidden bg-white">
-        <div className="absolute inset-0 bg-premium-noise opacity-5 pointer-events-none"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_550px_450px_at_center_55%,#fbe8e7_50%,rgba(255,199,64,0)_100%)] opacity-40"></div>
+      <section className="relative pt-40 lg:pb-32 pb-10 overflow-hidden bg-gradient-to-b from-[#f0fdf4] via-[#f7fef9] to-white">
+        {/* Noise Texture Overlay */}
+        <div 
+          className="absolute inset-0 opacity-[0.15] pointer-events-none"
+          style={{
+            backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")",
+            backgroundRepeat: "repeat"
+          }}
+        ></div>
+        
+        {/* Green Radial Gradient */}
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_600px_500px_at_center_45%,rgba(34,197,94,0.12)_0%,rgba(34,197,94,0.05)_50%,transparent_100%)] pointer-events-none"></div>
+        
+        {/* Additional Green Glow Accents */}
+        <div className="absolute top-20 right-10 w-[400px] h-[400px] bg-[#22C55E] opacity-[0.04] rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-20 left-10 w-[350px] h-[350px] bg-[#10b981] opacity-[0.03] rounded-full blur-3xl pointer-events-none"></div>
 
         <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div
@@ -136,9 +149,9 @@ export default function ProductDetailPremium({
       {/* 2. Core HRMS Section */}
       <section className="lg:py-32 py-14 bg-white">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 ">
-            {/* Left Side - Image */}
-            <div className="relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 lg:text-left text-center">
+            {/* Left Side - Image (Sticky on Desktop) */}
+            <div className="relative lg:sticky lg:top-28 lg:self-start">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
                   src="/dashboard.webp"
@@ -172,7 +185,7 @@ export default function ProductDetailPremium({
                   className="flex items-start gap-4"
                 >
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#22C55E] to-[#16a34a] rounded-xl flex items-center justify-center text-2xl shadow-md">
+                    <div className="w-12 h-12 lg:flex hidden bg-gradient-to-br from-[#22C55E] to-[#16a34a] rounded-xl  items-center justify-center text-2xl shadow-md">
                       👥
                     </div>
                   </div>
@@ -193,7 +206,7 @@ export default function ProductDetailPremium({
                   className="flex items-start gap-4"
                 >
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#22C55E] to-[#16a34a] rounded-xl flex items-center justify-center text-2xl shadow-md">
+                    <div className="w-12 h-12  lg:flex hidden bg-gradient-to-br from-[#22C55E] to-[#16a34a] rounded-xl  items-center justify-center text-2xl shadow-md">
                       💰
                     </div>
                   </div>
@@ -214,7 +227,7 @@ export default function ProductDetailPremium({
                   className="flex items-start gap-4"
                 >
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#22C55E] to-[#16a34a] rounded-xl flex items-center justify-center text-2xl shadow-md">
+                    <div className="w-12 h-12 lg:flex hidden bg-gradient-to-br from-[#22C55E] to-[#16a34a] rounded-xl  items-center justify-center text-2xl shadow-md">
                       📊
                     </div>
                   </div>
