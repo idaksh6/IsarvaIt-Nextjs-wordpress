@@ -7,8 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Blog", href: "/blog" },
+  { label: "About Us", href: "/about" },
 ];
 
 const servicesData = [
@@ -105,6 +104,97 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
+
+          {/* Products Mega Menu Trigger */}
+          <div
+            className="relative"
+            onMouseEnter={() => setIsProductsOpen(true)}
+            onMouseLeave={() => setIsProductsOpen(false)}
+          >
+            <Link
+              href="/products"
+              prefetch={true}
+              className="text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1"
+            >
+              Products
+              <svg
+                className={`w-4 h-4 transition-transform duration-200 ${
+                  isProductsOpen ? "rotate-180" : ""
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </Link>
+
+            {/* Products Mega Menu Dropdown */}
+            {isProductsOpen && (
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[800px]">
+                <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-100 p-8">
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                      Our Products
+                    </h3>
+                    <p className="text-gray-600">
+                      Innovative software solutions for your business
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-4">
+                    {productsData.map((product) => (
+                      <Link
+                        key={product.href}
+                        href={product.href}
+                        prefetch={true}
+                        onClick={() => setIsProductsOpen(false)}
+                        className="group flex items-start gap-3 p-4 rounded-xl hover:bg-violet-50 transition-all duration-200"
+                      >
+                        <span className="text-2xl mt-0.5 group-hover:scale-110 transition-transform duration-200">
+                          {product.icon}
+                        </span>
+                        <div>
+                          <h4 className="font-semibold text-gray-900 group-hover:text-violet-600 transition-colors text-sm">
+                            {product.label}
+                          </h4>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+
+                  <div className="mt-6 pt-6 border-t border-gray-200">
+                    <Link
+                      href="/products"
+                      prefetch={true}
+                      onClick={() => setIsProductsOpen(false)}
+                      className="inline-flex items-center gap-2 text-violet-600 font-semibold hover:gap-3 transition-all duration-200"
+                    >
+                      View All Products
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
 
           {/* Services Mega Menu Trigger */}
           <div
@@ -288,96 +378,14 @@ export default function Header() {
             )}
           </div>
 
-          {/* Products Mega Menu Trigger */}
-          <div
-            className="relative"
-            onMouseEnter={() => setIsProductsOpen(true)}
-            onMouseLeave={() => setIsProductsOpen(false)}
+          {/* Blog Link */}
+          <Link
+            href="/blog"
+            prefetch={true}
+            className="text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600"
           >
-            <Link
-              href="/products"
-              prefetch={true}
-              className="text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1"
-            >
-              Products
-              <svg
-                className={`w-4 h-4 transition-transform duration-200 ${
-                  isProductsOpen ? "rotate-180" : ""
-                }`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </Link>
-
-            {/* Products Mega Menu Dropdown */}
-            {isProductsOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[800px]">
-                <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-100 p-8">
-                  <div className="mb-6">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                      Our Products
-                    </h3>
-                    <p className="text-gray-600">
-                      Innovative software solutions for your business
-                    </p>
-                  </div>
-
-                  <div className="grid grid-cols-3 gap-4">
-                    {productsData.map((product) => (
-                      <Link
-                        key={product.href}
-                        href={product.href}
-                        prefetch={true}
-                        onClick={() => setIsProductsOpen(false)}
-                        className="group flex items-start gap-3 p-4 rounded-xl hover:bg-violet-50 transition-all duration-200"
-                      >
-                        <span className="text-2xl mt-0.5 group-hover:scale-110 transition-transform duration-200">
-                          {product.icon}
-                        </span>
-                        <div>
-                          <h4 className="font-semibold text-gray-900 group-hover:text-violet-600 transition-colors text-sm">
-                            {product.label}
-                          </h4>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-
-                  <div className="mt-6 pt-6 border-t border-gray-200">
-                    <Link
-                      href="/products"
-                      prefetch={true}
-                      onClick={() => setIsProductsOpen(false)}
-                      className="inline-flex items-center gap-2 text-violet-600 font-semibold hover:gap-3 transition-all duration-200"
-                    >
-                      View All Products
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
+            Blog
+          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -519,11 +527,90 @@ export default function Header() {
                   </motion.div>
                 ))}
 
-                {/* Services Accordion */}
+                {/* Products Accordion */}
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: navLinks.length * 0.05 }}
+                  className="border-2 border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm"
+                >
+                  <button
+                    onClick={() => setIsMobileProductsOpen(!isMobileProductsOpen)}
+                    className="flex items-center justify-between w-full p-4 text-gray-800 hover:bg-gradient-to-r hover:from-violet-50 hover:to-purple-50 transition-all duration-300"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-gradient-to-br from-violet-100 to-purple-100 rounded-xl flex items-center justify-center">
+                        <span className="text-lg">📦</span>
+                      </div>
+                      <span className="font-bold text-base">Products</span>
+                    </div>
+                    <motion.svg
+                      animate={{ rotate: isMobileProductsOpen ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="w-5 h-5 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </motion.svg>
+                  </button>
+
+                  <AnimatePresence>
+                    {isMobileProductsOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="bg-gradient-to-b from-gray-50 to-white p-3 space-y-1 max-h-[300px] overflow-y-auto">
+                          <Link
+                            href="/products"
+                            prefetch={true}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="flex items-center gap-2 p-3 rounded-xl text-violet-600 hover:bg-white bg-violet-50 border border-violet-200 transition-all duration-200 font-bold text-sm mb-2"
+                          >
+                            <span>View All Products</span>
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Link>
+                          {productsData.map((product, idx) => (
+                            <motion.div
+                              key={product.href}
+                              initial={{ opacity: 0, y: 5 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ delay: idx * 0.03 }}
+                            >
+                              <Link
+                                href={product.href}
+                                prefetch={true}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="flex items-center gap-3 p-3 rounded-xl text-gray-700 hover:bg-white hover:shadow-sm transition-all duration-200"
+                              >
+                                <span className="text-xl">{product.icon}</span>
+                                <span className="text-sm font-medium">{product.label}</span>
+                              </Link>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+
+                {/* Services Accordion */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: (navLinks.length + 1) * 0.05 }}
                   className="border-2 border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm"
                 >
                   <button
@@ -677,27 +764,30 @@ export default function Header() {
                   </AnimatePresence>
                 </motion.div>
 
-                {/* Products Accordion */}
+                {/* Blog Link */}
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: (navLinks.length + 2) * 0.05 }}
-                  className="border-2 border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm"
+                  transition={{ delay: (navLinks.length + 3) * 0.05 }}
                 >
-                  <button
-                    onClick={() => setIsMobileProductsOpen(!isMobileProductsOpen)}
-                    className="flex items-center justify-between w-full p-4 text-gray-800 hover:bg-gradient-to-r hover:from-violet-50 hover:to-purple-50 transition-all duration-300"
+                  <Link
+                    href="/blog"
+                    prefetch={true}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="group flex items-center gap-3 p-4 rounded-2xl bg-white hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 border border-transparent hover:border-green-200 active:bg-green-100 transition-all duration-300"
                   >
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-violet-100 to-purple-100 rounded-xl flex items-center justify-center">
-                        <span className="text-lg">📦</span>
-                      </div>
-                      <span className="font-bold text-base">Products</span>
+                    <div className="w-10 h-10 bg-gradient-to-br from-green-100 to-emerald-100 group-hover:from-green-400 group-hover:to-emerald-500 rounded-xl flex items-center justify-center transition-all duration-300">
+                      <span className="text-lg group-hover:scale-110 transition-transform duration-300">
+                        📝
+                      </span>
                     </div>
-                    <motion.svg
-                      animate={{ rotate: isMobileProductsOpen ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="w-5 h-5 text-gray-400"
+                    <div className="flex-1">
+                      <span className="font-bold text-gray-800 group-hover:text-green-700 text-base transition-colors duration-300">
+                        Blog
+                      </span>
+                    </div>
+                    <svg
+                      className="w-5 h-5 text-gray-300 group-hover:text-green-600 group-hover:translate-x-1 transition-all duration-300"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -706,54 +796,10 @@ export default function Header() {
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        d="M19 9l-7 7-7-7"
+                        d="M9 5l7 7-7 7"
                       />
-                    </motion.svg>
-                  </button>
-
-                  <AnimatePresence>
-                    {isMobileProductsOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="overflow-hidden"
-                      >
-                        <div className="bg-gradient-to-b from-gray-50 to-white p-3 space-y-1 max-h-[300px] overflow-y-auto">
-                          <Link
-                            href="/products"
-                            prefetch={true}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                            className="flex items-center gap-2 p-3 rounded-xl text-violet-600 hover:bg-white bg-violet-50 border border-violet-200 transition-all duration-200 font-bold text-sm mb-2"
-                          >
-                            <span>View All Products</span>
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                          </Link>
-                          {productsData.map((product, idx) => (
-                            <motion.div
-                              key={product.href}
-                              initial={{ opacity: 0, y: 5 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ delay: idx * 0.03 }}
-                            >
-                              <Link
-                                href={product.href}
-                                prefetch={true}
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className="flex items-center gap-3 p-3 rounded-xl text-gray-700 hover:bg-white hover:shadow-sm transition-all duration-200"
-                              >
-                                <span className="text-xl">{product.icon}</span>
-                                <span className="text-sm font-medium">{product.label}</span>
-                              </Link>
-                            </motion.div>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                    </svg>
+                  </Link>
                 </motion.div>
               </div>
 

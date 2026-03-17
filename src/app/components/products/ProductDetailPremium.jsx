@@ -512,7 +512,7 @@ function FaqAccordion() {
             <div
               className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${isOpen
                 ? "bg-[#22C55E] rotate-180"
-                : "bg-gray-100 group-hover:bg-gray-200"
+                : "bg-gray-100 group-hover:bg-gray-200 group-hover:rotate-180"
                 }`}
             >
               <svg
@@ -794,7 +794,7 @@ function HrmsFeatureSection() {
               <div key={feature.id} className="border-b border-gray-200">
                 <button
                   onClick={() => setMobileOpenId(isOpen ? null : feature.id)}
-                  className="w-full flex items-center justify-between p-4 bg-transparent border-none cursor-pointer"
+                  className="group w-full flex items-center justify-between p-4 bg-transparent border-none cursor-pointer"
                 >
                   <div className="flex items-center gap-3">
                     <div
@@ -815,11 +815,11 @@ function HrmsFeatureSection() {
                   <div
                     className={`w-7 h-7 rounded-full border-2 flex items-center justify-center transition-all duration-200 shrink-0 ${isOpen
                       ? "bg-gray-900 border-gray-900"
-                      : "bg-transparent border-gray-300"
+                      : "bg-transparent border-gray-300 group-hover:border-gray-400"
                       }`}
                   >
                     <span
-                      className={`text-lg font-light leading-none block transition-transform duration-200 ${isOpen ? "text-white rotate-45" : "text-gray-400"
+                      className={`text-lg font-light leading-none block transition-transform duration-200 ${isOpen ? "text-white rotate-45" : "text-gray-400 group-hover:rotate-45"
                         }`}
                     >
                       +
