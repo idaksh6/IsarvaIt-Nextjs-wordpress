@@ -22,9 +22,6 @@ export default function BlogHero() {
   return (
     <section className="bg-premium-noise blog-list-gradient pt-40 pb-16 relative overflow-hidden">
       {/* Decorative background elements */}
-      <div className="floating-blob w-[500px] h-[500px] bg-emerald-100/40 top-0 right-0 -translate-y-1/2 translate-x-1/4"></div>
-      <div className="floating-blob w-[400px] h-[400px] bg-green-100/40 bottom-0 left-0 translate-y-1/2 -translate-x-1/4"></div>
-
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center text-center">
           <h1 className="text-7xl md:text-9xl font-black text-gray-900 mb-6 tracking-tighter uppercase opacity-5 absolute -top-10 select-none pointer-events-none">

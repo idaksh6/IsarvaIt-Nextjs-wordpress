@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -414,245 +415,383 @@ export default function Header() {
       </div>
 
       {/* Mobile Navigation Menu */}
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-[9999] md:hidden">
-          {/* Menu Panel */}
-          <div className="absolute right-0 top-0 max-w-[100vw] w-full bg-white h-[100vh] shadow-2xl transform transition-transform duration-300 ease-out translate-x-0 overflow-y-auto">
-            {/* Header */}
-            <div className="bg-gradient-to-br from-green-400 via-green-500 to-emerald-600 p-6">
-              <div className="flex items-center justify-end">
-                {/* Close Button */}
-                <button
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-xl flex items-center justify-center transition-colors duration-200"
-                  aria-label="Close menu"
-                >
-                  <svg
-                    className="w-5 h-5 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <>
+            {/* Backdrop Overlay with Blur */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 z-[9998] md:hidden backdrop-blur-sm bg-black/30"
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
 
-            {/* Navigation Links */}
-            <div className="p-6 space-y-1">
-              {navLinks.map((link, index) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  prefetch={true}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center gap-4 p-4 rounded-2xl text-gray-700 hover:bg-green-50 hover:text-green-700 active:bg-green-100 transition-all duration-200 group"
-                >
-                  <div className="flex-1">
-                    <span className="font-semibold text-base">
-                      {link.label}
-                    </span>
+            {/* Menu Panel */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 30, stiffness: 300 }}
+              className="fixed right-0 top-0 max-w-[85vw] w-full bg-white h-[100vh] shadow-2xl z-[9999] md:hidden overflow-y-auto"
+            >
+              {/* Premium Header with Gradient */}
+              <div className="relative bg-gradient-to-br from-[#22C55E] via-[#16a34a] to-[#15803d] p-6 overflow-hidden">
+                {/* Decorative Pattern */}
+                <div 
+                  className="absolute inset-0 opacity-10"
+                  style={{
+                    backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"
+                  }}
+                ></div>
+                
+                <div className="relative flex items-center justify-between mb-4">
+                  <div>
+                    <h2 className="text-white text-xl font-bold mb-1">Menu</h2>
+                    <p className="text-white/80 text-sm">Explore our solutions</p>
                   </div>
-                  <svg
-                    className="w-5 h-5 text-gray-400 group-hover:text-green-600 transition-colors duration-200"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+                  
+                  {/* Close Button */}
+                  <motion.button
+                    whileHover={{ scale: 1.05, rotate: 90 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="w-11 h-11 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-2xl flex items-center justify-center transition-colors duration-200"
+                    aria-label="Close menu"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </Link>
-              ))}
+                    <svg
+                      className="w-6 h-6 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      strokeWidth={2.5}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </motion.button>
+                </div>
+              </div>
 
-              {/* Services Accordion in Mobile */}
-              <div className="border border-gray-200 rounded-2xl overflow-hidden">
-                <button
-                  onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                  className="flex items-center justify-between w-full p-4 text-gray-700 hover:bg-green-50 transition-all duration-200"
-                >
-                  <span className="font-semibold text-base">Services</span>
-                  <svg
-                    className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${
-                      isMobileServicesOpen ? "rotate-180" : ""
-                    }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+              {/* Navigation Links with Staggered Animation */}
+              <div className="p-4 space-y-2">
+                {navLinks.map((link, index) => (
+                  <motion.div
+                    key={link.label}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.05 }}
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-
-                {isMobileServicesOpen && (
-                  <div className="bg-gray-50 p-3 space-y-1">
                     <Link
-                      href="/services"
+                      href={link.href}
                       prefetch={true}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="block p-3 rounded-xl text-emerald-600 hover:bg-white transition-all duration-200 font-semibold text-sm"
+                      className="group flex items-center gap-3 p-4 rounded-2xl bg-white hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 border border-transparent hover:border-green-200 active:bg-green-100 transition-all duration-300"
                     >
-                      View All Services →
-                    </Link>
-                    {servicesData.map((service) => (
-                      <Link
-                        key={service.href}
-                        href={service.href}
-                        prefetch={true}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className="flex items-center gap-3 p-3 rounded-xl text-gray-700 hover:bg-white transition-all duration-200"
+                      <div className="w-10 h-10 bg-gradient-to-br from-green-100 to-emerald-100 group-hover:from-green-400 group-hover:to-emerald-500 rounded-xl flex items-center justify-center transition-all duration-300">
+                        <span className="text-lg group-hover:scale-110 transition-transform duration-300">
+                          {index === 0 ? "🏠" : index === 1 ? "ℹ️" : "📝"}
+                        </span>
+                      </div>
+                      <div className="flex-1">
+                        <span className="font-bold text-gray-800 group-hover:text-green-700 text-base transition-colors duration-300">
+                          {link.label}
+                        </span>
+                      </div>
+                      <svg
+                        className="w-5 h-5 text-gray-300 group-hover:text-green-600 group-hover:translate-x-1 transition-all duration-300"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        strokeWidth={2}
                       >
-                        <span className="text-lg">{service.icon}</span>
-                        <span className="text-sm">{service.label}</span>
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    </Link>
+                  </motion.div>
+                ))}
 
-              {/* Industries Accordion in Mobile */}
-              <div className="border border-gray-200 rounded-2xl overflow-hidden">
-                <button
-                  onClick={() => setIsMobileIndustriesOpen(!isMobileIndustriesOpen)}
-                  className="flex items-center justify-between w-full p-4 text-gray-700 hover:bg-blue-50 transition-all duration-200"
+                {/* Services Accordion */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: navLinks.length * 0.05 }}
+                  className="border-2 border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm"
                 >
-                  <span className="font-semibold text-base">Industries</span>
-                  <svg
-                    className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${
-                      isMobileIndustriesOpen ? "rotate-180" : ""
-                    }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+                  <button
+                    onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                    className="flex items-center justify-between w-full p-4 text-gray-800 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 transition-all duration-300"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-gradient-to-br from-green-100 to-emerald-100 rounded-xl flex items-center justify-center">
+                        <span className="text-lg">🛠️</span>
+                      </div>
+                      <span className="font-bold text-base">Services</span>
+                    </div>
+                    <motion.svg
+                      animate={{ rotate: isMobileServicesOpen ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="w-5 h-5 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
                       strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-
-                {isMobileIndustriesOpen && (
-                  <div className="bg-gray-50 p-3 space-y-1">
-                    <Link
-                      href="/industries"
-                      prefetch={true}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="block p-3 rounded-xl text-blue-600 hover:bg-white transition-all duration-200 font-semibold text-sm"
                     >
-                      View All Industries →
-                    </Link>
-                    {industriesData.map((industry) => (
-                      <Link
-                        key={industry.href}
-                        href={industry.href}
-                        prefetch={true}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className="flex items-center gap-3 p-3 rounded-xl text-gray-700 hover:bg-white transition-all duration-200"
-                      >
-                        <span className="text-lg">{industry.icon}</span>
-                        <span className="text-sm">{industry.label}</span>
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </motion.svg>
+                  </button>
 
-              {/* Products Accordion in Mobile */}
-              <div className="border border-gray-200 rounded-2xl overflow-hidden">
-                <button
-                  onClick={() => setIsMobileProductsOpen(!isMobileProductsOpen)}
-                  className="flex items-center justify-between w-full p-4 text-gray-700 hover:bg-violet-50 transition-all duration-200"
+                  <AnimatePresence>
+                    {isMobileServicesOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="bg-gradient-to-b from-gray-50 to-white p-3 space-y-1 max-h-[300px] overflow-y-auto">
+                          <Link
+                            href="/services"
+                            prefetch={true}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="flex items-center gap-2 p-3 rounded-xl text-green-600 hover:bg-white bg-green-50 border border-green-200 transition-all duration-200 font-bold text-sm mb-2"
+                          >
+                            <span>View All Services</span>
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Link>
+                          {servicesData.map((service, idx) => (
+                            <motion.div
+                              key={service.href}
+                              initial={{ opacity: 0, y: 5 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ delay: idx * 0.03 }}
+                            >
+                              <Link
+                                href={service.href}
+                                prefetch={true}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="flex items-center gap-3 p-3 rounded-xl text-gray-700 hover:bg-white hover:shadow-sm transition-all duration-200"
+                              >
+                                <span className="text-xl">{service.icon}</span>
+                                <span className="text-sm font-medium">{service.label}</span>
+                              </Link>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+
+                {/* Industries Accordion */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: (navLinks.length + 1) * 0.05 }}
+                  className="border-2 border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm"
                 >
-                  <span className="font-semibold text-base">Products</span>
-                  <svg
-                    className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${
-                      isMobileProductsOpen ? "rotate-180" : ""
-                    }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
+                  <button
+                    onClick={() => setIsMobileIndustriesOpen(!isMobileIndustriesOpen)}
+                    className="flex items-center justify-between w-full p-4 text-gray-800 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 transition-all duration-300"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-xl flex items-center justify-center">
+                        <span className="text-lg">🏭</span>
+                      </div>
+                      <span className="font-bold text-base">Industries</span>
+                    </div>
+                    <motion.svg
+                      animate={{ rotate: isMobileIndustriesOpen ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="w-5 h-5 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
                       strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-
-                {isMobileProductsOpen && (
-                  <div className="bg-gray-50 p-3 space-y-1">
-                    <Link
-                      href="/products"
-                      prefetch={true}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="block p-3 rounded-xl text-violet-600 hover:bg-white transition-all duration-200 font-semibold text-sm"
                     >
-                      View All Products →
-                    </Link>
-                    {productsData.map((product) => (
-                      <Link
-                        key={product.href}
-                        href={product.href}
-                        prefetch={true}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className="flex items-center gap-3 p-3 rounded-xl text-gray-700 hover:bg-white transition-all duration-200"
-                      >
-                        <span className="text-lg">{product.icon}</span>
-                        <span className="text-sm">{product.label}</span>
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </motion.svg>
+                  </button>
 
-            {/* CTA Section */}
-            <div className="p-6 border-t border-gray-100">
-              <Link
-                href="/contact"
-                prefetch={true}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="press-illusion-btn bg-green-400 text-black w-fit font-bold px-6 py-2 text-sm items-center space-x-2 inline-flex"
-              >
-                <span>Get Pricing & Demo</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 17 9"
-                  className="h-2 w-4"
+                  <AnimatePresence>
+                    {isMobileIndustriesOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="bg-gradient-to-b from-gray-50 to-white p-3 space-y-1">
+                          <Link
+                            href="/industries"
+                            prefetch={true}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="flex items-center gap-2 p-3 rounded-xl text-blue-600 hover:bg-white bg-blue-50 border border-blue-200 transition-all duration-200 font-bold text-sm mb-2"
+                          >
+                            <span>View All Industries</span>
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Link>
+                          {industriesData.map((industry, idx) => (
+                            <motion.div
+                              key={industry.href}
+                              initial={{ opacity: 0, y: 5 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ delay: idx * 0.03 }}
+                            >
+                              <Link
+                                href={industry.href}
+                                prefetch={true}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="flex items-center gap-3 p-3 rounded-xl text-gray-700 hover:bg-white hover:shadow-sm transition-all duration-200"
+                              >
+                                <span className="text-xl">{industry.icon}</span>
+                                <span className="text-sm font-medium">{industry.label}</span>
+                              </Link>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+
+                {/* Products Accordion */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: (navLinks.length + 2) * 0.05 }}
+                  className="border-2 border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm"
                 >
-                  <path
-                    fill="currentColor"
-                    fillRule="evenodd"
-                    d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
+                  <button
+                    onClick={() => setIsMobileProductsOpen(!isMobileProductsOpen)}
+                    className="flex items-center justify-between w-full p-4 text-gray-800 hover:bg-gradient-to-r hover:from-violet-50 hover:to-purple-50 transition-all duration-300"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-gradient-to-br from-violet-100 to-purple-100 rounded-xl flex items-center justify-center">
+                        <span className="text-lg">📦</span>
+                      </div>
+                      <span className="font-bold text-base">Products</span>
+                    </div>
+                    <motion.svg
+                      animate={{ rotate: isMobileProductsOpen ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="w-5 h-5 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </motion.svg>
+                  </button>
+
+                  <AnimatePresence>
+                    {isMobileProductsOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="bg-gradient-to-b from-gray-50 to-white p-3 space-y-1 max-h-[300px] overflow-y-auto">
+                          <Link
+                            href="/products"
+                            prefetch={true}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="flex items-center gap-2 p-3 rounded-xl text-violet-600 hover:bg-white bg-violet-50 border border-violet-200 transition-all duration-200 font-bold text-sm mb-2"
+                          >
+                            <span>View All Products</span>
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Link>
+                          {productsData.map((product, idx) => (
+                            <motion.div
+                              key={product.href}
+                              initial={{ opacity: 0, y: 5 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ delay: idx * 0.03 }}
+                            >
+                              <Link
+                                href={product.href}
+                                prefetch={true}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="flex items-center gap-3 p-3 rounded-xl text-gray-700 hover:bg-white hover:shadow-sm transition-all duration-200"
+                              >
+                                <span className="text-xl">{product.icon}</span>
+                                <span className="text-sm font-medium">{product.label}</span>
+                              </Link>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              </div>
+
+              {/* Premium CTA Section */}
+              <div className="p-4 border-t border-gray-100 bg-gradient-to-b from-white to-gray-50">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <Link
+                    href="/contact"
+                    prefetch={true}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="group relative w-full bg-gradient-to-r from-green-400 to-emerald-500 hover:from-green-500 hover:to-emerald-600 text-white font-bold px-6 py-4 rounded-2xl flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl overflow-hidden"
+                  >
+                    <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                    <span className="relative z-10 text-base">Get Pricing & Demo</span>
+                    <svg
+                      className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      strokeWidth={2.5}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
+                      />
+                    </svg>
+                  </Link>
+                </motion.div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
