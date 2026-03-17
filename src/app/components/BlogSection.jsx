@@ -9,7 +9,7 @@ export default function BlogSection({ posts }) {
   return (
     <section className="py-24 bg-premium-noise gradient-bg-green">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end lg:text-left text-center justify-between mb-16 gap-6">
           <div className="max-w-2xl">
             <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
               Latest From <span className="text-green-500">Our Blog</span>
@@ -64,10 +64,10 @@ export default function BlogSection({ posts }) {
                     </span>
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-500 transition-colors line-clamp-2">
+                <h3 className="text-xl font-bold lg:text-left text-center text-gray-900 mb-3 group-hover:text-green-500 transition-colors line-clamp-2">
                   {post.title}
                 </h3>
-                <div className="flex items-center gap-3 text-sm text-gray-500">
+                <div className="flex items-center lg:justify-start justify-center gap-3 lg:text-left text-center text-sm text-gray-500">
                   <span>{post.date}</span>
                   <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
                   <span>{post.readTime}</span>
