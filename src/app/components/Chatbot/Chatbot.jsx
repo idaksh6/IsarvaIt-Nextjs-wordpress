@@ -68,18 +68,17 @@ const Chatbot = () => {
     const saveConversation = async () => {
       if (conversationId && messages.length > 1) {
         try {
-          // Temporarily disabled to debug - conversation saving not critical for chat functionality
-          // await fetch('/api/save-conversation', {
-          //   method: 'POST',
-          //   headers: { 'Content-Type': 'application/json' },
-          //   body: JSON.stringify({
-          //     conversationId,
-          //     messages,
-          //     timestamp: new Date().toISOString(),
-          //   }),
-          // });
+          await fetch('/api/save-conversation', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              conversationId,
+              messages,
+              timestamp: new Date().toISOString(),
+            }),
+          });
         } catch (error) {
-          // Failed to save conversation
+          console.error('Failed to save conversation:', error);
         }
       }
     };
