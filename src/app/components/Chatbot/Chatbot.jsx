@@ -254,7 +254,7 @@ const Chatbot = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-[9999] font-outfit antialiased">
+    <div className="fixed bottom-6 md:right-6 right-4 left-4 md:left-auto z-[9999] font-outfit antialiased">
       <AnimatePresence mode="wait">
         {isOpen ? (
           <motion.div
@@ -262,20 +262,20 @@ const Chatbot = () => {
             initial={{
               opacity: 0,
               height: "80px",
-              width: "400px",
+              width: "100%",
               y: 40,
               overflow: "hidden",
             }}
             animate={{
               opacity: 1,
               height: isMinimized ? "72px" : "620px",
-              width: "400px",
+              width: "100%",
               y: 0,
             }}
             exit={{
               opacity: 0,
               height: "80px",
-              width: "400px",
+              width: "100%",
               y: 40,
             }}
             transition={{
@@ -284,7 +284,7 @@ const Chatbot = () => {
               stiffness: 400,
               opacity: { duration: 0.2 },
             }}
-            className="bg-[#0f0f0f] border border-white/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col"
+            className="bg-[#0f0f0f] border border-white/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col md:w-[400px] w-full max-w-full max-h-[calc(100vh-3rem)]"
           >
             {/* Header */}
             <div className="p-4 bg-gradient-to-r from-emerald-600/10 via-emerald-500/5 to-transparent border-b border-white/10 flex items-center justify-between">
