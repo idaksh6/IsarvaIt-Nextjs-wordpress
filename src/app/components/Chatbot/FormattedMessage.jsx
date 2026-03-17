@@ -107,12 +107,14 @@ export function FormattedMessage({ content }) {
     const elements = [];
     let lastIndex = 0;
     let match;
+    let elementCounter = 0; // Counter to ensure unique keys
 
     while ((match = linkRegex.exec(text)) !== null) {
       // Add text before the link
       if (match.index > lastIndex) {
         const beforeText = text.substring(lastIndex, match.index);
-        elements.push(...formatBoldText(beforeText));
+        elements.push(...formatBoldText(beforeText, elementCounter));
+        elementCounter += beforeText.split(/(\*\*[^*]+\*\*)/g).length;
       }
 
       // Add the link
@@ -120,7 +122,7 @@ export function FormattedMessage({ content }) {
       const linkUrl = match[2];
       elements.push(
         <a
-          key={`link-${match.index}`}
+          key={`link-${elementCounter++}`}
           href={linkUrl}
           target="_blank"
           rel="noopener noreferrer"
@@ -136,23 +138,24 @@ export function FormattedMessage({ content }) {
     // Add remaining text after last link
     if (lastIndex < text.length) {
       const remainingText = text.substring(lastIndex);
-      elements.push(...formatBoldText(remainingText));
+      elements.push(...formatBoldText(remainingText, elementCounter));
     }
 
-    return elements.length > 0 ? elements : formatBoldText(text);
+    return elements.length > 0 ? elements : formatBoldText(text, 0);
   };
 
-  const formatBoldText = (text) => {
+  const formatBoldText = (text, baseIndex = 0) => {
     // Split text by **bold** markers
     const parts = text.split(/(\*\*[^*]+\*\*)/g);
     
     return parts.map((part, index) => {
+      const uniqueIndex = baseIndex + index;
       // Check if this part is bold
       if (part.startsWith('**') && part.endsWith('**')) {
         const boldText = part.slice(2, -2);
-        return <strong key={`bold-${index}`} className="font-bold text-white">{boldText}</strong>;
+        return <strong key={`bold-${uniqueIndex}`} className="font-bold text-white">{boldText}</strong>;
       }
-      return <span key={`text-${index}`}>{part}</span>;
+      return <span key={`text-${uniqueIndex}`}>{part}</span>;
     });
   };
 

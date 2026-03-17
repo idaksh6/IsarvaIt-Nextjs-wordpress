@@ -26,6 +26,140 @@ function findQuickResponse(message) {
   return null;
 }
 
+// Helper function to detect question type and filter context
+function detectQuestionType(message) {
+  const lowerMessage = message.toLowerCase();
+  
+  // Product keywords - looking for software/solutions to buy
+  const productKeywords = [
+    'product', 'products', 'software', 'solution', 'solutions',
+    'hrms', 'billing', 'crm', 'pos', 'erp',
+    'buy', 'purchase', 'license', 'pricing',
+    'ready-made', 'off-the-shelf'
+  ];
+  
+  // Service keywords - looking for custom development/work
+  const serviceKeywords = [
+    'service', 'services', 'develop', 'development',
+    'design', 'create', 'build', 'custom',
+    'website', 'web development', 'mobile app',
+    'ui/ux', 'digital marketing', 'seo',
+    'how you work', 'what you do', 'your team'
+  ];
+  
+  // Industry keywords
+  const industryKeywords = [
+    'industry', 'industries', 'sector', 'sectors',
+    'healthcare', 'banking', 'finance', 'financial',
+    'education', 'manufacturing', 'retail', 'ecommerce',
+    'hospitality', 'real estate', 'logistics'
+  ];
+  
+  // Count matches
+  const productScore = productKeywords.filter(kw => lowerMessage.includes(kw)).length;
+  const serviceScore = serviceKeywords.filter(kw => lowerMessage.includes(kw)).length;
+  const industryScore = industryKeywords.filter(kw => lowerMessage.includes(kw)).length;
+  
+  // Determine type based on highest score
+  if (productScore > serviceScore && productScore > industryScore) {
+    return 'products';
+  } else if (serviceScore > productScore && serviceScore > industryScore) {
+    return 'services';
+  } else if (industryScore > productScore && industryScore > serviceScore) {
+    return 'industries';
+  }
+  
+  return null; // Mixed or unclear
+}
+
+// Filter documents based on question type
+function filterDocumentsByType(docs, questionType) {
+  if (!questionType) return docs; // If unclear, return all
+  
+  return docs.filter(doc => {
+    const sourceUrl = doc.metadata?.page_url || doc.metadata?.source || '';
+    const lowerUrl = sourceUrl.toLowerCase();
+    
+    // Filter based on URL pattern
+    if (questionType === 'products') {
+      return lowerUrl.includes('/products/');
+    } else if (questionType === 'services') {
+      return lowerUrl.includes('/services/');
+    } else if (questionType === 'industries') {
+      return lowerUrl.includes('/industries/');
+    }
+    
+    return true;
+  });
+}
+
+// Extract key entities (product/service/industry names) from question
+function extractKeyEntities(message) {
+  const lowerMessage = message.toLowerCase();
+  
+  // Common product names
+  const products = [
+    'hrms', 'billing software', 'billing', 'crm', 'pos', 'erp',
+    'document management', 'inventory management', 'payroll',
+    'accounting software', 'project management', 'attendance system'
+  ];
+  
+  // Common service names
+  const services = [
+    'web development', 'mobile app', 'ui/ux design', 'digital marketing',
+    'seo', 'cloud solutions', 'api integration', 'ecommerce development',
+    'custom software', 'cms development'
+  ];
+  
+  // Common industry names
+  const industries = [
+    'healthcare', 'banking', 'finance', 'education', 'manufacturing',
+    'retail', 'ecommerce', 'hospitality', 'real estate', 'logistics'
+  ];
+  
+  const found = [];
+  
+  // Check for products
+  products.forEach(product => {
+    if (lowerMessage.includes(product)) {
+      found.push(product);
+    }
+  });
+  
+  // Check for services
+  services.forEach(service => {
+    if (lowerMessage.includes(service)) {
+      found.push(service);
+    }
+  });
+  
+  // Check for industries
+  industries.forEach(industry => {
+    if (lowerMessage.includes(industry)) {
+      found.push(industry);
+    }
+  });
+  
+  return found;
+}
+
+// Check if two questions are asking about the same entities
+function isSameEntityQuestion(question1, question2) {
+  const entities1 = extractKeyEntities(question1);
+  const entities2 = extractKeyEntities(question2);
+  
+  // If no specific entities found in either, consider them different
+  if (entities1.length === 0 || entities2.length === 0) {
+    return false;
+  }
+  
+  // Check if there's any overlap in entities
+  const overlap = entities1.filter(e => entities2.includes(e));
+  
+  // Must have at least one matching entity
+  return overlap.length > 0;
+}
+
 export async function POST(req) {
   try {
     const { message, history } = await req.json();
@@ -90,8 +224,8 @@ export async function POST(req) {
     try {
       const result = await client.rpc('search_qa_cache', {
         query_embedding: questionEmbedding,
-        similarity_threshold: 0.85,
-        match_count: 1
+        similarity_threshold: 0.90, // Increased from 0.85 to be more strict
+        match_count: 3 // Get top 3 to check entity matching
       });
       cachedAnswers = result.data;
       cacheError = result.error;
@@ -101,33 +235,49 @@ export async function POST(req) {
     }
 
     if (!cacheError && cachedAnswers && cachedAnswers.length > 0) {
-      const cachedResponse = cachedAnswers[0].answer;
+      // Smart cache validation: Check if the cached question asks about the same entities
+      let validCachedAnswer = null;
       
-      // Stream the cached response with typing effect
-      const encoder = new TextEncoder();
-      const stream = new ReadableStream({
-        async start(controller) {
-          // Send metadata about cache hit
-          controller.enqueue(encoder.encode(`data: ${JSON.stringify({ metadata: { cached: true, similarity: cachedAnswers[0].similarity } })}\n\n`));
-          
-          // Send characters with typing delay
-          for (let i = 0; i < cachedResponse.length; i++) {
-            controller.enqueue(encoder.encode(`data: ${JSON.stringify({ content: cachedResponse[i] })}\n\n`));
-            // Add typing delay (15ms per character)
-            await new Promise(resolve => setTimeout(resolve, 15));
-          }
-          controller.enqueue(encoder.encode('data: [DONE]\n\n'));
-          controller.close();
-        },
-      });
+      for (const cached of cachedAnswers) {
+        // Validate that both questions are asking about the same specific entities
+        if (isSameEntityQuestion(message, cached.question)) {
+          validCachedAnswer = cached;
+          console.log(`Cache HIT: "${message}" matched with "${cached.question}" (similarity: ${cached.similarity})`);
+          break;
+        } else {
+          console.log(`Cache SKIP: "${message}" vs "${cached.question}" - different entities`);
+        }
+      }
+      
+      if (validCachedAnswer) {
+        const cachedResponse = validCachedAnswer.answer;
+        
+        // Stream the cached response with typing effect
+        const encoder = new TextEncoder();
+        const stream = new ReadableStream({
+          async start(controller) {
+            // Send metadata about cache hit
+            controller.enqueue(encoder.encode(`data: ${JSON.stringify({ metadata: { cached: true, similarity: validCachedAnswer.similarity } })}\n\n`));
+            
+            // Send characters with typing delay
+            for (let i = 0; i < cachedResponse.length; i++) {
+              controller.enqueue(encoder.encode(`data: ${JSON.stringify({ content: cachedResponse[i] })}\n\n`));
+              // Add typing delay (15ms per character)
+              await new Promise(resolve => setTimeout(resolve, 15));
+            }
+            controller.enqueue(encoder.encode('data: [DONE]\n\n'));
+            controller.close();
+          },
+        });
 
-      return new Response(stream, {
-        headers: {
-          'Content-Type': 'text/event-stream',
-          'Cache-Control': 'no-cache',
-          'Connection': 'keep-alive',
-        },
-      });
+        return new Response(stream, {
+          headers: {
+            'Content-Type': 'text/event-stream',
+            'Cache-Control': 'no-cache',
+            'Connection': 'keep-alive',
+          },
+        });
+      }
     }
 
     const vectorStore = new SupabaseVectorStore(embeddings, {
@@ -145,18 +295,55 @@ export async function POST(req) {
       openAIApiKey: process.env.OPENAI_API_KEY,
     });
 
+    // Detect question type for smart filtering
+    const questionType = detectQuestionType(message);
+    console.log(`Question type detected: ${questionType || 'general'}`);
+
     // 3. Define Prompt Template
     const template = `
       You are Isarva AI, the official assistant for Isarva (a premium web design & development agency).
-      Answer the user's question clearly and professionally based ONLY on the following context. 
       
-      CRITICAL REQUIREMENTS - MUST FOLLOW:
-      1. ALWAYS end your response with relevant source links
-      2. Use markdown format: [descriptive text](URL)
-      3. Extract URLs from the "Source:" lines in the context
-      4. Use descriptive link text like "Learn more about this service", "View product details", "Explore our solutions"
-      5. If no specific page URL is found, ALWAYS end with: "For more information, [contact us](https://isarvait.vercel.app/contact)"
-      6. NEVER show raw URLs - always format as clickable links with text
+      🚨 CRITICAL: READ THE QUESTION CAREFULLY FIRST! 🚨
+      STEP 1: Identify what the user is asking about:
+      - Keywords like "product", "software", "buy", "solution", "HRMS", "billing software" = PRODUCTS QUESTION
+      - Keywords like "service", "development", "design", "how you work", "build", "create" = SERVICES QUESTION
+      - Keywords like "industry", "sector", "healthcare", "banking", "education" = INDUSTRIES QUESTION
+      
+      STEP 2: Filter the context to ONLY use information matching the question type:
+      - If PRODUCTS question → Use ONLY context with URLs containing "/products/"
+      - If SERVICES question → Use ONLY context with URLs containing "/services/"
+      - If INDUSTRIES question → Use ONLY context with URLs containing "/industries/"
+      
+      STEP 3: Answer based on filtered context only.
+      
+      ⚠️ ABSOLUTE RULES - BREAKING THESE IS FORBIDDEN:
+      
+      **SERVICES vs PRODUCTS DISTINCTION:**
+      - **SERVICES** = What Isarva DOES for clients (custom development, design work, consulting)
+        Examples: Web Development, Mobile App Development, UI/UX Design, Digital Marketing
+        URL Pattern: /services/
+        
+      - **PRODUCTS** = Ready-made SOFTWARE that clients can BUY/LICENSE from Isarva
+        Examples: HRMS Software, Billing Software, CRM Software, POS Systems
+        URL Pattern: /products/
+        
+      - **INDUSTRIES** = Sectors/verticals Isarva serves
+        Examples: Healthcare, Banking, Education, Manufacturing, Retail
+        URL Pattern: /industries/
+      
+      ❌ WRONG ANSWER EXAMPLE:
+      User asks: "What products do you have?"
+      Bad Answer: "We offer web development, mobile app development..." ← THIS IS SERVICES, NOT PRODUCTS!
+      
+      ✅ CORRECT ANSWER EXAMPLE:
+      User asks: "What products do you have?"
+      Good Answer: "We offer software products including HRMS, Billing Software, CRM..." ← CORRECT!
+      
+      **MANDATORY FILTERING:**
+      1. Read the question and identify the topic (products/services/industries)
+      2. Look at the Source URLs in the context
+      3. IGNORE any context that doesn't match the question type
+      4. If user asks about products and context only has /services/ URLs → Say "I found information about our services, but if you're looking for our software products, [view our products](https://isarvait.vercel.app/products)"
       
       FORMATTING RULES:
       - Keep responses CONCISE and to the point
@@ -166,33 +353,23 @@ export async function POST(req) {
       - Maximum 3-4 sentences of explanation before lists
       - Format like professional, brief documentation
       
-      CONTENT RULES:
-      - **Services** = What Isarva DOES (web development, mobile apps, design, etc.)
-      - **Products** = Ready-made SOFTWARE that Isarva SELLS (HRMS, Billing Software, etc.)
-      - **Industries** = Sectors we serve (Banking, Healthcare, Education, Manufacturing, etc.)
-      - If asked about "products", answer ONLY about products (software), NOT services
-      - If asked about "services", answer ONLY about services, NOT products
-      - If asked about "industries", answer ONLY about industry-specific solutions
-      - Answer EXACTLY what was asked - don't mix topics
-      
       LINK PLACEMENT (MANDATORY):
-      - End EVERY response with 1-3 relevant links
-      - Example endings for Services:
-        * "[Learn more about our services](https://isarvait.vercel.app/services)"
-        * "[Explore web development services](https://isarvait.vercel.app/services/website-services)"
-      - Example endings for Products:
-        * "[View HRMS product](https://isarvait.vercel.app/products/hrms-software) | [Contact us](https://isarvait.vercel.app/contact)"
-        * "[Explore our software solutions](https://isarvait.vercel.app/products)"
-      - Example endings for Industries:
-        * "[Healthcare industry solutions](https://isarvait.vercel.app/industries/healthcare-life-sciences)"
-        * "[Banking & financial services](https://isarvait.vercel.app/industries/banking-financial-services) | [Contact us](https://isarvait.vercel.app/contact)"
-      - General format:
-        * "[Explore our solutions](https://isarvait.vercel.app) | [Get in touch](https://isarvait.vercel.app/contact)"
+      1. ALWAYS end your response with relevant source links
+      2. Use markdown format: [descriptive text](URL)
+      3. Extract URLs from the "Source:" lines in the context
+      4. Match link topic to question topic:
+         - Products question → Link to /products/ URLs
+         - Services question → Link to /services/ URLs
+         - Industries question → Link to /industries/ URLs
+      5. If no specific page URL is found, ALWAYS end with: "[Contact us](https://isarvait.vercel.app/contact)"
+      6. NEVER show raw URLs - always format as clickable links
       
       Context with Sources (URLs are after "Source:"): 
       {context}
       
       Question: {question}
+      
+      REMINDER: Check if the question is about PRODUCTS, SERVICES, or INDUSTRIES. Only use matching context!
       
       Answer (MUST include relevant links at the end):
     `;
@@ -203,8 +380,22 @@ export async function POST(req) {
     const chain = RunnableSequence.from([
       {
         context: retriever.pipe((docs) => {
-          // Include both content and source URLs
-          return docs.map((d) => {
+          // SMART FILTERING: Filter documents based on question type
+          const filteredDocs = filterDocumentsByType(docs, questionType);
+          
+          console.log(`Total docs retrieved: ${docs.length}, After filtering: ${filteredDocs.length}`);
+          
+          // If filtering removed all docs, inform user
+          if (filteredDocs.length === 0 && docs.length > 0) {
+            return `No specific ${questionType} information found in the knowledge base, but here's what we have:\n\n` + 
+              docs.slice(0, 2).map((d) => {
+                const sourceUrl = d.metadata?.page_url || d.metadata?.source || '';
+                return `Content: ${d.pageContent}\nSource: ${sourceUrl}`;
+              }).join('\n\n---\n\n');
+          }
+          
+          // Include both content and source URLs from filtered docs
+          return filteredDocs.map((d) => {
             const sourceUrl = d.metadata?.page_url || d.metadata?.source || '';
             return `Content: ${d.pageContent}\nSource: ${sourceUrl}`;
           }).join('\n\n---\n\n');
