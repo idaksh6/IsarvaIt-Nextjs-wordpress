@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
 import {
   motion,
   AnimatePresence,
@@ -10,52 +9,33 @@ import {
 } from "framer-motion";
 import ContactFormModal from "../../components/ContactFormModal";
 
-const ZOHO_RED = "#E24343";
+const ZOHO_GREEN = "#22C55E";
 const ZOHO_DARK = "#4B4B4B";
 const ZOHO_GREY = "#F5F5F5";
 
 // Helper for segmented features data
 const getSegmentItems = (segment) => {
   const data = {
-    "travel-expense": [
+    "core-hrms": [
       {
-        title: "Business travel simplified: Book smart, save big.",
-        desc: "Book flights, hotels, cabs, and trains with our new-age online booking tool, giving you access to the widest range of inventory. Enjoy unmatched control, incredible savings, and exclusive perks, all while staying within company policies.",
-        icon: "✈️",
+        question: "What is HRMS & Payroll?",
+        answer: "HRMS (Human Resource Management System) software is a comprehensive tool that automates and streamlines HR processes, including performance management, payroll management, and employee self-service, helping organizations efficiently manage their workforce and improve overall productivity.",
+        icon: "🎯",
       },
       {
-        title: "Receipts to reimbursements: Automation that works for you.",
-        desc: "Scan receipts on the go and let AI categorize them automatically. Speed up approvals and ensure timely reimbursements for your team.",
-        icon: "🧾",
-      },
-      {
-        title: "Automate card reconciliation: Any bank, any card.",
-        desc: "Connect your corporate cards and watch transactions flow in. Matches expenses automatically to save hours of manual work.",
-        icon: "💳",
-      },
-    ],
-    "procure-to-pay": [
-      {
-        title: "Centralized Procurement: Buy what you need, when you need it.",
-        desc: "Streamline your purchasing process from request to delivery. Maintain a central catalog and track every order in real-time.",
-        icon: "📦",
-      },
-      {
-        title: "Vendor Management: Build stronger relationships.",
-        desc: "Manage all your vendors in one place. Track performance, handle contracts, and ensure compliance easily.",
+        question: "How does the Employee Self-Service Portal benefit my organization?",
+        answer: "The self-service portal empowers employees to manage their own information, submit leave requests, and enhance their engagement and satisfaction. This reduces the administrative burden on HR teams while giving employees more control and transparency over their personal data and requests.",
         icon: "👥",
       },
-    ],
-    payroll: [
       {
-        title: "Error-free Payroll: Pay your team on time, every time.",
-        desc: "Automate complex calculations, handle tax filings, and disburse salaries with a single click. Compliance is built-in.",
-        icon: "💰",
+        question: "What payroll capabilities does the system offer?",
+        answer: "Payroll management ensures accurate and timely salary processing, handles deductions, taxes, and compliance, and reduces manual errors. The system automates complex calculations and ensures statutory compliance, saving significant time and reducing the risk of costly mistakes.",
+        icon: "💳",
       },
       {
-        title: "Employee Self-Service: Empower your workforce.",
-        desc: "Give your employees access to payslips, tax declarations, and reimbursement status through a dedicated portal.",
-        icon: "📱",
+        question: "How does HRMS enable strategic HR initiatives?",
+        answer: "Overall, HRMS software enables HR departments to focus on strategic initiatives by automating routine tasks and providing data-driven insights for decision-making. By eliminating time-consuming administrative work, HR professionals can dedicate more time to talent development, employee engagement, and organizational growth.",
+        icon: "📊",
       },
     ],
   };
@@ -69,56 +49,24 @@ export default function ProductDetailPremium({
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSegment, setActiveSegment] = useState("travel-expense");
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 400);
-
-      const sections = [
-        "travel-expense",
-        "procure-to-pay",
-        "payroll",
-        "security",
-        "pricing",
-      ];
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 150 && rect.bottom >= 150) {
-            setActiveSegment(section);
-            break;
-          }
-        }
-      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 120;
-      const elementPosition =
-        element.getBoundingClientRect().top + window.pageYOffset;
-      window.scrollTo({
-        top: elementPosition - offset,
-        behavior: "smooth",
-      });
-    }
-  };
-
   return (
     <div className="bg-white font-sans selection:bg-red-100 selection:text-red-900">
       {/* 1. Centered Hero Section with Zoho Side-Animations */}
-      <section className="relative pt-40 pb-32 overflow-hidden bg-white">
+      <section className="relative pt-40 lg:pb-32 pb-10 overflow-hidden bg-white">
         <div className="absolute inset-0 bg-premium-noise opacity-5 pointer-events-none"></div>
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_550px_450px_at_center_55%,#fbe8e7_50%,rgba(255,199,64,0)_100%)] opacity-40"></div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
+        <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -132,18 +80,17 @@ export default function ProductDetailPremium({
               <span className="text-[#000000]">
                 {product.title.split(" ").slice(1).join(" ")} under control
               </span>
-              <span style={{ color: ZOHO_RED }}>.</span>
+              <span style={{ color: ZOHO_GREEN }}>.</span>
             </h1>
             <p className="text-base text-[#444444] mb-8 max-w-3xl mx-auto leading-relaxed">
               {product.description}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link
-                href="/contact"
-                prefetch={true}
-                className="press-illusion-btn bg-green-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 hidden md:flex"
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="press-illusion-btn bg-green-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex cursor-pointer"
               >
-                <span> SIGN UP FOR FREE</span>
+                <span>REQUEST DEMO</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -157,27 +104,7 @@ export default function ProductDetailPremium({
                     clipRule="evenodd"
                   ></path>
                 </svg>
-              </Link>
-              <Link
-                href="/contact"
-                prefetch={true}
-                className="press-illusion-btn bg-green-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 hidden md:flex"
-              >
-                <span> REQUEST DEMO</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 17 9"
-                  className="h-2 w-4"
-                >
-                  <path
-                    fill="currentColor"
-                    fillRule="evenodd"
-                    d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-              </Link>
+              </button>
             </div>
           </motion.div>
         </div>
@@ -200,314 +127,233 @@ export default function ProductDetailPremium({
               <img
                 src="/dashboard.webp"
                 alt="Dashboard Preview"
-                className="w-full object-contain h-[668px] shadow-2xl"
+                className="w-full object-contain lg:h-[668px]  h-full shadow-2xl"
               />
             </div>
           </div>
         </motion.div>
       </section>{" "}
-      {/* 2. Take Control Section (Segmented features) */}
-      <section className="py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-[50px] font-extrabold text-[#000000] mb-6 leading-tight">
-              Take control of every{" "}
-              <span className="text-[#E24343]">business spend</span>
-              <span className="text-[#000000]">.</span>
-            </h2>
-            <p className="text-lg text-[#444444] max-w-4xl mx-auto leading-relaxed">
-              Zoho Spend is the industry-first, complete spend management
-              platform. It unifies travel, expense, procurement, AP automation,
-              and payroll, giving businesses the power to track, control, and
-              save on all business spending.
-            </p>
-          </div>
-
-          <div className="flex justify-center mb-20">
-            <div className="bg-[#4B4B4B] p-1.5 rounded-full flex gap-1">
-              {[
-                { id: "travel-expense", label: "Travel & Expense" },
-                { id: "procure-to-pay", label: "Procure-to-Pay" },
-                { id: "payroll", label: "Payroll" },
-              ].map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveSegment(tab.id)}
-                  className={`px-8 py-3 rounded-full text-sm font-bold transition-all ${
-                    activeSegment === tab.id
-                      ? "bg-[#E24343] text-white shadow-lg"
-                      : "text-gray-300 hover:text-white"
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
+      {/* 2. Core HRMS Section */}
+      <section className="lg:py-32 py-14 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 ">
+            {/* Left Side - Image */}
+            <div className="relative">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src="/dashboard.webp"
+                  alt="HRMS Dashboard"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              {/* Decorative elements */}
+              <div className="absolute -top-6 -left-6 w-32 h-32 bg-[#22C55E] opacity-10 rounded-full blur-3xl"></div>
+              <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-[#22C55E] opacity-10 rounded-full blur-3xl"></div>
             </div>
-          </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center min-h-[600px]">
-            {/* Left side: Mockup */}
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeSegment}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-                transition={{ duration: 0.5 }}
-                className="relative"
-              >
-                <div className="bg-[#EAEAEA] rounded-[2rem] p-10 md:p-16 shadow-inner aspect-[4/3] flex items-center justify-center">
-                  <div className="w-full h-full bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100 p-4">
-                    {/* Mockup content based on activeSegment */}
-                    <div className="w-full h-full bg-gray-50 rounded-lg border-2 border-dashed border-gray-200 flex flex-col p-6">
-                      {activeSegment === "travel-expense" && (
-                        <div className="space-y-4">
-                          <div className="h-8 w-1/3 bg-green-500 rounded-md mb-8 flex items-center px-4 text-white text-xs font-bold">
-                            Ticket Booked
-                          </div>
-                          <div className="h-4 w-1/4 bg-gray-200 rounded"></div>
-                          <div className="h-32 w-full bg-gray-100 rounded-lg flex items-center justify-center">
-                            <span className="text-gray-400 text-sm font-medium">
-                              Booking Confimation
-                            </span>
-                          </div>
-                          <div className="grid grid-cols-3 gap-4">
-                            <div className="h-4 bg-gray-200 rounded"></div>
-                            <div className="h-4 bg-gray-200 rounded"></div>
-                            <div className="h-4 bg-gray-200 rounded"></div>
-                          </div>
-                        </div>
-                      )}
-                      {activeSegment === "procure-to-pay" && (
-                        <div className="space-y-4">
-                          <div className="h-8 w-1/3 bg-blue-500 rounded-md mb-8 flex items-center px-4 text-white text-xs font-bold">
-                            PO #4521 Approved
-                          </div>
-                          <div className="h-4 w-1/4 bg-gray-200 rounded"></div>
-                          <div className="h-40 w-full bg-gray-100 rounded-lg p-4">
-                            <div className="flex justify-between mb-4">
-                              <div className="h-4 w-1/2 bg-gray-300 rounded"></div>
-                              <div className="h-4 w-1/4 bg-gray-300 rounded"></div>
-                            </div>
-                            <div className="space-y-2">
-                              <div className="h-2 w-full bg-gray-200 rounded"></div>
-                              <div className="h-2 w-full bg-gray-200 rounded"></div>
-                              <div className="h-2 w-2/3 bg-gray-200 rounded"></div>
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                      {activeSegment === "payroll" && (
-                        <div className="space-y-4">
-                          <div className="h-8 w-1/3 bg-orange-500 rounded-md mb-8 flex items-center px-4 text-white text-xs font-bold">
-                            Payroll Processed
-                          </div>
-                          <div className="flex items-center gap-4 mb-8">
-                            <div className="w-12 h-12 bg-gray-200 rounded-full"></div>
-                            <div className="space-y-2">
-                              <div className="h-3 w-32 bg-gray-300 rounded"></div>
-                              <div className="h-2 w-24 bg-gray-200 rounded"></div>
-                            </div>
-                          </div>
-                          <div className="h-32 w-full bg-blue-50 rounded-lg flex flex-col justify-center px-6">
-                            <div className="text-[#000] text-lg font-bold">
-                              Net Pay: $25,432.00
-                            </div>
-                            <div className="text-blue-600 text-xs mt-1">
-                              Disbursed on July 30, 2024
-                            </div>
-                          </div>
-                        </div>
-                      )}
+            {/* Right Side - Content */}
+            <div>
+              <h2 className="text-4xl md:text-[50px] font-extrabold text-[#000000] mb-6 leading-tight">
+                Take control of every{" "}
+                <span className="text-[#22C55E]">employee workflow</span>
+                <span className="text-[#000000]">.</span>
+              </h2>
+
+              <p className="text-lg text-[#444444] mb-8 leading-relaxed">
+                HRMS (Human Resource Management System) software is a comprehensive tool that automates and streamlines HR processes, including performance management, payroll management, and employee self-service, helping organizations efficiently manage their workforce and improve overall productivity.
+              </p>
+
+              {/* Key Benefits */}
+              <div className="space-y-6">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0 }}
+                  className="flex items-start gap-4"
+                >
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#22C55E] to-[#16a34a] rounded-xl flex items-center justify-center text-2xl shadow-md">
+                      👥
                     </div>
                   </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-[#000000] mb-2">
+                      Employee Self-Service Portal
+                    </h3>
+                    <p className="text-[#555] leading-relaxed text-sm">
+                      The self-service portal empowers employees to manage their own information, submit leave requests, and enhance their engagement and satisfaction.
+                    </p>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="flex items-start gap-4"
+                >
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#22C55E] to-[#16a34a] rounded-xl flex items-center justify-center text-2xl shadow-md">
+                      💰
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-[#000000] mb-2">
+                      Payroll Management
+                    </h3>
+                    <p className="text-[#555] leading-relaxed text-sm">
+                      Payroll management ensures accurate and timely salary processing, handles deductions, taxes, and compliance, and reduces manual errors.
+                    </p>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="flex items-start gap-4"
+                >
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-br from-[#22C55E] to-[#16a34a] rounded-xl flex items-center justify-center text-2xl shadow-md">
+                      📊
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-[#000000] mb-2">
+                      Strategic HR Initiatives
+                    </h3>
+                    <p className="text-[#555] leading-relaxed text-sm">
+                      HRMS software enables HR departments to focus on strategic initiatives by automating routine tasks and providing data-driven insights for decision-making.
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* 3. HRMS Interactive Feature Section */}
+      <div id="hrms-features-section">
+        <HrmsFeatureSection />
+      </div>
+
+      {/* 4. FAQ Section - Interactive Accordion */}
+      <section className="py-24 bg-gradient-to-b from-white via-[#F7FFF9] to-white relative overflow-hidden">
+        {/* Decorative Background Elements */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#22C55E] opacity-[0.03] rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#22C55E] opacity-[0.04] rounded-full blur-3xl"></div>
+
+        <div className="container mx-auto px-6 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <span className="inline-block text-[10px] font-black text-[#22C55E] tracking-[0.28em] uppercase mb-3 bg-[#22C55E]/10 px-4 py-2 rounded-full">
+                SUPPORT
+              </span>
+              <h2 className="text-[clamp(32px,4.5vw,48px)] font-extrabold text-[#0a0a0a] leading-tight mb-4">
+                Everything you need to know
+              </h2>
+              <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
+                Get instant answers to common questions about our HRMS platform.
+                Click any question to expand and learn more.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* FAQ Accordion */}
+          <div className="max-w-6xl mx-auto">
+            <FaqAccordion />
+          </div>
+        </div>
+      </section>
+
+      {/* 5. CTA Section */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        {/* Background Decoration */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#22C55E]/5 via-transparent to-[#22C55E]/5"></div>
+
+        <div className="container mx-auto px-6 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative bg-gradient-to-br from-[#22C55E] to-[#16a34a] rounded-[32px] overflow-hidden shadow-[0_20px_70px_rgba(34,197,94,0.3)]"
+          >
+            {/* Decorative Elements */}
+            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-white/10 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-black/10 rounded-full blur-3xl"></div>
+
+            {/* Pattern Overlay */}
+            <div className="absolute inset-0 opacity-[0.03]" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+            }}></div>
+
+            <div className="relative z-10 px-8 md:px-16 py-16 md:py-20 text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <span className="inline-block text-xs font-black text-white/90 tracking-[0.25em] uppercase mb-4 bg-white/20 px-5 py-2 rounded-full backdrop-blur-sm">
+                  GET STARTED TODAY
+                </span>
+
+                <h2 className="text-[clamp(32px,5vw,56px)] font-extrabold text-white leading-tight mb-6">
+                  Ready to transform your <br className="hidden md:block" />
+                  HR operations?
+                </h2>
+
+                <p className="text-white/90 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                  Join hundreds of organizations streamlining their HR processes.
+                  Start your free trial today or schedule a personalized demo with our team.
+                </p>
+
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="group relative bg-white text-[#22C55E] px-8 py-4 rounded-full font-bold text-base shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-3"
+                  >
+                    <span>Start Free Trial</span>
+                    <svg
+                      className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={3}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </button>
+
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="group relative bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-base hover:bg-white hover:text-[#22C55E] transition-all duration-300 hover:scale-105 flex items-center gap-3"
+                  >
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    <span>Request Demo</span>
+                  </button>
                 </div>
               </motion.div>
-            </AnimatePresence>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
-            {/* Right side: Accordion list */}
-            <div>
-              <div className="mb-2">
-                <span className="text-[10px] font-black text-[#E24343] uppercase tracking-[0.3em]">
-                  {activeSegment.replace(/-/g, " ")}
-                </span>
-              </div>
-              <div className="space-y-6">
-                {getSegmentItems(activeSegment).map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="border-b border-gray-100 pb-6 transition-all"
-                  >
-                    <button
-                      className="w-full flex items-start gap-4 text-left group"
-                      onClick={() => {}}
-                    >
-                      <div className="mt-1 w-12 h-12 bg-[#333] rounded-lg flex items-center justify-center text-white shrink-0 group-hover:bg-[#E24343] transition-colors">
-                        {item.icon}
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between mb-3">
-                          <h3 className="text-xl font-extrabold text-black group-hover:text-[#E24343] transition-colors">
-                            {item.title}
-                          </h3>
-                          {idx === 0 && (
-                            <svg
-                              className="w-5 h-5 text-gray-400"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M5 15l7-7 7 7"
-                              />
-                            </svg>
-                          )}
-                        </div>
-                        {idx === 0 && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            className="overflow-hidden"
-                          >
-                            <p className="text-[#555] leading-relaxed mb-4">
-                              {item.desc}
-                            </p>
-                            <Link
-                              href="#"
-                              className="text-xs font-bold text-gray-500 border-b border-gray-300 hover:text-[#E24343] hover:border-[#E24343] transition-all pb-1 inline-flex items-center gap-2"
-                            >
-                              Explore {activeSegment.replace(/-/g, " ")}{" "}
-                              <span className="text-lg">›</span>
-                            </Link>
-                          </motion.div>
-                        )}
-                      </div>
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Trusted By Section (Small logos beneath) */}
-          <div className="text-center mt-32">
-            <p className="text-[11px] font-black text-gray-400 uppercase tracking-[0.5em] mb-12">
-              Trusted by users across the world
-            </p>
-            <div className="flex flex-wrap justify-center items-center gap-12 lg:gap-24 opacity-30 grayscale hover:opacity-80 transition-opacity">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
-                className="h-6"
-                alt="Amazon"
-              />
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
-                className="h-6"
-                alt="Google"
-              />
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg"
-                className="h-8"
-                alt="IBM"
-              />
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
-                className="h-6"
-                alt="Netflix"
-              />
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg"
-                className="h-6"
-                alt="Slack"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* 3. Feature Grid (Restored & Polished) */}
-      <section className="py-32 bg-[#F5F5F5]">
-        <div className="max-w-7xl mx-auto px-6 text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-[#000000] mb-6">
-            Everything your business needs
-            <span className="text-[#E24343]">.</span>
-          </h2>
-        </div>
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {product.features.slice(0, 4).map((feature, idx) => (
-            <div
-              key={idx}
-              className="bg-white p-10 rounded-[2rem] shadow-sm border border-gray-50 hover:shadow-xl transition-all"
-            >
-              <div className="w-12 h-12 bg-red-50 text-[#E24343] rounded-xl flex items-center justify-center mb-6 font-black">
-                {idx + 1}
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                {feature}
-              </h3>
-              <p className="text-gray-500 leading-relaxed">
-                Seamlessly integrated solution designed to automate high-volume
-                processes and reduce manual errors.
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-      {/* 4. Security Section (Restored & Polished) */}
-      <section className="py-32 bg-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="inline-block px-4 py-2 bg-green-50 text-green-700 rounded-full font-bold text-xs mb-8 tracking-widest uppercase">
-            SECURE & COMPLIANT
-          </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-10 leading-tight">
-            Truly global and enterprise ready
-            <span className="text-[#E24343]">.</span>
-          </h2>
-          <p className="text-xl text-[#444444] leading-relaxed mb-16 px-4">
-            Your data is protected by bank-level security. We are SOC 2, GDPR,
-            and ISO compliant, ensuring your financial information is always
-            safe and private.
-          </p>
-          <div className="flex flex-wrap justify-center gap-12 opacity-30 px-6">
-            <span className="font-black text-2xl tracking-tighter">
-              ISO 27001
-            </span>
-            <span className="font-black text-2xl tracking-tighter">
-              SOC 2 TYPE II
-            </span>
-            <span className="font-black text-2xl tracking-tighter">GDPR</span>
-            <span className="font-black text-2xl tracking-tighter">HIPAA</span>
-          </div>
-        </div>
-      </section>
-      {/* 5. Final CTA / Pricing Section */}
-      <section className="py-32 bg-[#4B4B4B] text-white">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-6xl font-extrabold mb-10">
-            Start your journey today<span className="text-[#E24343]">.</span>
-          </h2>
-          <p className="text-xl text-gray-300 mb-16 max-w-2xl mx-auto">
-            Get started for free or schedule a personalized walkthrough with our
-            product specialists.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="w-full sm:w-auto px-12 py-5 bg-[#E24343] text-white font-extrabold text-xl rounded-full hover:scale-105 transition-all shadow-xl shadow-red-900/40"
-            >
-              SIGN UP FOR FREE
-            </button>
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="w-full sm:w-auto px-12 py-5 border-2 border-white text-white font-extrabold text-xl rounded-full hover:bg-white/10 transition-all"
-            >
-              BOOK A DEMO
-            </button>
-          </div>
-        </div>
-      </section>
       <ContactFormModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
@@ -516,6 +362,488 @@ export default function ProductDetailPremium({
         allItems={allProducts}
       />
     </div>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   FAQ ACCORDION COMPONENT
+───────────────────────────────────────────────────────────── */
+const faqData = [
+  {
+    question: "What is an HRMS and how can it help our organization?",
+    answer: "An HRMS (Human Resource Management System) helps businesses manage employee information, attendance, payroll, leave management, and other HR operations from a single platform. It simplifies HR processes, improves accuracy, and saves time by automating routine administrative tasks.",
+    icon: "🎯",
+    color: "#22C55E"
+  },
+  {
+    question: "How does the system manage employee records?",
+    answer: "The system maintains comprehensive employee records including personal information, contact details, department, designation, and employee IDs. It also allows secure storage of documents such as resumes, identity proofs, and certifications, making it easy for HR teams to access and manage employee information.",
+    icon: "👤",
+    color: "#22C55E"
+  },
+  {
+    question: "Can the system integrate with biometric or attendance devices?",
+    answer: "Yes. The system integrates with biometric devices, RFID systems, and mobile punch-in applications. It captures real-time check-in and check-out data and synchronizes it automatically with the attendance management system.",
+    icon: "🔗",
+    color: "#22C55E"
+  },
+  {
+    question: "How does the leave management system work?",
+    answer: "Employees can apply for leave through the self-service portal, upload supporting documents, and track approval status in real time. HR managers can configure different leave types, define accrual rules, and automate leave balance calculations.",
+    icon: "🌴",
+    color: "#22C55E"
+  },
+  {
+    question: "Does the system support multiple shift schedules?",
+    answer: "Yes. The system allows organizations to create custom shifts based on departments, roles, or locations. It supports fixed, rotational, split, and night shifts, and makes it easy to assign schedules to individuals or teams.",
+    icon: "📅",
+    color: "#22C55E"
+  },
+  {
+    question: "How are overtime hours calculated?",
+    answer: "The system automatically calculates overtime hours based on predefined shift schedules and employee attendance records. This helps ensure accurate compensation and simplifies payroll processing.",
+    icon: "⏰",
+    color: "#22C55E"
+  },
+  {
+    question: "What is the Employee Self-Service (ESS) portal?",
+    answer: "The ESS portal allows employees to manage many HR tasks independently. They can update personal information, apply for leave, view attendance records, check leave balances, submit expenses, and track approvals—all from a single dashboard.",
+    icon: "💼",
+    color: "#22C55E"
+  },
+  {
+    question: "How secure is employee data in the system?",
+    answer: "The platform uses role-based access control (RBAC) to ensure users only access information relevant to their roles. Sensitive data is encrypted both during transmission and while stored, protecting employee details such as salary and bank information.",
+    icon: "🔒",
+    color: "#22C55E"
+  },
+  {
+    question: "Can managers generate HR reports and analytics?",
+    answer: "Yes. The system provides powerful reporting tools that allow HR teams and managers to generate reports on attendance, leave, payroll, and other HR metrics. Reports can be filtered by department, employee type, or date range and exported in formats like PDF, Excel, or CSV.",
+    icon: "📊",
+    color: "#22C55E"
+  },
+  {
+    question: "How does the payroll management system work?",
+    answer: "The payroll module allows organizations to configure salary structures, allowances, and deductions for each employee. It supports statutory compliance such as tax deductions and provident fund contributions, calculates salaries based on attendance and overtime, and generates payslips automatically.",
+    icon: "💰",
+    color: "#22C55E"
+  }
+];
+
+function FaqAccordion() {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleFaq = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const leftColumnFaqs = faqData.slice(0, 5);
+  const rightColumnFaqs = faqData.slice(5, 10);
+
+  const renderFaqItem = (faq, index) => {
+    const isOpen = openIndex === index;
+
+    return (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4, delay: (index % 5) * 0.05 }}
+        className={`group relative bg-white border-2 transition-all duration-300 overflow-hidden ${isOpen
+            ? "border-[#22C55E] shadow-[0_8px_30px_rgba(34,197,94,0.15)]"
+            : "border-gray-200 hover:border-gray-300 hover:shadow-md"
+          }`}
+        style={{
+          borderRadius: "20px",
+        }}
+      >
+        {/* Gradient Accent Bar */}
+        <div
+          className={`absolute left-0 top-0 bottom-0 w-1.5 transition-all duration-300 ${isOpen ? "opacity-100" : "opacity-0"
+            }`}
+          style={{
+            background: "linear-gradient(180deg, #22C55E 0%, #16a34a 100%)",
+          }}
+        />
+
+        {/* Question Header */}
+        <button
+          onClick={() => toggleFaq(index)}
+          className="w-full text-left px-6 py-5 flex items-start gap-4 transition-colors duration-200"
+        >
+          {/* Icon Circle */}
+          <div
+            className={`flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-xl transition-all duration-300 ${isOpen
+                ? "bg-gradient-to-br from-[#22C55E] to-[#16a34a] shadow-lg scale-110"
+                : "bg-gray-100 group-hover:bg-gray-200"
+              }`}
+          >
+            <span className={isOpen ? "filter drop-shadow" : ""}>
+              {faq.icon}
+            </span>
+          </div>
+
+          {/* Question Text */}
+          <div className="flex-1 pt-1">
+            <h3
+              className={`text-[17px] font-bold transition-colors duration-200 pr-8 ${isOpen ? "text-[#22C55E]" : "text-[#0a0a0a] group-hover:text-[#22C55E]"
+                }`}
+            >
+              {faq.question}
+            </h3>
+          </div>
+
+          {/* Toggle Icon */}
+          <div className="flex-shrink-0 mt-1">
+            <div
+              className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${isOpen
+                  ? "bg-[#22C55E] rotate-180"
+                  : "bg-gray-100 group-hover:bg-gray-200"
+                }`}
+            >
+              <svg
+                className={`w-5 h-5 transition-colors ${isOpen ? "text-white" : "text-gray-600"
+                  }`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={3}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </div>
+        </button>
+
+        {/* Answer Content with Animation */}
+        <AnimatePresence initial={false}>
+          {isOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="overflow-hidden"
+            >
+              <div className="px-6 pb-6 pl-[24px]">
+                <div className="pt-1 pb-2 border-t border-gray-100 mt-2">
+                  <p className="text-[15px] text-[#555] leading-relaxed pt-4">
+                    {faq.answer}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
+    );
+  };
+
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+      {/* Left Column - First 5 FAQs */}
+      <div className="space-y-4">
+        {leftColumnFaqs.map((faq, index) => renderFaqItem(faq, index))}
+      </div>
+
+      {/* Right Column - Last 5 FAQs */}
+      <div className="space-y-4">
+        {rightColumnFaqs.map((faq, index) => renderFaqItem(faq, index + 5))}
+      </div>
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   HRMS FEATURE DATA
+───────────────────────────────────────────────────────────── */
+const hrmsFeatures = [
+  {
+    id: "personnel",
+    label: "Personnel Management",
+    icon: "👤",
+    color: "#4F46E5",
+    desc: "Centralise every employee record in one place. Manage profiles, org charts, documents, and HR workflows with precision and ease.",
+    placeholder: "PM",
+    image: "/products/personal Mangement.png",
+  },
+  {
+    id: "attendance",
+    label: "Time & Attendance",
+    icon: "⏰",
+    color: "#0EA5E9",
+    desc: "Track work hours accurately with biometric, mobile, and web-based check-in. Gain real-time visibility into team availability.",
+    placeholder: "TA",
+    image: "/products/Time and Attendence.png",
+  },
+  {
+    id: "shift",
+    label: "Shift Scheduling",
+    icon: "📅",
+    color: "#10B981",
+    desc: "Plan, publish, and manage employee shifts with a drag-and-drop visual scheduler. Eliminate conflicts and last-minute gaps.",
+    placeholder: "SS",
+    image: "/products/Shift Management .png",
+  },
+  {
+    id: "leave",
+    label: "Leave Management",
+    icon: "🌴",
+    color: "#F59E0B",
+    desc: "Automate leave requests, multi-level approvals, and policy enforcement. Employees get instant visibility into their leave balance.",
+    placeholder: "LM",
+    image: "/products/Leave Management.png",
+  },
+  {
+    id: "security",
+    label: "Security & Access Control",
+    icon: "🔒",
+    color: "#EF4444",
+    desc: "Define granular role-based permissions, enforce multi-factor authentication, and maintain complete audit trails for compliance.",
+    placeholder: "SC",
+    image: "/products/Security.png",
+  },
+  {
+    id: "analytics",
+    label: "Reporting & Analytics",
+    icon: "📊",
+    color: "#8B5CF6",
+    desc: "Unlock data-driven HR insights with pre-built dashboards and custom reports covering headcount, payroll, attrition, and more.",
+    placeholder: "RA",
+    image: "/products/Reporting.png",
+  },
+  {
+    id: "ess",
+    label: "Employee Self-Service Portal",
+    icon: "💼",
+    color: "#06B6D4",
+    desc: "Empower employees to manage their own information, submit requests, access payslips, and track approvals — all in a clean portal.",
+    placeholder: "ES",
+    image: "/products/Emplyee self Service.png",
+  },
+  {
+    id: "payroll",
+    label: "Payroll Management System",
+    icon: "💰",
+    color: "#22C55E",
+    desc: "Ensure accurate, compliant, and on-time salary processing. Handle deductions, taxes, and statutory filings with zero manual effort.",
+    placeholder: "PY",
+    image: "/products/Payroll Management System.png",
+  },
+];
+
+/* ─────────────────────────────────────────────────────────────
+   PLACEHOLDER IMAGE COMPONENT
+───────────────────────────────────────────────────────────── */
+function FeaturePlaceholder({ feature }) {
+  return (
+    <div
+      className="w-full h-full flex flex-col items-center justify-center rounded-2xl overflow-hidden"
+      style={{
+        background: `linear-gradient(135deg, ${feature.color}10 0%, ${feature.color}20 100%)`,
+      }}
+    >
+      <img
+        src={feature.image}
+        alt={feature.label}
+        className="w-full h-full object-contain"
+        style={{
+          maxWidth: "100%",
+          maxHeight: "100%",
+        }}
+      />
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────
+   HRMS FEATURE ORBIT SECTION — Production-Grade
+──────────────────────────────────────────────────────────── */
+function HrmsFeatureSection() {
+  const [activeId, setActiveId] = useState("personnel");
+  const [mobileOpenId, setMobileOpenId] = useState("personnel");
+
+  const leftFeatures = hrmsFeatures.slice(0, 4);
+  const rightFeatures = hrmsFeatures.slice(4);
+  const activeFeature = hrmsFeatures.find((f) => f.id === activeId);
+
+  return (
+    <section className="py-20 overflow-hidden bg-[#F7F7F7]">
+      <div className="container mx-auto px-6">
+        {/* Section Header */}
+        <div className="text-center mb-14">
+          <span className="block text-[10px] font-black text-[#22C55E] tracking-[0.28em] uppercase mb-2.5">
+            KEY FEATURES
+          </span>
+          <h2 className="text-[clamp(28px,4vw,44px)] font-extrabold text-[#0a0a0a] leading-tight mb-3.5">
+            Key Features Of <span className="text-[#22C55E]">HRMS</span> Software
+          </h2>
+          <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">
+            HRMS & Payroll software automates and streamlines every HR function
+            — from personnel management to payroll — delivering a highly
+            time-efficient experience.
+          </p>
+        </div>
+
+        {/* ── DESKTOP ORBIT ── */}
+        <div className="hidden lg:block">
+          <div className="relative h-[605px] mx-auto xl:w-[80%] lg:w-full">
+            {/* Green arc ellipse */}
+            <div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[90%] rounded-full border-[1.5px] pointer-events-none z-0"
+              style={{ borderColor: 'rgba(34, 197, 94, 0.42)' }}
+            />
+
+            {/* Left column */}
+            <div className="absolute -left-24 top-1/2 -translate-y-1/2 flex flex-col items-end gap-10 z-10 w-[220px]">
+              {leftFeatures.map((feature) => (
+                <button
+                  key={feature.id}
+                  onClick={() => setActiveId(feature.id)}
+                  className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[13px] font-semibold whitespace-nowrap ${activeId === feature.id
+                    ? "bg-gray-900 border-green-600 text-black shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
+                    : "border-green-300 text-gray-800 hover:border-green-500 hover:shadow-md"
+                    }`}
+                >
+                  <span className="text-sm leading-none">{feature.icon}</span>
+                  {feature.label}
+                  {activeId === feature.id && (
+                    <span className="absolute -right-[7px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[7px] border-t-transparent border-b-[7px] border-b-transparent border-l-[7px] border-l-green-900" />
+                  )}
+                </button>
+              ))}
+            </div>
+
+            {/* Center card */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 2xl:w-[72%] lg:w-[70%]">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeId}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                  className="w-full h-full rounded-xl overflow-hidden shadow-[0_24px_64px_rgba(0,0,0,0.15)]"
+                >
+                  <img
+                    src={activeFeature.image}
+                    alt={activeFeature.label}
+                    className="w-full h-full object-contain bg-white"
+                  />
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Right column */}
+            <div className="absolute -right-24 top-1/2 -translate-y-1/2 flex flex-col items-start gap-10 z-10 w-[220px]">
+              {rightFeatures.map((feature) => (
+                <button
+                  key={feature.id}
+                  onClick={() => setActiveId(feature.id)}
+                  className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[13px] font-semibold whitespace-nowrap ${activeId === feature.id
+                    ? "bg-gray-900 border-green-600 text-black shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
+                    : "border-green-300 text-gray-800 hover:border-green-500 hover:shadow-md"
+                    }`}
+                >
+                  {feature.label}
+                  <span className="text-sm leading-none">{feature.icon}</span>
+                  {activeId === feature.id && (
+                    <span className="absolute -left-[7px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[7px] border-t-transparent border-b-[7px] border-b-transparent border-r-[7px] border-r-green-900" />
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Description */}
+          <div className="mt-3 pb-2">
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={activeId + "-d"}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.22 }}
+                className="text-center text-[#6b7280] max-w-[500px] mx-auto text-sm leading-relaxed"
+              >
+                {activeFeature.desc}
+              </motion.p>
+            </AnimatePresence>
+          </div>
+        </div>
+
+        {/* ── MOBILE ACCORDION ── */}
+        <div className="lg:hidden border-t border-gray-200">
+          {hrmsFeatures.map((feature) => {
+            const isOpen = mobileOpenId === feature.id;
+            return (
+              <div key={feature.id} className="border-b border-gray-200">
+                <button
+                  onClick={() => setMobileOpenId(isOpen ? null : feature.id)}
+                  className="w-full flex items-center justify-between p-4 bg-transparent border-none cursor-pointer"
+                >
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="w-8 h-8 rounded-full flex items-center justify-center text-sm transition-colors duration-200 shrink-0"
+                      style={{
+                        background: isOpen ? feature.color : "#e5e7eb",
+                      }}
+                    >
+                      {feature.icon}
+                    </div>
+                    <span
+                      className={`font-bold text-sm transition-colors ${isOpen ? "text-gray-900" : "text-gray-500"
+                        }`}
+                    >
+                      {feature.label}
+                    </span>
+                  </div>
+                  <div
+                    className={`w-7 h-7 rounded-full border-2 flex items-center justify-center transition-all duration-200 shrink-0 ${isOpen
+                      ? "bg-gray-900 border-gray-900"
+                      : "bg-transparent border-gray-300"
+                      }`}
+                  >
+                    <span
+                      className={`text-lg font-light leading-none block transition-transform duration-200 ${isOpen ? "text-white rotate-45" : "text-gray-400"
+                        }`}
+                    >
+                      +
+                    </span>
+                  </div>
+                </button>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="p-1 pb-5">
+                        <div className="rounded-xl overflow-hidden bg-white border border-gray-200 shadow-md mb-3">
+                          <img
+                            src={feature.image}
+                            alt={feature.label}
+                            className="w-full h-auto object-contain bg-white"
+                          />
+                        </div>
+                        <p className="text-[#6b7280] text-[13px] leading-relaxed m-0">
+                          {feature.desc}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -553,7 +881,7 @@ function FeatureShowcase() {
           <button
             key={i}
             onClick={() => setIndex(i)}
-            className={`h-1 transition-all duration-300 rounded-full ${index === i ? "w-12 bg-[#E24343]" : "w-4 bg-gray-200"}`}
+            className={`h-1 transition-all duration-300 rounded-full ${index === i ? "w-12 bg-[#22C55E]" : "w-4 bg-gray-200"}`}
           />
         ))}
       </div>

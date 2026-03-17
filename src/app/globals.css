@@ -391,6 +391,24 @@ h6,
   transform: translateY(3px);
   box-shadow: 0 3px 0 #27ae60;
 }
+.press-illusion-btn-white {
+  border: none;
+  box-shadow: 0 6px 0 #ffffff;
+  transition: all 0.1s ease;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.press-illusion-btn-white:hover {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #ffffff;
+}
 
 .btn-outline {
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -849,6 +867,13 @@ img {
   overflow: visible;
   padding: 40px 0;
   min-height: 700px;
+}
+
+@media(max-width: 768px) {
+  .hero-dashboard-wrapper {
+    padding: 40px 0;
+    min-height: 100%;
+  }
 }
 
 .dashboard-animation {

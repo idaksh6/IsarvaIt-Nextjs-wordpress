@@ -7,6 +7,7 @@ import TestimonialsSection from "./components/TestimonialsSection";
 import ContactSection from "./components/ContactSection";
 import BlogSection from "./components/BlogSection";
 import Footer from "./components/Footer";
+import CtaSection from "./components/CtaSection";
 import { getHomePageData, getHeroSectionData, getServicesSectionData, getTechStackSectionData } from "./lib/services/home-page-service";
 import { getBlogPosts } from "./lib/services/blog-service";
 
@@ -37,7 +38,7 @@ export default async function HomePage() {
         <ProductDesktop />
         <TestimonialsSection />
         <BlogSection posts={blogPosts} />
-        <ContactSection />
+        <CtaSection />
       </main>
     </div>
   );
