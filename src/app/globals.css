@@ -3,18 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --bg-dark: #ffffff;
-  --bg-lighter: #f8fafc;
+  --bg-dark: #FDF8F2; /* Soft Beige/Cream */
+  --bg-lighter: #ffffff; /* Clean white cards */
 
-  --accent-primary: #10b981;
-  --accent-secondary: #84cc16;
-  --accent-glow: rgba(16, 185, 129, 0.2);
+  --accent-primary: #10b981; /* Brand Green */
+  --accent-secondary: #84cc16; /* Lime Green */
+  --accent-glow: rgba(16, 185, 129, 0.15); /* Soft brand green glow */
 
-  --glass-bg: rgba(0, 0, 0, 0.03);
-  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.4);
+  --glass-border: rgba(16, 185, 129, 0.05);
 
-  --text-main: #0f172a;
-  --text-muted: #475569;
+  --text-muted: #53606b; /* Muted gray */
 }
 
 * {
