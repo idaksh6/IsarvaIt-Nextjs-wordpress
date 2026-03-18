@@ -37,6 +37,7 @@ const products = [
   {
     id: 1,
     name: "HRMS Software",
+    slug: "hrms-software",
     category: "HR & Workforce",
     short:
       "Automates HR tasks, boosts productivity, and empowers employees to self-manage their information.",
@@ -48,6 +49,7 @@ const products = [
   {
     id: 2,
     name: "Petro Care",
+    slug: "petro-care",
     category: "Industry Specific",
     short:
       "Designed for Petrol Bunk Agencies to manage daily sales activities and accounting operations smoothly.",
@@ -58,6 +60,7 @@ const products = [
   {
     id: 3,
     name: "eCommerce Software",
+    slug: "woocommerce-development",
     category: "E-Commerce & Retail",
     short:
       "Sell online effortlessly — cloud-powered store management, delivery tracking, and a robust admin panel.",
@@ -69,6 +72,7 @@ const products = [
   {
     id: 4,
     name: "Bill Soft — Multi Branch",
+    slug: "retail-billing-multi-branch",
     category: "E-Commerce & Retail",
     short:
       "Streamlines billing and inventory for multi-branch, multi-warehouse businesses. Android & iOS app coming soon.",
@@ -79,6 +83,7 @@ const products = [
   {
     id: 5,
     name: "Retail Billing Software",
+    slug: "retail-billing-software",
     category: "E-Commerce & Retail",
     short:
       "Convenient and reliable billing for purchase and sales — generates invoices, manages goods billing end-to-end.",
@@ -90,6 +95,7 @@ const products = [
   {
     id: 6,
     name: "Document Management System",
+    slug: "document-management-system",
     category: "Operations",
     short:
       "Tailored to your business needs — no expensive setup required. Centralise, organise, and retrieve documents instantly.",
@@ -100,6 +106,7 @@ const products = [
   {
     id: 7,
     name: "Time Attendant System",
+    slug: "time-attendance-system",
     category: "HR & Workforce",
     short:
       "Makes easy work of monitoring employee time and attendance — automated, accurate, and effortless.",
@@ -110,6 +117,7 @@ const products = [
   {
     id: 8,
     name: "Ticket Management Software",
+    slug: "ticket-management-software",
     category: "Operations",
     short:
       "Support Help Desk powering teams to run projects and support systems with confidence and speed.",
@@ -120,6 +128,7 @@ const products = [
   {
     id: 9,
     name: "Lodge Booking Software",
+    slug: "lodge-booking-software",
     category: "Hospitality",
     short:
       "Cloud-based hotel management with next-gen capabilities — simplifies reservations and improves operating efficiency.",
@@ -130,6 +139,7 @@ const products = [
   {
     id: 10,
     name: "Fleet Management Software",
+    slug: "fleet-management-software",
     category: "Fleet & Logistics",
     short:
       "Web-based platform integrating logistics, maintenance, payroll, and dispatch operations on one unified dashboard.",
@@ -140,6 +150,7 @@ const products = [
   {
     id: 11,
     name: "Mobile Service Center",
+    slug: "mobile-service-center",
     category: "Industry Specific",
     short:
       "Designed for mobile repair agencies to manage customer job sheets, repairs, and service workflows easily.",
@@ -150,6 +161,7 @@ const products = [
   {
     id: 12,
     name: "3PL WMS Solution",
+    slug: "3pl-wms-solution",
     category: "Fleet & Logistics",
     short:
       "Comprehensive warehouse management with complete inventory visibility and control for third-party logistics providers.",
@@ -160,6 +172,7 @@ const products = [
   {
     id: 13,
     name: "Marine Service Software",
+    slug: "marine-service-software",
     category: "Industry Specific",
     short:
       "Manages marine client services, generates 40+ reports, and supports seamless multi-location operations.",
@@ -170,6 +183,7 @@ const products = [
   {
     id: 14,
     name: "Order Picking Tools",
+    slug: "order-picking-packing",
     category: "Fleet & Logistics",
     short:
       "Streamlines order tracking and packing updates for Shopify stores — built with Laravel, JavaScript, and Tailwind.",
@@ -180,6 +194,7 @@ const products = [
   {
     id: 15,
     name: "Dispatcher Panel",
+    slug: "dispatcher-panel",
     category: "Fleet & Logistics",
     short:
       "Streamlines manual handling and tracking of florist product orders for fast, efficient delivery management.",
@@ -189,7 +204,8 @@ const products = [
   },
   {
     id: 16,
-    name: "ID CRM",
+    name: "CRM Application",
+    slug: "crm-application",
     category: "Operations",
     short:
       "Manages clients efficiently — boosting profits and revenue through robust architecture and smart business operations.",
@@ -200,6 +216,7 @@ const products = [
   {
     id: 17,
     name: "Dealer Management",
+    slug: "dealer-management-software",
     category: "Operations",
     short:
       "Streamlines dealer onboarding, management, and distribution of articles — with secure access and smart communication.",
@@ -210,6 +227,7 @@ const products = [
   {
     id: 18,
     name: "Expense Tracker",
+    slug: "expense-tracker",
     category: "Operations",
     short:
       "Simplifies expense management with Google login, role-based access, dynamic configuration, and detailed reporting.",
@@ -560,52 +578,92 @@ function ProductDesktop() {
                   {/* Monitor Frame */}
                   <div className="bg-gradient-to-br from-slate-800 via-slate-900 to-black p-6 rounded-t-2xl border-4 border-slate-700 shadow-2xl">
                     {/* Monitor Screen */}
-                    <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-xl overflow-hidden w-full max-w-[1200px] h-[500px] xl:h-[700px] border-2 border-slate-600 relative">
-                      {/* Desktop Header/Taskbar */}
-                      <div className="h-14 bg-gradient-to-r from-slate-700 to-slate-600 border-b border-slate-500/50 flex items-center justify-between px-6">
-                        <div className="flex items-center gap-4">
-                          <div className="flex gap-2">
-                            <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                            <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                          </div>
-                          <h2 className="text-white font-semibold text-sm">
-                            Isarva Products Explorer
-                          </h2>
-                        </div>
-
-                        {/* Search Bar in Header */}
-                        <div className="flex-1 max-w-md mx-8">
-                          <div className="relative">
-                            <svg
-                              className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-slate-400"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                              />
+                    <div className="bg-white rounded-xl overflow-hidden w-full max-w-[1200px] h-[500px] xl:h-[700px] border-2 border-slate-600 relative">
+                      {/* Chrome-style Header */}
+                      <div className="bg-white border-b border-gray-200">
+                        {/* Tab Bar */}
+                        <div className="bg-gray-100 px-2 pt-2 flex items-end gap-1">
+                          <div className="bg-white rounded-t-lg px-4 py-2 flex items-center gap-3 min-w-[200px] border-t border-l border-r border-gray-200">
+                            <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14-7l2 7-2 7H5l2-7-2-7h14z" />
                             </svg>
-                            <input
-                              type="text"
-                              placeholder="Search products..."
-                              value={searchTerm}
-                              onChange={(e) => setSearchTerm(e.target.value)}
-                              className="w-full pl-10 pr-4 py-2 bg-slate-600/50 border border-slate-500/50 rounded-lg text-white placeholder-slate-400 text-sm focus:outline-none focus:border-blue-400 focus:bg-slate-600/70 transition-all"
-                            />
+                            <span className="text-sm text-gray-900 font-medium truncate">Isarva Products</span>
+                            <button className="ml-auto p-1 hover:bg-gray-100 rounded">
+                              <svg className="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                              </svg>
+                            </button>
+                          </div>
+                          <button className="p-2 hover:bg-gray-200 rounded-t-lg">
+                            <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                            </svg>
+                          </button>
+                        </div>
+                        
+                        {/* Address Bar */}
+                        <div className="px-3 py-2 flex items-center justify-between gap-2">
+                          {/* Navigation Buttons */}
+                          <div className="flex items-center gap-1">
+                            <button className="p-2 hover:bg-gray-100 rounded-full">
+                              <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                              </svg>
+                            </button>
+                            <button className="p-2 hover:bg-gray-100 rounded-full">
+                              <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </button>
+                            <button className="p-2 hover:bg-gray-100 rounded-full">
+                              <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                              </svg>
+                            </button>
+                          </div>
+
+                          {/* Search/Address Bar - Centered */}
+                          <div className="flex-1 flex justify-center mx-4">
+                            <div className="relative flex items-center bg-white border border-gray-300 rounded-full px-4 py-2 hover:border-gray-400 focus-within:border-blue-500 focus-within:shadow-md transition-all w-full max-w-2xl">
+                              <svg className="w-4 h-4 text-gray-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                              </svg>
+                              <input
+                                type="text"
+                                placeholder="Search products..."
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                                className="flex-1 bg-transparent text-sm text-gray-900 placeholder-gray-500 focus:outline-none"
+                              />
+                              <button className="p-1 hover:bg-gray-100 rounded">
+                                <svg className="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+
+                          {/* Right Side Icons */}
+                          <div className="flex items-center gap-1">
+                            <button className="p-2 hover:bg-gray-100 rounded-full">
+                              <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                              </svg>
+                            </button>
+                            <button className="p-2 hover:bg-gray-100 rounded-full">
+                              <svg className="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+                              </svg>
+                            </button>
                           </div>
                         </div>
                       </div>
 
                       {/* Desktop Content Area */}
-                      <div className="flex h-[calc(100%-3.5rem)]">
+                      <div className="flex h-[calc(100%-6.5rem)]">
                         {/* Sidebar - Categories */}
-                        <div className="w-64 xl:w-80 bg-slate-800/50 border-r border-slate-600/50 p-4 xl:p-6">
-                          <h3 className="text-white font-semibold text-lg mb-6 flex items-center gap-2">
+                        <div className="w-64 xl:w-80 bg-gray-50 border-r border-gray-200 p-4 xl:p-6">
+                          <h3 className="text-gray-900 font-semibold text-lg mb-6 flex items-center gap-2">
                             <svg
                               className="w-5 h-5 text-blue-400"
                               fill="none"
@@ -638,7 +696,7 @@ function ProductDesktop() {
                                   className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 flex items-center justify-between group ${
                                     selectedCategory === category
                                       ? "bg-blue-600 text-white shadow-lg"
-                                      : "text-slate-300 hover:bg-slate-700/50 hover:text-white"
+                                      : "text-gray-700 hover:bg-gray-200 hover:text-gray-900"
                                   }`}
                                 >
                                   <span className="font-medium">
@@ -648,7 +706,7 @@ function ProductDesktop() {
                                     className={`text-xs px-2 py-1 rounded-full ${
                                       selectedCategory === category
                                         ? "bg-blue-500 text-white"
-                                        : "bg-slate-600 text-slate-300 group-hover:bg-slate-600"
+                                        : "bg-gray-200 text-gray-700 group-hover:bg-gray-300"
                                     }`}
                                   >
                                     {count}
@@ -660,8 +718,8 @@ function ProductDesktop() {
 
                           {/* Search Results Info */}
                           {searchTerm && (
-                            <div className="mt-6 p-4 bg-slate-700/50 rounded-lg">
-                              <p className="text-slate-300 text-sm">
+                            <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                              <p className="text-gray-700 text-sm">
                                 Found {filteredProducts.length} result
                                 {filteredProducts.length !== 1
                                   ? "s"
@@ -689,7 +747,7 @@ function ProductDesktop() {
                           {filteredProducts.length === 0 && (
                             <div className="flex flex-col items-center justify-center h-full min-h-[400px] text-center">
                               <svg
-                                className="w-16 h-16 text-slate-500 mb-4"
+                                className="w-16 h-16 text-gray-400 mb-4"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
@@ -701,10 +759,10 @@ function ProductDesktop() {
                                   d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                                 />
                               </svg>
-                              <h3 className="text-slate-400 text-xl font-semibold mb-2">
+                              <h3 className="text-gray-600 text-xl font-semibold mb-2">
                                 No products found
                               </h3>
-                              <p className="text-slate-500">
+                              <p className="text-gray-500">
                                 Try adjusting your search or selecting a
                                 different category
                               </p>
@@ -993,11 +1051,11 @@ const ProductDesktopCard = ({ product, onClick }) => {
 
   return (
     <div
-      className="group relative bg-slate-700/30 hover:bg-slate-700/50 border border-slate-600/50 hover:border-slate-500 rounded-lg p-4 cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
+      className="group relative bg-white hover:bg-gray-50 border border-gray-200 hover:border-blue-400 rounded-lg p-4 cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
       onClick={onClick}
     >
       {/* Product Image */}
-      <div className="relative h-32 mb-3 rounded-lg overflow-hidden bg-slate-600/30">
+      <div className="relative h-32 mb-3 rounded-lg overflow-hidden bg-gray-100">
         <img
           src={product.image}
           alt={product.name}
@@ -1011,7 +1069,7 @@ const ProductDesktopCard = ({ product, onClick }) => {
               {product.badge}
             </span>
           )}
-          <span className="text-[8px] font-medium uppercase tracking-wide px-2 py-1 rounded bg-slate-600/80 text-slate-200">
+          <span className="text-[8px] font-medium uppercase tracking-wide px-2 py-1 rounded bg-blue-600 text-white">
             {product.category}
           </span>
         </div>
@@ -1019,10 +1077,10 @@ const ProductDesktopCard = ({ product, onClick }) => {
 
       {/* Content */}
       <div>
-        <h3 className="text-white font-semibold text-sm mb-2 group-hover:text-blue-400 transition-colors line-clamp-1">
+        <h3 className="text-gray-900 font-semibold text-sm mb-2 group-hover:text-blue-600 transition-colors line-clamp-1">
           {product.name}
         </h3>
-        <p className="text-slate-400 text-xs leading-relaxed line-clamp-3">
+        <p className="text-gray-600 text-xs leading-relaxed line-clamp-3">
           {product.short}
         </p>
       </div>
@@ -1036,17 +1094,17 @@ const ProductDesktopCard = ({ product, onClick }) => {
 // Product Detail Modal
 const ProductDetailModal = ({ product, onClose }) => {
   return (
-    <div className="absolute inset-4 bg-slate-800/95 backdrop-blur-sm rounded-xl border border-slate-600/50 p-6 overflow-auto z-10">
+    <div className="absolute inset-4 bg-white/95 backdrop-blur-sm rounded-xl border border-gray-300 p-6 overflow-auto z-10 shadow-2xl">
       <div className="flex justify-between items-start mb-6">
         <div>
-          <h2 className="text-white text-2xl font-bold mb-2">{product.name}</h2>
-          <span className="inline-block px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full text-sm font-medium">
+          <h2 className="text-gray-900 text-2xl font-bold mb-2">{product.name}</h2>
+          <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
             {product.category}
           </span>
         </div>
         <button
           onClick={onClose}
-          className="text-slate-400 hover:text-white transition-colors"
+          className="text-gray-500 hover:text-gray-900 transition-colors"
         >
           <svg
             className="w-6 h-6"
@@ -1073,11 +1131,11 @@ const ProductDetailModal = ({ product, onClose }) => {
           />
         </div>
         <div>
-          <p className="text-slate-300 mb-6 leading-relaxed">{product.short}</p>
+          <p className="text-gray-700 mb-6 leading-relaxed">{product.short}</p>
 
           <div className="flex gap-4">
             <Link
-              href="#contact"
+              href={`/products/${product.slug}`}
               className="press-illusion-btn bg-green-400 text-white w-fit  font-bold px-6 py-2 text-sm  items-center space-x-2  md:flex"
             >
               <span>Get Pricing & Demo</span>
@@ -1124,7 +1182,7 @@ const MobileProductCard = ({ product, onClick, isLast }) => {
 
           {/* Badge */}
           {isHighlighted && (
-            <div className="absolute -top-1 -right-1">
+            <div className="absolute -top-1 -right-1 lg:block hidden">
               <span className="text-[8px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full bg-yellow-400 text-black shadow-sm">
                 {product.badge}
               </span>
@@ -1266,7 +1324,7 @@ const MobileProductModal = ({ product, onClose }) => {
             {/* CTA Buttons */}
             <div className="flex flex-col gap-4 py-4 border-t border-gray-100">
                     <Link
-                href="#contact"
+                href={`/products/${product.slug}`}
                 className="press-illusion-btn bg-green-400 text-black w-fit  font-bold px-6 py-2 text-sm mx-auto  items-center space-x-2  inline-flex"
               >
                 <span>Get Pricing & Demo</span>
@@ -1350,8 +1408,8 @@ function ProductCard({ product }) {
 
         {/* Bottom Action Row (Purchase Focused) */}
         <div className="mt-6 flex items-center justify-between pt-4 border-t border-gray-100">
-          <a
-            href="/contact"
+          <Link
+            href={`/products/${product.slug}`}
             className="btn-primary px-4 py-2 text-sm inline-flex items-center space-x-1"
           >
             <span>Get Pricing & Demo</span>
@@ -1368,7 +1426,7 @@ function ProductCard({ product }) {
                 clipRule="evenodd"
               ></path>
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

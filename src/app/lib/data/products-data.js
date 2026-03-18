@@ -617,6 +617,43 @@ export const productsData = [
     color: "from-emerald-600 to-teal-600",
     bgGradient: "from-emerald-50 via-teal-50 to-white",
   },
+  {
+    slug: "crm-application",
+    title: "CRM Application",
+    category: "Customer Relationship Management",
+    icon: "👔",
+    tagline: "Complete Customer Relationship Management",
+    shortDescription:
+      "Powerful CRM solution for managing leads, contacts, sales pipeline, and customer interactions.",
+    description:
+      "Transform your customer relationships with our comprehensive CRM application. Manage your entire sales pipeline, track customer interactions, automate follow-ups, and gain valuable insights to close more deals and retain customers.",
+    features: [
+      "Lead & Contact Management",
+      "Sales Pipeline Tracking",
+      "Email Integration & Automation",
+      "Customer Interaction History",
+      "Task & Activity Management",
+      "Sales Analytics & Reports",
+      "Mobile CRM App",
+      "Integration with Email & Calendar",
+    ],
+    technologies: [
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "Redis",
+      "Email API Integration",
+    ],
+    benefits: [
+      "Improved Sales Conversion",
+      "Better Customer Retention",
+      "Streamlined Sales Process",
+      "Data-Driven Decisions",
+      "Enhanced Team Collaboration",
+    ],
+    color: "from-sky-500 to-blue-600",
+    bgGradient: "from-sky-50 via-blue-50 to-white",
+  },
 ];
 
 // Helper functions
