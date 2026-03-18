@@ -604,6 +604,78 @@ h6,
   transform: translateY(3px);
   box-shadow: 0 3px 0 #27ae60;
 }
+.press-illusion-btn-orange {
+  border: none;
+  box-shadow: 0 6px 0 #f97316;
+  transition: all 0.1s ease;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.press-illusion-btn-orange:hover {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #f97316;
+}
+.press-illusion-btn-purple {
+  border: none;
+  box-shadow: 0 6px 0 #a855f7;
+  transition: all 0.1s ease;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.press-illusion-btn-purple:hover {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #a855f7;
+}
+.press-illusion-btn-yellow {
+  border: none;
+  box-shadow: 0 6px 0 #f59e0b;
+  transition: all 0.1s ease;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.press-illusion-btn-yellow:hover {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #f59e0b;
+}
+.press-illusion-btn-blue {
+  border: none;
+  box-shadow: 0 6px 0 #1b85c3;
+  transition: all 0.1s ease;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.press-illusion-btn-blue:hover {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #1b85c3;
+}
 
 .btn-outline {
   border: 1px solid rgba(255, 255, 255, 0.15);

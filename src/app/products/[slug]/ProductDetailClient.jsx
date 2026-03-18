@@ -4,6 +4,13 @@ import { useState } from "react";
 import Link from "next/link";
 import ContactFormModal from "../../components/ContactFormModal";
 import ProductDetailPremium from "../../components/products/ProductDetailPremium";
+import ProductDetailPremiumWMS from "../../components/products/ProductDetailPremiumWMS";
+import ProductDetailPremiumWooCommerce from "../../components/products/ProductDetailPremiumWooCommerce";
+import ProductDetailPremiumPetroCare from "../../components/products/ProductDetailPremiumPetroCare";
+import ProductDetailPremiumRetailBilling from "../../components/products/ProductDetailPremiumRetailBilling";
+import ProductDetailPremiumMultiBranch from "../../components/products/ProductDetailPremiumMultiBranch";
+import ProductDetailPremiumDMS from "../../components/products/ProductDetailPremiumDMS";
+import ProductDetailPremiumTimeAttendance from "../../components/products/ProductDetailPremiumTimeAttendance";
 
 export default function ProductDetailClient({ product, relatedProducts, allProducts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -12,6 +19,83 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   if (product.slug === 'hrms-software') {
     return (
       <ProductDetailPremium 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for WMS Software
+  if (product.slug === 'wms-software') {
+    return (
+      <ProductDetailPremiumWMS 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for WooCommerce Development
+  if (product.slug === 'woocommerce-development') {
+    return (
+      <ProductDetailPremiumWooCommerce 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for Petro Care
+  if (product.slug === 'petro-care') {
+    return (
+      <ProductDetailPremiumPetroCare 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for Retail Billing Software
+  if (product.slug === 'retail-billing-software') {
+    return (
+      <ProductDetailPremiumRetailBilling 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for Multi-Branch Retail Billing Software
+  if (product.slug === 'retail-billing-multi-branch') {
+    return (
+      <ProductDetailPremiumMultiBranch 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for Document Management System
+  if (product.slug === 'document-management-system') {
+    return (
+      <ProductDetailPremiumDMS 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for Time Attendance System
+  if (product.slug === 'time-attendance-system') {
+    return (
+      <ProductDetailPremiumTimeAttendance 
         product={product} 
         relatedProducts={relatedProducts} 
         allProducts={allProducts}

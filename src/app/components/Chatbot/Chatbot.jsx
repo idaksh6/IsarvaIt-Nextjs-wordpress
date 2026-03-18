@@ -262,20 +262,17 @@ const Chatbot = () => {
             initial={{
               opacity: 0,
               height: "80px",
-              width: "100%",
               y: 40,
               overflow: "hidden",
             }}
             animate={{
               opacity: 1,
               height: isMinimized ? "72px" : "620px",
-              width: "100%",
               y: 0,
             }}
             exit={{
               opacity: 0,
               height: "80px",
-              width: "100%",
               y: 40,
             }}
             transition={{
