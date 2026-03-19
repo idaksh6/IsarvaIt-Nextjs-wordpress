@@ -7,8 +7,7 @@ import {
   Sparkles, 
   Cpu, 
   RefreshCcw,
-  CheckCircle2,
-  ArrowRight
+  CheckCircle2
 } from "lucide-react";
 
 export const metadata = {
@@ -24,6 +23,7 @@ export default function AboutPage() {
       <section className="relative pt-32 lg:pt-48 pb-10 lg:pb-20 overflow-hidden bg-gradient-to-b from-[#F0F7F4] to-[#FDF8F2]">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#10b981] opacity-[0.03] rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute -bottom-24 -left-24 w-[600px] h-[600px] bg-[#84cc16] opacity-[0.05] rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="hero-noise-overlay"></div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <div className="inline-flex flex-col items-center mb-10 section-animate">
@@ -205,11 +205,45 @@ export default function AboutPage() {
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-4">
-                   <Link href="/contact" className="inline-flex items-center gap-3 px-10 py-5 bg-[#10b981] text-white rounded-full font-bold hover:bg-[#84cc16] transition-all group shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
-                      Contact Us <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                   <Link 
+                     href="/contact" 
+                     prefetch={true}
+                     className="press-illusion-btn bg-green-400 text-white w-fit font-bold px-6 py-2 text-base flex items-center space-x-2"
+                   >
+                      <span>Contact Us</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 17 9"
+                        className="h-2 w-4"
+                      >
+                        <path
+                          fill="currentColor"
+                          fillRule="evenodd"
+                          d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>
                    </Link>
-                   <Link href="/products" className="inline-flex items-center gap-3 px-10 py-5 bg-white text-[#1a1f24] border border-[#1a1f24]/10 rounded-full font-bold hover:border-[#10b981] transition-all shadow-md transform hover:-translate-y-1">
-                      Our Solutions
+                   <Link 
+                     href="/products"
+                     prefetch={true}
+                     className="press-illusion-btn bg-green-400 text-white w-fit font-bold px-6 py-2 text-base flex items-center space-x-2"
+                   >
+                      <span>Our Solutions</span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 17 9"
+                        className="h-2 w-4"
+                      >
+                        <path
+                          fill="currentColor"
+                          fillRule="evenodd"
+                          d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>
                    </Link>
                 </div>
              </div>
@@ -242,9 +276,23 @@ export default function AboutPage() {
           <div className="flex justify-center items-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-14 py-5 text-xl font-bold text-white bg-[#10b981] rounded-full hover:bg-[#84cc16] transition-all duration-300 shadow-2xl transform hover:-translate-y-2"
+              prefetch={true}
+              className="press-illusion-btn bg-green-400 text-white w-fit font-bold px-8 py-3 text-lg flex items-center space-x-3"
             >
-              Get In Touch
+              <span>Get In Touch</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 17 9"
+                className="h-3 w-5"
+              >
+                <path
+                  fill="currentColor"
+                  fillRule="evenodd"
+                  d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
             </Link>
           </div>
         </div>

@@ -7,7 +7,14 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
+  { 
+    label: "About Us", 
+    href: "/about",
+    children: [
+      { label: "About Isarva", href: "/about" },
+      { label: "Testimonials", href: "/testimonial" },
+    ]
+  },
 ];
 
 const servicesData = [
@@ -55,9 +62,11 @@ export default function Header() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const [isMobileIndustriesOpen, setIsMobileIndustriesOpen] = useState(false);
   const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false);
+  const [isMobileAboutOpen, setIsMobileAboutOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -95,14 +104,97 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              prefetch={true}
-              className="text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600"
-            >
-              {link.label}
-            </Link>
+            link.children ? (
+              <div
+                key={link.label}
+                className="relative"
+                onMouseEnter={() => link.label === "About Us" && setIsAboutOpen(true)}
+                onMouseLeave={() => link.label === "About Us" && setIsAboutOpen(false)}
+              >
+                <Link
+                  href={link.href}
+                  prefetch={true}
+                  className="text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1"
+                >
+                  {link.label}
+                  <svg
+                    className={`w-4 h-4 transition-transform duration-200 ${
+                      (link.label === "About Us" && isAboutOpen) ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </Link>
+
+                {/* About Us Mega Menu */}
+                {link.label === "About Us" && isAboutOpen && (
+                  <div className="absolute top-full left-[-200px] pt-4 w-[650px]">
+                    <div className="bg-white/95 backdrop-blur-xl rounded-[2.5rem] shadow-2xl border border-gray-100 p-8 flex gap-8">
+                      {/* Left: Nav Links */}
+                      <div className="flex-1">
+                        <div className="mb-6">
+                           <h3 className="text-xl font-bold text-gray-900 mb-1">Company</h3>
+                           <p className="text-gray-500 text-sm">Discover our mission and impact</p>
+                        </div>
+                        <div className="space-y-2">
+                          {link.children.map((child) => (
+                            <Link
+                              key={child.label}
+                              href={child.href}
+                              prefetch={true}
+                              onClick={() => setIsAboutOpen(false)}
+                              className="group flex items-center justify-between p-4 rounded-2xl bg-gray-50 hover:bg-emerald-50 transition-all duration-300 border border-transparent hover:border-emerald-200"
+                            >
+                              <div className="flex items-center gap-3">
+                                <div className="w-10 h-10 rounded-xl bg-white group-hover:bg-[#10b981] flex items-center justify-center transition-colors shadow-sm">
+                                  <span className="text-lg group-hover:scale-110 transition-transform">{child.label === "Testimonials" ? "💬" : "🏛️"}</span>
+                                </div>
+                                <span className="font-bold text-gray-800 group-hover:text-emerald-600 transition-colors uppercase tracking-tight text-sm">
+                                  {child.label}
+                                </span>
+                              </div>
+                              <svg className="w-5 h-5 text-gray-300 group-hover:text-emerald-500 transform transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Right: Featured Content with Image */}
+                      <div className="w-[280px] bg-gradient-to-br from-emerald-50 to-lime-50 rounded-3xl p-6 relative overflow-hidden group/featured">
+                         <div className="absolute inset-0 opacity-10 group-hover/featured:scale-110 transition-transform duration-700">
+                           <img src="/agency_office_studio_premium_1773850105446.png" className="w-full h-full object-cover" alt="" />
+                         </div>
+                         <div className="relative z-10 flex flex-col h-full">
+                            <span className="text-[10px] font-black text-emerald-600 tracking-widest uppercase mb-2">Featured</span>
+                            <h4 className="text-xl font-display font-bold text-gray-900 mb-4 leading-tight">Our Journey of Innovation</h4>
+                            <p className="text-gray-600 text-xs mb-6 font-medium leading-relaxed">Pioneering digital transformation for over a decade with world-class design and engineering.</p>
+                            <Link href="/about" className="mt-auto text-emerald-600 font-bold text-sm flex items-center gap-2 group/link">
+                               Read More <span className="group-hover/link:translate-x-1 transition-transform">→</span>
+                            </Link>
+                         </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link
+                key={link.label}
+                href={link.href}
+                prefetch={true}
+                className="text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600"
+              >
+                {link.label}
+              </Link>
+            )
           ))}
 
           {/* Products Mega Menu Trigger */}
@@ -494,36 +586,94 @@ export default function Header() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.05 }}
                   >
-                    <Link
-                      href={link.href}
-                      prefetch={true}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="group flex items-center gap-3 p-4 rounded-2xl bg-white hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 border border-transparent hover:border-green-200 active:bg-green-100 transition-all duration-300"
-                    >
-                      <div className="w-10 h-10 bg-gradient-to-br from-green-100 to-emerald-100 group-hover:from-green-400 group-hover:to-emerald-500 rounded-xl flex items-center justify-center transition-all duration-300">
-                        <span className="text-lg group-hover:scale-110 transition-transform duration-300">
-                          {index === 0 ? "🏠" : index === 1 ? "ℹ️" : "📝"}
-                        </span>
+                    {link.children ? (
+                      <div className="border-2 border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm mb-2">
+                        <button
+                          onClick={() => setIsMobileAboutOpen(!isMobileAboutOpen)}
+                          className="flex items-center justify-between w-full p-4 text-gray-800 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 transition-all duration-300"
+                        >
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 bg-gradient-to-br from-green-100 to-emerald-100 rounded-xl flex items-center justify-center">
+                              <span className="text-lg">ℹ️</span>
+                            </div>
+                            <span className="font-bold text-base">{link.label}</span>
+                          </div>
+                          <motion.svg
+                            animate={{ rotate: isMobileAboutOpen ? 180 : 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="w-5 h-5 text-gray-400"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            strokeWidth={2}
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </motion.svg>
+                        </button>
+                        <AnimatePresence>
+                          {isMobileAboutOpen && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.3 }}
+                              className="overflow-hidden bg-gray-50/50"
+                            >
+                              <div className="p-3 space-y-2">
+                                {link.children.map((child) => (
+                                  <Link
+                                    key={child.label}
+                                    href={child.href}
+                                    prefetch={true}
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className="flex items-center gap-3 p-3 rounded-xl hover:bg-white hover:shadow-sm transition-all duration-200"
+                                  >
+                                    <span className="text-sm font-semibold text-gray-700">
+                                      {child.label}
+                                    </span>
+                                  </Link>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
                       </div>
-                      <div className="flex-1">
-                        <span className="font-bold text-gray-800 group-hover:text-green-700 text-base transition-colors duration-300">
-                          {link.label}
-                        </span>
-                      </div>
-                      <svg
-                        className="w-5 h-5 text-gray-300 group-hover:text-green-600 group-hover:translate-x-1 transition-all duration-300"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2}
+                    ) : (
+                      <Link
+                        href={link.href}
+                        prefetch={true}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="group flex items-center gap-3 p-4 rounded-2xl bg-white hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 border border-transparent hover:border-green-200 active:bg-green-100 transition-all duration-300"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </Link>
+                        <div className="w-10 h-10 bg-gradient-to-br from-green-100 to-emerald-100 group-hover:from-green-400 group-hover:to-emerald-500 rounded-xl flex items-center justify-center transition-all duration-300">
+                          <span className="text-lg group-hover:scale-110 transition-transform duration-300">
+                            {index === 0 ? "🏠" : "📝"}
+                          </span>
+                        </div>
+                        <div className="flex-1">
+                          <span className="font-bold text-gray-800 group-hover:text-green-700 text-base transition-colors duration-300">
+                            {link.label}
+                          </span>
+                        </div>
+                        <svg
+                          className="w-5 h-5 text-gray-300 group-hover:text-green-600 group-hover:translate-x-1 transition-all duration-300"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          strokeWidth={2}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </Link>
+                    )}
                   </motion.div>
                 ))}
 
