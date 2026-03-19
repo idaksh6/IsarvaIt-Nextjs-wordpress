@@ -13,6 +13,7 @@ const navLinks = [
     children: [
       { label: "About Isarva", href: "/about" },
       { label: "Testimonials", href: "/testimonial" },
+      { label: "Careers", href: "/careers" },
     ]
   },
 ];

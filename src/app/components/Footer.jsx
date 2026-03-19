@@ -143,6 +143,7 @@ export default function Footer() {
                 "TECHNOLOGY STACK",
                 "SERVICES",
                 "PRODUCTS",
+                "CAREERS",
                 "CONTACT US",
               ].map((link) => (
                 <li key={link}>

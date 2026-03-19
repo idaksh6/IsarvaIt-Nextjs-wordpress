@@ -7,7 +7,8 @@ import {
   Sparkles, 
   Cpu, 
   RefreshCcw,
-  CheckCircle2
+  CheckCircle2,
+  Briefcase
 } from "lucide-react";
 
 export const metadata = {
@@ -256,6 +257,39 @@ export default function AboutPage() {
                    <p className="text-xl font-display font-medium italic text-[#1a1f24] leading-relaxed">"Isarva Infotech is where technology begins to mean something more."</p>
                 </div>
              </div>
+           </div>
+        </div>
+      </section>
+
+      {/* 5.5 JOIN OUR TEAM SECTION */}
+      <section className="py-24 bg-[#FDF8F2] relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+           <div className="bg-white rounded-[4rem] p-12 md:p-20 shadow-2xl border border-[#10b981]/5 flex flex-col lg:flex-row items-center justify-between gap-12">
+              <div className="lg:w-3/5 text-center lg:text-left">
+                 <span className="text-[#10b981] font-black tracking-[0.3em] uppercase text-xs mb-4 inline-block">Join our mission</span>
+                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-[#1a1f24] mb-8 leading-tight">
+                    Shape the future <br /> 
+                    <span className="text-[#10b981]">at Isarva Infotech.</span>
+                 </h2>
+                 <p className="text-xl text-[#53606b] mb-10 max-w-2xl font-medium leading-relaxed">
+                    We’re looking for bold thinkers who believe technology can solve the world's most complex challenges. Explore our open roles and find where you belong.
+                 </p>
+                 <Link 
+                    href="/careers" 
+                    className="press-illusion-btn bg-[#10b981] text-white px-10 py-4 text-xl font-bold inline-flex items-center gap-3 transition-transform hover:scale-105 rounded-2xl shadow-xl"
+                 >
+                    <span>View Careers</span>
+                    <TrendingUp className="w-5 h-5" />
+                 </Link>
+              </div>
+              <div className="lg:w-2/5 relative">
+                 <div className="relative w-full h-[300px] md:h-[400px] rounded-[3rem] overflow-hidden shadow-2xl ring-4 ring-white/50">
+                    <Image src="/team_collab_hero_1773850334652.png" alt="Our Culture" fill className="object-cover" />
+                 </div>
+                 <div className="absolute -top-6 -right-6 w-24 h-24 bg-[#10b981] rounded-2xl flex items-center justify-center text-white shadow-2xl transform rotate-12">
+                    <Briefcase className="w-10 h-10" />
+                 </div>
+              </div>
            </div>
         </div>
       </section>

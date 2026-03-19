@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import ContactSection from "../components/ContactSection";
-import { Star, Quote, PlayCircle, CheckCircle2, Award, Zap, X } from "lucide-react";
+import { Star, Quote, PlayCircle, CheckCircle2, Award, Zap, X, Briefcase } from "lucide-react";
 
 const testimonials = [
   {
@@ -343,13 +343,21 @@ export default function TestimonialPage() {
           <p className="text-xl text-white/70 mb-12 max-w-2xl mx-auto font-medium">
             Ready to experience the Isarva impact? Our team is waiting to turn your biggest ideas into digital reality.
           </p>
-          <div className="flex justify-center">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-8">
             <Link 
               href="/contact"
-              className="press-illusion-btn bg-[#10b981] text-white w-fit font-bold px-10 py-5 text-xl flex items-center gap-3 transition-transform hover:scale-105"
+              className="press-illusion-btn bg-[#10b981] text-white w-full sm:w-fit font-bold px-10 py-5 text-xl flex items-center justify-center gap-3 transition-transform hover:scale-105"
             >
               <span>Get Started Now</span>
               <svg viewBox="0 0 17 9" className="h-3 w-5 text-white fill-current"><path d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z" /></svg>
+            </Link>
+
+            <Link 
+              href="/careers"
+              className="text-white font-bold text-xl hover:text-[#10b981] transition-colors flex items-center gap-3"
+            >
+              <Briefcase className="w-5 h-5 text-[#10b981]" />
+              <span>Join Our Team</span>
             </Link>
           </div>
         </div>
