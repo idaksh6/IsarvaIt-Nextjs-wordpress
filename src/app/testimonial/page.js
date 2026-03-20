@@ -363,7 +363,7 @@ export default function TestimonialPage() {
         </div>
       </section>
 
-      <ContactSection />
+     
     </div>
   );
 }
