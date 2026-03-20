@@ -118,7 +118,7 @@ function HeroSection({ data }) {
                 {heroData.floatingCards && heroData.floatingCards[0] ? heroData.floatingCards[0].heading : "Web Platforms"}
               </h3>
             </div>
-            <p className="text-gray-500 text-[13px] leading-relaxed font-medium">
+            <p className="text-gray-500 text-[13px] leading-relaxed font-bold">
               {heroData.floatingCards && heroData.floatingCards[0] ? 
                 heroData.floatingCards[0].description.replace(/<[^>]*>/g, '') : 
                 "We design and build high-performance website solutions applied basically for speed, scalability, and user experience."
@@ -136,7 +136,7 @@ function HeroSection({ data }) {
                 {heroData.floatingCards && heroData.floatingCards[1] ? heroData.floatingCards[1].heading : "Custom Software"}
               </h3>
             </div>
-            <p className="text-gray-500 text-[13px] leading-relaxed font-medium">
+            <p className="text-gray-500 text-[13px] leading-relaxed font-bold">
               {heroData.floatingCards && heroData.floatingCards[1] ? 
                 heroData.floatingCards[1].description.replace(/<[^>]*>/g, '') : 
                 "Tailored digital solutions built to solve complex business challenges and support long-term growth."

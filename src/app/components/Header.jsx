@@ -11,8 +11,8 @@ const navLinks = [
     label: "About Us", 
     href: "/about",
     children: [
-      { label: "About Isarva", href: "/about" },
       { label: "Testimonials", href: "/testimonial" },
+      { label: "Blog", href: "/blog" },
       { label: "Careers", href: "/careers" },
     ]
   },
@@ -142,7 +142,7 @@ export default function Header() {
                       {/* Left: Nav Links */}
                       <div className="flex-1">
                         <div className="mb-6">
-                           <h3 className="text-xl font-bold text-gray-900 mb-1">Company</h3>
+                           <h3 className="text-xl font-bold text-gray-900 mb-1">Resources</h3>
                            <p className="text-gray-500 text-sm">Discover our mission and impact</p>
                         </div>
                         <div className="space-y-2">
@@ -156,7 +156,9 @@ export default function Header() {
                             >
                               <div className="flex items-center gap-3">
                                 <div className="w-10 h-10 rounded-xl bg-white group-hover:bg-[#10b981] flex items-center justify-center transition-colors shadow-sm">
-                                  <span className="text-lg group-hover:scale-110 transition-transform">{child.label === "Testimonials" ? "💬" : "🏛️"}</span>
+                                  <span className="text-lg group-hover:scale-110 transition-transform">
+                                    {child.label === "Testimonials" ? "💬" : child.label === "Careers" ? "💼" : "📝"}
+                                  </span>
                                 </div>
                                 <span className="font-bold text-gray-800 group-hover:text-emerald-600 transition-colors uppercase tracking-tight text-sm">
                                   {child.label}
@@ -174,10 +176,9 @@ export default function Header() {
                            <img src="/agency_office_studio_premium_1773850105446.png" className="w-full h-full object-cover" alt="" />
                          </div>
                          <div className="relative z-10 flex flex-col h-full">
-                            <span className="text-[10px] font-black text-emerald-600 tracking-widest uppercase mb-2">Featured</span>
-                            <h4 className="text-xl font-display font-bold text-gray-900 mb-4 leading-tight">Our Journey of Innovation</h4>
-                            <p className="text-gray-600 text-xs mb-6 font-medium leading-relaxed">Pioneering digital transformation for over a decade with world-class design and engineering.</p>
-                            <Link href="/about" className="mt-auto text-emerald-600 font-bold text-sm flex items-center gap-2 group/link">
+                            <h4 className="text-xl font-display font-bold text-gray-900 mb-4 leading-tight">About Us</h4>
+                            <p className="text-gray-600 text-xs mb-6 font-medium leading-relaxed">At Isarva Infotech, we are more than an IT consulting firm — we are a strategic technology partner . </p>
+                            <Link href="/about" className="mt-auto text-emerald-600 font-bold text-lg flex items-center gap-2 group/link">
                                Read More <span className="group-hover/link:translate-x-1 transition-transform">→</span>
                             </Link>
                          </div>
@@ -470,15 +471,6 @@ export default function Header() {
               </div>
             )}
           </div>
-
-          {/* Blog Link */}
-          <Link
-            href="/blog"
-            prefetch={true}
-            className="text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600"
-          >
-            Blog
-          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -915,43 +907,6 @@ export default function Header() {
                   </AnimatePresence>
                 </motion.div>
 
-                {/* Blog Link */}
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: (navLinks.length + 3) * 0.05 }}
-                >
-                  <Link
-                    href="/blog"
-                    prefetch={true}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="group flex items-center gap-3 p-4 rounded-2xl bg-white hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 border border-transparent hover:border-green-200 active:bg-green-100 transition-all duration-300"
-                  >
-                    <div className="w-10 h-10 bg-gradient-to-br from-green-100 to-emerald-100 group-hover:from-green-400 group-hover:to-emerald-500 rounded-xl flex items-center justify-center transition-all duration-300">
-                      <span className="text-lg group-hover:scale-110 transition-transform duration-300">
-                        📝
-                      </span>
-                    </div>
-                    <div className="flex-1">
-                      <span className="font-bold text-gray-800 group-hover:text-green-700 text-base transition-colors duration-300">
-                        Blog
-                      </span>
-                    </div>
-                    <svg
-                      className="w-5 h-5 text-gray-300 group-hover:text-green-600 group-hover:translate-x-1 transition-all duration-300"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </Link>
-                </motion.div>
               </div>
 
               {/* Premium CTA Section */}
