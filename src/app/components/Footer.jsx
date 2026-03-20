@@ -25,7 +25,7 @@ export default function Footer() {
               and succeed in the digital age.
             </p>
           </div>
-
+          
           <div className="flex flex-col items-start lg:items-end gap-6 mt-4 lg:mt-0 lg:ml-0 lg:mr-0 ml-auto mr-auto">
             <Link
               href="/contact"

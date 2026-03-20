@@ -13,6 +13,15 @@ import ProductDetailPremiumDMS from "../../components/products/ProductDetailPrem
 import ProductDetailPremiumTimeAttendance from "../../components/products/ProductDetailPremiumTimeAttendance";
 import ProductDetailPremiumTicketing from "../../components/products/ProductDetailPremiumTicketing";
 import ProductDetailPremiumLodge from "../../components/products/ProductDetailPremiumLodge";
+import ProductDetailPremiumFleet from "../../components/products/ProductDetailPremiumFleet";
+import ProductDetailPremiumMobile from "../../components/products/ProductDetailPremiumMobile";
+import ProductDetailPremium3PL from "../../components/products/ProductDetailPremium3PL";
+import ProductDetailPremiumMarine from "../../components/products/ProductDetailPremiumMarine";
+import ProductDetailPremiumOrderPicking from "../../components/products/ProductDetailPremiumOrderPicking";
+import ProductDetailPremiumDispatcher from "../../components/products/ProductDetailPremiumDispatcher";
+import ProductDetailPremiumDealer from "../../components/products/ProductDetailPremiumDealer";
+import ProductDetailPremiumExpense from "../../components/products/ProductDetailPremiumExpense";
+import ProductDetailPremiumCRM from "../../components/products/ProductDetailPremiumCRM";
 
 export default function ProductDetailClient({ product, relatedProducts, allProducts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -120,6 +129,105 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   if (product.slug === 'lodge-booking-software') {
     return (
       <ProductDetailPremiumLodge 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for Fleet Management Software
+  if (product.slug === 'fleet-management-software') {
+    return (
+      <ProductDetailPremiumFleet 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for Mobile Service Center
+  if (product.slug === 'mobile-service-center') {
+    return (
+      <ProductDetailPremiumMobile 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for 3PL WMS Solution
+  if (product.slug === '3pl-wms-solution') {
+    return (
+      <ProductDetailPremium3PL 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for Marine Service Software
+  if (product.slug === 'marine-service-software') {
+    return (
+      <ProductDetailPremiumMarine 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for Order Picking & Packing
+  if (product.slug === 'order-picking-packing') {
+    return (
+      <ProductDetailPremiumOrderPicking 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for Dispatcher Panel
+  if (product.slug === 'dispatcher-panel') {
+    return (
+      <ProductDetailPremiumDispatcher 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for Dealer Management Software
+  if (product.slug === 'dealer-management-software') {
+    return (
+      <ProductDetailPremiumDealer 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for Expense Tracker
+  if (product.slug === 'expense-tracker') {
+    return (
+      <ProductDetailPremiumExpense 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for CRM Application
+  if (product.slug === 'crm-application') {
+    return (
+      <ProductDetailPremiumCRM 
         product={product} 
         relatedProducts={relatedProducts} 
         allProducts={allProducts}
