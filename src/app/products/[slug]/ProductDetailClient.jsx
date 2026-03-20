@@ -11,6 +11,8 @@ import ProductDetailPremiumRetailBilling from "../../components/products/Product
 import ProductDetailPremiumMultiBranch from "../../components/products/ProductDetailPremiumMultiBranch";
 import ProductDetailPremiumDMS from "../../components/products/ProductDetailPremiumDMS";
 import ProductDetailPremiumTimeAttendance from "../../components/products/ProductDetailPremiumTimeAttendance";
+import ProductDetailPremiumTicketing from "../../components/products/ProductDetailPremiumTicketing";
+import ProductDetailPremiumLodge from "../../components/products/ProductDetailPremiumLodge";
 
 export default function ProductDetailClient({ product, relatedProducts, allProducts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -96,6 +98,28 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   if (product.slug === 'time-attendance-system') {
     return (
       <ProductDetailPremiumTimeAttendance 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for Ticket Management Software
+  if (product.slug === 'ticket-management-software') {
+    return (
+      <ProductDetailPremiumTicketing 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for Lodge Booking Software
+  if (product.slug === 'lodge-booking-software') {
+    return (
+      <ProductDetailPremiumLodge 
         product={product} 
         relatedProducts={relatedProducts} 
         allProducts={allProducts}
