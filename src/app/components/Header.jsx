@@ -495,8 +495,9 @@ export default function Header() {
 
         {/* CTA Button - Hidden on Mobile */}
         <Link
-          href="/contact"
-          prefetch={true}
+          href="https://support.isarva.in/form"
+          target="_blank"
+          rel="noopener noreferrer"
           className="press-illusion-btn bg-green-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 hidden md:flex"
         >
           <span>Support</span>

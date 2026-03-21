@@ -50,7 +50,7 @@ export default function Footer() {
         </div>
 
         {/* Links Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-32">
           {/* Services */}
           <div>
             <h4 className="text-white font-extrabold mb-8 text-[13px] uppercase tracking-[0.2em] flex items-center gap-3 lg:justify-start justify-center">
@@ -59,19 +59,19 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               {[
-                "Cloud Services",
-                "Consulting Services",
-                "Digital Marketing",
-                "ERP Services",
-                "GPS Tracking",
-                "Offshore Development",
+                { label: "Cloud Services", href: "/services/cloud-services" },
+                { label: "Consulting Services", href: "/services/consulting-services" },
+                { label: "Digital Marketing", href: "/services/digital-marketing" },
+                { label: "ERP Services", href: "/services/erp-services" },
+                { label: "GPS Tracking", href: "/services/gps-tracking" },
+                { label: "Offshore Development", href: "/services/offshore-development" },
               ].map((link) => (
-                <li key={link}>
+                <li key={link.label}>
                   <Link
-                    href="#"
+                    href={link.href}
                     className="text-white/60 hover:text-white hover:translate-x-1.5 inline-block transition-all duration-300 text-sm font-medium"
                   >
-                    {link}
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -86,18 +86,18 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               {[
-                "e Commerce",
-                "Petro Care",
-                "Retail Billing Software",
-                "HRMS Software",
-                "Document Management System",
+                { label: "e Commerce", href: "/products/woocommerce-development" },
+                { label: "Petro Care", href: "/products/petro-care" },
+                { label: "Retail Billing Software", href: "/products/retail-billing-software" },
+                { label: "HRMS Software", href: "/products/hrms-software" },
+                { label: "Document Management System", href: "/products/document-management-system" },
               ].map((link) => (
-                <li key={link}>
+                <li key={link.label}>
                   <Link
-                    href="#"
+                    href={link.href}
                     className="text-white/60 hover:text-white hover:translate-x-1.5 inline-block transition-all duration-300 text-sm font-medium"
                   >
-                    {link}
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -112,19 +112,19 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               {[
-                "Media & Entertainment",
-                "Insurance",
-                "Manufacturing",
-                "Health Care & Life Sciences",
-                "Education",
-                "Banking and Financial Services",
+                { label: "Media & Entertainment", href: "/industries/media-entertainment" },
+                { label: "Insurance", href: "/industries/insurance" },
+                { label: "Manufacturing", href: "/industries/manufacturing" },
+                { label: "Health Care & Life Sciences", href: "/industries/healthcare-life-sciences" },
+                { label: "Education", href: "/industries/education" },
+                { label: "Banking and Financial Services", href: "/industries/banking-financial-services" },
               ].map((link) => (
-                <li key={link}>
+                <li key={link.label}>
                   <Link
-                    href="#"
+                    href={link.href}
                     className="text-white/60 hover:text-white hover:translate-x-1.5 inline-block transition-all duration-300 text-sm font-medium"
                   >
-                    {link}
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -132,26 +132,26 @@ export default function Footer() {
           </div>
 
           {/* Useful Links */}
-          <div className="p-8 rounded-3xl bg-white/[0.02] border border-white/5 backdrop-blur-md">
+          <div>
             <h4 className="text-white font-extrabold mb-8 text-[13px] uppercase tracking-[0.2em] flex items-center gap-3 lg:justify-start justify-center">
               <span className="w-1.5 h-1.5 rounded-full bg-[#60a5fa] shadow-[0_0_10px_#60a5fa]"></span>
               Useful Links
             </h4>
             <ul className="space-y-4">
               {[
-                "ABOUT US",
-                "TECHNOLOGY STACK",
-                "SERVICES",
-                "PRODUCTS",
-                "CAREERS",
-                "CONTACT US",
+                { label: "ABOUT US", href: "/about" },
+                { label: "TECHNOLOGY STACK", href: "/#clients" },
+                { label: "SERVICES", href: "/services" },
+                { label: "PRODUCTS", href: "/products" },
+                { label: "CAREERS", href: "/careers" },
+                { label: "CONTACT US", href: "/contact" },
               ].map((link) => (
-                <li key={link}>
+                <li key={link.label}>
                   <Link
-                    href="#"
-                    className="text-white/60 hover:text-white hover:translate-x-1.5 inline-block transition-all duration-300 text-[12px] font-bold tracking-[0.1em]"
+                    href={link.href}
+                    className="text-white/60 hover:text-white hover:translate-x-1.5 inline-block transition-all duration-300 text-sm font-medium"
                   >
-                    {link}
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -172,7 +172,7 @@ export default function Footer() {
           <div className="absolute top-0 right-1/4 w-64 h-64 bg-white/5 blur-[60px] rounded-full pointer-events-none" />
 
           <div className="relative z-10 flex flex-wrap items-center justify-center md:justify-start gap-6 text-[13px] font-bold tracking-widest text-white/90 uppercase">
-            <Link href="#" className="hover:text-white transition-colors">
+            <Link href="/careers" className="hover:text-white transition-colors">
               Careers
             </Link>
             <span className="w-1.5 h-1.5 rounded-full bg-white/20"></span>
