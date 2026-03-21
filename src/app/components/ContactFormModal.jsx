@@ -20,6 +20,7 @@ export default function ContactFormModal({
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     if (preSelectedItem) {
@@ -50,32 +51,65 @@ export default function ContactFormModal({
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
+    setErrorMessage("");
 
     try {
-      // Simulate API call - replace with actual API endpoint
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      console.log("Form submitted:", {
-        ...formData,
-        type: preSelectedType,
-        timestamp: new Date().toISOString()
+      // Prepare data for API
+      const submissionData = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        subject: `Demo Request: ${formData.selectedItem || preSelectedType || 'General Inquiry'}`,
+        message: formData.message,
+        pageType: preSelectedType || 'General',
+        itemName: formData.selectedItem || preSelectedItem || ''
+      };
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submissionData),
       });
 
-      setSubmitStatus("success");
-      setTimeout(() => {
-        onClose();
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          company: "",
-          selectedItem: preSelectedItem || "",
-          message: ""
-        });
-        setSubmitStatus(null);
-      }, 2000);
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitStatus("success");
+        setTimeout(() => {
+          onClose();
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            company: "",
+            selectedItem: preSelectedItem || "",
+            message: ""
+          });
+          setSubmitStatus(null);
+        }, 2000);
+      } else {
+        setSubmitStatus("error");
+        
+        // Extract user-friendly error message
+        let friendlyError = "Something went wrong. Please try again.";
+        if (data.error) {
+          if (data.error.includes('email has already been taken')) {
+            friendlyError = "This email is already registered. Please use a different email address.";
+          } else if (data.error.includes('Unable to connect')) {
+            friendlyError = "Unable to connect to server. Please check your internet connection.";
+          } else {
+            friendlyError = data.error;
+          }
+        }
+        setErrorMessage(friendlyError);
+      }
     } catch (error) {
+      console.error('Form submission error:', error);
       setSubmitStatus("error");
+      setErrorMessage("Network error. Please check your connection and try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -140,7 +174,7 @@ export default function ContactFormModal({
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:outline-none transition-colors duration-200"
+                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-900 focus:border-green-400 focus:outline-none transition-colors duration-200"
                 placeholder="John Doe"
               />
             </div>
@@ -157,7 +191,7 @@ export default function ContactFormModal({
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:outline-none transition-colors duration-200"
+                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-900 focus:border-green-400 focus:outline-none transition-colors duration-200"
                 placeholder="john@company.com"
               />
             </div>
@@ -174,7 +208,7 @@ export default function ContactFormModal({
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:outline-none transition-colors duration-200"
+                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-900 focus:border-green-400 focus:outline-none transition-colors duration-200"
                 placeholder="+1 (555) 000-0000"
               />
             </div>
@@ -190,7 +224,7 @@ export default function ContactFormModal({
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:outline-none transition-colors duration-200"
+                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-900 focus:border-green-400 focus:outline-none transition-colors duration-200"
                 placeholder="Your Company"
               />
             </div>
@@ -228,7 +262,7 @@ export default function ContactFormModal({
                 value={formData.message}
                 onChange={handleChange}
                 rows="4"
-                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:outline-none transition-colors duration-200 resize-none"
+                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-900 focus:border-green-400 focus:outline-none transition-colors duration-200 resize-none"
                 placeholder="Tell us about your requirements..."
               ></textarea>
             </div>
@@ -249,10 +283,13 @@ export default function ContactFormModal({
           {submitStatus === "error" && (
             <div className="mt-6 p-4 bg-red-50 border border-red-200 rounded-xl">
               <div className="flex items-center gap-2 text-red-700">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                 </svg>
-                <span className="font-semibold">Something went wrong. Please try again.</span>
+                <div className="flex-1">
+                  <span className="font-semibold block">Failed to submit</span>
+                  <span className="text-sm">{errorMessage || "Something went wrong. Please try again."}</span>
+                </div>
               </div>
             </div>
           )}

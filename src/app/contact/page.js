@@ -180,7 +180,7 @@ export default function Contact() {
                 </p>
               </div>
 
-              <ContactForm />
+              <ContactForm pageType="Contact Page" />
             </div>
 
             {/* Map and Additional Info */}

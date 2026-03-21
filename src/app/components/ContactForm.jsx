@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
-export default function ContactForm() {
+export default function ContactForm({ pageType = "Contact Page", itemName = "" }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,6 +14,7 @@ export default function ContactForm() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,22 +24,72 @@ export default function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus(null);
+    setErrorMessage("");
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus("success");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        subject: "",
-        message: "",
-      });
+    try {
+      const submissionData = {
+        ...formData,
+        pageType,
+        itemName
+      };
       
-      setTimeout(() => setSubmitStatus(null), 5000);
-    }, 2000);
+      console.log('Submitting form data:', submissionData);
+      
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submissionData),
+      });
+
+      const data = await response.json();
+      console.log('Response data:', data);
+
+      if (data.success) {
+        setSubmitStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          subject: "",
+          message: "",
+        });
+        setTimeout(() => setSubmitStatus(null), 5000);
+      } else {
+        console.error('Form submission failed:', data);
+        setSubmitStatus("error");
+        
+        // Extract user-friendly error message
+        let friendlyError = "Something went wrong. Please try again.";
+        if (data.error) {
+          if (data.error.includes('email has already been taken')) {
+            friendlyError = "This email is already registered. Please use a different email address.";
+          } else if (data.error.includes('Unable to connect')) {
+            friendlyError = "Unable to connect to server. Please check your internet connection.";
+          } else {
+            friendlyError = data.error;
+          }
+        }
+        setErrorMessage(friendlyError);
+        setTimeout(() => {
+          setSubmitStatus(null);
+          setErrorMessage("");
+        }, 7000);
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus("error");
+      setErrorMessage("Network error. Please check your connection and try again.");
+      setTimeout(() => {
+        setSubmitStatus(null);
+        setErrorMessage("");
+      }, 7000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -152,6 +203,22 @@ export default function ContactForm() {
             <div>
               <p className="font-semibold text-emerald-900">Message sent successfully!</p>
               <p className="text-sm text-emerald-700">We'll get back to you within 24 hours.</p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {submitStatus === "error" && (
+        <div className="rounded-xl bg-red-50 border-2 border-red-200 p-4">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </div>
+            <div className="flex-1">
+              <p className="font-semibold text-red-900">Failed to send message</p>
+              <p className="text-sm text-red-700">{errorMessage || "Please try again or contact us directly."}</p>
             </div>
           </div>
         </div>
