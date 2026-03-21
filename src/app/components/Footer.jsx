@@ -176,7 +176,7 @@ export default function Footer() {
               Careers
             </Link>
             <span className="w-1.5 h-1.5 rounded-full bg-white/20"></span>
-            <Link href="#" className="hover:text-white transition-colors">
+            <Link href="https://support.isarva.in/form" className="hover:text-white transition-colors">
               Support
             </Link>
           </div>

@@ -11,7 +11,7 @@ const navLinks = [
     label: "About Us", 
     href: "/about",
     children: [
-      { label: "Testimonials", href: "/testimonial" },
+      { label: "About Isarva", href: "/about" },
       { label: "Blog", href: "/blog" },
       { label: "Careers", href: "/careers" },
     ]
@@ -157,7 +157,7 @@ export default function Header() {
                               <div className="flex items-center gap-3">
                                 <div className="w-10 h-10 rounded-xl bg-white group-hover:bg-[#10b981] flex items-center justify-center transition-colors shadow-sm">
                                   <span className="text-lg group-hover:scale-110 transition-transform">
-                                    {child.label === "Testimonials" ? "💬" : child.label === "Careers" ? "💼" : "📝"}
+                                    {child.label === "About Isarva" ? "🏢" : child.label === "Careers" ? "💼" : "📝"}
                                   </span>
                                 </div>
                                 <span className="font-bold text-gray-800 group-hover:text-emerald-600 transition-colors uppercase tracking-tight text-sm">
@@ -176,9 +176,9 @@ export default function Header() {
                            <img src="/agency_office_studio_premium_1773850105446.png" className="w-full h-full object-cover" alt="" />
                          </div>
                          <div className="relative z-10 flex flex-col h-full">
-                            <h4 className="text-xl font-display font-bold text-gray-900 mb-4 leading-tight">About Us</h4>
-                            <p className="text-gray-600 text-xs mb-6 font-medium leading-relaxed">At Isarva Infotech, we are more than an IT consulting firm — we are a strategic technology partner . </p>
-                            <Link href="/about" className="mt-auto text-emerald-600 font-bold text-lg flex items-center gap-2 group/link">
+                            <h4 className="text-xl font-display font-bold text-gray-900 mb-4 leading-tight">Testimonials</h4>
+                            <p className="text-gray-600 text-base mb-6 font-medium leading-relaxed">Hear from our satisfied clients about their experience working with Isarva Infotech.</p>
+                            <Link href="/testimonial" className="mt-auto text-emerald-600 font-bold text-lg flex items-center gap-2 group/link">
                                Read More <span className="group-hover/link:translate-x-1 transition-transform">→</span>
                             </Link>
                          </div>
@@ -471,6 +471,15 @@ export default function Header() {
               </div>
             )}
           </div>
+
+          {/* Contact Us Link */}
+          <Link
+            href="/contact"
+            prefetch={true}
+            className="text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600"
+          >
+            Contact Us
+          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -905,6 +914,44 @@ export default function Header() {
                       </motion.div>
                     )}
                   </AnimatePresence>
+                </motion.div>
+
+                {/* Contact Us Link */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: (navLinks.length + 4) * 0.05 }}
+                >
+                  <Link
+                    href="/contact"
+                    prefetch={true}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="group flex items-center gap-3 p-4 rounded-2xl bg-white hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 border border-transparent hover:border-orange-200 active:bg-orange-100 transition-all duration-300"
+                  >
+                    <div className="w-10 h-10 bg-gradient-to-br from-orange-100 to-red-100 group-hover:from-orange-400 group-hover:to-red-500 rounded-xl flex items-center justify-center transition-all duration-300">
+                      <span className="text-lg group-hover:scale-110 transition-transform duration-300">
+                        📧
+                      </span>
+                    </div>
+                    <div className="flex-1">
+                      <span className="font-bold text-gray-800 group-hover:text-orange-700 text-base transition-colors duration-300">
+                        Contact Us
+                      </span>
+                    </div>
+                    <svg
+                      className="w-5 h-5 text-gray-300 group-hover:text-orange-600 group-hover:translate-x-1 transition-all duration-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </Link>
                 </motion.div>
 
               </div>
