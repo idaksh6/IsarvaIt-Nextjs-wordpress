@@ -8,6 +8,7 @@ import ContactSection from "./components/ContactSection";
 import BlogSection from "./components/BlogSection";
 import Footer from "./components/Footer";
 import CtaSection from "./components/CtaSection";
+import IsarvaAIChatbot from "./components/IsarvaAIChatbot";
 import { getHomePageData, getHeroSectionData, getServicesSectionData, getTechStackSectionData } from "./lib/services/home-page-service";
 import { getBlogPosts } from "./lib/services/blog-service";
 
@@ -40,6 +41,7 @@ export default async function HomePage() {
         <BlogSection posts={blogPosts} />
         <CtaSection />
       </main>
+      <IsarvaAIChatbot />
     </div>
   );
 }
