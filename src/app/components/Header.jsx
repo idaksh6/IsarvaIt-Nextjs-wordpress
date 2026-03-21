@@ -11,7 +11,7 @@ const navLinks = [
     label: "About Us", 
     href: "/about",
     children: [
-      { label: "About Isarva", href: "/about" },
+      { label: "Testimonials", href: "/testimonial" },
       { label: "Blog", href: "/blog" },
       { label: "Careers", href: "/careers" },
     ]
@@ -139,7 +139,21 @@ export default function Header() {
                 {link.label === "About Us" && isAboutOpen && (
                   <div className="absolute top-full left-[-200px] pt-4 w-[650px]">
                     <div className="bg-white/95 backdrop-blur-xl rounded-[2.5rem] shadow-2xl border border-gray-100 p-8 flex gap-8">
-                      {/* Left: Nav Links */}
+                      {/* Left: Featured Content with Image */}
+                      <div className="w-[280px] bg-gradient-to-br from-emerald-50 to-lime-50 rounded-3xl p-6 relative overflow-hidden group/featured">
+                         <div className="absolute inset-0 opacity-10 group-hover/featured:scale-110 transition-transform duration-700">
+                           <img src="/agency_office_studio_premium_1773850105446.png" className="w-full h-full object-cover" alt="" />
+                         </div>
+                         <div className="relative z-10 flex flex-col h-full">
+                            <h4 className="text-xl font-display font-bold text-gray-900 mb-4 leading-tight">About Isarva</h4>
+                            <p className="text-gray-600 text-base mb-6 font-medium leading-relaxed">At Isarva Infotech, we are more than an IT consulting firm — we are a strategic technology partner.</p>
+                            <Link href="/about" className="mt-auto text-emerald-600 font-bold text-lg flex items-center gap-2 group/link">
+                               Read More <span className="group-hover/link:translate-x-1 transition-transform">→</span>
+                            </Link>
+                         </div>
+                      </div>
+
+                      {/* Right: Nav Links */}
                       <div className="flex-1">
                         <div className="mb-6">
                            <h3 className="text-xl font-bold text-gray-900 mb-1">Resources</h3>
@@ -157,7 +171,7 @@ export default function Header() {
                               <div className="flex items-center gap-3">
                                 <div className="w-10 h-10 rounded-xl bg-white group-hover:bg-[#10b981] flex items-center justify-center transition-colors shadow-sm">
                                   <span className="text-lg group-hover:scale-110 transition-transform">
-                                    {child.label === "About Isarva" ? "🏢" : child.label === "Careers" ? "💼" : "📝"}
+                                    {child.label === "Testimonials" ? "💬" : child.label === "Careers" ? "💼" : "📝"}
                                   </span>
                                 </div>
                                 <span className="font-bold text-gray-800 group-hover:text-emerald-600 transition-colors uppercase tracking-tight text-sm">
@@ -168,20 +182,6 @@ export default function Header() {
                             </Link>
                           ))}
                         </div>
-                      </div>
-
-                      {/* Right: Featured Content with Image */}
-                      <div className="w-[280px] bg-gradient-to-br from-emerald-50 to-lime-50 rounded-3xl p-6 relative overflow-hidden group/featured">
-                         <div className="absolute inset-0 opacity-10 group-hover/featured:scale-110 transition-transform duration-700">
-                           <img src="/agency_office_studio_premium_1773850105446.png" className="w-full h-full object-cover" alt="" />
-                         </div>
-                         <div className="relative z-10 flex flex-col h-full">
-                            <h4 className="text-xl font-display font-bold text-gray-900 mb-4 leading-tight">Testimonials</h4>
-                            <p className="text-gray-600 text-base mb-6 font-medium leading-relaxed">Hear from our satisfied clients about their experience working with Isarva Infotech.</p>
-                            <Link href="/testimonial" className="mt-auto text-emerald-600 font-bold text-lg flex items-center gap-2 group/link">
-                               Read More <span className="group-hover/link:translate-x-1 transition-transform">→</span>
-                            </Link>
-                         </div>
                       </div>
                     </div>
                   </div>
