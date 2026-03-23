@@ -88,7 +88,6 @@ export default function Footer() {
               {[
                 { label: "e Commerce", href: "/products/woocommerce-development" },
                 { label: "Petro Care", href: "/products/petro-care" },
-                { label: "Retail Billing Software", href: "/products/retail-billing-software" },
                 { label: "HRMS Software", href: "/products/hrms-software" },
                 { label: "Document Management System", href: "/products/document-management-system" },
               ].map((link) => (
@@ -143,7 +142,7 @@ export default function Footer() {
                 { label: "TECHNOLOGY STACK", href: "/#clients" },
                 { label: "SERVICES", href: "/services" },
                 { label: "PRODUCTS", href: "/products" },
-                { label: "CAREERS", href: "/careers" },
+                { label: "INDUSTRIES", href: "/industries" },
                 { label: "CONTACT US", href: "/contact" },
               ].map((link) => (
                 <li key={link.label}>
@@ -176,7 +175,7 @@ export default function Footer() {
               Careers
             </Link>
             <span className="w-1.5 h-1.5 rounded-full bg-white/20"></span>
-            <Link href="https://support.isarva.in/form" className="hover:text-white transition-colors">
+            <Link target="_blank" href="https://support.isarva.in/form" className="hover:text-white transition-colors">
               Support
             </Link>
           </div>

@@ -27,6 +27,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ContactSection from "../components/ContactSection";
 import { getJobsListData } from "../lib/data/jobsData";
+import GeneralApplicationModal from "../components/GeneralApplicationModal";
 
 const jobCategories = [
   { id: 'all', name: 'All Jobs', icon: <Briefcase className="w-5 h-5" />, emoji: '💼' },
@@ -74,6 +75,7 @@ export default function CareerPage() {
   const jobs = getJobsListData();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const filteredJobs = jobs.filter(job => {
     const matchesSearch = job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -136,6 +138,13 @@ export default function CareerPage() {
                     >
                       <span>Explore Roles</span>
                       <ArrowRight className="w-5 h-5 text-white" />
+                    </Link>
+                    <Link 
+                      href="/internships"
+                      className="press-illusion-btn bg-white text-[#10b981] border-2 border-[#10b981] w-full sm:w-fit font-bold px-10 py-5 text-xl flex items-center justify-center gap-3 transition-transform hover:scale-105 rounded-2xl shadow-xl hover:shadow-2xl"
+                    >
+                      <GraduationCap className="w-5 h-5" />
+                      <span>Explore Internships</span>
                     </Link>
                   </motion.div>
               </div>
@@ -361,12 +370,12 @@ export default function CareerPage() {
                   We're always looking for remarkable people who think differently. Send us your profile and let's see where you fit in our evolution.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-8">
-                  <Link 
-                    href="/contact"
+                  <button 
+                    onClick={() => setIsModalOpen(true)}
                     className="press-illusion-btn bg-[#10b981] text-white px-12 py-6 text-xl font-bold rounded-2xl transition-all hover:scale-105"
                   >
                     Send Resume
-                  </Link>
+                  </button>
                   <Link 
                     href="/about"
                     className="text-white font-bold text-xl hover:text-[#10b981] transition-colors flex items-center gap-3"
@@ -378,6 +387,12 @@ export default function CareerPage() {
           </motion.div>
         </div>
       </section>
+
+      {/* General Application Modal */}
+      <GeneralApplicationModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </div>
   );
 }

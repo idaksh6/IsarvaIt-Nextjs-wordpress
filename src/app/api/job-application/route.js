@@ -25,13 +25,23 @@ export async function POST(request) {
       throw new Error('Name, email, phone, and job title are required fields');
     }
 
+    // Determine the subject line based on application type
+    let subject;
+    if (jobSlug === 'general') {
+      subject = 'New Application from Website: General';
+    } else if (jobSlug === 'internship') {
+      subject = `New Application from Website: ${jobTitle}`;
+    } else {
+      subject = `New Application from Website: ${jobTitle}`;
+    }
+
     // Create the job application data
     const applicationData = new FormData();
     applicationData.append('name', name);
     applicationData.append('email', email);
     applicationData.append('phone', phone);
     applicationData.append('position', jobTitle); // Job title as position
-    applicationData.append('subject', `New Application from Website: ${jobTitle}`);
+    applicationData.append('subject', subject);
     applicationData.append('message', '');
     applicationData.append('social_links', '');
     applicationData.append('note', '');

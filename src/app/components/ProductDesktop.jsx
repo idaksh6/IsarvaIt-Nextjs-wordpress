@@ -105,18 +105,6 @@ const products = [
       "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop",
   },
   {
-    id: 7,
-    name: "Retail Billing Software",
-    slug: "retail-billing-software",
-    category: "E-Commerce & Retail",
-    short:
-      "Convenient and reliable billing for purchase and sales — generates invoices, manages goods billing end-to-end.",
-    gradient: "#11998e",
-    image:
-      "https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=800&auto=format&fit=crop",
-    badge: "Popular",
-  },
-  {
     id: 8,
     name: "Document Management System",
     slug: "document-management-system",
@@ -126,28 +114,6 @@ const products = [
     gradient: "#4facfe",
     image:
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    id: 9,
-    name: "Time Attendant System",
-    slug: "time-attendance-system",
-    category: "HR & Workforce",
-    short:
-      "Makes easy work of monitoring employee time and attendance — automated, accurate, and effortless.",
-    gradient: "#f093fb",
-    image:
-      "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    id: 10,
-    name: "Ticket Management Software",
-    slug: "ticket-management-software",
-    category: "Operations",
-    short:
-      "Support Help Desk powering teams to run projects and support systems with confidence and speed.",
-    gradient: "#e0c3fc",
-    image:
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: 11,
@@ -183,17 +149,6 @@ const products = [
       "https://images.unsplash.com/photo-1597740985671-2a8a3b80502e?q=80&w=800&auto=format&fit=crop",
   },
   {
-    id: 14,
-    name: "3PL WMS Solution",
-    slug: "3pl-wms-solution",
-    category: "Fleet & Logistics",
-    short:
-      "Comprehensive warehouse management with complete inventory visibility and control for third-party logistics providers.",
-    gradient: "#4286f4",
-    image:
-      "https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=800&auto=format&fit=crop",
-  },
-  {
     id: 15,
     name: "Marine Service Software",
     slug: "marine-service-software",
@@ -203,17 +158,6 @@ const products = [
     gradient: "#302b63",
     image:
       "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    id: 16,
-    name: "Order Picking Tools",
-    slug: "order-picking-packing",
-    category: "Fleet & Logistics",
-    short:
-      "Streamlines order tracking and packing updates for Shopify stores — built with Laravel, JavaScript, and Tailwind.",
-    gradient: "#f7971e",
-    image:
-      "https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: 17,
