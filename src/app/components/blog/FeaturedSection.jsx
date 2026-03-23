@@ -33,12 +33,10 @@ export default function FeaturedSection({ posts }) {
             <p className="text-xl text-gray-600 mb-6 line-clamp-3">
               {mainPost.excerpt}
             </p>
-            <div className="flex items-center gap-4">
-                <img src={mainPost.author.avatar} className="w-10 h-10 rounded-full border-2 border-emerald-100" />
-                <div>
-                    <h4 className="font-bold text-gray-900">{mainPost.author.name}</h4>
-                    <p className="text-sm text-gray-500">{mainPost.date} • {mainPost.readTime}</p>
-                </div>
+            <div className="flex items-center gap-3 text-sm text-gray-500 font-medium">
+                <span>{mainPost.date}</span>
+                <span>•</span>
+                <span>{mainPost.readTime}</span>
             </div>
           </Link>
         </div>

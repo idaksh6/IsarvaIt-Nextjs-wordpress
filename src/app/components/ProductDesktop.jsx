@@ -48,6 +48,30 @@ const products = [
   },
   {
     id: 2,
+    name: "Support Application",
+    slug: "support-application",
+    category: "Customer Support",
+    short:
+      "Complete customer support and ticketing system for managing inquiries, issues, and support requests efficiently.",
+    gradient: "#a18cd1",
+    image:
+      "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=800&auto=format&fit=crop",
+    badge: "New",
+  },
+  {
+    id: 3,
+    name: "CRM Application",
+    slug: "crm-application",
+    category: "Sales & Marketing",
+    short:
+      "Powerful CRM solution for managing leads, contacts, sales pipeline, and customer interactions seamlessly.",
+    gradient: "#4facfe",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop",
+    badge: "Popular",
+  },
+  {
+    id: 4,
     name: "Petro Care",
     slug: "petro-care",
     category: "Industry Specific",
@@ -58,7 +82,7 @@ const products = [
       "https://images.unsplash.com/photo-1613521140785-e85e427f8002?q=80&w=800&auto=format&fit=crop",
   },
   {
-    id: 3,
+    id: 5,
     name: "eCommerce Software",
     slug: "woocommerce-development",
     category: "E-Commerce & Retail",
@@ -70,7 +94,7 @@ const products = [
     badge: "High ROI",
   },
   {
-    id: 4,
+    id: 6,
     name: "Bill Soft — Multi Branch",
     slug: "retail-billing-multi-branch",
     category: "E-Commerce & Retail",
@@ -81,7 +105,7 @@ const products = [
       "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop",
   },
   {
-    id: 5,
+    id: 7,
     name: "Retail Billing Software",
     slug: "retail-billing-software",
     category: "E-Commerce & Retail",
@@ -93,7 +117,7 @@ const products = [
     badge: "Popular",
   },
   {
-    id: 6,
+    id: 8,
     name: "Document Management System",
     slug: "document-management-system",
     category: "Operations",
@@ -104,7 +128,7 @@ const products = [
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop",
   },
   {
-    id: 7,
+    id: 9,
     name: "Time Attendant System",
     slug: "time-attendance-system",
     category: "HR & Workforce",
@@ -115,7 +139,7 @@ const products = [
       "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=800&auto=format&fit=crop",
   },
   {
-    id: 8,
+    id: 10,
     name: "Ticket Management Software",
     slug: "ticket-management-software",
     category: "Operations",
@@ -126,7 +150,7 @@ const products = [
       "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=800&auto=format&fit=crop",
   },
   {
-    id: 9,
+    id: 11,
     name: "Lodge Booking Software",
     slug: "lodge-booking-software",
     category: "Hospitality",
@@ -137,7 +161,7 @@ const products = [
       "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop",
   },
   {
-    id: 10,
+    id: 12,
     name: "Fleet Management Software",
     slug: "fleet-management-software",
     category: "Fleet & Logistics",
@@ -148,7 +172,7 @@ const products = [
       "https://images.unsplash.com/photo-1519003300449-424ad0405076?q=80&w=800&auto=format&fit=crop",
   },
   {
-    id: 11,
+    id: 13,
     name: "Mobile Service Center",
     slug: "mobile-service-center",
     category: "Industry Specific",
@@ -159,7 +183,7 @@ const products = [
       "https://images.unsplash.com/photo-1597740985671-2a8a3b80502e?q=80&w=800&auto=format&fit=crop",
   },
   {
-    id: 12,
+    id: 14,
     name: "3PL WMS Solution",
     slug: "3pl-wms-solution",
     category: "Fleet & Logistics",
@@ -170,7 +194,7 @@ const products = [
       "https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=800&auto=format&fit=crop",
   },
   {
-    id: 13,
+    id: 15,
     name: "Marine Service Software",
     slug: "marine-service-software",
     category: "Industry Specific",
@@ -181,7 +205,7 @@ const products = [
       "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=800&auto=format&fit=crop",
   },
   {
-    id: 14,
+    id: 16,
     name: "Order Picking Tools",
     slug: "order-picking-packing",
     category: "Fleet & Logistics",
@@ -192,7 +216,7 @@ const products = [
       "https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=800&auto=format&fit=crop",
   },
   {
-    id: 15,
+    id: 17,
     name: "Dispatcher Panel",
     slug: "dispatcher-panel",
     category: "Fleet & Logistics",
@@ -203,7 +227,7 @@ const products = [
       "https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=800&auto=format&fit=crop",
   },
   {
-    id: 16,
+    id: 18,
     name: "CRM Application",
     slug: "crm-application",
     category: "Operations",
@@ -214,7 +238,7 @@ const products = [
       "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop",
   },
   {
-    id: 17,
+    id: 19,
     name: "Dealer Management",
     slug: "dealer-management-software",
     category: "Operations",
@@ -225,7 +249,7 @@ const products = [
       "https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=800&auto=format&fit=crop",
   },
   {
-    id: 18,
+    id: 20,
     name: "Expense Tracker",
     slug: "expense-tracker",
     category: "Operations",

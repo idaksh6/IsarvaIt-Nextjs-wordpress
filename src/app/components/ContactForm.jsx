@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function ContactForm({ pageType = "Contact Page", itemName = "" }) {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -48,32 +50,29 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
       console.log('Response data:', data);
 
       if (data.success) {
-        setSubmitStatus("success");
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          company: "",
-          subject: "",
-          message: "",
+        // Determine page type for thank you page
+        let type = 'contact';
+        if (pageType.toLowerCase().includes('product')) {
+          type = 'product';
+        } else if (pageType.toLowerCase().includes('service')) {
+          type = 'service';
+        } else if (pageType.toLowerCase().includes('industry')) {
+          type = 'industry';
+        }
+        
+        // Redirect to thank you page with context
+        const queryParams = new URLSearchParams({
+          type: type,
+          ...(itemName && { item: itemName })
         });
-        setTimeout(() => setSubmitStatus(null), 5000);
+        
+        router.push(`/thank-you?${queryParams.toString()}`);
       } else {
         console.error('Form submission failed:', data);
         setSubmitStatus("error");
         
-        // Extract user-friendly error message
-        let friendlyError = "Something went wrong. Please try again.";
-        if (data.error) {
-          if (data.error.includes('email has already been taken')) {
-            friendlyError = "This email is already registered. Please use a different email address.";
-          } else if (data.error.includes('Unable to connect')) {
-            friendlyError = "Unable to connect to server. Please check your internet connection.";
-          } else {
-            friendlyError = data.error;
-          }
-        }
-        setErrorMessage(friendlyError);
+        // Display the error message from API
+        setErrorMessage(data.error || "Something went wrong. Please try again.");
         setTimeout(() => {
           setSubmitStatus(null);
           setErrorMessage("");

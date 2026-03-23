@@ -86,12 +86,10 @@ export default function PostGrid({ posts, title = "Latest Articles" }) {
                     {post.excerpt}
                   </p>
                 </div>
-                <div className="flex items-center gap-4 pt-4 border-t border-gray-50">
-                    <img src={post.author.avatar} className="w-8 h-8 rounded-full" />
-                    <div className="text-[13px]">
-                        <span className="block font-bold text-gray-900">{post.author.name}</span>
-                        <span className="text-gray-400 font-medium lowercase italic">{post.date} • {post.readTime}</span>
-                    </div>
+                <div className="flex items-center gap-2 pt-4 border-t border-gray-50">
+                    <span className="text-[13px] text-gray-400 font-medium">{post.date}</span>
+                    <span className="text-gray-200">•</span>
+                    <span className="text-[13px] text-gray-400 font-medium">{post.readTime}</span>
                 </div>
               </Link>
             </motion.article>

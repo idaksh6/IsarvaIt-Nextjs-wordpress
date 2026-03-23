@@ -37,12 +37,12 @@ const AISummary = ({ postTitle, date, readTime }) => {
   ];
 
   return (
-    <div className="flex flex-col md:flex-row md:items-center justify-between py-6 border-b border-gray-100 mb-10 w-full group/summary">
-      <div className="flex items-center gap-4">
-        <span className="text-[15px] text-gray-400 font-medium whitespace-nowrap">
+    <div className="flex flex-col gap-4 py-6 border-b border-gray-100 mb-10 w-full">
+      <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+        <span className="text-sm md:text-[15px] text-gray-400 font-medium">
           Summarize this article with:
         </span>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 flex-wrap">
           {platforms.map((platform) => (
             <a 
               key={platform.name}
@@ -50,7 +50,7 @@ const AISummary = ({ postTitle, date, readTime }) => {
               target="_blank"
               rel="noopener noreferrer"
               title={`Summarize with ${platform.name}`}
-              className={`p-2 rounded-xl transition-all duration-300 transform hover:scale-125 ${platform.color}`}
+              className={`p-2.5 rounded-xl transition-all duration-300 transform hover:scale-110 ${platform.color} bg-white shadow-sm border border-gray-100`}
             >
               <img 
                 src={platform.iconPath} 
@@ -62,9 +62,9 @@ const AISummary = ({ postTitle, date, readTime }) => {
         </div>
       </div>
 
-      <div className="text-[15px] text-gray-400 font-medium hidden md:flex items-center whitespace-nowrap">
+      <div className="text-sm md:text-[15px] text-gray-400 font-medium flex items-center gap-2">
         <span>{date}</span>
-        <span className="mx-3 text-gray-200">|</span>
+        <span className="text-gray-200">•</span>
         <span>{readTime}</span>
       </div>
     </div>

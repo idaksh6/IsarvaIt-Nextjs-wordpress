@@ -26,7 +26,7 @@ export default async function BlogPage({ searchParams }) {
     posts = posts.filter(post => 
       post.title.toLowerCase().includes(query) || 
       post.excerpt.toLowerCase().includes(query) ||
-      post.author.name.toLowerCase().includes(query) ||
+
       post.categoryName.toLowerCase().includes(query)
     );
   }

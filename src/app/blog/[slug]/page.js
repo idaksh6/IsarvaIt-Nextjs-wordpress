@@ -1,6 +1,5 @@
 import Header from "../../components/Header";
 import AISummary from "../../components/blog/AISummary";
-import AuthorCard from "../../components/blog/AuthorCard";
 
 import {
   getPostBySlug,
@@ -72,19 +71,6 @@ export default async function BlogPostPage({ params }) {
             date={post.date}
             readTime={post.readTime}
           />
-
-          <div className="flex items-center gap-4 mt-8">
-            <img
-              src={post.author.avatar}
-              className="w-12 h-12 rounded-full ring-2 ring-emerald-50"
-            />
-            <div>
-              <h4 className="font-bold text-gray-900">{post.author.name}</h4>
-              <p className="text-xs text-gray-500 font-medium uppercase tracking-widest">
-                {post.author.role}
-              </p>
-            </div>
-          </div>
         </header>
 
         {/* Featured Image */}

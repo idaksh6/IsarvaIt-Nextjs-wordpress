@@ -16,11 +16,26 @@ import {
   CheckCircle2,
   ArrowRight,
   GraduationCap,
-  Search
+  Search,
+  Code,
+  Megaphone,
+  Palette,
+  DollarSign,
+  Settings
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import ContactSection from "../components/ContactSection";
+import { getJobsListData } from "../lib/data/jobsData";
+
+const jobCategories = [
+  { id: 'all', name: 'All Jobs', icon: <Briefcase className="w-5 h-5" />, emoji: '💼' },
+  { id: 'Development', name: 'Development', icon: <Code className="w-5 h-5" />, emoji: '⚙️' },
+  { id: 'Marketing', name: 'Marketing', icon: <Megaphone className="w-5 h-5" />, emoji: '📢' },
+  { id: 'Design', name: 'Design', icon: <Palette className="w-5 h-5" />, emoji: '🎨' },
+  { id: 'Finance', name: 'Finance', icon: <DollarSign className="w-5 h-5" />, emoji: '💰' },
+  { id: 'Operation', name: 'Operation', icon: <Settings className="w-5 h-5" />, emoji: '📋' },
+];
 
 const benefits = [
   {
@@ -55,130 +70,19 @@ const benefits = [
   }
 ];
 
-const jobs = [
-  {
-    title: "Software Developer – C++",
-    location: "Bangalore",
-    experience: "5–8 years",
-    type: "Full-time"
-  },
-  {
-    title: "Client Solution Executive",
-    location: "Bajpe, Mangalore",
-    experience: "0–3 years",
-    type: "Full-time"
-  },
-  {
-    title: "Lead AI/ML Engineer – NLP & Generative AI",
-    location: "Bangalore",
-    experience: "Fresher",
-    type: "Full-time"
-  },
-  {
-    title: "Senior Software Developer – Python",
-    location: "Bangalore",
-    experience: "5+ years",
-    type: "Full-time"
-  },
-  {
-    title: "AI/ML Internship – Agentic AI (Autonomous Agents)",
-    location: "Remote",
-    experience: "Fresher",
-    type: "Internship"
-  },
-  {
-    title: "Senior Software Engineer (Backend C# - Microservices & RESTful APIs)",
-    location: "Bangalore",
-    experience: "4-8 years",
-    type: "Full-time"
-  },
-  {
-    title: "Senior Software Test Automation Engineer",
-    location: "Bangalore",
-    experience: "5-10 years",
-    type: "Full-time"
-  },
-  {
-    title: "Senior Software Developer – .NET Web",
-    location: "Bangalore",
-    experience: "5 - 7 years",
-    type: "Full-time"
-  },
-  {
-    title: "Business Development Executive",
-    location: "Bajpe, Mangalore",
-    experience: "0-1 year",
-    type: "Full-time"
-  },
-  {
-    title: "Accounts Executive",
-    location: "Bajpe, Mangalore",
-    experience: "0-1 year",
-    type: "Full-time"
-  },
-  {
-    title: "Quality Assurance Tester",
-    location: "Bangalore",
-    experience: "2 – 4 years",
-    type: "Full-time"
-  },
-  {
-    title: "Full Stack Java Developer",
-    location: "Bangalore",
-    experience: "3-8 years",
-    type: "Full-time"
-  },
-  {
-    title: "Full Stack Node.js Developer",
-    location: "Bangalore",
-    experience: "4 – 6 years",
-    type: "Full-time"
-  },
-  {
-    title: "Systems Engineer – Manufacturing & Knowledge Base Specialist",
-    location: "Bangalore",
-    experience: "2-4 years",
-    type: "Full-time"
-  },
-  {
-    title: "Marketing Intern",
-    location: "Bajpe, Mangalore",
-    experience: "Currently Pursuing MBA",
-    type: "Internship"
-  },
-  {
-    title: "HR Intern",
-    location: "Bajpe, Mangalore",
-    experience: "Currently pursuing MBA",
-    type: "Internship"
-  },
-  {
-    title: "IT Intern",
-    location: "Bajpe, Mangalore",
-    experience: "Currently pursuing BCA, MCA, B.Tech",
-    type: "Internship"
-  },
-  {
-    title: "Devops Engineer",
-    location: "Bangalore",
-    experience: "5 years",
-    type: "Full-time"
-  },
-  {
-    title: "C# Development Engineer",
-    location: "Bangalore",
-    experience: "4 to 7 years",
-    type: "Full-time"
-  }
-];
-
 export default function CareerPage() {
+  const jobs = getJobsListData();
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
-  const filteredJobs = jobs.filter(job => 
-    job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    job.location.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredJobs = jobs.filter(job => {
+    const matchesSearch = job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job.location.toLowerCase().includes(searchTerm.toLowerCase());
+    
+    const matchesCategory = selectedCategory === 'all' || job.category === selectedCategory;
+    
+    return matchesSearch && matchesCategory;
+  });
 
   return (
     <div className="min-h-screen bg-[#FDF8F2] font-sans text-[#1a1f24]">
@@ -324,7 +228,7 @@ export default function CareerPage() {
       {/* ── OPEN POSITIONS ── */}
       <section id="openings" className="py-24 bg-[#FDF8F2] relative">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 px-4">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 px-4">
             <div className="text-left">
               <span className="text-[#10b981] font-black tracking-[0.3em] uppercase text-xs mb-4 inline-block">Career Opportunities</span>
               <h2 className="text-4xl md:text-5xl font-display font-bold text-[#1a1f24] leading-tight">Find Your Calling</h2>
@@ -340,6 +244,35 @@ export default function CareerPage() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
+            </div>
+          </div>
+
+          {/* Category Tabs */}
+          <div className="mb-8 overflow-x-auto px-4">
+            <div className="flex gap-3 min-w-max pb-2">
+              {jobCategories.map((category) => (
+                <motion.button
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category.id)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`
+                    px-6 py-3 rounded-xl font-bold text-sm transition-all flex items-center gap-2
+                    ${selectedCategory === category.id
+                      ? 'bg-[#10b981] text-white shadow-lg shadow-emerald-500/20'
+                      : 'bg-white text-[#1a1f24] hover:bg-emerald-50 border border-emerald-500/10'
+                    }
+                  `}
+                >
+                  <span className="text-base">{category.emoji}</span>
+                  <span>{category.name}</span>
+                  {selectedCategory === category.id && (
+                    <span className="ml-1 px-2 py-0.5 bg-white/20 rounded-full text-xs">
+                      {category.id === 'all' ? jobs.length : jobs.filter(j => j.category === category.id).length}
+                    </span>
+                  )}
+                </motion.button>
+              ))}
             </div>
           </div>
 
@@ -367,16 +300,22 @@ export default function CareerPage() {
                           {job.experience}
                         </div>
                         <div className="flex items-center gap-1.5 text-[#10b981] text-[10px] font-black bg-emerald-50 px-3 py-1 rounded-full uppercase tracking-widest border border-emerald-100">
-                          {job.type}
+                          {job.jobType}
                         </div>
+                        {job.category && (
+                          <div className="flex items-center gap-1.5 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider bg-gradient-to-r from-purple-50 to-blue-50 text-purple-700 border border-purple-100">
+                            {jobCategories.find(c => c.id === job.category)?.emoji}
+                            <span>{job.category}</span>
+                          </div>
+                        )}
                       </div>
                     </div>
 
                     <Link 
-                      href="/contact"
+                      href={`/careers/${job.slug}`}
                       className="bg-[#1a1f24]/5 hover:bg-[#10b981] text-[#1a1f24] hover:text-white px-8 py-3.5 rounded-xl font-bold transition-all transform active:scale-95 flex items-center gap-2 text-sm"
                     >
-                      <span>Apply Now</span>
+                      <span>View Details</span>
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   </motion.div>
@@ -390,10 +329,13 @@ export default function CareerPage() {
                   <Search className="w-12 h-12 text-[#10b981]/20 mx-auto mb-4" />
                   <p className="text-[#53606b] font-display text-xl">No roles matching your search.</p>
                   <button 
-                    onClick={() => setSearchTerm("")}
+                    onClick={() => {
+                      setSearchTerm("");
+                      setSelectedCategory("all");
+                    }}
                     className="mt-4 text-[#10b981] font-bold underline underline-offset-4"
                   >
-                    Clear search filters
+                    Clear all filters
                   </button>
                 </motion.div>
               )}
@@ -436,8 +378,6 @@ export default function CareerPage() {
           </motion.div>
         </div>
       </section>
-
-      <ContactSection />
     </div>
   );
 }

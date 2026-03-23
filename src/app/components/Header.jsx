@@ -47,6 +47,8 @@ const industriesData = [
 
 const productsData = [
   { label: "HRMS Software", href: "/products/hrms-software", icon: "👥" },
+  { label: "Support Application", href: "/products/support-application", icon: "🎧" },
+  { label: "CRM Application", href: "/products/crm-application", icon: "👔" },
   { label: "WMS Software", href: "/products/wms-software", icon: "📦" },
   { label: "WooCommerce Development", href: "/products/woocommerce-development", icon: "🛒" },
   { label: "Petro Care", href: "/products/petro-care", icon: "⛽" },

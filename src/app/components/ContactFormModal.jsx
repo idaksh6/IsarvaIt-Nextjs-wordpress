@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
+import { useRouter } from "next/navigation";
 
 export default function ContactFormModal({ 
   isOpen, 
@@ -10,23 +11,73 @@ export default function ContactFormModal({
   preSelectedItem,
   allItems = []
 }) {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     company: "",
-    selectedItem: preSelectedItem || "",
+    selectedItem: "",
+    selectedCategoryId: "",
     message: ""
   });
+  const [categories, setCategories] = useState([]);
+  const [isLoadingCategories, setIsLoadingCategories] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
 
+  // Fetch categories from API based on page type
   useEffect(() => {
-    if (preSelectedItem) {
-      setFormData(prev => ({ ...prev, selectedItem: preSelectedItem }));
-    }
-  }, [preSelectedItem]);
+    const fetchCategories = async () => {
+      if (!isOpen) return;
+      
+      setIsLoadingCategories(true);
+      try {
+        // Determine API endpoint based on page type
+        let endpoint = 'general';
+        const pageTypeLower = (preSelectedType || '').toLowerCase();
+        
+        if (pageTypeLower.includes('product')) {
+          endpoint = 'products';
+        } else if (pageTypeLower.includes('service')) {
+          endpoint = 'services';
+        } else if (pageTypeLower.includes('industry')) {
+          endpoint = 'industries';
+        }
+        
+        const response = await fetch(`https://crm-demo.isarva.in/api/product-categories/${endpoint}`);
+        const data = await response.json();
+        
+        if (data.categories) {
+          setCategories(data.categories);
+          
+          // Pre-select item if it matches
+          if (preSelectedItem) {
+            const matchedCategory = data.categories.find(
+              cat => cat.category_name.toLowerCase() === preSelectedItem.toLowerCase() ||
+                     cat.category_name.toLowerCase().includes(preSelectedItem.toLowerCase())
+            );
+            
+            if (matchedCategory) {
+              setFormData(prev => ({
+                ...prev,
+                selectedItem: matchedCategory.category_name,
+                selectedCategoryId: matchedCategory.id
+              }));
+            }
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching categories:', error);
+        setCategories([]);
+      } finally {
+        setIsLoadingCategories(false);
+      }
+    };
+
+    fetchCategories();
+  }, [isOpen, preSelectedType, preSelectedItem]);
 
   // Prevent body scroll when modal is open
   useEffect(() => {
@@ -41,10 +92,22 @@ export default function ContactFormModal({
   }, [isOpen]);
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    
+    // If selecting a category, also capture its ID
+    if (name === 'selectedItem') {
+      const selectedCategory = categories.find(cat => cat.category_name === value);
+      setFormData({
+        ...formData,
+        selectedItem: value,
+        selectedCategoryId: selectedCategory ? selectedCategory.id : ""
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value
+      });
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -63,7 +126,8 @@ export default function ContactFormModal({
         subject: `Demo Request: ${formData.selectedItem || preSelectedType || 'General Inquiry'}`,
         message: formData.message,
         pageType: preSelectedType || 'General',
-        itemName: formData.selectedItem || preSelectedItem || ''
+        itemName: formData.selectedItem || preSelectedItem || '',
+        categoryId: formData.selectedCategoryId || null
       };
 
       const response = await fetch('/api/contact', {
@@ -77,41 +141,41 @@ export default function ContactFormModal({
       const data = await response.json();
 
       if (data.success) {
-        setSubmitStatus("success");
-        setTimeout(() => {
-          onClose();
-          setFormData({
-            name: "",
-            email: "",
-            phone: "",
-            company: "",
-            selectedItem: preSelectedItem || "",
-            message: ""
-          });
-          setSubmitStatus(null);
-        }, 2000);
+        // Determine page type for thank you page
+        let type = 'contact';
+        const pageTypeLower = (preSelectedType || '').toLowerCase();
+        
+        if (pageTypeLower.includes('product')) {
+          type = 'product';
+        } else if (pageTypeLower.includes('service')) {
+          type = 'service';
+        } else if (pageTypeLower.includes('industry')) {
+          type = 'industry';
+        }
+        
+        // Close modal first
+        onClose();
+        
+        // Redirect to thank you page with context
+        const queryParams = new URLSearchParams({
+          type: type,
+          ...(formData.selectedItem && { item: formData.selectedItem }),
+          ...(!formData.selectedItem && preSelectedItem && { item: preSelectedItem })
+        });
+        
+        router.push(`/thank-you?${queryParams.toString()}`);
       } else {
         setSubmitStatus("error");
+        setIsSubmitting(false);
         
-        // Extract user-friendly error message
-        let friendlyError = "Something went wrong. Please try again.";
-        if (data.error) {
-          if (data.error.includes('email has already been taken')) {
-            friendlyError = "This email is already registered. Please use a different email address.";
-          } else if (data.error.includes('Unable to connect')) {
-            friendlyError = "Unable to connect to server. Please check your internet connection.";
-          } else {
-            friendlyError = data.error;
-          }
-        }
-        setErrorMessage(friendlyError);
+        // Display the error message from API
+        setErrorMessage(data.error || "Something went wrong. Please try again.");
       }
     } catch (error) {
       console.error('Form submission error:', error);
       setSubmitStatus("error");
-      setErrorMessage("Network error. Please check your connection and try again.");
-    } finally {
       setIsSubmitting(false);
+      setErrorMessage("Network error. Please check your connection and try again.");
     }
   };
 
@@ -240,12 +304,15 @@ export default function ContactFormModal({
                 value={formData.selectedItem}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-black focus:border-green-400 focus:outline-none transition-colors duration-200 bg-white"
+                disabled={isLoadingCategories}
+                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-black focus:border-green-400 focus:outline-none transition-colors duration-200 bg-white disabled:bg-gray-100 disabled:cursor-not-allowed"
               >
-                <option value="">Select {preSelectedType || "an option"}</option>
-                {allItems.map((item) => (
-                  <option key={item.slug} value={item.title}>
-                    {item.title}
+                <option value="">
+                  {isLoadingCategories ? "Loading..." : `Select ${preSelectedType || "an option"}`}
+                </option>
+                {categories.map((category) => (
+                  <option key={category.id} value={category.category_name}>
+                    {category.category_name}
                   </option>
                 ))}
               </select>

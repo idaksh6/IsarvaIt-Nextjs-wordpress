@@ -36,19 +36,8 @@ export async function POST(request) {
     let contextualDescription = '';
     const userMessage = formData.message?.trim() || '';
     
-    if (formData.pageType && formData.itemName) {
-      contextualDescription = `Page: ${formData.pageType} - ${formData.itemName}`;
-      if (userMessage) {
-        contextualDescription += `\n\nMessage: ${userMessage}`;
-      }
-    } else if (formData.pageType) {
-      contextualDescription = `Page: ${formData.pageType}`;
-      if (userMessage) {
-        contextualDescription += `\n\nMessage: ${userMessage}`;
-      }
-    } else {
-      contextualDescription = userMessage;
-    }
+    // Just send the user message, without pageType prefix
+    contextualDescription = userMessage;
     
     // Ensure description is never empty
     if (!contextualDescription) {
@@ -65,7 +54,7 @@ export async function POST(request) {
       full_name: formData.name?.trim() || '',
       email: formData.email?.trim() || '',
       mobile: mobileNumber,
-      categories: 1,
+      categories: formData.categoryId || 1, // Use dynamic category ID or default to 1
       lead_source: 19
     };
 
@@ -111,18 +100,29 @@ export async function POST(request) {
         body: responseText,
       });
       
-      // Try to parse error response
-      let errorMessage = responseText;
+      // Try to parse error response and provide user-friendly messages
+      let errorMessage = "We couldn't process your request. Please try again.";
       try {
         const errorData = JSON.parse(responseText);
         if (errorData.errors) {
-          errorMessage = JSON.stringify(errorData.errors);
+          const errorString = JSON.stringify(errorData.errors).toLowerCase();
+          
+          // Check for common error patterns and return user-friendly messages
+          if (errorString.includes('email') && errorString.includes('taken')) {
+            errorMessage = "This email address has already been registered with us. Please use a different email or contact our support team.";
+          } else if (errorString.includes('title') && (errorString.includes('taken') || errorString.includes('duplicate'))) {
+            errorMessage = "This form subject already exists with your query. Please modify your subject line or check your previous submissions.";
+          } else if (errorString.includes('duplicate')) {
+            errorMessage = "We've already received a similar inquiry from you. Our team will respond to your previous submission shortly.";
+          } else {
+            errorMessage = "There was an issue processing your request. Please try again or contact us directly.";
+          }
         }
       } catch (e) {
-        // Use raw text if not JSON
+        // Use default error message if parsing fails
       }
       
-      throw new Error(`CRM API error (${response.status}): ${errorMessage}`);
+      throw new Error(errorMessage);
     }
 
     let data;
