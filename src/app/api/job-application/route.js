@@ -27,12 +27,21 @@ export async function POST(request) {
 
     // Determine the subject line based on application type
     let subject;
+    let formType;
+    let source;
+    
     if (jobSlug === 'general') {
       subject = 'New Application from Website: General';
+      formType = 'Job Application Website';
+      source = pageUrl || 'https://isarvait.com/careers';
     } else if (jobSlug === 'internship') {
       subject = `New Application from Website: ${jobTitle}`;
+      formType = 'Internship Application Website';
+      source = 'https://isarvait.vercel.app/internships';
     } else {
       subject = `New Application from Website: ${jobTitle}`;
+      formType = 'Job Application Website';
+      source = pageUrl || `https://isarvait.com/careers/${jobSlug || ''}`;
     }
 
     // Create the job application data
@@ -45,8 +54,8 @@ export async function POST(request) {
     applicationData.append('message', '');
     applicationData.append('social_links', '');
     applicationData.append('note', '');
-    applicationData.append('form_type', 'Job Application Website');
-    applicationData.append('source', pageUrl || `https://isarvait.com/careers/${jobSlug || ''}`);
+    applicationData.append('form_type', formType);
+    applicationData.append('source', source);
     applicationData.append('form_id', '0');
     
     // Attach resume if provided
