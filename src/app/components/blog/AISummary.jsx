@@ -18,15 +18,9 @@ const AISummary = ({ postTitle, date, readTime }) => {
     },
     { 
       name: "Gemini", 
-      url: `https://gemini.google.com/app?q=Summarize this article: ${postTitle}`, 
+      url: `https://www.google.com/search?udm=50&q=Summarize this article: ${encodeURIComponent(postTitle)}`, 
       iconPath: "/gemini.svg",
       color: "hover:bg-[#4285f4]/10"
-    },
-    { 
-      name: "Grok", 
-      url: `https://x.com/i/grok?text=Summarize this article: ${postTitle}`, 
-      iconPath: "/grok.svg",
-      color: "hover:bg-black/10"
     },
     { 
       name: "Perplexity", 
