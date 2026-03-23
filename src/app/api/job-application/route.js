@@ -9,6 +9,7 @@ export async function POST(request) {
     const phone = formData.get('phone');
     const jobTitle = formData.get('jobTitle');
     const jobSlug = formData.get('jobSlug');
+    const pageUrl = formData.get('pageUrl');
     const resume = formData.get('resume');
 
     console.log('=== Job Application API Request Started ===');
@@ -16,6 +17,7 @@ export async function POST(request) {
     console.log('Email:', email);
     console.log('Phone:', phone);
     console.log('Job Title:', jobTitle);
+    console.log('Page URL:', pageUrl);
     console.log('Resume:', resume?.name);
 
     // Validate required fields
@@ -28,18 +30,21 @@ export async function POST(request) {
     applicationData.append('name', name);
     applicationData.append('email', email);
     applicationData.append('phone', phone);
-    applicationData.append('subject', `New Job Application from Website: ${jobTitle}`);
+    applicationData.append('position', jobTitle); // Job title as position
+    applicationData.append('subject', `New Application from Website: ${jobTitle}`);
     applicationData.append('message', '');
-    applicationData.append('form_type', 'Job application Website');
-    applicationData.append('source', `https://isarvait.com/careers/${jobSlug || ''}`);
+    applicationData.append('social_links', '');
+    applicationData.append('note', '');
+    applicationData.append('form_type', 'Job Application Website');
+    applicationData.append('source', pageUrl || `https://isarvait.com/careers/${jobSlug || ''}`);
     applicationData.append('form_id', '0');
     
     // Attach resume if provided
     if (resume && resume.size > 0) {
-      applicationData.append('resume', resume);
+      applicationData.append('resume_file', resume);
     }
 
-    console.log('Sending request to: https://formcontroller.isarva.in/api/enquiry');
+    console.log('Sending request to: https://formcontroller.isarva.in/public/api/enquiry');
 
     // Send to job application API with timeout
     const controller = new AbortController();
@@ -47,7 +52,7 @@ export async function POST(request) {
 
     let response;
     try {
-      response = await fetch('https://formcontroller.isarva.in/api/enquiry', {
+      response = await fetch('https://formcontroller.isarva.in/public/api/enquiry', {
         method: 'POST',
         body: applicationData,
         signal: controller.signal,

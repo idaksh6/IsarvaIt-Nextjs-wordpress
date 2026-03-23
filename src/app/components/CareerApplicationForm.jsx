@@ -72,6 +72,7 @@ export default function CareerApplicationForm({ jobTitle, jobSlug }) {
       submitData.append('phone', formData.phone);
       submitData.append('jobTitle', jobTitle);
       submitData.append('jobSlug', jobSlug);
+      submitData.append('pageUrl', window.location.href); // Current page URL
       
       if (resume) {
         submitData.append('resume', resume);
