@@ -242,7 +242,6 @@ export default function Contact() {
                 city: "Mangalore",
                 address: "Bajpe",
                 postal: "Mangalore, India",
-                flag: "🇮🇳",
                 mapEmbedUrl: "https://maps.google.com/maps?q=Bajpe,Mangalore,India&t=&z=13&ie=UTF8&iwloc=&output=embed",
                 googleMapsLink: "https://maps.app.goo.gl/33PWqCCNP69tLAXQ7",
               },
@@ -250,7 +249,6 @@ export default function Contact() {
                 city: "Bangalore",
                 address: "",
                 postal: "Bangalore, India",
-                flag: "🇮🇳",
                 mapEmbedUrl: "https://maps.google.com/maps?q=Bangalore,India&t=&z=12&ie=UTF8&iwloc=&output=embed",
                 googleMapsLink: "https://www.google.com/maps/place/Bangalore",
               },
@@ -258,7 +256,6 @@ export default function Contact() {
                 city: "Dubai",
                 address: "",
                 postal: "Dubai, UAE",
-                flag: "🇦🇪",
                 mapEmbedUrl: "https://maps.google.com/maps?q=Dubai,UAE&t=&z=12&ie=UTF8&iwloc=&output=embed",
                 googleMapsLink: "https://www.google.com/maps/place/Dubai",
               },
@@ -266,7 +263,6 @@ export default function Contact() {
                 city: "UK",
                 address: "",
                 postal: "United Kingdom",
-                flag: "🇬🇧",
                 mapEmbedUrl: "https://maps.google.com/maps?q=London,UK&t=&z=11&ie=UTF8&iwloc=&output=embed",
                 googleMapsLink: "https://www.google.com/maps/place/London,+UK",
               },
@@ -304,9 +300,6 @@ export default function Contact() {
                   {/* Location Name Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
                     <div className="text-center">
-                      <span className="text-3xl mb-2 inline-block group-hover:scale-110 transition-transform duration-300">
-                        {office.flag}
-                      </span>
                       <h3 className="text-xl md:text-2xl font-bold text-gray-900 drop-shadow-sm">
                         {office.city}
                       </h3>
