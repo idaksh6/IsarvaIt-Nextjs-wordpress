@@ -42,7 +42,7 @@ export default function PostGrid({ posts, title = "Latest Articles" }) {
   const visiblePosts = posts.slice(0, visibleCount);
 
   return (
-    <section className="max-w-7xl mx-auto px-6 lg:py-20 py-10 border-t border-gray-100">
+    <section className="max-w-7xl mx-auto px-6 lg:py-16 py-10 border-t border-gray-100">
       <div className="flex items-center lg:justify-between justify-center lg:mb-16 mb-10">
         <h2 className="text-3xl font-black text-gray-900 uppercase tracking-tight">
           {title}
@@ -50,7 +50,7 @@ export default function PostGrid({ posts, title = "Latest Articles" }) {
         <div className="w-2/3 h-px bg-gray-100 hidden md:block"></div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-10">
         <AnimatePresence mode="popLayout">
           {visiblePosts.map((post, index) => (
             <motion.article 
@@ -86,7 +86,7 @@ export default function PostGrid({ posts, title = "Latest Articles" }) {
                     {post.excerpt}
                   </p>
                 </div>
-                <div className="flex items-center gap-2 pt-4 border-t border-gray-50 lg:justify-start justify-center">
+                <div className="flex items-center gap-2  border-t border-gray-50 lg:justify-start justify-center">
                     <span className="text-[13px] text-gray-400 font-medium">{post.date}</span>
                     <span className="text-gray-200">•</span>
                     <span className="text-[13px] text-gray-400 font-medium">{post.readTime}</span>
@@ -98,7 +98,7 @@ export default function PostGrid({ posts, title = "Latest Articles" }) {
       </div>
       
       {/* Scroll Trigger & Loader */}
-      <div ref={observerTarget} className="mt-20 py-10 flex flex-col items-center justify-center">
+      <div ref={observerTarget} className="mt-10 py-10 flex flex-col items-center justify-center">
         {isLoading && (
           <div className="flex flex-col items-center gap-4">
             <div className="w-10 h-10 border-4 border-emerald-100 border-t-emerald-600 rounded-full animate-spin"></div>
@@ -107,7 +107,7 @@ export default function PostGrid({ posts, title = "Latest Articles" }) {
             </span>
           </div>
         )}
-        {!hasMore && !isLoading && posts.length > 6 && (
+        {!hasMore && !isLoading  && (
           <div className="text-gray-300 font-black uppercase tracking-[0.3em] text-xs py-10 border-t border-gray-50 w-full text-center">
             You&apos;ve reached the end of our insights
           </div>
