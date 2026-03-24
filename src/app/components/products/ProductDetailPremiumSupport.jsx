@@ -95,15 +95,25 @@ export default function ProductDetailPremiumSupport({
           className="hero-dashboard-wrapper"
         >
           <div className="dashboard-animation left">
-            <div className="scroll-img"></div>
+            <div 
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/support/support slider image 1.png'), url('/products/support/support slider image 2.png')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-animation right">
-            <div className="scroll-img"></div>
+            <div 
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/support/support slider image 2.png'), url('/products/support/support slider image 3.png')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-main-img">
             <div className="relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)] bg-white">
               <img
-                src="/dashboard.webp"
+                src="/products/support/Ticket Management.png"
                 alt="Support Dashboard Preview"
                 className="w-full object-contain lg:h-[668px] h-full shadow-2xl"
               />
@@ -120,7 +130,7 @@ export default function ProductDetailPremiumSupport({
             <div className="relative lg:sticky lg:top-28 lg:self-start">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/dashboard.webp"
+                  src="/products/support/Ticket Management.png"
                   alt="Support Application Dashboard"
                   className="w-full h-auto object-cover"
                 />
@@ -652,7 +662,7 @@ const supportFeatures = [
     color: "#4F46E5",
     desc: "Add projects, set deadlines, assign billing companies, and organize tasks, notes, credentials, internal docs, and assets in a well-structured manner.",
     placeholder: "PM",
-    image: "/dashboard.webp",
+    image: "/products/support/Project and Task Management.png",
   },
   {
     id: "ticket",
@@ -661,7 +671,7 @@ const supportFeatures = [
     color: "#0EA5E9",
     desc: "Create tickets, assign specialized team members, and collaborate in real-time through comments and file attachments while accurately tracking billable hours for every task.",
     placeholder: "TM",
-    image: "/dashboard.webp",
+    image: "/products/support/Ticket Management.png",
   },
   {
     id: "renewal",
@@ -670,7 +680,7 @@ const supportFeatures = [
     color: "#10B981",
     desc: "Centralize and track domain, hosting, application AMC, and other essential service details for every project and client. Use a dedicated dashboard to monitor expiry dates in real-time.",
     placeholder: "RM",
-    image: "/dashboard.webp",
+    image: "/products/support/renewal Management.png",
   },
   {
     id: "backup",
@@ -679,7 +689,7 @@ const supportFeatures = [
     color: "#F59E0B",
     desc: "Securely manage file locations for projects, tickets, and internal data with flexible backup type selections and detailed coordination comments. Access comprehensive backup history.",
     placeholder: "BM",
-    image: "/dashboard.webp",
+    image: "/products/support/Backup Management.png",
   },
   {
     id: "reports",
@@ -688,7 +698,7 @@ const supportFeatures = [
     color: "#EF4444",
     desc: "Detailed analytics reports to track daily submissions and productivity. From active ticket analytics to billable hour comparisons, gain full visibility into company-wide performance.",
     placeholder: "RA",
-    image: "/dashboard.webp",
+    image: "/products/support/Report and analytics.png",
   },
   {
     id: "hours",
@@ -697,7 +707,7 @@ const supportFeatures = [
     color: "#8B5CF6",
     desc: "Monitor total time invested in each project with advanced employee and task filters. Track actual days spent versus projected timelines to identify overflow data and optimize efficiency.",
     placeholder: "HT",
-    image: "/dashboard.webp",
+    image: "/products/support/worked Hours tracking.png",
   },
   {
     id: "notifications",
@@ -706,7 +716,7 @@ const supportFeatures = [
     color: "#06B6D4",
     desc: "Stay updated with automated alerts during project creation and daily report submissions. Receive real-time notifications for every task submission via email and Google Chat.",
     placeholder: "NT",
-    image: "/dashboard.webp",
+    image: "/products/support/Email Google chat Notifications .png",
   },
   {
     id: "permissions",
@@ -715,7 +725,7 @@ const supportFeatures = [
     color: "#9333EA",
     desc: "Secure your system with role-based permissions. Control exactly what each user can create, view, or edit to maintain strict organizational security for each section.",
     placeholder: "MP",
-    image: "/dashboard.webp",
+    image: "/products/support/Member Management with role based.png",
   },
 ];
 
