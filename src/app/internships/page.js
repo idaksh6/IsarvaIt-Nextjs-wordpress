@@ -211,7 +211,7 @@ export default function InternshipsPage() {
   return (
     <div className="min-h-screen bg-[#FDF8F2] font-sans text-[#1a1f24]">
       {/* Hero Section */}
-      <section className="relative pt-44 pb-32 overflow-hidden bg-gradient-to-b from-[#F0F7F4] to-[#FDF8F2]">
+      <section className="relative pt-44 lg:pb-32 pb-14 overflow-hidden bg-gradient-to-b from-[#F0F7F4] to-[#FDF8F2]">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#10b981] opacity-[0.03] rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute -bottom-24 -left-24 w-[600px] h-[600px] bg-[#84cc16] opacity-[0.05] rounded-full blur-[100px] pointer-events-none"></div>
         
@@ -288,9 +288,9 @@ export default function InternshipsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-[#FDF8F2] p-10 rounded-[3rem] border border-[#10b981]/5 hover:border-[#10b981]/20 transition-all group hover:shadow-2xl"
+                className="bg-[#FDF8F2] p-10 rounded-[3rem] lg:text-left text-center border border-[#10b981]/5 hover:border-[#10b981]/20 transition-all group hover:shadow-2xl"
               >
-                <div className="mb-6 p-4 bg-white rounded-2xl w-fit shadow-lg transform group-hover:scale-110 transition-transform duration-500">
+                <div className="mb-6 p-4 bg-white lg:mx-0 mx-auto rounded-2xl w-fit shadow-lg transform group-hover:scale-110 transition-transform duration-500">
                   {item.icon}
                 </div>
                 <h3 className="text-2xl font-display font-bold mb-4 text-[#1a1f24]">{item.title}</h3>
@@ -327,9 +327,9 @@ export default function InternshipsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-white p-8 rounded-3xl border border-[#10b981]/5 hover:border-[#10b981]/20 transition-all group hover:shadow-xl"
+                className="bg-white p-8 rounded-3xl border lg:text-left text-center border-[#10b981]/5 hover:border-[#10b981]/20 transition-all group hover:shadow-xl"
               >
-                <div className="mb-4 p-3 bg-emerald-50 rounded-xl w-fit text-[#10b981] transform group-hover:scale-110 transition-transform duration-500">
+                <div className="mb-4 p-3 bg-emerald-50 rounded-xl w-fit lg:mx-0 mx-auto text-[#10b981] transform group-hover:scale-110 transition-transform duration-500">
                   {item.icon}
                 </div>
                 <h3 className="text-xl font-display font-bold mb-3 text-[#1a1f24]">{item.title}</h3>
@@ -366,9 +366,9 @@ export default function InternshipsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-[#FDF8F2] p-12 rounded-[3.5rem] border border-[#10b981]/5 hover:border-[#10b981]/20 transition-all group hover:shadow-2xl"
+                className="bg-[#FDF8F2] p-12 rounded-[3.5rem] border lg:text-left text-center border-[#10b981]/5 hover:border-[#10b981]/20 transition-all group hover:shadow-2xl"
               >
-                <div className="mb-6 transform group-hover:scale-110 transition-transform duration-500">
+                <div className="mb-6 transform group-hover:scale-110 transition-transform duration-500 w-fit lg:mx-0 mx-auto">
                   {reason.icon}
                 </div>
                 <h3 className="text-2xl font-display font-bold mb-4 text-[#1a1f24]">{reason.title}</h3>

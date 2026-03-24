@@ -130,10 +130,10 @@ export default function Contact() {
                 key={index}
                 className="relative rounded-3xl p-8 bg-white border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-br  from-emerald-400/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                <div className="relative">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-400 to-green-500 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 text-white">
+                <div className="relative lg:text-left text-center">
+                  <div className="w-14 h-14 rounded-2xl lg:mx-0 mx-auto  bg-gradient-to-br from-emerald-400 to-green-500 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 text-white">
                     {info.icon}
                   </div>
 
@@ -164,7 +164,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div className="relative">
-              <div className="mb-8">
+              <div className="mb-8 lg:text-left text-center">
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                   Send us a Message
                 </h2>
@@ -193,14 +193,14 @@ export default function Contact() {
               </div>
 
               {/* Social Links */}
-              <div className="rounded-3xl p-8 bg-gradient-to-br from-emerald-50 to-green-50 border border-emerald-100">
+              <div className="rounded-3xl lg:text-left text-center p-8 bg-gradient-to-br from-emerald-50 to-green-50 border border-emerald-100">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   Follow Us
                 </h3>
                 <p className="text-gray-600 mb-6">
                   Stay connected with us on social media for updates, insights, and more.
                 </p>
-                <div className="flex gap-4">
+                <div className="flex gap-4 lg:justify-start justify-center">
                   {socialLinks.map((social) => (
                     <a
                       key={social.name}
@@ -243,40 +243,84 @@ export default function Contact() {
                 address: "Bajpe",
                 postal: "Mangalore, India",
                 flag: "🇮🇳",
+                mapEmbedUrl: "https://maps.google.com/maps?q=Bajpe,Mangalore,India&t=&z=13&ie=UTF8&iwloc=&output=embed",
+                googleMapsLink: "https://maps.app.goo.gl/33PWqCCNP69tLAXQ7",
               },
               {
                 city: "Bangalore",
                 address: "",
                 postal: "Bangalore, India",
                 flag: "🇮🇳",
+                mapEmbedUrl: "https://maps.google.com/maps?q=Bangalore,India&t=&z=12&ie=UTF8&iwloc=&output=embed",
+                googleMapsLink: "https://www.google.com/maps/place/Bangalore",
               },
               {
                 city: "Dubai",
                 address: "",
                 postal: "Dubai, UAE",
                 flag: "🇦🇪",
+                mapEmbedUrl: "https://maps.google.com/maps?q=Dubai,UAE&t=&z=12&ie=UTF8&iwloc=&output=embed",
+                googleMapsLink: "https://www.google.com/maps/place/Dubai",
               },
               {
                 city: "UK",
                 address: "",
                 postal: "United Kingdom",
                 flag: "🇬🇧",
+                mapEmbedUrl: "https://maps.google.com/maps?q=London,UK&t=&z=11&ie=UTF8&iwloc=&output=embed",
+                googleMapsLink: "https://www.google.com/maps/place/London,+UK",
               },
             ].map((office, index) => (
               <div
                 key={index}
-                className="rounded-3xl p-8 bg-white border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                className="rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 group relative"
               >
-                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {office.flag}
+                {/* Map Background with Overlay */}
+                <div className="relative h-48 overflow-hidden">
+                  {/* Google Maps Iframe - Non-interactive Background */}
+                  <iframe
+                    src={office.mapEmbedUrl}
+                    className="absolute inset-0 w-full h-full pointer-events-none opacity-60 grayscale-[30%] brightness-110"
+                    style={{ border: 0 }}
+                    allowFullScreen={false}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title={`Map of ${office.city}`}
+                  ></iframe>
+
+                  {/* Light Overlay for better visibility */}
+                  <div className="absolute inset-0 bg-white/40"></div>
+
+                  {/* Gradient Overlay for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent"></div>
+                  
+                  {/* Location Pin Icon */}
+                  <div className="absolute top-4 left-1/2 -translate-x-1/2 text-emerald-500 group-hover:scale-110 transition-transform duration-300 z-10">
+                    <svg className="w-10 h-10 drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                  </div>
+                  
+                  {/* Location Name Overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
+                    <div className="text-center">
+                      <span className="text-3xl mb-2 inline-block group-hover:scale-110 transition-transform duration-300">
+                        {office.flag}
+                      </span>
+                      <h3 className="text-xl md:text-2xl font-bold text-gray-900 drop-shadow-sm">
+                        {office.city}
+                      </h3>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  {office.city}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {office.address}<br />
-                  {office.postal}
-                </p>
+                
+                {/* Address Section */}
+                <div className="p-4">
+                  <p className="text-gray-600 leading-relaxed text-center">
+                    {office.address && <>{office.address} , </>}
+                    {office.postal}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
