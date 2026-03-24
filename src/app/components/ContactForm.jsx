@@ -226,7 +226,7 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
       <button
         type="submit"
         disabled={isSubmitting}
-        className="press-illusion-btn bg-green-400 text-black font-bold px-8 py-4 text-lg items-center space-x-2 inline-flex disabled:opacity-50 disabled:cursor-not-allowed w-full justify-center"
+        className="press-illusion-btn bg-green-400 text-black md:mx-0 mx-auto font-bold px-8 w-fit py-4 text-lg items-center space-x-2 flex disabled:opacity-50 disabled:cursor-not-allowed  justify-center"
       >
         <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
         {!isSubmitting && (
