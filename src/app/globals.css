@@ -927,6 +927,13 @@ img {
   z-index: -1;
 }
 
+.isv_blog_contents p{
+  margin-bottom: 20px;
+}
+.isv_blog_contents p:last-child{
+  margin-bottom: 0px;
+}
+
 /* Zoho Hero Scrolling Animation - BIG SCALE */
 .hero-dashboard-wrapper {
   position: relative;
@@ -939,6 +946,7 @@ img {
   padding: 40px 0;
   min-height: 700px;
 }
+
 
 @media(max-width: 768px) {
   .hero-dashboard-wrapper {

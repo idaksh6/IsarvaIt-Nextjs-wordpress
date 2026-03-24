@@ -32,11 +32,11 @@ const AISummary = ({ postTitle, date, readTime }) => {
 
   return (
     <div className="flex flex-col gap-4 py-6 border-b border-gray-100 mb-10 w-full">
-      <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-        <span className="text-sm md:text-[15px] text-gray-400 font-medium">
+      <div className="flex flex-col sm:flex-row sm:items-center gap-4 lg:justify-start justify-center">
+        <span className="text-sm md:text-[15px] text-gray-400 font-medium lg:text-left text-center">
           Summarize this article with:
         </span>
-        <div className="flex items-center gap-3 flex-wrap">
+        <div className="flex items-center gap-3 flex-wrap lg:justify-start justify-center">
           {platforms.map((platform) => (
             <a 
               key={platform.name}
@@ -56,7 +56,7 @@ const AISummary = ({ postTitle, date, readTime }) => {
         </div>
       </div>
 
-      <div className="text-sm md:text-[15px] text-gray-400 font-medium flex items-center gap-2">
+      <div className="text-sm md:text-[15px] text-gray-400 font-medium lg:text-left text-center flex items-center gap-2 lg:justify-start justify-center">
         <span>{date}</span>
         <span className="text-gray-200">•</span>
         <span>{readTime}</span>

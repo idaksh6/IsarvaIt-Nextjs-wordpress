@@ -34,7 +34,7 @@ export default async function BlogPostPage({ params }) {
     <div className="min-h-screen bg-premium-noise gradient-bg-green">
       <Header />
 
-      <main className="pt-32">
+      <main className="pt-44">
         {/* Article Header */}
         <header className="max-w-4xl mx-auto px-6 mb-16">
           <Link
@@ -56,12 +56,12 @@ export default async function BlogPostPage({ params }) {
             </svg>
             Back to Blog
           </Link>
-          <div className="flex items-center gap-3 text-xs font-black text-gray-400 uppercase tracking-widest mb-6">
+          <div className="flex items-center lg:justify-start justify-center gap-3 text-xs font-black text-gray-400 uppercase tracking-widest mb-6">
             <span>{post.categoryName}</span>
             <span className="w-1 h-1 bg-gray-200 rounded-full"></span>
             <span>{post.date}</span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-black text-gray-900 leading-tight mb-8 tracking-tighter">
+          <h1 className="text-4xl md:text-6xl font-black text-gray-900 leading-tight mb-8 tracking-tighter lg:text-left text-center ">
             {post.title}
           </h1>
 
@@ -74,7 +74,7 @@ export default async function BlogPostPage({ params }) {
         </header>
 
         {/* Featured Image */}
-        <div className="max-w-6xl mx-auto px-6 mb-20">
+        <div className="max-w-6xl mx-auto px-6 lg:mb-20 mb-10">
           <div className="aspect-[21/9] rounded-[3rem] overflow-hidden shadow-2xl">
             <img
               src={post.featuredImage}
@@ -88,7 +88,7 @@ export default async function BlogPostPage({ params }) {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 pb-24">
           <div className="lg:col-span-8">
             <div
-              className="prose prose-lg prose-emerald max-w-none text-black prose-headings:font-black prose-headings:tracking-tighter prose-p:text-gray-600 prose-p:leading-relaxed"
+              className="prose prose-lg prose-emerald max-w-none text-black prose-headings:font-black isv_blog_contents prose-headings:tracking-tighter lg:text-left text-center prose-p:text-gray-600 prose-p:leading-relaxed"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
 
@@ -97,10 +97,10 @@ export default async function BlogPostPage({ params }) {
           {/* Sidebar / Related Posts */}
           <aside className="lg:col-span-4 space-y-12">
             <div className="sticky top-32">
-              <h3 className="text-xl font-black text-gray-900 uppercase tracking-tight mb-8 pl-4 border-l-4 border-emerald-500">
+              <h3 className="text-xl font-black lg:text-left text-center text-gray-900 w-fit lg:mx-0 mx-auto uppercase tracking-tight mb-8 pl-4 border-l-4 border-emerald-500">
                 Related Articles
               </h3>
-              <div className="space-y-8">
+              <div className="space-y-16">
                 {relatedPosts.map((post) => (
                   <Link
                     key={post.id}
