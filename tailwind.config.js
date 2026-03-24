@@ -11,6 +11,10 @@ module.exports = {
   },
   theme: {
     extend: {
+      screens: {
+        'nav': '1094px',
+        'cards': '1250px',
+      },
       colors: {
         dark: {
           DEFAULT: 'var(--bg-dark)',

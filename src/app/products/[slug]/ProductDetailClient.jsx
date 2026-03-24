@@ -22,6 +22,7 @@ import ProductDetailPremiumDispatcher from "../../components/products/ProductDet
 import ProductDetailPremiumDealer from "../../components/products/ProductDetailPremiumDealer";
 import ProductDetailPremiumExpense from "../../components/products/ProductDetailPremiumExpense";
 import ProductDetailPremiumCRM from "../../components/products/ProductDetailPremiumCRM";
+import ProductDetailPremiumSupport from "../../components/products/ProductDetailPremiumSupport";
 
 export default function ProductDetailClient({ product, relatedProducts, allProducts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -228,6 +229,17 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   if (product.slug === 'crm-application') {
     return (
       <ProductDetailPremiumCRM 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for Support Application
+  if (product.slug === 'support-application') {
+    return (
+      <ProductDetailPremiumSupport 
         product={product} 
         relatedProducts={relatedProducts} 
         allProducts={allProducts}

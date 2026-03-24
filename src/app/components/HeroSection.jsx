@@ -84,7 +84,7 @@ function HeroSection({ data }) {
           />
         )}
         {heroData.hasButton && (
-          <div className="relative z-30 mb-20">
+          <div className="relative z-30 mb-20 cards:mb-20 lg:mb-10">
             <Link
               href={heroData.buttonLink}
               className="press-illusion-btn bg-green-400 text-white w-fit  font-bold px-6 py-2 text-base mx-auto items-center space-x-2 gap-2 inline-flex"
@@ -106,8 +106,9 @@ function HeroSection({ data }) {
             </Link>
           </div>
         )}
-        {/* Floating Cards Mockup */}
-        <div className="-mt-40 relative h-[600px] w-full max-w-6xl mx-auto hidden lg:block">
+
+        {/* Floating Cards - Absolute Positioning (Above 1250px) */}
+        <div className="-mt-40 relative h-[600px] w-full max-w-6xl mx-auto hidden cards:block">
           {/* Web Platforms Card */}
           <div className="floating-card absolute left-[-150px] top-0 w-80 glass-card p-8 rounded-[2.5rem] border border-gray-100 text-left shadow-2xl z-10">
             <div className="flex items-center gap-4 mb-6">
@@ -155,6 +156,63 @@ function HeroSection({ data }) {
               </h3>
             </div>
             <p className="text-gray-500 text-[15px] leading-relaxed mb-8 font-bold">
+              {heroData.floatingCards && heroData.floatingCards[2] ? 
+                heroData.floatingCards[2].description.replace(/<[^>]*>/g, '') : 
+                "Launch powerful online stores with secure payments, optimized performance, and conversion-focused design."
+              }
+            </p>
+          </div>
+        </div>
+
+        {/* Floating Cards - Flex Row Layout (Between 1024px and 1250px) */}
+        <div className="hidden lg:flex cards:hidden flex-row gap-6 w-full max-w-6xl mx-auto mb-16 px-6">
+          {/* Web Platforms Card */}
+          <div className="flex-1 glass-card p-6 rounded-[2rem] border border-gray-100 text-left shadow-xl">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 flex-shrink-0 bg-gray-50 rounded-xl flex items-center justify-center text-2xl shadow-inner ring-1 ring-gray-100">
+                🌐
+              </div>
+              <h3 className="text-gray-900 font-bold text-lg">
+                {heroData.floatingCards && heroData.floatingCards[0] ? heroData.floatingCards[0].heading : "Web Platforms"}
+              </h3>
+            </div>
+            <p className="text-gray-500 text-sm leading-relaxed font-medium">
+              {heroData.floatingCards && heroData.floatingCards[0] ? 
+                heroData.floatingCards[0].description.replace(/<[^>]*>/g, '') : 
+                "We design and build high-performance website solutions applied basically for speed, scalability, and user experience."
+              }
+            </p>
+          </div>
+
+          {/* Custom Software Card */}
+          <div className="flex-1 glass-card p-6 rounded-[2rem] border border-gray-100 text-left shadow-xl">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 flex-shrink-0 bg-gray-50 rounded-xl flex items-center justify-center text-2xl shadow-inner ring-1 ring-gray-100">
+                💻
+              </div>
+              <h3 className="text-gray-900 font-bold text-lg">
+                {heroData.floatingCards && heroData.floatingCards[1] ? heroData.floatingCards[1].heading : "Custom Software"}
+              </h3>
+            </div>
+            <p className="text-gray-500 text-sm leading-relaxed font-medium">
+              {heroData.floatingCards && heroData.floatingCards[1] ? 
+                heroData.floatingCards[1].description.replace(/<[^>]*>/g, '') : 
+                "Tailored digital solutions built to solve complex business challenges and support long-term growth."
+              }
+            </p>
+          </div>
+
+          {/* E-commerce Solutions Card */}
+          <div className="flex-1 glass-card p-6 rounded-[2rem] border border-gray-100 text-left shadow-xl">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 bg-[#10b981]/10 rounded-xl flex items-center justify-center text-2xl text-[#10b981] shadow-glow ring-1 ring-[#10b981]/20">
+                💰
+              </div>
+              <h3 className="text-gray-900 font-bold text-lg">
+                {heroData.floatingCards && heroData.floatingCards[2] ? heroData.floatingCards[2].heading : "E-commerce Solutions"}
+              </h3>
+            </div>
+            <p className="text-gray-500 text-sm leading-relaxed font-medium">
               {heroData.floatingCards && heroData.floatingCards[2] ? 
                 heroData.floatingCards[2].description.replace(/<[^>]*>/g, '') : 
                 "Launch powerful online stores with secure payments, optimized performance, and conversion-focused design."

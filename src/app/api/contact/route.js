@@ -7,11 +7,6 @@ export async function POST(request) {
     console.log('=== CRM API Request Started ===');
     console.log('Received form data:', JSON.stringify(formData, null, 2));
 
-    // Validate required fields
-    if (!formData.name || !formData.email) {
-      throw new Error('Name and email are required fields');
-    }
-
     // Format phone number - strip non-digits and format
     let mobileNumber = '';
     if (formData.phone) {
@@ -32,29 +27,17 @@ export async function POST(request) {
       }
     }
 
-    // Build contextual description with page info
-    let contextualDescription = '';
-    const userMessage = formData.message?.trim() || '';
-    
-    // Just send the user message, without pageType prefix
-    contextualDescription = userMessage;
-    
-    // Ensure description is never empty
-    if (!contextualDescription) {
-      contextualDescription = 'Contact form submission - no message provided';
-    }
-
     // Map form data to CRM API format
     const crmData = {
-      title: formData.subject?.trim() || `Contact from ${formData.name}`,
-      description: contextualDescription,
-      organization_name: formData.company?.trim() || '',
+      title: formData.subject || 'Contact Form Submission',
+      description: formData.message || '',
+      organization_name: formData.company || '',
       address: '',
       website: '',
-      full_name: formData.name?.trim() || '',
-      email: formData.email?.trim() || '',
+      full_name: formData.name || '',
+      email: formData.email || '',
       mobile: mobileNumber,
-      categories: formData.categoryId || 1, // Use dynamic category ID or default to 1
+      categories: 1,
       lead_source: 19
     };
 
@@ -100,29 +83,18 @@ export async function POST(request) {
         body: responseText,
       });
       
-      // Try to parse error response and provide user-friendly messages
-      let errorMessage = "We couldn't process your request. Please try again.";
+      // Try to parse error response
+      let errorMessage = responseText;
       try {
         const errorData = JSON.parse(responseText);
         if (errorData.errors) {
-          const errorString = JSON.stringify(errorData.errors).toLowerCase();
-          
-          // Check for common error patterns and return user-friendly messages
-          if (errorString.includes('email') && errorString.includes('taken')) {
-            errorMessage = "This email address has already been registered with us. Please use a different email or contact our support team.";
-          } else if (errorString.includes('title') && (errorString.includes('taken') || errorString.includes('duplicate'))) {
-            errorMessage = "This form subject already exists with your query. Please modify your subject line or check your previous submissions.";
-          } else if (errorString.includes('duplicate')) {
-            errorMessage = "We've already received a similar inquiry from you. Our team will respond to your previous submission shortly.";
-          } else {
-            errorMessage = "There was an issue processing your request. Please try again or contact us directly.";
-          }
+          errorMessage = JSON.stringify(errorData.errors);
         }
       } catch (e) {
-        // Use default error message if parsing fails
+        // Use raw text if not JSON
       }
       
-      throw new Error(errorMessage);
+      throw new Error(`CRM API error (${response.status}): ${errorMessage}`);
     }
 
     let data;

@@ -14,8 +14,8 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Top Section: Brand & Description */}
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-20 pb-16 border-b border-white/5">
-          <div className="max-w-2xl ">
+        <div className="flex flex-col lg:flex-row justify-between lg:items-start items-center gap-12 mb-20 pb-16 border-b border-white/5">
+          <div className="lg:max-w-2xl max-w-full">
             <Link href="/" prefetch={true} className="flex items-center">
               <img src="/isarva New Logo.png" className="w-auto lg:mx-0 mx-auto h-[78px] object-contain drop-shadow-sm" alt="Isarva Logo" />
             </Link>
@@ -86,6 +86,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               {[
+                { label: "Support Application", href: "/products/support-application" },
                 { label: "e Commerce", href: "/products/woocommerce-development" },
                 { label: "Petro Care", href: "/products/petro-care" },
                 { label: "HRMS Software", href: "/products/hrms-software" },

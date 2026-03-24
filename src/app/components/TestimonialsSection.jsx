@@ -370,7 +370,7 @@ function TestimonialsSection({ data }) {
               </div>
 
               {/* Testimonial text */}
-              <p
+              <p className=""
                 style={{
                   color: "#374151",
                   fontSize: 15,

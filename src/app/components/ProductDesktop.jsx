@@ -35,7 +35,7 @@ if (typeof document !== "undefined") {
 // ── Product Data ──────────────────────────────────────────────────────────────
 const products = [
   {
-    id: 1,
+    id: 2,
     name: "HRMS Software",
     slug: "hrms-software",
     category: "HR & Workforce",
@@ -47,7 +47,7 @@ const products = [
     badge: "Best Seller",
   },
   {
-    id: 2,
+    id: 3,
     name: "Support Application",
     slug: "support-application",
     category: "Customer Support",
@@ -59,7 +59,7 @@ const products = [
     badge: "New",
   },
   {
-    id: 3,
+    id: 7,
     name: "CRM Application",
     slug: "crm-application",
     category: "Sales & Marketing",

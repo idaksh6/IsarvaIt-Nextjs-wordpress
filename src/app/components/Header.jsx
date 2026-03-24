@@ -7,8 +7,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { 
-    label: "About Us", 
+  {
+    label: "About Us",
     href: "/about",
     children: [
       { label: "Testimonials", href: "/testimonial" },
@@ -91,21 +91,20 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
           ? "bg-white/90 backdrop-blur-md py-3 shadow-sm border-b border-gray-100"
           : "bg-transparent py-5"
-      }`}
+        }`}
       style={{ willChange: scrolled ? "auto" : "transform" }}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" prefetch={true} className="flex items-center">
-        <img src="/isarva New Logo.png" className="w-auto h-[78px] object-contain drop-shadow-sm" alt="Isarva Logo" />
+          <img src="/isarva New Logo.png" className="w-auto h-[78px] object-contain drop-shadow-sm" alt="Isarva Logo" />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-7">
+        <nav className="hidden nav:flex items-center gap-7">
           {navLinks.map((link) => (
             link.children ? (
               <div
@@ -121,9 +120,8 @@ export default function Header() {
                 >
                   {link.label}
                   <svg
-                    className={`w-4 h-4 transition-transform duration-200 ${
-                      (link.label === "About Us" && isAboutOpen) ? "rotate-180" : ""
-                    }`}
+                    className={`w-4 h-4 transition-transform duration-200 ${(link.label === "About Us" && isAboutOpen) ? "rotate-180" : ""
+                      }`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -143,23 +141,23 @@ export default function Header() {
                     <div className="bg-white/95 backdrop-blur-xl rounded-[2.5rem] shadow-2xl border border-gray-100 p-8 flex gap-8">
                       {/* Left: Featured Content with Image */}
                       <div className="w-[280px] bg-gradient-to-br from-emerald-50 to-lime-50 rounded-3xl p-6 relative overflow-hidden group/featured">
-                         <div className="absolute inset-0 opacity-10 group-hover/featured:scale-110 transition-transform duration-700">
-                           <img src="/agency_office_studio_premium_1773850105446.png" className="w-full h-full object-cover" alt="" />
-                         </div>
-                         <div className="relative z-10 flex flex-col h-full">
-                            <h4 className="text-xl font-display font-bold text-gray-900 mb-4 leading-tight">About Isarva</h4>
-                            <p className="text-gray-600 text-base mb-6 font-medium leading-relaxed">At Isarva Infotech, we are more than an IT consulting firm — we are a strategic technology partner.</p>
-                            <Link href="/about" className="mt-auto text-emerald-600 font-bold text-lg flex items-center gap-2 group/link">
-                               Read More <span className="group-hover/link:translate-x-1 transition-transform">→</span>
-                            </Link>
-                         </div>
+                        <div className="absolute inset-0 opacity-10 group-hover/featured:scale-110 transition-transform duration-700">
+                          <img src="/agency_office_studio_premium_1773850105446.png" className="w-full h-full object-cover" alt="" />
+                        </div>
+                        <div className="relative z-10 flex flex-col h-full">
+                          <h4 className="text-xl font-display font-bold text-gray-900 mb-4 leading-tight">About Isarva</h4>
+                          <p className="text-gray-600 text-base mb-6 font-medium leading-relaxed">At Isarva Infotech, we are more than an IT consulting firm — we are a strategic technology partner.</p>
+                          <Link href="/about" className="mt-auto text-emerald-600 font-bold text-lg flex items-center gap-2 group/link">
+                            Read More <span className="group-hover/link:translate-x-1 transition-transform">→</span>
+                          </Link>
+                        </div>
                       </div>
 
                       {/* Right: Nav Links */}
                       <div className="flex-1">
                         <div className="mb-6">
-                           <h3 className="text-xl font-bold text-gray-900 mb-1">Resources</h3>
-                           <p className="text-gray-500 text-sm">Discover our mission and impact</p>
+                          <h3 className="text-xl font-bold text-gray-900 mb-1">Resources</h3>
+                          <p className="text-gray-500 text-sm">Discover our mission and impact</p>
                         </div>
                         <div className="space-y-2">
                           {link.children.map((child) => (
@@ -214,9 +212,8 @@ export default function Header() {
             >
               Products
               <svg
-                className={`w-4 h-4 transition-transform duration-200 ${
-                  isProductsOpen ? "rotate-180" : ""
-                }`}
+                className={`w-4 h-4 transition-transform duration-200 ${isProductsOpen ? "rotate-180" : ""
+                  }`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -305,9 +302,8 @@ export default function Header() {
             >
               Services
               <svg
-                className={`w-4 h-4 transition-transform duration-200 ${
-                  isServicesOpen ? "rotate-180" : ""
-                }`}
+                className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""
+                  }`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -396,9 +392,8 @@ export default function Header() {
             >
               Industries
               <svg
-                className={`w-4 h-4 transition-transform duration-200 ${
-                  isIndustriesOpen ? "rotate-180" : ""
-                }`}
+                className={`w-4 h-4 transition-transform duration-200 ${isIndustriesOpen ? "rotate-180" : ""
+                  }`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -487,7 +482,7 @@ export default function Header() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(true)}
-          className="md:hidden relative w-8 h-8 flex flex-col justify-center items-center group self-end"
+          className="nav:hidden relative w-8 h-8 flex flex-col justify-center items-center group self-end"
           aria-label="Open mobile menu"
         >
           <div className="w-6 h-0.5 bg-gray-800 rounded-full transition-all duration-300 group-hover:bg-green-500"></div>
@@ -500,7 +495,7 @@ export default function Header() {
           href="https://support.isarva.in/form"
           target="_blank"
           rel="noopener noreferrer"
-          className="press-illusion-btn bg-green-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 hidden md:flex"
+          className="press-illusion-btn bg-green-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 hidden nav:flex"
         >
           <span>Support</span>
           <svg
@@ -529,7 +524,7 @@ export default function Header() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="fixed inset-0 z-[9998] md:hidden backdrop-blur-sm bg-black/30"
+              className="fixed inset-0 z-[9998] nav:hidden backdrop-blur-sm bg-black/30"
               onClick={() => setIsMobileMenuOpen(false)}
             />
 
@@ -539,24 +534,24 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="fixed right-0 top-0 max-w-[85vw] w-full bg-white h-[100vh] shadow-2xl z-[9999] md:hidden overflow-y-auto"
+              className="fixed right-0 top-0 max-w-[85vw] w-full bg-white h-[100vh] shadow-2xl z-[9999] nav:hidden overflow-y-auto"
             >
               {/* Premium Header with Gradient */}
               <div className="relative bg-gradient-to-br from-[#22C55E] via-[#16a34a] to-[#15803d] p-6 overflow-hidden">
                 {/* Decorative Pattern */}
-                <div 
+                <div
                   className="absolute inset-0 opacity-10"
                   style={{
                     backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"
                   }}
                 ></div>
-                
+
                 <div className="relative flex items-center justify-between mb-4">
                   <div>
                     <h2 className="text-white text-xl font-bold mb-1">Menu</h2>
                     <p className="text-white/80 text-sm">Explore our solutions</p>
                   </div>
-                  
+
                   {/* Close Button */}
                   <motion.button
                     whileHover={{ scale: 1.05, rotate: 90 }}
@@ -967,25 +962,24 @@ export default function Header() {
                   transition={{ delay: 0.4 }}
                 >
                   <Link
-                    href="/contact"
-                    prefetch={true}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="group relative w-full bg-gradient-to-r from-green-400 to-emerald-500 hover:from-green-500 hover:to-emerald-600 text-white font-bold px-6 py-4 rounded-2xl flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl overflow-hidden"
+                    href="https://support.isarva.in/form"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="press-illusion-btn bg-green-400 justify-center text-white w-fit text-center mx-auto  font-bold px-6 py-2 text-base items-center space-x-2 flex nav:hidden"
                   >
-                    <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-                    <span className="relative z-10 text-base">Get Pricing & Demo</span>
+                    <span>Support</span>
                     <svg
-                      className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
+                      xmlns="http://www.w3.org/2000/svg"
                       fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      strokeWidth={2.5}
+                      viewBox="0 0 17 9"
+                      className="h-2 w-4"
                     >
                       <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M13 7l5 5m0 0l-5 5m5-5H6"
-                      />
+                        fill="currentColor"
+                        fillRule="evenodd"
+                        d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+                        clipRule="evenodd"
+                      ></path>
                     </svg>
                   </Link>
                 </motion.div>
