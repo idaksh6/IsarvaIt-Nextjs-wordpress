@@ -156,7 +156,7 @@ export default function ProductDetailPremiumDealer({
 
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="press-illusion-btn bg-fuchsia-400 text-white font-bold px-6 py-2 text-base items-center space-x-2 inline-flex cursor-pointer"
+                className="press-illusion-btn-fuchsia bg-fuchsia-400 text-white font-bold px-6 py-2 text-base items-center space-x-2 inline-flex cursor-pointer"
               >
                 <span>Download Brochure</span>
                 <svg
@@ -227,22 +227,6 @@ export default function ProductDetailPremiumDealer({
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <button
-                    onClick={() => setIsModalOpen(true)}
-                    className="group relative bg-white text-fuchsia-600 px-8 py-4 rounded-full font-bold text-base shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-3"
-                  >
-                    <span>Download Brochure</span>
-                    <svg
-                      className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={3}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </button>
-
                   <button
                     onClick={() => setIsModalOpen(true)}
                     className="group relative bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-base hover:bg-white hover:text-fuchsia-600 transition-all duration-300 hover:scale-105 flex items-center gap-3"
