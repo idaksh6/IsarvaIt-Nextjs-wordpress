@@ -111,6 +111,44 @@ const testimonials = [
 ];
 
 export default function TestimonialPage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  // Handle touch events for swipe
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    }
+    if (isRightSwipe) {
+      prevSlide();
+    }
+
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
 
   return (
     <div className="min-h-screen bg-[#FDF8F2]  text-[#1a1f24] pt-24">
@@ -277,7 +315,110 @@ export default function TestimonialPage() {
       {/* ── 3. TESTIMONIAL SHOWCASE ── */}
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-24 gap-x-10">
+          
+          {/* Mobile Slider (visible only on mobile) */}
+          <div className="md:hidden relative px-4">
+            {/* Previous Button - Left Side Centered */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-[#10b981] text-white flex items-center justify-center shadow-lg hover:bg-[#0d9668] transition-all active:scale-95"
+              aria-label="Previous testimonial"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            {/* Next Button - Right Side Centered */}
+            <button
+              onClick={nextSlide}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-[#10b981] text-white flex items-center justify-center shadow-lg hover:bg-[#0d9668] transition-all active:scale-95"
+              aria-label="Next testimonial"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            <div 
+              className=""
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
+              <AnimatePresence mode="wait">
+                <motion.div 
+                  key={currentSlide}
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -100 }}
+                  transition={{ duration: 0.3 }}
+                  className="relative bg-[#FDF8F2] pt-20 pb-12 px-8 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.03)] flex flex-col border border-emerald-500/5 mx-4"
+                >
+                  {/* Client Photo */}
+                  <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-32 h-32 rounded-full border-[8px] border-white shadow-2xl overflow-hidden bg-white z-20">
+                    {testimonials[currentSlide].image ? (
+                      <Image src={testimonials[currentSlide].image} alt={testimonials[currentSlide].name} fill className="object-cover" />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center font-bold text-3xl text-[#10b981] bg-[#10b981]/5">
+                        {testimonials[currentSlide].name[0]}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex flex-col items-center mb-8">
+                    <h5 className="font-display font-bold text-2xl text-[#1a1f24] mb-1">{testimonials[currentSlide].name}</h5>
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#10b981] mb-4">
+                      {testimonials[currentSlide].role} @ {testimonials[currentSlide].company}
+                    </p>
+                    
+                    <div className="flex gap-1.5 px-4 py-2 bg-white rounded-full border border-black/5 shadow-sm">
+                      {[...Array(testimonials[currentSlide].rating)].map((_, i) => (
+                        <Star key={i} className="w-3.5 h-3.5 text-[#10b981] fill-[#10b981]" />
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div className="relative mb-8 text-center">
+                    <Quote className="absolute -top-6 -left-4 w-12 h-12 text-[#10b981]/10 transform -rotate-12" />
+                    <p className="text-[#1a1f24] text-xl font-display font-bold leading-tight mb-4 relative z-10 italic">
+                      "{testimonials[currentSlide].highlight}"
+                    </p>
+                  </div>
+                  
+                  <p className="text-[#53606b] text-center leading-relaxed mb-10 font-medium">
+                    {testimonials[currentSlide].text}
+                  </p>
+
+                  <div className="text-center">
+                    <span className="inline-block text-[10px] font-black tracking-[0.2em] uppercase text-[#10b981] bg-[#10b981]/10 px-5 py-2 rounded-full border border-[#10b981]/20">
+                      {testimonials[currentSlide].tag}
+                    </span>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Slide Indicators - Bottom Center */}
+            <div className="flex justify-center gap-2 mt-8">
+              {testimonials.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentSlide(idx)}
+                  className={`h-2 rounded-full transition-all ${
+                    idx === currentSlide 
+                      ? 'w-8 bg-[#10b981]' 
+                      : 'w-2 bg-gray-300'
+                  }`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop Grid (visible on tablet and above) */}
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-24 gap-x-10">
             {testimonials.map((t, idx) => (
               <motion.div 
                 key={t.id}
@@ -352,12 +493,12 @@ export default function TestimonialPage() {
               <svg viewBox="0 0 17 9" className="h-3 w-5 text-white fill-current"><path d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z" /></svg>
             </Link>
 
-            <Link 
+                <Link 
               href="/careers"
-              className="text-white font-bold text-xl hover:text-[#10b981] transition-colors flex items-center gap-3"
+              className="press-illusion-btn bg-[#10b981] text-white w-full sm:w-fit font-bold px-10 py-5 text-xl flex items-center justify-center gap-3 transition-transform hover:scale-105"
             >
-              <Briefcase className="w-5 h-5 text-[#10b981]" />
               <span>Join Our Team</span>
+              <svg viewBox="0 0 17 9" className="h-3 w-5 text-white fill-current"><path d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z" /></svg>
             </Link>
           </div>
         </div>
