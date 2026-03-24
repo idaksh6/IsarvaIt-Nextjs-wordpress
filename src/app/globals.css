@@ -159,6 +159,43 @@ body {
   display: none;
 }
 
+/* Mobile-only scrollbar hide with desktop show */
+.scrollbar-hide-mobile {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide-mobile::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .scrollbar-hide-mobile {
+    -ms-overflow-style: auto;
+    scrollbar-width: thin;
+  }
+  
+  .scrollbar-hide-mobile::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+    height: 8px;
+  }
+  
+  .scrollbar-hide-mobile::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  .scrollbar-hide-mobile::-webkit-scrollbar-thumb {
+    background: #10b981;
+    border-radius: 4px;
+  }
+  
+  .scrollbar-hide-mobile::-webkit-scrollbar-thumb:hover {
+    background: #059669;
+  }
+}
+
 /* ─── Modal Animations ─────────────────────────── */
 @keyframes slideUp {
   from {

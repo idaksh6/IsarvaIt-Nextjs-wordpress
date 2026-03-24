@@ -2,12 +2,12 @@
 
 import { use, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { 
-  ArrowLeft, 
-  MapPin, 
-  Clock, 
-  Briefcase, 
-  CheckCircle2, 
+import {
+  ArrowLeft,
+  MapPin,
+  Clock,
+  Briefcase,
+  CheckCircle2,
   Star,
   Users,
   Globe,
@@ -69,11 +69,11 @@ export default function JobDetailPage({ params }) {
 
   return (
     <div className="min-h-screen bg-[#FDF8F2] font-sans text-[#1a1f24]">
-      
+
       {/* BACK BUTTON */}
       <div className="bg-white border-b border-emerald-500/10 pt-32 pb-6">
         <div className="max-w-6xl mx-auto px-6">
-          <Link 
+          <Link
             href="/careers"
             className="inline-flex items-center gap-2 text-[#53606b] hover:text-[#10b981] transition-colors font-bold group"
           >
@@ -84,10 +84,10 @@ export default function JobDetailPage({ params }) {
       </div>
 
       {/* HERO SECTION */}
-      <section className="bg-gradient-to-b from-white to-[#FDF8F2] py-16 relative overflow-hidden">
+      <section className="bg-gradient-to-b from-white to-[#FDF8F2] lg:py-16 py-10 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#10b981] opacity-[0.03] rounded-full blur-[100px] pointer-events-none"></div>
-        
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
+
+        <div className="max-w-6xl mx-auto px-6 relative z-10 lg:text-left text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -109,7 +109,7 @@ export default function JobDetailPage({ params }) {
             </h1>
 
             {/* Job Meta Info */}
-            <div className="flex flex-wrap gap-4 mb-8">
+            <div className="flex flex-wrap gap-4 mb-8 lg:justify-start justify-center">
               <div className="flex items-center gap-2 px-5 py-3 bg-white rounded-xl border border-emerald-500/10 shadow-sm">
                 <MapPin className="w-5 h-5 text-[#10b981]" />
                 <span className="font-bold text-[#1a1f24]">{job.location}</span>
@@ -125,13 +125,13 @@ export default function JobDetailPage({ params }) {
       </section>
 
       {/* MAIN CONTENT */}
-      <section className="py-16">
+      <section className="lg:py-16 py-10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            
+
             {/* LEFT COLUMN - Main Content */}
             <div className="lg:col-span-2 space-y-12">
-              
+
               {/* About the Role */}
               {job.description && (
                 <motion.div
@@ -162,7 +162,7 @@ export default function JobDetailPage({ params }) {
                     <div className="w-2 h-8 bg-[#10b981] rounded-full"></div>
                     Key Responsibilities
                   </h2>
-                  
+
                   <div className="space-y-8">
                     {job.responsibilities.map((section, idx) => (
                       <div key={idx}>
@@ -197,7 +197,7 @@ export default function JobDetailPage({ params }) {
                     <div className="w-2 h-8 bg-[#10b981] rounded-full"></div>
                     Qualifications
                   </h2>
-                  
+
                   <div className="space-y-4">
                     {job.qualifications.education && (
                       <div className="flex items-start gap-3">
@@ -233,7 +233,7 @@ export default function JobDetailPage({ params }) {
                     <div className="w-2 h-8 bg-[#10b981] rounded-full"></div>
                     Required Skills
                   </h2>
-                  
+
                   <ul className="space-y-3">
                     {job.requiredSkills.map((skill, idx) => (
                       <li key={idx} className="flex items-start gap-3">
@@ -257,7 +257,7 @@ export default function JobDetailPage({ params }) {
                     <div className="w-2 h-8 bg-[#10b981] rounded-full"></div>
                     Preferred Skills
                   </h2>
-                  
+
                   <ul className="space-y-3">
                     {job.preferredSkills.map((skill, idx) => (
                       <li key={idx} className="flex items-start gap-3">
@@ -281,7 +281,7 @@ export default function JobDetailPage({ params }) {
                     <div className="w-2 h-8 bg-[#10b981] rounded-full"></div>
                     Perks and Benefits
                   </h2>
-                  
+
                   <ul className="space-y-3">
                     {job.perks.map((perk, idx) => (
                       <li key={idx} className="flex items-start gap-3">
@@ -305,11 +305,11 @@ export default function JobDetailPage({ params }) {
                     <div className="w-2 h-8 bg-[#10b981] rounded-full"></div>
                     Interview Process
                   </h2>
-                  
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {job.interviewProcess.map((step, idx) => (
-                      <div 
-                        key={idx} 
+                      <div
+                        key={idx}
                         className="flex items-center gap-4 p-4 bg-[#FDF8F2] rounded-xl border border-emerald-500/10"
                       >
                         <div className="w-10 h-10 bg-[#10b981] text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
@@ -327,7 +327,7 @@ export default function JobDetailPage({ params }) {
             {/* RIGHT COLUMN - Sidebar */}
             <div className="lg:col-span-1">
               <div className="sticky top-32 space-y-6">
-                
+
                 {/* Application Form Card */}
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
@@ -335,12 +335,12 @@ export default function JobDetailPage({ params }) {
                   viewport={{ once: true }}
                   className="bg-white p-8 rounded-3xl border border-emerald-500/10 shadow-xl"
                 >
-                  <h3 className="text-2xl font-display font-bold text-[#1a1f24] mb-2">Submit Your Application</h3>
-                  <p className="text-[#53606b] mb-6 leading-relaxed">
+                  <h3 className="text-2xl font-display font-bold text-[#1a1f24] mb-2 lg:text-left text-center">Submit Your Application</h3>
+                  <p className="text-[#53606b] mb-6 leading-relaxed lg:text-left text-center">
                     Fill out the form below and we'll get back to you shortly.
                   </p>
-                  
-                  <CareerApplicationForm 
+
+                  <CareerApplicationForm
                     jobTitle={job.title}
                     jobSlug={slug}
                   />
@@ -354,10 +354,10 @@ export default function JobDetailPage({ params }) {
                   transition={{ delay: 0.1 }}
                   className="bg-white p-8 rounded-3xl border border-emerald-500/10 shadow-sm"
                 >
-                  <h3 className="text-xl font-display font-bold text-[#1a1f24] mb-6">
+                  <h3 className="text-xl font-display font-bold text-[#1a1f24] mb-6 lg:text-left text-center">
                     Why Isarva Infotech?
                   </h3>
-                  
+
                   <div className="space-y-6">
                     {perksData.map((perk, idx) => (
                       <div key={idx} className="flex items-start gap-4">
@@ -396,7 +396,7 @@ export default function JobDetailPage({ params }) {
       {/* BOTTOM CTA */}
       <section className="py-20 bg-[#1a1f24] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#10b981] opacity-[0.05] rounded-full blur-[100px] pointer-events-none"></div>
-        
+
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -410,17 +410,17 @@ export default function JobDetailPage({ params }) {
               Apply using the form above, or explore more career opportunities with Isarva Infotech.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Link 
+              <Link
                 href="/careers"
                 className="bg-[#10b981] text-white px-10 py-5 rounded-xl font-bold text-lg transition-all hover:scale-105 hover:shadow-xl active:scale-95"
               >
                 View All Openings
               </Link>
-              <Link 
+              <Link
                 href="/about"
-                className="text-white font-bold text-lg hover:text-[#10b981] transition-colors"
+                className="press-illusion-btn bg-[#10b981] text-white px-12 py-6 text-xl font-bold rounded-2xl transition-all hover:scale-105"
               >
-                Learn About Our Culture
+                Learn About culture
               </Link>
             </div>
           </motion.div>
