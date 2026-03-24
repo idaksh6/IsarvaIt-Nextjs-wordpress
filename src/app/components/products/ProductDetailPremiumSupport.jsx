@@ -113,7 +113,7 @@ export default function ProductDetailPremiumSupport({
           <div className="dashboard-main-img">
             <div className="relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)] bg-white">
               <img
-                src="/products/support/Ticket Management.png"
+                src="/products/support/Support-dashboard-img.jpg"
                 alt="Support Dashboard Preview"
                 className="w-full object-contain lg:h-[668px] h-full shadow-2xl"
               />
