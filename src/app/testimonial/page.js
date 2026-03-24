@@ -113,10 +113,10 @@ const testimonials = [
 export default function TestimonialPage() {
 
   return (
-    <div className="min-h-screen bg-[#FDF8F2] font-sans text-[#1a1f24] pt-24">
+    <div className="min-h-screen bg-[#FDF8F2]  text-[#1a1f24] pt-24">
       
       {/* ── 1. HERO SECTION ── */}
-      <section className="relative py-24 lg:py-40 overflow-hidden bg-gradient-to-b from-[#F0F7F4] to-[#FDF8F2]">
+      <section className="relative py-12 lg:py-38 overflow-hidden ">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#10b981] opacity-[0.03] rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute -bottom-24 -left-24 w-[600px] h-[600px] bg-[#84cc16] opacity-[0.05] rounded-full blur-[100px] pointer-events-none"></div>
         
@@ -172,9 +172,9 @@ export default function TestimonialPage() {
       </section>
 
       {/* ── 2. FEATURED VIDEO TESTIMONIALS (Restored Correctly) ── */}
-      <section className="py-24 bg-white border-y border-[#10b981]/10 overflow-hidden">
+      <section className="lg:py-24 py-10 bg-white border-y border-[#10b981]/10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
+          <div className="text-center lg:mb-20 mb-10">
             <motion.span
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -197,12 +197,12 @@ export default function TestimonialPage() {
               <div className="bg-[#FDF8F2] border border-[#10b981]/10 rounded-[2.5rem] p-8 md:p-10 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.03)] flex flex-col group relative overflow-hidden h-fit">
                 <div className="absolute top-0 left-0 w-48 h-48 bg-[#10b981]/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
                 <div className="relative z-10">
-                  <div className="inline-flex items-center gap-2 mb-6 bg-white px-4 py-1.5 rounded-full border border-emerald-100 shadow-sm">
+                  <div className="flex lg:mx-0 mx-auto items-center gap-2  mb-6 bg-white px-4 py-1.5 rounded-full border border-emerald-100 shadow-sm">
                     <Zap className="w-3.5 h-3.5 text-[#10b981]" />
                     <span className="text-emerald-700 font-bold text-[9px] uppercase tracking-widest">Global Impact</span>
                   </div>
                   
-                  <h4 className="text-3xl md:text-4xl font-display font-bold text-[#1a1f24] mb-10 leading-tight">
+                  <h4 className="text-3xl md:text-4xl lg:text-left text-center font-display font-bold text-[#1a1f24] mb-10 leading-tight">
                     Digital Future, <br />
                     <span className="text-[#10b981]">Architected.</span>
                   </h4>
@@ -232,7 +232,7 @@ export default function TestimonialPage() {
 
                 <Link 
                   href="/contact"
-                  className="press-illusion-btn bg-[#10b981] text-white w-full py-5 text-lg font-bold flex items-center justify-center gap-3 group rounded-2xl shadow-xl hover:shadow-2xl transition-all"
+                  className="press-illusion-btn bg-[#10b981] text-white w-fit lg:mx-0 mx-auto py-5 text-lg font-bold flex items-center justify-center gap-3 group rounded-2xl shadow-xl hover:shadow-2xl transition-all"
                 >
                   <span>Begin Transformation</span>
                   <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center transform group-hover:translate-x-2 transition-transform">
