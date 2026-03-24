@@ -43,26 +43,15 @@ function HeroSection({ data }) {
   const heroData = data || DEFAULT_HERO_DATA;
 
   return (
-    <section className="relative flex flex-col items-center pt-36 pb-0 overflow-hidden">
-      {/* Background Decorations */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none translate-z-0">
-        {/* 1. Base Grid Layer (Softer Checkboxes) */}
-        <div className="absolute inset-0 bg-checkbox-grid opacity-[0.35] mask-hero-fade"></div>
-        <div className="absolute inset-0 bg-dots opacity-[0.20] mask-hero-fade"></div>
-
-        {/* 2. Glass Depth Blur (The "Screenblur" effect) */}
-        <div className="absolute inset-0 backdrop-blur-[1px] opacity-30"></div>
-
-        {/* 3. The "Brand Aura" / Glow Mask (Bron Shaddy Musk) */}
-        <div className="top-glow"></div>
-
-        {/* 4. Bottom Transition Shadow */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/95 z-[2]"></div>
-
-        {/* 5. The "Shaky" Screen Texture (High Fidelity Noise) */}
-        <div className="hero-noise-overlay"></div>
-      </div>
-
+    <section 
+      className="relative flex flex-col items-center pt-36 pb-0 overflow-hidden"
+      style={{
+        backgroundImage: "url('/bg1 new.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat"
+      }}
+    >
       <div className="max-w-7xl mx-auto px-6 relative z-20 text-center hero-content">
         {heroData.stripTag && (
           <div className="inline-flex mb-8">
@@ -110,7 +99,7 @@ function HeroSection({ data }) {
         {/* Floating Cards - Absolute Positioning (Above 1250px) */}
         <div className="-mt-40 relative h-[600px] w-full max-w-6xl mx-auto hidden cards:block">
           {/* Web Platforms Card */}
-          <div className="floating-card absolute left-[-150px] top-0 w-80 glass-card p-8 rounded-[2.5rem] border border-gray-100 text-left shadow-2xl z-10">
+          <div className="floating-card min-h-[230px] absolute left-[-150px] top-0 w-80 glass-card p-8 rounded-[2.5rem] border border-gray-100 text-left shadow-2xl z-10">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-14 h-14 flex-shrink-0 bg-gray-50 rounded-2xl flex items-center justify-center text-3xl shadow-inner ring-1 ring-gray-100">
                 🌐
