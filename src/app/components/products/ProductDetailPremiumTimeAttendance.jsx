@@ -455,8 +455,8 @@ function TimeAttendanceFeatureSection() {
   const [activeId, setActiveId] = useState("time-tracking");
   const [mobileOpenId, setMobileOpenId] = useState("time-tracking");
 
-  const leftFeatures = timeAttendanceFeatures.slice(0, 2);
-  const rightFeatures = timeAttendanceFeatures.slice(2);
+  const leftFeatures = timeAttendanceFeatures.slice(0, Math.ceil(timeAttendanceFeatures.length / 2));
+  const rightFeatures = timeAttendanceFeatures.slice(Math.ceil(timeAttendanceFeatures.length / 2));
   const activeFeature = timeAttendanceFeatures.find((f) => f.id === activeId);
 
   return (

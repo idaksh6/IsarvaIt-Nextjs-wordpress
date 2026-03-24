@@ -485,8 +485,8 @@ function LodgeFeatureSection() {
   const [activeId, setActiveId] = useState("chart");
   const [mobileOpenId, setMobileOpenId] = useState("chart");
 
-  const leftFeatures = lodgeFeatures.slice(0, 5);
-  const rightFeatures = lodgeFeatures.slice(5);
+  const leftFeatures = lodgeFeatures.slice(0, Math.ceil(lodgeFeatures.length / 2));
+  const rightFeatures = lodgeFeatures.slice(Math.ceil(lodgeFeatures.length / 2));
   const activeFeature = lodgeFeatures.find((f) => f.id === activeId) || lodgeFeatures[0];
 
   return (

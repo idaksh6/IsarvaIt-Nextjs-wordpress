@@ -720,8 +720,8 @@ function SupportFeatureSection() {
   const [activeId, setActiveId] = useState("project");
   const [mobileOpenId, setMobileOpenId] = useState("project");
 
-  const leftFeatures = supportFeatures.slice(0, 4);
-  const rightFeatures = supportFeatures.slice(4);
+  const leftFeatures = supportFeatures.slice(0, Math.ceil(supportFeatures.length / 2));
+  const rightFeatures = supportFeatures.slice(Math.ceil(supportFeatures.length / 2));
   const activeFeature = supportFeatures.find((f) => f.id === activeId);
 
   return (

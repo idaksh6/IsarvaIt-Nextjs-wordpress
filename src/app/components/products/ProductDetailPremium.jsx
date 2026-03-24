@@ -778,8 +778,8 @@ function HrmsFeatureSection() {
   const [activeId, setActiveId] = useState("personnel");
   const [mobileOpenId, setMobileOpenId] = useState("personnel");
 
-  const leftFeatures = hrmsFeatures.slice(0, 4);
-  const rightFeatures = hrmsFeatures.slice(4);
+  const leftFeatures = hrmsFeatures.slice(0, Math.ceil(hrmsFeatures.length / 2));
+  const rightFeatures = hrmsFeatures.slice(Math.ceil(hrmsFeatures.length / 2));
   const activeFeature = hrmsFeatures.find((f) => f.id === activeId);
 
   return (

@@ -473,8 +473,8 @@ function ThreePLFeatureSection() {
   const [activeId, setActiveId] = useState("automation");
   const [mobileOpenId, setMobileOpenId] = useState("automation");
 
-  const leftFeatures = threePLFeatures.slice(0, 3);
-  const rightFeatures = threePLFeatures.slice(3);
+  const leftFeatures = threePLFeatures.slice(0, Math.ceil(threePLFeatures.length / 2));
+  const rightFeatures = threePLFeatures.slice(Math.ceil(threePLFeatures.length / 2));
   const activeFeature = threePLFeatures.find((f) => f.id === activeId) || threePLFeatures[0];
 
   return (

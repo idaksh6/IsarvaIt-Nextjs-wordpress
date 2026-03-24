@@ -457,8 +457,8 @@ function FleetFeatureSection() {
   const [activeId, setActiveId] = useState("collaboration");
   const [mobileOpenId, setMobileOpenId] = useState("collaboration");
 
-  const leftFeatures = fleetFeatures.slice(0, 3);
-  const rightFeatures = fleetFeatures.slice(3);
+  const leftFeatures = fleetFeatures.slice(0, Math.ceil(fleetFeatures.length / 2));
+  const rightFeatures = fleetFeatures.slice(Math.ceil(fleetFeatures.length / 2));
   const activeFeature = fleetFeatures.find((f) => f.id === activeId) || fleetFeatures[0];
 
   return (

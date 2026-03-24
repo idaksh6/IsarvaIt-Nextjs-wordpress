@@ -475,8 +475,8 @@ function WmsFeatureSection() {
   const [activeId, setActiveId] = useState("multi-warehouse");
   const [mobileOpenId, setMobileOpenId] = useState("multi-warehouse");
 
-  const leftFeatures = wmsFeatures.slice(0, 4);
-  const rightFeatures = wmsFeatures.slice(4);
+  const leftFeatures = wmsFeatures.slice(0, Math.ceil(wmsFeatures.length / 2));
+  const rightFeatures = wmsFeatures.slice(Math.ceil(wmsFeatures.length / 2));
   const activeFeature = wmsFeatures.find((f) => f.id === activeId);
 
   return (

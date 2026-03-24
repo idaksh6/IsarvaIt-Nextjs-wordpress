@@ -511,8 +511,8 @@ function PetroCareFeatureSection() {
   const [activeId, setActiveId] = useState("memo");
   const [mobileOpenId, setMobileOpenId] = useState("memo");
 
-  const leftFeatures = petroCareFeatures.slice(0, 6);
-  const rightFeatures = petroCareFeatures.slice(6);
+  const leftFeatures = petroCareFeatures.slice(0, Math.ceil(petroCareFeatures.length / 2));
+  const rightFeatures = petroCareFeatures.slice(Math.ceil(petroCareFeatures.length / 2));
   const activeFeature = petroCareFeatures.find((f) => f.id === activeId);
 
   return (

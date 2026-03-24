@@ -457,8 +457,8 @@ function MobileFeatureSection() {
   const [activeId, setActiveId] = useState("service-entry");
   const [mobileOpenId, setMobileOpenId] = useState("service-entry");
 
-  const leftFeatures = mobileFeatures.slice(0, 3);
-  const rightFeatures = mobileFeatures.slice(3);
+  const leftFeatures = mobileFeatures.slice(0, Math.ceil(mobileFeatures.length / 2));
+  const rightFeatures = mobileFeatures.slice(Math.ceil(mobileFeatures.length / 2));
   const activeFeature = mobileFeatures.find((f) => f.id === activeId) || mobileFeatures[0];
 
   return (

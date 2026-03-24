@@ -476,8 +476,8 @@ function WooCommerceFeatureSection() {
   const [activeId, setActiveId] = useState("custom-theme");
   const [mobileOpenId, setMobileOpenId] = useState("custom-theme");
 
-  const leftFeatures = wooCommerceFeatures.slice(0, 4);
-  const rightFeatures = wooCommerceFeatures.slice(4);
+  const leftFeatures = wooCommerceFeatures.slice(0, Math.ceil(wooCommerceFeatures.length / 2));
+  const rightFeatures = wooCommerceFeatures.slice(Math.ceil(wooCommerceFeatures.length / 2));
   const activeFeature = wooCommerceFeatures.find((f) => f.id === activeId);
 
   return (

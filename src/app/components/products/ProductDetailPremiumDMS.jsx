@@ -484,8 +484,8 @@ function DMSFeatureSection() {
   const [activeId, setActiveId] = useState("file-upload");
   const [mobileOpenId, setMobileOpenId] = useState("file-upload");
 
-  const leftFeatures = dmsFeatures.slice(0, 5);
-  const rightFeatures = dmsFeatures.slice(5);
+  const leftFeatures = dmsFeatures.slice(0, Math.ceil(dmsFeatures.length / 2));
+  const rightFeatures = dmsFeatures.slice(Math.ceil(dmsFeatures.length / 2));
   const activeFeature = dmsFeatures.find((f) => f.id === activeId);
 
   return (

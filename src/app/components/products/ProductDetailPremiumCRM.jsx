@@ -503,8 +503,8 @@ function CRMFeatureSection() {
   const [activeId, setActiveId] = useState("leads");
   const [mobileOpenId, setMobileOpenId] = useState("leads");
 
-  const leftFeatures = crmFeatures.slice(0, 3);
-  const rightFeatures = crmFeatures.slice(3);
+  const leftFeatures = crmFeatures.slice(0, Math.ceil(crmFeatures.length / 2));
+  const rightFeatures = crmFeatures.slice(Math.ceil(crmFeatures.length / 2));
   const activeFeature = crmFeatures.find((f) => f.id === activeId) || crmFeatures[0];
 
   return (

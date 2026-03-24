@@ -100,15 +100,25 @@ export default function ProductDetailPremiumMultiBranch({
           className="hero-dashboard-wrapper"
         >
           <div className="dashboard-animation left">
-            <div className="scroll-img"></div>
+            <div 
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/retail billing multi branch/Multibranch-slide-1.jpg'), url('/products/retail billing multi branch/Multibranch-slide-2.jpg')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-animation right">
-            <div className="scroll-img"></div>
+            <div 
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/retail billing multi branch/Multibranch-slide-3.jpg'), url('/products/retail billing multi branch/Multibranch-slide-4.jpg')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-main-img">
             <div className="relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)] bg-white">
               <img
-                src="/dashboard.webp"
+                src="/products/retail billing multi branch/Multibranch-dashboard.jpg"
                 alt="Bill Soft Multi-Branch Dashboard"
                 className="w-full object-contain lg:h-[668px] h-full shadow-2xl"
               />
@@ -125,7 +135,7 @@ export default function ProductDetailPremiumMultiBranch({
             <div className="relative lg:sticky lg:top-28 lg:self-start">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/dashboard.webp"
+                  src="/products/retail billing multi branch/Multibranch-dashboard.jpg"
                   alt="Multi-Branch Management Dashboard"
                   className="w-full h-auto object-cover"
                 />
@@ -371,22 +381,13 @@ export default function ProductDetailPremiumMultiBranch({
 ───────────────────────────────────────────────────────────── */
 const multiBranchFeatures = [
   {
-    id: "multi-branch",
-    label: "Multiple Branch Management",
-    icon: "🏢",
-    color: "#14B8A6",
-    desc: "Supports up to 4 branches with centralized control and real-time synchronization across all locations.",
-    placeholder: "MB",
-    image: "/dashboard.webp",
-  },
-  {
     id: "warehouse",
     label: "Unlimited Warehouse Management",
     icon: "🏭",
     color: "#0D9488",
     desc: "Allows for unlimited warehouse entries with comprehensive tracking and management capabilities.",
     placeholder: "WH",
-    image: "/dashboard.webp",
+    image: "/products/retail billing multi branch/Unlimited-Wraehouse-Management.jpg",
   },
   {
     id: "stock-tracking",
@@ -395,7 +396,7 @@ const multiBranchFeatures = [
     color: "#2DD4BF",
     desc: "Keeps track of stock levels across all branches and warehouses with real-time updates.",
     placeholder: "ST",
-    image: "/dashboard.webp",
+    image: "/products/retail billing multi branch/Product-stock-tracking.jpg",
   },
   {
     id: "sales-payment",
@@ -404,7 +405,7 @@ const multiBranchFeatures = [
     color: "#5EEAD4",
     desc: "Facilitates payment entries for sales, including invoice clearance for received payments.",
     placeholder: "SP",
-    image: "/dashboard.webp",
+    image: "/products/retail billing multi branch/Sales-payment-management.jpg",
   },
   {
     id: "customer-credit",
@@ -413,7 +414,7 @@ const multiBranchFeatures = [
     color: "#14B8A6",
     desc: "Manages customer credit balances and advance payments with detailed tracking.",
     placeholder: "CC",
-    image: "/dashboard.webp",
+    image: "/products/retail billing multi branch/Customer-credit-&-advances.jpg",
   },
   {
     id: "purchase-payment",
@@ -422,7 +423,7 @@ const multiBranchFeatures = [
     color: "#0D9488",
     desc: "Facilitates payment entries for purchases, including invoice clearance for payments made.",
     placeholder: "PP",
-    image: "/dashboard.webp",
+    image: "/products/retail billing multi branch/Purchase-Pyament-Management.jpg",
   },
   {
     id: "vendor-credit",
@@ -431,7 +432,7 @@ const multiBranchFeatures = [
     color: "#2DD4BF",
     desc: "Manages vendor credit balances and advance payments efficiently.",
     placeholder: "VC",
-    image: "/dashboard.webp",
+    image: "/products/retail billing multi branch/Vendor-credits-&-Advances.jpg",
   },
   {
     id: "transaction-mgmt",
@@ -440,25 +441,7 @@ const multiBranchFeatures = [
     color: "#5EEAD4",
     desc: "Handles sales, purchases, sales returns, and purchase returns with integrated warehouse stock management.",
     placeholder: "TM",
-    image: "/dashboard.webp",
-  },
-  {
-    id: "billing-system",
-    label: "Flexible Billing System",
-    icon: "📝",
-    color: "#0D9488",
-    desc: "Supports both reverse and forward billing systems for maximum flexibility.",
-    placeholder: "BS",
-    image: "/dashboard.webp",
-  },
-  {
-    id: "collaboration",
-    label: "Seamless Collaboration",
-    icon: "🤝",
-    color: "#2DD4BF",
-    desc: "Work with team members to provide the best support to your customers in a better way.",
-    placeholder: "SC",
-    image: "/dashboard.webp",
+    image: "/products/retail billing multi branch/Comprehensive-transaction-management.jpg",
   },
   {
     id: "site-config",
@@ -467,34 +450,7 @@ const multiBranchFeatures = [
     color: "#5EEAD4",
     desc: "Allows for flexible and customizable site settings to match your business needs.",
     placeholder: "DC",
-    image: "/dashboard.webp",
-  },
-  {
-    id: "rbac",
-    label: "Role-Based Access Control",
-    icon: "🔐",
-    color: "#14B8A6",
-    desc: "Features role management for secure login and access control across different user levels.",
-    placeholder: "RBAC",
-    image: "/dashboard.webp",
-  },
-  {
-    id: "backup",
-    label: "Manual Data Backup",
-    icon: "💾",
-    color: "#0D9488",
-    desc: "Supports manual data backup to ensure your critical business data is always protected.",
-    placeholder: "BK",
-    image: "/dashboard.webp",
-  },
-  {
-    id: "financial-year",
-    label: "Financial Year Management",
-    icon: "📅",
-    color: "#2DD4BF",
-    desc: "Supports financial year-based reporting and management with easy year-end closing.",
-    placeholder: "FY",
-    image: "/dashboard.webp",
+    image: "/products/retail billing multi branch/Dynamic-Site-Configuration.jpg",
   },
   {
     id: "product-mgmt",
@@ -503,7 +459,7 @@ const multiBranchFeatures = [
     color: "#5EEAD4",
     desc: "Allows adding products with multiple options and comprehensive product information.",
     placeholder: "PM",
-    image: "/dashboard.webp",
+    image: "/products/retail billing multi branch/Product-Management.jpg",
   },
   {
     id: "reporting",
@@ -512,16 +468,7 @@ const multiBranchFeatures = [
     color: "#14B8A6",
     desc: "Offers detailed reports on sales, purchases, stock timelines, warehouse stock, payments to collect, payments to pay, profit and loss, customer ledgers, and more, with multiple printing and export options.",
     placeholder: "REP",
-    image: "/dashboard.webp",
-  },
-  {
-    id: "mobile-app",
-    label: "Mobile App Support",
-    icon: "📱",
-    color: "#0D9488",
-    desc: "Available on both Android and iOS platforms, with the app release coming shortly, providing accessibility and convenience for users on the go.",
-    placeholder: "APP",
-    image: "/dashboard.webp",
+    image: "/products/retail billing multi branch/Comprehensive-Reportst.jpg",
   },
 ];
 
@@ -553,11 +500,11 @@ function FeaturePlaceholder({ feature }) {
    MULTI-BRANCH FEATURE ORBIT SECTION
 ──────────────────────────────────────────────────────────── */
 function MultiBranchFeatureSection() {
-  const [activeId, setActiveId] = useState("multi-branch");
-  const [mobileOpenId, setMobileOpenId] = useState("multi-branch");
+  const [activeId, setActiveId] = useState("warehouse");
+  const [mobileOpenId, setMobileOpenId] = useState("warehouse");
 
-  const leftFeatures = multiBranchFeatures.slice(0, 9);
-  const rightFeatures = multiBranchFeatures.slice(9);
+  const leftFeatures = multiBranchFeatures.slice(0, Math.ceil(multiBranchFeatures.length / 2));
+  const rightFeatures = multiBranchFeatures.slice(Math.ceil(multiBranchFeatures.length / 2));
   const activeFeature = multiBranchFeatures.find((f) => f.id === activeId);
 
   return (

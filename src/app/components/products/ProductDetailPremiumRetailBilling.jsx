@@ -500,8 +500,8 @@ function RetailBillingFeatureSection() {
   const [activeId, setActiveId] = useState("sales-reports");
   const [mobileOpenId, setMobileOpenId] = useState("sales-reports");
 
-  const leftFeatures = retailBillingFeatures.slice(0, 5);
-  const rightFeatures = retailBillingFeatures.slice(5);
+  const leftFeatures = retailBillingFeatures.slice(0, Math.ceil(retailBillingFeatures.length / 2));
+  const rightFeatures = retailBillingFeatures.slice(Math.ceil(retailBillingFeatures.length / 2));
   const activeFeature = retailBillingFeatures.find((f) => f.id === activeId);
 
   return (
