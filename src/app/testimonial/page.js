@@ -197,7 +197,7 @@ export default function TestimonialPage() {
               <div className="bg-[#FDF8F2] border border-[#10b981]/10 rounded-[2.5rem] p-8 md:p-10 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.03)] flex flex-col group relative overflow-hidden h-fit">
                 <div className="absolute top-0 left-0 w-48 h-48 bg-[#10b981]/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
                 <div className="relative z-10">
-                  <div className="flex lg:mx-0 mx-auto items-center gap-2  mb-6 bg-white px-4 py-1.5 rounded-full border border-emerald-100 shadow-sm">
+                  <div className="flex lg:mx-0 mx-auto items-center gap-2 w-fit  mb-6 bg-white px-4 py-1.5 rounded-full border border-emerald-100 shadow-sm">
                     <Zap className="w-3.5 h-3.5 text-[#10b981]" />
                     <span className="text-emerald-700 font-bold text-[9px] uppercase tracking-widest">Global Impact</span>
                   </div>
