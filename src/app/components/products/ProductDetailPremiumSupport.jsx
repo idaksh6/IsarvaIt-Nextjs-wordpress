@@ -66,7 +66,7 @@ export default function ProductDetailPremiumSupport({
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="press-illusion-btn bg-purple-500 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex cursor-pointer"
+                className="press-illusion-btn-purple bg-purple-500 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex cursor-pointer"
               >
                 <span>REQUEST DEMO</span>
                 <svg

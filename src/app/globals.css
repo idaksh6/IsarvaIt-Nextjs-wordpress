@@ -711,10 +711,28 @@ h6,
   transform: translateY(3px);
   box-shadow: 0 3px 0 #f97316;
 }
+.press-illusion-btn-red {
+  border: none;
+  box-shadow: 0 6px 0 #ff4c00;
+  transition: all 0.1s ease;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.press-illusion-btn-red:hover {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #ff4c00;
+}
 
 .press-illusion-btn-purple {
   border: none;
-  box-shadow: 0 6px 0 #a855f7;
+  box-shadow: 0 6px 0 #6d32a5;
   transition: all 0.1s ease;
   padding: 12px 24px;
   border: none;
@@ -728,7 +746,134 @@ h6,
 
 .press-illusion-btn-purple:hover {
   transform: translateY(3px);
-  box-shadow: 0 3px 0 #a855f7;
+  box-shadow: 0 3px 0 #6d32a5;
+}
+
+.press-illusion-btn-violet {
+  border: none;
+  box-shadow: 0 6px 0 #6162ad;
+  transition: all 0.1s ease;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.press-illusion-btn-violet:hover {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #6162ad;
+}
+.press-illusion-btn-pink {
+  border: none;
+  box-shadow: 0 6px 0 #EC4899;
+  transition: all 0.1s ease;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.press-illusion-btn-pink:hover {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #EC4899;
+}
+.press-illusion-btn-teal {
+  border: none;
+  box-shadow: 0 6px 0 #14B8A6;
+  transition: all 0.1s ease;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.press-illusion-btn-teal:hover {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #14B8A6;
+}
+.press-illusion-btn-sky {
+  border: none;
+  box-shadow: 0 6px 0 #0ea5e9;
+  transition: all 0.1s ease;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.press-illusion-btn-sky:hover {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #0ea5e9;
+}
+.press-illusion-btn-indigo {
+  border: none;
+  box-shadow: 0 6px 0 #6366F1;
+  transition: all 0.1s ease;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.press-illusion-btn-indigo:hover {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #6366F1;
+}
+.press-illusion-btn-cyan {
+  border: none;
+  box-shadow: 0 6px 0 #06B6D4;
+  transition: all 0.1s ease;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.press-illusion-btn-cyan:hover {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #06B6D4;
+}
+.press-illusion-btn-fuchsia {
+  border: none;
+  box-shadow: 0 6px 0 #D946EF;
+  transition: all 0.1s ease;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.press-illusion-btn-fuchsia:hover {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #D946EF;
 }
 
 .press-illusion-btn-yellow {

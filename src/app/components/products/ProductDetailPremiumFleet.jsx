@@ -71,7 +71,7 @@ export default function ProductDetailPremiumFleet({
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="press-illusion-btn bg-cyan-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex cursor-pointer"
+                className="press-illusion-btn-cyan bg-cyan-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex cursor-pointer"
               >
                 <span>DOWNLOAD BROCHURE</span>
                 <svg
