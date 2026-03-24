@@ -596,7 +596,7 @@ function DealerFeatureSection() {
             />
 
             {/* Left column */}
-            <div className="absolute -left-24 top-1/2 -translate-y-1/2 flex flex-col items-end gap-10 z-10 w-[280px]">
+            <div className="absolute -left-44 top-1/2 -translate-y-1/2 flex flex-col items-end gap-10 z-10 w-[280px]">
               {leftFeatures.map((feature) => (
                 <button
                   key={feature.id}
@@ -636,7 +636,7 @@ function DealerFeatureSection() {
             </div>
 
             {/* Right column */}
-            <div className="absolute -right-24 top-1/2 -translate-y-1/2 flex flex-col items-start gap-10 z-10 w-[280px]">
+            <div className="absolute -right-44 top-1/2 -translate-y-1/2 flex flex-col items-start gap-10 z-10 w-[280px]">
               {rightFeatures.map((feature) => (
                 <button
                   key={feature.id}

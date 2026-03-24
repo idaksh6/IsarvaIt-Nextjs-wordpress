@@ -53,11 +53,9 @@ const productsData = [
   { label: "WMS Software", href: "/products/wms-software", icon: "📦" },
   { label: "WooCommerce Development", href: "/products/woocommerce-development", icon: "🛒" },
   { label: "Petro Care", href: "/products/petro-care", icon: "⛽" },
-  { label: "Retail Billing Software", href: "/products/retail-billing-software", icon: "🏪" },
-  { label: "Retail Billing Multi Branch", href: "/products/retail-billing-multi-branch", icon: "🏬" },
   { label: "Document Management System", href: "/products/document-management-system", icon: "📄" },
-  { label: "Time Attendance System", href: "/products/time-attendance-system", icon: "⏰" },
-  { label: "Ticket Management Software", href: "/products/ticket-management-software", icon: "🎫" },
+  { label: "Fleet Management Software", href: "/products/fleet-management-software", icon: "🚚" },
+  { label: "Dealer Management Software", href: "/products/dealer-management-software", icon: "🤝" },
 ];
 
 export default function Header() {
