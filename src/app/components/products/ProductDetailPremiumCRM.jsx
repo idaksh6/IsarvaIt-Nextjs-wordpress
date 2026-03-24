@@ -100,15 +100,25 @@ export default function ProductDetailPremiumCRM({
           className="hero-dashboard-wrapper"
         >
           <div className="dashboard-animation left">
-            <div className="scroll-img"></div>
+            <div 
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/crm/CRM-slide-1.jpg'), url('/products/crm/CRM-slide-2.jpg')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-animation right">
-            <div className="scroll-img"></div>
+            <div 
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/crm/CRM-slide-3.jpg'), url('/products/crm/CRM-slide-4.jpg')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-main-img">
             <div className="relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)] bg-white">
               <img
-                src="/dashboard.webp"
+                src="/products/crm/CRM-dashboard.jpg"
                 alt="CRM Dashboard"
                 className="w-full object-contain lg:h-[668px] h-full shadow-2xl"
               />
@@ -125,7 +135,7 @@ export default function ProductDetailPremiumCRM({
             <div className="relative lg:sticky lg:top-28 lg:self-start">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/dashboard.webp"
+                  src="/products/crm/CRM-dashboard.jpg"
                   alt="CRM Dashboard"
                   className="w-full h-auto object-cover"
                 />
@@ -458,7 +468,7 @@ const crmFeatures = [
     icon: "🎯",
     color: "#0EA5E9",
     desc: "Capture, track, and nurture leads from multiple sources. Score leads based on engagement and readiness, and seamlessly convert qualified leads into opportunities for your sales team.",
-    image: "/dashboard.webp",
+    image: "/products/crm/Leads-management.jpg",
   },
   {
     id: "deals",
@@ -466,7 +476,7 @@ const crmFeatures = [
     icon: "💼",
     color: "#0284C7",
     desc: "Manage the entire sales pipeline from opportunity to closure. Track deal stages, assign values, set probabilities, and forecast revenue with visual pipeline management and customizable deal stages.",
-    image: "/dashboard.webp",
+    image: "/products/crm/Deals-management.jpg",
   },
   {
     id: "companies",
@@ -474,7 +484,7 @@ const crmFeatures = [
     icon: "🏢",
     color: "#3B82F6",
     desc: "Maintain comprehensive company profiles with detailed information, interaction history, and hierarchical relationships. Link companies to contacts, deals, and activities for complete visibility.",
-    image: "/dashboard.webp",
+    image: "/products/crm/Company-management.jpg",
   },
   {
     id: "contacts",
@@ -482,7 +492,7 @@ const crmFeatures = [
     icon: "👥",
     color: "#0EA5E9",
     desc: "Build and maintain a centralized database of contact persons with complete profiles, communication preferences, interaction history, and relationship mapping to companies and deals.",
-    image: "/dashboard.webp",
+    image: "/products/crm/Contact-Person.jpg",
   },
   {
     id: "analytics",
@@ -490,7 +500,7 @@ const crmFeatures = [
     icon: "📊",
     color: "#0284C7",
     desc: "Access powerful dashboards and reports to track sales performance, conversion rates, pipeline health, and revenue forecasts. Generate custom reports and export data for deeper analysis.",
-    image: "/dashboard.webp",
+    image: "/products/crm/Analytics-Reports.jpg",
   },
   {
     id: "user-access",
@@ -498,7 +508,7 @@ const crmFeatures = [
     icon: "🔐",
     color: "#3B82F6",
     desc: "Manage team members with role-based permissions, control data access, and define workflows. Assign territories, set quotas, and monitor individual and team performance metrics.",
-    image: "/dashboard.webp",
+    image: "/products/crm/User-Management.jpg",
   },
 ];
 
@@ -539,7 +549,7 @@ function CRMFeatureSection() {
             />
 
             {/* Left column */}
-            <div className="absolute -left-24 top-1/2 -translate-y-1/2 flex flex-col items-end gap-10 z-10 w-[280px]">
+            <div className="absolute -left-40 top-1/2 -translate-y-1/2 flex flex-col items-end gap-10 z-10 w-[280px]">
               {leftFeatures.map((feature) => (
                 <button
                   key={feature.id}
@@ -579,7 +589,7 @@ function CRMFeatureSection() {
             </div>
 
             {/* Right column */}
-            <div className="absolute -right-24 top-1/2 -translate-y-1/2 flex flex-col items-start gap-10 z-10 w-[280px]">
+            <div className="absolute -right-40 top-1/2 -translate-y-1/2 flex flex-col items-start gap-10 z-10 w-[280px]">
               {rightFeatures.map((feature) => (
                 <button
                   key={feature.id}
