@@ -131,15 +131,25 @@ export default function ProductDetailPremium({
           className="hero-dashboard-wrapper"
         >
           <div className="dashboard-animation left">
-            <div className="scroll-img"></div>
+            <div 
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/hrms/HRMS-slide-1.jpg'), url('/products/hrms/HRMS-slide-2.jpg')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-animation right">
-            <div className="scroll-img"></div>
+            <div 
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/hrms/HRMS-slide-3.jpg'), url('/products/hrms/HRMS-slide-4.jpg')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-main-img">
             <div className="relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)] bg-white">
               <img
-                src="/dashboard.webp"
+                src="/products/hrms/Main-img.jpg"
                 alt="Dashboard Preview"
                 className="w-full object-contain lg:h-[668px]  h-full shadow-2xl"
               />
@@ -155,7 +165,7 @@ export default function ProductDetailPremium({
             <div className="relative lg:sticky lg:top-28 lg:self-start">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/dashboard.webp"
+                  src="/products/hrms/Reporting-&-analytics.jpg"
                   alt="HRMS Dashboard"
                   className="w-full h-auto object-cover"
                 />
@@ -168,7 +178,7 @@ export default function ProductDetailPremium({
             {/* Right Side - Content */}
             <div>
               <h2 className="text-4xl md:text-[50px] font-extrabold text-[#000000] mb-6 leading-tight">
-                Take control of every{" "}
+                Take control of every{" "} 
                 <span className="text-[#22C55E]">employee workflow</span>
               </h2>
 
@@ -686,7 +696,7 @@ const hrmsFeatures = [
     color: "#4F46E5",
     desc: "Centralise every employee record in one place. Manage profiles, org charts, documents, and HR workflows with precision and ease.",
     placeholder: "PM",
-    image: "/products/personal Mangement.png",
+    image: "/products/hrms/Personnel-details.jpg",
   },
   {
     id: "attendance",
@@ -704,7 +714,7 @@ const hrmsFeatures = [
     color: "#10B981",
     desc: "Plan, publish, and manage employee shifts with a drag-and-drop visual scheduler. Eliminate conflicts and last-minute gaps.",
     placeholder: "SS",
-    image: "/products/Shift Management .png",
+    image: "/products/hrms/Shift-scheduling.jpg",
   },
   {
     id: "leave",
@@ -713,7 +723,7 @@ const hrmsFeatures = [
     color: "#F59E0B",
     desc: "Automate leave requests, multi-level approvals, and policy enforcement. Employees get instant visibility into their leave balance.",
     placeholder: "LM",
-    image: "/products/Leave Management.png",
+    image: "/products/hrms/Leave-management.jpg",
   },
   {
     id: "security",
@@ -731,7 +741,7 @@ const hrmsFeatures = [
     color: "#8B5CF6",
     desc: "Unlock data-driven HR insights with pre-built dashboards and custom reports covering headcount, payroll, attrition, and more.",
     placeholder: "RA",
-    image: "/products/Reporting.png",
+    image: "/products/hrms/Reporting-&-analytics.jpg",
   },
   {
     id: "ess",
@@ -749,7 +759,7 @@ const hrmsFeatures = [
     color: "#22C55E",
     desc: "Ensure accurate, compliant, and on-time salary processing. Handle deductions, taxes, and statutory filings with zero manual effort.",
     placeholder: "PY",
-    image: "/products/Payroll Management System.png",
+    image: "/products/hrms/Payroll-management.jpg",
   },
 ];
 
