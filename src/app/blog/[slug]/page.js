@@ -97,7 +97,7 @@ export default async function BlogPostPage({ params }) {
           {/* Sidebar / Related Posts */}
           <aside className="lg:col-span-4 space-y-12">
             <div className="sticky top-32">
-              <h3 className="text-xl font-black lg:text-left text-center text-gray-900 w-fit lg:mx-0 mx-auto uppercase tracking-tight mb-8 pl-4 border-l-4 border-emerald-500">
+              <h3 className="text-xl font-black lg:text-left text-center text-gray-900 w-fit  uppercase tracking-tight mb-8 pl-4 border-l-4 border-emerald-500">
                 Related Articles
               </h3>
               <div className="space-y-16">
