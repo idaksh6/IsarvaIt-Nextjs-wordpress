@@ -21,19 +21,19 @@ export default function FeaturedSection({ posts }) {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              <div className="absolute bottom-8 left-8">
-                <span className="px-4 py-1.5 bg-emerald-500 text-white rounded-full text-xs font-bold uppercase tracking-widest mb-4 inline-block">
+              <div className="absolute bottom-8 left-8 right-8">
+                <span className="px-4 py-1.5 bg-emerald-500 text-white rounded-full text-xs font-bold uppercase tracking-widest mb-4 flex w-fit lg:mx-0 mx-auto lg:justify-start justify-center items-center gap-2">
                   {mainPost.categoryName}
                 </span>
-                <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight max-w-2xl">
+                <h2 className="text-xl md:text-4xl font-bold text-white leading-tight max-w-2xl lg:text-left text-center">
                   {mainPost.title}
                 </h2>
               </div>
             </div>
-            <p className="text-xl text-gray-600 mb-6 line-clamp-3">
+            <p className="text-xl text-gray-600 mb-6 line-clamp-3 lg:text-left text-center">
               {mainPost.excerpt}
             </p>
-            <div className="flex items-center gap-3 text-sm text-gray-500 font-medium">
+            <div className="flex items-center gap-3 text-sm text-gray-500 font-medium lg:justify-start justify-center">
                 <span>{mainPost.date}</span>
                 <span>•</span>
                 <span>{mainPost.readTime}</span>

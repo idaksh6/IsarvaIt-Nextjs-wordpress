@@ -42,8 +42,8 @@ export default function PostGrid({ posts, title = "Latest Articles" }) {
   const visiblePosts = posts.slice(0, visibleCount);
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-20 border-t border-gray-100">
-      <div className="flex items-center justify-between mb-16">
+    <section className="max-w-7xl mx-auto px-6 lg:py-20 py-10 border-t border-gray-100">
+      <div className="flex items-center lg:justify-between justify-center lg:mb-16 mb-10">
         <h2 className="text-3xl font-black text-gray-900 uppercase tracking-tight">
           {title}
         </h2>
@@ -65,7 +65,7 @@ export default function PostGrid({ posts, title = "Latest Articles" }) {
               }}
               className="group"
             >
-              <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
+              <Link href={`/blog/${post.slug}`} className="flex flex-col h-full lg:text-left text-center">
                 <div className="relative aspect-[16/10] rounded-3xl overflow-hidden mb-6 shadow-xl shadow-gray-200/50">
                   <img 
                     src={post.featuredImage} 
@@ -86,7 +86,7 @@ export default function PostGrid({ posts, title = "Latest Articles" }) {
                     {post.excerpt}
                   </p>
                 </div>
-                <div className="flex items-center gap-2 pt-4 border-t border-gray-50">
+                <div className="flex items-center gap-2 pt-4 border-t border-gray-50 lg:justify-start justify-center">
                     <span className="text-[13px] text-gray-400 font-medium">{post.date}</span>
                     <span className="text-gray-200">•</span>
                     <span className="text-[13px] text-gray-400 font-medium">{post.readTime}</span>

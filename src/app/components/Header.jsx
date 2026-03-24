@@ -161,7 +161,7 @@ export default function Header() {
                           <p className="text-gray-500 text-sm">Discover our mission and impact</p>
                         </div>
                         <div className="space-y-2">
-                          {link.children.map((child) => (
+                          {link.children.filter(child => child.label !== "About Isarva").map((child) => (
                             <Link
                               key={child.label}
                               href={child.href}
