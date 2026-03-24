@@ -187,7 +187,7 @@ export default function AboutPage() {
       </section>
 
       {/* 5. IMPACT & CULTURE SECTION */}
-      <section className="py-24 bg-[#FDF8F2] overflow-hidden">
+      <section className="lg:py-24 py-10 bg-[#FDF8F2] overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-20 items-center">
             <div className="w-full lg:w-1/2 section-animate lg:text-left text-center">
