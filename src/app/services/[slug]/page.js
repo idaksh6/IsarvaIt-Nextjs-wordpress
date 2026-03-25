@@ -4,6 +4,7 @@ import { getServiceBySlug, getAllServiceSlugs, servicesData } from "../../lib/da
 import ServiceDetailClient from "./ServiceDetailClient";
 import FeatureItem from "./FeatureItem";
 import BenefitItem from "./BenefitItem";
+import WebsiteServicesPremium from "./WebsiteServicesPremium";
 
 export async function generateStaticParams() {
   return getAllServiceSlugs().map((slug) => ({
@@ -36,6 +37,11 @@ export default async function ServiceDetailPage({ params }) {
 
   if (!service) {
     notFound();
+  }
+
+  // ── Premium page for Website Services ──────────────────────
+  if (slug === "website-services") {
+    return <WebsiteServicesPremium service={service} servicesData={servicesData} />;
   }
 
   // Get related services (3 random services excluding current)
