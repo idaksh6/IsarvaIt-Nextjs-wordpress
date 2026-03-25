@@ -140,7 +140,6 @@ export default function Footer() {
             <ul className="space-y-4">
               {[
                 { label: "ABOUT US", href: "/about" },
-                { label: "TECHNOLOGY STACK", href: "/#clients" },
                 { label: "SERVICES", href: "/services" },
                 { label: "PRODUCTS", href: "/products" },
                 { label: "INDUSTRIES", href: "/industries" },

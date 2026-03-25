@@ -27,6 +27,24 @@ export default function ContactFormModal({
   const [submitStatus, setSubmitStatus] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
 
+  // Reset form when modal opens/closes
+  useEffect(() => {
+    if (!isOpen) {
+      // Reset form data when modal closes
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        selectedItem: "",
+        selectedCategoryId: "",
+        message: ""
+      });
+      setSubmitStatus(null);
+      setErrorMessage("");
+    }
+  }, [isOpen]);
+
   // Fetch categories from API based on page type
   useEffect(() => {
     const fetchCategories = async () => {
@@ -52,12 +70,78 @@ export default function ContactFormModal({
         if (data.categories) {
           setCategories(data.categories);
           
+          // Log for debugging
+          console.log('Fetched categories:', data.categories);
+          console.log('PreSelectedItem:', preSelectedItem);
+          console.log('PreSelectedType:', preSelectedType);
+          console.log('Category names from API:', data.categories.map(c => c.category_name));
+          
           // Pre-select item if it matches
           if (preSelectedItem) {
-            const matchedCategory = data.categories.find(
-              cat => cat.category_name.toLowerCase() === preSelectedItem.toLowerCase() ||
-                     cat.category_name.toLowerCase().includes(preSelectedItem.toLowerCase())
-            );
+            // Normalize strings for better matching
+            const normalizeStr = (str) => {
+              return str
+                .toLowerCase()
+                .trim()
+                .replace(/–/g, ' ')    // EN DASH to space
+                .replace(/—/g, ' ')    // EM DASH to space
+                .replace(/-/g, ' ')    // Regular hyphen to space
+                .replace(/\s+/g, ' ')  // Multiple spaces to single space
+                .replace(/&/g, 'and')  // & to "and"
+                .replace(/\band\b/g, '&');  // "and" back to &, then both become same
+            };
+            
+            // Extract key words (remove common filler words)
+            const extractKeyWords = (str) => {
+              const commonWords = ['and', '&', 'the', 'a', 'an', 'software', 'application', 'system', 'service', 'solution', 'services'];
+              return normalizeStr(str)
+                .split(' ')
+                .filter(word => !commonWords.includes(word) && word.length > 0)
+                .join(' ');
+            };
+            
+            const normalizedPreSelected = normalizeStr(preSelectedItem);
+            const keyWordsPreSelected = extractKeyWords(preSelectedItem);
+            
+            console.log('Normalized preSelected:', normalizedPreSelected);
+            console.log('Key words preSelected:', keyWordsPreSelected);
+            
+            const matchedCategory = data.categories.find(cat => {
+              const normalizedCatName = normalizeStr(cat.category_name);
+              const keyWordsCatName = extractKeyWords(cat.category_name);
+              
+              console.log(`Testing "${cat.category_name}": normalized="${normalizedCatName}", keywords="${keyWordsCatName}"`);
+              
+              // Check multiple matching strategies
+              const isMatch = (
+                // 1. Exact match (normalized)
+                normalizedCatName === normalizedPreSelected ||
+                
+                // 2. Category contains preselected
+                normalizedCatName.includes(normalizedPreSelected) ||
+                
+                // 3. Preselected contains category
+                normalizedPreSelected.includes(normalizedCatName) ||
+                
+                // 4. Key words match (ignoring filler words)
+                keyWordsCatName === keyWordsPreSelected ||
+                keyWordsCatName.includes(keyWordsPreSelected) ||
+                keyWordsPreSelected.includes(keyWordsCatName) ||
+                
+                // 5. First 2-3 significant words match
+                (keyWordsCatName.split(' ').slice(0, 2).join(' ') === 
+                 keyWordsPreSelected.split(' ').slice(0, 2).join(' ') &&
+                 keyWordsCatName.split(' ').length >= 2)
+              );
+              
+              if (isMatch) {
+                console.log(`✓ MATCHED: "${cat.category_name}"`);
+              }
+              
+              return isMatch;
+            });
+            
+            console.log('Matched category:', matchedCategory);
             
             if (matchedCategory) {
               setFormData(prev => ({
@@ -65,6 +149,10 @@ export default function ContactFormModal({
                 selectedItem: matchedCategory.category_name,
                 selectedCategoryId: matchedCategory.id
               }));
+              console.log('Auto-selected:', matchedCategory.category_name);
+            } else {
+              console.warn(`No matching category found for "${preSelectedItem}"`);
+              console.log('Available categories:', data.categories.map(c => c.category_name));
             }
           }
         }
