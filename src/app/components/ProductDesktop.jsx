@@ -83,7 +83,7 @@ const products = [
   },
   {
     id: 5,
-    name: "eCommerce Software",
+    name: "WooCommerce Development",
     slug: "woocommerce-development",
     category: "E-Commerce & Retail",
     short:
@@ -171,17 +171,6 @@ const products = [
       "https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=800&auto=format&fit=crop",
   },
   {
-    id: 18,
-    name: "CRM Application",
-    slug: "crm-application",
-    category: "Operations",
-    short:
-      "Manages clients efficiently — boosting profits and revenue through robust architecture and smart business operations.",
-    gradient: "#a044ff",
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop",
-  },
-  {
     id: 19,
     name: "Dealer Management",
     slug: "dealer-management-software",
@@ -219,7 +208,6 @@ function ProductDesktop() {
   const sectionRef = useRef(null);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedProduct, setSelectedProduct] = useState(null);
   const mobileTabsRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
@@ -707,7 +695,6 @@ function ProductDesktop() {
                               <ProductDesktopCard
                                 key={product.id}
                                 product={product}
-                                onClick={() => setSelectedProduct(product)}
                               />
                             ))}
                           </div>
@@ -738,14 +725,6 @@ function ProductDesktop() {
                           )}
                         </div>
                       </div>
-
-                      {/* Product Detail Modal */}
-                      {selectedProduct && (
-                        <ProductDetailModal
-                          product={selectedProduct}
-                          onClose={() => setSelectedProduct(null)}
-                        />
-                      )}
                     </div>
                   </div>
 
@@ -929,7 +908,6 @@ function ProductDesktop() {
                       <MobileProductCard
                         key={product.id}
                         product={product}
-                        onClick={() => setSelectedProduct(product)}
                         isLast={
                           index === visibleProducts.length - 1 && !hasMoreItems
                         }
@@ -998,14 +976,6 @@ function ProductDesktop() {
                 </>
               )}
             </div>
-
-            {/* Mobile Product Detail Modal */}
-            {selectedProduct && (
-              <MobileProductModal
-                product={selectedProduct}
-                onClose={() => setSelectedProduct(null)}
-              />
-            )}
           </div>
         </div>
       </div>
@@ -1014,13 +984,13 @@ function ProductDesktop() {
 }
 
 // Product Card for Desktop View
-const ProductDesktopCard = ({ product, onClick }) => {
+const ProductDesktopCard = ({ product }) => {
   const isHighlighted = !!product.badge;
 
   return (
-    <div
-      className="group relative bg-white hover:bg-gray-50 border border-gray-200 hover:border-blue-400 rounded-lg p-4 cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
-      onClick={onClick}
+    <Link
+      href={`/products/${product.slug}`}
+      className="group relative bg-white hover:bg-gray-50 border border-gray-200 hover:border-blue-400 rounded-lg p-4 cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-[1.02] block"
     >
       {/* Product Image */}
       <div className="relative h-32 mb-3 rounded-lg overflow-hidden bg-gray-100">
@@ -1055,7 +1025,7 @@ const ProductDesktopCard = ({ product, onClick }) => {
 
       {/* Hover Overlay */}
       <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg pointer-events-none"></div>
-    </div>
+    </Link>
   );
 };
 
@@ -1129,15 +1099,15 @@ const ProductDetailModal = ({ product, onClose }) => {
 };
 
 // Mobile Product Card Component
-const MobileProductCard = ({ product, onClick, isLast }) => {
+const MobileProductCard = ({ product, isLast }) => {
   const isHighlighted = !!product.badge;
 
   return (
-    <div
-      className={`p-4 active:bg-gray-50 transition-colors ${
+    <Link
+      href={`/products/${product.slug}`}
+      className={`p-4 active:bg-gray-50 transition-colors block ${
         !isLast ? "border-b border-gray-100" : ""
       }`}
-      onClick={onClick}
     >
       <div className="flex gap-4">
         {/* Product Image */}
@@ -1190,7 +1160,7 @@ const MobileProductCard = ({ product, onClick, isLast }) => {
           </p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
