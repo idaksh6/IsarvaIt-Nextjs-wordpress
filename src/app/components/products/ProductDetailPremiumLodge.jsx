@@ -73,7 +73,7 @@ export default function ProductDetailPremiumLodge({
                 onClick={() => setIsModalOpen(true)}
                 className="press-illusion-btn-pink bg-pink-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex cursor-pointer"
               >
-                <span>DOWNLOAD BROCHURE</span>
+                <span>REQUEST DEMO</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -163,26 +163,6 @@ export default function ProductDetailPremiumLodge({
               <p className="text-lg text-[#444444] mb-8 leading-relaxed">
                 Our fully interactive system allows you to effectively manage your rooms, organize them into groups, apply multiple rate types for a single stay and special pricing for different age ranges. Have a unique and complete calendar of travelers' check-ins/check-outs to find all your bookings in a single platform. Optimize your time and manage more efficiently with our top-level security user management system.
               </p>
-
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="press-illusion-btn-pink bg-pink-400 text-white font-bold px-6 py-2 text-base items-center space-x-2 inline-flex cursor-pointer"
-              >
-                <span>Download Brochure</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 17 9"
-                  className="h-2 w-4"
-                >
-                  <path
-                    fill="currentColor"
-                    fillRule="evenodd"
-                    d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-              </button>
             </div>
           </div>
         </div>
