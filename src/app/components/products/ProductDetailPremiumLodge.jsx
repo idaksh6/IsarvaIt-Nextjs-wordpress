@@ -100,15 +100,25 @@ export default function ProductDetailPremiumLodge({
           className="hero-dashboard-wrapper"
         >
           <div className="dashboard-animation left">
-            <div className="scroll-img"></div>
+            <div 
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/loadge Booking/Lodge-Slide-1.jpg'), url('/products/loadge Booking/Lodge-Slide-2.jpg')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-animation right">
-            <div className="scroll-img"></div>
+            <div 
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/loadge Booking/Lodge-Slide-3.jpg'), url('/products/loadge Booking/Lodge-Slide-4.jpg')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-main-img">
             <div className="relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)] bg-white">
               <img
-                src="/dashboard.webp"
+                src="/products/loadge Booking/Lodge-Dashboard.jpg"
                 alt="Lodge Booking Software Dashboard"
                 className="w-full object-contain lg:h-[668px] h-full shadow-2xl"
               />
@@ -125,7 +135,7 @@ export default function ProductDetailPremiumLodge({
             <div className="relative lg:sticky lg:top-28 lg:self-start">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/dashboard.webp"
+                  src="/products/loadge Booking/Reservations.jpg"
                   alt="Lodge Booking Dashboard"
                   className="w-full h-auto object-cover"
                 />
@@ -378,7 +388,7 @@ const lodgeFeatures = [
     color: "#EC4899",
     desc: "The best interactive occupancy presentation available on the market. Variety of options and highly user friendly layout provides you with an instant access to all necessary reservation details.",
     placeholder: "CH",
-    image: "/dashboard.webp",
+    image: "/products/loadge Booking/Chart.jpg",
   },
   {
     id: "frontdesk",
@@ -387,7 +397,7 @@ const lodgeFeatures = [
     color: "#DB2777",
     desc: "Lets you multitask regular activities such as check-ins and check-outs of individuals, corporates, and other group bookings.",
     placeholder: "FD",
-    image: "/dashboard.webp",
+    image: "/products/loadge Booking/Frontdesk-operations.jpg",
   },
   {
     id: "reservations",
@@ -396,7 +406,7 @@ const lodgeFeatures = [
     color: "#F43F5E",
     desc: "Featuring a highly intuitive interface and integrated bills, this swift guest check-in is a superior choice for your company.",
     placeholder: "RES",
-    image: "/dashboard.webp",
+    image: "/products/loadge Booking/Reservations.jpg",
   },
   {
     id: "rooms",
@@ -405,16 +415,7 @@ const lodgeFeatures = [
     color: "#FB7185",
     desc: "Fully interactive system allowing you to effectively manage your rooms, organise them into groups, apply multiple rate types for a single stay and special pricing for different age ranges.",
     placeholder: "RM",
-    image: "/dashboard.webp",
-  },
-  {
-    id: "backoffice",
-    label: "Back Office Operations",
-    icon: "💼",
-    color: "#EC4899",
-    desc: "Back office operations contain- Night Audit summarizes your daily activity covering every aspect of your hotel's operation.",
-    placeholder: "BO",
-    image: "/dashboard.webp",
+    image: "/products/loadge Booking/Rooms.jpg",
   },
   {
     id: "reports",
@@ -423,25 +424,7 @@ const lodgeFeatures = [
     color: "#DB2777",
     desc: "Have a unique and complete calendar of travelers check-ins / check-outs in order to find all your bookings in a single platform. Optimize your time and manage more efficiently!",
     placeholder: "DR",
-    image: "/dashboard.webp",
-  },
-  {
-    id: "reminders",
-    label: "Reminders",
-    icon: "🔔",
-    color: "#F43F5E",
-    desc: "This easy to set up reminders system will never let you forget when important guests arrive or payment is due.",
-    placeholder: "REM",
-    image: "/dashboard.webp",
-  },
-  {
-    id: "customers",
-    label: "Customers",
-    icon: "👥",
-    color: "#FB7185",
-    desc: "Easy to use and comfortable guest management area. Store all contact information and guest reservation history in one place.",
-    placeholder: "CUS",
-    image: "/dashboard.webp",
+    image: "/products/loadge Booking/Detailed-reports.jpg",
   },
   {
     id: "users",
@@ -450,7 +433,7 @@ const lodgeFeatures = [
     color: "#EC4899",
     desc: "Top level security user management system with four access levels. Assign various roles and permissions to different users to maximize your security.",
     placeholder: "USR",
-    image: "/dashboard.webp",
+    image: "/products/loadge Booking/Users.jpg",
   },
 ];
 
@@ -515,7 +498,7 @@ function LodgeFeatureSection() {
             />
 
             {/* Left column */}
-            <div className="absolute -left-24 top-1/2 -translate-y-1/2 flex flex-col items-end gap-10 z-10 w-[220px]">
+            <div className="absolute -left-44 top-1/2 -translate-y-1/2 flex flex-col items-end gap-10 z-10 w-[220px]">
               {leftFeatures.map((feature) => (
                 <button
                   key={feature.id}
@@ -555,7 +538,7 @@ function LodgeFeatureSection() {
             </div>
 
             {/* Right column */}
-            <div className="absolute -right-24 top-1/2 -translate-y-1/2 flex flex-col items-start gap-10 z-10 w-[220px]">
+            <div className="absolute -right-44 top-1/2 -translate-y-1/2 flex flex-col items-start gap-10 z-10 w-[220px]">
               {rightFeatures.map((feature) => (
                 <button
                   key={feature.id}
