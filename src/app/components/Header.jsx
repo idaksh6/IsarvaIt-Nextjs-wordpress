@@ -50,7 +50,7 @@ const productsData = [
   { label: "HRMS Software", href: "/products/hrms-software", icon: "👥" },
   { label: "Support Application", href: "/products/support-application", icon: "🎧" },
   { label: "CRM Application", href: "/products/crm-application", icon: "👔" },
-  { label: "WMS Software", href: "/products/wms-software", icon: "📦" },
+  { label: "Retail Billing Multi Branch", href: "/products/retail-billing-multi-branch", icon: "🏬" },
   { label: "WooCommerce Development", href: "/products/woocommerce-development", icon: "🛒" },
   { label: "Petro Care", href: "/products/petro-care", icon: "⛽" },
   { label: "Document Management System", href: "/products/document-management-system", icon: "📄" },

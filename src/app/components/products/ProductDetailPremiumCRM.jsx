@@ -7,6 +7,7 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import ContactFormModal from "../../components/ContactFormModal";
+import CRMBrochureModal from "../../components/CRMBrochureModal";
 
 const SKY = "#0EA5E9";
 const SKY_DARK = "#0284C7";
@@ -18,6 +19,7 @@ export default function ProductDetailPremiumCRM({
   allProducts,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -230,7 +232,7 @@ export default function ProductDetailPremiumCRM({
 
               <div className="mt-8">
                 <button
-                  onClick={() => setIsModalOpen(true)}
+                  onClick={() => setIsBrochureModalOpen(true)}
                   className="press-illusion-btn-sky bg-sky-400 text-white font-bold px-6 py-2 text-base items-center space-x-2 inline-flex cursor-pointer"
                 >
                   <span>Download Brochure</span>
@@ -438,6 +440,11 @@ export default function ProductDetailPremiumCRM({
         preSelectedItem={product.title}
         allItems={allProducts}
       />
+
+      <CRMBrochureModal
+        isOpen={isBrochureModalOpen}
+        onClose={() => setIsBrochureModalOpen(false)}
+      />
     </div>
   );
 }
@@ -493,6 +500,14 @@ const crmFeatures = [
     color: "#3B82F6",
     desc: "Manage team members with role-based permissions, control data access, and define workflows. Assign territories, set quotas, and monitor individual and team performance metrics.",
     image: "/products/crm/User-Management.jpg",
+  },
+  {
+    id: "meeting-calendar",
+    label: "Meeting Calendar",
+    icon: "📅",
+    color: "#0EA5E9",
+    desc: "Schedule and manage meetings with clients and team members. Sync with your calendar, set reminders, track meeting outcomes, and maintain a complete history of all customer interactions and appointments.",
+    image: "/products/crm/Calender.jpg",
   },
 ];
 

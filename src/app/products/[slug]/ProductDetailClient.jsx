@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import ContactFormModal from "../../components/ContactFormModal";
 import ProductDetailPremium from "../../components/products/ProductDetailPremium";
-import ProductDetailPremiumWMS from "../../components/products/ProductDetailPremiumWMS";
 import ProductDetailPremiumWooCommerce from "../../components/products/ProductDetailPremiumWooCommerce";
 import ProductDetailPremiumPetroCare from "../../components/products/ProductDetailPremiumPetroCare";
 import ProductDetailPremiumRetailBilling from "../../components/products/ProductDetailPremiumRetailBilling";
@@ -31,17 +30,6 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   if (product.slug === 'hrms-software') {
     return (
       <ProductDetailPremium 
-        product={product} 
-        relatedProducts={relatedProducts} 
-        allProducts={allProducts}
-      />
-    );
-  }
-
-  // Use Premium View for WMS Software
-  if (product.slug === 'wms-software') {
-    return (
-      <ProductDetailPremiumWMS 
         product={product} 
         relatedProducts={relatedProducts} 
         allProducts={allProducts}

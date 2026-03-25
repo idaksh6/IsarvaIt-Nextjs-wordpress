@@ -116,43 +116,6 @@ export const productsData = [
     bgGradient: "from-sky-50 via-blue-50 to-white",
   },
   {
-    slug: "wms-software",
-    title: "WMS Software",
-    category: "Warehouse Management",
-    icon: "📦",
-    tagline: "Smart Warehouse Management System",
-    shortDescription:
-      "Advanced warehouse management system for inventory control, order fulfillment, and logistics optimization.",
-    description:
-      "Optimize your warehouse operations with our intelligent WMS. Track inventory in real-time, manage multi-location warehouses, automate picking and packing, and integrate seamlessly with your ERP.",
-    features: [
-      "Real-time Inventory Tracking",
-      "Multi-Warehouse Management",
-      "Barcode & RFID Integration",
-      "Automated Picking & Packing",
-      "Order Management System",
-      "Stock Level Optimization",
-      "Integration with ERP & E-commerce",
-      "Mobile Warehouse Operations",
-    ],
-    technologies: [
-      "Python",
-      "React",
-      "MongoDB",
-      "IoT Integration",
-      "Cloud Services",
-    ],
-    benefits: [
-      "Reduced Inventory Costs",
-      "Improved Order Accuracy",
-      "Faster Order Fulfillment",
-      "Real-time Visibility",
-      "Scalable Operations",
-    ],
-    color: "from-orange-500 to-amber-600",
-    bgGradient: "from-orange-50 via-amber-50 to-white",
-  },
-  {
     slug: "woocommerce-development",
     title: "WooCommerce Development",
     category: "E-Commerce",
