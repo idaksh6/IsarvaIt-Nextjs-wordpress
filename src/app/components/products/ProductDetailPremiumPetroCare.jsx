@@ -100,15 +100,25 @@ export default function ProductDetailPremiumPetroCare({
           className="hero-dashboard-wrapper"
         >
           <div className="dashboard-animation left">
-            <div className="scroll-img"></div>
+            <div 
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/petro care/Slide-1.jpg'), url('/products/petro care/Slide-2.jpg')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-animation right">
-            <div className="scroll-img"></div>
+            <div 
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/petro care/Slide-3.jpg'), url('/products/petro care/Slide-4.jpg')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-main-img">
             <div className="relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)] bg-white">
               <img
-                src="/dashboard.webp"
+                src="/products/petro care/Petro-Dashboard.jpg"
                 alt="Petro Care Dashboard Preview"
                 className="w-full object-contain lg:h-[668px] h-full shadow-2xl"
               />
@@ -125,7 +135,7 @@ export default function ProductDetailPremiumPetroCare({
             <div className="relative lg:sticky lg:top-28 lg:self-start">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/dashboard.webp"
+                  src="/products/petro care/Sales-Analytics.jpg"
                   alt="Petro Care Dashboard"
                   className="w-full h-auto object-cover"
                 />
@@ -377,7 +387,7 @@ const petroCareFeatures = [
     color: "#F59E0B",
     desc: "Track everything with cash billing, credit billing, credit memo reports, and payment pending details for complete financial visibility.",
     placeholder: "MM",
-    image: "/dashboard.webp",
+    image: "/products/petro care/Manage-memo_s.jpg",
   },
   {
     id: "purchase",
@@ -386,7 +396,7 @@ const petroCareFeatures = [
     color: "#d97706",
     desc: "Create invoices, manage purchase information, track lubricant stock, and view comprehensive purchase reports all in one place.",
     placeholder: "PM",
-    image: "/dashboard.webp",
+    image: "/products/petro care/Purchase--Management.jpg",
   },
   {
     id: "account-book",
@@ -395,7 +405,7 @@ const petroCareFeatures = [
     color: "#b45309",
     desc: "Meter reading entry for petrol and diesel, manage lubricant sales, and maintain complete financial records with ease.",
     placeholder: "AB",
-    image: "/dashboard.webp",
+    image: "/products/petro care/Account-book.jpg",
   },
   {
     id: "lubricant",
@@ -404,7 +414,7 @@ const petroCareFeatures = [
     color: "#92400e",
     desc: "Stock entry, lubricant list configuration, and stock left reports to ensure you never run out of essential products.",
     placeholder: "LM",
-    image: "/dashboard.webp",
+    image: "/products/petro care/Lubricant-Management.jpg",
   },
   {
     id: "tyre",
@@ -413,7 +423,7 @@ const petroCareFeatures = [
     color: "#78350f",
     desc: "Comprehensive tyre inventory management with detailed reports to track tyre-related stock and sales efficiently.",
     placeholder: "TM",
-    image: "/dashboard.webp",
+    image: "/products/petro care/Tyre-Management.jpg",
   },
   {
     id: "attendance",
@@ -422,7 +432,7 @@ const petroCareFeatures = [
     color: "#F59E0B",
     desc: "Keep track of employee attendance with automated reports, ensuring accurate payroll and workforce management.",
     placeholder: "AM",
-    image: "/dashboard.webp",
+    image: "/products/petro care/Attendance-Management.jpg",
   },
   {
     id: "calibration",
@@ -431,7 +441,7 @@ const petroCareFeatures = [
     color: "#fbbf24",
     desc: "Monitor expiry time of individual items in the fuel station to maintain quality standards and regulatory compliance.",
     placeholder: "CM",
-    image: "/dashboard.webp",
+    image: "/products/petro care/Calibration-module.jpg",
   },
   {
     id: "fuel-sample",
@@ -440,7 +450,7 @@ const petroCareFeatures = [
     color: "#fcd34d",
     desc: "Record fuel samples collected from oil tankers to ensure quality control and maintain safety standards.",
     placeholder: "FS",
-    image: "/dashboard.webp",
+    image: "/products/petro care/Fuel-sample-entry.jpg",
   },
   {
     id: "sales-analytics",
@@ -449,7 +459,7 @@ const petroCareFeatures = [
     color: "#fde68a",
     desc: "Comprehensive meter reading reports and purchase reports providing insights into sales performance and trends.",
     placeholder: "SA",
-    image: "/dashboard.webp",
+    image: "/products/petro care/Sales-Analytics.jpg",
   },
   {
     id: "dip-reader",
@@ -458,7 +468,7 @@ const petroCareFeatures = [
     color: "#fef3c7",
     desc: "Track fuel difference when unloading from tankers, preventing losses and ensuring accurate inventory management.",
     placeholder: "DR",
-    image: "/dashboard.webp",
+    image: "/products/petro care/Slide-1.jpg",
   },
   {
     id: "cheque-pass",
@@ -467,7 +477,7 @@ const petroCareFeatures = [
     color: "#fffbeb",
     desc: "Monitor client-issued cheque status, track cleared and pending cheques for better cash flow management.",
     placeholder: "CP",
-    image: "/dashboard.webp",
+    image: "/products/petro care/Cheque-pass-entry.jpg",
   },
   {
     id: "user-mgmt",
@@ -476,7 +486,7 @@ const petroCareFeatures = [
     color: "#F59E0B",
     desc: "Manage staff members assigned to Petro Care with role-based access control and activity tracking.",
     placeholder: "UM",
-    image: "/dashboard.webp",
+    image: "/products/petro care/User-Management.jpg",
   },
 ];
 

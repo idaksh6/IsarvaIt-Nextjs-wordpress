@@ -100,15 +100,25 @@ export default function ProductDetailPremiumDMS({
           className="hero-dashboard-wrapper"
         >
           <div className="dashboard-animation left">
-            <div className="scroll-img"></div>
+            <div
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/document Management System/Document-slide1.jpg'), url('/products/document Management System/Document-slide2.jpg')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-animation right">
-            <div className="scroll-img"></div>
+            <div
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/document Management System/Document-slide3.jpg'), url('/products/document Management System/Document-slide4.jpg')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-main-img">
             <div className="relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)] bg-white">
               <img
-                src="/dashboard.webp"
+                src="/products/document Management System/Document-Dashboard.jpg"
                 alt="Document Management System Dashboard"
                 className="w-full object-contain lg:h-[668px] h-full shadow-2xl"
               />
@@ -125,7 +135,7 @@ export default function ProductDetailPremiumDMS({
             <div className="relative lg:sticky lg:top-28 lg:self-start">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/dashboard.webp"
+                  src="/products/document Management System/File-management.jpg"
                   alt="Document Management Dashboard"
                   className="w-full h-auto object-cover"
                 />
@@ -254,7 +264,7 @@ export default function ProductDetailPremiumDMS({
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%236366F1' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
-        
+
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-14">
             <motion.div
@@ -377,7 +387,7 @@ const dmsFeatures = [
     color: "#6366F1",
     desc: "The File Upload feature allows the user to upload the file directly to the server. In the Server Document maintained and managed in the secure manner.",
     placeholder: "FU",
-    image: "/dashboard.webp",
+    image: "/products/document Management System/Upload-files.jpg",
   },
   {
     id: "file-management",
@@ -386,7 +396,7 @@ const dmsFeatures = [
     color: "#4F46E5",
     desc: "The File management feature allows the Users and Managers to effectively manage the files. It allows the user or administrator to Add, delete and manipulate the files.",
     placeholder: "FM",
-    image: "/dashboard.webp",
+    image: "/products/document Management System/File-management.jpg",
   },
   {
     id: "bulk-upload",
@@ -395,7 +405,7 @@ const dmsFeatures = [
     color: "#818CF8",
     desc: "Document uploading is the time-consuming process in a serial manner, so Bulk upload facility facilities multiple uploads of the documents.",
     placeholder: "BU",
-    image: "/dashboard.webp",
+    image: "/products/document Management System/Bulk-upload.jpg",
   },
   {
     id: "folder-management",
@@ -404,7 +414,7 @@ const dmsFeatures = [
     color: "#A5B4FC",
     desc: "Folder Management allows the user or administrator to manage the files effectively. The folder management used to structuring the documents in a sensible manner.",
     placeholder: "FOM",
-    image: "/dashboard.webp",
+    image: "/products/document Management System/Document-slide1.jpg",
   },
   {
     id: "file-security",
@@ -413,7 +423,7 @@ const dmsFeatures = [
     color: "#6366F1",
     desc: "File security is allows to store the document in server in stored in a secure manner. User's needs authentication for manipulating and doing other file operation.",
     placeholder: "FS",
-    image: "/dashboard.webp",
+    image: "/products/document Management System/Document-slide3.jpg",
   },
   {
     id: "user-management",
@@ -422,7 +432,8 @@ const dmsFeatures = [
     color: "#4F46E5",
     desc: "The User management allows the Administrator to manage the users in effective way. He can give the role to the Users as Administrator or Staff. He can Grant and Revoke the permissions of users.",
     placeholder: "UM",
-    image: "/dashboard.webp",
+    image: "/products/document Management System/Document-slide2.jpg",
+
   },
   {
     id: "search-engine",
@@ -431,7 +442,7 @@ const dmsFeatures = [
     color: "#818CF8",
     desc: "The Document Search Engine allows the User or Administrator to search the files recursively. This feature allows searching of the particular document made simple and easy manner.",
     placeholder: "SE",
-    image: "/dashboard.webp",
+    image: "/products/document Management System/File-management.jpg",
   },
   {
     id: "document-classes",
@@ -440,7 +451,7 @@ const dmsFeatures = [
     color: "#A5B4FC",
     desc: "The Document can be stored and tagged in with different Document classes include for example: Invoice, PO and Shipment. It's helpful for a company to store it's document in different category.",
     placeholder: "DC",
-    image: "/dashboard.webp",
+    image: "/products/document Management System/Document-classes.jpg",
   },
   {
     id: "role-management",
@@ -449,7 +460,8 @@ const dmsFeatures = [
     color: "#6366F1",
     desc: "Role management allows efficiently and effectively manage the users. This feature allows set the custom-tailored abilities for each and every user to give them permission to access document resource based on their role.",
     placeholder: "RM",
-    image: "/dashboard.webp",
+    image: "/products/document Management System/Document-slide4.jpg",
+
   },
 ];
 
@@ -600,11 +612,10 @@ function DMSFeatureSection() {
                 <button
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
-                  className={`flex items-center gap-2 py-2.5 px-5 rounded-lg font-semibold text-sm transition-all duration-200 ${
-                    activeId === feature.id
+                  className={`flex items-center gap-2 py-2.5 px-5 rounded-lg font-semibold text-sm transition-all duration-200 ${activeId === feature.id
                       ? "bg-[#0EA5E9] text-white shadow-lg scale-105"
                       : "bg-white border border-gray-200 text-gray-700 hover:border-[#0EA5E9] hover:shadow-md"
-                  }`}
+                    }`}
                 >
                   <span className="text-base">{feature.icon}</span>
                   <span>{feature.label}</span>

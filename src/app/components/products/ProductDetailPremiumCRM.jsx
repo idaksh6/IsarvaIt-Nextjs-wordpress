@@ -137,7 +137,7 @@ export default function ProductDetailPremiumCRM({
             <div className="relative lg:sticky lg:top-28 lg:self-start">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/products/crm/CRM-dashboard.jpg"
+                  src="/products/crm/Leads-management.jpg"
                   alt="CRM Dashboard"
                   className="w-full h-auto object-cover"
                 />

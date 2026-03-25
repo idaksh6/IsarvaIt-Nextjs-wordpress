@@ -135,7 +135,7 @@ export default function ProductDetailPremiumMultiBranch({
             <div className="relative lg:sticky lg:top-28 lg:self-start">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/products/retail billing multi branch/Multibranch-dashboard.jpg"
+                  src="/products/retail billing multi branch/Unlimited-Wraehouse-Management.jpg"
                   alt="Multi-Branch Management Dashboard"
                   className="w-full h-auto object-cover"
                 />
