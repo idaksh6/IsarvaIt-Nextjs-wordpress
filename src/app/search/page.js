@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import Header from "../components/Header";
@@ -63,7 +63,22 @@ const staticPages = [
   }
 ];
 
-export default function SearchPage() {
+// Loading fallback component
+function SearchLoadingFallback() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-green-50 to-white">
+      <Header />
+      <div className="max-w-7xl mx-auto px-6 py-44">
+        <div className="flex items-center justify-center py-20">
+          <div className="animate-spin rounded-full h-12 w-12 border-4 border-emerald-600 border-t-transparent"></div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Main search component that uses useSearchParams
+function SearchResults() {
   const searchParams = useSearchParams();
   const query = searchParams.get("q") || "";
   const [searchQuery, setSearchQuery] = useState(query);
@@ -549,5 +564,14 @@ export default function SearchPage() {
         )}
       </div>
     </div>
+  );
+}
+
+// Main page component with Suspense boundary
+export default function SearchPage() {
+  return (
+    <Suspense fallback={<SearchLoadingFallback />}>
+      <SearchResults />
+    </Suspense>
   );
 }
