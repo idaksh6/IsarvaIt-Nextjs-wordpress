@@ -538,8 +538,8 @@ function DispatcherFeatureSection() {
           </div>
         </div>
 
-        {/* ── DESKTOP ORBIT ── */}
-        <div className="hidden lg:block">
+        {/* ── DESKTOP ORBIT (xl and above) ── */}
+        <div className="hidden xl:block">
           <div className="relative h-[605px] mx-auto xl:w-[80%] lg:w-full">
             {/* Red arc ellipse */}
             <div
@@ -613,6 +613,65 @@ function DispatcherFeatureSection() {
             <AnimatePresence mode="wait">
               <motion.p
                 key={activeTab + "-" + activeId + "-d"}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.22 }}
+                className="text-center text-[#6b7280] max-w-[600px] mx-auto text-sm leading-relaxed"
+              >
+                {activeFeature.desc}
+              </motion.p>
+            </AnimatePresence>
+          </div>
+        </div>
+
+        {/* ── TABLET LAYOUT (lg to xl) ── */}
+        <div className="hidden lg:block xl:hidden">
+          {/* Navigation buttons on top */}
+          <div className="mb-8">
+            <div className="flex flex-wrap gap-3 justify-center">
+              {currentFeatures.map((feature) => (
+                <button
+                  key={feature.id}
+                  onClick={() => setActiveId(feature.id)}
+                  className={`flex items-center gap-2 py-2.5 px-5 rounded-lg font-semibold text-sm transition-all duration-200 ${
+                    activeId === feature.id
+                      ? "bg-[#0EA5E9] text-white shadow-lg scale-105"
+                      : "bg-white border border-gray-200 text-gray-700 hover:border-[#0EA5E9] hover:shadow-md"
+                  }`}
+                >
+                  <span className="text-base">{feature.icon}</span>
+                  <span>{feature.label}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Center image display */}
+          <div className="max-w-4xl mx-auto">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab + "-" + activeId}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                className="rounded-xl overflow-hidden shadow-2xl bg-white"
+              >
+                <img
+                  src={activeFeature.image}
+                  alt={activeFeature.label}
+                  className="w-full h-auto object-contain"
+                />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Description */}
+          <div className="mt-6">
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={activeTab + "-" + activeId + "-desc"}
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
