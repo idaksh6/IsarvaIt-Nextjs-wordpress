@@ -73,7 +73,7 @@ export default function ProductDetailPremiumMobile({
                 onClick={() => setIsModalOpen(true)}
                 className="press-illusion-btn-violet bg-violet-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex cursor-pointer"
               >
-                <span>DOWNLOAD BROCHURE</span>
+                <span>D</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -100,15 +100,25 @@ export default function ProductDetailPremiumMobile({
           className="hero-dashboard-wrapper"
         >
           <div className="dashboard-animation left">
-            <div className="scroll-img"></div>
+            <div 
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/mobile care/Mobilecare-Slide1.jpg'), url('/products/mobile care/Mobilecare-Slide2.jpg')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-animation right">
-            <div className="scroll-img"></div>
+            <div 
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/mobile care/Mobilecare-Slide3.jpg'), url('/products/mobile care/Mobilecare-Slide4.jpg')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-main-img">
             <div className="relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)] bg-white">
               <img
-                src="/dashboard.webp"
+                src="/products/mobile care/Mobile-Dashboard.jpg"
                 alt="Mobile Service Center Dashboard"
                 className="w-full object-contain lg:h-[668px] h-full shadow-2xl"
               />
@@ -125,7 +135,7 @@ export default function ProductDetailPremiumMobile({
             <div className="relative lg:sticky lg:top-28 lg:self-start">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/dashboard.webp"
+                  src="/products/mobile care/Job-order.jpg"
                   alt="Mobile Service Dashboard"
                   className="w-full h-auto object-cover"
                 />
@@ -377,7 +387,7 @@ const mobileFeatures = [
     color: "#8B5CF6",
     desc: "Enables to quickly create the customer job orders.",
     placeholder: "SE",
-    image: "/dashboard.webp",
+    image: "/products/mobile care/Mobile-Dashboard.jpg",
   },
   {
     id: "job-order",
@@ -386,7 +396,7 @@ const mobileFeatures = [
     color: "#7C3AED",
     desc: "View & manage the Opened, Queued & Delivered Orders.",
     placeholder: "JO",
-    image: "/dashboard.webp",
+    image: "/products/mobile care/Job-order.jpg",
   },
   {
     id: "job-management",
@@ -395,7 +405,7 @@ const mobileFeatures = [
     color: "#A855F7",
     desc: "Allows the managing various job sheets.",
     placeholder: "JM",
-    image: "/dashboard.webp",
+    image: "/products/mobile care/Mobilecare-Slide1.jpg",
   },
   {
     id: "print",
@@ -404,7 +414,7 @@ const mobileFeatures = [
     color: "#8B5CF6",
     desc: "Enables to instantly print the created job orders.",
     placeholder: "PR",
-    image: "/dashboard.webp",
+    image: "/products/mobile care/Print-job-orders.jpg",
   },
   {
     id: "branches",
@@ -413,7 +423,7 @@ const mobileFeatures = [
     color: "#7C3AED",
     desc: "Allows to manage the multiple branches of the service centres.",
     placeholder: "MB",
-    image: "/dashboard.webp",
+    image: "/products/mobile care/Manage-branch.jpg",
   },
   {
     id: "sms",
@@ -422,7 +432,7 @@ const mobileFeatures = [
     color: "#A855F7",
     desc: "Have functionality send an instant SMS Notification to customers.",
     placeholder: "SMS",
-    image: "/dashboard.webp",
+    image: "/products/mobile care/Mobilecare-Slide2.jpg",
   },
 ];
 

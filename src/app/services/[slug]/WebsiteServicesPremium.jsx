@@ -725,7 +725,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                   <img
                     src={subServices[activeTab].image}
                     alt={subServices[activeTab].title}
-                    className="w-full h-[400px] object-cover transition-all duration-500"
+                    className="w-full object-cover transition-all duration-500"
                   />
                   <div className="absolute top-6 left-6">
                     <span
@@ -1138,8 +1138,8 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                 >
                   <div className="h-full p-8 bg-white rounded-2xl border-2 border-gray-100 hover:border-emerald-300 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                     <div className="w-14 h-14 rounded-2xl  bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-2xl mb-6 shadow-md shadow-emerald-100 group-hover:scale-110 transition-transform duration-300">
-                        {r.icon}
-                      </div>
+                      {r.icon}
+                    </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-emerald-700 transition-colors">
                       {r.title}
                     </h3>

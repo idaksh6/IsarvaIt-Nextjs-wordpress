@@ -5,6 +5,7 @@ import ServiceDetailClient from "./ServiceDetailClient";
 import FeatureItem from "./FeatureItem";
 import BenefitItem from "./BenefitItem";
 import WebsiteServicesPremium from "./WebsiteServicesPremium";
+import WordPressDevelopmentPremium from "./WordPressDevelopmentPremium";
 
 export async function generateStaticParams() {
   return getAllServiceSlugs().map((slug) => ({
@@ -42,6 +43,11 @@ export default async function ServiceDetailPage({ params }) {
   // ── Premium page for Website Services ──────────────────────
   if (slug === "website-services") {
     return <WebsiteServicesPremium service={service} servicesData={servicesData} />;
+  }
+
+  // ── Premium page for WordPress Development ──────────────────────
+  if (slug === "wordpress-development") {
+    return <WordPressDevelopmentPremium service={service} servicesData={servicesData} />;
   }
 
   // Get related services (3 random services excluding current)
