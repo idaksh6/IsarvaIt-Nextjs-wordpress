@@ -14,9 +14,49 @@ export default function CRMBrochureModal({
     company: "",
     message: ""
   });
+  const [categoryId, setCategoryId] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
+
+  // Fetch CRM Application category ID
+  useEffect(() => {
+    const fetchCategoryId = async () => {
+      if (!isOpen) return;
+      
+      try {
+        const response = await fetch('https://crm-demo.isarva.in/api/product-categories/products');
+        const data = await response.json();
+        
+        if (data.categories) {
+          console.log('Available categories:', data.categories);
+          
+          // Find CRM Application category - be more specific
+          const crmCategory = data.categories.find(
+            cat => cat.category_name.toLowerCase() === 'crm application' ||
+                   cat.category_name.toLowerCase() === 'crm' ||
+                   (cat.category_name.toLowerCase().includes('crm') && 
+                    cat.category_name.toLowerCase().includes('application'))
+          );
+          
+          if (crmCategory) {
+            console.log('Found CRM category:', crmCategory);
+            setCategoryId(crmCategory.id);
+          } else {
+            // Fallback to ID 2 if not found
+            console.log('CRM category not found, using fallback ID 2');
+            setCategoryId(2);
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching category:', error);
+        // Fallback to ID 2 on error
+        setCategoryId(2);
+      }
+    };
+
+    fetchCategoryId();
+  }, [isOpen]);
 
   // Prevent body scroll when modal is open
   useEffect(() => {
@@ -42,22 +82,30 @@ export default function CRMBrochureModal({
     setErrorMessage("");
 
     try {
-      const response = await fetch('https://crm-demo.isarva.in/leads', {
+      // Prepare data for API
+      const submissionData = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        subject: 'CRM Brochure Download Request',
+        message: formData.message || 'CRM Brochure download request',
+        pageType: 'Product',
+        itemName: 'CRM Application',
+        categoryId: categoryId
+      };
+
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          company: formData.company,
-          message: formData.message,
-          source: 'CRM Brochure Download',
-        }),
+        body: JSON.stringify(submissionData),
       });
 
-      if (response.ok) {
+      const data = await response.json();
+
+      if (data.success) {
         setSubmitStatus('success');
         
         // Trigger PDF download
@@ -83,9 +131,8 @@ export default function CRMBrochureModal({
           setSubmitStatus(null);
         }, 2000);
       } else {
-        const errorData = await response.json();
         setSubmitStatus('error');
-        setErrorMessage(errorData.message || 'Failed to submit form. Please try again.');
+        setErrorMessage(data.error || 'Failed to submit form. Please try again.');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -147,7 +194,7 @@ export default function CRMBrochureModal({
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition-all"
+              className="w-full px-4 py-3 border text-gray-700 border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition-all"
               placeholder="Enter your full name"
             />
           </div>
@@ -164,7 +211,7 @@ export default function CRMBrochureModal({
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition-all"
+              className="w-full px-4 py-3 border border-gray-300 text-gray-700 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition-all"
               placeholder="your.email@company.com"
             />
           </div>
@@ -181,7 +228,7 @@ export default function CRMBrochureModal({
               value={formData.phone}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition-all"
+              className="w-full px-4 py-3 border border-gray-300 text-gray-700 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition-all"
               placeholder="+91 00000 00000"
             />
           </div>
@@ -197,7 +244,7 @@ export default function CRMBrochureModal({
               name="company"
               value={formData.company}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition-all"
+              className="w-full px-4 py-3 border text-gray-700 border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition-all"
               placeholder="Your company name"
             />
           </div>
@@ -213,7 +260,7 @@ export default function CRMBrochureModal({
               value={formData.message}
               onChange={handleChange}
               rows={3}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition-all resize-none"
+              className="w-full px-4 py-3 border border-gray-300 text-gray-700 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition-all resize-none"
               placeholder="Any specific requirements or questions?"
             ></textarea>
           </div>

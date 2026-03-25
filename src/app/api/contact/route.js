@@ -37,7 +37,7 @@ export async function POST(request) {
       full_name: formData.name || '',
       email: formData.email || '',
       mobile: mobileNumber,
-      categories: 1,
+      categories: formData.categoryId || 1,
       lead_source: 19
     };
 
