@@ -102,15 +102,25 @@ export default function ProductDetailPremiumDealer({
           className="hero-dashboard-wrapper"
         >
           <div className="dashboard-animation left">
-            <div className="scroll-img"></div>
+            <div 
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/dealer management software/Dealer-slide1.jpg'), url('/products/dealer management software/Dealer-slide2.jpg')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-animation right">
-            <div className="scroll-img"></div>
+            <div 
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/dealer management software/Dealer-slide3.jpg'), url('/products/dealer management software/Dealer-slide4.jpg')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-main-img">
             <div className="relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)] bg-white">
               <img
-                src="/dashboard.webp"
+                src="/products/dealer management software/Dealer-Dashboard.jpg"
                 alt="Dealer Management Dashboard"
                 className="w-full object-contain lg:h-[668px] h-full shadow-2xl"
               />
@@ -127,8 +137,8 @@ export default function ProductDetailPremiumDealer({
             <div className="relative lg:sticky lg:top-28 lg:self-start">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/dashboard.webp"
-                  alt="Dealer Management Dashboard"
+                  src="/products/dealer management software/Onboarding-dealers.jpg"
+                  alt="Dealer Onboarding"
                   className="w-full h-auto object-cover"
                 />
               </div>
@@ -384,7 +394,7 @@ const dealerFeaturesByTab = {
       icon: "📝",
       color: "#D946EF",
       desc: "Interested dealers can apply through the portal.",
-      image: "/dashboard.webp",
+      image: "/products/dealer management software/Onboarding-dealers.jpg",
     },
     {
       id: "notifications",
@@ -392,7 +402,7 @@ const dealerFeaturesByTab = {
       icon: "📧",
       color: "#C026D3",
       desc: "Email notifications are sent for new applications.",
-      image: "/dashboard.webp",
+      image: "/products/dealer management software/Dealer-slide1.jpg",
     },
     {
       id: "approval",
@@ -400,7 +410,7 @@ const dealerFeaturesByTab = {
       icon: "✅",
       color: "#EC4899",
       desc: "Admins can review applications and either approve or reject them. The application status is emailed to the applicant, and if approved, credentials are sent to the dealer.",
-      image: "/dashboard.webp",
+      image: "/products/dealer management software/Dealer-slide2.jpg",
     },
     {
       id: "manual-onboarding",
@@ -408,7 +418,7 @@ const dealerFeaturesByTab = {
       icon: "👤",
       color: "#D946EF",
       desc: "Admins can manually onboard dealers using a predefined form for basic details.",
-      image: "/dashboard.webp",
+      image: "/products/dealer management software/Add-dealer.jpg",
     },
     {
       id: "article-upload",
@@ -416,7 +426,7 @@ const dealerFeaturesByTab = {
       icon: "📄",
       color: "#C026D3",
       desc: "Admins can upload articles that are displayed to dealers. PDF uploads are view-only and not downloadable for dealers.",
-      image: "/dashboard.webp",
+      image: "/products/dealer management software/Upload-article.jpg",
     },
     {
       id: "organized-articles",
@@ -424,7 +434,7 @@ const dealerFeaturesByTab = {
       icon: "📚",
       color: "#EC4899",
       desc: "Articles are published by department and organized by year and month, allowing for easy access and reading.",
-      image: "/dashboard.webp",
+      image: "/products/dealer management software/Article-publication.jpg",
     },
     {
       id: "secure-login",
@@ -432,7 +442,7 @@ const dealerFeaturesByTab = {
       icon: "🔐",
       color: "#D946EF",
       desc: "Provides secure login for both dealers and admins, ensuring data protection and privacy.",
-      image: "/dashboard.webp",
+      image: "/products/dealer management software/Secure-login.jpg",
     },
   ],
   reports: [
@@ -442,7 +452,7 @@ const dealerFeaturesByTab = {
       icon: "📊",
       color: "#D946EF",
       desc: "Overview of key metrics, data, and functionalities within a web application for admin.",
-      image: "/dashboard.webp",
+      image: "/products/dealer management software/Dealer-slide3.jpg",
     },
     {
       id: "add-dealer",
@@ -450,7 +460,7 @@ const dealerFeaturesByTab = {
       icon: "➕",
       color: "#C026D3",
       desc: "The panel allows admin to add the dealers on the web application.",
-      image: "/dashboard.webp",
+      image: "/products/dealer management software/Add-dealer.jpg",
     },
     {
       id: "manage-dealer",
@@ -458,7 +468,7 @@ const dealerFeaturesByTab = {
       icon: "👥",
       color: "#EC4899",
       desc: "The panel allows admin to manage the dealers on the web application.",
-      image: "/dashboard.webp",
+      image: "/products/dealer management software/Dealer-slide4.jpg",
     },
     {
       id: "add-article",
@@ -466,7 +476,7 @@ const dealerFeaturesByTab = {
       icon: "📝",
       color: "#D946EF",
       desc: "Admin can easily add the articles on the web application.",
-      image: "/dashboard.webp",
+      image: "/products/dealer management software/Upload-article.jpg",
     },
     {
       id: "manage-article",
@@ -474,7 +484,7 @@ const dealerFeaturesByTab = {
       icon: "📋",
       color: "#C026D3",
       desc: "Allows admin to easily manage the articles that added on the web app.",
-      image: "/dashboard.webp",
+      image: "/products/dealer management software/Article-publication.jpg",
     },
     {
       id: "dealer-dashboard",
@@ -482,7 +492,7 @@ const dealerFeaturesByTab = {
       icon: "🏠",
       color: "#EC4899",
       desc: "This is the default dashboard for the particular dealer added on the web app.",
-      image: "/dashboard.webp",
+      image: "/products/dealer management software/Dealer-Dashboard.jpg",
     },
     {
       id: "read-article-manage",
@@ -490,7 +500,7 @@ const dealerFeaturesByTab = {
       icon: "📖",
       color: "#D946EF",
       desc: "View the list of articles & circulars updated on the web application.",
-      image: "/dashboard.webp",
+      image: "/products/dealer management software/Read-Article.jpg",
     },
     {
       id: "department-wise",
@@ -498,7 +508,7 @@ const dealerFeaturesByTab = {
       icon: "📅",
       color: "#C026D3",
       desc: "Allows the user to sort the document department wise.",
-      image: "/dashboard.webp",
+      image: "/products/dealer management software/Article-publication.jpg",
     },
     {
       id: "read-article",
@@ -506,7 +516,7 @@ const dealerFeaturesByTab = {
       icon: "📄",
       color: "#EC4899",
       desc: "Dealers can easily read the document uploaded by the admin on this panel.",
-      image: "/dashboard.webp",
+      image: "/products/dealer management software/Read-Article.jpg",
     },
   ],
 };

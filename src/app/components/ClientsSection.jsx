@@ -18,7 +18,7 @@ export default function ClientsSection({ data }) {
         <p className="text-black text-sm font-bold uppercase tracking-[0.2em] mb-16">
           Our Work Revolves Around
         </p>
-        <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
+        <div className="flex flex-wrap justify-center items-center gap-8 ">
           {displayBrands.map((brand, i) => (
             <motion.div
               key={i}
