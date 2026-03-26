@@ -53,7 +53,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-32">
           {/* Services */}
           <div>
-            <h4 className="text-white font-extrabold mb-8 text-[13px] uppercase tracking-[0.2em] flex items-center gap-3 lg:justify-start justify-center">
+            <h4 className="text-white font-extrabold mb-8 text-[15px] uppercase tracking-[0.2em] flex items-center gap-3 lg:justify-start justify-center">
               <span className="w-1.5 h-1.5 rounded-full bg-[#00ff88] shadow-[0_0_10px_#00ff88]"></span>
               Services
             </h4>
@@ -80,7 +80,7 @@ export default function Footer() {
 
           {/* Products */}
           <div>
-            <h4 className="text-white font-extrabold mb-8 text-[13px] uppercase tracking-[0.2em] flex items-center gap-3 lg:justify-start justify-center">
+            <h4 className="text-white font-extrabold mb-8 text-[15px] uppercase tracking-[0.2em] flex items-center gap-3 lg:justify-start justify-center">
               <span className="w-1.5 h-1.5 rounded-full bg-[#adff2f] shadow-[0_0_10px_#adff2f]"></span>
               Products
             </h4>
@@ -106,7 +106,7 @@ export default function Footer() {
 
           {/* Industries */}
           <div>
-            <h4 className="text-white font-extrabold mb-8 text-[13px] uppercase tracking-[0.2em] flex items-center gap-3 lg:justify-start justify-center">
+            <h4 className="text-white font-extrabold mb-8 text-[15px] uppercase tracking-[0.2em] flex items-center gap-3 lg:justify-start justify-center">
               <span className="w-1.5 h-1.5 rounded-full bg-[#ff4c00] shadow-[0_0_10px_#ff4c00]"></span>
               Industries
             </h4>
@@ -133,7 +133,7 @@ export default function Footer() {
 
           {/* Useful Links */}
           <div>
-            <h4 className="text-white font-extrabold mb-8 text-[13px] uppercase tracking-[0.2em] flex items-center gap-3 lg:justify-start justify-center">
+            <h4 className="text-white font-extrabold mb-8 text-[15px] uppercase tracking-[0.2em] flex items-center gap-3 lg:justify-start justify-center">
               <span className="w-1.5 h-1.5 rounded-full bg-[#60a5fa] shadow-[0_0_10px_#60a5fa]"></span>
               Useful Links
             </h4>
