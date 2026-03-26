@@ -484,7 +484,7 @@ const expenseFeaturesByTab = {
       icon: "👁️",
       color: "#10B981",
       desc: "Detailed view of individual expense submissions showing all information, attachments, and approval trail.",
-      image: "/products/expense tracker/Expense-slide3.jpg",
+       image: "/products/expense tracker/Expense-slide1.jpg",
     },
     {
       id: "add-user",
@@ -517,14 +517,6 @@ const expenseFeaturesByTab = {
       color: "#059669",
       desc: "Approver interface to review expense details, supporting documents, and approve claims with comments.",
       image: "/products/expense tracker/Expense-slide1.jpg",
-    },
-    {
-      id: "reject-expense",
-      label: "Reject Expense",
-      icon: "❌",
-      color: "#14B8A6",
-      desc: "Option for approvers to reject expense claims with mandatory reason comments for transparency.",
-      image: "/products/expense tracker/Expense-slide2.jpg",
     },
     {
       id: "expense-report",
