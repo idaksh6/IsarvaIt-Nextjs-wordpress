@@ -254,7 +254,7 @@ const Chatbot = () => {
   };
 
   return (
-    <div className="fixed bottom-6 md:right-6 right-4 left-4 md:left-auto z-[9999] font-outfit antialiased">
+    <div className="fixed bottom-3 md:right-6 w-fit right-4 left-2 md:left-auto z-[9999] font-outfit antialiased">
       <AnimatePresence mode="wait">
         {isOpen ? (
           <motion.div
