@@ -310,7 +310,7 @@ export default function ServicesListClient({ servicesData }) {
             <Link
               href="/contact"
               prefetch={true}
-              className="press-illusion-btn bg-green-400 text-black font-bold px-8 py-4 text-lg items-center space-x-2 inline-flex justify-center"
+              className="press-illusion-btn-green bg-green-400 text-black font-bold px-8 py-4 text-lg items-center space-x-2 inline-flex justify-center"
             >
               <span>Get Started Now</span>
               <svg
@@ -330,7 +330,7 @@ export default function ServicesListClient({ servicesData }) {
             <Link
               href="/about"
               prefetch={true}
-              className="press-illusion-btn inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-gray-700 bg-white/80 backdrop-blur-md border-2 border-gray-200 rounded-lg hover:border-emerald-600 hover:text-emerald-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+              className="press-illusion-btn bg-green-400 inline-flex text-black items-center justify-center px-8 py-4 text-lg font-bold  border-2 border-gray-200 rounded-lg  transition-all duration-200 "
             >Learn About Us
             </Link>
           </div>
@@ -339,3 +339,4 @@ export default function ServicesListClient({ servicesData }) {
     </div>
   );
 }
+

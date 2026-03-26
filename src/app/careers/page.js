@@ -416,10 +416,23 @@ export default function CareerPage() {
 
                     <Link
                       href={`/careers/${job.slug}`}
-                      className="bg-[#1a1f24]/5 hover:bg-[#10b981] text-[#1a1f24] hover:text-white px-8 py-3.5 rounded-xl font-bold transition-all transform active:scale-95 flex items-center gap-2 text-sm"
+                      rel="noopener noreferrer"
+                      className="press-illusion-btn bg-green-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex"
                     >
                       <span>View Details</span>
-                      <ArrowRight className="w-4 h-4" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 17 9"
+                        className="h-2 w-4"
+                      >
+                        <path
+                          fill="currentColor"
+                          fillRule="evenodd"
+                          d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>
                     </Link>
                   </motion.div>
                 ))
@@ -464,18 +477,49 @@ export default function CareerPage() {
                 We're always looking for remarkable people who think differently. Send us your profile and let's see where you fit in our evolution.
               </p>
               <div className="flex flex-col sm:flex-row justify-center items-center gap-8">
-                <button
-                  onClick={() => setIsModalOpen(true)}
-                  className="press-illusion-btn bg-[#10b981] text-white px-12 py-6 text-xl font-bold rounded-2xl transition-all hover:scale-105"
-                >
-                  Send Resume
-                </button>
                 <Link
-                  href="/about"
-                  className="press-illusion-btn bg-[#10b981] text-white px-12 py-6 text-xl font-bold rounded-2xl transition-all hover:scale-105"
+                  onClick={() => setIsModalOpen(true)}
+                  href="#"
+                  rel="noopener noreferrer"
+                  className="press-illusion-btn bg-green-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 hidden nav:flex"
                 >
-                  Learn About culture
+                  <span>Send Resume</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 17 9"
+                    className="h-2 w-4"
+                  >
+                    <path
+                      fill="currentColor"
+                      fillRule="evenodd"
+                      d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
                 </Link>
+
+                <Link
+                  href="about"
+                  rel="noopener noreferrer"
+                  className="press-illusion-btn bg-green-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex"
+                >
+                  <span> Learn About culture</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 17 9"
+                    className="h-2 w-4"
+                  >
+                    <path
+                      fill="currentColor"
+                      fillRule="evenodd"
+                      d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
+                </Link>
+
               </div>
             </div>
           </motion.div>

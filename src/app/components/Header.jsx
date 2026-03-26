@@ -25,36 +25,37 @@ const servicesData = [
   { label: "Odoo Apps Support", href: "/services/odoo-apps-support", icon: "📦" },
   { label: "AI & ML Consulting", href: "/services/ai-ml-consulting", icon: "🤖" },
   { label: "Staffing Services", href: "/services/staffing-services", icon: "👥" },
+  { label: "Digital Marketing", href: "/services/digital-marketing", icon: "📱" },
+  { label: "Statamic Development", href: "/services/statamic-development", icon: "✨" },
   { label: "Consulting Services", href: "/services/consulting-services", icon: "💼" },
   { label: "ERP Services", href: "/services/erp-services", icon: "🏢" },
   { label: "Offshore Development", href: "/services/offshore-development", icon: "🌍" },
   { label: "Training", href: "/services/training", icon: "📚" },
   { label: "WordPress Development", href: "/services/wordpress-development", icon: "📝" },
-  { label: "Statamic Development", href: "/services/statamic-development", icon: "✨" },
   { label: "GPS Tracking", href: "/services/gps-tracking", icon: "📍" },
   { label: "WordPress Training", href: "/services/wordpress-training", icon: "🎓" },
-  { label: "Digital Marketing", href: "/services/digital-marketing", icon: "📱" },
+
 ];
 
 const industriesData = [
   { label: "Banking & Financial Services", href: "/industries/banking-financial-services", icon: "🏦" },
-  { label: "Education", href: "/industries/education", icon: "🎓" },
-  { label: "Insurance", href: "/industries/insurance", icon: "🛡️" },
   { label: "Healthcare & Life Sciences", href: "/industries/healthcare-life-sciences", icon: "🏥" },
+  { label: "Insurance", href: "/industries/insurance", icon: "🛡️" },
   { label: "Manufacturing", href: "/industries/manufacturing", icon: "🏭" },
+  { label: "Education", href: "/industries/education", icon: "🎓" },
   { label: "Media & Entertainment", href: "/industries/media-entertainment", icon: "🎬" },
   { label: "BPO Services – ITES", href: "/industries/bpo-services-ites", icon: "💼" },
 ];
 
 const productsData = [
   { label: "HRMS Software", href: "/products/hrms-software", icon: "👥" },
-  { label: "Support Application", href: "/products/support-application", icon: "🎧" },
   { label: "CRM Application", href: "/products/crm-application", icon: "👔" },
-  { label: "Retail Billing Multi Branch", href: "/products/retail-billing-multi-branch", icon: "🏬" },
+  { label: "Support Application", href: "/products/support-application", icon: "🎧" },
+  { label: "Marine Service Software", href: "/products/marine-service-software", icon: "🏬" },
+  { label: "Dispatcher Panel", href: "/products/dispatcher-panel", icon: "⛽" },
   { label: "WooCommerce Development", href: "/products/woocommerce-development", icon: "🛒" },
-  { label: "Petro Care", href: "/products/petro-care", icon: "⛽" },
   { label: "Document Management System", href: "/products/document-management-system", icon: "📄" },
-  { label: "Fleet Management Software", href: "/products/fleet-management-software", icon: "🚚" },
+  { label: "Retail Billing Multi Branch", href: "/products/retail-billing-multi-branch", icon: "🚚" },
   { label: "Dealer Management Software", href: "/products/dealer-management-software", icon: "🤝" },
 ];
 
@@ -91,8 +92,8 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
-          ? "bg-white/90 backdrop-blur-md py-3 shadow-sm border-b border-gray-100"
-          : "bg-transparent py-5"
+        ? "bg-white/90 backdrop-blur-md py-3 shadow-sm border-b border-gray-100"
+        : "bg-transparent py-5"
         }`}
       style={{ willChange: scrolled ? "auto" : "transform" }}
     >

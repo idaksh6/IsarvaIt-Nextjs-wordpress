@@ -13,7 +13,7 @@ const testimonials = [
     name: "Jagdish Bhat",
     role: "CEO",
     company: "FTR",
-    image: "/Testimonials/ftr.jpg", 
+    image: "/Testimonials/ftr.jpg",
     text: "Working with Isarva Infotech has been an outstanding experience from start to finish. The team showed exceptional professionalism, great attention to detail, and a deep understanding of our requirements. They delivered a clean, intuitive design that not only met but exceeded our expectations. Throughout the project, communication was clear, timely, and proactive, which made the entire collaboration smooth and efficient. We truly appreciate their dedication and responsiveness, and we are very satisfied with the final outcome.",
     highlight: "Exceptional professionalism and deep understanding.",
     rating: 5,
@@ -25,7 +25,7 @@ const testimonials = [
     role: "CEO",
     company: "Iris",
     image: "/Testimonials/iris.png",
-    youtubeId: "HBQ3JHfqUhI", 
+    youtubeId: "HBQ3JHfqUhI",
     text: "Isarva Infotech transformed our digital approach. Their innovative solutions and dedicated support helped us scale faster than we ever imagined.",
     highlight: "Helped us scale faster than imagined.",
     rating: 5,
@@ -134,7 +134,7 @@ export default function TestimonialPage() {
 
   const handleTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
-    
+
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
@@ -152,12 +152,12 @@ export default function TestimonialPage() {
 
   return (
     <div className="min-h-screen bg-[#FDF8F2]  text-[#1a1f24] pt-24">
-      
+
       {/* ── 1. HERO SECTION ── */}
       <section className="relative py-12 lg:py-38 overflow-hidden ">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#10b981] opacity-[0.03] rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute -bottom-24 -left-24 w-[600px] h-[600px] bg-[#84cc16] opacity-[0.05] rounded-full blur-[100px] pointer-events-none"></div>
-        
+
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -168,18 +168,18 @@ export default function TestimonialPage() {
             <Award className="w-4 h-4 text-[#10b981]" />
             <span className="text-[#10b981] font-bold tracking-wider uppercase text-xs">A Decade of Excellence</span>
           </motion.div>
-          
-          <motion.h1 
+
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-[#1a1f24] max-w-5xl mx-auto tracking-tight leading-[1.1] mb-8"
           >
-            Real Stories, <br /> 
+            Real Stories, <br />
             <span className="italic text-[#10b981] font-bold">Proven Results.</span>
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -189,7 +189,7 @@ export default function TestimonialPage() {
           </motion.p>
 
           {/* Stat counters */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -223,10 +223,10 @@ export default function TestimonialPage() {
             <h2 className="text-4xl md:text-6xl font-display font-bold text-[#1a1f24] mb-6">Success Stories on Camera</h2>
             <div className="w-24 h-1.5 bg-[#10b981] mx-auto rounded-full"></div>
           </div>
-          
+
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
             {/* Left: Content Block */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -239,7 +239,7 @@ export default function TestimonialPage() {
                     <Zap className="w-3.5 h-3.5 text-[#10b981]" />
                     <span className="text-emerald-700 font-bold text-[9px] uppercase tracking-widest">Global Impact</span>
                   </div>
-                  
+
                   <h4 className="text-3xl md:text-4xl lg:text-left text-center font-display font-bold text-[#1a1f24] mb-10 leading-tight">
                     Digital Future, <br />
                     <span className="text-[#10b981]">Architected.</span>
@@ -255,7 +255,7 @@ export default function TestimonialPage() {
                         <p className="text-[#53606b] text-sm leading-relaxed font-medium">Equipping you with technology that eliminates bottlenecks and accelerates global market entry.</p>
                       </div>
                     </div>
-                    
+
                     <div className="flex gap-5 group">
                       <div className="w-14 h-14 rounded-2xl bg-[#10b981] flex items-center justify-center flex-shrink-0 shadow-lg shadow-emerald-500/10 transform -rotate-3 group-hover:-rotate-6 transition-transform">
                         <CheckCircle2 className="w-6 h-6 text-white stroke-[3px]" />
@@ -267,21 +267,31 @@ export default function TestimonialPage() {
                     </div>
                   </div>
                 </div>
-
-                <Link 
+                <Link
                   href="/contact"
-                  className="press-illusion-btn bg-[#10b981] text-white w-fit lg:mx-0 mx-auto py-5 text-lg font-bold flex items-center justify-center gap-3 group rounded-2xl shadow-xl hover:shadow-2xl transition-all"
+                  rel="noopener noreferrer"
+                  className="press-illusion-btn bg-green-400 text-white w-fit lg:mx-0 mx-auto font-bold px-6 py-2 text-base items-center space-x-2 flex"
                 >
                   <span>Begin Transformation</span>
-                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center transform group-hover:translate-x-2 transition-transform">
-                     <svg viewBox="0 0 17 9" className="h-2 w-3 text-white fill-current"><path d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z" /></svg>
-                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 17 9"
+                    className="h-2 w-4"
+                  >
+                    <path
+                      fill="currentColor"
+                      fillRule="evenodd"
+                      d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
                 </Link>
               </div>
             </motion.div>
 
             {/* Right: Direct Video Block */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -295,7 +305,7 @@ export default function TestimonialPage() {
                   allowFullScreen
                 ></iframe>
               </div>
-              
+
               {/* Optional: Simple client info below direct video */}
               <div className="mt-8 flex items-center gap-4 px-6">
                 <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#10b981] shadow-lg">
@@ -315,7 +325,7 @@ export default function TestimonialPage() {
       {/* ── 3. TESTIMONIAL SHOWCASE ── */}
       <section className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          
+
           {/* Mobile Slider (visible only on mobile) */}
           <div className="md:hidden relative px-4">
             {/* Previous Button - Left Side Centered */}
@@ -340,14 +350,14 @@ export default function TestimonialPage() {
               </svg>
             </button>
 
-            <div 
+            <div
               className=""
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
             >
               <AnimatePresence mode="wait">
-                <motion.div 
+                <motion.div
                   key={currentSlide}
                   initial={{ opacity: 0, x: 100 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -372,21 +382,21 @@ export default function TestimonialPage() {
                     <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#10b981] mb-4">
                       {testimonials[currentSlide].role} @ {testimonials[currentSlide].company}
                     </p>
-                    
+
                     <div className="flex gap-1.5 px-4 py-2 bg-white rounded-full border border-black/5 shadow-sm">
                       {[...Array(testimonials[currentSlide].rating)].map((_, i) => (
                         <Star key={i} className="w-3.5 h-3.5 text-[#10b981] fill-[#10b981]" />
                       ))}
                     </div>
                   </div>
-                  
+
                   <div className="relative mb-8 text-center">
                     <Quote className="absolute -top-6 -left-4 w-12 h-12 text-[#10b981]/10 transform -rotate-12" />
                     <p className="text-[#1a1f24] text-xl font-display font-bold leading-tight mb-4 relative z-10 italic">
                       "{testimonials[currentSlide].highlight}"
                     </p>
                   </div>
-                  
+
                   <p className="text-[#53606b] text-center leading-relaxed mb-10 font-medium">
                     {testimonials[currentSlide].text}
                   </p>
@@ -406,11 +416,10 @@ export default function TestimonialPage() {
                 <button
                   key={idx}
                   onClick={() => setCurrentSlide(idx)}
-                  className={`h-2 rounded-full transition-all ${
-                    idx === currentSlide 
-                      ? 'w-8 bg-[#10b981]' 
-                      : 'w-2 bg-gray-300'
-                  }`}
+                  className={`h-2 rounded-full transition-all ${idx === currentSlide
+                    ? 'w-8 bg-[#10b981]'
+                    : 'w-2 bg-gray-300'
+                    }`}
                   aria-label={`Go to slide ${idx + 1}`}
                 />
               ))}
@@ -420,7 +429,7 @@ export default function TestimonialPage() {
           {/* Desktop Grid (visible on tablet and above) */}
           <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-24 gap-x-10">
             {testimonials.map((t, idx) => (
-              <motion.div 
+              <motion.div
                 key={t.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -441,27 +450,27 @@ export default function TestimonialPage() {
                 <div className="flex flex-col items-center mb-8">
                   <h5 className="font-display font-bold text-2xl text-[#1a1f24] mb-1">{t.name}</h5>
                   <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#10b981] mb-4">{t.role} @ {t.company}</p>
-                  
+
                   <div className="flex gap-1.5 px-4 py-2 bg-white rounded-full border border-black/5 shadow-sm">
                     {[...Array(t.rating)].map((_, i) => (
                       <Star key={i} className="w-3.5 h-3.5 text-[#10b981] fill-[#10b981]" />
                     ))}
                   </div>
                 </div>
-                
+
                 <div className="relative mb-8 text-center">
                   <Quote className="absolute -top-6 -left-4 w-12 h-12 text-[#10b981]/10 transform -rotate-12 group-hover:rotate-0 transition-transform duration-500" />
                   <p className="text-[#1a1f24] text-xl font-display font-bold leading-tight mb-4 relative z-10 italic">
                     "{t.highlight}"
                   </p>
                 </div>
-                
+
                 <p className="text-[#53606b] text-center leading-relaxed mb-10 flex-grow font-medium">
                   {t.text}
                 </p>
 
                 <div className="text-center">
-                   <span className="inline-block text-[10px] font-black tracking-[0.2em] uppercase text-[#10b981] bg-[#10b981]/10 px-5 py-2 rounded-full border border-[#10b981]/20">
+                  <span className="inline-block text-[10px] font-black tracking-[0.2em] uppercase text-[#10b981] bg-[#10b981]/10 px-5 py-2 rounded-full border border-[#10b981]/20">
                     {t.tag}
                   </span>
                 </div>
@@ -471,40 +480,6 @@ export default function TestimonialPage() {
         </div>
       </section>
 
-      {/* ── 4. CTA SECTION ── */}
-      <section className="py-24 relative bg-[#1a1f24] text-white overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-10">
-          <div className="hero-noise-overlay"></div>
-        </div>
-        
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <h2 className="text-4xl md:text-6xl font-display font-bold mb-8">
-            Let's build something <span className="text-[#10b981] italic font-bold">remarkable</span>.
-          </h2>
-          <p className="text-xl text-white/70 mb-12 max-w-2xl mx-auto font-medium">
-            Ready to experience the Isarva impact? Our team is waiting to turn your biggest ideas into digital reality.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-8">
-            <Link 
-              href="/contact"
-              className="press-illusion-btn bg-[#10b981] text-white w-full sm:w-fit font-bold px-10 py-5 text-xl flex items-center justify-center gap-3 transition-transform hover:scale-105"
-            >
-              <span>Get Started Now</span>
-              <svg viewBox="0 0 17 9" className="h-3 w-5 text-white fill-current"><path d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z" /></svg>
-            </Link>
-
-                <Link 
-              href="/careers"
-              className="press-illusion-btn bg-[#10b981] text-white w-full sm:w-fit font-bold px-10 py-5 text-xl flex items-center justify-center gap-3 transition-transform hover:scale-105"
-            >
-              <span>Join Our Team</span>
-              <svg viewBox="0 0 17 9" className="h-3 w-5 text-white fill-current"><path d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z" /></svg>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-     
     </div>
   );
 }

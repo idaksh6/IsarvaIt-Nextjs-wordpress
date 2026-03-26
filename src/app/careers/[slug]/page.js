@@ -394,7 +394,7 @@ export default function JobDetailPage({ params }) {
       </section>
 
       {/* BOTTOM CTA */}
-      <section className="py-20 bg-[#1a1f24] relative overflow-hidden">
+      <section className="py-20 bg-green-700 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#10b981] opacity-[0.05] rounded-full blur-[100px] pointer-events-none"></div>
 
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
@@ -412,15 +412,45 @@ export default function JobDetailPage({ params }) {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link
                 href="/careers"
-                className="bg-[#10b981] text-white px-10 py-5 rounded-xl font-bold text-lg transition-all hover:scale-105 hover:shadow-xl active:scale-95"
+                rel="noopener noreferrer"
+                className="press-illusion-btn bg-green-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex"
               >
-                View All Openings
+                <span>View All Openings</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 17 9"
+                  className="h-2 w-4"
+                >
+                  <path
+                    fill="currentColor"
+                    fillRule="evenodd"
+                    d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+                    clipRule="evenodd"
+                  ></path>
+                </svg>
               </Link>
+
+
               <Link
                 href="/about"
-                className="press-illusion-btn bg-[#10b981] text-white px-12 py-6 text-xl font-bold rounded-2xl transition-all hover:scale-105"
+                rel="noopener noreferrer"
+                className="press-illusion-btn bg-green-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex"
               >
-                Learn About culture
+                <span>Learn About culture</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 17 9"
+                  className="h-2 w-4"
+                >
+                  <path
+                    fill="currentColor"
+                    fillRule="evenodd"
+                    d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+                    clipRule="evenodd"
+                  ></path>
+                </svg>
               </Link>
             </div>
           </motion.div>

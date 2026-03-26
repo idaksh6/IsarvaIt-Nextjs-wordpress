@@ -128,7 +128,7 @@ export default function CtaSection() {
                                 {/* CTA Button */}
                                 <div className="flex items-center justify-center">
                                     <Link href="" onClick={() => setIsModalOpen(true)}
-                                        className="press-illusion-btn-white bg-white text-black w-fit font-bold px-6 py-2 text-base items-center space-x-2 hidden md:flex"
+                                        className="press-illusion-btn-green bg-green-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex"
                                     >
                                         <span>Get in Touch</span>
                                         <svg

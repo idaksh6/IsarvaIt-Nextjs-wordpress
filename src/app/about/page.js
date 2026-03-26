@@ -277,7 +277,7 @@ export default function AboutPage() {
               <Link
                 href="/careers"
                 prefetch={true}
-                className="press-illusion-btn bg-green-400 text-white w-fit mx-auto font-bold px-6 py-2 text-base flex items-center space-x-2"
+                className="press-illusion-btn bg-green-400 text-white w-fit lg:mx-0 mx-auto font-bold px-6 py-2 text-base flex items-center space-x-2"
               >
                 <span>View Careers</span>
                 <svg

@@ -2,6 +2,7 @@
 
 import { memo } from "react";
 import Link from "next/link";
+import { Lightbulb, Settings, BarChart3, ChevronRight } from "lucide-react";
 
 // Helper function to strip HTML tags from WYSIWYG content
 // Moved outside component to avoid recreation on every render
@@ -53,7 +54,7 @@ function HeroSection({ data }) {
       }}
     >
 
-      <div className="max-w-7xl mx-auto px-6 relative z-20 text-center hero-content">
+      <div className="max-w-7xl mx-auto px-6 relative z-20 text-center hero-content w-full">
         {heroData.stripTag && (
           <div className="inline-flex mb-8">
             <span className="badge">{stripHtml(heroData.stripTag)}</span>
@@ -74,7 +75,7 @@ function HeroSection({ data }) {
           />
         )}
         {heroData.hasButton && (
-          <div className="relative z-30 mb-20 cards:mb-20 lg:mb-10">
+          <div className="relative z-30 mb-8 lg:mb-12">
             <Link
               href={heroData.buttonLink}
               className="press-illusion-btn bg-green-400 text-white w-fit  font-bold px-6 py-2 text-base mx-auto items-center space-x-2 gap-2 inline-flex"
@@ -97,123 +98,72 @@ function HeroSection({ data }) {
           </div>
         )}
 
-        {/* Floating Cards - Absolute Positioning (Above 1250px) */}
-        <div className="-mt-40 relative h-[600px] w-full max-w-6xl mx-auto hidden cards:block">
-          {/* Web Platforms Card */}
-          <div className="floating-card absolute left-[-150px] top-0 w-80 glass-card p-8 min-h-[230px] rounded-[2.5rem] border border-gray-100 text-left shadow-2xl z-10">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-14 h-14 flex-shrink-0 bg-gray-50 rounded-2xl flex items-center justify-center text-3xl shadow-inner ring-1 ring-gray-100">
-                🌐
-              </div>
-              <h3 className="text-gray-900 font-bold text-xl">
-                {heroData.floatingCards && heroData.floatingCards[0] ? heroData.floatingCards[0].heading : "Web Platforms"}
-              </h3>
+        {/* Floating Cards - Overlapping Layout */}
+        <div className="relative w-full max-w-[1024px] mx-auto flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-0 mt-8 pb-20 px-4">
+          
+          {/* Card 1 - Left */}
+          <div className="w-full lg:w-[320px] bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] z-10 lg:translate-x-12 transition-all duration-300 hover:z-40 hover:-translate-y-2 flex flex-col items-center flex-1 lg:flex-none h-full min-h-[380px]">
+            <div className="w-20 h-20 bg-[#89c0fe] rounded-full flex items-center justify-center text-white mb-6">
+              <Lightbulb size={36} strokeWidth={2} />
             </div>
-            <p className="text-gray-500 text-[13px] leading-relaxed font-bold">
+            <h3 className="text-gray-900 font-bold text-xl mb-4 text-center w-full">
+              {heroData.floatingCards && heroData.floatingCards[0] ? heroData.floatingCards[0].heading : "Web Platforms"}
+            </h3>
+            <p className="text-gray-500 text-[13px] leading-relaxed text-center mb-8 flex-grow w-full">
               {heroData.floatingCards && heroData.floatingCards[0] ? 
                 heroData.floatingCards[0].description.replace(/<[^>]*>/g, '') : 
                 "We design and build high-performance website solutions applied basically for speed, scalability, and user experience."
               }
             </p>
+            <Link href="/services/web-platforms" className="inline-flex items-center justify-center gap-1 text-[#4b6bfb] font-semibold text-[13px] border border-[#e5e7eb] rounded-full px-5 py-2 transition-colors hover:bg-[#f3f4f6] w-fit mt-auto whitespace-nowrap">
+              Learn More <ChevronRight size={14} />
+            </Link>
           </div>
 
-          {/* Custom Software Card */}
-          <div className="floating-card absolute right-[-150px] top-0 w-80 glass-card p-8 rounded-[2.5rem] border border-gray-100 text-left shadow-2xl z-10">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-14 h-14 flex-shrink-0 bg-gray-50 rounded-2xl flex items-center justify-center text-3xl shadow-inner ring-1 ring-gray-100">
-                💻
-              </div>
-              <h3 className="text-gray-900 font-bold text-xl">
-                {heroData.floatingCards && heroData.floatingCards[1] ? heroData.floatingCards[1].heading : "Custom Software"}
-              </h3>
+          {/* Card 2 - Center (Elevated & Overlapping) */}
+          <div className="w-full lg:w-[360px] bg-white rounded-[2.5rem] p-10 shadow-[0_20px_50px_rgb(0,0,0,0.15)] z-30 transform lg:rotate-3 lg:-translate-y-4 transition-all duration-500 hover:rotate-0 hover:-translate-y-6 hover:z-40 flex flex-col items-center mx-[-20px] lg:mx-0 flex-1 lg:flex-none relative h-full min-h-[420px]">
+            <div className="w-24 h-24 bg-[#7bd29b] rounded-full flex items-center justify-center text-white mb-6 shadow-[0_8px_20px_rgba(123,210,155,0.3)]">
+              <Settings size={44} strokeWidth={2} />
             </div>
-            <p className="text-gray-500 text-[13px] leading-relaxed font-bold">
+            <h3 className="text-gray-900 font-bold text-[22px] mb-4 text-center w-full">
+              {heroData.floatingCards && heroData.floatingCards[1] ? heroData.floatingCards[1].heading : "Custom Software"}
+            </h3>
+            <p className="text-gray-500 text-[14px] leading-relaxed text-center mb-8 flex-grow w-full">
               {heroData.floatingCards && heroData.floatingCards[1] ? 
                 heroData.floatingCards[1].description.replace(/<[^>]*>/g, '') : 
                 "Tailored digital solutions built to solve complex business challenges and support long-term growth."
               }
             </p>
+            <Link href="/services/custom-software" className="inline-flex items-center justify-center gap-1 text-[#4b6bfb] font-semibold text-[14px] border border-[#e5e7eb] rounded-full px-6 py-2.5 transition-colors hover:bg-[#f3f4f6] w-fit mt-auto whitespace-nowrap">
+              Learn More <ChevronRight size={16} />
+            </Link>
           </div>
 
-          {/* E-commerce Solutions Card (Center Bottom) */}
-          <div className="floating-card absolute left-1/2 -translate-x-1/2 bottom-[150px] w-96 glass-card p-10 rounded-[3rem] border border-gray-100 text-left shadow-2xl z-20">
-            <div className="flex items-center gap-6 mb-8">
-              <div className="w-16 h-16 bg-[#10b981]/10 rounded-[1.5rem] flex items-center justify-center text-4xl text-[#10b981] shadow-glow ring-1 ring-[#10b981]/20">
-                💰
-              </div>
-              <h3 className="text-gray-900 font-bold text-2xl">
-                {heroData.floatingCards && heroData.floatingCards[2] ? heroData.floatingCards[2].heading : "E-commerce Solutions"}
-              </h3>
+          {/* Card 3 - Right */}
+          <div className="w-full lg:w-[320px] bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] z-20 lg:-translate-x-12 transition-all duration-300 hover:z-40 hover:-translate-y-2 flex flex-col items-center flex-1 lg:flex-none h-full min-h-[380px]">
+            <div className="w-20 h-20 bg-[#a37eea] rounded-full flex items-center justify-center text-white mb-6">
+              <BarChart3 size={36} strokeWidth={2} />
             </div>
-            <p className="text-gray-500 text-[15px] leading-relaxed mb-8 font-bold">
+            <h3 className="text-gray-900 font-bold text-xl mb-4 text-center w-full">
+              {heroData.floatingCards && heroData.floatingCards[2] ? heroData.floatingCards[2].heading : "E-commerce Solutions"}
+            </h3>
+            <p className="text-gray-500 text-[13px] leading-relaxed text-center mb-8 flex-grow w-full">
               {heroData.floatingCards && heroData.floatingCards[2] ? 
                 heroData.floatingCards[2].description.replace(/<[^>]*>/g, '') : 
                 "Launch powerful online stores with secure payments, optimized performance, and conversion-focused design."
               }
             </p>
+            <Link href="/services/ecommerce-solutions" className="inline-flex items-center justify-center gap-1 text-[#4b6bfb] font-semibold text-[13px] border border-[#e5e7eb] rounded-full px-5 py-2 transition-colors hover:bg-[#f3f4f6] w-fit mt-auto whitespace-nowrap">
+              Learn More <ChevronRight size={14} />
+            </Link>
           </div>
-        </div>
-
-        {/* Floating Cards - Flex Row Layout (Between 1024px and 1250px) */}
-        <div className="hidden lg:flex cards:hidden flex-row gap-6 w-full max-w-6xl mx-auto mb-16 px-6">
-          {/* Web Platforms Card */}
-          <div className="flex-1 glass-card p-6 rounded-[2rem] border border-gray-100 text-left shadow-xl">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 flex-shrink-0 bg-gray-50 rounded-xl flex items-center justify-center text-2xl shadow-inner ring-1 ring-gray-100">
-                🌐
-              </div>
-              <h3 className="text-gray-900 font-bold text-lg">
-                {heroData.floatingCards && heroData.floatingCards[0] ? heroData.floatingCards[0].heading : "Web Platforms"}
-              </h3>
-            </div>
-            <p className="text-gray-500 text-sm leading-relaxed font-medium">
-              {heroData.floatingCards && heroData.floatingCards[0] ? 
-                heroData.floatingCards[0].description.replace(/<[^>]*>/g, '') : 
-                "We design and build high-performance website solutions applied basically for speed, scalability, and user experience."
-              }
-            </p>
-          </div>
-
-          {/* Custom Software Card */}
-          <div className="flex-1 glass-card p-6 rounded-[2rem] border border-gray-100 text-left shadow-xl">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 flex-shrink-0 bg-gray-50 rounded-xl flex items-center justify-center text-2xl shadow-inner ring-1 ring-gray-100">
-                💻
-              </div>
-              <h3 className="text-gray-900 font-bold text-lg">
-                {heroData.floatingCards && heroData.floatingCards[1] ? heroData.floatingCards[1].heading : "Custom Software"}
-              </h3>
-            </div>
-            <p className="text-gray-500 text-sm leading-relaxed font-medium">
-              {heroData.floatingCards && heroData.floatingCards[1] ? 
-                heroData.floatingCards[1].description.replace(/<[^>]*>/g, '') : 
-                "Tailored digital solutions built to solve complex business challenges and support long-term growth."
-              }
-            </p>
-          </div>
-
-          {/* E-commerce Solutions Card */}
-          <div className="flex-1 glass-card p-6 rounded-[2rem] border border-gray-100 text-left shadow-xl">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-[#10b981]/10 rounded-xl flex items-center justify-center text-2xl text-[#10b981] shadow-glow ring-1 ring-[#10b981]/20">
-                💰
-              </div>
-              <h3 className="text-gray-900 font-bold text-lg">
-                {heroData.floatingCards && heroData.floatingCards[2] ? heroData.floatingCards[2].heading : "E-commerce Solutions"}
-              </h3>
-            </div>
-            <p className="text-gray-500 text-sm leading-relaxed font-medium">
-              {heroData.floatingCards && heroData.floatingCards[2] ? 
-                heroData.floatingCards[2].description.replace(/<[^>]*>/g, '') : 
-                "Launch powerful online stores with secure payments, optimized performance, and conversion-focused design."
-              }
-            </p>
-          </div>
+          
         </div>
       </div>
     </section>
   );
 }
+
 // Memoize component to prevent unnecessary re-renders
 // Only re-render if data prop changes
 export default memo(HeroSection, (prevProps, nextProps) => {

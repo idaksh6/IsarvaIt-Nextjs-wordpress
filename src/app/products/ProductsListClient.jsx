@@ -313,7 +313,7 @@ export default function ProductsListClient({ productsData }) {
             <Link
               href="/contact"
               prefetch={true}
-              className="press-illusion-btn bg-green-400 text-black font-bold px-8 py-4 text-lg items-center space-x-2 inline-flex justify-center"
+              className="press-illusion-btn bg-green-400 text-white font-bold px-8 py-4 text-lg items-center space-x-2 inline-flex justify-center"
             >
               <span>Request Custom Solution</span>
               <svg
@@ -333,7 +333,7 @@ export default function ProductsListClient({ productsData }) {
             <Link
               href="/services"
               prefetch={true}
-              className="press-illusion-btn inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-gray-700 bg-white/80 backdrop-blur-md border-2 border-gray-200 rounded-lg hover:border-emerald-600 hover:text-emerald-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+              className="press-illusion-btn bg-green-400 text-white inline-flex items-center justify-center px-8 py-4 text-lg font-bold  backdrop-blur-md border-2 border-gray-200 rounded-lg "
             >View Our Services
             </Link>
           </div>
