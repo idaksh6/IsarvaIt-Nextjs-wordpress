@@ -73,7 +73,7 @@ export default function ProductDetailPremiumMobile({
                 onClick={() => setIsModalOpen(true)}
                 className="press-illusion-btn-violet bg-violet-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex cursor-pointer"
               >
-                <span>D</span>
+                <span>REQUEST DEMO</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
