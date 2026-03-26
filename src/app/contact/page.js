@@ -124,56 +124,35 @@ export default function Contact() {
         <div className="absolute inset-0 hero-noise-overlay opacity-[0.02]"></div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-            {contactInfo.map((info, index) => (
-              <div
-                key={index}
-                className="relative rounded-3xl p-8 bg-white border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br  from-emerald-400/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                <div className="relative lg:text-left text-center">
-                  <div className="w-14 h-14 rounded-2xl lg:mx-0 mx-auto  bg-gradient-to-br from-emerald-400 to-green-500 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 text-white">
-                    {info.icon}
-                  </div>
-
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">
-                    {info.title}
-                  </h3>
-
-                  {info.link ? (
-                    <a
-                      href={info.link}
-                      target={info.link.startsWith('http') ? '_blank' : undefined}
-                      rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="text-emerald-600 font-semibold hover:text-emerald-700 transition-colors block mb-2"
-                    >
-                      {info.content}
-                    </a>
-                  ) : (
-                    <p className="text-gray-900 font-semibold mb-2">{info.content}</p>
-                  )}
-
-                  <p className="text-sm text-gray-600">{info.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
 
           {/* Form and Map Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div className="relative">
-              <div className="mb-8 lg:text-left text-center">
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                  Send us a Message
-                </h2>
-                <p className="text-lg text-gray-600">
-                  Fill out the form below and we'll get back to you as soon as possible.
-                </p>
-              </div>
+              <div className="rounded-3xl p-8 lg:p-10 bg-gradient-to-br from-emerald-50 via-green-50 to-white border-2 border-emerald-100 shadow-2xl transition-all duration-300 relative overflow-hidden">
+                {/* Decorative elements */}
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-emerald-200/30 rounded-full blur-3xl"></div>
+                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-green-200/30 rounded-full blur-3xl"></div>
+                
+                <div className="relative z-10">
+                  <div className="mb-8 lg:text-left text-center">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 font-semibold text-sm mb-4">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                      Get in Touch
+                    </div>
+                    <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                      Send us a Message
+                    </h2>
+                    <p className="text-lg text-gray-700">
+                      Fill out the form below and we'll get back to you as soon as possible.
+                    </p>
+                  </div>
 
-              <ContactForm pageType="Contact Page" />
+                  <ContactForm pageType="Contact Page" />
+                </div>
+              </div>
             </div>
 
             {/* Map and Additional Info */}
@@ -219,6 +198,44 @@ export default function Contact() {
 
             </div>
           </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-20">
+            {contactInfo.map((info, index) => (
+              <div
+                key={index}
+                className="relative rounded-3xl p-8 bg-white border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br  from-emerald-400/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                <div className="relative lg:text-left text-center">
+                  <div className="w-14 h-14 rounded-2xl lg:mx-0 mx-auto  bg-gradient-to-br from-emerald-400 to-green-500 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 text-white">
+                    {info.icon}
+                  </div>
+
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">
+                    {info.title}
+                  </h3>
+
+                  {info.link ? (
+                    <a
+                      href={info.link}
+                      target={info.link.startsWith('http') ? '_blank' : undefined}
+                      rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      className="text-emerald-600 font-semibold hover:text-emerald-700 transition-colors block mb-2"
+                    >
+                      {info.content}
+                    </a>
+                  ) : (
+                    <p className="text-gray-900 font-semibold mb-2">{info.content}</p>
+                  )}
+
+                  <p className="text-sm text-gray-600">{info.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+
         </div>
       </section>
 
@@ -289,14 +306,14 @@ export default function Contact() {
 
                   {/* Gradient Overlay for text readability */}
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent"></div>
-                  
+
                   {/* Location Pin Icon */}
                   <div className="absolute top-4 left-1/2 -translate-x-1/2 text-emerald-500 group-hover:scale-110 transition-transform duration-300 z-10">
                     <svg className="w-10 h-10 drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                     </svg>
                   </div>
-                  
+
                   {/* Location Name Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
                     <div className="text-center">
@@ -306,7 +323,7 @@ export default function Contact() {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Address Section */}
                 <div className="p-4">
                   <p className="text-gray-600 leading-relaxed text-center">
