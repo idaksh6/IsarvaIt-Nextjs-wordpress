@@ -914,6 +914,25 @@ h6,
   box-shadow: 0 3px 0 #1b85c3;
 }
 
+.press-illusion-btn-green {
+  border: none;
+  box-shadow: 0 6px 0 #22C55E;
+  transition: all 0.1s ease;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.press-illusion-btn-green:hover {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #22C55E;
+}
+
 .btn-outline {
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: white;
