@@ -39,7 +39,6 @@ export default function CtaSection() {
                   Let's discuss your project and turn your ideas into reality
                 </p>
 
-                {/* Contact Details Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 max-w-[1000px] mx-auto mb-12 w-full">
                   {/* Email */}
                   <motion.a
@@ -48,11 +47,11 @@ export default function CtaSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                    className="group bg-[#1e9a4f] rounded-[24px] p-8 hover:bg-[#178542] transition-colors duration-300 w-full flex flex-col items-center justify-center min-h-[220px]"
+                    className="group bg-[#1e9a4f] rounded-[24px] border-2 border-transparent p-8 hover:bg-white hover:border-[#1e9a4f] transition-all duration-300 w-full flex flex-col items-center justify-center min-h-[220px]"
                   >
-                    <div className="w-14 h-14 border border-white/40 rounded-full flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-14 h-14 border border-white/40 group-hover:border-[#1e9a4f] rounded-full flex items-center justify-center mb-5 group-hover:scale-110 transition-all duration-300">
                       <svg
-                        className="w-6 h-6 text-white"
+                        className="w-6 h-6 text-white group-hover:text-[#1e9a4f] transition-colors duration-300"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -65,10 +64,10 @@ export default function CtaSection() {
                         />
                       </svg>
                     </div>
-                    <h3 className="text-white font-semibold text-xl mb-1.5 flex items-center gap-1">
+                    <h3 className="text-white group-hover:text-[#1e9a4f] transition-colors duration-300 font-semibold text-xl mb-1.5 flex items-center gap-1">
                       Email Us
                     </h3>
-                    <p className="text-white/80 text-[15px] font-normal">
+                    <p className="text-white/80 group-hover:text-[#356747] transition-colors duration-300 text-[15px] font-normal">
                       info@isarvait.com
                     </p>
                   </motion.a>
@@ -80,11 +79,11 @@ export default function CtaSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.4 }}
-                    className="group bg-[#1e9a4f] rounded-[24px] p-8 hover:bg-[#178542] transition-colors duration-300 w-full flex flex-col items-center justify-center min-h-[220px]"
+                    className="group bg-[#1e9a4f] rounded-[24px] border-2 border-transparent p-8 hover:bg-white hover:border-[#1e9a4f] transition-all duration-300 w-full flex flex-col items-center justify-center min-h-[220px]"
                   >
-                    <div className="w-14 h-14 border border-white/40 rounded-full flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-14 h-14 border border-white/40 group-hover:border-[#1e9a4f] rounded-full flex items-center justify-center mb-5 group-hover:scale-110 transition-all duration-300">
                       <svg
-                        className="w-5 h-5 text-white"
+                        className="w-5 h-5 text-white group-hover:text-[#1e9a4f] transition-colors duration-300"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -97,10 +96,10 @@ export default function CtaSection() {
                         />
                       </svg>
                     </div>
-                    <h3 className="text-white font-semibold text-xl mb-1.5 flex items-center gap-1">
+                    <h3 className="text-white group-hover:text-[#1e9a4f] transition-colors duration-300 font-semibold text-xl mb-1.5 flex items-center gap-1">
                       Call Us
                     </h3>
-                    <p className="text-white/80 text-[15px] font-normal">
+                    <p className="text-white/80 group-hover:text-[#356747] transition-colors duration-300 text-[15px] font-normal">
                       +91 9880606087
                     </p>
                   </motion.a>
@@ -116,11 +115,11 @@ export default function CtaSection() {
                         "https://maps.google.com/?q=Bajpe, Mangalore, India",
                       )
                     }
-                    className="group bg-[#1e9a4f] rounded-[24px] p-8 hover:bg-[#178542] transition-colors duration-300 w-full flex flex-col items-center justify-center min-h-[220px] cursor-pointer"
+                    className="group bg-[#1e9a4f] rounded-[24px] border-2 border-transparent p-8 hover:bg-white hover:border-[#1e9a4f] transition-all duration-300 w-full flex flex-col items-center justify-center min-h-[220px] cursor-pointer"
                   >
-                    <div className="w-14 h-14 border border-white/40 rounded-full flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-14 h-14 border border-white/40 group-hover:border-[#1e9a4f] rounded-full flex items-center justify-center mb-5 group-hover:scale-110 transition-all duration-300">
                       <svg
-                        className="w-6 h-6 text-white"
+                        className="w-6 h-6 text-white group-hover:text-[#1e9a4f] transition-colors duration-300"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -138,10 +137,10 @@ export default function CtaSection() {
                         />
                       </svg>
                     </div>
-                    <h3 className="text-white font-semibold text-xl mb-1.5 flex items-center gap-1">
+                    <h3 className="text-white group-hover:text-[#1e9a4f] transition-colors duration-300 font-semibold text-xl mb-1.5 flex items-center gap-1">
                       Visit Us
                     </h3>
-                    <p className="text-white/80 text-[15px] font-normal">
+                    <p className="text-white/80 group-hover:text-[#356747] transition-colors duration-300 text-[15px] font-normal">
                       Bajpe, Mangalore, India
                     </p>
                   </motion.div>
