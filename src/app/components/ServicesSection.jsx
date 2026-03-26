@@ -204,7 +204,7 @@ function ServicesSection({ data }) {
             <Link
               href={buttonLink}
               target={data?.buttonTarget || ""}
-              className="press-illusion-btn bg-green-400 text-white font-bold px-6 py-2 text-base w-fit mx-auto items-center space-x-2  inline-flex"
+              className="press-illusion-btn-orange bg-orange-400 text-white font-bold px-6 py-2 text-base w-fit mx-auto items-center space-x-2  inline-flex"
             >
               <span>{decodeHTMLEntities(buttonText)}</span>
               <svg
