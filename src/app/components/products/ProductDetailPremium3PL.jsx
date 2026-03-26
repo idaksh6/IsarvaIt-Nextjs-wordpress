@@ -184,7 +184,7 @@ export default function ProductDetailPremium3PL({
       </div>
 
       {/* 4. CTA Section */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      <section className="py-16 bg-white relative overflow-hidden">
         {/* Background Decoration */}
         <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-transparent to-yellow-50"></div>
 

@@ -435,7 +435,7 @@ function ProductDesktop() {
   return (
     <section
       ref={sectionRef}
-      className="relative lg:py-24 py-10 overflow-hidden"
+      className="relative lg:py-16 py-10 overflow-hidden"
       style={{ backgroundColor: "#fcfdfd" }}
     >
       {/* Subtle grid */}

@@ -262,7 +262,7 @@ export default function ProductDetailPremiumSupport({
       </section>
 
       {/* 5. CTA Section */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      <section className="py-16 bg-white relative overflow-hidden">
         {/* Background Decoration */}
         <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-transparent to-purple-50"></div>
 

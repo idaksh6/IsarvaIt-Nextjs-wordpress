@@ -196,7 +196,7 @@ export default function ProductDetailPremiumMultiBranch({
       </div>
 
       {/* 4. CTA Section */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      <section className="py-16 bg-white relative overflow-hidden">
         {/* Background Decoration */}
         <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-transparent to-cyan-50"></div>
 

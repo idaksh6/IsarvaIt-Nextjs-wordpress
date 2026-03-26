@@ -26,7 +26,7 @@ function ServicesSection({ data }) {
 
   return (
     <section
-      className="relative py-10 lg:py-24 overflow-hidden bg-gradient-to-b from-[#d4f4dd] via-[#defae4] to-[#f2fff5]"
+      className="relative py-10 lg:py-16 overflow-hidden bg-gradient-to-b from-[#d4f4dd] via-[#defae4] to-[#f2fff5]"
       style={{
         contain: "layout style paint",
       }}

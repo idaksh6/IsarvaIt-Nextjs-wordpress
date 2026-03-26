@@ -189,7 +189,7 @@ export default function ProductDetailPremiumISS({
       </section>
 
       {/* 2. Workflow Section */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      <section className="py-16 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-extrabold text-[#000000] mb-6">
@@ -265,7 +265,7 @@ export default function ProductDetailPremiumISS({
       </section>
 
       {/* 4. FAQ Section */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      <section className="py-16 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-extrabold text-[#000000] mb-4">

@@ -7,7 +7,7 @@ export default function BlogSection({ posts }) {
   if (!posts || posts.length === 0) return null;
 
   return (
-    <section className="py-24 bg-premium-noise gradient-bg-green">
+    <section className="lg:py-16 py-10 bg-premium-noise gradient-bg-green">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end lg:text-left text-center justify-between mb-16 gap-6">
           <div className="lg:max-w-2xl max-w-full">

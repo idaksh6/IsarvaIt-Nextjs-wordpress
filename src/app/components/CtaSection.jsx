@@ -10,7 +10,7 @@ export default function CtaSection() {
 
     return (
         <>
-            <section className="py-20 bg-white relative overflow-hidden">
+            <section className="py-16 bg-white relative overflow-hidden">
                 {/* Background Decoration */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#22C55E]/5 via-transparent to-[#22C55E]/5"></div>
 
@@ -20,7 +20,7 @@ export default function CtaSection() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.7 }}
-                        className="relative bg-gradient-to-br from-[#22C55E] to-[#16a34a] rounded-[32px] overflow-hidden shadow-[0_20px_70px_rgba(34,197,94,0.3)]"
+                        className="relative bg-gradient-to-br from-[#145e2f] to-[#092513] rounded-[32px] overflow-hidden shadow-[0_20px_70px_rgba(34,197,94,0.3)]"
                     >
                         {/* Decorative Elements */}
                         <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-white/10 rounded-full blur-3xl"></div>

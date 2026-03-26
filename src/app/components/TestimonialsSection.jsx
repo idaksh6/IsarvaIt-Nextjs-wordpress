@@ -152,7 +152,7 @@ function TestimonialsSection({ data }) {
   return (
     <section
       ref={sectionRef}
-      className="relative lg:py-24 py-10 overflow-hidden"
+      className="relative lg:py-16 py-10 overflow-hidden"
       style={{
         background: "#f8f9eb",
       }}
@@ -288,7 +288,7 @@ function TestimonialsSection({ data }) {
           dragElastic={0.06} // Clean edge feel
           dragMomentum={true} // High quality momentum physics
           style={{ x: dragX }}
-          className="flex gap-7 py-10 px-6 md:px-20 cursor-grab active:cursor-grabbing"
+          className="flex gap-7 px-6 md:px-20 cursor-grab active:cursor-grabbing"
         >
           {testimonials.map((t) => (
             <article

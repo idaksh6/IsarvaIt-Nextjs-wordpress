@@ -120,7 +120,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      <section className="py-16 bg-white relative overflow-hidden">
         <div className="absolute inset-0 hero-noise-overlay opacity-[0.02]"></div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">

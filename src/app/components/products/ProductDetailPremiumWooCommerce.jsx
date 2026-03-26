@@ -244,7 +244,7 @@ export default function ProductDetailPremiumWooCommerce({
       <WooCommerceFAQSection />
 
       {/* 6. CTA Section */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      <section className="py-16 bg-white relative overflow-hidden">
         {/* Background Decoration */}
         <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-transparent to-pink-50"></div>
 
