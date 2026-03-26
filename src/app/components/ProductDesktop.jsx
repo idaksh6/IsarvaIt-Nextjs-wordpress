@@ -990,7 +990,7 @@ const ProductDesktopCard = ({ product }) => {
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="group relative bg-white hover:bg-gray-50 border border-gray-200 hover:border-blue-400 rounded-lg p-4 cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-[1.02] block"
+      className="group relative bg-white hover:bg-gray-50 border border-gray-200 hover:border-blue-400 rounded-lg p-4 cursor-pointer transition-all duration-300 hover:shadow-2xl hover:scale-105 block"
     >
       {/* Product Image */}
       <div className="relative h-32 mb-3 rounded-lg overflow-hidden bg-gray-100">

@@ -51,12 +51,7 @@ function ServicesSection({ data }) {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Heading */}
         <div className="services-heading text-center mb-16 lg:mb-20">
-          {stripData && (
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/40 backdrop-blur-md text-emerald-800 font-semibold text-sm mb-6 border border-white/60 shadow-lg">
-              <span className="w-2 h-2 bg-emerald-600 rounded-full animate-pulse"></span>
-              {decodeHTMLEntities(stripData)}
-            </div>
-          )}
+
           {heading && (
             <h2 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-4 tracking-tight">
               {decodeHTMLEntities(heading)}
@@ -64,9 +59,15 @@ function ServicesSection({ data }) {
           )}
           {description && (
             <div
-              className="text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto prose prose-slate"
+              className="text-lg lg:text-xl text-gray-700 max-w-3xl mb-6 mx-auto prose prose-slate"
               dangerouslySetInnerHTML={{ __html: description }}
             />
+          )}
+          {stripData && (
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/40 backdrop-blur-md text-emerald-800 font-semibold text-sm  border border-white/60 shadow-lg">
+              <span className="w-2 h-2 bg-emerald-600 rounded-full animate-pulse"></span>
+              {decodeHTMLEntities(stripData)}
+            </div>
           )}
         </div>
 
@@ -75,9 +76,8 @@ function ServicesSection({ data }) {
           {services.map((service, index) => (
             <div
               key={service.id || index}
-              className="service-card group relative rounded-3xl p-8 transition-all duration-300 hover:scale-[1.03] bg-white/90 border border-white/60 shadow-lg md:bg-white/40 md:backdrop-blur-md md:shadow-[0_8px_32px_0_rgba(0,255,136,0.15)]"
+              className="service-card group relative rounded-3xl p-8 transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-2xl bg-white/90 border border-white/60 shadow-lg md:bg-white/40 md:backdrop-blur-md md:shadow-[0_8px_32px_0_rgba(0,255,136,0.15)]"
               style={{
-                transform: "translate3d(0, 0, 0)",
                 backfaceVisibility: "hidden",
                 WebkitBackfaceVisibility: "hidden",
               }}
