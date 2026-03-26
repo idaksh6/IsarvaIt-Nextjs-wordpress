@@ -101,7 +101,7 @@ function HeroSection({ data }) {
         )}
 
         {/* Floating Cards - Overlapping Layout */}
-        <div className="relative w-full max-w-[1024px] mx-auto flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-0 mt-12 pb-20 px-4">
+        <div className="relative w-full max-w-[1024px] mx-auto  flex-col lg:flex-row items-center justify-center gap-6 lg:gap-0 mt-12 lg:flex hidden pb-20 px-4">
           {/* Card 1 - Left */}
           <div className="w-full lg:w-[320px] bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] z-10 lg:translate-x-4 transition-all duration-300  hover:-translate-y-2 flex flex-col items-center flex-1 lg:flex-none h-full min-h-[380px]">
             <div className="w-20 h-20 bg-[#89c0fe] rounded-full flex items-center justify-center text-white mb-6">
