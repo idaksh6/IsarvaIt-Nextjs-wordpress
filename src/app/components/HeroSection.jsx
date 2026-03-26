@@ -2,7 +2,8 @@
 
 import { memo } from "react";
 import Link from "next/link";
-import { Lightbulb, Settings, BarChart3, ChevronRight } from "lucide-react";
+import Script from "next/script";
+import { ChevronRight } from "lucide-react";
 
 // Helper function to strip HTML tags from WYSIWYG content
 // Moved outside component to avoid recreation on every render
@@ -56,6 +57,12 @@ function HeroSection({ data }) {
         backgroundRepeat: "no-repeat",
       }}
     >
+      {/* Load Lordicon Script for Animated GIF-type Icons */}
+      <Script
+        src="https://cdn.lordicon.com/lordicon.js"
+        strategy="lazyOnload"
+      />
+
       <div className="max-w-7xl mx-auto px-6 relative z-20 text-center hero-content w-full">
         {heroData.stripTag && (
           <div className="inline-flex mb-8">
@@ -82,7 +89,12 @@ function HeroSection({ data }) {
           {/* Card 1 - Left */}
           <div className="w-full lg:w-[320px] bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] z-10 lg:translate-x-4 transition-all duration-300  hover:-translate-y-2 flex flex-col items-center flex-1 lg:flex-none h-full min-h-[380px]">
             <div className="w-20 h-20 bg-[#89c0fe] rounded-full flex items-center justify-center text-white mb-6">
-              <Lightbulb size={36} strokeWidth={2} />
+              <lord-icon
+                src="https://cdn.lordicon.com/wzwygmng.json"
+                trigger="loop"
+                colors="primary:#ffffff,secondary:#ffffff"
+                style={{ width: "48px", height: "48px" }}
+              ></lord-icon>
             </div>
             <h3 className="text-gray-900 font-bold text-xl mb-4 text-center w-full">
               {heroData.floatingCards && heroData.floatingCards[0]
@@ -105,18 +117,21 @@ function HeroSection({ data }) {
           {/* Card 2 - Center (Elevated & Overlapping) */}
           <div className="w-full lg:w-[360px] bg-white rounded-[2.5rem] p-10 shadow-[0_20px_50px_rgb(0,0,0,0.15)] z-30 transform lg:rotate-3 lg:-translate-y-0 transition-all duration-500 hover:rotate-0 hover:-translate-y-2 hover:z-40 flex flex-col items-center mx-[-10px] lg:mx-0 flex-1 lg:flex-none relative h-full min-h-[420px]">
             <div className="w-24 h-24 bg-[#7bd29b] rounded-full flex items-center justify-center text-white mb-6 shadow-[0_8px_20px_rgba(123,210,155,0.3)]">
-              <Settings size={44} strokeWidth={2} />
+              <lord-icon
+                src="https://cdn.lordicon.com/cllunfud.json"
+                trigger="loop"
+                colors="primary:#ffffff,secondary:#ffffff"
+                style={{ width: "56px", height: "56px" }}
+              ></lord-icon>
             </div>
             <h3 className="text-gray-900 font-bold text-[22px] mb-4 text-center w-full">
-             
-
-                 {heroData.floatingCards && heroData.floatingCards[2]
-                ? heroData.floatingCards[2].heading
-                : "Woocommerce Development"}
+              {heroData.floatingCards && heroData.floatingCards[1]
+                ? heroData.floatingCards[1].heading
+                : "Custom Software"}
             </h3>
             <p className="text-gray-700 text-[14px] leading-relaxed text-center font-bold mb-8 flex-grow w-full">
-              {heroData.floatingCards && heroData.floatingCards[2]
-                ? heroData.floatingCards[2].description.replace(/<[^>]*>/g, "")
+              {heroData.floatingCards && heroData.floatingCards[1]
+                ? heroData.floatingCards[1].description.replace(/<[^>]*>/g, "")
                 : "Tailored digital solutions built to solve complex business challenges and support long-term growth."}
             </p>
             <Link
@@ -130,16 +145,21 @@ function HeroSection({ data }) {
           {/* Card 3 - Right */}
           <div className="w-full lg:w-[320px] bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] z-20 lg:-translate-x-4 transition-all duration-300 hover:-translate-y-2 flex flex-col items-center flex-1 lg:flex-none h-full min-h-[380px]">
             <div className="w-20 h-20 bg-[#a37eea] rounded-full flex items-center justify-center text-white mb-6">
-              <BarChart3 size={36} strokeWidth={2} />
+              <lord-icon
+                src="https://cdn.lordicon.com/rjzlnunf.json"
+                trigger="loop"
+                colors="primary:#ffffff,secondary:#ffffff"
+                style={{ width: "48px", height: "48px" }}
+              ></lord-icon>
             </div>
             <h3 className="text-gray-900 font-bold text-xl mb-4 text-center w-full">
-               {heroData.floatingCards && heroData.floatingCards[1]
-                ? heroData.floatingCards[1].heading
-                : "Custom Software"}
+              {heroData.floatingCards && heroData.floatingCards[2]
+                ? heroData.floatingCards[2].heading
+                : "Woocommerce Development"}
             </h3>
             <p className="text-gray-700 text-[13px] leading-relaxed text-center font-bold mb-8 flex-grow w-full">
-              {heroData.floatingCards && heroData.floatingCards[1]
-                ? heroData.floatingCards[1].description.replace(/<[^>]*>/g, "")
+              {heroData.floatingCards && heroData.floatingCards[2]
+                ? heroData.floatingCards[2].description.replace(/<[^>]*>/g, "")
                 : "Launch powerful online stores with secure payments, optimized performance, and conversion-focused design."}
             </p>
             <Link
