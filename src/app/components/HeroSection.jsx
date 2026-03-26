@@ -76,29 +76,6 @@ function HeroSection({ data }) {
             dangerouslySetInnerHTML={{ __html: heroData.description }}
           />
         )}
-        {heroData.hasButton && (
-          <div className="relative z-30 mb-8 lg:mb-12">
-            <Link
-              href={heroData.buttonLink}
-              className="press-illusion-btn bg-green-400 text-white w-fit  font-bold px-6 py-2 text-base mx-auto items-center space-x-2 gap-2 inline-flex"
-            >
-              Get In Touch
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 17 9"
-                className="h-2 w-4"
-              >
-                <path
-                  fill="currentColor"
-                  fillRule="evenodd"
-                  d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-            </Link>
-          </div>
-        )}
 
         {/* Floating Cards - Overlapping Layout */}
         <div className="relative w-full max-w-[1024px] mx-auto  flex-col lg:flex-row items-center justify-center gap-6 lg:gap-0 mt-12 lg:flex hidden pb-20 px-4">

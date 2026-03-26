@@ -102,15 +102,25 @@ export default function ProductDetailPremiumExpense({
           className="hero-dashboard-wrapper"
         >
           <div className="dashboard-animation left">
-            <div className="scroll-img"></div>
+            <div 
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/expense tracker/Expense-slide1.jpg'), url('/products/expense tracker/Expense-slide2.jpg')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-animation right">
-            <div className="scroll-img"></div>
+            <div 
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/expense tracker/Expense-slide3.jpg'), url('/products/expense tracker/Expense-slide4.jpg')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-main-img">
             <div className="relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)] bg-white">
               <img
-                src="/dashboard.webp"
+                src="/products/expense tracker/Expense-dashboard.jpg"
                 alt="Expense Management Dashboard"
                 className="w-full object-contain lg:h-[668px] h-full shadow-2xl"
               />
@@ -127,8 +137,8 @@ export default function ProductDetailPremiumExpense({
             <div className="relative lg:sticky lg:top-28 lg:self-start">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/dashboard.webp"
-                  alt="Expense Management Dashboard"
+                  src="/products/expense tracker/Expense_submission.jpg"
+                  alt="Expense Submission"
                   className="w-full h-auto object-cover"
                 />
               </div>
@@ -384,7 +394,7 @@ const expenseFeaturesByTab = {
       icon: "🔐",
       color: "#10B981",
       desc: "Secure and convenient login through Google authentication for all employees.",
-      image: "/dashboard.webp",
+      image: "/products/expense tracker/Google-login.jpg",
     },
     {
       id: "onboarding",
@@ -392,7 +402,7 @@ const expenseFeaturesByTab = {
       icon: "👤",
       color: "#059669",
       desc: "Guided onboarding form to capture essential employee information during initial setup.",
-      image: "/dashboard.webp",
+      image: "/products/expense tracker/User-onboarding.jpg",
     },
     {
       id: "role-login",
@@ -400,7 +410,7 @@ const expenseFeaturesByTab = {
       icon: "🎭",
       color: "#14B8A6",
       desc: "Authenticated employees are directed to respective dashboards based on their assigned roles.",
-      image: "/dashboard.webp",
+      image: "/products/expense tracker/Roll-based-login.jpg",
     },
     {
       id: "dynamic-masters",
@@ -408,7 +418,7 @@ const expenseFeaturesByTab = {
       icon: "⚙️",
       color: "#10B981",
       desc: "Configurable expense categories, approval hierarchies, and workflow rules to match your organization's structure.",
-      image: "/dashboard.webp",
+      image: "/products/expense tracker/Dynamic-Masters.jpg",
     },
     {
       id: "expense-submission",
@@ -416,7 +426,7 @@ const expenseFeaturesByTab = {
       icon: "📝",
       color: "#059669",
       desc: "Employees can submit expenses with detailed information and supporting documents through an intuitive interface.",
-      image: "/dashboard.webp",
+      image: "/products/expense tracker/Expense_submission.jpg",
     },
     {
       id: "approval-workflow",
@@ -424,7 +434,7 @@ const expenseFeaturesByTab = {
       icon: "✅",
       color: "#14B8A6",
       desc: "Intelligent multi-level approval process where designated approvers can review, approve, reject, or forward expenses.",
-      image: "/dashboard.webp",
+      image: "/products/expense tracker/Expense-slide1.jpg",
     },
     {
       id: "status-log",
@@ -432,7 +442,7 @@ const expenseFeaturesByTab = {
       icon: "📋",
       color: "#10B981",
       desc: "Complete transparency with comprehensive status logs tracking every action taken on each expense submission.",
-      image: "/dashboard.webp",
+      image: "/products/expense tracker/Expense-slide2.jpg",
     },
     {
       id: "reporting",
@@ -440,7 +450,7 @@ const expenseFeaturesByTab = {
       icon: "📊",
       color: "#059669",
       desc: "Detailed expense reports with filtering, export capabilities, and analytics for better financial insights.",
-      image: "/dashboard.webp",
+      image: "/products/expense tracker/Comphrensive-report.jpg",
     },
   ],
   reports: [
@@ -450,7 +460,7 @@ const expenseFeaturesByTab = {
       icon: "🏠",
       color: "#10B981",
       desc: "Personalized dashboard showing expense summaries, pending approvals, and quick action buttons.",
-      image: "/dashboard.webp",
+      image: "/products/expense tracker/Expense-dashboard.jpg",
     },
     {
       id: "manage-expenses",
@@ -458,7 +468,7 @@ const expenseFeaturesByTab = {
       icon: "💼",
       color: "#059669",
       desc: "Comprehensive view to manage all submitted expenses with filtering and search capabilities.",
-      image: "/dashboard.webp",
+      image: "/products/expense tracker/Employeewise-Report.jpg",
     },
     {
       id: "add-expense",
@@ -466,7 +476,7 @@ const expenseFeaturesByTab = {
       icon: "➕",
       color: "#14B8A6",
       desc: "User-friendly form to submit new expense claims with category selection, amount, description, and document upload.",
-      image: "/dashboard.webp",
+      image: "/products/expense tracker/Expense_submission.jpg",
     },
     {
       id: "view-expense",
@@ -474,7 +484,7 @@ const expenseFeaturesByTab = {
       icon: "👁️",
       color: "#10B981",
       desc: "Detailed view of individual expense submissions showing all information, attachments, and approval trail.",
-      image: "/dashboard.webp",
+      image: "/products/expense tracker/Expense-slide3.jpg",
     },
     {
       id: "add-user",
@@ -482,7 +492,7 @@ const expenseFeaturesByTab = {
       icon: "👥",
       color: "#059669",
       desc: "Admin panel to onboard new employees, assign roles, and configure approval hierarchies.",
-      image: "/dashboard.webp",
+      image: "/products/expense tracker/User-onboarding.jpg",
     },
     {
       id: "manage-status",
@@ -490,7 +500,7 @@ const expenseFeaturesByTab = {
       icon: "🔄",
       color: "#14B8A6",
       desc: "Track and update expense statuses throughout the approval workflow with detailed status history.",
-      image: "/dashboard.webp",
+      image: "/products/expense tracker/Expense-slide4.jpg",
     },
     {
       id: "page-rights",
@@ -498,7 +508,7 @@ const expenseFeaturesByTab = {
       icon: "🔒",
       color: "#10B981",
       desc: "Granular access control to manage which features and reports are accessible to different user roles.",
-      image: "/dashboard.webp",
+      image: "/products/expense tracker/Roll-based-login.jpg",
     },
     {
       id: "approve-expense",
@@ -506,7 +516,7 @@ const expenseFeaturesByTab = {
       icon: "✅",
       color: "#059669",
       desc: "Approver interface to review expense details, supporting documents, and approve claims with comments.",
-      image: "/dashboard.webp",
+      image: "/products/expense tracker/Expense-slide1.jpg",
     },
     {
       id: "reject-expense",
@@ -514,7 +524,7 @@ const expenseFeaturesByTab = {
       icon: "❌",
       color: "#14B8A6",
       desc: "Option for approvers to reject expense claims with mandatory reason comments for transparency.",
-      image: "/dashboard.webp",
+      image: "/products/expense tracker/Expense-slide2.jpg",
     },
     {
       id: "expense-report",
@@ -522,7 +532,7 @@ const expenseFeaturesByTab = {
       icon: "📊",
       color: "#10B981",
       desc: "Comprehensive analytics and reports showing expense trends, category breakdowns, and approval metrics.",
-      image: "/dashboard.webp",
+      image: "/products/expense tracker/Comphrensive-report.jpg",
     },
     {
       id: "forward-expense",
@@ -530,7 +540,7 @@ const expenseFeaturesByTab = {
       icon: "➡️",
       color: "#059669",
       desc: "Capability for approvers to forward expenses to other approvers when needed, maintaining audit trail.",
-      image: "/dashboard.webp",
+      image: "/products/expense tracker/Payout-Report.jpg",
     },
     {
       id: "edit-profile",
@@ -538,7 +548,7 @@ const expenseFeaturesByTab = {
       icon: "✏️",
       color: "#14B8A6",
       desc: "Employee self-service portal to update personal information, contact details, and notification preferences.",
-      image: "/dashboard.webp",
+      image: "/products/expense tracker/Edit-profile.jpg",
     },
   ],
 };
