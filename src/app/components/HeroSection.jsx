@@ -118,19 +118,20 @@ function HeroSection({ data }) {
           <div className="w-full lg:w-[360px] bg-white rounded-[2.5rem] p-10 shadow-[0_20px_50px_rgb(0,0,0,0.15)] z-30 transform lg:rotate-3 lg:-translate-y-0 transition-all duration-500 hover:rotate-0 hover:-translate-y-2 hover:z-40 flex flex-col items-center mx-[-10px] lg:mx-0 flex-1 lg:flex-none relative h-full min-h-[420px]">
             <div className="w-24 h-24 bg-[#7bd29b] rounded-full flex items-center justify-center text-white mb-6 shadow-[0_8px_20px_rgba(123,210,155,0.3)]">
               <lord-icon
-                src="https://cdn.lordicon.com/cllunfud.json"
+               
+                 src="https://cdn.lordicon.com/rjzlnunf.json"
                 trigger="loop"
                 colors="primary:#ffffff,secondary:#ffffff"
                 style={{ width: "56px", height: "56px" }}
               ></lord-icon>
             </div>
             <h3 className="text-gray-900 font-bold text-[22px] mb-4 text-center w-full">
-              {heroData.floatingCards && heroData.floatingCards[2]
+              {heroData.floatingCards && heroData.floatingCards[1]
                 ? heroData.floatingCards[2].heading
                 : "Woocommerce Development"}
             </h3>
             <p className="text-gray-700 text-[14px] leading-relaxed text-center font-bold mb-8 flex-grow w-full">
-              {heroData.floatingCards && heroData.floatingCards[2]
+              {heroData.floatingCards && heroData.floatingCards[1]
                 ? heroData.floatingCards[2].description.replace(/<[^>]*>/g, "")
                 : "Launch powerful online stores with secure payments, optimized performance, and conversion-focused design."}
             </p>
@@ -146,7 +147,7 @@ function HeroSection({ data }) {
           <div className="w-full lg:w-[320px] bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] z-20 lg:-translate-x-4 transition-all duration-300 hover:-translate-y-2 flex flex-col items-center flex-1 lg:flex-none h-full min-h-[380px]">
             <div className="w-20 h-20 bg-[#a37eea] rounded-full flex items-center justify-center text-white mb-6">
               <lord-icon
-                src="https://cdn.lordicon.com/rjzlnunf.json"
+                src="https://cdn.lordicon.com/cllunfud.json"
                 trigger="loop"
                 colors="primary:#ffffff,secondary:#ffffff"
                 style={{ width: "48px", height: "48px" }}
