@@ -100,15 +100,25 @@ export default function ProductDetailPremiumDispatcher({
           className="hero-dashboard-wrapper"
         >
           <div className="dashboard-animation left">
-            <div className="scroll-img"></div>
+            <div 
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/dispatcher%20Panel/Dispatcher-slide1.jpg'), url('/products/dispatcher%20Panel/Dispatcher-slide2.jpg')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-animation right">
-            <div className="scroll-img"></div>
+            <div 
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/dispatcher%20Panel/Dispatcher-slide3.jpg'), url('/products/dispatcher%20Panel/Dispatcher-slide4.jpg')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-main-img">
             <div className="relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)] bg-white">
               <img
-                src="/dashboard.webp"
+                src="/products/dispatcher%20Panel/Dispatcher-dashboard.jpg"
                 alt="Dispatcher Panel Dashboard"
                 className="w-full object-contain lg:h-[668px] h-full shadow-2xl"
               />
@@ -125,8 +135,8 @@ export default function ProductDetailPremiumDispatcher({
             <div className="relative lg:sticky lg:top-28 lg:self-start">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/dashboard.webp"
-                  alt="Dispatcher Dashboard"
+                  src="/products/dispatcher%20Panel/Order-management.jpg"
+                  alt="Dispatcher Order Management"
                   className="w-full h-auto object-cover"
                 />
               </div>
@@ -377,15 +387,7 @@ const dispatcherFeaturesByTab = {
       icon: "📝",
       color: "#EF4444",
       desc: "Users can create orders received through different channels, such as email, WhatsApp, and phone calls. The panel allows users to input all necessary order details, ensuring that no order is missed or incorrectly recorded. This feature helps consolidate orders from various sources into a single system for better management and tracking.",
-      image: "/dashboard.webp",
-    },
-    {
-      id: "generate-invoice",
-      label: "Generate Invoice",
-      icon: "🧾",
-      color: "#DC2626",
-      desc: "The application can automatically generate invoices for each order received from customers. This includes calculating the total cost, applying any relevant discounts, and adding taxes. The generated invoices can be printed or emailed directly to the customers, ensuring a smooth and professional billing process.",
-      image: "/dashboard.webp",
+      image: "/products/dispatcher%20Panel/Create-orders.jpg",
     },
     {
       id: "order-management",
@@ -393,7 +395,7 @@ const dispatcherFeaturesByTab = {
       icon: "📦",
       color: "#F97316",
       desc: "Users can manually manage the status of each order through various stages, such as 'Received,' 'Processing,' 'Dispatched,' and 'Delivered.' This feature ensures that every order is accurately tracked throughout its lifecycle, allowing users to update the status as necessary and keep customers informed about their order progress. Additionally, it provides an organized way to handle multiple orders efficiently, reducing the risk of errors and delays.",
-      image: "/dashboard.webp",
+      image: "/products/dispatcher%20Panel/Order-management.jpg",
     },
     {
       id: "assigning-orders",
@@ -401,15 +403,7 @@ const dispatcherFeaturesByTab = {
       icon: "🚚",
       color: "#EF4444",
       desc: "Users can assign orders to specific delivery boys based on availability and delivery routes. This feature helps optimize the delivery process by ensuring that orders are distributed evenly among delivery personnel. It also allows users to track which delivery boy is responsible for each order, improving accountability and delivery efficiency.",
-      image: "/dashboard.webp",
-    },
-    {
-      id: "delivery-boy-screen",
-      label: "Delivery Boy Screen",
-      icon: "📱",
-      color: "#DC2626",
-      desc: "Delivery boys have their own login credentials and a dedicated screen where they can view their assigned orders. This screen provides all the necessary details for each delivery, including customer information, delivery address, and order specifics. Upon successful delivery, delivery boys are required to upload an image as proof of delivery, which is then recorded in the system for verification and record-keeping purposes.",
-      image: "/dashboard.webp",
+      image: "/products/dispatcher%20Panel/Asigning-orders-to-delivery.jpg",
     },
     {
       id: "user-management",
@@ -417,7 +411,7 @@ const dispatcherFeaturesByTab = {
       icon: "👥",
       color: "#F97316",
       desc: "The system supports multiple user roles, including admin, shop user, online user, and delivery boy. Each role is granted specific permissions and access rights to ensure that users only have access to the functionalities relevant to their responsibilities. Admins can manage all aspects of the system, shop users can handle order creation and management, online users can place orders, and delivery boys can view and update their assigned deliveries. This role-based access control ensures security and efficiency in the system's operation.",
-      image: "/dashboard.webp",
+      image: "/products/dispatcher%20Panel/User-Management.jpg",
     },
   ],
   reports: [
@@ -427,7 +421,7 @@ const dispatcherFeaturesByTab = {
       icon: "📊",
       color: "#EF4444",
       desc: "Dashboard will display total orders and recently added order.",
-      image: "/dashboard.webp",
+      image: "/products/dispatcher%20Panel/Dispatcher-dashboard.jpg",
     },
     {
       id: "manage-order",
@@ -435,7 +429,7 @@ const dispatcherFeaturesByTab = {
       icon: "📋",
       color: "#DC2626",
       desc: "Under this view user can handle all the placed order.",
-      image: "/dashboard.webp",
+      image: "/products/dispatcher%20Panel/Order-management.jpg",
     },
     {
       id: "place-order",
@@ -443,7 +437,7 @@ const dispatcherFeaturesByTab = {
       icon: "➕",
       color: "#F97316",
       desc: "User can created the order via this screen.",
-      image: "/dashboard.webp",
+      image: "/products/dispatcher%20Panel/Create-orders.jpg",
     },
     {
       id: "view-placed",
@@ -451,7 +445,7 @@ const dispatcherFeaturesByTab = {
       icon: "👁️",
       color: "#EF4444",
       desc: "User can view the placed order here and also dispatcher can update the status of the order via this screen.",
-      image: "/dashboard.webp",
+      image: "/products/dispatcher%20Panel/Dispatcher-slide2.jpg",
     },
     {
       id: "delivery-receipt",
@@ -459,7 +453,7 @@ const dispatcherFeaturesByTab = {
       icon: "🧾",
       color: "#DC2626",
       desc: "Sample of delivery challan generated by dispatcher.",
-      image: "/dashboard.webp",
+      image: "/products/dispatcher%20Panel/Dispatcher-slide3.jpg",
     },
     {
       id: "product-report",
@@ -467,7 +461,7 @@ const dispatcherFeaturesByTab = {
       icon: "📈",
       color: "#F97316",
       desc: "Sample of product challan generated by dispatcher.",
-      image: "/dashboard.webp",
+      image: "/products/dispatcher%20Panel/Dispatcher-slide4.jpg",
     },
   ],
 };
@@ -492,8 +486,8 @@ function DispatcherFeatureSection() {
   }, [activeTab]);
 
   const currentFeatures = dispatcherFeaturesByTab[activeTab];
-  const leftFeatures = currentFeatures.slice(0, 3);
-  const rightFeatures = currentFeatures.slice(3);
+  const leftFeatures = currentFeatures.slice(0, Math.ceil(currentFeatures.length / 2));
+  const rightFeatures = currentFeatures.slice(Math.ceil(currentFeatures.length / 2));
   const activeFeature = currentFeatures.find((f) => f.id === activeId) || currentFeatures[0];
 
   return (

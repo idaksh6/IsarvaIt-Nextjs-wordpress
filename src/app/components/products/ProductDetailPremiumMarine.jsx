@@ -100,15 +100,25 @@ export default function ProductDetailPremiumMarine({
           className="hero-dashboard-wrapper"
         >
           <div className="dashboard-animation left">
-            <div className="scroll-img"></div>
+            <div 
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/marnine%20service%20center/Marine-Slide1.jpg'), url('/products/marnine%20service%20center/Marine-Slide2.jpg')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-animation right">
-            <div className="scroll-img"></div>
+            <div 
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/marnine%20service%20center/Marine-Slide3.jpg'), url('/products/marnine%20service%20center/Marine-Slide4.jpg')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-main-img">
             <div className="relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)] bg-white">
               <img
-                src="/dashboard.webp"
+                src="/products/marnine%20service%20center/Marine-Dashboard.jpg"
                 alt="Marine Service Software Dashboard"
                 className="w-full object-contain lg:h-[668px] h-full shadow-2xl"
               />
@@ -125,8 +135,8 @@ export default function ProductDetailPremiumMarine({
             <div className="relative lg:sticky lg:top-28 lg:self-start">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/dashboard.webp"
-                  alt="Marine Service Dashboard"
+                  src="/products/marnine%20service%20center/Monitor-enquiry.jpg"
+                  alt="Marine Service Monitor Enquiry"
                   className="w-full h-auto object-cover"
                 />
               </div>
@@ -378,7 +388,7 @@ const marineFeaturesByTab = {
       color: "#2563EB",
       desc: "Users have the ability to create new enquiries and closely monitor their status throughout the entire process. This feature ensures that each enquiry is tracked from inception to resolution, allowing users to stay updated on progress and make informed decisions based on real-time information.",
       placeholder: "ENQ",
-      image: "/dashboard.webp",
+      image: "/products/marnine%20service%20center/Monitor-enquiry.jpg",
     },
     {
       id: "quotations",
@@ -387,7 +397,7 @@ const marineFeaturesByTab = {
       color: "#1E40AF",
       desc: "The application allows users to generate detailed quotations for selected enquiries. Totals are automatically calculated based on the provided VAT and discount percentages, ensuring accuracy and consistency in pricing. This feature streamlines the quotation process, making it easier to provide timely and precise cost estimates to clients.",
       placeholder: "QUO",
-      image: "/dashboard.webp",
+      image: "/products/marnine%20service%20center/Quotation.jpg",
     },
     {
       id: "reports-gen",
@@ -396,7 +406,7 @@ const marineFeaturesByTab = {
       color: "#06B6D4",
       desc: "The application is equipped to generate over 50 different types of marine services-related PDF reports. These reports cover a wide range of marine service activities and can be customized to meet various reporting needs. This functionality helps users compile and present comprehensive data in a professional format.",
       placeholder: "REP",
-      image: "/dashboard.webp",
+      image: "/products/marnine%20service%20center/50+reports.jpg",
     },
     {
       id: "summary",
@@ -405,7 +415,7 @@ const marineFeaturesByTab = {
       color: "#2563EB",
       desc: "Users can generate a final summary and delivery note report for enquiries. The summary report provides a concise overview of the enquiry's details and status, while the delivery note report includes information about the delivery, ensuring that all relevant documentation is complete and accurate.",
       placeholder: "SUM",
-      image: "/dashboard.webp",
+      image: "/products/marnine%20service%20center/Summary-certificate.jpg",
     },
     {
       id: "dashboard",
@@ -414,7 +424,7 @@ const marineFeaturesByTab = {
       color: "#1E40AF",
       desc: "The dashboard provides an interactive interface that displays the count of enquiry statuses and showcases the latest enquiries. The visual representation of data helps users quickly understand the current state of enquiries and identify any emerging trends or issues. The dashboard is designed to offer a clear and accessible view of key metrics.",
       placeholder: "DASH",
-      image: "/dashboard.webp",
+      image: "/products/marnine%20service%20center/Marine-Dashboard.jpg",
     },
     {
       id: "user-mgmt",
@@ -423,7 +433,7 @@ const marineFeaturesByTab = {
       color: "#06B6D4",
       desc: "The system includes robust user management capabilities, allowing for the creation of reports based on the location of marine branches. This feature ensures that reports are tailored to specific locations, providing relevant insights and data for each branch. User management also involves assigning appropriate roles and permissions to users, ensuring that access to features and data is appropriately controlled.",
       placeholder: "USR",
-      image: "/dashboard.webp",
+      image: "/products/marnine%20service%20center/User-management.jpg",
     },
   ],
   reports: [
@@ -434,7 +444,7 @@ const marineFeaturesByTab = {
       color: "#2563EB",
       desc: "Displays the count of enquiry status and the latest enquiries.",
       placeholder: "DB",
-      image: "/dashboard.webp",
+      image: "/products/marnine%20service%20center/Marine-Dashboard.jpg",
     },
     {
       id: "enquiry-form",
@@ -443,7 +453,7 @@ const marineFeaturesByTab = {
       color: "#1E40AF",
       desc: "Here user can create the enquiries received and generated the enquiry report in pdf format.",
       placeholder: "EF",
-      image: "/dashboard.webp",
+      image: "/products/marnine%20service%20center/Monitor-enquiry.jpg",
     },
     {
       id: "quotation-details",
@@ -452,7 +462,7 @@ const marineFeaturesByTab = {
       color: "#06B6D4",
       desc: "View where the quotation can be created.",
       placeholder: "QD",
-      image: "/dashboard.webp",
+      image: "/products/marnine%20service%20center/Quotation.jpg",
     },
     {
       id: "service-report",
@@ -461,7 +471,7 @@ const marineFeaturesByTab = {
       color: "#2563EB",
       desc: "Entry point to create the different kind of service reports.",
       placeholder: "SR",
-      image: "/dashboard.webp",
+      image: "/products/marnine%20service%20center/Marine-Slide1.jpg",
     },
     {
       id: "portable-service",
@@ -470,7 +480,7 @@ const marineFeaturesByTab = {
       color: "#1E40AF",
       desc: "Entry point to create different kind of portable service report.",
       placeholder: "PSR",
-      image: "/dashboard.webp",
+      image: "/products/marnine%20service%20center/Marine-Slide2.jpg",
     },
     {
       id: "fire-extinguisher",
@@ -479,7 +489,7 @@ const marineFeaturesByTab = {
       color: "#06B6D4",
       desc: "Under this form fire extinguisher report can be created, in similar way 50+ marine related reports can be generated.",
       placeholder: "PFE",
-      image: "/dashboard.webp",
+      image: "/products/marnine%20service%20center/Marine-Slide3.jpg",
     },
   ],
 };
@@ -528,8 +538,8 @@ function MarineFeatureSection() {
   }, [activeTab]);
 
   const currentFeatures = marineFeaturesByTab[activeTab];
-  const leftFeatures = currentFeatures.slice(0, 3);
-  const rightFeatures = currentFeatures.slice(3);
+  const leftFeatures = currentFeatures.slice(0, Math.ceil(currentFeatures.length / 2));
+  const rightFeatures = currentFeatures.slice(Math.ceil(currentFeatures.length / 2));
   const activeFeature = currentFeatures.find((f) => f.id === activeId) || currentFeatures[0];
 
   return (
