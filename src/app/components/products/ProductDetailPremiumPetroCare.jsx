@@ -7,6 +7,7 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import ContactFormModal from "../../components/ContactFormModal";
+import PetroCareBrochureModal from "../../components/PetroCareBrochureModal";
 
 const PETRO_ORANGE = "#F59E0B";
 const PETRO_DARK = "#4B4B4B";
@@ -18,6 +19,7 @@ export default function ProductDetailPremiumPetroCare({
   allProducts,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -165,7 +167,7 @@ export default function ProductDetailPremiumPetroCare({
               </p>
 
               <button
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => setIsBrochureModalOpen(true)}
                 className="press-illusion-btn-yellow bg-amber-400 text-white font-bold px-6 py-2 text-base items-center space-x-2 inline-flex cursor-pointer"
               >
                 <span>Download Brochure</span>
@@ -371,6 +373,11 @@ export default function ProductDetailPremiumPetroCare({
         preSelectedType="Product"
         preSelectedItem={product.title}
         allItems={allProducts}
+      />
+      
+      <PetroCareBrochureModal
+        isOpen={isBrochureModalOpen}
+        onClose={() => setIsBrochureModalOpen(false)}
       />
     </div>
   );

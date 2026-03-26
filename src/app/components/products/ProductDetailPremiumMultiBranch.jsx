@@ -7,6 +7,7 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import ContactFormModal from "../../components/ContactFormModal";
+import RetailMultiBranchBrochureModal from "../../components/RetailMultiBranchBrochureModal";
 
 const TEAL = "#14B8A6";
 const TEAL_DARK = "#0D9488";
@@ -18,6 +19,7 @@ export default function ProductDetailPremiumMultiBranch({
   allProducts,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -165,7 +167,7 @@ export default function ProductDetailPremiumMultiBranch({
               </p>
 
               <button
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => setIsBrochureModalOpen(true)}
                 className="press-illusion-btn-teal bg-teal-400 text-white font-bold px-6 py-2 text-base items-center space-x-2 inline-flex cursor-pointer"
               >
                 <span>Download Brochure</span>
@@ -371,6 +373,11 @@ export default function ProductDetailPremiumMultiBranch({
         preSelectedType="Product"
         preSelectedItem={product.title}
         allItems={allProducts}
+      />
+      
+      <RetailMultiBranchBrochureModal
+        isOpen={isBrochureModalOpen}
+        onClose={() => setIsBrochureModalOpen(false)}
       />
     </div>
   );

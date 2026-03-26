@@ -7,6 +7,7 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import ContactFormModal from "../../components/ContactFormModal";
+import DMSBrochureModal from "../../components/DMSBrochureModal";
 
 const INDIGO = "#6366F1";
 const INDIGO_DARK = "#4F46E5";
@@ -18,6 +19,7 @@ export default function ProductDetailPremiumDMS({
   allProducts,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -165,7 +167,7 @@ export default function ProductDetailPremiumDMS({
               </p>
 
               <button
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => setIsBrochureModalOpen(true)}
                 className="press-illusion-btn-indigo bg-indigo-400 text-white font-bold px-6 py-2 text-base items-center space-x-2 inline-flex cursor-pointer"
               >
                 <span>Download Brochure</span>
@@ -371,6 +373,11 @@ export default function ProductDetailPremiumDMS({
         preSelectedType="Product"
         preSelectedItem={product.title}
         allItems={allProducts}
+      />
+
+      <DMSBrochureModal
+        isOpen={isBrochureModalOpen}
+        onClose={() => setIsBrochureModalOpen(false)}
       />
     </div>
   );

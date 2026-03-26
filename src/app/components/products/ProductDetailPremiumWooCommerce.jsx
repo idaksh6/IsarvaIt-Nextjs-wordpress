@@ -25,8 +25,17 @@ export default function ProductDetailPremiumWooCommerce({
       setIsScrolled(window.scrollY > 400);
     };
 
+    const handleOpenModal = () => {
+      setIsModalOpen(true);
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("openContactModal", handleOpenModal);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("openContactModal", handleOpenModal);
+    };
   }, []);
 
   return (
@@ -183,7 +192,58 @@ export default function ProductDetailPremiumWooCommerce({
         <WooCommerceFeatureSection />
       </div>
 
-      {/* 4. CTA Section */}
+      {/* 4. What We Offer Section */}
+      <section className="lg:py-32 py-14 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-14">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <span className="inline-block text-[10px] font-black text-[#A855F7] tracking-[0.28em] uppercase mb-3 bg-[#A855F7]/10 px-4 py-2 rounded-full">
+                OUR SERVICES
+              </span>
+              <h2 className="text-[clamp(32px,4.5vw,48px)] font-extrabold text-[#0a0a0a] leading-tight mb-4">
+                What we offer with <span className="text-[#A855F7]">WooCommerce</span>
+              </h2>
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {wooCommerceServices.map((service, index) => (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="relative bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-100 hover:border-[#A855F7]/30 hover:shadow-xl transition-all duration-300 group"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#A855F7] to-[#9333ea] flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-2xl">{service.icon}</span>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#A855F7] transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. FAQ Section */}
+      <WooCommerceFAQSection />
+
+      {/* 6. CTA Section */}
       <section className="py-20 bg-white relative overflow-hidden">
         {/* Background Decoration */}
         <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-transparent to-pink-50"></div>
@@ -443,6 +503,100 @@ const wooCommerceFeatures = [
     placeholder: "IM",
     image: "/dashboard.webp",
   },
+];
+
+/* ─────────────────────────────────────────────────────────────
+   WooCommerce SERVICES DATA
+───────────────────────────────────────────────────────────── */
+const wooCommerceServices = [
+  {
+    id: "store-setup",
+    title: "WooCommerce Store Setup",
+    icon: "🛒",
+    description: "Launch your online store with a fully configured WooCommerce setup tailored to your business needs, including theme customization and essential settings."
+  },
+  {
+    id: "order-management",
+    title: "Order Management",
+    icon: "📋",
+    description: "Efficient order processing system to manage customer orders, track statuses, and streamline your sales workflow."
+  },
+  {
+    id: "product-upload",
+    title: "Product Upload & Categorization",
+    icon: "📦",
+    description: "Get your product catalog organized with bulk uploads, custom attributes, and logical category structuring for a smooth shopping experience."
+  },
+  {
+    id: "payment-gateway",
+    title: "Payment Gateway Integration",
+    icon: "💳",
+    description: "Seamless integration with trusted payment gateways like PayPal, Stripe, and local providers to ensure secure transactions."
+  },
+  {
+    id: "shipping-api",
+    title: "Shipping API Integration",
+    icon: "🚚",
+    description: "Automated shipping rate calculations and real-time tracking with leading carriers via integrated shipping APIs."
+  },
+  {
+    id: "plugin-install",
+    title: "Plugin Installation & Configuration",
+    icon: "🔌",
+    description: "Extend your store's capabilities with the right plugins, carefully selected, installed, and configured to match your goals."
+  },
+  {
+    id: "seo-optimization",
+    title: "SEO Optimization for WooCommerce",
+    icon: "🔍",
+    description: "Boost your product visibility with on-page SEO, keyword targeting, and schema markup specifically optimized for WooCommerce."
+  },
+  {
+    id: "mobile-design",
+    title: "Mobile-Responsive Design",
+    icon: "📱",
+    description: "Ensure a smooth and engaging shopping experience on all devices with a responsive design that adapts to screens of all sizes."
+  },
+  {
+    id: "maintenance",
+    title: "Ongoing Maintenance & Support",
+    icon: "🛠️",
+    description: "Stay worry-free with regular updates, security checks, and expert support to keep your WooCommerce store running smoothly."
+  }
+];
+
+/* ─────────────────────────────────────────────────────────────
+   WooCommerce FAQ DATA
+───────────────────────────────────────────────────────────── */
+const wooCommerceFAQs = [
+  {
+    question: "Does WooCommerce offer inventory tracking capabilities?",
+    answer: "Yes, WooCommerce comes with built-in inventory management. You can track stock levels, set low stock notifications, manage backorders, and hide out-of-stock items automatically."
+  },
+  {
+    question: "Can I manage orders and customer details within WooCommerce?",
+    answer: "Absolutely! WooCommerce provides a comprehensive order management system where you can view, process, and track all customer orders. You can also manage customer information, view purchase history, and handle refunds and exchanges directly from the dashboard."
+  },
+  {
+    question: "Does WooCommerce support product variations like size and color?",
+    answer: "Yes, WooCommerce has robust support for product variations. You can create variable products with multiple attributes like size, color, material, etc. Each variation can have its own price, stock level, and SKU."
+  },
+  {
+    question: "Does WooCommerce support coupon codes and discounts?",
+    answer: "Yes, WooCommerce includes a powerful coupon system. You can create percentage discounts, fixed cart discounts, fixed product discounts, and set usage restrictions like minimum purchase amounts, specific products, or user roles."
+  },
+  {
+    question: "Can I integrate multiple payment gateways with WooCommerce?",
+    answer: "Absolutely! WooCommerce supports integration with numerous payment gateways including PayPal, Stripe, Square, Authorize.net, and many more. You can offer multiple payment options to your customers simultaneously."
+  },
+  {
+    question: "Can I manage multiple product categories and filters in WooCommerce?",
+    answer: "Yes, WooCommerce allows you to create unlimited product categories and subcategories. You can also add custom attributes and filters to help customers easily find products based on specific criteria like price range, brand, size, color, and more."
+  },
+  {
+    question: "Can WooCommerce handle digital products as well as physical goods?",
+    answer: "Yes, WooCommerce fully supports both digital and physical products. For digital products, you can enable automatic download links sent to customers after purchase, set download limits, and expiration dates. Physical products can be managed with shipping options and inventory tracking."
+  }
 ];
 
 /* ─────────────────────────────────────────────────────────────
@@ -714,3 +868,141 @@ function WooCommerceFeatureSection() {
     </section>
   );
 }
+
+/* ─────────────────────────────────────────────────────────
+   WooCommerce FAQ SECTION
+──────────────────────────────────────────────────────────── */
+function WooCommerceFAQSection() {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  return (
+    <section className="py-24 bg-gradient-to-b from-white via-purple-50/30 to-white relative overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#A855F7] opacity-[0.03] rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#9333ea] opacity-[0.03] rounded-full blur-3xl"></div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-14">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="inline-block text-[10px] font-black text-[#A855F7] tracking-[0.28em] uppercase mb-3 bg-[#A855F7]/10 px-4 py-2 rounded-full">
+              FAQ
+            </span>
+            <h2 className="text-[clamp(32px,4.5vw,48px)] font-extrabold text-[#0a0a0a] leading-tight mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
+              Find answers to common questions about WooCommerce development and our services
+            </p>
+          </motion.div>
+        </div>
+
+        <div className="max-w-4xl mx-auto">
+          {wooCommerceFAQs.map((faq, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="mb-4"
+            >
+              <div className="bg-white rounded-2xl shadow-md border-2 border-gray-100 overflow-hidden hover:border-[#A855F7]/30 transition-all duration-300">
+                <button
+                  onClick={() => toggleFAQ(index)}
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors duration-200"
+                >
+                  <div className="flex items-start gap-4 flex-1">
+                    <div className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                      openIndex === index
+                        ? "bg-gradient-to-br from-[#A855F7] to-[#9333ea] shadow-md"
+                        : "bg-gray-100"
+                    }`}>
+                      <span className={`text-xl ${openIndex === index ? "text-white" : "text-gray-600"}`}>
+                        ❓
+                      </span>
+                    </div>
+                    <span className={`font-bold text-lg pr-4 transition-colors ${
+                      openIndex === index ? "text-[#A855F7]" : "text-gray-900"
+                    }`}>
+                      {faq.question}
+                    </span>
+                  </div>
+                  <div className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${
+                    openIndex === index
+                      ? "bg-[#A855F7] rotate-180"
+                      : "bg-gray-100"
+                  }`}>
+                    <svg
+                      className={`w-5 h-5 transition-colors ${openIndex === index ? "text-white" : "text-gray-600"}`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={3}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {openIndex === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-6 pt-2">
+                        <div className="pl-14 pr-4">
+                          <p className="text-gray-600 leading-relaxed">
+                            {faq.answer}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* CTA at bottom of FAQ */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-center mt-12"
+        >
+          <p className="text-gray-600 mb-6">
+            Still have questions? We're here to help!
+          </p>
+          <button
+            onClick={() => {
+              const event = new CustomEvent('openContactModal');
+              window.dispatchEvent(event);
+            }}
+            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#A855F7] to-[#9333ea] text-white font-bold text-base rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+          >
+            <span>Request Quote</span>
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </button>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+

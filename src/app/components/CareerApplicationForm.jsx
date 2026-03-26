@@ -100,7 +100,21 @@ export default function CareerApplicationForm({ jobTitle, jobSlug }) {
       } else {
         console.error('Application submission failed:', data);
         setSubmitStatus("error");
-        setErrorMessage(data.error || "Something went wrong. Please try again.");
+        
+        // Parse error message for user-friendly display
+        let friendlyError = 'Something went wrong. Please try again.';
+        if (data.error && typeof data.error === 'string') {
+          if (data.error.includes('mobile') || data.error.includes('phone')) {
+            friendlyError = 'Please enter a proper phone number.';
+          } else if (data.error.includes('email')) {
+            friendlyError = 'Please enter a valid email address.';
+          } else if (data.error.includes('name')) {
+            friendlyError = 'Please enter your full name.';
+          } else {
+            friendlyError = data.error;
+          }
+        }
+        setErrorMessage(friendlyError);
         setIsSubmitting(false);
         
         setTimeout(() => {

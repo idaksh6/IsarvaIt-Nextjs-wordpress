@@ -7,6 +7,7 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import ContactFormModal from "../../components/ContactFormModal";
+import DispatcherPanelBrochureModal from "../../components/DispatcherPanelBrochureModal";
 
 const RED = "#EF4444";
 const RED_DARK = "#DC2626";
@@ -18,6 +19,7 @@ export default function ProductDetailPremiumDispatcher({
   allProducts,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -165,7 +167,7 @@ export default function ProductDetailPremiumDispatcher({
               </p>
 
               <button
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => setIsBrochureModalOpen(true)}
                 className="press-illusion-btn-red bg-red-400 text-white font-bold px-6 py-2 text-base items-center space-x-2 inline-flex cursor-pointer"
               >
                 <span>Download Brochure</span>
@@ -371,6 +373,11 @@ export default function ProductDetailPremiumDispatcher({
         preSelectedType="Product"
         preSelectedItem={product.title}
         allItems={allProducts}
+      />
+
+      <DispatcherPanelBrochureModal
+        isOpen={isBrochureModalOpen}
+        onClose={() => setIsBrochureModalOpen(false)}
       />
     </div>
   );
