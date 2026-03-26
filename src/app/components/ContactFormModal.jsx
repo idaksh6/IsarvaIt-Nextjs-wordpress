@@ -93,7 +93,7 @@ export default function ContactFormModal({
             
             // Extract key words (remove common filler words)
             const extractKeyWords = (str) => {
-              const commonWords = ['and', '&', 'the', 'a', 'an', 'software', 'application', 'system', 'service', 'solution', 'services'];
+              const commonWords = ['and', '&', 'the', 'a', 'an', 'software', 'application', 'system'];
               return normalizeStr(str)
                 .split(' ')
                 .filter(word => !commonWords.includes(word) && word.length > 0)
@@ -112,26 +112,30 @@ export default function ContactFormModal({
               
               console.log(`Testing "${cat.category_name}": normalized="${normalizedCatName}", keywords="${keyWordsCatName}"`);
               
-              // Check multiple matching strategies
+              // Check multiple matching strategies in order of specificity
               const isMatch = (
-                // 1. Exact match (normalized)
+                // 1. Exact match (normalized) - highest priority
                 normalizedCatName === normalizedPreSelected ||
                 
-                // 2. Category contains preselected
-                normalizedCatName.includes(normalizedPreSelected) ||
-                
-                // 3. Preselected contains category
-                normalizedPreSelected.includes(normalizedCatName) ||
-                
-                // 4. Key words match (ignoring filler words)
+                // 2. Exact keyword match (all words match)
                 keyWordsCatName === keyWordsPreSelected ||
-                keyWordsCatName.includes(keyWordsPreSelected) ||
-                keyWordsPreSelected.includes(keyWordsCatName) ||
                 
-                // 5. First 2-3 significant words match
-                (keyWordsCatName.split(' ').slice(0, 2).join(' ') === 
-                 keyWordsPreSelected.split(' ').slice(0, 2).join(' ') &&
-                 keyWordsCatName.split(' ').length >= 2)
+                // 3. Category name exactly contains preselected (full phrase match)
+                normalizedCatName === normalizedPreSelected ||
+                
+                // 4. Preselected contains category (must be exact substring with word boundaries)
+                (normalizedPreSelected.includes(normalizedCatName) && 
+                 normalizedCatName.split(' ').length > 1) ||
+                
+                // 5. Category contains preselected (must be exact substring with word boundaries)
+                (normalizedCatName.includes(normalizedPreSelected) && 
+                 normalizedPreSelected.split(' ').length > 1) ||
+                
+                // 6. First significant words match (at least 2 words)
+                (keyWordsCatName.split(' ').length >= 2 &&
+                 keyWordsPreSelected.split(' ').length >= 2 &&
+                 keyWordsCatName.split(' ').slice(0, 2).join(' ') === 
+                 keyWordsPreSelected.split(' ').slice(0, 2).join(' '))
               );
               
               if (isMatch) {

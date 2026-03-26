@@ -2,11 +2,11 @@
 
 import { useEffect, useState, Suspense } from "react";
 import { motion } from "framer-motion";
-import { 
-  CheckCircle2, 
-  Mail, 
-  Phone, 
-  ArrowRight, 
+import {
+  CheckCircle2,
+  Mail,
+  Phone,
+  ArrowRight,
   Home,
   Calendar,
   Clock,
@@ -33,8 +33,8 @@ function ThankYouContent() {
       case "job-application":
         return {
           title: "Application Received!",
-          subtitle: itemName 
-            ? `Thank you for applying for the ${itemName} position!` 
+          subtitle: itemName
+            ? `Thank you for applying for the ${itemName} position!`
             : "Thank you for your job application!",
           nextSteps: [
             "Your application has been successfully submitted",
@@ -46,8 +46,8 @@ function ThankYouContent() {
       case "product":
         return {
           title: "Demo Request Received!",
-          subtitle: itemName 
-            ? `We're excited to show you ${itemName} in action!` 
+          subtitle: itemName
+            ? `We're excited to show you ${itemName} in action!`
             : "We're excited to demonstrate our solution!",
           nextSteps: [
             "Our product specialist will review your request",
@@ -59,8 +59,8 @@ function ThankYouContent() {
       case "service":
         return {
           title: "Service Inquiry Submitted!",
-          subtitle: itemName 
-            ? `Thank you for your interest in our ${itemName} services!` 
+          subtitle: itemName
+            ? `Thank you for your interest in our ${itemName} services!`
             : "Thank you for reaching out about our services!",
           nextSteps: [
             "Our service consultant will review your requirements",
@@ -72,8 +72,8 @@ function ThankYouContent() {
       case "industry":
         return {
           title: "Industry Solution Request Received!",
-          subtitle: itemName 
-            ? `We'll show you how we serve the ${itemName} industry!` 
+          subtitle: itemName
+            ? `We'll show you how we serve the ${itemName} industry!`
             : "We'll show you our industry-specific solutions!",
           nextSteps: [
             "Our industry expert will assess your needs",
@@ -101,16 +101,16 @@ function ThankYouContent() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-emerald-50 via-white to-[#FDF8F2] font-sans text-[#1a1f24] flex items-center justify-center py-44 px-6">
       <div className="max-w-4xl w-full">
-        
+
         {/* Success Icon with Animation */}
         <motion.div
           initial={{ scale: 0, rotate: -180 }}
           animate={{ scale: 1, rotate: 0 }}
-          transition={{ 
-            type: "spring", 
-            stiffness: 200, 
+          transition={{
+            type: "spring",
+            stiffness: 200,
             damping: 15,
-            delay: 0.2 
+            delay: 0.2
           }}
           className="flex justify-center mb-8"
         >
@@ -193,8 +193,8 @@ function ThankYouContent() {
                 </div>
                 <div>
                   <div className="text-xs text-[#53606b] font-bold uppercase tracking-wider mb-1">Email Us</div>
-                  <a 
-                    href="mailto:info@isarvait.com" 
+                  <a
+                    href="mailto:info@isarvait.com"
                     className="text-emerald-600 font-bold hover:text-emerald-700 transition-colors"
                   >
                     info@isarvait.com
@@ -208,11 +208,12 @@ function ThankYouContent() {
                 </div>
                 <div>
                   <div className="text-xs text-[#53606b] font-bold uppercase tracking-wider mb-1">Call Us</div>
-                  <a 
-                    href="tel:+918242445511" 
+                  <a
+                    href="tel:+91 9880606087"
                     className="text-emerald-600 font-bold hover:text-emerald-700 transition-colors"
                   >
-                    +91 82424 45511
+                    +91 9880606087
+
                   </a>
                 </div>
               </div>
@@ -227,7 +228,7 @@ function ThankYouContent() {
           transition={{ delay: 1.2 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <Link 
+          <Link
             href="/"
             className="inline-flex items-center justify-center gap-3 bg-[#10b981] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all hover:scale-105 hover:shadow-xl active:scale-95"
           >
@@ -237,7 +238,7 @@ function ThankYouContent() {
 
           {/* Conditional second button based on form type */}
           {pageType === "product" && (
-            <Link 
+            <Link
               href="/products"
               className="inline-flex items-center justify-center gap-3 bg-white text-[#1a1f24] px-8 py-4 rounded-xl font-bold text-lg border-2 border-emerald-500/10 transition-all hover:border-emerald-500/30 hover:shadow-lg"
             >
@@ -247,7 +248,7 @@ function ThankYouContent() {
           )}
 
           {pageType === "service" && (
-            <Link 
+            <Link
               href="/services"
               className="inline-flex items-center justify-center gap-3 bg-white text-[#1a1f24] px-8 py-4 rounded-xl font-bold text-lg border-2 border-emerald-500/10 transition-all hover:border-emerald-500/30 hover:shadow-lg"
             >
@@ -257,7 +258,7 @@ function ThankYouContent() {
           )}
 
           {pageType === "industry" && (
-            <Link 
+            <Link
               href="/industries"
               className="inline-flex items-center justify-center gap-3 bg-white text-[#1a1f24] px-8 py-4 rounded-xl font-bold text-lg border-2 border-emerald-500/10 transition-all hover:border-emerald-500/30 hover:shadow-lg"
             >

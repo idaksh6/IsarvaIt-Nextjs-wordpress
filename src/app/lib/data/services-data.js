@@ -650,7 +650,7 @@ export const servicesData = [
     slug: "digital-marketing",
     title: "Digital Marketing",
     icon: "📱",
-    heroImage: "https://images.unsplash.com/photo-1529587546238-bd3c4c5e86c3?w=800&h=1200&fit=crop&q=80",
+    heroImage: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=800&h=1200&fit=crop&q=80",
     shortDescription: "Results-driven digital marketing strategies",
     description: "We are a well-known digital marketing agency in India, offering comprehensive online marketing solutions for businesses. Our services range from SEO, social media management, PPC campaigns and more. We have an experienced team of professionals who are passionate about helping you reach your goals and make your business successful.",
     subServices: [
@@ -736,7 +736,7 @@ export const servicesData = [
     slug: "seo",
     title: "Search Engine Optimization",
     icon: "🔍",
-    heroImage: "https://images.unsplash.com/photo-1571677208826-0c1cc0d5d6fb?w=800&h=1200&fit=crop&q=80",
+    heroImage: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=1200&fit=crop&q=80",
     shortDescription: "Elevate your online presence with expert SEO",
     description: "Our SEO service is designed to elevate your company's online presence by improving search engine rankings, driving targeted traffic, and increasing sales. We optimize your website with advanced keyword strategies and high-quality content, ensuring that it appeals to your ideal audience. This targeted approach results in higher conversion rates, sustainable growth, and a stronger connection with potential customers, ultimately leading to long-term business success.",
     features: [
