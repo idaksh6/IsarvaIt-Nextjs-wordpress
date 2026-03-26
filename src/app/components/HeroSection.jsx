@@ -108,17 +108,19 @@ function HeroSection({ data }) {
               <Settings size={44} strokeWidth={2} />
             </div>
             <h3 className="text-gray-900 font-bold text-[22px] mb-4 text-center w-full">
-              {heroData.floatingCards && heroData.floatingCards[1]
-                ? heroData.floatingCards[1].heading
-                : "Custom Software"}
+             
+
+                 {heroData.floatingCards && heroData.floatingCards[2]
+                ? heroData.floatingCards[2].heading
+                : "Woocommerce Development"}
             </h3>
             <p className="text-gray-700 text-[14px] leading-relaxed text-center font-bold mb-8 flex-grow w-full">
-              {heroData.floatingCards && heroData.floatingCards[1]
-                ? heroData.floatingCards[1].description.replace(/<[^>]*>/g, "")
+              {heroData.floatingCards && heroData.floatingCards[2]
+                ? heroData.floatingCards[2].description.replace(/<[^>]*>/g, "")
                 : "Tailored digital solutions built to solve complex business challenges and support long-term growth."}
             </p>
             <Link
-              href="products/woocommerce-development"
+              href="/contact"
               className="inline-flex items-center justify-center gap-1 text-black font-semibold text-[13px] border border-green-400 rounded-full px-5 py-2 transition-colors hover:bg-green-400 hover:text-white w-fit mt-auto whitespace-nowrap"
             >
               Learn More <ChevronRight size={16} />
@@ -131,17 +133,17 @@ function HeroSection({ data }) {
               <BarChart3 size={36} strokeWidth={2} />
             </div>
             <h3 className="text-gray-900 font-bold text-xl mb-4 text-center w-full">
-              {heroData.floatingCards && heroData.floatingCards[2]
-                ? heroData.floatingCards[2].heading
-                : "E-commerce Solutions"}
+               {heroData.floatingCards && heroData.floatingCards[1]
+                ? heroData.floatingCards[1].heading
+                : "Custom Software"}
             </h3>
             <p className="text-gray-700 text-[13px] leading-relaxed text-center font-bold mb-8 flex-grow w-full">
-              {heroData.floatingCards && heroData.floatingCards[2]
-                ? heroData.floatingCards[2].description.replace(/<[^>]*>/g, "")
+              {heroData.floatingCards && heroData.floatingCards[1]
+                ? heroData.floatingCards[1].description.replace(/<[^>]*>/g, "")
                 : "Launch powerful online stores with secure payments, optimized performance, and conversion-focused design."}
             </p>
             <Link
-              href="/contact"
+              href="/products/woocommerce-development"
               className="inline-flex items-center justify-center gap-1 text-black font-semibold text-[13px] border border-green-400 rounded-full px-5 py-2 transition-colors hover:bg-green-400 hover:text-white w-fit mt-auto whitespace-nowrap"
             >
               Learn More <ChevronRight size={14} />
