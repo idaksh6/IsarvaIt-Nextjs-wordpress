@@ -104,7 +104,7 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-6" aria-label="Contact form">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
@@ -117,6 +117,8 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
             value={formData.name}
             onChange={handleChange}
             required
+            aria-required="true"
+            aria-label="Full name"
             className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-200 outline-none text-gray-900"
             placeholder="John Doe"
           />
@@ -133,6 +135,8 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
             value={formData.email}
             onChange={handleChange}
             required
+            aria-required="true"
+            aria-label="Email address"
             className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-200 outline-none text-gray-900"
             placeholder="john@company.com"
           />
@@ -148,6 +152,7 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
             type="tel"
             id="phone"
             name="phone"
+            aria-label="Phone number"
             value={formData.phone}
             onChange={handleChange}
             className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-200 outline-none text-gray-900"
@@ -165,6 +170,7 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
             name="company"
             value={formData.company}
             onChange={handleChange}
+            aria-label="Company name"
             className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-200 outline-none text-gray-900"
             placeholder="Your Company"
           />
@@ -182,6 +188,8 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
           value={formData.subject}
           onChange={handleChange}
           required
+          aria-required="true"
+          aria-label="Subject"
           className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-200 outline-none text-gray-900"
           placeholder="How can we help you?"
         />
@@ -198,16 +206,18 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
           onChange={handleChange}
           required
           rows={6}
+          aria-required="true"
+          aria-label="Message"
           className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-200 outline-none resize-none text-gray-900"
           placeholder="Tell us more about your project..."
         />
       </div>
 
       {submitStatus === "success" && (
-        <div className="rounded-xl bg-emerald-50 border-2 border-emerald-200 p-4">
+        <div className="rounded-xl bg-emerald-50 border-2 border-emerald-200 p-4" role="alert" aria-live="polite">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0">
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
@@ -220,10 +230,10 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
       )}
 
       {submitStatus === "error" && (
-        <div className="rounded-xl bg-red-50 border-2 border-red-200 p-4">
+        <div className="rounded-xl bg-red-50 border-2 border-red-200 p-4" role="alert" aria-live="assertive">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0">
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </div>
@@ -238,6 +248,7 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
       <button
         type="submit"
         disabled={isSubmitting}
+        aria-label={isSubmitting ? "Sending message" : "Send message"}
         className="press-illusion-btn bg-green-400 text-black md:mx-0 mx-auto font-bold px-8 w-fit py-4 text-lg items-center space-x-2 flex disabled:opacity-50 disabled:cursor-not-allowed  justify-center"
       >
         <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
@@ -247,6 +258,7 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
             fill="none"
             viewBox="0 0 17 9"
             className="h-2 w-4"
+            aria-hidden="true"
           >
             <path
               fill="currentColor"

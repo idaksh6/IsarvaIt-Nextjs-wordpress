@@ -50,6 +50,7 @@ function HeroSection({ data }) {
   return (
     <section
       className="relative flex flex-col items-center pt-36 pb-0 overflow-hidden"
+      aria-labelledby="hero-heading"
       style={{
         backgroundImage: "url('/bg1 new.jpg')",
         backgroundSize: "cover",
@@ -71,6 +72,7 @@ function HeroSection({ data }) {
         )}
         {heroData.heading && (
           <h1
+            id="hero-heading"
             className="lg:text-[70px] text-[40px] hero_heading font-bold leading-tight text-gray-900 mb-10 tracking-tighter max-w-6xl mx-auto"
             dangerouslySetInnerHTML={{ __html: heroData.heading }}
           />
@@ -109,8 +111,9 @@ function HeroSection({ data }) {
             <Link
               href="/services/website-services"
               className="inline-flex items-center justify-center gap-1 text-black font-semibold text-[13px] border border-green-400 rounded-full px-5 py-2 transition-colors hover:bg-green-400 hover:text-white w-fit mt-auto whitespace-nowrap"
+              aria-label="Learn more about Website Services"
             >
-              Learn More <ChevronRight size={14} />
+              Explore Website Services <ChevronRight size={14} />
             </Link>
           </div>
 
@@ -118,8 +121,8 @@ function HeroSection({ data }) {
           <div className="w-full lg:w-[360px] bg-white rounded-[2.5rem] p-10 shadow-[0_20px_50px_rgb(0,0,0,0.15)] z-30 transform lg:rotate-3 lg:-translate-y-0 transition-all duration-500 hover:rotate-0 hover:-translate-y-2 hover:z-40 flex flex-col items-center mx-[-10px] lg:mx-0 flex-1 lg:flex-none relative h-full min-h-[420px]">
             <div className="w-24 h-24 bg-[#7bd29b] rounded-full flex items-center justify-center text-white mb-6 shadow-[0_8px_20px_rgba(123,210,155,0.3)]">
               <lord-icon
-               
-                 src="https://cdn.lordicon.com/mubdgyyw.json"
+
+                src="https://cdn.lordicon.com/mubdgyyw.json"
                 trigger="loop"
                 colors="primary:#ffffff,secondary:#ffffff"
                 style={{ width: "56px", height: "56px" }}
@@ -136,10 +139,11 @@ function HeroSection({ data }) {
                 : "Launch powerful online stores with secure payments, optimized performance, and conversion-focused design."}
             </p>
             <Link
-              href="/products/woocommerce-development"
+              href="/contact"
               className="inline-flex items-center justify-center gap-1 text-black font-semibold text-[13px] border border-green-400 rounded-full px-5 py-2 transition-colors hover:bg-green-400 hover:text-white w-fit mt-auto whitespace-nowrap"
+              aria-label="Learn more about WooCommerce Development"
             >
-              Learn More <ChevronRight size={16} />
+              Get Started Today   <ChevronRight size={16} />
             </Link>
           </div>
 
@@ -164,10 +168,11 @@ function HeroSection({ data }) {
                 : "Tailored digital solutions built to solve complex business challenges and support long-term growth."}
             </p>
             <Link
-              href="/contact"
+              href="/products/woocommerce-development"
               className="inline-flex items-center justify-center gap-1 text-black font-semibold text-[13px] border border-green-400 rounded-full px-5 py-2 transition-colors hover:bg-green-400 hover:text-white w-fit mt-auto whitespace-nowrap"
+              aria-label="Get started with custom software development"
             >
-              Learn More <ChevronRight size={14} />
+              View WooCommerce Solutions <ChevronRight size={14} />
             </Link>
           </div>
         </div>

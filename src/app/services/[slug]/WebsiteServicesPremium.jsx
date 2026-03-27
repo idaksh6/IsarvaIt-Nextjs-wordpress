@@ -945,7 +945,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                 </div>
               </div>
               {/* Floating metric cards */}
-              <div className="absolute top-6 right-6 flex flex-col gap-3 hidden lg:flex">
+              <div className="absolute top-6 right-6 hidden lg:flex lg:flex-col lg:gap-3">
                 <div className="metric-badge rounded-xl px-4 py-3 text-center">
                   <div className="text-2xl font-black text-emerald-600">
                     150+

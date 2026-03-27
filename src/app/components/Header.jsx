@@ -146,7 +146,7 @@ export default function Header() {
                         onClick={() => setIsAboutOpen(false)}
                       >
                         <div className="absolute inset-0 opacity-10 group-hover/featured:scale-110 transition-transform duration-700">
-                          <Image src="/agency_office_studio_premium_1773850105446.png" fill className="object-cover" alt="" loading="lazy" />
+                          <Image src="/agency_office_studio_premium_1773850105446.png" fill className="object-cover" alt="Isarva team collaboration workspace" loading="lazy" />
                         </div>
                         <div className="relative z-10 flex flex-col h-full">
                           <h4 className="text-xl font-display font-bold text-gray-900 mb-4 leading-tight">About Isarva</h4>
