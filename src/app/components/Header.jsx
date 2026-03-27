@@ -21,6 +21,7 @@ const navLinks = [
 
 const servicesData = [
   { label: "Website Services", href: "/services/website-services", icon: "🌐" },
+   { label: "WordPress Development", href: "/services/wordpress-development", icon: "📝" },
   { label: "Cloud Services", href: "/services/cloud-services", icon: "☁️" },
   { label: "Odoo Apps Support", href: "/services/odoo-apps-support", icon: "📦" },
   { label: "AI & ML Consulting", href: "/services/ai-ml-consulting", icon: "🤖" },
@@ -31,7 +32,6 @@ const servicesData = [
   { label: "ERP Services", href: "/services/erp-services", icon: "🏢" },
   { label: "Offshore Development", href: "/services/offshore-development", icon: "🌍" },
   { label: "Training", href: "/services/training", icon: "📚" },
-  { label: "WordPress Development", href: "/services/wordpress-development", icon: "📝" },
   { label: "GPS Tracking", href: "/services/gps-tracking", icon: "📍" },
   { label: "WordPress Training", href: "/services/wordpress-training", icon: "🎓" },
 
