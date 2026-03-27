@@ -1,11 +1,14 @@
 import Link from "next/link";
 import ContactForm from "../components/ContactForm";
 import StickyContactInfo from "../components/StickyContactInfo";
+import { generateMetadata as generateSEOMetadata } from "../lib/utils/seo";
 
-export const metadata = {
-  title: "Contact Us - Isarva | Get in Touch",
-  description: "Have a project in mind? Contact Isarva for expert technology solutions. We respond within 24 hours. Offices in Mangalore, Bangalore, Dubai, and UK.",
-};
+export const metadata = generateSEOMetadata({
+  title: "Contact Us - Get in Touch with Our Experts",
+  description: "Have a project in mind? Contact Isarva for expert technology solutions. We respond within 24 hours. Offices in Mangalore, Bangalore, Dubai, and UK. Call +91-9880606087 or email info@isarvait.com",
+  keywords: ["contact", "get in touch", "IT support", "project inquiry", "consultation", "reach us"],
+  url: "/contact",
+});
 
 // Force static rendering
 export const dynamic = 'force-static';

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AboutSection() {
   return (
@@ -112,7 +113,7 @@ export default function AboutSection() {
 
             {/* Brand "Z" mark overlay */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <img src="/Isarva-logo copy.png" alt="" />
+              <Image src="/Isarva-logo copy.png" width={200} height={78} alt="Isarva Logo" loading="lazy" />
             </div>
           </div>
 

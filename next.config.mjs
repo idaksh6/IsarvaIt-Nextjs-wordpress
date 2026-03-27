@@ -16,6 +16,9 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60,
   },
   
   // Enable experimental features for better performance
@@ -27,10 +30,15 @@ const nextConfig = {
       'langchain', 
       '@langchain/core', 
       '@langchain/community', 
-      '@langchain/openai'
+      '@langchain/openai',
+      'lucide-react',
     ],
   },
 
+  // Performance optimizations
+  poweredByHeader: false,
+  compress: true,
+  
   // Turbopack configuration at the root (Next.js 15+)
   turbopack: {
     resolveAlias: {

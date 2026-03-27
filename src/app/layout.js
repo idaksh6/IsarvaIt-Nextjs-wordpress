@@ -2,8 +2,7 @@ import { Inter, Outfit, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Chatbot from "./components/Chatbot/Chatbot";
-import IsarvaAIChatbot from "./components/IsarvaAIChatbot";
+import ClientProviders from "./components/ClientProviders";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -49,8 +48,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.variable} ${outfit.variable} ${spaceGrotesk.variable} antialiased text-white`}>
         <Header />
         <main>{children}</main>
-         <Chatbot />
-        <IsarvaAIChatbot />
+        <ClientProviders />
         <Footer />
       </body>
     </html>

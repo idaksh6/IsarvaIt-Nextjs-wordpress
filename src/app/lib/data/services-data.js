@@ -873,7 +873,7 @@ export const servicesData = [
     slug: "website-maintenance-amc",
     title: "Website Maintenance – AMC",
     icon: "🔧",
-    heroImage: "/Services/Website-services/Expert-team.jpg",
+    heroImage: "/Services/Cloud services/Banner-image.jpg",
     shortDescription: "Comprehensive annual maintenance contracts for your website",
     description: "Keep your website running smoothly with our Annual Maintenance Contracts. We provide ongoing support, updates, and security monitoring to ensure your site remains secure, fast, and up-to-date.",
     features: [

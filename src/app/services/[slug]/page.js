@@ -6,6 +6,7 @@ import FeatureItem from "./FeatureItem";
 import BenefitItem from "./BenefitItem";
 import WebsiteServicesPremium from "./WebsiteServicesPremium";
 import WordPressDevelopmentPremium from "./WordPressDevelopmentPremium";
+import { generateServiceMetadata } from "../../lib/utils/seo";
 
 export async function generateStaticParams() {
   return getAllServiceSlugs().map((slug) => ({
@@ -26,10 +27,7 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  return {
-    title: `${service.title} - Isarva Services`,
-    description: service.description,
-  };
+  return generateServiceMetadata(service);
 }
 
 export default async function ServiceDetailPage({ params }) {

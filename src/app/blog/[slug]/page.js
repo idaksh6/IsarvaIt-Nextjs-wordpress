@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Header from "../../components/Header";
 import AISummary from "../../components/blog/AISummary";
 import { getPostBySlug, getRelatedPosts, getBlogPosts } from "../../lib/services/blog-service";
+import { generateBlogMetadata, generateArticleSchema } from "../../lib/utils/seo";
 
 export async function generateStaticParams() {
   const posts = await getBlogPosts({ perPage: 100 });
@@ -21,15 +22,7 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  return {
-    title: `${post.title} | Isarva Blog`,
-    description: post.excerpt,
-    openGraph: {
-      title: post.title,
-      description: post.excerpt,
-      images: [post.featuredImage],
-    },
-  };
+  return generateBlogMetadata(post);
 }
 
 export default async function BlogPostPage({ params }) {
@@ -42,8 +35,15 @@ export default async function BlogPostPage({ params }) {
 
   const relatedPosts = await getRelatedPosts(post.categoryId, post.id, 3);
 
+  const articleSchema = generateArticleSchema(post);
+
   return (
     <div className="min-h-screen bg-white">
+      {/* JSON-LD Schema for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <Header />
 
       {/* Hero Section */}

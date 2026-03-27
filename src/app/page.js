@@ -10,11 +10,14 @@ import Footer from "./components/Footer";
 import CtaSection from "./components/CtaSection";
 import { getHomePageData, getHeroSectionData, getServicesSectionData, getTechStackSectionData } from "./lib/services/home-page-service";
 import { getBlogPosts } from "./lib/services/blog-service";
+import { generateMetadata as generateSEOMetadata, generateOrganizationSchema } from "./lib/utils/seo";
 
-export const metadata = {
+export const metadata = generateSEOMetadata({
   title: "Isarva Infotech — Scalable IT Solutions for Global Enterprises",
-  description: "Your trusted partner for scalable digital solutions. We help businesses innovate, grow, and succeed in the modern digital world.",
-};
+  description: "Your trusted partner for scalable digital solutions. We build custom web applications, mobile apps, ERP systems, CRM platforms, and cloud solutions that drive business growth.",
+  keywords: ["IT solutions", "web development", "mobile app development", "ERP systems", "CRM software", "cloud solutions", "digital transformation"],
+  url: "/",
+});
 
 // Revalidate this page every 60 seconds (ISR - Incremental Static Regeneration)
 // This prevents API calls on every page load, only rebuilds when cache expires
@@ -28,8 +31,15 @@ export default async function HomePage() {
   const techStackData = await getTechStackSectionData(homePageData);
   const blogPosts = await getBlogPosts({ perPage: 4 });
 
+  const organizationSchema = generateOrganizationSchema();
+
   return (
     <div className="relative min-h-screen">
+      {/* JSON-LD Schema for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
       <main>
         <HeroSection data={heroData} />
         {/* <AboutSection /> */}

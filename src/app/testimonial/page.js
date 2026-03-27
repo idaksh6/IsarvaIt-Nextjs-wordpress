@@ -198,7 +198,7 @@ export default function TestimonialPage() {
             {[
               { label: "Client Satisfaction", value: "98%" },
               { label: "Repeat Business", value: "85%" },
-              { label: "Global Presence", value: "15+ Countries" }
+              { label: "Global Presence", value: "6+ Countries" }
             ].map((stat, idx) => (
               <div key={idx} className="text-center">
                 <div className="text-3xl md:text-4xl font-display font-bold text-[#1a1f24]">{stat.value}</div>
@@ -308,8 +308,8 @@ export default function TestimonialPage() {
 
               {/* Optional: Simple client info below direct video */}
               <div className="mt-8 flex items-center gap-4 px-6">
-                <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#10b981] shadow-lg">
-                  <img src={testimonials[1].image} alt="" className="w-full h-full object-cover" />
+                <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#10b981] shadow-lg relative">
+                  <Image src={testimonials[1].image} fill alt={testimonials[1].name} className="object-cover" loading="lazy" />
                 </div>
                 <div>
                   <h3 className="text-[#1a1f24] text-xl font-display font-bold leading-tight">{testimonials[1].name}</h3>

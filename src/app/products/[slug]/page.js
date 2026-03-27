@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getProductBySlug, getAllProductSlugs, productsData } from "../../lib/data/products-data";
 import ProductDetailClient from "./ProductDetailClient";
+import { generateProductMetadata, generateProductSchema } from "../../lib/utils/seo";
 
 export async function generateStaticParams() {
   return getAllProductSlugs().map((slug) => ({
@@ -21,10 +22,7 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  return {
-    title: `${product.title} - Isarva Products`,
-    description: product.description,
-  };
+  return generateProductMetadata(product);
 }
 
 export default async function ProductDetailPage({ params }) {
@@ -42,11 +40,20 @@ export default async function ProductDetailPage({ params }) {
     .sort(() => 0.5 - Math.random())
     .slice(0, 3);
 
+  const productSchema = generateProductSchema(product);
+
   return (
-    <ProductDetailClient 
-      product={product} 
-      relatedProducts={relatedProducts}
-      allProducts={productsData}
-    />
+    <>
+      {/* JSON-LD Schema for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <ProductDetailClient 
+        product={product} 
+        relatedProducts={relatedProducts}
+        allProducts={productsData}
+      />
+    </>
   );
 }

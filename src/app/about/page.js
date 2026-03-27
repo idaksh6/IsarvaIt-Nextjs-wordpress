@@ -10,11 +10,14 @@ import {
   CheckCircle2,
   Briefcase
 } from "lucide-react";
+import { generateMetadata as generateSEOMetadata } from "../lib/utils/seo";
 
-export const metadata = {
-  title: "About Us - Isarva | Digital Excellence",
-  description: "Precision in Technology. Purpose in Impact. Learn about Isarva Infotech's legacy of innovation and commitment to client success.",
-};
+export const metadata = generateSEOMetadata({
+  title: "About Us - Leading IT Solutions Provider",
+  description: "Precision in Technology. Purpose in Impact. Learn about Isarva Infotech's legacy of innovation, our expert team, and commitment to delivering exceptional digital solutions since our founding.",
+  keywords: ["about us", "company profile", "IT company", "software development company", "technology partner", "innovation"],
+  url: "/about",
+});
 
 export default function AboutPage() {
   return (

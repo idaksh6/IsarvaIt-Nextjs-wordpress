@@ -17,7 +17,7 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row justify-between lg:items-start items-center gap-12 mb-20 pb-16 border-b border-white/5">
           <div className="lg:max-w-2xl max-w-full">
             <Link href="/" prefetch={true} className="flex items-center">
-              <img src="/isarva New Logo.png" className="w-auto lg:mx-0 mx-auto h-[78px] object-contain drop-shadow-sm" alt="Isarva Logo" />
+              <Image src="/isarva New Logo.png" width={200} height={78} className="w-auto lg:mx-0 mx-auto h-[78px] object-contain drop-shadow-sm" alt="Isarva Logo" loading="lazy" />
             </Link>
             <p className="text-white/60 text-lg md:text-xl leading-relaxed font-medium max-w-xl mt-3">
               We design and deliver precision-engineered technology solutions
