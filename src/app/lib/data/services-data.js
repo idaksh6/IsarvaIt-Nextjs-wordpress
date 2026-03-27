@@ -736,7 +736,7 @@ export const servicesData = [
     slug: "seo",
     title: "Search Engine Optimization",
     icon: "🔍",
-    heroImage: "/Services/Digital-marketing/Banner-img.jpg",
+    heroImage: "https://images.unsplash.com/photo-1562577309-2592ab84b1bc?w=1200&h=800&fit=crop&q=80",
     shortDescription: "Elevate your online presence with expert SEO",
     description: "Our SEO service is designed to elevate your company's online presence by improving search engine rankings, driving targeted traffic, and increasing sales. We optimize your website with advanced keyword strategies and high-quality content, ensuring that it appeals to your ideal audience. This targeted approach results in higher conversion rates, sustainable growth, and a stronger connection with potential customers, ultimately leading to long-term business success.",
     features: [
@@ -773,7 +773,7 @@ export const servicesData = [
     slug: "social-media-marketing",
     title: "Social Media Marketing",
     icon: "📱",
-    heroImage: "/Services/Digital-marketing/Banner-img.jpg",
+    heroImage: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=1200&h=800&fit=crop&q=80",
     shortDescription: "Engage and grow your audience on social media",
     description: "We specialize in helping small and medium businesses with their digital marketing and branding needs. Our team of experts will help you create a social media marketing plan, create content, develop campaigns, manage accounts, and optimize for visibility and engagement.",
     features: [
@@ -810,7 +810,7 @@ export const servicesData = [
     slug: "google-ads",
     title: "Google Ads",
     icon: "💰",
-    heroImage: "/Services/Digital-marketing/Banner-img.jpg",
+    heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop&q=80",
     shortDescription: "Maximize ROI with targeted Google Ads campaigns",
     description: "Google ads let businesses plan their budgets and create innovative techniques, targeting audiences when they are searching for items and services that are comparable to the ones the company offers. In addition, Google ads are the only type of advertising that enables businesses to thoroughly quantify their return on investment (ROI).",
     features: [
