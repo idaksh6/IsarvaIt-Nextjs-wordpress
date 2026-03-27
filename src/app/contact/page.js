@@ -137,12 +137,6 @@ export default function Contact() {
                 
                 <div className="relative z-10">
                   <div className="mb-8 lg:text-left text-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 font-semibold text-sm mb-4">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                      Get in Touch
-                    </div>
                     <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                       Send us a Message
                     </h2>
