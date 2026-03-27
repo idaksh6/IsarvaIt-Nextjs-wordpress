@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Header from "../components/Header";
 import BlogCategoryNav from "../components/blog/BlogCategoryNav";
 import FeaturedSection from "../components/blog/FeaturedSection";
 import PostGrid from "../components/blog/PostGrid";
@@ -46,7 +45,6 @@ export default async function BlogPage({ searchParams }) {
 
   return (
     <div className="min-h-screen bg-premium-noise blog-list-gradient relative overflow-hidden">
-      <Header />
       <main>
         <BlogHero />
         <BlogCategoryNav />

@@ -116,11 +116,11 @@ export default function Header() {
                 <Link
                   href={link.href}
                   prefetch={true}
-                  className="text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1"
+                  className="group text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1"
                 >
                   {link.label}
                   <svg
-                    className={`w-4 h-4 transition-transform duration-200 ${(link.label === "About Us" && isAboutOpen) ? "rotate-180" : ""
+                    className={`w-4 h-4 transition-all duration-200 text-gray-600 group-hover:text-emerald-600 ${(link.label === "About Us" && isAboutOpen) ? "rotate-180" : ""
                       }`}
                     fill="none"
                     stroke="currentColor"
@@ -212,11 +212,11 @@ export default function Header() {
             <Link
               href="/products"
               prefetch={true}
-              className="text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1"
+              className="group text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1"
             >
               Products
               <svg
-                className={`w-4 h-4 transition-transform duration-200 ${isProductsOpen ? "rotate-180" : ""
+                className={`w-4 h-4 transition-all duration-200 text-gray-600 group-hover:text-emerald-600 ${isProductsOpen ? "rotate-180" : ""
                   }`}
                 fill="none"
                 stroke="currentColor"
@@ -302,11 +302,11 @@ export default function Header() {
             <Link
               href="/services"
               prefetch={true}
-              className="text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1"
+              className="group text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1"
             >
               Services
               <svg
-                className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""
+                className={`w-4 h-4 transition-all duration-200 text-gray-600 group-hover:text-emerald-600 ${isServicesOpen ? "rotate-180" : ""
                   }`}
                 fill="none"
                 stroke="currentColor"
@@ -392,11 +392,11 @@ export default function Header() {
             <Link
               href="/industries"
               prefetch={true}
-              className="text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1"
+              className="group text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1"
             >
               Industries
               <svg
-                className={`w-4 h-4 transition-transform duration-200 ${isIndustriesOpen ? "rotate-180" : ""
+                className={`w-4 h-4 transition-all duration-200 text-gray-600 group-hover:text-emerald-600 ${isIndustriesOpen ? "rotate-180" : ""
                   }`}
                 fill="none"
                 stroke="currentColor"

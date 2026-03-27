@@ -6,8 +6,6 @@ import Header from "./components/Header";
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-green-50 to-white">
-      <Header />
-      
       <div className="relative flex items-center justify-center min-h-[calc(100vh-80px)] px-6 pt-44 lg:pb-20 pb-10 ">
         {/* Decorative Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Header from "../../components/Header";
 import AISummary from "../../components/blog/AISummary";
 import { getPostBySlug, getRelatedPosts, getBlogPosts } from "../../lib/services/blog-service";
 import { generateBlogMetadata, generateArticleSchema } from "../../lib/utils/seo";
@@ -44,7 +43,6 @@ export default async function BlogPostPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      <Header />
 
       {/* Hero Section */}
       <div className="relative bg-gradient-to-br from-emerald-50 via-green-50 to-white overflow-hidden">

@@ -3,7 +3,6 @@
 import { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import Header from "../components/Header";
 
 // Import data sources
 import { productsData as products } from "../lib/data/products-data";
@@ -67,7 +66,6 @@ const staticPages = [
 function SearchLoadingFallback() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-green-50 to-white">
-      <Header />
       <div className="max-w-7xl mx-auto px-6 py-44">
         <div className="flex items-center justify-center py-20">
           <div className="animate-spin rounded-full h-12 w-12 border-4 border-emerald-600 border-t-transparent"></div>
@@ -182,7 +180,6 @@ function SearchResults() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-green-50 to-white">
-      <Header />
 
       <div className="max-w-7xl mx-auto px-6 py-44">
         {/* Search Header */}

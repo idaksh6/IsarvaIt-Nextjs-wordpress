@@ -1,10 +1,8 @@
 import Link from "next/link";
-import Header from "../../components/Header";
 
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-      <Header />
       
       <div className="max-w-4xl mx-auto px-6 pt-44 lg:pb-20 pb-10 text-center">
         <div className="mb-8">
