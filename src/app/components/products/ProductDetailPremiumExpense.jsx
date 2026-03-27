@@ -495,14 +495,6 @@ const expenseFeaturesByTab = {
       image: "/products/expense tracker/User-onboarding.jpg",
     },
     {
-      id: "manage-status",
-      label: "Manage Expense Status",
-      icon: "🔄",
-      color: "#14B8A6",
-      desc: "Track and update expense statuses throughout the approval workflow with detailed status history.",
-      image: "/products/expense tracker/Expense-slide4.jpg",
-    },
-    {
       id: "page-rights",
       label: "Page Rights",
       icon: "🔒",
