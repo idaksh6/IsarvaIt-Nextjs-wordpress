@@ -82,7 +82,7 @@ export default function ProductDetailPremiumWooCommerce({
                 onClick={() => setIsModalOpen(true)}
                 className="press-illusion-btn-purple bg-purple-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex cursor-pointer"
               >
-                <span>GET IN TOUCH</span>
+                <span>REQUEST DEMO</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"

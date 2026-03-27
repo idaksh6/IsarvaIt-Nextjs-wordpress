@@ -136,7 +136,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
   const stats = [
     { value: 150, suffix: "+", label: "Websites Delivered" },
     { value: 98, suffix: "%", label: "Client Satisfaction" },
-    { value: 8, suffix: "+", label: "Years of Expertise" },
+    { value: 15, suffix: "+", label: "Years of Expertise" },
     { value: 24, suffix: "/7", label: "Support Available" },
   ];
 

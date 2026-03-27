@@ -127,17 +127,6 @@ const products = [
       "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop",
   },
   {
-    id: 12,
-    name: "Fleet Management Software",
-    slug: "fleet-management-software",
-    category: "Fleet & Logistics",
-    short:
-      "Web-based platform integrating logistics, maintenance, payroll, and dispatch operations on one unified dashboard.",
-    gradient: "#636e72",
-    image:
-      "https://images.unsplash.com/photo-1519003300449-424ad0405076?q=80&w=800&auto=format&fit=crop",
-  },
-  {
     id: 13,
     name: "Mobile Service Center",
     slug: "mobile-service-center",
@@ -198,7 +187,6 @@ const categories = [
   "All",
   "HR & Workforce",
   "E-Commerce & Retail",
-  "Fleet & Logistics",
   "Operations",
   "Industry Specific",
   "Hospitality",

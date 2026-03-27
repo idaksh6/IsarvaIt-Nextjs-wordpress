@@ -12,7 +12,6 @@ import ProductDetailPremiumDMS from "../../components/products/ProductDetailPrem
 import ProductDetailPremiumTimeAttendance from "../../components/products/ProductDetailPremiumTimeAttendance";
 import ProductDetailPremiumTicketing from "../../components/products/ProductDetailPremiumTicketing";
 import ProductDetailPremiumLodge from "../../components/products/ProductDetailPremiumLodge";
-import ProductDetailPremiumFleet from "../../components/products/ProductDetailPremiumFleet";
 import ProductDetailPremiumMobile from "../../components/products/ProductDetailPremiumMobile";
 import ProductDetailPremium3PL from "../../components/products/ProductDetailPremium3PL";
 import ProductDetailPremiumMarine from "../../components/products/ProductDetailPremiumMarine";
@@ -118,17 +117,6 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   if (product.slug === 'lodge-booking-software') {
     return (
       <ProductDetailPremiumLodge 
-        product={product} 
-        relatedProducts={relatedProducts} 
-        allProducts={allProducts}
-      />
-    );
-  }
-
-  // Use Premium View for Fleet Management Software
-  if (product.slug === 'fleet-management-software') {
-    return (
-      <ProductDetailPremiumFleet 
         product={product} 
         relatedProducts={relatedProducts} 
         allProducts={allProducts}

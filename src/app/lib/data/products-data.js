@@ -278,43 +278,6 @@ export const productsData = [
     bgGradient: "from-pink-50 via-rose-50 to-white",
   },
   {
-    slug: "fleet-management-software",
-    title: "Fleet Management Software",
-    category: "Logistics & Transport",
-    icon: "🚚",
-    tagline: "Vehicle Fleet Tracking System",
-    shortDescription:
-      "GPS-based fleet tracking, vehicle maintenance, and driver management solution.",
-    description:
-      "Optimize your fleet operations with real-time GPS tracking, maintenance scheduling, fuel monitoring, and driver performance analytics. Reduce costs and improve fleet efficiency.",
-    features: [
-      "Real-time GPS Tracking",
-      "Route Optimization",
-      "Fuel Monitoring",
-      "Maintenance Scheduling",
-      "Driver Management",
-      "Geofencing & Alerts",
-      "Trip Reports",
-      "Mobile Driver App",
-    ],
-    technologies: [
-      "React Native",
-      "Node.js",
-      "PostgreSQL",
-      "Google Maps API",
-      "IoT",
-    ],
-    benefits: [
-      "Reduced Fuel Costs",
-      "Improved Vehicle Utilization",
-      "Preventive Maintenance",
-      "Better Driver Behavior",
-      "Enhanced Security",
-    ],
-    color: "from-cyan-500 to-blue-600",
-    bgGradient: "from-cyan-50 via-blue-50 to-white",
-  },
-  {
     slug: "mobile-service-center",
     title: "Mobile Service Center",
     category: "Repair & Services",
