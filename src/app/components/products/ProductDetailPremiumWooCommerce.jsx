@@ -109,15 +109,25 @@ export default function ProductDetailPremiumWooCommerce({
           className="hero-dashboard-wrapper"
         >
           <div className="dashboard-animation left">
-            <div className="scroll-img"></div>
+            <div 
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/woocommerce/Woo-commerce-slide-1.jpg'), url('/products/woocommerce/Woo-commerce-slide-2.jpg')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-animation right">
-            <div className="scroll-img"></div>
+            <div 
+              className="scroll-img"
+              style={{
+                backgroundImage: `url('/products/woocommerce/Woo-commerce-slide-3.jpg'), url('/products/woocommerce/Woo-commerce-slide-4.jpg')`
+              }}
+            ></div>
           </div>
           <div className="dashboard-main-img">
             <div className="relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)] bg-white">
               <img
-                src="/dashboard.webp"
+                src="/products/woocommerce/Woo-commerce-dashboard.jpg"
                 alt="WooCommerce Store Preview"
                 className="w-full object-contain lg:h-[668px] h-full shadow-2xl"
               />
@@ -134,8 +144,8 @@ export default function ProductDetailPremiumWooCommerce({
             <div className="relative lg:sticky lg:top-28 lg:self-start">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/dashboard.webp"
-                  alt="WooCommerce Dashboard"
+                  src="/products/woocommerce/Add-products.jpg"
+                  alt="WooCommerce Product Management"
                   className="w-full h-auto object-cover"
                 />
               </div>
@@ -418,16 +428,16 @@ const wooCommerceFeatures = [
     color: "#A855F7",
     desc: "Create unique, brand-aligned WooCommerce themes from scratch. Fully responsive designs that provide exceptional shopping experiences across all devices.",
     placeholder: "CT",
-    image: "/dashboard.webp",
+    image: "/products/woocommerce/Custom-theme-development.jpg",
   },
   {
-    id: "plugin-dev",
-    label: "Plugin Development & Customization",
-    icon: "🔌",
+    id: "product-management",
+    label: "Product Management",
+    icon: "📦",
     color: "#9333ea",
-    desc: "Build custom plugins to extend WooCommerce functionality. Tailored solutions for unique business requirements and workflow automation.",
-    placeholder: "PD",
-    image: "/dashboard.webp",
+    desc: "Effortlessly manage your product catalog with bulk uploads, variations, attributes, and categories. Organize your inventory for optimal customer experience.",
+    placeholder: "PM",
+    image: "/products/woocommerce/Add-products.jpg",
   },
   {
     id: "payment",
@@ -436,52 +446,43 @@ const wooCommerceFeatures = [
     color: "#7c3aed",
     desc: "Seamless integration with multiple payment gateways including PayPal, Stripe, Square, and custom payment solutions for global transactions.",
     placeholder: "PG",
-    image: "/dashboard.webp",
+    image: "/products/woocommerce/Payment-gateway-integration.jpg",
   },
   {
-    id: "multi-vendor",
-    label: "Multi-Vendor Marketplace",
-    icon: "🏪",
+    id: "coupon-management",
+    label: "Coupon & Discount Management",
+    icon: "🎟️",
     color: "#6d28d9",
-    desc: "Transform your store into a thriving marketplace. Enable multiple vendors to sell products with commission management and vendor dashboards.",
-    placeholder: "MV",
-    image: "/dashboard.webp",
+    desc: "Create and manage promotional campaigns with flexible coupon codes, discount rules, and special offers to boost sales and customer loyalty.",
+    placeholder: "CM",
+    image: "/products/woocommerce/Coupon-management.jpg",
   },
   {
-    id: "seo",
-    label: "SEO Optimization",
-    icon: "🔍",
+    id: "user-management",
+    label: "User Management & Roles",
+    icon: "👥",
     color: "#5b21b6",
-    desc: "Comprehensive SEO strategies to improve search rankings. Optimize product pages, metadata, schema markup, and site structure for maximum visibility.",
-    placeholder: "SEO",
-    image: "/dashboard.webp",
+    desc: "Manage customer accounts, user roles, and permissions. Create custom user experiences with role-based access control and customer groups.",
+    placeholder: "UM",
+    image: "/products/woocommerce/User-Management.jpg",
   },
   {
-    id: "performance",
-    label: "Performance Optimization",
-    icon: "⚡",
-    color: "#A855F7",
-    desc: "Lightning-fast loading times with advanced caching, image optimization, and code minification. Improve conversions through superior performance.",
-    placeholder: "PO",
-    image: "/dashboard.webp",
-  },
-  {
-    id: "mobile",
-    label: "Mobile-Responsive Design",
-    icon: "📱",
+    id: "page-builder",
+    label: "Custom Page Builder",
+    icon: "📄",
     color: "#c084fc",
-    desc: "Mobile-first design approach ensuring perfect shopping experiences on smartphones and tablets. Touch-optimized navigation and checkout flows.",
-    placeholder: "MR",
-    image: "/dashboard.webp",
+    desc: "Design stunning product pages, landing pages, and promotional content with drag-and-drop page builders and custom templates.",
+    placeholder: "PB",
+    image: "/products/woocommerce/Add-page.jpg",
   },
   {
-    id: "inventory",
-    label: "Advanced Inventory Management",
-    icon: "📦",
+    id: "coupon-dashboard",
+    label: "Coupon Analytics",
+    icon: "📈",
     color: "#e9d5ff",
-    desc: "Sophisticated inventory tracking with real-time stock updates, low-stock alerts, and seamless integration with warehouse management systems.",
-    placeholder: "IM",
-    image: "/dashboard.webp",
+    desc: "Track coupon performance, redemption rates, and campaign effectiveness. Analyze discount strategies to maximize ROI on promotional activities.",
+    placeholder: "CA",
+    image: "/products/woocommerce/Coupon-dashboard.jpg",
   },
 ];
 
