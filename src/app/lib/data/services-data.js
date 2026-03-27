@@ -3,7 +3,7 @@ export const servicesData = [
     slug: "website-services",
     title: "Website Services",
     icon: "🌐",
-    heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=1200&fit=crop&q=80",
+    heroImage: "/Services/Website-services/Expert-team.jpg",
     shortDescription: "Custom website development tailored to your business needs",
     description: "Transform your online presence with our comprehensive website development services. We create stunning, high-performance websites that engage visitors and drive conversions.",
     features: [
@@ -70,7 +70,7 @@ export const servicesData = [
     slug: "cloud-services",
     title: "Cloud Services",
     icon: "☁️",
-    heroImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=1200&fit=crop&q=80",
+    heroImage: "/Services/Cloud services/Banner-image.jpg",
     shortDescription: "Scalable cloud infrastructure and migration solutions",
     description: "Unlock the full potential of your business with Isarva Infotech's cloud consulting solutions. Our team of seasoned experts will guide you through every step of your cloud journey, from strategy and planning to implementation and optimization. Enhance your efficiency, reduce costs, and drive innovation with our tailored cloud consulting services.",
     features: [
@@ -115,7 +115,7 @@ export const servicesData = [
     slug: "odoo-apps-support",
     title: "Odoo Apps Support and Maintenance",
     icon: "📦",
-    heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=1200&fit=crop&q=80",
+    heroImage: "/Services/oddo-app/Banner-img.jpg",
     shortDescription: "Expert Odoo ERP customization and support services",
     description: "Keep your business running smoothly with our comprehensive Odoo ERP maintenance and support solutions. We optimize functionality so you can focus on growth.",
     features: [
@@ -164,7 +164,7 @@ export const servicesData = [
     slug: "ai-ml-consulting",
     title: "AI & ML Consulting",
     icon: "🤖",
-    heroImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=1200&fit=crop&q=80",
+    heroImage: "/Services/Ai consulting/Home-img.jpg",
     shortDescription: "Cutting-edge AI and machine learning solutions",
     description: "Artificial intelligence and machine learning consulting and development services that empower you to become a leader in your field. Align your business objectives with the right AI and ML solutions with our consulting services.",
     features: [
@@ -221,7 +221,7 @@ export const servicesData = [
     slug: "staffing-services",
     title: "Staffing Services",
     icon: "👥",
-    heroImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=1200&fit=crop&q=80",
+    heroImage: "/Services/Staffing/Banner-img.jpg",
     shortDescription: "Premium IT staffing and resource augmentation",
     description: "Connect with top-tier talent tailored to your business needs. Our expertise spans IT, healthcare, finance, and more, with flexible hiring models including contract staffing, direct placements, and project-based hiring.",
     features: [
@@ -274,7 +274,7 @@ export const servicesData = [
     slug: "consulting-services",
     title: "Consulting Services",
     icon: "💼",
-    heroImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=1200&fit=crop&q=80",
+    heroImage: "/Services/Consulting services/Banner-img.jpg",
     shortDescription: "Strategic IT consulting for digital transformation",
     description: "Are you ready to innovate with your technology to benefit your business? Our Technology Strategy and Advisory practice can help you realize exceptional value from your technology investments by building an industry-relevant strategy, identifying opportunities for innovation, and executing on proof of concepts to see real results.",
     features: [
@@ -319,7 +319,7 @@ export const servicesData = [
     slug: "erp-services",
     title: "ERP Services",
     icon: "🏢",
-    heroImage: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=1200&fit=crop&q=80",
+    heroImage: "/Services/ERP-services/Banner-img.jpg",
     shortDescription: "Comprehensive ERP implementation and customization",
     description: "At Isarva, we specialize in delivering transformative technology solutions tailored to meet the unique challenges of modern businesses. With a commitment to innovation and excellence, we leverage the latest advancements in technology to drive efficiency, productivity, and growth for our clients.",
     features: [
@@ -364,7 +364,7 @@ export const servicesData = [
     slug: "offshore-development",
     title: "Offshore Development",
     icon: "🌍",
-    heroImage: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=1200&fit=crop&q=80",
+    heroImage: "/Services/Offshore-development/Banner-img.jpg",
     shortDescription: "Cost-effective offshore development teams",
     description: "Isarva Infotech offers top-tier Offshore Development Services, enabling businesses to access global talent and reduce costs. Our dedicated offshore teams deliver high-quality software solutions tailored to your specific needs. We ensure seamless collaboration, efficient project management, and timely delivery, helping you scale your operations and achieve your business goals.",
     features: [
@@ -409,7 +409,7 @@ export const servicesData = [
     slug: "training",
     title: "Training",
     icon: "📚",
-    heroImage: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=1200&fit=crop&q=80",
+    heroImage: "/Services/Training/Banner-img.jpg",
     shortDescription: "Professional IT training and skill development",
     description: "Elevate your career and stay ahead of the competition by taking your IT skills to the next level with our expert-led training courses. We offer a wide range of programs to help you gain the practical experience and industry insights you need to succeed in today's fast-paced digital world. Enroll now and unlock your full potential!",
     features: [
@@ -454,7 +454,7 @@ export const servicesData = [
     slug: "wordpress-development",
     title: "WordPress Development",
     icon: "📝",
-    heroImage: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=1200&fit=crop&q=80",
+    heroImage: "/Services/Wordpress-development/Banner-img.jpg",
     shortDescription: "Expert WordPress development and customization",
     description: "Unlock the full potential of your online presence with Isarva Infotech's premier WordPress Development services. Our expert team specializes in creating stunning, responsive, and high-performing WordPress websites tailored to your unique business needs. From custom themes and plugins to seamless integrations and performance optimization, we ensure your site not only looks great but also delivers exceptional user experiences.",
     features: [
@@ -507,7 +507,7 @@ export const servicesData = [
     slug: "statamic-development",
     title: "Statamic Development",
     icon: "✨",
-    heroImage: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=800&h=1200&fit=crop&q=80",
+    heroImage: "/Services/Statamic/Banner-img.jpg",
     shortDescription: "Modern flat-file CMS development with Statamic",
     description: "Unlock the full potential of your online presence with Isarva Infotech's premier Statamic Development services. Our expert team specializes in creating stunning, responsive, and high-performance Statamic websites tailored to your unique business needs. From custom themes and addons to seamless integrations and performance optimizations, we ensure your site not only looks great but also delivers an exceptional user experience. Trust Isarva Infotech to transform your vision into a powerful, scalable, and secure Statamic website that drives engagement and growth.",
     features: [
@@ -560,7 +560,7 @@ export const servicesData = [
     slug: "gps-tracking",
     title: "GPS Tracking",
     icon: "📍",
-    heroImage: "https://images.unsplash.com/photo-1569074187119-c87815b476da?w=800&h=1200&fit=crop&q=80",
+    heroImage: "/Services/GPS-Tracking/banner-img.jpg",
     shortDescription: "Advanced GPS tracking and fleet management solutions",
     description: "GPS tracking in the IT sector involves using Global Positioning System (GPS) technology to monitor and track the real-time location of assets, vehicles, or individuals. This technology helps businesses optimize logistics, improve fleet management, enhance field service operations, and provide location-based services through mobile applications. Moreover, GPS tracking plays a crucial role in precision agriculture, personal safety, environmental monitoring, and various other industries.",
     features: [
@@ -605,7 +605,7 @@ export const servicesData = [
     slug: "wordpress-training",
     title: "WordPress Training",
     icon: "🎓",
-    heroImage: "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?w=800&h=1200&fit=crop&q=80",
+    heroImage: "/Services/Wordpress-training/Banner-img.jpg",
     shortDescription: "Comprehensive WordPress training and certification",
     description: "Unlock the full potential of WordPress with our hands-on training course. Learn to build, customize, and optimize beautiful websites using the world's leading content management system. Perfect for beginners and experienced users alike, this course equips you with the skills to create standout sites for any purpose. Start mastering WordPress today!",
     features: [
@@ -650,7 +650,7 @@ export const servicesData = [
     slug: "digital-marketing",
     title: "Digital Marketing",
     icon: "📱",
-    heroImage: "https://images.unsplash.com/photo-1557838923-2985c318be48?w=800&h=1200&fit=crop&q=80",
+    heroImage: "/Services/Digital-marketing/Banner-img.jpg",
     shortDescription: "Results-driven digital marketing strategies",
     description: "We are a well-known digital marketing agency in India, offering comprehensive online marketing solutions for businesses. Our services range from SEO, social media management, PPC campaigns and more. We have an experienced team of professionals who are passionate about helping you reach your goals and make your business successful.",
     subServices: [
@@ -736,7 +736,7 @@ export const servicesData = [
     slug: "seo",
     title: "Search Engine Optimization",
     icon: "🔍",
-    heroImage: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=1200&fit=crop&q=80",
+    heroImage: "/Services/Digital-marketing/Banner-img.jpg",
     shortDescription: "Elevate your online presence with expert SEO",
     description: "Our SEO service is designed to elevate your company's online presence by improving search engine rankings, driving targeted traffic, and increasing sales. We optimize your website with advanced keyword strategies and high-quality content, ensuring that it appeals to your ideal audience. This targeted approach results in higher conversion rates, sustainable growth, and a stronger connection with potential customers, ultimately leading to long-term business success.",
     features: [
@@ -773,7 +773,7 @@ export const servicesData = [
     slug: "social-media-marketing",
     title: "Social Media Marketing",
     icon: "📱",
-    heroImage: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=1200&fit=crop&q=80",
+    heroImage: "/Services/Digital-marketing/Banner-img.jpg",
     shortDescription: "Engage and grow your audience on social media",
     description: "We specialize in helping small and medium businesses with their digital marketing and branding needs. Our team of experts will help you create a social media marketing plan, create content, develop campaigns, manage accounts, and optimize for visibility and engagement.",
     features: [
@@ -810,7 +810,7 @@ export const servicesData = [
     slug: "google-ads",
     title: "Google Ads",
     icon: "💰",
-    heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=1200&fit=crop&q=80",
+    heroImage: "/Services/Digital-marketing/Banner-img.jpg",
     shortDescription: "Maximize ROI with targeted Google Ads campaigns",
     description: "Google ads let businesses plan their budgets and create innovative techniques, targeting audiences when they are searching for items and services that are comparable to the ones the company offers. In addition, Google ads are the only type of advertising that enables businesses to thoroughly quantify their return on investment (ROI).",
     features: [
@@ -847,7 +847,7 @@ export const servicesData = [
     slug: "website-design",
     title: "Website Design",
     icon: "🎨",
-    heroImage: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=1200&fit=crop&q=80",
+    heroImage: "/Services/Website-services/Expert-team.jpg",
     shortDescription: "Create visually stunning and user-friendly websites",
     description: "Create visually stunning and user-friendly websites that captivate your audience and represent your brand perfectly. Our expert designers craft custom solutions that combine aesthetics with functionality.",
     features: [
@@ -873,7 +873,7 @@ export const servicesData = [
     slug: "website-maintenance-amc",
     title: "Website Maintenance – AMC",
     icon: "🔧",
-    heroImage: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&h=1200&fit=crop&q=80",
+    heroImage: "/Services/Website-services/Expert-team.jpg",
     shortDescription: "Comprehensive annual maintenance contracts for your website",
     description: "Keep your website running smoothly with our Annual Maintenance Contracts. We provide ongoing support, updates, and security monitoring to ensure your site remains secure, fast, and up-to-date.",
     features: [
@@ -899,7 +899,7 @@ export const servicesData = [
     slug: "migrate-to-wordpress",
     title: "Migrate to WordPress",
     icon: "🚀",
-    heroImage: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=1200&fit=crop&q=80",
+    heroImage: "/Services/Wordpress-development/Banner-img.jpg",
     shortDescription: "Seamless migration to WordPress platform",
     description: "Seamlessly transition your existing website to WordPress platform with zero downtime and improved functionality. We handle every aspect of the migration process to ensure a smooth transition.",
     features: [
