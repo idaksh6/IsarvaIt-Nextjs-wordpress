@@ -162,26 +162,6 @@ export default function ProductDetailPremiumWooCommerce({
               <p className="text-lg text-[#444444] mb-8 leading-relaxed">
                 Our development approach focuses on performance, security, and user experience. We optimize every aspect of your store for speed, implement robust security measures, and create intuitive shopping experiences that convert visitors into customers. Whether you're launching a new store or scaling an existing one, we deliver solutions that drive real business results.
               </p>
-
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="press-illusion-btn-purple bg-purple-400 text-white font-bold px-6 py-2 text-base items-center space-x-2 inline-flex cursor-pointer"
-              >
-                <span>Get in touch</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 17 9"
-                  className="h-2 w-4"
-                >
-                  <path
-                    fill="currentColor"
-                    fillRule="evenodd"
-                    d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-              </button>
             </div>
           </div>
         </div>
