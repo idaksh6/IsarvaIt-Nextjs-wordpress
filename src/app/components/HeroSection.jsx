@@ -119,7 +119,7 @@ function HeroSection({ data }) {
             <div className="w-24 h-24 bg-[#7bd29b] rounded-full flex items-center justify-center text-white mb-6 shadow-[0_8px_20px_rgba(123,210,155,0.3)]">
               <lord-icon
                
-                 src="https://cdn.lordicon.com/rjzlnunf.json"
+                 src="https://cdn.lordicon.com/mubdgyyw.json"
                 trigger="loop"
                 colors="primary:#ffffff,secondary:#ffffff"
                 style={{ width: "56px", height: "56px" }}

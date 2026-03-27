@@ -73,8 +73,8 @@ export default function HRMSBrochureModal({
         
         // Trigger PDF download
         const link = document.createElement('a');
-        link.href = '/products/hrms/HRMS-Brochure-1.pdf';
-        link.download = 'HRMS-Brochure.pdf';
+        link.href = '/products/hrms/HRMS-construction ver2.pdf';
+        link.download = 'HRMS-construction-ver2.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

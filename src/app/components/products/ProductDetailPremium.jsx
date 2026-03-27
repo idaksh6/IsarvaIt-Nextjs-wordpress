@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import ContactFormModal from "../../components/ContactFormModal";
+import HRMSBrochureModal from "../../components/HRMSBrochureModal";
 
 const ZOHO_GREEN = "#22C55E";
 const ZOHO_DARK = "#4B4B4B";
@@ -49,6 +50,7 @@ export default function ProductDetailPremium({
   allProducts,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -250,6 +252,28 @@ export default function ProductDetailPremium({
                     </p>
                   </div>
                 </motion.div>
+              </div>
+
+              <div className="mt-8">
+                <button
+                  onClick={() => setIsBrochureModalOpen(true)}
+                  className="press-illusion-btn bg-green-400 text-white font-bold px-6 py-2 text-base items-center space-x-2 inline-flex cursor-pointer"
+                >
+                  <span>Download Brochure</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 17 9"
+                    className="h-2 w-4"
+                  >
+                    <path
+                      fill="currentColor"
+                      fillRule="evenodd"
+                      d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
@@ -473,6 +497,11 @@ export default function ProductDetailPremium({
         preSelectedType="Product"
         preSelectedItem={product.title}
         allItems={allProducts}
+      />
+
+      <HRMSBrochureModal
+        isOpen={isBrochureModalOpen}
+        onClose={() => setIsBrochureModalOpen(false)}
       />
     </div>
   );
