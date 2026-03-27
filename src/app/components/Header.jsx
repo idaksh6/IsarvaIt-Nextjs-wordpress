@@ -140,18 +140,22 @@ export default function Header() {
                   <div className="absolute top-full left-[-200px] pt-4 w-[650px]">
                     <div className="bg-white/95 backdrop-blur-xl rounded-[2.5rem] shadow-2xl border border-gray-100 p-8 flex gap-8">
                       {/* Left: Featured Content with Image */}
-                      <div className="w-[280px] bg-gradient-to-br from-emerald-50 to-lime-50 rounded-3xl p-6 relative overflow-hidden group/featured">
+                      <Link 
+                        href="/about" 
+                        className="w-[280px] bg-gradient-to-br from-emerald-50 to-lime-50 rounded-3xl p-6 relative overflow-hidden group/featured cursor-pointer hover:shadow-lg transition-all duration-300"
+                        onClick={() => setIsAboutOpen(false)}
+                      >
                         <div className="absolute inset-0 opacity-10 group-hover/featured:scale-110 transition-transform duration-700">
                           <img src="/agency_office_studio_premium_1773850105446.png" className="w-full h-full object-cover" alt="" />
                         </div>
                         <div className="relative z-10 flex flex-col h-full">
                           <h4 className="text-xl font-display font-bold text-gray-900 mb-4 leading-tight">About Isarva</h4>
                           <p className="text-gray-600 text-base mb-6 font-medium leading-relaxed">At Isarva Infotech, we are more than an IT consulting firm — we are a strategic technology partner.</p>
-                          <Link href="/about" className="mt-auto text-emerald-600 font-bold text-lg flex items-center gap-2 group/link">
+                          <div className="mt-auto text-emerald-600 font-bold text-lg flex items-center gap-2 group/link">
                             Read More <span className="group-hover/link:translate-x-1 transition-transform">→</span>
-                          </Link>
+                          </div>
                         </div>
-                      </div>
+                      </Link>
 
                       {/* Right: Nav Links */}
                       <div className="flex-1">
