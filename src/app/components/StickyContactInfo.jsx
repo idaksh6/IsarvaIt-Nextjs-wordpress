@@ -60,6 +60,7 @@ export default function StickyContactInfo({ socialLinks }) {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
           className="grayscale hover:grayscale-0 transition-all duration-500"
+          title="Isarva Infotech office location in Mangalore, Karnataka"
         ></iframe>
       </div>
 

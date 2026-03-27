@@ -303,6 +303,7 @@ export default function TestimonialPage() {
                   className="absolute inset-0 w-full h-full border-0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
+                  title={`Customer testimonial video from ${testimonials[1].name}`}
                 ></iframe>
               </div>
 
