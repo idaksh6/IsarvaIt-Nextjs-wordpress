@@ -6,16 +6,11 @@ import ContactFormModal from "../../components/ContactFormModal";
 import ProductDetailPremium from "../../components/products/ProductDetailPremium";
 import ProductDetailPremiumWooCommerce from "../../components/products/ProductDetailPremiumWooCommerce";
 import ProductDetailPremiumPetroCare from "../../components/products/ProductDetailPremiumPetroCare";
-import ProductDetailPremiumRetailBilling from "../../components/products/ProductDetailPremiumRetailBilling";
 import ProductDetailPremiumMultiBranch from "../../components/products/ProductDetailPremiumMultiBranch";
 import ProductDetailPremiumDMS from "../../components/products/ProductDetailPremiumDMS";
-import ProductDetailPremiumTimeAttendance from "../../components/products/ProductDetailPremiumTimeAttendance";
-import ProductDetailPremiumTicketing from "../../components/products/ProductDetailPremiumTicketing";
 import ProductDetailPremiumLodge from "../../components/products/ProductDetailPremiumLodge";
 import ProductDetailPremiumMobile from "../../components/products/ProductDetailPremiumMobile";
-import ProductDetailPremium3PL from "../../components/products/ProductDetailPremium3PL";
 import ProductDetailPremiumMarine from "../../components/products/ProductDetailPremiumMarine";
-import ProductDetailPremiumOrderPicking from "../../components/products/ProductDetailPremiumOrderPicking";
 import ProductDetailPremiumDispatcher from "../../components/products/ProductDetailPremiumDispatcher";
 import ProductDetailPremiumDealer from "../../components/products/ProductDetailPremiumDealer";
 import ProductDetailPremiumExpense from "../../components/products/ProductDetailPremiumExpense";
@@ -58,17 +53,6 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
     );
   }
 
-  // Use Premium View for Retail Billing Software
-  if (product.slug === 'retail-billing-software') {
-    return (
-      <ProductDetailPremiumRetailBilling 
-        product={product} 
-        relatedProducts={relatedProducts} 
-        allProducts={allProducts}
-      />
-    );
-  }
-
   // Use Premium View for Multi-Branch Retail Billing Software
   if (product.slug === 'retail-billing-multi-branch') {
     return (
@@ -84,28 +68,6 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   if (product.slug === 'document-management-system') {
     return (
       <ProductDetailPremiumDMS 
-        product={product} 
-        relatedProducts={relatedProducts} 
-        allProducts={allProducts}
-      />
-    );
-  }
-
-  // Use Premium View for Time Attendance System
-  if (product.slug === 'time-attendance-system') {
-    return (
-      <ProductDetailPremiumTimeAttendance 
-        product={product} 
-        relatedProducts={relatedProducts} 
-        allProducts={allProducts}
-      />
-    );
-  }
-
-  // Use Premium View for Ticket Management Software
-  if (product.slug === 'ticket-management-software') {
-    return (
-      <ProductDetailPremiumTicketing 
         product={product} 
         relatedProducts={relatedProducts} 
         allProducts={allProducts}
@@ -135,32 +97,10 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
     );
   }
 
-  // Use Premium View for 3PL WMS Solution
-  if (product.slug === '3pl-wms-solution') {
-    return (
-      <ProductDetailPremium3PL 
-        product={product} 
-        relatedProducts={relatedProducts} 
-        allProducts={allProducts}
-      />
-    );
-  }
-
   // Use Premium View for Marine Service Software
   if (product.slug === 'marine-service-software') {
     return (
       <ProductDetailPremiumMarine 
-        product={product} 
-        relatedProducts={relatedProducts} 
-        allProducts={allProducts}
-      />
-    );
-  }
-
-  // Use Premium View for Order Picking & Packing
-  if (product.slug === 'order-picking-packing') {
-    return (
-      <ProductDetailPremiumOrderPicking 
         product={product} 
         relatedProducts={relatedProducts} 
         allProducts={allProducts}

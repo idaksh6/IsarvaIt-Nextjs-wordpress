@@ -466,7 +466,7 @@ export default function ContactFormModal({
           )}
 
           {/* Submit Button */}
-          <div className="mt-8 flex gap-4">
+          <div className="mt-8 flex gap-4 lg:flex-row flex-col">
             <button
               type="submit"
               disabled={isSubmitting}
