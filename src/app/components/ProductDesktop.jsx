@@ -545,7 +545,7 @@ function ProductDesktop() {
                             </svg>
                           </button>
                         </div>
-                        
+
                         {/* Address Bar */}
                         <div className="px-3 py-2 flex items-center justify-between gap-2">
                           {/* Navigation Buttons */}
@@ -631,28 +631,26 @@ function ProductDesktop() {
                                 category === "All"
                                   ? products.length
                                   : products.filter(
-                                      (p) => p.category === category,
-                                    ).length;
+                                    (p) => p.category === category,
+                                  ).length;
 
                               return (
                                 <button
                                   key={category}
                                   onClick={() => setSelectedCategory(category)}
-                                  className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 flex items-center justify-between group ${
-                                    selectedCategory === category
-                                      ? "bg-blue-600 text-white shadow-lg"
-                                      : "text-gray-700 hover:bg-gray-200 hover:text-gray-900"
-                                  }`}
+                                  className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 flex items-center justify-between group ${selectedCategory === category
+                                    ? "bg-blue-600 text-white shadow-lg"
+                                    : "text-gray-700 hover:bg-gray-200 hover:text-gray-900"
+                                    }`}
                                 >
                                   <span className="font-medium">
                                     {category}
                                   </span>
                                   <span
-                                    className={`text-xs px-2 py-1 rounded-full ${
-                                      selectedCategory === category
-                                        ? "bg-blue-500 text-white"
-                                        : "bg-gray-200 text-gray-700 group-hover:bg-gray-300"
-                                    }`}
+                                    className={`text-xs px-2 py-1 rounded-full ${selectedCategory === category
+                                      ? "bg-blue-500 text-white"
+                                      : "bg-gray-200 text-gray-700 group-hover:bg-gray-300"
+                                      }`}
                                   >
                                     {count}
                                   </span>
@@ -808,22 +806,20 @@ function ProductDesktop() {
                     <button
                       key={category}
                       onClick={() => handleCategorySelect(category, index)}
-                      className={`flex-shrink-0 flex items-center px-5 py-3 rounded-full font-medium text-sm transition-all duration-300 whitespace-nowrap transform ${
-                        selectedCategory === category
-                          ? "bg-blue-600 text-white shadow-lg scale-105 ring-2 ring-blue-200"
-                          : "bg-gray-100 text-gray-700 hover:bg-gray-150 active:bg-gray-200 hover:scale-102 active:scale-95"
-                      }`}
+                      className={`flex-shrink-0 flex items-center px-5 py-3 rounded-full font-medium text-sm transition-all duration-300 whitespace-nowrap transform ${selectedCategory === category
+                        ? "bg-blue-600 text-white shadow-lg scale-105 ring-2 ring-blue-200"
+                        : "bg-gray-100 text-gray-700 hover:bg-gray-150 active:bg-gray-200 hover:scale-102 active:scale-95"
+                        }`}
                       style={{
                         scrollSnapAlign: "center",
                       }}
                     >
                       <span className="mr-2 font-semibold">{category}</span>
                       <span
-                        className={`text-xs px-2.5 py-1 rounded-full font-bold ${
-                          selectedCategory === category
-                            ? "bg-blue-500 text-white"
-                            : "bg-gray-200 text-gray-600"
-                        }`}
+                        className={`text-xs px-2.5 py-1 rounded-full font-bold ${selectedCategory === category
+                          ? "bg-blue-500 text-white"
+                          : "bg-gray-200 text-gray-600"
+                          }`}
                       >
                         {count}
                       </span>
@@ -1094,9 +1090,8 @@ const MobileProductCard = ({ product, isLast }) => {
   return (
     <Link
       href={`/products/${product.slug}`}
-      className={`p-4 active:bg-gray-50 transition-colors block ${
-        !isLast ? "border-b border-gray-100" : ""
-      }`}
+      className={`p-4 active:bg-gray-50 transition-colors block ${!isLast ? "border-b border-gray-100" : ""
+        }`}
     >
       <div className="flex gap-4">
         {/* Product Image */}
@@ -1250,7 +1245,7 @@ const MobileProductModal = ({ product, onClose }) => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col gap-4 py-4 border-t border-gray-100">
-                    <Link
+              <Link
                 href={`/products/${product.slug}`}
                 className="press-illusion-btn bg-green-400 text-black w-fit  font-bold px-6 py-2 text-sm mx-auto  items-center space-x-2  inline-flex"
               >
