@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 
-export default function CRMBrochureModal({ 
-  isOpen, 
+export default function CRMBrochureModal({
+  isOpen,
   onClose
 }) {
   const [formData, setFormData] = useState({
@@ -23,22 +23,22 @@ export default function CRMBrochureModal({
   useEffect(() => {
     const fetchCategoryId = async () => {
       if (!isOpen) return;
-      
+
       try {
-        const response = await fetch('https://crm-demo.isarva.in/api/product-categories/products');
+        const response = await fetch('https://crm.isarva.in/api/product-categories/products');
         const data = await response.json();
-        
+
         if (data.categories) {
           console.log('Available categories:', data.categories);
-          
+
           // Find CRM Application category - be more specific
           const crmCategory = data.categories.find(
             cat => cat.category_name.toLowerCase() === 'crm application' ||
-                   cat.category_name.toLowerCase() === 'crm' ||
-                   (cat.category_name.toLowerCase().includes('crm') && 
-                    cat.category_name.toLowerCase().includes('application'))
+              cat.category_name.toLowerCase() === 'crm' ||
+              (cat.category_name.toLowerCase().includes('crm') &&
+                cat.category_name.toLowerCase().includes('application'))
           );
-          
+
           if (crmCategory) {
             console.log('Found CRM category:', crmCategory);
             setCategoryId(crmCategory.id);
@@ -107,7 +107,7 @@ export default function CRMBrochureModal({
 
       if (data.success) {
         setSubmitStatus('success');
-        
+
         // Trigger PDF download
         const link = document.createElement('a');
         link.href = '/products/crm/CRM-Brochure-Ver2-1.pdf';
@@ -169,7 +169,7 @@ export default function CRMBrochureModal({
   const modalContent = (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
       {/* Backdrop */}
-      <div 
+      <div
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
         onClick={handleClose}
       ></div>

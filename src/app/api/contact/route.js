@@ -42,7 +42,7 @@ export async function POST(request) {
     };
 
     console.log('Formatted CRM data:', JSON.stringify(crmData, null, 2));
-    console.log('Sending request to: https://crm-demo.isarva.in/api/leads');
+    console.log('Sending request to: https://crm.isarva.in/api/leads');
 
     // Send to CRM API with timeout
     const controller = new AbortController();
@@ -50,7 +50,7 @@ export async function POST(request) {
 
     let response;
     try {
-      response = await fetch('https://crm-demo.isarva.in/api/leads', {
+      response = await fetch('https://crm.isarva.in/api/leads', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ export async function POST(request) {
 
     console.log('CRM API Response Status:', response.status);
     console.log('CRM API Response Headers:', Object.fromEntries(response.headers.entries()));
-    
+
     const responseText = await response.text();
     console.log('CRM API Response Body:', responseText);
 
@@ -82,7 +82,7 @@ export async function POST(request) {
         statusText: response.statusText,
         body: responseText,
       });
-      
+
       // Try to parse error response
       let errorMessage = responseText;
       try {
@@ -93,7 +93,7 @@ export async function POST(request) {
       } catch (e) {
         // Use raw text if not JSON
       }
-      
+
       throw new Error(`CRM API error (${response.status}): ${errorMessage}`);
     }
 
@@ -113,10 +113,10 @@ export async function POST(request) {
       message: error.message,
       stack: error.stack,
     });
-    
+
     return NextResponse.json(
-      { 
-        success: false, 
+      {
+        success: false,
         error: error.message || 'Failed to submit form',
         details: process.env.NODE_ENV === 'development' ? error.stack : undefined,
       },
