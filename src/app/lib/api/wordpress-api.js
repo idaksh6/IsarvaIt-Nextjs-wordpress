@@ -68,7 +68,6 @@ export async function fetchPageBySlug(slug, options = {}) {
       `${WORDPRESS_API_URL}/wp-json/wp/v2/pages?slug=${slug}&_fields=${fields}`,
       {
         next: { revalidate },
-        cache: 'no-store', // Don't cache failed requests
       }
     );
 
@@ -111,7 +110,6 @@ export async function fetchPageById(id, options = {}) {
       `${WORDPRESS_API_URL}/wp-json/wp/v2/pages/${id}?_fields=${fields}`,
       {
         next: { revalidate },
-        cache: 'no-store',
       }
     );
 
@@ -151,7 +149,6 @@ export async function fetchPages(options = {}) {
       `${WORDPRESS_API_URL}/wp-json/wp/v2/pages?per_page=${perPage}&orderby=${orderby}&order=${order}&_fields=${fields}`,
       {
         next: { revalidate },
-        cache: 'no-store',
       }
     );
 
@@ -191,7 +188,6 @@ export async function fetchMediaById(mediaId, options = {}) {
       `${WORDPRESS_API_URL}/wp-json/wp/v2/media/${mediaId}?_fields=id,source_url,title,alt_text,media_details`,
       {
         next: { revalidate },
-        cache: 'no-store',
       }
     );
     
@@ -203,6 +199,39 @@ export async function fetchMediaById(mediaId, options = {}) {
   } catch (error) {
     console.warn(`WordPress API unavailable for media ID ${mediaId}.`);
     return null;
+  }
+}
+
+/**
+ * Fetch multiple media items by their IDs in a single request
+ * @param {Array<number>} mediaIds - Array of media IDs
+ * @param {Object} options - Additional options
+ * @returns {Promise<Array>} Array of media objects
+ */
+export async function fetchMediaByIds(mediaIds, options = {}) {
+  if (!isWordPressAvailable() || !mediaIds || !mediaIds.length) {
+    return [];
+  }
+
+  try {
+    const { revalidate = 3600, fields = 'id,source_url,title,alt_text' } = options;
+    const idsParam = mediaIds.join(',');
+    
+    const response = await fetch(
+      `${WORDPRESS_API_URL}/wp-json/wp/v2/media?include=${idsParam}&per_page=100&_fields=${fields}`,
+      {
+        next: { revalidate },
+      }
+    );
+
+    if (!response.ok) {
+      return [];
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.warn(`WordPress API unavailable for bulk media fetch: ${error.message}`);
+    return [];
   }
 }
 
@@ -243,7 +272,6 @@ export async function fetchPosts(options = {}) {
       `${WORDPRESS_API_URL}/wp-json/wp/v2/posts?per_page=${perPage}&orderby=${orderby}&order=${order}${categoryQuery}&_fields=${fields}`,
       {
         next: { revalidate },
-        cache: 'no-store',
       }
     );
 
@@ -284,7 +312,6 @@ export async function fetchCustomPostType(postType, options = {}) {
       `${WORDPRESS_API_URL}/wp-json/wp/v2/${postType}?per_page=${perPage}&orderby=${orderby}&order=${order}&_fields=${fields}`,
       {
         next: { revalidate },
-        cache: 'no-store',
       }
     );
 
@@ -311,14 +338,8 @@ export async function getFrontPage() {
     return null;
   }
 
-  // Test API connection first
-  const connectionTest = await testWordPressConnection();
-  if (!connectionTest.success) {
-    console.error(`WordPress API Connection Failed: ${connectionTest.error}`);
-    return null;
-  }
-
-  // Try fetching by slug 'home' first (most common)
+  // Optimized: Try fetching by slug 'home' directly
+  // Removed redundant connection test for faster initial load
   let page = await fetchPageBySlug('home');
   
   if (page) {
@@ -350,7 +371,6 @@ export async function fetchPostsByIds(postIds, postType = 'posts', options = {})
       `${WORDPRESS_API_URL}/wp-json/wp/v2/${postType}?include=${idsParam}&_fields=${fields}`,
       {
         next: { revalidate },
-        cache: 'no-store',
       }
     );
 

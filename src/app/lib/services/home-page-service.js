@@ -3,7 +3,7 @@
  * Handles data fetching and transformation for the home page
  */
 
-import { getFrontPage, getMediaUrl, fetchMediaById, fetchPostsByIds } from '../api/wordpress-api';
+import { getFrontPage, getMediaUrl, fetchMediaById, fetchMediaByIds, fetchPostsByIds } from '../api/wordpress-api';
 import { cleanWysiwygContent, parseAcfLink, parseAcfImage } from '../utils/content-helpers';
 
 /**
@@ -116,14 +116,24 @@ export async function getServicesSectionData(homePageData) {
       fields: 'id,title,content,acf,featured_media'
     });
     
+    // Batch fetch all featured media for all services at once to save time
+    const mediaIds = servicePosts
+      .map(post => post.featured_media)
+      .filter(id => id && typeof id === 'number');
+    
+    const allMedia = mediaIds.length > 0 
+      ? await fetchMediaByIds(mediaIds) 
+      : [];
+
     // Preserve the order from the relationship field
     for (const serviceId of serviceIds) {
       const servicePost = servicePosts.find(post => post.id === serviceId);
       if (servicePost) {
-        // Fetch featured image URL if featured_media exists
+        // Find the media URL from the batches
         let featuredImageUrl = '';
         if (servicePost.featured_media) {
-          featuredImageUrl = await getMediaUrl(servicePost.featured_media);
+          const mediaItem = allMedia.find(m => m.id === servicePost.featured_media);
+          featuredImageUrl = mediaItem?.source_url || '';
         }
 
         services.push({
@@ -170,20 +180,19 @@ export async function getTechStackSectionData(homePageData) {
   }
   
   // Process tech stack images from gallery field
-  const techStackImages = [];
+  let techStackImages = [];
   if (techStackSection.tech_stack_images && Array.isArray(techStackSection.tech_stack_images)) {
-    for (const imageId of techStackSection.tech_stack_images) {
-      // Fetch complete image data from WordPress media endpoint
-      const imageData = await fetchMediaById(imageId);
-      
-      if (imageData) {
-        techStackImages.push({
-          url: imageData.source_url,
-          alt: imageData.alt_text || '',
-          title: imageData.title?.rendered || ''
-        });
-      }
-    }
+    const imageIds = techStackSection.tech_stack_images;
+    
+    // Fetch ALL media items in a single request instead of a loop
+    const mediaItems = await fetchMediaByIds(imageIds);
+    
+    // Map them back to the expected format
+    techStackImages = mediaItems.map(imageData => ({
+      url: imageData.source_url,
+      alt: imageData.alt_text || '',
+      title: imageData.title?.rendered || ''
+    }));
   }
   
   return {
@@ -202,25 +211,17 @@ export async function getAllHomePageSections(homePageData) {
     return {};
   }
   
+  // Parallel fetch all sections for maximum performance
+  const [heroData, servicesData, techStackData] = await Promise.all([
+    getHeroSectionData(homePageData),
+    getServicesSectionData(homePageData),
+    getTechStackSectionData(homePageData)
+  ]);
+
   const sections = {};
-  
-  // Extract hero section
-  const heroData = await getHeroSectionData(homePageData);
-  if (heroData) {
-    sections.hero = heroData;
-  }
-  
-  // Extract services section
-  const servicesData = await getServicesSectionData(homePageData);
-  if (servicesData) {
-    sections.services = servicesData;
-  }
-  
-  // Extract tech stack section
-  const techStackData = await getTechStackSectionData(homePageData);
-  if (techStackData) {
-    sections.techStack = techStackData;
-  }
+  if (heroData) sections.hero = heroData;
+  if (servicesData) sections.services = servicesData;
+  if (techStackData) sections.techStack = techStackData;
   
   return sections;
 }

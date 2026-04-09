@@ -8,7 +8,7 @@ import ContactSection from "./components/ContactSection";
 import BlogSection from "./components/BlogSection";
 import Footer from "./components/Footer";
 import CtaSection from "./components/CtaSection";
-import { getHomePageData, getHeroSectionData, getServicesSectionData, getTechStackSectionData } from "./lib/services/home-page-service";
+import { getHomePageData, getAllHomePageSections } from "./lib/services/home-page-service";
 import { getBlogPosts } from "./lib/services/blog-service";
 import { generateMetadata as generateSEOMetadata, generateOrganizationSchema } from "./lib/utils/seo";
 import { 
@@ -45,10 +45,16 @@ export const revalidate = 60;
 export default async function HomePage() {
   // Fetch WordPress data (cached and revalidated based on settings above)
   const homePageData = await getHomePageData();
-  const heroData = await getHeroSectionData(homePageData);
-  const servicesData = await getServicesSectionData(homePageData);
-  const techStackData = await getTechStackSectionData(homePageData);
-  const blogPosts = await getBlogPosts({ perPage: 4 });
+  
+  // Parallelize the rest of the fetching to eliminate waterfalls
+  const [sections, blogPosts] = await Promise.all([
+    getAllHomePageSections(homePageData),
+    getBlogPosts({ perPage: 4 })
+  ]);
+
+  const heroData = sections.hero;
+  const servicesData = sections.services;
+  const techStackData = sections.techStack;
 
   // Generate comprehensive AI-optimized schemas
   const enhancedOrgSchema = generateEnhancedOrganizationSchema();
