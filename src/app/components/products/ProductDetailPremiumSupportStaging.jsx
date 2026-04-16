@@ -1122,8 +1122,8 @@ export default function ProductDetailPremiumSupportStaging({
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-[32px] md:text-[50px] font-extrabold text-[#000000] leading-tight mb-8">
-              Stop Switching Tools—<br />
-              <span className="text-[#9333EA]">Manage Projects, Tasks & Tickets Together</span>
+              The Simple Way to Manage Work.<br />
+              <span className="text-[#9333EA]">Your Projects, Tasks, and Support Tickets—Unified</span>
               <span style={{ color: SUPPORT_PURPLE }}>.</span>
             </h1>
             <p className="text-base text-[#444444] mb-8 max-w-3xl mx-auto leading-relaxed">
