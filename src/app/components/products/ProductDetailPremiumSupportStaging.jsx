@@ -57,11 +57,6 @@ const industriesBuiltFor = [
     icon: "📱"
   },
   {
-    title: "Full-Service Marketing Agencies",
-    description: "Bridge the gap between creative teams and clients with real-time resource tracking.",
-    icon: "🎯"
-  },
-  {
     title: "Consulting & Professional Services",
     description: "Professionalize your billable hours and maintain perfect documentation for every client engagement.",
     icon: "🤝"
@@ -270,7 +265,7 @@ const supportFeatures = [
     color: "#4F46E5",
     desc: "Add projects, set deadlines, assign billing companies, and organize tasks, notes, credentials, internal docs, and assets in a well-structured manner.",
     placeholder: "PM",
-    image: "/products/support/project_task_management.jpg",
+    image: "/products/support/Project-&-Task-Management.jpg",
   },
   {
     id: "ticket",
@@ -279,7 +274,7 @@ const supportFeatures = [
     color: "#0EA5E9",
     desc: "Create tickets, assign specialized team members, and collaborate in real-time through comments and file attachments while accurately tracking billable hours for every task.",
     placeholder: "TM",
-    image: "/products/support/ticket_management.jpg",
+    image: "/products/support/Ticket-management.jpg",
   },
   {
     id: "renewal",
@@ -288,7 +283,7 @@ const supportFeatures = [
     color: "#10B981",
     desc: "Centralize and track domain, hosting, application AMC, and other essential service details for every project and client. Use a dedicated dashboard to monitor expiry dates in real-time.",
     placeholder: "RM",
-    image: "/products/support/renewal_management.jpg",
+    image: "/products/support/Renewal-Management.jpg",
   },
   {
     id: "backup",
@@ -297,7 +292,7 @@ const supportFeatures = [
     color: "#F59E0B",
     desc: "Securely manage file locations for projects, tickets, and internal data with flexible backup type selections and detailed coordination comments. Access comprehensive backup history.",
     placeholder: "BM",
-    image: "/products/support/backup_management.jpg",
+    image: "/products/support/Backup-Management.jpg",
   },
   {
     id: "reports",
@@ -306,7 +301,7 @@ const supportFeatures = [
     color: "#EF4444",
     desc: "Detailed analytics reports to track daily submissions and productivity. From active ticket analytics to billable hour comparisons, gain full visibility into company-wide performance.",
     placeholder: "RA",
-    image: "/products/support/reports_analytics.jpg",
+    image: "/products/support/Reports-&-Analytics.jpg",
   },
   {
     id: "hours",
@@ -315,7 +310,7 @@ const supportFeatures = [
     color: "#8B5CF6",
     desc: "Monitor total time invested in each project with advanced employee and task filters. Track actual days spent versus projected timelines to identify overflow data and optimize efficiency.",
     placeholder: "HT",
-    image: "/products/support/worked_hours_tracking.jpg",
+    image: "/products/support/Worked-Hours-Tracking.jpg",
   },
   {
     id: "notifications",
@@ -324,7 +319,7 @@ const supportFeatures = [
     color: "#06B6D4",
     desc: "Stay updated with automated alerts during project creation and daily report submissions. Receive real-time notifications for every task submission via email and Google Chat.",
     placeholder: "NT",
-    image: "/products/support/email_google_notifications.jpg",
+    image: "/products/support/Email-google-notifications.jpg",
   },
   {
     id: "permissions",
@@ -333,14 +328,14 @@ const supportFeatures = [
     color: "#9333EA",
     desc: "Secure your system with role-based permissions. Control exactly what each user can create, view, or edit to maintain strict organizational security for each section.",
     placeholder: "MP",
-    image: "/products/support/member_management.jpg",
+    image: "/products/support/Member-management.jpg",
   },
 ];
 
 /* ─────────────────────────────────────────────────────────────
    ISS FEATURE ORBIT SECTION — Production-Grade
 ───────────────────────────────────────────────────────────── */
-function SupportFeatureSection() {
+function SupportFeatureSection({ onImageClick }) {
   const [activeId, setActiveId] = useState("project");
   const [mobileOpenId, setMobileOpenId] = useState("project");
 
@@ -379,38 +374,36 @@ function SupportFeatureSection() {
                 <button
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
-                  className={`relative border-2 rounded-full transition-all duration-300 ease-in-out cursor-pointer flex items-center gap-2 py-2.5 px-6 pr-6.5 text-[14px] font-bold whitespace-nowrap ${activeId === feature.id
-                    ? "bg-white border-[#9333EA] text-gray-900 shadow-[0_10px_25px_rgba(147,51,234,0.1)]"
-                    : "bg-white border-gray-100 text-gray-400 hover:border-gray-300 hover:text-gray-600"
+                  className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[13px] font-semibold whitespace-nowrap ${activeId === feature.id
+                    ? "bg-gray-900 border-purple-600 text-black shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
+                    : "border-purple-300 text-gray-800 hover:border-purple-500 hover:shadow-md"
                     }`}
                 >
-                  <span className="text-base leading-none">{feature.icon}</span>
+                  <span className="text-sm leading-none">{feature.icon}</span>
                   {feature.label}
                   {activeId === feature.id && (
-                    <span className="absolute -right-[7px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[7px] border-t-transparent border-b-[7px] border-b-transparent border-l-[8px] border-l-[#9333EA]" />
+                    <span className="absolute -right-[7px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[7px] border-t-transparent border-b-[7px] border-b-transparent border-l-[7px] border-l-purple-900" />
                   )}
                 </button>
               ))}
             </div>
 
             {/* Center card */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 2xl:w-[78%] lg:w-[76%]">
-              {/* Image Glow Background */}
-              <div className="absolute inset-0 bg-purple-500/10 blur-[100px] rounded-full scale-75 animate-pulse pointer-events-none"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 2xl:w-[72%] lg:w-[70%]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeId}
-                  initial={{ opacity: 0, scale: 0.98 }}
+                  initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.98 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-                  className="w-full h-full rounded-xl overflow-hidden shadow-[0_24px_64px_rgba(0,0,0,0.18)]"
+                  className="w-full h-full rounded-xl overflow-hidden shadow-[0_24px_64px_rgba(0,0,0,0.15)] cursor-zoom-in"
+                  onClick={() => onImageClick && onImageClick(activeFeature.image)}
                 >
                   <img
                     src={activeFeature.image}
                     alt={activeFeature.label}
                     className="w-full h-full object-contain bg-white"
-                    style={{ imageRendering: '-webkit-optimize-contrast' }}
                   />
                 </motion.div>
               </AnimatePresence>
@@ -422,15 +415,15 @@ function SupportFeatureSection() {
                 <button
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
-                  className={`relative border-2 rounded-full transition-all duration-300 ease-in-out cursor-pointer flex items-center gap-2 py-2.5 px-6 pr-6.5 text-[14px] font-bold whitespace-nowrap ${activeId === feature.id
-                    ? "bg-white border-[#9333EA] text-gray-900 shadow-[0_10px_25px_rgba(147,51,234,0.1)]"
-                    : "bg-white border-gray-100 text-gray-400 hover:border-gray-300 hover:text-gray-600"
+                  className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[13px] font-semibold whitespace-nowrap ${activeId === feature.id
+                    ? "bg-gray-900 border-purple-600 text-black shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
+                    : "border-purple-300 text-gray-800 hover:border-purple-500 hover:shadow-md"
                     }`}
                 >
                   {feature.label}
-                  <span className="text-base leading-none">{feature.icon}</span>
+                  <span className="text-sm leading-none">{feature.icon}</span>
                   {activeId === feature.id && (
-                    <span className="absolute -left-[7px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[7px] border-t-transparent border-b-[7px] border-b-transparent border-r-[8px] border-r-[#9333EA]" />
+                    <span className="absolute -left-[7px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[7px] border-t-transparent border-b-[7px] border-b-transparent border-r-[7px] border-r-purple-900" />
                   )}
                 </button>
               ))}
@@ -463,11 +456,10 @@ function SupportFeatureSection() {
                 <button
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
-                  className={`flex items-center gap-2 py-2.5 px-5 rounded-lg font-semibold text-sm transition-all duration-200 ${
-                    activeId === feature.id
-                      ? "bg-[#0EA5E9] text-white shadow-lg scale-105"
-                      : "bg-white border border-gray-200 text-gray-700 hover:border-[#0EA5E9] hover:shadow-md"
-                  }`}
+                  className={`flex items-center gap-2 py-2.5 px-5 rounded-lg font-semibold text-sm transition-all duration-200 ${activeId === feature.id
+                    ? "bg-[#0EA5E9] text-white shadow-lg scale-105"
+                    : "bg-white border border-gray-200 text-gray-700 hover:border-[#0EA5E9] hover:shadow-md"
+                    }`}
                 >
                   <span className="text-base">{feature.icon}</span>
                   <span>{feature.label}</span>
@@ -616,23 +608,23 @@ const reportsData = [
 ];
 
 const analyticsData = [
-  { 
-    title: "Performance Trends", 
-    desc: "Compare billable hours per day and see employee productivity trends.", 
-    icon: "📊", 
-    image: "/products/support/reports_analytics.jpg" 
+  {
+    title: "Performance Trends",
+    desc: "Compare billable hours per day and see employee productivity trends.",
+    icon: "📊",
+    image: "/products/support/reports_analytics.jpg"
   },
-  { 
-    title: "Client Insights", 
-    desc: 'Use "Company-Wise Analytics" to see which clients are your biggest earners and which require the most support.', 
-    icon: "💼", 
-    image: "/products/support/worked_hours_tracking.jpg" 
+  {
+    title: "Client Insights",
+    desc: 'Use "Company-Wise Analytics" to see which clients are your biggest earners and which require the most support.',
+    icon: "💼",
+    image: "/products/support/worked_hours_tracking.jpg"
   },
-  { 
-    title: "Hour Comparison", 
-    desc: "Visualize how your team’s time is spent month-over-month to plan for future hiring.", 
-    icon: "📅", 
-    image: "/products/support/project_task_management.jpg" 
+  {
+    title: "Hour Comparison",
+    desc: "Visualize how your team’s time is spent month-over-month to plan for future hiring.",
+    icon: "📅",
+    image: "/products/support/project_task_management.jpg"
   }
 ];
 
@@ -661,9 +653,9 @@ function ProjectLifecycleSection() {
         <div className="max-w-5xl mx-auto relative">
           {/* Vertical Line */}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-purple-100 transform md:-translate-x-1/2 rounded-full"></div>
-          
+
           {projectLifecycleData.map((item, index) => (
-            <motion.div 
+            <motion.div
               key={item.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -724,51 +716,164 @@ function TicketLifecycleSection() {
 }
 
 function ReportsSection() {
+  const [activeIdx, setActiveIdx] = useState(0);
+
   return (
-    <section className="py-24 bg-white relative">
-      <div className="container mx-auto px-6">
-        <div className="max-w-3xl mb-16">
-          <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-purple-50 px-4 py-2 rounded-full">The Power of Reports</span>
-          <h2 className="text-[clamp(32px,4vw,44px)] font-extrabold text-[#0a0a0a] leading-tight mb-6">
-            Total Transparency, <br/><span className="text-[#9333EA]">Zero Manual Effort.</span>
-          </h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
-            Stop spending your Friday nights building spreadsheets. Our Reports Module generates everything you need in seconds:
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          {reportsData.map((item, index) => {
-            const spans = [
-              "md:col-span-8", 
-              "md:col-span-4", 
-              "md:col-span-4", 
-              "md:col-span-4", 
-              "md:col-span-4"
-            ];
-            const spanClass = spans[index] || "md:col-span-4";
-            return (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className={`${spanClass} bg-gray-50 hover:bg-white border border-gray-100 hover:border-purple-200 rounded-3xl p-8 shadow-sm hover:shadow-[0_20px_50px_rgba(147,51,234,0.1)] transition-all duration-300 group`}
-              >
-                <div className="text-4xl mb-6 bg-white w-16 h-16 rounded-2xl flex items-center justify-center shadow-[0_5px_15px_rgba(0,0,0,0.05)] group-hover:scale-110 transition-transform">{item.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                <p className="text-gray-600 leading-relaxed text-sm">{item.desc}</p>
-              </motion.div>
-            )
-          })}
+    <section className="py-32 bg-slate-50 relative overflow-hidden">
+      {/* GLOBAL BACKGROUND LAYER */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Background Liquid Gradients */}
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-orange-100/30 via-purple-100/30 to-blue-100/30 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-pink-100/20 to-blue-100/20 rounded-full blur-[100px] -translate-x-1/2"></div>
+
+        {/* Dynamic Floating Orbs in Background */}
+        <motion.div 
+          animate={{ x: [0, 20, 0], y: [0, -20, 0] }}
+          transition={{ duration: 10, repeat: Infinity }}
+          className="absolute top-1/4 right-[10%] w-32 h-32 bg-orange-400/10 rounded-full blur-3xl"
+        />
+        <motion.div 
+          animate={{ x: [0, -30, 0], y: [0, 30, 0] }}
+          transition={{ duration: 12, repeat: Infinity, delay: 1 }}
+          className="absolute bottom-1/4 left-[20%] w-56 h-56 bg-purple-500/10 rounded-full blur-3xl"
+        />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="flex flex-col lg:flex-row gap-16 lg:items-center">
+          
+          {/* LEFT: THE NAVIGATOR */}
+          <div className="w-full lg:w-[40%]">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="mb-12"
+            >
+              <span className="text-[10px] font-black text-[#9333EA] tracking-[0.4em] uppercase mb-4 block">
+                Insight Engine
+              </span>
+              <h2 className="text-5xl md:text-6xl font-black text-gray-900 leading-none tracking-tighter mb-6">
+                Total <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-purple-600">Transparency</span>.
+              </h2>
+              <p className="text-lg text-gray-500 font-medium">
+                Click a module to explore how we automate your organizational intelligence.
+              </p>
+            </motion.div>
+
+            <div className="space-y-4">
+              {reportsData.map((item, index) => {
+                const colors = [
+                  "bg-orange-50/60 border-orange-100 text-orange-600",
+                  "bg-blue-50/60 border-blue-100 text-blue-600",
+                  "bg-purple-50/60 border-purple-100 text-purple-600",
+                  "bg-green-50/60 border-green-100 text-green-600",
+                  "bg-pink-50/60 border-pink-100 text-pink-600"
+                ];
+                
+                return (
+                  <button
+                    key={item.title}
+                    onClick={() => setActiveIdx(index)}
+                    className={`group w-full text-left p-6 rounded-[2rem] transition-all duration-500 flex items-center gap-6 border ${activeIdx === index 
+                      ? `${colors[index]} shadow-[0_20px_40px_rgba(0,0,0,0.03)] scale-105` 
+                      : "bg-transparent border-transparent grayscale hover:grayscale-0 opacity-40 hover:opacity-100"}`}
+                  >
+                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center text-2xl transition-all duration-500 ${activeIdx === index ? "bg-white shadow-sm" : "bg-gray-100 text-gray-400"}`}>
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h3 className={`text-lg font-bold transition-colors ${activeIdx === index ? "text-gray-900" : "text-gray-400 group-hover:text-gray-600"}`}>
+                        {item.title}
+                      </h3>
+                      {activeIdx === index && (
+                         <motion.div layoutId="activeBar" className={`h-0.5 w-12 mt-1 ${activeIdx === 0 ? "bg-orange-400" : "bg-purple-400"}`} />
+                      )}
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* RIGHT: THE SPOTLIGHT CANVAS */}
+          <div className="w-full lg:w-[60%] relative">
+             <div className="absolute inset-0 bg-white/20 blur-[100px] rounded-full scale-110 z-0"></div>
+
+             <div className="absolute inset-0 bg-white/20 blur-[100px] rounded-full scale-110 z-0"></div>
+             
+             <AnimatePresence mode="wait">
+               <motion.div
+                 key={activeIdx}
+                 initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                 animate={{ opacity: 1, y: 0, scale: 1 }}
+                 exit={{ opacity: 0, y: -30, scale: 0.95 }}
+                 transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+                 className="relative z-10 aspect-[4/3] w-full bg-white/60 backdrop-blur-3xl rounded-[3rem] p-12 md:p-20 border border-white shadow-[0_40px_100px_rgba(0,0,0,0.04)] flex flex-col justify-center overflow-hidden"
+               >
+                  {/* Decorative Liquid background inside the card */}
+                  <div className="absolute top-0 right-0 w-full h-full opacity-30 pointer-events-none">
+                     <div className={`absolute top-0 right-0 w-96 h-96 rounded-full blur-[80px] transition-colors duration-1000 ${
+                       activeIdx === 0 ? "bg-orange-200" :
+                       activeIdx === 1 ? "bg-blue-200" :
+                       activeIdx === 2 ? "bg-purple-200" :
+                       activeIdx === 3 ? "bg-green-200" : "bg-pink-200"
+                     }`}></div>
+                  </div>
+
+                  <div className="relative z-10 w-full">
+                    <span className="text-[12px] font-black text-[#9333EA]/50 tracking-[0.5em] uppercase mb-8 block">
+                      Autonomous Module Preview
+                    </span>
+                    <div className="text-8xl mb-8 group-hover:scale-110 transition-transform">
+                      {reportsData[activeIdx].icon}
+                    </div>
+                    <h3 className="text-5xl font-black text-gray-900 mb-6 tracking-tighter">
+                      {reportsData[activeIdx].title}
+                    </h3>
+                    <p className="text-2xl text-gray-500 leading-relaxed font-medium mb-12">
+                      {reportsData[activeIdx].desc}
+                    </p>
+
+                    <div className="flex flex-wrap gap-4">
+                      {["Real-time Syncing", "Automated Logic", "Zero Delay"].map(tag => (
+                        <div key={tag} className="px-5 py-2 rounded-full bg-white border border-gray-100 text-xs font-bold text-gray-400 uppercase tracking-widest shadow-sm">
+                          {tag}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Aesthetic system info footer */}
+                  <div className="absolute bottom-10 left-12 right-12 flex justify-between items-center text-[10px] font-mono text-gray-300 font-bold border-t border-gray-100/50 pt-6">
+                     <span className="flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+                        SYSTEM_STATUS: NOMINAL
+                     </span>
+                     <span>VER: 4.2.0_SECURE</span>
+                  </div>
+               </motion.div>
+             </AnimatePresence>
+
+             {/* Dynamic Floating Orbs for depth */}
+             <motion.div 
+               animate={{ x: [0, 20, 0], y: [0, -20, 0] }}
+               transition={{ duration: 10, repeat: Infinity }}
+               className="absolute -top-10 -right-10 w-32 h-32 bg-orange-400/10 rounded-full blur-3xl"
+             />
+             <motion.div 
+               animate={{ x: [0, -30, 0], y: [0, 30, 0] }}
+               transition={{ duration: 12, repeat: Infinity, delay: 1 }}
+               className="absolute -bottom-20 -left-20 w-56 h-56 bg-purple-600/25 rounded-full blur-3xl"
+             />
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-function AnalyticsSection() {
+function AnalyticsSection({ onImageClick }) {
   const [activeAnalysisIdx, setActiveAnalysisIdx] = useState(0);
 
   return (
@@ -791,17 +896,20 @@ function AnalyticsSection() {
               <button
                 key={item.title}
                 onClick={() => setActiveAnalysisIdx(index)}
-                className={`flex items-center gap-3 px-8 py-4 rounded-2xl font-bold transition-all duration-300 ${
-                  activeAnalysisIdx === index 
-                    ? "bg-[#9333EA] text-white shadow-xl shadow-purple-500/30 -translate-y-1" 
-                    : "bg-white text-gray-600 border border-gray-100 hover:border-purple-200"
-                }`}
+                className={`flex items-center gap-3 px-8 py-4 rounded-2xl font-bold transition-all duration-300 ${activeAnalysisIdx === index
+                  ? "bg-[#9333EA] text-white shadow-xl shadow-purple-500/30 -translate-y-1"
+                  : "bg-white text-gray-600 border border-gray-100 hover:border-purple-200"
+                  }`}
               >
                 <span className="text-xl">{item.icon}</span>
                 {item.title}
               </button>
             ))}
           </div>
+
+          <p className="text-center mb-12 text-sm text-gray-400 italic">
+            * Showing a curated preview of our full analytical suite.
+          </p>
 
           {/* Active Feature Display */}
           <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.1)] border border-gray-100">
@@ -825,10 +933,11 @@ function AnalyticsSection() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.98 }}
                     transition={{ duration: 0.4 }}
-                    className="w-full h-full p-6 flex items-start justify-center"
+                    className="w-full h-full p-6 flex items-start justify-center cursor-zoom-in"
+                    onClick={() => onImageClick && onImageClick(analyticsData[activeAnalysisIdx].image)}
                   >
-                    <img 
-                      src={analyticsData[activeAnalysisIdx].image} 
+                    <img
+                      src={analyticsData[activeAnalysisIdx].image}
                       alt={analyticsData[activeAnalysisIdx].title}
                       className="w-full h-auto max-h-full rounded-xl shadow-2xl object-contain ring-1 ring-gray-200"
                     />
@@ -893,10 +1002,10 @@ function AutomationSection() {
             We Do the <span className="text-[#9333EA]">Grunt Work</span><br className="md:hidden" /> So You Don't Have To.
           </h2>
         </div>
-        
+
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-6 relative mt-20">
           <div className="hidden md:block absolute top-[4.5rem] left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-purple-100 via-purple-300 to-purple-100"></div>
-          
+
           {automationData.map((item, index) => (
             <motion.div
               key={item.title}
@@ -930,14 +1039,12 @@ function SafetyManagementSection() {
           <div>
             <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-white px-4 py-2 rounded-full shadow-sm">Safety & Management</span>
             <h2 className="text-[clamp(32px,4vw,44px)] font-extrabold text-[#0a0a0a] leading-tight mb-6">
-              Secure Your Assets,<br/><span className="text-[#9333EA]">Organize Your Clients.</span>
+              Secure Your Assets,<br /><span className="text-[#9333EA]">Organize Your Clients.</span>
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">Enterprise-grade security controls wrapped in an intuitive, easy-to-use interface.</p>
-            <div className="inline-block bg-[#9333EA] hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg shadow-purple-500/30 transition-all hover:-translate-y-1 cursor-pointer">
-              Explore Safety Controls
-            </div>
+
           </div>
-          
+
           <div className="flex flex-col gap-6">
             {safetyData.map((item, index) => (
               <motion.div
@@ -970,6 +1077,7 @@ export default function ProductDetailPremiumSupportStaging({
   allProducts,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [lightboxImage, setLightboxImage] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -1053,7 +1161,7 @@ export default function ProductDetailPremiumSupportStaging({
           className="hero-dashboard-wrapper"
         >
           <div className="dashboard-animation left">
-            <div 
+            <div
               className="scroll-img"
               style={{
                 backgroundImage: `url('/products/support/support_slide_1.jpg'), url('/products/support/support_slide_2.jpg')`
@@ -1061,20 +1169,24 @@ export default function ProductDetailPremiumSupportStaging({
             ></div>
           </div>
           <div className="dashboard-animation right">
-            <div 
+            <div
               className="scroll-img"
               style={{
                 backgroundImage: `url('/products/support/support_slide_3.jpg'), url('/products/support/support_slide_4.jpg')`
               }}
             ></div>
           </div>
-          <div className="dashboard-main-img">
+          <div 
+            className="dashboard-main-img cursor-zoom-in group/hero"
+            onClick={() => setLightboxImage("/products/support/support_dashboard_img_1.jpg")}
+          >
             <div className="relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)] bg-white">
               <img
                 src="/products/support/support_dashboard_img_1.jpg"
                 alt="Support Dashboard Preview"
-                className="w-full object-contain lg:h-[668px] h-full shadow-2xl"
+                className="w-full object-contain lg:h-[668px] h-full shadow-2xl transition-transform duration-700 group-hover/hero:scale-[1.02]"
               />
+              <div className="absolute inset-0 bg-black/0 group-hover/hero:bg-black/5 transition-colors"></div>
             </div>
           </div>
         </motion.div>
@@ -1085,7 +1197,7 @@ export default function ProductDetailPremiumSupportStaging({
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#9333EA] opacity-[0.03] rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 left-10 w-[300px] h-[300px] bg-[#9333EA] opacity-[0.04] rounded-full blur-3xl"></div>
-        
+
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <motion.div
@@ -1115,7 +1227,7 @@ export default function ProductDetailPremiumSupportStaging({
               >
                 {/* Glow on hover */}
                 <div className="absolute -inset-px bg-gradient-to-br from-purple-500/0 via-purple-500/0 to-purple-500/0 group-hover:from-purple-500/10 group-hover:to-transparent rounded-3xl transition-all duration-500 z-0"></div>
-                
+
                 <div className="relative z-10">
                   <div className="w-14 h-14 bg-purple-50 text-2xl rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#9333EA] group-hover:text-white transition-all duration-300 shadow-sm">
                     <span className="group-hover:filter group-hover:brightness-0 group-hover:invert">{industry.icon}</span>
@@ -1139,12 +1251,16 @@ export default function ProductDetailPremiumSupportStaging({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 lg:text-left text-center">
             {/* Left Side - Image (Sticky on Desktop) */}
             <div className="relative lg:sticky lg:top-28 lg:self-start">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <div 
+                className="relative rounded-3xl overflow-hidden shadow-2xl cursor-zoom-in group/img"
+                onClick={() => setLightboxImage("/products/support/ticket_management.jpg")}
+              >
                 <img
                   src="/products/support/ticket_management.jpg"
                   alt="Support Application Dashboard"
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover/img:scale-105"
                 />
+                <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/5 transition-colors"></div>
               </div>
               {/* Decorative elements */}
               <div className="absolute -top-6 -left-6 w-32 h-32 bg-[#9333EA] opacity-10 rounded-full blur-3xl"></div>
@@ -1236,13 +1352,13 @@ export default function ProductDetailPremiumSupportStaging({
       <ProjectLifecycleSection />
       <TicketLifecycleSection />
       <ReportsSection />
-      <AnalyticsSection />
+      <AnalyticsSection onImageClick={setLightboxImage} />
       <AutomationSection />
       <SafetyManagementSection />
 
       {/* 3. ISS Interactive Feature Section */}
       <section id="iss-features-section">
-        <SupportFeatureSection />
+        <SupportFeatureSection onImageClick={setLightboxImage} />
       </section>
 
       {/* 4. FAQ Section - Interactive Accordion */}
@@ -1346,12 +1462,48 @@ export default function ProductDetailPremiumSupportStaging({
         </div>
       </section>
 
+      {/* Image Lightbox Popup */}
+      <AnimatePresence>
+        {lightboxImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setLightboxImage(null)}
+            className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 md:p-10 cursor-zoom-out"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative max-w-7xl max-h-[90vh] w-full flex items-center justify-center bg-white/5 rounded-2xl overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={lightboxImage}
+                alt="Popup Preview"
+                className="max-w-full max-h-[90vh] object-contain cursor-default"
+              />
+              <button
+                onClick={() => setLightboxImage(null)}
+                className="absolute top-4 right-4 w-10 h-10 bg-white/10 hover:bg-white/20 text-white rounded-full flex items-center justify-center transition-colors group"
+              >
+                <svg className="w-6 h-6 group-hover:rotate-90 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Explore More Products Section */}
       <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239333EA' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
-        
+
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-14">
             <motion.div
