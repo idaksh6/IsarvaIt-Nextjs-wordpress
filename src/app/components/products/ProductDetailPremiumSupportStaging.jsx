@@ -612,19 +612,19 @@ const analyticsData = [
     title: "Performance Trends",
     desc: "Compare billable hours per day and see employee productivity trends.",
     icon: "📊",
-    image: "/products/support/reports_analytics.jpg"
+    image: "/products/support/Performance-Trends.jpg"
   },
   {
     title: "Client Insights",
     desc: 'Use "Company-Wise Analytics" to see which clients are your biggest earners and which require the most support.',
     icon: "💼",
-    image: "/products/support/worked_hours_tracking.jpg"
+    image: "/products/support/Client-Insights.jpg"
   },
   {
     title: "Hour Comparison",
     desc: "Visualize how your team’s time is spent month-over-month to plan for future hiring.",
     icon: "📅",
-    image: "/products/support/project_task_management.jpg"
+    image: "/products/support/Hour-Comparison.jpg"
   }
 ];
 
