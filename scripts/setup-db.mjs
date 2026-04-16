@@ -1,0 +1,110 @@
+async function setupDB() {
+  const supabaseUrl = process.env.SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  
+  if (!supabaseUrl) {
+    console.error("❌ Missing SUPABASE_URL in .env.local");
+    process.exit(1);
+  }
+
+  // Extract project ID from URL
+  const projectId = supabaseUrl.match(/https:\/\/([^.]+)\./)?.[1] || 'your-project';
+
+  console.log("\n⚠️  MANUAL DATABASE SETUP REQUIRED\n");
+  console.log("Due to network restrictions, please run the following SQL manually:\n");
+  console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
+  console.log("-- Enable pgvector extension");
+  console.log("CREATE EXTENSION IF NOT EXISTS vector;\n");
+  console.log("-- Create documents table");
+  console.log("CREATE TABLE IF NOT EXISTS documents (");
+  console.log("  id bigserial PRIMARY KEY,");
+  console.log("  content text,");
+  console.log("  metadata jsonb,");
+  console.log("  embedding vector(1536)");
+  console.log(");\n");
+  console.log("-- Drop existing function if it exists (to update signature)");
+  console.log("DROP FUNCTION IF EXISTS match_documents;\n");
+  console.log("-- Create search function with correct signature for LangChain");
+  console.log("CREATE OR REPLACE FUNCTION match_documents (");
+  console.log("  query_embedding vector(1536),");
+  console.log("  match_count int DEFAULT 10,");
+  console.log("  filter jsonb DEFAULT '{}'");
+  console.log(")");
+  console.log("RETURNS TABLE (");
+  console.log("  id bigint,");
+  console.log("  content text,");
+  console.log("  metadata jsonb,");
+  console.log("  similarity float");
+  console.log(")");
+  console.log("LANGUAGE plpgsql");
+  console.log("AS $$");
+  console.log("BEGIN");
+  console.log("  RETURN QUERY");
+  console.log("  SELECT");
+  console.log("    documents.id,");
+  console.log("    documents.content,");
+  console.log("    documents.metadata,");
+  console.log("    1 - (documents.embedding <=> query_embedding) AS similarity");
+  console.log("  FROM documents");
+  console.log("  ORDER BY documents.embedding <=> query_embedding");
+  console.log("  LIMIT match_count;");
+  console.log("END;");
+  console.log("$$;\n");
+  console.log("-- Create conversations table to store chat history");
+  console.log("CREATE TABLE IF NOT EXISTS conversations (");
+  console.log("  id text PRIMARY KEY,");
+  console.log("  messages jsonb NOT NULL,");
+  console.log("  message_count int DEFAULT 0,");
+  console.log("  created_at timestamp DEFAULT now(),");
+  console.log("  updated_at timestamp DEFAULT now()");
+  console.log(");\n");
+  console.log("-- Create Q&A cache table to avoid redundant AI calls");
+  console.log("CREATE TABLE IF NOT EXISTS qa_cache (");
+  console.log("  id bigserial PRIMARY KEY,");
+  console.log("  question text NOT NULL,");
+  console.log("  answer text NOT NULL,");
+  console.log("  question_embedding vector(1536),");
+  console.log("  created_at timestamp DEFAULT now()");
+  console.log(");\n");
+  console.log("-- Create index on question embeddings for fast similarity search");
+  console.log("CREATE INDEX IF NOT EXISTS qa_cache_embedding_idx ON qa_cache");
+  console.log("  USING ivfflat (question_embedding vector_cosine_ops)");
+  console.log("  WITH (lists = 100);\n");
+  console.log("-- Create function to search cached Q&A");
+  console.log("CREATE OR REPLACE FUNCTION search_qa_cache (");
+  console.log("  query_embedding vector(1536),");
+  console.log("  similarity_threshold float DEFAULT 0.85,");
+  console.log("  match_count int DEFAULT 1");
+  console.log(")");
+  console.log("RETURNS TABLE (");
+  console.log("  id bigint,");
+  console.log("  question text,");
+  console.log("  answer text,");
+  console.log("  similarity float");
+  console.log(")");
+  console.log("LANGUAGE plpgsql");
+  console.log("AS $$");
+  console.log("BEGIN");
+  console.log("  RETURN QUERY");
+  console.log("  SELECT");
+  console.log("    qa_cache.id,");
+  console.log("    qa_cache.question,");
+  console.log("    qa_cache.answer,");
+  console.log("    1 - (qa_cache.question_embedding <=> query_embedding) AS similarity");
+  console.log("  FROM qa_cache");
+  console.log("  WHERE 1 - (qa_cache.question_embedding <=> query_embedding) > similarity_threshold");
+  console.log("  ORDER BY similarity DESC");
+  console.log("  LIMIT match_count;");
+  console.log("END;");
+  console.log("$$;");
+  console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
+  
+  console.log("📋 STEPS TO COMPLETE:");
+  console.log(`1. Open: https://supabase.com/dashboard/project/${projectId}/sql/new`);
+  console.log("2. Copy the SQL above (between the lines)");
+  console.log("3. Paste into the SQL Editor");
+  console.log("4. Click 'Run' or press Ctrl+Enter");
+  console.log("5. Then run: npm run ingest\n");
+}
+
+setupDB();

@@ -1,0 +1,273 @@
+"use client";
+
+import { useState } from "react";
+import { X, Upload, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { useRouter } from "next/navigation";
+
+export default function GeneralApplicationModal({ isOpen, onClose }) {
+  const router = useRouter();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
+  const [resume, setResume] = useState(null);
+  const [resumeFileName, setResumeFileName] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      // Check file size (max 5MB)
+      if (file.size > 5 * 1024 * 1024) {
+        setErrorMessage("Resume file size should be less than 5MB");
+        setSubmitStatus("error");
+        setTimeout(() => {
+          setSubmitStatus(null);
+          setErrorMessage("");
+        }, 5000);
+        return;
+      }
+
+      // Check file type
+      const allowedTypes = [
+        'application/pdf',
+        'application/msword',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+      ];
+      
+      if (!allowedTypes.includes(file.type)) {
+        setErrorMessage("Please upload a PDF or Word document");
+        setSubmitStatus("error");
+        setTimeout(() => {
+          setSubmitStatus(null);
+          setErrorMessage("");
+        }, 5000);
+        return;
+      }
+
+      setResume(file);
+      setResumeFileName(file.name);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    setErrorMessage("");
+
+    try {
+      // Create FormData for file upload
+      const submitData = new FormData();
+      submitData.append('name', formData.name);
+      submitData.append('email', formData.email);
+      submitData.append('phone', formData.phone);
+      submitData.append('jobTitle', 'General Application');
+      submitData.append('jobSlug', 'general');
+      submitData.append('pageUrl', '/careers');
+      
+      if (resume) {
+        submitData.append('resume', resume);
+      }
+
+      const response = await fetch('/api/job-application', {
+        method: 'POST',
+        body: submitData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Redirect to thank you page
+        const queryParams = new URLSearchParams({
+          type: 'job-application',
+          item: 'General Application'
+        });
+        
+        router.push(`/thank-you?${queryParams.toString()}`);
+      } else {
+        setSubmitStatus("error");
+        
+        // Parse error message for user-friendly display
+        let friendlyError = 'Something went wrong. Please try again.';
+        if (data.error && typeof data.error === 'string') {
+          if (data.error.includes('mobile') || data.error.includes('phone')) {
+            friendlyError = 'Please enter a proper phone number.';
+          } else if (data.error.includes('email')) {
+            friendlyError = 'Please enter a valid email address.';
+          } else if (data.error.includes('name')) {
+            friendlyError = 'Please enter your full name.';
+          } else {
+            friendlyError = data.error;
+          }
+        }
+        setErrorMessage(friendlyError);
+        setIsSubmitting(false);
+        
+        setTimeout(() => {
+          setSubmitStatus(null);
+          setErrorMessage("");
+        }, 7000);
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+      setErrorMessage("Network error. Please check your connection and try again.");
+      setIsSubmitting(false);
+      
+      setTimeout(() => {
+        setSubmitStatus(null);
+        setErrorMessage("");
+      }, 7000);
+    }
+  };
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+      <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl max-h-[90vh] overflow-y-auto">
+        {/* Close Button */}
+        <button
+          onClick={onClose}
+          className="absolute top-6 right-6 p-2 rounded-full hover:bg-gray-100 transition-colors"
+          disabled={isSubmitting}
+        >
+          <X className="w-6 h-6 text-gray-600" />
+        </button>
+
+        {/* Modal Content */}
+        <div className="p-8 md:p-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            General Application
+          </h2>
+          <p className="text-lg text-gray-600 mb-8">
+            Don't see your perfect role? Send us your profile and let's see where you fit in!
+          </p>
+
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Name Field */}
+            <div>
+              <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
+                Full Name *
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-200 outline-none text-gray-900"
+                placeholder="John Doe"
+              />
+            </div>
+
+            {/* Email Field */}
+            <div>
+              <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
+                Email Address *
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-200 outline-none text-gray-900"
+                placeholder="john@company.com"
+              />
+            </div>
+
+            {/* Phone Field */}
+            <div>
+              <label htmlFor="phone" className="block text-sm font-semibold text-gray-900 mb-2">
+                Phone Number *
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-200 outline-none text-gray-900"
+                placeholder="+91 98765 43210"
+              />
+            </div>
+
+            {/* Resume Upload */}
+            <div>
+              <label htmlFor="resume" className="block text-sm font-semibold text-gray-900 mb-2">
+                Attach Resume (PDF or Word, Max 5MB)
+              </label>
+              <div className="relative">
+                <input
+                  type="file"
+                  id="resume"
+                  name="resume"
+                  onChange={handleFileChange}
+                  accept=".pdf,.doc,.docx"
+                  className="hidden"
+                />
+                <label
+                  htmlFor="resume"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-dashed border-gray-300 hover:border-emerald-500 transition-all duration-200 cursor-pointer flex items-center justify-center gap-3 bg-gray-50 hover:bg-emerald-50"
+                >
+                  <Upload className="w-5 h-5 text-gray-600" />
+                  <span className="text-gray-700 font-medium">
+                    {resumeFileName || "Click to upload your resume"}
+                  </span>
+                </label>
+              </div>
+              {resumeFileName && (
+                <p className="mt-2 text-sm text-emerald-600 flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4" />
+                  {resumeFileName}
+                </p>
+              )}
+            </div>
+
+            {/* Error Message */}
+            {submitStatus === "error" && errorMessage && (
+              <div className="p-4 bg-red-50 border border-red-200 rounded-xl flex items-start gap-3">
+                <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                <p className="text-red-800 text-sm font-medium">{errorMessage}</p>
+              </div>
+            )}
+
+            {/* Submit Button */}
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-[#10b981] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all hover:scale-105 hover:shadow-xl active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-3"
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                  <span>Submitting...</span>
+                </>
+              ) : (
+                <>
+                  <span>Submit Application</span>
+                </>
+              )}
+            </button>
+
+            <p className="text-center text-sm text-gray-600 mt-4">
+              By applying, you agree to our terms and privacy policy
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+}
