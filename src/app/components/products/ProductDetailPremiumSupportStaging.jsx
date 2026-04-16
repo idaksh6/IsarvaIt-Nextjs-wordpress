@@ -871,9 +871,7 @@ function AnalyticsSection() {
                       ))}
                     </div>
 
-                    <button className="w-full bg-[#9333EA] text-white font-bold py-4 px-8 rounded-2xl shadow-lg shadow-purple-500/20 hover:bg-purple-700 transition-all">
-                      Request Module Demo
-                    </button>
+
                   </motion.div>
                 </AnimatePresence>
               </div>
