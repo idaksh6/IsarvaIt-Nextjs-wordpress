@@ -4,43 +4,43 @@ import { useState } from "react";
 import Link from "next/link";
 import ContactFormModal from "../../components/ContactFormModal";
 
-/* ─── Main Component (STAGING VERSION) ─────────────────────────────────── */
+/* ─── Main Component ─────────────────────────────────── */
 export default function WordPressDevelopmentPremiumStaging({ service, servicesData }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Staging specific service features
+  // Service features based on your content
   const stagingFeatures = [
     {
       title: "Migration to WordPress",
-      description: "Switch to WordPress without the risk. We handle full-site migrations from any platform — Wix, Squarespace, Joomla, Drupal — with zero data loss, zero downtime, and full preservation of your existing SEO rankings."
+      description: "We manage complete website migrations while preserving your content, structure, and functionality without disruption."
     },
     {
       title: "WordPress Theme Development",
-      description: "Stop blending in. We design and develop fully bespoke WordPress themes that reflect your brand, engage your audience, and are built to perform in search — not just look good in a browser."
+      description: "Custom-built themes designed to match your brand while remaining flexible, scalable, and easy to maintain."
     },
     {
       title: "Plugin Development",
-      description: "When off-the-shelf plugins don't cut it, we build custom WordPress plugins that add the exact functionality your business needs — cleanly coded, lightweight, and built to integrate without slowing your site down."
-    },
-    {
-      title: "Ecommerce & WooCommerce",
-      description: "From product pages to payment processing, we build end-to-end WooCommerce stores that are fast, secure, and optimised for maximum conversions — whether you sell 10 products or 10,000."
+      description: "Extend functionality with custom plugins built specifically to meet your business needs."
     },
     {
       title: "Feature Enhancement",
-      description: "Already have a WordPress site but need more from it? We add custom features, third-party integrations, and performance improvements that turn a basic website into a genuine business asset."
+      description: "Enhance your existing website with new features that improve usability and add real value."
     },
     {
       title: "Speed Optimisation",
-      description: "We don't just run a speed test — we fix what's causing the problem. Our WordPress performance experts eliminate bottlenecks at the code, server, and database level to achieve real, lasting speed improvements."
+      description: "Improve loading speed and responsiveness by resolving performance issues across your website."
     },
     {
       title: "Support & Maintenance",
-      description: "WordPress never stands still — and neither do we. Our ongoing maintenance plans keep your site secure, updated, and running at peak performance, so you can focus on running your business."
+      description: "Keep your website updated, secure, and running smoothly with ongoing support and maintenance."
     },
     {
       title: "WordPress Multisite Development",
-      description: "Running multiple brands or regional sites? We build and manage WordPress Multisite networks that let you control everything from a single dashboard — saving time, reducing cost, and maintaining consistency."
+      description: "Manage multiple websites efficiently using a centralized and scalable multisite setup."
+    },
+    {
+      title: "Security & Performance Monitoring",
+      description: "Protect your website with regular monitoring, updates, and proactive issue resolution."
     }
   ];
 
@@ -116,11 +116,11 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 </div>
 
                 <h1 className="text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 mb-6 leading-tight tracking-tight">
-                  Custom WordPress Websites That Drive <span className="wp-blue-text-gradient">Traffic, Leads & Revenue</span>
+                  Custom WordPress Websites That <span className="wp-blue-text-gradient">Drive Performance & Growth</span>
                 </h1>
 
                 <p className="text-lg lg:text-xl text-gray-600 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
-                  Your competitors are winning online — don't let your website hold you back. Isarva is a specialist WordPress development agency that builds fast, secure, and conversion-optimised websites engineered for business growth. Whether you need a brand-new site or a complete overhaul, we deliver WordPress solutions that rank on Google and turn visitors into paying customers.
+                  Your website should do more than just exist—it should actively support your business growth. At Isarva, we build custom WordPress websites that are fast, secure, and built to perform. Whether you're launching something new or improving what you already have, we create solutions that attract the right audience and deliver meaningful results.
                 </p>
 
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
@@ -160,18 +160,18 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
           </div>
         </section>
 
-        {/* ─── BESPOKE SOLUTIONS SECTION ────────────────────────── */}
+        {/* ─── BESPOKE SOLUTIONS SECTION (BUILT FOR AMBITION) ────────────────────────── */}
         <section id="portfolio" className="py-24 lg:py-32 bg-white relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center max-w-3xl mx-auto mb-20">
               <span className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-3 block">Why Choose Isarva</span>
               <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6">Built For Ambition</h2>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Most agencies hand you a theme and call it done. We don't. Every WordPress website we build is architected from the ground up — custom-coded, conversion-focused, and built to outperform the competition in search results and sales.
+                Most websites look good on the surface but fail to deliver real impact. We take a practical approach—every WordPress website we build is focused on performance, usability, and long-term reliability, so your site consistently supports your business goals.
               </p>
             </div>
 
-            {/* Showcase 1: Custom Themes */}
+            {/* Custom WordPress Design & Development */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24 lg:mb-32">
               <div className="order-2 lg:order-1 relative rounded-3xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px] group border-4 border-slate-50">
                 <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=1000&q=80" alt="Custom WordPress Design" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -182,12 +182,12 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               </div>
               <div className="order-1 lg:order-2 text-center lg:text-left">
                 <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 text-2xl mb-6 shadow-sm mx-auto lg:mx-0">🎨</div>
-                <h3 className="text-3xl lg:text-4xl font-black text-gray-900 mb-6">Custom WordPress Theme Design & Development</h3>
+                <h3 className="text-3xl lg:text-4xl font-black text-gray-900 mb-6">Custom WordPress Design & Development</h3>
                 <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                  Generic templates hurt your brand and your rankings. We build 100% custom WordPress themes from scratch — designed to match your brand identity, load in under a second, and convert visitors into customers. Every theme is hand-coded for SEO, optimised for Core Web Vitals, and tested across all major devices and browsers.
+                  Templates often limit flexibility and growth. We design and develop custom WordPress websites that reflect your brand, provide a smooth user experience, and remain easy to manage. Every build is structured for performance, scalability, and consistency across all devices.
                 </p>
                 <ul className="space-y-4 text-left">
-                  {["100% Custom — No Templates, No Shortcuts", "Pixel-Perfect Across All Devices & Browsers", "Mobile-First, SEO-Optimised Architecture", "Gutenberg & Full Site Editor (FSE) Ready"].map((item, i) => (
+                  {["Fully custom design (no templates)", "Responsive across all devices", "Clean and scalable code structure", "Easy content management"].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-gray-700 font-semibold">
                       <svg className="w-6 h-6 text-sky-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
                       {item}
@@ -197,76 +197,52 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               </div>
             </div>
 
-            {/* Showcase 2: WooCommerce */}
+            {/* WordPress Speed Optimisation */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24 lg:mb-32">
               <div className="text-center lg:text-left">
-                <div className="w-14 h-14 rounded-2xl bg-rose-50 flex items-center justify-center text-rose-500 text-2xl mb-6 shadow-sm mx-auto lg:mx-0">🛒</div>
-                <h3 className="text-3xl lg:text-4xl font-black text-gray-900 mb-6">WooCommerce Stores That Actually Sell</h3>
-                <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                  Most ecommerce sites leak revenue through poor UX, slow load times, and broken checkout flows. We build WooCommerce stores that are engineered to sell — with streamlined checkout experiences, smart product filtering, and scalable infrastructure that grows with your business. More traffic, fewer abandoned carts, higher revenue.
-                </p>
-                <div className="grid grid-cols-2 gap-4 mb-8 text-left">
-                  {["Custom Cart Flows", "Payment Gateway Integration", "Real-Time Inventory Sync", "Subscription & Recurring Models"].map((feat, i) => (
-                    <div key={i} className="bg-slate-50 rounded-xl p-4 font-semibold text-gray-800 border border-slate-100 shadow-sm text-sm">{feat}</div>
-                  ))}
-                </div>
-              </div>
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px] group border-4 border-slate-50">
-                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1000&q=80" alt="WooCommerce" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent" />
-                <div className="absolute bottom-8 right-8 bg-white text-gray-900 font-bold px-6 py-3 rounded-full shadow-lg flex items-center gap-2 transform group-hover:-translate-y-2 transition-transform">
-                  Secure Checkout <span className="text-green-500">🔒</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Showcase 3: Speed & Optimization */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div className="order-2 lg:order-1 relative rounded-3xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px] group border-4 border-slate-50">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1000&q=80" alt="Optimization" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-sky-900/20 mix-blend-multiply" />
-              </div>
-              <div className="order-1 lg:order-2 text-center lg:text-left">
                 <div className="w-14 h-14 rounded-2xl bg-amber-50 flex items-center justify-center text-amber-500 text-2xl mb-6 shadow-sm mx-auto lg:mx-0">⚡</div>
-                <h3 className="text-3xl lg:text-4xl font-black text-gray-900 mb-6">WordPress Speed Optimisation That Boosts Rankings & Revenue</h3>
+                <h3 className="text-3xl lg:text-4xl font-black text-gray-900 mb-6">WordPress Speed Optimisation That Improves Performance</h3>
                 <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                  Google ranks fast websites higher. Customers abandon slow ones. We perform a full technical audit of your WordPress site and eliminate every performance bottleneck — from bloated plugins and unoptimised images to slow databases and poor caching — delivering measurable speed gains that improve your Core Web Vitals, search rankings, and conversion rate.
+                  Website performance directly affects how users interact with your business online. We improve your WordPress site's speed by identifying and resolving issues at every level, ensuring faster load times, smoother navigation, and a better overall experience.
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                   <div className="flex flex-col items-center justify-center bg-white border border-gray-100 shadow-md rounded-2xl p-4 w-32">
                     <span className="text-2xl font-black text-green-500 mb-1">A+</span>
-                    <span className="text-[10px] text-gray-500 uppercase font-bold text-center">GTmetrix Score</span>
+                    <span className="text-[10px] text-gray-500 uppercase font-bold text-center">Faster Load Times</span>
                   </div>
                   <div className="flex flex-col items-center justify-center bg-white border border-gray-100 shadow-md rounded-2xl p-4 w-32">
-                    <span className="text-2xl font-black text-sky-500 mb-1">{"<"}1s</span>
-                    <span className="text-[10px] text-gray-500 uppercase font-bold text-center">Load Time</span>
+                    <span className="text-2xl font-black text-sky-500 mb-1">✓</span>
+                    <span className="text-[10px] text-gray-500 uppercase font-bold text-center">Better UX</span>
                   </div>
                   <div className="flex flex-col items-center justify-center bg-white border border-gray-100 shadow-md rounded-2xl p-4 w-32">
-                    <span className="text-2xl font-black text-violet-500 mb-1">90+</span>
-                    <span className="text-[10px] text-gray-500 uppercase font-bold text-center">PageSpeed Score</span>
+                    <span className="text-2xl font-black text-violet-500 mb-1">✓</span>
+                    <span className="text-[10px] text-gray-500 uppercase font-bold text-center">Optimised</span>
                   </div>
                 </div>
+              </div>
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px] group border-4 border-slate-50">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1000&q=80" alt="Speed Optimisation" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-sky-900/20 mix-blend-multiply" />
               </div>
             </div>
           </div>
         </section>
 
-        {/* ─── VISUAL ECOSYSTEM GRID ───────────────────────────────────── */}
+        {/* ─── INTEGRATIONS SECTION ───────────────────────────────────── */}
         <section className="py-24 bg-sky-50 relative border-y border-sky-100">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <h2 className="text-3xl lg:text-4xl font-black text-gray-900 mb-4">Your WordPress Site, Connected to Everything</h2>
             <p className="text-lg text-gray-600 mb-16 max-w-2xl mx-auto">
-              A great website doesn't work in isolation. We integrate your WordPress site with the tools powering your business — CRM, email marketing, payment processors, SEO platforms, and analytics — so your entire digital operation runs as one seamless, data-driven engine.
+              Your website should work seamlessly with the tools you rely on. We integrate your WordPress site with marketing platforms, analytics systems, and business tools to create a connected and efficient workflow.
             </p>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
               {[
-                { name: "Yoast SEO", icon: "🔍" },
-                { name: "Stripe", icon: "💳" },
-                { name: "Mailchimp", icon: "✉️" },
-                { name: "HubSpot", icon: "🤝" },
-                { name: "Google Analytics", icon: "📊" },
-                { name: "Advanced Custom Fields", icon: "🛠️" },
+                { name: "SEO Tools", icon: "🔍" },
+                { name: "CRM Systems", icon: "🤝" },
+                { name: "Analytics Platforms", icon: "📊" },
+                { name: "Marketing Automation", icon: "✉️" },
+                { name: "Third-party APIs", icon: "🔗" },
               ].map((tool, i) => (
                 <div key={i} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all border border-transparent hover:border-sky-200">
                   <div className="text-4xl mb-3">{tool.icon}</div>
@@ -277,7 +253,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
           </div>
         </section>
 
-        {/* ─── COMPREHENSIVE SERVICES LIST ─────────────────────────────── */}
+        {/* ─── SERVICES GRID ─────────────────────────────── */}
         <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
@@ -292,14 +268,14 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
                   </div>
                   <h4 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h4>
-                  <p className="text-sm text-gray-600 leading-relaxed">{feature.description}</p>
+                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ─── TEAM / PROCESS BANNER (CTA) ────────────────────────── */}
+        {/* ─── CTA SECTION ────────────────────────── */}
         <section className="py-12 bg-white pb-24">
           <div className="max-w-7xl mx-auto px-6">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px]">
@@ -309,7 +285,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                   <span className="text-sky-300 font-bold uppercase tracking-widest text-sm mb-4 block">Let's Build Something Great</span>
                   <h2 className="text-3xl lg:text-5xl font-black text-white mb-6 leading-tight">Your Trusted WordPress Development Partner</h2>
                   <p className="text-lg text-blue-100 mb-10 leading-relaxed">
-                    We've helped startups launch, SMEs scale, and enterprises modernise their digital presence — all on WordPress. Tell us what you're building and we'll show you exactly how we'll make it happen.
+                    We work closely with businesses to deliver WordPress solutions that are dependable, scalable, and aligned with their goals. Whether you're starting fresh or enhancing an existing website, we're here to help you move forward with confidence.
                   </p>
                   <div className="flex justify-center lg:justify-start">
                     <button
@@ -326,10 +302,10 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
           </div>
         </section>
 
-        {/* ─── FOOTER TAGLINE (Minimal) ─── */}
+        {/* ─── FOOTER ─── */}
         <div className="max-w-7xl mx-auto px-6 py-12 border-t border-gray-100 text-center">
           <p className="text-gray-500 max-w-3xl mx-auto text-sm leading-relaxed">
-            Isarva delivers precision-engineered WordPress and technology solutions that help businesses attract more customers, grow faster, and lead in the digital age.
+            We create reliable WordPress solutions that help businesses improve performance, streamline operations, and deliver better digital experiences.
           </p>
         </div>
       </div>
