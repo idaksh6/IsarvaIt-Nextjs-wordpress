@@ -533,11 +533,6 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                         <h4 className="text-2xl font-black text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">{srv.title}</h4>
                         <p className="text-gray-500 font-medium leading-relaxed line-clamp-3">{srv.shortDescription}</p>
                       </div>
-                      
-                      <div className="mt-8 pt-6 border-t border-gray-50 flex items-center gap-2 text-blue-600 font-bold group-hover:gap-4 transition-all uppercase tracking-widest text-xs">
-                        View Details
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                      </div>
                     </div>
                   </Link>
                 ))}
