@@ -482,6 +482,69 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
           </div>
         </section>
 
+        {/* ─── FAQ SECTION ────────────────────────── */}
+        <section className="py-24 bg-gradient-to-b from-white via-[#f0f9ff] to-white relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
+            <div className="text-center mb-16 lg:mb-20">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 font-bold text-[10px] uppercase tracking-wider mb-6 border border-blue-100">
+                Common Questions
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-gray-900 mb-6">
+                Everything You Need to Know
+              </h2>
+              <p className="text-base sm:text-xl text-gray-500 font-medium max-w-2xl mx-auto">
+                Get quick answers about our WordPress development process and services.
+              </p>
+            </div>
+
+            <div className="max-w-4xl mx-auto">
+              <FaqAccordion />
+            </div>
+          </div>
+        </section>
+
+        {/* ─── EXPLORE MORE SERVICES SECTION ────────────────────────── */}
+        <section className="py-24 bg-white relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 font-bold text-[10px] uppercase tracking-wider mb-6 border border-blue-100">
+                Expansion
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-gray-900 mb-6 tracking-tight">
+                Explore More Services
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+              {servicesData
+                .filter(s => s.slug !== service.slug)
+                .slice(0, 3)
+                .map((srv, i) => (
+                  <Link
+                    key={i}
+                    href={`/services/${srv.slug}`}
+                    className="group"
+                  >
+                    <div className="h-full bento-card rounded-[32px] p-8 lg:p-10 flex flex-col justify-between hover:shadow-2xl transition-all duration-500 bg-white border border-gray-100">
+                      <div>
+                        <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-8 text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm">
+                          {srv.icon || "✨"}
+                        </div>
+                        <h4 className="text-2xl font-black text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">{srv.title}</h4>
+                        <p className="text-gray-500 font-medium leading-relaxed line-clamp-3">{srv.shortDescription}</p>
+                      </div>
+                      
+                      <div className="mt-8 pt-6 border-t border-gray-50 flex items-center gap-2 text-blue-600 font-bold group-hover:gap-4 transition-all uppercase tracking-widest text-xs">
+                        View Details
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+            </div>
+          </div>
+        </section>
+
         {/* ─── CTA SECTION ────────────────────────── */}
         <section className="py-12 bg-white pb-20 sm:pb-24">
           <div className="max-w-7xl mx-auto px-6 sm:px-12">
@@ -526,5 +589,76 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
         allItems={servicesData}
       />
     </>
+  );
+}
+
+const faqData = [
+  {
+    question: "How long does a custom WordPress site migration take?",
+    answer: "A standard migration typically takes 1-2 weeks, depending on content volume and site complexity. We ensure zero downtime during the process.",
+    icon: "🚀"
+  },
+  {
+    question: "Do you build custom themes or use pre-made ones?",
+    answer: "We specialize in 100% custom-designed WordPress themes built from the ground up for performance, security, and unique brand identity.",
+    icon: "🎨"
+  },
+  {
+    question: "Can you optimize my existing WordPress site for speed?",
+    answer: "Yes, we perform deep performance audits and implement server-side caching, image optimization, and code minification to achieve sub-2s load times.",
+    icon: "⚡"
+  },
+  {
+    question: "What kind of ongoing support do you offer?",
+    answer: "We offer comprehensive Annual Maintenance Contracts (AMC) covering security patches, plugin updates, content management, and performance monitoring.",
+    icon: "🔧"
+  }
+];
+
+function FaqAccordion() {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleFaq = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  return (
+    <div className="space-y-4">
+      {faqData.map((faq, index) => (
+        <div 
+          key={index}
+          className={`border-2 rounded-[24px] overflow-hidden transition-all duration-300 ${openIndex === index ? 'border-blue-500 shadow-lg' : 'border-gray-100 hover:border-gray-200'}`}
+        >
+          <button
+            onClick={() => toggleFaq(index)}
+            className="w-full flex items-center justify-between p-6 lg:p-8 text-left bg-white"
+          >
+            <div className="flex items-center gap-5">
+              <span className="text-2xl">{faq.icon}</span>
+              <span className="text-lg lg:text-xl font-black text-gray-900">{faq.question}</span>
+            </div>
+            <div className={`w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center transition-transform duration-300 ${openIndex === index ? 'rotate-180 bg-blue-500' : ''}`}>
+              <svg 
+                className={`w-4 h-4 ${openIndex === index ? 'text-white' : 'text-blue-600'}`} 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor" 
+                strokeWidth={3}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d={openIndex === index ? "M20 12H4" : "M12 4v16m8-8H4"} />
+              </svg>
+            </div>
+          </button>
+          
+          <div className={`overflow-hidden transition-all duration-300 ${openIndex === index ? 'max-h-[500px] border-t border-gray-50' : 'max-h-0'}`}>
+            <div className="p-6 lg:p-8 bg-white">
+              <p className="text-gray-500 font-medium text-base leading-relaxed">
+                {faq.answer}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
   );
 }
