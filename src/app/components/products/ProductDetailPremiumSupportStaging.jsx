@@ -344,7 +344,10 @@ function SupportFeatureSection({ onImageClick }) {
   const activeFeature = supportFeatures.find((f) => f.id === activeId);
 
   return (
-    <section className="py-20 overflow-hidden bg-[#F7F7F7]">
+    <section className="py-24 overflow-hidden bg-white relative">
+      {/* Decorative Gradient Blobs */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-50 rounded-full blur-[100px] opacity-60"></div>
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-50 rounded-full blur-[100px] opacity-60"></div>
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-14">
@@ -599,32 +602,27 @@ const ticketLifecycleData = [
   { title: "Time Tracking", desc: "Every ticket tracks worked hours, so you know exactly how much effort a support request took.", icon: "⏱️" }
 ];
 
-const reportsData = [
-  { title: "Profitability Reports", desc: "See Billable vs. Non-Billable hours by employee, project, or company.", icon: "💰" },
-  { title: "The Overflow Alert", desc: "Get a \"Project Estimated Overflow\" report to see which projects are going over budget.", icon: "⚠️" },
-  { title: "Daily Snapshots", desc: "View consolidated daily reports and company-wide billing sheets.", icon: "📸" },
-  { title: "Compliance", desc: "Access backup and renewal logs to ensure your internal operations are 100% healthy.", icon: "✅" },
-  { title: "PDF Export", desc: "Download and share reports instantly.", icon: "📄" }
-];
-
 const analyticsData = [
   {
     title: "Performance Trends",
     desc: "Compare billable hours per day and see employee productivity trends.",
     icon: "📊",
-    image: "/products/support/Performance-Trends.jpg"
+    image: "/products/support/Performance-Trends.jpg",
+    features: ["Daily productivity tracking", "Billable vs. non-billable metrics", "Employee efficiency heatmaps"]
   },
   {
     title: "Client Insights",
     desc: 'Use "Company-Wise Analytics" to see which clients are your biggest earners and which require the most support.',
     icon: "💼",
-    image: "/products/support/Client-Insights.jpg"
+    image: "/products/support/Client-Insights.jpg",
+    features: ["Company-specific hour breakdowns", "Service demand distribution", "Client resource intensity tracking"]
   },
   {
     title: "Hour Comparison",
     desc: "Visualize how your team’s time is spent month-over-month to plan for future hiring.",
     icon: "📅",
-    image: "/products/support/Hour-Comparison.jpg"
+    image: "/products/support/Hour-Comparison.jpg",
+    features: ["Month-over-month variance", "Resource allocation forecasting", "Hiring requirement analytics"]
   }
 ];
 
@@ -642,17 +640,32 @@ const safetyData = [
 
 function ProjectLifecycleSection() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-32 bg-white relative overflow-hidden">
+      {/* Premium Aurora Background Gradients */}
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-purple-100/40 to-transparent rounded-full blur-[120px] translate-x-1/2 -translate-y-1/2 -z-10 animate-pulse"></div>
+      <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-sky-100/30 to-transparent rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 -z-10"></div>
+      <div className="absolute bottom-0 right-1/4 w-[700px] h-[700px] bg-gradient-to-bl from-amber-50/40 to-transparent rounded-full blur-[110px] translate-y-1/3 -z-10"></div>
+
+      {/* Refined Mesh Gradient Grid Overlay */}
+      <div className="absolute inset-0 opacity-[0.3] -z-20" style={{
+        backgroundImage: `radial-gradient(#9333EA 0.5px, transparent 0.5px)`,
+        backgroundSize: '30px 30px'
+      }}></div>
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
-          <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-[#9333EA]/10 px-4 py-2 rounded-full">Project & Task Lifecycle</span>
-          <h2 className="text-[clamp(32px,4vw,44px)] font-extrabold text-[#0a0a0a] leading-tight">
-            From Start to Finish—<br className="md:hidden" /><span className="text-[#9333EA]">Everything in One Place</span>
+          <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-purple-100/50 px-4 py-2 rounded-full ring-1 ring-purple-200">
+            Project & Task Lifecycle
+          </span>
+          <h2 className="text-[clamp(32px,4vw,44px)] font-black text-[#0a0a0a] leading-tight">
+            From Start to Finish—<br className="md:hidden" />
+            <span className="bg-gradient-to-r from-[#9333EA] to-[#7c3aed] bg-clip-text text-transparent">Everything in One Place</span>
           </h2>
         </div>
+
         <div className="max-w-5xl mx-auto relative">
-          {/* Vertical Line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-purple-100 transform md:-translate-x-1/2 rounded-full"></div>
+          {/* Vertical Line with Gradient */}
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-100 via-purple-300 to-purple-100 transform md:-translate-x-1/2 rounded-full"></div>
 
           {projectLifecycleData.map((item, index) => (
             <motion.div
@@ -664,13 +677,24 @@ function ProjectLifecycleSection() {
               className={`relative flex items-center mb-12 md:mb-16 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
             >
               <div className="hidden md:block w-1/2"></div>
-              <div className="absolute left-4 md:left-1/2 w-10 h-10 bg-white border-4 border-purple-100 rounded-full flex items-center justify-center transform -translate-x-1/2 z-10 text-xl shadow-lg shadow-purple-500/20">
-                {item.icon}
+
+              {/* Pulsing Icon Anchor */}
+              <div className="absolute left-4 md:left-1/2 w-12 h-12 bg-white border-4 border-purple-50 rounded-full flex items-center justify-center transform -translate-x-1/2 z-10 text-xl shadow-[0_0_20px_rgba(147,51,234,0.15)] ring-4 ring-white">
+                <span className="relative z-10">{item.icon}</span>
+                <div className="absolute inset-0 bg-purple-100 rounded-full animate-ping opacity-20"></div>
               </div>
+
               <div className={`w-full md:w-1/2 pl-12 md:pl-0 ${index % 2 === 0 ? 'md:pr-16 text-left md:text-right' : 'md:pl-16 text-left'}`}>
-                <div className="bg-white hover:bg-purple-50 transition-colors p-8 rounded-3xl border border-gray-100 shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(147,51,234,0.1)] group">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-[#9333EA] transition-colors">{item.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                <div className="bg-white/70 backdrop-blur-xl hover:bg-white transition-all duration-500 p-8 rounded-[2rem] lg:rounded-[2.5rem] border border-purple-100/50 shadow-[0_10px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_60px_rgba(147,51,234,0.12)] group relative overflow-hidden">
+                  {/* Hover Gradient Accent */}
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#9333EA] to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+                  <h3 className="text-2xl font-black text-gray-900 mb-3 group-hover:text-[#9333EA] transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-500 leading-relaxed font-medium text-base">
+                    {item.desc}
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -683,15 +707,30 @@ function ProjectLifecycleSection() {
 
 function TicketLifecycleSection() {
   return (
-    <section className="py-24 bg-[#faf5ff] relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white opacity-60 rounded-full blur-[100px]"></div>
+    <section className="py-24 lg:py-32 bg-[#faf9ff] relative overflow-hidden">
+      {/* Background Aurora Effects */}
+      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-sky-50 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 opacity-60"></div>
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-purple-100 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2 opacity-40"></div>
+
+      {/* Tech Mesh Overlay */}
+      <div className="absolute inset-0 opacity-[0.2]" style={{
+        backgroundImage: `radial-gradient(#9333EA 0.5px, transparent 0.5px)`,
+        backgroundSize: '40px 40px'
+      }}></div>
+      {/* Dynamic Background Accents */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-50/50 rounded-full blur-[120px] translate-x-1/4 -translate-y-1/4"></div>
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-100/30 rounded-full blur-[100px] -translate-x-1/4 translate-y-1/4"></div>
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-white px-4 py-2 rounded-full shadow-sm">Ticket Lifecycle</span>
-          <h2 className="text-[clamp(32px,4vw,44px)] font-extrabold text-[#0a0a0a] leading-tight">
+          <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-white px-4 py-2 rounded-full shadow-sm ring-1 ring-purple-100">
+            Ticket Lifecycle
+          </span>
+          <h2 className="text-[clamp(32px,4vw,44px)] font-black text-[#0a0a0a] leading-tight">
             Turn "Help!" into <span className="text-[#9333EA]">"Handled."</span>
           </h2>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {ticketLifecycleData.map((item, index) => (
             <motion.div
@@ -700,13 +739,18 @@ function TicketLifecycleSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="bg-white/80 backdrop-blur-xl border border-white rounded-[2.5rem] p-10 flex flex-col items-center text-center shadow-[0_15px_60px_rgba(147,51,234,0.08)] hover:-translate-y-2 transition-transform duration-300"
+              className="bg-white/40 backdrop-blur-2xl border-2 border-white rounded-[2rem] lg:rounded-[3rem] p-10 flex flex-col items-center text-center shadow-[0_20px_50px_rgba(147,51,234,0.06)] hover:-translate-y-3 transition-all duration-500 group relative overflow-hidden"
             >
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-100 to-purple-50 rounded-full flex items-center justify-center text-4xl mb-8 shadow-inner">
-                {item.icon}
+              {/* Background Number (Centered) */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[15rem] font-black italic text-purple-900/[0.04] select-none pointer-events-none leading-none tracking-tighter transition-all duration-700 group-hover:scale-110 group-hover:rotate-6">
+                {index + 1}
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">{item.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+
+              <div className="w-24 h-24 bg-gradient-to-br from-purple-50 to-white rounded-3xl flex items-center justify-center text-4xl mb-8 shadow-[inset_0_2px_10px_rgba(0,0,0,0.05)] transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110 relative z-10">
+                <span className="filter drop-shadow-md">{item.icon}</span>
+              </div>
+              <h3 className="text-2xl font-black text-gray-900 mb-4 group-hover:text-[#9333EA] transition-colors relative z-10">{item.title}</h3>
+              <p className="text-gray-500 font-medium leading-relaxed relative z-10">{item.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -715,157 +759,251 @@ function TicketLifecycleSection() {
   );
 }
 
-function ReportsSection() {
-  const [activeIdx, setActiveIdx] = useState(0);
+
+const reportsDatas = [
+  {
+    title: "Profitability Reports",
+    icon: "💰",
+    dot: "#9333EA",
+    gradient: "from-[#9333EA] to-[#7c3aed]",
+    bgLight: "bg-purple-50/50",
+    desc: "See Billable vs. Non-Billable hours by employee, project, or company.",
+    image: "/products/support/reports_analytics.jpg"
+  },
+  {
+    title: "The Overflow Alert",
+    icon: "⚠️",
+    dot: "#F59E0B",
+    gradient: "from-[#F59E0B] to-[#D97706]",
+    bgLight: "bg-amber-50/50",
+    desc: 'Get a "Project Estimated Overflow" report to see which projects are going over budget.',
+    image: "/products/support/worked_hours_tracking.jpg"
+  },
+  {
+    title: "Daily Snapshots",
+    icon: "📸",
+    dot: "#0EA5E9",
+    gradient: "from-[#0EA5E9] to-[#0284C7]",
+    bgLight: "bg-sky-50/50",
+    desc: "View consolidated daily reports Activity",
+    image: "/products/support/support_dashboard_img_1.jpg"
+  },
+  {
+    title: "Compliance",
+    icon: "✅",
+    dot: "#10B981",
+    gradient: "from-[#10B981] to-[#059669]",
+    bgLight: "bg-emerald-50/50",
+    desc: "Access backup tracks to ensure your internal operations are 100% healthy.",
+    image: "/products/support/backup_management.jpg"
+  },
+  {
+    title: "Project Timesheet Report",
+    icon: "📄",
+    dot: "#EF4444",
+    gradient: "from-[#EF4444] to-[#DC2626]",
+    bgLight: "bg-red-50/50",
+    desc: "Easily identify where tasks are running over their time limits so you can keep your deadlines under control.",
+    image: "/products/support/renewal_management.jpg"
+  },
+];
+
+function ReportsSection({ onImageClick }) {
+  const [active, setActive] = useState(0);
+  const d = reportsDatas[active];
 
   return (
-    <section className="py-32 bg-slate-50 relative overflow-hidden">
-      {/* GLOBAL BACKGROUND LAYER */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* Background Liquid Gradients */}
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-orange-100/30 via-purple-100/30 to-blue-100/30 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-pink-100/20 to-blue-100/20 rounded-full blur-[100px] -translate-x-1/2"></div>
-
-        {/* Dynamic Floating Orbs in Background */}
-        <motion.div 
-          animate={{ x: [0, 20, 0], y: [0, -20, 0] }}
-          transition={{ duration: 10, repeat: Infinity }}
-          className="absolute top-1/4 right-[10%] w-32 h-32 bg-orange-400/10 rounded-full blur-3xl"
-        />
-        <motion.div 
-          animate={{ x: [0, -30, 0], y: [0, 30, 0] }}
-          transition={{ duration: 12, repeat: Infinity, delay: 1 }}
-          className="absolute bottom-1/4 left-[20%] w-56 h-56 bg-purple-500/10 rounded-full blur-3xl"
-        />
+    <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
+      {/* Dynamic Background Mesh */}
+      <div className="absolute inset-0 z-0">
+        <div className={`absolute top-0 right-0 w-[800px] h-[800px] rounded-full blur-[150px] transition-colors duration-1000 opacity-20 translate-x-1/2 -translate-y-1/2`} style={{ background: d.dot }}></div>
+        <div className={`absolute bottom-0 left-0 w-[800px] h-[800px] rounded-full blur-[150px] transition-colors duration-1000 opacity-10 -translate-x-1/2 translate-y-1/2`} style={{ background: d.dot }}></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-16 lg:items-center">
-          
-          {/* LEFT: THE NAVIGATOR */}
-          <div className="w-full lg:w-[40%]">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
-            >
-              <span className="text-[10px] font-black text-[#9333EA] tracking-[0.4em] uppercase mb-4 block">
-                Insight Engine
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Header Section (Centered) */}
+        <div className="mb-12 lg:mb-20 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-purple-50 px-4 py-2 rounded-full ring-1 ring-purple-100">
+              The Power of Reports
+            </span>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-[#0a0a0a] leading-[1.1] mb-6 lg:mb-8 tracking-tight">
+              Total Transparency, <br className="hidden md:block" />
+              <span className={`bg-gradient-to-r ${d.gradient} bg-clip-text text-transparent transition-all duration-500`}>
+                Zero Manual Effort.
               </span>
-              <h2 className="text-5xl md:text-6xl font-black text-gray-900 leading-none tracking-tighter mb-6">
-                Total <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-purple-600">Transparency</span>.
-              </h2>
-              <p className="text-lg text-gray-500 font-medium">
-                Click a module to explore how we automate your organizational intelligence.
+            </h2>
+            <p className="text-gray-500 text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed font-medium mb-6">
+              Stop spending your Friday nights building spreadsheets. Our Reports Module generates everything you need in seconds:
+            </p>
+            <div className={`inline-flex items-center gap-3 px-6 py-3 rounded-2xl border border-current transition-all duration-500 shadow-sm bg-white/50 backdrop-blur-sm mx-auto`} style={{ color: d.dot }}>
+              <span className="flex-shrink-0 w-2 h-2 rounded-full bg-current animate-pulse"></span>
+              <p className="text-sm font-medium tracking-tight brightness-75">
+                A preview of our extensive reporting suite, allowing you to compare planned vs. actual hours.
               </p>
-            </motion.div>
+            </div>
+          </motion.div>
+        </div>
 
-            <div className="space-y-4">
-              {reportsData.map((item, index) => {
-                const colors = [
-                  "bg-orange-50/60 border-orange-100 text-orange-600",
-                  "bg-blue-50/60 border-blue-100 text-blue-600",
-                  "bg-purple-50/60 border-purple-100 text-purple-600",
-                  "bg-green-50/60 border-green-100 text-green-600",
-                  "bg-pink-50/60 border-pink-100 text-pink-600"
-                ];
-                
-                return (
-                  <button
-                    key={item.title}
-                    onClick={() => setActiveIdx(index)}
-                    className={`group w-full text-left p-6 rounded-[2rem] transition-all duration-500 flex items-center gap-6 border ${activeIdx === index 
-                      ? `${colors[index]} shadow-[0_20px_40px_rgba(0,0,0,0.03)] scale-105` 
-                      : "bg-transparent border-transparent grayscale hover:grayscale-0 opacity-40 hover:opacity-100"}`}
+        {/* Interactive Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+          {/* Left Column: Navigation Tabs (Mobile Icon Grid / Desktop List) */}
+          <div className="lg:col-span-5">
+            {/* Mobile: Compact Grid of Icon Buttons */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:hidden gap-3 mb-6">
+              {reportsDatas.map((item, i) => (
+                <button
+                  key={item.title}
+                  onClick={() => setActive(i)}
+                  className={`flex flex-col items-center justify-center p-3 rounded-[1.5rem] transition-all duration-300 relative border-2 ${active === i
+                    ? "bg-white shadow-xl border-purple-500/20 scale-105"
+                    : "bg-gray-50/50 hover:bg-white border-transparent text-gray-400"
+                    }`}
+                >
+                  <span className={`text-3xl mb-3 transition-transform duration-300 ${active === i ? "scale-110" : ""}`}>
+                    {item.icon}
+                  </span>
+                  <span className={`text-[11px] font-black uppercase tracking-tight text-center leading-tight px-2 ${active === i ? "text-gray-900" : "text-gray-400"}`}>
+                    {item.title}
+                  </span>
+                </button>
+              ))}
+            </div>
+
+            {/* Desktop: Premium List Style */}
+            <div className="hidden lg:flex flex-col gap-5">
+              {reportsDatas.map((item, i) => (
+                <button
+                  key={item.title}
+                  onClick={() => setActive(i)}
+                  className={`group w-full flex items-center gap-5 p-6 rounded-[2.5rem] transition-all duration-500 relative overflow-hidden min-h-[8rem] h-auto ${active === i
+                    ? `bg-white shadow-[0_30px_60px_rgba(0,0,0,0.08)] scale-[1.03] ring-1 ring-gray-100`
+                    : `${item.bgLight} hover:bg-white border border-transparent hover:border-gray-200 hover:shadow-xl hover:scale-[1.01]`
+                    }`}
+                >
+                  {/* Active Indicator Bar */}
+                  {active === i && (
+                    <motion.div
+                      layoutId="activeTab"
+                      className={`absolute left-0 top-0 bottom-0 w-2 bg-gradient-to-b ${item.gradient}`}
+                    />
+                  )}
+
+                  <div
+                    className={`w-16 h-16 rounded-[1.5rem] flex items-center justify-center text-3xl transition-all duration-500 transform ${active === i
+                      ? "scale-110 shadow-lg"
+                      : "bg-white text-gray-400 group-hover:scale-110"
+                      }`}
+                    style={active === i ? { background: item.dot, color: 'white' } : {}}
                   >
-                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center text-2xl transition-all duration-500 ${activeIdx === index ? "bg-white shadow-sm" : "bg-gray-100 text-gray-400"}`}>
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h3 className={`text-lg font-bold transition-colors ${activeIdx === index ? "text-gray-900" : "text-gray-400 group-hover:text-gray-600"}`}>
-                        {item.title}
-                      </h3>
-                      {activeIdx === index && (
-                         <motion.div layoutId="activeBar" className={`h-0.5 w-12 mt-1 ${activeIdx === 0 ? "bg-orange-400" : "bg-purple-400"}`} />
-                      )}
-                    </div>
-                  </button>
-                );
-              })}
+                    {item.icon}
+                  </div>
+                  <div className="flex-1 text-left">
+                    <h3 className={`text-lg font-black transition-colors ${active === i ? "text-gray-900" : "text-gray-400"}`}>
+                      {item.title}
+                    </h3>
+                    <p className={`text-sm mt-1 font-medium transition-colors ${active === i ? "text-gray-500" : "text-gray-400"}`}>
+                      {item.desc}
+                    </p>
+                  </div>
+                  {active === i && (
+                    <motion.div
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-900"
+                    >
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" /></svg>
+                    </motion.div>
+                  )}
+                </button>
+              ))}
             </div>
           </div>
 
-          {/* RIGHT: THE SPOTLIGHT CANVAS */}
-          <div className="w-full lg:w-[60%] relative">
-             <div className="absolute inset-0 bg-white/20 blur-[100px] rounded-full scale-110 z-0"></div>
+          {/* Right Column: Content Card (7/12) */}
+          <div className="lg:col-span-7 h-full">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={active}
+                initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -40, scale: 0.95 }}
+                transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+                className={`rounded-3xl lg:rounded-[4rem] p-6 lg:p-16 h-full flex flex-col relative overflow-hidden transition-colors duration-700 shadow-[0_100px_100px_-50px_rgba(0,0,0,0.1)] border-4 border-white ${d.bgLight}`}
+              >
+                {/* Card Background Patterns */}
+                <div className={`absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-br ${d.gradient} opacity-[0.07] rounded-full blur-[100px] -mr-32 -mt-32`}></div>
+                <div className={`absolute bottom-0 left-0 w-[300px] h-[300px] bg-gradient-to-br ${d.gradient} opacity-[0.05] rounded-full blur-[80px] -ml-24 -mb-24`}></div>
 
-             <div className="absolute inset-0 bg-white/20 blur-[100px] rounded-full scale-110 z-0"></div>
-             
-             <AnimatePresence mode="wait">
-               <motion.div
-                 key={activeIdx}
-                 initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                 exit={{ opacity: 0, y: -30, scale: 0.95 }}
-                 transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-                 className="relative z-10 aspect-[4/3] w-full bg-white/60 backdrop-blur-3xl rounded-[3rem] p-12 md:p-20 border border-white shadow-[0_40px_100px_rgba(0,0,0,0.04)] flex flex-col justify-center overflow-hidden"
-               >
-                  {/* Decorative Liquid background inside the card */}
-                  <div className="absolute top-0 right-0 w-full h-full opacity-30 pointer-events-none">
-                     <div className={`absolute top-0 right-0 w-96 h-96 rounded-full blur-[80px] transition-colors duration-1000 ${
-                       activeIdx === 0 ? "bg-orange-200" :
-                       activeIdx === 1 ? "bg-blue-200" :
-                       activeIdx === 2 ? "bg-purple-200" :
-                       activeIdx === 3 ? "bg-green-200" : "bg-pink-200"
-                     }`}></div>
+                <div className="relative z-10 flex flex-col h-full gap-5 lg:gap-8">
+                  {/* Header Side - Content (Mobile: Desc only / Desktop: Hidden) */}
+                  <div className="order-2 lg:order-1 lg:hidden">
+                    <div className="flex justify-between items-start">
+                      <div className="space-y-4">
+                        <div className={`w-20 h-2 bg-gradient-to-r ${d.gradient} rounded-full`}></div>
+                        {/* Title is hidden here because it's already shown in the Mobile Icon Grid */}
+                        <p className="text-gray-600 text-xl leading-relaxed max-w-xl font-medium">
+                          {d.desc}
+                        </p>
+                      </div>
+                    </div>
                   </div>
 
-                  <div className="relative z-10 w-full">
-                    <span className="text-[12px] font-black text-[#9333EA]/50 tracking-[0.5em] uppercase mb-8 block">
-                      Autonomous Module Preview
-                    </span>
-                    <div className="text-8xl mb-8 group-hover:scale-110 transition-transform">
-                      {reportsData[activeIdx].icon}
-                    </div>
-                    <h3 className="text-5xl font-black text-gray-900 mb-6 tracking-tighter">
-                      {reportsData[activeIdx].title}
-                    </h3>
-                    <p className="text-2xl text-gray-500 leading-relaxed font-medium mb-12">
-                      {reportsData[activeIdx].desc}
-                    </p>
-
-                    <div className="flex flex-wrap gap-4">
-                      {["Real-time Syncing", "Automated Logic", "Zero Delay"].map(tag => (
-                        <div key={tag} className="px-5 py-2 rounded-full bg-white border border-gray-100 text-xs font-bold text-gray-400 uppercase tracking-widest shadow-sm">
-                          {tag}
+                  {/* Visual Image Preview */}
+                  <div className="order-1 lg:order-2 mt-4 lg:mt-0 lg:flex-1 lg:flex lg:items-center lg:justify-center">
+                    <motion.div
+                      key={d.image}
+                      initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      transition={{ duration: 0.6, ease: "easeOut" }}
+                      className="relative group/img cursor-zoom-in"
+                      onClick={() => onImageClick && onImageClick(d.image)}
+                    >
+                      {/* Browser Mockup Frame */}
+                      <div className="relative bg-white rounded-3xl lg:rounded-[2rem] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.12)] border border-gray-100">
+                        <div className="flex items-center gap-1.5 p-4 bg-gray-50/50 border-b border-gray-100">
+                          <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                          <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+                          <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                          <div className="ml-4 flex-1 h-5 bg-white rounded-md border border-gray-100"></div>
                         </div>
-                      ))}
-                    </div>
-                  </div>
+                        <img
+                          src={d.image}
+                          alt={d.title}
+                          className="w-full h-auto object-cover transition-transform duration-700 group-hover/img:scale-[1.03]"
+                        />
 
-                  {/* Aesthetic system info footer */}
-                  <div className="absolute bottom-10 left-12 right-12 flex justify-between items-center text-[10px] font-mono text-gray-300 font-bold border-t border-gray-100/50 pt-6">
-                     <span className="flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-400"></span>
-                        SYSTEM_STATUS: NOMINAL
-                     </span>
-                     <span>VER: 4.2.0_SECURE</span>
-                  </div>
-               </motion.div>
-             </AnimatePresence>
+                        {/* Corner Zoom Indicator (Mobile only) */}
+                        <div className="lg:hidden absolute top-3 right-3 z-20 bg-white/90 backdrop-blur-md p-2 rounded-xl shadow-lg border border-purple-50 flex items-center gap-1.5 active:scale-95 transition-transform">
+                          <svg className="w-3.5 h-3.5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                          </svg>
+                          <span className="text-[10px] font-bold text-purple-700 uppercase tracking-tight">Expand</span>
+                        </div>
 
-             {/* Dynamic Floating Orbs for depth */}
-             <motion.div 
-               animate={{ x: [0, 20, 0], y: [0, -20, 0] }}
-               transition={{ duration: 10, repeat: Infinity }}
-               className="absolute -top-10 -right-10 w-32 h-32 bg-orange-400/10 rounded-full blur-3xl"
-             />
-             <motion.div 
-               animate={{ x: [0, -30, 0], y: [0, 30, 0] }}
-               transition={{ duration: 12, repeat: Infinity, delay: 1 }}
-               className="absolute -bottom-20 -left-20 w-56 h-56 bg-purple-600/25 rounded-full blur-3xl"
-             />
+                        {/* Fullscreen Indicator Overlay (Desktop Hover) */}
+                        <div className="absolute inset-0 bg-black/20 opacity-0 lg:group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-3xl lg:rounded-[2rem]">
+                          <div className="bg-white/90 backdrop-blur-md p-4 rounded-full shadow-2xl transform scale-75 group-hover/img:scale-100 transition-transform duration-500">
+                            <svg className="w-6 h-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Overlay Glow */}
+                      <div className={`absolute -inset-4 bg-gradient-to-br ${d.gradient} opacity-0 group-hover/img:opacity-[0.05] blur-2xl transition-opacity duration-500 -z-10`}></div>
+                    </motion.div>
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>
@@ -877,109 +1015,127 @@ function AnalyticsSection({ onImageClick }) {
   const [activeAnalysisIdx, setActiveAnalysisIdx] = useState(0);
 
   return (
-    <section className="py-24 bg-gradient-to-tr from-purple-50 to-white relative overflow-hidden">
-      <div className="container mx-auto px-6">
+    <section className="py-24 bg-white relative overflow-hidden">
+      {/* Modern Mesh Grid Background */}
+      <div className="absolute inset-0 opacity-[0.4] pointer-events-none" style={{
+        backgroundImage: `radial-gradient(#9333EA 1px, transparent 1px)`,
+        backgroundSize: '40px 40px'
+      }}></div>
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center mb-16">
-          <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-white px-4 py-2 rounded-full shadow-sm">High-Level Analytics</span>
-          <h2 className="text-[clamp(32px,4vw,44px)] font-extrabold text-[#0a0a0a] leading-tight mb-4">
-            See Your Business in <br className="hidden md:block" /> <span className="text-[#9333EA]">High Definition.</span>
+          <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-purple-50 px-4 py-2 rounded-full shadow-sm ring-1 ring-purple-100">
+            High-Level Analytics
+          </span>
+          <h2 className="text-[clamp(32px,5vw,56px)] font-black text-[#0a0a0a] leading-tight mb-6">
+            See Your Business in <br className="hidden md:block" />
+            <span className="bg-gradient-to-r from-[#9333EA] to-[#7c3aed] bg-clip-text text-transparent">High Definition.</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-500 text-lg max-w-2xl mx-auto font-medium mb-8">
             While reports give you the "what," our Analytics Module gives you the "why." Turn raw data into growth strategies:
           </p>
+          <div className="inline-flex items-center gap-4 px-8 py-4 rounded-3xl bg-white/50 border-2 border-purple-100 shadow-sm backdrop-blur-sm">
+            <span className="flex-shrink-0 w-3 h-3 rounded-full bg-[#9333EA] animate-ping"></span>
+            <p className="text-[#9333EA] text-sm font-semibold tracking-tight uppercase">
+              This is just the spark; the full suite is the wildfire. Experience the unfiltered depth of our analytical ecosystem.
+            </p>
+          </div>
         </div>
 
         <div className="max-w-6xl mx-auto">
-          {/* Dashboard Tabs */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {/* Dashboard Tabs with Modern Pill Style */}
+          <div className="flex flex-wrap justify-center gap-4 mb-16">
             {analyticsData.map((item, index) => (
               <button
                 key={item.title}
                 onClick={() => setActiveAnalysisIdx(index)}
-                className={`flex items-center gap-3 px-8 py-4 rounded-2xl font-bold transition-all duration-300 ${activeAnalysisIdx === index
-                  ? "bg-[#9333EA] text-white shadow-xl shadow-purple-500/30 -translate-y-1"
-                  : "bg-white text-gray-600 border border-gray-100 hover:border-purple-200"
+                className={`flex items-center gap-3 px-4 md:px-10 py-5 rounded-full font-black text-sm transition-all duration-500 overflow-hidden relative shadow-lg ${activeAnalysisIdx === index
+                  ? "text-white scale-105"
+                  : "bg-white text-gray-500 border border-gray-100 hover:border-purple-200 hover:text-[#9333EA]"
                   }`}
               >
-                <span className="text-xl">{item.icon}</span>
-                {item.title}
+                {activeAnalysisIdx === index && (
+                  <motion.div
+                    layoutId="analyticsTabBg"
+                    className="absolute inset-0 bg-gradient-to-r from-[#9333EA] to-[#7c3aed] z-0"
+                  />
+                )}
+                <span className="text-xl relative z-10">{item.icon}</span>
+                <span className="relative z-10 tracking-wide">{item.title}</span>
               </button>
             ))}
           </div>
 
-          <p className="text-center mb-12 text-sm text-gray-400 italic">
-            * Showing a curated preview of our full analytical suite.
-          </p>
-
-          {/* Active Feature Display */}
-          <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.1)] border border-gray-100">
-            <div className="grid lg:grid-cols-5 min-h-[500px]">
-              {/* Image Side (3/5 of width) */}
-              <div className="lg:col-span-3 bg-gray-50 border-r border-gray-100 overflow-hidden relative group">
-                {/* Browser Mockup Top Bar */}
-                <div className="flex items-center gap-1.5 p-4 bg-white border-b border-gray-100 sticky top-0 z-10">
-                  <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
-                  <div className="ml-4 flex-1 h-6 bg-gray-50 rounded-lg text-[10px] flex items-center px-3 text-gray-400 font-medium overflow-hidden whitespace-nowrap">
-                    isarva.com/support/analytics/{analyticsData[activeAnalysisIdx].title.toLowerCase().replace(/ /g, '-')}
+          {/* Large Interactive Display Card */}
+          <div className="bg-white/80 backdrop-blur-3xl rounded-3xl lg:rounded-[4rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.12)] border-2 border-white relative">
+            <div className="grid lg:grid-cols-5 min-h-[600px]">
+              {/* Image Side - Styled like a premium device/browser */}
+              <div className="lg:col-span-3 bg-gray-50/50 border-r border-gray-100 overflow-hidden relative group px-2 py-6 md:p-8 lg:p-12">
+                <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-white transform transition-transform duration-700 group-hover:scale-[1.02]">
+                  {/* Browser Mockup Top Bar */}
+                  <div className="flex items-center gap-2 p-2 md:p-4 bg-gray-50 border-b border-gray-200">
+                    <div className="flex gap-1.5 flex-shrink-0">
+                      <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                      <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+                      <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                    </div>
+                    <div className="flex-1 h-7 bg-white rounded-lg text-[9px] md:text-[10px] flex items-center px-3 text-gray-400 font-bold border border-gray-200/50 truncate">
+                      analytics.isarva.com/dashboard/preview
+                    </div>
                   </div>
+
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activeAnalysisIdx}
+                      initial={{ opacity: 0, scale: 1.05 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      transition={{ duration: 0.5, ease: "easeOut" }}
+                      className="cursor-zoom-in"
+                      onClick={() => onImageClick && onImageClick(analyticsData[activeAnalysisIdx].image)}
+                    >
+                      <img
+                        src={analyticsData[activeAnalysisIdx].image}
+                        alt={analyticsData[activeAnalysisIdx].title}
+                        className="w-full h-auto object-contain"
+                      />
+                    </motion.div>
+                  </AnimatePresence>
                 </div>
 
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeAnalysisIdx}
-                    initial={{ opacity: 0, scale: 1.02 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.98 }}
-                    transition={{ duration: 0.4 }}
-                    className="w-full h-full p-6 flex items-start justify-center cursor-zoom-in"
-                    onClick={() => onImageClick && onImageClick(analyticsData[activeAnalysisIdx].image)}
-                  >
-                    <img
-                      src={analyticsData[activeAnalysisIdx].image}
-                      alt={analyticsData[activeAnalysisIdx].title}
-                      className="w-full h-auto max-h-full rounded-xl shadow-2xl object-contain ring-1 ring-gray-200"
-                    />
-                  </motion.div>
-                </AnimatePresence>
+                {/* Floating Decorative Elements */}
+                <div className="absolute top-1/2 left-4 w-24 h-24 bg-purple-200/40 rounded-full blur-2xl animate-pulse"></div>
+                <div className="absolute bottom-1/4 right-4 w-32 h-32 bg-purple-100/40 rounded-full blur-3xl animate-pulse"></div>
               </div>
 
-              {/* Detail Side (2/5 of width) */}
-              <div className="lg:col-span-2 p-12 flex flex-col justify-center bg-white relative">
+              {/* Detail Side - Premium Content Look */}
+              <div className="lg:col-span-2 p-10 lg:p-16 flex flex-col justify-center bg-gradient-to-br from-white to-purple-50/30">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeAnalysisIdx}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.4 }}
                   >
-                    <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-widest uppercase mb-4 px-3 py-1 bg-purple-50 rounded-md">
-                      Module Deep Dive
-                    </span>
-                    <h3 className="text-3xl font-extrabold text-gray-900 mb-6 leading-tight">
+                    <div className="w-12 h-1 bg-gradient-to-r from-[#9333EA] to-transparent mb-6 rounded-full"></div>
+                    <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-6 leading-[1.1]">
                       {analyticsData[activeAnalysisIdx].title}
                     </h3>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                    <p className="text-gray-500 text-lg leading-relaxed mb-10 font-medium">
                       {analyticsData[activeAnalysisIdx].desc}
                     </p>
 
-                    <div className="space-y-4 mb-10">
-                      {[
-                        "Real-time data synchronization",
-                        "Custom report builders",
-                        "Historical trend analysis"
-                      ].map((item, i) => (
-                        <div key={i} className="flex items-center gap-3">
-                          <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center text-green-600">
-                            <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                    <div className="space-y-5">
+                      {analyticsData[activeAnalysisIdx].features.map((item, i) => (
+                        <div key={i} className="flex items-center gap-4 group">
+                          <div className="w-6 h-6 rounded-lg bg-green-50 flex items-center justify-center text-green-600 border border-green-100 transition-colors group-hover:bg-green-500 group-hover:text-white">
+                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
                           </div>
-                          <span className="text-gray-700 font-medium">{item}</span>
+                          <span className="text-gray-700 font-black text-sm tracking-tight">{item}</span>
                         </div>
                       ))}
                     </div>
-
 
                   </motion.div>
                 </AnimatePresence>
@@ -995,34 +1151,45 @@ function AnalyticsSection({ onImageClick }) {
 function AutomationSection() {
   return (
     <section className="py-24 bg-white relative overflow-hidden">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-[#9333EA]/10 px-4 py-2 rounded-full">Automation: Your "Invisible Assistant"</span>
-          <h2 className="text-[clamp(32px,4vw,44px)] font-extrabold text-[#0a0a0a] leading-tight">
-            We Do the <span className="text-[#9333EA]">Grunt Work</span><br className="md:hidden" /> So You Don't Have To.
+      {/* Background Mesh Gradient */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-purple-50 rounded-full blur-[150px] opacity-60"></div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-20">
+          <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-white px-5 py-2 rounded-full shadow-sm ring-1 ring-purple-100">
+            Automation: Your "Invisible Assistant"
+          </span>
+          <h2 className="text-[clamp(32px,5vw,56px)] font-black text-[#0a0a0a] leading-[1.1]">
+            We Do the <span className="bg-gradient-to-r from-[#9333EA] to-[#7c3aed] bg-clip-text text-transparent">Grunt Work</span><br className="md:hidden" />
+            So You Don't Have To.
           </h2>
         </div>
 
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-6 relative mt-20">
-          <div className="hidden md:block absolute top-[4.5rem] left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-purple-100 via-purple-300 to-purple-100"></div>
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 relative mt-24">
+          {/* Animated Flow Line */}
+          <div className="hidden md:block absolute top-[4.5rem] left-[15%] right-[15%] h-1 bg-gradient-to-r from-transparent via-purple-200 to-transparent">
+            <div className="w-full h-full animate-pulse bg-purple-400 opacity-20"></div>
+          </div>
 
           {automationData.map((item, index) => (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="flex-1 flex flex-col items-center text-center relative z-10"
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="flex-1 flex flex-col items-center text-center relative z-10 group"
             >
-              <div className="bg-white p-2 rounded-full mb-6 relative group">
-                <div className="absolute inset-0 bg-[#9333EA] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 scale-110"></div>
-                <div className="w-24 h-24 bg-purple-50 border-4 border-white rounded-full flex items-center justify-center text-4xl shadow-[0_10px_30px_rgba(147,51,234,0.15)] relative z-10 transition-transform">
-                  <span className="group-hover:scale-125 transition-transform duration-300">{item.icon}</span>
+              <div className="bg-white p-3 rounded-[1.5rem] lg:rounded-[2.5rem] mb-8 relative shadow-2xl transition-transform duration-500 group-hover:-translate-y-4">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#9333EA] to-[#7c3aed] rounded-[1.5rem] lg:rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-[1.05] -z-10"></div>
+                <div className="w-28 h-28 bg-white rounded-[2rem] flex items-center justify-center text-5xl shadow-inner border border-gray-100 transition-transform duration-700 group-hover:rotate-[15deg]">
+                  <span className="filter drop-shadow-sm group-hover:scale-110 transition-transform">{item.icon}</span>
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-              <p className="text-gray-600 leading-relaxed text-sm">{item.desc}</p>
+              <h3 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">{item.title}</h3>
+              <p className="text-gray-500 leading-relaxed font-medium px-4">{item.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -1033,34 +1200,43 @@ function AutomationSection() {
 
 function SafetyManagementSection() {
   return (
-    <section className="py-24 bg-[#faf5ff] relative border-t-2 border-white">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-white px-4 py-2 rounded-full shadow-sm">Safety & Management</span>
-            <h2 className="text-[clamp(32px,4vw,44px)] font-extrabold text-[#0a0a0a] leading-tight mb-6">
-              Secure Your Assets,<br /><span className="text-[#9333EA]">Organize Your Clients.</span>
-            </h2>
-            <p className="text-gray-600 text-lg leading-relaxed mb-8">Enterprise-grade security controls wrapped in an intuitive, easy-to-use interface.</p>
+    <section className="py-24 bg-gradient-to-b from-white to-[#faf5ff] relative border-t-2 border-white overflow-hidden">
+      {/* Decorative Blob */}
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-50 rounded-full blur-[100px] translate-x-1/4 translate-y-1/4"></div>
 
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <div className="max-w-xl">
+            <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-white px-5 py-2 rounded-full shadow-md ring-1 ring-purple-50">
+              Safety & Management
+            </span>
+            <h2 className="text-[clamp(32px,5vw,56px)] font-black text-[#0a0a0a] leading-[1.05] mb-8">
+              Secure Your Assets,<br />
+              <span className="bg-gradient-to-r from-[#9333EA] to-[#7c3aed] bg-clip-text text-transparent">Organize Your Clients.</span>
+            </h2>
+            <p className="text-gray-500 text-xl leading-relaxed mb-10 font-medium">
+              Enterprise-grade security controls wrapped in an intuitive, easy-to-use interface.
+            </p>
+
+            <div className="h-1 w-32 bg-gradient-to-r from-[#9333EA] to-transparent rounded-full"></div>
           </div>
 
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-8">
             {safetyData.map((item, index) => (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, x: 20 }}
+                initial={{ opacity: 0, x: 40 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="bg-white p-6 rounded-3xl flex items-center gap-6 shadow-[0_10px_40px_rgba(147,51,234,0.05)] border border-purple-50/50 hover:border-purple-200 transition-colors"
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                className="bg-white/70 backdrop-blur-xl p-8 rounded-[1.5rem] lg:rounded-[2.5rem] flex items-center gap-8 shadow-[0_15px_50px_rgba(147,51,234,0.08)] border-2 border-white hover:border-[#9333EA]/20 transition-all duration-500 group hover:-translate-x-4"
               >
-                <div className="w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 text-[#9333EA]">
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-50 to-white rounded-2xl flex items-center justify-center text-3xl flex-shrink-0 text-[#9333EA] shadow-inner group-hover:scale-110 transition-transform duration-500">
                   {item.icon}
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-1">{item.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                  <h3 className="text-xl font-black text-gray-900 mb-2 group-hover:text-[#9333EA] transition-colors">{item.title}</h3>
+                  <p className="text-gray-500 font-medium leading-relaxed">{item.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -1090,7 +1266,7 @@ export default function ProductDetailPremiumSupportStaging({
   }, []);
 
   return (
-    <div className="bg-white font-sans selection:bg-purple-100 selection:text-purple-900">
+    <div className="bg-white font-sans selection:bg-purple-100 selection:text-purple-900 overflow-x-clip">
       {/* 1. Centered Hero Section */}
       <section className="relative pt-40 lg:pb-32 pb-10 overflow-hidden bg-gradient-to-b from-[#faf5ff] via-[#fdf9ff] to-white">
         {/* Noise Texture Overlay */}
@@ -1176,7 +1352,7 @@ export default function ProductDetailPremiumSupportStaging({
               }}
             ></div>
           </div>
-          <div 
+          <div
             className="dashboard-main-img cursor-zoom-in group/hero"
             onClick={() => setLightboxImage("/products/support/support_dashboard_img_1.jpg")}
           >
@@ -1251,7 +1427,7 @@ export default function ProductDetailPremiumSupportStaging({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 lg:text-left text-center">
             {/* Left Side - Image (Sticky on Desktop) */}
             <div className="relative lg:sticky lg:top-28 lg:self-start">
-              <div 
+              <div
                 className="relative rounded-3xl overflow-hidden shadow-2xl cursor-zoom-in group/img"
                 onClick={() => setLightboxImage("/products/support/ticket_management.jpg")}
               >
@@ -1351,7 +1527,7 @@ export default function ProductDetailPremiumSupportStaging({
       {/* Unique Dynamic Sections */}
       <ProjectLifecycleSection />
       <TicketLifecycleSection />
-      <ReportsSection />
+      <ReportsSection onImageClick={setLightboxImage} />
       <AnalyticsSection onImageClick={setLightboxImage} />
       <AutomationSection />
       <SafetyManagementSection />
@@ -1407,7 +1583,7 @@ export default function ProductDetailPremiumSupportStaging({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative bg-gradient-to-br from-purple-500 to-purple-600 rounded-[32px] overflow-hidden shadow-[0_20px_70px_rgba(147,51,234,0.2)]"
+            className="relative bg-gradient-to-br from-purple-500 to-purple-600 rounded-3xl lg:rounded-[32px] overflow-hidden shadow-[0_20px_70px_rgba(147,51,234,0.2)]"
           >
             {/* Decorative Elements */}
             <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-white/10 rounded-full blur-3xl"></div>

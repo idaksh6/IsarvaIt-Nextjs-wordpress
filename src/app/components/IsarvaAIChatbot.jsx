@@ -27,7 +27,7 @@ export default function IsarvaAIChatbot() {
       {/* Floating WhatsApp Button */}
       <button
         onClick={handleWhatsAppClick}
-        className="fixed bottom-24 lg:left-10 left-2 z-50 bg-[#25D366] text-white rounded-full p-4 hover:scale-110 group transition-transform duration-300"
+        className="fixed bottom-24 lg:left-10 right-4 lg:right-auto z-50 bg-[#25D366] text-white rounded-full p-4 hover:scale-110 group transition-transform duration-300 shadow-xl"
         style={{ animation: "whatsapp-pulse 2.5s infinite" }}
         aria-label="Chat on WhatsApp"
       >
