@@ -15,7 +15,9 @@ import ProductDetailPremiumDispatcher from "../../components/products/ProductDet
 import ProductDetailPremiumDealer from "../../components/products/ProductDetailPremiumDealer";
 import ProductDetailPremiumExpense from "../../components/products/ProductDetailPremiumExpense";
 import ProductDetailPremiumCRM from "../../components/products/ProductDetailPremiumCRM";
+import ProductDetailPremiumCRMStaging from "../../components/products/ProductDetailPremiumCRMStaging";
 import ProductDetailPremiumSupport from "../../components/products/ProductDetailPremiumSupport";
+import ProductDetailPremiumSupportStaging from "../../components/products/ProductDetailPremiumSupportStaging";
 
 export default function ProductDetailClient({ product, relatedProducts, allProducts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -152,10 +154,32 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
     );
   }
 
+  // Use Premium View for CRM Application Staging
+  if (product.slug === 'crm-application-staging') {
+    return (
+      <ProductDetailPremiumCRMStaging 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
   // Use Premium View for Support Application
   if (product.slug === 'support-application') {
     return (
       <ProductDetailPremiumSupport 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for Support Application Staging
+  if (product.slug === 'support-application-staging') {
+    return (
+      <ProductDetailPremiumSupportStaging 
         product={product} 
         relatedProducts={relatedProducts} 
         allProducts={allProducts}

@@ -136,9 +136,6 @@ function FaqAccordion() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const leftColumnFaqs = faqData.slice(0, 5);
-  const rightColumnFaqs = faqData.slice(5, 10);
-
   const renderFaqItem = (faq, index) => {
     const isOpen = openIndex === index;
 
@@ -149,7 +146,7 @@ function FaqAccordion() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4, delay: (index % 5) * 0.05 }}
-        className={`group relative bg-white border-2 transition-all duration-300 overflow-hidden ${isOpen
+        className={`group relative bg-white border-2 transition-all duration-300 overflow-hidden h-full flex flex-col ${isOpen
           ? "border-[#9333EA] shadow-[0_8px_30px_rgba(147,51,234,0.15)]"
           : "border-gray-200 hover:border-gray-300 hover:shadow-md"
           }`}
@@ -169,7 +166,7 @@ function FaqAccordion() {
         {/* Question Header */}
         <button
           onClick={() => toggleFaq(index)}
-          className="w-full text-left px-6 py-5 flex items-start gap-4 transition-colors duration-200"
+          className="w-full text-left px-6 py-5 flex items-start gap-4 transition-colors duration-200 flex-grow"
         >
           {/* Icon Circle */}
           <div
@@ -240,16 +237,8 @@ function FaqAccordion() {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-      {/* Left Column - First 5 FAQs */}
-      <div className="space-y-4">
-        {leftColumnFaqs.map((faq, index) => renderFaqItem(faq, index))}
-      </div>
-
-      {/* Right Column - Last 5 FAQs */}
-      <div className="space-y-4">
-        {rightColumnFaqs.map((faq, index) => renderFaqItem(faq, index + 5))}
-      </div>
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+      {faqData.map((faq, index) => renderFaqItem(faq, index))}
     </div>
   );
 }
@@ -1700,7 +1689,7 @@ export default function ProductDetailPremiumSupportStaging({
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
             {allProducts
               .filter(p => p.slug !== product.slug)
               .slice(0, 3)
@@ -1711,13 +1700,14 @@ export default function ProductDetailPremiumSupportStaging({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="h-full"
                 >
                   <Link
                     href={`/products/${prod.slug}`}
-                    className="block"
+                    className="block h-full"
                   >
-                    <div className="relative rounded-3xl p-8 h-full bg-white border-2 border-gray-100 shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                      <div className="relative text-center md:text-left">
+                    <div className="relative rounded-3xl p-8 h-full bg-white border-2 border-gray-100 shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col">
+                      <div className="relative text-center md:text-left flex-grow">
                         {/* Icon */}
                         <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#9333EA] to-[#7c3aed] flex items-center justify-center mb-6 shadow-lg mx-auto md:mx-0">
                           <span className="text-3xl">{prod.icon}</span>
@@ -1741,18 +1731,18 @@ export default function ProductDetailPremiumSupportStaging({
                           {prod.shortDescription}
                         </p>
 
-                        {/* CTA Link */}
-                        <div className="flex items-center justify-center md:justify-start gap-2 text-[#9333EA] font-semibold">
-                          Explore Product
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </div>
-
                         {/* Category Badge */}
                         <div className="absolute -top-11 -right-2 bg-[#9333EA]/10 text-[#9333EA] text-xs font-bold px-3 py-1 rounded-full border-2 border-[#9333EA]/30 shadow-md">
                           {prod.category}
                         </div>
+                      </div>
+
+                      {/* CTA Link at bottom */}
+                      <div className="flex items-center justify-center md:justify-start gap-2 text-[#9333EA] font-semibold mt-auto pt-4 border-t border-gray-50">
+                        Explore Product
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
                       </div>
                     </div>
                   </Link>

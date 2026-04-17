@@ -116,6 +116,43 @@ export const productsData = [
     bgGradient: "from-sky-50 via-blue-50 to-white",
   },
   {
+    slug: "crm-application-staging",
+    title: "CRM Application Staging",
+    category: "Customer Relationship Management",
+    icon: "👔",
+    tagline: "CRM Workspace (Staging)",
+    shortDescription:
+      "Staging version of the CRM solution for testing new features and UI improvements.",
+    description:
+      "This is a staging environment for the CRM Application. Use this space to test new integrations, workflow automations, and UI enhancements before they are deployed to production.",
+    features: [
+      "Lead & Contact Management",
+      "Sales Pipeline Tracking",
+      "Email Integration & Automation",
+      "Customer Interaction History",
+      "Task & Activity Management",
+      "Sales Analytics & Reports",
+      "Mobile CRM App",
+      "Integration with Email & Calendar",
+    ],
+    technologies: [
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "Redis",
+      "Email API Integration",
+    ],
+    benefits: [
+      "Risk-Free Testing",
+      "UI/UX Experimentation",
+      "Feature Validation",
+      "Team Feedback Loop",
+      "Deployment Readiness",
+    ],
+    color: "from-sky-500 to-blue-600",
+    bgGradient: "from-sky-50 via-blue-50 to-white",
+  },
+  {
     slug: "woocommerce-development",
     title: "WooCommerce Development",
     category: "E-Commerce",
