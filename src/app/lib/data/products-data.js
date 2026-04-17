@@ -46,9 +46,9 @@ export const productsData = [
     title: "Support Application",
     category: "Customer Support",
     icon: "🎧",
-    tagline: "Complete Customer Support & Ticketing System",
+    tagline: "Complete Project, Task & Support Management",
     shortDescription:
-      "Advanced support ticketing system for managing customer inquiries, issues, and support requests efficiently.",
+      "A powerful workspace to manage end-to-end project lifecycles, team tasks, and customer support tickets in one unified system.",
     description:
       "Deliver exceptional customer support with our comprehensive support application. Manage tickets, track issues, automate responses, and provide seamless multi-channel support to keep your customers satisfied.",
     features: [
