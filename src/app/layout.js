@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ClientProviders from "./components/ClientProviders";
 import Script from "next/script";
+import { GoogleTagManager } from '@next/third-parties/google';
 
 const inter = Inter({
   variable: "--font-inter",
@@ -81,6 +82,7 @@ export default function RootLayout({ children }) {
         </noscript>
         {/* End Meta Pixel Code */}
       </head>
+      <GoogleTagManager gtmId="GTM-W2VBM4MJ" />
       <body className={`${inter.variable} ${outfit.variable} ${spaceGrotesk.variable} antialiased text-white`}>
         <Header />
         <main>{children}</main>
