@@ -20,20 +20,20 @@ const navLinks = [
 ];
 
 const servicesData = [
-  { label: "Website Services", href: "/services/website-services", icon: "🌐" },
-   { label: "WordPress Development", href: "/services/wordpress-development", icon: "📝" },
-  { label: "Cloud Services", href: "/services/cloud-services", icon: "☁️" },
-  { label: "Odoo Apps Support", href: "/services/odoo-apps-support", icon: "📦" },
-  { label: "AI & ML Consulting", href: "/services/ai-ml-consulting", icon: "🤖" },
-  { label: "Staffing Services", href: "/services/staffing-services", icon: "👥" },
-  { label: "Digital Marketing", href: "/services/digital-marketing", icon: "📱" },
-  { label: "Statamic Development", href: "/services/statamic-development", icon: "✨" },
-  { label: "Consulting Services", href: "/services/consulting-services", icon: "💼" },
-  { label: "ERP Services", href: "/services/erp-services", icon: "🏢" },
-  { label: "Offshore Development", href: "/services/offshore-development", icon: "🌍" },
-  { label: "Training", href: "/services/training", icon: "📚" },
-  { label: "GPS Tracking", href: "/services/gps-tracking", icon: "📍" },
-  { label: "WordPress Training", href: "/services/wordpress-training", icon: "🎓" },
+  { label: "Website Services", href: "/service/website-services", icon: "🌐" },
+   { label: "WordPress Development", href: "/service/wordpress-development", icon: "📝" },
+  { label: "Cloud Services", href: "/service/cloud", icon: "☁️" },
+  { label: "Odoo Apps Support", href: "/service/odoo-apps-support-and-maintenance", icon: "📦" },
+  { label: "AI & ML Consulting", href: "/service/ai-ml-consulting", icon: "🤖" },
+  { label: "Staffing Services", href: "/service/staffing", icon: "👥" },
+  { label: "Digital Marketing", href: "/service/digital-marketing", icon: "📱" },
+  { label: "Statamic Development", href: "/service/statamic-development", icon: "✨" },
+  { label: "Consulting Services", href: "/service/consulting-services", icon: "💼" },
+  { label: "ERP Services", href: "/service/erp-services", icon: "🏢" },
+  { label: "Offshore Development", href: "/service/offshore-development", icon: "🌍" },
+  { label: "Training", href: "/service/training", icon: "📚" },
+  { label: "GPS Tracking", href: "/service/gps-tracking", icon: "📍" },
+  { label: "WordPress Training", href: "/service/wordpress-training", icon: "🎓" },
 
 ];
 

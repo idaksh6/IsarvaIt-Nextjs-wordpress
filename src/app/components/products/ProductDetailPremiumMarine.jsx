@@ -102,7 +102,7 @@ export default function ProductDetailPremiumMarine({
           className="hero-dashboard-wrapper"
         >
           <div className="dashboard-animation left">
-            <div 
+            <div
               className="scroll-img"
               style={{
                 backgroundImage: `url('/products/marnine%20service%20center/Marine-Slide1.jpg'), url('/products/marnine%20service%20center/Marine-Slide2.jpg')`
@@ -110,19 +110,19 @@ export default function ProductDetailPremiumMarine({
             ></div>
           </div>
           <div className="dashboard-animation right">
-            <div 
+            <div
               className="scroll-img"
               style={{
                 backgroundImage: `url('/products/marnine%20service%20center/Marine-Slide3.jpg'), url('/products/marnine%20service%20center/Marine-Slide4.jpg')`
               }}
             ></div>
           </div>
-          <div className="dashboard-main-img">
-            <div className="relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)] bg-white">
+          <div className="dashboard-main-img max-w-[1550px] mx-auto">
+            <div className="relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.15)] rounded-3xl lg:mx-0 mx-4">
               <img
-                src="/products/marnine%20service%20center/Marine-Dashboard.jpg"
+                src="/products/marnine%20service%20center/Dashboard.png"
                 alt="Marine Service Software Dashboard"
-                className="w-full object-contain lg:h-[668px] h-full shadow-2xl"
+                className="w-full h-auto block shadow-2xl scale-[1.02]"
               />
             </div>
           </div>
@@ -266,7 +266,7 @@ export default function ProductDetailPremiumMarine({
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232563EB' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
-        
+
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-14">
             <motion.div
@@ -431,7 +431,7 @@ const marineFeaturesByTab = {
       color: "#1E40AF",
       desc: "The dashboard provides an interactive interface that displays the count of enquiry statuses and showcases the latest enquiries. The visual representation of data helps users quickly understand the current state of enquiries and identify any emerging trends or issues. The dashboard is designed to offer a clear and accessible view of key metrics.",
       placeholder: "DASH",
-      image: "/products/marnine%20service%20center/Marine-Dashboard.jpg",
+      image: "/products/marnine%20service%20center/Dashboard.png",
     },
     {
       id: "user-mgmt",
@@ -451,7 +451,7 @@ const marineFeaturesByTab = {
       color: "#2563EB",
       desc: "Displays the count of enquiry status and the latest enquiries.",
       placeholder: "DB",
-      image: "/products/marnine%20service%20center/Marine-Dashboard.jpg",
+      image: "/products/marnine%20service%20center/Dashboard.png",
     },
     {
       id: "enquiry-form",
@@ -570,21 +570,19 @@ function MarineFeatureSection() {
           <div className="inline-flex bg-white rounded-full p-1.5 shadow-lg border border-gray-200">
             <button
               onClick={() => setActiveTab("features")}
-              className={`px-8 py-3 rounded-full font-bold text-sm transition-all duration-300 ${
-                activeTab === "features"
-                  ? "bg-gradient-to-r from-[#2563EB] to-[#1E40AF] text-white shadow-md"
-                  : "text-gray-600 hover:text-gray-900"
-              }`}
+              className={`px-8 py-3 rounded-full font-bold text-sm transition-all duration-300 ${activeTab === "features"
+                ? "bg-gradient-to-r from-[#2563EB] to-[#1E40AF] text-white shadow-md"
+                : "text-gray-600 hover:text-gray-900"
+                }`}
             >
               Features
             </button>
             <button
               onClick={() => setActiveTab("reports")}
-              className={`px-8 py-3 rounded-full font-bold text-sm transition-all duration-300 ${
-                activeTab === "reports"
-                  ? "bg-gradient-to-r from-[#2563EB] to-[#1E40AF] text-white shadow-md"
-                  : "text-gray-600 hover:text-gray-900"
-              }`}
+              className={`px-8 py-3 rounded-full font-bold text-sm transition-all duration-300 ${activeTab === "reports"
+                ? "bg-gradient-to-r from-[#2563EB] to-[#1E40AF] text-white shadow-md"
+                : "text-gray-600 hover:text-gray-900"
+                }`}
             >
               Reports
             </button>
@@ -634,7 +632,7 @@ function MarineFeatureSection() {
                   <img
                     src={activeFeature.image}
                     alt={activeFeature.label}
-                    className="w-full h-full object-contain bg-white"
+                    className="w-full h-auto block"
                   />
                 </motion.div>
               </AnimatePresence>
@@ -687,11 +685,10 @@ function MarineFeatureSection() {
                 <button
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
-                  className={`flex items-center gap-2 py-2.5 px-5 rounded-lg font-semibold text-sm transition-all duration-200 ${
-                    activeId === feature.id
-                      ? "bg-[#0EA5E9] text-white shadow-lg scale-105"
-                      : "bg-white border border-gray-200 text-gray-700 hover:border-[#0EA5E9] hover:shadow-md"
-                  }`}
+                  className={`flex items-center gap-2 py-2.5 px-5 rounded-lg font-semibold text-sm transition-all duration-200 ${activeId === feature.id
+                    ? "bg-[#0EA5E9] text-white shadow-lg scale-105"
+                    : "bg-white border border-gray-200 text-gray-700 hover:border-[#0EA5E9] hover:shadow-md"
+                    }`}
                 >
                   <span className="text-base">{feature.icon}</span>
                   <span>{feature.label}</span>

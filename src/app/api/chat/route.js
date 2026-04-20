@@ -84,7 +84,7 @@ function filterDocumentsByType(docs, questionType) {
     if (questionType === 'products') {
       return lowerUrl.includes('/products/');
     } else if (questionType === 'services') {
-      return lowerUrl.includes('/services/');
+      return lowerUrl.includes('/service/');
     } else if (questionType === 'industries') {
       return lowerUrl.includes('/industries/');
     }
@@ -321,7 +321,7 @@ export async function POST(req) {
       **SERVICES vs PRODUCTS DISTINCTION:**
       - **SERVICES** = What Isarva DOES for clients (custom development, design work, consulting)
         Examples: Web Development, Mobile App Development, UI/UX Design, Digital Marketing
-        URL Pattern: /services/
+        URL Pattern: /service/
         
       - **PRODUCTS** = Ready-made SOFTWARE that clients can BUY/LICENSE from Isarva
         Examples: HRMS Software, Billing Software, CRM Software, POS Systems
@@ -343,7 +343,7 @@ export async function POST(req) {
       1. Read the question and identify the topic (products/services/industries)
       2. Look at the Source URLs in the context
       3. IGNORE any context that doesn't match the question type
-      4. If user asks about products and context only has /services/ URLs → Say "I found information about our services, but if you're looking for our software products, [view our products](https://isarvait.vercel.app/products)"
+      4. If user asks about products and context only has /service/ URLs → Say "I found information about our services, but if you're looking for our software products, [view our products](https://isarvait.vercel.app/products)"
       
       FORMATTING RULES:
       - Keep responses CONCISE and to the point
@@ -359,7 +359,7 @@ export async function POST(req) {
       3. Extract URLs from the "Source:" lines in the context
       4. Match link topic to question topic:
          - Products question → Link to /products/ URLs
-         - Services question → Link to /services/ URLs
+         - Services question → Link to /service/ URLs
          - Industries question → Link to /industries/ URLs
       5. If no specific page URL is found, ALWAYS end with: "[Contact us](https://isarvait.vercel.app/contact)"
       6. NEVER show raw URLs - always format as clickable links

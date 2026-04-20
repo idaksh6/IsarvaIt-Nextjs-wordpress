@@ -405,7 +405,7 @@ export function generateServiceSchema(service) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `${COMPANY_URL}/services/${service.slug}#service`,
+    "@id": `${COMPANY_URL}/service/${service.slug}#service`,
     name: service.title,
     description: service.shortDescription,
     provider: {
@@ -418,6 +418,6 @@ export function generateServiceSchema(service) {
       name: "India"
     },
     serviceType: service.title,
-    url: `${COMPANY_URL}/services/${service.slug}`
+    url: `${COMPANY_URL}/service/${service.slug}`
   };
 }

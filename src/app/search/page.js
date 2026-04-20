@@ -413,7 +413,7 @@ function SearchResults() {
                   {results.services.map((service) => (
                     <Link
                       key={`service-${service.slug}`}
-                      href={`/services/${service.slug}`}
+                      href={`/service/${service.slug}`}
                       className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-300"
                     >
                       <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">

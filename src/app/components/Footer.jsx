@@ -59,12 +59,12 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               {[
-                { label: "Cloud Services", href: "/services/cloud-services" },
-                { label: "Consulting Services", href: "/services/consulting-services" },
-                { label: "Digital Marketing", href: "/services/digital-marketing" },
-                { label: "ERP Services", href: "/services/erp-services" },
-                { label: "GPS Tracking", href: "/services/gps-tracking" },
-                { label: "Offshore Development", href: "/services/offshore-development" },
+                { label: "Cloud Services", href: "/service/cloud" },
+                { label: "Consulting Services", href: "/service/consulting-services" },
+                { label: "Digital Marketing", href: "/service/digital-marketing" },
+                { label: "ERP Services", href: "/service/erp-services" },
+                { label: "GPS Tracking", href: "/service/gps-tracking" },
+                { label: "Offshore Development", href: "/service/offshore-development" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
