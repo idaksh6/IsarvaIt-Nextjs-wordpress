@@ -232,10 +232,8 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                   </h1>
                 </div>
 
-                <div className="text-lg lg:text-xl text-gray-600 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0 font-medium border-l-2 border-blue-200 pl-8 space-y-2">
-                  <p className="text-blue-700 font-bold">Trusted by 200+ Businesses</p>
-
-                  <p>High-performance, secure <span className="text-blue-600 font-bold">WordPress Development</span> — built to scale with your business.</p>
+                <div className="text-lg lg:text-xl text-gray-600 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0 font-medium border-l-2 border-blue-200 pl-8 space-y-4">
+                  <p>At Isarva, we don’t ‘do’ WordPress development, we <span className="text-blue-600 font-bold">live and breathe it</span>. We combine our <span className="text-indigo-600 font-bold">technical, creative and marketing expertise</span> with our dedicated support to bring you simply <span className="text-blue-600 font-bold">outstanding WordPress development services</span>.</p>
                 </div>
 
                 <div className="flex flex-wrap gap-6 justify-center lg:justify-start items-center">
@@ -293,13 +291,13 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-400 rounded-full decorative-blob" />
                 <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-indigo-300 rounded-full decorative-blob" style={{ animationDelay: '-5s' }} />
 
-                <div className="relative h-[350px] sm:h-[450px] lg:h-[600px] w-full">
-                  <div className="absolute top-0 right-0 w-[95%] lg:w-[500px] h-[85%] lg:h-[500px] image-card image-3d-card z-10 border-4 sm:border-8 border-white shadow-2xl">
+                <div className="relative h-[300px] sm:h-[450px] lg:h-[600px] w-full px-4 sm:px-0">
+                  <div className="absolute top-0 right-4 lg:right-0 w-[80%] lg:w-[500px] h-[80%] lg:h-[500px] image-card image-3d-card z-10 border-4 sm:border-8 border-white shadow-2xl">
                     <img src="/wp_hero_aurora.png" alt="WordPress Engineering" className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/10 to-transparent" />
                   </div>
 
-                  <div className="absolute -bottom-6 -left-6 w-[65%] lg:w-[350px] h-[55%] lg:h-[280px] image-card wp-float2 z-20 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] border-2 sm:border-4 border-white transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+                  <div className="absolute bottom-2 left-4 lg:-bottom-6 lg:-left-6 w-[55%] lg:w-[350px] h-[50%] lg:h-[280px] image-card wp-float2 z-20 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] border-2 sm:border-4 border-white transform -rotate-3 hover:rotate-0 transition-transform duration-500">
                     <img src="/wp_hero_floating_new.png" alt="Code Quality" className="w-full h-full object-cover" />
                   </div>
 
