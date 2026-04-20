@@ -183,7 +183,7 @@ export default function ServicesListClient({ servicesData }) {
               {filteredServices.map((service, index) => (
                 <Link
                   key={service.slug}
-                  href={`/service/${service.slug}`}
+                  href={`/services/${service.slug}`}
                   prefetch={true}
                   className="group"
                 >

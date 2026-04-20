@@ -20,20 +20,20 @@ const navLinks = [
 ];
 
 const servicesData = [
-  { label: "Website Services", href: "/service/website-services", icon: "🌐" },
-   { label: "WordPress Development", href: "/service/wordpress-development", icon: "📝" },
-  { label: "Cloud Services", href: "/service/cloud", icon: "☁️" },
-  { label: "Odoo Apps Support", href: "/service/odoo-apps-support-and-maintenance", icon: "📦" },
-  { label: "AI & ML Consulting", href: "/service/ai-ml-consulting", icon: "🤖" },
-  { label: "Staffing Services", href: "/service/staffing", icon: "👥" },
-  { label: "Digital Marketing", href: "/service/digital-marketing", icon: "📱" },
-  { label: "Statamic Development", href: "/service/statamic-development", icon: "✨" },
-  { label: "Consulting Services", href: "/service/consulting-services", icon: "💼" },
-  { label: "ERP Services", href: "/service/erp-services", icon: "🏢" },
-  { label: "Offshore Development", href: "/service/offshore-development", icon: "🌍" },
-  { label: "Training", href: "/service/training", icon: "📚" },
-  { label: "GPS Tracking", href: "/service/gps-tracking", icon: "📍" },
-  { label: "WordPress Training", href: "/service/wordpress-training", icon: "🎓" },
+  { label: "Website Services", href: "/services/website-services", icon: "🌐" },
+   { label: "WordPress Development", href: "/services/wordpress-development", icon: "📝" },
+  { label: "Cloud Services", href: "/services/cloud", icon: "☁️" },
+  { label: "Odoo Apps Support", href: "/services/odoo-apps-support-and-maintenance", icon: "📦" },
+  { label: "AI & ML Consulting", href: "/services/ai-ml-consulting", icon: "🤖" },
+  { label: "Staffing Services", href: "/services/staffing", icon: "👥" },
+  { label: "Digital Marketing", href: "/services/digital-marketing", icon: "📱" },
+  { label: "Statamic Development", href: "/services/statamic-development", icon: "✨" },
+  { label: "Consulting Services", href: "/services/consulting-services", icon: "💼" },
+  { label: "ERP Services", href: "/services/erp-services", icon: "🏢" },
+  { label: "Offshore Development", href: "/services/offshore-development", icon: "🌍" },
+  { label: "Training", href: "/services/training", icon: "📚" },
+  { label: "GPS Tracking", href: "/services/gps-tracking", icon: "📍" },
+  { label: "WordPress Training", href: "/services/wordpress-training", icon: "🎓" },
 
 ];
 
@@ -300,7 +300,7 @@ export default function Header() {
             onMouseLeave={() => setIsServicesOpen(false)}
           >
             <Link
-              href="/service"
+              href="/services"
               prefetch={true}
               className="group text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1"
             >
@@ -357,7 +357,7 @@ export default function Header() {
 
                   <div className="mt-6 pt-6 border-t border-gray-200">
                     <Link
-                      href="/service"
+                      href="/services"
                       prefetch={true}
                       onClick={() => setIsServicesOpen(false)}
                       className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:gap-3 transition-all duration-200"
@@ -805,7 +805,7 @@ export default function Header() {
                       >
                         <div className="bg-gradient-to-b from-gray-50 to-white p-3 space-y-1 max-h-[300px] overflow-y-auto">
                           <Link
-                            href="/service"
+                            href="/services"
                             prefetch={true}
                             onClick={() => setIsMobileMenuOpen(false)}
                             className="flex items-center gap-2 p-3 rounded-xl text-green-600 hover:bg-white bg-green-50 border border-green-200 transition-all duration-200 font-bold text-sm mb-2"
