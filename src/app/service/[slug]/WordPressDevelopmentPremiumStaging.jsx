@@ -733,8 +733,8 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 </p>
 
                 <div className="mb-10 rounded-[48px] overflow-hidden shadow-2xl border-8 border-white float-animation relative group">
-                  <img src="/wp_growth_new.png" alt="Enterprise Dashboard" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105 opacity-95" />
-                  <div className="absolute inset-0 bg-white/20 group-hover:bg-transparent transition-colors duration-500" />
+                  <img src="/wp_growth_clear_light_primary.png" alt="Enterprise Dashboard" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-white/10 group-hover:bg-transparent transition-colors duration-500" />
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
@@ -758,11 +758,11 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               <div className="relative">
                 <div className="absolute -inset-4 bg-emerald-100/50 blur-3xl rounded-full" />
                 <div className="relative rounded-[56px] overflow-hidden shadow-3xl border-8 border-white">
-                  <img src="/wp_growth_secondary.png" alt="Enterprise Scalability" className="w-full h-full object-cover opacity-95" />
-                  <div className="absolute inset-0 bg-white/20 group-hover:bg-transparent transition-colors duration-500" />
-                  <div className="absolute bottom-8 left-8 right-8 text-white">
+                  <img src="/wp_growth_secondary_light.png" alt="Enterprise Scalability" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-white/10 group-hover:bg-transparent transition-colors duration-500" />
+                  <div className="absolute bottom-8 left-8 right-8 text-gray-900">
                     <p className="text-2xl font-black mb-2 leading-tight">Scale Without Limits</p>
-                    <p className="text-xs font-bold uppercase tracking-widest opacity-80">Enterprise Infrastructure</p>
+                    <p className="text-xs font-bold uppercase tracking-widest text-blue-600 font-black">Enterprise Infrastructure</p>
                   </div>
                 </div>
               </div>
