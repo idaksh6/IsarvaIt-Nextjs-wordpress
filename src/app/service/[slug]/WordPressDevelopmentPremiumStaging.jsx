@@ -734,9 +734,9 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                   We design, develop, and operate high-scale WordPress platforms with centralized governance, robust security, and seamless data integrations.
                 </p>
 
-                <div className="mb-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white float-animation relative group">
-                  <img src="/wp_growth_primary.png" alt="Enterprise Dashboard" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors duration-500" />
+                <div className="mb-10 rounded-[48px] overflow-hidden shadow-2xl border-8 border-white float-animation relative group">
+                  <img src="/wp_growth_new.png" alt="Enterprise Dashboard" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105 opacity-95" />
+                  <div className="absolute inset-0 bg-white/20 group-hover:bg-transparent transition-colors duration-500" />
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
@@ -759,9 +759,9 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               </div>
               <div className="relative">
                 <div className="absolute -inset-4 bg-emerald-100/50 blur-3xl rounded-full" />
-                <div className="relative rounded-[48px] overflow-hidden shadow-2xl border-8 border-white">
-                  <img src="/wp_growth_secondary.png" alt="Enterprise Scalability" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/40 to-transparent" />
+                <div className="relative rounded-[56px] overflow-hidden shadow-3xl border-8 border-white">
+                  <img src="/wp_growth_secondary.png" alt="Enterprise Scalability" className="w-full h-full object-cover opacity-95" />
+                  <div className="absolute inset-0 bg-white/20 group-hover:bg-transparent transition-colors duration-500" />
                   <div className="absolute bottom-8 left-8 right-8 text-white">
                     <p className="text-2xl font-black mb-2 leading-tight">Scale Without Limits</p>
                     <p className="text-xs font-bold uppercase tracking-widest opacity-80">Enterprise Infrastructure</p>
@@ -822,13 +822,14 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
 
         {/* ─── AI-ENHANCED WORDPRESS ────────────────────────── */}
         <section className="py-24 bg-white relative overflow-hidden border-y border-slate-100">
+          <div className="absolute inset-0 bg-gradient-to-tr from-sky-50/30 via-white to-transparent" />
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
             <div className="text-center mb-16 lg:mb-20">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-violet-100 text-violet-600 font-bold text-xs uppercase tracking-wider mb-6 border border-violet-200">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-sky-50 text-sky-600 font-bold text-xs uppercase tracking-wider mb-6 border border-sky-100">
                 AI-Enhanced
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-gray-900 mb-6 leading-[1.2]">
-                Supercharged <span className="text-violet-600">with AI</span>
+                Supercharged <span className="text-sky-500">with AI</span>
               </h2>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
@@ -839,28 +840,26 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                   { icon: "💬", title: "AI Chatbots", desc: "Intelligent support systems that qualify leads and book calls 24/7." },
                   { icon: "🎨", title: "Creative AI", desc: "Automated image and asset generation within your workflow." }
                 ].map((card, i) => (
-                  <div key={i} className="group relative bg-white border border-slate-200 hover:border-violet-400 rounded-[24px] p-8 transition-all duration-500 hover:shadow-xl shadow-sm">
+                  <div key={i} className="group relative bg-white border border-slate-100 hover:border-sky-300 rounded-[24px] p-8 transition-all duration-500 hover:shadow-xl shadow-sm">
                     <div className="text-3xl mb-5">{card.icon}</div>
                     <h4 className="text-lg font-black text-gray-900 mb-2">{card.title}</h4>
                     <p className="text-sm text-gray-500 font-medium leading-relaxed">{card.desc}</p>
                   </div>
                 ))}
               </div>
-              <div className="relative rounded-[56px] overflow-hidden shadow-3xl aspect-square border-8 border-white group">
-                <img src="/wp_ai_integration_new.png" alt="AI Integration" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-violet-900/10 group-hover:bg-transparent transition-colors duration-500" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="glass-panel px-8 py-5 rounded-3xl border border-white/50 shadow-2xl backdrop-blur-xl">
-                    <span className="text-2xl font-black text-violet-900 leading-tight">Next-Gen Automation</span>
-                  </div>
+              <div className="relative order-1 lg:order-2">
+                <div className="absolute -inset-4 bg-sky-100/50 blur-3xl rounded-full animate-pulse" />
+                <div className="relative rounded-[56px] overflow-hidden shadow-3xl aspect-square border-8 border-white group bg-slate-50">
+                  <img src="/wp_process_launch_new.png" alt="Supercharged AI" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-95" />
+                  <div className="absolute inset-0 bg-white/20 group-hover:bg-transparent transition-colors duration-500" />
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-r from-violet-600 to-indigo-600 rounded-[24px] p-10 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl shadow-violet-100">
+            <div className="bg-gradient-to-r from-sky-400 to-blue-500 rounded-[24px] p-10 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl shadow-sky-100">
               <p className="text-white font-black text-2xl">Ready to bring AI into your WordPress stack?</p>
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="shrink-0 px-8 py-4 bg-white text-violet-600 hover:bg-violet-50 text-base font-bold rounded-2xl transition-all duration-300 shadow-lg transform hover:-translate-y-1 premium-cta"
+                className="shrink-0 px-8 py-4 bg-white text-sky-600 hover:bg-sky-50 text-base font-bold rounded-2xl transition-all duration-300 shadow-lg transform hover:-translate-y-1 premium-cta"
               >
                 Explore AI Options
               </button>
@@ -872,10 +871,13 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
         <section className="py-12 bg-white pb-32">
           <div className="max-w-7xl mx-auto px-6 sm:px-12">
             <div className="relative rounded-[56px] overflow-hidden shadow-3xl h-[500px] lg:h-[600px]">
-              <img src="/wp_cta_new.png" alt="Team" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-blue-900/80 flex items-center">
+              <img src="/wp_process_team_new.png" alt="Team" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-950/95 via-blue-900/70 to-transparent transition-all duration-700 flex items-center">
                 <div className="px-10 lg:px-24 max-w-2xl text-left">
                   <h2 className="text-4xl lg:text-7xl font-black text-white mb-8 leading-tight">Your Trusted Development Partner</h2>
+                  <p className="text-xl text-white/90 mb-10 font-bold leading-relaxed">
+                    Collaborate with a team that speaks your language and understands your business goals.
+                  </p>
                   <button
                     onClick={() => setIsModalOpen(true)}
                     className="px-12 py-6 bg-white text-blue-900 text-xl font-bold rounded-2xl transition-all shadow-2xl hover:scale-105 transform premium-cta"
