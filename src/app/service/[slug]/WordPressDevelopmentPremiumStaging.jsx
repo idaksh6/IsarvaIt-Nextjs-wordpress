@@ -182,7 +182,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
         <section className="wp-aurora-gradient relative pt-32 lg:pt-40 pb-24 overflow-hidden">
           <div className="absolute inset-0 aurora-mesh pointer-events-none" />
           <div className="absolute inset-0 hero-grid opacity-[0.2] pointer-events-none" />
-          
+
           {/* Floating diagnostic widgets */}
           <div className="absolute top-48 right-24 wp-float1 hidden xl:block z-10">
             <div className="glass-panel rounded-2xl px-5 py-4 flex items-center gap-4">
@@ -193,7 +193,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               </div>
             </div>
           </div>
-          
+
           <div className="absolute bottom-40 left-20 wp-float2 hidden xl:block z-10">
             <div className="glass-panel rounded-2xl px-5 py-4 flex items-center gap-4">
               <div className="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center text-xl">🛡️</div>
@@ -220,8 +220,8 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div className="text-center lg:text-left">
                 <div className="relative inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-gradient-to-r from-blue-50/50 to-indigo-50/50 border border-blue-100/50 mb-8 backdrop-blur-sm">
-                   <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-                   <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent font-black text-xs uppercase tracking-[0.2em]">Premium Engineering</span>
+                  <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                  <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent font-black text-xs uppercase tracking-[0.2em]">Premium Engineering</span>
                 </div>
 
                 <div className="relative">
@@ -234,12 +234,12 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
 
                 <div className="text-lg lg:text-xl text-gray-600 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0 font-medium border-l-2 border-blue-200 pl-8 space-y-2">
                   <p className="text-blue-700 font-bold">Trusted by 200+ Businesses</p>
-                  <p className="text-gray-900 font-extrabold uppercase text-sm tracking-widest">WordPress Built for Performance & Growth</p>
+
                   <p>High-performance, secure <span className="text-blue-600 font-bold">WordPress ecosystems</span> — built to scale with your business.</p>
                 </div>
 
                 <div className="flex flex-wrap gap-6 justify-center lg:justify-start items-center">
-                   <div className="relative group">
+                  <div className="relative group">
                     <button
                       onClick={() => setIsModalOpen(true)}
                       className="group inline-flex items-center gap-3 px-8 py-4 text-base font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg shadow-blue-100 hover:shadow-xl transform hover:-translate-y-1"
@@ -260,7 +260,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                       </svg>
                     </button>
                   </div>
-                  
+
                   <Link
                     href="#what-we-offer"
                     className="inline-flex items-center gap-3 px-8 py-4 text-base font-bold text-blue-800 bg-white border border-blue-100 rounded-xl hover:bg-blue-50 transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-1"
@@ -270,21 +270,21 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 </div>
 
                 <div className="mt-16 grid grid-cols-3 gap-4 sm:gap-8 justify-center lg:justify-start">
-                   <div className="group p-4 sm:p-5 rounded-[24px] bg-white border border-blue-50 shadow-sm hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1 transition-all duration-300 relative truncate">
-                      <div className="absolute top-0 right-0 w-12 h-12 bg-blue-50/50 rounded-bl-3xl -z-10 transition-transform group-hover:scale-110" />
-                      <span className="block text-2xl sm:text-3xl font-black bg-gradient-to-br from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-1">100%</span>
-                      <span className="block text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">Quality</span>
-                   </div>
-                   <div className="group p-4 sm:p-5 rounded-[24px] bg-white border border-blue-50 shadow-sm hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1 transition-all duration-300 relative truncate">
-                      <div className="absolute top-0 right-0 w-12 h-12 bg-indigo-50/50 rounded-bl-3xl -z-10 transition-transform group-hover:scale-110" />
-                      <span className="block text-2xl sm:text-3xl font-black bg-gradient-to-br from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-1">A+</span>
-                      <span className="block text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">Speed</span>
-                   </div>
-                   <div className="group p-4 sm:p-5 rounded-[24px] bg-white border border-blue-50 shadow-sm hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1 transition-all duration-300 relative truncate">
-                      <div className="absolute top-0 right-0 w-12 h-12 bg-sky-50/50 rounded-bl-3xl -z-10 transition-transform group-hover:scale-110" />
-                      <span className="block text-2xl sm:text-3xl font-black bg-gradient-to-br from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-1">24/7</span>
-                      <span className="block text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">Support</span>
-                   </div>
+                  <div className="group p-4 sm:p-5 rounded-[24px] bg-white border border-blue-50 shadow-sm hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1 transition-all duration-300 relative truncate">
+                    <div className="absolute top-0 right-0 w-12 h-12 bg-blue-50/50 rounded-bl-3xl -z-10 transition-transform group-hover:scale-110" />
+                    <span className="block text-2xl sm:text-3xl font-black bg-gradient-to-br from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-1">100%</span>
+                    <span className="block text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">Quality</span>
+                  </div>
+                  <div className="group p-4 sm:p-5 rounded-[24px] bg-white border border-blue-50 shadow-sm hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1 transition-all duration-300 relative truncate">
+                    <div className="absolute top-0 right-0 w-12 h-12 bg-indigo-50/50 rounded-bl-3xl -z-10 transition-transform group-hover:scale-110" />
+                    <span className="block text-2xl sm:text-3xl font-black bg-gradient-to-br from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-1">A+</span>
+                    <span className="block text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">Speed</span>
+                  </div>
+                  <div className="group p-4 sm:p-5 rounded-[24px] bg-white border border-blue-50 shadow-sm hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1 transition-all duration-300 relative truncate">
+                    <div className="absolute top-0 right-0 w-12 h-12 bg-sky-50/50 rounded-bl-3xl -z-10 transition-transform group-hover:scale-110" />
+                    <span className="block text-2xl sm:text-3xl font-black bg-gradient-to-br from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-1">24/7</span>
+                    <span className="block text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">Support</span>
+                  </div>
                 </div>
               </div>
 
@@ -298,7 +298,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                     <img src="/wp_hero_aurora.png" alt="WordPress Engineering" className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/10 to-transparent" />
                   </div>
-                  
+
                   <div className="absolute -bottom-6 -left-6 w-[65%] lg:w-[350px] h-[55%] lg:h-[280px] image-card wp-float2 z-20 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] border-2 sm:border-4 border-white transform -rotate-3 hover:rotate-0 transition-transform duration-500">
                     <img src="/wp_hero_floating_aurora.png" alt="Code Quality" className="w-full h-full object-cover" />
                   </div>
@@ -321,7 +321,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
         <section className="py-10 bg-white/50 border-y border-slate-100 overflow-hidden relative">
           <div className="marquee-track flex items-center gap-12 sm:gap-24 opacity-40 hover:opacity-80 transition-opacity duration-500">
             {[
-              "WordPress", "PHP", "MySQL", "WooCommerce", "ACF Pro", "Elementor", 
+              "WordPress", "PHP", "MySQL", "WooCommerce", "ACF Pro", "Elementor",
               "Next.js", "REST API", "GraphQL", "Tailwind CSS", "JavaScript", "Security Hardened"
             ].map((tech, i) => (
               <div key={i} className="flex items-center gap-3 whitespace-nowrap">
@@ -330,7 +330,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               </div>
             ))}
             {[
-              "WordPress", "PHP", "MySQL", "WooCommerce", "ACF Pro", "Elementor", 
+              "WordPress", "PHP", "MySQL", "WooCommerce", "ACF Pro", "Elementor",
               "Next.js", "REST API", "GraphQL", "Tailwind CSS", "JavaScript", "Security Hardened"
             ].map((tech, i) => (
               <div key={i + 100} className="flex items-center gap-3 whitespace-nowrap">
@@ -617,7 +617,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 </div>
               </div>
             </div>
-            
+
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 mt-12 pt-8 border-t border-gray-100">
               <div className="flex items-center gap-2 text-[10px] font-black text-gray-400 uppercase tracking-widest">
                 <div className="w-4 h-0.5 bg-purple-200" /> Inputs
@@ -728,7 +728,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 <p className="text-base sm:text-xl text-gray-600 leading-relaxed mb-8">
                   We design, develop, and operate high-scale WordPress platforms with centralized governance, robust security, and seamless data integrations.
                 </p>
-                
+
                 <div className="mb-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white float-animation relative group">
                   <img src="/wp_growth_aurora.png" alt="Enterprise Dashboard" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors duration-500" />
@@ -936,8 +936,8 @@ function ProcessSlider({ servicesData, setIsModalOpen }) {
               key={i}
               onClick={() => setActive(i)}
               className={`flex items-center gap-2 px-4 py-2 rounded-xl text-[10px] sm:text-xs font-black transition-all duration-300 border shrink-0 ${active === i
-                  ? "bg-blue-600 text-white border-blue-600 shadow-lg shadow-blue-200"
-                  : "bg-white text-gray-500 border-gray-100 hover:border-blue-300 hover:text-blue-600"
+                ? "bg-blue-600 text-white border-blue-600 shadow-lg shadow-blue-200"
+                : "bg-white text-gray-500 border-gray-100 hover:border-blue-300 hover:text-blue-600"
                 }`}
             >
               <span className={`w-5 h-5 rounded-lg flex items-center justify-center text-[10px] font-black ${active === i ? "bg-white/20 text-white" : "bg-slate-100 text-gray-600"}`}>{s.num}</span>
@@ -960,9 +960,9 @@ function ProcessSlider({ servicesData, setIsModalOpen }) {
               <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed font-medium mb-10">
                 {step.desc}
               </p>
-              
+
               <div className="pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-6">
-                <button 
+                <button
                   onClick={() => setIsModalOpen(true)}
                   className="px-8 py-3 bg-blue-600 text-white font-bold rounded-xl premium-cta"
                 >
@@ -979,31 +979,31 @@ function ProcessSlider({ servicesData, setIsModalOpen }) {
 
           <div className="flex flex-col gap-4">
             <div className="p-6 bg-slate-50/50 rounded-[32px] border border-slate-200">
-               <h4 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-6 px-2">Project Lifecycle</h4>
-               <div className="space-y-3">
-                 {processSteps.map((s, i) => (
-                   <button
-                     key={i}
-                     onClick={() => setActive(i)}
-                     className={`w-full group text-left p-6 rounded-[24px] transition-all duration-400 border flex items-center gap-6 ${active === i 
-                       ? "bg-white border-blue-200 shadow-xl shadow-blue-100/50 scale-[1.02]" 
-                       : "bg-transparent border-transparent hover:bg-white/60 hover:border-slate-300"}`}
-                   >
-                     <div className={`w-14 h-14 rounded-2xl flex items-center justify-center text-2xl transition-all duration-500 ${active === i ? "bg-blue-600 text-white rotate-6" : "bg-white text-slate-400 group-hover:text-blue-500 shadow-sm"}`}>
-                       {s.icon}
-                     </div>
-                     <div className="flex-1 min-w-0">
-                       <div className="flex items-center justify-between mb-1">
-                         <span className={`text-[10px] font-black uppercase tracking-widest ${active === i ? "text-blue-500" : "text-slate-400"}`}>Phase {s.num}</span>
-                         {active === i && <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />}
-                       </div>
-                       <div className={`text-lg font-black ${active === i ? "text-gray-900" : "text-slate-500 group-hover:text-slate-700"}`}>
-                         {s.title}
-                       </div>
-                     </div>
-                   </button>
-                 ))}
-               </div>
+              <h4 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-6 px-2">Project Lifecycle</h4>
+              <div className="space-y-3">
+                {processSteps.map((s, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActive(i)}
+                    className={`w-full group text-left p-6 rounded-[24px] transition-all duration-400 border flex items-center gap-6 ${active === i
+                      ? "bg-white border-blue-200 shadow-xl shadow-blue-100/50 scale-[1.02]"
+                      : "bg-transparent border-transparent hover:bg-white/60 hover:border-slate-300"}`}
+                  >
+                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center text-2xl transition-all duration-500 ${active === i ? "bg-blue-600 text-white rotate-6" : "bg-white text-slate-400 group-hover:text-blue-500 shadow-sm"}`}>
+                      {s.icon}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className={`text-[10px] font-black uppercase tracking-widest ${active === i ? "text-blue-500" : "text-slate-400"}`}>Phase {s.num}</span>
+                        {active === i && <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />}
+                      </div>
+                      <div className={`text-lg font-black ${active === i ? "text-gray-900" : "text-slate-500 group-hover:text-slate-700"}`}>
+                        {s.title}
+                      </div>
+                    </div>
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
