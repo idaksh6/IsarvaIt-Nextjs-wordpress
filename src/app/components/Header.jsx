@@ -251,7 +251,8 @@ export default function Header() {
                         href={product.href}
                         prefetch={true}
                         onClick={() => setIsProductsOpen(false)}
-                        className="group flex items-start gap-3 p-4 rounded-xl hover:bg-violet-50 transition-all duration-200"
+                        className="product-click-trigger group flex items-start gap-3 p-4 rounded-xl hover:bg-violet-50 transition-all duration-200"
+                        data-product-name={product.label}
                       >
                         <span className="text-2xl mt-0.5 group-hover:scale-110 transition-transform duration-200">
                           {product.icon}
@@ -747,7 +748,8 @@ export default function Header() {
                                 href={product.href}
                                 prefetch={true}
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                className="flex items-center gap-3 p-3 rounded-xl text-gray-700 hover:bg-white hover:shadow-sm transition-all duration-200"
+                                className="product-click-trigger flex items-center gap-3 p-3 rounded-xl text-gray-700 hover:bg-white hover:shadow-sm transition-all duration-200"
+                                data-product-name={product.label}
                               >
                                 <span className="text-xl">{product.icon}</span>
                                 <span className="text-sm font-medium">{product.label}</span>
