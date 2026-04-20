@@ -67,7 +67,7 @@ export const servicesData = [
     ]
   },
   {
-    slug: "cloud-services",
+    slug: "cloud",
     title: "Cloud Services",
     icon: "☁️",
     heroImage: "/Services/Cloud services/Banner-image.jpg",
@@ -112,7 +112,7 @@ export const servicesData = [
     ]
   },
   {
-    slug: "odoo-apps-support",
+    slug: "odoo-apps-support-and-maintenance",
     title: "Odoo Apps Support and Maintenance",
     icon: "📦",
     heroImage: "/Services/oddo-app/Banner-img.jpg",
@@ -218,7 +218,7 @@ export const servicesData = [
     ]
   },
   {
-    slug: "staffing-services",
+    slug: "staffing",
     title: "Staffing Services",
     icon: "👥",
     heroImage: "/Services/Staffing/Banner-img.jpg",
@@ -919,6 +919,22 @@ export const servicesData = [
       "Better SEO Capabilities",
       "Extensive Plugin Ecosystem",
       "Lower Maintenance Costs"
+    ]
+  },
+  {
+    slug: "wordpress-development-staging",
+    title: "WordPress Development Staging",
+    icon: "📝",
+    heroImage: "/Services/Wordpress-development/Banner-img.jpg",
+    shortDescription: "Reviewing the new WordPress Ecosystem design",
+    description: "This is a staging environment for the new premium WordPress service layout.",
+    features: [
+      { title: "Review New Layout", description: "Auditing the visual flow and background rhythm." },
+      { title: "Verify Bento Grid", description: "Ensuring all capabilities are mapped correctly." }
+    ],
+    technologies: ["Next.js", "Tailwind", "Framer Motion"],
+    benefits: [
+      { title: "Iterative Feedback", description: "Design changes can be tested here before production deployment." }
     ]
   }
 ];
