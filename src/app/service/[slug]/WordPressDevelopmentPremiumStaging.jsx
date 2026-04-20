@@ -824,11 +824,11 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
         <section className="py-24 bg-white relative overflow-hidden border-y border-slate-100">
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
             <div className="text-center mb-16 lg:mb-20">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-100 text-blue-600 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-200">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-violet-100 text-violet-600 font-bold text-xs uppercase tracking-wider mb-6 border border-violet-200">
                 AI-Enhanced
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-gray-900 mb-6 leading-[1.2]">
-                Supercharged <span className="text-blue-600">with AI</span>
+                Supercharged <span className="text-violet-600">with AI</span>
               </h2>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
@@ -839,7 +839,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                   { icon: "💬", title: "AI Chatbots", desc: "Intelligent support systems that qualify leads and book calls 24/7." },
                   { icon: "🎨", title: "Creative AI", desc: "Automated image and asset generation within your workflow." }
                 ].map((card, i) => (
-                  <div key={i} className="group relative bg-white border border-slate-200 hover:border-blue-400 rounded-[24px] p-8 transition-all duration-500 hover:shadow-xl shadow-sm">
+                  <div key={i} className="group relative bg-white border border-slate-200 hover:border-violet-400 rounded-[24px] p-8 transition-all duration-500 hover:shadow-xl shadow-sm">
                     <div className="text-3xl mb-5">{card.icon}</div>
                     <h4 className="text-lg font-black text-gray-900 mb-2">{card.title}</h4>
                     <p className="text-sm text-gray-500 font-medium leading-relaxed">{card.desc}</p>
@@ -848,19 +848,19 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               </div>
               <div className="relative rounded-[56px] overflow-hidden shadow-3xl aspect-square border-8 border-white group">
                 <img src="/wp_ai_integration_new.png" alt="AI Integration" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-blue-900/10" />
+                <div className="absolute inset-0 bg-violet-900/10 group-hover:bg-transparent transition-colors duration-500" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="glass-panel px-8 py-5 rounded-3xl border border-white/50 shadow-2xl backdrop-blur-xl">
-                    <span className="text-2xl font-black text-blue-900 leading-tight">Next-Gen Automation</span>
+                    <span className="text-2xl font-black text-violet-900 leading-tight">Next-Gen Automation</span>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-[24px] p-10 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl shadow-blue-100">
+            <div className="bg-gradient-to-r from-violet-600 to-indigo-600 rounded-[24px] p-10 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl shadow-violet-100">
               <p className="text-white font-black text-2xl">Ready to bring AI into your WordPress stack?</p>
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="shrink-0 px-8 py-4 bg-white text-blue-600 hover:bg-blue-50 text-base font-bold rounded-2xl transition-all duration-300 shadow-lg transform hover:-translate-y-1 premium-cta"
+                className="shrink-0 px-8 py-4 bg-white text-violet-600 hover:bg-violet-50 text-base font-bold rounded-2xl transition-all duration-300 shadow-lg transform hover:-translate-y-1 premium-cta"
               >
                 Explore AI Options
               </button>
