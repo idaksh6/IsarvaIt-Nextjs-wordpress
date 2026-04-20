@@ -235,7 +235,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 <div className="text-lg lg:text-xl text-gray-600 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0 font-medium border-l-2 border-blue-200 pl-8 space-y-2">
                   <p className="text-blue-700 font-bold">Trusted by 200+ Businesses</p>
 
-                  <p>High-performance, secure <span className="text-blue-600 font-bold">WordPress ecosystems</span> — built to scale with your business.</p>
+                  <p>High-performance, secure <span className="text-blue-600 font-bold">WordPress Development</span> — built to scale with your business.</p>
                 </div>
 
                 <div className="flex flex-wrap gap-6 justify-center lg:justify-start items-center">
@@ -300,7 +300,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                   </div>
 
                   <div className="absolute -bottom-6 -left-6 w-[65%] lg:w-[350px] h-[55%] lg:h-[280px] image-card wp-float2 z-20 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] border-2 sm:border-4 border-white transform -rotate-3 hover:rotate-0 transition-transform duration-500">
-                    <img src="/wp_hero_floating_aurora.png" alt="Code Quality" className="w-full h-full object-cover" />
+                    <img src="/wp_hero_floating_new.png" alt="Code Quality" className="w-full h-full object-cover" />
                   </div>
 
                   {/* Floating Tech Tag */}
@@ -730,7 +730,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 </p>
 
                 <div className="mb-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white float-animation relative group">
-                  <img src="/wp_growth_aurora.png" alt="Enterprise Dashboard" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <img src="/wp_growth_primary.png" alt="Enterprise Dashboard" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors duration-500" />
                 </div>
 
@@ -753,10 +753,10 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 </div>
               </div>
               <div className="relative">
-                <div className="absolute -inset-4 bg-blue-100/50 blur-3xl rounded-full" />
+                <div className="absolute -inset-4 bg-emerald-100/50 blur-3xl rounded-full" />
                 <div className="relative rounded-[48px] overflow-hidden shadow-2xl border-8 border-white">
-                  <img src="/wp_hero_aurora.png" alt="Enterprise Scalability" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent" />
+                  <img src="/wp_growth_secondary.png" alt="Enterprise Scalability" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/40 to-transparent" />
                   <div className="absolute bottom-8 left-8 right-8 text-white">
                     <p className="text-2xl font-black mb-2 leading-tight">Scale Without Limits</p>
                     <p className="text-xs font-bold uppercase tracking-widest opacity-80">Enterprise Infrastructure</p>
@@ -842,7 +842,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 ))}
               </div>
               <div className="relative rounded-[56px] overflow-hidden shadow-3xl aspect-square border-8 border-white group">
-                <img src="/wp_ai_integration_aurora.png" alt="AI Integration" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                <img src="/wp_ai_integration_new.png" alt="AI Integration" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-blue-900/10" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="glass-panel px-8 py-5 rounded-3xl border border-white/50 shadow-2xl backdrop-blur-xl">
@@ -867,7 +867,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
         <section className="py-12 bg-white pb-32">
           <div className="max-w-7xl mx-auto px-6 sm:px-12">
             <div className="relative rounded-[56px] overflow-hidden shadow-3xl h-[500px] lg:h-[600px]">
-              <img src="/wp_cta_aurora.png" alt="Team" className="w-full h-full object-cover" />
+              <img src="/wp_cta_new.png" alt="Team" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-blue-900/80 flex items-center">
                 <div className="px-10 lg:px-24 max-w-2xl text-left">
                   <h2 className="text-4xl lg:text-7xl font-black text-white mb-8 leading-tight">Your Trusted Development Partner</h2>
@@ -902,12 +902,12 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
 
 /* ─── Process Slider Component ─────────────────────────────────── */
 const processSteps = [
-  { num: "01", title: "Team Assembly", desc: "Your team will play a valuable role in our success. Let's create a group with the experience necessary to handle your build.", icon: "👥", color: "from-blue-500 to-blue-600", image: "/wp_process_team_assembly_1776491557052.png" },
-  { num: "02", title: "Discovery", desc: "Our team does a deep dive into your ideas, planning for risks and opportunities, defining timelines, and features for MVP.", icon: "🔍", color: "from-sky-500 to-blue-500", image: "/wp_process_discovery_1776491582861.png" },
-  { num: "03", title: "Planning", desc: "We then plan the logistics of the development process, ensuring that all key requirements are met.", icon: "📋", color: "from-indigo-500 to-blue-600", image: "/wp_process_planning_1776491597600.png" },
-  { num: "04", title: "Implementation", desc: "Let's get to work! Your team will begin building your new WordPress product, and you'll have full day-to-day visibility.", icon: "⚙️", color: "from-blue-600 to-indigo-600", image: "/wp_process_implementation_1776491615332.png" },
-  { num: "05", title: "Launch", desc: "You're now ready to harness the power of WordPress' advanced publishing capabilities and unmatched flexibility!", icon: "🚀", color: "from-violet-500 to-indigo-600", image: "/wp_process_launch_1776491630177.png" },
-  { num: "06", title: "Maintain & Support", desc: "Keep your product performing at its best with our Proactive Maintenance and Support services.", icon: "🔧", color: "from-blue-500 to-sky-600", image: "/wp_process_support_1776491648274.png" }
+  { num: "01", title: "Team Assembly", desc: "Your team will play a valuable role in our success. Let's create a group with the experience necessary to handle your build.", icon: "👥", color: "from-blue-500 to-blue-600", image: "/wp_process_team_new.png" },
+  { num: "02", title: "Discovery", desc: "Our team does a deep dive into your ideas, planning for risks and opportunities, defining timelines, and features for MVP.", icon: "🔍", color: "from-sky-500 to-blue-400", image: "/wp_process_discovery_new.png" },
+  { num: "03", title: "Planning", desc: "We then plan the logistics of the development process, ensuring that all key requirements are met.", icon: "📋", color: "from-indigo-500 to-violet-600", image: "/wp_process_planning_new.png" },
+  { num: "04", title: "Implementation", desc: "Let's get to work! Your team will begin building your new WordPress product, and you'll have full day-to-day visibility.", icon: "⚙️", color: "from-teal-500 to-blue-600", image: "/wp_process_implementation_new.png" },
+  { num: "05", title: "Launch", desc: "You're now ready to harness the power of WordPress' advanced publishing capabilities and unmatched flexibility!", icon: "🚀", color: "from-rose-500 to-orange-500", image: "/wp_process_launch_new.png" },
+  { num: "06", title: "Maintain & Support", desc: "Keep your product performing at its best with our Proactive Maintenance and Support services.", icon: "🔧", color: "from-amber-500 to-yellow-600", image: "/wp_process_support_new.png" }
 ];
 
 function ProcessSlider({ servicesData, setIsModalOpen }) {
