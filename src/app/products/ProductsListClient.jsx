@@ -14,7 +14,7 @@ export default function ProductsListClient({ productsData }) {
     }
 
     const query = searchQuery.toLowerCase();
-    return productsData.filter(product => 
+    return productsData.filter(product =>
       product.title?.toLowerCase().includes(query) ||
       product.tagline?.toLowerCase().includes(query) ||
       product.shortDescription?.toLowerCase().includes(query) ||
@@ -25,9 +25,9 @@ export default function ProductsListClient({ productsData }) {
   // Scroll to products grid
   const scrollToProducts = () => {
     if (productsGridRef.current) {
-      productsGridRef.current.scrollIntoView({ 
-        behavior: 'smooth', 
-        block: 'start' 
+      productsGridRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
       });
     }
   };
@@ -47,7 +47,7 @@ export default function ProductsListClient({ productsData }) {
   return (
     <div className="bg-white overflow-hidden">
       {/* Hero Section with Search */}
-      <section 
+      <section
         className="relative pt-32 lg:pt-36 pb-16 lg:pb-20 overflow-hidden bg-gradient-to-br from-emerald-50 via-teal-50 to-white"
         style={{ contain: "layout style paint" }}
       >
@@ -88,17 +88,17 @@ export default function ProductsListClient({ productsData }) {
               <div className="flex flex-col md:flex-row items-stretch md:items-center gap-3">
                 <div className="flex-1 relative">
                   <div className="absolute inset-y-0 left-6 flex items-center pointer-events-none">
-                    <svg 
-                      className="w-6 h-6 text-emerald-600" 
-                      fill="none" 
-                      stroke="currentColor" 
+                    <svg
+                      className="w-6 h-6 text-emerald-600"
+                      fill="none"
+                      stroke="currentColor"
                       viewBox="0 0 24 24"
                     >
-                      <path 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        strokeWidth={2.5} 
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" 
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2.5}
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                       />
                     </svg>
                   </div>
@@ -122,7 +122,7 @@ export default function ProductsListClient({ productsData }) {
                     </button>
                   )}
                 </div>
-                
+
                 {/* Search Button */}
                 <button
                   onClick={handleSearch}
@@ -134,7 +134,7 @@ export default function ProductsListClient({ productsData }) {
                   </svg>
                 </button>
               </div>
-              
+
               {/* Search Results Count */}
               {searchQuery && (
                 <div className="mt-4 text-sm text-gray-600 font-medium lg:text-left text-center">
@@ -181,7 +181,8 @@ export default function ProductsListClient({ productsData }) {
                   key={product.slug}
                   href={`/products/${product.slug}`}
                   prefetch={true}
-                  className="group"
+                  className="product-click-trigger group"
+                  data-product-name={product.title}
                 >
                   <div className="relative rounded-3xl p-8 h-full transition-all duration-300 hover:scale-[1.02] bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg hover:shadow-2xl">
                     {/* Hover Gradient Effect */}
@@ -234,7 +235,7 @@ export default function ProductsListClient({ productsData }) {
       {/* Why Choose Us Section */}
       <section className="py-20 lg:py-32 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
         <div className="absolute inset-0 bg-mesh-green opacity-20"></div>
-        
+
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -290,14 +291,14 @@ export default function ProductsListClient({ productsData }) {
       </section>
 
       {/* CTA Section */}
-      <section 
+      <section
         className="py-20 lg:py-32 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden"
         style={{ contain: "layout style paint" }}
       >
         <div className="absolute inset-0 bg-mesh-green opacity-30"></div>
         <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-emerald-200/40 blur-[80px] rounded-full"></div>
         <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-green-200/40 blur-[80px] rounded-full"></div>
-        
+
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/60 backdrop-blur-md text-emerald-800 font-semibold text-sm mb-6 border border-white/60 shadow-lg">
             <span className="w-2 h-2 bg-emerald-600 rounded-full animate-pulse"></span>
