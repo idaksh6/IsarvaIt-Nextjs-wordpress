@@ -113,7 +113,7 @@ export function generateServiceMetadata(service) {
       "professional services",
       "IT services",
     ],
-    url: `/services/${service.slug}`,
+    url: `/service/${service.slug}`,
   });
 }
 

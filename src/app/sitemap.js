@@ -14,7 +14,7 @@ export default function sitemap() {
     '/careers',
     '/internships',
     '/products',
-    '/service',
+    '/services',
     '/industries',
     '/testimonial',
     '/thank-you',
@@ -35,7 +35,7 @@ export default function sitemap() {
 
   // Dynamic service pages
   const services = servicesData.map((service) => ({
-    url: `${baseUrl}/services/${service.slug}`,
+    url: `${baseUrl}/service/${service.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.9,
