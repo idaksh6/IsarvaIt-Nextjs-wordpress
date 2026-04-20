@@ -28,16 +28,16 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
     setIsSubmitting(true);
     setSubmitStatus(null);
     setErrorMessage("");
-    
+
     try {
       const submissionData = {
         ...formData,
         pageType,
         itemName
       };
-      
+
       console.log('Submitting form data:', submissionData);
-      
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -59,18 +59,18 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
         } else if (pageType.toLowerCase().includes('industry')) {
           type = 'industry';
         }
-        
+
         // Redirect to thank you page with context
         const queryParams = new URLSearchParams({
           type: type,
           ...(itemName && { item: itemName })
         });
-        
+
         router.push(`/thank-you?${queryParams.toString()}`);
       } else {
         console.error('Form submission failed:', data);
         setSubmitStatus("error");
-        
+
         // Parse error message for user-friendly display
         let friendlyError = 'Something went wrong. Please try again.';
         if (data.error && typeof data.error === 'string') {
@@ -247,6 +247,7 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
 
       <button
         type="submit"
+        id="main-enquiry-submit"
         disabled={isSubmitting}
         aria-label={isSubmitting ? "Sending message" : "Send message"}
         className="press-illusion-btn bg-green-400 text-black md:mx-0 mx-auto font-bold px-8 w-fit py-4 text-lg items-center space-x-2 flex disabled:opacity-50 disabled:cursor-not-allowed  justify-center"
