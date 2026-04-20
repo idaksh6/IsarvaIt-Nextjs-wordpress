@@ -46,7 +46,7 @@ export default async function ServiceDetailPage({ params }) {
 
   // ── Premium page for WordPress Development ──────────────────────
   if (slug === "wordpress-development") {
-    return <WordPressDevelopmentPremium service={service} servicesData={servicesData} />;
+    return <WordPressDevelopmentPremiumStaging service={service} servicesData={servicesData} />;
   }
 
   // ── Premium page for WordPress Development STAGING ────────────────
