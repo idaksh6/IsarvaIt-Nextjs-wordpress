@@ -14,7 +14,7 @@ export default function sitemap() {
     '/careers',
     '/internships',
     '/products',
-    '/services',
+    '/service',
     '/industries',
     '/testimonial',
     '/thank-you',

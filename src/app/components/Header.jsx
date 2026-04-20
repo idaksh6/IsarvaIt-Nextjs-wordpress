@@ -300,7 +300,7 @@ export default function Header() {
             onMouseLeave={() => setIsServicesOpen(false)}
           >
             <Link
-              href="/services"
+              href="/service"
               prefetch={true}
               className="group text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1"
             >
@@ -357,7 +357,7 @@ export default function Header() {
 
                   <div className="mt-6 pt-6 border-t border-gray-200">
                     <Link
-                      href="/services"
+                      href="/service"
                       prefetch={true}
                       onClick={() => setIsServicesOpen(false)}
                       className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:gap-3 transition-all duration-200"
@@ -805,7 +805,7 @@ export default function Header() {
                       >
                         <div className="bg-gradient-to-b from-gray-50 to-white p-3 space-y-1 max-h-[300px] overflow-y-auto">
                           <Link
-                            href="/services"
+                            href="/service"
                             prefetch={true}
                             onClick={() => setIsMobileMenuOpen(false)}
                             className="flex items-center gap-2 p-3 rounded-xl text-green-600 hover:bg-white bg-green-50 border border-green-200 transition-all duration-200 font-bold text-sm mb-2"
