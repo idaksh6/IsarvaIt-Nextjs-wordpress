@@ -645,7 +645,11 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               <p className="text-base sm:text-xl text-gray-500 font-medium">Enterprise WordPress expertise tailored to your digital growth.</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12" style={{ gap: 0, border: '1px solid rgba(226,232,240,0.8)', borderRadius: '32px', overflow: 'hidden' }}>
+            <div className="relative p-1">
+              {/* Premium Gradient Glow Shadow */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-100 via-indigo-50 to-emerald-100 blur-3xl opacity-60 rounded-[48px] -z-10" />
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 relative z-10 bg-white" style={{ gap: 0, border: '1px solid rgba(226,232,240,0.8)', borderRadius: '32px', overflow: 'hidden', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.05)' }}>
               {/* Box 1: Migration (Emerald) */}
               <div className="md:col-span-1 lg:col-span-4 lg:row-span-2 bento-card group p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-gradient-to-br from-emerald-50/40 to-white" style={{ borderRadius: 0, border: 'none', borderRight: '1px solid rgba(226,232,240,0.8)', borderBottom: '1px solid rgba(226,232,240,0.8)', minHeight: '420px' }}>
                 <div className="relative z-10">
@@ -708,6 +712,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                   <p className="text-xs sm:text-sm text-gray-500 font-medium leading-relaxed">Enterprise-grade security audits and advanced SEO architecture built-in.</p>
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </section>
