@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getServiceBySlug, servicesData } from "../../lib/data/services-data";
-import WordPressDevelopmentPremiumStaging from "../[slug]/WordPressDevelopmentPremiumStaging";
+import WordPressDevelopmentPremiumStaging from "../../service/[slug]/WordPressDevelopmentPremiumStaging";
 import { generateServiceMetadata } from "../../lib/utils/seo";
 
 // Force dynamic rendering for staging review

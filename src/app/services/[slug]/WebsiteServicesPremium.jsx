@@ -1132,7 +1132,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
               ].map((r) => (
                 <Link
                   key={r.slug}
-                  href={`/services/${r.slug}`}
+                  href={`/service/${r.slug}`}
                   prefetch
                   className="group"
                 >

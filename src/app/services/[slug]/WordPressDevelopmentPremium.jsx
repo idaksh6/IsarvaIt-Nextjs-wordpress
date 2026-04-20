@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import ContactFormModal from "../../components/ContactFormModal";
 
-/* ─── Main Component ─────────────────────────────────── */
+/* ─── Main Component ───────────────────────────────────────────── */
 export default function WordPressDevelopmentPremium({ service, servicesData }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -53,7 +53,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
       `}</style>
 
       <div className="bg-white min-h-screen font-sans">
-        {/* ─── HERO SECTION (LIGHT & IMAGE-RICH) ────────────────────── */}
+        {/* ─── HERO SECTION (LIGHT & IMAGE-RICH) ──────────────────────────── */}
         <section className="wp-light-gradient relative pt-32 lg:pt-48 pb-20 lg:pb-32 overflow-hidden">
           {/* Decorative Background Shapes */}
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-200/50 rounded-full blur-[100px] mix-blend-multiply" />
@@ -175,7 +175,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
           </div>
         </section>
 
-        {/* ─── IMAGE-CENTRIC ZIG-ZAG SHOWCASE ────────────────────────── */}
+        {/* ─── IMAGE-CENTRIC ZIG-ZAG SHOWCASE ──────────────────────────── */}
         <section
           id="portfolio"
           className="py-24 lg:py-32 bg-white relative overflow-hidden"
@@ -343,7 +343,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
           </div>
         </section>
 
-        {/* ─── VISUAL ECOSYSTEM GRID ───────────────────────────────────── */}
+        {/* ─── VISUAL ECOSYSTEM GRID ───────────────────────────────────────────── */}
         <section className="py-24 bg-sky-50 relative border-y border-sky-100">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <h2 className="text-3xl lg:text-4xl font-black text-gray-900 mb-4">
@@ -378,7 +378,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
           </div>
         </section>
 
-        {/* ─── COMPREHENSIVE SERVICES LIST ─────────────────────────────── */}
+        {/* ─── COMPREHENSIVE SERVICES LIST ───────────────────────────────────────────── */}
         <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
@@ -421,7 +421,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
           </div>
         </section>
 
-        {/* ─── TEAM / PROCESS BANNER WITH IMAGE ────────────────────────── */}
+        {/* ─── TEAM / PROCESS BANNER WITH IMAGE ──────────────────────────── */}
         <section className="py-12 bg-white pb-24">
           <div className="max-w-7xl mx-auto px-6">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px]">

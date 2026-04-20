@@ -6,6 +6,7 @@ import FeatureItem from "./FeatureItem";
 import BenefitItem from "./BenefitItem";
 import WebsiteServicesPremium from "./WebsiteServicesPremium";
 import WordPressDevelopmentPremium from "./WordPressDevelopmentPremium";
+import WordPressDevelopmentPremiumStaging from "./WordPressDevelopmentPremiumStaging";
 import { generateServiceMetadata } from "../../lib/utils/seo";
 
 export async function generateStaticParams() {
@@ -46,6 +47,11 @@ export default async function ServiceDetailPage({ params }) {
   // ── Premium page for WordPress Development ──────────────────────
   if (slug === "wordpress-development") {
     return <WordPressDevelopmentPremium service={service} servicesData={servicesData} />;
+  }
+
+  // ── Premium page for WordPress Development STAGING ────────────────
+  if (slug === "wordpress-development-staging") {
+    return <WordPressDevelopmentPremiumStaging service={service} servicesData={servicesData} />;
   }
 
   // Get related services (3 random services excluding current)
@@ -169,7 +175,7 @@ export default async function ServiceDetailPage({ params }) {
                 return (
                   <Link
                     key={index}
-                    href={subServiceSlug ? `/services/${subServiceSlug}` : "#"}
+                    href={subServiceSlug ? `/service/${subServiceSlug}` : "#"}
                     prefetch={true}
                     className="group relative block"
                   >
@@ -245,11 +251,11 @@ export default async function ServiceDetailPage({ params }) {
               <span className="text-emerald-700 font-semibold text-sm">Key Features</span>
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-              {service.slug === "odoo-apps-support" 
+              {service.slug === "odoo-apps-support-and-maintenance" 
                 ? "Comprehensive Support Services" 
                 : service.slug === "ai-ml-consulting"
                 ? "Why You Need Consulting Services"
-                : service.slug === "staffing-services"
+                : service.slug === "staffing"
                 ? "Explore Our Staffing Services"
                 : service.slug === "consulting-services"
                 ? "Transform Your Business with Innovative Technology Strategy"
@@ -279,11 +285,11 @@ export default async function ServiceDetailPage({ params }) {
               }
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              {service.slug === "odoo-apps-support" 
+              {service.slug === "odoo-apps-support-and-maintenance" 
                 ? "We ensure that your Odoo applications—from Finance to HR—are always up-to-date, secure, and performing at their peak."
                 : service.slug === "ai-ml-consulting"
                 ? "Align your business objectives with the right AI and ML solutions with our consulting services."
-                : service.slug === "staffing-services"
+                : service.slug === "staffing"
                 ? "At Isarva Infotech, we believe in going beyond conventional recruitment. Our expert staffing services are designed to craft customized strategies that build high-performing teams, empowering your business to achieve its true potential."
                 : service.slug === "consulting-services"
                 ? "Unlock the full potential of your business with our expert consulting services, designed to meet your unique needs. From strategic planning to operational improvement, we offer a full suite of solutions to ensure your organization is both effective and efficient."
@@ -379,7 +385,7 @@ export default async function ServiceDetailPage({ params }) {
               Business Impact
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              {service.slug === "odoo-apps-support" 
+              {service.slug === "odoo-apps-support-and-maintenance" 
                 ? "Why Choose Isarva for Odoo Support?" 
                 : service.slug === "ai-ml-consulting"
                 ? "Consulting Services for Businesses"
@@ -395,7 +401,7 @@ export default async function ServiceDetailPage({ params }) {
               }
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {service.slug === "odoo-apps-support" 
+              {service.slug === "odoo-apps-support-and-maintenance" 
                 ? "We are your trusted partner for creating sustainable value through Odoo ERP solutions."
                 : service.slug === "ai-ml-consulting"
                 ? "We help you create scalable products and services with intuitive design and robust implementation, aiming to meet both your business objectives and your customers' expectations."
@@ -413,7 +419,7 @@ export default async function ServiceDetailPage({ params }) {
           </div>
 
           {/* Cloud Services - Special centered layout */}
-          {service.slug === "cloud-services" || service.slug === "staffing-services" || service.slug === "consulting-services" || service.slug === "erp-services" || service.slug === "offshore-development" || service.slug === "training" || service.slug === "wordpress-development" || service.slug === "statamic-development" || service.slug === "gps-tracking" || service.slug === "digital-marketing" || service.slug === "google-ads" ? (
+          {service.slug === "cloud" || service.slug === "staffing" || service.slug === "consulting-services" || service.slug === "erp-services" || service.slug === "offshore-development" || service.slug === "training" || service.slug === "wordpress-development" || service.slug === "statamic-development" || service.slug === "gps-tracking" || service.slug === "digital-marketing" || service.slug === "google-ads" ? (
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
               {service.benefits.map((benefit, index) => (
                 <div key={index} className="text-center">
@@ -433,7 +439,7 @@ export default async function ServiceDetailPage({ params }) {
                 </div>
               ))}
             </div>
-          ) : service.slug === "odoo-apps-support" ? (
+          ) : service.slug === "odoo-apps-support-and-maintenance" ? (
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
               {service.benefits.map((benefit, index) => (
                 <div key={index} className="text-center">
@@ -590,7 +596,7 @@ export default async function ServiceDetailPage({ params }) {
             {relatedServices.map((relatedService) => (
               <Link
                 key={relatedService.slug}
-                href={`/services/${relatedService.slug}`}
+                href={`/service/${relatedService.slug}`}
                 prefetch={true}
                 className="group relative"
               >
@@ -673,14 +679,14 @@ export default async function ServiceDetailPage({ params }) {
           </div>
 
           <h2 className="text-4xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
-            {service.slug === "odoo-apps-support" 
+            {service.slug === "odoo-apps-support-and-maintenance" 
               ? "Ready to Optimize Your Odoo Experience?" 
               : "Ready to Transform Your Business?"
             }
           </h2>
           
           <p className="text-xl lg:text-2xl text-emerald-50 mb-12 max-w-3xl mx-auto leading-relaxed">
-            {service.slug === "odoo-apps-support"
+            {service.slug === "odoo-apps-support-and-maintenance"
               ? "Get in touch with us today to discuss your support and maintenance needs. Let's ensure your business runs like a well-oiled machine."
               : `Partner with our experts to unlock the full potential of ${service.title.toLowerCase()}. Let's create something amazing together.`
             }
