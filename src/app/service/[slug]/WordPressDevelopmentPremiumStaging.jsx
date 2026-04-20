@@ -214,7 +214,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               <svg className="w-2.5 h-2.5 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
               </svg>
-              <span className="text-blue-600 font-bold bg-blue-50 px-3 py-1 rounded-full border border-blue-100/50">WordPress Staging</span>
+              <span className="text-blue-600 font-bold bg-blue-50 px-3 py-1 rounded-full border border-blue-100/50">{service.title || "WordPress Development"}</span>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
