@@ -82,7 +82,7 @@ export default function RootLayout({ children }) {
         </noscript>
         {/* End Meta Pixel Code */}
       </head>
-      <GoogleTagManager gtmId="GTM-W2VBM4MJ" />
+      <GoogleTagManager gtmId="GTM-MVJF5BNV" />
       <body className={`${inter.variable} ${outfit.variable} ${spaceGrotesk.variable} antialiased text-white`}>
         <Header />
         <main>{children}</main>
