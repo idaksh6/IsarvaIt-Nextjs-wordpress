@@ -115,9 +115,9 @@ export default function Footer() {
                 { label: "Media & Entertainment", href: "/industry/media-entertainment" },
                 { label: "Insurance", href: "/industry/insurance" },
                 { label: "Manufacturing", href: "/industry/manufacturing" },
-                { label: "Health Care & Life Sciences", href: "/industry/healthcare-life-sciences" },
+                { label: "Health Care & Life Sciences", href: "/industry/health-care-life-sciences" },
                 { label: "Education", href: "/industry/education" },
-                { label: "Banking and Financial Services", href: "/industry/banking-financial-services" },
+                { label: "Banking and Financial Services", href: "/industry/banking-and-financial-services" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link

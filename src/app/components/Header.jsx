@@ -38,8 +38,8 @@ const servicesData = [
 ];
 
 const industriesData = [
-  { label: "Banking & Financial Services", href: "/industry/banking-financial-services", icon: "🏦" },
-  { label: "Healthcare & Life Sciences", href: "/industry/healthcare-life-sciences", icon: "🏥" },
+  { label: "Banking & Financial Services", href: "/industry/banking-and-financial-services", icon: "🏦" },
+  { label: "Healthcare & Life Sciences", href: "/industry/health-care-life-sciences", icon: "🏥" },
   { label: "Insurance", href: "/industry/insurance", icon: "🛡️" },
   { label: "Manufacturing", href: "/industry/manufacturing", icon: "🏭" },
   { label: "Education", href: "/industry/education", icon: "🎓" },
@@ -55,7 +55,7 @@ const productsData = [
   { label: "Dispatcher Panel", href: "/product/dispatcher-panel", icon: "⛽" },
   { label: "WooCommerce Development", href: "/product/woocommerce-development", icon: "🛒" },
   { label: "Document Management System", href: "/product/document-management-system", icon: "📄" },
-  { label: "Retail Billing Software with Multi Branch and Multi Warehouse", href: "/product/retail-billing-software-with-multi-branch-and-multi-warehouse", icon: "🚚" },
+  { label: "Retail Billing Software", href: "/product/retail-billing-software", icon: "🚚" },
   { label: "Dealer Management and Dealer Article Software", href: "/product/dealer-management-and-dealer-article-software", icon: "🤝" },
 ];
 

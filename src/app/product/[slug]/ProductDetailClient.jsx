@@ -56,7 +56,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   }
 
   // Use Premium View for Multi-Branch Retail Billing Software
-  if (product.slug === 'retail-billing-software-with-multi-branch-and-multi-warehouse') {
+  if (product.slug === 'retail-billing-software') {
     return (
       <ProductDetailPremiumMultiBranch 
         product={product} 
