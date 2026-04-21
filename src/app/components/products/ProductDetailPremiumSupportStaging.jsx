@@ -17,48 +17,48 @@ const SUPPORT_GREY = "#F5F5F5";
 ───────────────────────────────────────────────────────────── */
 const industriesBuiltFor = [
   {
-    title: "Software Development",
-    description: "Streamline bug tracking and manage server backups while keeping a tight log on developer productivity.",
-    icon: "💻"
-  },
-  {
-    title: "Financial & Accounting",
-    description: "Securely store sensitive client portal credentials and never miss a tax filing deadline.",
-    icon: "📈"
-  },
-  {
     title: "Website Design Agencies",
-    description: "Manage launches from A-to-Z and track SSL/Domain renewals so client sites never go offline.",
+    description: "Manage launches from A-to-Z with web design project management software, and track SSL/domain renewals so client sites never go offline.",
     icon: "🎨"
   },
   {
-    title: "Construction & Real Estate",
-    description: "Track site work, manage tasks across teams, and monitor project progress easily. Keep records, deadlines, and client updates organized from start to finish.",
-    icon: "🏗️"
+    title: "Digital Marketing Firms",
+    description: "Manage campaign requests and recurring social media posts in one central hub with digital marketing project management software.",
+    icon: "📱"
   },
   {
-    title: "Internet Marketing & SEO",
-    description: "Organize monthly deliverables like backlink reports and track time spent on every campaign for clear ROI.",
-    icon: "📊"
-  },
-  {
-    title: "Managed IT Service Providers",
-    description: "Centralize support tickets and maintain a rigorous schedule for hardware and license renewals.",
+    title: "Managed IT Service Providers (MSPs)",
+    description: "Centralize support tickets and maintain a rigorous schedule for hardware and license renewals using IT project service management software.",
     icon: "🛠️"
   },
   {
     title: "Creative Design & Branding",
-    description: 'Break down complex creative workflows and see exactly where "brainstorming" ends and "production" begins.',
+    description: "Break down complex creative workflows and clearly track progress from brainstorming to production with creative project management software.",
     icon: "✨"
   },
   {
-    title: "Digital Marketing Firms",
-    description: "Manage campaign requests and recurring social media posts in one central hub.",
-    icon: "📱"
+    title: "Internet Marketing & SEO",
+    description: "Organize monthly deliverables like backlink reports and track time spent on every campaign for clear ROI using SEO project management software.",
+    icon: "📊"
   },
   {
-    title: "Consulting & Professional Services",
-    description: "Professionalize your billable hours and maintain perfect documentation for every client engagement.",
+    title: "Software Development",
+    description: "Streamline bug tracking, manage server backups, and maintain detailed developer activity logs with software development project management software.",
+    icon: "💻"
+  },
+  {
+    title: "Financial & Accounting",
+    description: "Securely store sensitive client portal credentials and never miss a tax filing deadline with accounting project management software.",
+    icon: "📈"
+  },
+  {
+    title: "Construction & Real Estate",
+    description: "Track site work, manage tasks across teams, and monitor project progress efficiently while keeping records and deadlines organized with construction project management software.",
+    icon: "🏗️"
+  },
+  {
+    title: "Full-Service Marketing Agencies",
+    description: "Bridge the gap between creative teams and clients with real-time resource tracking using marketing agency project management software.",
     icon: "🤝"
   }
 ];
@@ -833,7 +833,7 @@ function ReportsSection({ onImageClick }) {
             <div className={`inline-flex items-center gap-3 px-6 py-3 rounded-2xl border border-current transition-all duration-500 shadow-sm bg-white/50 backdrop-blur-sm mx-auto`} style={{ color: d.dot }}>
               <span className="flex-shrink-0 w-2 h-2 rounded-full bg-current animate-pulse"></span>
               <p className="text-sm font-medium tracking-tight brightness-75">
-                A preview of our extensive reporting suite, allowing you to compare planned vs. actual hours.
+                A quick look at our powerful report mechanism.
               </p>
             </div>
           </motion.div>
@@ -1026,7 +1026,7 @@ function AnalyticsSection({ onImageClick }) {
           <div className="inline-flex items-center gap-4 px-8 py-4 rounded-3xl bg-white/50 border-2 border-purple-100 shadow-sm backdrop-blur-sm">
             <span className="flex-shrink-0 w-3 h-3 rounded-full bg-[#9333EA] animate-ping"></span>
             <p className="text-[#9333EA] text-sm font-semibold tracking-tight uppercase">
-              This is just the spark; the full suite is the wildfire. Experience the unfiltered depth of our analytical ecosystem.
+              Just a glimpse of our extensive analytics reporting library. From team productivity to project health, we track it all.
             </p>
           </div>
         </div>
@@ -1381,7 +1381,7 @@ export default function ProductDetailPremiumSupportStaging({
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-[clamp(32px,4vw,44px)] font-extrabold text-[#0a0a0a] leading-tight mb-4">
-                Tailored for the Way Your <span className="text-[#9333EA]">Industry</span> Works.
+                Project Management Software Suitable for These <span className="text-[#9333EA]">Industries</span>
               </h2>
               <p className="text-[#6b7280] max-w-2xl mx-auto text-base leading-relaxed">
                 Who is ISS built for? Discover how our system empowers specialized teams and scales with your business needs across every sector.
@@ -1415,6 +1415,56 @@ export default function ProductDetailPremiumSupportStaging({
                 </div>
               </motion.div>
             ))}
+          </div>
+
+          <div className="mt-20">
+            {/* Desktop Flow Diagram */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="hidden lg:block relative group"
+            >
+              <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/10 to-transparent blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="relative z-10 p-2 bg-white rounded-[2.5rem] shadow-[0_30px_100px_rgba(0,0,0,0.12)] border border-gray-100">
+                <img
+                  src="/products/support/iss_flow_desktop.png"
+                  alt="ISS Workflow Desktop"
+                  className="w-full h-auto rounded-[2rem]"
+                />
+              </div>
+            </motion.div>
+
+            {/* Mobile/Responsive Flow Diagrams */}
+            <div className="lg:hidden space-y-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative p-2 bg-white rounded-3xl shadow-xl border border-gray-100"
+              >
+                <img
+                  src="/products/support/iss_flow_pm_mobile.png"
+                  alt="ISS Project Management Flow"
+                  className="w-full h-auto rounded-2xl"
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="relative p-2 bg-white rounded-3xl shadow-xl border border-gray-100"
+              >
+                <img
+                  src="/products/support/iss_flow_ticket_mobile.png"
+                  alt="ISS Ticket Management Flow"
+                  className="w-full h-auto rounded-2xl"
+                />
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
