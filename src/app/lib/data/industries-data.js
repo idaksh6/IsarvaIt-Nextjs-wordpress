@@ -5,7 +5,7 @@
 
 export const industriesData = [
   {
-    slug: "banking-financial-services",
+    slug: "banking-and-financial-services",
     title: "Banking & Financial Services",
     icon: "🏦",
     heroImage: "/Industries/Banking & Financial/Banner-img.jpg",
@@ -204,7 +204,7 @@ export const industriesData = [
     caseStudies: "Automated claims processing reducing turnaround time by 60%"
   },
   {
-    slug: "healthcare-life-sciences",
+    slug: "health-care-life-sciences",
     title: "Healthcare & Life Sciences",
     icon: "🏥",
     heroImage: "/Industries/Healthcare & Lifesciences/Banner-img.jpg",

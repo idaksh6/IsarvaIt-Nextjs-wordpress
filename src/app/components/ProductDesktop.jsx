@@ -95,8 +95,8 @@ const products = [
   },
   {
     id: 6,
-    name: "Retail Billing Software with Multi Branch and Multi Warehouse",
-    slug: "retail-billing-software-with-multi-branch-and-multi-warehouse",
+    name: "Retail Billing Software",
+    slug: "retail-billing-software",
     category: "E-Commerce & Retail",
     short:
       "Streamlines billing and inventory for multi-branch, multi-warehouse businesses. Android & iOS app coming soon.",

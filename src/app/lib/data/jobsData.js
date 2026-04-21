@@ -1,6 +1,6 @@
 export const jobsData = [
   {
-    slug: "software-developer-cpp",
+    slug: "software-developer-c",
     title: "Software Developer C++",
     location: "Bangalore, India",
     jobType: "Full-time",
@@ -129,7 +129,7 @@ export const jobsData = [
     preferredSkills: []
   },
   {
-    slug: "ai-ml-internship-agentic-ai",
+    slug: "ai-ml-internship-agentic-ai-autonomous-agents",
     title: "AI/ML Internship – Agentic AI (Autonomous Agents)",
     location: "Remote",
     jobType: "Internship",
@@ -185,7 +185,7 @@ export const jobsData = [
     ]
   },
   {
-    slug: "senior-software-engineer-backend-csharp",
+    slug: "senior-software-engineer-backend-c-microservices-restful-apis",
     title: "Senior Software Engineer (Backend C# – Microservices & RESTful APIs)",
     location: "Bangalore, India",
     jobType: "Full-time",
@@ -265,7 +265,7 @@ export const jobsData = [
     ]
   },
   {
-    slug: "senior-software-developer-dotnet-web",
+    slug: "senior-software-developer-net-web",
     title: "Senior Software Developer – .NET Web",
     location: "Bangalore, India",
     jobType: "Full-time",
@@ -385,7 +385,7 @@ export const jobsData = [
     preferredSkills: []
   },
   {
-    slug: "full-stack-nodejs-developer",
+    slug: "full-stack-node-js-developer",
     title: "Full Stack Node.js Developer",
     location: "Bangalore, India",
     jobType: "Full-time",
