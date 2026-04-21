@@ -757,7 +757,7 @@ const reportsDatas = [
     gradient: "from-[#9333EA] to-[#7c3aed]",
     bgLight: "bg-purple-50/50",
     desc: "See Billable vs. Non-Billable hours by employee, project, or company.",
-    image: "/products/support/reports_analytics.jpg"
+    image: "/products/support/Billable-Non-billable.jpg"
   },
   {
     title: "The Overflow Alert",
@@ -766,7 +766,7 @@ const reportsDatas = [
     gradient: "from-[#F59E0B] to-[#D97706]",
     bgLight: "bg-amber-50/50",
     desc: 'Get a "Project Estimated Overflow" report to see which projects are going over budget.',
-    image: "/products/support/worked_hours_tracking.jpg"
+    image: "/products/support/Project-estimated-overflow.jpg"
   },
   {
     title: "Daily Snapshots",
@@ -775,7 +775,7 @@ const reportsDatas = [
     gradient: "from-[#0EA5E9] to-[#0284C7]",
     bgLight: "bg-sky-50/50",
     desc: "View consolidated daily reports Activity",
-    image: "/products/support/support_dashboard_img_1.jpg"
+    image: "/products/support/Daily-Report.jpg"
   },
   {
     title: "Compliance",
@@ -784,7 +784,7 @@ const reportsDatas = [
     gradient: "from-[#10B981] to-[#059669]",
     bgLight: "bg-emerald-50/50",
     desc: "Access backup tracks to ensure your internal operations are 100% healthy.",
-    image: "/products/support/backup_management.jpg"
+    image: "/products/support/Backup-active-report.jpg"
   },
   {
     title: "Project Timesheet Report",
@@ -793,7 +793,7 @@ const reportsDatas = [
     gradient: "from-[#EF4444] to-[#DC2626]",
     bgLight: "bg-red-50/50",
     desc: "Easily identify where tasks are running over their time limits so you can keep your deadlines under control.",
-    image: "/products/support/renewal_management.jpg"
+    image: "/products/support/Project-timesheet.jpg"
   },
 ];
 
@@ -1299,11 +1299,11 @@ export default function ProductDetailPremiumSupportStaging({
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setIsModalOpen(true)}
-                className="btn-premium-purple group relative px-10 py-5 rounded-full overflow-hidden shadow-[0_20px_50px_rgba(147,51,234,0.3)]"
+                className="btn-premium-orange group relative px-10 py-5 rounded-full overflow-hidden shadow-[0_20px_50px_rgba(249,115,22,0.3)]"
               >
                 <div className="shimmer absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
                 <span className="relative z-10 flex items-center gap-3 font-black tracking-wider text-sm">
-                  REQUEST A LIVE DEMO
+                  REQUEST A FREE DEMO
                   <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -1631,7 +1631,7 @@ export default function ProductDetailPremiumSupportStaging({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="relative bg-gradient-to-br from-purple-500 to-purple-600 rounded-3xl lg:rounded-[32px] overflow-hidden shadow-[0_20px_70px_rgba(147,51,234,0.2)]"
+            className="relative bg-gradient-to-br from-orange-500 to-orange-600 rounded-3xl lg:rounded-[32px] overflow-hidden shadow-[0_20px_70px_rgba(249,115,22,0.2)]"
           >
             {/* Decorative Elements */}
             <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-white/10 rounded-full blur-3xl"></div>
@@ -1666,7 +1666,7 @@ export default function ProductDetailPremiumSupportStaging({
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <button
                     onClick={() => setIsModalOpen(true)}
-                    className="group relative bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-base hover:bg-white hover:text-purple-600 transition-all duration-300 hover:scale-105 flex items-center gap-3"
+                    className="group relative bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-base hover:bg-white hover:text-orange-600 transition-all duration-300 hover:scale-105 flex items-center gap-3"
                   >
                     <svg
                       className="w-5 h-5"

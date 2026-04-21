@@ -240,9 +240,9 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                   <div className="relative group">
                     <button
                       onClick={() => setIsModalOpen(true)}
-                      className="group inline-flex items-center gap-3 px-8 py-4 text-base font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg shadow-blue-100 hover:shadow-xl transform hover:-translate-y-1"
+                      className="group inline-flex items-center gap-3 px-8 py-4 text-base font-bold text-white bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg shadow-orange-100 hover:shadow-xl transform hover:-translate-y-1"
                     >
-                      Start Your Project
+                      Book a Free Consultation
                       <svg
                         className="w-5 h-5 group-hover:translate-x-1 transition-transform"
                         fill="none"
@@ -404,7 +404,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 </div>
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-2xl transition-all duration-300 shadow-xl shadow-blue-200 hover:shadow-2xl transform hover:-translate-y-1 premium-cta"
+                  className="px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold rounded-2xl transition-all duration-300 shadow-xl shadow-orange-200 hover:shadow-2xl transform hover:-translate-y-1 premium-cta"
                 >
                   Convert or Design Your Site
                 </button>
@@ -646,71 +646,71 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
             <div className="relative p-1">
               {/* Premium Gradient Glow Shadow */}
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-100 via-indigo-50 to-emerald-100 blur-3xl opacity-60 rounded-[48px] -z-10" />
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 relative z-10 bg-white" style={{ gap: 0, border: '1px solid rgba(226,232,240,0.8)', borderRadius: '32px', overflow: 'hidden', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.05)' }}>
-              {/* Box 1: Migration (Emerald) */}
-              <div className="md:col-span-1 lg:col-span-4 lg:row-span-2 bento-card group p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-gradient-to-br from-emerald-50/40 to-white" style={{ borderRadius: 0, border: 'none', borderRight: '1px solid rgba(226,232,240,0.8)', borderBottom: '1px solid rgba(226,232,240,0.8)', minHeight: '420px' }}>
-                <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6 sm:mb-8 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500 text-2xl shadow-sm">🚀</div>
-                  <h4 className="text-xl sm:text-2xl lg:text-3xl font-black text-gray-900 mb-4 leading-tight">Migration to WordPress</h4>
-                  <p className="text-sm sm:text-base text-gray-500 font-medium leading-relaxed">We manage complete website migrations while preserving your content, structure, and functionality without disruption.</p>
+                {/* Box 1: Migration (Emerald) */}
+                <div className="md:col-span-1 lg:col-span-4 lg:row-span-2 bento-card group p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-gradient-to-br from-emerald-50/40 to-white" style={{ borderRadius: 0, border: 'none', borderRight: '1px solid rgba(226,232,240,0.8)', borderBottom: '1px solid rgba(226,232,240,0.8)', minHeight: '420px' }}>
+                  <div className="relative z-10">
+                    <div className="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6 sm:mb-8 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500 text-2xl shadow-sm">🚀</div>
+                    <h4 className="text-xl sm:text-2xl lg:text-3xl font-black text-gray-900 mb-4 leading-tight">Migration to WordPress</h4>
+                    <p className="text-sm sm:text-base text-gray-500 font-medium leading-relaxed">We manage complete website migrations while preserving your content, structure, and functionality without disruption.</p>
+                  </div>
                 </div>
-              </div>
 
-              {/* Box 2: Theme Development (Blue) */}
-              <div className="md:col-span-1 lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-blue-50/40 to-white" style={{ borderRadius: 0, border: 'none', borderRight: '1px solid rgba(226,232,240,0.8)', borderBottom: '1px solid rgba(226,232,240,0.8)' }}>
-                <div className="relative z-10">
-                  <div className="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-5 text-xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm">🎨</div>
-                  <h4 className="text-lg sm:text-xl font-black text-gray-900 mb-2">Theme Development</h4>
-                  <p className="text-xs sm:text-sm text-gray-500 font-medium leading-relaxed">Custom-built themes designed to match your brand and scale effortlessly.</p>
+                {/* Box 2: Theme Development (Blue) */}
+                <div className="md:col-span-1 lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-blue-50/40 to-white" style={{ borderRadius: 0, border: 'none', borderRight: '1px solid rgba(226,232,240,0.8)', borderBottom: '1px solid rgba(226,232,240,0.8)' }}>
+                  <div className="relative z-10">
+                    <div className="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-5 text-xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm">🎨</div>
+                    <h4 className="text-lg sm:text-xl font-black text-gray-900 mb-2">Theme Development</h4>
+                    <p className="text-xs sm:text-sm text-gray-500 font-medium leading-relaxed">Custom-built themes designed to match your brand and scale effortlessly.</p>
+                  </div>
                 </div>
-              </div>
 
-              {/* Box 3: Plugin Development (Violet) */}
-              <div className="md:col-span-1 lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-violet-50/40 to-white" style={{ borderRadius: 0, border: 'none', borderBottom: '1px solid rgba(226,232,240,0.8)' }}>
-                <div className="relative z-10">
-                  <div className="w-11 h-11 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center mb-5 text-xl group-hover:bg-violet-600 group-hover:text-white transition-all duration-500 shadow-sm">⚙️</div>
-                  <h4 className="text-lg sm:text-xl font-black text-gray-900 mb-2">Plugin Development</h4>
-                  <p className="text-xs sm:text-sm text-gray-500 font-medium leading-relaxed">Extend functionality with custom plugins built specifically for your business needs.</p>
+                {/* Box 3: Plugin Development (Violet) */}
+                <div className="md:col-span-1 lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-violet-50/40 to-white" style={{ borderRadius: 0, border: 'none', borderBottom: '1px solid rgba(226,232,240,0.8)' }}>
+                  <div className="relative z-10">
+                    <div className="w-11 h-11 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center mb-5 text-xl group-hover:bg-violet-600 group-hover:text-white transition-all duration-500 shadow-sm">⚙️</div>
+                    <h4 className="text-lg sm:text-xl font-black text-gray-900 mb-2">Plugin Development</h4>
+                    <p className="text-xs sm:text-sm text-gray-500 font-medium leading-relaxed">Extend functionality with custom plugins built specifically for your business needs.</p>
+                  </div>
                 </div>
-              </div>
 
-              {/* Box 4: Ecommerce Solution (Orange) */}
-              <div className="md:col-span-1 lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-orange-50/40 to-white" style={{ borderRadius: 0, border: 'none', borderRight: '1px solid rgba(226,232,240,0.8)', borderBottom: '1px solid rgba(226,232,240,0.8)' }}>
-                <div className="w-11 h-11 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center mb-5 text-xl shrink-0 group-hover:bg-orange-600 group-hover:text-white transition-all duration-500 shadow-sm">🛒</div>
-                <div>
-                  <h4 className="text-lg sm:text-xl font-black text-gray-900 mb-2">Ecommerce Solution</h4>
-                  <p className="text-xs sm:text-sm text-gray-500 font-medium leading-relaxed">Boost your sales with robust, user-friendly WordPress eCommerce solutions.</p>
+                {/* Box 4: Ecommerce Solution (Orange) */}
+                <div className="md:col-span-1 lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-orange-50/40 to-white" style={{ borderRadius: 0, border: 'none', borderRight: '1px solid rgba(226,232,240,0.8)', borderBottom: '1px solid rgba(226,232,240,0.8)' }}>
+                  <div className="w-11 h-11 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center mb-5 text-xl shrink-0 group-hover:bg-orange-600 group-hover:text-white transition-all duration-500 shadow-sm">🛒</div>
+                  <div>
+                    <h4 className="text-lg sm:text-xl font-black text-gray-900 mb-2">Ecommerce Solution</h4>
+                    <p className="text-xs sm:text-sm text-gray-500 font-medium leading-relaxed">Boost your sales with robust, user-friendly WordPress eCommerce solutions.</p>
+                  </div>
                 </div>
-              </div>
 
-              {/* Box 5: Speed & Performance (Amber) */}
-              <div className="md:col-span-1 lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-amber-50/40 to-white" style={{ borderRadius: 0, border: 'none', borderBottom: '1px solid rgba(226,232,240,0.8)' }}>
-                <div className="relative z-10">
-                  <div className="w-11 h-11 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-5 text-xl group-hover:bg-amber-600 group-hover:text-white transition-all duration-500 shadow-sm">⚡</div>
-                  <h4 className="text-lg sm:text-xl font-black text-gray-900 mb-2">Speed & Performance</h4>
-                  <p className="text-xs sm:text-sm text-gray-500 font-medium leading-relaxed">Optimised for core web vitals and industry-leading load times.</p>
+                {/* Box 5: Speed & Performance (Amber) */}
+                <div className="md:col-span-1 lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-amber-50/40 to-white" style={{ borderRadius: 0, border: 'none', borderBottom: '1px solid rgba(226,232,240,0.8)' }}>
+                  <div className="relative z-10">
+                    <div className="w-11 h-11 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-5 text-xl group-hover:bg-amber-600 group-hover:text-white transition-all duration-500 shadow-sm">⚡</div>
+                    <h4 className="text-lg sm:text-xl font-black text-gray-900 mb-2">Speed & Performance</h4>
+                    <p className="text-xs sm:text-sm text-gray-500 font-medium leading-relaxed">Optimised for core web vitals and industry-leading load times.</p>
+                  </div>
                 </div>
-              </div>
 
-              {/* Box 6: Multisite Development (Cyan) */}
-              <div className="md:col-span-2 lg:col-span-8 bento-card group p-6 sm:p-10 flex flex-col sm:flex-row items-start sm:items-center gap-6 bg-gradient-to-r from-cyan-50/40 to-white" style={{ borderRadius: 0, border: 'none', borderRight: '1px solid rgba(226,232,240,0.8)' }}>
-                <div className="w-16 h-16 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center text-3xl shrink-0 group-hover:bg-cyan-600 group-hover:text-white transition-all duration-500 shadow-sm">🏢</div>
-                <div>
-                  <h4 className="text-xl sm:text-2xl font-black text-gray-900 mb-2">Multisite Development</h4>
-                  <p className="text-sm sm:text-base text-gray-500 font-medium leading-relaxed">Manage multiple websites efficiently using a centralised multisite setup for enterprise governance.</p>
+                {/* Box 6: Multisite Development (Cyan) */}
+                <div className="md:col-span-2 lg:col-span-8 bento-card group p-6 sm:p-10 flex flex-col sm:flex-row items-start sm:items-center gap-6 bg-gradient-to-r from-cyan-50/40 to-white" style={{ borderRadius: 0, border: 'none', borderRight: '1px solid rgba(226,232,240,0.8)' }}>
+                  <div className="w-16 h-16 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center text-3xl shrink-0 group-hover:bg-cyan-600 group-hover:text-white transition-all duration-500 shadow-sm">🏢</div>
+                  <div>
+                    <h4 className="text-xl sm:text-2xl font-black text-gray-900 mb-2">Multisite Development</h4>
+                    <p className="text-sm sm:text-base text-gray-500 font-medium leading-relaxed">Manage multiple websites efficiently using a centralised multisite setup for enterprise governance.</p>
+                  </div>
                 </div>
-              </div>
 
-              {/* Box 7: Security & Support (Indigo) */}
-              <div className="md:col-span-1 lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-indigo-50/40 to-white" style={{ borderRadius: 0, border: 'none' }}>
-                <div className="relative z-10">
-                  <div className="w-11 h-11 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-5 text-xl group-hover:bg-indigo-600 group-hover:text-white transition-all duration-500 shadow-sm">🔒</div>
-                  <h4 className="text-lg sm:text-xl font-black text-gray-900 mb-2">Technical SEO & Hardening</h4>
-                  <p className="text-xs sm:text-sm text-gray-500 font-medium leading-relaxed">Enterprise-grade security audits and advanced SEO architecture built-in.</p>
+                {/* Box 7: Security & Support (Indigo) */}
+                <div className="md:col-span-1 lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-indigo-50/40 to-white" style={{ borderRadius: 0, border: 'none' }}>
+                  <div className="relative z-10">
+                    <div className="w-11 h-11 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-5 text-xl group-hover:bg-indigo-600 group-hover:text-white transition-all duration-500 shadow-sm">🔒</div>
+                    <h4 className="text-lg sm:text-xl font-black text-gray-900 mb-2">Technical SEO & Hardening</h4>
+                    <p className="text-xs sm:text-sm text-gray-500 font-medium leading-relaxed">Enterprise-grade security audits and advanced SEO architecture built-in.</p>
+                  </div>
                 </div>
               </div>
-            </div>
             </div>
           </div>
         </section>

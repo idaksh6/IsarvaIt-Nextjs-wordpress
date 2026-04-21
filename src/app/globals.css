@@ -682,7 +682,9 @@ h6,
 
 .press-illusion-btn-orange {
   border: none;
-  box-shadow: 0 6px 0 #f97316;
+  box-shadow: 0 6px 0 #ea580c, 
+              0 8px 12px rgba(234, 88, 12, 0.3),
+              0 12px 24px rgba(234, 88, 12, 0.15);
   transition: all 0.1s ease;
   padding: 12px 24px;
   border: none;
@@ -692,11 +694,14 @@ h6,
   position: relative;
   overflow: hidden;
   text-align: center;
+  transform: perspective(1000px) translateZ(0);
 }
 
 .press-illusion-btn-orange:hover {
-  transform: translateY(3px);
-  box-shadow: 0 3px 0 #f97316;
+  transform: perspective(1000px) translateY(3px) translateZ(0);
+  box-shadow: 0 3px 0 #ea580c,
+              0 5px 8px rgba(234, 88, 12, 0.25),
+              0 8px 16px rgba(234, 88, 12, 0.12);
 }
 .press-illusion-btn-red {
   border: none;
@@ -778,6 +783,32 @@ h6,
 }
 
 .btn-premium-purple .shimmer {
+  @apply absolute inset-0 -translate-x-full;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  animation: shimmer 2s infinite;
+}
+
+.btn-premium-orange {
+  @apply relative inline-flex items-center justify-center gap-2 px-8 py-4 font-bold text-white transition-all duration-300 rounded-full overflow-hidden shadow-[0_10px_30px_rgba(249,115,22,0.3)] hover:shadow-[0_20px_40px_rgba(249,115,22,0.5)] hover:-translate-y-1 active:scale-95;
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+}
+
+.btn-premium-orange::before {
+  content: '';
+  @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), transparent);
+}
+
+.btn-premium-orange:hover::before {
+  @apply opacity-100;
+}
+
+.btn-premium-orange .shimmer {
   @apply absolute inset-0 -translate-x-full;
   background: linear-gradient(
     90deg,
