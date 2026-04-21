@@ -18,6 +18,7 @@ import ProductDetailPremiumCRM from "../../components/products/ProductDetailPrem
 import ProductDetailPremiumCRMStaging from "../../components/products/ProductDetailPremiumCRMStaging";
 import ProductDetailPremiumSupport from "../../components/products/ProductDetailPremiumSupport";
 import ProductDetailPremiumSupportStaging from "../../components/products/ProductDetailPremiumSupportStaging";
+import ProductDetailPremiumGodownStaging from "../../components/products/ProductDetailPremiumGodownStaging";
 
 export default function ProductDetailClient({ product, relatedProducts, allProducts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -180,6 +181,17 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   if (product.slug === 'support-application-staging') {
     return (
       <ProductDetailPremiumSupportStaging 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for Godown Management Staging
+  if (product.slug === 'godown-management-staging') {
+    return (
+      <ProductDetailPremiumGodownStaging 
         product={product} 
         relatedProducts={relatedProducts} 
         allProducts={allProducts}

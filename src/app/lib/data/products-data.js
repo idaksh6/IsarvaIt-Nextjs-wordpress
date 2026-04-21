@@ -524,6 +524,37 @@ export const productsData = [
     color: "from-emerald-600 to-teal-600",
     bgGradient: "from-emerald-50 via-teal-50 to-white",
   },
+  {
+    slug: "godown-management-staging",
+    title: "Smart Godown & Inventory Management System",
+    category: "Warehouse Management",
+    icon: "📦",
+    tagline: "Track. Manage. Control. Grow.",
+    shortDescription:
+      "Everything you need to manage your warehouse, stock, events, rentals, and payments — all in one place.",
+    description:
+      "Our Smart Godown & Inventory Management System provides comprehensive tracking and control over your entire warehouse operations. From simple stock tracking to complex event and rental management, stay ahead with real-time insights and automated status updates.",
+    features: [
+      "Real-Time Inventory Tracking",
+      "Smart Dashboard Analytics",
+      "Event & Rental Management",
+      "Financial & Payment Tracking",
+      "Automated Status Updates",
+      "QR & Barcode Generation",
+      "Multi-Level Category System",
+      "Advanced Insight Reports",
+    ],
+    technologies: ["React", "Next.js", "PostgreSQL", "Node.js", "Cloud Infrastructure"],
+    benefits: [
+      "Optimized Warehouse Space",
+      "Minimum Stock-out Risks",
+      "Crystal Clear Financial Control",
+      "Automated Workflow Efficiency",
+      "Data-Driven Decisions",
+    ],
+    color: "from-teal-500 to-cyan-600",
+    bgGradient: "from-teal-50 via-cyan-50 to-white",
+  },
 ];
 
 // Helper functions
