@@ -147,7 +147,7 @@ export function generateJobMetadata(job) {
     title: `${job.title} - Careers`,
     description: `Join our team as ${job.title}. ${job.description?.substring(0, 150)}`,
     keywords: [job.title, job.category, "careers", "job opening", "hiring"],
-    url: `/careers/${job.slug}`,
+    url: `/career/${job.slug}`,
   });
 }
 

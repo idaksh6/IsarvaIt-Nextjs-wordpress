@@ -8,6 +8,7 @@ import { useSearchParams } from "next/navigation";
 import { productsData as products } from "../lib/data/products-data";
 import { servicesData as services } from "../lib/data/services-data";
 import { industriesData as industries } from "../lib/data/industries-data";
+import { jobsData as jobs } from "../lib/data/jobsData";
 import { getBlogPosts } from "../lib/services/blog-service";
 
 // Static Pages Data
@@ -85,6 +86,7 @@ function SearchResults() {
     products: [],
     services: [],
     industries: [],
+    careers: [],
     blogs: [],
   });
   const [isLoading, setIsLoading] = useState(true);
@@ -142,6 +144,17 @@ function SearchResults() {
       );
     });
 
+    // Search Careers
+    const careerResults = jobs.filter((item) => {
+      return (
+        item.title?.toLowerCase().includes(term) ||
+        item.description?.toLowerCase().includes(term) ||
+        item.category?.toLowerCase().includes(term) ||
+        item.location?.toLowerCase().includes(term) ||
+        item.requiredSkills?.some(skill => skill.toLowerCase().includes(term))
+      );
+    });
+
     // Search Blog Posts
     const blogPosts = await getBlogPosts({ perPage: 100 });
     const blogResults = blogPosts.filter((item) => {
@@ -158,6 +171,7 @@ function SearchResults() {
       products: productResults,
       services: serviceResults,
       industries: industryResults,
+      careers: careerResults,
       blogs: blogResults,
     });
 
@@ -166,6 +180,7 @@ function SearchResults() {
       productResults.length +
         serviceResults.length +
         industryResults.length +
+        careerResults.length +
         blogResults.length
     );
     setIsLoading(false);
@@ -500,7 +515,69 @@ function SearchResults() {
               </section>
             )}
 
-            {/* Blog Posts */}
+            {/* Careers */}
+            {results.careers.length > 0 && (
+              <section>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                  <span className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                    <svg
+                      className="w-5 h-5 text-orange-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </span>
+                  Careers ({results.careers.length})
+                </h2>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {results.careers.map((job) => (
+                    <Link
+                      key={`career-${job.slug}`}
+                      href={`/career/${job.slug}`}
+                      className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-orange-300"
+                    >
+                      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
+                        {job.title}
+                      </h3>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        <span className="text-[10px] font-bold px-2 py-0.5 bg-gray-100 text-gray-600 rounded-full uppercase">
+                          {job.location}
+                        </span>
+                        <span className="text-[10px] font-bold px-2 py-0.5 bg-orange-50 text-orange-600 rounded-full uppercase">
+                          {job.jobType}
+                        </span>
+                      </div>
+                      <p className="text-gray-600 text-sm line-clamp-3 mb-4">
+                        {job.description}
+                      </p>
+                      <span className="inline-flex items-center text-orange-600 font-semibold text-sm">
+                        View Job Details
+                        <svg
+                          className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            )}
             {results.blogs.length > 0 && (
               <section>
                 <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">

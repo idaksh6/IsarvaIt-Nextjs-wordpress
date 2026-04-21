@@ -415,7 +415,7 @@ export default function CareerPage() {
                     </div>
 
                     <Link
-                      href={`/careers/${job.slug}`}
+                      href={`/career/${job.slug}`}
                       rel="noopener noreferrer"
                       className="press-illusion-btn bg-green-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex"
                     >
