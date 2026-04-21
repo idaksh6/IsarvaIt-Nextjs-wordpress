@@ -481,7 +481,7 @@ export default async function IndustryDetailPage({ params }) {
             {relatedIndustries.map((relatedIndustry) => (
               <Link
                 key={relatedIndustry.slug}
-                href={`/industries/${relatedIndustry.slug}`}
+                href={`/industry/${relatedIndustry.slug}`}
                 prefetch={true}
                 className="group"
               >

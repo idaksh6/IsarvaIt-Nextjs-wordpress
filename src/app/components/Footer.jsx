@@ -112,12 +112,12 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               {[
-                { label: "Media & Entertainment", href: "/industries/media-entertainment" },
-                { label: "Insurance", href: "/industries/insurance" },
-                { label: "Manufacturing", href: "/industries/manufacturing" },
-                { label: "Health Care & Life Sciences", href: "/industries/healthcare-life-sciences" },
-                { label: "Education", href: "/industries/education" },
-                { label: "Banking and Financial Services", href: "/industries/banking-financial-services" },
+                { label: "Media & Entertainment", href: "/industry/media-entertainment" },
+                { label: "Insurance", href: "/industry/insurance" },
+                { label: "Manufacturing", href: "/industry/manufacturing" },
+                { label: "Health Care & Life Sciences", href: "/industry/healthcare-life-sciences" },
+                { label: "Education", href: "/industry/education" },
+                { label: "Banking and Financial Services", href: "/industry/banking-financial-services" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link

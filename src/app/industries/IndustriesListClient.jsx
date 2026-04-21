@@ -183,7 +183,7 @@ export default function IndustriesListClient({ industriesData }) {
               {filteredIndustries.map((industry, index) => (
                 <Link
                   key={industry.slug}
-                  href={`/industries/${industry.slug}`}
+                  href={`/industry/${industry.slug}`}
                   prefetch={true}
                   className="group"
                 >

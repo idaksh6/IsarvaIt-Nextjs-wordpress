@@ -469,7 +469,7 @@ function SearchResults() {
                   {results.industries.map((industry) => (
                     <Link
                       key={`industry-${industry.slug}`}
-                      href={`/industries/${industry.slug}`}
+                      href={`/industry/${industry.slug}`}
                       className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-purple-300"
                     >
                       <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">

@@ -86,7 +86,7 @@ function filterDocumentsByType(docs, questionType) {
     } else if (questionType === 'services') {
       return lowerUrl.includes('/service/');
     } else if (questionType === 'industries') {
-      return lowerUrl.includes('/industries/');
+      return lowerUrl.includes('/industry/');
     }
     
     return true;
@@ -312,7 +312,7 @@ export async function POST(req) {
       STEP 2: Filter the context to ONLY use information matching the question type:
       - If PRODUCTS question → Use ONLY context with URLs containing "/products/"
       - If SERVICES question → Use ONLY context with URLs containing "/services/"
-      - If INDUSTRIES question → Use ONLY context with URLs containing "/industries/"
+      - If INDUSTRIES question → Use ONLY context with URLs containing "/industry/"
       
       STEP 3: Answer based on filtered context only.
       
@@ -329,7 +329,7 @@ export async function POST(req) {
         
       - **INDUSTRIES** = Sectors/verticals Isarva serves
         Examples: Healthcare, Banking, Education, Manufacturing, Retail
-        URL Pattern: /industries/
+        URL Pattern: /industry/
       
       ❌ WRONG ANSWER EXAMPLE:
       User asks: "What products do you have?"
@@ -360,7 +360,7 @@ export async function POST(req) {
       4. Match link topic to question topic:
          - Products question → Link to /products/ URLs
          - Services question → Link to /service/ URLs
-         - Industries question → Link to /industries/ URLs
+         - Industries question → Link to /industry/ URLs
       5. If no specific page URL is found, ALWAYS end with: "[Contact us](https://isarvait.vercel.app/contact)"
       6. NEVER show raw URLs - always format as clickable links
       

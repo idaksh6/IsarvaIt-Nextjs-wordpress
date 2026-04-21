@@ -127,7 +127,7 @@ export function generateIndustryMetadata(industry) {
       "vertical software",
       "business transformation",
     ],
-    url: `/industries/${industry.slug}`,
+    url: `/industry/${industry.slug}`,
   });
 }
 

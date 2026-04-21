@@ -38,13 +38,13 @@ const servicesData = [
 ];
 
 const industriesData = [
-  { label: "Banking & Financial Services", href: "/industries/banking-financial-services", icon: "🏦" },
-  { label: "Healthcare & Life Sciences", href: "/industries/healthcare-life-sciences", icon: "🏥" },
-  { label: "Insurance", href: "/industries/insurance", icon: "🛡️" },
-  { label: "Manufacturing", href: "/industries/manufacturing", icon: "🏭" },
-  { label: "Education", href: "/industries/education", icon: "🎓" },
-  { label: "Media & Entertainment", href: "/industries/media-entertainment", icon: "🎬" },
-  { label: "BPO Services – ITES", href: "/industries/bpo-services-ites", icon: "💼" },
+  { label: "Banking & Financial Services", href: "/industry/banking-financial-services", icon: "🏦" },
+  { label: "Healthcare & Life Sciences", href: "/industry/healthcare-life-sciences", icon: "🏥" },
+  { label: "Insurance", href: "/industry/insurance", icon: "🛡️" },
+  { label: "Manufacturing", href: "/industry/manufacturing", icon: "🏭" },
+  { label: "Education", href: "/industry/education", icon: "🎓" },
+  { label: "Media & Entertainment", href: "/industry/media-entertainment", icon: "🎬" },
+  { label: "BPO Services – ITES", href: "/industry/bpo-services-ites", icon: "💼" },
 ];
 
 const productsData = [

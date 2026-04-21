@@ -43,7 +43,7 @@ export default function sitemap() {
 
   // Dynamic industry pages
   const industries = industriesData.map((industry) => ({
-    url: `${baseUrl}/industries/${industry.slug}`,
+    url: `${baseUrl}/industry/${industry.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.8,
