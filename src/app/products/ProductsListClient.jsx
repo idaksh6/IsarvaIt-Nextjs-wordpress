@@ -7,14 +7,17 @@ export default function ProductsListClient({ productsData }) {
   const [searchQuery, setSearchQuery] = useState("");
   const productsGridRef = useRef(null);
 
-  // Filter products based on search query
+  // Filter products based on search query and exclude staging items
   const filteredProducts = useMemo(() => {
+    // First, exclude any items that are meant for staging only
+    let baseProducts = productsData.filter(product => !product.slug?.includes("-staging"));
+
     if (!searchQuery.trim()) {
-      return productsData;
+      return baseProducts;
     }
 
     const query = searchQuery.toLowerCase();
-    return productsData.filter(product =>
+    return baseProducts.filter(product =>
       product.title?.toLowerCase().includes(query) ||
       product.tagline?.toLowerCase().includes(query) ||
       product.shortDescription?.toLowerCase().includes(query) ||
