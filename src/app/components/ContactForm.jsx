@@ -104,7 +104,7 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6" aria-label="Contact form">
+    <form onSubmit={handleSubmit} id="main-enquiry-submit" className="space-y-6" aria-label="Contact form">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
@@ -247,7 +247,6 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
 
       <button
         type="submit"
-        id="main-enquiry-submit"
         disabled={isSubmitting}
         aria-label={isSubmitting ? "Sending message" : "Send message"}
         className="press-illusion-btn bg-green-400 text-black md:mx-0 mx-auto font-bold px-8 w-fit py-4 text-lg items-center space-x-2 flex disabled:opacity-50 disabled:cursor-not-allowed  justify-center"
