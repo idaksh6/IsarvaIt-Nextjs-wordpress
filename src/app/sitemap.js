@@ -1,6 +1,7 @@
 import { productsData } from './lib/data/products-data';
 import { servicesData } from './lib/data/services-data';
 import { industriesData } from './lib/data/industries-data';
+import { jobsData } from './lib/data/jobsData';
 
 export default function sitemap() {
   const baseUrl = 'https://www.isarvait.com';
@@ -41,7 +42,6 @@ export default function sitemap() {
     priority: 0.9,
   }));
 
-  // Dynamic industry pages
   const industries = industriesData.map((industry) => ({
     url: `${baseUrl}/industry/${industry.slug}`,
     lastModified: new Date(),
@@ -49,5 +49,13 @@ export default function sitemap() {
     priority: 0.8,
   }));
 
-  return [...routes, ...products, ...services, ...industries];
+  // Dynamic career pages
+  const careers = jobsData.map((job) => ({
+    url: `${baseUrl}/career/${job.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
+  return [...routes, ...products, ...services, ...industries, ...careers];
 }
