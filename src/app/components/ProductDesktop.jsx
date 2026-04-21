@@ -1249,22 +1249,25 @@ const MobileProductModal = ({ product, onClose }) => {
             <div className="flex flex-col gap-4 py-4 border-t border-gray-100">
               <Link
                 href={`/product/${product.slug}`}
-                className="press-illusion-btn bg-green-400 text-black w-fit  font-bold px-6 py-2 text-sm mx-auto  items-center space-x-2  inline-flex"
+                className="btn-premium-cyan group !px-6 !py-3 !text-sm mx-auto"
               >
-                <span>Get Pricing & Demo</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 17 9"
-                  className="h-2 w-4"
-                >
-                  <path
-                    fill="currentColor"
-                    fillRule="evenodd"
-                    d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
+                <div className="shimmer"></div>
+                <span className="relative z-10 flex items-center gap-2">
+                  GET PRICING & DEMO
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 17 9"
+                    className="h-2 w-4 transition-transform duration-300 group-hover:translate-x-2"
+                  >
+                    <path
+                      fill="currentColor"
+                      fillRule="evenodd"
+                      d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
+                </span>
               </Link>
             </div>
           </div>
@@ -1334,23 +1337,26 @@ function ProductCard({ product }) {
         <div className="mt-6 flex items-center justify-between pt-4 border-t border-gray-100">
           <Link
             href={`/product/${product.slug}`}
-            className="product-click-trigger btn-primary px-4 py-2 text-sm inline-flex items-center space-x-1"
+            className="product-click-trigger btn-premium-cyan group !px-4 !py-2 !text-[12px] !font-bold"
             data-product-name={product.name}
           >
-            <span>Get Pricing & Demo</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 9"
-              className="h-1.5 w-3"
-            >
-              <path
-                fill="currentColor"
-                fillRule="evenodd"
-                d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
-                clipRule="evenodd"
-              ></path>
-            </svg>
+            <div className="shimmer"></div>
+            <span className="relative z-10 flex items-center gap-1.5 uppercase tracking-wider">
+              PRICING & DEMO
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 17 9"
+                className="h-1.5 w-3 transition-transform duration-300 group-hover:translate-x-1"
+              >
+                <path
+                  fill="currentColor"
+                  fillRule="evenodd"
+                  d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+            </span>
           </Link>
         </div>
       </div>

@@ -1294,26 +1294,35 @@ export default function ProductDetailPremiumSupportStaging({
             <p className="text-base text-[#444444] mb-8 max-w-3xl mx-auto leading-relaxed">
               One simple platform to manage projects, track daily work, monitor team performance, and never miss billing, reports, or renewals again.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <button
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mt-10">
+              <motion.button
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={() => setIsModalOpen(true)}
-                className="press-illusion-btn-purple bg-purple-500 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex cursor-pointer"
+                className="btn-premium-purple group relative px-10 py-5 rounded-full overflow-hidden shadow-[0_20px_50px_rgba(147,51,234,0.3)]"
               >
-                <span>REQUEST DEMO</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 17 9"
-                  className="h-2 w-4"
-                >
-                  <path
-                    fill="currentColor"
-                    fillRule="evenodd"
-                    d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
-                    clipRule="evenodd"
-                  ></path>
+                <div className="shimmer absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                <span className="relative z-10 flex items-center gap-3 font-black tracking-wider text-sm">
+                  REQUEST A LIVE DEMO
+                  <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
+              </motion.button>
+
+              <motion.button
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => {
+                  document.getElementById('iss-features-section')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="relative inline-flex items-center justify-center gap-3 px-10 py-5 font-black tracking-wider text-sm text-gray-700 transition-all duration-300 rounded-full bg-white border-2 border-gray-100 hover:border-purple-200 hover:text-[#9333EA] shadow-sm hover:shadow-xl"
+              >
+                EXPLORE FEATURES
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
-              </button>
+              </motion.button>
             </div>
           </motion.div>
         </div>
