@@ -255,6 +255,13 @@ export default function ContactFormModal({
           ...(!formData.selectedItem && preSelectedItem && { item: preSelectedItem })
         });
 
+        // Send custom event to GTM for 100% accurate success tracking
+        if (window.dataLayer) {
+          window.dataLayer.push({
+            event: 'enquiry_success'
+          });
+        }
+
         router.push(`/thank-you?${queryParams.toString()}`);
       } else {
         setSubmitStatus("error");
