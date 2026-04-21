@@ -215,7 +215,7 @@ export const productsData = [
     bgGradient: "from-green-50 via-emerald-50 to-white",
   },
   {
-    slug: "retail-billing-multi-branch",
+    slug: "retail-billing-software-with-multi-branch-and-multi-warehouse",
     title: "Retail Billing Software with Multi Branch and Multi Warehouse",
     category: "Enterprise Retail",
     icon: "🏬",
@@ -420,7 +420,7 @@ export const productsData = [
     bgGradient: "from-red-50 via-orange-50 to-white",
   },
   {
-    slug: "dealer-management-software",
+    slug: "dealer-management-and-dealer-article-software",
     title: "Dealer Management and Dealer Article Software",
     category: "Distribution Management",
     icon: "🤝",

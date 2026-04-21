@@ -55,8 +55,8 @@ const productsData = [
   { label: "Dispatcher Panel", href: "/product/dispatcher-panel", icon: "⛽" },
   { label: "WooCommerce Development", href: "/product/woocommerce-development", icon: "🛒" },
   { label: "Document Management System", href: "/product/document-management-system", icon: "📄" },
-  { label: "Retail Billing Multi Branch", href: "/product/retail-billing-multi-branch", icon: "🚚" },
-  { label: "Dealer Management Software", href: "/product/dealer-management-software", icon: "🤝" },
+  { label: "Retail Billing Software with Multi Branch and Multi Warehouse", href: "/product/retail-billing-software-with-multi-branch-and-multi-warehouse", icon: "🚚" },
+  { label: "Dealer Management and Dealer Article Software", href: "/product/dealer-management-and-dealer-article-software", icon: "🤝" },
 ];
 
 export default function Header() {

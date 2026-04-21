@@ -56,7 +56,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   }
 
   // Use Premium View for Multi-Branch Retail Billing Software
-  if (product.slug === 'retail-billing-multi-branch') {
+  if (product.slug === 'retail-billing-software-with-multi-branch-and-multi-warehouse') {
     return (
       <ProductDetailPremiumMultiBranch 
         product={product} 
@@ -122,7 +122,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   }
 
   // Use Premium View for Dealer Management Software
-  if (product.slug === 'dealer-management-software') {
+  if (product.slug === 'dealer-management-and-dealer-article-software') {
     return (
       <ProductDetailPremiumDealer 
         product={product} 
