@@ -88,8 +88,10 @@ export function generateMetadata({
 }
 
 export function generateProductMetadata(product) {
+  const isStaging = product.slug?.includes("-staging");
+
   return generateMetadata({
-    title: product.title,
+    title: isStaging ? `[STAGING] ${product.title}` : product.title,
     description: product.shortDescription || product.description,
     keywords: [
       product.title,
@@ -100,12 +102,15 @@ export function generateProductMetadata(product) {
     ],
     url: `/product/${product.slug}`,
     type: "website",
+    noIndex: isStaging,
   });
 }
 
 export function generateServiceMetadata(service) {
+  const isStaging = service.slug?.includes("-staging");
+
   return generateMetadata({
-    title: service.title,
+    title: isStaging ? `[STAGING] ${service.title}` : service.title,
     description: service.shortDescription || service.description,
     keywords: [
       service.title,
@@ -114,6 +119,7 @@ export function generateServiceMetadata(service) {
       "IT services",
     ],
     url: `/service/${service.slug}`,
+    noIndex: isStaging,
   });
 }
 
