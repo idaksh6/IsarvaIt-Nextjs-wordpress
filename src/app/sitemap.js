@@ -27,7 +27,7 @@ export default function sitemap() {
 
   // Dynamic product pages
   const products = productsData.map((product) => ({
-    url: `${baseUrl}/products/${product.slug}`,
+    url: `${baseUrl}/product/${product.slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.9,

@@ -179,7 +179,7 @@ export default function ProductsListClient({ productsData }) {
               {filteredProducts.map((product, index) => (
                 <Link
                   key={product.slug}
-                  href={`/products/${product.slug}`}
+                  href={`/product/${product.slug}`}
                   prefetch={true}
                   className="product-click-trigger group"
                   data-product-name={product.title}

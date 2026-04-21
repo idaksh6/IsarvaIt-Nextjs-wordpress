@@ -42,7 +42,7 @@ export default function ProductsClient({ productsData, categories }) {
         {filteredProducts.map((product, index) => (
           <Link
             key={product.slug}
-            href={`/products/${product.slug}`}
+            href={`/product/${product.slug}`}
             prefetch={true}
             className="group"
           >

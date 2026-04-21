@@ -168,7 +168,7 @@ function HeroSection({ data }) {
                 : "Tailored digital solutions built to solve complex business challenges and support long-term growth."}
             </p>
             <Link
-              href="/products/woocommerce-development"
+              href="/product/woocommerce-development"
               className="inline-flex items-center justify-center gap-1 text-black font-semibold text-[13px] border border-green-400 rounded-full px-5 py-2 transition-colors hover:bg-green-400 hover:text-white w-fit mt-auto whitespace-nowrap"
               aria-label="Get started with custom software development"
             >

@@ -86,11 +86,11 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               {[
-                { label: "Support Application", href: "/products/support-application" },
-                { label: "e Commerce", href: "/products/woocommerce-development" },
-                { label: "Petro Care", href: "/products/petro-care" },
-                { label: "HRMS Software", href: "/products/hrms-software" },
-                { label: "Document Management System", href: "/products/document-management-system" },
+                { label: "Support Application", href: "/product/support-application" },
+                { label: "e Commerce", href: "/product/woocommerce-development" },
+                { label: "Petro Care", href: "/product/petro-care" },
+                { label: "HRMS Software", href: "/product/hrms-software" },
+                { label: "Document Management System", href: "/product/document-management-system" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link

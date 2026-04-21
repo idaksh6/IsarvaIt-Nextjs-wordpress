@@ -98,7 +98,7 @@ export function generateProductMetadata(product) {
       "software solution",
       "business software",
     ],
-    url: `/products/${product.slug}`,
+    url: `/product/${product.slug}`,
     type: "website",
   });
 }

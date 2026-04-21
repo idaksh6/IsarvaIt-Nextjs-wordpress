@@ -82,7 +82,7 @@ function filterDocumentsByType(docs, questionType) {
     
     // Filter based on URL pattern
     if (questionType === 'products') {
-      return lowerUrl.includes('/products/');
+      return lowerUrl.includes('/product/');
     } else if (questionType === 'services') {
       return lowerUrl.includes('/service/');
     } else if (questionType === 'industries') {
@@ -310,8 +310,8 @@ export async function POST(req) {
       - Keywords like "industry", "sector", "healthcare", "banking", "education" = INDUSTRIES QUESTION
       
       STEP 2: Filter the context to ONLY use information matching the question type:
-      - If PRODUCTS question → Use ONLY context with URLs containing "/products/"
-      - If SERVICES question → Use ONLY context with URLs containing "/services/"
+      - If PRODUCTS question → Use ONLY context with URLs containing "/product/"
+      - If SERVICES question → Use ONLY context with URLs containing "/service/"
       - If INDUSTRIES question → Use ONLY context with URLs containing "/industry/"
       
       STEP 3: Answer based on filtered context only.
@@ -325,7 +325,7 @@ export async function POST(req) {
         
       - **PRODUCTS** = Ready-made SOFTWARE that clients can BUY/LICENSE from Isarva
         Examples: HRMS Software, Billing Software, CRM Software, POS Systems
-        URL Pattern: /products/
+        URL Pattern: /product/
         
       - **INDUSTRIES** = Sectors/verticals Isarva serves
         Examples: Healthcare, Banking, Education, Manufacturing, Retail
@@ -358,7 +358,7 @@ export async function POST(req) {
       2. Use markdown format: [descriptive text](URL)
       3. Extract URLs from the "Source:" lines in the context
       4. Match link topic to question topic:
-         - Products question → Link to /products/ URLs
+         - Products question → Link to /product/ URLs
          - Services question → Link to /service/ URLs
          - Industries question → Link to /industry/ URLs
       5. If no specific page URL is found, ALWAYS end with: "[Contact us](https://isarvait.vercel.app/contact)"

@@ -48,15 +48,15 @@ const industriesData = [
 ];
 
 const productsData = [
-  { label: "HRMS Software", href: "/products/hrms-software", icon: "👥" },
-  { label: "CRM Application", href: "/products/crm-application", icon: "👔" },
-  { label: "Support Application", href: "/products/support-application", icon: "🎧" },
-  { label: "Marine Service Software", href: "/products/marine-service-software", icon: "🏬" },
-  { label: "Dispatcher Panel", href: "/products/dispatcher-panel", icon: "⛽" },
-  { label: "WooCommerce Development", href: "/products/woocommerce-development", icon: "🛒" },
-  { label: "Document Management System", href: "/products/document-management-system", icon: "📄" },
-  { label: "Retail Billing Multi Branch", href: "/products/retail-billing-multi-branch", icon: "🚚" },
-  { label: "Dealer Management Software", href: "/products/dealer-management-software", icon: "🤝" },
+  { label: "HRMS Software", href: "/product/hrms-software", icon: "👥" },
+  { label: "CRM Application", href: "/product/crm-application", icon: "👔" },
+  { label: "Support Application", href: "/product/support-application", icon: "🎧" },
+  { label: "Marine Service Software", href: "/product/marine-service-software", icon: "🏬" },
+  { label: "Dispatcher Panel", href: "/product/dispatcher-panel", icon: "⛽" },
+  { label: "WooCommerce Development", href: "/product/woocommerce-development", icon: "🛒" },
+  { label: "Document Management System", href: "/product/document-management-system", icon: "📄" },
+  { label: "Retail Billing Multi Branch", href: "/product/retail-billing-multi-branch", icon: "🚚" },
+  { label: "Dealer Management Software", href: "/product/dealer-management-software", icon: "🤝" },
 ];
 
 export default function Header() {

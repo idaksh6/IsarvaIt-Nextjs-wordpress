@@ -357,7 +357,7 @@ function SearchResults() {
                   {results.products.map((product) => (
                     <Link
                       key={`product-${product.slug}`}
-                      href={`/products/${product.slug}`}
+                      href={`/product/${product.slug}`}
                       className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-emerald-300"
                     >
                       <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors">
