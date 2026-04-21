@@ -183,6 +183,14 @@ export default function ProductsListClient({ productsData }) {
                   prefetch={true}
                   className="product-click-trigger group"
                   data-product-name={product.title}
+                  onClick={() => {
+                    if (window.dataLayer) {
+                      window.dataLayer.push({
+                        event: 'product_click',
+                        'product-name': product.title
+                      });
+                    }
+                  }}
                 >
                   <div className="relative rounded-3xl p-8 h-full transition-all duration-300 hover:scale-[1.02] bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg hover:shadow-2xl">
                     {/* Hover Gradient Effect */}

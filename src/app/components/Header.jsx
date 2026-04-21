@@ -250,7 +250,15 @@ export default function Header() {
                         key={product.href}
                         href={product.href}
                         prefetch={true}
-                        onClick={() => setIsProductsOpen(false)}
+                        onClick={() => {
+                          setIsProductsOpen(false);
+                          if (window.dataLayer) {
+                            window.dataLayer.push({
+                              event: 'product_click',
+                              'product-name': product.label
+                            });
+                          }
+                        }}
                         className="product-click-trigger group flex items-start gap-3 p-4 rounded-xl hover:bg-violet-50 transition-all duration-200"
                         data-product-name={product.label}
                       >
@@ -747,7 +755,15 @@ export default function Header() {
                               <Link
                                 href={product.href}
                                 prefetch={true}
-                                onClick={() => setIsMobileMenuOpen(false)}
+                                onClick={() => {
+                                  setIsMobileMenuOpen(false);
+                                  if (window.dataLayer) {
+                                    window.dataLayer.push({
+                                      event: 'product_click',
+                                      'product-name': product.label
+                                    });
+                                  }
+                                }}
                                 className="product-click-trigger flex items-center gap-3 p-3 rounded-xl text-gray-700 hover:bg-white hover:shadow-sm transition-all duration-200"
                                 data-product-name={product.label}
                               >
