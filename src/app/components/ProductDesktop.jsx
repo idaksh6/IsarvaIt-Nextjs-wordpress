@@ -95,8 +95,8 @@ const products = [
   },
   {
     id: 6,
-    name: "Bill Soft — Multi Branch",
-    slug: "retail-billing-multi-branch",
+    name: "Retail Billing Software with Multi Branch and Multi Warehouse",
+    slug: "retail-billing-software-with-multi-branch-and-multi-warehouse",
     category: "E-Commerce & Retail",
     short:
       "Streamlines billing and inventory for multi-branch, multi-warehouse businesses. Android & iOS app coming soon.",
@@ -161,8 +161,8 @@ const products = [
   },
   {
     id: 19,
-    name: "Dealer Management",
-    slug: "dealer-management-software",
+    name: "Dealer Management and Dealer Article Software",
+    slug: "dealer-management-and-dealer-article-software",
     category: "Operations",
     short:
       "Streamlines dealer onboarding, management, and distribution of articles — with secure access and smart communication.",
