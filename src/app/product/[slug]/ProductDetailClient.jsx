@@ -166,10 +166,11 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
     );
   }
 
-  // Use Premium View for Support Application
+
+  // Use Staging View for Support Application (now live)
   if (product.slug === 'support-application') {
     return (
-      <ProductDetailPremiumSupport 
+      <ProductDetailPremiumSupportStaging 
         product={product} 
         relatedProducts={relatedProducts} 
         allProducts={allProducts}
