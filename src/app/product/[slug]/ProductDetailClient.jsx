@@ -255,7 +255,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
                 <div className="flex flex-wrap gap-4">
                   <button
                     onClick={() => setIsModalOpen(true)}
-                    className="press-illusion-btn bg-green-400 text-white font-bold px-8 py-4 text-lg items-center space-x-2 inline-flex shadow-lg hover:shadow-xl"
+                    className="press-illusion-btn bg-orange-500 text-white font-bold px-8 py-4 text-lg items-center space-x-2 inline-flex shadow-lg hover:shadow-xl"
                   >
                     <span>Request Demo</span>
                     <svg

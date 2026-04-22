@@ -1249,7 +1249,7 @@ const MobileProductModal = ({ product, onClose }) => {
             <div className="flex flex-col gap-4 py-4 border-t border-gray-100">
               <Link
                 href={`/product/${product.slug}`}
-                className="btn-premium-cyan group !px-6 !py-3 !text-sm mx-auto"
+                className="btn-premium-orange group !px-6 !py-3 !text-sm mx-auto"
               >
                 <div className="shimmer"></div>
                 <span className="relative z-10 flex items-center gap-2">
@@ -1337,7 +1337,7 @@ function ProductCard({ product }) {
         <div className="mt-6 flex items-center justify-between pt-4 border-t border-gray-100">
           <Link
             href={`/product/${product.slug}`}
-            className="product-click-trigger btn-premium-cyan group !px-4 !py-2 !text-[12px] !font-bold"
+            className="product-click-trigger btn-premium-orange group !px-4 !py-2 !text-[12px] !font-bold"
             data-product-name={product.name}
           >
             <div className="shimmer"></div>

@@ -232,7 +232,7 @@ export default function CareerApplicationForm({ jobTitle, jobSlug }) {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="press-illusion-btn bg-green-400 text-white w-full text-center jus font-bold px-6 py-2 text-base items-center space-x-2 justify-center flex"
+        className="press-illusion-btn bg-orange-500 text-white w-full text-center jus font-bold px-6 py-2 text-base items-center space-x-2 justify-center flex"
       >
         {isSubmitting ? (
           <>

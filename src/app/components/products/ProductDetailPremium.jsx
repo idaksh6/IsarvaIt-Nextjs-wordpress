@@ -257,7 +257,7 @@ export default function ProductDetailPremium({
               <div className="mt-8">
                 <button
                   onClick={() => setIsBrochureModalOpen(true)}
-                  className="press-illusion-btn bg-green-400 text-white font-bold px-6 py-2 text-base items-center space-x-2 inline-flex cursor-pointer"
+                  className="press-illusion-btn bg-orange-500 text-white font-bold px-6 py-2 text-base items-center space-x-2 inline-flex cursor-pointer"
                 >
                   <span>Download Brochure</span>
                   <svg

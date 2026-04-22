@@ -515,7 +515,7 @@ export default function Header() {
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 17 9"
-            className="h-2 v-4"
+            className="h-2 w-4"
           >
             <path
               fill="currentColor"
