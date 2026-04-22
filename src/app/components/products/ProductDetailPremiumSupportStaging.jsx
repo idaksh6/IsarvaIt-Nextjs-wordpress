@@ -1666,7 +1666,7 @@ export default function ProductDetailPremiumSupportStaging({
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <button
                     onClick={() => setIsModalOpen(true)}
-                    className="group relative bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-base hover:bg-white hover:text-orange-600 transition-all duration-300 hover:scale-105 flex items-center gap-3"
+                    className="group relative bg-white text-orange-600 px-8 py-4 rounded-full font-bold text-base hover:bg-orange-50 transition-all duration-300 hover:scale-105 flex items-center gap-3 shadow-lg shadow-orange-900/10"
                   >
                     <svg
                       className="w-5 h-5"
