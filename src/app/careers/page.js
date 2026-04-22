@@ -170,7 +170,7 @@ export default function CareerPage() {
                 <Link
                   href="#openings"
                   rel="noopener noreferrer"
-                  className="press-illusion-btn bg-orange-500 justify-center text-white text-center lg:mx-0 mx-auto  font-bold px-6 py-2 text-base items-center space-x-2 flex"
+                  className="press-illusion-btn-orange bg-orange-500 justify-center text-white text-center lg:mx-0 mx-auto  font-bold px-6 py-2 text-base items-center space-x-2 flex"
                 >
                   <span>Explore Roles</span>
                   <svg
@@ -190,7 +190,7 @@ export default function CareerPage() {
                 <Link
                   href="/internships"
                   rel="noopener noreferrer"
-                  className="press-illusion-btn bg-orange-500 justify-center text-white text-center lg:mx-0 mx-auto  font-bold px-6 py-2 text-base items-center space-x-2 flex"
+                  className="press-illusion-btn-orange bg-orange-500 justify-center text-white text-center lg:mx-0 mx-auto  font-bold px-6 py-2 text-base items-center space-x-2 flex"
                 >
                   <span>Explore Internships</span>
                   <svg
@@ -417,7 +417,7 @@ export default function CareerPage() {
                     <Link
                       href={`/career/${job.slug}`}
                       rel="noopener noreferrer"
-                      className="press-illusion-btn bg-orange-500 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex"
+                      className="press-illusion-btn-orange bg-orange-600 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex"
                     >
                       <span>View Details</span>
                       <svg
@@ -481,7 +481,7 @@ export default function CareerPage() {
                   onClick={() => setIsModalOpen(true)}
                   href="#"
                   rel="noopener noreferrer"
-                  className="press-illusion-btn bg-orange-500 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 hidden nav:flex"
+                  className="press-illusion-btn-orange bg-orange-600 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 hidden nav:flex"
                 >
                   <span>Send Resume</span>
                   <svg
@@ -502,7 +502,7 @@ export default function CareerPage() {
                 <Link
                   href="/about"
                   rel="noopener noreferrer"
-                  className="press-illusion-btn bg-orange-500 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex"
+                  className="press-illusion-btn-orange bg-orange-600 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex"
                 >
                   <span> Learn About culture</span>
                   <svg

@@ -270,7 +270,7 @@ export default function TestimonialPage() {
                 <Link
                   href="/contact"
                   rel="noopener noreferrer"
-                  className="press-illusion-btn bg-orange-500 text-white w-fit lg:mx-0 mx-auto font-bold px-6 py-2 text-base items-center space-x-2 flex"
+                  className="press-illusion-btn-orange bg-orange-500 text-white w-fit lg:mx-0 mx-auto font-bold px-6 py-2 text-base items-center space-x-2 flex"
                 >
                   <span>Begin Transformation</span>
                   <svg

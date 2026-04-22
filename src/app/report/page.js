@@ -90,7 +90,7 @@ export default function ReportPage() {
             {error && <p className="text-red-600 mb-4 text-sm">{error}</p>}
             <button
               type="submit"
-              className="w-full bg-emerald-600 text-white py-3 rounded-lg font-semibold hover:bg-emerald-700 transition shadow-md"
+              className="w-full bg-orange-500 text-white py-3 rounded-lg font-semibold hover:bg-orange-600 transition shadow-md"
             >
               Login
             </button>
@@ -123,7 +123,7 @@ export default function ReportPage() {
             <button
               onClick={loadData}
               disabled={loading}
-              className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 shadow-md font-medium"
+              className="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 shadow-md font-medium"
             >
               {loading ? '🔄 Refreshing...' : '🔄 Refresh Data'}
             </button>
@@ -144,7 +144,7 @@ export default function ReportPage() {
             onClick={() => setActiveTab('overview')}
             className={`flex-1 py-3 rounded-lg font-semibold transition ${
               activeTab === 'overview'
-                ? 'bg-emerald-600 text-white shadow-md'
+                ? 'bg-orange-500 text-white shadow-md'
                 : 'text-gray-700 hover:bg-white'
             }`}
           >
@@ -154,7 +154,7 @@ export default function ReportPage() {
             onClick={() => setActiveTab('conversations')}
             className={`flex-1 py-3 rounded-lg font-semibold transition ${
               activeTab === 'conversations'
-                ? 'bg-emerald-600 text-white shadow-md'
+                ? 'bg-orange-500 text-white shadow-md'
                 : 'text-gray-700 hover:bg-white'
             }`}
           >
@@ -164,7 +164,7 @@ export default function ReportPage() {
             onClick={() => setActiveTab('analytics')}
             className={`flex-1 py-3 rounded-lg font-semibold transition ${
               activeTab === 'analytics'
-                ? 'bg-emerald-600 text-white shadow-md'
+                ? 'bg-orange-500 text-white shadow-md'
                 : 'text-gray-700 hover:bg-white'
             }`}
           >

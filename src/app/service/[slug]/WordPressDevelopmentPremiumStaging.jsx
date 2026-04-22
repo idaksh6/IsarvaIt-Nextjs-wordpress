@@ -237,27 +237,28 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 </div>
 
                 <div className="flex flex-wrap gap-6 justify-center lg:justify-start items-center">
-                  <div className="relative group">
                     <button
                       onClick={() => setIsModalOpen(true)}
-                      className="group inline-flex items-center gap-3 px-8 py-4 text-base font-bold text-white bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg shadow-orange-100 hover:shadow-xl transform hover:-translate-y-1"
+                      className="btn-premium-orange group !px-8 !py-4 !text-base mt-2"
                     >
-                      Book a Free Consultation
-                      <svg
-                        className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17 8l4 4m0 0l-4 4m4-4H3"
-                        />
-                      </svg>
+                      <div className="shimmer"></div>
+                      <span className="relative z-10 flex items-center gap-2">
+                        Book a Free Consultation
+                        <svg
+                          className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          />
+                        </svg>
+                      </span>
                     </button>
-                  </div>
 
                   <Link
                     href="#what-we-offer"
@@ -404,9 +405,25 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 </div>
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold rounded-2xl transition-all duration-300 shadow-xl shadow-orange-200 hover:shadow-2xl transform hover:-translate-y-1 premium-cta"
+                  className="btn-premium-orange group !px-10 !py-4 !text-lg mt-4"
                 >
-                  Convert or Design Your Site
+                  <div className="shimmer"></div>
+                  <span className="relative z-10 flex items-center gap-2">
+                    Convert or Design Your Site
+                    <svg
+                      className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </span>
                 </button>
               </div>
 
@@ -857,9 +874,12 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               <p className="text-white font-black text-2xl">Ready to bring AI into your WordPress stack?</p>
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="shrink-0 px-8 py-4 bg-white text-sky-600 hover:bg-sky-50 text-base font-bold rounded-2xl transition-all duration-300 shadow-lg transform hover:-translate-y-1 premium-cta"
+                className="btn-premium-orange group !px-8 !py-3 !text-lg"
               >
-                Explore AI Options
+                <div className="shimmer"></div>
+                <span className="relative z-10 flex items-center gap-2">
+                  Explore AI Options
+                </span>
               </button>
             </div>
           </div>
@@ -878,9 +898,9 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                   </p>
                   <button
                     onClick={() => setIsModalOpen(true)}
-                    className="px-12 py-6 bg-white text-blue-900 text-xl font-bold rounded-2xl transition-all shadow-2xl hover:scale-105 transform premium-cta"
+                    className="press-illusion-btn-orange text-white w-fit font-bold !px-10 !py-4 !text-xl flex items-center space-x-2"
                   >
-                    Hire Our Experts
+                    <span>Hire Our Experts</span>
                   </button>
                 </div>
               </div>
@@ -969,7 +989,7 @@ function ProcessSlider({ servicesData, setIsModalOpen }) {
               <div className="pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-6">
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="px-8 py-3 bg-blue-600 text-white font-bold rounded-xl premium-cta"
+                  className="press-illusion-btn-orange text-white font-bold"
                 >
                   Consult on {step.title}
                 </button>

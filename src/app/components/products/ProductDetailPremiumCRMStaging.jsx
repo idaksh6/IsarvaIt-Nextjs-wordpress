@@ -146,7 +146,7 @@ export default function ProductDetailPremiumCRMStaging({
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="press-illusion-btn-sky bg-sky-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex cursor-pointer"
+                className="press-illusion-btn-orange bg-orange-600 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex cursor-pointer"
               >
                 <span>REQUEST DEMO</span>
                 <svg
@@ -306,7 +306,7 @@ export default function ProductDetailPremiumCRMStaging({
               <div className="mt-8">
                 <button
                   onClick={() => setIsBrochureModalOpen(true)}
-                  className="press-illusion-btn-sky bg-sky-400 text-white font-bold px-6 py-2 text-base items-center space-x-2 inline-flex cursor-pointer"
+                  className="press-illusion-btn-orange bg-orange-600 text-white font-bold px-6 py-2 text-base items-center space-x-2 inline-flex cursor-pointer"
                 >
                   <span>Download Brochure</span>
                   <svg
@@ -458,14 +458,14 @@ export default function ProductDetailPremiumCRMStaging({
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <button
                     onClick={() => setIsModalOpen(true)}
-                    className="group relative bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-base hover:bg-white hover:text-sky-600 transition-all duration-300 hover:scale-105 flex items-center gap-3"
+                    className="press-illusion-btn-orange bg-orange-600 text-white px-8 py-4 rounded-full font-bold text-base flex items-center gap-3 transition-all hover:scale-105"
                   >
                     <svg
-                      className="w-5 h-5"
+                      className="w-5 h-5 transition-transform group-hover:translate-x-1"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
-                      strokeWidth={2}
+                      strokeWidth={3}
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                     </svg>
@@ -574,7 +574,7 @@ export default function ProductDetailPremiumCRMStaging({
           >
             <Link
               href="/products"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#0EA5E9] to-[#0284C7] text-white font-bold text-base rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="press-illusion-btn-orange bg-orange-600 text-white w-fit font-bold px-8 py-4 text-base items-center space-x-2 flex cursor-pointer mx-auto"
             >
               <span>View All Products</span>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

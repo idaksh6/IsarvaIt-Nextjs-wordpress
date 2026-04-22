@@ -169,7 +169,7 @@ export default function ServicesListClient({ servicesData }) {
               <p className="text-gray-600 mb-6">Try adjusting your search terms or browse all our services.</p>
               <button
                 onClick={() => setSearchQuery("")}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors"
               >
                 Clear Search
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -310,7 +310,7 @@ export default function ServicesListClient({ servicesData }) {
             <Link
               href="/contact"
               prefetch={true}
-              className="press-illusion-btn bg-orange-500 text-white font-bold px-8 py-4 text-lg items-center space-x-2 inline-flex justify-center"
+              className="press-illusion-btn-orange bg-orange-600 text-white font-bold px-8 py-4 text-lg items-center space-x-2 inline-flex justify-center"
             >
               <span>Get Started Now</span>
               <svg

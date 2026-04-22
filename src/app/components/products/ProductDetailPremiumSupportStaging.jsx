@@ -1295,11 +1295,9 @@ export default function ProductDetailPremiumSupportStaging({
               One simple platform to manage projects, track daily work, monitor team performance, and never miss billing, reports, or renewals again.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mt-10">
-              <motion.button
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.98 }}
+              <button
                 onClick={() => setIsModalOpen(true)}
-                className="btn-premium-orange group relative px-10 py-5 rounded-full overflow-hidden shadow-[0_20px_50px_rgba(249,115,22,0.3)]"
+                className="btn-premium-orange group !px-10 !py-5"
               >
                 <div className="shimmer absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
                 <span className="relative z-10 flex items-center gap-3 font-black tracking-wider text-sm">
@@ -1308,7 +1306,7 @@ export default function ProductDetailPremiumSupportStaging({
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </span>
-              </motion.button>
+              </button>
 
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
@@ -1666,18 +1664,20 @@ export default function ProductDetailPremiumSupportStaging({
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <button
                     onClick={() => setIsModalOpen(true)}
-                    className="group relative bg-white text-orange-600 px-8 py-4 rounded-full font-bold text-base hover:bg-orange-50 transition-all duration-300 hover:scale-105 flex items-center gap-3 shadow-lg shadow-orange-900/10"
+                    className="press-illusion-btn-white bg-white text-orange-600 !px-8 !py-4 font-bold transition-all duration-300"
                   >
+                    <span className="relative z-10 flex items-center gap-3">
                     <svg
                       className="w-5 h-5"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
-                      strokeWidth={2}
+                      strokeWidth={3}
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                     </svg>
-                    <span>Request Demo</span>
+                    <span>Request Demo Now</span>
+                    </span>
                   </button>
                 </div>
               </motion.div>
@@ -1819,12 +1819,15 @@ export default function ProductDetailPremiumSupportStaging({
           >
             <Link
               href="/products"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#9333EA] to-[#7c3aed] text-white font-bold text-base rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="btn-premium-orange group !px-8 !py-4 mx-auto"
             >
-              <span>View All Products</span>
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
+              <div className="shimmer"></div>
+              <span className="relative z-10 flex items-center gap-2">
+                <span>View All Products</span>
+                <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
             </Link>
           </motion.div>
         </div>

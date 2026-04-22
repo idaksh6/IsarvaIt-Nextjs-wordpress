@@ -413,7 +413,7 @@ export default function JobDetailPage({ params }) {
               <Link
                 href="/careers"
                 rel="noopener noreferrer"
-                className="press-illusion-btn bg-orange-500 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex"
+                className="press-illusion-btn-orange bg-orange-600 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex"
               >
                 <span>View All Openings</span>
                 <svg
@@ -435,7 +435,7 @@ export default function JobDetailPage({ params }) {
               <Link
                 href="/about"
                 rel="noopener noreferrer"
-                className="press-illusion-btn bg-orange-500 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex"
+                className="press-illusion-btn-orange bg-orange-600 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex"
               >
                 <span>Learn About culture</span>
                 <svg

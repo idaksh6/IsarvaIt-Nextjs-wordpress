@@ -464,9 +464,9 @@ h6,
 
 .press-illusion-btn {
   border: none;
-  box-shadow: 0 6px 0 #ea580c, 
-              0 8px 12px rgba(234, 88, 12, 0.3),
-              0 12px 24px rgba(234, 88, 12, 0.15);
+  box-shadow: 0 6px 0 #22C55E, 
+              0 8px 12px rgba(34, 197, 94, 0.3),
+              0 12px 24px rgba(34, 197, 94, 0.15);
   transition: all 0.1s ease;
   padding: 12px 24px;
   border: none;
@@ -481,14 +481,41 @@ h6,
 
 .press-illusion-btn:hover {
   transform: perspective(1000px) translateY(3px) translateZ(0);
-  box-shadow: 0 3px 0 #ea580c,
-              0 5px 8px rgba(234, 88, 12, 0.25),
-              0 8px 16px rgba(234, 88, 12, 0.12);
+  box-shadow: 0 3px 0 #22C55E,
+              0 5px 8px rgba(34, 197, 94, 0.25),
+              0 8px 16px rgba(34, 197, 94, 0.12);
+}
+
+.press-illusion-btn-orange {
+  border: none;
+  background: #f97316;
+  box-shadow: 0 6px #ea580c, 0 8px 12px #ea580c4d, 0 12px 24px #ea580c26;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px 24px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  transform: perspective(1000px) translateZ(0);
+  color: #ffffff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+.press-illusion-btn-orange:hover {
+  transform: perspective(1000px) translateY(3px) translateZ(0);
+  background: #ea580c;
+  box-shadow: 0 6px #ea580c, 0 8px 12px #ea580c4d, 0 12px 24px #ea580c26;
 }
 
 .press-illusion-btn-white {
   border: none;
-  box-shadow: 0 6px 0 #ffffff;
+  box-shadow: 0 6px 0 #ea580c, 0 8px 12px rgba(0,0,0,0.1), 0 12px 24px rgba(0,0,0,0.05);
   transition: all 0.1s ease;
   padding: 12px 24px;
   border: none;
@@ -680,29 +707,6 @@ h6,
 }
 
 
-.press-illusion-btn-orange {
-  border: none;
-  box-shadow: 0 6px 0 #ea580c, 
-              0 8px 12px rgba(234, 88, 12, 0.3),
-              0 12px 24px rgba(234, 88, 12, 0.15);
-  transition: all 0.1s ease;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-  transform: perspective(1000px) translateZ(0);
-}
-
-.press-illusion-btn-orange:hover {
-  transform: perspective(1000px) translateY(3px) translateZ(0);
-  box-shadow: 0 3px 0 #ea580c,
-              0 5px 8px rgba(234, 88, 12, 0.25),
-              0 8px 16px rgba(234, 88, 12, 0.12);
-}
 .press-illusion-btn-red {
   border: none;
   box-shadow: 0 6px 0 #ff4c00;

@@ -151,7 +151,7 @@ export default function CtaSection() {
                   <Link
                     href="/contact"
                     rel="noopener noreferrer"
-                    className="press-illusion-btn bg-orange-500 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex"
+                    className="press-illusion-btn-orange text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex"
                   >
                     <span>Get In Touch</span>
                     <svg

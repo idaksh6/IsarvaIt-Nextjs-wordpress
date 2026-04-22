@@ -124,9 +124,15 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                   <button
                     onClick={() => setIsModalOpen(true)}
-                    className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-base font-bold rounded-xl transition-all duration-300 shadow-[0_10px_20px_rgba(37,99,235,0.2)] hover:shadow-[0_15px_30px_rgba(37,99,235,0.3)] transform hover:-translate-y-1"
+                    className="btn-premium-orange group !px-10 !py-5"
                   >
-                    Start Your Project
+                    <div className="shimmer absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                    <span className="relative z-10 flex items-center gap-3 font-black tracking-wider text-sm">
+                      Start Your Project
+                      <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </span>
                   </button>
                   <Link
                     href="#portfolio"
@@ -446,22 +452,15 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
                   <div className="flex justify-center lg:justify-start">
                     <button
                       onClick={() => setIsModalOpen(true)}
-                      className="px-8 py-4 bg-white text-blue-800 text-base font-bold rounded-xl transition-all shadow-lg hover:shadow-xl hover:bg-sky-50 transform hover:-translate-y-1 inline-flex items-center gap-3"
+                      className="btn-premium-orange group !px-10 !py-5"
                     >
-                      Hire Our Team
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2.5}
-                          d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        />
-                      </svg>
+                      <div className="shimmer absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                      <span className="relative z-10 flex items-center gap-3 font-black tracking-wider text-sm">
+                        Hire Our Team
+                        <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                      </span>
                     </button>
                   </div>
                 </div>

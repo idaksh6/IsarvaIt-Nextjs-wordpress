@@ -256,7 +256,7 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
         type="submit"
         disabled={isSubmitting}
         aria-label={isSubmitting ? "Sending message" : "Send message"}
-        className="press-illusion-btn bg-orange-500 text-white md:mx-0 mx-auto font-bold px-8 w-fit py-4 text-lg items-center space-x-2 flex disabled:opacity-50 disabled:cursor-not-allowed  justify-center"
+        className="press-illusion-btn-orange bg-orange-500 text-white md:mx-0 mx-auto font-bold px-8 w-fit py-4 text-lg items-center space-x-2 flex disabled:opacity-50 disabled:cursor-not-allowed  justify-center"
       >
         <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
         {!isSubmitting && (

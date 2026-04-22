@@ -279,7 +279,7 @@ export default function Header() {
                       href="/products"
                       prefetch={true}
                       onClick={() => setIsProductsOpen(false)}
-                      className="inline-flex items-center gap-2 text-violet-600 font-semibold hover:gap-3 transition-all duration-200"
+                      className="inline-flex items-center gap-2 text-orange-600 font-semibold hover:gap-3 transition-all duration-200"
                     >
                       View All Products
                       <svg
@@ -369,7 +369,7 @@ export default function Header() {
                       href="/services"
                       prefetch={true}
                       onClick={() => setIsServicesOpen(false)}
-                      className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:gap-3 transition-all duration-200"
+                      className="inline-flex items-center gap-2 text-orange-600 font-semibold hover:gap-3 transition-all duration-200"
                     >
                       View All Services
                       <svg
@@ -508,7 +508,7 @@ export default function Header() {
         <Link
           href="/contact"
           prefetch={true}
-          className="press-illusion-btn-orange bg-orange-500 hover:bg-orange-600 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 hidden nav:flex transition-all duration-300"
+          className="press-illusion-btn-orange text-white w-fit font-bold px-8 py-3 text-base items-center space-x-2 hidden nav:flex transition-all duration-300"
         >
           <span>Contact Us</span>
           <svg
@@ -738,7 +738,7 @@ export default function Header() {
                             href="/products"
                             prefetch={true}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className="flex items-center gap-2 p-3 rounded-xl text-violet-600 hover:bg-white bg-violet-50 border border-violet-200 transition-all duration-200 font-bold text-sm mb-2"
+                            className="flex items-center gap-2 p-3 rounded-xl text-emerald-600 hover:bg-white bg-emerald-50 border border-emerald-200 transition-all duration-200 font-bold text-sm mb-2"
                           >
                             <span>View All Products</span>
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -826,7 +826,7 @@ export default function Header() {
                             href="/services"
                             prefetch={true}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className="flex items-center gap-2 p-3 rounded-xl text-green-600 hover:bg-white bg-green-50 border border-green-200 transition-all duration-200 font-bold text-sm mb-2"
+                            className="flex items-center gap-2 p-3 rounded-xl text-orange-600 hover:bg-white bg-orange-50 border border-orange-200 transition-all duration-200 font-bold text-sm mb-2"
                           >
                             <span>View All Services</span>
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -905,7 +905,7 @@ export default function Header() {
                             href="/industries"
                             prefetch={true}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className="flex items-center gap-2 p-3 rounded-xl text-blue-600 hover:bg-white bg-blue-50 border border-blue-200 transition-all duration-200 font-bold text-sm mb-2"
+                            className="flex items-center gap-2 p-3 rounded-xl text-emerald-600 hover:bg-white bg-emerald-50 border border-emerald-200 transition-all duration-200 font-bold text-sm mb-2"
                           >
                             <span>View All Industries</span>
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -988,7 +988,7 @@ export default function Header() {
                     href="/contact"
                     prefetch={true}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="press-illusion-btn-orange bg-orange-500 justify-center text-white w-fit text-center mx-auto font-bold px-6 py-2 text-base items-center space-x-2 flex nav:hidden"
+                    className="press-illusion-btn-orange bg-orange-600 justify-center text-white w-fit text-center mx-auto font-bold px-6 py-2 text-base items-center space-x-2 flex nav:hidden"
                   >
                     <span>Contact Us</span>
                     <svg

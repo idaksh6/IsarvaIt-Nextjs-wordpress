@@ -188,11 +188,7 @@ export default function AboutSection() {
           {/* CTA row */}
           <div className="flex items-center gap-7 flex-wrap lg:justify-start justify-center">
             {/* Yellow CTA button — matches reference design */}
-            <Link
-              href="/contact"
-              prefetch={true}
-              className="press-illusion-btn bg-orange-500 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 hidden md:flex"
-            >
+            <Link href="/about" className="press-illusion-btn-orange text-white w-fit font-bold px-8 py-4 text-base items-center space-x-2 flex">
               <span>About Us</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

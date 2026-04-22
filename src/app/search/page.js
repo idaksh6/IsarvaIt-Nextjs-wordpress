@@ -216,7 +216,7 @@ function SearchResults() {
               />
               <button
                 type="submit"
-                className="absolute right-2 top-1/2 -translate-y-1/2 p-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full transition-colors"
+                className="absolute right-2 top-1/2 -translate-y-1/2 p-3 bg-orange-500 hover:bg-orange-600 text-white rounded-full transition-colors"
               >
                 <svg
                   className="w-5 h-5"
@@ -281,7 +281,7 @@ function SearchResults() {
             </p>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-full transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-full transition-colors"
             >
               Back to Home
             </Link>

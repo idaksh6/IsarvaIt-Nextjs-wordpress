@@ -78,7 +78,7 @@ export default function ContactSection() {
           <div>
             <Link
                 href="/contact"
-                className="press-illusion-btn-green bg-orange-500 text-white w-fit mx-auto font-bold px-6 py-2 text-base  items-center space-x-2  inline-flex"
+                className="press-illusion-btn-orange bg-orange-600 text-white w-fit mx-auto font-bold px-6 py-2 text-base  items-center space-x-2  inline-flex"
                 aria-label="Navigate to contact page"
               >
                 <span>Get In Touch</span>

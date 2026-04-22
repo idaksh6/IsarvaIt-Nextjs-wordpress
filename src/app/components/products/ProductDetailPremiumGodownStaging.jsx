@@ -124,10 +124,13 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
             <div className="flex flex-wrap justify-center gap-6 mb-24">
               <button 
                 onClick={() => setIsModalOpen(true)}
-                className="px-10 py-5 bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-black text-xl rounded-2xl shadow-[0_20px_40px_rgba(13,148,136,0.25)] hover:shadow-[0_25px_50px_rgba(13,148,136,0.35)] transition-all hover:-translate-y-1.5 active:scale-95 group"
+                className="btn-premium-orange group !px-10 !py-5 !text-xl"
               >
-                Launch Live Demo
-                <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                <div className="shimmer"></div>
+                <span className="relative z-10 flex items-center gap-2">
+                  Launch Live Demo
+                  <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                </span>
               </button>
               <Link 
                 href="#features"
@@ -607,8 +610,13 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                 <button className="px-8 py-4 bg-white text-teal-700 font-black rounded-2xl hover:bg-teal-50 transition-colors shadow-lg flex items-center gap-3">
                   <span>📄</span> PDF Export
                 </button>
-                <button className="px-8 py-4 bg-teal-500 text-white font-black rounded-2xl hover:bg-teal-400 transition-colors shadow-lg border border-teal-400 flex items-center gap-3">
-                  <span>📊</span> Excel Export
+                <button 
+                  onClick={() => setIsModalOpen(true)}
+                  className="press-illusion-btn-orange text-white font-black !px-8 !py-4 transition-all duration-300 active:scale-95"
+                >
+                  <span className="relative z-10 flex items-center gap-3">
+                    <span>📊</span> Excel Export
+                  </span>
                 </button>
              </div>
           </div>
@@ -654,9 +662,11 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
             <div className="flex flex-wrap justify-center gap-4">
                <button 
                   onClick={() => setIsModalOpen(true)}
-                  className="px-10 py-5 bg-teal-600 text-white font-black text-xl rounded-2xl shadow-2xl hover:shadow-teal-200 transition-all hover:-translate-y-1"
+                  className="press-illusion-btn-orange text-white !px-10 !py-5 font-black !text-xl hover:scale-105 transition-all duration-300"
                >
-                  Get Started for Free
+                  <span className="relative z-10 flex items-center gap-2">
+                    Get Started for Free
+                  </span>
                </button>
             </div>
          </div>

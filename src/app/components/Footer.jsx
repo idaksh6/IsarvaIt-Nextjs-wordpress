@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="flex flex-col items-start lg:items-end gap-6 mt-4 lg:mt-0 lg:ml-0 lg:mr-0 ml-auto mr-auto">
             <Link
               href="/contact"
-              className="press-illusion-btn bg-orange-500 text-white w-fit mx-auto font-bold px-6 py-2 text-base  items-center space-x-2  inline-flex"
+              className="press-illusion-btn-orange bg-orange-600 text-white w-fit mx-auto font-bold px-6 py-2 text-base  items-center space-x-2  inline-flex"
             >
               <span>Start a Project</span>
               <svg
