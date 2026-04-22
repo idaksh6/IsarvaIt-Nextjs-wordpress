@@ -17,7 +17,6 @@ import ProductDetailPremiumExpense from "../../components/products/ProductDetail
 import ProductDetailPremiumCRM from "../../components/products/ProductDetailPremiumCRM";
 import ProductDetailPremiumCRMStaging from "../../components/products/ProductDetailPremiumCRMStaging";
 import ProductDetailPremiumSupport from "../../components/products/ProductDetailPremiumSupport";
-import ProductDetailPremiumSupportStaging from "../../components/products/ProductDetailPremiumSupportStaging";
 import ProductDetailPremiumGodownStaging from "../../components/products/ProductDetailPremiumGodownStaging";
 
 export default function ProductDetailClient({ product, relatedProducts, allProducts }) {
@@ -170,7 +169,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   // Use Staging View for Support Application (now live)
   if (product.slug === 'support-application') {
     return (
-      <ProductDetailPremiumSupportStaging 
+      <ProductDetailPremiumSupport 
         product={product} 
         relatedProducts={relatedProducts} 
         allProducts={allProducts}
@@ -181,7 +180,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   // Use Premium View for Support Application Staging
   if (product.slug === 'support-application-staging') {
     return (
-      <ProductDetailPremiumSupportStaging 
+      <ProductDetailPremiumSupport 
         product={product} 
         relatedProducts={relatedProducts} 
         allProducts={allProducts}
