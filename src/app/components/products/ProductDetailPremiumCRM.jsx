@@ -366,7 +366,7 @@ export default function ProductDetailPremiumCRM({
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   <Link
-                    href={`/products/${prod.slug}`}
+                    href={`/product/${prod.slug}`}
                     className="block"
                   >
                     <div className="relative rounded-3xl p-8 h-full bg-white border-2 border-gray-100 shadow-lg">
