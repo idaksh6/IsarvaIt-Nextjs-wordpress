@@ -1750,7 +1750,17 @@ export default function ProductDetailPremiumSupportStaging({
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
             {allProducts
-              .filter(p => p.slug !== product.slug && !p.slug.includes("staging"))
+              .filter(p => {
+                // Exclude current product and its production/staging variant
+                if (p.slug === product.slug) return false;
+                if (product.slug.includes('staging')) {
+                  // If current is staging, exclude the production version
+                  return p.slug !== product.slug.replace('-staging', '') && !p.slug.includes('staging');
+                } else {
+                  // If current is production, exclude the staging version
+                  return p.slug !== product.slug + '-staging' && !p.slug.includes('staging');
+                }
+              })
               .slice(0, 3)
               .map((prod, index) => (
                 <motion.div
