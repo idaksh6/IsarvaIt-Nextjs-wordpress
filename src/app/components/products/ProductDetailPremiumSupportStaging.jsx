@@ -27,34 +27,34 @@ const industriesBuiltFor = [
     icon: "📱"
   },
   {
+    title: "Website Development Companies",
+    description: "Plan, develop, and deliver websites efficiently by managing project tickets, tracking progress, and organizing all assets and client feedback in one centralized platform with website development project management software.",
+    icon: "🌐"
+  },
+  {
     title: "Managed IT Service Providers (MSPs)",
     description: "Centralize support tickets and maintain a rigorous schedule for hardware and license renewals using IT project service management software.",
     icon: "🛠️"
   },
   {
-    title: "Creative Design & Branding",
+    title: "Creative Design & Branding Company",
     description: "Break down complex creative workflows and clearly track progress from brainstorming to production with creative project management software.",
     icon: "✨"
   },
   {
-    title: "Internet Marketing & SEO",
+    title: "Internet Marketing & SEO Company",
     description: "Organize monthly deliverables like backlink reports and track time spent on every campaign for clear ROI using SEO project management software.",
     icon: "📊"
   },
   {
-    title: "Software Development",
+    title: "Software Development Company",
     description: "Streamline bug tracking, manage server backups, and maintain detailed developer activity logs with software development project management software.",
     icon: "💻"
   },
   {
-    title: "Financial & Accounting",
+    title: "Financial & Accounting Company",
     description: "Securely store sensitive client portal credentials and never miss a tax filing deadline with accounting project management software.",
     icon: "📈"
-  },
-  {
-    title: "Construction & Real Estate",
-    description: "Track site work, manage tasks across teams, and monitor project progress efficiently while keeping records and deadlines organized with construction project management software.",
-    icon: "🏗️"
   },
   {
     title: "Full-Service Marketing Agencies",
