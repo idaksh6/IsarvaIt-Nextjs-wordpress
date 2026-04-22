@@ -335,8 +335,8 @@ function SupportFeatureSection({ onImageClick }) {
   return (
     <section className="py-24 overflow-hidden bg-white relative">
       {/* Decorative Gradient Blobs */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-50 rounded-full blur-[100px] opacity-60"></div>
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-50 rounded-full blur-[100px] opacity-60"></div>
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-50 rounded-full blur-[100px] opacity-60 hidden lg:block"></div>
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-50 rounded-full blur-[100px] opacity-60 hidden lg:block"></div>
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-14">
@@ -366,7 +366,7 @@ function SupportFeatureSection({ onImageClick }) {
                 <button
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
-                  className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[13px] font-semibold whitespace-nowrap ${activeId === feature.id
+                  className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[13px] font-semibold ${activeId === feature.id
                     ? "bg-gray-900 border-purple-600 text-black shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
                     : "border-purple-300 text-gray-800 hover:border-purple-500 hover:shadow-md"
                     }`}
@@ -407,7 +407,7 @@ function SupportFeatureSection({ onImageClick }) {
                 <button
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
-                  className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[13px] font-semibold whitespace-nowrap ${activeId === feature.id
+                  className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[13px] font-semibold ${activeId === feature.id
                     ? "bg-gray-900 border-purple-600 text-black shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
                     : "border-purple-300 text-gray-800 hover:border-purple-500 hover:shadow-md"
                     }`}
@@ -1750,7 +1750,7 @@ export default function ProductDetailPremiumSupportStaging({
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
             {allProducts
-              .filter(p => p.slug !== product.slug)
+              .filter(p => p.slug !== product.slug && !p.slug.includes("staging"))
               .slice(0, 3)
               .map((prod, index) => (
                 <motion.div
