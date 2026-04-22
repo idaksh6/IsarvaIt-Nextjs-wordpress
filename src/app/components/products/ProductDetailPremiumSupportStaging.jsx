@@ -1429,7 +1429,7 @@ export default function ProductDetailPremiumSupportStaging({
               <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/10 to-transparent blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               <div className="relative z-10 p-2 bg-white rounded-[2.5rem] shadow-[0_30px_100px_rgba(0,0,0,0.12)] border border-gray-100">
                 <img
-                  src="/products/support/iss_flow_desktop.png"
+                  src="/products/support/Project info graphicsnew.png"
                   alt="ISS Workflow Desktop"
                   className="w-full h-auto rounded-[2rem]"
                 />
