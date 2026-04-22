@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="flex flex-col items-start lg:items-end gap-6 mt-4 lg:mt-0 lg:ml-0 lg:mr-0 ml-auto mr-auto">
             <Link
               href="/contact"
-              className="press-illusion-btn bg-green-400 text-white w-fit mx-auto font-bold px-6 py-2 text-base  items-center space-x-2  inline-flex"
+              className="press-illusion-btn bg-orange-500 text-white w-fit mx-auto font-bold px-6 py-2 text-base  items-center space-x-2  inline-flex"
             >
               <span>Start a Project</span>
               <svg
@@ -59,12 +59,12 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               {[
-                { label: "Cloud Services", href: "/services/cloud" },
-                { label: "Consulting Services", href: "/services/consulting-services" },
-                { label: "Digital Marketing", href: "/services/digital-marketing" },
-                { label: "ERP Services", href: "/services/erp-services" },
-                { label: "GPS Tracking", href: "/services/gps-tracking" },
-                { label: "Offshore Development", href: "/services/offshore-development" },
+                { label: "Cloud Services", href: "/service/cloud" },
+                { label: "Consulting Services", href: "/service/consulting-services" },
+                { label: "Digital Marketing", href: "/service/digital-marketing" },
+                { label: "ERP Services", href: "/service/erp-services" },
+                { label: "GPS Tracking", href: "/service/gps-tracking" },
+                { label: "Offshore Development", href: "/service/offshore-development" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
@@ -112,12 +112,12 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               {[
-                { label: "Media & Entertainment", href: "/industry/media-entertainment" },
-                { label: "Insurance", href: "/industry/insurance" },
-                { label: "Manufacturing", href: "/industry/manufacturing" },
-                { label: "Health Care & Life Sciences", href: "/industry/health-care-life-sciences" },
+                { label: "Banking", href: "/industry/banking-and-financial-services" },
                 { label: "Education", href: "/industry/education" },
-                { label: "Banking and Financial Services", href: "/industry/banking-and-financial-services" },
+                { label: "Healthcare", href: "/industry/health-care-life-sciences" },
+                { label: "Manufacturing", href: "/industry/manufacturing" },
+                { label: "Insurance", href: "/industry/insurance" },
+                { label: "Media & Entertainment", href: "/industry/media-entertainment" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
@@ -140,7 +140,7 @@ export default function Footer() {
             <ul className="space-y-4">
               {[
                 { label: "ABOUT US", href: "/about" },
-                { label: "SERVICES", href: "/service" },
+                { label: "SERVICES", href: "/services" },
                 { label: "PRODUCTS", href: "/products" },
                 { label: "INDUSTRIES", href: "/industries" },
                 { label: "CONTACT US", href: "/contact" },
@@ -173,6 +173,10 @@ export default function Footer() {
           <div className="relative z-10 flex flex-wrap items-center justify-center md:justify-start gap-6 text-[13px] font-bold tracking-widest text-white/90 uppercase">
             <Link href="/careers" className="hover:text-white transition-colors">
               Careers
+            </Link>
+            <span className="w-1.5 h-1.5 rounded-full bg-white/20"></span>
+            <Link href="/services" className="hover:text-white transition-colors">
+              SERVICES
             </Link>
             <span className="w-1.5 h-1.5 rounded-full bg-white/20"></span>
             <Link target="_blank" href="https://support.isarva.in/form" className="hover:text-white transition-colors">

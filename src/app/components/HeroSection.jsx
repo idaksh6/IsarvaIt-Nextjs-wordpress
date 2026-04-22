@@ -109,8 +109,8 @@ function HeroSection({ data }) {
                 : "We design and build high-performance website solutions applied basically for speed, scalability, and user experience."}
             </p>
             <Link
-              href="/services/website-design"
-              className="inline-flex items-center justify-center gap-1 text-black font-semibold text-[13px] border border-green-400 rounded-full px-5 py-2 transition-colors hover:bg-green-400 hover:text-white w-fit mt-auto whitespace-nowrap"
+              href="/service/website-design"
+              className="inline-flex items-center justify-center gap-1 text-black font-semibold text-[13px] border border-orange-500 rounded-full px-5 py-2 transition-colors hover:bg-orange-500 hover:text-white w-fit mt-auto whitespace-nowrap"
               aria-label="Learn more about Website Services"
             >
               Explore Website Services <ChevronRight size={14} />
@@ -121,7 +121,6 @@ function HeroSection({ data }) {
           <div className="w-full lg:w-[360px] bg-white rounded-[2.5rem] p-10 shadow-[0_20px_50px_rgb(0,0,0,0.15)] z-30 transform lg:rotate-3 lg:-translate-y-0 transition-all duration-500 hover:rotate-0 hover:-translate-y-2 hover:z-40 flex flex-col items-center mx-[-10px] lg:mx-0 flex-1 lg:flex-none relative h-full min-h-[420px]">
             <div className="w-24 h-24 bg-[#7bd29b] rounded-full flex items-center justify-center text-white mb-6 shadow-[0_8px_20px_rgba(123,210,155,0.3)]">
               <lord-icon
-
                 src="https://cdn.lordicon.com/mubdgyyw.json"
                 trigger="loop"
                 colors="primary:#ffffff,secondary:#ffffff"
@@ -140,7 +139,7 @@ function HeroSection({ data }) {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-1 text-black font-semibold text-[13px] border border-green-400 rounded-full px-5 py-2 transition-colors hover:bg-green-400 hover:text-white w-fit mt-auto whitespace-nowrap"
+              className="inline-flex items-center justify-center gap-1 text-black font-semibold text-[13px] border border-orange-500 rounded-full px-5 py-2 transition-colors hover:bg-orange-500 hover:text-white w-fit mt-auto whitespace-nowrap"
               aria-label="Learn more about WooCommerce Development"
             >
               Get Started Today   <ChevronRight size={16} />
@@ -169,7 +168,7 @@ function HeroSection({ data }) {
             </p>
             <Link
               href="/product/woocommerce-development"
-              className="inline-flex items-center justify-center gap-1 text-black font-semibold text-[13px] border border-green-400 rounded-full px-5 py-2 transition-colors hover:bg-green-400 hover:text-white w-fit mt-auto whitespace-nowrap"
+              className="inline-flex items-center justify-center gap-1 text-black font-semibold text-[13px] border border-orange-500 rounded-full px-5 py-2 transition-colors hover:bg-orange-500 hover:text-white w-fit mt-auto whitespace-nowrap"
               aria-label="Get started with custom software development"
             >
               View WooCommerce Solutions <ChevronRight size={14} />

@@ -500,7 +500,7 @@ export default function CareerPage() {
                 </Link>
 
                 <Link
-                  href="about"
+                  href="/about"
                   rel="noopener noreferrer"
                   className="press-illusion-btn bg-green-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex"
                 >

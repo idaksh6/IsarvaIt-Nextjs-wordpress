@@ -477,7 +477,7 @@ export default function ContactFormModal({
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="flex-1 press-illusion-btn bg-green-400 text-white font-bold px-8 py-4 text-lg items-center justify-center space-x-2 inline-flex disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 press-illusion-btn bg-orange-500 text-white font-bold px-8 py-4 text-lg items-center justify-center space-x-2 inline-flex disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <>

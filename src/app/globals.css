@@ -464,9 +464,9 @@ h6,
 
 .press-illusion-btn {
   border: none;
-  box-shadow: 0 6px 0 #27ae60, 
-              0 8px 12px rgba(39, 174, 96, 0.3),
-              0 12px 24px rgba(39, 174, 96, 0.15);
+  box-shadow: 0 6px 0 #ea580c, 
+              0 8px 12px rgba(234, 88, 12, 0.3),
+              0 12px 24px rgba(234, 88, 12, 0.15);
   transition: all 0.1s ease;
   padding: 12px 24px;
   border: none;
@@ -481,9 +481,9 @@ h6,
 
 .press-illusion-btn:hover {
   transform: perspective(1000px) translateY(3px) translateZ(0);
-  box-shadow: 0 3px 0 #27ae60,
-              0 5px 8px rgba(39, 174, 96, 0.25),
-              0 8px 16px rgba(39, 174, 96, 0.12);
+  box-shadow: 0 3px 0 #ea580c,
+              0 5px 8px rgba(234, 88, 12, 0.25),
+              0 8px 16px rgba(234, 88, 12, 0.12);
 }
 
 .press-illusion-btn-white {

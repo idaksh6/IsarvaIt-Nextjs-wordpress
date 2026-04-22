@@ -191,7 +191,7 @@ export default function AboutSection() {
             <Link
               href="/contact"
               prefetch={true}
-              className="press-illusion-btn bg-green-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 hidden md:flex"
+              className="press-illusion-btn bg-orange-500 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 hidden md:flex"
             >
               <span>About Us</span>
               <svg

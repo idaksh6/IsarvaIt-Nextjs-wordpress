@@ -59,10 +59,36 @@ export function parseAcfLink(linkField) {
   
   if (!linkField) return defaultLink;
   
+  // Normalize internal links to fix plural/singular prefix issues
+  const normalizeUrl = (url) => {
+    if (!url || typeof url !== 'string') return url;
+    
+    // Check if it's an internal-formatted link
+    if (url.startsWith('/')) {
+      // Fix /services/ -> /service/
+      if (url.startsWith('/services/') && url.length > 10) {
+        return url.replace('/services/', '/service/');
+      }
+      // Fix /products/ -> /product/
+      if (url.startsWith('/products/') && url.length > 10) {
+        return url.replace('/products/', '/product/');
+      }
+      // Fix /industries/ -> /industry/
+      if (url.startsWith('/industries/') && url.length > 12) {
+        return url.replace('/industries/', '/industry/');
+      }
+      // Fix /careers/ -> /career/
+      if (url.startsWith('/careers/') && url.length > 9) {
+        return url.replace('/careers/', '/career/');
+      }
+    }
+    return url;
+  };
+  
   // If it's already an object with url property
   if (typeof linkField === 'object' && linkField.url) {
     return {
-      url: linkField.url || '#',
+      url: normalizeUrl(linkField.url) || '#',
       title: linkField.title || '',
       target: linkField.target || '',
     };
@@ -71,7 +97,7 @@ export function parseAcfLink(linkField) {
   // If it's a string (direct URL)
   if (typeof linkField === 'string') {
     return {
-      url: linkField,
+      url: normalizeUrl(linkField),
       title: '',
       target: '',
     };

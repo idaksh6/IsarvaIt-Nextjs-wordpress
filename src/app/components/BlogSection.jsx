@@ -22,7 +22,7 @@ export default function BlogSection({ posts }) {
           <Link
             href="/blog"
             prefetch={true}
-            className="press-illusion-btn bg-green-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 hidden lg:flex"
+            className="press-illusion-btn bg-orange-500 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 hidden lg:flex"
           >
             <span>View More Blog</span>
             <svg
@@ -79,7 +79,7 @@ export default function BlogSection({ posts }) {
         <Link
             href="/blog"
             prefetch={true}
-            className="press-illusion-btn mt-10 bg-green-400 text-white mx-auto w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex lg:hidden"
+            className="press-illusion-btn mt-10 bg-orange-500 text-white mx-auto w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex lg:hidden"
           >
             <span>View More Blog</span>
             <svg
