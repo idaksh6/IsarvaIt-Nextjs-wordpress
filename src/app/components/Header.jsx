@@ -508,7 +508,7 @@ export default function Header() {
         <Link
           href="/contact"
           prefetch={true}
-          className="press-illusion-btn-orange text-white w-fit font-bold px-8 py-3 text-base items-center space-x-2 hidden nav:flex transition-all duration-300"
+          className="press-illusion-btn-orange text-white w-fit font-bold px-8 py-3 text-base items-center space-x-2 !hidden md:!flex transition-all duration-300"
         >
           <span>Contact Us</span>
           <svg
