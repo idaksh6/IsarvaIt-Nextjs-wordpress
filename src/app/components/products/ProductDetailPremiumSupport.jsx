@@ -333,7 +333,7 @@ function SupportFeatureSection({ onImageClick }) {
   const activeFeature = supportFeatures.find((f) => f.id === activeId);
 
   return (
-    <section className="py-24 overflow-hidden bg-white relative">
+    <section className="lg:py-24 py-14 overflow-hidden bg-white relative">
       {/* Decorative Gradient Blobs */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-50 rounded-full blur-[100px] opacity-60 hidden lg:block"></div>
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-50 rounded-full blur-[100px] opacity-60 hidden lg:block"></div>
@@ -629,7 +629,7 @@ const safetyData = [
 
 function ProjectLifecycleSection() {
   return (
-    <section className="py-32 bg-white relative overflow-hidden">
+    <section className="lg:pt-32 pt-14 pb-0 lg:pb-0 bg-white relative overflow-hidden">
       {/* Premium Aurora Background Gradients */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-purple-100/40 to-transparent rounded-full blur-[120px] translate-x-1/2 -translate-y-1/2 -z-10 animate-pulse"></div>
       <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-sky-100/30 to-transparent rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 -z-10"></div>
@@ -696,7 +696,7 @@ function ProjectLifecycleSection() {
 
 function TicketLifecycleSection() {
   return (
-    <section className="py-24 lg:py-32 bg-[#faf9ff] relative overflow-hidden">
+    <section className="lg:py-32 py-14 bg-[#faf9ff] relative overflow-hidden">
       {/* Background Aurora Effects */}
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-sky-50 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 opacity-60"></div>
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-purple-100 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2 opacity-40"></div>
@@ -802,7 +802,7 @@ function ReportsSection({ onImageClick }) {
   const d = reportsDatas[active];
 
   return (
-    <section className="py-16 lg:py-24 bg-white relative overflow-hidden">
+    <section className="lg:py-24 py-14 bg-white relative overflow-hidden">
       {/* Dynamic Background Mesh */}
       <div className="absolute inset-0 z-0">
         <div className={`absolute top-0 right-0 w-[800px] h-[800px] rounded-full blur-[150px] transition-colors duration-1000 opacity-20 translate-x-1/2 -translate-y-1/2`} style={{ background: d.dot }}></div>
@@ -1004,7 +1004,7 @@ function AnalyticsSection({ onImageClick }) {
   const [activeAnalysisIdx, setActiveAnalysisIdx] = useState(0);
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="lg:py-24 py-14 bg-white relative overflow-hidden">
       {/* Modern Mesh Grid Background */}
       <div className="absolute inset-0 opacity-[0.4] pointer-events-none" style={{
         backgroundImage: `radial-gradient(#9333EA 1px, transparent 1px)`,
@@ -1139,7 +1139,7 @@ function AnalyticsSection({ onImageClick }) {
 
 function AutomationSection() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="lg:py-24 py-14 bg-white relative overflow-hidden">
       {/* Background Mesh Gradient */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-purple-50 rounded-full blur-[150px] opacity-60"></div>
@@ -1189,13 +1189,13 @@ function AutomationSection() {
 
 function SafetyManagementSection() {
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-[#faf5ff] relative border-t-2 border-white overflow-hidden">
+    <section className="lg:py-24 py-14 bg-gradient-to-b from-white to-[#faf5ff] relative border-t-2 border-white overflow-hidden">
       {/* Decorative Blob */}
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-50 rounded-full blur-[100px] translate-x-1/4 translate-y-1/4"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <div className="max-w-xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="max-w-xl mx-auto text-center lg:text-left">
             <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-white px-5 py-2 rounded-full shadow-md ring-1 ring-purple-50">
               Safety & Management
             </span>
@@ -1206,11 +1206,9 @@ function SafetyManagementSection() {
             <p className="text-gray-500 text-xl leading-relaxed mb-10 font-medium">
               Enterprise-grade security controls wrapped in an intuitive, easy-to-use interface.
             </p>
-
-            <div className="h-1 w-32 bg-gradient-to-r from-[#9333EA] to-transparent rounded-full"></div>
+            <div className="h-1 w-32 bg-gradient-to-r from-[#9333EA] to-transparent rounded-full mx-auto lg:mx-0"></div>
           </div>
-
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-8 mx-auto">
             {safetyData.map((item, index) => (
               <motion.div
                 key={item.title}
@@ -1365,7 +1363,7 @@ export default function ProductDetailPremiumSupportStaging({
       </section>
 
       {/* 1.5. Who Is ISS Built For */}
-      <section className="py-24 bg-gradient-to-br from-[#faf5ff] to-white relative overflow-hidden">
+      <section className="lg:py-24 py-14 bg-gradient-to-br from-[#faf5ff] to-white relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#9333EA] opacity-[0.03] rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 left-10 w-[300px] h-[300px] bg-[#9333EA] opacity-[0.04] rounded-full blur-3xl"></div>
@@ -1584,7 +1582,7 @@ export default function ProductDetailPremiumSupportStaging({
       </section>
 
       {/* 4. FAQ Section - Interactive Accordion */}
-      <section className="py-24 bg-gradient-to-b from-white via-[#FAF5FF] to-white relative overflow-hidden">
+      <section className="lg:py-24 py-14 bg-gradient-to-b from-white via-[#FAF5FF] to-white relative overflow-hidden">
         {/* Decorative Background Elements */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#9333EA] opacity-[0.03] rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#9333EA] opacity-[0.04] rounded-full blur-3xl"></div>
@@ -1723,7 +1721,7 @@ export default function ProductDetailPremiumSupportStaging({
       </AnimatePresence>
 
       {/* Explore More Products Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      <section className="lg:py-20 py-10 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239333EA' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
