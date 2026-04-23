@@ -25,7 +25,7 @@ const features = [
 
 const TierCards = ({ onApply }: { onApply: () => void }) => {
   return (
-    <section className="py-16 md:py-24 bg-[#FDF8F2] relative overflow-hidden">
+    <section className="py-16 md:py-24 relative overflow-hidden bg-[#FDF8F2]">
       {/* Background Subtle mesh and Grid for consistency */}
       <div className="absolute inset-0 z-0 opacity-20 bg-mesh-green pointer-events-none" />
       <div className="absolute inset-0 z-0 bg-dots opacity-[0.05] pointer-events-none" />
@@ -76,9 +76,9 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
 
                 <div className="flex flex-col mb-10 font-display">
                   <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-1">Earning Rate</span>
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-7xl sm:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-br from-slate-400 via-slate-600 to-slate-900 drop-shadow-[0_10px_20px_rgba(0,0,0,0.15)] leading-none">20%</span>
-                    <span className="text-lg sm:text-xl font-bold text-slate-500 leading-none uppercase tracking-wider">Commission</span>
+                  <div className="flex flex-wrap items-baseline gap-x-2">
+                    <span className="text-6xl min-[375px]:text-7xl sm:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-br from-slate-400 via-slate-600 to-slate-900 drop-shadow-[0_10px_20px_rgba(0,0,0,0.15)] leading-none">20%</span>
+                    <span className="text-base sm:text-xl font-bold text-slate-500 leading-none uppercase tracking-wider">Commission</span>
                   </div>
                 </div>
  
@@ -146,9 +146,9 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
 
               <div className="flex flex-col mb-10 font-display">
                  <span className="text-[10px] font-black text-amber-500 uppercase tracking-[0.3em] mb-1">Max Earning Rate</span>
-                 <div className="flex items-baseline gap-2">
-                    <span className="text-7xl sm:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-br from-amber-400 via-yellow-500 to-orange-600 drop-shadow-[0_15px_30px_rgba(234,179,8,0.4)] leading-none">30%</span>
-                    <span className="text-lg sm:text-xl font-bold text-amber-600 leading-none uppercase tracking-wider">Commission</span>
+                 <div className="flex flex-wrap items-baseline gap-x-2">
+                    <span className="text-6xl min-[375px]:text-7xl sm:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-br from-amber-400 via-yellow-500 to-orange-600 drop-shadow-[0_15px_30px_rgba(234,179,8,0.4)] leading-none">30%</span>
+                    <span className="text-base sm:text-xl font-bold text-amber-600 leading-none uppercase tracking-wider">Commission</span>
                  </div>
               </div>
 

@@ -223,11 +223,11 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
                 {/* Earnings Card & Extras */}
                 <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 md:gap-6">
                   <div className="sm:col-span-12 lg:col-span-7">
-                    <div className="bg-gradient-to-br from-emerald-50 to-white p-8 md:p-10 rounded-[32px] text-emerald-900 border border-emerald-100 h-full relative overflow-hidden group/earn">
+                    <div className="bg-gradient-to-br from-emerald-50 to-white p-6 sm:p-8 md:p-10 rounded-[32px] text-emerald-900 border border-emerald-100 h-full relative overflow-hidden group/earn">
                       <div className="absolute -top-10 -right-10 w-40 h-40 bg-emerald-500/5 rounded-full blur-3xl group-hover/earn:bg-emerald-500/10 transition-all duration-700" />
 
                       <p className="text-emerald-600 text-[10px] font-black tracking-widest uppercase mb-6 font-display">Revenue Advantage</p>
-                      <h4 className="text-2xl sm:text-2xl md:text-3xl font-black font-display leading-tight mb-8">
+                      <h4 className="text-xl sm:text-2xl md:text-3xl font-black font-display leading-tight mb-8">
                         {activeModel.earn}
                       </h4>
                       <div className="h-px bg-emerald-100 w-full mb-6" />

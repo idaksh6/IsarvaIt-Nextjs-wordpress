@@ -97,7 +97,7 @@ export default function PartnerFormSection({
   };
 
   return (
-    <section id={id} className="py-24 relative overflow-hidden bg-white">
+    <section id={id} className="py-16 md:py-24 relative overflow-hidden bg-white">
       {/* Background Accents */}
       <div className="absolute inset-0 pointer-events-none opacity-40">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3" />
@@ -106,7 +106,7 @@ export default function PartnerFormSection({
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col lg:flex-row gap-16 items-start">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
             
             {/* Content Side */}
             <div className="lg:w-1/3">
