@@ -8,25 +8,29 @@ const steps = [
     number: "01",
     title: "Apply Online",
     desc: "Fill out our quick partnership inquiry form to share your business profile.",
-    color: "text-emerald-600"
+    color: "text-emerald-600",
+    gradient: "from-emerald-700 to-emerald-950"
   },
   {
     number: "02",
     title: "Discovery Call",
     desc: "We'll discuss your goals and choose the right tier (Silver or Gold) for you.",
-    color: "text-blue-600"
+    color: "text-blue-600",
+    gradient: "from-blue-700 to-indigo-950"
   },
   {
     number: "03",
     title: "Onboarding",
     desc: "Access your dashboard, marketing collateral, and training materials.",
-    color: "text-orange-600"
+    color: "text-orange-600",
+    gradient: "from-orange-700 to-red-950"
   },
   {
     number: "04",
     title: "Start Scaling",
     desc: "Bring your first project and watch us handle the delivery while you earn.",
-    color: "text-emerald-600"
+    color: "text-purple-600",
+    gradient: "from-purple-700 to-violet-950"
   }
 ];
 
@@ -51,24 +55,33 @@ const PartnerOnboarding = () => {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -12, scale: 1.02 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.15 }}
-              className="relative p-8 lg:p-12 rounded-[32px] md:rounded-[48px] bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 group"
+              transition={{ 
+                duration: 0.5, 
+                ease: [0.23, 1, 0.32, 1], // Custom cubic-bezier for premium feel
+                delay: index * 0.1 
+              }}
+              className="relative p-8 lg:p-10 rounded-[32px] md:rounded-[40px] bg-white border border-gray-100 shadow-sm hover:shadow-2xl hover:border-emerald-100 transition-all duration-500 group cursor-default"
             >
-              <div className={`text-5xl md:text-6xl font-black ${step.color} opacity-10 group-hover:opacity-20 transition-all mb-6 md:mb-8 font-display`}>
+              <div className={`text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-br ${step.gradient} opacity-10 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 mb-6 md:mb-8 font-display pointer-events-none`}>
                 {step.number}
               </div>
-              <h3 className="text-2xl font-bold font-display text-[#111827] uppercase leading-tight mb-4">
+              <h3 className={`text-xl md:text-2xl font-black font-display text-[#111827] uppercase leading-tight mb-4 group-hover:${step.color} transition-colors duration-500`}>
                 {step.title}
               </h3>
-              <p className="text-gray-500 font-body text-lg leading-relaxed">
+              <p className="text-gray-500 font-body text-base md:text-lg leading-relaxed relative z-10">
                 {step.desc}
               </p>
               
-              {/* Connector line for desktop */}
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-[2px] bg-gray-100 z-0" />
-              )}
+              {/* Decorative Light Aligned Dots Pattern on Hover */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-[32px] md:rounded-[40px] pointer-events-none -z-10"
+                   style={{
+                     backgroundImage: `radial-gradient(circle at 1.5px 1.5px, #10b98115 1px, transparent 0)`,
+                     backgroundSize: '16px 16px'
+                   }}
+              />
+              
             </motion.div>
           ))}
         </div>
