@@ -11,29 +11,31 @@ import CtaSection from "./components/CtaSection";
 import { getHomePageData, getAllHomePageSections } from "./lib/services/home-page-service";
 import { getBlogPosts } from "./lib/services/blog-service";
 import { generateMetadata as generateSEOMetadata, generateOrganizationSchema } from "./lib/utils/seo";
-import { 
-  generateEnhancedOrganizationSchema, 
-  generateLocalBusinessSchema, 
+import {
+  generateEnhancedOrganizationSchema,
+  generateLocalBusinessSchema,
   generateProfessionalServiceSchema,
-  generateFAQSchema 
+  generateFAQSchema
 } from "./lib/utils/ai-seo-schema";
 
 export const metadata = generateSEOMetadata({
-  title: "Best Website Design Company in Mangalore | Isarva Infotech",
-  description: "Leading website design and software development company in Mangalore, Karnataka. Expert in custom websites, mobile apps, ERP, CRM, e-commerce development. 10+ years experience. Call +91-9880606087",
+  title: "Offshore IT Partner for Scalable Digital Products — Web, Mobile & Cloud",
+  description: "Accelerate your digital growth with Isarva Infotech, your trusted offshore IT partner. We specialize in building scalable web, mobile, and cloud solutions for global businesses. Leverage 10+ years of expertise in custom software development and digital transformation.",
   keywords: [
-    "website design company Mangalore",
-    "web development Mangalore",
-    "best website makers Mangalore",
-    "software development company Karnataka",
-    "mobile app development Mangalore",
-    "ERP development India",
-    "CRM software Mangalore",
-    "e-commerce development Karnataka",
-    "WordPress development Mangalore",
-    "custom software development India",
-    "IT solutions Mangalore",
-    "digital transformation services"
+    "offshore software development partner",
+    "scalable digital product engineering",
+    "custom web development services",
+    "mobile app development agency",
+    "cloud-native application development",
+    "IT outsourcing services India",
+    "dedicated development team offshore",
+    "enterprise software solutions",
+    "digital transformation consulting",
+    "dedicated developers India",
+    "full-stack development company",
+    "UI/UX design for digital products",
+    "MVP development for startups",
+    "offshore dedicated development center"
   ],
   url: "/",
 });
@@ -45,7 +47,7 @@ export const revalidate = 60;
 export default async function HomePage() {
   // Fetch WordPress data (cached and revalidated based on settings above)
   const homePageData = await getHomePageData();
-  
+
   // Parallelize the rest of the fetching to eliminate waterfalls
   const [sections, blogPosts] = await Promise.all([
     getAllHomePageSections(homePageData),
