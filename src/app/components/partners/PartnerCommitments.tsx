@@ -15,21 +15,21 @@ const commitments = [
 
 const PartnerCommitments = () => {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center mb-20">
+        <div className="max-w-4xl mx-auto text-center mb-12 md:mb-20">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="font-display text-4xl md:text-6xl font-bold text-[#111827] mb-6 uppercase"
           >
-            Partner <span className="text-[#ea580c]">Commitments</span>
+            Partner <span className="text-emerald-600">Commitments</span>
           </motion.h2>
-          <div className="w-24 h-1.5 bg-orange-600 mx-auto rounded-full" />
+          <div className="w-24 h-1.5 bg-emerald-600 mx-auto rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
           {commitments.map((item, idx) => (
             <motion.div
               key={idx}
@@ -37,9 +37,9 @@ const PartnerCommitments = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="p-10 rounded-[32px] border border-gray-100 hover:border-orange-200 hover:shadow-xl transition-all duration-300 group bg-white"
+              className="p-8 md:p-10 rounded-[24px] md:rounded-[32px] border border-emerald-100/50 hover:border-emerald-300 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group bg-gradient-to-br from-white to-emerald-50/40 relative overflow-hidden flex flex-col items-center text-center sm:items-start sm:text-left"
             >
-              <div className="w-16 h-16 rounded-2xl bg-orange-50 text-orange-600 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                  {item.icon}
               </div>
               <h3 className="text-2xl font-bold text-[#111827] font-display leading-tight">{item.text}</h3>

@@ -13,35 +13,40 @@ import {
 
 const props = [
   {
-    icon: <Users className="w-8 h-8 text-orange-600" />,
+    icon: <Users className="w-8 h-8 text-emerald-600" />,
     title: "Expand Without Adding Resources",
     desc: "Leverage our 50+ expert team without overhead costs.",
+    color: "emerald"
   },
   {
-    icon: <TrendingUp className="w-8 h-8 text-emerald-600" />,
+    icon: <TrendingUp className="w-8 h-8 text-blue-600" />,
     title: "Create New Revenue Opportunities",
     desc: "Unlock enterprise-grade service streams for your clients.",
+    color: "blue"
   },
   {
-    icon: <ShieldCheck className="w-8 h-8 text-blue-600" />,
+    icon: <ShieldCheck className="w-8 h-8 text-orange-600" />,
     title: "Strengthen Your Brand Value",
     desc: "Deliver premium solutions under your own trusted brand.",
+    color: "orange"
   },
   {
-    icon: <Zap className="w-8 h-8 text-amber-600" />,
+    icon: <Zap className="w-8 h-8 text-indigo-600" />,
     title: "Faster Execution & Go-To-Market",
     desc: "Reduce development cycles with our pre-built frameworks.",
+    color: "indigo"
   },
   {
-    icon: <BarChart3 className="w-8 h-8 text-purple-600" />,
+    icon: <BarChart3 className="w-8 h-8 text-rose-600" />,
     title: "Scalable Growth Model",
     desc: "Scale your business horizontally with unlimited capacity.",
+    color: "rose"
   },
 ];
 
 const WhyPartner = () => {
   return (
-    <section className="py-24 relative overflow-hidden bg-white">
+    <section className="py-16 md:py-24 relative overflow-hidden bg-white">
       {/* Antigravity background elements */}
       <motion.div 
         animate={{ 
@@ -49,37 +54,39 @@ const WhyPartner = () => {
           x: [0, 10, 0]
         }}
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-40 left-10 w-64 h-64 bg-orange-600/5 rounded-full blur-3xl pointer-events-none"
+        className="absolute top-40 left-10 w-64 h-64 bg-blue-600/5 rounded-full blur-3xl pointer-events-none"
       />
+
+
       <motion.div 
         animate={{ 
           y: [0, 30, 0],
           x: [0, -20, 0]
         }}
         transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        className="absolute bottom-20 right-20 w-80 h-80 bg-emerald-600/5 rounded-full blur-3xl pointer-events-none"
+        className="absolute bottom-20 right-20 w-80 h-80 bg-blue-600/5 rounded-full blur-3xl pointer-events-none"
       />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-display text-4xl md:text-6xl font-bold text-[#111827] mb-6"
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#111827] mb-4 md:mb-6"
           >
-            Why Choose <span className="text-[#ea580c]">Isarva</span>
+            Why Choose <span className="text-emerald-600">Isarva</span>
           </motion.h2>
-          <div className="w-24 h-1.5 bg-orange-600 mx-auto rounded-full" />
+          <div className="w-24 h-1.5 bg-emerald-600 mx-auto rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
           {props.slice(0, 3).map((item, index) => (
             <ValueCard key={index} {...item} index={index} />
           ))}
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto mt-6 md:mt-8">
           {props.slice(3).map((item, index) => (
             <ValueCard key={index + 3} {...item} index={index + 3} />
           ))}
@@ -89,29 +96,49 @@ const WhyPartner = () => {
   );
 };
 
-const ValueCard = ({ icon, title, desc, index }: { icon: any, title: string, desc: string, index: number }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay: index * 0.1, duration: 0.6 }}
-    className="p-10 rounded-[32px] hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 group bg-white border border-gray-100 relative overflow-hidden"
-  >
-    {/* Subtle glow on hover */}
-    <div className="absolute inset-0 bg-gradient-to-br from-orange-600/0 to-orange-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-    
-    <div className="relative z-10">
-      <div className="mb-8 p-4 rounded-2xl bg-gray-50/50 group-hover:scale-110 group-hover:bg-orange-50 transition-all duration-300 inline-block">
-        {icon}
+const ValueCard = ({ icon, title, desc, index, color }: { icon: any, title: string, desc: string, index: number, color?: string }) => {
+  const themeColor = color || 'blue';
+  
+  const colorVariants: Record<string, string> = {
+    emerald: "from-emerald-600/0 to-emerald-100/50 bg-emerald-50",
+    blue: "from-blue-600/0 to-blue-100/50 bg-blue-50",
+    orange: "from-orange-600/0 to-orange-100/50 bg-orange-50",
+    indigo: "from-indigo-600/0 to-indigo-100/50 bg-indigo-50",
+    rose: "from-rose-600/0 to-rose-100/50 bg-rose-50",
+  };
+
+  const bgVariants: Record<string, string> = {
+    emerald: "to-emerald-50/40 border-emerald-100/50",
+    blue: "to-blue-50/40 border-blue-100/50",
+    orange: "to-orange-50/40 border-orange-100/50",
+    indigo: "to-indigo-50/40 border-indigo-100/50",
+    rose: "to-rose-50/40 border-rose-100/50",
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1, duration: 0.6 }}
+      className={`p-8 md:p-10 rounded-[32px] hover:shadow-2xl hover:-translate-y-2 md:hover:-translate-y-3 transition-all duration-500 group bg-gradient-to-br from-white ${bgVariants[themeColor]} relative overflow-hidden`}
+    >
+      {/* Subtle glow on hover */}
+      <div className={`absolute inset-0 bg-gradient-to-br ${colorVariants[themeColor].split(' ').slice(0, 2).join(' ')} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+      
+      <div className="relative z-10 flex flex-col items-center text-center sm:items-start sm:text-left">
+        <div className={`mb-5 md:mb-8 p-3 md:p-4 rounded-2xl bg-gray-50/50 group-hover:scale-110 group-hover:${colorVariants[themeColor].split(' ')[2]} transition-all duration-300 inline-block`}>
+          {icon}
+        </div>
+        <h3 className="text-xl sm:text-2xl font-bold mb-3 md:mb-4 text-[#111827] font-display">
+          {title}
+        </h3>
+        <p className="text-gray-500 text-lg leading-relaxed font-body">
+          {desc}
+        </p>
       </div>
-      <h3 className="text-2xl font-bold mb-4 text-[#111827] font-display">
-        {title}
-      </h3>
-      <p className="text-gray-500 text-lg leading-relaxed font-body">
-        {desc}
-      </p>
-    </div>
-  </motion.div>
-);
+    </motion.div>
+  );
+};
 
 export default WhyPartner;

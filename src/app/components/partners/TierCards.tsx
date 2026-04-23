@@ -25,25 +25,25 @@ const features = [
 
 const TierCards = ({ onApply }: { onApply: () => void }) => {
   return (
-    <section className="py-24 bg-[#FDF8F2] relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-[#FDF8F2] relative overflow-hidden">
       {/* Background Subtle mesh and Grid for consistency */}
       <div className="absolute inset-0 z-0 opacity-20 bg-mesh-green pointer-events-none" />
       <div className="absolute inset-0 z-0 bg-dots opacity-[0.05] pointer-events-none" />
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 md:mb-20">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-display text-4xl md:text-6xl font-bold text-[#111827] mb-6"
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#111827] mb-4 md:mb-6"
           >
             Partner <span className="text-[#EAB308]">Tiers</span>
           </motion.h2>
-          <p className="text-gray-500 text-xl font-body">Choose the growth level that matches your ambition.</p>
+          <p className="text-gray-500 text-lg md:text-xl font-body">Choose the growth level that matches your ambition.</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 max-w-6xl mx-auto items-start">
           {/* Silver Tier */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -53,7 +53,7 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
             className="relative group bg-white rounded-[40px] border border-gray-100 shadow-2xl overflow-hidden"
           >
             {/* Header Bar */}
-            <div className="bg-gradient-to-br from-[#B1B9C1] to-[#94A3B8] py-10 text-center flex flex-col items-center justify-center gap-2 relative overflow-hidden">
+            <div className="bg-gradient-to-br from-[#B1B9C1] to-[#94A3B8] py-8 md:py-10 text-center flex flex-col items-center justify-center gap-2 relative overflow-hidden">
                <div className="absolute inset-0 opacity-[0.06] pointer-events-none">
                   <Image src="/partners/silver-tier.png" alt="" fill className="object-cover scale-150 rotate-12" />
                </div>
@@ -62,7 +62,7 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
             </div>
  
             <div 
-              className="absolute top-28 -right-12 w-56 h-56 opacity-30 group-hover:scale-110 transition-transform duration-700 pointer-events-none mix-blend-multiply z-0"
+              className="absolute top-1/2 -right-24 -translate-y-1/2 w-72 h-72 opacity-10 group-hover:scale-110 group-hover:opacity-20 transition-all duration-700 pointer-events-none mix-blend-multiply z-0"
               style={{
                 maskImage: 'radial-gradient(circle at center, black 20%, transparent 75%)',
                 WebkitMaskImage: 'radial-gradient(circle at center, black 20%, transparent 75%)'
@@ -71,23 +71,23 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
                <Image src="/partners/silver-tier.png" alt="Silver Tier" fill className="object-contain" />
             </div>
 
-            <div className="p-8 md:p-12 relative z-10">
-              <p className="text-[#B1B9C1] font-bold mb-8 font-body uppercase tracking-widest text-sm">Perfect for small agencies & freelancers</p>
+            <div className="p-6 md:p-8 lg:p-12 relative z-10">
+              <p className="text-gray-900 font-black mb-8 font-body uppercase tracking-widest text-sm">Perfect for small agencies & freelancers</p>
 
-              <div className="flex items-baseline gap-2 mb-10 font-display">
-                 <span className="text-6xl font-black text-[#111827]">20%</span>
-                 <span className="text-xl font-bold text-[#B1B9C1]">Commission</span>
+              <div className="flex flex-wrap sm:flex-nowrap items-baseline gap-1 sm:gap-2 mb-10 font-display">
+                 <span className="text-5xl sm:text-6xl font-black text-[#111827]">20%</span>
+                 <span className="text-lg sm:text-xl font-bold text-gray-900 leading-none">Commission</span>
               </div>
 
               <div className="space-y-4 mb-12">
                 {features.map((f, i) => (
-                  <div key={i} className="flex items-center justify-between py-3 border-b border-gray-50">
-                    <span className="text-gray-600 font-medium font-body">{f.label}</span>
+                  <div key={i} className="flex items-center justify-between py-3 border-b border-gray-100">
+                    <span className="text-gray-900 font-bold font-body">{f.label}</span>
                     <span>
                       {typeof f.silver === "boolean" ? (
-                        f.silver ? <Check className="w-5 h-5 text-[#B1B9C1]" /> : <X className="w-5 h-5 text-gray-300" />
+                        f.silver ? <Check className="w-6 h-6 text-black stroke-[3]" /> : <X className="w-5 h-5 text-gray-300" />
                       ) : (
-                        <span className="text-[#B1B9C1] font-black">{f.silver}</span>
+                        <span className="text-black font-black">{f.silver}</span>
                       )}
                     </span>
                   </div>
@@ -126,7 +126,7 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
 
             <div className="relative bg-white rounded-[40px] border-2 border-[#EAB308]/20 shadow-[0_30px_60px_-15px_rgba(234,179,8,0.15)] overflow-hidden">
               {/* Header Bar */}
-              <div className="bg-gradient-to-br from-[#EAB308] to-[#CA8A04] py-10 text-center relative flex flex-col items-center justify-center gap-2 overflow-hidden">
+              <div className="bg-gradient-to-br from-[#EAB308] to-[#CA8A04] py-8 md:py-10 text-center relative flex flex-col items-center justify-center gap-2 overflow-hidden">
                 <div className="absolute inset-0 opacity-[0.06] pointer-events-none">
                   <Image src="/partners/gold-tier.png" alt="" fill className="object-cover scale-150 -rotate-12" />
                 </div>
@@ -135,7 +135,7 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
               </div>
 
             <div 
-              className="absolute top-28 -right-12 w-64 h-64 opacity-50 group-hover:scale-110 transition-transform duration-700 pointer-events-none mix-blend-multiply z-0"
+              className="absolute top-1/2 -right-24 -translate-y-1/2 w-80 h-80 opacity-[0.15] group-hover:scale-110 group-hover:opacity-25 transition-all duration-700 pointer-events-none mix-blend-multiply z-0"
               style={{
                 maskImage: 'radial-gradient(circle at center, black 20%, transparent 75%)',
                 WebkitMaskImage: 'radial-gradient(circle at center, black 20%, transparent 75%)'
@@ -144,12 +144,12 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
                <Image src="/partners/gold-tier.png" alt="Gold Tier" fill className="object-contain" />
             </div>
 
-            <div className="p-8 md:p-12 relative z-10">
+            <div className="p-6 sm:p-8 lg:p-12 relative z-10">
               <p className="text-[#EAB308] font-bold mb-8 font-body uppercase tracking-widest text-sm">For established business consultants</p>
 
-              <div className="flex items-baseline gap-2 mb-10 font-display">
-                 <span className="text-7xl font-black text-[#EAB308]">30%</span>
-                 <span className="text-xl font-bold text-[#EAB308]/80">Commission</span>
+              <div className="flex flex-wrap sm:flex-nowrap items-baseline gap-1 sm:gap-2 mb-10 font-display">
+                 <span className="text-5xl sm:text-7xl font-black text-[#EAB308]">30%</span>
+                 <span className="text-lg sm:text-xl font-bold text-[#EAB308]/80 leading-none">Commission</span>
               </div>
 
               <div className="space-y-4 mb-12">

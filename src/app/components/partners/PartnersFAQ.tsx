@@ -31,19 +31,19 @@ const PartnersFAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 md:mb-16">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="font-display text-4xl md:text-6xl font-bold text-[#111827] uppercase"
             >
-              Common <span className="text-[#ea580c]">Questions</span>
+              Common <span className="text-emerald-600">Questions</span>
             </motion.h2>
-            <div className="w-24 h-1.5 bg-orange-600 mx-auto rounded-full mt-4" />
+            <div className="w-24 h-1.5 bg-emerald-600 mx-auto rounded-full mt-4" />
           </div>
 
           <div className="space-y-4">
@@ -58,16 +58,16 @@ const PartnersFAQ = () => {
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className={`w-full text-left p-8 rounded-[32px] border transition-all duration-300 flex items-center justify-between gap-4 ${
+                  className={`w-full text-left p-6 md:p-8 rounded-[24px] md:rounded-[32px] border transition-all duration-300 flex items-center justify-between gap-3 md:gap-4 ${
                     openIndex === index 
-                    ? "bg-orange-50 border-orange-200 shadow-lg shadow-orange-600/5" 
-                    : "bg-[#F8FAFC]/50 border-gray-100 hover:border-orange-200"
+                    ? "bg-emerald-50 border-emerald-200 shadow-lg shadow-emerald-600/5" 
+                    : "bg-[#F8FAFC]/50 border-gray-100 hover:border-emerald-200"
                   }`}
                 >
-                  <span className={`text-xl font-bold font-display ${openIndex === index ? "text-[#ea580c]" : "text-[#111827]"}`}>
+                  <span className={`text-lg md:text-xl font-bold font-display ${openIndex === index ? "text-emerald-600" : "text-[#111827]"}`}>
                     {faq.question}
                   </span>
-                  <ChevronDown className={`w-6 h-6 transition-transform duration-300 ${openIndex === index ? "rotate-180 text-[#ea580c]" : "text-gray-400 group-hover:text-orange-600"}`} />
+                  <ChevronDown className={`w-6 h-6 flex-shrink-0 transition-transform duration-300 ${openIndex === index ? "rotate-180 text-emerald-600" : "text-gray-400 group-hover:text-emerald-600"}`} />
                 </button>
                 <AnimatePresence>
                   {openIndex === index && (
@@ -78,7 +78,7 @@ const PartnersFAQ = () => {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="p-8 pb-10 text-gray-600 font-body text-lg leading-relaxed bg-white/50 rounded-b-[32px] border-x border-b border-orange-100 mx-4">
+                      <div className="p-6 md:p-8 pb-8 md:pb-10 text-gray-600 font-body text-base md:text-lg leading-relaxed bg-white/50 rounded-b-[24px] md:rounded-b-[32px] border-x border-b border-emerald-100">
                         {faq.answer}
                       </div>
                     </motion.div>
