@@ -39,7 +39,7 @@ const PartnersFAQ = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-display text-4xl md:text-6xl font-bold text-[#111827] uppercase"
+              className="text-4xl md:text-6xl font-bold text-[#111827] uppercase"
             >
               Common <span className="text-emerald-600">Questions</span>
             </motion.h2>
@@ -64,7 +64,7 @@ const PartnersFAQ = () => {
                     : "bg-[#F8FAFC]/50 border-gray-100 hover:border-emerald-200"
                   }`}
                 >
-                  <span className={`text-lg md:text-xl font-bold font-display ${openIndex === index ? "text-emerald-600" : "text-[#111827]"}`}>
+                  <span className={`text-lg md:text-xl font-bold ${openIndex === index ? "text-emerald-600" : "text-[#111827]"}`}>
                     {faq.question}
                   </span>
                   <ChevronDown className={`w-6 h-6 flex-shrink-0 transition-transform duration-300 ${openIndex === index ? "rotate-180 text-emerald-600" : "text-gray-400 group-hover:text-emerald-600"}`} />
@@ -78,7 +78,7 @@ const PartnersFAQ = () => {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="p-6 md:p-8 pb-8 md:pb-10 text-gray-600 font-body text-base md:text-lg leading-relaxed bg-white/50 rounded-b-[24px] md:rounded-b-[32px] border-x border-b border-emerald-100">
+                      <div className="p-6 md:p-8 pb-8 md:pb-10 text-gray-600 text-base md:text-lg leading-relaxed bg-white/50 rounded-b-[24px] md:rounded-b-[32px] border-x border-b border-emerald-100">
                         {faq.answer}
                       </div>
                     </motion.div>

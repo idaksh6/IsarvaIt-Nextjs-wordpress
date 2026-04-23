@@ -26,7 +26,7 @@ const IdealPartners = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-10 md:mb-16 text-[#111827] uppercase tracking-tight"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-10 md:mb-16 text-[#111827] uppercase tracking-tight"
         >
           Who We're <span className="text-[#ea580c]">Looking For</span>
         </motion.h2>
@@ -44,10 +44,10 @@ const IdealPartners = () => {
               {/* Subtle background gradient on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-orange-50/0 to-orange-50/50 opacity-0 group-hover:opacity-100 transition-opacity" />
               
-              <h3 className="text-[22px] sm:text-3xl font-bold font-display text-[#111827] uppercase leading-tight mb-4 sm:mb-6 relative z-10 hyphens-auto sm:hyphens-none break-words">
+              <h3 className="text-[22px] sm:text-3xl font-bold text-[#111827] uppercase leading-tight mb-4 sm:mb-6 relative z-10 hyphens-auto sm:hyphens-none break-words">
                 {item.title}
               </h3>
-              <p className="text-gray-500 font-body text-base sm:text-lg leading-relaxed relative z-10">
+              <p className="text-gray-500 text-base sm:text-lg leading-relaxed relative z-10">
                 {item.desc}
               </p>
             </motion.div>

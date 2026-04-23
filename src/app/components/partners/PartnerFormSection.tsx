@@ -11,7 +11,7 @@ interface PartnerFormSectionProps {
   preSelectedItem?: string;
 }
 
-export default function PartnerFormSection({ 
+export default function PartnerFormSection({
   id = "partner-inquiry-form",
   preSelectedType = "General",
   preSelectedItem = "Channel Partner Inquiry"
@@ -79,7 +79,7 @@ export default function PartnerFormSection({
         if ((window as any).dataLayer) {
           (window as any).dataLayer.push({ event: 'enquiry_success' });
         }
-        
+
         // Brief delay before redirecting to show success state
         setTimeout(() => {
           router.push(`/thank-you?type=contact&item=${encodeURIComponent(formData.selectedItem)}`);
@@ -107,7 +107,7 @@ export default function PartnerFormSection({
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
-            
+
             {/* Content Side */}
             <div className="lg:w-1/3">
               <motion.div
@@ -125,7 +125,7 @@ export default function PartnerFormSection({
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                   Fill out the form to become an authorized Isarva partner. Our team will review your application and get in touch within 24 hours.
                 </p>
-                
+
                 <div className="space-y-6">
                   {[
                     "Priority Backend Support",
@@ -156,7 +156,7 @@ export default function PartnerFormSection({
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Name */}
                     <div className="space-y-2">
-                      <label className="text-sm font-bold text-gray-700 flex items-center gap-2">
+                      <label className="text-sm font-bold text-gray-700 flex items-center gap-2 font-body">
                         <User className="w-4 h-4 text-emerald-500" /> Full Name
                       </label>
                       <input
@@ -172,7 +172,7 @@ export default function PartnerFormSection({
 
                     {/* Email */}
                     <div className="space-y-2">
-                      <label className="text-sm font-bold text-gray-700 flex items-center gap-2">
+                      <label className="text-sm font-bold text-gray-700 flex items-center gap-2 font-body">
                         <Mail className="w-4 h-4 text-emerald-500" /> Professional Email
                       </label>
                       <input
@@ -188,7 +188,7 @@ export default function PartnerFormSection({
 
                     {/* Phone */}
                     <div className="space-y-2">
-                      <label className="text-sm font-bold text-gray-700 flex items-center gap-2">
+                      <label className="text-sm font-bold text-gray-700 flex items-center gap-2 font-body">
                         <Phone className="w-4 h-4 text-emerald-500" /> Phone Number
                       </label>
                       <input
@@ -204,7 +204,7 @@ export default function PartnerFormSection({
 
                     {/* Company */}
                     <div className="space-y-2">
-                      <label className="text-sm font-bold text-gray-700 flex items-center gap-2">
+                      <label className="text-sm font-bold text-gray-700 flex items-center gap-2 font-body">
                         <Building2 className="w-4 h-4 text-emerald-500" /> Organization Name
                       </label>
                       <input
@@ -219,7 +219,6 @@ export default function PartnerFormSection({
                     </div>
                   </div>
 
-                  {/* Program Selection */}
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-gray-700">Type of Business*</label>
                     <select
@@ -238,7 +237,6 @@ export default function PartnerFormSection({
                     </select>
                   </div>
 
-                  {/* Message */}
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-gray-700">Any specific questions?</label>
                     <textarea
@@ -253,7 +251,7 @@ export default function PartnerFormSection({
 
                   {/* Submit Status */}
                   {submitStatus === "error" && (
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       className="p-4 bg-red-50 border border-red-100 text-red-600 rounded-2xl text-sm font-bold"
@@ -263,7 +261,7 @@ export default function PartnerFormSection({
                   )}
 
                   {submitStatus === "success" && (
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       className="p-4 bg-emerald-50 border border-emerald-100 text-emerald-600 rounded-2xl text-sm font-bold"

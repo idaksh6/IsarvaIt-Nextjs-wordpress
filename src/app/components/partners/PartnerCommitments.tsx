@@ -22,7 +22,7 @@ const PartnerCommitments = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-display text-4xl md:text-6xl font-bold text-[#111827] mb-6 uppercase"
+            className="text-4xl md:text-6xl font-bold text-[#111827] mb-6 uppercase"
           >
             Partner <span className="text-emerald-600">Commitments</span>
           </motion.h2>
@@ -42,7 +42,7 @@ const PartnerCommitments = () => {
               <div className="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                  {item.icon}
               </div>
-              <h3 className="text-2xl font-bold text-[#111827] font-display leading-tight">{item.text}</h3>
+              <h3 className="text-2xl font-bold text-[#111827] leading-tight">{item.text}</h3>
             </motion.div>
           ))}
         </div>

@@ -36,7 +36,7 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#111827] mb-4 md:mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#111827] mb-4 md:mb-6"
           >
             Partner <span className="text-[#EAB308]">Tiers</span>
           </motion.h2>
@@ -85,7 +85,7 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
                <div className="space-y-2 mb-12 flex-1 relative px-2 py-4 rounded-3xl bg-slate-50/50 backdrop-blur-[2px] border border-slate-100/50">
                  {features.map((f, i) => (
                    <div key={i} className="flex items-center justify-between py-3 px-4 rounded-xl hover:bg-white/80 transition-all duration-300 border-b border-slate-100/30 last:border-0 group/row">
-                     <span className="text-slate-900 font-bold font-body text-sm sm:text-base group-hover/row:translate-x-1 transition-transform">{f.label}</span>
+                     <span className="text-slate-900 font-bold text-sm sm:text-base group-hover/row:translate-x-1 transition-transform">{f.label}</span>
                      <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-slate-100 border border-slate-200/50 shadow-sm transition-transform group-hover/row:scale-110">
                        {typeof f.silver === "boolean" ? (
                          f.silver ? <Check className="w-5 h-5 text-slate-600 stroke-[4]" /> : <X className="w-4 h-4 text-slate-300" />
@@ -99,7 +99,7 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
 
               <button 
                 onClick={onApply}
-                className="press-illusion-btn-silver w-full py-4 md:py-5 font-body text-base md:text-lg z-20"
+                className="press-illusion-btn-silver w-full py-4 md:py-5 text-base md:text-lg z-20"
               >
                 Level Up to Silver
               </button>
@@ -128,7 +128,7 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
                   <Image src="/partners/gold-tier.png" alt="" fill className="object-cover scale-150 -rotate-12" />
                 </div>
                 <Crown className="w-12 h-12 text-white relative z-10 drop-shadow-[0_0_20px_rgba(255,255,255,0.5)]" />
-                <h3 className="font-display text-5xl md:text-6xl font-black text-white uppercase tracking-[0.2em] relative z-10 drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)]">Gold</h3>
+                <h3 className="text-5xl md:text-6xl font-black text-white uppercase tracking-[0.2em] relative z-10 drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)]">Gold</h3>
               </div>
 
             <div 
@@ -142,9 +142,9 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
             </div>
 
             <div className="p-6 sm:p-8 lg:p-12 relative z-10 flex flex-col flex-1">
-              <p className="text-[#EAB308] font-bold mb-8 font-body uppercase tracking-widest text-xs">For high-volume strategic partners</p>
+              <p className="text-[#EAB308] font-bold mb-8 uppercase tracking-widest text-xs">For high-volume strategic partners</p>
 
-              <div className="flex flex-col mb-10 font-display">
+              <div className="flex flex-col mb-10">
                  <span className="text-[10px] font-black text-amber-500 uppercase tracking-[0.3em] mb-1">Max Earning Rate</span>
                  <div className="flex flex-wrap items-baseline gap-x-2">
                     <span className="text-6xl min-[375px]:text-7xl sm:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-br from-amber-400 via-yellow-500 to-orange-600 drop-shadow-[0_15px_30px_rgba(234,179,8,0.4)] leading-none">30%</span>
@@ -155,7 +155,7 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
               <div className="space-y-2 mb-12 flex-1 relative px-2 py-4 rounded-3xl bg-amber-50/50 backdrop-blur-[2px] border border-amber-100/50">
                 {features.map((f, i) => (
                   <div key={i} className="flex items-center justify-between py-3 px-4 rounded-xl hover:bg-white/80 transition-all duration-300 border-b border-amber-100/30 last:border-0 group/row">
-                    <span className="text-gray-900 font-bold font-body text-sm sm:text-base group-hover/row:translate-x-1 transition-transform">{f.label}</span>
+                    <span className="text-gray-900 font-bold text-sm sm:text-base group-hover/row:translate-x-1 transition-transform">{f.label}</span>
                     <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-amber-100/80 border border-amber-200/50 shadow-sm transition-transform group-hover/row:scale-110">
                       {typeof f.gold === "boolean" ? (
                         f.gold ? <Check className="w-5 h-5 text-[#EAB308] stroke-[4]" /> : <X className="w-4 h-4 text-amber-200" />
@@ -169,7 +169,7 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
 
               <button 
                 onClick={onApply}
-                className="press-illusion-btn-gold w-full py-4 md:py-5 font-body text-base md:text-lg z-20"
+                className="press-illusion-btn-gold w-full py-4 md:py-5 text-base md:text-lg z-20"
               >
                 Level Up to Gold
               </button>

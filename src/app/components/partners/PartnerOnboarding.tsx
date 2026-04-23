@@ -44,7 +44,7 @@ const PartnerOnboarding = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-12 md:mb-24 text-[#111827] uppercase tracking-tight"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-12 md:mb-24 text-[#111827] uppercase tracking-tight"
         >
           Your Journey to <span className="text-emerald-600">Growth</span>
         </motion.h2>
@@ -64,13 +64,13 @@ const PartnerOnboarding = () => {
               }}
               className="relative p-8 lg:p-10 rounded-[32px] md:rounded-[40px] bg-white border border-gray-100 shadow-sm hover:shadow-2xl hover:border-emerald-100 transition-all duration-500 group cursor-default"
             >
-              <div className={`text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-br ${step.gradient} opacity-10 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 mb-6 md:mb-8 font-display pointer-events-none`}>
+              <div className={`text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-br ${step.gradient} opacity-10 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 mb-6 md:mb-8 pointer-events-none`}>
                 {step.number}
               </div>
-              <h3 className={`text-xl md:text-2xl font-black font-display text-[#111827] uppercase leading-tight mb-4 group-hover:${step.color} transition-colors duration-500`}>
+              <h3 className={`text-xl md:text-2xl font-black text-[#111827] uppercase leading-tight mb-4 group-hover:${step.color} transition-colors duration-500`}>
                 {step.title}
               </h3>
-              <p className="text-gray-500 font-body text-base md:text-lg leading-relaxed relative z-10">
+              <p className="text-gray-500 text-base md:text-lg leading-relaxed relative z-10">
                 {step.desc}
               </p>
               

@@ -73,7 +73,7 @@ const WhyPartner = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#111827] mb-4 md:mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#111827] mb-4 md:mb-6"
           >
             Why Choose <span className="text-emerald-600">Isarva Infotech</span>
           </motion.h2>
@@ -130,10 +130,10 @@ const ValueCard = ({ icon, title, desc, index, color }: { icon: any, title: stri
         <div className={`mb-5 md:mb-8 p-3 md:p-4 rounded-2xl bg-gray-50/50 group-hover:scale-110 group-hover:${colorVariants[themeColor].split(' ')[2]} transition-all duration-300 inline-block`}>
           {icon}
         </div>
-        <h3 className="text-xl sm:text-2xl font-bold mb-3 md:mb-4 text-[#111827] font-display">
+        <h3 className="text-xl sm:text-2xl font-bold mb-3 md:mb-4 text-[#111827]">
           {title}
         </h3>
-        <p className="text-gray-500 text-lg leading-relaxed font-body">
+        <p className="text-gray-500 text-lg leading-relaxed">
           {desc}
         </p>
       </div>
