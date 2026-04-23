@@ -350,7 +350,7 @@ export default function ContactFormModal({
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-900 focus:border-orange-400 focus:outline-none transition-colors duration-200"
-                  placeholder="John Doe"
+                  placeholder="Enter your full name"
                 />
               </div>
 
@@ -367,7 +367,7 @@ export default function ContactFormModal({
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-900 focus:border-orange-400 focus:outline-none transition-colors duration-200"
-                  placeholder="john@company.com"
+                  placeholder="email@example.com"
                 />
               </div>
 
