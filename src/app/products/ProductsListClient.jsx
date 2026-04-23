@@ -7,14 +7,17 @@ export default function ProductsListClient({ productsData }) {
   const [searchQuery, setSearchQuery] = useState("");
   const productsGridRef = useRef(null);
 
-  // Filter products based on search query
+  // Filter products based on search query and exclude staging items
   const filteredProducts = useMemo(() => {
+    // First, exclude any items that are meant for staging only
+    let baseProducts = productsData.filter(product => !product.slug?.includes("-staging"));
+
     if (!searchQuery.trim()) {
-      return productsData;
+      return baseProducts;
     }
 
     const query = searchQuery.toLowerCase();
-    return productsData.filter(product =>
+    return baseProducts.filter(product =>
       product.title?.toLowerCase().includes(query) ||
       product.tagline?.toLowerCase().includes(query) ||
       product.shortDescription?.toLowerCase().includes(query) ||
@@ -165,7 +168,7 @@ export default function ProductsListClient({ productsData }) {
               <p className="text-gray-600 mb-6">Try adjusting your search terms or browse all our products.</p>
               <button
                 onClick={() => setSearchQuery("")}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-600 transition-colors"
               >
                 Clear Search
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -322,7 +325,7 @@ export default function ProductsListClient({ productsData }) {
             <Link
               href="/contact"
               prefetch={true}
-              className="press-illusion-btn bg-green-400 text-white font-bold px-8 py-4 text-lg items-center space-x-2 inline-flex justify-center"
+              className="press-illusion-btn-orange bg-orange-600 text-white font-bold px-8 py-4 text-lg items-center space-x-2 inline-flex justify-center"
             >
               <span>Request Custom Solution</span>
               <svg

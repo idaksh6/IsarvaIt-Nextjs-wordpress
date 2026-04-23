@@ -73,7 +73,7 @@ export default function ProductDetailPremiumDispatcher({
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="press-illusion-btn-red bg-red-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex cursor-pointer"
+                className="press-illusion-btn-orange bg-orange-600 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex cursor-pointer"
               >
                 <span>REQUEST DEMO</span>
                 <svg
@@ -168,7 +168,7 @@ export default function ProductDetailPremiumDispatcher({
 
               <button
                 onClick={() => setIsBrochureModalOpen(true)}
-                className="press-illusion-btn-red bg-red-400 text-white font-bold px-6 py-2 text-base items-center space-x-2 inline-flex cursor-pointer"
+                className="press-illusion-btn-orange bg-orange-600 text-white font-bold px-6 py-2 text-base items-center space-x-2 inline-flex cursor-pointer"
               >
                 <span>Download Brochure</span>
                 <svg
@@ -241,18 +241,20 @@ export default function ProductDetailPremiumDispatcher({
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <button
                     onClick={() => setIsModalOpen(true)}
-                    className="group relative bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-base hover:bg-white hover:text-red-600 transition-all duration-300 hover:scale-105 flex items-center gap-3"
+                    className="press-illusion-btn-white bg-white text-orange-600 !px-8 !py-4 font-bold transition-all duration-300"
                   >
+                    <span className="relative z-10 flex items-center gap-3">
                     <svg
                       className="w-5 h-5"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
-                      strokeWidth={2}
+                      strokeWidth={3}
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                     </svg>
-                    <span>Request Demo</span>
+                    <span>Request Demo Now</span>
+                    </span>
                   </button>
                 </div>
               </motion.div>
@@ -300,7 +302,7 @@ export default function ProductDetailPremiumDispatcher({
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   <Link
-                    href={`/products/${prod.slug}`}
+                    href={`/product/${prod.slug}`}
                     className="block"
                   >
                     <div className="relative rounded-3xl p-8 h-full bg-white border-2 border-gray-100 shadow-lg">
@@ -356,7 +358,7 @@ export default function ProductDetailPremiumDispatcher({
           >
             <Link
               href="/products"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#EF4444] to-[#DC2626] text-white font-bold text-base rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="press-illusion-btn-orange bg-orange-600 text-white w-fit font-bold px-8 py-4 text-base items-center space-x-2 flex cursor-pointer mx-auto"
             >
               <span>View All Products</span>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

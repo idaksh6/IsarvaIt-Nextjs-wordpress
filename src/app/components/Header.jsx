@@ -279,7 +279,7 @@ export default function Header() {
                       href="/products"
                       prefetch={true}
                       onClick={() => setIsProductsOpen(false)}
-                      className="inline-flex items-center gap-2 text-violet-600 font-semibold hover:gap-3 transition-all duration-200"
+                      className="inline-flex items-center gap-2 text-orange-600 font-semibold hover:gap-3 transition-all duration-200"
                     >
                       View All Products
                       <svg
@@ -369,7 +369,7 @@ export default function Header() {
                       href="/services"
                       prefetch={true}
                       onClick={() => setIsServicesOpen(false)}
-                      className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:gap-3 transition-all duration-200"
+                      className="inline-flex items-center gap-2 text-orange-600 font-semibold hover:gap-3 transition-all duration-200"
                     >
                       View All Services
                       <svg
@@ -482,13 +482,14 @@ export default function Header() {
             )}
           </div>
 
-          {/* Contact Us Link */}
+          {/* Support Link */}
           <Link
-            href="/contact"
-            prefetch={true}
+            href="https://support.isarva.in/form"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600"
           >
-            Contact Us
+            Support
           </Link>
         </nav>
 
@@ -505,12 +506,11 @@ export default function Header() {
 
         {/* CTA Button - Hidden on Mobile */}
         <Link
-          href="https://support.isarva.in/form"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="press-illusion-btn bg-green-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 hidden nav:flex"
+          href="/contact"
+          prefetch={true}
+          className="press-illusion-btn-orange text-white w-fit font-bold px-8 py-3 text-base items-center space-x-2 !hidden nav:!flex transition-all duration-300"
         >
-          <span>Support</span>
+          <span>Contact Us</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -738,7 +738,7 @@ export default function Header() {
                             href="/products"
                             prefetch={true}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className="flex items-center gap-2 p-3 rounded-xl text-violet-600 hover:bg-white bg-violet-50 border border-violet-200 transition-all duration-200 font-bold text-sm mb-2"
+                            className="flex items-center gap-2 p-3 rounded-xl text-emerald-600 hover:bg-white bg-emerald-50 border border-emerald-200 transition-all duration-200 font-bold text-sm mb-2"
                           >
                             <span>View All Products</span>
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -826,7 +826,7 @@ export default function Header() {
                             href="/services"
                             prefetch={true}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className="flex items-center gap-2 p-3 rounded-xl text-green-600 hover:bg-white bg-green-50 border border-green-200 transition-all duration-200 font-bold text-sm mb-2"
+                            className="flex items-center gap-2 p-3 rounded-xl text-orange-600 hover:bg-white bg-orange-50 border border-orange-200 transition-all duration-200 font-bold text-sm mb-2"
                           >
                             <span>View All Services</span>
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -905,7 +905,7 @@ export default function Header() {
                             href="/industries"
                             prefetch={true}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className="flex items-center gap-2 p-3 rounded-xl text-blue-600 hover:bg-white bg-blue-50 border border-blue-200 transition-all duration-200 font-bold text-sm mb-2"
+                            className="flex items-center gap-2 p-3 rounded-xl text-emerald-600 hover:bg-white bg-emerald-50 border border-emerald-200 transition-all duration-200 font-bold text-sm mb-2"
                           >
                             <span>View All Industries</span>
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -936,30 +936,31 @@ export default function Header() {
                   </AnimatePresence>
                 </motion.div>
 
-                {/* Contact Us Link */}
+                {/* Support Link */}
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: (navLinks.length + 4) * 0.05 }}
                 >
                   <Link
-                    href="/contact"
-                    prefetch={true}
+                    href="https://support.isarva.in/form"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="group flex items-center gap-3 p-4 rounded-2xl bg-white hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 border border-transparent hover:border-orange-200 active:bg-orange-100 transition-all duration-300"
+                    className="group flex items-center gap-3 p-4 rounded-2xl bg-white hover:bg-gradient-to-r hover:from-emerald-50 hover:to-teal-50 border border-transparent hover:border-emerald-200 active:bg-emerald-100 transition-all duration-300"
                   >
-                    <div className="w-10 h-10 bg-gradient-to-br from-orange-100 to-red-100 group-hover:from-orange-400 group-hover:to-red-500 rounded-xl flex items-center justify-center transition-all duration-300">
+                    <div className="w-10 h-10 bg-gradient-to-br from-emerald-100 to-teal-100 group-hover:from-emerald-400 group-hover:to-teal-500 rounded-xl flex items-center justify-center transition-all duration-300">
                       <span className="text-lg group-hover:scale-110 transition-transform duration-300">
-                        📧
+                        🎧
                       </span>
                     </div>
                     <div className="flex-1">
-                      <span className="font-bold text-gray-800 group-hover:text-orange-700 text-base transition-colors duration-300">
-                        Contact Us
+                      <span className="font-bold text-gray-800 group-hover:text-emerald-700 text-base transition-colors duration-300">
+                        Support
                       </span>
                     </div>
                     <svg
-                      className="w-5 h-5 text-gray-300 group-hover:text-orange-600 group-hover:translate-x-1 transition-all duration-300"
+                      className="w-5 h-5 text-gray-300 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all duration-300"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -984,12 +985,12 @@ export default function Header() {
                   transition={{ delay: 0.4 }}
                 >
                   <Link
-                    href="https://support.isarva.in/form"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="press-illusion-btn bg-green-400 justify-center text-white w-fit text-center mx-auto  font-bold px-6 py-2 text-base items-center space-x-2 flex nav:hidden"
+                    href="/contact"
+                    prefetch={true}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="press-illusion-btn-orange bg-orange-600 justify-center text-white w-fit text-center mx-auto font-bold px-6 py-2 text-base items-center space-x-2 flex nav:hidden"
                   >
-                    <span>Support</span>
+                    <span>Contact Us</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"

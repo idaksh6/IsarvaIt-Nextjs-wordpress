@@ -304,11 +304,11 @@ export default function ContactFormModal({
       {/* Modal */}
       <div className="relative bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col">
         {/* Header */}
-        <div className="bg-gradient-to-r from-green-400 to-emerald-500 px-8 py-6 rounded-t-3xl flex-shrink-0">
+        <div className="bg-gradient-to-r from-orange-400 to-orange-600 px-6 md:px-8 py-4 md:py-6 rounded-t-3xl flex-shrink-0">
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-3xl font-bold text-white mb-1">Request a Demo</h2>
-              <p className="text-green-50">Let's discuss how we can help your business</p>
+              <p className="text-orange-50">Let's discuss how we can help your business</p>
             </div>
             <button
               onClick={onClose}
@@ -335,7 +335,7 @@ export default function ContactFormModal({
         {/* Scrollable Form Container */}
         <div className="overflow-y-auto flex-1 scrollbar-thin">
           {/* Form */}
-          <form onSubmit={handleSubmit} id="main-enquiry-submit" className="p-8">
+          <form onSubmit={handleSubmit} id="main-enquiry-submit" className="p-5 md:p-8">
             <div className="space-y-6">
               {/* Name */}
               <div>
@@ -349,8 +349,8 @@ export default function ContactFormModal({
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-900 focus:border-green-400 focus:outline-none transition-colors duration-200"
-                  placeholder="John Doe"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-900 focus:border-orange-400 focus:outline-none transition-colors duration-200"
+                  placeholder="Enter your full name"
                 />
               </div>
 
@@ -366,8 +366,8 @@ export default function ContactFormModal({
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-900 focus:border-green-400 focus:outline-none transition-colors duration-200"
-                  placeholder="john@company.com"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-900 focus:border-orange-400 focus:outline-none transition-colors duration-200"
+                  placeholder="email@example.com"
                 />
               </div>
 
@@ -383,7 +383,7 @@ export default function ContactFormModal({
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-900 focus:border-green-400 focus:outline-none transition-colors duration-200"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-900 focus:border-orange-400 focus:outline-none transition-colors duration-200"
                   placeholder="+1 (555) 000-0000"
                 />
               </div>
@@ -399,7 +399,7 @@ export default function ContactFormModal({
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-900 focus:border-green-400 focus:outline-none transition-colors duration-200"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-900 focus:border-orange-400 focus:outline-none transition-colors duration-200"
                   placeholder="Your Company"
                 />
               </div>
@@ -416,7 +416,7 @@ export default function ContactFormModal({
                   onChange={handleChange}
                   required
                   disabled={isLoadingCategories}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-black focus:border-green-400 focus:outline-none transition-colors duration-200 bg-white disabled:bg-gray-100 disabled:cursor-not-allowed"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-black focus:border-orange-400 focus:outline-none transition-colors duration-200 bg-white disabled:bg-gray-100 disabled:cursor-not-allowed"
                 >
                   <option value="">
                     {isLoadingCategories ? "Loading..." : `Select ${preSelectedType || "an option"}`}
@@ -440,7 +440,7 @@ export default function ContactFormModal({
                   value={formData.message}
                   onChange={handleChange}
                   rows="4"
-                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-900 focus:border-green-400 focus:outline-none transition-colors duration-200 resize-none"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-900 focus:border-orange-400 focus:outline-none transition-colors duration-200 resize-none"
                   placeholder="Tell us about your requirements..."
                 ></textarea>
               </div>
@@ -477,7 +477,7 @@ export default function ContactFormModal({
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="flex-1 press-illusion-btn bg-green-400 text-white font-bold px-8 py-4 text-lg items-center justify-center space-x-2 inline-flex disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 press-illusion-btn-orange bg-orange-500 text-white font-bold px-8 py-4 text-lg items-center justify-center space-x-2 inline-flex disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <>

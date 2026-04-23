@@ -54,7 +54,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
 
       <div className="bg-white min-h-screen font-sans">
         {/* ─── HERO SECTION (LIGHT & IMAGE-RICH) ──────────────────────────── */}
-        <section className="wp-light-gradient relative pt-32 lg:pt-48 pb-20 lg:pb-32 overflow-hidden">
+        <section className="wp-light-gradient relative pt-32 lg:pt-48 pb-16 lg:pb-32 overflow-hidden">
           {/* Decorative Background Shapes */}
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-200/50 rounded-full blur-[100px] mix-blend-multiply" />
           <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-200/40 rounded-full blur-[120px] mix-blend-multiply" />
@@ -124,9 +124,15 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                   <button
                     onClick={() => setIsModalOpen(true)}
-                    className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-base font-bold rounded-xl transition-all duration-300 shadow-[0_10px_20px_rgba(37,99,235,0.2)] hover:shadow-[0_15px_30px_rgba(37,99,235,0.3)] transform hover:-translate-y-1"
+                    className="btn-premium-orange group !px-10 !py-5"
                   >
-                    Start Your Project
+                    <div className="shimmer absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                    <span className="relative z-10 flex items-center gap-3 font-black tracking-wider text-sm">
+                      Start Your Project
+                      <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </span>
                   </button>
                   <Link
                     href="#portfolio"
@@ -178,7 +184,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
         {/* ─── IMAGE-CENTRIC ZIG-ZAG SHOWCASE ──────────────────────────── */}
         <section
           id="portfolio"
-          className="py-24 lg:py-32 bg-white relative overflow-hidden"
+          className="py-16 lg:py-32 bg-white relative overflow-hidden"
         >
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center max-w-3xl mx-auto mb-20">
@@ -344,7 +350,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
         </section>
 
         {/* ─── VISUAL ECOSYSTEM GRID ───────────────────────────────────────────── */}
-        <section className="py-24 bg-sky-50 relative border-y border-sky-100">
+        <section className="py-16 lg:py-32 bg-sky-50 relative border-y border-sky-100">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <h2 className="text-3xl lg:text-4xl font-black text-gray-900 mb-4">
               The WordPress Ecosystem
@@ -366,9 +372,11 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
               ].map((tool, i) => (
                 <div
                   key={i}
-                  className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all border border-transparent hover:border-sky-200"
+                  className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all border border-transparent hover:border-sky-200 flex flex-col items-center text-center"
                 >
-                  <div className="text-4xl mb-3">{tool.icon}</div>
+                  <div className="w-16 h-16 rounded-2xl bg-sky-50 flex items-center justify-center text-4xl mb-4 shadow-inner mx-auto">
+                    {tool.icon}
+                  </div>
                   <div className="font-bold text-gray-800 text-sm">
                     {tool.name}
                   </div>
@@ -379,7 +387,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
         </section>
 
         {/* ─── COMPREHENSIVE SERVICES LIST ───────────────────────────────────────────── */}
-        <section className="py-24 bg-white">
+        <section className="py-16 lg:py-32 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-3xl lg:text-5xl font-black text-gray-900 mb-6">
@@ -392,9 +400,9 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
               {features.map((feature, idx) => (
                 <div
                   key={idx}
-                  className="bg-gray-50 p-8 rounded-2xl hover:bg-white hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-all border border-gray-100 group"
+                  className="bg-gray-50 p-8 rounded-2xl hover:bg-white hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-all border border-gray-100 group flex flex-col items-center text-center lg:items-start lg:text-left"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                  <div className="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all mx-auto lg:mx-0">
                     <svg
                       className="w-6 h-6"
                       fill="none"
@@ -422,7 +430,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
         </section>
 
         {/* ─── TEAM / PROCESS BANNER WITH IMAGE ──────────────────────────── */}
-        <section className="py-12 bg-white pb-24">
+        <section className="py-16 lg:py-32 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px]">
               <img
@@ -446,22 +454,15 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
                   <div className="flex justify-center lg:justify-start">
                     <button
                       onClick={() => setIsModalOpen(true)}
-                      className="px-8 py-4 bg-white text-blue-800 text-base font-bold rounded-xl transition-all shadow-lg hover:shadow-xl hover:bg-sky-50 transform hover:-translate-y-1 inline-flex items-center gap-3"
+                      className="btn-premium-orange group !px-10 !py-5"
                     >
-                      Hire Our Team
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2.5}
-                          d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        />
-                      </svg>
+                      <div className="shimmer absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                      <span className="relative z-10 flex items-center gap-3 font-black tracking-wider text-sm">
+                        Hire Our Team
+                        <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                      </span>
                     </button>
                   </div>
                 </div>

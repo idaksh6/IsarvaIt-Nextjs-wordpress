@@ -79,6 +79,43 @@ export const productsData = [
     bgGradient: "from-purple-50 via-pink-50 to-white",
   },
   {
+    slug: "support-application-staging",
+    title: "Support Application Staging",
+    category: "Customer Support",
+    icon: "🎧",
+    tagline: "Complete Project, Task & Support Management (Staging)",
+    shortDescription:
+      "Staging version of the Support Application for testing new workflows and UI refinements.",
+    description:
+      "This is a staging environment for the Support Application. Use this space to test new project lifecycles, ticketing flows, and reporting modules before they are deployed to production.",
+    features: [
+      "Multi-Channel Ticket Management",
+      "Automated Ticket Assignment & Routing",
+      "Knowledge Base Integration",
+      "Live Chat & Email Support",
+      "SLA Management & Tracking",
+      "Customer Portal for Self-Service",
+      "Team Collaboration Tools",
+      "Analytics & Performance Reports",
+    ],
+    technologies: [
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "WebSocket",
+      "Cloud Infrastructure",
+    ],
+    benefits: [
+      "Risk-Free Testing",
+      "Workflow Validation",
+      "UI/UX Experimentation",
+      "Team Feedback Loop",
+      "Deployment Readiness",
+    ],
+    color: "from-purple-500 to-pink-600",
+    bgGradient: "from-purple-50 via-pink-50 to-white",
+  },
+  {
     slug: "crm-application",
     title: "CRM Application",
     category: "Customer Relationship Management",
@@ -486,6 +523,37 @@ export const productsData = [
     ],
     color: "from-emerald-600 to-teal-600",
     bgGradient: "from-emerald-50 via-teal-50 to-white",
+  },
+  {
+    slug: "godown-management-staging",
+    title: "Smart Godown & Inventory Management System",
+    category: "Warehouse Management",
+    icon: "📦",
+    tagline: "Track. Manage. Control. Grow.",
+    shortDescription:
+      "Everything you need to manage your warehouse, stock, events, rentals, and payments — all in one place.",
+    description:
+      "Our Smart Godown & Inventory Management System provides comprehensive tracking and control over your entire warehouse operations. From simple stock tracking to complex event and rental management, stay ahead with real-time insights and automated status updates.",
+    features: [
+      "Real-Time Inventory Tracking",
+      "Smart Dashboard Analytics",
+      "Event & Rental Management",
+      "Financial & Payment Tracking",
+      "Automated Status Updates",
+      "QR & Barcode Generation",
+      "Multi-Level Category System",
+      "Advanced Insight Reports",
+    ],
+    technologies: ["React", "Next.js", "PostgreSQL", "Node.js", "Cloud Infrastructure"],
+    benefits: [
+      "Optimized Warehouse Space",
+      "Minimum Stock-out Risks",
+      "Crystal Clear Financial Control",
+      "Automated Workflow Efficiency",
+      "Data-Driven Decisions",
+    ],
+    color: "from-teal-500 to-cyan-600",
+    bgGradient: "from-teal-50 via-cyan-50 to-white",
   },
 ];
 

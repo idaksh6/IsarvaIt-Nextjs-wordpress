@@ -104,7 +104,7 @@ export default function ProductDetailPremium({
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="press-illusion-btn bg-green-400 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex cursor-pointer"
+                className="press-illusion-btn-orange bg-orange-600 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex cursor-pointer"
               >
                 <span>REQUEST DEMO</span>
                 <svg
@@ -257,7 +257,7 @@ export default function ProductDetailPremium({
               <div className="mt-8">
                 <button
                   onClick={() => setIsBrochureModalOpen(true)}
-                  className="press-illusion-btn bg-green-400 text-white font-bold px-6 py-2 text-base items-center space-x-2 inline-flex cursor-pointer"
+                  className="press-illusion-btn-orange bg-orange-600 text-white font-bold px-6 py-2 text-base items-center space-x-2 inline-flex cursor-pointer"
                 >
                   <span>Download Brochure</span>
                   <svg
@@ -365,7 +365,7 @@ export default function ProductDetailPremium({
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <button
                     onClick={() => setIsModalOpen(true)}
-                    className="group relative bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-base hover:bg-white hover:text-emerald-600 transition-all duration-300 hover:scale-105 flex items-center gap-3"
+                    className="press-illusion-btn-orange bg-orange-600 text-white px-8 py-4 rounded-full font-bold text-base flex items-center gap-3 transition-all hover:scale-105"
                   >
                     <svg
                       className="w-5 h-5"
@@ -413,7 +413,7 @@ export default function ProductDetailPremium({
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {allProducts
-              .filter(p => p.slug !== product.slug)
+              .filter(p => p.slug !== product.slug && !p.slug.includes("staging"))
               .slice(0, 3)
               .map((prod, index) => (
                 <motion.div
@@ -422,13 +422,14 @@ export default function ProductDetailPremium({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="h-full flex flex-col"
                 >
                   <Link
-                    href={`/products/${prod.slug}`}
-                    className="block"
+                    href={`/product/${prod.slug}`}
+                    className="block h-full"
                   >
-                    <div className="relative rounded-3xl p-8 h-full bg-white border-2 border-gray-100 shadow-lg">
-                      <div className="relative text-center md:text-left">
+                    <div className="relative rounded-3xl p-8 h-full bg-white border-2 border-gray-100 shadow-lg flex flex-col">
+                      <div className="relative text-center md:text-left flex-1 flex flex-col">
                         {/* Icon */}
                         <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#22C55E] to-[#16a34a] flex items-center justify-center mb-6 shadow-lg mx-auto md:mx-0">
                           <span className="text-3xl">{prod.icon}</span>
@@ -446,13 +447,16 @@ export default function ProductDetailPremium({
                           </p>
                         )}
 
+
                         {/* Description */}
                         <p className="text-gray-600 leading-relaxed mb-6 text-sm">
                           {prod.shortDescription}
                         </p>
 
-                        {/* CTA Link */}
-                        <div className="flex items-center justify-center md:justify-start gap-2 text-[#22C55E] font-semibold">
+                        <div className="flex-1"></div>
+
+                        {/* CTA Link at bottom */}
+                        <div className="flex items-center justify-center md:justify-start gap-2 text-[#22C55E] font-semibold mt-auto pt-2">
                           Explore Product
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -480,7 +484,7 @@ export default function ProductDetailPremium({
           >
             <Link
               href="/products"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#22C55E] to-[#16a34a] text-white font-bold text-base rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="press-illusion-btn-orange bg-orange-600 text-white w-fit font-bold px-8 py-4 text-base items-center space-x-2 flex cursor-pointer mx-auto"
             >
               <span>View All Products</span>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -497,7 +497,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                   <button
                     id="ws-hero-cta"
                     onClick={() => setIsModalOpen(true)}
-                    className="group inline-flex items-center gap-3 px-8 py-4 text-base font-bold text-white bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 shadow-lg shadow-emerald-200 hover:shadow-xl transform hover:-translate-y-1"
+                    className="press-illusion-btn-orange bg-orange-500 text-white w-fit font-bold px-8 py-4 text-base items-center space-x-2 flex cursor-pointer"
                   >
                     Get a Free Quote
                     <svg
@@ -774,7 +774,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                 <div className="flex justify-center lg:justify-start">
                   <button
                     onClick={() => setIsModalOpen(true)}
-                    className={`inline-flex items-center gap-3 px-8 py-4 text-base font-bold text-white bg-gradient-to-r ${subServices[activeTab].color} rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1`}
+                    className="press-illusion-btn-orange bg-orange-500 text-white w-fit font-bold px-8 py-4 text-base items-center space-x-2 flex cursor-pointer"
                   >
                     Get Started With This
                     <svg

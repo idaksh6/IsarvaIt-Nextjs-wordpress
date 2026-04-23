@@ -127,7 +127,7 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
             aria-required="true"
             aria-label="Full name"
             className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-200 outline-none text-gray-900"
-            placeholder="John Doe"
+            placeholder="Enter your full name"
           />
         </div>
 
@@ -145,7 +145,7 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
             aria-required="true"
             aria-label="Email address"
             className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-200 outline-none text-gray-900"
-            placeholder="john@company.com"
+            placeholder="email@example.com"
           />
         </div>
       </div>
@@ -256,7 +256,7 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
         type="submit"
         disabled={isSubmitting}
         aria-label={isSubmitting ? "Sending message" : "Send message"}
-        className="press-illusion-btn bg-green-400 text-black md:mx-0 mx-auto font-bold px-8 w-fit py-4 text-lg items-center space-x-2 flex disabled:opacity-50 disabled:cursor-not-allowed  justify-center"
+        className="press-illusion-btn-orange bg-orange-500 text-white md:mx-0 mx-auto font-bold px-8 w-fit py-4 text-lg items-center space-x-2 flex disabled:opacity-50 disabled:cursor-not-allowed  justify-center"
       >
         <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
         {!isSubmitting && (

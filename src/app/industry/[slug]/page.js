@@ -517,11 +517,11 @@ export default async function IndustryDetailPage({ params }) {
             <Link
               href="/industries"
               prefetch={true}
-              className={`inline-flex items-center gap-2 text-${industry.accentColor}-600 font-semibold hover:gap-3 transition-all duration-200 text-lg`}
+              className="press-illusion-btn-orange bg-orange-600 text-white w-fit font-bold px-8 py-4 text-base items-center space-x-2 flex cursor-pointer mx-auto"
             >
-              View All Industries
+              <span>View All Industries</span>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </Link>
           </div>
@@ -607,7 +607,7 @@ export default async function IndustryDetailPage({ params }) {
             <Link
               href="/contact"
               prefetch={true}
-              className={`group relative inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-white bg-gradient-to-r ${industry.color} rounded-xl hover:shadow-2xl transition-all duration-300 shadow-xl transform hover:-translate-y-1 overflow-hidden`}
+              className="press-illusion-btn-orange bg-orange-600 text-white group relative inline-flex items-center justify-center px-10 py-5 text-lg font-bold rounded-xl overflow-hidden shadow-xl"
             >
               <span className="relative z-10 flex items-center gap-3">
                 Get Started Today
@@ -615,7 +615,6 @@ export default async function IndustryDetailPage({ params }) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </span>
-              {/* Shine effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transform -skew-x-12 group-hover:translate-x-full transition-all duration-700"></div>
             </Link>
             

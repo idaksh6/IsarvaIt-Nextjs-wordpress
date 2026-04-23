@@ -17,7 +17,7 @@ import ProductDetailPremiumExpense from "../../components/products/ProductDetail
 import ProductDetailPremiumCRM from "../../components/products/ProductDetailPremiumCRM";
 import ProductDetailPremiumCRMStaging from "../../components/products/ProductDetailPremiumCRMStaging";
 import ProductDetailPremiumSupport from "../../components/products/ProductDetailPremiumSupport";
-import ProductDetailPremiumSupportStaging from "../../components/products/ProductDetailPremiumSupportStaging";
+import ProductDetailPremiumGodownStaging from "../../components/products/ProductDetailPremiumGodownStaging";
 
 export default function ProductDetailClient({ product, relatedProducts, allProducts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -165,7 +165,8 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
     );
   }
 
-  // Use Premium View for Support Application
+
+  // Use Staging View for Support Application (now live)
   if (product.slug === 'support-application') {
     return (
       <ProductDetailPremiumSupport 
@@ -179,7 +180,18 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   // Use Premium View for Support Application Staging
   if (product.slug === 'support-application-staging') {
     return (
-      <ProductDetailPremiumSupportStaging 
+      <ProductDetailPremiumSupport 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for Godown Management Staging
+  if (product.slug === 'godown-management-staging') {
+    return (
+      <ProductDetailPremiumGodownStaging 
         product={product} 
         relatedProducts={relatedProducts} 
         allProducts={allProducts}
@@ -243,7 +255,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
                 <div className="flex flex-wrap gap-4">
                   <button
                     onClick={() => setIsModalOpen(true)}
-                    className="press-illusion-btn bg-green-400 text-white font-bold px-8 py-4 text-lg items-center space-x-2 inline-flex shadow-lg hover:shadow-xl"
+                    className="press-illusion-btn-orange bg-white text-orange-600 font-bold px-8 py-4 text-lg items-center space-x-2 inline-flex shadow-lg hover:shadow-xl"
                   >
                     <span>Request Demo</span>
                     <svg
@@ -440,11 +452,11 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
               <Link
                 href="/products"
                 prefetch={true}
-                className="inline-flex items-center gap-2 text-violet-600 font-semibold hover:gap-3 transition-all duration-200 text-lg"
+                className="press-illusion-btn-orange bg-orange-600 text-white w-fit font-bold px-8 py-4 text-base items-center space-x-2 flex cursor-pointer mx-auto"
               >
-                View All Products
+                <span>View All Products</span>
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </Link>
             </div>

@@ -164,7 +164,7 @@ export default async function BlogPostPage({ params }) {
               <Link
                 href="/blog"
                 rel="noopener noreferrer"
-                className="press-illusion-btn bg-green-400 text-white w-fit mx-auto font-bold px-6 py-2 text-base items-center space-x-2 flex"
+                className="press-illusion-btn-orange bg-orange-600 text-white w-fit mx-auto font-bold px-6 py-4 text-base items-center space-x-2 flex shadow-lg hover:shadow-xl"
               >
                 <span>View All Articles</span>
                 <svg

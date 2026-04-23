@@ -464,9 +464,9 @@ h6,
 
 .press-illusion-btn {
   border: none;
-  box-shadow: 0 6px 0 #27ae60, 
-              0 8px 12px rgba(39, 174, 96, 0.3),
-              0 12px 24px rgba(39, 174, 96, 0.15);
+  box-shadow: 0 6px 0 #22C55E, 
+              0 8px 12px rgba(34, 197, 94, 0.3),
+              0 12px 24px rgba(34, 197, 94, 0.15);
   transition: all 0.1s ease;
   padding: 12px 24px;
   border: none;
@@ -481,14 +481,41 @@ h6,
 
 .press-illusion-btn:hover {
   transform: perspective(1000px) translateY(3px) translateZ(0);
-  box-shadow: 0 3px 0 #27ae60,
-              0 5px 8px rgba(39, 174, 96, 0.25),
-              0 8px 16px rgba(39, 174, 96, 0.12);
+  box-shadow: 0 3px 0 #22C55E,
+              0 5px 8px rgba(34, 197, 94, 0.25),
+              0 8px 16px rgba(34, 197, 94, 0.12);
+}
+
+.press-illusion-btn-orange {
+  border: none;
+  background: #f97316;
+  box-shadow: 0 6px #ea580c, 0 8px 12px #ea580c4d, 0 12px 24px #ea580c26;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px 24px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  transform: perspective(1000px) translateZ(0);
+  color: #ffffff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+.press-illusion-btn-orange:hover {
+  transform: perspective(1000px) translateY(3px) translateZ(0);
+  background: #ea580c;
+  box-shadow: 0 6px #ea580c, 0 8px 12px #ea580c4d, 0 12px 24px #ea580c26;
 }
 
 .press-illusion-btn-white {
   border: none;
-  box-shadow: 0 6px 0 #ffffff;
+  box-shadow: 0 6px 0 #ea580c, 0 8px 12px rgba(0,0,0,0.1), 0 12px 24px rgba(0,0,0,0.05);
   transition: all 0.1s ease;
   padding: 12px 24px;
   border: none;
@@ -680,24 +707,6 @@ h6,
 }
 
 
-.press-illusion-btn-orange {
-  border: none;
-  box-shadow: 0 6px 0 #f97316;
-  transition: all 0.1s ease;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-}
-
-.press-illusion-btn-orange:hover {
-  transform: translateY(3px);
-  box-shadow: 0 3px 0 #f97316;
-}
 .press-illusion-btn-red {
   border: none;
   box-shadow: 0 6px 0 #ff4c00;
@@ -734,6 +743,90 @@ h6,
 .press-illusion-btn-purple:hover {
   transform: translateY(3px);
   box-shadow: 0 3px 0 #6d32a5;
+}
+
+.btn-premium-cyan {
+  @apply relative inline-flex items-center justify-center gap-2 px-8 py-4 font-bold text-white transition-all duration-300 rounded-full overflow-hidden shadow-[0_10px_30px_rgba(6,182,212,0.3)] hover:shadow-[0_20px_40px_rgba(6,182,212,0.5)] hover:-translate-y-1 active:scale-95;
+  background: linear-gradient(135deg, #06B6D4 0%, #0891B2 100%);
+}
+
+.btn-premium-cyan::before {
+  content: '';
+  @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), transparent);
+}
+
+.btn-premium-cyan:hover::before {
+  @apply opacity-100;
+}
+
+.btn-premium-cyan .shimmer {
+  @apply absolute inset-0 -translate-x-full;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  animation: shimmer 2s infinite;
+}
+
+.btn-premium-purple {
+  @apply relative inline-flex items-center justify-center gap-2 px-8 py-4 font-bold text-white transition-all duration-300 rounded-full overflow-hidden shadow-[0_10px_30px_rgba(147,51,234,0.3)] hover:shadow-[0_20px_40px_rgba(147,51,234,0.5)] hover:-translate-y-1 active:scale-95;
+  background: linear-gradient(135deg, #9333EA 0%, #7c3aed 100%);
+}
+
+.btn-premium-purple::before {
+  content: '';
+  @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), transparent);
+}
+
+.btn-premium-purple:hover::before {
+  @apply opacity-100;
+}
+
+.btn-premium-purple .shimmer {
+  @apply absolute inset-0 -translate-x-full;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  animation: shimmer 2s infinite;
+}
+
+.btn-premium-orange {
+  @apply relative inline-flex items-center justify-center gap-2 px-8 py-4 font-bold text-white transition-all duration-300 rounded-full overflow-hidden shadow-[0_10px_30px_rgba(249,115,22,0.3)] hover:shadow-[0_20px_40px_rgba(249,115,22,0.5)] hover:-translate-y-1 active:scale-95;
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+}
+
+.btn-premium-orange::before {
+  content: '';
+  @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), transparent);
+}
+
+.btn-premium-orange:hover::before {
+  @apply opacity-100;
+}
+
+.btn-premium-orange .shimmer {
+  @apply absolute inset-0 -translate-x-full;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 .press-illusion-btn-violet {
@@ -918,6 +1011,58 @@ h6,
 .press-illusion-btn-green:hover {
   transform: translateY(3px);
   box-shadow: 0 3px 0 #22C55E;
+}
+
+.press-illusion-btn-silver {
+  border: none;
+  background: #94a3b8;
+  box-shadow: 0 6px #64748b, 0 8px 12px #64748b4d, 0 12px 24px #64748b26;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 12px;
+  padding: 12px 24px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  transform: perspective(1000px) translateZ(0);
+  color: #ffffff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.press-illusion-btn-silver:hover {
+  transform: perspective(1000px) translateY(3px) translateZ(0);
+  background: #64748b;
+  box-shadow: 0 6px #64748b, 0 8px 12px #64748b4d, 0 12px 24px #64748b26;
+}
+
+.press-illusion-btn-gold {
+  border: none;
+  background: #eab308;
+  box-shadow: 0 6px #b45309, 0 8px 12px #b453094d, 0 12px 24px #b4530926;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 12px;
+  padding: 12px 24px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  transform: perspective(1000px) translateZ(0);
+  color: #ffffff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.press-illusion-btn-gold:hover {
+  transform: perspective(1000px) translateY(3px) translateZ(0);
+  background: #b45309;
+  box-shadow: 0 6px #b45309, 0 8px 12px #b453094d, 0 12px 24px #b4530926;
 }
 
 .btn-outline {
