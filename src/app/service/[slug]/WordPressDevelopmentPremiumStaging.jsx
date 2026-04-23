@@ -899,10 +899,6 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
           </div>
         </section>
 
-        {/* ─── FOOTER ─── */}
-        <div className="border-t border-gray-100 py-12 text-center text-gray-400 text-sm">
-          © Isarva Infotech. Premium WordPress Ecosystems.
-        </div>
       </div>
 
       <ContactFormModal
