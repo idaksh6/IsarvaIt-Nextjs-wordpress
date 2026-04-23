@@ -37,7 +37,7 @@ const PartnerCommitments = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="p-8 md:p-10 rounded-[24px] md:rounded-[32px] border border-emerald-100/50 hover:border-emerald-300 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group bg-gradient-to-br from-white to-emerald-50/40 relative overflow-hidden flex flex-col items-center text-center sm:items-start sm:text-left"
+              className="p-8 md:p-10 rounded-[24px] md:rounded-[32px] border border-emerald-200/60 hover:border-emerald-400 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group bg-gradient-to-br from-white to-emerald-100/70 relative overflow-hidden flex flex-col items-center text-center sm:items-start sm:text-left"
             >
               <div className="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                  {item.icon}

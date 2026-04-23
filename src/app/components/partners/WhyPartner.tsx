@@ -75,7 +75,7 @@ const WhyPartner = () => {
             viewport={{ once: true }}
             className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[#111827] mb-4 md:mb-6"
           >
-            Why Choose <span className="text-emerald-600">Isarva</span>
+            Why Choose <span className="text-emerald-600">Isarva Infotech</span>
           </motion.h2>
           <div className="w-24 h-1.5 bg-emerald-600 mx-auto rounded-full" />
         </div>
@@ -108,11 +108,11 @@ const ValueCard = ({ icon, title, desc, index, color }: { icon: any, title: stri
   };
 
   const bgVariants: Record<string, string> = {
-    emerald: "to-emerald-50/40 border-emerald-100/50",
-    blue: "to-blue-50/40 border-blue-100/50",
-    orange: "to-orange-50/40 border-orange-100/50",
-    indigo: "to-indigo-50/40 border-indigo-100/50",
-    rose: "to-rose-50/40 border-rose-100/50",
+    emerald: "to-emerald-100/70 border-emerald-200/50",
+    blue: "to-blue-100/70 border-blue-200/50",
+    orange: "to-orange-100/70 border-orange-200/50",
+    indigo: "to-indigo-100/70 border-indigo-200/50",
+    rose: "to-rose-100/70 border-rose-200/50",
   };
 
   return (
@@ -121,7 +121,7 @@ const ValueCard = ({ icon, title, desc, index, color }: { icon: any, title: stri
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.6 }}
-      className={`p-8 md:p-10 rounded-[32px] hover:shadow-2xl hover:-translate-y-2 md:hover:-translate-y-3 transition-all duration-500 group bg-gradient-to-br from-white ${bgVariants[themeColor]} relative overflow-hidden`}
+      className={`p-8 md:p-10 rounded-[32px] hover:shadow-2xl hover:-translate-y-2 md:hover:-translate-y-3 transition-all duration-500 group bg-gradient-to-br from-white ${bgVariants[themeColor]} relative overflow-hidden border border-transparent hover:border-current`} style={{ borderColor: 'rgba(0,0,0,0.05)' }}
     >
       {/* Subtle glow on hover */}
       <div className={`absolute inset-0 bg-gradient-to-br ${colorVariants[themeColor].split(' ').slice(0, 2).join(' ')} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />

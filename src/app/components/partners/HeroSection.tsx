@@ -73,7 +73,7 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
             transition={{ delay: 0.2 }}
             className="text-lg md:text-xl lg:text-2xl text-gray-500 font-medium max-w-2xl mx-auto mb-8 md:mb-12 leading-relaxed font-body px-2"
           >
-            Join Isarva's Channel Partner Program — deliver enterprise digital solutions without building an in-house team.
+            Join Isarva Infotech's Channel Partner Program — deliver enterprise digital solutions without building an in-house team.
           </motion.p>
 
           {/* Actions */}

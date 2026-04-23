@@ -14,7 +14,7 @@ const faqs = [
     answer: "While basic digital literacy helps, you don't need to be a developer. We handle all technical deliveries, scoping, and demos. Your primary role is relationship management and high-level strategy."
   },
   {
-    question: "Can I use Isarva's brand in my marketing?",
+    question: "Can I use Isarva Infotech's brand in my marketing?",
     answer: "Yes, Gold partners receive full trademark rights and a 'Certified Partner' badge. Silver partners can mention their partnership in proposals and on their website."
   },
   {
