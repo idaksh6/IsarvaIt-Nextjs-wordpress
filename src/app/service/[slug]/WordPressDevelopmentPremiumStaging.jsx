@@ -179,7 +179,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
       <div className="bg-white min-h-screen font-sans overflow-hidden">
 
         {/* ─── HERO SECTION ────────────────────── */}
-        <section className="wp-aurora-gradient relative pt-32 lg:pt-40 pb-24 overflow-hidden">
+        <section className="wp-aurora-gradient relative pt-24 lg:pt-48 pb-16 lg:pb-32 overflow-hidden">
           <div className="absolute inset-0 aurora-mesh pointer-events-none" />
           <div className="absolute inset-0 hero-grid opacity-[0.2] pointer-events-none" />
 
@@ -237,28 +237,28 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 </div>
 
                 <div className="flex flex-wrap gap-6 justify-center lg:justify-start items-center">
-                    <button
-                      onClick={() => setIsModalOpen(true)}
-                      className="btn-premium-orange group !px-6 !py-3 sm:!px-8 sm:!py-4 !text-sm sm:!text-base mt-2"
-                    >
-                      <div className="shimmer"></div>
-                      <span className="relative z-10 flex items-center gap-2">
-                        Book a Free Consultation
-                        <svg
-                          className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M17 8l4 4m0 0l-4 4m4-4H3"
-                          />
-                        </svg>
-                      </span>
-                    </button>
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="btn-premium-orange group !px-6 !py-3 sm:!px-8 sm:!py-4 !text-sm sm:!text-base mt-2"
+                  >
+                    <div className="shimmer"></div>
+                    <span className="relative z-10 flex items-center gap-2">
+                      Book a Free Consultation
+                      <svg
+                        className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                      </svg>
+                    </span>
+                  </button>
 
                   <Link
                     href="#what-we-offer"
@@ -344,7 +344,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
         <section id="what-we-offer" className="py-16 lg:py-32 bg-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(37,99,235,0.02),transparent_70%)]" />
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
-            <div className="text-center mb-16 lg:mb-20">
+            <div className="text-center mb-10 lg:mb-20">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-100">
                 What We Offer
               </div>
@@ -509,10 +509,10 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
         </section>
 
         {/* ─── WORDPRESS ECOSYSTEM DIAGRAM ────────────────────────── */}
-        <section className="py-20 lg:py-32 bg-white relative overflow-hidden text-center">
+        <section className="py-16 lg:py-32 bg-white relative overflow-hidden text-center">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(37,99,235,0.04),transparent_70%)]" />
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
-            <div className="text-center mb-14">
+            <div className="text-center mb-10 lg:mb-14">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-100">
                 Architecture
               </div>
@@ -650,7 +650,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
         {/* ─── BENTO CAPABILITIES SECTION ──────────────────────────── (Engineered for Success) */}
         <section className="py-16 lg:py-32 bg-slate-50 relative overflow-hidden border-y border-slate-100">
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
-            <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-24">
+            <div className="text-center max-w-3xl mx-auto mb-10 lg:mb-24">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 font-bold text-[10px] uppercase tracking-wider mb-6 border border-blue-100">
                 Core Capabilities
               </div>
@@ -733,9 +733,9 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
         </section>
 
         {/* ─── ENTERPRISE SOLUTIONS SECTION ──────────────────────────── */}
-        <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
+        <section className="py-16 lg:py-32 bg-white relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10 lg:mb-16">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-100">
                 Enterprise Solutions
               </div>
@@ -745,7 +745,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               <div>
-                <p className="text-base sm:text-xl text-gray-600 leading-relaxed mb-8">
+                <p className="text-base sm:text-xl text-gray-600 leading-relaxed mb-8 text-center lg:text-left">
                   We design, develop, and operate high-scale WordPress platforms with centralized governance, robust security, and seamless data integrations.
                 </p>
 
@@ -791,7 +791,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
         <ProcessSlider servicesData={servicesData} setIsModalOpen={setIsModalOpen} />
 
         {/* ─── WHAT WE'RE GOOD AT ────────────────────────── */}
-        <section className="py-24 lg:py-40 bg-slate-50 relative overflow-hidden">
+        <section className="py-16 lg:py-32 bg-slate-50 relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
             <div className="flex flex-col lg:flex-row items-start gap-16 lg:gap-24">
               <div className="w-full lg:w-1/2">
@@ -836,10 +836,10 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
 
 
         {/* ─── AI-ENHANCED WORDPRESS ────────────────────────── */}
-        <section className="py-24 bg-white relative overflow-hidden border-y border-slate-100">
+        <section className="py-16 lg:py-32 bg-white relative overflow-hidden border-y border-slate-100">
           <div className="absolute inset-0 bg-gradient-to-tr from-sky-50/30 via-white to-transparent" />
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
-            <div className="text-center mb-16 lg:mb-20">
+            <div className="text-center mb-10 lg:mb-20">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-sky-50 text-sky-600 font-bold text-xs uppercase tracking-wider mb-6 border border-sky-100">
                 AI-Enhanced
               </div>
@@ -886,7 +886,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
         </section>
 
         {/* ─── CTA SECTION ────────────────────────── */}
-        <section className="py-12 bg-white pb-32">
+        <section className="py-12 bg-white pb-16 lg:pb-32">
           <div className="max-w-7xl mx-auto px-6 sm:px-12">
             <div className="relative rounded-[56px] overflow-hidden shadow-3xl h-[500px] lg:h-[600px]">
               <img src="/wp_process_team_new.png" alt="Team" className="w-full h-full object-cover" />
@@ -940,9 +940,9 @@ function ProcessSlider({ servicesData, setIsModalOpen }) {
   const step = processSteps[active];
 
   return (
-    <section className="py-20 lg:py-32 bg-white relative overflow-hidden border-y border-slate-100">
+    <section className="py-16 lg:py-32 bg-white relative overflow-hidden border-y border-slate-100">
       <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
-        <div className="text-center mb-16 lg:mb-20">
+        <div className="text-center mb-10 lg:mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-100">
             Process
           </div>

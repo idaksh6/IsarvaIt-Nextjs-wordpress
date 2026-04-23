@@ -54,7 +54,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
 
       <div className="bg-white min-h-screen font-sans">
         {/* ─── HERO SECTION (LIGHT & IMAGE-RICH) ──────────────────────────── */}
-        <section className="wp-light-gradient relative pt-32 lg:pt-48 pb-20 lg:pb-32 overflow-hidden">
+        <section className="wp-light-gradient relative pt-32 lg:pt-48 pb-16 lg:pb-32 overflow-hidden">
           {/* Decorative Background Shapes */}
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-200/50 rounded-full blur-[100px] mix-blend-multiply" />
           <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-200/40 rounded-full blur-[120px] mix-blend-multiply" />
@@ -184,7 +184,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
         {/* ─── IMAGE-CENTRIC ZIG-ZAG SHOWCASE ──────────────────────────── */}
         <section
           id="portfolio"
-          className="py-24 lg:py-32 bg-white relative overflow-hidden"
+          className="py-16 lg:py-32 bg-white relative overflow-hidden"
         >
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center max-w-3xl mx-auto mb-20">
@@ -350,7 +350,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
         </section>
 
         {/* ─── VISUAL ECOSYSTEM GRID ───────────────────────────────────────────── */}
-        <section className="py-24 bg-sky-50 relative border-y border-sky-100">
+        <section className="py-16 lg:py-32 bg-sky-50 relative border-y border-sky-100">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <h2 className="text-3xl lg:text-4xl font-black text-gray-900 mb-4">
               The WordPress Ecosystem
@@ -372,9 +372,11 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
               ].map((tool, i) => (
                 <div
                   key={i}
-                  className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all border border-transparent hover:border-sky-200"
+                  className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all border border-transparent hover:border-sky-200 flex flex-col items-center text-center"
                 >
-                  <div className="text-4xl mb-3">{tool.icon}</div>
+                  <div className="w-16 h-16 rounded-2xl bg-sky-50 flex items-center justify-center text-4xl mb-4 shadow-inner mx-auto">
+                    {tool.icon}
+                  </div>
                   <div className="font-bold text-gray-800 text-sm">
                     {tool.name}
                   </div>
@@ -385,7 +387,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
         </section>
 
         {/* ─── COMPREHENSIVE SERVICES LIST ───────────────────────────────────────────── */}
-        <section className="py-24 bg-white">
+        <section className="py-16 lg:py-32 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-3xl lg:text-5xl font-black text-gray-900 mb-6">
@@ -398,9 +400,9 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
               {features.map((feature, idx) => (
                 <div
                   key={idx}
-                  className="bg-gray-50 p-8 rounded-2xl hover:bg-white hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-all border border-gray-100 group"
+                  className="bg-gray-50 p-8 rounded-2xl hover:bg-white hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-all border border-gray-100 group flex flex-col items-center text-center lg:items-start lg:text-left"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                  <div className="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all mx-auto lg:mx-0">
                     <svg
                       className="w-6 h-6"
                       fill="none"
@@ -428,7 +430,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
         </section>
 
         {/* ─── TEAM / PROCESS BANNER WITH IMAGE ──────────────────────────── */}
-        <section className="py-12 bg-white pb-24">
+        <section className="py-16 lg:py-32 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px]">
               <img
