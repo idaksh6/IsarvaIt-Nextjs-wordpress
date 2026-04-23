@@ -14,9 +14,9 @@ function stripHtml(html) {
 
 // Fallback content used when WordPress is not configured
 const DEFAULT_HERO_DATA = {
-  stripTag: "🚀 Scalable IT Solutions for Global Enterprises",
+  stripTag: "🚀 Your Trusted Partner for Scalable IT & AI Solutions",
   heading:
-    'We Build <span style="background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Digital Solutions</span> That Drive Growth',
+    'Your Trusted Partner<br />for Scalable <span style="color: #2bc735;">IT & AI Business Solution</span>',
   description:
     "<p>Your trusted technology partner for end-to-end digital transformation. From custom software to enterprise platforms — we help businesses innovate, scale, and succeed.</p>",
   backgroundImage: null,
@@ -47,6 +47,9 @@ function HeroSection({ data }) {
   // Use fallback data when WordPress is not configured
   const heroData = data || DEFAULT_HERO_DATA;
 
+  // High-priority brand override for IT & AI strategic update
+  const displayHeading = 'Your Trusted Partner<br />for Scalable <span style="color: #2bc735;">IT & AI Business Solution</span>';
+
   return (
     <section
       className="relative flex flex-col items-center pt-36 pb-0 overflow-hidden"
@@ -74,7 +77,7 @@ function HeroSection({ data }) {
           <h1
             id="hero-heading"
             className="lg:text-[70px] text-[40px] hero_heading font-bold leading-tight text-gray-900 mb-10 tracking-tighter max-w-6xl mx-auto"
-            dangerouslySetInnerHTML={{ __html: heroData.heading }}
+            dangerouslySetInnerHTML={{ __html: displayHeading }}
           />
         )}
 
