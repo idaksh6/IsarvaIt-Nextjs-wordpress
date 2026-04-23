@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Mail, Phone, ArrowRight } from "lucide-react";
 
@@ -11,11 +12,34 @@ const PartnerCTA = ({ onApply }: { onApply: () => void }) => {
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        className="max-w-7xl mx-auto rounded-[64px] border border-orange-100 bg-[#FDF8F2] p-12 md:p-24 relative overflow-hidden flex flex-col items-center text-center"
+        className="max-w-7xl mx-auto rounded-[64px] border border-orange-100 bg-white p-12 md:p-24 relative overflow-hidden flex flex-col items-center text-center shadow-2xl shadow-orange-600/5 group"
       >
-        {/* Decorative elements matching site's abstract shapes */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-orange-600/5 rounded-full blur-3xl -mr-32 -mt-32" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-600/5 rounded-full blur-3xl -ml-32 -mb-32" />
+        {/* Background Patterns for "Banner" feel */}
+        <div className="absolute inset-0 z-0 opacity-40 bg-mesh-green pointer-events-none" />
+        <div className="absolute inset-0 z-0 bg-dots opacity-[0.1] pointer-events-none" />
+        
+        {/* Decorative Image Elements */}
+        <motion.div 
+          animate={{ 
+            y: [0, 40, 0],
+            rotate: [0, 10, 0]
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -bottom-24 -right-24 w-[600px] h-[600px] opacity-10 pointer-events-none"
+        >
+          <Image src="/partners/hero-banner.png" alt="" fill className="object-contain" />
+        </motion.div>
+
+        <motion.div 
+          animate={{ 
+            y: [0, -30, 0],
+            rotate: [0, -5, 0]
+          }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute -top-32 -left-32 w-[500px] h-[500px] opacity-[0.07] pointer-events-none"
+        >
+          <Image src="/partners/hero-banner.png" alt="" fill className="object-contain" />
+        </motion.div>
 
         <div className="relative z-10 w-full flex flex-col items-center">
             <motion.h2 
@@ -32,12 +56,12 @@ const PartnerCTA = ({ onApply }: { onApply: () => void }) => {
             </p>
 
             <div className="flex flex-col items-center gap-10 w-full">
-                <button 
-                  onClick={onApply}
-                  className="press-illusion-btn-orange min-w-[280px] h-16 text-xl"
-                >
-                    Apply Now — Partner With Us <ArrowRight className="w-6 h-6" />
-                </button>
+                 <button 
+                   onClick={onApply}
+                   className="press-illusion-btn-orange min-w-[280px] h-16 text-xl font-display uppercase tracking-wider"
+                 >
+                     Apply Now — Partner With Us <ArrowRight className="w-6 h-6" />
+                 </button>
 
                 <div className="flex flex-wrap justify-center gap-8 pt-8 border-t border-orange-100 w-full max-w-2xl">
                   <a href="mailto:marketing@isarvait.com" className="flex items-center gap-3 text-gray-700 hover:text-orange-600 transition-colors group">

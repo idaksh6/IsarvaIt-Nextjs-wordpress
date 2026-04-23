@@ -32,9 +32,9 @@ module.exports = {
         }
       },
       fontFamily: {
-        sans: ['var(--font-dm-sans)', 'var(--font-inter)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-syne)', 'var(--font-outfit)', 'system-ui', 'sans-serif'],
-        body: ['var(--font-dm-sans)', 'var(--font-inter)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-space-grotesk)', 'var(--font-outfit)', 'system-ui', 'sans-serif'],
+        body: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
         'premium-gradient': 'linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%)',

@@ -7,6 +7,8 @@ import TierCards from "../components/partners/TierCards";
 import PartnershipModels from "../components/partners/PartnershipModels";
 import PartnerCommitments from "../components/partners/PartnerCommitments";
 import IdealPartners from "../components/partners/IdealPartners";
+import PartnerOnboarding from "../components/partners/PartnerOnboarding";
+import PartnersFAQ from "../components/partners/PartnersFAQ";
 import PartnerCTA from "../components/partners/PartnerCTA";
 import ContactFormModal from "../components/ContactFormModal";
 
@@ -21,8 +23,10 @@ export default function PartnersPage() {
       <WhyPartner />
       <TierCards onApply={openModal} />
       <PartnershipModels onApply={openModal} />
+      <PartnerOnboarding />
       <PartnerCommitments />
       <IdealPartners />
+      <PartnersFAQ />
       <PartnerCTA onApply={openModal} />
 
       <ContactFormModal

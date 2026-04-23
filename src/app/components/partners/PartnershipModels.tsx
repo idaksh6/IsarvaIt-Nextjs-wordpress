@@ -88,7 +88,7 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
             <button
               key={model.id}
               onClick={() => setActiveTab(model.id)}
-              className={`relative px-8 py-4 rounded-2xl text-sm md:text-base font-bold transition-all duration-300 border ${
+              className={`relative px-8 py-4 rounded-2xl text-sm md:text-base font-bold transition-all duration-300 border font-display tracking-tight ${
                 activeTab === model.id ? "bg-orange-600 border-orange-600 text-white shadow-lg shadow-orange-600/20" : "bg-gray-50 border-gray-100 text-gray-500 hover:bg-gray-100"
               }`}
             >
@@ -119,11 +119,11 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
                           <Image src="/partners/partnership-models.png" alt="Partnership Illustration" fill className="object-contain" />
                        </div>
                        <div className="mt-8 flex flex-wrap justify-center gap-2">
-                          {model.idealFor.map((tag, idx) => (
-                            <span key={idx} className="px-4 py-2 rounded-xl bg-white border border-gray-100 text-gray-600 text-xs font-bold shadow-sm uppercase tracking-wider">
-                               {tag}
-                            </span>
-                          ))}
+                           {model.idealFor.map((tag, idx) => (
+                             <span key={idx} className="px-4 py-2 rounded-xl bg-white border border-gray-100 text-gray-600 text-xs font-bold shadow-sm uppercase tracking-wider font-display">
+                                {tag}
+                             </span>
+                           ))}
                        </div>
                     </div>
 
@@ -131,12 +131,12 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
                     <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-12">
                       <div className="space-y-8">
                         <div>
-                          <p className="text-orange-600 text-xs font-black tracking-widest uppercase mb-6 flex items-center gap-2">
+                          <p className="text-orange-600 text-xs font-black tracking-widest uppercase mb-6 flex items-center gap-2 font-display">
                             <span className="w-8 h-[2px] bg-orange-600" /> We Deliver
                           </p>
                           <ul className="space-y-6">
                             {model.deliverables.map((item, idx) => (
-                              <li key={idx} className="flex items-start gap-4 text-[#111827] font-bold text-lg leading-tight">
+                              <li key={idx} className="flex items-start gap-4 text-[#111827] font-bold text-lg leading-tight font-display">
                                 <CheckCircle2 className="w-6 h-6 text-emerald-500 flex-shrink-0" />
                                 {item}
                               </li>
@@ -149,7 +149,7 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
                         <div className="bg-white p-10 rounded-[32px] border border-orange-100 shadow-xl shadow-orange-600/5 relative overflow-hidden group">
                            <div className="absolute -top-10 -right-10 w-32 h-32 bg-orange-600/5 rounded-full blur-3xl group-hover:bg-orange-600/10 transition-colors" />
                            <p className="text-gray-400 text-xs font-black tracking-widest uppercase mb-4">You Earn</p>
-                           <h4 className="text-3xl font-black text-orange-600 leading-tight mb-8">
+                           <h4 className="text-3xl font-black text-orange-600 leading-tight mb-8 font-display">
                               {model.earn}
                            </h4>
                            
@@ -162,7 +162,7 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
 
                            <button 
                              onClick={onApply}
-                             className="press-illusion-btn-orange w-full text-sm font-black uppercase tracking-wider"
+                             className="press-illusion-btn-orange w-full text-sm font-black uppercase tracking-wider font-display"
                             >
                              Inquire About This Model
                            </button>
