@@ -1013,6 +1013,58 @@ h6,
   box-shadow: 0 3px 0 #22C55E;
 }
 
+.press-illusion-btn-silver {
+  border: none;
+  background: #94a3b8;
+  box-shadow: 0 6px #64748b, 0 8px 12px #64748b4d, 0 12px 24px #64748b26;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 12px;
+  padding: 12px 24px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  transform: perspective(1000px) translateZ(0);
+  color: #ffffff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.press-illusion-btn-silver:hover {
+  transform: perspective(1000px) translateY(3px) translateZ(0);
+  background: #64748b;
+  box-shadow: 0 6px #64748b, 0 8px 12px #64748b4d, 0 12px 24px #64748b26;
+}
+
+.press-illusion-btn-gold {
+  border: none;
+  background: #eab308;
+  box-shadow: 0 6px #b45309, 0 8px 12px #b453094d, 0 12px 24px #b4530926;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 12px;
+  padding: 12px 24px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  transform: perspective(1000px) translateZ(0);
+  color: #ffffff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.press-illusion-btn-gold:hover {
+  transform: perspective(1000px) translateY(3px) translateZ(0);
+  background: #b45309;
+  box-shadow: 0 6px #b45309, 0 8px 12px #b453094d, 0 12px 24px #b4530926;
+}
+
 .btn-outline {
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: white;
