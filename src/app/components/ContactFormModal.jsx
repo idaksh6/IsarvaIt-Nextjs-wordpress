@@ -304,7 +304,7 @@ export default function ContactFormModal({
       {/* Modal */}
       <div className="relative bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col">
         {/* Header */}
-        <div className="bg-gradient-to-r from-orange-400 to-orange-600 px-8 py-6 rounded-t-3xl flex-shrink-0">
+        <div className="bg-gradient-to-r from-orange-400 to-orange-600 px-6 md:px-8 py-4 md:py-6 rounded-t-3xl flex-shrink-0">
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-3xl font-bold text-white mb-1">Request a Demo</h2>
@@ -335,7 +335,7 @@ export default function ContactFormModal({
         {/* Scrollable Form Container */}
         <div className="overflow-y-auto flex-1 scrollbar-thin">
           {/* Form */}
-          <form onSubmit={handleSubmit} id="main-enquiry-submit" className="p-8">
+          <form onSubmit={handleSubmit} id="main-enquiry-submit" className="p-5 md:p-8">
             <div className="space-y-6">
               {/* Name */}
               <div>

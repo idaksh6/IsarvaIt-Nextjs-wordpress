@@ -170,7 +170,7 @@ function FaqAccordion() {
         >
           {/* Icon Circle */}
           <div
-            className={`flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-xl transition-all duration-300 ${isOpen
+            className={`flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center text-lg md:text-xl transition-all duration-300 ${isOpen
               ? "bg-gradient-to-br from-[#9333EA] to-[#7c3aed] shadow-lg scale-110"
               : "bg-gray-100 group-hover:bg-gray-200"
               }`}
@@ -193,7 +193,7 @@ function FaqAccordion() {
           {/* Toggle Icon */}
           <div className="flex-shrink-0 mt-1">
             <div
-              className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${isOpen
+              className={`w-7 h-7 md:w-8 md:h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${isOpen
                 ? "bg-[#9333EA] rotate-180"
                 : "bg-gray-100 group-hover:bg-gray-200 group-hover:rotate-180"
                 }`}
@@ -339,7 +339,7 @@ function SupportFeatureSection({ onImageClick }) {
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-50 rounded-full blur-[100px] opacity-60 hidden lg:block"></div>
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-8 md:mb-14">
           <span className="block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-2.5">
             KEY FEATURES
           </span>
@@ -629,7 +629,7 @@ const safetyData = [
 
 function ProjectLifecycleSection() {
   return (
-    <section className="lg:pt-32 pt-14 pb-0 lg:pb-0 bg-white relative overflow-hidden">
+    <section className="lg:pt-32 pt-0 pb-0 lg:pb-0 bg-white relative overflow-hidden">
       {/* Premium Aurora Background Gradients */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-purple-100/40 to-transparent rounded-full blur-[120px] translate-x-1/2 -translate-y-1/2 -z-10 animate-pulse"></div>
       <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-sky-100/30 to-transparent rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 -z-10"></div>
@@ -642,7 +642,7 @@ function ProjectLifecycleSection() {
       }}></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
+        <div className="text-center mb-10 md:mb-20">
           <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-purple-100/50 px-4 py-2 rounded-full ring-1 ring-purple-200">
             Project & Task Lifecycle
           </span>
@@ -663,7 +663,7 @@ function ProjectLifecycleSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: (index % 4) * 0.1 }}
-              className={`relative flex items-center mb-12 md:mb-16 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+              className={`relative flex items-center mb-8 md:mb-16 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
             >
               <div className="hidden md:block w-1/2"></div>
 
@@ -711,7 +711,7 @@ function TicketLifecycleSection() {
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-100/30 rounded-full blur-[100px] -translate-x-1/4 translate-y-1/4"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-16">
           <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-white px-4 py-2 rounded-full shadow-sm ring-1 ring-purple-100">
             Ticket Lifecycle
           </span>
@@ -840,12 +840,12 @@ function ReportsSection({ onImageClick }) {
         </div>
 
         {/* Interactive Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
 
           {/* Left Column: Navigation Tabs (Mobile Icon Grid / Desktop List) */}
           <div className="lg:col-span-5">
             {/* Mobile: Compact Grid of Icon Buttons */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:hidden gap-3 mb-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:hidden gap-3 mb-0">
               {reportsDatas.map((item, i) => (
                 <button
                   key={item.title}
@@ -1012,7 +1012,7 @@ function AnalyticsSection({ onImageClick }) {
       }}></div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-16">
           <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-purple-50 px-4 py-2 rounded-full shadow-sm ring-1 ring-purple-100">
             High-Level Analytics
           </span>
@@ -1033,7 +1033,7 @@ function AnalyticsSection({ onImageClick }) {
 
         <div className="max-w-6xl mx-auto">
           {/* Dashboard Tabs with Modern Pill Style */}
-          <div className="flex flex-wrap justify-center gap-4 mb-16">
+          <div className="flex flex-wrap justify-center gap-4 mb-8 md:mb-16">
             {analyticsData.map((item, index) => (
               <button
                 key={item.title}
@@ -1111,7 +1111,7 @@ function AnalyticsSection({ onImageClick }) {
                     <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-6 leading-[1.1]">
                       {analyticsData[activeAnalysisIdx].title}
                     </h3>
-                    <p className="text-gray-500 text-lg leading-relaxed mb-10 font-medium">
+                    <p className="text-gray-500 text-lg leading-relaxed mb-6 md:mb-10 font-medium">
                       {analyticsData[activeAnalysisIdx].desc}
                     </p>
 
@@ -1146,7 +1146,7 @@ function AutomationSection() {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
+        <div className="text-center mb-10 md:mb-20">
           <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-white px-5 py-2 rounded-full shadow-sm ring-1 ring-purple-100">
             Automation: Your "Invisible Assistant"
           </span>
@@ -1156,7 +1156,7 @@ function AutomationSection() {
           </h2>
         </div>
 
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 relative mt-24">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 relative mt-10 md:mt-24">
           {/* Animated Flow Line */}
           <div className="hidden md:block absolute top-[4.5rem] left-[15%] right-[15%] h-1 bg-gradient-to-r from-transparent via-purple-200 to-transparent">
             <div className="w-full h-full animate-pulse bg-purple-400 opacity-20"></div>
@@ -1189,12 +1189,12 @@ function AutomationSection() {
 
 function SafetyManagementSection() {
   return (
-    <section className="lg:py-24 py-14 bg-gradient-to-b from-white to-[#faf5ff] relative border-t-2 border-white overflow-hidden">
+    <section className="lg:py-24 pt-0 pb-10 bg-gradient-to-b from-white to-[#faf5ff] relative border-t-2 border-white overflow-hidden">
       {/* Decorative Blob */}
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-50 rounded-full blur-[100px] translate-x-1/4 translate-y-1/4"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
           <div className="max-w-xl mx-auto text-center lg:text-left">
             <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-white px-5 py-2 rounded-full shadow-md ring-1 ring-purple-50">
               Safety & Management
@@ -1203,7 +1203,7 @@ function SafetyManagementSection() {
               Secure Your Assets,<br />
               <span className="bg-gradient-to-r from-[#9333EA] to-[#7c3aed] bg-clip-text text-transparent">Organize Your Clients.</span>
             </h2>
-            <p className="text-gray-500 text-xl leading-relaxed mb-10 font-medium">
+            <p className="text-gray-500 text-xl leading-relaxed mb-6 md:mb-10 font-medium">
               Enterprise-grade security controls wrapped in an intuitive, easy-to-use interface.
             </p>
             <div className="h-1 w-32 bg-gradient-to-r from-[#9333EA] to-transparent rounded-full mx-auto lg:mx-0"></div>
@@ -1292,7 +1292,7 @@ export default function ProductDetailPremiumSupportStaging({
             <p className="text-base text-[#444444] mb-8 max-w-3xl mx-auto leading-relaxed">
               One simple platform to manage projects, track daily work, monitor team performance, and never miss billing, reports, or renewals again.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mt-10">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mt-6 md:mt-10">
               <button
                 onClick={() => setIsModalOpen(true)}
                 className="btn-premium-orange group !px-10 !py-5"
@@ -1363,13 +1363,13 @@ export default function ProductDetailPremiumSupportStaging({
       </section>
 
       {/* 1.5. Who Is ISS Built For */}
-      <section className="lg:py-24 py-14 bg-gradient-to-br from-[#faf5ff] to-white relative overflow-hidden">
+      <section className="lg:py-24 py-10 bg-gradient-to-br from-[#faf5ff] to-white relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#9333EA] opacity-[0.03] rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 left-10 w-[300px] h-[300px] bg-[#9333EA] opacity-[0.04] rounded-full blur-3xl"></div>
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="text-center mb-8 md:mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1413,7 +1413,7 @@ export default function ProductDetailPremiumSupportStaging({
             ))}
           </div>
 
-          <div className="mt-20">
+          <div className="mt-10 md:mt-20">
             {/* Desktop Flow Diagram */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -1466,9 +1466,9 @@ export default function ProductDetailPremiumSupportStaging({
       </section>
 
       {/* 2. Core Support Section */}
-      <section className="lg:py-32 py-14 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 lg:text-left text-center">
+      <section className="lg:py-32 py-10 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 lg:text-left text-center">
             {/* Left Side - Image (Sticky on Desktop) */}
             <div className="relative lg:sticky lg:top-28 lg:self-start">
               <div
@@ -1582,14 +1582,14 @@ export default function ProductDetailPremiumSupportStaging({
       </section>
 
       {/* 4. FAQ Section - Interactive Accordion */}
-      <section className="lg:py-24 py-14 bg-gradient-to-b from-white via-[#FAF5FF] to-white relative overflow-hidden">
+      <section className="lg:py-24 py-10 bg-gradient-to-b from-white via-[#FAF5FF] to-white relative overflow-hidden">
         {/* Decorative Background Elements */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#9333EA] opacity-[0.03] rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#9333EA] opacity-[0.04] rounded-full blur-3xl"></div>
 
         <div className="container mx-auto px-6 relative z-10">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1726,8 +1726,8 @@ export default function ProductDetailPremiumSupportStaging({
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239333EA' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-14">
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="text-center mb-8 md:mb-14">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1823,7 +1823,7 @@ export default function ProductDetailPremiumSupportStaging({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-center mt-12"
+            className="text-center mt-8 md:mt-12"
           >
             <Link
               href="/products"

@@ -10,7 +10,7 @@ export default function FeaturedSection({ posts }) {
 
   return (
     <section className="max-w-7xl mx-auto px-6 py-12">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
         {/* Main Featured Post */}
         <div className="lg:col-span-7">
           <Link href={`/blog/${mainPost.slug}`} className="group">

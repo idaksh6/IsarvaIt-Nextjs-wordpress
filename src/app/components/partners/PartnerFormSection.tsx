@@ -141,7 +141,7 @@ export default function PartnerFormSection({
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-50 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/4" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-16 items-start">
             
@@ -187,7 +187,7 @@ export default function PartnerFormSection({
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-[32px] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-gray-100"
+                className="bg-white rounded-[32px] p-6 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-gray-100"
               >
                 <form onSubmit={handleSubmit} className="space-y-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
