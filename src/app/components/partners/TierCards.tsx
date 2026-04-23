@@ -74,25 +74,28 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
             <div className="p-6 md:p-8 lg:p-12 relative z-10 flex flex-col flex-1">
               <p className="text-slate-500 font-black mb-8 font-body uppercase tracking-widest text-xs">Foundation for growing agencies</p>
 
-              <div className="flex flex-wrap sm:flex-nowrap items-baseline gap-1 sm:gap-2 mb-10 font-display">
-                 <span className="text-6xl sm:text-7xl font-black text-slate-800">20%</span>
-                 <span className="text-lg sm:text-xl font-bold text-slate-500 leading-none uppercase tracking-wider">Commission</span>
-              </div>
-
-              <div className="space-y-4 mb-12 flex-1">
-                {features.map((f, i) => (
-                  <div key={i} className="flex items-center justify-between py-3 border-b border-slate-100">
-                    <span className="text-slate-700 font-bold font-body text-sm sm:text-base">{f.label}</span>
-                    <span>
-                      {typeof f.silver === "boolean" ? (
-                        f.silver ? <Check className="w-6 h-6 text-slate-800 stroke-[3]" /> : <X className="w-5 h-5 text-slate-200" />
-                      ) : (
-                        <span className="text-slate-900 font-black">{f.silver}</span>
-                      )}
-                    </span>
+                <div className="flex flex-col mb-10 font-display">
+                  <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-1">Earning Rate</span>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-7xl sm:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-br from-slate-400 via-slate-600 to-slate-900 drop-shadow-[0_10px_20px_rgba(0,0,0,0.15)] leading-none">20%</span>
+                    <span className="text-lg sm:text-xl font-bold text-slate-500 leading-none uppercase tracking-wider">Commission</span>
                   </div>
-                ))}
-              </div>
+                </div>
+ 
+               <div className="space-y-2 mb-12 flex-1 relative px-2 py-4 rounded-3xl bg-slate-50/50 backdrop-blur-[2px] border border-slate-100/50">
+                 {features.map((f, i) => (
+                   <div key={i} className="flex items-center justify-between py-3 px-4 rounded-xl hover:bg-white/80 transition-all duration-300 border-b border-slate-100/30 last:border-0 group/row">
+                     <span className="text-slate-900 font-bold font-body text-sm sm:text-base group-hover/row:translate-x-1 transition-transform">{f.label}</span>
+                     <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-slate-100 border border-slate-200/50 shadow-sm transition-transform group-hover/row:scale-110">
+                       {typeof f.silver === "boolean" ? (
+                         f.silver ? <Check className="w-5 h-5 text-slate-600 stroke-[4]" /> : <X className="w-4 h-4 text-slate-300" />
+                       ) : (
+                         <span className="text-slate-900 font-black text-[10px] whitespace-nowrap">{f.silver}</span>
+                       )}
+                     </div>
+                   </div>
+                 ))}
+               </div>
 
               <button 
                 onClick={onApply}
@@ -141,22 +144,25 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
             <div className="p-6 sm:p-8 lg:p-12 relative z-10 flex flex-col flex-1">
               <p className="text-[#EAB308] font-bold mb-8 font-body uppercase tracking-widest text-xs">For high-volume strategic partners</p>
 
-              <div className="flex flex-wrap sm:flex-nowrap items-baseline gap-1 sm:gap-2 mb-10 font-display">
-                 <span className="text-6xl sm:text-8xl font-black text-[#EAB308]">30%</span>
-                 <span className="text-lg sm:text-xl font-bold text-[#EAB308]/60 leading-none uppercase tracking-wider">Commission</span>
+              <div className="flex flex-col mb-10 font-display">
+                 <span className="text-[10px] font-black text-amber-500 uppercase tracking-[0.3em] mb-1">Max Earning Rate</span>
+                 <div className="flex items-baseline gap-2">
+                    <span className="text-7xl sm:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-br from-amber-400 via-yellow-500 to-orange-600 drop-shadow-[0_15px_30px_rgba(234,179,8,0.4)] leading-none">30%</span>
+                    <span className="text-lg sm:text-xl font-bold text-amber-600 leading-none uppercase tracking-wider">Commission</span>
+                 </div>
               </div>
 
-              <div className="space-y-4 mb-12 flex-1">
+              <div className="space-y-2 mb-12 flex-1 relative px-2 py-4 rounded-3xl bg-amber-50/50 backdrop-blur-[2px] border border-amber-100/50">
                 {features.map((f, i) => (
-                  <div key={i} className="flex items-center justify-between py-3 border-b border-amber-50">
-                    <span className="text-gray-800 font-bold font-body text-sm sm:text-base">{f.label}</span>
-                    <span>
+                  <div key={i} className="flex items-center justify-between py-3 px-4 rounded-xl hover:bg-white/80 transition-all duration-300 border-b border-amber-100/30 last:border-0 group/row">
+                    <span className="text-gray-900 font-bold font-body text-sm sm:text-base group-hover/row:translate-x-1 transition-transform">{f.label}</span>
+                    <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-amber-100/80 border border-amber-200/50 shadow-sm transition-transform group-hover/row:scale-110">
                       {typeof f.gold === "boolean" ? (
-                        f.gold ? <Check className="w-6 h-6 text-[#EAB308] stroke-[3]" /> : <X className="w-5 h-5 text-gray-200" />
+                        f.gold ? <Check className="w-5 h-5 text-[#EAB308] stroke-[4]" /> : <X className="w-4 h-4 text-amber-200" />
                       ) : (
-                        <span className="text-[#EAB308] font-black">{f.gold}</span>
+                        <span className="text-[#EAB308] font-black text-[10px] whitespace-nowrap">{f.gold}</span>
                       )}
-                    </span>
+                    </div>
                   </div>
                 ))}
               </div>
