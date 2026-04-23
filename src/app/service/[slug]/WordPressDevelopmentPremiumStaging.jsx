@@ -194,15 +194,6 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
             </div>
           </div>
 
-          <div className="absolute bottom-40 left-20 wp-float2 hidden xl:block z-10">
-            <div className="glass-panel rounded-2xl px-5 py-4 flex items-center gap-4">
-              <div className="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center text-xl">🛡️</div>
-              <div>
-                <div className="text-gray-900 text-xs font-bold uppercase tracking-wider">Security</div>
-                <div className="text-indigo-600 font-black text-lg">Hardened ✓</div>
-              </div>
-            </div>
-          </div>
 
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10 w-full">
             <div className="flex flex-wrap items-center gap-2 text-sm text-sky-700/60 mb-10 justify-center lg:justify-start font-medium pt-8 lg:pt-0">
@@ -321,7 +312,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
           <div className="marquee-track flex items-center gap-12 sm:gap-24 opacity-40 hover:opacity-80 transition-opacity duration-500">
             {[
               "WordPress", "PHP", "MySQL", "WooCommerce", "ACF Pro", "Elementor",
-              "Next.js", "REST API", "GraphQL", "Tailwind CSS", "JavaScript", "Security Hardened"
+              "Next.js", "REST API", "GraphQL", "Tailwind CSS", "JavaScript"
             ].map((tech, i) => (
               <div key={i} className="flex items-center gap-3 whitespace-nowrap">
                 <span className="text-xl font-black text-blue-900/40 tracking-tighter uppercase italic">{tech}</span>
@@ -330,7 +321,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
             ))}
             {[
               "WordPress", "PHP", "MySQL", "WooCommerce", "ACF Pro", "Elementor",
-              "Next.js", "REST API", "GraphQL", "Tailwind CSS", "JavaScript", "Security Hardened"
+              "Next.js", "REST API", "GraphQL", "Tailwind CSS", "JavaScript"
             ].map((tech, i) => (
               <div key={i + 100} className="flex items-center gap-3 whitespace-nowrap">
                 <span className="text-xl font-black text-blue-900/40 tracking-tighter uppercase italic">{tech}</span>
