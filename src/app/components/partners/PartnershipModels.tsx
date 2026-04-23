@@ -193,16 +193,28 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 relative">
                       {activeModel.path.map((item, idx) => (
-                        <div key={idx} className="relative group/path flex md:block gap-5 items-start">
-                          <div className="text-5xl md:text-5xl font-black text-emerald-100 font-display md:mb-2 shrink-0">{item.step}</div>
+                        <motion.div 
+                          key={idx} 
+                          whileHover={{ y: -5 }}
+                          className="relative group/path flex md:block gap-5 items-start cursor-default"
+                        >
+                          <div className="text-5xl md:text-5xl font-black text-emerald-100 group-hover/path:bg-clip-text group-hover/path:text-transparent group-hover/path:bg-gradient-to-br from-emerald-600 to-teal-400 group-hover/path:scale-110 transition-all duration-700 font-display md:mb-2 shrink-0">
+                            {item.step}
+                          </div>
                           <div>
-                            <h4 className="text-gray-900 font-bold font-display text-base md:text-lg mb-1">{item.label}</h4>
-                            <p className="text-gray-500 font-body text-sm md:text-xs lg:text-base leading-relaxed">{item.desc}</p>
+                            <h4 className="text-gray-900 font-bold font-display text-base md:text-lg mb-1 group-hover:text-emerald-400 transition-colors duration-500">
+                              {item.label}
+                            </h4>
+                            <p className="text-gray-500 font-body text-sm md:text-xs lg:text-base leading-relaxed">
+                              {item.desc}
+                            </p>
                           </div>
                           {idx < 2 && (
-                            <div className="hidden md:block absolute top-[20%] -right-4 translate-y-[-50%] text-emerald-100 text-2xl font-black">→</div>
+                            <div className="hidden md:block absolute top-[20%] -right-4 translate-y-[-50%] text-emerald-100 group-hover/path:text-emerald-300 transition-colors text-2xl font-black">
+                              →
+                            </div>
                           )}
-                        </div>
+                        </motion.div>
                       ))}
                     </div>
                   </div>

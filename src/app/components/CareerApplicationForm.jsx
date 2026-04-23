@@ -150,7 +150,7 @@ export default function CareerApplicationForm({ jobTitle, jobSlug }) {
           onChange={handleChange}
           required
           className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-200 outline-none text-gray-900"
-          placeholder="John Doe"
+          placeholder="Enter your full name"
         />
       </div>
 
@@ -167,7 +167,7 @@ export default function CareerApplicationForm({ jobTitle, jobSlug }) {
           onChange={handleChange}
           required
           className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-200 outline-none text-gray-900"
-          placeholder="john@company.com"
+          placeholder="email@example.com"
         />
       </div>
 
