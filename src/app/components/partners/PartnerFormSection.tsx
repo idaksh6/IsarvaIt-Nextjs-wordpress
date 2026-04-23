@@ -26,61 +26,24 @@ export default function PartnerFormSection({
     selectedCategoryId: "",
     message: ""
   });
-  const [categories, setCategories] = useState<any[]>([]);
-  const [isLoadingCategories, setIsLoadingCategories] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
   const [errorMessage, setErrorMessage] = useState("");
 
-  // Fetch categories from API
-  useEffect(() => {
-    const fetchCategories = async () => {
-      setIsLoadingCategories(true);
-      try {
-        const response = await fetch(`https://crm.isarva.in/api/product-categories/general`);
-        const data = await response.json();
-
-        if (data.categories) {
-          setCategories(data.categories);
-          
-          // Try to find matching category for ID
-          const matched = data.categories.find((cat: any) => 
-            cat.category_name.toLowerCase().includes(preSelectedItem.toLowerCase())
-          );
-          if (matched) {
-            setFormData(prev => ({
-              ...prev,
-              selectedItem: matched.category_name,
-              selectedCategoryId: matched.id
-            }));
-          }
-        }
-      } catch (error) {
-        console.error('Error fetching categories:', error);
-      } finally {
-        setIsLoadingCategories(false);
-      }
-    };
-
-    fetchCategories();
-  }, [preSelectedItem]);
+  const businessTypes = [
+    "Digital Marketing Agency",
+    "IT Services Provider",
+    "Independent Consultant",
+    "Software Development Company",
+    "Other:"
+  ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-
-    if (name === 'selectedItem') {
-      const selectedCategory = categories.find(cat => cat.category_name === value);
-      setFormData(prev => ({
-        ...prev,
-        selectedItem: value,
-        selectedCategoryId: selectedCategory ? selectedCategory.id : ""
-      }));
-    } else {
-      setFormData(prev => ({
-        ...prev,
-        [name]: value
-      }));
-    }
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -258,7 +221,7 @@ export default function PartnerFormSection({
 
                   {/* Program Selection */}
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-gray-700">Inquiry Type</label>
+                    <label className="text-sm font-bold text-gray-700">Type of Business*</label>
                     <select
                       name="selectedItem"
                       value={formData.selectedItem}
@@ -266,15 +229,12 @@ export default function PartnerFormSection({
                       required
                       className="w-full h-14 px-5 rounded-2xl border-2 border-gray-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium bg-white appearance-none cursor-pointer"
                     >
-                      <option value="">Select an inquiry type</option>
-                      {categories.map((cat: any) => (
-                        <option key={cat.id} value={cat.category_name}>
-                          {cat.category_name}
+                      <option value="">Select your business type</option>
+                      {businessTypes.map((type) => (
+                        <option key={type} value={type}>
+                          {type}
                         </option>
                       ))}
-                      {!categories.some(c => c.category_name === preSelectedItem) && (
-                        <option value={preSelectedItem}>{preSelectedItem}</option>
-                      )}
                     </select>
                   </div>
 
