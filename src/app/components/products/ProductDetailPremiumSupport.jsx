@@ -1216,7 +1216,7 @@ function SafetyManagementSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="bg-white/70 backdrop-blur-xl p-8 rounded-[1.5rem] lg:rounded-[2.5rem] flex items-center gap-8 shadow-[0_15px_50px_rgba(147,51,234,0.08)] border-2 border-white hover:border-[#9333EA]/20 transition-all duration-500 group hover:-translate-x-4"
+                className="bg-white/70 backdrop-blur-xl p-8 rounded-[1.5rem] lg:rounded-[2.5rem] flex flex-col md:flex-row items-center gap-6 md:gap-8 shadow-[0_15px_50px_rgba(147,51,234,0.08)] border-2 border-white hover:border-[#9333EA]/20 transition-all duration-500 group hover:-translate-x-4 text-center md:text-left"
               >
                 <div className="w-20 h-20 bg-gradient-to-br from-purple-50 to-white rounded-2xl flex items-center justify-center text-3xl flex-shrink-0 text-[#9333EA] shadow-inner group-hover:scale-110 transition-transform duration-500">
                   {item.icon}
@@ -1398,7 +1398,7 @@ export default function ProductDetailPremiumSupportStaging({
                 {/* Glow on hover */}
                 <div className="absolute -inset-px bg-gradient-to-br from-purple-500/0 via-purple-500/0 to-purple-500/0 group-hover:from-purple-500/10 group-hover:to-transparent rounded-3xl transition-all duration-500 z-0"></div>
 
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col items-center text-center md:items-start md:text-left">
                   <div className="w-14 h-14 bg-purple-50 text-2xl rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#9333EA] group-hover:text-white transition-all duration-300 shadow-sm">
                     <span className="group-hover:filter group-hover:brightness-0 group-hover:invert">{industry.icon}</span>
                   </div>
