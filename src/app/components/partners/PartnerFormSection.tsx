@@ -86,16 +86,28 @@ export default function PartnerFormSection({
           router.push(`/thank-you?type=contact&item=${encodeURIComponent(formData.selectedItem)}`);
         }, 1500);
       } else {
-        setSubmitStatus("error");
-        let friendlyError = data.error || "Something went wrong. Please try again.";
+        setErrorMessage("");
+        
+        let friendlyError = "Something went wrong. Please try again.";
         const prefix = "Failed to submit Partner Inquiry: ";
         
         if (typeof data.error === "string") {
-          if (data.error.includes("mobile") || data.error.includes("phone")) {
-            friendlyError = prefix + (data.error.includes("associated") ? "This phone number is already registered." : "Please enter a valid phone number.");
-          } else if (data.error.includes("email")) {
-            friendlyError = prefix + ((data.error.includes("taken") || data.error.includes("associated")) ? "This email address is already registered." : "Please enter a valid email address.");
-          } else {
+          try {
+            // Check if it's the CRM error format (contains JSON inside the string)
+            if (data.error.includes('{')) {
+              const jsonStr = data.error.substring(data.error.indexOf('{'));
+              const errorObj = JSON.parse(jsonStr);
+              if (errorObj.message) {
+                friendlyError = prefix + errorObj.message;
+              }
+            } else if (data.error.includes("mobile") || data.error.includes("phone")) {
+              friendlyError = prefix + (data.error.includes("associated") || data.error.includes("taken") || data.error.includes("registered") ? "This phone number is already registered." : "Please enter a valid phone number.");
+            } else if (data.error.includes("email")) {
+              friendlyError = prefix + (data.error.includes("taken") || data.error.includes("associated") || data.error.includes("registered") ? "This email address is already registered." : "Please enter a valid email address.");
+            } else {
+              friendlyError = prefix + data.error;
+            }
+          } catch (e) {
             friendlyError = prefix + data.error;
           }
         }
