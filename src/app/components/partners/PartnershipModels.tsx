@@ -10,77 +10,134 @@ const models = [
     id: "web",
     title: "Website Design & Development",
     icon: "🎨",
-    subtitle: "Identify clients needing new designs, WordPress solutions, or high-end UI/UX redesigns.",
-    idealFor: ["Marketing Consultants", "Advertising Agencies", "Digital Firms", "Freelancers", "Graphic Designers"],
+    subtitle: "Introduce us to clients who need new designs, WordPress solutions, or high-end UI/UX redesigns.",
+    idealFor: ["Marketing Consultants", "Advertising Agencies", "Web Designers", "Digital Marketing Agencies", "Freelancers", "Graphic Designers"],
     deliverables: [
-      { title: "Design & Build", desc: "(i) Custom Website, (ii) WordPress Design, (iii) Web UI/UX Design" },
-      { title: "Specialized Sites", desc: "(iv) CMS Website, (v) Redesign Website, (vi) Portfolio Website" },
-      { title: "Conversion Focus", desc: "(vii) Landing Pages, (viii) One Page Website, (ix) Blog Websites" }
+      { title: "Standard Solutions", desc: "Custom Website, WordPress Design, CMS Website, Redesign Services" },
+      { title: "Targeted Pages", desc: "Landing Pages, One Page Websites, Portfolio & Blog Websites" },
+      { title: "UX Focus", desc: "Web UI/UX Design and optional design revision support" }
     ],
     path: [
       { step: "01", label: "Introduce", desc: "Refer clients needing new designs or redesigns" },
-      { step: "02", label: "Build", desc: "We deliver custom, SEO-optimized code" },
-      { step: "03", label: "Profit", desc: "Earn 10% – 30% referral commissions + bonuses" }
+      { step: "02", label: "Design", desc: "We handle UI/UX, coding, and CMS architecture" },
+      { step: "03", label: "Earn", desc: "10% – 30% referral commissions + volume bonuses" }
     ],
-    earn: "10% – 30% Referral Commissions + Volume Bonuses",
-    extras: "White-labelled reports, Presentations, client-ready pitch prototypes (Figma, Adobe XD, InVision), and optional design revision support.",
+    earn: "10% – 30% Referral Commissions Per Project",
+    extras: "White-labelled reports, pitch prototypes (Figma, XD), and additional volume-based performance bonuses.",
   },
   {
     id: "ecommerce",
     title: "E-Commerce / WooCommerce",
     icon: "🛒",
-    subtitle: "Identify merchants or brands needing robust online stores or complex inventory integrations.",
-    idealFor: ["Retail Advisors", "Digital Marketing Agencies", "E-com Strategists"],
+    subtitle: "Identify and refer merchants or brands needing robust online stores or complex inventory integrations.",
+    idealFor: ["Retail Advisors", "Digital Marketing Agencies", "Retail Consultants", "E-com Strategists"],
     deliverables: [
-      { title: "Platforms", desc: "E-Commerce, WooCommerce, and custom checkout platforms" },
-      { title: "Logistics", desc: "Payment gateway and logistics/shipping integrations" },
-      { title: "Scale", desc: "Inventory, ERP, CRM integrations and mobile-first optimization" }
+      { title: "Retail Tech", desc: "E-Commerce, WooCommerce, and custom bespoke platforms" },
+      { title: "Logistics", desc: "Payment gateway, logistics, and inventory/ERP/CRM integrations" },
+      { title: "Optimization", desc: "Mobile-first checkout and high-conversion architectures" }
     ],
     path: [
-      { step: "01", label: "Identify", desc: "Find merchants needing robust online stores" },
-      { step: "02", label: "Integrate", desc: "We handle complex POS & API bridges" },
-      { step: "03", label: "Recurring", desc: "Setup commission + recurring hosting/maintenance revenue" }
+      { step: "01", label: "Identify", desc: "Refer brands needing scalable online sales tools" },
+      { step: "02", label: "Build", desc: "We integrate payments, inventory, and logistics" },
+      { step: "03", label: "Profit", desc: "Setup commission + recurring hosting/maintenance revenue" }
     ],
     earn: "Setup Commissions + Recurring Hosting & Maintenance Revenue",
     extras: "Technical support during sales calls, POS/Warehouse integration, and fast-launch templates.",
   },
   {
     id: "maintenance",
-    title: "Website Maintenance & Security",
+    title: "Maintenance & Security",
     icon: "🔒",
-    subtitle: "Offer managed website care plans as a high-value add-on to your existing clients.",
-    idealFor: ["IT Providers", "MSPs", "Managed Agencies", "Freelance Developers"],
+    subtitle: "Offer managed website care plans and AMC as an add-on to your existing client service portfolio.",
+    idealFor: ["IT Providers", "MSPs", "Managed Agencies", "Freelance Developers", "Retail Agents"],
     deliverables: [
-      { title: "Management", desc: "Monthly Maintenance Service, AMC, and Server Maintenance" },
-      { title: "Protection", desc: "24/7 Uptime Monitoring, Security Updates, and Malware Protection" },
-      { title: "Optimization", desc: "Regular Backups, Performance Tuning, and Health Check-Ups" }
+      { title: "Care Plans", desc: "Monthly Maintenance Service and Annual Maintenance Contracts (AMC)" },
+      { title: "Monitoring", desc: "24/7 Uptime, Security Monitoring, Backups, and Malware Protection" },
+      { title: "Performance", desc: "Regular Software/Plugin Updates and Site Performance Optimization" }
     ],
     path: [
-      { step: "01", label: "Offer", desc: "Add managed website care to your service portfolio" },
-      { step: "02", label: "Maintain", desc: "We handle daily updates, backups, and security" },
-      { step: "03", label: "MRR", desc: "Earn Monthly Recurring Revenue (MRR) per managed site" }
+      { step: "01", label: "Offer", desc: "Bundle managed care plans with your services" },
+      { step: "02", label: "Monitor", desc: "We handle technical updates and security recovery" },
+      { step: "03", label: "MRR", desc: "Earn Monthly Recurring Revenue (MRR) per website managed" }
     ],
-    earn: "Monthly Recurring Revenue (MRR) based on Maintenance Tiers",
-    extras: "Automated branded monthly reports, malware protection, and accessibility optimization.",
+    earn: "Monthly Recurring Revenue (MRR) per Website Managed",
+    extras: "Automated branded reports, malware protection, and accessibility/health check-up services.",
   },
   {
-    id: "software",
-    title: "Software Sales & Integration",
-    icon: "⚙️",
-    subtitle: "Refer clients who need custom-built automation, CRM tools, or enterprise integrations.",
-    idealFor: ["SaaS Resellers", "Business Advisors", "IT Consultants", "Operations Leads"],
+    id: "hrms",
+    title: "HRMS Suite Partners",
+    icon: "👥",
+    subtitle: "Recommend our comprehensive HRMS suite to businesses looking to automate workforce management.",
+    idealFor: ["Business Consultants", "Payroll Providers", "HR Outsourcing Firms", "Startup Incubators"],
     deliverables: [
-      { title: "Custom Build", desc: "Custom-built web and desktop applications" },
-      { title: "Ecosystems", desc: "CRM & ERP integrations with middleware automation" },
-      { title: "Intelligence", desc: "API development and cloud-based business dashboards" }
+      { title: "Workforce", desc: "Time & Attendance, Leave Management, and Employee Self-Service" },
+      { title: "Governance", desc: "Payroll Management with tax deductions and statutory compliance" },
+      { title: "Insights", desc: "Data-driven Reporting & Analytics for informed HR decision-making" }
     ],
     path: [
-      { step: "01", label: "Consult", desc: "Refer clients needing bespoke automation or apps" },
-      { step: "02", label: "Architect", desc: "We build the custom middleware and cloud tools" },
-      { step: "03", label: "Earn", desc: "Project-based referral commissions + managed service fees" }
+      { step: "01", label: "Recommend", desc: "Identify businesses needing HR automation" },
+      { step: "02", label: "Onboard", desc: "Our team handles technical setup and data migration" },
+      { step: "03", label: "Reward", desc: "Implementation commissions + ongoing annual renewals" }
     ],
-    earn: "High-Ticket Project Commissions + Managed Service Fees",
-    extras: "Technical sales engineering, branded software demos, and co-creation opportunities.",
+    earn: "High Setup Commissions + Annual Renewal Revenue",
+    extras: "Free Demo Sandbox, Technical Onboarding Assistance, and co-branded marketing brochures.",
+  },
+  {
+    id: "crm",
+    title: "CRM Partners",
+    icon: "📈",
+    subtitle: "Connect us with companies struggling to manage sales pipelines, lead tracking, or customer retention.",
+    idealFor: ["Sales Coaches", "Marketing Agencies", "Process Consultants", "Lead Gen Experts"],
+    deliverables: [
+      { title: "Sales Funnel", desc: "Lead Capture, Deal Stages, and Sales Pipeline Management" },
+      { title: "Relationship", desc: "Organization / Contact Management for stakeholders and decision makers" },
+      { title: "Visibility", desc: "Visual Dashboards, Analytics, and Meeting Calendar synchronization" }
+    ],
+    path: [
+      { step: "01", label: "Connect", desc: "Refer leads needing better pipeline control" },
+      { step: "02", label: "Engineer", desc: "We provide high-value sales engineering and demos" },
+      { step: "03", label: "Scale", desc: "Per-user commissions + extra on custom integrations" }
+    ],
+    earn: "Per-User Commissions + Integrated Module Upsells",
+    extras: "White-labelled CRM Dashboards, Sales engineering support, and ready-to-use sales funnels.",
+  },
+  {
+    id: "project",
+    title: "Project & Support Portal",
+    icon: "🛠️",
+    subtitle: "Refer businesses needing a structured environment to manage tasks, tickets, and renewals.",
+    idealFor: ["IT MSPs", "Project Consultants", "Operations Agencies", "Legal/Service Firms"],
+    deliverables: [
+      { title: "Execution", desc: "Project and Task Management with worked hours tracking" },
+      { title: "Support", desc: "Ticketing systems for customer issues and internal requests" },
+      { title: "Infrastructure", desc: "Renewal Automation, Real-time Alerts, and Role-based Security" }
+    ],
+    path: [
+      { step: "01", label: "Refer", desc: "Identify teams needing structured task/ticket flows" },
+      { step: "02", label: "Deploy", desc: "We configure managed support plans and notifications" },
+      { step: "03", label: "Retain", desc: "MRR for managed support + large onboarding bonuses" }
+    ],
+    earn: "Monthly Support MRR + Implementation Onboarding Bonuses",
+    extras: "Managed backup protocols, security alerts, and integrated Google Chat notifications.",
+  },
+  {
+    id: "integrated",
+    title: "Integrated Solutions",
+    icon: "🔗",
+    subtitle: "Introduce enterprise clients requiring a unified ecosystem where HRMS, CRM, and Web data talk.",
+    idealFor: ["Full-stack Agencies", "IT Consultants", "ERP Implementers", "Enterprise Advisors"],
+    deliverables: [
+      { title: "Unified Stack", desc: "Syncing data between Sales (CRM) and Operations (HRMS)" },
+      { title: "Bespoke Ops", desc: "Custom API development and third-party tool connectors" },
+      { title: "Architecture", desc: "Scalable systems ready for 10 to 1,000+ employees" }
+    ],
+    path: [
+      { step: "01", label: "Integrate", desc: "Architect clients needing multi-product ecosystems" },
+      { step: "02", label: "Sync", desc: "We build unified dashboards and bespoke API layers" },
+      { step: "03", label: "Strategize", desc: "Top-tier multi-product commissions + Beta access" }
+    ],
+    earn: "Exclusive Top-Tier Multi-Product Reward Commissions",
+    extras: "Dedicated Account Manager, strategic Roadmap access, and joint collaborative webinars.",
   },
 ];
 
@@ -102,7 +159,7 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
             Partnership <span className="text-emerald-600">Models</span>
           </motion.h2>
           <p className="text-gray-500 max-w-2xl mx-auto font-body text-base md:text-lg">
-            Four flexible ways to collaborate. Choose the path that fits your business goals and operational style.
+            Seven flexible ways to collaborate. Choose the path that fits your business expertise and client base.
           </p>
         </div>
 

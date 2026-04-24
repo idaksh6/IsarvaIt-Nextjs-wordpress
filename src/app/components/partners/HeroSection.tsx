@@ -13,7 +13,7 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
   ];
 
   return (
-    <section className="relative min-h-screen md:min-h-[90vh] flex items-center overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-br from-[#f0fdf4] via-[#ecfdf5] to-white">
+    <section className="relative min-h-screen md:min-h-[90vh] flex items-center overflow-hidden pt-24 pb-10 lg:pt-32 md:pb-24 bg-gradient-to-br from-[#f0fdf4] via-[#ecfdf5] to-white">
       {/* Background Subtle mesh and Grid */}
       <div className="absolute inset-0 z-0 opacity-40 bg-mesh-green pointer-events-none" />
       <div className="absolute inset-0 z-0 bg-dots opacity-[0.1] pointer-events-none" />
@@ -22,10 +22,10 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
       
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-20 items-center">
           
           {/* Left Content Side */}
-          <div className="text-center lg:text-left pt-10">
+          <div className="text-center lg:text-left pt-4 lg:pt-10">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -39,7 +39,7 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-[#111827] leading-[1.05] mb-6 tracking-tight uppercase"
+              className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-[#111827] leading-[1.05] mb-4 md:mb-6 tracking-tight uppercase"
             >
               Scale Beyond <br />
               <span className="text-emerald-600">Gravity</span>
@@ -58,7 +58,7 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-4 mb-12"
+              className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-4 mb-8 lg:mb-12"
             >
               <button 
                 onClick={onApply}
@@ -93,12 +93,12 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
           </div>
 
           {/* Right Imagery Side - The Collage */}
-          <div className="relative h-[450px] md:h-[600px] lg:h-[700px] flex items-center justify-center lg:justify-end mt-12 lg:mt-0">
+          <div className="relative flex items-center justify-center mt-6 lg:mt-0">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
-              className="relative z-10 w-full max-w-[650px] aspect-square rounded-[64px] overflow-hidden shadow-[0_50px_120px_rgba(0,0,0,0.15)] bg-slate-50 border-4 border-white/30"
+              className="relative z-10 w-full max-w-[500px] aspect-square rounded-[48px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.12)] bg-slate-50 border-4 border-white/30"
             >
               <img 
                 src="/partner_ecosystem_infographic.png" 
@@ -108,20 +108,19 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
               <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/10 to-transparent" />
             </motion.div>
 
-            {/* Floating Glass Badges */}
             <motion.div
               animate={{ 
                 y: [0, -20, 0],
               }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-[15%] -left-4 lg:-left-12 z-20 bg-white/70 backdrop-blur-xl p-5 rounded-3xl border border-white/50 shadow-2xl flex items-center gap-4 border-l-4 border-l-emerald-500"
+              className="absolute top-[20%] left-2 lg:-left-6 z-20 bg-white/80 backdrop-blur-xl p-3 rounded-xl border border-white/50 shadow-lg flex items-center gap-2.5 border-l-4 border-l-emerald-500 scale-90 lg:scale-100"
             >
-              <div className="w-12 h-12 rounded-2xl bg-emerald-500 text-white flex items-center justify-center text-2xl shadow-lg shadow-emerald-500/20">
+              <div className="w-9 h-9 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-lg shadow-lg shadow-emerald-500/20">
                 💰
               </div>
               <div>
-                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Earning Potential</p>
-                <p className="text-xl font-black text-slate-900">30% Commissions</p>
+                <p className="text-[8px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Earning Potential</p>
+                <p className="text-sm font-black text-slate-900">30% Commissions</p>
               </div>
             </motion.div>
 
@@ -130,14 +129,14 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
                 y: [0, 20, 0],
               }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute bottom-[20%] -right-4 lg:-right-8 z-20 bg-white/70 backdrop-blur-xl p-5 rounded-3xl border border-white/50 shadow-2xl flex items-center gap-4 border-l-4 border-l-blue-500"
+              className="absolute bottom-[25%] right-2 lg:-right-4 z-20 bg-white/80 backdrop-blur-xl p-3 rounded-xl border border-white/50 shadow-lg flex items-center gap-2.5 border-l-4 border-l-blue-500 scale-90 lg:scale-100"
             >
-              <div className="w-12 h-12 rounded-2xl bg-blue-500 text-white flex items-center justify-center text-2xl shadow-lg shadow-blue-500/20">
+              <div className="w-9 h-9 rounded-xl bg-blue-500 text-white flex items-center justify-center text-lg shadow-lg shadow-blue-500/20">
                 🚀
               </div>
               <div>
-                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Business Expansion</p>
-                <p className="text-xl font-black text-slate-900">Enterprise Ready</p>
+                <p className="text-[8px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Business Expansion</p>
+                <p className="text-sm font-black text-slate-900">Enterprise Ready</p>
               </div>
             </motion.div>
 
