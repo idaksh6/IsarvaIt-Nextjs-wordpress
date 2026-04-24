@@ -278,27 +278,6 @@ export default function ContactFormModal({
           } else {
             friendlyError = prefix + data.error;
           }
-        }`;
-            } else if (parsedError.email) {
-              friendlyError = `Email: ${parsedError.email[0]}`;
-            }
-          } catch (e) {
-            // Fallback to original logic if parsing fails
-          }
-        } else if (typeof data.error === 'string') {
-          if (data.error.includes('mobile') || data.error.includes('phone')) {
-            if (data.error.includes('associated')) {
-              friendlyError = 'This phone number is already registered.';
-            } else {
-              friendlyError = 'Please enter a valid phone number.';
-            }
-          } else if (data.error.includes('email')) {
-             if (data.error.includes('taken') || data.error.includes('associated')) {
-              friendlyError = 'This email address is already registered.';
-            } else {
-              friendlyError = 'Please enter a valid email address.';
-            }
-          }
         }
         setErrorMessage(friendlyError);
       }
