@@ -152,11 +152,11 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               {[
-                { label: "ABOUT US", href: "/about" },
-                { label: "SERVICES", href: "/services" },
-                { label: "PRODUCTS", href: "/products" },
-                { label: "INDUSTRIES", href: "/industries" },
-                { label: "CONTACT US", href: "/contact" },
+                { label: "About Us", href: "/about" },
+                { label: "Services", href: "/services" },
+                { label: "Products", href: "/products" },
+                { label: "Industries", href: "/industries" },
+                { label: "Contact Us", href: "/contact" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
@@ -189,7 +189,7 @@ export default function Footer() {
             </Link>
             <span className="w-1.5 h-1.5 rounded-full bg-white/20"></span>
             <Link href="/services" className="hover:text-white transition-colors">
-              SERVICES
+              Services
             </Link>
             <span className="w-1.5 h-1.5 rounded-full bg-white/20"></span>
             <Link target="_blank" href="https://support.isarva.in/form" className="hover:text-white transition-colors">
