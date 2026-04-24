@@ -17,58 +17,12 @@ function decodeHTMLEntities(text) {
 }
 
 function ServicesSection({ data }) {
-  // Original core services used as fallback if WordPress is empty
-  const defaultServices = [
-    {
-      id: 1,
-      icon: '🌐',
-      title: 'Web Development',
-      description: 'Custom web applications built with cutting-edge technologies for optimal performance and scalability.',
-      features: ['React & Next.js', 'Full-Stack Solutions', 'API Integration'],
-    },
-    {
-      id: 2,
-      icon: '📱',
-      title: 'Mobile Apps',
-      description: 'Native and cross-platform mobile applications designed for seamless user experiences.',
-      features: ['iOS & Android', 'React Native', 'Progressive Web Apps'],
-    },
-    {
-      id: 3,
-      icon: '☁️',
-      title: 'Cloud Solutions',
-      description: 'Scalable cloud infrastructure and deployment solutions for modern applications.',
-      features: ['AWS & Azure', 'DevOps', 'Serverless Architecture'],
-    },
-    {
-      id: 4,
-      icon: '🎨',
-      title: 'UI/UX Design',
-      description: 'Beautiful, intuitive interfaces that enhance user engagement and satisfaction.',
-      features: ['User Research', 'Prototyping', 'Design Systems'],
-    },
-    {
-      id: 5,
-      icon: '🛒',
-      title: 'E-Commerce',
-      description: 'Complete e-commerce solutions with secure payment processing and inventory management.',
-      features: ['Shopping Cart', 'Payment Gateway', 'Admin Dashboard'],
-    },
-    {
-      id: 6,
-      icon: '🔧',
-      title: 'Maintenance & Support',
-      description: 'Ongoing support and maintenance to keep your applications running smoothly.',
-      features: ['24/7 Monitoring', 'Bug Fixes', 'Performance Optimization'],
-    },
-  ];
-
-  const services = (data?.services && data.services.length > 0) ? data.services : defaultServices;
-  const heading = data?.heading || "Our Services";
-  const description = data?.description || "Providing precision-engineered technology solutions to enable global enterprises and startups.";
-  const stripData = data?.stripData || "Innovate • Scalable • Secure";
-  const buttonText = data?.buttonText || "Explore Services";
-  const buttonLink = data?.buttonLink || "/services";
+  const services = data?.services || [];
+  const heading = data?.heading || "";
+  const description = data?.description || "";
+  const stripData = data?.stripData || "";
+  const buttonText = data?.buttonText || "";
+  const buttonLink = data?.buttonLink || "";
 
   return (
     <section
@@ -250,7 +204,7 @@ function ServicesSection({ data }) {
             <Link
               href={buttonLink}
               target={data?.buttonTarget || ""}
-              className="press-illusion-btn-orange text-white font-bold px-6 py-2 text-base w-fit mx-auto items-center space-x-2  inline-flex"
+              className="press-illusion-btn-orange bg-orange-400 text-white font-bold px-6 py-2 text-base w-fit mx-auto items-center space-x-2  inline-flex"
             >
               <span>{decodeHTMLEntities(buttonText)}</span>
               <svg

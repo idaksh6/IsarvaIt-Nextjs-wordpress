@@ -191,12 +191,17 @@ export async function getTechStackSectionData(homePageData) {
     // Fetch ALL media items in a single request instead of a loop
     const mediaItems = await fetchMediaByIds(imageIds);
     
-    // Map them back to the expected format
-    techStackImages = mediaItems.map(imageData => ({
-      url: imageData.source_url,
-      alt: imageData.alt_text || '',
-      title: imageData.title?.rendered || ''
-    }));
+    // Map and sort them back to the original order from the gallery field
+    techStackImages = imageIds.map(id => {
+      const imageData = mediaItems.find(item => item.id === id);
+      if (!imageData) return null;
+      
+      return {
+        url: imageData.source_url,
+        alt: imageData.alt_text || '',
+        title: imageData.title?.rendered || ''
+      };
+    }).filter(item => item !== null);
   }
   
   return {
