@@ -163,7 +163,7 @@ export default async function ServiceDetailPage({ params }) {
               {service.subServices.map((subService, index) => {
                 // Map sub-service titles to their slugs
                 const subServiceSlugMap = {
-                  "Website Design": "website-design",
+                  "Website Design": "website-services",
                   "Website Maintenance – AMC": "website-maintenance-amc",
                   "Migrate to WordPress": "migrate-to-wordpress",
                   "SEO": "seo",

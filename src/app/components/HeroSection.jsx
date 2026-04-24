@@ -112,7 +112,7 @@ function HeroSection({ data }) {
                 : "We design and build high-performance website solutions applied basically for speed, scalability, and user experience."}
             </p>
             <Link
-              href="/service/website-design"
+              href="/service/website-services"
               className="inline-flex items-center justify-center gap-1 text-black font-semibold text-[13px] border border-orange-500 rounded-full px-5 py-2 transition-colors hover:bg-orange-500 hover:text-white w-fit mt-auto whitespace-nowrap"
               aria-label="Learn more about Website Services"
             >
