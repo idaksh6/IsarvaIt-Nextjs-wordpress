@@ -41,18 +41,6 @@ export default function ContactV2() {
     {
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-      ),
-      title: "Visit Us",
-      content: "Bajpe, Mangalore, India",
-      description: "Come say hello at our office",
-      link: "https://maps.app.goo.gl/33PWqCCNP69tLAXQ7",
-    },
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
@@ -96,7 +84,7 @@ export default function ContactV2() {
   return (
     <div className="bg-white overflow-hidden">
       {/* Contact Section with Banner Gradient */}
-      <section className="relative pt-32 lg:pt-40 pb-20 overflow-hidden bg-gradient-to-b from-[#d4f4dd] via-[#defae4] to-white">
+      <section className="relative pt-32 lg:pt-40 pb-10 lg:pb-20 overflow-hidden bg-gradient-to-b from-[#d4f4dd] via-[#defae4] to-white">
         {/* Background Decorations */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none" style={{ transform: "translateZ(0)" }}>
           <div className="absolute inset-0 bg-mesh-green opacity-40"></div>
@@ -149,7 +137,7 @@ export default function ContactV2() {
           </div>
 
           {/* Contact Info Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 lg:mt-20">
             {contactInfo.map((info, index) => (
               <div
                 key={index}
@@ -180,6 +168,104 @@ export default function ContactV2() {
                   )}
 
                   <p className="text-sm text-gray-600">{info.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Office Locations */}
+      <section className="py-10 lg:py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-mesh-green opacity-20"></div>
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Our Offices
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              We have offices around the world to serve you better
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                city: "Mangalore",
+                address: "Bajpe",
+                postal: "Mangalore, India",
+                mapEmbedUrl: "https://maps.google.com/maps?q=Bajpe,Mangalore,India&t=&z=13&ie=UTF8&iwloc=&output=embed",
+                googleMapsLink: "https://maps.app.goo.gl/33PWqCCNP69tLAXQ7",
+              },
+              {
+                city: "Bangalore",
+                address: "",
+                postal: "Bangalore, India",
+                mapEmbedUrl: "https://maps.google.com/maps?q=Bangalore,India&t=&z=12&ie=UTF8&iwloc=&output=embed",
+                googleMapsLink: "https://www.google.com/maps/place/Bangalore",
+              },
+              {
+                city: "Dubai",
+                address: "",
+                postal: "Dubai, UAE",
+                mapEmbedUrl: "https://maps.google.com/maps?q=Dubai,UAE&t=&z=12&ie=UTF8&iwloc=&output=embed",
+                googleMapsLink: "https://www.google.com/maps/place/Dubai",
+              },
+              {
+                city: "UK",
+                address: "",
+                postal: "United Kingdom",
+                mapEmbedUrl: "https://maps.google.com/maps?q=London,UK&t=&z=11&ie=UTF8&iwloc=&output=embed",
+                googleMapsLink: "https://www.google.com/maps/place/London,+UK",
+              },
+            ].map((office, index) => (
+              <div
+                key={index}
+                className="rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 group relative"
+              >
+                {/* Map Background with Overlay */}
+                <div className="relative h-48 overflow-hidden">
+                  {/* Google Maps Iframe - Non-interactive Background */}
+                  <iframe
+                    src={office.mapEmbedUrl}
+                    className="absolute inset-0 w-full h-full pointer-events-none opacity-60 grayscale-[30%] brightness-110"
+                    style={{ border: 0 }}
+                    allowFullScreen={false}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title={`Map of ${office.city}`}
+                  ></iframe>
+
+                  {/* Light Overlay for better visibility */}
+                  <div className="absolute inset-0 bg-white/40"></div>
+
+                  {/* Gradient Overlay for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent"></div>
+
+                  {/* Location Pin Icon */}
+                  <div className="absolute top-4 left-1/2 -translate-x-1/2 text-emerald-500 group-hover:scale-110 transition-transform duration-300 z-10">
+                    <svg className="w-10 h-10 drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                    </svg>
+                  </div>
+
+                  {/* Location Name Overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
+                    <div className="text-center">
+                      <h3 className="text-xl md:text-2xl font-bold text-gray-900 drop-shadow-sm">
+                        {office.city}
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Address Section */}
+                <div className="p-4">
+                  <p className="text-gray-600 leading-relaxed text-center">
+                    {office.address && <>{office.address} , </>}
+                    {office.postal}
+                  </p>
                 </div>
               </div>
             ))}
