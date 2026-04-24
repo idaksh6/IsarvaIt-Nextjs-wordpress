@@ -48,7 +48,7 @@ export default function Footer() {
               </svg>
             </Link>
 
-            <div className="flex items-center gap-4 mt-6 lg:ml-auto w-fit lg:justify-end justify-center">
+            <div className="flex items-center gap-4 mt-6 lg:ml-auto mx-auto lg:mx-0 w-fit lg:justify-end justify-center">
               <Link target="_blank" href="https://facebook.com/isarvait" className="w-11 h-11 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-all duration-300 shadow-xl hover:shadow-[#1877F2]/40 group">
                 <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </Link>
