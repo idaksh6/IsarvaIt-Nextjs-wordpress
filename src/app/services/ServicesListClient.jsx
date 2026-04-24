@@ -9,8 +9,11 @@ export default function ServicesListClient({ servicesData }) {
 
   // Filter services based on search query and staging status
   const filteredServices = useMemo(() => {
-    // Stage 1: Filter out staging services unless specifically searched for (or just always hide)
-    const publicServices = servicesData.filter(service => !service.slug?.toLowerCase().includes("staging"));
+    // Stage 1: Filter out staging services from the public list
+    const publicServices = servicesData.filter(service => {
+      const slug = service.slug?.toLowerCase() || "";
+      return !slug.includes("staging");
+    });
 
     if (!searchQuery.trim()) {
       return publicServices;
