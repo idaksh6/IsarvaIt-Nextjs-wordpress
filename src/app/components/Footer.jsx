@@ -6,7 +6,7 @@ import { Instagram, Facebook, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="relative pt-24 pb-12 overflow-hidden border-t  text-center lg:text-left border-white/5 bg-[#0A0D14] bg-[url('/get-started-bg.webp')] bg-cover bg-center bg-no-repeat">
+    <footer className="relative pt-12 pb-12 lg:pt-24 overflow-hidden border-t  text-center lg:text-left border-white/5 bg-[#0A0D14] bg-[url('/get-started-bg.webp')] bg-cover bg-center bg-no-repeat">
       <div className="absolute inset-0 bg-[#0A0D14]/10 backdrop-blur-sm pointer-events-none" />
 
       {/* Background Ambient Glows */}
@@ -15,7 +15,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Top Section: Brand & Description */}
-        <div className="flex flex-col lg:flex-row justify-between lg:items-start items-center gap-12 mb-20 pb-16 border-b border-white/5">
+        <div className="flex flex-col lg:flex-row justify-between lg:items-start items-center gap-6 lg:gap-12 mb-10 pb-10 lg:mb-20 lg:pb-16 border-b border-white/5">
           <div className="lg:max-w-2xl max-w-full">
             <Link href="/" prefetch={true} className="flex items-center">
               <Image src="/isarva New Logo.png" width={200} height={78} className="w-auto lg:mx-0 mx-auto h-[78px] object-contain drop-shadow-sm" alt="Isarva Logo" loading="lazy" />
@@ -63,7 +63,7 @@ export default function Footer() {
         </div>
 
         {/* Links Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12 lg:mb-32">
           {/* Services */}
           <div>
             <h4 className="text-white font-extrabold mb-8 text-[15px] uppercase tracking-[0.2em] flex items-center gap-3 lg:justify-start justify-center">
@@ -179,7 +179,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar Glass Container */}
-        <div className="relative p-6 sm:p-8 rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-xl flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden z-20 mt-16">
+        <div className="relative p-6 sm:p-8 rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-xl flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden z-20 mt-8 lg:mt-16">
           {/* Subtle interior glow */}
           <div className="absolute top-0 right-1/4 w-64 h-64 bg-white/5 blur-[60px] rounded-full pointer-events-none" />
 
