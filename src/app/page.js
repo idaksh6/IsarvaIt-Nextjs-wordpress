@@ -122,7 +122,7 @@ export default async function HomePage() {
       />
       <main>
         <HeroSection data={heroData} />
-        <AboutSection />
+        {/* <AboutSection /> */}
         <ClientsSection data={techStackData} />
         <ServicesSection data={servicesData} />
         <ProductDesktop />

@@ -17,22 +17,12 @@ function decodeHTMLEntities(text) {
 }
 
 function ServicesSection({ data }) {
-  // Fallback services if none are provided by data
-  const fallbackServices = [
-    { title: "Website Services", description: "Custom web solutions tailored to your business needs.", featuredImage: null, icon: "🌐" },
-    { title: "WordPress Development", description: "Bespoke WordPress themes and plugin development.", featuredImage: null, icon: "📝" },
-    { title: "Cloud Services", description: "Scalable cloud infrastructure and management.", featuredImage: null, icon: "☁️" },
-    { title: "Odoo Apps Support", description: "Enterprise-grade Odoo implementation and maintenance.", featuredImage: null, icon: "📦" },
-    { title: "AI & ML Consulting", description: "Smart AI solutions to transform your operations.", featuredImage: null, icon: "🤖" },
-    { title: "Staffing Services", description: "Global talent acquisition and team augmentation.", featuredImage: null, icon: "👥" }
-  ];
-
-  const services = (data?.services && data.services.length > 0) ? data.services : fallbackServices;
-  const heading = data?.heading || "Our Services";
-  const description = data?.description || "Comprehensive technology solutions designed to help your business scale and succeed.";
-  const stripData = data?.stripData || "Innovation • Scale • Success";
-  const buttonText = data?.buttonText || "Explore All Services";
-  const buttonLink = data?.buttonLink || "/services";
+  const services = data?.services || [];
+  const heading = data?.heading || "";
+  const description = data?.description || "";
+  const stripData = data?.stripData || "";
+  const buttonText = data?.buttonText || "";
+  const buttonLink = data?.buttonLink || "";
 
   return (
     <section
