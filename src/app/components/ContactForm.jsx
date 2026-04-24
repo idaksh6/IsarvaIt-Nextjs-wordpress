@@ -89,9 +89,6 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
           } else {
             friendlyError = prefix + data.error;
           }
-        } else if (data.error.includes('email')) {
-            friendlyError = (data.error.includes('taken') || data.error.includes('associated')) ? 'This email address is already registered.' : 'Please enter a valid email address.';
-          }
         }
         setErrorMessage(friendlyError);
         setTimeout(() => {
