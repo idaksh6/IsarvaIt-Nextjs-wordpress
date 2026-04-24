@@ -7,14 +7,17 @@ export default function ServicesListClient({ servicesData }) {
   const [searchQuery, setSearchQuery] = useState("");
   const servicesGridRef = useRef(null);
 
-  // Filter services based on search query
+  // Filter services based on search query and staging status
   const filteredServices = useMemo(() => {
+    // Stage 1: Filter out staging services unless specifically searched for (or just always hide)
+    const publicServices = servicesData.filter(service => !service.slug?.toLowerCase().includes("staging"));
+
     if (!searchQuery.trim()) {
-      return servicesData;
+      return publicServices;
     }
 
     const query = searchQuery.toLowerCase();
-    return servicesData.filter(service => 
+    return publicServices.filter(service => 
       service.title?.toLowerCase().includes(query) ||
       service.shortDescription?.toLowerCase().includes(query) ||
       service.features?.some(feature => 
