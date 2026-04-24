@@ -91,11 +91,15 @@ export async function getServicesSectionData(homePageData) {
   
   const layouts = homePageData.acf.home_page_layout;
   
-  // Find the services lists layout (try multiple possible names)
+  // Find the services layout (more flexible search to avoid missing it)
   const servicesSection = layouts.find(
-    (layout) => layout.acf_fc_layout === 'services_lists' ||
-                layout.acf_fc_layout === 'services_section' ||
-                layout.acf_fc_layout === 'services'
+    (layout) => 
+      layout.acf_fc_layout === 'services_lists' ||
+      layout.acf_fc_layout === 'services_section' ||
+      layout.acf_fc_layout === 'services' ||
+      layout.acf_fc_layout === 'our_services' ||
+      layout.acf_fc_layout === 'service_section' ||
+      layout.acf_fc_layout.toLowerCase().includes('service')
   );
   
   if (!servicesSection) {
@@ -152,8 +156,8 @@ export async function getServicesSectionData(homePageData) {
     heading: cleanWysiwygContent(servicesSection.services_section_heading) || 'Our Services',
     description: cleanWysiwygContent(servicesSection.services_section_description) || '',
     buttonText: servicesSection.button_text || 'View All Services',
-    buttonLink: buttonLink.url,
-    buttonTarget: buttonLink.target,
+    buttonLink: buttonLink.url || '',
+    buttonTarget: buttonLink.target || '',
     services,
   };
 }
