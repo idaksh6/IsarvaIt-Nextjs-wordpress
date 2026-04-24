@@ -17,11 +17,14 @@ export async function POST(request) {
         if (digitsOnly.length === 10) {
           // Indian 10-digit number, add country code
           mobileNumber = `+91${digitsOnly}`;
+        } else if (formData.phone.startsWith('+')) {
+          // Already has country code with +, use as is (stripping spaces/dashes)
+          mobileNumber = `+${digitsOnly}`;
         } else if (digitsOnly.length > 10) {
-          // Already has country code
+          // Has country code but no +, add one
           mobileNumber = `+${digitsOnly}`;
         } else {
-          // Too short, just send as is with +
+          // Too short or unknown, just send digits with +
           mobileNumber = `+${digitsOnly}`;
         }
       }

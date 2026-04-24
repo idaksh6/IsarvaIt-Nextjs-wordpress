@@ -137,9 +137,9 @@ export default function CRMBrochureModal({
         if (typeof data.error === 'string') {
           const prefix = 'Failed to submit C R M  Brochure  Request: ';
           if (data.error.includes('mobile') || data.error.includes('phone')) {
-            friendlyError = prefix + (data.error.includes('associated') ? 'This phone number is already registered.' : 'Please enter a valid phone number.');
+            friendlyError = prefix + (data.error.includes('associated') || data.error.includes('taken') || data.error.includes('registered') ? 'This phone number is already registered.' : 'Please enter a valid phone number.');
           } else if (data.error.includes('email')) {
-            friendlyError = prefix + ((data.error.includes('taken') || data.error.includes('associated')) ? 'This email address is already registered.' : 'Please enter a valid email address.');
+            friendlyError = prefix + (data.error.includes('taken') || data.error.includes('associated') || data.error.includes('registered') ? 'This email address is already registered.' : 'Please enter a valid email address.');
           } else {
             friendlyError = prefix + data.error;
           }
