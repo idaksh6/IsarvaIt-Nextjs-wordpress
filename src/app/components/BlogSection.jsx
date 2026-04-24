@@ -22,7 +22,7 @@ export default function BlogSection({ posts }) {
           <Link
             href="/blog"
             prefetch={true}
-            className="press-illusion-btn-orange bg-orange-600 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 hidden lg:flex"
+            className="press-illusion-btn-orange bg-orange-600 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 !hidden xl:!flex mt-4 md:mt-0"
           >
             <span>View More Blog</span>
             <svg
@@ -76,10 +76,11 @@ export default function BlogSection({ posts }) {
             </motion.article>
           ))}
         </div>
+        <div className="flex justify-center lg:hidden mt-10">
           <Link
             href="/blog"
             prefetch={true}
-            className="press-illusion-btn-orange mt-10 bg-orange-600 text-white mx-auto w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex lg:hidden"
+            className="press-illusion-btn-orange bg-orange-600 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex"
           >
             <span>View More Blog</span>
             <svg
@@ -96,6 +97,7 @@ export default function BlogSection({ posts }) {
               ></path>
             </svg>
           </Link>
+        </div>
       </div>
     </section>
   );
