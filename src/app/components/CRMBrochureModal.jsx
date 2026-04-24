@@ -133,14 +133,26 @@ export default function CRMBrochureModal({
       } else {
         setSubmitStatus('error');
         // Parse error message for user-friendly display
-        let friendlyError = data.error || 'Failed to submit form. Please try again.';
+        let friendlyError = 'Failed to submit form. Please try again.';
         if (typeof data.error === 'string') {
-          const prefix = 'Failed to submit C R M  Brochure  Request: ';
-          if (data.error.includes('mobile') || data.error.includes('phone')) {
-            friendlyError = prefix + (data.error.includes('associated') || data.error.includes('taken') || data.error.includes('registered') ? 'This phone number is already registered.' : 'Please enter a valid phone number.');
-          } else if (data.error.includes('email')) {
-            friendlyError = prefix + (data.error.includes('taken') || data.error.includes('associated') || data.error.includes('registered') ? 'This email address is already registered.' : 'Please enter a valid email address.');
-          } else {
+          const prefix = 'Failed to submit CRM brochure Request: ';
+          
+          try {
+            // Check if it's the CRM error format (contains JSON inside the string)
+            if (data.error.includes('{')) {
+              const jsonStr = data.error.substring(data.error.indexOf('{'));
+              const errorObj = JSON.parse(jsonStr);
+              if (errorObj.message) {
+                friendlyError = prefix + errorObj.message;
+              }
+            } else if (data.error.includes('mobile') || data.error.includes('phone')) {
+              friendlyError = prefix + (data.error.includes('associated') || data.error.includes('taken') || data.error.includes('registered') ? 'This phone number is already registered.' : 'Please enter a valid phone number.');
+            } else if (data.error.includes('email')) {
+              friendlyError = prefix + (data.error.includes('taken') || data.error.includes('associated') || data.error.includes('registered') ? 'This email address is already registered.' : 'Please enter a valid email address.');
+            } else {
+              friendlyError = prefix + data.error;
+            }
+          } catch (e) {
             friendlyError = prefix + data.error;
           }
         }
