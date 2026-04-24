@@ -78,7 +78,7 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
         console.error('Form submission failed:', data);
         setSubmitStatus("error");
 
-                // Parse error message for user-friendly display
+        // Parse error message for user-friendly display
         let friendlyError = 'Something went wrong. Please try again.';
         if (typeof data.error === 'string') {
           const prefix = data.error.includes('Partner') ? 'Failed to submit Partner Inquiry: ' : 
@@ -116,6 +116,107 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
           } catch (e) {
             friendlyError = prefix + data.error;
           }
+        }
+        setErrorMessage(friendlyError);
+        setTimeout(() => {
+          setSubmitStatus(null);
+          setErrorMessage("");
+        }, 7000);
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus("error");
+      setErrorMessage("Network error. Please check your connection and try again.");
+      setTimeout(() => {
+        setSubmitStatus(null);
+        setErrorMessage("");
+      }, 7000);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} id="main-enquiry-submit" className="space-y-6" aria-label="Contact form">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
+            Full Name *
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            aria-required="true"
+            aria-label="Full name"
+            className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-200 outline-none text-gray-900"
+            placeholder="Enter your full name"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
+            Email Address *
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            aria-required="true"
+            aria-label="Email address"
+            className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-200 outline-none text-gray-900"
+            placeholder="email@example.com"
+          />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label htmlFor="phone" className="block text-sm font-semibold text-gray-900 mb-2">
+            Phone Number
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            aria-label="Phone number"
+            value={formData.phone}
+            onChange={handleChange}
+            className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-200 outline-none text-gray-900"
+            placeholder="+1 (555) 123-4567"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="company" className="block text-sm font-semibold text-gray-900 mb-2">
+            Company Name *
+          </label>
+          <input
+            type="text"
+            id="company"
+            name="company"
+            value={formData.company}
+            onChange={handleChange}
+            required
+            aria-required="true"
+            aria-label="Company name"
+            className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-200 outline-none text-gray-900"
+            placeholder="Your Company"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label htmlFor="subject" className="block text-sm font-semibold text-gray-900 mb-2">
+          Subject *
+        </label>
+        <input
           type="text"
           id="subject"
           name="subject"
