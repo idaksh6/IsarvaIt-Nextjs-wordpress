@@ -30,7 +30,7 @@ export async function POST(request) {
     // Map form data to CRM API format
     const crmData = {
       title: formData.subject || 'Contact Form Submission',
-      description: formData.message || '',
+      description: `[FORM SOURCE: ${formData.subject || formData.pageType || 'General Inquiry'}]\n\n${formData.message || ''}`,
       organization_name: formData.company || '',
       address: '',
       website: '',

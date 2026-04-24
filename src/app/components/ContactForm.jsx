@@ -79,16 +79,18 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
         setSubmitStatus("error");
 
         // Parse error message for user-friendly display
-        let friendlyError = 'Something went wrong. Please try again.';
-        if (data.error && typeof data.error === 'string') {
+        let friendlyError = data.error || 'Something went wrong. Please try again.';
+        if (typeof data.error === 'string') {
+          const prefix = 'Failed to submit Contact Form: ';
           if (data.error.includes('mobile') || data.error.includes('phone')) {
-            friendlyError = 'Please enter a proper phone number.';
+            friendlyError = prefix + (data.error.includes('associated') ? 'This phone number is already registered.' : 'Please enter a valid phone number.');
           } else if (data.error.includes('email')) {
-            friendlyError = 'Please enter a valid email address.';
-          } else if (data.error.includes('name')) {
-            friendlyError = 'Please enter your full name.';
+            friendlyError = prefix + ((data.error.includes('taken') || data.error.includes('associated')) ? 'This email address is already registered.' : 'Please enter a valid email address.');
           } else {
-            friendlyError = data.error;
+            friendlyError = prefix + data.error;
+          }
+        } else if (data.error.includes('email')) {
+            friendlyError = (data.error.includes('taken') || data.error.includes('associated')) ? 'This email address is already registered.' : 'Please enter a valid email address.';
           }
         }
         setErrorMessage(friendlyError);

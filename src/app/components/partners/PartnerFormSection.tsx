@@ -87,7 +87,19 @@ export default function PartnerFormSection({
         }, 1500);
       } else {
         setSubmitStatus("error");
-        setErrorMessage(data.error || "Something went wrong. Please try again.");
+        let friendlyError = data.error || "Something went wrong. Please try again.";
+        const prefix = "Failed to submit Partner Inquiry: ";
+        
+        if (typeof data.error === "string") {
+          if (data.error.includes("mobile") || data.error.includes("phone")) {
+            friendlyError = prefix + (data.error.includes("associated") ? "This phone number is already registered." : "Please enter a valid phone number.");
+          } else if (data.error.includes("email")) {
+            friendlyError = prefix + ((data.error.includes("taken") || data.error.includes("associated")) ? "This email address is already registered." : "Please enter a valid email address.");
+          } else {
+            friendlyError = prefix + data.error;
+          }
+        }
+        setErrorMessage(friendlyError);
       }
     } catch (error) {
       setSubmitStatus("error");

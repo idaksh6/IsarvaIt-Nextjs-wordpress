@@ -97,15 +97,14 @@ export default function ExpenseTrackerBrochureModal({
         setSubmitStatus('error');
         // Parse error message for user-friendly display
         let friendlyError = 'Failed to submit form. Please try again.';
-        if (data.error && typeof data.error === 'string') {
+        if (typeof data.error === 'string') {
+          const prefix = 'Failed to submit Expense Tracker  Brochure  Request: ';
           if (data.error.includes('mobile') || data.error.includes('phone')) {
-            friendlyError = 'Please enter a proper phone number.';
+            friendlyError = prefix + (data.error.includes('associated') ? 'This phone number is already registered.' : 'Please enter a valid phone number.');
           } else if (data.error.includes('email')) {
-            friendlyError = 'Please enter a valid email address.';
-          } else if (data.error.includes('name')) {
-            friendlyError = 'Please enter your full name.';
+            friendlyError = prefix + ((data.error.includes('taken') || data.error.includes('associated')) ? 'This email address is already registered.' : 'Please enter a valid email address.');
           } else {
-            friendlyError = data.error;
+            friendlyError = prefix + data.error;
           }
         }
         setErrorMessage(friendlyError);
