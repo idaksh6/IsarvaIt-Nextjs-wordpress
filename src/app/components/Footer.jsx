@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { Instagram, Facebook, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -46,6 +47,18 @@ export default function Footer() {
                 ></path>
               </svg>
             </Link>
+
+            <div className="flex items-center gap-4 mt-6 lg:ml-auto w-fit lg:justify-end justify-center">
+              <Link target="_blank" href="https://facebook.com/isarvait" className="w-11 h-11 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-all duration-300 shadow-xl hover:shadow-[#1877F2]/40 group">
+                <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              </Link>
+              <Link target="_blank" href="https://instagram.com/isarvait" className="w-11 h-11 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-[#E4405F] hover:border-[#E4405F] transition-all duration-300 shadow-xl hover:shadow-[#E4405F]/40 group">
+                <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              </Link>
+              <Link target="_blank" href="https://linkedin.com/company/isarvait" className="w-11 h-11 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-[#0A66C2] hover:border-[#0A66C2] transition-all duration-300 shadow-xl hover:shadow-[#0A66C2]/40 group">
+                <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              </Link>
+            </div>
           </div>
         </div>
 
