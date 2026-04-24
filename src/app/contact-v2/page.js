@@ -84,9 +84,9 @@ export default function ContactV2() {
   return (
     <div className="bg-white overflow-hidden">
       {/* Contact Section with Banner Gradient */}
-      <section className="relative pt-32 lg:pt-40 pb-10 lg:pb-20 overflow-hidden bg-gradient-to-b from-[#d4f4dd] via-[#defae4] to-white">
-        {/* Background Decorations */}
-        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none" style={{ transform: "translateZ(0)" }}>
+      <section className="relative pt-32 lg:pt-40 pb-10 lg:pb-20 bg-gradient-to-b from-[#d4f4dd] via-[#defae4] to-white">
+        {/* Background Decorations - Wrapped to contain overflow without breaking sticky */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none" style={{ contain: "layout style paint" }}>
           <div className="absolute inset-0 bg-mesh-green opacity-40"></div>
           <div className="absolute top-20 right-10 w-[500px] h-[500px] bg-emerald-200/40 blur-[80px] rounded-full"></div>
           <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-green-200/30 blur-[80px] rounded-full"></div>
@@ -94,15 +94,15 @@ export default function ContactV2() {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
             {/* Left: Contact Form */}
-            <div className="relative order-2 lg:order-1">
-              <div className="rounded-3xl p-8 lg:p-10 bg-white/80 backdrop-blur-sm border-2 border-emerald-100 shadow-2xl transition-all duration-300 relative overflow-hidden">
+            <div className="relative order-2 lg:order-1 h-full">
+              <div className="h-full rounded-3xl p-8 lg:p-10 bg-white/80 backdrop-blur-sm border-2 border-emerald-100 shadow-2xl transition-all duration-300 relative overflow-hidden flex flex-col">
                 {/* Decorative elements */}
                 <div className="absolute -top-10 -right-10 w-40 h-40 bg-emerald-200/30 rounded-full blur-3xl"></div>
                 <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-green-200/30 rounded-full blur-3xl"></div>
                 
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col h-full">
                   <div className="mb-8 lg:text-left text-center">
                     <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                       Send us a Message
@@ -112,22 +112,24 @@ export default function ContactV2() {
                     </p>
                   </div>
 
-                  <ContactForm pageType="Contact Page V2" />
+                  <div className="flex-grow">
+                    <ContactForm pageType="Contact Page V2" />
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Right: Get in Touch Text and Additional Info */}
             <div className="relative order-1 lg:order-2">
-              <div className="mb-12 lg:text-left text-center">
+              <div className="mb-6 lg:text-left text-center">
                 <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/40 backdrop-blur-md text-emerald-800 font-semibold text-sm mb-6 border border-white/60 shadow-lg">
                   <span className="w-2 h-2 bg-emerald-600 rounded-full animate-pulse"></span>
                   Let's Connect
                 </div>
-                <h1 className="text-4xl lg:text-7xl font-bold text-gray-900 mb-6 tracking-tight">
+                <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-4 tracking-tight">
                   Get in Touch
                 </h1>
-                <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-10">
+                <p className="text-xl text-gray-700 leading-relaxed mb-6">
                   Have a project in mind? We'd love to hear about it. Send us a message and we'll respond within 24 hours.
                 </p>
               </div>
