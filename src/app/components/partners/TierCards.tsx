@@ -15,12 +15,10 @@ const features = [
   { label: "Enterprise Product Demo Access", silver: false, gold: true },
   { label: "Dedicated Account Manager", silver: false, gold: true },
   { label: "Local Leads", silver: true, gold: true },
-  { label: "Commission Rate", silver: "20%", gold: "30%" },
-  { label: "Promote on Partner Page", silver: false, gold: true },
-  { label: "Customer Success Stories", silver: true, gold: true },
   { label: "Expert Guidance", silver: true, gold: true },
   { label: "Screen Share Detailing", silver: false, gold: true },
   { label: "Functional & Technical Docs", silver: true, gold: true },
+  { label: "Commission Rate", silver: "20%", gold: "30%", hasAsterisk: true },
 ];
 
 const TierCards = ({ onApply }: { onApply: () => void }) => {
@@ -85,7 +83,10 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
                <div className="space-y-2 mb-12 flex-1 relative px-2 py-4 rounded-3xl bg-slate-50/50 backdrop-blur-[2px] border border-slate-100/50">
                  {features.map((f, i) => (
                    <div key={i} className="flex items-center justify-between py-3 px-4 rounded-xl hover:bg-white/80 transition-all duration-300 border-b border-slate-100/30 last:border-0 group/row">
-                     <span className="text-slate-900 font-bold text-sm sm:text-base group-hover/row:translate-x-1 transition-transform">{f.label}</span>
+                    <span className="text-slate-900 font-bold text-sm sm:text-base group-hover/row:translate-x-1 transition-transform">
+                      {f.label}
+                      {(f as any).hasAsterisk && <span className="text-red-600 ml-1 font-black">*</span>}
+                    </span>
                      <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-slate-100 border border-slate-200/50 shadow-sm transition-transform group-hover/row:scale-110">
                        {typeof f.silver === "boolean" ? (
                          f.silver ? <Check className="w-5 h-5 text-slate-600 stroke-[4]" /> : <X className="w-4 h-4 text-slate-300" />
@@ -155,7 +156,10 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
               <div className="space-y-2 mb-12 flex-1 relative px-2 py-4 rounded-3xl bg-amber-50/50 backdrop-blur-[2px] border border-amber-100/50">
                 {features.map((f, i) => (
                   <div key={i} className="flex items-center justify-between py-3 px-4 rounded-xl hover:bg-white/80 transition-all duration-300 border-b border-amber-100/30 last:border-0 group/row">
-                    <span className="text-gray-900 font-bold text-sm sm:text-base group-hover/row:translate-x-1 transition-transform">{f.label}</span>
+                    <span className="text-gray-900 font-bold text-sm sm:text-base group-hover/row:translate-x-1 transition-transform">
+                      {f.label}
+                      {(f as any).hasAsterisk && <span className="text-red-600 ml-1 font-black">*</span>}
+                    </span>
                     <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-amber-100/80 border border-amber-200/50 shadow-sm transition-transform group-hover/row:scale-110">
                       {typeof f.gold === "boolean" ? (
                         f.gold ? <Check className="w-5 h-5 text-[#EAB308] stroke-[4]" /> : <X className="w-4 h-4 text-amber-200" />
@@ -176,6 +180,17 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
             </div>
           </div>
         </motion.div>
+        </div>
+        <div className="mt-12 text-center">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-slate-500 text-sm font-medium"
+          >
+            <span className="text-red-600 font-bold text-lg leading-none align-middle mr-1">*</span> 
+            Terms and conditions apply
+          </motion.p>
         </div>
       </div>
     </section>

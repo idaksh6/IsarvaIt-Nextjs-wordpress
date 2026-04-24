@@ -24,7 +24,8 @@ export default function PartnerFormSection({
     company: "",
     selectedItem: preSelectedItem,
     selectedCategoryId: "",
-    message: ""
+    message: "",
+    otherBusinessType: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
@@ -35,7 +36,7 @@ export default function PartnerFormSection({
     "IT Services Provider",
     "Independent Consultant",
     "Software Development Company",
-    "Other:"
+    "Other"
   ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -58,10 +59,10 @@ export default function PartnerFormSection({
         email: formData.email,
         phone: formData.phone,
         company: formData.company,
-        subject: `Partner Inquiry: ${formData.selectedItem}`,
+        subject: `Partner Inquiry: ${formData.selectedItem === "Other" ? formData.otherBusinessType : formData.selectedItem}`,
         message: formData.message,
         pageType: "Partner",
-        itemName: formData.selectedItem,
+        itemName: formData.selectedItem === "Other" ? formData.otherBusinessType : formData.selectedItem,
         categoryId: formData.selectedCategoryId || null
       };
 
@@ -236,6 +237,25 @@ export default function PartnerFormSection({
                       ))}
                     </select>
                   </div>
+
+                  {formData.selectedItem === "Other" && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      className="space-y-2"
+                    >
+                      <label className="text-sm font-bold text-emerald-600">Please specify your business type*</label>
+                      <input
+                        type="text"
+                        name="otherBusinessType"
+                        value={formData.otherBusinessType}
+                        onChange={handleChange}
+                        required
+                        placeholder="Type your business category"
+                        className="w-full h-14 px-5 rounded-2xl border-2 border-emerald-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium"
+                      />
+                    </motion.div>
+                  )}
 
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-gray-700">Any specific questions?</label>
