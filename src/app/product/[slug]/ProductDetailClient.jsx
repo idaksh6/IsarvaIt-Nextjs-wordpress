@@ -177,16 +177,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
     );
   }
 
-  // Use Premium View for Support Application Staging
-  if (product.slug === 'support-application-staging') {
-    return (
-      <ProductDetailPremiumSupport 
-        product={product} 
-        relatedProducts={relatedProducts} 
-        allProducts={allProducts}
-      />
-    );
-  }
+
 
   // Use Premium View for Godown Management Staging
   if (product.slug === 'godown-management-staging') {

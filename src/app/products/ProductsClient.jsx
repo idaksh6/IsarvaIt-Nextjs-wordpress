@@ -6,9 +6,11 @@ import Link from "next/link";
 export default function ProductsClient({ productsData, categories }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const filteredProducts = selectedCategory === "All" 
-    ? productsData 
-    : productsData.filter(product => product.category === selectedCategory);
+  const filteredProducts = productsData.filter(product => {
+    const matchesCategory = selectedCategory === "All" || product.category === selectedCategory;
+    const isNotStaging = !product.slug?.includes("staging");
+    return matchesCategory && isNotStaging;
+  });
 
   return (
     <>

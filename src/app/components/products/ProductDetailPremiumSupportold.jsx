@@ -355,7 +355,7 @@ export default function ProductDetailPremiumSupport({
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {allProducts
-              .filter(p => p.slug !== product.slug)
+              .filter(p => p.slug !== product.slug && !p.slug.includes("staging"))
               .slice(0, 3)
               .map((prod, index) => (
                 <motion.div
@@ -367,10 +367,10 @@ export default function ProductDetailPremiumSupport({
                 >
                   <Link
                     href={`/product/${prod.slug}`}
-                    className="block"
+                    className="block h-full"
                   >
-                    <div className="relative rounded-3xl p-8 h-full bg-white border-2 border-gray-100 shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                      <div className="relative text-center md:text-left">
+                    <div className="relative rounded-3xl p-8 h-full bg-white border-2 border-gray-100 shadow-lg flex flex-col">
+                      <div className="relative text-center md:text-left flex-grow">
                         {/* Icon */}
                         <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#9333EA] to-[#7c3aed] flex items-center justify-center mb-6 shadow-lg mx-auto md:mx-0">
                           <span className="text-3xl">{prod.icon}</span>
@@ -393,18 +393,18 @@ export default function ProductDetailPremiumSupport({
                           {prod.shortDescription}
                         </p>
 
-                        {/* CTA Link */}
-                        <div className="flex items-center justify-center md:justify-start gap-2 text-[#9333EA] font-semibold">
-                          Explore Product
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </div>
-
                         {/* Category Badge */}
                         <div className="absolute -top-11 -right-2 bg-[#9333EA]/10 text-[#9333EA] text-xs font-bold px-3 py-1 rounded-full border-2 border-[#9333EA]/30 shadow-md">
                           {prod.category}
                         </div>
+                      </div>
+
+                      {/* CTA Link at bottom */}
+                      <div className="flex items-center justify-center md:justify-start gap-2 text-[#9333EA] font-semibold mt-auto pt-4 border-t border-gray-50">
+                        Explore Product
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
                       </div>
                     </div>
                   </Link>

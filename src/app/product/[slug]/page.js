@@ -34,8 +34,8 @@ export default async function ProductDetailPage({ params }) {
   }
 
   // Get related products (3 random products excluding current, prioritizing same category)
-  const sameCategory = productsData.filter(p => p.slug !== product.slug && p.category === product.category);
-  const otherProducts = productsData.filter(p => p.slug !== product.slug && p.category !== product.category);
+  const sameCategory = productsData.filter(p => p.slug !== product.slug && p.category === product.category && !p.slug.includes("staging"));
+  const otherProducts = productsData.filter(p => p.slug !== product.slug && p.category !== product.category && !p.slug.includes("staging"));
   const relatedProducts = [...sameCategory, ...otherProducts]
     .sort(() => 0.5 - Math.random())
     .slice(0, 3);

@@ -78,43 +78,7 @@ export const productsData = [
     color: "from-purple-500 to-pink-600",
     bgGradient: "from-purple-50 via-pink-50 to-white",
   },
-  {
-    slug: "support-application-staging",
-    title: "Support Application Staging",
-    category: "Customer Support",
-    icon: "🎧",
-    tagline: "Complete Project, Task & Support Management (Staging)",
-    shortDescription:
-      "Staging version of the Support Application for testing new workflows and UI refinements.",
-    description:
-      "This is a staging environment for the Support Application. Use this space to test new project lifecycles, ticketing flows, and reporting modules before they are deployed to production.",
-    features: [
-      "Multi-Channel Ticket Management",
-      "Automated Ticket Assignment & Routing",
-      "Knowledge Base Integration",
-      "Live Chat & Email Support",
-      "SLA Management & Tracking",
-      "Customer Portal for Self-Service",
-      "Team Collaboration Tools",
-      "Analytics & Performance Reports",
-    ],
-    technologies: [
-      "React",
-      "Node.js",
-      "PostgreSQL",
-      "WebSocket",
-      "Cloud Infrastructure",
-    ],
-    benefits: [
-      "Risk-Free Testing",
-      "Workflow Validation",
-      "UI/UX Experimentation",
-      "Team Feedback Loop",
-      "Deployment Readiness",
-    ],
-    color: "from-purple-500 to-pink-600",
-    bgGradient: "from-purple-50 via-pink-50 to-white",
-  },
+
   {
     slug: "crm-application",
     title: "CRM Application",
@@ -567,12 +531,16 @@ export const getAllProductSlugs = () => {
 };
 
 export const getProductsByCategory = (category) => {
-  return productsData.filter((product) => product.category === category);
+  return productsData.filter((product) => product.category === category && !product.slug?.includes("staging"));
 };
 
 export const getAllCategories = () => {
   const categories = [
-    ...new Set(productsData.map((product) => product.category)),
+    ...new Set(
+      productsData
+        .filter(p => !p.slug?.includes("staging"))
+        .map((product) => product.category)
+    ),
   ];
   return categories.sort();
 };
