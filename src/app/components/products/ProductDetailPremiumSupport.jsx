@@ -1400,7 +1400,7 @@ export default function ProductDetailPremiumSupportStaging({
 
                 <div className="relative z-10 flex flex-col items-center text-center md:items-start md:text-left">
                   <div className="w-14 h-14 bg-purple-50 text-2xl rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#9333EA] group-hover:text-white transition-all duration-300 shadow-sm">
-                    <span className="group-hover:filter group-hover:brightness-0 group-hover:invert">{industry.icon}</span>
+                    <span className="">{industry.icon}</span>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#9333EA] transition-colors">
                     {industry.title}
