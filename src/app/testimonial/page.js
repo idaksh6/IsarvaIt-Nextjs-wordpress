@@ -369,7 +369,7 @@ export default function TestimonialPage() {
                   {/* Client Photo */}
                   <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-32 h-32 rounded-full border-[8px] border-white shadow-2xl overflow-hidden bg-white z-20">
                     {testimonials[currentSlide].image ? (
-                      <Image src={testimonials[currentSlide].image} alt={testimonials[currentSlide].name} fill className="object-cover" />
+                      <Image src={testimonials[currentSlide].image} alt={testimonials[currentSlide].name} fill className={currentSlide === 1 ? "object-contain" : "object-cover"} />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center font-bold text-3xl text-[#10b981] bg-[#10b981]/5">
                         {testimonials[currentSlide].name[0]}
@@ -441,7 +441,7 @@ export default function TestimonialPage() {
                 {/* 1. Client Photo Centered and Overlapping */}
                 <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-32 h-32 rounded-full border-[8px] border-white shadow-2xl overflow-hidden bg-white z-20 group-hover:scale-105 transition-transform duration-500">
                   {t.image ? (
-                    <Image src={t.image} alt={t.name} fill className="object-cover" />
+                    <Image src={t.image} alt={t.name} fill className={idx === 1 ? "object-contain" : "object-cover"} />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center font-bold text-3xl text-[#10b981] bg-[#10b981]/5">{t.name[0]}</div>
                   )}
