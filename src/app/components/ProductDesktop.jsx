@@ -945,19 +945,6 @@ function ProductDesktop() {
                       </button>
                     </div>
                   )}
-
-                  {/* End Indicator */}
-                  {!hasMoreItems && filteredProducts.length > 6 && (
-                    <div className="flex items-center justify-center py-4 border-t border-gray-100">
-                      <div className="flex items-center gap-2 text-gray-500">
-                        <div className="h-px w-8 bg-gray-300"></div>
-                        <span className="text-sm font-medium">
-                          All {filteredProducts.length} products loaded
-                        </span>
-                        <div className="h-px w-8 bg-gray-300"></div>
-                      </div>
-                    </div>
-                  )}
                 </>
               )}
             </div>
