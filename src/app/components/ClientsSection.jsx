@@ -10,7 +10,7 @@ export default function ClientsSection({ data }) {
     icon: image.url,
   }));
   return (
-    <section className="py-24 relative overflow-hidden bg-gradient-to-br from-green-100 via-white to-green-100">
+    <section className="py-10 lg:py-24 relative overflow-hidden bg-gradient-to-br from-green-100 via-white to-green-100">
       {/* Radiant Glow under the row (Cool Blues/Purples to match professional vibe) */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[150px] rounded-full pointer-events-none" />
 
