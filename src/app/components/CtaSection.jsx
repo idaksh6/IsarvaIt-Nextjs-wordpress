@@ -10,7 +10,7 @@ export default function CtaSection() {
 
   return (
     <>
-      <section className="py-16 bg-white relative overflow-hidden">
+      <section className="py-10 lg:py-16 bg-white relative overflow-hidden">
         <div className="max-w-[1300px] mx-auto px-4 sm:px-6 relative z-10 w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
