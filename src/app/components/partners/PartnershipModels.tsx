@@ -196,42 +196,34 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
               transition={{ duration: 0.3, ease: "easeOut" }}
               className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 items-start"
             >
-              {/* Left Column: Visual & Deliverables */}
-              <div className="lg:col-span-4 lg:sticky lg:top-32 space-y-6 md:space-y-8">
-                <div className="hidden lg:block relative aspect-square rounded-3xl overflow-hidden bg-emerald-50/50 border border-emerald-100/50 group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent z-0" />
-                  <Image
-                    src="/partners/partnership-models.png"
-                    alt={activeModel.title}
-                    fill
-                    className="object-contain p-6 group-hover:scale-110 transition-transform duration-700"
-                  />
-                </div>
-
-                <div className="space-y-4">
-                  <p className="text-xs font-black text-emerald-600 uppercase tracking-widest border-l-4 border-emerald-600 pl-4">Ideal For</p>
-                  <div className="flex flex-wrap gap-2">
-                    {activeModel.idealFor.map((tag, idx) => (
-                      <span key={idx} className="px-3 py-1.5 rounded-lg bg-white border border-gray-100 text-gray-700 text-[11px] font-bold shadow-sm uppercase">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="space-y-4 pt-6 border-t border-emerald-50 lg:border-t-0 lg:pt-0">
+              {/* Left Column: Deliverables & Ideal For */}
+              <div className="lg:col-span-4 lg:sticky lg:top-32 space-y-10 md:space-y-12">
+                {/* Deliverables & Support First */}
+                <div className="space-y-5">
                   <p className="text-xs font-black text-emerald-600 uppercase tracking-widest border-l-4 border-emerald-600 pl-4">Deliverables & Support</p>
-                  <div className="grid grid-cols-1 gap-3">
+                  <div className="grid grid-cols-1 gap-4">
                     {activeModel.deliverables.map((item, idx) => (
-                      <div key={idx} className="flex gap-4 p-4 rounded-2xl bg-white border border-gray-100 shadow-sm">
-                        <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600 font-black text-xs shrink-0">
+                      <div key={idx} className="flex gap-4 p-5 rounded-2xl bg-white border border-gray-100 shadow-sm transition-all hover:shadow-md hover:border-emerald-100 group/card">
+                        <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600 font-black text-xs shrink-0 group-hover/card:bg-emerald-600 group-hover/card:text-white transition-colors">
                           {idx + 1}
                         </div>
                         <div>
                           <h4 className="text-[#111827] font-bold text-sm md:text-base leading-tight">{item.title}</h4>
-                          <p className="text-gray-500 text-sm mt-1">{item.desc}</p>
+                          <p className="text-gray-500 text-sm mt-1.5 leading-relaxed">{item.desc}</p>
                         </div>
                       </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Ideal For Second */}
+                <div className="space-y-5">
+                  <p className="text-xs font-black text-emerald-600 uppercase tracking-widest border-l-4 border-emerald-600 pl-4">Ideal For</p>
+                  <div className="flex flex-wrap gap-2.5">
+                    {activeModel.idealFor.map((tag, idx) => (
+                      <span key={idx} className="px-4 py-2 rounded-xl bg-white border border-gray-100 text-gray-600 text-[11px] font-bold shadow-sm uppercase tracking-wider transition-all hover:border-emerald-200 hover:text-emerald-700">
+                        {tag}
+                      </span>
                     ))}
                   </div>
                 </div>
