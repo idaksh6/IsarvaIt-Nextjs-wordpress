@@ -22,7 +22,10 @@ export function stripHtml(html) {
 export function cleanWysiwygContent(content) {
   if (!content) return '';
   
-  return content
+  // Trim first to ensure regex matches and trailing newlines don't become <br>
+  const trimmed = content.trim();
+  
+  return trimmed
     .replace(/^<p>(.*)<\/p>$/s, '$1') // Remove wrapping <p> tags
     .replace(/\r\n/g, '<br>') // Convert Windows line breaks
     .replace(/\n/g, '<br>') // Convert Unix line breaks
