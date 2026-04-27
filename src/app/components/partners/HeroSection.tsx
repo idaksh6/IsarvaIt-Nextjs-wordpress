@@ -83,7 +83,7 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.6 + i * 0.1 }}
-                  className={`bg-white/80 backdrop-blur-sm px-5 py-2.5 rounded-full shadow-sm text-[10px] font-bold border border-slate-100 flex items-center justify-center font-display tracking-widest uppercase text-slate-600`}
+                  className={`bg-white/80 backdrop-blur-sm px-5 py-2.5 rounded-full shadow-sm text-xs md:text-sm font-bold border border-slate-100 flex items-center justify-center font-display tracking-widest uppercase text-slate-600`}
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-2" />
                   {pill.text}
@@ -101,7 +101,7 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
               className="relative z-10 w-full max-w-[500px] aspect-square rounded-[48px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.12)] bg-slate-50 border-4 border-white/30"
             >
               <img 
-                src="/partner_ecosystem_infographic.png" 
+                src="/partner_ecosystem_no_text.png" 
                 alt="Partner Ecosystem" 
                 className="w-full h-full object-cover"
               />
@@ -119,7 +119,6 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
                 💰
               </div>
               <div>
-                <p className="text-[8px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Earning Potential</p>
                 <p className="text-sm font-black text-slate-900">30% Commissions</p>
               </div>
             </motion.div>
@@ -135,7 +134,6 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
                 🚀
               </div>
               <div>
-                <p className="text-[8px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Business Expansion</p>
                 <p className="text-sm font-black text-slate-900">Enterprise Ready</p>
               </div>
             </motion.div>

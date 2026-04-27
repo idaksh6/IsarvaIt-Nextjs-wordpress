@@ -89,7 +89,7 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
                     </span>
                      <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-slate-100 border border-slate-200/50 shadow-sm transition-transform group-hover/row:scale-110">
                        {typeof f.silver === "boolean" ? (
-                         f.silver ? <Check className="w-5 h-5 text-slate-600 stroke-[4]" /> : <X className="w-4 h-4 text-slate-300" />
+                         f.silver ? <Check className="w-5 h-5 text-slate-600 stroke-[4]" /> : <X className="w-5 h-5 text-red-500 stroke-[4]" />
                        ) : (
                          <span className="text-slate-900 font-black text-[10px] whitespace-nowrap">{f.silver}</span>
                        )}
@@ -162,7 +162,7 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
                     </span>
                     <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-amber-100/80 border border-amber-200/50 shadow-sm transition-transform group-hover/row:scale-110">
                       {typeof f.gold === "boolean" ? (
-                        f.gold ? <Check className="w-5 h-5 text-[#EAB308] stroke-[4]" /> : <X className="w-4 h-4 text-amber-200" />
+                        f.gold ? <Check className="w-5 h-5 text-[#EAB308] stroke-[4]" /> : <X className="w-5 h-5 text-red-500 stroke-[4]" />
                       ) : (
                         <span className="text-[#EAB308] font-black text-[10px] whitespace-nowrap">{f.gold}</span>
                       )}
