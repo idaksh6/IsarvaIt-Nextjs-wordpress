@@ -149,7 +149,7 @@ export default function ProductDetailPremium({
             ></div>
           </div>
           <div className="dashboard-main-img">
-            <div className="relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)] bg-white">
+            <div className="relative overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.1)] md:shadow-[0_50px_100px_rgba(0,0,0,0.2)] bg-white">
               <img
                 src="/products/hrms/Main-img.jpg"
                 alt="Dashboard Preview"
