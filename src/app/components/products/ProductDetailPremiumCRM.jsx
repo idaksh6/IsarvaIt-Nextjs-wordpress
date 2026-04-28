@@ -130,7 +130,7 @@ export default function ProductDetailPremiumCRM({
       </section>
 
       {/* 2. Why Businesses Need a CRM Section */}
-      <section className="lg:py-32 py-14 bg-white">
+      <section className="lg:py-32 py-10 bg-white">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 lg:text-left text-center">
             {/* Left Side - Image (Sticky on Desktop) */}
@@ -262,7 +262,7 @@ export default function ProductDetailPremiumCRM({
       </div>
 
       {/* 4. CTA Section */}
-      <section className="py-16 bg-white relative overflow-hidden">
+      <section className="py-10 lg:py-16 bg-white relative overflow-hidden">
         {/* Background Decoration */}
         <div className="absolute inset-0 bg-gradient-to-br from-sky-50 via-transparent to-blue-50"></div>
 
@@ -283,7 +283,7 @@ export default function ProductDetailPremiumCRM({
               backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
             }}></div>
 
-            <div className="relative z-10 px-8 md:px-16 py-16 md:py-20 text-center">
+            <div className="relative z-10 px-8 md:px-16 py-10 md:py-20 text-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -328,7 +328,7 @@ export default function ProductDetailPremiumCRM({
       </section>
 
       {/* Explore More Products Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      <section className="py-10 lg:py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230EA5E9' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
@@ -523,7 +523,7 @@ function CRMFeatureSection() {
   const activeFeature = crmFeatures.find((f) => f.id === activeId) || crmFeatures[0];
 
   return (
-    <section className="py-20 overflow-hidden bg-[#F7F7F7]">
+    <section className="py-10 lg:py-20 overflow-hidden bg-[#F7F7F7]">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-10">
