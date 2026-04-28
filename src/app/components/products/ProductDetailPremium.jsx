@@ -160,7 +160,7 @@ export default function ProductDetailPremium({
         </motion.div>
       </section>{" "}
       {/* 2. Core HRMS Section */}
-      <section className="lg:py-32 py-14 bg-white">
+      <section className="py-10 lg:py-32  bg-white">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 lg:text-left text-center">
             {/* Left Side - Image (Sticky on Desktop) */}
@@ -320,7 +320,7 @@ export default function ProductDetailPremium({
       </section>
 
       {/* 5. CTA Section */}
-      <section className="py-16 bg-white relative overflow-hidden">
+      <section className="py-10 lg:py-16 bg-white relative overflow-hidden">
         {/* Background Decoration */}
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-transparent to-green-50"></div>
 
@@ -386,7 +386,7 @@ export default function ProductDetailPremium({
       </section>
 
       {/* Explore More Products Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      <section className="py-10 lg:py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2322C55E' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
@@ -816,7 +816,7 @@ function HrmsFeatureSection() {
   const activeFeature = hrmsFeatures.find((f) => f.id === activeId);
 
   return (
-    <section className="py-20 overflow-hidden bg-[#F7F7F7]">
+    <section className="py-10 lg:py-20 overflow-hidden bg-[#F7F7F7]">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-14">
@@ -930,8 +930,8 @@ function HrmsFeatureSection() {
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
                   className={`flex items-center gap-2 py-2.5 px-5 rounded-lg font-semibold text-sm transition-all duration-200 ${activeId === feature.id
-                      ? "bg-[#22C55E] text-white shadow-lg scale-105"
-                      : "bg-white border border-gray-200 text-gray-700 hover:border-[#22C55E] hover:shadow-md"
+                    ? "bg-[#22C55E] text-white shadow-lg scale-105"
+                    : "bg-white border border-gray-200 text-gray-700 hover:border-[#22C55E] hover:shadow-md"
                     }`}
                 >
                   <span className="text-base">{feature.icon}</span>
