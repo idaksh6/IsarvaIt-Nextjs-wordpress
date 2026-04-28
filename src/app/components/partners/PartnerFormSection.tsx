@@ -53,6 +53,13 @@ export default function PartnerFormSection({
     setSubmitStatus(null);
     setErrorMessage("");
 
+    if (!formData.company) {
+      setSubmitStatus("error");
+      setIsSubmitting(false);
+      setErrorMessage("The company name field is required.");
+      return;
+    }
+
     try {
       const submissionData = {
         name: formData.name,
@@ -230,7 +237,7 @@ export default function PartnerFormSection({
                     {/* Company */}
                     <div className="space-y-2">
                       <label className="text-sm font-bold text-gray-700 flex items-center gap-2 font-body">
-                        <Building2 className="w-4 h-4 text-emerald-500" /> Organization Name
+                        <Building2 className="w-4 h-4 text-emerald-500" /> Company Name *
                       </label>
                       <input
                         type="text"

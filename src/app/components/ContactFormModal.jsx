@@ -208,6 +208,13 @@ export default function ContactFormModal({
     setSubmitStatus(null);
     setErrorMessage("");
 
+    if (!formData.company) {
+      setSubmitStatus("error");
+      setIsSubmitting(false);
+      setErrorMessage("The company name field is required.");
+      return;
+    }
+
     try {
       // Prepare data for API
       const submissionData = {
@@ -402,7 +409,7 @@ export default function ContactFormModal({
               {/* Company */}
               <div>
                 <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Company Name
+                  Company Name *
                 </label>
                 <input
                   type="text"
@@ -410,6 +417,7 @@ export default function ContactFormModal({
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
+                  required
                   className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-900 focus:border-orange-400 focus:outline-none transition-colors duration-200"
                   placeholder="Your Company"
                 />

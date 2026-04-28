@@ -28,6 +28,13 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
     setIsSubmitting(true);
     setSubmitStatus(null);
     setErrorMessage("");
+    
+    if (!formData.company) {
+      setSubmitStatus("error");
+      setIsSubmitting(false);
+      setErrorMessage("The company name field is required.");
+      return;
+    }
 
     try {
       const submissionData = {
@@ -205,7 +212,7 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
             onChange={handleChange}
             required
             aria-required="true"
-            aria-label="Company name"
+            aria-label="Organization name"
             className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-200 outline-none text-gray-900"
             placeholder="Your Company"
           />

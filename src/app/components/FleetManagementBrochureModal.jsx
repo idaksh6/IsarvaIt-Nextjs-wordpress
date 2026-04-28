@@ -44,6 +44,13 @@ export default function FleetManagementBrochureModal({
     setSubmitStatus(null);
     setErrorMessage("");
 
+    if (!formData.company) {
+      setSubmitStatus("error");
+      setIsSubmitting(false);
+      setErrorMessage("The company name field is required.");
+      return;
+    }
+
     try {
       // Prepare data for API
       const submissionData = {
@@ -211,7 +218,7 @@ export default function FleetManagementBrochureModal({
           {/* Company */}
           <div>
             <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2">
-              Company Name
+              Company Name <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -219,6 +226,7 @@ export default function FleetManagementBrochureModal({
               name="company"
               value={formData.company}
               onChange={handleChange}
+              required
               className="w-full px-4 py-3 border text-gray-700 border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition-all"
               placeholder="Your company name"
             />
