@@ -328,7 +328,7 @@ export default function ProductDetailPremiumPetroCare({
                         </p>
 
                         {/* Category Badge */}
-                        <div className="absolute -top-11 -right-2 bg-[#F59E0B]/10 text-[#F59E0B] text-xs font-bold px-3 py-1 rounded-full border-2 border-[#F59E0B]/30 shadow-md">
+                        <div className="absolute -top-11 -right-2 bg-white text-[#F59E0B] text-xs font-bold px-3 py-1 rounded-full border-2 border-[#F59E0B]/30 shadow-md">
                           {prod.category}
                         </div>
                       </div>

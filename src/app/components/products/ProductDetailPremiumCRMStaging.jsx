@@ -546,7 +546,7 @@ export default function ProductDetailPremiumCRMStaging({
                         </p>
 
                         {/* Category Badge */}
-                        <div className="absolute -top-11 -right-2 bg-[#0EA5E9]/10 text-[#0EA5E9] text-xs font-bold px-3 py-1 rounded-full border-2 border-[#0EA5E9]/30 shadow-md">
+                        <div className="absolute -top-11 -right-2 bg-white text-[#0EA5E9] text-xs font-bold px-3 py-1 rounded-full border-2 border-[#0EA5E9]/30 shadow-md">
                           {prod.category}
                         </div>
                       </div>

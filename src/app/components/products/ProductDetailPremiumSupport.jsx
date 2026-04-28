@@ -1799,7 +1799,7 @@ export default function ProductDetailPremiumSupportStaging({
                         </p>
 
                         {/* Category Badge */}
-                        <div className="absolute -top-11 -right-2 bg-[#9333EA]/10 text-[#9333EA] text-xs font-bold px-3 py-1 rounded-full border-2 border-[#9333EA]/30 shadow-md">
+                        <div className="absolute -top-11 -right-2 bg-white text-[#9333EA] text-xs font-bold px-3 py-1 rounded-full border-2 border-[#9333EA]/30 shadow-md">
                           {prod.category}
                         </div>
                       </div>

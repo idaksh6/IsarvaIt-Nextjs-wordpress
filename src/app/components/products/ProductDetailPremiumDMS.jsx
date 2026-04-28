@@ -328,7 +328,7 @@ export default function ProductDetailPremiumDMS({
                         </p>
 
                         {/* Category Badge */}
-                        <div className="absolute -top-11 -right-2 bg-[#6366F1]/10 text-[#6366F1] text-xs font-bold px-3 py-1 rounded-full border-2 border-[#6366F1]/30 shadow-md">
+                        <div className="absolute -top-11 -right-2 bg-white text-[#3B82F6] text-xs font-bold px-3 py-1 rounded-full border-2 border-[#3B82F6]/30 shadow-md">
                           {prod.category}
                         </div>
                       </div>

@@ -367,7 +367,7 @@ export default function ProductDetailPremiumWooCommerce({
                         </p>
 
                         {/* Category Badge */}
-                        <div className="absolute -top-11 -right-2 bg-[#A855F7]/10 text-[#A855F7] text-xs font-bold px-3 py-1 rounded-full border-2 border-[#A855F7]/30 shadow-md">
+                        <div className="absolute -top-11 -right-2 bg-white text-[#A855F7] text-xs font-bold px-3 py-1 rounded-full border-2 border-[#A855F7]/30 shadow-md">
                           {prod.category}
                         </div>
                       </div>
