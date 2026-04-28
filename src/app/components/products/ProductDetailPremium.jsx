@@ -133,7 +133,7 @@ export default function ProductDetailPremium({
           className="hero-dashboard-wrapper"
         >
           <div className="dashboard-animation left">
-            <div 
+            <div
               className="scroll-img"
               style={{
                 backgroundImage: `url('/products/hrms/HRMS-slide-1.jpg'), url('/products/hrms/HRMS-slide-2.jpg')`
@@ -141,7 +141,7 @@ export default function ProductDetailPremium({
             ></div>
           </div>
           <div className="dashboard-animation right">
-            <div 
+            <div
               className="scroll-img"
               style={{
                 backgroundImage: `url('/products/hrms/HRMS-slide-3.jpg'), url('/products/hrms/HRMS-slide-4.jpg')`
@@ -180,7 +180,7 @@ export default function ProductDetailPremium({
             {/* Right Side - Content */}
             <div>
               <h2 className="text-4xl md:text-[50px] font-extrabold text-[#000000] mb-6 leading-tight">
-                Take control of every{" "} 
+                Take control of every{" "}
                 <span className="text-[#22C55E]">employee workflow</span>
               </h2>
 
@@ -285,7 +285,7 @@ export default function ProductDetailPremium({
       </div>
 
       {/* 4. FAQ Section - Interactive Accordion */}
-      <section className="py-24 bg-gradient-to-b from-white via-[#F7FFF9] to-white relative overflow-hidden">
+      <section className="py-10 lg:py-24 bg-gradient-to-b from-white via-[#F7FFF9] to-white relative overflow-hidden">
         {/* Decorative Background Elements */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#22C55E] opacity-[0.03] rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#22C55E] opacity-[0.04] rounded-full blur-3xl"></div>
@@ -390,7 +390,7 @@ export default function ProductDetailPremium({
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2322C55E' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
-        
+
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-14">
             <motion.div
@@ -929,11 +929,10 @@ function HrmsFeatureSection() {
                 <button
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
-                  className={`flex items-center gap-2 py-2.5 px-5 rounded-lg font-semibold text-sm transition-all duration-200 ${
-                    activeId === feature.id
+                  className={`flex items-center gap-2 py-2.5 px-5 rounded-lg font-semibold text-sm transition-all duration-200 ${activeId === feature.id
                       ? "bg-[#22C55E] text-white shadow-lg scale-105"
                       : "bg-white border border-gray-200 text-gray-700 hover:border-[#22C55E] hover:shadow-md"
-                  }`}
+                    }`}
                 >
                   <span className="text-base">{feature.icon}</span>
                   <span>{feature.label}</span>
