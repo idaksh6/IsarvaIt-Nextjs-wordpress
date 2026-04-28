@@ -14,28 +14,28 @@ const SKY_DARK = "#0284C7";
 const BLUE = "#3B82F6";
 
 const howItWorksData = [
-  { 
-    title: "Capture Leads", 
+  {
+    title: "Capture Leads",
     desc: "Collect and organize leads from various sources effortlessly.",
     icon: "🎯"
   },
-  { 
-    title: "Track Opportunities", 
+  {
+    title: "Track Opportunities",
     desc: "Convert leads into deals and monitor project progress.",
     icon: "📈"
   },
-  { 
-    title: "Manage Deals & Activities", 
+  {
+    title: "Manage Deals & Activities",
     desc: "Handle deals, tasks, meetings, and follow-ups in one place.",
     icon: "💼"
   },
-  { 
-    title: "Create Quotations", 
+  {
+    title: "Create Quotations",
     desc: "Generate and share professional quotations quickly.",
     icon: "📄"
   },
-  { 
-    title: "Build Relationships", 
+  {
+    title: "Build Relationships",
     desc: "Maintain complete customer history across all your devices.",
     icon: "🤝"
   }
@@ -175,7 +175,7 @@ export default function ProductDetailPremiumCRMStaging({
           className="hero-dashboard-wrapper"
         >
           <div className="dashboard-animation left">
-            <div 
+            <div
               className="scroll-img"
               style={{
                 backgroundImage: `url('/products/crm/CRM-slide-1.jpg'), url('/products/crm/CRM-slide-2.jpg')`
@@ -183,7 +183,7 @@ export default function ProductDetailPremiumCRMStaging({
             ></div>
           </div>
           <div className="dashboard-animation right">
-            <div 
+            <div
               className="scroll-img"
               style={{
                 backgroundImage: `url('/products/crm/CRM-slide-3.jpg'), url('/products/crm/CRM-slide-4.jpg')`
@@ -232,7 +232,7 @@ export default function ProductDetailPremiumCRMStaging({
               </p>
 
               <div className="space-y-6">
-                <div className="flex items-start gap-4">
+                <div className="flex flex-col md:flex-row items-start gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7] flex items-center justify-center shadow-lg">
                     <span className="text-2xl">📊</span>
                   </div>
@@ -246,7 +246,7 @@ export default function ProductDetailPremiumCRMStaging({
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
+                <div className="flex flex-col md:flex-row items-start gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7] flex items-center justify-center shadow-lg">
                     <span className="text-2xl">🚀</span>
                   </div>
@@ -260,7 +260,7 @@ export default function ProductDetailPremiumCRMStaging({
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
+                <div className="flex flex-col md:flex-row items-start gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7] flex items-center justify-center shadow-lg">
                     <span className="text-2xl">🤝</span>
                   </div>
@@ -274,7 +274,7 @@ export default function ProductDetailPremiumCRMStaging({
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
+                <div className="flex flex-col md:flex-row items-start gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7] flex items-center justify-center shadow-lg">
                     <span className="text-2xl">📈</span>
                   </div>
@@ -288,7 +288,7 @@ export default function ProductDetailPremiumCRMStaging({
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
+                <div className="flex flex-col md:flex-row items-start gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7] flex items-center justify-center shadow-lg">
                     <span className="text-2xl">⚡</span>
                   </div>
@@ -335,10 +335,10 @@ export default function ProductDetailPremiumCRMStaging({
       </div>
 
       {/* 4. How Isarva CRM Works Section */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-10 lg:py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-3 bg-[#0EA5E9]/10 px-4 py-2 rounded-full">
+            <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-3 bg-white px-4 py-2 rounded-full border border-[#0EA5E9]/20 shadow-sm">
               PROCESS
             </span>
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6">
@@ -364,7 +364,7 @@ export default function ProductDetailPremiumCRMStaging({
       </section>
 
       {/* 5. Why Choose Isarva CRM Section */}
-      <section className="py-24 bg-slate-50 relative overflow-hidden">
+      <section className="py-10 lg:py-24 bg-slate-50 relative overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6">
@@ -386,7 +386,7 @@ export default function ProductDetailPremiumCRMStaging({
       </section>
 
       {/* 6. FAQ Section */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-10 lg:py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-16">
             <motion.div
@@ -395,7 +395,7 @@ export default function ProductDetailPremiumCRMStaging({
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-3 bg-[#0EA5E9]/10 px-4 py-2 rounded-full">
+              <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-3 bg-white px-4 py-2 rounded-full border border-[#0EA5E9]/20 shadow-sm">
                 FAQ
               </span>
               <h2 className="text-[clamp(32px,4.5vw,48px)] font-extrabold text-[#0a0a0a] leading-tight mb-4">
@@ -413,7 +413,7 @@ export default function ProductDetailPremiumCRMStaging({
       </section>
 
       {/* 4. CTA Section */}
-      <section className="py-16 bg-white relative overflow-hidden">
+      <section className="py-10 lg:py-16 bg-white relative overflow-hidden">
         {/* Background Decoration */}
         <div className="absolute inset-0 bg-gradient-to-br from-sky-50 via-transparent to-blue-50"></div>
 
@@ -434,7 +434,7 @@ export default function ProductDetailPremiumCRMStaging({
               backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
             }}></div>
 
-            <div className="relative z-10 px-8 md:px-16 py-16 md:py-20 text-center">
+            <div className="relative z-10 px-8 md:px-16 py-10 md:py-20 text-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -479,11 +479,11 @@ export default function ProductDetailPremiumCRMStaging({
       </section>
 
       {/* Explore More Products Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      <section className="py-10 lg:py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230EA5E9' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
-        
+
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-14">
             <motion.div
@@ -492,7 +492,7 @@ export default function ProductDetailPremiumCRMStaging({
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-3 bg-[#0EA5E9]/10 px-4 py-2 rounded-full">
+              <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-3 bg-white px-4 py-2 rounded-full border border-[#0EA5E9]/20 shadow-sm">
                 MORE PRODUCTS
               </span>
               <h2 className="text-[clamp(32px,4.5vw,48px)] font-extrabold text-[#0a0a0a] leading-tight mb-4">
@@ -781,7 +781,7 @@ function CRMFeatureSection() {
   const activeFeature = crmFeatures.find((f) => f.id === activeId) || crmFeatures[0];
 
   return (
-    <section className="py-20 overflow-hidden bg-[#F7F7F7]">
+    <section className="py-10 lg:py-20 overflow-hidden bg-[#F7F7F7]">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-10">
@@ -812,7 +812,7 @@ function CRMFeatureSection() {
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
                   className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[13px] font-semibold ${activeId === feature.id
-                    ? "bg-gray-900 border-sky-600 text-black shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
+                    ? "bg-gray-900 border-sky-600 text-white shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
                     : "border-sky-300 text-gray-800 hover:border-sky-500 hover:shadow-md"
                     }`}
                 >
@@ -852,7 +852,7 @@ function CRMFeatureSection() {
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
                   className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[13px] font-semibold ${activeId === feature.id
-                    ? "bg-gray-900 border-sky-600 text-black shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
+                    ? "bg-gray-900 border-sky-600 text-white shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
                     : "border-sky-300 text-gray-800 hover:border-sky-500 hover:shadow-md"
                     }`}
                 >
@@ -892,11 +892,10 @@ function CRMFeatureSection() {
                 <button
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
-                  className={`flex items-center gap-2 py-2.5 px-5 rounded-lg font-semibold text-sm transition-all duration-200 ${
-                    activeId === feature.id
-                      ? "bg-[#0EA5E9] text-white shadow-lg scale-105"
-                      : "bg-white border border-gray-200 text-gray-700 hover:border-[#0EA5E9] hover:shadow-md"
-                  }`}
+                  className={`flex items-center gap-2 py-2.5 px-5 rounded-lg font-semibold text-sm transition-all duration-200 ${activeId === feature.id
+                    ? "bg-[#0EA5E9] text-white shadow-lg scale-105"
+                    : "bg-white border border-gray-200 text-gray-700 hover:border-[#0EA5E9] hover:shadow-md"
+                    }`}
                 >
                   <span className="text-base">{feature.icon}</span>
                   <span>{feature.label}</span>

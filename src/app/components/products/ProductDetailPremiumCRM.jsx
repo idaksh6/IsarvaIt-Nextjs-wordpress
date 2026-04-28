@@ -102,7 +102,7 @@ export default function ProductDetailPremiumCRM({
           className="hero-dashboard-wrapper"
         >
           <div className="dashboard-animation left">
-            <div 
+            <div
               className="scroll-img"
               style={{
                 backgroundImage: `url('/products/crm/CRM-slide-1.jpg'), url('/products/crm/CRM-slide-2.jpg')`
@@ -110,7 +110,7 @@ export default function ProductDetailPremiumCRM({
             ></div>
           </div>
           <div className="dashboard-animation right">
-            <div 
+            <div
               className="scroll-img"
               style={{
                 backgroundImage: `url('/products/crm/CRM-slide-3.jpg'), url('/products/crm/CRM-slide-4.jpg')`
@@ -159,7 +159,7 @@ export default function ProductDetailPremiumCRM({
               </p>
 
               <div className="space-y-6">
-                <div className="flex items-start gap-4">
+                <div className="flex flex-col md:flex-row items-start gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7] flex items-center justify-center shadow-lg">
                     <span className="text-2xl">📊</span>
                   </div>
@@ -173,7 +173,7 @@ export default function ProductDetailPremiumCRM({
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
+                <div className="flex flex-col md:flex-row items-start gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7] flex items-center justify-center shadow-lg">
                     <span className="text-2xl">🚀</span>
                   </div>
@@ -187,7 +187,7 @@ export default function ProductDetailPremiumCRM({
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
+                <div className="flex flex-col md:flex-row items-start gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7] flex items-center justify-center shadow-lg">
                     <span className="text-2xl">🤝</span>
                   </div>
@@ -201,7 +201,7 @@ export default function ProductDetailPremiumCRM({
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
+                <div className="flex flex-col md:flex-row items-start gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7] flex items-center justify-center shadow-lg">
                     <span className="text-2xl">📈</span>
                   </div>
@@ -215,7 +215,7 @@ export default function ProductDetailPremiumCRM({
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
+                <div className="flex flex-col md:flex-row items-start gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7] flex items-center justify-center shadow-lg">
                     <span className="text-2xl">⚡</span>
                   </div>
@@ -332,7 +332,7 @@ export default function ProductDetailPremiumCRM({
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230EA5E9' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
-        
+
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-14">
             <motion.div
@@ -554,7 +554,7 @@ function CRMFeatureSection() {
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
                   className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[13px] font-semibold ${activeId === feature.id
-                    ? "bg-gray-900 border-sky-600 text-black shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
+                    ? "bg-gray-900 border-sky-600 text-white shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
                     : "border-sky-300 text-gray-800 hover:border-sky-500 hover:shadow-md"
                     }`}
                 >
@@ -594,7 +594,7 @@ function CRMFeatureSection() {
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
                   className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[13px] font-semibold ${activeId === feature.id
-                    ? "bg-gray-900 border-sky-600 text-black shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
+                    ? "bg-gray-900 border-sky-600 text-white shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
                     : "border-sky-300 text-gray-800 hover:border-sky-500 hover:shadow-md"
                     }`}
                 >
@@ -634,11 +634,10 @@ function CRMFeatureSection() {
                 <button
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
-                  className={`flex items-center gap-2 py-2.5 px-5 rounded-lg font-semibold text-sm transition-all duration-200 ${
-                    activeId === feature.id
+                  className={`flex items-center gap-2 py-2.5 px-5 rounded-lg font-semibold text-sm transition-all duration-200 ${activeId === feature.id
                       ? "bg-[#0EA5E9] text-white shadow-lg scale-105"
                       : "bg-white border border-gray-200 text-gray-700 hover:border-[#0EA5E9] hover:shadow-md"
-                  }`}
+                    }`}
                 >
                   <span className="text-base">{feature.icon}</span>
                   <span>{feature.label}</span>
