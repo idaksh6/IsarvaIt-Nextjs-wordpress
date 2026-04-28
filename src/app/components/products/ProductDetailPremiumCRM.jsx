@@ -159,7 +159,7 @@ export default function ProductDetailPremiumCRM({
               </p>
 
               <div className="space-y-6">
-                <div className="flex flex-col md:flex-row items-start gap-4">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7] flex items-center justify-center shadow-lg">
                     <span className="text-2xl">📊</span>
                   </div>
@@ -173,7 +173,7 @@ export default function ProductDetailPremiumCRM({
                   </div>
                 </div>
 
-                <div className="flex flex-col md:flex-row items-start gap-4">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7] flex items-center justify-center shadow-lg">
                     <span className="text-2xl">🚀</span>
                   </div>
@@ -187,7 +187,7 @@ export default function ProductDetailPremiumCRM({
                   </div>
                 </div>
 
-                <div className="flex flex-col md:flex-row items-start gap-4">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7] flex items-center justify-center shadow-lg">
                     <span className="text-2xl">🤝</span>
                   </div>
@@ -201,7 +201,7 @@ export default function ProductDetailPremiumCRM({
                   </div>
                 </div>
 
-                <div className="flex flex-col md:flex-row items-start gap-4">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7] flex items-center justify-center shadow-lg">
                     <span className="text-2xl">📈</span>
                   </div>
@@ -215,7 +215,7 @@ export default function ProductDetailPremiumCRM({
                   </div>
                 </div>
 
-                <div className="flex flex-col md:flex-row items-start gap-4">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7] flex items-center justify-center shadow-lg">
                     <span className="text-2xl">⚡</span>
                   </div>
@@ -635,8 +635,8 @@ function CRMFeatureSection() {
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
                   className={`flex items-center gap-2 py-2.5 px-5 rounded-lg font-semibold text-sm transition-all duration-200 ${activeId === feature.id
-                      ? "bg-[#0EA5E9] text-white shadow-lg scale-105"
-                      : "bg-white border border-gray-200 text-gray-700 hover:border-[#0EA5E9] hover:shadow-md"
+                    ? "bg-[#0EA5E9] text-white shadow-lg scale-105"
+                    : "bg-white border border-gray-200 text-gray-700 hover:border-[#0EA5E9] hover:shadow-md"
                     }`}
                 >
                   <span className="text-base">{feature.icon}</span>
