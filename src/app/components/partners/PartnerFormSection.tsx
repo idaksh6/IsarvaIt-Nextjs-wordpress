@@ -96,28 +96,32 @@ export default function PartnerFormSection({
         setErrorMessage("");
         
         let friendlyError = "Something went wrong. Please try again.";
-        const prefix = "Failed to submit Partner Inquiry: ";
-        
         if (typeof data.error === "string") {
           try {
-            // Check if it's the CRM error format (contains JSON inside the string)
             if (data.error.includes('{')) {
               const jsonStr = data.error.substring(data.error.indexOf('{'));
               const errorObj = JSON.parse(jsonStr);
               if (errorObj.message) {
-                friendlyError = prefix + errorObj.message;
+                friendlyError = errorObj.message;
+                if (friendlyError.includes("already registered")) {
+                  friendlyError = "This Email or Mobile number is already registered for this request.";
+                }
               }
-            } else if (data.error.includes("mobile") || data.error.includes("phone")) {
-              friendlyError = prefix + (data.error.includes("associated") || data.error.includes("taken") || data.error.includes("registered") ? "This phone number is already registered." : "Please enter a valid phone number.");
-            } else if (data.error.includes("email")) {
-              friendlyError = prefix + (data.error.includes("taken") || data.error.includes("associated") || data.error.includes("registered") ? "This email address is already registered." : "Please enter a valid email address.");
+            } else if (data.error.toLowerCase().includes("mobile") || data.error.toLowerCase().includes("phone")) {
+              friendlyError = (data.error.toLowerCase().includes("registered") || data.error.toLowerCase().includes("taken")) ? "This phone number is already registered." : "Please enter a valid phone number.";
+            } else if (data.error.toLowerCase().includes("email")) {
+              friendlyError = (data.error.toLowerCase().includes("registered") || data.error.toLowerCase().includes("taken")) ? "This email address is already registered." : "Please enter a valid email address.";
             } else {
-              friendlyError = prefix + data.error;
+              friendlyError = data.error;
             }
           } catch (e) {
-            friendlyError = prefix + data.error;
+            friendlyError = data.error;
           }
         }
+        
+        // Remove "CRM API error" prefix
+        friendlyError = friendlyError.replace(/CRM API error \(\d+\):\s*/g, '');
+        
         setErrorMessage(friendlyError);
       }
     } catch (error) {

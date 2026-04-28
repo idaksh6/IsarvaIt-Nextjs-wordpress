@@ -103,17 +103,50 @@ export default function DispatcherPanelBrochureModal({
       } else {
         setSubmitStatus('error');
         // Parse error message for user-friendly display
-        let friendlyError = 'Failed to submit form. Please try again.';
+        let friendlyError = 'Something went wrong. Please try again.';
         if (typeof data.error === 'string') {
-          const prefix = 'Failed to submit Dispatcher Panel  Brochure  Request: ';
-          if (data.error.includes('mobile') || data.error.includes('phone')) {
-            friendlyError = prefix + (data.error.includes('associated') ? 'This phone number is already registered.' : 'Please enter a valid phone number.');
-          } else if (data.error.includes('email')) {
-            friendlyError = prefix + ((data.error.includes('taken') || data.error.includes('associated')) ? 'This email address is already registered.' : 'Please enter a valid email address.');
-          } else {
-            friendlyError = prefix + data.error;
+          try {
+            // Check if it's the CRM error format (contains JSON inside the string)
+            if (data.error.includes('{')) {
+              const jsonStr = data.error.substring(data.error.indexOf('{'));
+              const errorObj = JSON.parse(jsonStr);
+              if (errorObj.message) {
+                friendlyError = errorObj.message;
+                // Clean up the specific "already registered" message
+                if (friendlyError.includes("already registered")) {
+                  friendlyError = "This Email or Mobile number is already registered for this request.";
+                }
+              } else {
+                // Handle field-specific validation errors (e.g., {"organization_name": ["..."]})
+                const fieldErrors = [];
+                for (const key in errorObj) {
+                  if (Array.isArray(errorObj[key])) {
+                    fieldErrors.push(errorObj[key][0]);
+                  }
+                }
+                if (fieldErrors.length > 0) {
+                  friendlyError = fieldErrors.join(', ');
+                }
+              }
+            } else if (data.error.toLowerCase().includes('mobile') || data.error.toLowerCase().includes('phone')) {
+              friendlyError = (data.error.toLowerCase().includes('registered') || data.error.toLowerCase().includes('taken')) 
+                ? 'This phone number is already registered.' 
+                : 'Please enter a valid phone number.';
+            } else if (data.error.toLowerCase().includes('email')) {
+              friendlyError = (data.error.toLowerCase().includes('registered') || data.error.toLowerCase().includes('taken')) 
+                ? 'This email address is already registered.' 
+                : 'Please enter a valid email address.';
+            } else {
+              friendlyError = data.error;
+            }
+          } catch (e) {
+            friendlyError = data.error;
           }
         }
+        
+        // Remove "CRM API error (409):" prefix if it somehow leaked through
+        friendlyError = friendlyError.replace(/CRM API error \(\d+\):\s*/g, '');
+        
         setErrorMessage(friendlyError);
       }
     } catch (error) {

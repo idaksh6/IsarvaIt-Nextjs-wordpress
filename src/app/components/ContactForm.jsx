@@ -88,19 +88,17 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
         // Parse error message for user-friendly display
         let friendlyError = 'Something went wrong. Please try again.';
         if (typeof data.error === 'string') {
-          const prefix = data.error.includes('Partner') ? 'Failed to submit Partner Inquiry: ' : 
-                        data.error.includes('Contact') ? 'Failed to submit Contact Form: ' : 
-                        data.error.includes('Career') ? 'Failed to submit Career Application: ' : 
-                        data.error.includes('General') ? 'Failed to submit General Application: ' : 'Failed to submit: ';
-          
           try {
             // Check if it's the CRM error format (contains JSON inside the string)
             if (data.error.includes('{')) {
               const jsonStr = data.error.substring(data.error.indexOf('{'));
               const errorObj = JSON.parse(jsonStr);
-              
               if (errorObj.message) {
-                friendlyError = prefix + errorObj.message;
+                friendlyError = errorObj.message;
+                // Clean up the specific "already registered" message
+                if (friendlyError.includes("already registered")) {
+                  friendlyError = "This Email or Mobile number is already registered for this request.";
+                }
               } else {
                 // Handle field-specific validation errors (e.g., {"organization_name": ["..."]})
                 const fieldErrors = [];
@@ -110,20 +108,28 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
                   }
                 }
                 if (fieldErrors.length > 0) {
-                  friendlyError = prefix + fieldErrors.join(', ');
+                  friendlyError = fieldErrors.join(', ');
                 }
               }
-            } else if (data.error.includes('mobile') || data.error.includes('phone')) {
-              friendlyError = prefix + (data.error.includes('associated') || data.error.includes('taken') || data.error.includes('registered') ? 'This phone number is already registered.' : 'Please enter a valid phone number.');
-            } else if (data.error.includes('email')) {
-              friendlyError = prefix + (data.error.includes('taken') || data.error.includes('associated') || data.error.includes('registered') ? 'This email address is already registered.' : 'Please enter a valid email address.');
+            } else if (data.error.toLowerCase().includes('mobile') || data.error.toLowerCase().includes('phone')) {
+              friendlyError = (data.error.toLowerCase().includes('registered') || data.error.toLowerCase().includes('taken')) 
+                ? 'This phone number is already registered.' 
+                : 'Please enter a valid phone number.';
+            } else if (data.error.toLowerCase().includes('email')) {
+              friendlyError = (data.error.toLowerCase().includes('registered') || data.error.toLowerCase().includes('taken')) 
+                ? 'This email address is already registered.' 
+                : 'Please enter a valid email address.';
             } else {
-              friendlyError = prefix + data.error;
+              friendlyError = data.error;
             }
           } catch (e) {
-            friendlyError = prefix + data.error;
+            friendlyError = data.error;
           }
         }
+        
+        // Remove "CRM API error (409):" prefix if it somehow leaked through
+        friendlyError = friendlyError.replace(/CRM API error \(\d+\):\s*/g, '');
+        
         setErrorMessage(friendlyError);
         setTimeout(() => {
           setSubmitStatus(null);
