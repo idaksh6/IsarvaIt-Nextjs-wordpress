@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ContactForm from "../components/ContactForm";
-import StickyContactInfo from "../components/StickyContactInfo";
+import StickyContactInfoV2 from "../components/StickyContactInfoV2";
 import { generateMetadata as generateSEOMetadata } from "../lib/utils/seo";
 
 export const metadata = generateSEOMetadata({
@@ -103,15 +103,6 @@ export default function ContactV2() {
                 <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-green-200/30 rounded-full blur-3xl"></div>
                 
                 <div className="relative z-10 flex flex-col h-full">
-                  <div className="mb-8 lg:text-left text-center">
-                    <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                      Send us a Message
-                    </h2>
-                    <p className="text-lg text-gray-700">
-                      Fill out the form below and we'll get back to you as soon as possible.
-                    </p>
-                  </div>
-
                   <div className="flex-grow">
                     <ContactForm pageType="Contact Page V2" />
                   </div>
@@ -121,20 +112,7 @@ export default function ContactV2() {
 
             {/* Right: Get in Touch Text and Additional Info */}
             <div className="relative order-1 lg:order-2">
-              <div className="mb-6 lg:text-left text-center">
-                <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/40 backdrop-blur-md text-emerald-800 font-semibold text-sm mb-6 border border-white/60 shadow-lg">
-                  <span className="w-2 h-2 bg-emerald-600 rounded-full animate-pulse"></span>
-                  Let's Connect
-                </div>
-                <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-4 tracking-tight">
-                  Get in Touch
-                </h1>
-                <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                  Have a project in mind? We'd love to hear about it. Send us a message and we'll respond within 24 hours.
-                </p>
-              </div>
-
-              <StickyContactInfo socialLinks={socialLinks} showMap={false} />
+              <StickyContactInfoV2 socialLinks={socialLinks} showMap={false} />
             </div>
           </div>
 
