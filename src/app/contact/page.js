@@ -5,7 +5,7 @@ import { generateMetadata as generateSEOMetadata } from "../lib/utils/seo";
 
 export const metadata = generateSEOMetadata({
   title: "Contact Us - Get in Touch with Our Experts",
-  description: "Have a project in mind? Contact Isarva for expert technology solutions. We respond within 24 hours. Offices in Mangalore, Bangalore, Dubai, and UK. Call +91-9880606087 or email info@isarvait.com",
+  description: "Have a project in mind? Contact Isarva for expert technology solutions. We respond within 24 hours. Offices in Mangalore, Bangalore, Dubai, and UK. Call +91 9902863697 or email marketing@isarvait.com",
   keywords: ["contact", "get in touch", "IT support", "project inquiry", "consultation", "reach us"],
   url: "/contact",
 });
@@ -22,9 +22,9 @@ export default function Contact() {
         </svg>
       ),
       title: "Email Us",
-      content: "info@isarvait.com",
+      content: "marketing@isarvait.com",
       description: "Send us an email anytime!",
-      link: "mailto:info@isarvait.com",
+      link: "mailto:marketing@isarvait.com",
     },
     {
       icon: (
@@ -33,9 +33,9 @@ export default function Contact() {
         </svg>
       ),
       title: "Call Us",
-      content: "+91 9880606087",
+      content: "+91 9902863697",
       description: "Mon-Fri from 9.30am to 6.30pm",
-      link: "tel:+919880606087",
+      link: "tel:+919902863697",
     },
     {
       icon: (

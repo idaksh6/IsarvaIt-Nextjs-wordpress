@@ -137,14 +137,14 @@ export function generateEnhancedOrganizationSchema() {
     contactPoint: [
       {
         "@type": "ContactPoint",
-        telephone: "+91-9880606087",
+        telephone: "+919902863697",
         contactType: "Customer Service",
         areaServed: "IN",
         availableLanguage: ["English", "Hindi", "Kannada"]
       },
       {
         "@type": "ContactPoint",
-        email: "info@isarvait.com",
+        email: "marketing@isarvait.com",
         contactType: "Sales",
         areaServed: "Worldwide"
       }
@@ -257,8 +257,8 @@ export function generateLocalBusinessSchema() {
       ...LOCATIONS.mangalore.geo
     },
     url: COMPANY_URL,
-    telephone: "+91-9880606087",
-    email: "info@isarvait.com",
+    telephone: "+919902863697",
+    email: "marketing@isarvait.com",
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -351,7 +351,7 @@ export function generateFAQSchema() {
         name: "Where is Isarva Infotech located?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Isarva Infotech has offices in Mangalore and Bangalore, Karnataka, India. We also serve clients in UAE, UK, USA, and across the globe. Contact us at +91-9880606087 or info@isarvait.com"
+          text: "Isarva Infotech has offices in Mangalore and Bangalore, Karnataka, India. We also serve clients in UAE, UK, USA, and across the globe. Contact us at +91 9902863697 or marketing@isarvait.com"
         }
       },
       {

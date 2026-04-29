@@ -194,10 +194,10 @@ function ThankYouContent() {
                 <div>
                   <div className="text-xs text-[#53606b] font-bold uppercase tracking-wider mb-1">Email Us</div>
                   <a
-                    href="mailto:info@isarvait.com"
+                    href="mailto:marketing@isarvait.com"
                     className="text-emerald-600 font-bold hover:text-emerald-700 transition-colors"
                   >
-                    info@isarvait.com
+                    marketing@isarvait.com
                   </a>
                 </div>
               </div>
@@ -209,11 +209,10 @@ function ThankYouContent() {
                 <div>
                   <div className="text-xs text-[#53606b] font-bold uppercase tracking-wider mb-1">Call Us</div>
                   <a
-                    href="tel:+91 9880606087"
+                    href="tel:+919902863697"
                     className="text-emerald-600 font-bold hover:text-emerald-700 transition-colors"
                   >
-                    +91 9880606087
-
+                    +91 9902863697
                   </a>
                 </div>
               </div>

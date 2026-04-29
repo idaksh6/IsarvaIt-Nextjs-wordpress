@@ -3,7 +3,7 @@
 export default function IsarvaAIChatbot() {
   const handleWhatsAppClick = () => {
     // WhatsApp link with phone number
-    window.open('https://wa.me/919880606087', '_blank');
+    window.open('https://wa.me/919902863697', '_blank');
   };
 
   return (

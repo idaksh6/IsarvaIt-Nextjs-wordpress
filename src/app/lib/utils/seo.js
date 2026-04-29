@@ -173,7 +173,7 @@ export function generateOrganizationSchema() {
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+91-9880606087",
+      telephone: "+919902863697",
       contactType: "Customer Service",
     },
     sameAs: [
