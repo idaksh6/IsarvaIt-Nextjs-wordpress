@@ -618,7 +618,12 @@ const analyticsData = [
 const automationData = [
   { title: "Instant Sync", desc: "When a daily task is added, it’s automatically pushed to your Google Chat group.", icon: "🔄" },
   { title: "CEO Alerts", desc: "The \"Main Person\" gets an automated email the moment a project is created or a daily report is submitted.", icon: "📧" },
-  { title: "Accountability Bot", desc: "If a team member misses their daily report, ISS automatically notifies the CEO—ensuring everyone stays disciplined.", icon: "🤖" }
+  { title: "Accountability Bot", desc: "If a team member misses their daily report, ISS automatically notifies the CEO—ensuring everyone stays disciplined.", icon: "🤖" },
+  {
+    title: "Auto-Close Timer",
+    desc: "Set duration when moving a project to \"Monitor\" status. System auto-closes after cooling-off period.",
+    icon: "⏱️"
+  }
 ];
 
 const safetyData = [
@@ -1665,16 +1670,16 @@ export default function ProductDetailPremiumSupportStaging({
                     className="press-illusion-btn-white bg-white text-orange-600 !px-8 !py-4 font-bold transition-all duration-300"
                   >
                     <span className="relative z-10 flex items-center gap-3">
-                    <svg
-                      className="w-5 h-5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={3}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                    </svg>
-                    <span>Request Demo Now</span>
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={3}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                      </svg>
+                      <span>Request Demo Now</span>
                     </span>
                   </button>
                 </div>
