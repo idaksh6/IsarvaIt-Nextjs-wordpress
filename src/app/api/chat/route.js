@@ -164,17 +164,13 @@ export async function POST(req) {
   try {
     const { message, history } = await req.json();
 
-    if (!process.env.OPENAI_API_KEY) {
-      return NextResponse.json({ response: "API Key is missing. Please configure OPENAI_API_KEY." }, { status: 500 });
+    if (typeof message !== 'string' || !message.trim()) {
+      return NextResponse.json({ response: 'Please enter a message.' }, { status: 400 });
     }
 
-    if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
-      return NextResponse.json({ response: "Supabase credentials are missing." }, { status: 500 });
-    }
-
-    // PRIORITY 1: Check quick responses (greetings, FAQs) - INSTANT
+    // Quick responses need no external services — handle first so greetings work even if keys are missing/misconfigured
     const quickResponse = findQuickResponse(message);
-    
+
     if (quickResponse) {
       // Stream the quick response with typing effect
       const encoder = new TextEncoder();
@@ -201,6 +197,14 @@ export async function POST(req) {
           'Connection': 'keep-alive',
         },
       });
+    }
+
+    if (!process.env.OPENAI_API_KEY) {
+      return NextResponse.json({ response: "API Key is missing. Please configure OPENAI_API_KEY." }, { status: 500 });
+    }
+
+    if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
+      return NextResponse.json({ response: "Supabase credentials are missing." }, { status: 500 });
     }
 
     // PRIORITY 2: Check Supabase cache

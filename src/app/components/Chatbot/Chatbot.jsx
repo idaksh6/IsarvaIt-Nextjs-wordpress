@@ -149,7 +149,19 @@ const Chatbot = () => {
       });
 
       if (!response.ok) {
-        throw new Error("Failed to fetch response");
+        let serverMessage = "";
+        try {
+          const ct = response.headers.get("content-type");
+          if (ct?.includes("application/json")) {
+            const data = await response.json();
+            if (typeof data.response === "string" && data.response.trim()) {
+              serverMessage = data.response.trim();
+            }
+          }
+        } catch {
+          // ignore parse errors — fall through to generic failure
+        }
+        throw new Error(serverMessage || "Failed to fetch response");
       }
 
       const reader = response.body.getReader();
