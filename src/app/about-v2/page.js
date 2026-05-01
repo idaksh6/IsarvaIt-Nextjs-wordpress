@@ -25,38 +25,47 @@ export default function AboutPageV2() {
     <div className="bg-[#FDF8F2] overflow-hidden font-sans text-[#1a1f24]">
 
       {/* 1. HERO SECTION */}
-      <section className="relative pt-36 lg:pt-48 pb-10 lg:pb-20 overflow-hidden bg-gradient-to-b from-[#F0F7F4] to-[#FDF8F2]">
+      <section className="relative pt-52 lg:pt-48 pb-10 lg:pb-20 overflow-hidden bg-gradient-to-b from-[#F0F7F4] to-[#FDF8F2]">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#10b981] opacity-[0.03] rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute -bottom-24 -left-24 w-[600px] h-[600px] bg-[#84cc16] opacity-[0.05] rounded-full blur-[100px] pointer-events-none"></div>
         <div className="hero-noise-overlay"></div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-          <div className="inline-flex flex-col items-center mb-10 section-animate">
+          <div className="inline-flex flex-col items-center mb-5 md:mb-10 section-animate">
             <span className="text-[#10b981] font-bold tracking-wider uppercase text-sm mb-4">Isarva Infotech</span>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-[#1a1f24] max-w-5xl tracking-tight leading-[1.1] mb-8">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-bold text-[#1a1f24] max-w-5xl tracking-tight leading-[1.1] mb-8">
               Precision in <span className="italic text-[#10b981] font-bold">Technology.</span> <br /> Purpose in <span className="italic text-[#10b981] font-bold">Impact.</span>
             </h1>
-            <p className="mt-4 text-xl md:text-2xl text-[#53606b] max-w-3xl mx-auto leading-relaxed">
+            <p className="mt-4 text-lg md:text-2xl text-[#53606b] max-w-3xl mx-auto leading-relaxed">
               At Isarva Infotech, we are more than an IT consulting firm — we are a strategic technology partner and a catalyst for progress in an ever-evolving digital world.
             </p>
           </div>
 
           <div className="relative section-animate" style={{ animationDelay: '0.2s' }}>
-            <div className="flex justify-center items-center gap-2 md:gap-5 overflow-hidden py-6 md:py-10">
-              <div className="relative w-20 h-32 sm:w-32 sm:h-48 md:w-48 md:h-72 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-xl transform -translate-y-4 md:-translate-y-8 hover:-translate-y-10 transition-transform duration-500 ring-1 ring-[#10b981]/5">
-                <Image src="/about_tech_light_v2.png" alt="Modern tech hub" fill className="object-cover" />
+            <div className="flex justify-center items-center -space-x-2 md:space-x-5 overflow-visible py-5 md:py-16">
+              {/* Card 1 */}
+              <div className="relative w-12 h-32 sm:w-32 sm:h-44 md:w-[12vw] md:h-[18vw] xl:w-[240px] xl:h-[320px] rounded-[1rem] md:rounded-[2rem] overflow-hidden shadow-xl transform -translate-y-4 md:-translate-y-8 hover:-translate-y-10 transition-transform duration-500 ring-1 ring-[#10b981]/5">
+                <Image src="/about/air.png" alt="Modern tech hub" fill className="object-cover" />
               </div>
-              <div className="relative w-28 h-40 sm:w-40 sm:h-60 md:w-60 md:h-80 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl z-10 transform -translate-y-1 md:-translate-y-2 hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5">
-                <Image src="/about_brand_hero_v3.png" alt="Isarva Branding" fill className="object-cover" />
+
+              {/* Card 2 */}
+              <div className="relative w-16 h-48 sm:w-40 sm:h-56 md:w-[16vw] md:h-[24vw] xl:w-[320px] xl:h-[420px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl z-10 transform -translate-y-1 md:-translate-y-2 hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5">
+                <Image src="/about/water 2.png" alt="Isarva Branding" fill className="object-cover" />
               </div>
-              <div className="relative w-32 h-48 sm:w-48 sm:h-72 md:w-80 md:h-[30rem] rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden shadow-[0_35px_60px_-15px_rgba(16,185,129,0.3)] z-20 transform translate-y-4 md:translate-y-6 hover:translate-y-4 transition-transform duration-500 ring-2 md:ring-4 ring-white">
-                <Image src="/about_globe_v4.png" alt="Global Connectivity" fill className="object-cover" />
+
+              {/* Card 3 - Main Globe */}
+              <div className="relative w-24 h-64 sm:w-56 sm:h-80 md:w-[22vw] md:h-[32vw] xl:w-[450px] xl:h-[580px] rounded-[2rem] md:rounded-[3.5rem] overflow-hidden shadow-2xl z-20 transform translate-y-4 md:translate-y-6 hover:translate-y-4 transition-transform duration-500 ring-2 md:ring-4 ring-white">
+                <Image src="/about/earth.png" alt="Global Connectivity" fill className="object-cover" />
               </div>
-              <div className="relative w-28 h-40 sm:w-40 sm:h-60 md:w-60 md:h-80 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl z-10 transform -translate-y-1 md:-translate-y-2 hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5">
-                <Image src="/ui_design_screen_hero_1773850368381.png" alt="Design" fill className="object-cover" />
+
+              {/* Card 4 */}
+              <div className="relative w-16 h-48 sm:w-40 sm:h-56 md:w-[16vw] md:h-[24vw] xl:w-[320px] xl:h-[420px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl z-10 transform -translate-y-1 md:-translate-y-2 hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5">
+                <Image src="/about/fire.png" alt="Design" fill className="object-cover" />
               </div>
-              <div className="relative w-20 h-32 sm:w-32 sm:h-48 md:w-48 md:h-72 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-xl transform -translate-y-4 md:-translate-y-8 hover:-translate-y-10 transition-transform duration-500 ring-1 ring-[#10b981]/5 hidden sm:block">
-                <Image src="/agency_hero_laptop_1773849789513.png" alt="Laptop" fill className="object-cover" />
+
+              {/* Card 5 */}
+              <div className="relative w-12 h-32 sm:w-32 sm:h-44 md:w-[12vw] md:h-[18vw] xl:w-[240px] xl:h-[320px] rounded-[1rem] md:rounded-[2rem] overflow-hidden shadow-xl transform -translate-y-4 md:-translate-y-8 hover:-translate-y-10 transition-transform duration-500 ring-1 ring-[#10b981]/5">
+                <Image src="/about/space.png" alt="Laptop" fill className="object-cover" />
               </div>
             </div>
           </div>
@@ -253,9 +262,12 @@ export default function AboutPageV2() {
               </div>
             </div>
             <div className="w-full lg:w-1/2 relative section-animate" style={{ animationDelay: '0.2s' }}>
-              <div className="relative rounded-[4rem] overflow-hidden aspect-[4/3] shadow-2xl ring-1 ring-[#10b981]/10 min-h-[400px]">
-                <Image src="/about_globe_v4.png" alt="Digital Impact" fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#10b981]/10 to-transparent"></div>
+              <div className="relative w-full rounded-[4rem] overflow-hidden shadow-2xl ring-1 ring-[#10b981]/10">
+                <div className="pb-[100%] lg:pb-[90%]"></div>
+                <div className="absolute inset-0">
+                  <Image src="/about_globe_v4.png" alt="Digital Impact" fill className="object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#10b981]/10 to-transparent pointer-events-none"></div>
+                </div>
               </div>
               <div className="absolute -bottom-10 -right-6 bg-white p-10 rounded-[3rem] shadow-2xl border border-[#10b981]/5 hidden md:block max-w-[320px]">
                 <p className="text-xl font-display font-medium italic text-[#1a1f24] leading-relaxed">"Isarva Infotech is where technology begins to mean something more."</p>
