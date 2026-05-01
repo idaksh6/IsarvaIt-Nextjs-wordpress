@@ -2,7 +2,7 @@ export const metadata = {
   title: "Channel Partner Program | Isarva Infotech",
   description: "Join Isarva's Channel Partner Program — scale your business and deliver enterprise digital solutions without building an in-house team.",
   keywords: "channel partner, business partnership, IT outsourcing partner, Isarva Infotech, digital solutions partner",
-  robots: "noindex, nofollow",
+  robots: "index, follow",
 };
 
 export default function PartnersLayout({ children }: { children: React.ReactNode }) {
