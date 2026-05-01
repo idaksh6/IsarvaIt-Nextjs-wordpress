@@ -413,7 +413,7 @@ const marineFeaturesByTab = {
       color: "#06B6D4",
       desc: "The application is equipped to generate over 50 different types of marine services-related PDF reports. These reports cover a wide range of marine service activities and can be customized to meet various reporting needs. This functionality helps users compile and present comprehensive data in a professional format.",
       placeholder: "REP",
-      image: "/products/marnine%20service%20center/50+reports.jpg",
+      image: "/products/marnine%20service%20center/marine-reports.jpg",
     },
     {
       id: "summary",
