@@ -17,13 +17,13 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
       {/* Background Subtle mesh and Grid */}
       <div className="absolute inset-0 z-0 opacity-40 bg-mesh-green pointer-events-none" />
       <div className="absolute inset-0 z-0 bg-dots opacity-[0.1] pointer-events-none" />
-      
+
       <div className="absolute inset-0 z-0 bg-white/40 pointer-events-none" />
-      
-      
+
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-20 items-center">
-          
+
           {/* Left Content Side */}
           <div className="text-center lg:text-left pt-4 lg:pt-10">
             <motion.div
@@ -41,7 +41,7 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-[#111827] leading-[1.05] mb-4 md:mb-6 tracking-tight uppercase"
             >
-              Scale Beyond <br />
+              <span className="bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent">Scale Beyond</span> <br />
               <span className="text-emerald-600">Gravity</span>
             </motion.h1>
 
@@ -60,13 +60,13 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
               transition={{ delay: 0.4 }}
               className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-4 mb-8 lg:mb-12"
             >
-              <button 
+              <button
                 onClick={onApply}
                 className="press-illusion-btn-orange w-full sm:w-auto min-w-[200px] h-14 text-base"
               >
                 Apply Now
               </button>
-              <button 
+              <button
                 onClick={onApply}
                 className="group relative w-full sm:w-auto min-w-[200px] h-14 rounded-2xl border-2 border-emerald-600/20 text-emerald-600 font-black font-display uppercase tracking-wider text-xs flex items-center justify-center gap-3 bg-white/50 backdrop-blur-sm transition-all duration-300 hover:border-emerald-600 hover:bg-emerald-600 hover:text-white active:scale-95"
               >
@@ -100,16 +100,16 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
               transition={{ duration: 1.2, ease: "easeOut" }}
               className="relative z-10 w-full max-w-[500px] aspect-square rounded-[48px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.12)] bg-slate-50 border-4 border-white/30"
             >
-              <img 
-                src="/partner_ecosystem_no_text.png" 
-                alt="Partner Ecosystem" 
+              <img
+                src="partners/sky-coin.png"
+                alt="Partner Ecosystem"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/10 to-transparent" />
             </motion.div>
 
             <motion.div
-              animate={{ 
+              animate={{
                 y: [0, -20, 0],
               }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
@@ -118,19 +118,20 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
               <div className="w-9 h-9 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-lg shadow-lg shadow-emerald-500/20">
                 💰
               </div>
-              <div>
-                <p className="text-sm font-black text-slate-900">30% Commissions</p>
+              <div className="flex flex-col items-center leading-none">
+                <p className="text-3xl font-black bg-clip-text text-transparent bg-gradient-to-br from-amber-400 to-orange-600">30%</p>
+                <p className="text-[8px] font-black text-slate-500 uppercase tracking-widest">Commission</p>
               </div>
             </motion.div>
 
             <motion.div
-              animate={{ 
+              animate={{
                 y: [0, 20, 0],
               }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute bottom-[25%] right-2 lg:-right-4 z-20 bg-white/80 backdrop-blur-xl p-3 rounded-xl border border-white/50 shadow-lg flex items-center gap-2.5 border-l-4 border-l-blue-500 scale-90 lg:scale-100"
+              className="absolute bottom-[25%] right-2 lg:-right-4 z-20 bg-white/80 backdrop-blur-xl p-3 rounded-xl border border-white/50 shadow-lg flex items-center gap-2.5 border-l-4 border-l-emerald-600 scale-90 lg:scale-100"
             >
-              <div className="w-9 h-9 rounded-xl bg-blue-500 text-white flex items-center justify-center text-lg shadow-lg shadow-blue-500/20">
+              <div className="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-lg shadow-lg shadow-emerald-600/20">
                 🚀
               </div>
               <div>
