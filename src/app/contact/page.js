@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ContactForm from "../components/ContactForm";
-import StickyContactInfo from "../components/StickyContactInfo";
+import StickyContactInfoV2 from "../components/StickyContactInfoV2";
 import { generateMetadata as generateSEOMetadata } from "../lib/utils/seo";
 
 export const metadata = generateSEOMetadata({
@@ -36,18 +36,6 @@ export default function Contact() {
       content: "+91 9902863697",
       description: "Mon-Fri from 9.30am to 6.30pm",
       link: "tel:+919902863697",
-    },
-    {
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-      ),
-      title: "Visit Us",
-      content: "Bajpe, Mangalore, India",
-      description: "Come say hello at our office",
-      link: "https://maps.app.goo.gl/33PWqCCNP69tLAXQ7",
     },
     {
       icon: (
@@ -94,13 +82,10 @@ export default function Contact() {
 
   return (
     <div className="bg-white overflow-hidden">
-      {/* Hero Section */}
-      <section
-        className="relative pt-32 lg:pt-40 pb-20 overflow-hidden bg-gradient-to-b from-[#d4f4dd] via-[#defae4] to-white"
-        style={{ contain: "layout style paint" }}
-      >
-        {/* Background Decorations */}
-        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none" style={{ transform: "translateZ(0)" }}>
+      {/* Contact Section with Banner Gradient */}
+      <section className="relative pt-32 lg:pt-40 pb-10 lg:pb-20 bg-gradient-to-b from-[#d4f4dd] via-[#defae4] to-white">
+        {/* Background Decorations - Wrapped to contain overflow without breaking sticky */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none" style={{ contain: "layout style paint" }}>
           <div className="absolute inset-0 bg-mesh-green opacity-40"></div>
           <div className="absolute top-20 right-10 w-[500px] h-[500px] bg-emerald-200/40 blur-[80px] rounded-full"></div>
           <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-green-200/30 blur-[80px] rounded-full"></div>
@@ -108,67 +93,39 @@ export default function Contact() {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/40 backdrop-blur-md text-emerald-800 font-semibold text-sm mb-6 border border-white/60 shadow-lg">
-              <span className="w-2 h-2 bg-emerald-600 rounded-full animate-pulse"></span>
-              Let's Connect
-            </div>
-            <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-6 tracking-tight">
-              Get in Touch
-            </h1>
-            <p className="text-xl lg:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Have a project in mind? We'd love to hear about it. Send us a message and we'll respond within 24 hours.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Info Cards */}
-      <section className="py-16 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 hero-noise-overlay opacity-[0.02]"></div>
-
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-
-          {/* Form and Map Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div className="relative">
-              <div className="rounded-3xl p-8 lg:p-10 bg-gradient-to-br from-emerald-50 via-green-50 to-white border-2 border-emerald-100 shadow-2xl transition-all duration-300 relative overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+            {/* Left: Contact Form */}
+            <div className="relative order-2 lg:order-1 h-full">
+              <div className="h-full rounded-3xl p-8 lg:p-10 bg-white/80 backdrop-blur-sm border-2 border-emerald-100 shadow-2xl transition-all duration-300 relative overflow-hidden flex flex-col">
                 {/* Decorative elements */}
                 <div className="absolute -top-10 -right-10 w-40 h-40 bg-emerald-200/30 rounded-full blur-3xl"></div>
                 <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-green-200/30 rounded-full blur-3xl"></div>
                 
-                <div className="relative z-10">
-                  <div className="mb-8 lg:text-left text-center">
-                    <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                      Send us a Message
-                    </h2>
-                    <p className="text-lg text-gray-700">
-                      Fill out the form below and we'll get back to you as soon as possible.
-                    </p>
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="flex-grow">
+                    <ContactForm pageType="Contact Page" />
                   </div>
-
-                  <ContactForm pageType="Contact Page" />
                 </div>
               </div>
             </div>
 
-            {/* Map and Additional Info */}
-            <div className="relative">
-              <StickyContactInfo socialLinks={socialLinks} />
+            {/* Right: Get in Touch Text and Additional Info */}
+            <div className="relative order-1 lg:order-2">
+              <StickyContactInfoV2 socialLinks={socialLinks} showMap={false} />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-20">
+          {/* Contact Info Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 lg:mt-20">
             {contactInfo.map((info, index) => (
               <div
                 key={index}
                 className="relative rounded-3xl p-8 bg-white border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 group overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-br  from-emerald-400/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                 <div className="relative lg:text-left text-center">
-                  <div className="w-14 h-14 rounded-2xl lg:mx-0 mx-auto  bg-gradient-to-br from-emerald-400 to-green-500 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 text-white">
+                  <div className="w-14 h-14 rounded-2xl lg:mx-0 mx-auto bg-gradient-to-br from-emerald-400 to-green-500 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 text-white">
                     {info.icon}
                   </div>
 
@@ -194,13 +151,11 @@ export default function Contact() {
               </div>
             ))}
           </div>
-
-
         </div>
       </section>
 
-      {/* Office Locations (Optional) */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      {/* Office Locations */}
+      <section className="py-10 lg:py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
         <div className="absolute inset-0 bg-mesh-green opacity-20"></div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
