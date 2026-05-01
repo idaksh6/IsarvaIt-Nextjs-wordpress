@@ -60,12 +60,12 @@ export default function AboutPageV2() {
 
               {/* Card 4 */}
               <div className="relative w-16 h-48 sm:w-40 sm:h-56 md:w-[16vw] md:h-[24vw] xl:w-[320px] xl:h-[420px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl z-10 transform -translate-y-1 md:-translate-y-2 hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5">
-                <Image src="/about/fire.png" alt="Design" fill className="object-cover" />
+                <Image src="/about/space.png" alt="Design" fill className="object-cover" />
               </div>
 
               {/* Card 5 */}
               <div className="relative w-12 h-32 sm:w-32 sm:h-44 md:w-[12vw] md:h-[18vw] xl:w-[240px] xl:h-[320px] rounded-[1rem] md:rounded-[2rem] overflow-hidden shadow-xl transform -translate-y-4 md:-translate-y-8 hover:-translate-y-10 transition-transform duration-500 ring-1 ring-[#10b981]/5">
-                <Image src="/about/space.png" alt="Laptop" fill className="object-cover" />
+                <Image src="/about/fire.png" alt="Laptop" fill className="object-cover" />
               </div>
             </div>
           </div>

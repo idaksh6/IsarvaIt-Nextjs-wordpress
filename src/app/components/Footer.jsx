@@ -63,7 +63,7 @@ export default function Footer() {
         </div>
 
         {/* Links Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12 lg:mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12 lg:mb-20">
           {/* Services */}
           <div>
             <h4 className="text-white font-extrabold mb-8 text-[15px] uppercase tracking-[0.2em] flex items-center gap-3 lg:justify-start justify-center">
