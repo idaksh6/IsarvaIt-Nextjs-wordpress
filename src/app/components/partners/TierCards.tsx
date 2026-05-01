@@ -197,7 +197,7 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="max-w-4xl mx-auto relative group"
+          className="max-w-6xl mx-auto relative group"
         >
 
           <div className="bg-white rounded-[40px] border border-orange-200/50 shadow-2xl overflow-hidden flex flex-col md:flex-row">
@@ -238,13 +238,15 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
                 <div className="space-y-3">
                   <h4 className="text-orange-900 font-black text-xs uppercase tracking-[0.2em] mb-4">Highlights</h4>
                   {bronzeFeatures.map((f, i) => (
-                    <div key={i} className="flex items-center justify-between py-2.5 px-4 rounded-xl bg-orange-50/50 border border-orange-100/50">
-                      <span className="text-slate-800 font-bold text-xs">{f.label}</span>
-                      {f.check ? (
-                        <Check className="w-4 h-4 text-orange-600 stroke-[4]" />
-                      ) : (
-                        <X className="w-4 h-4 text-red-400 stroke-[4]" />
-                      )}
+                    <div key={i} className="flex items-center justify-between py-3 px-4 rounded-xl bg-orange-50/50 hover:bg-white transition-all duration-300 border border-orange-100/50 group/row">
+                      <span className="text-slate-800 font-bold text-sm sm:text-base group-hover/row:translate-x-1 transition-transform">{f.label}</span>
+                      <div className="transition-transform group-hover/row:scale-110">
+                        {f.check ? (
+                          <Check className="w-5 h-5 text-orange-600 stroke-[4]" />
+                        ) : (
+                          <X className="w-5 h-5 text-red-400 stroke-[4]" />
+                        )}
+                      </div>
                     </div>
                   ))}
                 </div>
