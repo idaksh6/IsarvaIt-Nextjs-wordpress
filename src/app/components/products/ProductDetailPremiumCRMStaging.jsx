@@ -812,7 +812,7 @@ function CRMFeatureSection() {
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
                   className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[13px] font-semibold ${activeId === feature.id
-                    ? "bg-gray-900 border-sky-600 text-white shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
+                    ? "bg-gray-900 border-sky-600 text-gray-800 shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
                     : "border-sky-300 text-gray-800 hover:border-sky-500 hover:shadow-md"
                     }`}
                 >
