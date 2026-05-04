@@ -67,7 +67,7 @@ const WhyPartner = () => {
         className="absolute bottom-20 right-20 w-80 h-80 bg-blue-600/5 rounded-full blur-3xl pointer-events-none"
       />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-12 md:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -80,13 +80,13 @@ const WhyPartner = () => {
           <div className="w-24 h-1.5 bg-emerald-600 mx-auto rounded-full" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mx-auto">
           {props.slice(0, 3).map((item, index) => (
             <ValueCard key={index} {...item} index={index} />
           ))}
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto mt-6 md:mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mx-auto mt-6 md:mt-8">
           {props.slice(3).map((item, index) => (
             <ValueCard key={index + 3} {...item} index={index + 3} />
           ))}

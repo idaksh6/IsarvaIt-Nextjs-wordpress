@@ -21,7 +21,7 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
       <div className="absolute inset-0 z-0 bg-white/40 pointer-events-none" />
 
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-20 items-center">
 
           {/* Left Content Side */}

@@ -37,7 +37,7 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
       <div className="absolute inset-0 z-0 opacity-20 bg-mesh-green pointer-events-none" />
       <div className="absolute inset-0 z-0 bg-dots opacity-[0.05] pointer-events-none" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-12 md:mb-20">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -50,7 +50,7 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
           <p className="text-gray-500 text-lg md:text-xl font-body">Choose the growth level that matches your ambition.</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 max-w-6xl mx-auto items-stretch mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 mx-auto items-stretch mb-20">
           {/* Gold Tier */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -197,7 +197,7 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="max-w-6xl mx-auto relative group"
+          className="relative group"
         >
 
           <div className="bg-white rounded-[40px] border border-orange-200/50 shadow-2xl overflow-hidden flex flex-col md:flex-row">

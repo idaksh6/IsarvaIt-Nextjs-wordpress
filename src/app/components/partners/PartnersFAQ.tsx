@@ -32,7 +32,7 @@ const PartnersFAQ = () => {
 
   return (
     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10 md:mb-16">
             <motion.h2

@@ -39,7 +39,7 @@ const PartnerOnboarding = () => {
     <section className="py-16 md:py-24 bg-[#FDF8F2] relative overflow-hidden">
 
 
-      <div className="container mx-auto px-6 relative z-10 text-center">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

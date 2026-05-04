@@ -140,8 +140,8 @@ export default function PartnerFormSection({
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-50 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/4" />
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
+        <div className="mx-auto">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
 
             {/* Content Side */}
