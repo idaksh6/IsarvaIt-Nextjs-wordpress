@@ -19,8 +19,21 @@ import ProductDetailPremiumCRMStaging from "../../components/products/ProductDet
 import ProductDetailPremiumSupport from "../../components/products/ProductDetailPremiumSupport";
 import ProductDetailPremiumGodownStaging from "../../components/products/ProductDetailPremiumGodownStaging";
 
+import ProductDetailPremiumHRMSStaging from "../../components/products/ProductDetailPremiumHRMSStaging";
+
 export default function ProductDetailClient({ product, relatedProducts, allProducts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Use Staging View for HRMS Software Staging
+  if (product.slug === 'hrms-software-staging') {
+    return (
+      <ProductDetailPremiumHRMSStaging 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
 
   // Use Premium View for HRMS Software
   if (product.slug === 'hrms-software') {
