@@ -156,9 +156,17 @@ export default function ProductDetailPremiumHRMSStaging({
   const activeContent = TAB_CONTENT[activeTab] || TAB_CONTENT["hr-software"];
 
   return (
-    <div className="relative font-sans selection:bg-blue-100 selection:text-blue-900 bg-[#eff6ff]">
-      {/* 1. Global Hero Background (Ensures transparency logic) */}
-      <div className="absolute top-0 left-0 w-full h-[1000px] bg-gradient-to-b from-[#eff6ff] via-[#ecfeff] to-white z-0 pointer-events-none" />
+    <div className="relative font-sans selection:bg-blue-100 selection:text-blue-900 bg-white">
+      {/* 1. Global Hero Background (Matching Contact Page Style) */}
+      <div className="absolute top-0 left-0 w-full h-[1000px] bg-gradient-to-b from-[#d4f4dd] via-[#defae4] to-white z-0 pointer-events-none" />
+      
+      {/* Background Decorations */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none" style={{ contain: "layout style paint" }}>
+        <div className="absolute inset-0 bg-mesh-green opacity-40"></div>
+        <div className="absolute top-20 right-10 w-[500px] h-[500px] bg-emerald-200/40 blur-[80px] rounded-full"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-green-200/30 blur-[80px] rounded-full"></div>
+        <div className="hero-noise-overlay opacity-[0.12]"></div>
+      </div>
 
       {/* 2. Floating Premium Tab Bar (Sticky for entire page) */}
       <div className={`sticky ${isScrolled ? "top-[82px]" : "top-[98px]"} z-[99] flex justify-center py-6 px-4 pointer-events-none transition-all duration-300`}>
