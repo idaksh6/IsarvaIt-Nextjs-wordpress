@@ -15,7 +15,7 @@ const benefits = [
 
 const WhiteLabelBenefits = () => {
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-t from-slate-50 to-[#F8FAFC] relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-gradient-to-t from-slate-50 to-[#F8FAFC] relative overflow-hidden">
       {/* Background Decorative elements */}
       <div className="absolute inset-0 z-0 opacity-40 bg-mesh-blue pointer-events-none" />
 

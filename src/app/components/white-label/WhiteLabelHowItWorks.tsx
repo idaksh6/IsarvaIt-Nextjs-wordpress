@@ -38,7 +38,7 @@ const steps = [
 
 const WhiteLabelHowItWorks = () => {
   return (
-    <section className="py-20 md:py-28 bg-white relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0 z-0 opacity-40 bg-mesh-blue pointer-events-none" />
       

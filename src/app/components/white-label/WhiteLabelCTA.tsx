@@ -6,13 +6,13 @@ import { ArrowRight, Phone, Mail } from "lucide-react";
 
 const WhiteLabelCTA = ({ onContact }: { onContact: () => void }) => {
   return (
-    <section className="py-20 md:py-28 bg-blue-50/50 px-6 relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-blue-50/50 px-6 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="relative rounded-[4rem] bg-gradient-to-br from-[#F8FAFC] via-white to-blue-50/50 overflow-hidden p-8 md:p-20 lg:p-32 text-center shadow-[0_40px_100px_rgba(37,99,235,0.05)] border border-slate-100 group"
+          className="relative rounded-[4rem] bg-gradient-to-br from-[#F8FAFC] via-white to-blue-50/50 overflow-hidden p-4 md:p-8 lg:p-12 text-center shadow-[0_40px_100px_rgba(37,99,235,0.05)] border border-slate-100 group"
         >
           {/* Background decoration */}
           <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
@@ -39,7 +39,7 @@ const WhiteLabelCTA = ({ onContact }: { onContact: () => void }) => {
               Ready to Grow <br />
               <span className="text-blue-600">Without Limits?</span>
             </motion.h2>
-            
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -47,7 +47,7 @@ const WhiteLabelCTA = ({ onContact }: { onContact: () => void }) => {
               transition={{ delay: 0.1 }}
               className="text-xl md:text-2xl text-slate-600 mb-16 leading-relaxed font-medium max-w-2xl mx-auto"
             >
-              Scale your agency with a reliable white-label partner. 
+              Scale your agency with a reliable white-label partner.
               Expert execution, fast delivery, and complete confidentiality—guaranteed.
             </motion.p>
 
@@ -65,7 +65,7 @@ const WhiteLabelCTA = ({ onContact }: { onContact: () => void }) => {
                 Become a Partner
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </button>
-              
+
               <div className="flex flex-col gap-4 w-full sm:w-auto text-left">
                 <a href="tel:+919902863697" className="flex items-center gap-3 text-slate-700 hover:text-blue-600 transition-colors group justify-center sm:justify-start">
                   <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
