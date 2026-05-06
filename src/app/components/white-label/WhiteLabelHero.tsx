@@ -98,7 +98,7 @@ const WhiteLabelHero = ({ onContact }: { onContact: () => void }) => {
               style={{ minHeight: "220px" }}
             >
               <img
-                src={heroImage.src}
+                src="/white_label_handshake.png"
                 alt="White-Label Agency Partnership"
                 className="w-full h-full object-cover aspect-[4/3]"
               />

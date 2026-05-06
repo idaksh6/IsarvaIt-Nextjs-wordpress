@@ -107,12 +107,12 @@ const TAB_CONTENT = {
 };
 
 const TAB_THEMES = {
-  "setup": { bg: "bg-blue-600", gradient: "from-[#2563EB] to-[#1E40AF]", shadow: "shadow-blue-500/30", text: "text-blue-600", lightBg: "bg-blue-50", hoverBorder: "hover:border-blue-200" },
-  "employee": { bg: "bg-emerald-600", gradient: "from-emerald-500 to-teal-600", shadow: "shadow-emerald-500/30", text: "text-emerald-600", lightBg: "bg-emerald-50", hoverBorder: "hover:border-emerald-200" },
-  "payroll": { bg: "bg-purple-600", gradient: "from-purple-500 to-fuchsia-600", shadow: "shadow-purple-500/30", text: "text-purple-600", lightBg: "bg-purple-50", hoverBorder: "hover:border-purple-200" },
-  "reporting": { bg: "bg-rose-600", gradient: "from-rose-500 to-orange-600", shadow: "shadow-rose-500/30", text: "text-rose-600", lightBg: "bg-rose-50", hoverBorder: "hover:border-rose-200" },
-  "analytics": { bg: "bg-cyan-600", gradient: "from-cyan-500 to-sky-600", shadow: "shadow-cyan-500/30", text: "text-cyan-600", lightBg: "bg-cyan-50", hoverBorder: "hover:border-cyan-200" },
-  "ess": { bg: "bg-amber-500", gradient: "from-amber-400 to-orange-500", shadow: "shadow-amber-500/30", text: "text-amber-600", lightBg: "bg-amber-50", hoverBorder: "hover:border-amber-200" }
+  "setup": { bg: "bg-blue-600", gradient: "from-[#2563EB] to-[#1E40AF]", shadow: "shadow-blue-500/20", text: "text-blue-600", lightBg: "bg-blue-50", hoverBorder: "hover:border-blue-200", accent: "blue" },
+  "employee": { bg: "bg-emerald-600", gradient: "from-[#10B981] to-[#059669]", shadow: "shadow-emerald-500/20", text: "text-emerald-600", lightBg: "bg-emerald-50", hoverBorder: "hover:border-emerald-200", accent: "emerald" },
+  "payroll": { bg: "bg-violet-600", gradient: "from-[#7C3AED] to-[#6D28D9]", shadow: "shadow-violet-500/20", text: "text-violet-600", lightBg: "bg-violet-50", hoverBorder: "hover:border-violet-200", accent: "violet" },
+  "reporting": { bg: "bg-rose-600", gradient: "from-[#E11D48] to-[#BE123C]", shadow: "shadow-rose-500/20", text: "text-rose-600", lightBg: "bg-rose-50", hoverBorder: "hover:border-rose-200", accent: "rose" },
+  "analytics": { bg: "bg-sky-600", gradient: "from-[#0EA5E9] to-[#0284C7]", shadow: "shadow-sky-500/20", text: "text-sky-600", lightBg: "bg-sky-50", hoverBorder: "hover:border-sky-200", accent: "sky" },
+  "ess": { bg: "bg-amber-500", gradient: "from-[#F59E0B] to-[#D97706]", shadow: "shadow-amber-500/20", text: "text-amber-600", lightBg: "bg-amber-50", hoverBorder: "hover:border-amber-200", accent: "amber" }
 };
 
 export default function ProductDetailPremiumHRMSStaging({
@@ -136,35 +136,77 @@ export default function ProductDetailPremiumHRMSStaging({
   const activeContent = TAB_CONTENT[activeTab] || TAB_CONTENT["setup"];
 
   return (
-    <div className="relative font-sans selection:bg-blue-100 selection:text-blue-900 bg-white">
-      {/* --- Premium SaaS Hero Background --- */}
-      <div className="absolute top-0 left-0 w-full h-[850px] z-0 pointer-events-none overflow-hidden select-none">
+    <div className={`relative font-sans selection:bg-blue-100 selection:text-blue-900 transition-colors duration-1000 bg-white`}>
+      {/* --- Dynamic Shifting Background (Soft & Light) --- */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        {/* Very subtle ambient gradient */}
+        <div className={`absolute inset-0 opacity-10 transition-colors duration-1000 bg-gradient-to-br ${TAB_THEMES[activeTab].gradient} blur-[120px] scale-125`} />
+        
+        {/* Animated decorative blobs - Using complementary colors for variety */}
+        <motion.div 
+          animate={{ 
+            x: [0, 50, 0],
+            y: [0, -30, 0],
+          }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          className={`absolute top-[-5%] left-[-5%] w-[40%] h-[40%] rounded-full opacity-[0.08] blur-[100px] ${TAB_THEMES[activeTab].bg}`} 
+        />
+        <motion.div 
+          animate={{ 
+            x: [0, -40, 0],
+            y: [0, 60, 0],
+          }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          className="absolute top-[20%] right-[-5%] w-[35%] h-[35%] rounded-full opacity-[0.06] bg-violet-500 blur-[100px]" 
+        />
+        <motion.div 
+          animate={{ 
+            x: [0, -30, 0],
+            y: [0, -50, 0],
+          }}
+          transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
+          className="absolute bottom-[10%] left-[10%] w-[30%] h-[30%] rounded-full opacity-[0.05] bg-blue-400 blur-[90px]" 
+        />
+        <motion.div 
+          animate={{ 
+            x: [0, -100, 0],
+            y: [0, 100, 0],
+            scale: [1, 1.3, 1]
+          }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full opacity-10 bg-indigo-500 blur-[120px]" 
+        />
 
-
-        {/* Subtle premium textures that fade out beautifully */}
-        <div className="absolute inset-0 bg-dots opacity-[0.2] mask-fade-bottom" />
-        <div className="absolute inset-0 bg-mesh-green opacity-[0.08] mask-fade-bottom" />
-
-        {/* Bottom gradient mask to guarantee absolutely zero sharp cutoffs */}
-        <div className="absolute bottom-0 left-0 w-full h-[250px] bg-gradient-to-t from-white via-white/80 to-transparent" />
+        {/* Global patterns */}
+        <div className="absolute inset-0 bg-dots opacity-[0.1]" />
+        <div className="absolute inset-0 bg-grid-slate-200/[0.05] [mask-image:linear-gradient(to_bottom,white,transparent,white)]" />
       </div>
 
-      {/* 2. Floating Premium Tab Bar (Sticky for entire page) */}
-      <div className={`sticky ${isScrolled ? "top-[82px]" : "top-[98px]"} z-[99] flex justify-center py-4 px-4 pointer-events-none transition-all duration-300`}>
-        <div className="inline-flex items-center bg-white/90 backdrop-blur-md border border-gray-100 p-1.5 shadow-xl rounded-full transition-all pointer-events-auto">
-          <div className="flex items-center space-x-1 overflow-x-auto scrollbar-hide max-w-[90vw] px-2 py-1">
+      {/* 2. Enhanced Floating Tab Bar */}
+      <div className={`sticky ${isScrolled ? "top-[80px]" : "top-[100px]"} z-[99] flex justify-center py-6 px-4 pointer-events-none transition-all duration-500`}>
+        <div className="inline-flex items-center bg-white/80 backdrop-blur-2xl border border-white/50 p-1.5 shadow-[0_20px_50px_rgba(0,0,0,0.08)] rounded-[2rem] transition-all pointer-events-auto">
+          <div className="flex items-center space-x-1 px-1 py-1">
             {TABS.map((tab) => {
+              const isActive = activeTab === tab.id;
               const theme = TAB_THEMES[tab.id];
               return (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 relative whitespace-nowrap ${activeTab === tab.id
-                      ? `bg-gradient-to-r ${theme.gradient} text-white scale-105 z-10`
-                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
-                    }`}
+                  className={`px-6 py-3 rounded-[1.5rem] font-bold text-xs uppercase tracking-widest transition-all duration-500 relative group overflow-hidden ${
+                    isActive
+                      ? "text-white"
+                      : "text-gray-500 hover:text-gray-900"
+                  }`}
                 >
-                  {tab.label}
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeTab"
+                      className={`absolute inset-0 bg-gradient-to-r ${theme.gradient} ${theme.shadow} z-0`}
+                      transition={{ type: "spring", bounce: 0.25, duration: 0.6 }}
+                    />
+                  )}
+                  <span className="relative z-10">{tab.label}</span>
                 </button>
               );
             })}
@@ -202,9 +244,10 @@ export default function ProductDetailPremiumHRMSStaging({
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="text-5xl lg:text-[76px] font-black text-gray-900 leading-[1.0] mb-8 tracking-tighter"
+                  className="text-6xl lg:text-[92px] font-black text-gray-900 leading-[0.9] mb-10 tracking-tighter uppercase"
                 >
                   {activeContent.title.split(" ").slice(0, -1).join(" ")}{" "}
+                  <br />
                   <span className={`text-transparent bg-clip-text bg-gradient-to-r ${TAB_THEMES[activeTab].gradient}`}>
                     {activeContent.title.split(" ").pop()}
                   </span>
@@ -214,7 +257,7 @@ export default function ProductDetailPremiumHRMSStaging({
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
-                  className="text-xl text-gray-500 mb-10 leading-relaxed max-w-xl font-medium"
+                  className="text-xl md:text-2xl text-gray-500 mb-12 leading-relaxed max-w-xl font-medium"
                 >
                   {activeContent.description}
                 </motion.p>
@@ -223,14 +266,14 @@ export default function ProductDetailPremiumHRMSStaging({
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12"
+                  className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12"
                 >
                   {activeContent.features.map((f, i) => (
-                    <div key={i} className={`flex items-start gap-3 p-4 rounded-[20px] bg-white/60 backdrop-blur-md border border-white ${TAB_THEMES[activeTab].hoverBorder} transition-all group shadow-sm hover:shadow-md hover:bg-white`}>
-                      <div className={`w-5 h-5 rounded-full ${TAB_THEMES[activeTab].lightBg} flex items-center justify-center ${TAB_THEMES[activeTab].text} transition-colors flex-shrink-0 mt-0.5 shadow-inner`}>
-                        <span className="text-[10px] font-black">✓</span>
+                    <div key={i} className={`flex items-center gap-4 p-5 rounded-[24px] bg-white border border-gray-100 ${TAB_THEMES[activeTab].hoverBorder} transition-all group shadow-sm hover:shadow-xl hover:-translate-y-1`}>
+                      <div className={`w-8 h-8 rounded-full ${TAB_THEMES[activeTab].lightBg} flex items-center justify-center ${TAB_THEMES[activeTab].text} transition-colors flex-shrink-0 shadow-inner`}>
+                        <span className="text-xs font-black">✓</span>
                       </div>
-                      <span className="text-sm font-bold text-gray-700 leading-snug">{f}</span>
+                      <span className="text-sm font-black text-gray-700 leading-tight uppercase tracking-tight">{f}</span>
                     </div>
                   ))}
                 </motion.div>
@@ -290,11 +333,17 @@ export default function ProductDetailPremiumHRMSStaging({
 
       </section>
 
-      {/* 4. The "Broken HR" Modern Section */}
-      <section className="relative pt-16 pb-24 bg-white border-y border-gray-100 overflow-hidden">
+      {/* 4. The "Broken HR" Modern Section - Light & Vibrant Contrast */}
+      <section className="relative pt-24 pb-32 bg-white overflow-hidden border-y border-gray-100">
+        {/* Background elements for light section */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-rose-500/5 rounded-full blur-[100px]" />
+          <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px]" />
+          <div className="absolute inset-0 bg-dots opacity-[0.1]" />
+        </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-end mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-end mb-24 text-gray-900">
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 text-red-600 font-bold text-sm mb-6">
                 <span className="relative flex h-2 w-2">
@@ -324,33 +373,29 @@ export default function ProductDetailPremiumHRMSStaging({
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { 
-                title: "Endless Paperwork", icon: "📄", desc: "HR spends more time filling out forms than helping people.",
-                theme: "from-rose-50 to-red-50 border-rose-100 hover:border-rose-300",
-                iconTheme: "bg-gradient-to-br from-rose-500 to-red-600 shadow-rose-500/30 text-white"
+                title: "Endless Paperwork", icon: "📄", desc: "HR spends more time filling out forms than helping people improve.",
+                iconTheme: "bg-rose-50 text-rose-600"
               },
               { 
-                title: "Disconnected Apps", icon: "🔌", desc: "Data is spread across too many places, leading to messy mistakes.",
-                theme: "from-purple-50 to-indigo-50 border-purple-100 hover:border-purple-300",
-                iconTheme: "bg-gradient-to-br from-purple-500 to-indigo-600 shadow-purple-500/30 text-white"
+                title: "Disconnected Apps", icon: "🔌", desc: "Data spread across too many places leads to messy mistakes.",
+                iconTheme: "bg-violet-50 text-violet-600"
               },
               { 
-                title: "Frustrated Employees", icon: "😠", desc: "Hard-to-use software makes workers unhappy and less productive.",
-                theme: "from-amber-50 to-orange-50 border-amber-100 hover:border-amber-300",
-                iconTheme: "bg-gradient-to-br from-amber-500 to-orange-600 shadow-amber-500/30 text-white"
+                title: "Frustrated Workers", icon: "😠", desc: "Hard-to-use software makes workers unhappy and less productive.",
+                iconTheme: "bg-amber-50 text-amber-600"
               },
               { 
                 title: "Risky Security", icon: "🔓", desc: "Old ways of handling info leave you open to legal and tech threats.",
-                theme: "from-slate-50 to-gray-100 border-slate-200 hover:border-slate-400",
-                iconTheme: "bg-gradient-to-br from-slate-600 to-gray-800 shadow-slate-500/30 text-white"
+                iconTheme: "bg-slate-100 text-slate-600"
               }
             ].map((item, idx) => (
-              <div key={idx} className={`group p-10 rounded-[40px] border transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 bg-gradient-to-br relative overflow-hidden ${item.theme}`}>
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/60 blur-3xl rounded-full"></div>
-                <div className={`relative z-10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform ${item.iconTheme}`}>
-                  <span className="text-3xl drop-shadow-sm">{item.icon}</span>
+              <div key={idx} className="group p-10 rounded-[40px] border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 bg-white relative overflow-hidden">
+                <div className={`absolute inset-0 bg-gradient-to-br from-white to-slate-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                <div className={`relative z-10 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform ${item.iconTheme} shadow-sm`}>
+                  <span className="text-3xl">{item.icon}</span>
                 </div>
-                <h3 className="relative z-10 text-xl font-black text-gray-900 mb-4">{item.title}</h3>
-                <p className="relative z-10 text-sm text-gray-700 leading-relaxed font-medium">{item.desc}</p>
+                <h3 className="relative z-10 text-2xl font-black text-gray-900 mb-4 uppercase tracking-tighter">{item.title}</h3>
+                <p className="relative z-10 text-sm text-gray-500 leading-relaxed font-bold">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -403,45 +448,47 @@ export default function ProductDetailPremiumHRMSStaging({
         </div>
       </section>
 
-      {/* 6. Infinite Advanced Slider */}
-      <section className="py-24 bg-gray-50 overflow-hidden border-y border-gray-100">
-        <div className="container mx-auto px-6 mb-16 text-center">
-          <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-4">Complete HR Suite</h2>
-          <p className="text-gray-500 font-medium">Streamline and manage your entire HR operations with a powerful, integrated HRMS platform designed for modern businesses.</p>
+      {/* 6. Infinite Advanced Slider - Soft Shifting Background */}
+      <section className="py-32 bg-white relative overflow-hidden border-t border-gray-100">
+        <div className="absolute inset-0 z-0">
+          <div className={`absolute inset-0 opacity-5 transition-colors duration-1000 bg-gradient-to-br ${TAB_THEMES[activeTab].gradient} blur-[120px]`} />
+          <div className="absolute inset-0 bg-dots opacity-[0.1]" />
         </div>
 
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 mb-20 text-center relative z-10">
+          <h2 className="text-5xl lg:text-7xl font-black text-gray-900 mb-6 tracking-tighter uppercase">Complete <span className={TAB_THEMES[activeTab].text}>HR Suite</span></h2>
+          <p className="text-gray-500 font-bold text-xl max-w-2xl mx-auto uppercase tracking-tight">Streamline your entire operations with a powerful integrated platform.</p>
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {SECTION_6_FEATURES.map((card, idx) => {
-              const theme = [
-                { bg: "bg-gradient-to-br from-blue-50 to-indigo-50/50 border-blue-100 hover:border-blue-300", icon: "bg-gradient-to-br from-blue-500 to-indigo-600 shadow-blue-500/30 text-white", check: "text-blue-500" },
-                { bg: "bg-gradient-to-br from-emerald-50 to-teal-50/50 border-emerald-100 hover:border-emerald-300", icon: "bg-gradient-to-br from-emerald-500 to-teal-600 shadow-emerald-500/30 text-white", check: "text-emerald-500" },
-                { bg: "bg-gradient-to-br from-purple-50 to-fuchsia-50/50 border-purple-100 hover:border-purple-300", icon: "bg-gradient-to-br from-purple-500 to-fuchsia-600 shadow-purple-500/30 text-white", check: "text-purple-500" },
-                { bg: "bg-gradient-to-br from-rose-50 to-orange-50/50 border-rose-100 hover:border-rose-300", icon: "bg-gradient-to-br from-rose-500 to-orange-600 shadow-rose-500/30 text-white", check: "text-rose-500" },
-                { bg: "bg-gradient-to-br from-cyan-50 to-sky-50/50 border-cyan-100 hover:border-cyan-300", icon: "bg-gradient-to-br from-cyan-500 to-sky-600 shadow-cyan-500/30 text-white", check: "text-cyan-500" },
-                { bg: "bg-gradient-to-br from-amber-50 to-yellow-50/50 border-amber-100 hover:border-amber-300", icon: "bg-gradient-to-br from-amber-500 to-yellow-600 shadow-amber-500/30 text-white", check: "text-amber-500" }
+               const theme = [
+                { text: "text-blue-600", check: "text-blue-600", iconBg: "bg-blue-50" },
+                { text: "text-emerald-600", check: "text-emerald-600", iconBg: "bg-emerald-50" },
+                { text: "text-violet-600", check: "text-violet-600", iconBg: "bg-violet-50" },
+                { text: "text-rose-600", check: "text-rose-600", iconBg: "bg-rose-50" },
+                { text: "text-sky-600", check: "text-sky-600", iconBg: "bg-sky-50" },
+                { text: "text-amber-600", check: "text-amber-600", iconBg: "bg-amber-50" }
               ][idx % 6];
-              
+
               return (
                 <div key={idx} className="w-full">
-                  <div className={`p-8 rounded-[40px] border h-full hover:shadow-2xl transition-all duration-500 group relative overflow-hidden flex flex-col ${theme.bg}`}>
-                    {/* Subtle background glow effect inside the card */}
-                    <div className="absolute top-0 right-0 w-40 h-40 bg-white/60 blur-3xl rounded-full"></div>
+                  <div className={`p-10 rounded-[48px] bg-white border border-gray-100 h-full hover:shadow-2xl transition-all duration-500 group relative overflow-hidden flex flex-col`}>
+                    <div className="absolute top-0 right-0 w-40 h-40 bg-gray-50 blur-3xl rounded-full group-hover:bg-blue-50 transition-colors"></div>
                     
-                    <div className={`relative z-10 w-14 h-14 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform ${theme.icon}`}>
-                      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className={`relative z-10 w-16 h-16 rounded-2xl flex items-center justify-center mb-10 group-hover:scale-110 transition-transform ${theme.iconBg} ${theme.text} shadow-inner`}>
+                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                     </div>
-                    <h3 className="relative z-10 text-2xl font-black text-gray-900 mb-4">{card.title}</h3>
-                    <p className="relative z-10 text-[15px] text-gray-600 mb-8 leading-relaxed font-medium">{card.desc}</p>
-                    <div className="relative z-10 flex flex-col gap-3 mt-auto">
+                    <h3 className="relative z-10 text-2xl font-black text-gray-900 mb-4 uppercase tracking-tighter">{card.title}</h3>
+                    <p className="relative z-10 text-base text-gray-500 mb-10 leading-relaxed font-bold">{card.desc}</p>
+                    <div className="relative z-10 flex flex-col gap-4 mt-auto">
                       {card.items.map((item, j) => (
-                        <div key={j} className="flex items-start gap-3 bg-white/50 p-3 rounded-2xl border border-white backdrop-blur-sm shadow-sm group-hover:bg-white transition-colors">
-                          <div className="w-5 h-5 rounded-full bg-white shadow-sm flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <span className={`text-[10px] font-black ${theme.check}`}>✓</span>
-                          </div>
-                          <span className="text-sm font-bold text-gray-700 leading-snug">{item}</span>
+                        <div key={j} className="flex items-center gap-4 bg-gray-50/50 p-4 rounded-2xl border border-gray-100 group-hover:bg-white transition-all group-hover:border-blue-100">
+                          <div className={`w-6 h-6 rounded-full bg-white shadow-sm flex items-center justify-center flex-shrink-0 ${theme.check} font-black text-xs`}>✓</div>
+                          <span className="text-sm font-black text-gray-600 tracking-tight leading-tight uppercase">{item}</span>
                         </div>
                       ))}
                     </div>
