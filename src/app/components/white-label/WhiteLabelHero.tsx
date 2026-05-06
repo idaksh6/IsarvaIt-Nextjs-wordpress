@@ -3,12 +3,12 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Shield, Zap, Target } from "lucide-react";
+import { ArrowRight, CheckCircle2, Shield, Zap, Target, Users, Sparkles } from "lucide-react";
 import heroImage from "../../../../public/white_label_abstract.png";
 
 const WhiteLabelHero = ({ onContact }: { onContact: () => void }) => {
   return (
-    <section className="relative min-h-screen flex items-center pt-32 md:pt-40 pb-16 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-indigo-50/50">
+    <section className="relative min-h-screen flex items-center pt-24 sm:pt-32 md:pt-40 pb-12 sm:pb-16 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-indigo-50/50">
       {/* Vibrant Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] right-[-5%] w-[50%] h-[50%] bg-blue-300/20 rounded-full blur-[120px] mix-blend-multiply animate-pulse" />
@@ -35,7 +35,7 @@ const WhiteLabelHero = ({ onContact }: { onContact: () => void }) => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-slate-900 leading-[1.05] mb-6 font-display tracking-tight uppercase"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-slate-900 leading-[1.05] mb-6 font-display tracking-tight uppercase"
             >
               Scale Your Agency <br />
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-rose-500 bg-clip-text text-transparent drop-shadow-sm">
@@ -47,7 +47,7 @@ const WhiteLabelHero = ({ onContact }: { onContact: () => void }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-lg md:text-xl text-slate-600 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed font-medium"
+              className="text-lg md:text-xl text-slate-600 max-w-xl mx-auto lg:mx-0 mb-6 md:mb-10 leading-relaxed font-medium"
             >
               Deliver world-class digital solutions behind the scenes. Our white-label team acts as your invisible tech arm, helping you grow while we handle the heavy lifting.
             </motion.p>
@@ -56,7 +56,7 @@ const WhiteLabelHero = ({ onContact }: { onContact: () => void }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-4 mb-12"
+              className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-4 mb-8 md:mb-12"
             >
               <button
                 onClick={onContact}
@@ -72,7 +72,7 @@ const WhiteLabelHero = ({ onContact }: { onContact: () => void }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="grid grid-cols-2 gap-6 max-w-sm mx-auto lg:mx-0"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-sm mx-auto lg:mx-0"
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center">
@@ -89,13 +89,13 @@ const WhiteLabelHero = ({ onContact }: { onContact: () => void }) => {
             </motion.div>
           </div>
 
-          <div className="relative flex items-center justify-center mt-12 lg:mt-0">
+          <div className="relative flex items-center justify-center mt-6 sm:mt-12 lg:mt-0 px-4 sm:px-0">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
-              className="relative z-10 w-full max-w-[550px] rounded-[48px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.1)] border-4 border-white bg-slate-100 flex items-center justify-center"
-              style={{ minHeight: "350px" }}
+              className="relative z-10 w-full max-w-[550px] rounded-[32px] md:rounded-[48px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.1)] border-4 border-white bg-slate-100 flex items-center justify-center"
+              style={{ minHeight: "220px" }}
             >
               <img
                 src={heroImage.src}
@@ -105,32 +105,32 @@ const WhiteLabelHero = ({ onContact }: { onContact: () => void }) => {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent pointer-events-none" />
             </motion.div>
 
-            {/* Floating badges */}
+            {/* Floating badges - Optimized for Mobile Visibility */}
             <motion.div
               animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-6 right-0 sm:-right-6 lg:-right-2 xl:-right-6 z-20 bg-white/90 backdrop-blur-xl p-4 rounded-3xl border border-slate-200 shadow-2xl flex items-center gap-3 border-l-4 border-l-blue-500"
+              className="absolute -top-6 md:-top-6 right-2 md:right-6 lg:-right-4 xl:-right-10 z-20 bg-white/90 backdrop-blur-xl p-2 md:p-4 rounded-xl md:rounded-3xl border border-slate-200 shadow-2xl flex items-center gap-2 md:gap-3 border-l-4 border-l-blue-500 scale-[0.8] origin-right md:scale-100"
             >
-              <div className="w-10 h-10 rounded-2xl bg-blue-500 text-white flex items-center justify-center text-xl shadow-lg shadow-blue-500/20">
-                <Target className="w-6 h-6" />
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-2xl bg-blue-500 text-white flex items-center justify-center text-lg md:text-xl shadow-lg shadow-blue-500/20">
+                <Sparkles className="w-5 h-5 md:w-6 md:h-6" />
               </div>
               <div>
-                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Growth</p>
-                <p className="text-lg font-black text-slate-900">+150% ROI</p>
+                <p className="text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-0.5 md:mb-0">Quality</p>
+                <p className="text-xs md:text-lg font-black text-slate-900 whitespace-nowrap">98% Bug-Free Delivery</p>
               </div>
             </motion.div>
 
             <motion.div
               animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-10 left-0 sm:-left-6 lg:-left-2 xl:-left-6 z-20 bg-white/90 backdrop-blur-xl p-4 rounded-3xl border border-slate-200 shadow-2xl flex items-center gap-3 border-l-4 border-l-emerald-500"
+              className="absolute bottom-2 md:-bottom-10 left-2 md:left-6 lg:-left-4 xl:-left-10 z-20 bg-white/90 backdrop-blur-xl p-2 md:p-4 rounded-xl md:rounded-3xl border border-slate-200 shadow-2xl flex items-center gap-2 md:gap-3 border-l-4 border-l-emerald-500 scale-[0.8] origin-left md:scale-100"
             >
-              <div className="w-10 h-10 rounded-2xl bg-emerald-500 text-white flex items-center justify-center text-xl shadow-lg shadow-emerald-500/20">
-                <Shield className="w-6 h-6" />
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-2xl bg-emerald-500 text-white flex items-center justify-center text-lg md:text-xl shadow-lg shadow-emerald-500/20">
+                <Users className="w-5 h-5 md:w-6 md:h-6" />
               </div>
               <div>
-                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Status</p>
-                <p className="text-lg font-black text-slate-900">Verified</p>
+                <p className="text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-0.5 md:mb-0">Scalability</p>
+                <p className="text-xs md:text-lg font-black text-slate-900 whitespace-nowrap">2x Team Bandwidth</p>
               </div>
             </motion.div>
 

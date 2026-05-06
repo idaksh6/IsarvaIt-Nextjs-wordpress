@@ -31,8 +31,8 @@ export default function WhiteLabelPartnershipPage() {
       <WhiteLabelHowItWorks />
       <WhiteLabelWhoWeWorkWith />
       <WhiteLabelTechStack />
-      <WhiteLabelFAQ />
       <WhiteLabelCTA onContact={scrollToForm} />
+      <WhiteLabelFAQ />
       
       {/* Inquiry Form Section */}
       <PartnerFormSection id="white-label-inquiry-form" />

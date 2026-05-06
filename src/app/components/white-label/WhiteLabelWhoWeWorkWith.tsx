@@ -12,12 +12,12 @@ import {
 } from "lucide-react";
 
 const partners = [
-  { name: "Digital Marketing Agencies", icon: Megaphone, color: "text-blue-600", bg: "bg-blue-50" },
-  { name: "Creative & Design Studios", icon: Palette, color: "text-emerald-600", bg: "bg-emerald-50" },
-  { name: "Freelancers & Consultants", icon: UserCircle, color: "text-indigo-600", bg: "bg-indigo-50" },
-  { name: "Growing Startups", icon: Rocket, color: "text-orange-600", bg: "bg-orange-50" },
-  { name: "IT & Software Development", icon: Code2, color: "text-purple-600", bg: "bg-purple-50" },
-  { name: "Branding & Advertising", icon: Award, color: "text-rose-600", bg: "bg-rose-50" },
+  { name: "Digital Marketing Agencies", icon: Megaphone, color: "text-blue-600", bg: "bg-blue-50", dash: "bg-blue-300" },
+  { name: "Creative & Design Studios", icon: Palette, color: "text-emerald-600", bg: "bg-emerald-50", dash: "bg-emerald-300" },
+  { name: "Freelancers & Consultants", icon: UserCircle, color: "text-indigo-600", bg: "bg-indigo-50", dash: "bg-indigo-300" },
+  { name: "Growing Startups", icon: Rocket, color: "text-orange-600", bg: "bg-orange-50", dash: "bg-orange-300" },
+  { name: "IT & Software Development", icon: Code2, color: "text-purple-600", bg: "bg-purple-50", dash: "bg-purple-300" },
+  { name: "Branding & Advertising", icon: Award, color: "text-rose-600", bg: "bg-rose-50", dash: "bg-rose-300" },
 ];
 
 const WhiteLabelWhoWeWorkWith = () => {
@@ -58,16 +58,16 @@ const WhiteLabelWhoWeWorkWith = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="group p-8 rounded-[40px] bg-white border border-slate-100 hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col items-center text-center md:items-start md:text-left gap-6"
+              className={`group p-8 rounded-[40px] ${partner.bg} border border-white/50 hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col items-center text-center md:items-start md:text-left gap-6`}
             >
-              <div className={`w-16 h-16 rounded-2xl ${partner.bg} ${partner.color} flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-sm`}>
+              <div className={`w-16 h-16 rounded-2xl bg-white ${partner.color} flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-sm`}>
                 <partner.icon className="w-8 h-8" />
               </div>
               <h3 className="text-2xl font-black text-slate-900 font-display uppercase tracking-tight group-hover:text-blue-600 transition-colors">
                 {partner.name}
               </h3>
               
-              <div className="w-12 h-1 bg-slate-100 group-hover:w-full group-hover:bg-blue-600 transition-all duration-700 rounded-full" />
+              <div className={`w-12 h-1.5 ${partner.dash} group-hover:w-full group-hover:bg-blue-600 transition-all duration-700 rounded-full`} />
             </motion.div>
           ))}
         </div>

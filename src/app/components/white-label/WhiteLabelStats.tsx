@@ -4,8 +4,8 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "15+", label: "Years of Industry Expertise" },
-  { value: "500+", label: "Trusted Clients" },
+  { value: "15+", label: "Years of Experience" },
+  { value: "500+", label: "World Wide Clients" },
   { value: "1000+", label: "Successful Projects" },
   { value: "100+", label: "Industries Served" },
   { value: "80+", label: "Skilled Professionals" },
