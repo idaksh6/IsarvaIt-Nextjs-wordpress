@@ -36,11 +36,11 @@ export default function PartnersPage() {
       <IdealPartners />
       <PartnersFAQ />
       <PartnerCTA onApply={() => scrollToForm("General Partner Inquiry")} />
-      
+
       {/* Permanent Form at bottom */}
-      <PartnerFormSection 
-        id="partner-inquiry-form" 
-        preSelectedItem={selectedTier} 
+      <PartnerFormSection
+        id="partner-inquiry-form"
+        preSelectedItem={selectedTier}
       />
     </div>
   );
