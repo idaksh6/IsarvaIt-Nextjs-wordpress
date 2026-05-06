@@ -25,11 +25,18 @@ export default function PartnerFormSection({
     selectedItem: preSelectedItem,
     selectedCategoryId: "",
     message: "",
-    otherBusinessType: ""
+    otherBusinessType: "",
+    tier: preSelectedItem || "General Partner Inquiry"
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
   const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    if (preSelectedItem) {
+      setFormData(prev => ({ ...prev, tier: preSelectedItem }));
+    }
+  }, [preSelectedItem]);
 
   const businessTypes = [
     "Digital Marketing Agency",
@@ -66,10 +73,10 @@ export default function PartnerFormSection({
         email: formData.email,
         phone: formData.phone,
         company: formData.company,
-        subject: `Partner Inquiry: ${formData.selectedItem === "Other" ? formData.otherBusinessType : formData.selectedItem}`,
-        message: formData.message,
+        subject: `Partner Inquiry: ${formData.tier}`,
+        message: `[Selected Tier: ${formData.tier}]\n\n${formData.message}`,
         pageType: "Partner",
-        itemName: formData.selectedItem === "Other" ? formData.otherBusinessType : formData.selectedItem,
+        itemName: formData.tier,
         categoryId: formData.selectedCategoryId || null
       };
 
@@ -90,7 +97,7 @@ export default function PartnerFormSection({
 
         // Brief delay before redirecting to show success state
         setTimeout(() => {
-          router.push(`/thank-you?type=contact&item=${encodeURIComponent(formData.selectedItem)}`);
+          router.push(`/thank-you?type=partner&item=${encodeURIComponent(formData.tier)}`);
         }, 1500);
       } else {
         setErrorMessage("");
@@ -253,6 +260,26 @@ export default function PartnerFormSection({
                         className="w-full h-14 px-5 rounded-2xl border-2 border-gray-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium"
                       />
                     </div>
+                  </div>
+                  
+                  {/* Partnership Tier Selection */}
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-gray-700 flex items-center gap-2 font-body">
+                      <Sparkles className="w-4 h-4 text-emerald-500" /> Interested Partnership Tier*
+                    </label>
+                    <select
+                      name="tier"
+                      value={formData.tier}
+                      onChange={handleChange}
+                      required
+                      className="w-full h-14 px-5 rounded-2xl border-2 border-gray-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium bg-white appearance-none cursor-pointer"
+                    >
+                      <option value="General Partner Inquiry">General Partner Inquiry</option>
+                      <option value="Gold Tier Inquiry">Gold Tier Inquiry</option>
+                      <option value="Silver Tier Inquiry">Silver Tier Inquiry</option>
+                      <option value="Bronze Tier Inquiry">Bronze Tier Inquiry</option>
+                      <option value="Partnership Model Inquiry">Partnership Model Inquiry</option>
+                    </select>
                   </div>
 
                   <div className="space-y-2">

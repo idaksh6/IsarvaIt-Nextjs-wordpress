@@ -13,7 +13,12 @@ import PartnerCTA from "../components/partners/PartnerCTA";
 import PartnerFormSection from "../components/partners/PartnerFormSection";
 
 export default function PartnersPage() {
-  const scrollToForm = () => {
+  const [selectedTier, setSelectedTier] = React.useState("Channel Partner Inquiry");
+
+  const scrollToForm = (tier?: string) => {
+    if (tier) {
+      setSelectedTier(tier);
+    }
     const formElement = document.getElementById("partner-inquiry-form");
     if (formElement) {
       formElement.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -22,18 +27,21 @@ export default function PartnersPage() {
 
   return (
     <div className="bg-[#FDF8F2] overflow-x-hidden relative">
-      <HeroSection onApply={scrollToForm} />
+      <HeroSection onApply={() => scrollToForm("General Partner Inquiry")} />
       <WhyPartner />
-      <TierCards onApply={scrollToForm} />
-      <PartnershipModels onApply={scrollToForm} />
+      <TierCards onApply={(tier) => scrollToForm(tier)} />
+      <PartnershipModels onApply={() => scrollToForm("Partnership Model Inquiry")} />
       <PartnerOnboarding />
       <PartnerCommitments />
       <IdealPartners />
       <PartnersFAQ />
-      <PartnerCTA onApply={scrollToForm} />
+      <PartnerCTA onApply={() => scrollToForm("General Partner Inquiry")} />
       
       {/* Permanent Form at bottom */}
-      <PartnerFormSection id="partner-inquiry-form" />
+      <PartnerFormSection 
+        id="partner-inquiry-form" 
+        preSelectedItem={selectedTier} 
+      />
     </div>
   );
 }

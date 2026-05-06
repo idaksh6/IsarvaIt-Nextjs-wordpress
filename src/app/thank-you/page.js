@@ -69,19 +69,20 @@ function ThankYouContent() {
             "Expect a call within 24 hours to discuss next steps"
           ]
         };
-      case "industry":
+      case "partner":
         return {
-          title: "Industry Solution Request Received!",
+          title: "Partner Inquiry Received!",
           subtitle: itemName
-            ? `We'll show you how we serve the ${itemName} industry!`
-            : "We'll show you our industry-specific solutions!",
+            ? `Thank you for your interest in the ${itemName}!`
+            : "Thank you for your interest in our Partner Program!",
           nextSteps: [
-            "Our industry expert will assess your needs",
-            "You'll receive detailed information via email",
-            "We'll schedule a consultation call",
-            "Learn how we've helped similar businesses succeed"
+            "Our partnership team will review your application",
+            "You'll receive a confirmation email within 15 minutes",
+            "We'll reach out to discuss your tier benefits in detail",
+            "Get ready to scale your business with Isarva Infotech"
           ]
         };
+      case "industry":
       default:
         return {
           title: "Message Received!",

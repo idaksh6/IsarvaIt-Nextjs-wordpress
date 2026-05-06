@@ -30,7 +30,7 @@ const bronzeFeatures = [
   { label: "Sales Closure Responsibility", check: false },
 ];
 
-const TierCards = ({ onApply }: { onApply: () => void }) => {
+const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
   return (
     <section className="py-16 md:py-24 relative overflow-hidden bg-[#FDF8F2]">
       {/* Background Subtle mesh and Grid for consistency */}
@@ -116,7 +116,7 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
                 </div>
 
                 <button
-                  onClick={onApply}
+                  onClick={() => onApply("Gold Tier Inquiry")}
                   className="press-illusion-btn-gold w-full py-4 md:py-5 text-base md:text-lg z-20"
                 >
                   Level Up to Gold
@@ -182,7 +182,7 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
               </div>
 
               <button
-                onClick={onApply}
+                onClick={() => onApply("Silver Tier Inquiry")}
                 className="press-illusion-btn-silver w-full py-4 md:py-5 text-base md:text-lg z-20"
               >
                 Level Up to Silver
@@ -266,7 +266,7 @@ const TierCards = ({ onApply }: { onApply: () => void }) => {
                 </div>
 
                 <button
-                  onClick={onApply}
+                  onClick={() => onApply("Bronze Tier Inquiry")}
                   className="press-illusion-btn-orange bg-orange-700 text-white font-black px-10 py-4 rounded-2xl shadow-xl hover:shadow-orange-200 transition-all text-sm uppercase tracking-widest"
                 >
                   Activate Access
