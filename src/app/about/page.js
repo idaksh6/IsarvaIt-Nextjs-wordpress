@@ -46,7 +46,7 @@ export default function AboutPage() {
               {/* Card 1 - Connectivity */}
               <div className="relative w-16 h-48 sm:w-40 sm:h-56 md:w-[16vw] md:h-[24vw] xl:w-[320px] xl:h-[420px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-xl transform hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5 group">
                 <Image src="/partners/expertise/clouds.png" alt="Connectivity" fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-2 md:p-6 text-left opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-2 md:p-6 text-left transition-opacity duration-500">
                   <h4 className="text-white font-bold text-xs md:text-2xl mb-1">Connectivity</h4>
                   <div className="w-8 h-0.5 bg-cyan-400 mb-2" />
                   <p className="text-white/70 text-[8px] md:text-xs leading-tight line-clamp-3">We build systems that communicate effortlessly through APIs and cloud services.</p>
@@ -56,7 +56,7 @@ export default function AboutPage() {
               {/* Card 2 - Flow */}
               <div className="relative w-20 h-56 sm:w-48 sm:h-72 md:w-[19vw] md:h-[28vw] xl:w-[380px] xl:h-[500px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl z-10 transform hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5 group">
                 <Image src="/partners/expertise/waterfall_v2.png" alt="Seamless Flow" fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-3 md:p-8 text-left opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-3 md:p-8 text-left transition-opacity duration-500">
                   <h4 className="text-white font-bold text-sm md:text-3xl mb-1">Seamless Flow</h4>
                   <div className="w-10 h-0.5 bg-blue-500 mb-2" />
                   <p className="text-white/70 text-xs md:text-sm leading-tight line-clamp-3">We design intuitive user experiences that create smooth digital journeys.</p>
@@ -76,7 +76,7 @@ export default function AboutPage() {
               {/* Card 4 - Scalability */}
               <div className="relative w-20 h-56 sm:w-48 sm:h-72 md:w-[19vw] md:h-[28vw] xl:w-[380px] xl:h-[500px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl z-10 transform hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5 group">
                 <Image src="/partners/expertise/galaxy.png" alt="Scalability" fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-3 md:p-8 text-left opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-3 md:p-8 text-left transition-opacity duration-500">
                   <h4 className="text-white font-bold text-sm md:text-3xl mb-1">Scalability</h4>
                   <div className="w-10 h-0.5 bg-purple-500 mb-2" />
                   <p className="text-white/70 text-xs md:text-sm leading-tight line-clamp-3">Future-ready solutions that scale with your business and unlock possibilities.</p>
@@ -86,7 +86,7 @@ export default function AboutPage() {
               {/* Card 5 - Innovation */}
               <div className="relative w-16 h-48 sm:w-40 sm:h-56 md:w-[16vw] md:h-[24vw] xl:w-[320px] xl:h-[420px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-xl transform hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5 group">
                 <Image src="/partners/expertise/volcano.png" alt="Innovation" fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-2 md:p-6 text-left opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-2 md:p-6 text-left transition-opacity duration-500">
                   <h4 className="text-white font-bold text-xs md:text-2xl mb-1">Performance</h4>
                   <div className="w-8 h-0.5 bg-orange-500 mb-2" />
                   <p className="text-white/70 text-[8px] md:text-xs leading-tight line-clamp-3">High-speed, optimized solutions that drive results and innovation.</p>
