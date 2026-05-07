@@ -16,8 +16,8 @@ const IsarvaAIChatbot = dynamic(() => import("./IsarvaAIChatbot"), {
 export default function ClientProviders() {
   return (
     <>
-      <Chatbot />
-      <IsarvaAIChatbot />
+      {/* <Chatbot /> */}
+      {/* <IsarvaAIChatbot /> */}
     </>
   );
 }

@@ -136,7 +136,7 @@ export default function AboutPage() {
 
             {/* Full Width Image Content */}
             <div className="relative w-full h-[300px] md:h-[450px] rounded-[3rem] overflow-hidden mb-16 shadow-2xl ring-4 ring-white/50">
-              <Image src="/about_tech_light_v2.png" alt="Digital Excellence" fill className="object-cover" />
+              <Image src="/enterprise-custom.png" alt="Digital Excellence" fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#16423C]/90 via-transparent to-transparent flex items-end p-6">
                 <div className="flex flex-col">
                   <span className="text-white/60 text-xs font-bold uppercase tracking-[0.3em] mb-2">Isarva Innovation Hub</span>
@@ -294,9 +294,9 @@ export default function AboutPage() {
                   <div className="absolute inset-0 bg-gradient-to-r from-[#10b981]/10 to-transparent pointer-events-none"></div>
                 </div>
               </div>
-              <div className="absolute -bottom-10 -right-6 bg-white p-10 rounded-[3rem] shadow-2xl border border-[#10b981]/5 hidden md:block max-w-[320px]">
+              {/* <div className="absolute -bottom-10 -right-6 bg-white p-10 rounded-[3rem] shadow-2xl border border-[#10b981]/5 hidden md:block max-w-[320px]">
                 <p className="text-xl font-display font-medium italic text-[#1a1f24] leading-relaxed">"Isarva Infotech is where technology begins to mean something more."</p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
