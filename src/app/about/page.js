@@ -45,7 +45,7 @@ export default function AboutPage() {
             <div className="flex justify-center items-center -space-x-2 md:space-x-5 overflow-visible !pt-0 py-5 md:py-16 ">
               {/* Card 1 - Connectivity */}
               <div className="relative w-16 h-48 sm:w-40 sm:h-56 md:w-[16vw] md:h-[24vw] xl:w-[320px] xl:h-[420px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-xl transform hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5 group">
-                <Image src="/partners/expertise/clouds.png" alt="Connectivity" fill className="object-cover" />
+                <Image src="/premium-sky.png" alt="Connectivity" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-2 md:p-6 text-left transition-opacity duration-500">
                   <h4 className="text-white font-bold text-xs md:text-2xl mb-1">Connectivity</h4>
                   <div className="w-8 h-0.5 bg-cyan-400 mb-2" />
