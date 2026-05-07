@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import ContactFormModal from "../../components/ContactFormModal";
 
 const PRIMARY_BLUE = "#0066FF";
@@ -140,42 +141,13 @@ export default function ProductDetailPremiumHRMSStaging({
       {/* --- Dynamic Shifting Background (Soft & Light) --- */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         {/* Very subtle ambient gradient */}
-        <div className={`absolute inset-0 opacity-10 transition-colors duration-1000 bg-gradient-to-br ${TAB_THEMES[activeTab].gradient} blur-[120px] scale-125`} />
+        <div className={`absolute inset-0 opacity-10 transition-colors duration-500 bg-gradient-to-br ${TAB_THEMES[activeTab].gradient} blur-[120px] scale-125`} />
         
-        {/* Animated decorative blobs - Using complementary colors for variety */}
-        <motion.div 
-          animate={{ 
-            x: [0, 50, 0],
-            y: [0, -30, 0],
-          }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className={`absolute top-[-5%] left-[-5%] w-[40%] h-[40%] rounded-full opacity-[0.08] blur-[100px] ${TAB_THEMES[activeTab].bg}`} 
-        />
-        <motion.div 
-          animate={{ 
-            x: [0, -40, 0],
-            y: [0, 60, 0],
-          }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[20%] right-[-5%] w-[35%] h-[35%] rounded-full opacity-[0.06] bg-violet-500 blur-[100px]" 
-        />
-        <motion.div 
-          animate={{ 
-            x: [0, -30, 0],
-            y: [0, -50, 0],
-          }}
-          transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-[10%] left-[10%] w-[30%] h-[30%] rounded-full opacity-[0.05] bg-blue-400 blur-[90px]" 
-        />
-        <motion.div 
-          animate={{ 
-            x: [0, -100, 0],
-            y: [0, 100, 0],
-            scale: [1, 1.3, 1]
-          }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full opacity-10 bg-indigo-500 blur-[120px]" 
-        />
+        {/* Simplified Static Blobs for Performance */}
+        <div className={`absolute top-[-5%] left-[-5%] w-[40%] h-[40%] rounded-full opacity-[0.08] blur-[100px] ${TAB_THEMES[activeTab].bg}`} />
+        <div className="absolute top-[20%] right-[-5%] w-[35%] h-[35%] rounded-full opacity-[0.06] bg-violet-500 blur-[100px]" />
+        <div className="absolute bottom-[10%] left-[10%] w-[30%] h-[30%] rounded-full opacity-[0.05] bg-blue-400 blur-[90px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full opacity-10 bg-indigo-500 blur-[120px]" />
 
         {/* Global patterns */}
         <div className="absolute inset-0 bg-dots opacity-[0.1]" />
@@ -218,13 +190,13 @@ export default function ProductDetailPremiumHRMSStaging({
       <section className="relative pt-12 lg:pt-32 pb-20 lg:pb-32 overflow-hidden z-10">
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <AnimatePresence mode="wait">
+          <AnimatePresence>
             <motion.div
               key={activeTab}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.2 }}
               className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center"
             >
               <div className="max-w-2xl">
@@ -300,11 +272,14 @@ export default function ProductDetailPremiumHRMSStaging({
                 className="relative"
               >
                 <div className="relative z-10 p-2 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-2xl border border-white backdrop-blur-sm cursor-pointer group" onClick={() => setSelectedImage(activeContent.image)}>
-                  <div className="rounded-xl overflow-hidden border border-gray-100 shadow-inner">
-                    <img
+                  <div className="rounded-xl overflow-hidden border border-gray-100 shadow-inner relative" style={{ aspectRatio: '1.4 / 1' }}>
+                    <Image
                       src={activeContent.image}
                       alt={activeContent.title}
-                      className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
+                      fill
+                      priority
+                      unoptimized
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -405,12 +380,12 @@ export default function ProductDetailPremiumHRMSStaging({
       {/* 5. Feature Spotlight Glassmorphism */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <AnimatePresence mode="wait">
+          <AnimatePresence>
             <motion.div
               key={activeTab}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.3 }}
               className="relative rounded-[64px] bg-gradient-to-br from-gray-50 to-white p-8 lg:p-20 border border-gray-100 shadow-inner overflow-hidden"
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -431,11 +406,15 @@ export default function ProductDetailPremiumHRMSStaging({
 
                 <div className="relative cursor-pointer group" onClick={() => setSelectedImage(activeContent.image)}>
                   <div className="absolute -inset-4 bg-blue-600/5 blur-3xl rounded-full"></div>
-                  <img
-                    src={activeContent.image}
-                    alt={activeContent.title}
-                    className="relative z-10 rounded-2xl shadow-2xl border border-white group-hover:shadow-blue-500/20 group-hover:-translate-y-1 transition-all duration-300"
-                  />
+                  <div className="relative z-10 rounded-2xl shadow-2xl border border-white overflow-hidden relative" style={{ aspectRatio: '1.4 / 1' }}>
+                    <Image
+                      src={activeContent.image}
+                      alt={activeContent.title}
+                      fill
+                      unoptimized
+                      className="object-cover group-hover:shadow-blue-500/20 group-hover:-translate-y-1 transition-all duration-300"
+                    />
+                  </div>
                   <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="bg-white/90 backdrop-blur-sm text-blue-600 p-3 rounded-full shadow-lg">
                       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
@@ -552,11 +531,14 @@ export default function ProductDetailPremiumHRMSStaging({
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
               </button>
-              <img
-                src={selectedImage}
-                alt="Enlarged view"
-                className="w-full h-full object-contain rounded-xl shadow-2xl border border-white/10"
-              />
+              <div className="relative w-full h-full max-w-[80vw] max-h-[80vh]">
+                <Image
+                  src={selectedImage}
+                  alt="Enlarged view"
+                  fill
+                  className="object-contain rounded-xl shadow-2xl border border-white/10"
+                />
+              </div>
             </motion.div>
           </motion.div>
         )}
