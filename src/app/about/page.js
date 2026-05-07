@@ -44,28 +44,28 @@ export default function AboutPage() {
           <div className="relative section-animate" style={{ animationDelay: '0.2s' }}>
             <div className="flex justify-center items-center -space-x-2 md:space-x-5 overflow-visible !pt-0 py-5 md:py-16 ">
               {/* Card 1 - Connectivity */}
-              <div className="relative w-12 h-32 sm:w-32 sm:h-44 md:w-[12vw] md:h-[18vw] xl:w-[240px] xl:h-[320px] rounded-[1rem] md:rounded-[2rem] overflow-hidden shadow-xl transform -translate-y-4 md:-translate-y-8 hover:-translate-y-10 transition-transform duration-500 ring-1 ring-[#10b981]/5 group">
+              <div className="relative w-16 h-48 sm:w-40 sm:h-56 md:w-[16vw] md:h-[24vw] xl:w-[320px] xl:h-[420px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-xl transform hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5 group">
                 <Image src="/partners/expertise/clouds.png" alt="Connectivity" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-2 md:p-6 text-left opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <h4 className="text-white font-bold text-[10px] md:text-lg mb-1">Connectivity</h4>
+                  <h4 className="text-white font-bold text-xs md:text-2xl mb-1">Connectivity</h4>
                   <div className="w-8 h-0.5 bg-cyan-400 mb-2" />
-                  <p className="text-white/70 text-[6px] md:text-[10px] leading-tight line-clamp-3">We build systems that communicate effortlessly through APIs and cloud services.</p>
+                  <p className="text-white/70 text-[8px] md:text-xs leading-tight line-clamp-3">We build systems that communicate effortlessly through APIs and cloud services.</p>
                 </div>
               </div>
 
               {/* Card 2 - Flow */}
-              <div className="relative w-16 h-48 sm:w-40 sm:h-56 md:w-[16vw] md:h-[24vw] xl:w-[320px] xl:h-[420px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl z-10 transform -translate-y-1 md:-translate-y-2 hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5 group">
-                <Image src="/partners/expertise/waterfall.png" alt="Seamless Flow" fill className="object-cover" />
+              <div className="relative w-20 h-56 sm:w-48 sm:h-72 md:w-[19vw] md:h-[28vw] xl:w-[380px] xl:h-[500px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl z-10 transform hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5 group">
+                <Image src="/partners/expertise/waterfall_v2.png" alt="Seamless Flow" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-3 md:p-8 text-left opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <h4 className="text-white font-bold text-xs md:text-2xl mb-1">Seamless Flow</h4>
+                  <h4 className="text-white font-bold text-sm md:text-3xl mb-1">Seamless Flow</h4>
                   <div className="w-10 h-0.5 bg-blue-500 mb-2" />
-                  <p className="text-white/70 text-[8px] md:text-xs leading-tight line-clamp-3">We design intuitive user experiences that create smooth digital journeys.</p>
+                  <p className="text-white/70 text-xs md:text-sm leading-tight line-clamp-3">We design intuitive user experiences that create smooth digital journeys.</p>
                 </div>
               </div>
 
               {/* Card 3 - Foundations (Main Center) */}
-              <div className="relative w-24 h-64 sm:w-56 sm:h-80 md:w-[22vw] md:h-[32vw] xl:w-[450px] xl:h-[580px] rounded-[2rem] md:rounded-[3.5rem] overflow-hidden shadow-2xl z-20 transform translate-y-4 md:translate-y-6 hover:translate-y-4 transition-transform duration-500 ring-2 md:ring-4 ring-white group">
-                <Image src="/partners/expertise/mountain.png" alt="Strong Foundations" fill className="object-cover" />
+              <div className="relative w-24 h-64 sm:w-56 sm:h-80 md:w-[22vw] md:h-[32vw] xl:w-[450px] xl:h-[580px] rounded-[2rem] md:rounded-[3.5rem] overflow-hidden shadow-2xl z-20 transform hover:-translate-y-2 transition-transform duration-500 ring-2 md:ring-4 ring-white group">
+                <Image src="/partners/expertise/mountain_v2.png" alt="Strong Foundations" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent flex flex-col justify-end p-4 md:p-12 text-left">
                   <h3 className="text-white font-bold text-sm md:text-4xl leading-tight mb-2">Strong <br /> Foundations</h3>
                   <div className="w-16 h-1 bg-green-500 mb-4" />
@@ -74,22 +74,22 @@ export default function AboutPage() {
               </div>
 
               {/* Card 4 - Scalability */}
-              <div className="relative w-16 h-48 sm:w-40 sm:h-56 md:w-[16vw] md:h-[24vw] xl:w-[320px] xl:h-[420px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl z-10 transform -translate-y-1 md:-translate-y-2 hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5 group">
+              <div className="relative w-20 h-56 sm:w-48 sm:h-72 md:w-[19vw] md:h-[28vw] xl:w-[380px] xl:h-[500px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl z-10 transform hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5 group">
                 <Image src="/partners/expertise/galaxy.png" alt="Scalability" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-3 md:p-8 text-left opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <h4 className="text-white font-bold text-xs md:text-2xl mb-1">Scalability</h4>
+                  <h4 className="text-white font-bold text-sm md:text-3xl mb-1">Scalability</h4>
                   <div className="w-10 h-0.5 bg-purple-500 mb-2" />
-                  <p className="text-white/70 text-[8px] md:text-xs leading-tight line-clamp-3">Future-ready solutions that scale with your business and unlock possibilities.</p>
+                  <p className="text-white/70 text-xs md:text-sm leading-tight line-clamp-3">Future-ready solutions that scale with your business and unlock possibilities.</p>
                 </div>
               </div>
 
               {/* Card 5 - Innovation */}
-              <div className="relative w-12 h-32 sm:w-32 sm:h-44 md:w-[12vw] md:h-[18vw] xl:w-[240px] xl:h-[320px] rounded-[1rem] md:rounded-[2rem] overflow-hidden shadow-xl transform -translate-y-4 md:-translate-y-8 hover:-translate-y-10 transition-transform duration-500 ring-1 ring-[#10b981]/5 group">
+              <div className="relative w-16 h-48 sm:w-40 sm:h-56 md:w-[16vw] md:h-[24vw] xl:w-[320px] xl:h-[420px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-xl transform hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5 group">
                 <Image src="/partners/expertise/volcano.png" alt="Innovation" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-2 md:p-6 text-left opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <h4 className="text-white font-bold text-[10px] md:text-lg mb-1">Performance</h4>
+                  <h4 className="text-white font-bold text-xs md:text-2xl mb-1">Performance</h4>
                   <div className="w-8 h-0.5 bg-orange-500 mb-2" />
-                  <p className="text-white/70 text-[6px] md:text-[10px] leading-tight line-clamp-3">High-speed, optimized solutions that drive results and innovation.</p>
+                  <p className="text-white/70 text-[8px] md:text-xs leading-tight line-clamp-3">High-speed, optimized solutions that drive results and innovation.</p>
                 </div>
               </div>
             </div>
