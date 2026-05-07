@@ -173,7 +173,7 @@ export default function TestimonialPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-[#1a1f24] max-w-5xl mx-auto tracking-tight leading-[1.1] mb-8"
+            className="text-[clamp(2.5rem,6vw,4.5rem)] font-display font-bold text-[#1a1f24] max-w-5xl mx-auto tracking-tight leading-[1.1] mb-8"
           >
             Real Stories, <br />
             <span className="italic text-[#10b981] font-bold">Proven Results.</span>

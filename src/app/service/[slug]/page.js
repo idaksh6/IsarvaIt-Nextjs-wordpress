@@ -100,7 +100,7 @@ export default async function ServiceDetailPage({ params }) {
                 <span className="text-2xl">{service.icon}</span>
                 <span>Premium Service</span>
               </div>
-              <h1 className="text-5xl lg:text-7xl font-extrabold text-gray-900 mb-6 tracking-tight leading-tight">
+              <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-gray-900 mb-6 tracking-tight leading-tight">
                 {service.title}
               </h1>
               <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed mb-10">

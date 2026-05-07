@@ -11,6 +11,7 @@ import {
   Briefcase
 } from "lucide-react";
 import { generateMetadata as generateSEOMetadata } from "../lib/utils/seo";
+import AboutHeroSlider from "./AboutHeroSlider";
 
 export const metadata = generateSEOMetadata({
   title: "About Us - Leading IT Solutions Provider",
@@ -32,68 +33,16 @@ export default function AboutPage() {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <div className="inline-flex flex-col items-center mb-5 md:mb-10 section-animate">
-            <span className="text-[#10b981] font-bold tracking-wider uppercase text-sm mb-4">Isarva Infotech</span>
-            <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-bold text-[#1a1f24] max-w-5xl tracking-tight leading-[1.1] mb-8">
+            <span className="text-[#10b981] font-black tracking-[0.2em] uppercase text-[clamp(0.7rem,1.5vw,0.85rem)] mb-4">Isarva Infotech</span>
+            <h1 className="text-[clamp(2.2rem,6vw,4.5rem)] font-display font-bold text-[#1a1f24] max-w-5xl tracking-tight leading-[1] mb-8">
               Precision in <span className="italic text-[#10b981] font-bold">Technology.</span> <br /> Purpose in <span className="italic text-[#10b981] font-bold">Impact.</span>
             </h1>
-            <p className="mt-4 text-lg md:text-2xl text-[#53606b] max-w-3xl mx-auto leading-relaxed">
+            <p className="mt-4 text-[clamp(1rem,2vw,1.25rem)] text-[#53606b] max-w-3xl mx-auto leading-relaxed font-medium">
               At Isarva Infotech, we are more than an IT consulting firm — we are a strategic technology partner and a catalyst for progress in an ever-evolving digital world.
             </p>
           </div>
 
-          <div className="relative section-animate" style={{ animationDelay: '0.2s' }}>
-            <div className="flex justify-center items-center -space-x-2 md:space-x-5 overflow-visible !pt-0 py-5 md:py-16 ">
-              {/* Card 1 - Connectivity */}
-              <div className="relative w-16 h-48 sm:w-40 sm:h-56 md:w-[16vw] md:h-[24vw] xl:w-[320px] xl:h-[420px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-xl transform hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5 group">
-                <Image src="/premium-sky.png" alt="Connectivity" fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-2 md:p-6 text-left transition-opacity duration-500">
-                  <h4 className="text-white font-bold text-xs md:text-2xl mb-1">Connectivity</h4>
-                  <div className="w-8 h-0.5 bg-cyan-400 mb-2" />
-                  <p className="text-white/70 text-[8px] md:text-xs leading-tight line-clamp-3">We build systems that communicate effortlessly through APIs and cloud services.</p>
-                </div>
-              </div>
-
-              {/* Card 2 - Flow */}
-              <div className="relative w-20 h-56 sm:w-48 sm:h-72 md:w-[19vw] md:h-[28vw] xl:w-[380px] xl:h-[500px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl z-10 transform hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5 group">
-                <Image src="/partners/expertise/waterfall_v2.png" alt="Seamless Flow" fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-3 md:p-8 text-left transition-opacity duration-500">
-                  <h4 className="text-white font-bold text-sm md:text-3xl mb-1">Seamless Flow</h4>
-                  <div className="w-10 h-0.5 bg-blue-500 mb-2" />
-                  <p className="text-white/70 text-xs md:text-sm leading-tight line-clamp-3">We design intuitive user experiences that create smooth digital journeys.</p>
-                </div>
-              </div>
-
-              {/* Card 3 - Foundations (Main Center) */}
-              <div className="relative w-24 h-64 sm:w-56 sm:h-80 md:w-[22vw] md:h-[32vw] xl:w-[450px] xl:h-[580px] rounded-[2rem] md:rounded-[3.5rem] overflow-hidden shadow-2xl z-20 transform hover:-translate-y-2 transition-transform duration-500 ring-2 md:ring-4 ring-white group">
-                <Image src="/partners/expertise/mountain_v2.png" alt="Strong Foundations" fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent flex flex-col justify-end p-4 md:p-12 text-left">
-                  <h3 className="text-white font-bold text-sm md:text-4xl leading-tight mb-2">Strong <br /> Foundations</h3>
-                  <div className="w-16 h-1 bg-green-500 mb-4" />
-                  <p className="text-white/80 text-[8px] md:text-sm leading-relaxed">Secure, scalable backend systems and infrastructure ensuring long-term reliability.</p>
-                </div>
-              </div>
-
-              {/* Card 4 - Scalability */}
-              <div className="relative w-20 h-56 sm:w-48 sm:h-72 md:w-[19vw] md:h-[28vw] xl:w-[380px] xl:h-[500px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl z-10 transform hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5 group">
-                <Image src="/partners/expertise/galaxy.png" alt="Scalability" fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-3 md:p-8 text-left transition-opacity duration-500">
-                  <h4 className="text-white font-bold text-sm md:text-3xl mb-1">Scalability</h4>
-                  <div className="w-10 h-0.5 bg-purple-500 mb-2" />
-                  <p className="text-white/70 text-xs md:text-sm leading-tight line-clamp-3">Future-ready solutions that scale with your business and unlock possibilities.</p>
-                </div>
-              </div>
-
-              {/* Card 5 - Innovation */}
-              <div className="relative w-16 h-48 sm:w-40 sm:h-56 md:w-[16vw] md:h-[24vw] xl:w-[320px] xl:h-[420px] rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-xl transform hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5 group">
-                <Image src="/partners/expertise/volcano.png" alt="Innovation" fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-2 md:p-6 text-left transition-opacity duration-500">
-                  <h4 className="text-white font-bold text-xs md:text-2xl mb-1">Performance</h4>
-                  <div className="w-8 h-0.5 bg-orange-500 mb-2" />
-                  <p className="text-white/70 text-[8px] md:text-xs leading-tight line-clamp-3">High-speed, optimized solutions that drive results and innovation.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <AboutHeroSlider />
         </div>
       </section>
 
@@ -102,7 +51,7 @@ export default function AboutPage() {
         <div className="flex flex-col lg:flex-row">
 
           {/* Left Column: Dark Green Stats Bar */}
-          <div className="w-full lg:w-[350px] bg-[#16423C] text-white p-12 md:p-16 flex flex-col justify-center items-center lg:items-start space-y-16 section-animate">
+          <div className="w-full lg:w-[350px] bg-[#16423C] text-white p-8 md:p-16 flex flex-col justify-center items-center lg:items-start space-y-10 md:space-y-16 section-animate">
             <div className="flex flex-col items-center lg:items-start">
               <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-6">
                 <TrendingUp className="w-6 h-6 text-[#10b981]" />
@@ -130,17 +79,16 @@ export default function AboutPage() {
 
           {/* Right Column: Cream Content Area with Full-Width Image */}
           <div className="flex-1 bg-[#FDF8F2] p-6 md:p-16 lg:p-20 section-animate" style={{ animationDelay: '0.2s' }}>
-            <h2 className="text-3xl md:text-5xl lg:text-6xl lg:text-left text-center font-display font-bold text-[#16423C] mb-12 leading-tight max-w-4xl">
+            <h2 className="text-[clamp(1.8rem,4vw,3.5rem)] lg:text-left text-center font-display font-bold text-[#16423C] mb-12 leading-[1.1] max-w-4xl tracking-tight">
               Standing at the forefront of digital transformation.
             </h2>
 
             {/* Full Width Image Content */}
-            <div className="relative w-full h-[300px] md:h-[450px] rounded-[3rem] overflow-hidden mb-16 shadow-2xl ring-4 ring-white/50">
+            <div className="relative w-full h-[220px] sm:h-[300px] md:h-[450px] rounded-[2rem] md:rounded-[3rem] overflow-hidden mb-12 md:mb-16 shadow-2xl ring-4 ring-white/50">
               <Image src="/enterprise-custom.png" alt="Digital Excellence" fill className="object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#16423C]/90 via-transparent to-transparent flex items-end p-6">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#16423C]/90 via-transparent to-transparent flex items-end p-6 md:p-12">
                 <div className="flex flex-col">
-                  <span className="text-white/60 text-xs font-bold uppercase tracking-[0.3em] mb-2">Isarva Innovation Hub</span>
-                  <h3 className="text-white text-3xl font-display font-bold">Crafting the Future of Enterprise Solutions.</h3>
+                  <h3 className="text-white text-[clamp(1.2rem,3vw,2.5rem)] font-display font-bold leading-tight">Crafting the Future of Enterprise Solutions.</h3>
                 </div>
               </div>
             </div>
@@ -200,9 +148,9 @@ export default function AboutPage() {
                 <TrendingUp className="w-48 h-48 md:w-64 md:h-64" />
               </div>
               <div className="relative z-10">
-                <span className="text-[#10b981] font-bold tracking-widest uppercase text-[10px] md:text-xs mb-6 block">Future Outlook</span>
-                <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 md:mb-8 leading-tight">Our Vision</h2>
-                <p className="text-lg md:text-xl text-[#FDF8F2]/80 leading-relaxed font-light">
+                <span className="text-[#10b981] font-black tracking-[0.2em] uppercase text-[clamp(0.6rem,1.2w,0.8rem)] mb-6 block">Future Outlook</span>
+                <h2 className="text-[clamp(1.8rem,4vw,3.2rem)] font-display font-bold mb-6 md:mb-8 leading-[1.1] tracking-tight">Our Vision</h2>
+                <p className="text-[clamp(1rem,1.8vw,1.3rem)] text-[#FDF8F2]/80 leading-relaxed font-light">
                   To empower global enterprises through transformative technology — driving progress, enriching experiences, and enabling smarter, sustainable growth.
                 </p>
               </div>
@@ -213,9 +161,9 @@ export default function AboutPage() {
                 <Cpu className="w-48 h-48 md:w-64 md:h-64" />
               </div>
               <div className="relative z-10">
-                <span className="text-[#1a1f24] font-bold tracking-widest uppercase text-[10px] md:text-xs mb-6 block">Day-to-day Execution</span>
-                <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 md:mb-8 leading-tight">Our Mission</h2>
-                <p className="text-lg md:text-xl text-white/90 leading-relaxed font-light">
+                <span className="text-[#1a1f24] font-black tracking-[0.2em] uppercase text-[clamp(0.6rem,1.2vw,0.8rem)] mb-6 block">Day-to-day Execution</span>
+                <h2 className="text-[clamp(1.8rem,4vw,3.2rem)] font-display font-bold mb-6 md:mb-8 leading-[1.1] tracking-tight">Our Mission</h2>
+                <p className="text-[clamp(1rem,1.8vw,1.3rem)] text-white/90 leading-relaxed font-light">
                   We deliver scalable, innovative tech solutions that help enterprises and startups achieve growth, efficiency, and impact—driven by expertise and a commitment to client success.
                 </p>
               </div>
@@ -229,7 +177,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-20 items-center">
             <div className="w-full lg:w-1/2 section-animate lg:text-left text-center">
-              <h2 className="text-4xl lg:text-6xl font-display font-bold text-[#1a1f24] mb-8 leading-[1.1] ">
+              <h2 className="text-[clamp(2rem,5vw,4rem)] font-display font-bold text-[#1a1f24] mb-8 leading-[1.1] tracking-tight">
                 Technology should create opportunity — <span className="italic font-normal text-[#10b981]">not just efficiency.</span>
               </h2>
               <div className="space-y-6 text-[#53606b] text-lg leading-relaxed mb-10">
@@ -307,8 +255,8 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="bg-white rounded-[4rem] p-12 md:p-20 shadow-2xl border border-[#10b981]/5 flex flex-col lg:flex-row items-center justify-between gap-12">
             <div className="lg:w-3/5 text-center lg:text-left">
-              <span className="text-[#10b981] font-black tracking-[0.3em] uppercase text-xs mb-4 inline-block">Join our mission</span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-[#1a1f24] mb-8 leading-tight">
+              <span className="text-[#10b981] font-black tracking-[0.2em] uppercase text-[clamp(0.65rem,1.3vw,0.85rem)] mb-4 inline-block">Join our mission</span>
+              <h2 className="text-[clamp(1.8rem,4vw,3.5rem)] font-display font-bold text-[#1a1f24] mb-8 leading-[1.1] tracking-tight">
                 Shape the future <br />
                 <span className="text-[#10b981]">at Isarva Infotech.</span>
               </h2>
@@ -355,10 +303,10 @@ export default function AboutPage() {
         </div>
 
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10 section-animate">
-          <h2 className="text-5xl md:text-7xl font-display font-bold mb-8">
+          <h2 className="text-[clamp(2.2rem,6vw,4.5rem)] font-display font-bold mb-8 leading-[1] tracking-tight">
             Ready to shape the digital future?
           </h2>
-          <p className="text-xl md:text-2xl text-[#FDF8F2]/70 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-[clamp(1rem,2vw,1.3rem)] text-[#FDF8F2]/70 mb-12 max-w-2xl mx-auto leading-relaxed">
             We simplify complexity through innovation—crafting custom platforms, accelerating cloud adoption, and advancing intelligent automation aligned with your strategic goals.
           </p>
           <div className="flex justify-center items-center">

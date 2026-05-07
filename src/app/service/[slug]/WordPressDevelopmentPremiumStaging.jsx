@@ -216,10 +216,10 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 </div>
 
                 <div className="relative">
-                  <h1 className="text-5xl sm:text-6xl lg:text-[88px] font-black text-gray-900 mb-6 leading-[0.95] tracking-tight">
+                  <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-black text-gray-900 mb-6 leading-[0.95] tracking-tight">
                     <span className="shimmer-title inline-block py-2">WordPress</span> <br />
                     Built for <br />
-                    <span className="text-4xl lg:text-5xl bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent font-bold">Performance & Growth</span>
+                    <span className="text-[clamp(1.5rem,4vw,3.5rem)] bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent font-bold">Performance & Growth</span>
                   </h1>
                 </div>
 
@@ -289,7 +289,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                     <div className="absolute inset-0 bg-gradient-to-tr from-blue-900/10 to-transparent" />
                   </div>
 
-                  <div className="absolute bottom-2 left-4 lg:-bottom-6 lg:-left-6 w-[55%] lg:w-[350px] h-[50%] lg:h-[280px] image-card wp-float2 z-20 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] border-2 sm:border-4 border-white transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+                  <div className="absolute bottom-2 left-4 lg:-bottom-6 lg:-left-6 w-[55%] lg:w-[250px] h-[50%] lg:h-[280px] image-card wp-float2 z-20 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] border-2 sm:border-4 border-white transform -rotate-3 hover:rotate-0 transition-transform duration-500">
                     <img src="/wp_hero_floating_new.png" alt="Code Quality" className="w-full h-full object-cover" />
                   </div>
 

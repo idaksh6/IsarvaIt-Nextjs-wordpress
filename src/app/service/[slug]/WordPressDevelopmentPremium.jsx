@@ -110,7 +110,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
                   Premium WordPress Agency
                 </div>
 
-                <h1 className="text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 mb-6 leading-tight tracking-tight">
+                <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-black text-gray-900 mb-6 leading-tight tracking-tight">
                   Creating{" "}
                   <span className="wp-blue-text-gradient">Beautiful</span> &
                   Powerful WP Sites

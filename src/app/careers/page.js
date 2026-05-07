@@ -145,7 +145,7 @@ export default function CareerPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-[#1a1f24] tracking-tight leading-[1.1] mb-8"
+                className="text-[clamp(2.5rem,6vw,4.5rem)] font-display font-bold text-[#1a1f24] tracking-tight leading-[1.1] mb-8"
               >
                 Shape the Future at <br />
                 <span className="italic text-[#10b981] font-bold">Isarva Infotech</span>

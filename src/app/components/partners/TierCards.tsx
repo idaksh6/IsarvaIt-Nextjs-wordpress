@@ -50,14 +50,14 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
           <p className="text-gray-500 text-lg md:text-xl font-body">Choose the growth level that matches your ambition.</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 mx-auto items-stretch mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch mb-20">
           {/* Gold Tier */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative group flex flex-col"
+            className="relative group flex flex-col h-full"
           >
             {/* Most Recommended Badge */}
             <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-30 bg-gradient-to-r from-orange-600 to-amber-500 px-6 sm:px-10 py-3 rounded-full text-[9px] sm:text-[11px] font-black text-white tracking-[0.2em] sm:tracking-[0.3em] shadow-[0_20px_40px_rgba(234,88,12,0.5)] uppercase border-2 border-white/40 font-display flex items-center gap-2 sm:gap-3 whitespace-nowrap">
@@ -66,7 +66,7 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
               <Sparkles className="w-4 h-4 text-white animate-pulse" />
             </div>
 
-            <div className="relative bg-white rounded-[40px] border-2 border-amber-200 shadow-[0_40px_80px_-15px_rgba(217,119,6,0.2)] overflow-hidden flex flex-col flex-1">
+            <div className="relative bg-white rounded-[40px] border-2 border-amber-200 shadow-[0_40px_80px_-15px_rgba(217,119,6,0.2)] overflow-hidden flex flex-col flex-1 h-full">
               {/* Header Bar */}
               <div className="bg-gradient-to-br from-amber-400 via-yellow-300 to-orange-600 py-10 md:py-12 text-center relative flex flex-col items-center justify-center gap-3 overflow-hidden">
                 <div className="absolute inset-0 opacity-25 pointer-events-none mix-blend-overlay">
@@ -86,27 +86,27 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
                 <Image src="/partners/gold-tier.png" alt="Gold Tier" fill className="object-contain" />
               </div>
 
-              <div className="p-6 sm:p-8 lg:p-12 relative z-10 flex flex-col flex-1">
+              <div className="p-5 sm:p-6 lg:p-8 relative z-10 flex flex-col flex-1 h-full">
                 <p className="text-[#EAB308] font-bold mb-8 uppercase tracking-widest text-xs">For high-volume strategic partners</p>
 
                 <div className="flex flex-col mb-10">
-                  <span className="text-[10px] font-black text-amber-500 uppercase tracking-[0.3em] mb-1">Max Earning Rate</span>
-                  <div className="flex flex-wrap items-baseline gap-x-2">
-                    <span className="text-6xl min-[375px]:text-7xl sm:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-orange-600 drop-shadow-[0_4px_12px_rgba(234,88,12,0.15)] leading-none">30%</span>
-                    <span className="text-base sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-orange-600 leading-none uppercase tracking-wider">Commission</span>
+                  <span className="text-[10px] font-black text-amber-500 uppercase tracking-[0.3em] mb-2">Max Earning Rate</span>
+                  <div className="flex flex-col">
+                    <span className="font-display text-7xl sm:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-orange-600 leading-none tracking-tight">30%</span>
+                    <span className="text-lg sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-orange-600 leading-none uppercase tracking-wider mt-2">Commission</span>
                   </div>
                 </div>
 
                 <div className="space-y-2 mb-12 flex-1 relative px-2 py-4 rounded-3xl bg-amber-50/50 backdrop-blur-[2px] border border-amber-100/50">
                   {features.map((f, i) => (
-                    <div key={i} className="flex items-center justify-between py-3 px-4 rounded-xl hover:bg-white/80 transition-all duration-300 border-b border-amber-100/30 last:border-0 group/row">
-                      <span className="text-gray-900 font-bold text-sm sm:text-base group-hover/row:translate-x-1 transition-transform">
+                    <div key={i} className="flex items-center justify-between gap-4 py-2 px-4 rounded-xl hover:bg-white/80 transition-all duration-300 border-b border-amber-100/30 last:border-0 group/row">
+                      <span className="text-gray-900 font-bold text-sm sm:text-[15px] group-hover/row:translate-x-1 transition-transform">
                         {f.label}
                         {(f as any).hasAsterisk && <span className="text-red-600 ml-1 font-black">*</span>}
                       </span>
                       <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-amber-50/50 border border-amber-200/50 shadow-sm transition-transform group-hover/row:scale-110">
                         {typeof f.gold === "boolean" ? (
-                          f.gold ? <Check className="w-5 h-5 text-[#EAB308] stroke-[4]" /> : <X className="w-5 h-5 text-red-500 stroke-[4]" />
+                          f.gold ? <Check className="w-5 h-5 text-[#EAB308] stroke-[4]" /> : <X className="w-5 h-5 text-slate-300 stroke-[4]" />
                         ) : (
                           <span className="text-[#EAB308] font-black text-[10px] whitespace-nowrap">{f.gold}</span>
                         )}
@@ -117,9 +117,9 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
 
                 <button
                   onClick={() => onApply("Gold Tier Inquiry")}
-                  className="press-illusion-btn-gold w-full py-4 md:py-5 text-base md:text-lg z-20"
+                  className="press-illusion-btn-gold w-full py-4 md:py-5 text-base md:text-lg font-bold uppercase tracking-widest mt-auto z-20"
                 >
-                  Level Up to Gold
+                  Join Now
                 </button>
               </div>
             </div>
@@ -127,11 +127,11 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
 
           {/* Silver Tier */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative group bg-white rounded-[40px] border border-slate-200 shadow-2xl overflow-hidden flex flex-col"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative group bg-white rounded-[40px] border border-slate-200 shadow-2xl overflow-hidden flex flex-col h-full"
           >
             {/* Header Bar */}
             <div className="bg-gradient-to-br from-slate-400 via-slate-200 to-slate-500 py-10 md:py-12 text-center flex flex-col items-center justify-center gap-3 relative overflow-hidden">
@@ -152,27 +152,27 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
               <Image src="/partners/silver-tier.png" alt="Silver Tier" fill className="object-contain" />
             </div>
 
-            <div className="p-6 md:p-8 lg:p-12 relative z-10 flex flex-col flex-1">
+            <div className="p-5 sm:p-6 lg:p-8 relative z-10 flex flex-col flex-1 h-full">
               <p className="text-slate-500 font-black mb-8 font-body uppercase tracking-widest text-xs">Foundation for growing agencies</p>
 
-              <div className="flex flex-col mb-10 font-display">
-                <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-1">Earning Rate</span>
-                <div className="flex flex-wrap items-baseline gap-x-2">
-                  <span className="text-6xl min-[375px]:text-7xl sm:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-400 via-slate-500 to-slate-600 drop-shadow-sm leading-none">20%</span>
-                  <span className="text-base sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-400 via-slate-500 to-slate-600 leading-none uppercase tracking-wider">Commission</span>
+              <div className="flex flex-col mb-10">
+                <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-2">Earning Rate</span>
+                <div className="flex flex-col">
+                  <span className="font-display text-6xl sm:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-400 via-slate-500 to-slate-600 leading-none tracking-tight">20%</span>
+                  <span className="text-base sm:text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-400 via-slate-500 to-slate-600 leading-none uppercase tracking-wider mt-2">Commission</span>
                 </div>
               </div>
 
               <div className="space-y-2 mb-12 flex-1 relative px-2 py-4 rounded-3xl bg-slate-50/50 backdrop-blur-[2px] border border-slate-100/50">
                 {features.map((f, i) => (
-                  <div key={i} className="flex items-center justify-between py-3 px-4 rounded-xl hover:bg-white/80 transition-all duration-300 border-b border-slate-100/30 last:border-0 group/row">
-                    <span className="text-slate-900 font-bold text-sm sm:text-base group-hover/row:translate-x-1 transition-transform">
+                  <div key={i} className="flex items-center justify-between gap-4 py-2 px-4 rounded-xl hover:bg-white/80 transition-all duration-300 border-b border-slate-100/30 last:border-0 group/row">
+                    <span className="text-slate-900 font-bold text-sm sm:text-[15px] group-hover/row:translate-x-1 transition-transform">
                       {f.label}
                       {(f as any).hasAsterisk && <span className="text-red-600 ml-1 font-black">*</span>}
                     </span>
                     <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-slate-50/50 border border-slate-200/50 shadow-sm transition-transform group-hover/row:scale-110">
                       {typeof f.silver === "boolean" ? (
-                        f.silver ? <Check className="w-5 h-5 text-slate-600 stroke-[4]" /> : <X className="w-5 h-5 text-red-500 stroke-[4]" />
+                        f.silver ? <Check className="w-5 h-5 text-slate-600 stroke-[4]" /> : <X className="w-5 h-5 text-slate-300 stroke-[4]" />
                       ) : (
                         <span className="text-slate-900 font-black text-[10px] whitespace-nowrap">{f.silver}</span>
                       )}
@@ -183,98 +183,65 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
 
               <button
                 onClick={() => onApply("Silver Tier Inquiry")}
-                className="press-illusion-btn-silver w-full py-4 md:py-5 text-base md:text-lg z-20"
+                className="press-illusion-btn-silver w-full py-4 md:py-5 text-base md:text-lg font-bold uppercase tracking-widest mt-auto z-20"
               >
-                Level Up to Silver
+                Join Now
+              </button>
+            </div>
+          </motion.div>
+
+          {/* Bronze Tier */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="relative group bg-white rounded-[40px] border border-orange-200 shadow-2xl overflow-hidden flex flex-col h-full"
+          >
+            {/* Header Bar */}
+            <div className="bg-gradient-to-br from-orange-800 via-orange-600 to-orange-900 py-10 md:py-12 text-center flex flex-col items-center justify-center gap-3 relative overflow-hidden">
+              <div className="absolute inset-0 opacity-40 pointer-events-none">
+                <Image src="/partners/bronze-tier.png" alt="" fill className="object-cover scale-125" />
+              </div>
+              <Key className="w-12 h-12 text-orange-100 relative z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]" />
+              <h3 className="font-display text-5xl md:text-6xl font-black text-white uppercase tracking-[0.2em] relative z-10 drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)]">Bronze</h3>
+            </div>
+
+            <div className="p-5 sm:p-6 lg:p-8 relative z-10 flex flex-col flex-1 h-full">
+              <p className="text-orange-900 font-black mb-8 uppercase tracking-widest text-xs">Commission-Based Entry</p>
+
+              <div className="flex flex-col mb-10">
+                <span className="text-[10px] font-black text-orange-600 uppercase tracking-[0.3em] mb-2">Earning Rate</span>
+                <div className="flex flex-col">
+                  <span className="font-display text-5xl sm:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-orange-700 to-orange-800 leading-none tracking-tight">10%</span>
+                  <span className="text-xs sm:text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-orange-700 to-orange-800 leading-none uppercase tracking-wider mt-2">Commission</span>
+                </div>
+              </div>
+
+              <div className="space-y-3 mb-12 flex-1 relative px-2 py-4 rounded-3xl bg-orange-50/50 backdrop-blur-[2px] border border-orange-100/50">
+                {bronzeFeatures.map((f, i) => (
+                  <div key={i} className="flex items-center justify-between gap-4 py-2 px-4 rounded-xl hover:bg-white/80 transition-all duration-300 border-b border-orange-100/30 last:border-0 group/row">
+                    <span className="text-slate-800 font-bold text-sm sm:text-[15px] group-hover/row:translate-x-1 transition-transform">{f.label}</span>
+                    <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-orange-50/50 border border-orange-200/50 shadow-sm transition-transform group-hover/row:scale-110">
+                      {f.check ? (
+                        <Check className="w-5 h-5 text-orange-600 stroke-[4]" />
+                      ) : (
+                        <X className="w-5 h-5 text-slate-300 stroke-[4]" />
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <button
+                onClick={() => onApply("Bronze Tier Inquiry")}
+                className="press-illusion-btn-orange w-full py-4 md:py-5 text-base md:text-lg font-bold uppercase tracking-widest mt-auto z-20"
+              >
+                Join Now
               </button>
             </div>
           </motion.div>
         </div>
-
-        {/* Bronze Tier - Full Width Below */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-          className="relative group"
-        >
-
-          <div className="bg-white rounded-[40px] border border-orange-200/50 shadow-2xl overflow-hidden flex flex-col md:flex-row">
-            {/* Left Side: Visual Header */}
-            <div className="w-full md:w-[350px] bg-gradient-to-br from-orange-800 via-orange-600 to-orange-900 p-10 md:p-12 text-center flex flex-col items-center justify-center gap-4 relative overflow-hidden">
-              <div className="absolute inset-0 opacity-40 pointer-events-none">
-                <Image src="/partners/bronze-tier.png" alt="" fill className="object-cover scale-125" />
-              </div>
-              <div className="relative z-10 w-20 h-20 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center mb-2 shadow-2xl">
-                <Key className="w-10 h-10 text-orange-100 drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]" />
-              </div>
-              <h3 className="font-display text-4xl md:text-5xl font-black text-white uppercase tracking-[0.2em] relative z-10 drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)]">Bronze</h3>
-              <p className="text-orange-100/80 text-[10px] font-black uppercase tracking-widest relative z-10">Commission-Based Entry</p>
-            </div>
-
-            {/* Right Side: Content */}
-            <div className="flex-1 p-8 md:p-12 relative">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div>
-                  <h4 className="text-orange-900 font-black text-xs uppercase tracking-[0.2em] mb-4">This Exclusive Program</h4>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                    Specially for past and current:
-                    <span className="block font-bold text-orange-700 mt-1">• Employees</span>
-                    <span className="block font-bold text-orange-700">• Interns</span>
-                    <span className="block font-bold text-orange-700">• Clients</span>
-                    <span className="block mt-2">to earn benefits through simple referrals.</span>
-                  </p>
-
-                  <div className="flex flex-col mt-4">
-                    <span className="text-[10px] font-black text-orange-600 uppercase tracking-[0.3em] mb-2">Earning Rate</span>
-                    <div className="flex flex-col">
-                      <span className="text-6xl sm:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-orange-700 to-orange-800 drop-shadow-sm leading-none tracking-tighter">10%</span>
-                      <span className="text-[10px] sm:text-xs font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-orange-700 to-orange-800 uppercase tracking-[0.2em] mt-1">Commission on successful deals</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  <h4 className="text-orange-900 font-black text-xs uppercase tracking-[0.2em] mb-4">Highlights</h4>
-                  {bronzeFeatures.map((f, i) => (
-                    <div key={i} className="flex items-center justify-between py-3 px-4 rounded-xl bg-orange-50/50 hover:bg-white transition-all duration-300 border border-orange-100/50 group/row">
-                      <span className="text-slate-800 font-bold text-sm sm:text-base group-hover/row:translate-x-1 transition-transform">{f.label}</span>
-                      <div className="transition-transform group-hover/row:scale-110">
-                        {f.check ? (
-                          <Check className="w-5 h-5 text-orange-600 stroke-[4]" />
-                        ) : (
-                          <X className="w-5 h-5 text-red-400 stroke-[4]" />
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mt-10 pt-8 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-6">
-                <div className="flex gap-4">
-                  <div className="flex flex-col">
-                    <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Responsibility</span>
-                    <span className="text-xs font-bold text-slate-700">Referral Only</span>
-                  </div>
-                  <div className="w-px h-8 bg-slate-200" />
-                  <div className="flex flex-col">
-                    <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Closure</span>
-                    <span className="text-xs font-bold text-slate-700">By Internal Team</span>
-                  </div>
-                </div>
-
-                <button
-                  onClick={() => onApply("Bronze Tier Inquiry")}
-                  className="press-illusion-btn-orange bg-orange-700 text-white font-black px-10 py-4 rounded-2xl shadow-xl hover:shadow-orange-200 transition-all text-sm uppercase tracking-widest"
-                >
-                  Activate Access
-                </button>
-              </div>
-            </div>
-          </div>
-        </motion.div>
 
         <div className="mt-16 text-center">
           <motion.p

@@ -155,7 +155,7 @@ export default function ProductDetailPremiumHRMSStaging({
       </div>
 
       {/* 2. Enhanced Floating Tab Bar */}
-      <div className={`sticky ${isScrolled ? "top-[80px]" : "top-[100px]"} z-[99] flex justify-center py-6 px-4 pointer-events-none transition-all duration-500`}>
+      <div className={`sticky ${isScrolled ? "top-[80px]" : "top-[100px]"} z-[40] flex justify-center py-6 px-4 pointer-events-none transition-all duration-500`}>
         <div className="inline-flex items-center bg-white/80 backdrop-blur-2xl border border-white/50 p-1.5 shadow-[0_20px_50px_rgba(0,0,0,0.08)] rounded-[2rem] transition-all pointer-events-auto">
           <div className="flex items-center space-x-1 px-1 py-1">
             {TABS.map((tab) => {

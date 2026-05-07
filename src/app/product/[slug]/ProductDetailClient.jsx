@@ -247,7 +247,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
                 <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/60 backdrop-blur-md text-gray-800 font-semibold text-sm mb-6 border border-white/60 shadow-lg">
                   <span>{product.category}</span>
                 </div>
-                <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
+                <h1 className="text-[clamp(2.5rem,6vw,4.5rem)] font-bold text-gray-900 mb-6 tracking-tight">
                   {product.title}
                 </h1>
                 <p className="text-2xl text-violet-600 font-semibold mb-6">
