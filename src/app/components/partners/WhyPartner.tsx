@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import { 
   Users, 
@@ -44,7 +44,7 @@ const props = [
   },
 ];
 
-const bgVariants1 = {
+const bgVariants1: Variants = {
   animate: {
     y: [0, -20, 0],
     x: [0, 10, 0],
@@ -52,7 +52,7 @@ const bgVariants1 = {
   }
 };
 
-const bgVariants2 = {
+const bgVariants2: Variants = {
   animate: {
     y: [0, 30, 0],
     x: [0, -20, 0],
@@ -60,12 +60,12 @@ const bgVariants2 = {
   }
 };
 
-const headingVariants = {
+const headingVariants: Variants = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   initial: { opacity: 0, y: 40 },
   whileInView: (index: number) => ({
     opacity: 1,

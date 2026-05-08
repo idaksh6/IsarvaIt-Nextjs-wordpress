@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 const faqs = [
@@ -27,12 +27,12 @@ const faqs = [
   }
 ];
 
-const headingVariants = {
+const headingVariants: Variants = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
 
-const faqItemVariants = {
+const faqItemVariants: Variants = {
   initial: { opacity: 0, y: 10 },
   whileInView: (i: number) => ({
     opacity: 1,
@@ -41,7 +41,7 @@ const faqItemVariants = {
   })
 };
 
-const accordionVariants = {
+const accordionVariants: Variants = {
   initial: { height: 0, opacity: 0 },
   animate: { height: "auto", opacity: 1, transition: { duration: 0.3, ease: "easeInOut" } },
   exit: { height: 0, opacity: 0, transition: { duration: 0.3, ease: "easeInOut" } }

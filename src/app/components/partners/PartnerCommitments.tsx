@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Shield, MessageSquare, Headset, BookOpen, UserCheck, Clock } from "lucide-react";
 
 const commitments = [
@@ -13,12 +13,12 @@ const commitments = [
   { text: "Strict Project Timelines & QC", icon: <Clock className="w-8 h-8"/> },
 ];
 
-const headingVariants = {
+const headingVariants: Variants = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   initial: { opacity: 0, y: 30 },
   whileInView: (i: number) => ({
     opacity: 1,

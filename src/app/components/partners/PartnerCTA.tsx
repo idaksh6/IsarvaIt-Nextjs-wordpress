@@ -2,15 +2,15 @@
 
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Mail, Phone, ArrowRight } from "lucide-react";
 
-const containerVariants = {
+const containerVariants: Variants = {
   initial: { opacity: 0, scale: 0.95 },
   whileInView: { opacity: 1, scale: 1, transition: { duration: 0.6 } }
 };
 
-const bgVariants1 = {
+const bgVariants1: Variants = {
   animate: { 
     y: [0, 40, 0],
     rotate: [0, 10, 0],
@@ -18,7 +18,7 @@ const bgVariants1 = {
   }
 };
 
-const bgVariants2 = {
+const bgVariants2: Variants = {
   animate: { 
     y: [0, -30, 0],
     rotate: [0, -5, 0],
@@ -26,7 +26,7 @@ const bgVariants2 = {
   }
 };
 
-const headingVariants = {
+const headingVariants: Variants = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };

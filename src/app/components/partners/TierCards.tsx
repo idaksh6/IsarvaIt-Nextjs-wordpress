@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Check, X, Star, Crown, Shield, Sparkles, Key } from "lucide-react";
 
 const features = [
@@ -30,27 +30,27 @@ const bronzeFeatures = [
   { label: "Sales Closure Responsibility", check: false },
 ];
 
-const headingVariants = {
+const headingVariants: Variants = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
 
-const goldVariants = {
+const goldVariants: Variants = {
   initial: { opacity: 0, x: -50 },
   whileInView: { opacity: 1, x: 0, transition: { duration: 0.8 } }
 };
 
-const silverVariants = {
+const silverVariants: Variants = {
   initial: { opacity: 0, y: 50 },
   whileInView: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } }
 };
 
-const bronzeVariants = {
+const bronzeVariants: Variants = {
   initial: { opacity: 0, x: 50 },
   whileInView: { opacity: 1, x: 0, transition: { duration: 0.8, delay: 0.4 } }
 };
 
-const footerVariants = {
+const footerVariants: Variants = {
   initial: { opacity: 0 },
   whileInView: { opacity: 1, transition: { duration: 0.6 } }
 };

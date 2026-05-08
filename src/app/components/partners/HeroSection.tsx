@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { MessageSquare } from "lucide-react";
 
 const HeroSection = ({ onApply }: { onApply: () => void }) => {
@@ -12,22 +12,22 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
     { text: "Backend Delivery Included", color: "from-emerald-100 to-emerald-50 border-emerald-200 text-emerald-800" },
   ];
 
-  const collageVariants = {
+  const collageVariants: Variants = {
     initial: { opacity: 0, scale: 0.9 },
     animate: { opacity: 1, scale: 1, transition: { duration: 1.2, ease: "easeOut" } }
   };
 
-  const badgeVariants = {
+  const badgeVariants: Variants = {
     initial: { opacity: 0, scale: 0.9 },
     animate: { opacity: 1, scale: 1 }
   };
 
-  const headingVariants = {
+  const headingVariants: Variants = {
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 }
   };
 
-  const pillVariants = {
+  const pillVariants: Variants = {
     initial: { opacity: 0, scale: 0.8 },
     animate: (i: number) => ({
       opacity: 1,
@@ -36,7 +36,7 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
     })
   };
 
-  const buttonContainerVariants = {
+  const buttonContainerVariants: Variants = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0, transition: { delay: 0.4 } }
   };
@@ -89,7 +89,7 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
               variants={buttonContainerVariants}
               initial="initial"
               animate="animate"
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-12"
+              className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-4 mb-8 lg:mb-12"
             >
               <button
                 onClick={onApply}
