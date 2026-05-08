@@ -88,7 +88,7 @@ export default function ProductDetailPremium({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-[32px] md:text-[50px] font-extrabold text-[#000000] leading-tight mb-8">
+            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-[#000000] leading-tight mb-8">
               One platform. Every <br />
               <span className="text-[#2bc735]">
                 {product.title.split(" ")[0]}
@@ -179,7 +179,7 @@ export default function ProductDetailPremium({
 
             {/* Right Side - Content */}
             <div>
-              <h2 className="text-4xl md:text-[50px] font-extrabold text-[#000000] mb-6 leading-tight">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#000000] mb-6 leading-tight">
                 Take control of every{" "}
                 <span className="text-[#22C55E]">employee workflow</span>
               </h2>
@@ -302,7 +302,7 @@ export default function ProductDetailPremium({
               <span className="inline-block text-[10px] font-black text-[#22C55E] tracking-[0.28em] uppercase mb-3 bg-[#22C55E]/10 px-4 py-2 rounded-full">
                 SUPPORT
               </span>
-              <h2 className="text-[clamp(32px,4.5vw,48px)] font-extrabold text-[#0a0a0a] leading-tight mb-4">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-4">
                 Everything you need to know
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -352,7 +352,7 @@ export default function ProductDetailPremium({
                   GET STARTED TODAY
                 </span>
 
-                <h2 className="text-[clamp(32px,5vw,56px)] font-extrabold text-white leading-tight mb-6">
+                <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
                   Ready to transform your <br className="hidden md:block" />
                   HR operations?
                 </h2>
@@ -402,7 +402,7 @@ export default function ProductDetailPremium({
               <span className="inline-block text-[10px] font-black text-[#22C55E] tracking-[0.28em] uppercase mb-3 bg-[#22C55E]/10 px-4 py-2 rounded-full">
                 MORE PRODUCTS
               </span>
-              <h2 className="text-[clamp(32px,4.5vw,48px)] font-extrabold text-[#0a0a0a] leading-tight mb-4">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-4">
                 Explore Our More Products
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -823,7 +823,7 @@ function HrmsFeatureSection() {
           <span className="block text-[10px] font-black text-[#22C55E] tracking-[0.28em] uppercase mb-2.5">
             KEY FEATURES
           </span>
-          <h2 className="text-[clamp(28px,4vw,44px)] font-extrabold text-[#0a0a0a] leading-tight mb-3.5">
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-3.5">
             Key Features Of <span className="text-[#22C55E]">HRMS</span> Software
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">
@@ -1190,3 +1190,5 @@ function FeatureShowcase() {
     </div>
   );
 }
+
+

@@ -133,7 +133,7 @@ export default function ProductDetailPremiumCRMStaging({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-[32px] md:text-[50px] font-extrabold text-[#000000] leading-tight mb-8">
+            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-[#000000] leading-tight mb-8">
               Cloud-Based CRM for<br />
               <span className="text-[#0EA5E9]">
                 Sales Teams & Growing Businesses
@@ -222,7 +222,7 @@ export default function ProductDetailPremiumCRMStaging({
 
             {/* Right Side - Content */}
             <div>
-              <h2 className="text-4xl md:text-[50px] font-extrabold text-[#000000] mb-6 leading-tight">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#000000] mb-6 leading-tight">
                 Why Businesses Need{" "}
                 <span className="text-[#0EA5E9]">Isarva CRM</span>
               </h2>
@@ -398,7 +398,7 @@ export default function ProductDetailPremiumCRMStaging({
               <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-3 bg-white px-4 py-2 rounded-full border border-[#0EA5E9]/20 shadow-sm">
                 FAQ
               </span>
-              <h2 className="text-[clamp(32px,4.5vw,48px)] font-extrabold text-[#0a0a0a] leading-tight mb-4">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-4">
                 Everything you need to know
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -445,7 +445,7 @@ export default function ProductDetailPremiumCRMStaging({
                   STAGING ENVIRONMENT
                 </span>
 
-                <h2 className="text-[clamp(32px,5vw,56px)] font-extrabold text-white leading-tight mb-6">
+                <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
                   Ready to test our new <br className="hidden md:block" />
                   CRM features?
                 </h2>
@@ -495,7 +495,7 @@ export default function ProductDetailPremiumCRMStaging({
               <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-3 bg-white px-4 py-2 rounded-full border border-[#0EA5E9]/20 shadow-sm">
                 MORE PRODUCTS
               </span>
-              <h2 className="text-[clamp(32px,4.5vw,48px)] font-extrabold text-[#0a0a0a] leading-tight mb-4">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-4">
                 Explore Our More Products
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -788,7 +788,7 @@ function CRMFeatureSection() {
           <span className="block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-2.5">
             STAGING FEATURES
           </span>
-          <h2 className="text-[clamp(28px,4vw,44px)] font-extrabold text-[#0a0a0a] leading-tight mb-3.5">
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-3.5">
             Modern Features Of <span className="text-[#0EA5E9]">CRM</span> Staging
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">
@@ -1013,3 +1013,5 @@ function CRMFeatureSection() {
     </section>
   );
 }
+
+

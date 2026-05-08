@@ -78,7 +78,7 @@ const WhiteLabelAbout = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black text-slate-900 mb-8 font-display uppercase tracking-tight"
+            className="text-4xl lg:text-5xl font-black text-slate-900 mb-8 font-display uppercase tracking-tight"
           >
             Why Agencies <span className="text-blue-600">Choose Us</span>
           </motion.h2>
@@ -87,7 +87,7 @@ const WhiteLabelAbout = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-slate-600 font-medium leading-relaxed"
+            className="text-xl lg:text-2xl text-slate-600 font-medium leading-relaxed"
           >
             We empower agencies to deliver premium digital solutions under their own brand, 
             providing the technical muscle needed to scale rapidly and efficiently.

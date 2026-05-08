@@ -54,12 +54,12 @@ const PartnerCTA = ({ onApply }: { onApply: () => void }) => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="font-display text-4xl md:text-[84px] font-bold text-[#111827] mb-6 md:mb-8 leading-[1.1] md:leading-none uppercase tracking-tighter"
+              className="font-display text-5xl lg:text-7xl font-bold text-[#111827] mb-6 md:mb-8 leading-[1.1] md:leading-none uppercase tracking-tighter"
             >
               Ready to Grow <br /> <span className="text-emerald-600">Without Limits?</span>
             </motion.h2>
             
-            <p className="text-gray-500 text-lg md:text-2xl font-medium font-body max-w-2xl mb-10 md:mb-12">
+            <p className="text-gray-500 text-xl lg:text-2xl font-medium font-body max-w-2xl mb-10 md:mb-12">
                Join our partner ecosystem and deliver enterprise-grade digital solutions to your clients today.
             </p>
 

@@ -74,7 +74,7 @@ export default function ProductsListClient({ productsData }) {
             </div>
 
             {/* Heading */}
-            <h1 className="text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold text-gray-900 mb-4 tracking-tight leading-tight">
+            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-gray-900 mb-4 tracking-tight leading-tight">
               Software Products
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-green-600 mt-2">
                 Built for Success
@@ -82,7 +82,7 @@ export default function ProductsListClient({ productsData }) {
             </h1>
 
             {/* Description */}
-            <p className="text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8">
+            <p className="text-xl lg:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8">
               Discover our comprehensive suite of business software solutions designed to streamline operations and drive growth.
             </p>
 
@@ -218,7 +218,7 @@ export default function ProductsListClient({ productsData }) {
                       )}
 
                       {/* Description */}
-                      <p className="text-gray-600 leading-relaxed mb-6">
+                      <p className="text-gray-700 leading-relaxed mb-6">
                         {product.shortDescription}
                       </p>
 
@@ -252,7 +252,7 @@ export default function ProductsListClient({ productsData }) {
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               Why Choose Our Products?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               Built with expertise, innovation, and dedication to deliver exceptional results.
             </p>
           </div>
@@ -264,8 +264,8 @@ export default function ProductsListClient({ productsData }) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Ready to Deploy</h3>
-              <p className="text-gray-600">Pre-built solutions ready for immediate implementation</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">Ready to Deploy</h3>
+              <p className="text-gray-700 leading-relaxed">Pre-built solutions ready for immediate implementation</p>
             </div>
 
             <div className="text-center group">
@@ -318,7 +318,7 @@ export default function ProductsListClient({ productsData }) {
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Can't Find What You're Looking For?
           </h2>
-          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 mb-10 max-w-2xl mx-auto">
             We build custom software solutions tailored to your specific business needs. Let's discuss your requirements.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -354,3 +354,4 @@ export default function ProductsListClient({ productsData }) {
     </div>
   );
 }
+

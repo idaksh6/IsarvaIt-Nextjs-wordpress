@@ -73,12 +73,12 @@ export default async function BlogPostPage({ params }) {
             </div>
 
             {/* Title */}
-            <h1 className="text-[clamp(2.5rem,6vw,4.5rem)] font-black mb-6 leading-tight tracking-tight text-gray-900">
+            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-black mb-6 leading-tight tracking-tight text-gray-900">
               {post.title}
             </h1>
 
             {/* Excerpt */}
-            <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-light">
+            <p className="text-xl lg:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
               {post.excerpt}
             </p>
           </div>
@@ -116,7 +116,7 @@ export default async function BlogPostPage({ params }) {
         <section className="bg-gray-50 py-20">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-black text-gray-900 mb-4 uppercase tracking-tight">
+              <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-4 uppercase tracking-tight">
                 Related Articles
               </h2>
               <p className="text-gray-600 text-lg">
@@ -188,3 +188,4 @@ export default async function BlogPostPage({ params }) {
     </div>
   );
 }
+

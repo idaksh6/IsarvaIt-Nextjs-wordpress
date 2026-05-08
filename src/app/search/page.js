@@ -199,7 +199,7 @@ function SearchResults() {
       <div className="max-w-7xl mx-auto px-6 py-44">
         {/* Search Header */}
         <div className="mb-12">
-          <h1 className="text-[clamp(2.5rem,6vw,4.5rem)] font-black text-gray-900 mb-6 tracking-tight">
+          <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-black text-gray-900 mb-6 tracking-tight">
             Search Results
           </h1>
 
@@ -649,3 +649,4 @@ export default function SearchPage() {
     </Suspense>
   );
 }
+

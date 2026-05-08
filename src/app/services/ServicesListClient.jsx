@@ -79,7 +79,7 @@ export default function ServicesListClient({ servicesData }) {
             </div>
 
             {/* Heading */}
-            <h1 className="text-[clamp(2.5rem,6vw,4.5rem)] font-extrabold text-gray-900 mb-4 tracking-tight leading-tight">
+            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-gray-900 mb-4 tracking-tight leading-tight">
               Comprehensive
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-green-600 mt-2">
                 IT Solutions
@@ -87,7 +87,7 @@ export default function ServicesListClient({ servicesData }) {
             </h1>
 
             {/* Description */}
-            <p className="text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8">
+            <p className="text-xl lg:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8">
               From web development to AI consulting, we offer end-to-end services that drive your digital transformation journey.
             </p>
 
@@ -209,7 +209,7 @@ export default function ServicesListClient({ servicesData }) {
                       </h3>
 
                       {/* Description */}
-                      <p className="text-gray-600 leading-relaxed mb-6">
+                      <p className="text-gray-700 leading-relaxed mb-6">
                         {service.shortDescription}
                       </p>
 
@@ -243,7 +243,7 @@ export default function ServicesListClient({ servicesData }) {
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               Why Choose Our Services?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               We combine expertise, innovation, and dedication to deliver exceptional results.
             </p>
           </div>
@@ -255,8 +255,8 @@ export default function ServicesListClient({ servicesData }) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Proven Expertise</h3>
-              <p className="text-gray-600">Years of experience delivering successful projects across industries</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">Proven Expertise</h3>
+              <p className="text-gray-700 leading-relaxed">Years of experience delivering successful projects across industries</p>
             </div>
 
             <div className="text-center group">
@@ -309,7 +309,7 @@ export default function ServicesListClient({ servicesData }) {
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Let's Build Something Amazing Together
           </h2>
-          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-700 mb-10 max-w-2xl mx-auto">
             Contact us today to discuss your project requirements and discover how our services can help you achieve your goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -345,4 +345,5 @@ export default function ServicesListClient({ servicesData }) {
     </div>
   );
 }
+
 

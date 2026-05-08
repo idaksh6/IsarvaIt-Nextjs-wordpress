@@ -64,7 +64,7 @@ export default function ProductDetailPremiumWooCommerce({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-[32px] md:text-[50px] font-extrabold text-[#000000] leading-tight mb-8">
+            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-[#000000] leading-tight mb-8">
               Build Your Dream<br />
               <span className="text-[#A855F7]">
                 E-Commerce Store
@@ -156,7 +156,7 @@ export default function ProductDetailPremiumWooCommerce({
 
             {/* Right Side - Content */}
             <div>
-              <h2 className="text-4xl md:text-[50px] font-extrabold text-[#000000] mb-6 leading-tight">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#000000] mb-6 leading-tight">
                 Power Your Online Business with{" "}
                 <span className="text-[#A855F7]">WooCommerce</span>
               </h2>
@@ -195,7 +195,7 @@ export default function ProductDetailPremiumWooCommerce({
               <span className="inline-block text-[10px] font-black text-[#A855F7] tracking-[0.28em] uppercase mb-3 bg-[#A855F7]/10 px-4 py-2 rounded-full">
                 OUR SERVICES
               </span>
-              <h2 className="text-[clamp(32px,4.5vw,48px)] font-extrabold text-[#0a0a0a] leading-tight mb-4">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-4">
                 What we offer with <span className="text-[#A855F7]">WooCommerce</span>
               </h2>
             </motion.div>
@@ -266,7 +266,7 @@ export default function ProductDetailPremiumWooCommerce({
                   GET STARTED TODAY
                 </span>
 
-                <h2 className="text-[clamp(32px,5vw,56px)] font-extrabold text-white leading-tight mb-6">
+                <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
                   Ready to launch your <br className="hidden md:block" />
                   online store?
                 </h2>
@@ -317,7 +317,7 @@ export default function ProductDetailPremiumWooCommerce({
               <span className="inline-block text-[10px] font-black text-[#A855F7] tracking-[0.28em] uppercase mb-3 bg-[#A855F7]/10 px-4 py-2 rounded-full">
                 MORE PRODUCTS
               </span>
-              <h2 className="text-[clamp(32px,4.5vw,48px)] font-extrabold text-[#0a0a0a] leading-tight mb-4">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-4">
                 Explore Our More Products
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -623,7 +623,7 @@ function WooCommerceFeatureSection() {
           <span className="block text-[10px] font-black text-[#A855F7] tracking-[0.28em] uppercase mb-2.5">
             KEY FEATURES
           </span>
-          <h2 className="text-[clamp(28px,4vw,44px)] font-extrabold text-[#0a0a0a] leading-tight mb-3.5">
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-3.5">
             Key Features Of Our <span className="text-[#A855F7]">WooCommerce</span> Development
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">
@@ -877,7 +877,7 @@ function WooCommerceFAQSection() {
             <span className="inline-block text-[10px] font-black text-[#A855F7] tracking-[0.28em] uppercase mb-3 bg-[#A855F7]/10 px-4 py-2 rounded-full">
               FAQ
             </span>
-            <h2 className="text-[clamp(32px,4.5vw,48px)] font-extrabold text-[#0a0a0a] leading-tight mb-4">
+            <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-4">
               Frequently Asked Questions
             </h2>
             <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -986,4 +986,6 @@ function WooCommerceFAQSection() {
     </section>
   );
 }
+
+
 

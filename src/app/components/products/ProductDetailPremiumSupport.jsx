@@ -343,7 +343,7 @@ function SupportFeatureSection({ onImageClick }) {
           <span className="block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-2.5">
             KEY FEATURES
           </span>
-          <h2 className="text-[clamp(28px,4vw,44px)] font-extrabold text-[#0a0a0a] leading-tight mb-3.5">
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-3.5">
             Key Features Of <span className="text-[#9333EA]">Internal Support</span> System
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">
@@ -651,9 +651,9 @@ function ProjectLifecycleSection() {
           <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-purple-100/50 px-4 py-2 rounded-full ring-1 ring-purple-200">
             Project & Task Lifecycle
           </span>
-          <h2 className="text-[clamp(32px,4vw,44px)] font-black text-[#0a0a0a] leading-tight">
+          <h2 className="text-4xl lg:text-5xl font-black text-[#0a0a0a] leading-tight">
             From Start to Finish—<br className="md:hidden" />
-            <span className="bg-gradient-to-r from-[#9333EA] to-[#7c3aed] bg-clip-text text-transparent">Everything in One Place</span>
+            <span className="bg-gradient-to-r from-[#9333EA] to-[#7c3aed] bg-clip-text text-transparent py-1">Everything in One Place</span>
           </h2>
         </div>
 
@@ -720,7 +720,7 @@ function TicketLifecycleSection() {
           <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-white px-4 py-2 rounded-full shadow-sm ring-1 ring-purple-100">
             Ticket Lifecycle
           </span>
-          <h2 className="text-[clamp(32px,4vw,44px)] font-black text-[#0a0a0a] leading-tight">
+          <h2 className="text-4xl lg:text-5xl font-black text-[#0a0a0a] leading-tight">
             Turn "Help!" into <span className="text-[#9333EA]">"Handled."</span>
           </h2>
         </div>
@@ -828,7 +828,7 @@ function ReportsSection({ onImageClick }) {
             </span>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-[#0a0a0a] leading-[1.1] mb-6 lg:mb-8 tracking-tight">
               Total Transparency, <br className="hidden md:block" />
-              <span className={`bg-gradient-to-r ${d.gradient} bg-clip-text text-transparent transition-all duration-500`}>
+              <span className={`bg-gradient-to-r ${d.gradient} bg-clip-text text-transparent py-1 transition-all duration-500`}>
                 Zero Manual Effort.
               </span>
             </h2>
@@ -1021,9 +1021,9 @@ function AnalyticsSection({ onImageClick }) {
           <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-purple-50 px-4 py-2 rounded-full shadow-sm ring-1 ring-purple-100">
             High-Level Analytics
           </span>
-          <h2 className="text-[clamp(32px,5vw,56px)] font-black text-[#0a0a0a] leading-tight mb-6">
+          <h2 className="text-4xl lg:text-5xl font-black text-[#0a0a0a] leading-tight mb-6">
             See Your Business in <br className="hidden md:block" />
-            <span className="bg-gradient-to-r from-[#9333EA] to-[#7c3aed] bg-clip-text text-transparent">High Definition.</span>
+            <span className="bg-gradient-to-r from-[#9333EA] to-[#7c3aed] bg-clip-text text-transparent py-1">High Definition.</span>
           </h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto font-medium mb-8">
             While reports give you the "what," our Analytics Module gives you the "why." Turn raw data into growth strategies:
@@ -1155,8 +1155,8 @@ function AutomationSection() {
           <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-white px-5 py-2 rounded-full shadow-sm ring-1 ring-purple-100">
             Automation: Your "Invisible Assistant"
           </span>
-          <h2 className="text-[clamp(32px,5vw,56px)] font-black text-[#0a0a0a] leading-[1.1]">
-            We Do the <span className="bg-gradient-to-r from-[#9333EA] to-[#7c3aed] bg-clip-text text-transparent">Grunt Work</span><br className="md:hidden" />
+          <h2 className="text-4xl lg:text-5xl font-black text-[#0a0a0a] leading-[1.1]">
+            We Do the <span className="bg-gradient-to-r from-[#9333EA] to-[#7c3aed] bg-clip-text text-transparent py-1">Grunt Work</span><br className="md:hidden" />
             So You Don't Have To.
           </h2>
         </div>
@@ -1204,9 +1204,9 @@ function SafetyManagementSection() {
             <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-white px-5 py-2 rounded-full shadow-md ring-1 ring-purple-50">
               Safety & Management
             </span>
-            <h2 className="text-[clamp(32px,5vw,56px)] font-black text-[#0a0a0a] leading-[1.05] mb-8">
+            <h2 className="text-4xl lg:text-5xl font-black text-[#0a0a0a] leading-[1.05] mb-8">
               Secure Your Assets,<br />
-              <span className="bg-gradient-to-r from-[#9333EA] to-[#7c3aed] bg-clip-text text-transparent">Organize Your Clients.</span>
+              <span className="bg-gradient-to-r from-[#9333EA] to-[#7c3aed] bg-clip-text text-transparent py-1">Organize Your Clients.</span>
             </h2>
             <p className="text-gray-500 text-xl leading-relaxed mb-6 md:mb-10 font-medium">
               Enterprise-grade security controls wrapped in an intuitive, easy-to-use interface.
@@ -1289,7 +1289,7 @@ export default function ProductDetailPremiumSupportStaging({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-[32px] md:text-[50px] font-extrabold text-[#000000] leading-tight mb-8">
+            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-[#000000] leading-tight mb-8">
               The Simple Way to Manage Work.<br />
               <span className="text-[#9333EA]">Your Projects, Tasks, and Support Tickets—Unified</span>
               <span style={{ color: SUPPORT_PURPLE }}>.</span>
@@ -1381,7 +1381,7 @@ export default function ProductDetailPremiumSupportStaging({
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-[clamp(32px,4vw,44px)] font-extrabold text-[#0a0a0a] leading-tight mb-4">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-4">
                 Project Management Software Suitable for These <span className="text-[#9333EA]">Industries</span>
               </h2>
               <p className="text-[#6b7280] max-w-2xl mx-auto text-base leading-relaxed">
@@ -1494,7 +1494,7 @@ export default function ProductDetailPremiumSupportStaging({
 
             {/* Right Side - Content */}
             <div>
-              <h2 className="text-4xl md:text-[50px] font-extrabold text-[#000000] mb-6 leading-tight">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#000000] mb-6 leading-tight">
                 The Unified Pulse of Your{" "}
                 <span className="text-[#9333EA]">Projects and Tickets</span>
               </h2>
@@ -1604,7 +1604,7 @@ export default function ProductDetailPremiumSupportStaging({
               <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-3 bg-[#9333EA]/10 px-4 py-2 rounded-full">
                 SUPPORT
               </span>
-              <h2 className="text-[clamp(32px,4.5vw,48px)] font-extrabold text-[#0a0a0a] leading-tight mb-4">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-4">
                 Everything you need to know
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -1654,7 +1654,7 @@ export default function ProductDetailPremiumSupportStaging({
                   GET STARTED TODAY
                 </span>
 
-                <h2 className="text-[clamp(32px,5vw,56px)] font-extrabold text-white leading-tight mb-6">
+                <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
                   Ready to streamline your <br className="hidden md:block" />
                   internal operations?
                 </h2>
@@ -1742,7 +1742,7 @@ export default function ProductDetailPremiumSupportStaging({
               <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-3 bg-[#9333EA]/10 px-4 py-2 rounded-full">
                 MORE PRODUCTS
               </span>
-              <h2 className="text-[clamp(32px,4.5vw,48px)] font-extrabold text-[#0a0a0a] leading-tight mb-4">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-4">
                 Explore Our More Products
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -1856,3 +1856,6 @@ export default function ProductDetailPremiumSupportStaging({
     </div>
   );
 }
+
+
+

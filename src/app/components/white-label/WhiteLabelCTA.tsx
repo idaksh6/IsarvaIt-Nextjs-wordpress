@@ -34,7 +34,7 @@ const WhiteLabelCTA = ({ onContact }: { onContact: () => void }) => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-6xl lg:text-8xl font-black text-slate-900 mb-8 font-display leading-[1] uppercase tracking-tighter"
+              className="text-5xl lg:text-7xl font-black text-slate-900 mb-8 font-display leading-[1] uppercase tracking-tighter"
             >
               Ready to Grow <br />
               <span className="text-blue-600">Without Limits?</span>
@@ -45,7 +45,7 @@ const WhiteLabelCTA = ({ onContact }: { onContact: () => void }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-xl md:text-2xl text-slate-600 mb-16 leading-relaxed font-medium max-w-2xl mx-auto"
+              className="text-xl lg:text-2xl text-slate-600 mb-16 leading-relaxed font-medium max-w-2xl mx-auto"
             >
               Scale your agency with a reliable white-label partner.
               Expert execution, fast delivery, and complete confidentiality—guaranteed.

@@ -173,7 +173,7 @@ export default function TestimonialPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-[clamp(2.5rem,6vw,4.5rem)] font-display font-bold text-[#1a1f24] max-w-5xl mx-auto tracking-tight leading-[1.1] mb-8"
+            className="text-[clamp(2.25rem,5vw,3.75rem)] font-display font-bold text-[#1a1f24] max-w-5xl mx-auto tracking-tight leading-[1.1] mb-8"
           >
             Real Stories, <br />
             <span className="italic text-[#10b981] font-bold">Proven Results.</span>
@@ -183,7 +183,7 @@ export default function TestimonialPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-[#53606b] max-w-3xl mx-auto leading-relaxed mb-12"
+            className="text-xl lg:text-2xl text-[#53606b] max-w-3xl mx-auto leading-relaxed mb-12"
           >
             Join 500+ global enterprises and startups that trust Isarva Infotech to architect their digital future.
           </motion.p>
@@ -220,7 +220,7 @@ export default function TestimonialPage() {
             >
               Visual Proof
             </motion.span>
-            <h2 className="text-4xl md:text-6xl font-display font-bold text-[#1a1f24] mb-6">Success Stories on Camera</h2>
+            <h2 className="text-4xl lg:text-5xl font-display font-bold text-[#1a1f24] mb-6">Success Stories on Camera</h2>
             <div className="w-24 h-1.5 bg-[#10b981] mx-auto rounded-full"></div>
           </div>
 
@@ -484,3 +484,4 @@ export default function TestimonialPage() {
     </div>
   );
 }
+

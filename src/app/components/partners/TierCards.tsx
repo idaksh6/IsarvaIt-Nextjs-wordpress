@@ -43,11 +43,11 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#111827] mb-4 md:mb-6"
+            className="text-4xl lg:text-5xl font-bold text-[#111827] mb-4 md:mb-6"
           >
             Partner <span className="text-[#EAB308]">Tiers</span>
           </motion.h2>
-          <p className="text-gray-500 text-lg md:text-xl font-body">Choose the growth level that matches your ambition.</p>
+          <p className="text-gray-500 text-xl font-body">Choose the growth level that matches your ambition.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch mb-20">

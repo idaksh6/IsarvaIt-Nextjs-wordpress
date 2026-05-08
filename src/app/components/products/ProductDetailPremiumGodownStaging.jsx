@@ -110,9 +110,9 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
               <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></span>
               The Future of Godown Tech
             </span>
-            <h1 className="text-6xl lg:text-8xl font-black tracking-tighter text-slate-900 mb-8 leading-[0.95]">
+            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-black tracking-tighter text-slate-900 mb-8 leading-[0.95]">
               <span className="inline-block hover:scale-[1.02] transition-transform duration-300">Smart Godown</span> <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 via-cyan-500 to-emerald-500 drop-shadow-sm">
+              <span className="text-transparent bg-clip-text py-1 bg-gradient-to-r from-teal-600 via-cyan-500 to-emerald-500 drop-shadow-sm py-1">
                 & Inventory System
               </span>
             </h1>
@@ -704,3 +704,6 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
     </div>
   );
 }
+
+
+

@@ -103,7 +103,7 @@ export default async function ServiceDetailPage({ params }) {
               <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-gray-900 mb-6 tracking-tight leading-tight">
                 {service.title}
               </h1>
-              <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed mb-10">
+              <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-10">
                 {service.description}
               </p>
               <div className="flex flex-wrap gap-4">
@@ -154,7 +154,7 @@ export default async function ServiceDetailPage({ params }) {
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 What We Offer Under {service.title}
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
                 Comprehensive solutions tailored to your specific needs
               </p>
             </div>
@@ -194,7 +194,7 @@ export default async function ServiceDetailPage({ params }) {
                           {subService.title}
                         </h3>
 
-                        <p className="text-gray-600 leading-relaxed mb-6">
+                        <p className="text-gray-700 leading-relaxed mb-6">
                           {subService.description}
                         </p>
 
@@ -284,7 +284,7 @@ export default async function ServiceDetailPage({ params }) {
                 : "Everything You Need to Succeed"
               }
             </h2>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <p className="text-xl text-gray-700 leading-relaxed">
               {service.slug === "odoo-apps-support-and-maintenance" 
                 ? "We ensure that your Odoo applications—from Finance to HR—are always up-to-date, secure, and performing at their peak."
                 : service.slug === "ai-ml-consulting"
@@ -400,7 +400,7 @@ export default async function ServiceDetailPage({ params }) {
                 : "Benefits You'll Unlock"
               }
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               {service.slug === "odoo-apps-support-and-maintenance" 
                 ? "We are your trusted partner for creating sustainable value through Odoo ERP solutions."
                 : service.slug === "ai-ml-consulting"
@@ -587,7 +587,7 @@ export default async function ServiceDetailPage({ params }) {
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               Explore Related Services
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               Discover complementary solutions to enhance your business
             </p>
           </div>
@@ -614,7 +614,7 @@ export default async function ServiceDetailPage({ params }) {
                     </h3>
 
                     {/* Description */}
-                    <p className="text-gray-600 leading-relaxed mb-6">
+                    <p className="text-gray-700 leading-relaxed mb-6">
                       {relatedService.shortDescription}
                     </p>
 
@@ -678,7 +678,7 @@ export default async function ServiceDetailPage({ params }) {
             Let's Get Started
           </div>
 
-          <h2 className="text-4xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
+          <h2 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-white mb-6 leading-tight">
             {service.slug === "odoo-apps-support-and-maintenance" 
               ? "Ready to Optimize Your Odoo Experience?" 
               : "Ready to Transform Your Business?"
@@ -739,3 +739,4 @@ export default async function ServiceDetailPage({ params }) {
     </div>
   );
 }
+

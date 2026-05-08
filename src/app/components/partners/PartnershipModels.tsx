@@ -154,11 +154,11 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-bold text-[#111827] uppercase mb-4"
+            className="text-4xl lg:text-5xl font-bold text-[#111827] uppercase mb-4"
           >
             Partnership <span className="text-emerald-600">Models</span>
           </motion.h2>
-          <p className="text-gray-500 max-w-2xl mx-auto font-body text-base md:text-lg">
+          <p className="text-gray-500 max-w-2xl mx-auto font-body text-xl">
             Seven flexible ways to collaborate. Choose the path that fits your business expertise and client base.
           </p>
         </div>

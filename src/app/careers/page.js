@@ -145,7 +145,7 @@ export default function CareerPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className="text-[clamp(2.5rem,6vw,4.5rem)] font-display font-bold text-[#1a1f24] tracking-tight leading-[1.1] mb-8"
+                className="text-[clamp(2.25rem,5vw,3.75rem)] font-display font-bold text-[#1a1f24] tracking-tight leading-[1.1] mb-8"
               >
                 Shape the Future at <br />
                 <span className="italic text-[#10b981] font-bold">Isarva Infotech</span>
@@ -155,7 +155,7 @@ export default function CareerPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-xl md:text-2xl text-[#53606b] max-w-2xl leading-relaxed mb-12 font-medium"
+                className="text-xl lg:text-2xl text-[#53606b] max-w-2xl leading-relaxed mb-12 font-medium"
               >
                 At Isarva Infotech, we don’t just keep up with technology — we drive its evolution. Our passion lies in using cutting-edge engineering to solve real-world challenges with meaningful impact.
               </motion.p>
@@ -266,7 +266,7 @@ export default function CareerPage() {
             >
               Our Foundation
             </motion.div>
-            <h2 className="text-4xl md:text-6xl font-display font-bold text-[#1a1f24] mb-6">Why Choose Isarva Infotech?</h2>
+            <h2 className="text-4xl lg:text-5xl font-display font-bold text-[#1a1f24] mb-6">Why Choose Isarva Infotech?</h2>
             <div className="w-24 h-1.5 bg-[#10b981] mx-auto rounded-full"></div>
           </div>
 
@@ -301,7 +301,7 @@ export default function CareerPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 px-4">
             <div className="lg:text-left text-center">
               <span className="text-[#10b981] font-black tracking-[0.3em] uppercase text-xs mb-4 inline-block">Career Opportunities</span>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-[#1a1f24] leading-tight">Find Your Calling</h2>
+              <h2 className="text-4xl lg:text-5xl font-display font-bold text-[#1a1f24] leading-tight">Find Your Calling</h2>
             </div>
 
             {/* Minimalist Search Bar */}
@@ -469,7 +469,7 @@ export default function CareerPage() {
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-500 opacity-[0.05] rounded-full blur-[120px] pointer-events-none"></div>
 
             <div className="relative z-10">
-              <h4 className="text-4xl lg:text-6xl font-display font-bold text-white mb-8">
+              <h4 className="text-[clamp(2.25rem,5vw,3.75rem)] font-display font-bold text-white mb-8">
                 Don't see your <br />
                 <span className="text-[#10b981] italic">perfect role?</span>
               </h4>
@@ -534,3 +534,4 @@ export default function CareerPage() {
     </div>
   );
 }
+

@@ -142,7 +142,7 @@ export default function ProductDetailPremiumHRMSStaging({
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         {/* Very subtle ambient gradient */}
         <div className={`absolute inset-0 opacity-10 transition-colors duration-500 bg-gradient-to-br ${TAB_THEMES[activeTab].gradient} blur-[120px] scale-125`} />
-        
+
         {/* Simplified Static Blobs for Performance */}
         <div className={`absolute top-[-5%] left-[-5%] w-[40%] h-[40%] rounded-full opacity-[0.08] blur-[100px] ${TAB_THEMES[activeTab].bg}`} />
         <div className="absolute top-[20%] right-[-5%] w-[35%] h-[35%] rounded-full opacity-[0.06] bg-violet-500 blur-[100px]" />
@@ -165,11 +165,10 @@ export default function ProductDetailPremiumHRMSStaging({
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`px-6 py-3 rounded-[1.5rem] font-bold text-xs uppercase tracking-widest transition-all duration-500 relative group overflow-hidden ${
-                    isActive
+                  className={`px-6 py-3 rounded-[1.5rem] font-bold text-xs uppercase tracking-widest transition-all duration-500 relative group overflow-hidden ${isActive
                       ? "text-white"
                       : "text-gray-500 hover:text-gray-900"
-                  }`}
+                    }`}
                 >
                   {isActive && (
                     <motion.div
@@ -216,11 +215,11 @@ export default function ProductDetailPremiumHRMSStaging({
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="text-6xl lg:text-[92px] font-black text-gray-900 leading-[0.9] mb-10 tracking-tighter uppercase"
+                  className="text-[clamp(2.25rem,5vw,3.75rem)] font-black text-gray-900 leading-[1.1] mb-10 tracking-tighter uppercase pb-2"
                 >
                   {activeContent.title.split(" ").slice(0, -1).join(" ")}{" "}
                   <br />
-                  <span className={`text-transparent bg-clip-text bg-gradient-to-r ${TAB_THEMES[activeTab].gradient}`}>
+                  <span className={`inline-block text-transparent bg-clip-text bg-gradient-to-r ${TAB_THEMES[activeTab].gradient} py-2`}>
                     {activeContent.title.split(" ").pop()}
                   </span>
                 </motion.h1>
@@ -257,7 +256,7 @@ export default function ProductDetailPremiumHRMSStaging({
                 >
                   <button
                     onClick={() => setIsModalOpen(true)}
-                    className={`btn-premium-orange !py-6 !px-12 !text-lg !rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300`}
+                    className={`btn-premium-orange !py-4 !px-8 !text-base !rounded-xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300`}
                   >
                     Get Started Free
                     <span className="shimmer"></span>
@@ -327,9 +326,9 @@ export default function ProductDetailPremiumHRMSStaging({
                 </span>
                 The Problem
               </div>
-              <h2 className="text-4xl lg:text-[56px] font-black text-gray-900 leading-[1.1] mb-6 tracking-tight">
-                Traditional HR <br /> 
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">Is Broken.</span>
+              <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-[1.3] mb-6 tracking-tight">
+                Traditional HR <br />
+                <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500 py-2">Is Broken.</span>
               </h2>
               <p className="text-xl text-gray-500 font-medium leading-relaxed">Organizations are stuck with outdated systems that waste time, frustrate employees, and hold back growth. It's time for a change.</p>
             </div>
@@ -347,19 +346,19 @@ export default function ProductDetailPremiumHRMSStaging({
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { 
+              {
                 title: "Endless Paperwork", icon: "📄", desc: "HR spends more time filling out forms than helping people improve.",
                 iconTheme: "bg-rose-50 text-rose-600"
               },
-              { 
+              {
                 title: "Disconnected Apps", icon: "🔌", desc: "Data spread across too many places leads to messy mistakes.",
                 iconTheme: "bg-violet-50 text-violet-600"
               },
-              { 
+              {
                 title: "Frustrated Workers", icon: "😠", desc: "Hard-to-use software makes workers unhappy and less productive.",
                 iconTheme: "bg-amber-50 text-amber-600"
               },
-              { 
+              {
                 title: "Risky Security", icon: "🔓", desc: "Old ways of handling info leave you open to legal and tech threats.",
                 iconTheme: "bg-slate-100 text-slate-600"
               }
@@ -391,7 +390,7 @@ export default function ProductDetailPremiumHRMSStaging({
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                 <div>
                   <div className="w-12 h-1.5 bg-blue-600 rounded-full mb-8"></div>
-                  <h2 className="text-4xl lg:text-[56px] font-black text-gray-900 mb-8 leading-[1.1]">{activeContent.title}</h2>
+                  <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-8 leading-tight">{activeContent.title}</h2>
                   <p className="text-xl text-gray-500 mb-12 font-medium leading-relaxed">{activeContent.description}</p>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -435,14 +434,14 @@ export default function ProductDetailPremiumHRMSStaging({
         </div>
 
         <div className="container mx-auto px-6 mb-20 text-center relative z-10">
-          <h2 className="text-5xl lg:text-7xl font-black text-gray-900 mb-6 tracking-tighter uppercase">Complete <span className={TAB_THEMES[activeTab].text}>HR Suite</span></h2>
+          <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 tracking-tighter uppercase">Complete <span className={TAB_THEMES[activeTab].text}>HR Suite</span></h2>
           <p className="text-gray-500 font-bold text-xl max-w-2xl mx-auto uppercase tracking-tight">Streamline your entire operations with a powerful integrated platform.</p>
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {SECTION_6_FEATURES.map((card, idx) => {
-               const theme = [
+              const theme = [
                 { text: "text-blue-600", check: "text-blue-600", iconBg: "bg-blue-50" },
                 { text: "text-emerald-600", check: "text-emerald-600", iconBg: "bg-emerald-50" },
                 { text: "text-violet-600", check: "text-violet-600", iconBg: "bg-violet-50" },
@@ -455,7 +454,7 @@ export default function ProductDetailPremiumHRMSStaging({
                 <div key={idx} className="w-full">
                   <div className={`p-10 rounded-[48px] bg-white border border-gray-100 h-full hover:shadow-2xl transition-all duration-500 group relative overflow-hidden flex flex-col`}>
                     <div className="absolute top-0 right-0 w-40 h-40 bg-gray-50 blur-3xl rounded-full group-hover:bg-blue-50 transition-colors"></div>
-                    
+
                     <div className={`relative z-10 w-16 h-16 rounded-2xl flex items-center justify-center mb-10 group-hover:scale-110 transition-transform ${theme.iconBg} ${theme.text} shadow-inner`}>
                       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -485,11 +484,11 @@ export default function ProductDetailPremiumHRMSStaging({
           <div className="relative rounded-[72px] bg-gray-50 py-12 lg:py-16 px-8 overflow-hidden text-center border border-gray-100 shadow-inner">
 
             <div className="relative z-10">
-              <h2 className="text-5xl lg:text-[84px] font-black text-gray-900 mb-8 leading-[0.95] tracking-tight">Build the future <br /> today.</h2>
+              <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-8 leading-tight tracking-tight">Build the future <br /> today.</h2>
               <p className="text-xl text-gray-500 mb-12 max-w-xl mx-auto font-medium">Join 10,000+ forward-thinking HRs transforming their workplace with Isarva.</p>
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="btn-premium-orange !py-8 !px-16 !text-2xl !rounded-[32px] shadow-xl"
+                className="btn-premium-orange !py-6 !px-12 !text-xl !rounded-3xl shadow-xl hover:shadow-2xl transition-all"
               >
                 Request Free Access
                 <span className="shimmer"></span>
@@ -609,3 +608,6 @@ const SECTION_6_FEATURES = [
     ]
   }
 ];
+
+
+

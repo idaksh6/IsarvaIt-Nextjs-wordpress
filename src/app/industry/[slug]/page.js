@@ -257,7 +257,7 @@ export default async function IndustryDetailPage({ params }) {
                 <span className="text-2xl">{industry.icon}</span>
                 <span>Industry Expertise</span>
               </div>
-              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
+              <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-bold text-gray-900 mb-6 tracking-tight">
                 {industry.title}
               </h1>
               <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8">
@@ -595,7 +595,7 @@ export default async function IndustryDetailPage({ params }) {
             Let's Get Started
           </div>
 
-          <h2 className="text-4xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+          <h2 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-gray-900 mb-6 leading-tight">
             Ready to Transform Your {industry.title} Business?
           </h2>
           
@@ -649,3 +649,4 @@ export default async function IndustryDetailPage({ params }) {
     </div>
   );
 }
+

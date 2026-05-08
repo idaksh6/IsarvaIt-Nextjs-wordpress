@@ -73,7 +73,7 @@ export default function IndustriesListClient({ industriesData }) {
             </div>
 
             {/* Heading */}
-            <h1 className="text-4xl lg:text-6xl font-extrabold text-gray-900 mb-4 tracking-tight leading-tight">
+            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-gray-900 mb-4 tracking-tight leading-tight">
               Industry-Focused
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-green-600 mt-2">
                 Solutions
@@ -81,7 +81,7 @@ export default function IndustriesListClient({ industriesData }) {
             </h1>
 
             {/* Description */}
-            <p className="text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8">
+            <p className="text-xl lg:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8">
               Delivering specialized technology solutions tailored to the unique challenges and opportunities of your industry.
             </p>
 
@@ -249,8 +249,8 @@ export default function IndustriesListClient({ industriesData }) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Industry Expertise</h3>
-              <p className="text-gray-600">Deep understanding of sector-specific challenges and regulations</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">Industry Expertise</h3>
+              <p className="text-gray-700 leading-relaxed">Deep understanding of sector-specific challenges and regulations</p>
             </div>
 
             <div className="text-center group">
@@ -339,3 +339,4 @@ export default function IndustriesListClient({ industriesData }) {
     </div>
   );
 }
+

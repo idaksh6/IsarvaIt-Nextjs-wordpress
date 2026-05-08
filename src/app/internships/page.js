@@ -231,7 +231,7 @@ export default function InternshipsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-[clamp(2.5rem,6vw,4.5rem)] font-display font-bold text-[#1a1f24] tracking-tight leading-[1.1] mb-8"
+              className="text-[clamp(2.25rem,5vw,3.75rem)] font-display font-bold text-[#1a1f24] tracking-tight leading-[1.1] mb-8"
             >
               Internship at <br /> 
               <span className="italic text-[#10b981] font-bold">Isarva Infotech</span>
@@ -241,7 +241,7 @@ export default function InternshipsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl md:text-2xl text-[#53606b] max-w-4xl mx-auto leading-relaxed mb-12 font-medium"
+              className="text-xl lg:text-2xl text-[#53606b] max-w-4xl mx-auto leading-relaxed mb-12 font-medium"
             >
               Isarva Infotech offers internships that transcend traditional learning. Interns are immersed in dynamic projects, tackling complex challenges and gaining hands-on experience with cutting-edge technologies. This program provides a platform for aspiring professionals to apply theoretical knowledge to real-world scenarios, fostering a deep understanding of the industry and accelerating career readiness.
             </motion.p>
@@ -276,7 +276,7 @@ export default function InternshipsPage() {
             >
               Your Experience
             </motion.div>
-            <h2 className="text-4xl md:text-6xl font-display font-bold text-[#1a1f24] mb-6">What You Can Expect</h2>
+            <h2 className="text-4xl lg:text-5xl font-display font-bold text-[#1a1f24] mb-6">What You Can Expect</h2>
             <div className="w-24 h-1.5 bg-[#10b981] mx-auto rounded-full"></div>
           </div>
 
@@ -313,7 +313,7 @@ export default function InternshipsPage() {
             >
               Ideal Candidate
             </motion.div>
-            <h2 className="text-4xl md:text-6xl font-display font-bold text-[#1a1f24] mb-6">Who We're Looking For</h2>
+            <h2 className="text-4xl lg:text-5xl font-display font-bold text-[#1a1f24] mb-6">Who We're Looking For</h2>
             <p className="text-xl text-[#53606b] max-w-4xl mx-auto leading-relaxed font-medium">
               At Isarva Infotech, we're on the lookout for passionate and driven individuals who are eager to make a difference. Our ideal intern is someone who is not only enthusiastic about learning but also committed to contributing to our projects in meaningful ways. We value candidates who bring a positive attitude, a willingness to take on challenges, and the ability to think critically.
             </p>
@@ -352,7 +352,7 @@ export default function InternshipsPage() {
             >
               Your Journey Starts Here
             </motion.div>
-            <h2 className="text-4xl md:text-6xl font-display font-bold text-[#1a1f24] mb-6">Join Us</h2>
+            <h2 className="text-4xl lg:text-5xl font-display font-bold text-[#1a1f24] mb-6">Join Us</h2>
             <p className="text-xl text-[#53606b] max-w-4xl mx-auto leading-relaxed font-medium">
               Kick-start your career by joining Isarva Infotech, where innovation meets opportunity. As an intern, you'll have the chance to explore your potential, build your skills, and gain invaluable experience in a thriving and supportive environment.
             </p>
@@ -399,7 +399,7 @@ export default function InternshipsPage() {
             >
               Ready to Start?
             </motion.div>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-[#1a1f24] mb-6">Internship Application Form</h2>
+            <h2 className="text-4xl lg:text-5xl font-display font-bold text-[#1a1f24] mb-6">Internship Application Form</h2>
             <p className="text-lg text-[#53606b] font-medium">
               Please Fill Out the Form Below to Submit Your Internship Application!
             </p>
@@ -555,3 +555,4 @@ export default function InternshipsPage() {
     </div>
   );
 }
+

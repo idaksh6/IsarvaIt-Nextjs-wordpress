@@ -57,7 +57,7 @@ export default function ProductDetailPremiumDealer({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-[32px] md:text-[50px] font-extrabold text-[#000000] leading-tight mb-8">
+            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-[#000000] leading-tight mb-8">
               Comprehensive Platform for<br />
               <span className="text-[#D946EF]">
                 Dealer Management
@@ -149,7 +149,7 @@ export default function ProductDetailPremiumDealer({
 
             {/* Right Side - Content */}
             <div>
-              <h2 className="text-4xl md:text-[50px] font-extrabold text-[#000000] mb-6 leading-tight">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#000000] mb-6 leading-tight">
                 Streamline Dealer Network with{" "}
                 <span className="text-[#D946EF]">Secure Content Distribution</span>
               </h2>
@@ -228,7 +228,7 @@ export default function ProductDetailPremiumDealer({
                   GET STARTED TODAY
                 </span>
 
-                <h2 className="text-[clamp(32px,5vw,56px)] font-extrabold text-white leading-tight mb-6">
+                <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
                   Ready to streamline your <br className="hidden md:block" />
                   dealer network?
                 </h2>
@@ -278,7 +278,7 @@ export default function ProductDetailPremiumDealer({
               <span className="inline-block text-[10px] font-black text-[#D946EF] tracking-[0.28em] uppercase mb-3 bg-[#D946EF]/10 px-4 py-2 rounded-full">
                 MORE PRODUCTS
               </span>
-              <h2 className="text-[clamp(32px,4.5vw,48px)] font-extrabold text-[#0a0a0a] leading-tight mb-4">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-4">
                 Explore Our More Products
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -553,7 +553,7 @@ function DealerFeatureSection() {
           <span className="block text-[10px] font-black text-[#D946EF] tracking-[0.28em] uppercase mb-2.5">
             SOFTWARE FEATURES
           </span>
-          <h2 className="text-[clamp(28px,4vw,44px)] font-extrabold text-[#0a0a0a] leading-tight mb-3.5">
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-3.5">
             Key Features Of <span className="text-[#D946EF]">Dealer Management</span> Software
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">
@@ -805,3 +805,5 @@ function DealerFeatureSection() {
     </section>
   );
 }
+
+

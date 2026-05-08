@@ -73,7 +73,7 @@ const WhyPartner = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#111827] mb-4 md:mb-6"
+            className="text-4xl lg:text-5xl font-bold text-[#111827] mb-4 md:mb-6"
           >
             Why Choose <span className="text-emerald-600">Isarva Infotech</span>
           </motion.h2>

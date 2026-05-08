@@ -247,10 +247,10 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
                 <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/60 backdrop-blur-md text-gray-800 font-semibold text-sm mb-6 border border-white/60 shadow-lg">
                   <span>{product.category}</span>
                 </div>
-                <h1 className="text-[clamp(2.5rem,6vw,4.5rem)] font-bold text-gray-900 mb-6 tracking-tight">
+                <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-bold text-gray-900 mb-6 tracking-tight leading-tight">
                   {product.title}
                 </h1>
-                <p className="text-2xl text-violet-600 font-semibold mb-6">
+                <p className="text-xl lg:text-2xl text-violet-600 font-semibold mb-6">
                   {product.tagline}
                 </p>
                 <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8">
@@ -310,7 +310,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Key Features
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
                 Powerful features designed to meet your business needs
               </p>
             </div>
@@ -346,7 +346,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Technology Stack
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
                 Built with modern, reliable technologies
               </p>
             </div>
@@ -373,7 +373,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Business Benefits
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
                 Real value that drives your business forward
               </p>
             </div>
@@ -410,7 +410,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Related Products
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
                 Explore other solutions that might interest you
               </p>
             </div>
@@ -479,3 +479,4 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
     </>
   );
 }
+
