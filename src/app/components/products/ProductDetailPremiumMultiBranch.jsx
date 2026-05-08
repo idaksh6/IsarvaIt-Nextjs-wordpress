@@ -57,7 +57,7 @@ export default function ProductDetailPremiumMultiBranch({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-[#000000] leading-tight mb-8">
+            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-[#000000] leading-[1] mb-8">
               Enterprise-Grade<br />
               <span className="text-[#14B8A6]">
                 Retail Billing Software
@@ -149,7 +149,7 @@ export default function ProductDetailPremiumMultiBranch({
 
             {/* Right Side - Content */}
             <div>
-              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#000000] mb-6 leading-tight">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#000000] mb-6 leading-[1]">
                 Powerful Multi-Branch & Warehouse{" "}
                 <span className="text-[#14B8A6]">Management System</span>
               </h2>
@@ -228,7 +228,7 @@ export default function ProductDetailPremiumMultiBranch({
                   GET STARTED TODAY
                 </span>
 
-                <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
+                <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-[1] mb-6">
                   Ready to scale your <br className="hidden md:block" />
                   multi-branch business?
                 </h2>
@@ -278,7 +278,7 @@ export default function ProductDetailPremiumMultiBranch({
               <span className="inline-block text-[10px] font-black text-[#14B8A6] tracking-[0.28em] uppercase mb-3 bg-[#14B8A6]/10 px-4 py-2 rounded-full">
                 MORE PRODUCTS
               </span>
-              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-4">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-[1] mb-4">
                 Explore Our More Products
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -522,7 +522,7 @@ function MultiBranchFeatureSection() {
           <span className="block text-[10px] font-black text-[#14B8A6] tracking-[0.28em] uppercase mb-2.5">
             SOFTWARE FEATURES
           </span>
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-3.5">
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-[1] mb-3.5">
             Key Features Of <span className="text-[#14B8A6]">Bill Soft</span> Multi-Branch Software
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">
@@ -748,5 +748,6 @@ function MultiBranchFeatureSection() {
     </section>
   );
 }
+
 
 

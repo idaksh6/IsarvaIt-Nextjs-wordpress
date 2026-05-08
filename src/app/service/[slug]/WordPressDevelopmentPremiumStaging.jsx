@@ -216,7 +216,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 </div>
 
                 <div className="relative">
-                  <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-black text-gray-900 mb-6 leading-[0.95] tracking-tight">
+                  <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-black text-gray-900 mb-6 leading-[1] tracking-tight">
                     <span className="shimmer-title inline-block py-2">WordPress</span> <br />
                     Built for <br />
                     <span className="text-[clamp(1.5rem,4vw,3.5rem)] bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent font-bold">Performance & Growth</span>

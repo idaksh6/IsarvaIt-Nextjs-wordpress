@@ -76,7 +76,7 @@ function HeroSection({ data }) {
         {heroData.heading && (
           <h1
             id="hero-heading"
-            className="text-[clamp(2.25rem,5vw,3.75rem)] hero_heading font-bold leading-tight text-gray-900 mb-10 tracking-tighter max-w-6xl mx-auto"
+            className="text-[clamp(2.25rem,5vw,3.75rem)] hero_heading font-bold leading-[1] text-gray-900 mb-10 tracking-tighter max-w-6xl mx-auto"
             dangerouslySetInnerHTML={{ __html: displayHeading }}
           />
         )}
@@ -189,3 +189,4 @@ export default memo(HeroSection, (prevProps, nextProps) => {
   // Custom comparison: only re-render if data actually changed
   return JSON.stringify(prevProps.data) === JSON.stringify(nextProps.data);
 });
+

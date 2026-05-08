@@ -257,7 +257,7 @@ export default async function IndustryDetailPage({ params }) {
                 <span className="text-2xl">{industry.icon}</span>
                 <span>Industry Expertise</span>
               </div>
-              <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-bold text-gray-900 mb-6 tracking-tight">
+              <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-bold text-gray-900 mb-6 tracking-tight leading-[1]">
                 {industry.title}
               </h1>
               <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8">

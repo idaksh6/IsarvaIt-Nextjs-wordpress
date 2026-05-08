@@ -35,7 +35,7 @@ const WhiteLabelHero = ({ onContact }: { onContact: () => void }) => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-5xl lg:text-7xl font-black text-slate-900 leading-[1.05] mb-6 font-display tracking-tight uppercase"
+              className="text-5xl lg:text-7xl font-black text-slate-900 leading-[1] mb-6 font-display tracking-tight uppercase"
             >
               Scale Your Agency <br />
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-rose-500 bg-clip-text text-transparent drop-shadow-sm">

@@ -104,7 +104,7 @@ export default function JobDetailPage({ params }) {
             </div>
 
             {/* Job Title */}
-            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-display font-bold text-[#1a1f24] mb-8 leading-tight">
+            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-display font-bold text-[#1a1f24] mb-8 leading-[1]">
               {job.title}
             </h1>
 

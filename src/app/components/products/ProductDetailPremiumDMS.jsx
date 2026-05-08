@@ -57,7 +57,7 @@ export default function ProductDetailPremiumDMS({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-[#000000] leading-tight mb-8">
+            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-[#000000] leading-[1] mb-8">
               Intelligent & Secure<br />
               <span className="text-[#6366F1]">
                 Document Management System
@@ -149,7 +149,7 @@ export default function ProductDetailPremiumDMS({
 
             {/* Right Side - Content */}
             <div>
-              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#000000] mb-6 leading-tight">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#000000] mb-6 leading-[1]">
                 Streamline Your Document Workflow with{" "}
                 <span className="text-[#6366F1]">Smart Management</span>
               </h2>
@@ -228,7 +228,7 @@ export default function ProductDetailPremiumDMS({
                   GET STARTED TODAY
                 </span>
 
-                <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
+                <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-[1] mb-6">
                   Ready to go paperless and <br className="hidden md:block" />
                   boost productivity?
                 </h2>
@@ -278,7 +278,7 @@ export default function ProductDetailPremiumDMS({
               <span className="inline-block text-[10px] font-black text-[#6366F1] tracking-[0.28em] uppercase mb-3 bg-[#6366F1]/10 px-4 py-2 rounded-full">
                 MORE PRODUCTS
               </span>
-              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-4">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-[1] mb-4">
                 Explore Our More Products
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -515,7 +515,7 @@ function DMSFeatureSection() {
           <span className="block text-[10px] font-black text-[#6366F1] tracking-[0.28em] uppercase mb-2.5">
             SOFTWARE FEATURES
           </span>
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-3.5">
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-[1] mb-3.5">
             Key Features Of <span className="text-[#6366F1]">Document Management</span> System
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">
@@ -740,5 +740,6 @@ function DMSFeatureSection() {
     </section>
   );
 }
+
 
 

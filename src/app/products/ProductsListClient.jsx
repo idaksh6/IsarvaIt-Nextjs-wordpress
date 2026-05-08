@@ -74,7 +74,7 @@ export default function ProductsListClient({ productsData }) {
             </div>
 
             {/* Heading */}
-            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-gray-900 mb-4 tracking-tight leading-tight">
+            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-gray-900 mb-4 tracking-tight leading-[1]">
               Software Products
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-green-600 mt-2">
                 Built for Success
@@ -354,4 +354,5 @@ export default function ProductsListClient({ productsData }) {
     </div>
   );
 }
+
 

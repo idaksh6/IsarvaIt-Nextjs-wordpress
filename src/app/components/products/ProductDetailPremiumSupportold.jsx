@@ -55,7 +55,7 @@ export default function ProductDetailPremiumSupport({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-[#000000] leading-tight mb-8">
+            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-[#000000] leading-[1] mb-8">
               Streamline Your <span className="text-[#9333EA]">Workflow</span>. <br />
               Simplify Your <span className="text-[#9333EA]">Support</span>
               <span style={{ color: SUPPORT_PURPLE }}>.</span>
@@ -142,7 +142,7 @@ export default function ProductDetailPremiumSupport({
 
             {/* Right Side - Content */}
             <div>
-              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#000000] mb-6 leading-tight">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#000000] mb-6 leading-[1]">
                 The Unified Pulse of Your{" "}
                 <span className="text-[#9333EA]">Projects and Tickets</span>
               </h2>
@@ -244,7 +244,7 @@ export default function ProductDetailPremiumSupport({
               <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-3 bg-[#9333EA]/10 px-4 py-2 rounded-full">
                 SUPPORT
               </span>
-              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-4">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-[1] mb-4">
                 Everything you need to know
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -294,7 +294,7 @@ export default function ProductDetailPremiumSupport({
                   GET STARTED TODAY
                 </span>
 
-                <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
+                <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-[1] mb-6">
                   Ready to streamline your <br className="hidden md:block" />
                   internal operations?
                 </h2>
@@ -344,7 +344,7 @@ export default function ProductDetailPremiumSupport({
               <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-3 bg-[#9333EA]/10 px-4 py-2 rounded-full">
                 MORE PRODUCTS
               </span>
-              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-4">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-[1] mb-4">
                 Explore Our More Products
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -732,7 +732,7 @@ function SupportFeatureSection() {
           <span className="block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-2.5">
             KEY FEATURES
           </span>
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-3.5">
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-[1] mb-3.5">
             Key Features Of <span className="text-[#9333EA]">Internal Support</span> System
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">
@@ -958,5 +958,6 @@ function SupportFeatureSection() {
     </section>
   );
 }
+
 
 

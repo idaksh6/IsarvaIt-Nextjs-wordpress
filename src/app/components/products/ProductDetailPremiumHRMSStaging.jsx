@@ -215,7 +215,7 @@ export default function ProductDetailPremiumHRMSStaging({
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="text-[clamp(2.25rem,5vw,3.75rem)] font-black text-gray-900 leading-[1.1] mb-10 tracking-tighter uppercase pb-2"
+                  className="text-[clamp(2.25rem,5vw,3.75rem)] font-black text-gray-900 leading-[1] mb-10 tracking-tighter uppercase pb-2"
                 >
                   {activeContent.title.split(" ").slice(0, -1).join(" ")}{" "}
                   <br />

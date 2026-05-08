@@ -73,7 +73,7 @@ export default async function BlogPostPage({ params }) {
             </div>
 
             {/* Title */}
-            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-black mb-6 leading-tight tracking-tight text-gray-900">
+            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-black mb-6 leading-[1] tracking-tight text-gray-900">
               {post.title}
             </h1>
 

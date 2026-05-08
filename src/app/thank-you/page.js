@@ -130,7 +130,7 @@ function ThankYouContent() {
           transition={{ delay: 0.4 }}
           className="text-center mb-12"
         >
-          <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-display font-bold text-[#1a1f24] mb-6 leading-tight">
+          <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-display font-bold text-[#1a1f24] mb-6 leading-[1]">
             {content.title}
           </h1>
           <p className="text-2xl text-[#53606b] font-medium max-w-2xl mx-auto leading-relaxed">
@@ -300,4 +300,5 @@ export default function ThankYouPage() {
     </Suspense>
   );
 }
+
 

@@ -57,7 +57,7 @@ export default function ProductDetailPremiumLodge({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-[#000000] leading-tight mb-8">
+            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-[#000000] leading-[1] mb-8">
               Next-Gen Cloud-Based<br />
               <span className="text-[#EC4899]">
                 Lodge Booking Software
@@ -149,7 +149,7 @@ export default function ProductDetailPremiumLodge({
 
             {/* Right Side - Content */}
             <div>
-              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#000000] mb-6 leading-tight">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#000000] mb-6 leading-[1]">
                 Maximize Revenue with{" "}
                 <span className="text-[#EC4899]">Smart Hotel Management</span>
               </h2>
@@ -228,7 +228,7 @@ export default function ProductDetailPremiumLodge({
                   GET STARTED TODAY
                 </span>
 
-                <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6">
+                <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-[1] mb-6">
                   Ready to transform your <br className="hidden md:block" />
                   hotel operations?
                 </h2>
@@ -279,7 +279,7 @@ export default function ProductDetailPremiumLodge({
               <span className="inline-block text-[10px] font-black text-[#EC4899] tracking-[0.28em] uppercase mb-3 bg-[#EC4899]/10 px-4 py-2 rounded-full">
                 MORE PRODUCTS
               </span>
-              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-4">
+              <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-[1] mb-4">
                 Explore Our More Products
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -487,7 +487,7 @@ function LodgeFeatureSection() {
           <span className="block text-[10px] font-black text-[#EC4899] tracking-[0.28em] uppercase mb-2.5">
             SOFTWARE FEATURES
           </span>
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-tight mb-3.5">
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-[1] mb-3.5">
             Key Features Of <span className="text-[#EC4899]">Lodge Booking</span> Software
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">
@@ -713,5 +713,6 @@ function LodgeFeatureSection() {
     </section>
   );
 }
+
 
 

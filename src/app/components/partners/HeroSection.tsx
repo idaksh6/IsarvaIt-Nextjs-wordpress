@@ -12,6 +12,21 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
     { text: "Backend Delivery Included", color: "from-emerald-100 to-emerald-50 border-emerald-200 text-emerald-800" },
   ];
 
+  const collageVariants = {
+    initial: { opacity: 0, scale: 0.9 },
+    animate: { opacity: 1, scale: 1, transition: { duration: 1.2, ease: "easeOut" } }
+  };
+
+  const badgeVariants = {
+    initial: { opacity: 0, scale: 0.9 },
+    animate: { opacity: 1, scale: 1 }
+  };
+
+  const headingVariants = {
+    initial: { opacity: 0, y: 30 },
+    animate: { opacity: 1, y: 0 }
+  };
+
   return (
     <section className="relative min-h-screen md:min-h-[90vh] flex items-center overflow-hidden pt-24 pb-10 lg:pt-32 md:pb-24 bg-gradient-to-br from-[#f0fdf4] via-[#ecfdf5] to-white">
       {/* Background Subtle mesh and Grid */}
@@ -27,8 +42,9 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
           {/* Left Content Side */}
           <div className="text-center lg:text-left pt-4 lg:pt-10">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
+              variants={badgeVariants}
+              initial="initial"
+              animate="animate"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 text-sm font-bold mb-8 font-display"
             >
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -36,10 +52,11 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              variants={headingVariants}
+              initial="initial"
+              animate="animate"
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="font-display text-5xl lg:text-7xl font-black text-[#111827] leading-[1.05] mb-4 md:mb-6 tracking-tight uppercase"
+              className="font-display text-5xl lg:text-7xl font-black text-[#111827] leading-[1] mb-4 md:mb-6 tracking-tight uppercase"
             >
               <span className="bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent">Scale Beyond</span> <br />
               <span className="text-emerald-600">Gravity</span>
@@ -95,9 +112,9 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
           {/* Right Imagery Side - The Collage */}
           <div className="relative flex items-center justify-center mt-6 lg:mt-0">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.2, ease: "easeOut" }}
+              variants={collageVariants}
+              initial="initial"
+              animate="animate"
               className="relative z-10 w-full max-w-[500px] aspect-square rounded-[48px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.12)] bg-slate-50 border-4 border-white/30"
             >
               <img

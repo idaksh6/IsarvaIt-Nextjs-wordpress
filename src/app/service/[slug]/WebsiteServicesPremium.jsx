@@ -468,7 +468,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                   </span>
                   Premium Website Services
                 </div>
-                <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-black text-gray-900 mb-6 leading-[1.05] tracking-tight">
+                <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-black text-gray-900 mb-6 leading-[1] tracking-tight">
                   Build Your <span className="shimmer-title">Digital</span>
                   <br />
                   Presence

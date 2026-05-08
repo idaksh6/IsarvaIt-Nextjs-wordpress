@@ -110,7 +110,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
               <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></span>
               The Future of Godown Tech
             </span>
-            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-black tracking-tighter text-slate-900 mb-8 leading-[0.95]">
+            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-black tracking-tighter text-slate-900 mb-8 leading-[1]">
               <span className="inline-block hover:scale-[1.02] transition-transform duration-300">Smart Godown</span> <br />
               <span className="text-transparent bg-clip-text py-1 bg-gradient-to-r from-teal-600 via-cyan-500 to-emerald-500 drop-shadow-sm py-1">
                 & Inventory System
@@ -252,7 +252,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
               <span className="text-teal-600 font-black tracking-widest text-xs uppercase mb-6 inline-block">MOBILE OPTIMIZED</span>
-              <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-8 leading-tight">Your Warehouse in <br /><span className="text-teal-600">Your Pocket.</span></h2>
+              <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-8 leading-[1]">Your Warehouse in <br /><span className="text-teal-600">Your Pocket.</span></h2>
               <p className="text-slate-500 text-lg mb-8 leading-relaxed font-medium">Access your entire godown operation from anywhere. Our mobile-first design ensures you stay in control even when you're on the move.</p>
               
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -376,7 +376,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
             
             <div>
               <span className="text-teal-600 font-black tracking-widest text-xs uppercase mb-6 inline-block">MASTER SETUP</span>
-              <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-8 leading-tight">Foundation for <br /><span className="text-teal-600">Enterprise Scale.</span></h2>
+              <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-8 leading-[1]">Foundation for <br /><span className="text-teal-600">Enterprise Scale.</span></h2>
               
               <div className="space-y-8">
                  <div>
@@ -446,7 +446,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
           <div className="flex flex-col lg:flex-row items-center gap-20">
             <div className="lg:w-1/2">
               <span className="text-teal-400 font-black tracking-widest text-xs uppercase mb-6 inline-block">AUTOMATION THAT WORKS</span>
-              <h2 className="text-4xl lg:text-6xl font-black mb-8 leading-tight">Smart Status Updates— <br /><span className="text-teal-400">Zero Manual Work.</span></h2>
+              <h2 className="text-4xl lg:text-6xl font-black mb-8 leading-[1]">Smart Status Updates— <br /><span className="text-teal-400">Zero Manual Work.</span></h2>
               <p className="text-slate-400 text-lg mb-10 leading-relaxed font-medium">Our system automatically detects inventory returns and updates statuses in real-time. Whether it's partially back or fully returned, the system knows what to do.</p>
               
               <div className="space-y-6">
@@ -545,7 +545,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
 
             <div className="order-1 lg:order-2">
               <span className="text-teal-600 font-black tracking-widest text-xs uppercase mb-6 inline-block">ACCOUNTABILITY & CONDITION</span>
-              <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-8 leading-tight">Meticulous Return <br /><span className="text-teal-600">Management.</span></h2>
+              <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-8 leading-[1]">Meticulous Return <br /><span className="text-teal-600">Management.</span></h2>
               <div className="space-y-10">
                 <div className="flex gap-6">
                   <div className="w-12 h-12 rounded-2xl bg-teal-50 flex items-center justify-center text-2xl flex-shrink-0 text-teal-600">🛡️</div>
@@ -704,6 +704,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
     </div>
   );
 }
+
 
 
 
