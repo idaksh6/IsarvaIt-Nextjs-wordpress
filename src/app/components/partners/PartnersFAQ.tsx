@@ -27,6 +27,8 @@ const faqs = [
   }
 ];
 
+const viewportConfig = { once: true };
+
 const headingVariants: Variants = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -59,7 +61,7 @@ const PartnersFAQ = () => {
               variants={headingVariants}
               initial="initial"
               whileInView="whileInView"
-              viewport={{ once: true }}
+              viewport={viewportConfig}
               className="text-4xl md:text-6xl font-bold text-[#111827] uppercase"
             >
               Common <span className="text-emerald-600">Questions</span>
@@ -75,7 +77,7 @@ const PartnersFAQ = () => {
                 variants={faqItemVariants}
                 initial="initial"
                 whileInView="whileInView"
-                viewport={{ once: true }}
+                viewport={viewportConfig}
                 className="group"
               >
                 <button

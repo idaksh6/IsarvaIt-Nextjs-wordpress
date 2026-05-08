@@ -13,6 +13,8 @@ const commitments = [
   { text: "Strict Project Timelines & QC", icon: <Clock className="w-8 h-8"/> },
 ];
 
+const viewportConfig = { once: true };
+
 const headingVariants: Variants = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -36,7 +38,7 @@ const PartnerCommitments = () => {
             variants={headingVariants}
             initial="initial"
             whileInView="whileInView"
-            viewport={{ once: true }}
+            viewport={viewportConfig}
             className="text-4xl md:text-6xl font-bold text-[#111827] mb-6 uppercase"
           >
             Partner <span className="text-emerald-600">Commitments</span>
@@ -52,7 +54,7 @@ const PartnerCommitments = () => {
               variants={cardVariants}
               initial="initial"
               whileInView="whileInView"
-              viewport={{ once: true }}
+              viewport={viewportConfig}
               className="p-8 md:p-10 rounded-[24px] md:rounded-[32px] border border-emerald-200/60 hover:border-emerald-400 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group bg-gradient-to-br from-white to-emerald-100/70 relative overflow-hidden flex flex-col items-center text-center sm:items-start sm:text-left"
             >
               <div className="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">

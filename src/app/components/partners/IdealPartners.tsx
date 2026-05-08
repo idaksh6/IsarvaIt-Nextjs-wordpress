@@ -25,6 +25,8 @@ const partners = [
   }
 ];
 
+const viewportConfig = { once: true };
+
 const headerVariants: Variants = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -53,7 +55,7 @@ const IdealPartners = () => {
           variants={headerVariants}
           initial="initial"
           whileInView="whileInView"
-          viewport={{ once: true }}
+          viewport={viewportConfig}
           className="mb-16 md:mb-24"
         >
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-[#111827] uppercase tracking-tighter">
@@ -70,7 +72,7 @@ const IdealPartners = () => {
               variants={cardVariants}
               initial="initial"
               whileInView="whileInView"
-              viewport={{ once: true }}
+              viewport={viewportConfig}
               className="flex flex-col items-center p-8 md:p-12 rounded-[40px] bg-white border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 group relative overflow-hidden"
             >
               {/* Card background decoration */}

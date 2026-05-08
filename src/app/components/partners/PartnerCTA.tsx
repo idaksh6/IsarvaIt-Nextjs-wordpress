@@ -26,6 +26,8 @@ const bgVariants2: Variants = {
   }
 };
 
+const viewportConfig = { once: true };
+
 const headingVariants: Variants = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -38,7 +40,7 @@ const PartnerCTA = ({ onApply }: { onApply: () => void }) => {
         variants={containerVariants}
         initial="initial"
         whileInView="whileInView"
-        viewport={{ once: true }}
+        viewport={viewportConfig}
         className="max-w-7xl mx-auto rounded-[32px] md:rounded-[64px] border border-emerald-100 bg-white p-6 sm:p-8 md:p-16 lg:p-24 relative overflow-hidden flex flex-col items-center text-center shadow-2xl shadow-emerald-600/5 group"
       >
         {/* Background Patterns for "Banner" feel */}

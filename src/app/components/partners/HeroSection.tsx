@@ -41,6 +41,20 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
     animate: { opacity: 1, y: 0, transition: { delay: 0.4 } }
   };
 
+  const floatVariants1: Variants = {
+    animate: {
+      y: [0, -20, 0],
+      transition: { duration: 5, repeat: Infinity, ease: "easeInOut" }
+    }
+  };
+
+  const floatVariants2: Variants = {
+    animate: {
+      y: [0, 20, 0],
+      transition: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }
+    }
+  };
+
   return (
     <section className="relative min-h-screen md:min-h-[90vh] flex items-center overflow-hidden pt-24 pb-10 lg:pt-32 md:pb-24 bg-gradient-to-br from-[#f0fdf4] via-[#ecfdf5] to-white">
       {/* Background Subtle mesh and Grid */}
@@ -141,10 +155,8 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
             </motion.div>
 
             <motion.div
-              animate={{
-                y: [0, -20, 0],
-              }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              variants={floatVariants1}
+              animate="animate"
               className="absolute top-[20%] left-2 lg:-left-6 z-20 bg-white/80 backdrop-blur-xl p-3 rounded-xl border border-white/50 shadow-lg flex items-center gap-2.5 border-l-4 border-l-emerald-500 scale-90 lg:scale-100"
             >
               <div className="w-9 h-9 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-lg shadow-lg shadow-emerald-500/20">
@@ -157,10 +169,8 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
             </motion.div>
 
             <motion.div
-              animate={{
-                y: [0, 20, 0],
-              }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              variants={floatVariants2}
+              animate="animate"
               className="absolute bottom-[25%] right-2 lg:-right-4 z-20 bg-white/80 backdrop-blur-xl p-3 rounded-xl border border-white/50 shadow-lg flex items-center gap-2.5 border-l-4 border-l-emerald-600 scale-90 lg:scale-100"
             >
               <div className="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-lg shadow-lg shadow-emerald-600/20">

@@ -139,6 +139,8 @@ export default function PartnerFormSection({
     }
   };
 
+  const viewportConfig = { once: true };
+
   const contentVariants: Variants = {
     initial: { opacity: 0, x: -20 },
     whileInView: { opacity: 1, x: 0, transition: { duration: 0.6 } }
@@ -172,7 +174,7 @@ export default function PartnerFormSection({
                 variants={contentVariants}
                 initial="initial"
                 whileInView="whileInView"
-                viewport={{ once: true }}
+                viewport={viewportConfig}
               >
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold uppercase tracking-wider mb-6">
                   <Sparkles className="w-3 h-3" />
@@ -209,7 +211,7 @@ export default function PartnerFormSection({
                 variants={formVariants}
                 initial="initial"
                 whileInView="whileInView"
-                viewport={{ once: true }}
+                viewport={viewportConfig}
                 className="bg-white rounded-[32px] p-6 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-gray-100"
               >
                 <form onSubmit={handleSubmit} className="space-y-8">

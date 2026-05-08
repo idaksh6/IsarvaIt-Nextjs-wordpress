@@ -60,6 +60,8 @@ const bgVariants2: Variants = {
   }
 };
 
+const viewportConfig = { once: true };
+
 const headingVariants: Variants = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -97,7 +99,7 @@ const WhyPartner = () => {
             variants={headingVariants}
             initial="initial"
             whileInView="whileInView"
-            viewport={{ once: true }}
+            viewport={viewportConfig}
             className="text-4xl lg:text-5xl font-bold text-[#111827] mb-4 md:mb-6"
           >
             Why Choose <span className="text-emerald-600">Isarva Infotech</span>
@@ -146,7 +148,7 @@ const ValueCard = ({ icon, title, desc, index, color }: { icon: any, title: stri
       variants={cardVariants}
       initial="initial"
       whileInView="whileInView"
-      viewport={{ once: true }}
+      viewport={viewportConfig}
       className={`p-8 md:p-10 rounded-[32px] hover:shadow-2xl hover:-translate-y-2 md:hover:-translate-y-3 transition-all duration-500 group bg-gradient-to-br from-white ${bgVariants[themeColor]} relative overflow-hidden border border-transparent hover:border-current`} style={{ borderColor: 'rgba(0,0,0,0.05)' }}
     >
       {/* Subtle glow on hover */}

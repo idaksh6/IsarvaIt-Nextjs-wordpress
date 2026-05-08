@@ -30,6 +30,8 @@ const bronzeFeatures = [
   { label: "Sales Closure Responsibility", check: false },
 ];
 
+const viewportConfig = { once: true };
+
 const headingVariants: Variants = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -68,7 +70,7 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
             variants={headingVariants}
             initial="initial"
             whileInView="whileInView"
-            viewport={{ once: true }}
+            viewport={viewportConfig}
             className="text-4xl lg:text-5xl font-bold text-[#111827] mb-4 md:mb-6"
           >
             Partner <span className="text-[#EAB308]">Tiers</span>
@@ -82,7 +84,7 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
             variants={goldVariants}
             initial="initial"
             whileInView="whileInView"
-            viewport={{ once: true }}
+            viewport={viewportConfig}
             className="relative group flex flex-col h-full"
           >
             {/* Most Recommended Badge */}
@@ -156,7 +158,7 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
             variants={silverVariants}
             initial="initial"
             whileInView="whileInView"
-            viewport={{ once: true }}
+            viewport={viewportConfig}
             className="relative group bg-white rounded-[40px] border border-slate-200 shadow-2xl overflow-hidden flex flex-col h-full"
           >
             {/* Header Bar */}
@@ -221,7 +223,7 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
             variants={bronzeVariants}
             initial="initial"
             whileInView="whileInView"
-            viewport={{ once: true }}
+            viewport={viewportConfig}
             className="relative group bg-white rounded-[40px] border border-orange-200 shadow-2xl overflow-hidden flex flex-col h-full"
           >
             {/* Header Bar */}
@@ -274,7 +276,7 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
             variants={footerVariants}
             initial="initial"
             whileInView="whileInView"
-            viewport={{ once: true }}
+            viewport={viewportConfig}
             className="text-slate-500 text-sm font-medium"
           >
             <span className="text-red-600 font-bold text-lg leading-none align-middle mr-1">*</span>

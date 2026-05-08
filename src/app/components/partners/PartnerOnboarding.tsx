@@ -34,6 +34,8 @@ const steps = [
   }
 ];
 
+const viewportConfig = { once: true };
+
 const headingVariants: Variants = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -63,7 +65,7 @@ const PartnerOnboarding = () => {
           variants={headingVariants}
           initial="initial"
           whileInView="whileInView"
-          viewport={{ once: true }}
+          viewport={viewportConfig}
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-12 md:mb-24 text-[#111827] uppercase tracking-tight"
         >
           Your Journey to <span className="text-emerald-600">Growth</span>
@@ -78,7 +80,7 @@ const PartnerOnboarding = () => {
               initial="initial"
               whileInView="whileInView"
               whileHover="hover"
-              viewport={{ once: true }}
+              viewport={viewportConfig}
               className="relative p-8 lg:p-10 rounded-[32px] md:rounded-[40px] bg-white border border-gray-100 shadow-sm hover:shadow-2xl hover:border-emerald-100 transition-all duration-500 group cursor-default"
             >
               <div className={`text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-br ${step.gradient} opacity-10 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 mb-6 md:mb-8 pointer-events-none`}>
