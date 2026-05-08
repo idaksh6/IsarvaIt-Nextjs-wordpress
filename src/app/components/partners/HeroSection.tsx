@@ -27,6 +27,20 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
     animate: { opacity: 1, y: 0 }
   };
 
+  const pillVariants = {
+    initial: { opacity: 0, scale: 0.8 },
+    animate: (i: number) => ({
+      opacity: 1,
+      scale: 1,
+      transition: { delay: 0.6 + i * 0.1 }
+    })
+  };
+
+  const buttonContainerVariants = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0, transition: { delay: 0.4 } }
+  };
+
   return (
     <section className="relative min-h-screen md:min-h-[90vh] flex items-center overflow-hidden pt-24 pb-10 lg:pt-32 md:pb-24 bg-gradient-to-br from-[#f0fdf4] via-[#ecfdf5] to-white">
       {/* Background Subtle mesh and Grid */}
@@ -72,10 +86,10 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-4 mb-8 lg:mb-12"
+              variants={buttonContainerVariants}
+              initial="initial"
+              animate="animate"
+              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-12"
             >
               <button
                 onClick={onApply}
@@ -97,9 +111,10 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
               {statPills.map((pill, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.6 + i * 0.1 }}
+                  custom={i}
+                  variants={pillVariants}
+                  initial="initial"
+                  animate="animate"
                   className={`bg-white/80 backdrop-blur-sm px-5 py-2.5 rounded-full shadow-sm text-xs md:text-sm font-bold border border-slate-100 flex items-center justify-center font-display tracking-widest uppercase text-slate-600`}
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-2" />
