@@ -141,6 +141,21 @@ const models = [
   },
 ];
 
+const headingVariants = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
+
+const tabContentVariants = {
+  initial: { opacity: 0, y: 10 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" } },
+  exit: { opacity: 0, y: -10, transition: { duration: 0.3, ease: "easeIn" } }
+};
+
+const pathItemVariants = {
+  hover: { y: -5, transition: { duration: 0.3 } }
+};
+
 const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
   const [activeTab, setActiveTab] = useState(models[0].id);
 
@@ -151,8 +166,9 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10 md:mb-16">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={headingVariants}
+            initial="initial"
+            whileInView="whileInView"
             viewport={{ once: true }}
             className="text-4xl lg:text-5xl font-bold text-[#111827] uppercase mb-4"
           >
@@ -190,10 +206,10 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
+              variants={tabContentVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
               className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 items-start"
             >
               {/* Left Column: Deliverables & Ideal For */}
@@ -244,7 +260,8 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
                       {activeModel.path.map((item, idx) => (
                         <motion.div 
                           key={idx} 
-                          whileHover={{ y: -5 }}
+                          variants={pathItemVariants}
+                          whileHover="hover"
                           className="relative group/path flex md:block gap-5 items-start cursor-default"
                         >
                           <div className="text-5xl md:text-5xl font-black text-emerald-100 group-hover/path:bg-clip-text group-hover/path:text-transparent group-hover/path:bg-gradient-to-br from-emerald-600 to-teal-400 group-hover/path:scale-110 transition-all duration-700 font-display md:mb-2 shrink-0">

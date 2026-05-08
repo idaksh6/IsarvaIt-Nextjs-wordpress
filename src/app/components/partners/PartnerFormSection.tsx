@@ -139,6 +139,21 @@ export default function PartnerFormSection({
     }
   };
 
+  const contentVariants = {
+    initial: { opacity: 0, x: -20 },
+    whileInView: { opacity: 1, x: 0, transition: { duration: 0.6 } }
+  };
+
+  const formVariants = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
+
+  const messageVariants = {
+    initial: { opacity: 0, height: 0 },
+    animate: { opacity: 1, height: "auto", transition: { duration: 0.3 } }
+  };
+
   return (
     <section id={id} className="py-16 md:py-24 relative overflow-hidden bg-white">
       {/* Background Accents */}
@@ -154,8 +169,9 @@ export default function PartnerFormSection({
             {/* Content Side */}
             <div className="lg:w-1/3">
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                variants={contentVariants}
+                initial="initial"
+                whileInView="whileInView"
                 viewport={{ once: true }}
               >
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold uppercase tracking-wider mb-6">
@@ -190,8 +206,9 @@ export default function PartnerFormSection({
             {/* Form Side */}
             <div className="lg:w-2/3 w-full">
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                variants={formVariants}
+                initial="initial"
+                whileInView="whileInView"
                 viewport={{ once: true }}
                 className="bg-white rounded-[32px] p-6 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-gray-100"
               >
@@ -302,8 +319,9 @@ export default function PartnerFormSection({
 
                   {formData.selectedItem === "Other" && (
                     <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
+                      variants={messageVariants}
+                      initial="initial"
+                      animate="animate"
                       className="space-y-2"
                     >
                       <label className="text-sm font-bold text-emerald-600">Please specify your business type*</label>
@@ -334,8 +352,9 @@ export default function PartnerFormSection({
                   {/* Submit Status */}
                   {submitStatus === "error" && (
                     <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
+                      variants={messageVariants}
+                      initial="initial"
+                      animate="animate"
                       className="p-4 bg-red-50 border border-red-100 text-red-600 rounded-2xl text-sm font-bold"
                     >
                       {errorMessage}
@@ -344,8 +363,9 @@ export default function PartnerFormSection({
 
                   {submitStatus === "success" && (
                     <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
+                      variants={messageVariants}
+                      initial="initial"
+                      animate="animate"
                       className="p-4 bg-emerald-50 border border-emerald-100 text-emerald-600 rounded-2xl text-sm font-bold"
                     >
                       Application submitted! Redirecting to thank you page...

@@ -13,14 +13,29 @@ const commitments = [
   { text: "Strict Project Timelines & QC", icon: <Clock className="w-8 h-8"/> },
 ];
 
+const headingVariants = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
+
+const cardVariants = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.1, duration: 0.5 }
+  })
+};
+
 const PartnerCommitments = () => {
   return (
     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-12 md:mb-20">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={headingVariants}
+            initial="initial"
+            whileInView="whileInView"
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-bold text-[#111827] mb-6 uppercase"
           >
@@ -33,10 +48,11 @@ const PartnerCommitments = () => {
           {commitments.map((item, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              custom={idx}
+              variants={cardVariants}
+              initial="initial"
+              whileInView="whileInView"
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
               className="p-8 md:p-10 rounded-[24px] md:rounded-[32px] border border-emerald-200/60 hover:border-emerald-400 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group bg-gradient-to-br from-white to-emerald-100/70 relative overflow-hidden flex flex-col items-center text-center sm:items-start sm:text-left"
             >
               <div className="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">

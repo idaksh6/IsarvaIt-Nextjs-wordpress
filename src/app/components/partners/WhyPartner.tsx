@@ -44,34 +44,59 @@ const props = [
   },
 ];
 
+const bgVariants1 = {
+  animate: {
+    y: [0, -20, 0],
+    x: [0, 10, 0],
+    transition: { duration: 12, repeat: Infinity, ease: "easeInOut" }
+  }
+};
+
+const bgVariants2 = {
+  animate: {
+    y: [0, 30, 0],
+    x: [0, -20, 0],
+    transition: { duration: 15, repeat: Infinity, ease: "easeInOut", delay: 2 }
+  }
+};
+
+const headingVariants = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
+
+const cardVariants = {
+  initial: { opacity: 0, y: 40 },
+  whileInView: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: index * 0.1, duration: 0.6 }
+  })
+};
+
 const WhyPartner = () => {
   return (
     <section className="py-16 md:py-24 relative overflow-hidden bg-white">
       {/* Antigravity background elements */}
       <motion.div 
-        animate={{ 
-          y: [0, -20, 0],
-          x: [0, 10, 0]
-        }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        variants={bgVariants1}
+        animate="animate"
         className="absolute top-40 left-10 w-64 h-64 bg-blue-600/5 rounded-full blur-3xl pointer-events-none"
       />
 
 
       <motion.div 
-        animate={{ 
-          y: [0, 30, 0],
-          x: [0, -20, 0]
-        }}
-        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        variants={bgVariants2}
+        animate="animate"
         className="absolute bottom-20 right-20 w-80 h-80 bg-blue-600/5 rounded-full blur-3xl pointer-events-none"
       />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-12 md:mb-16">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={headingVariants}
+            initial="initial"
+            whileInView="whileInView"
             viewport={{ once: true }}
             className="text-4xl lg:text-5xl font-bold text-[#111827] mb-4 md:mb-6"
           >
@@ -117,10 +142,11 @@ const ValueCard = ({ icon, title, desc, index, color }: { icon: any, title: stri
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      custom={index}
+      variants={cardVariants}
+      initial="initial"
+      whileInView="whileInView"
       viewport={{ once: true }}
-      transition={{ delay: index * 0.1, duration: 0.6 }}
       className={`p-8 md:p-10 rounded-[32px] hover:shadow-2xl hover:-translate-y-2 md:hover:-translate-y-3 transition-all duration-500 group bg-gradient-to-br from-white ${bgVariants[themeColor]} relative overflow-hidden border border-transparent hover:border-current`} style={{ borderColor: 'rgba(0,0,0,0.05)' }}
     >
       {/* Subtle glow on hover */}

@@ -5,12 +5,39 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Mail, Phone, ArrowRight } from "lucide-react";
 
+const containerVariants = {
+  initial: { opacity: 0, scale: 0.95 },
+  whileInView: { opacity: 1, scale: 1, transition: { duration: 0.6 } }
+};
+
+const bgVariants1 = {
+  animate: { 
+    y: [0, 40, 0],
+    rotate: [0, 10, 0],
+    transition: { duration: 20, repeat: Infinity, ease: "easeInOut" }
+  }
+};
+
+const bgVariants2 = {
+  animate: { 
+    y: [0, -30, 0],
+    rotate: [0, -5, 0],
+    transition: { duration: 15, repeat: Infinity, ease: "easeInOut", delay: 1 }
+  }
+};
+
+const headingVariants = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
+
 const PartnerCTA = ({ onApply }: { onApply: () => void }) => {
   return (
     <section className="pt-8 pb-16 md:py-24 px-4 md:px-6 bg-white">
       <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
+        variants={containerVariants}
+        initial="initial"
+        whileInView="whileInView"
         viewport={{ once: true }}
         className="max-w-7xl mx-auto rounded-[32px] md:rounded-[64px] border border-emerald-100 bg-white p-6 sm:p-8 md:p-16 lg:p-24 relative overflow-hidden flex flex-col items-center text-center shadow-2xl shadow-emerald-600/5 group"
       >
@@ -20,11 +47,8 @@ const PartnerCTA = ({ onApply }: { onApply: () => void }) => {
         
         {/* Decorative Image Elements */}
         <motion.div 
-          animate={{ 
-            y: [0, 40, 0],
-            rotate: [0, 10, 0]
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+          variants={bgVariants1}
+          animate="animate"
           className="absolute -bottom-24 -right-24 w-[600px] h-[600px] opacity-10 pointer-events-none mix-blend-multiply"
           style={{
             maskImage: 'radial-gradient(ellipse at center, black 20%, transparent 85%)',
@@ -35,11 +59,8 @@ const PartnerCTA = ({ onApply }: { onApply: () => void }) => {
         </motion.div>
 
         <motion.div 
-          animate={{ 
-            y: [0, -30, 0],
-            rotate: [0, -5, 0]
-          }}
-          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          variants={bgVariants2}
+          animate="animate"
           className="absolute -top-32 -left-32 w-[500px] h-[500px] opacity-[0.07] pointer-events-none mix-blend-multiply"
           style={{
             maskImage: 'radial-gradient(ellipse at center, black 20%, transparent 85%)',
@@ -51,9 +72,9 @@ const PartnerCTA = ({ onApply }: { onApply: () => void }) => {
 
         <div className="relative z-10 w-full flex flex-col items-center">
             <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              variants={headingVariants}
+              initial="initial"
+              whileInView="whileInView"
               className="font-display text-5xl lg:text-7xl font-bold text-[#111827] mb-6 md:mb-8 leading-[1.1] md:leading-none uppercase tracking-tighter"
             >
               Ready to Grow <br /> <span className="text-emerald-600">Without Limits?</span>

@@ -25,6 +25,20 @@ const partners = [
   }
 ];
 
+const headerVariants = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
+
+const cardVariants = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.2, type: "spring", stiffness: 100 }
+  })
+};
+
 const IdealPartners = () => {
   return (
     <section className="py-16 md:py-32 bg-[#FDF8F2] relative overflow-hidden">
@@ -36,8 +50,9 @@ const IdealPartners = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={headerVariants}
+          initial="initial"
+          whileInView="whileInView"
           viewport={{ once: true }}
           className="mb-16 md:mb-24"
         >
@@ -51,10 +66,11 @@ const IdealPartners = () => {
           {partners.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              custom={index}
+              variants={cardVariants}
+              initial="initial"
+              whileInView="whileInView"
               viewport={{ once: true }}
-              transition={{ delay: index * 0.2, type: "spring", stiffness: 100 }}
               className="flex flex-col items-center p-8 md:p-12 rounded-[40px] bg-white border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 group relative overflow-hidden"
             >
               {/* Card background decoration */}

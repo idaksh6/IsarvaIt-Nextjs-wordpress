@@ -30,6 +30,31 @@ const bronzeFeatures = [
   { label: "Sales Closure Responsibility", check: false },
 ];
 
+const headingVariants = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
+
+const goldVariants = {
+  initial: { opacity: 0, x: -50 },
+  whileInView: { opacity: 1, x: 0, transition: { duration: 0.8 } }
+};
+
+const silverVariants = {
+  initial: { opacity: 0, y: 50 },
+  whileInView: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } }
+};
+
+const bronzeVariants = {
+  initial: { opacity: 0, x: 50 },
+  whileInView: { opacity: 1, x: 0, transition: { duration: 0.8, delay: 0.4 } }
+};
+
+const footerVariants = {
+  initial: { opacity: 0 },
+  whileInView: { opacity: 1, transition: { duration: 0.6 } }
+};
+
 const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
   return (
     <section className="py-16 md:py-24 relative overflow-hidden bg-[#FDF8F2]">
@@ -40,8 +65,9 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-12 md:mb-20">
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={headingVariants}
+            initial="initial"
+            whileInView="whileInView"
             viewport={{ once: true }}
             className="text-4xl lg:text-5xl font-bold text-[#111827] mb-4 md:mb-6"
           >
@@ -53,10 +79,10 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch mb-20">
           {/* Gold Tier */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            variants={goldVariants}
+            initial="initial"
+            whileInView="whileInView"
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
             className="relative group flex flex-col h-full"
           >
             {/* Most Recommended Badge */}
@@ -127,10 +153,10 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
 
           {/* Silver Tier */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={silverVariants}
+            initial="initial"
+            whileInView="whileInView"
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
             className="relative group bg-white rounded-[40px] border border-slate-200 shadow-2xl overflow-hidden flex flex-col h-full"
           >
             {/* Header Bar */}
@@ -192,10 +218,10 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
 
           {/* Bronze Tier */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            variants={bronzeVariants}
+            initial="initial"
+            whileInView="whileInView"
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
             className="relative group bg-white rounded-[40px] border border-orange-200 shadow-2xl overflow-hidden flex flex-col h-full"
           >
             {/* Header Bar */}
@@ -245,8 +271,9 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
 
         <div className="mt-16 text-center">
           <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            variants={footerVariants}
+            initial="initial"
+            whileInView="whileInView"
             viewport={{ once: true }}
             className="text-slate-500 text-sm font-medium"
           >
