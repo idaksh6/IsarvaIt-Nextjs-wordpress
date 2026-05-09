@@ -29,7 +29,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   background: var(--bg-dark);
   /* Premium interpolated scroll feel */
   scroll-snap-type: none;
@@ -191,7 +191,7 @@ html {
 
 body {
   /* Smooth deceleration on trackpad / momentum scroll */
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {

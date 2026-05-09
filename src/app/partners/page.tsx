@@ -15,6 +15,18 @@ import PartnerFormSection from "../components/partners/PartnerFormSection";
 export default function PartnersPage() {
   const [selectedTier, setSelectedTier] = React.useState("Channel Partner Inquiry");
 
+  React.useEffect(() => {
+    // Immediate scroll to top
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    
+    // Delayed scroll as a fallback for slower rendering/hydration
+    const timeoutId = setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }, 10);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
+
   const scrollToForm = (tier?: string) => {
     if (tier) {
       setSelectedTier(tier);
