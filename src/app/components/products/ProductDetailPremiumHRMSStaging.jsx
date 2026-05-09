@@ -29,7 +29,7 @@ const TAB_CONTENT = {
       "Salary & Statutory Setup",
       "Department Management",
       "Designation Control",
-      "Role-Based Access",
+      "Roles & Permissions",
       "Employee Status",
       "Document Types"
     ]
@@ -40,12 +40,12 @@ const TAB_CONTENT = {
     description: "Create a comprehensive employee database with 360-degree profiles, organizational mapping, and role-based access controls for seamless workforce management.",
     image: "/products/hrms/Personnel-details.jpg",
     features: [
-      "Role-Based Access Control",
-      "Document Vault Management",
+      "Role-based access & permissions",
+      "Document vault management",
       "360° Employee Profiles",
       "Auto-Generated HR Letters",
-      "Employee Asset Tracking",
-      "Bulk Data Management"
+      "Week-off & Leave Mapping",
+      "Employee Self-Service"
     ]
   },
   "payroll": {
@@ -55,25 +55,25 @@ const TAB_CONTENT = {
     image: "/products/hrms/Payroll-management.jpg",
     features: [
       "Multi-Location Processing",
-      "Automated Bank Formats",
-      "EPF & ESIC Portal Ready",
-      "One-Click Payslip Delivery",
-      "Advance & Loan Handling",
-      "Salary Increment History"
+      "Override Salary Components",
+      "Employee Advances/Loans",
+      "Comparison Dashboards",
+      "Bank Ready Formats",
+      "EPF & ESIC Portal Ready"
     ]
   },
   "reporting": {
     title: "Robust Reporting",
     subtitle: "Analyze and grow your organization",
-    description: "We offer different types of reports that helps organization to analyse",
+    description: "We offer different types of reports that helps organization to analyse their workforce performance and statutory compliance.",
     image: "/products/hrms/Reporting-&-analytics.jpg",
     features: [
+      "Payroll Reports",
       "Payroll Analytics",
-      "Comparison Reports",
-      "Employee Leave Insights",
-      "Attendance Reporting",
-      "Statutory Compliance",
-      "Custom Filter Reports"
+      "Leave Insights",
+      "LOP Reports",
+      "Attendance Analysis",
+      "Comparison Reports"
     ]
   },
   "analytics": {
@@ -83,25 +83,25 @@ const TAB_CONTENT = {
     image: "/products/hrms/Reporting-&-analytics.jpg",
     features: [
       "Real-Time Dashboards",
-      "Workforce Insights",
-      "Cost Center Analysis",
-      "HR Event Calendar",
-      "Retention Analytics",
+      "Attendance Insights",
+      "Payroll & Cost Analysis",
+      "Department Analytics",
+      "Quick Note HR Calendar",
       "Headcount Tracking"
     ]
   },
   "ess": {
-    title: "Employee Self-Service Leave Application",
+    title: "Employee Self-Service Portal",
     subtitle: "Empower your workforce with self-service tools",
     description: "Empower employees to easily apply for leaves through a self-service portal with accurate calculations and real-time leave availability.",
     image: "/products/Emplyee self Service.png",
     features: [
-      "Flexible Leave Application",
+      "Single/Multi-Day Leave",
+      "Half-Day Customization",
+      "Auto Holiday Exclusion",
       "Real-Time Leave Balance",
-      "Multi-Level Approvals",
-      "Self-Service Documents",
-      "Payslip Downloads",
-      "Profile Update Requests"
+      "Approval Workflows",
+      "Email Notifications"
     ]
   }
 };
@@ -414,7 +414,7 @@ export default function ProductDetailPremiumHRMSStaging({
                     Traditional HR <br />
                     <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500 py-2">Is Broken.</span>
                   </h2>
-                  <p className="text-lg text-gray-500 font-medium leading-relaxed max-w-xl uppercase tracking-tight">Organizations are stuck with outdated systems that waste time and frustrate employees.</p>
+                  <p className="text-lg text-gray-500 font-medium leading-relaxed max-w-xl uppercase tracking-tight">Organizations are stuck with outdated systems that waste time, frustrate employees, and hold back growth. It's time for a change.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -437,14 +437,14 @@ export default function ProductDetailPremiumHRMSStaging({
             </section>
 
             {/* 6. Complete HR Suite Section */}
-            <section className="py-16 bg-white relative overflow-hidden border border-gray-100 rounded-[3rem]">
+            <section className="py-16 bg-white relative overflow-hidden border border-gray-100 rounded-[3rem] mb-16">
               <div className="px-4 md:px-12">
                 <div className="mb-16">
-                  <h2 className="text-3xl lg:text-5xl font-black text-gray-900 mb-6 tracking-tighter uppercase">Complete <span className={TAB_THEMES[activeTab].text}>HR Suite</span></h2>
-                  <p className="text-gray-500 font-bold text-lg uppercase tracking-tight">Streamline operations with one platform.</p>
+                  <h2 className="text-3xl lg:text-5xl font-black text-gray-900 mb-6 tracking-tighter uppercase">Complete HR Suite – <span className={TAB_THEMES[activeTab].text}>All-in-One HRMS Features</span></h2>
+                  <p className="text-gray-500 font-bold text-lg uppercase tracking-tight">Streamline and manage your entire HR operations with a powerful, integrated HRMS platform designed for modern businesses.</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {SECTION_6_FEATURES.slice(0, 4).map((card, idx) => (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {SECTION_6_FEATURES.map((card, idx) => (
                     <div key={idx} className="p-8 rounded-[40px] bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-xl transition-all duration-500">
                       <h3 className="text-xl font-black text-gray-900 mb-6 uppercase tracking-tighter">{card.title}</h3>
                       <div className="space-y-3">
@@ -480,7 +480,11 @@ export default function ProductDetailPremiumHRMSStaging({
             </section>
           </main>
         </div>
+
       </div>
+
+      {/* Ported Key Features Section (Orbit) - Full Width Section */}
+      <HrmsFeatureSection />
 
       <ContactFormModal
         isOpen={isModalOpen}
@@ -538,68 +542,419 @@ export default function ProductDetailPremiumHRMSStaging({
   );
 }
 
+
 const SECTION_6_FEATURES = [
   {
     title: "Shifts & Duty Rosters",
     desc: "Efficiently manage employee shifts and duty rosters with flexible scheduling and bulk assignment capabilities.",
     items: [
-      "Duty roster management with flexible scheduling",
-      "Bulk assignment of shifts across multiple employees",
-      "Easy planning and allocation of workforce shifts",
-      "Improved scheduling efficiency and accuracy"
+      "Duty roster management",
+      "Bulk assignment of shifts",
+      "Date range allocation",
+      "Scheduling efficiency"
     ]
   },
   {
     title: "Attendance Processing",
     desc: "Easily manage and finalize employee attendance with accurate tracking and seamless integration with payroll systems.",
     items: [
-      "Admins view and manage attendance for all employees",
-      "Manual updates for attendance entries",
-      "Save & Lock feature to finalize monthly attendance",
-      "Seamless API integration with payroll"
+      "Admin attendance management",
+      "Manual status updates",
+      "Save & Lock feature",
+      "Seamless API integration"
     ]
   },
   {
     title: "Biometric Connections",
-    desc: "Seamlessly manage employee attendance with biometric integration via the Timestation API, supporting both automated syncing and manual uploads.",
+    desc: "Seamlessly manage employee attendance with biometric integration via the Timestation API, supporting automated syncing.",
     items: [
-      "Real-time attendance tracking via API",
-      "Manual biometric data upload option",
-      "Admin control to override attendance data",
-      "Automatic calculation of leaves and overtime"
+      "Timestation API Integration",
+      "Manual data upload option",
+      "Late entry/OT calculation",
+      "Centralized management"
     ]
   },
   {
-    title: "Public Holiday Management",
+    title: "Public Holiday Master Management",
     desc: "Easily configure and manage public holidays with flexible options, including department-wise customization to suit organizational needs.",
     items: [
-      "Admin control to manage public holidays",
-      "Department-wise holiday configuration",
-      "Restrict eligibility for applying public holidays",
-      "Flexible holiday setup based on policies"
+      "Admin holiday control",
+      "Dept-wise configuration",
+      "Restrict eligibility",
+      "Flexible policy setup"
     ]
   },
   {
     title: "Leave Policy Management",
     desc: "Easily create and manage multiple leave policies by assigning leave types, days, and departments, ensuring employees can only apply for leaves applicable to them.",
     items: [
-      "Create and manage multiple leave policies",
-      "Assign leave types and number of days",
-      "Department-wise leave policy configuration",
-      "Multi-level leave approval workflows"
+      "Multiple policy creation",
+      "Leave type assignment",
+      "Dept-wise mapping",
+      "Multi-level approvals"
     ]
   },
   {
     title: "Other Features",
-    desc: "Isarva HRMS is an all-in-one platform packed with additional tools to streamline and automate your HR workflow.",
+    desc: "Isarva HRMS is not limited it has many more useful features",
     items: [
-      "Auto realtime sync between attendance and payroll",
-      "Separate OT and incentive calculations",
-      "Hold and release salary modules",
-      "Full and final settlement on employee exit"
+      "Activity security logger",
+      "OT & Incentive calcs",
+      "Hold/Release salary",
+      "Full & Final settlement"
     ]
   }
 ];
+
+/* ─────────────────────────────────────────────────────────────
+   HRMS FEATURE DATA (PORTED FROM LIVE)
+───────────────────────────────────────────────────────────── */
+const hrmsFeatures = [
+  {
+    id: "personnel",
+    label: "Personnel Management",
+    icon: "👤",
+    color: "#4F46E5",
+    desc: "Centralise every employee record in one place. Manage profiles, org charts, documents, and HR workflows with precision and ease.",
+    placeholder: "PM",
+    image: "/products/hrms/Personnel-details.jpg",
+  },
+  {
+    id: "attendance",
+    label: "Time & Attendance",
+    icon: "⏰",
+    color: "#0EA5E9",
+    desc: "Track work hours accurately with biometric, mobile, and web-based check-in. Gain real-time visibility into team availability.",
+    placeholder: "TA",
+    image: "/products/Time and Attendence.png",
+  },
+  {
+    id: "shift",
+    label: "Shift Scheduling",
+    icon: "📅",
+    color: "#10B981",
+    desc: "Plan, publish, and manage employee shifts with a drag-and-drop visual scheduler. Eliminate conflicts and last-minute gaps.",
+    placeholder: "SS",
+    image: "/products/hrms/Shift-scheduling.jpg",
+  },
+  {
+    id: "leave",
+    label: "Leave Management",
+    icon: "🌴",
+    color: "#F59E0B",
+    desc: "Automate leave requests, multi-level approvals, and policy enforcement. Employees get instant visibility into their leave balance.",
+    placeholder: "LM",
+    image: "/products/hrms/Leave-management.jpg",
+  },
+  {
+    id: "security",
+    label: "Security & Access Control",
+    icon: "🔒",
+    color: "#EF4444",
+    desc: "Define granular role-based permissions, enforce multi-factor authentication, and maintain complete audit trails for compliance.",
+    placeholder: "SC",
+    image: "/products/Security.png",
+  },
+  {
+    id: "analytics",
+    label: "Reporting & Analytics",
+    icon: "📊",
+    color: "#8B5CF6",
+    desc: "Unlock data-driven HR insights with pre-built dashboards and custom reports covering headcount, payroll, attrition, and more.",
+    placeholder: "RA",
+    image: "/products/hrms/Reporting-&-analytics.jpg",
+  },
+  {
+    id: "ess",
+    label: "Employee Self-Service Portal",
+    icon: "💼",
+    color: "#06B6D4",
+    desc: "Empower employees to manage their own information, submit requests, access payslips, and track approvals — all in a clean portal.",
+    placeholder: "ES",
+    image: "/products/Emplyee self Service.png",
+  },
+  {
+    id: "payroll",
+    label: "Payroll Management System",
+    icon: "💰",
+    color: "#22C55E",
+    desc: "Ensure accurate, compliant, and on-time salary processing. Handle deductions, taxes, and statutory filings with zero manual effort.",
+    placeholder: "PY",
+    image: "/products/hrms/Payroll-management.jpg",
+  },
+];
+
+/* ─────────────────────────────────────────────────────────────
+   PLACEHOLDER IMAGE COMPONENT
+───────────────────────────────────────────────────────────── */
+function FeaturePlaceholder({ feature }) {
+  return (
+    <div
+      className="w-full h-full flex flex-col items-center justify-center rounded-2xl overflow-hidden"
+      style={{
+        background: `linear-gradient(135deg, ${feature.color}10 0%, ${feature.color}20 100%)`,
+      }}
+    >
+      <img
+        src={feature.image}
+        alt={feature.label}
+        className="w-full h-full object-contain"
+        style={{
+          maxWidth: "100%",
+          maxHeight: "100%",
+        }}
+      />
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────
+   HRMS FEATURE ORBIT SECTION — Production-Grade (EXACT LIVE VERSION)
+──────────────────────────────────────────────────────────── */
+function HrmsFeatureSection() {
+  const [activeId, setActiveId] = useState("personnel");
+  const [mobileOpenId, setMobileOpenId] = useState("personnel");
+
+  const leftFeatures = hrmsFeatures.slice(0, Math.ceil(hrmsFeatures.length / 2));
+  const rightFeatures = hrmsFeatures.slice(Math.ceil(hrmsFeatures.length / 2));
+  const activeFeature = hrmsFeatures.find((f) => f.id === activeId);
+
+  return (
+    <section className="py-10 lg:py-20 overflow-hidden bg-[#F7F7F7]">
+      <div className="container mx-auto px-6">
+        {/* Section Header */}
+        <div className="text-center mb-14">
+          <span className="block text-[10px] font-black text-[#22C55E] tracking-[0.28em] uppercase mb-2.5">
+            KEY FEATURES
+          </span>
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-[1] mb-3.5">
+            Key Features Of <span className="text-[#22C55E]">HRMS</span> Software
+          </h2>
+          <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">
+            HRMS & Payroll software automates and streamlines every HR function
+            — from personnel management to payroll — delivering a highly
+            time-efficient experience.
+          </p>
+        </div>
+
+        {/* ── DESKTOP ORBIT (xl and above) ── */}
+        <div className="hidden xl:block">
+          <div className="relative h-[605px] mx-auto xl:w-[80%] lg:w-full">
+            {/* Green arc ellipse */}
+            <div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[90%] rounded-full border-[1.5px] pointer-events-none z-0"
+              style={{ borderColor: 'rgba(34, 197, 94, 0.42)' }}
+            />
+
+            {/* Left column */}
+            <div className="absolute -left-24 top-1/2 -translate-y-1/2 flex flex-col items-end gap-10 z-10 w-[220px]">
+              {leftFeatures.map((feature) => (
+                <button
+                  key={feature.id}
+                  onClick={() => setActiveId(feature.id)}
+                  className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[13px] font-semibold whitespace-nowrap ${activeId === feature.id
+                    ? "bg-gray-900 border-green-600 text-gray-800 shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
+                    : "border-green-300 text-gray-800 hover:border-green-500 hover:shadow-md"
+                    }`}
+                >
+                  <span className="text-sm leading-none">{feature.icon}</span>
+                  {feature.label}
+                  {activeId === feature.id && (
+                    <span className="absolute -right-[7px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[7px] border-t-transparent border-b-[7px] border-b-transparent border-l-[7px] border-l-green-900" />
+                  )}
+                </button>
+              ))}
+            </div>
+
+            {/* Center card */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 2xl:w-[72%] lg:w-[70%]">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeId}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                  className="w-full h-full rounded-xl overflow-hidden shadow-[0_24px_64px_rgba(0,0,0,0.15)]"
+                >
+                  <img
+                    src={activeFeature.image}
+                    alt={activeFeature.label}
+                    className="w-full h-full object-contain bg-white"
+                  />
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Right column */}
+            <div className="absolute -right-24 top-1/2 -translate-y-1/2 flex flex-col items-start gap-10 z-10 w-[220px]">
+              {rightFeatures.map((feature) => (
+                <button
+                  key={feature.id}
+                  onClick={() => setActiveId(feature.id)}
+                  className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[13px] font-semibold whitespace-nowrap ${activeId === feature.id
+                    ? "bg-gray-900 border-green-600 text-white shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
+                    : "border-green-300 text-gray-800 hover:border-green-500 hover:shadow-md"
+                    }`}
+                >
+                  {feature.label}
+                  <span className="text-sm leading-none">{feature.icon}</span>
+                  {activeId === feature.id && (
+                    <span className="absolute -left-[7px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[7px] border-t-transparent border-b-[7px] border-b-transparent border-r-[7px] border-r-green-900" />
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Description */}
+          <div className="mt-3 pb-2">
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={activeId + "-d"}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.22 }}
+                className="text-center text-[#6b7280] max-w-[500px] mx-auto text-sm leading-relaxed"
+              >
+                {activeFeature.desc}
+              </motion.p>
+            </AnimatePresence>
+          </div>
+        </div>
+
+        {/* ── TABLET LAYOUT (lg to xl) ── */}
+        <div className="hidden lg:block xl:hidden">
+          {/* Navigation buttons on top */}
+          <div className="mb-8">
+            <div className="flex flex-wrap gap-3 justify-center">
+              {hrmsFeatures.map((feature) => (
+                <button
+                  key={feature.id}
+                  onClick={() => setActiveId(feature.id)}
+                  className={`flex items-center gap-2 py-2.5 px-5 rounded-lg font-semibold text-sm transition-all duration-200 ${activeId === feature.id
+                    ? "bg-[#22C55E] text-white shadow-lg scale-105"
+                    : "bg-white border border-gray-200 text-gray-700 hover:border-[#22C55E] hover:shadow-md"
+                    }`}
+                >
+                  <span className="text-base">{feature.icon}</span>
+                  <span>{feature.label}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Center image display */}
+          <div className="max-w-4xl mx-auto">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeId}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                className="rounded-xl overflow-hidden shadow-2xl bg-white"
+              >
+                <img
+                  src={activeFeature.image}
+                  alt={activeFeature.label}
+                  className="w-full h-auto object-contain"
+                />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Description */}
+          <div className="mt-6">
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={activeId + "-desc"}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.22 }}
+                className="text-center text-[#6b7280] max-w-[600px] mx-auto text-sm leading-relaxed"
+              >
+                {activeFeature.desc}
+              </motion.p>
+            </AnimatePresence>
+          </div>
+        </div>
+
+        {/* ── MOBILE ACCORDION ── */}
+        <div className="lg:hidden border-t border-gray-200">
+          {hrmsFeatures.map((feature) => {
+            const isOpen = mobileOpenId === feature.id;
+            return (
+              <div key={feature.id} className="border-b border-gray-200">
+                <button
+                  onClick={() => setMobileOpenId(isOpen ? null : feature.id)}
+                  className="group w-full flex items-center justify-between p-4 bg-transparent border-none cursor-pointer"
+                >
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="w-8 h-8 rounded-full flex items-center justify-center text-sm transition-colors duration-200 shrink-0"
+                      style={{
+                        background: isOpen ? feature.color : "#e5e7eb",
+                      }}
+                    >
+                      {feature.icon}
+                    </div>
+                    <span
+                      className={`font-bold text-sm transition-colors ${isOpen ? "text-gray-900" : "text-gray-500"
+                        }`}
+                    >
+                      {feature.label}
+                    </span>
+                  </div>
+                  <div
+                    className={`w-7 h-7 rounded-full border-2 flex items-center justify-center transition-all duration-200 shrink-0 ${isOpen
+                      ? "bg-gray-900 border-gray-900"
+                      : "bg-transparent border-gray-300 group-hover:border-gray-400"
+                      }`}
+                  >
+                    <span
+                      className={`text-lg font-light leading-none block transition-transform duration-200 ${isOpen ? "text-white rotate-45" : "text-gray-400 group-hover:rotate-45"
+                        }`}
+                    >
+                      +
+                    </span>
+                  </div>
+                </button>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="p-1 pb-5">
+                        <div className="rounded-xl overflow-hidden bg-white border border-gray-200 shadow-md mb-3">
+                          <img
+                            src={feature.image}
+                            alt={feature.label}
+                            className="w-full h-auto object-contain bg-white"
+                          />
+                        </div>
+                        <p className="text-[#6b7280] text-[13px] leading-relaxed m-0">
+                          {feature.desc}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 
 
 
