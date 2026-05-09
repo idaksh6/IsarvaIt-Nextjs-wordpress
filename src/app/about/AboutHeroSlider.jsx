@@ -80,7 +80,7 @@ export default function AboutHeroSlider() {
           transition={{ duration: 0.4 }}
           className="relative w-[250px] h-[420px] flex-shrink-0 snap-center rounded-[2.5rem] overflow-hidden ring-1 ring-[#10b981]/10 bg-[#1a1f24]"
         >
-          <Image src="/partners/expertise/volcano.png" alt="Innovation" fill className="object-cover" />
+          <Image src="/vol-final.png" alt="Performance" fill className="object-cover object-[80%_20%]" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-8 text-left">
             <h4 className="text-white font-bold text-[clamp(1.2rem,5vw,2.5rem)] mb-1 leading-tight">Performance</h4>
             <div className="w-10 h-0.5 bg-orange-500 mb-2" />
@@ -133,7 +133,7 @@ export default function AboutHeroSlider() {
 
         {/* Card 5 - Desktop */}
         <div className="relative lg:w-[14vw] lg:h-[20vw] xl:w-[320px] xl:h-[420px] rounded-[2.5rem] overflow-hidden shadow-xl transform hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5 group">
-          <Image src="/partners/expertise/volcano.png" alt="Innovation" fill className="object-cover" />
+          <Image src="/vol-final.png" alt="Performance" fill className="object-cover object-[80%_20%]" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-6 text-left transition-opacity duration-500">
             <h4 className="text-white font-bold text-[clamp(1.2rem,1.5vw,1.8rem)] mb-1 leading-tight">Performance</h4>
             <div className="w-8 h-0.5 bg-orange-500 mb-2" />
