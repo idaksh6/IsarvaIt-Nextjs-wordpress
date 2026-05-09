@@ -32,7 +32,7 @@ export default function AboutHeroSlider() {
           transition={{ duration: 0.4 }}
           className="relative w-[250px] h-[420px] flex-shrink-0 snap-center rounded-[2.5rem] overflow-hidden ring-1 ring-[#10b981]/10 bg-[#1a1f24]"
         >
-          <Image src="/partners/expertise/seamless_flow.png" alt="Seamless Flow" fill className="object-cover" />
+          <Image src="/water-v2.png" alt="Seamless Flow" fill className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-8 text-left">
             <h4 className="text-white font-bold text-[clamp(1.2rem,5vw,2.5rem)] mb-1 leading-tight">Seamless Flow</h4>
             <div className="w-12 h-0.5 bg-blue-500 mb-2" />
@@ -103,7 +103,7 @@ export default function AboutHeroSlider() {
 
         {/* Card 2 - Desktop */}
         <div className="relative lg:w-[17vw] lg:h-[24vw] xl:w-[380px] xl:h-[500px] rounded-[2.5rem] overflow-hidden shadow-2xl z-10 transform hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5 group">
-          <Image src="/partners/expertise/seamless_flow.png" alt="Seamless Flow" fill className="object-cover" />
+          <Image src="/water-v2.png" alt="Seamless Flow" fill className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-8 text-left transition-opacity duration-500">
             <h4 className="text-white font-bold text-[clamp(1.5rem,2vw,2.2rem)] mb-1 leading-tight">Seamless Flow</h4>
             <div className="w-10 h-0.5 bg-blue-500 mb-2" />
