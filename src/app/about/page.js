@@ -236,9 +236,9 @@ export default function AboutPage() {
             </div>
             <div className="w-full lg:w-1/2 relative section-animate" style={{ animationDelay: '0.2s' }}>
               <div className="relative w-full rounded-[4rem] overflow-hidden shadow-2xl ring-1 ring-[#10b981]/10">
-                <div className="pb-[100%] lg:pb-[90%]"></div>
+                <div className="pb-[100%] lg:pb-[95%]"></div>
                 <div className="absolute inset-0">
-                  <Image src="/about_globe_v4.png" alt="Digital Impact" fill className="object-cover" />
+                  <Image src="/globe-final-hd.png" alt="Digital Impact" fill className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-r from-[#10b981]/10 to-transparent pointer-events-none"></div>
                 </div>
               </div>
