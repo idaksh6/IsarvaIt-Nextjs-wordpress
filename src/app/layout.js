@@ -28,7 +28,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata = {
-  title: "Isarva AI — Premium Web Design & Development Agency",
+  title: "Isarva Infotech — Premium Web Design & Development Agency",
   description:
     "We build stunning, high-performance websites, web apps, and eCommerce platforms that drive real business results. Next.js, React, WordPress specialists.",
   keywords: "web design agency, web development, Next.js, eCommerce, WordPress, React",
@@ -38,7 +38,7 @@ export const metadata = {
     apple: "/Favicon.png",
   },
   openGraph: {
-    title: "Isarva AI — Premium Web Design & Development Agency",
+    title: "Isarva Infotech — Premium Web Design & Development Agency",
     description: "We build stunning websites and web apps that drive results.",
     type: "website",
   },
