@@ -26,12 +26,12 @@ const TAB_CONTENT = {
     description: "Easily customize your departments, roles, and office locations to fit your business perfectly—no coding required.",
     image: "/products/hrms/Personnel-details.jpg",
     features: [
-      "Master setup for Salary and statutory components",
-      "Departments",
-      "Designations",
-      "Roles",
-      "Employee status",
-      "Employee document types"
+      "Salary & Statutory Setup",
+      "Department Management",
+      "Designation Control",
+      "Role-Based Access",
+      "Employee Status",
+      "Document Types"
     ]
   },
   "employee": {
@@ -40,13 +40,12 @@ const TAB_CONTENT = {
     description: "Create a comprehensive employee database with 360-degree profiles, organizational mapping, and role-based access controls for seamless workforce management.",
     image: "/products/hrms/Personnel-details.jpg",
     features: [
-      "Role-based access and permissions",
-      "Document management and vault",
-      "Employee personal details",
-      "Employee salary structure",
-      "Employee level weekoff and leave mapping",
-      "Auto generated Joining form, Offer letter, Experience letter in case of exit",
-      "Employee self-service portal"
+      "Role-Based Access Control",
+      "Document Vault Management",
+      "360° Employee Profiles",
+      "Auto-Generated HR Letters",
+      "Employee Asset Tracking",
+      "Bulk Data Management"
     ]
   },
   "payroll": {
@@ -55,13 +54,12 @@ const TAB_CONTENT = {
     description: "Process payroll with confidence using our automated engine, designed to handle multiple locations seamlessly. It also generates bank-ready formats for salary processing and provides portal upload-ready formats for EPF and ESIC.",
     image: "/products/hrms/Payroll-management.jpg",
     features: [
-      "Multi location payroll processing",
-      "Override salary components",
-      "Add/update employee advances",
-      "Comparison view for previous and current month salaries",
-      "Bank ready formats for salary process",
-      "EPF and ESIC portal upload-ready formats",
-      "One-click salary slip sending"
+      "Multi-Location Processing",
+      "Automated Bank Formats",
+      "EPF & ESIC Portal Ready",
+      "One-Click Payslip Delivery",
+      "Advance & Loan Handling",
+      "Salary Increment History"
     ]
   },
   "reporting": {
@@ -70,12 +68,12 @@ const TAB_CONTENT = {
     description: "We offer different types of reports that helps organization to analyse",
     image: "/products/hrms/Reporting-&-analytics.jpg",
     features: [
-      "Payroll reports",
-      "Comparison reports for payroll",
-      "Payroll analytical reports",
-      "Employee leave reports",
-      "LOP reports",
-      "Attendance report"
+      "Payroll Analytics",
+      "Comparison Reports",
+      "Employee Leave Insights",
+      "Attendance Reporting",
+      "Statutory Compliance",
+      "Custom Filter Reports"
     ]
   },
   "analytics": {
@@ -84,11 +82,12 @@ const TAB_CONTENT = {
     description: "HR Analytics & Insights delivers real-time dashboards and actionable workforce data to help you make smarter HR decisions.",
     image: "/products/hrms/Reporting-&-analytics.jpg",
     features: [
-      "Real-time dashboard",
-      "Attendance & leave insights",
-      "Payroll and cost analysis",
-      "Department-wise analytics",
-      "Quick note calendar for HR"
+      "Real-Time Dashboards",
+      "Workforce Insights",
+      "Cost Center Analysis",
+      "HR Event Calendar",
+      "Retention Analytics",
+      "Headcount Tracking"
     ]
   },
   "ess": {
@@ -97,12 +96,12 @@ const TAB_CONTENT = {
     description: "Empower employees to easily apply for leaves through a self-service portal with accurate calculations and real-time leave availability.",
     image: "/products/Emplyee self Service.png",
     features: [
-      "Apply for single-day or multiple-day leave",
-      "Half-day leave customization",
-      "Automatic exclusion of public holidays and weekly offs",
-      "Real-time leave balance based on payroll data",
-      "Streamlined leave request and approval process",
-      "Automated email notifications"
+      "Flexible Leave Application",
+      "Real-Time Leave Balance",
+      "Multi-Level Approvals",
+      "Self-Service Documents",
+      "Payslip Downloads",
+      "Profile Update Requests"
     ]
   }
 };
@@ -125,6 +124,21 @@ export default function ProductDetailPremiumHRMSStaging({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const contentTopRef = useRef(null);
+
+  // Scroll to top of content area when tab changes
+  useEffect(() => {
+    if (contentTopRef.current) {
+      const offset = 120; // Space for sticky header + tabs
+      const elementPosition = contentTopRef.current.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }, [activeTab]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -154,355 +168,325 @@ export default function ProductDetailPremiumHRMSStaging({
         <div className="absolute inset-0 bg-grid-slate-200/[0.05] [mask-image:linear-gradient(to_bottom,white,transparent,white)]" />
       </div>
 
-      {/* 2. Enhanced Floating Tab Bar */}
-      <div className={`sticky ${isScrolled ? "top-[80px]" : "top-[100px]"} z-[40] flex justify-center py-6 px-4 pointer-events-none transition-all duration-500`}>
-        <div className="inline-flex items-center bg-white/80 backdrop-blur-2xl border border-white/50 p-1.5 shadow-[0_20px_50px_rgba(0,0,0,0.08)] rounded-[2rem] transition-all pointer-events-auto">
-          <div className="flex items-center space-x-1 px-1 py-1">
-            {TABS.map((tab) => {
-              const isActive = activeTab === tab.id;
-              const theme = TAB_THEMES[tab.id];
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`px-6 py-3 rounded-[1.5rem] font-bold text-xs uppercase tracking-widest transition-all duration-500 relative group overflow-hidden ${isActive
-                      ? "text-white"
-                      : "text-gray-500 hover:text-gray-900"
-                    }`}
-                >
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeTab"
-                      className={`absolute inset-0 bg-gradient-to-r ${theme.gradient} ${theme.shadow} z-0`}
-                      transition={{ type: "spring", bounce: 0.25, duration: 0.6 }}
-                    />
-                  )}
-                  <span className="relative z-10">{tab.label}</span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-
-      {/* 3. Hero Section Content (Restored to Grid Layout) */}
-      <section className="relative pt-12 lg:pt-32 pb-20 lg:pb-32 overflow-hidden z-10">
-
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <AnimatePresence>
-            <motion.div
-              key={activeTab}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center"
-            >
-              <div className="max-w-2xl">
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border text-[10px] font-black uppercase tracking-[0.2em] mb-8 ${TAB_THEMES[activeTab].lightBg} ${TAB_THEMES[activeTab].text} border-white/50 shadow-sm`}
-                >
-                  <span className="relative flex h-2 w-2">
-                    <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${TAB_THEMES[activeTab].bg}`}></span>
-                    <span className={`relative inline-flex rounded-full h-2 w-2 ${TAB_THEMES[activeTab].bg}`}></span>
-                  </span>
-                  {TABS.find(t => t.id === activeTab)?.label} MODULE
-                </motion.div>
-
-                <motion.h1
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                  className="text-[clamp(2.25rem,5vw,3.75rem)] font-black text-gray-900 leading-[1] mb-10 tracking-tighter uppercase pb-2"
-                >
-                  {activeContent.title.split(" ").slice(0, -1).join(" ")}{" "}
-                  <br />
-                  <span className={`inline-block text-transparent bg-clip-text bg-gradient-to-r ${TAB_THEMES[activeTab].gradient} py-2`}>
-                    {activeContent.title.split(" ").pop()}
-                  </span>
-                </motion.h1>
-
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                  className="text-xl md:text-2xl text-gray-500 mb-12 leading-relaxed max-w-xl font-medium"
-                >
-                  {activeContent.description}
-                </motion.p>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                  className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12"
-                >
-                  {activeContent.features.map((f, i) => (
-                    <div key={i} className={`flex items-center gap-4 p-5 rounded-[24px] bg-white border border-gray-100 ${TAB_THEMES[activeTab].hoverBorder} transition-all group shadow-sm hover:shadow-xl hover:-translate-y-1`}>
-                      <div className={`w-8 h-8 rounded-full ${TAB_THEMES[activeTab].lightBg} flex items-center justify-center ${TAB_THEMES[activeTab].text} transition-colors flex-shrink-0 shadow-inner`}>
-                        <span className="text-xs font-black">✓</span>
-                      </div>
-                      <span className="text-sm font-black text-gray-700 leading-tight uppercase tracking-tight">{f}</span>
-                    </div>
-                  ))}
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 }}
-                >
+      {/* 2. Enhanced Vertical Sidebar Tabs (Desktop) & Floating Top Bar (Mobile) */}
+      <div ref={contentTopRef} className="relative z-40 max-w-7xl mx-auto px-4 md:px-6 pt-24 lg:pt-48 pb-12 lg:pb-32">
+        {/* Mobile View (Horizontal Scroll) - Restored previous centered design but kept stickiness */}
+        <div className="lg:hidden sticky top-28 z-[60] flex justify-center py-4 px-2 mb-10 bg-transparent">
+          <div className="inline-flex items-center bg-white/80 backdrop-blur-2xl border border-white/50 p-1.5 shadow-xl rounded-full overflow-x-auto no-scrollbar max-w-full">
+            <div className="flex items-center space-x-1 whitespace-nowrap">
+              {TABS.map((tab) => {
+                const isActive = activeTab === tab.id;
+                const theme = TAB_THEMES[tab.id];
+                return (
                   <button
-                    onClick={() => setIsModalOpen(true)}
-                    className={`btn-premium-orange !py-4 !px-8 !text-base !rounded-xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300`}
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`px-5 py-2.5 rounded-full font-bold text-[10px] uppercase tracking-widest transition-all duration-500 relative ${isActive ? "text-white" : "text-gray-500"}`}
                   >
-                    Get Started Free
-                    <span className="shimmer"></span>
+                    {isActive && (
+                      <motion.div
+                        layoutId="activeTabMobile"
+                        className={`absolute inset-0 bg-gradient-to-r ${theme.gradient} z-0 rounded-full`}
+                      />
+                    )}
+                    <span className="relative z-10">{tab.label}</span>
                   </button>
-                </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+
+          {/* Sidebar Sidebar */}
+          <aside className="lg:w-72 flex-shrink-0">
+            <div className={`lg:sticky lg:top-32 transition-all duration-500 space-y-4`}>
+              {/* Mobile version remains as a horizontal scroll or grid, but for desktop we want vertical */}
+              <div className="hidden lg:flex flex-col bg-white/60 backdrop-blur-3xl border border-white/50 p-3 shadow-[0_20px_50px_rgba(0,0,0,0.06)] rounded-[2.5rem]">
+                <div className="flex flex-col space-y-2">
+                  {TABS.map((tab) => {
+                    const isActive = activeTab === tab.id;
+                    const theme = TAB_THEMES[tab.id];
+                    return (
+                      <button
+                        key={tab.id}
+                        onClick={() => setActiveTab(tab.id)}
+                        className={`group relative flex items-center gap-4 px-6 py-5 rounded-[2rem] font-bold text-sm uppercase tracking-widest transition-all duration-500 overflow-hidden ${isActive
+                          ? "text-white shadow-lg"
+                          : "text-gray-500 hover:text-gray-900 hover:bg-gray-50/50"
+                          }`}
+                      >
+                        {isActive && (
+                          <motion.div
+                            layoutId="activeTabDesktop"
+                            className={`absolute inset-0 bg-gradient-to-r ${theme.gradient} z-0`}
+                            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                          />
+                        )}
+
+                        <div className={`relative z-10 w-8 h-8 rounded-xl flex items-center justify-center transition-all duration-500 ${isActive ? "bg-white/20" : theme.lightBg + " " + theme.text}`}>
+                          <span className="text-lg">
+                            {tab.id === 'setup' ? '🏢' : tab.id === 'employee' ? '👥' : tab.id === 'payroll' ? '💰' : tab.id === 'reporting' ? '📊' : tab.id === 'analytics' ? '📈' : '🔐'}
+                          </span>
+                        </div>
+
+                        <span className="relative z-10 flex-1 text-left">{tab.label}</span>
+
+                        {isActive && (
+                          <motion.div
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            className="relative z-10 w-2 h-2 bg-white rounded-full"
+                          />
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
 
+
+            </div>
+          </aside>
+
+          {/* Main Content Area */}
+          <main className="flex-1 min-w-0">
+            <AnimatePresence mode="wait">
               <motion.div
-                initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
-                animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                transition={{ duration: 1, delay: 0.2 }}
-                className="relative"
+                key={activeTab}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
               >
-                <div className="relative z-10 p-2 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-2xl border border-white backdrop-blur-sm cursor-pointer group" onClick={() => setSelectedImage(activeContent.image)}>
-                  <div className="rounded-xl overflow-hidden border border-gray-100 shadow-inner relative" style={{ aspectRatio: '1.4 / 1' }}>
-                    <Image
-                      src={activeContent.image}
-                      alt={activeContent.title}
-                      fill
-                      priority
-                      unoptimized
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="bg-white/90 backdrop-blur-sm text-blue-600 p-3 rounded-full shadow-lg">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                {/* 3. Module Dashboard Header */}
+                <section className="pt-4 pb-12">
+                  <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
+                    <div className="max-w-2xl">
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border text-[10px] font-black uppercase tracking-[0.2em] mb-6 ${TAB_THEMES[activeTab].lightBg} ${TAB_THEMES[activeTab].text} border-white/50 shadow-sm`}
+                      >
+                        <span className="relative flex h-2 w-2">
+                          <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${TAB_THEMES[activeTab].bg}`}></span>
+                          <span className={`relative inline-flex rounded-full h-2 w-2 ${TAB_THEMES[activeTab].bg}`}></span>
+                        </span>
+                        {TABS.find(t => t.id === activeTab)?.label} MODULE
+                      </motion.div>
+
+                      <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        className="text-4xl lg:text-5xl font-black text-gray-900 leading-[1.1] mb-4 tracking-tighter uppercase"
+                      >
+                        {activeContent.title}
+                      </motion.h1>
+
+                      <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3 }}
+                        className="text-base text-gray-500 font-medium leading-relaxed max-w-xl"
+                      >
+                        {activeContent.description}
+                      </motion.p>
                     </div>
+
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.4 }}
+                    >
+                      <button
+                        onClick={() => setIsModalOpen(true)}
+                        className="press-illusion-btn-orange w-full sm:w-auto sm:min-w-[240px] px-8 py-4 font-black uppercase tracking-[0.2em] text-xs flex items-center justify-center gap-3"
+                      >
+                        Get Started Free
+                      </button>
+                    </motion.div>
                   </div>
-                </div>
-                {/* Floating Stats UI */}
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -top-12 -right-8 bg-white/80 backdrop-blur-xl p-6 rounded-[32px] shadow-2xl border border-white z-20 w-44"
-                >
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center text-green-600 text-sm">↑</div>
-                    <span className="text-xl font-black text-gray-900">42%</span>
-                  </div>
-                  <div className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Efficiency Boost</div>
-                </motion.div>
-              </motion.div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
 
-
-      </section>
-
-      {/* 4. The "Broken HR" Modern Section - Light & Vibrant Contrast */}
-      <section className="relative pt-24 pb-32 bg-white overflow-hidden border-y border-gray-100">
-        {/* Background elements for light section */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-rose-500/5 rounded-full blur-[100px]" />
-          <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px]" />
-          <div className="absolute inset-0 bg-dots opacity-[0.1]" />
-        </div>
-
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-end mb-24 text-gray-900">
-            <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 text-red-600 font-bold text-sm mb-6">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
-                </span>
-                The Problem
-              </div>
-              <h2 className="text-4xl lg:text-5xl font-black text-gray-900 leading-[1.3] mb-6 tracking-tight">
-                Traditional HR <br />
-                <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500 py-2">Is Broken.</span>
-              </h2>
-              <p className="text-xl text-gray-500 font-medium leading-relaxed">Organizations are stuck with outdated systems that waste time, frustrate employees, and hold back growth. It's time for a change.</p>
-            </div>
-            <div className="flex gap-4 lg:justify-end">
-              <div className="px-6 py-4 rounded-3xl bg-white border border-gray-100 shadow-sm flex items-center gap-4">
-                <span className="text-3xl">🚫</span>
-                <span className="text-sm font-bold text-gray-600">No Bloatware</span>
-              </div>
-              <div className="px-6 py-4 rounded-3xl bg-white border border-gray-100 shadow-sm flex items-center gap-4">
-                <span className="text-3xl">⚡</span>
-                <span className="text-sm font-bold text-gray-600">Instant Setup</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                title: "Endless Paperwork", icon: "📄", desc: "HR spends more time filling out forms than helping people improve.",
-                iconTheme: "bg-rose-50 text-rose-600"
-              },
-              {
-                title: "Disconnected Apps", icon: "🔌", desc: "Data spread across too many places leads to messy mistakes.",
-                iconTheme: "bg-violet-50 text-violet-600"
-              },
-              {
-                title: "Frustrated Workers", icon: "😠", desc: "Hard-to-use software makes workers unhappy and less productive.",
-                iconTheme: "bg-amber-50 text-amber-600"
-              },
-              {
-                title: "Risky Security", icon: "🔓", desc: "Old ways of handling info leave you open to legal and tech threats.",
-                iconTheme: "bg-slate-100 text-slate-600"
-              }
-            ].map((item, idx) => (
-              <div key={idx} className="group p-10 rounded-[40px] border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 bg-white relative overflow-hidden">
-                <div className={`absolute inset-0 bg-gradient-to-br from-white to-slate-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                <div className={`relative z-10 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform ${item.iconTheme} shadow-sm`}>
-                  <span className="text-3xl">{item.icon}</span>
-                </div>
-                <h3 className="relative z-10 text-2xl font-black text-gray-900 mb-4 uppercase tracking-tighter">{item.title}</h3>
-                <p className="relative z-10 text-sm text-gray-500 leading-relaxed font-bold">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. Feature Spotlight Glassmorphism */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
-          <AnimatePresence>
-            <motion.div
-              key={activeTab}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-              className="relative rounded-[64px] bg-gradient-to-br from-gray-50 to-white p-8 lg:p-20 border border-gray-100 shadow-inner overflow-hidden"
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                <div>
-                  <div className="w-12 h-1.5 bg-blue-600 rounded-full mb-8"></div>
-                  <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-8 leading-tight">{activeContent.title}</h2>
-                  <p className="text-xl text-gray-500 mb-12 font-medium leading-relaxed">{activeContent.description}</p>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {activeContent.features.map((f, i) => (
-                      <div key={i} className="flex items-center gap-4 p-5 rounded-[24px] bg-white border border-gray-50 hover:border-blue-100 transition-all group">
-                        <div className="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">✓</div>
-                        <span className="text-sm font-black text-gray-600 group-hover:text-gray-900">{f}</span>
+                  {/* 4. Primary Product Visual */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="relative mb-12"
+                  >
+                    <div className="relative z-10 p-2 bg-white rounded-[2rem] border border-gray-100 shadow-xl cursor-pointer group overflow-hidden" onClick={() => setSelectedImage(activeContent.image)}>
+                      <div className="rounded-[1.5rem] overflow-hidden relative" style={{ aspectRatio: '1.8 / 1' }}>
+                        <Image
+                          src={activeContent.image}
+                          alt={activeContent.title}
+                          fill
+                          priority
+                          unoptimized
+                          className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
                       </div>
+                      <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/5 backdrop-blur-[2px]">
+                        <div className={`bg-white/90 backdrop-blur-sm ${TAB_THEMES[activeTab].text} p-3 rounded-full shadow-2xl`}>
+                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* 5. Feature Highlights Grid */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {activeContent.features.map((f, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1 * i }}
+                        className={`flex items-center gap-4 p-5 rounded-[24px] bg-white border border-gray-100 ${TAB_THEMES[activeTab].hoverBorder} transition-all group shadow-sm hover:shadow-lg`}
+                      >
+                        <div className={`w-8 h-8 rounded-full ${TAB_THEMES[activeTab].lightBg} flex items-center justify-center ${TAB_THEMES[activeTab].text} transition-colors flex-shrink-0 shadow-inner aspect-square`}>
+                          <span className="text-xs font-black">✓</span>
+                        </div>
+                        <span className="text-[11px] font-black text-gray-700 leading-tight uppercase tracking-tight">{f}</span>
+                      </motion.div>
                     ))}
                   </div>
-                </div>
+                </section>
 
-                <div className="relative cursor-pointer group" onClick={() => setSelectedImage(activeContent.image)}>
-                  <div className="absolute -inset-4 bg-blue-600/5 blur-3xl rounded-full"></div>
-                  <div className="relative z-10 rounded-2xl shadow-2xl border border-white overflow-hidden relative" style={{ aspectRatio: '1.4 / 1' }}>
-                    <Image
-                      src={activeContent.image}
-                      alt={activeContent.title}
-                      fill
-                      unoptimized
-                      className="object-cover group-hover:shadow-blue-500/20 group-hover:-translate-y-1 transition-all duration-300"
-                    />
-                  </div>
-                  <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="bg-white/90 backdrop-blur-sm text-blue-600 p-3 rounded-full shadow-lg">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                {/* 5. Feature Spotlight Section Integrated into Tab Content */}
+                <section className="pb-16">
+                  <div className="relative rounded-[3rem] bg-white p-8 lg:p-12 border border-gray-100 shadow-[0_15px_40px_rgba(0,0,0,0.03)] overflow-hidden">
+                    <div className="flex flex-col items-start text-left">
+                      <div className={`w-12 h-1 ${TAB_THEMES[activeTab].bg} rounded-full mb-6`}></div>
+                      <h2 className="text-2xl lg:text-4xl font-black text-gray-900 mb-4 uppercase tracking-tighter">Deep Dive: {activeContent.title}</h2>
+                      <p className="text-base lg:text-lg text-gray-500 mb-10 font-medium leading-relaxed max-w-2xl">{activeContent.description}</p>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-12 w-full">
+                        {activeContent.features.map((f, i) => (
+                          <div key={i} className={`flex items-center gap-4 p-4 rounded-[20px] bg-gray-50/50 border border-transparent ${TAB_THEMES[activeTab].hoverBorder} transition-all group hover:bg-white hover:shadow-md`}>
+                            <div className={`w-7 h-7 rounded-full ${TAB_THEMES[activeTab].lightBg} flex items-center justify-center ${TAB_THEMES[activeTab].text} group-hover:${TAB_THEMES[activeTab].bg} group-hover:text-white transition-colors flex-shrink-0 aspect-square shadow-inner`}>
+                              <span className="text-[10px] font-black">✓</span>
+                            </div>
+                            <span className="text-[11px] font-black text-gray-600 group-hover:text-gray-900 uppercase tracking-tight leading-tight">{f}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="relative w-full cursor-pointer group" onClick={() => setSelectedImage(activeContent.image)}>
+                        <div className={`absolute -inset-10 ${TAB_THEMES[activeTab].bg}/5 blur-[80px] rounded-full`}></div>
+                        <div className="relative z-10 rounded-2xl shadow-xl border border-white overflow-hidden w-full" style={{ aspectRatio: '2.4 / 1' }}>
+                          <Image
+                            src={activeContent.image}
+                            alt={activeContent.title}
+                            fill
+                            unoptimized
+                            className="object-cover group-hover:scale-105 transition-all duration-700"
+                          />
+                        </div>
+                        <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <div className={`bg-white/90 backdrop-blur-sm ${TAB_THEMES[activeTab].text} p-4 rounded-full shadow-xl`}>
+                            <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
+                </section>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Static Content (Section 4, 6, 7) */}
+            {/* These sections are outside AnimatePresence so they don't flash on tab change, but scroll alongside */}
+
+            {/* 4. The "Broken HR" Modern Section */}
+            <section className="relative py-16 bg-white overflow-hidden border-y border-gray-100 rounded-[3rem] mb-16">
+              <div className="absolute inset-0 z-0">
+                <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-rose-500/5 rounded-full blur-[100px]" />
+                <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px]" />
+              </div>
+              <div className="relative z-10 px-4 md:px-12">
+                <div className="flex flex-col mb-16">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 text-red-600 font-bold text-xs mb-6 w-fit uppercase tracking-widest">
+                    The Problem
+                  </div>
+                  <h2 className="text-3xl lg:text-5xl font-black text-gray-900 leading-[1.1] mb-6 tracking-tighter uppercase">
+                    Traditional HR <br />
+                    <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500 py-2">Is Broken.</span>
+                  </h2>
+                  <p className="text-lg text-gray-500 font-medium leading-relaxed max-w-xl uppercase tracking-tight">Organizations are stuck with outdated systems that waste time and frustrate employees.</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {[
+                    { title: "Endless Paperwork", icon: "📄", desc: "HR spends more time on forms than people.", color: "rose" },
+                    { title: "Disconnected Apps", icon: "🔌", desc: "Messy data spread across too many places.", color: "violet" },
+                    { title: "Frustrated Workers", icon: "😠", desc: "Hard-to-use software ruins productivity.", color: "amber" },
+                    { title: "Risky Security", icon: "🔓", desc: "Old ways leave you open to legal threats.", color: "slate" }
+                  ].map((item, idx) => (
+                    <div key={idx} className="group p-8 rounded-[32px] border border-gray-100 hover:shadow-xl transition-all duration-500 bg-white">
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 bg-${item.color}-50 text-${item.color}-600 font-bold text-2xl`}>
+                        {item.icon}
+                      </div>
+                      <h3 className="text-xl font-black text-gray-900 mb-2 uppercase tracking-tighter">{item.title}</h3>
+                      <p className="text-xs text-gray-500 font-bold uppercase tracking-tight">{item.desc}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </section>
+            </section>
 
-      {/* 6. Infinite Advanced Slider - Soft Shifting Background */}
-      <section className="py-32 bg-white relative overflow-hidden border-t border-gray-100">
-        <div className="absolute inset-0 z-0">
-          <div className={`absolute inset-0 opacity-5 transition-colors duration-1000 bg-gradient-to-br ${TAB_THEMES[activeTab].gradient} blur-[120px]`} />
-          <div className="absolute inset-0 bg-dots opacity-[0.1]" />
-        </div>
-
-        <div className="container mx-auto px-6 mb-20 text-center relative z-10">
-          <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 tracking-tighter uppercase">Complete <span className={TAB_THEMES[activeTab].text}>HR Suite</span></h2>
-          <p className="text-gray-500 font-bold text-xl max-w-2xl mx-auto uppercase tracking-tight">Streamline your entire operations with a powerful integrated platform.</p>
-        </div>
-
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {SECTION_6_FEATURES.map((card, idx) => {
-              const theme = [
-                { text: "text-blue-600", check: "text-blue-600", iconBg: "bg-blue-50" },
-                { text: "text-emerald-600", check: "text-emerald-600", iconBg: "bg-emerald-50" },
-                { text: "text-violet-600", check: "text-violet-600", iconBg: "bg-violet-50" },
-                { text: "text-rose-600", check: "text-rose-600", iconBg: "bg-rose-50" },
-                { text: "text-sky-600", check: "text-sky-600", iconBg: "bg-sky-50" },
-                { text: "text-amber-600", check: "text-amber-600", iconBg: "bg-amber-50" }
-              ][idx % 6];
-
-              return (
-                <div key={idx} className="w-full">
-                  <div className={`p-10 rounded-[48px] bg-white border border-gray-100 h-full hover:shadow-2xl transition-all duration-500 group relative overflow-hidden flex flex-col`}>
-                    <div className="absolute top-0 right-0 w-40 h-40 bg-gray-50 blur-3xl rounded-full group-hover:bg-blue-50 transition-colors"></div>
-
-                    <div className={`relative z-10 w-16 h-16 rounded-2xl flex items-center justify-center mb-10 group-hover:scale-110 transition-transform ${theme.iconBg} ${theme.text} shadow-inner`}>
-                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                      </svg>
-                    </div>
-                    <h3 className="relative z-10 text-2xl font-black text-gray-900 mb-4 uppercase tracking-tighter">{card.title}</h3>
-                    <p className="relative z-10 text-base text-gray-500 mb-10 leading-relaxed font-bold">{card.desc}</p>
-                    <div className="relative z-10 flex flex-col gap-4 mt-auto">
-                      {card.items.map((item, j) => (
-                        <div key={j} className="flex items-center gap-4 bg-gray-50/50 p-4 rounded-2xl border border-gray-100 group-hover:bg-white transition-all group-hover:border-blue-100">
-                          <div className={`w-6 h-6 rounded-full bg-white shadow-sm flex items-center justify-center flex-shrink-0 ${theme.check} font-black text-xs`}>✓</div>
-                          <span className="text-sm font-black text-gray-600 tracking-tight leading-tight uppercase">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+            {/* 6. Complete HR Suite Section */}
+            <section className="py-16 bg-white relative overflow-hidden border border-gray-100 rounded-[3rem]">
+              <div className="px-4 md:px-12">
+                <div className="mb-16">
+                  <h2 className="text-3xl lg:text-5xl font-black text-gray-900 mb-6 tracking-tighter uppercase">Complete <span className={TAB_THEMES[activeTab].text}>HR Suite</span></h2>
+                  <p className="text-gray-500 font-bold text-lg uppercase tracking-tight">Streamline operations with one platform.</p>
                 </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {SECTION_6_FEATURES.slice(0, 4).map((card, idx) => (
+                    <div key={idx} className="p-8 rounded-[40px] bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-xl transition-all duration-500">
+                      <h3 className="text-xl font-black text-gray-900 mb-6 uppercase tracking-tighter">{card.title}</h3>
+                      <div className="space-y-3">
+                        {card.items.slice(0, 3).map((item, j) => (
+                          <div key={j} className="flex items-center gap-3">
+                            <div className="w-5 h-5 rounded-full bg-white shadow-sm flex items-center justify-center text-[10px] font-black text-blue-600">✓</div>
+                            <span className="text-[10px] font-black text-gray-500 uppercase tracking-tight">{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
 
-      {/* 7. Modern Light Gradient CTA */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="relative rounded-[72px] bg-gray-50 py-12 lg:py-16 px-8 overflow-hidden text-center border border-gray-100 shadow-inner">
+            {/* 7. Final CTA Section */}
+            <section className="py-16">
+              <div className="relative rounded-[3rem] bg-gradient-to-br from-white to-gray-50 py-16 px-8 lg:px-16 overflow-hidden text-center shadow-[0_40px_80px_rgba(0,0,0,0.05)] border border-gray-100">
+                <div className={`absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-br ${TAB_THEMES[activeTab].gradient} opacity-5 blur-[100px]`}></div>
 
-            <div className="relative z-10">
-              <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-8 leading-tight tracking-tight">Build the future <br /> today.</h2>
-              <p className="text-xl text-gray-500 mb-12 max-w-xl mx-auto font-medium">Join 10,000+ forward-thinking HRs transforming their workplace with Isarva.</p>
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="btn-premium-orange !py-6 !px-12 !text-xl !rounded-3xl shadow-xl hover:shadow-2xl transition-all"
-              >
-                Request Free Access
-                <span className="shimmer"></span>
-              </button>
-            </div>
-          </div>
+                <div className="relative z-10 flex flex-col items-center">
+                  <h2 className="text-4xl lg:text-6xl font-black text-gray-900 mb-6 tracking-tighter uppercase leading-[1.1]">Build the <br /> future today.</h2>
+                  <p className="text-gray-500 mb-10 max-w-xl font-bold uppercase tracking-widest text-xs">Join 10,000+ teams transforming their workplace.</p>
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="press-illusion-btn-orange w-full sm:w-auto sm:min-w-[280px] px-12 py-6 font-black uppercase tracking-[0.2em] text-sm flex items-center justify-center gap-3"
+                  >
+                    Request Free Access
+                  </button>
+                </div>
+              </div>
+            </section>
+          </main>
         </div>
-      </section>
+      </div>
 
       <ContactFormModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         preSelectedType="Product"
-        preSelectedItem={product.title}
+        preSelectedItem="HRMS Software"
         allItems={allProducts}
       />
 
@@ -513,7 +497,7 @@ export default function ProductDetailPremiumHRMSStaging({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm cursor-zoom-out"
+            className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md cursor-zoom-out"
             onClick={() => setSelectedImage(null)}
           >
             <motion.div
@@ -521,22 +505,30 @@ export default function ProductDetailPremiumHRMSStaging({
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative max-w-[90vw] max-h-[90vh] cursor-default"
+              className="relative w-full max-w-5xl h-auto flex flex-col items-center cursor-default"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute -top-12 right-0 w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-colors"
+                className="absolute -top-16 right-0 md:-right-12 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all duration-300 hover:rotate-90 z-[1001]"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" /></svg>
               </button>
-              <div className="relative w-full h-full max-w-[80vw] max-h-[80vh]">
+
+              <div className="relative w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-white/20" style={{ aspectRatio: '1.4 / 1' }}>
                 <Image
                   src={selectedImage}
                   alt="Enlarged view"
                   fill
-                  className="object-contain rounded-xl shadow-2xl border border-white/10"
+                  priority
+                  unoptimized
+                  className="object-contain"
                 />
+              </div>
+
+              <div className="mt-6 text-white text-center">
+                <h3 className="text-2xl font-black uppercase tracking-widest">{activeContent.title}</h3>
+                <p className="text-white/60 font-medium mt-1 uppercase text-sm tracking-widest">{activeContent.subtitle}</p>
               </div>
             </motion.div>
           </motion.div>
