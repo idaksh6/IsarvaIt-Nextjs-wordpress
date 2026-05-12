@@ -1060,6 +1060,7 @@ const crmTabData = [
     title: "Lead Management",
     subtitle: "Capture, organize, and convert leads instantly.",
     description: "Capture, organize, and convert leads instantly using the mobile CRM app. Lead creation and capture are seamless from mobile or web.",
+    color: "from-[#0EA5E9] to-[#2563EB]",
     points: [
       { label: "Lead creation", text: "Create and capture leads instantly from mobile or web." },
       { label: "Lead Tracking", text: "Track lead progress and sources across the sales funnel." }
@@ -1071,6 +1072,7 @@ const crmTabData = [
     title: "Deal & Pipeline Management",
     subtitle: "Visualize your entire sales funnel in real-time.",
     description: "Visualize your entire sales funnel using powerful sales pipeline software designed for real-time tracking of deal value and probability.",
+    color: "from-[#8B5CF6] to-[#6D28D9]",
     points: [
       { label: "Visual deal stages", text: "View and move deals easily across each sales stage." },
       { label: "Opportunity tracking", text: "Track deal value, probability, and progress in real time." }
@@ -1082,6 +1084,7 @@ const crmTabData = [
     title: "Customer Management",
     subtitle: "A centralized CRM for small business teams.",
     description: "A centralized CRM for small business teams to manage customer data, interactions, and sales history in one place with detailed profiles.",
+    color: "from-[#F59E0B] to-[#D97706]",
     points: [
       { label: "Customer Profiles", text: "Store all customer details in one centralized profile." },
       { label: "Sales & Activity History", text: "View past sales, interactions, and follow-ups easily." }
@@ -1093,6 +1096,7 @@ const crmTabData = [
     title: "Quotations & Sales Orders",
     subtitle: "Turn opportunities into revenue smoothly.",
     description: "Turn opportunities into revenue smoothly using mobile-friendly sales tools. Create and track quotes and sales orders efficiently.",
+    color: "from-[#10B981] to-[#059669]",
     points: [
       { label: "Quote & Order Tracking", text: "Create and track quotes and sales orders." },
       { label: "Order Status Tracking", text: "Track order status from start to finish." }
@@ -1104,6 +1108,7 @@ const crmTabData = [
     title: "Tasks & Schedules",
     subtitle: "Monitor tasks, meetings, and schedules in real time.",
     description: "Use GO1 CRM as a sales tracking app to monitor tasks, meetings, and follow-ups in real time, linked to leads and customers.",
+    color: "from-[#EC4899] to-[#DB2777]",
     points: [
       { label: "Task Scheduling", text: "Plan and track daily tasks and meetings easily." },
       { label: "Linked Activities", text: "Manage activities connected to leads, deals, and customers." }
@@ -1115,6 +1120,7 @@ const crmTabData = [
     title: "Android CRM App",
     subtitle: "A powerful Android mobile CRM app.",
     description: "A powerful Android mobile CRM app designed for real-world sales execution with real-time sync between mobile and web.",
+    color: "from-[#3B82F6] to-[#1D4ED8]",
     points: [
       { label: "Android-First App", text: "Built for smooth, mobile-first sales execution." },
       { label: "Real-Time Sync", text: "Sync data instantly between mobile and web." }
@@ -1148,29 +1154,37 @@ function CRMTabSection() {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex-shrink-0 lg:flex-shrink w-[260px] lg:w-full text-left p-5 lg:p-6 rounded-2xl transition-all duration-300 border-2 ${activeTab === tab.id
-                  ? "bg-white border-[#0EA5E9] shadow-xl lg:translate-x-2"
+                  ? `bg-gradient-to-br ${tab.color} border-transparent shadow-xl lg:translate-x-2`
                   : "bg-white/40 lg:bg-transparent border-transparent hover:bg-white/60"
                   }`}
               >
-                <h3 className={`text-lg lg:text-xl font-bold ${activeTab === tab.id ? "text-[#0EA5E9]" : "text-gray-900"}`}>
+                <h3 className={`text-lg lg:text-xl font-bold ${activeTab === tab.id ? "text-white" : "text-gray-900"}`}>
                   {tab.title}
                 </h3>
-                <p className="text-[12px] lg:text-sm text-gray-500 mt-1 line-clamp-1">{tab.subtitle}</p>
+                <p className={`text-[12px] lg:text-sm mt-1 line-clamp-1 ${activeTab === tab.id ? "text-white/80" : "text-gray-500"}`}>{tab.subtitle}</p>
               </button>
             ))}
           </div>
 
           {/* Right Side: Content Area */}
-          <div className="lg:col-span-8 bg-white rounded-[24px] lg:rounded-[32px] p-6 lg:p-12 shadow-xl border border-slate-100 min-h-[500px] lg:min-h-[650px] relative overflow-hidden flex flex-col justify-center">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeTab}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.4 }}
-                className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12 items-center w-full"
-              >
+          <div className="lg:col-span-8 relative">
+            {/* Dynamic Gradient Glow Shadow */}
+            <div className={`absolute -inset-4 bg-gradient-to-br ${currentTab.color} opacity-20 blur-2xl rounded-[40px] transition-all duration-700`}></div>
+            
+            <div className="bg-white rounded-[24px] lg:rounded-[32px] p-6 lg:p-12 shadow-xl border border-slate-100 min-h-[500px] lg:min-h-[650px] relative overflow-hidden flex flex-col justify-center">
+              {/* Edge Shades / Decorative Blobs */}
+              <div className={`absolute -top-20 -left-20 w-64 h-64 bg-gradient-to-br ${currentTab.color} opacity-[0.07] rounded-full blur-[80px]`}></div>
+              <div className={`absolute -bottom-20 -right-20 w-64 h-64 bg-gradient-to-br ${currentTab.color} opacity-[0.07] rounded-full blur-[80px]`}></div>
+
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeTab}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.4 }}
+                  className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12 items-center w-full relative z-10"
+                >
                 {/* Content */}
                 <div className="order-2 md:order-1">
                   <h3 className="text-2xl lg:text-3xl font-black text-gray-900 mb-4">{currentTab.title}</h3>
@@ -1179,8 +1193,8 @@ function CRMTabSection() {
                   <div className="space-y-4 lg:space-y-6 mb-8 lg:mb-10">
                     {currentTab.points.map((pt, i) => (
                       <div key={i} className="flex gap-4">
-                        <div className="w-5 h-5 lg:w-6 lg:h-6 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0 mt-1">
-                          <svg className="w-3 h-3 lg:w-3.5 lg:h-3.5 text-sky-600" fill="currentColor" viewBox="0 0 20 20">
+                        <div className={`w-5 h-5 lg:w-6 lg:h-6 rounded-full bg-gradient-to-br ${currentTab.color} flex items-center justify-center flex-shrink-0 mt-1`}>
+                          <svg className="w-3 h-3 lg:w-3.5 lg:h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                         </div>
@@ -1191,11 +1205,18 @@ function CRMTabSection() {
                       </div>
                     ))}
                   </div>
+
+                  <button className={`font-bold text-sm lg:text-base flex items-center gap-2 group bg-clip-text text-transparent bg-gradient-to-r ${currentTab.color}`}>
+                    Learn More
+                    <svg className="w-4 h-4 transition-transform group-hover:translate-x-1 stroke-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
                 </div>
 
                 {/* Image with Popup trigger */}
                 <div className="relative order-1 md:order-2">
-                  <div className="absolute inset-0 bg-[#0EA5E9] opacity-5 blur-3xl rounded-full"></div>
+                  <div className={`absolute inset-0 bg-gradient-to-br ${currentTab.color} opacity-10 blur-3xl rounded-full`}></div>
                   <motion.div
                     initial={{ scale: 0.95, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
@@ -1222,6 +1243,7 @@ function CRMTabSection() {
           </div>
         </div>
       </div>
+    </div>
 
       {/* Image Popup Modal */}
       <AnimatePresence>
