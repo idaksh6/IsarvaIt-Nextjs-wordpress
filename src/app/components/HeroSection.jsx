@@ -104,7 +104,7 @@ function HeroSection({ data }) {
             <h3 className="text-gray-900 font-bold text-xl mb-4 text-center w-full">
               {heroData.floatingCards && heroData.floatingCards[0]
                 ? heroData.floatingCards[0].heading
-                : "Website Service"}
+                : "Website Services"}
             </h3>
             <p className="text-gray-700 text-[13px] leading-relaxed text-center font-bold mb-8 flex-grow w-full">
               {heroData.floatingCards && heroData.floatingCards[0]
@@ -114,9 +114,9 @@ function HeroSection({ data }) {
             <Link
               href="/service/website-services"
               className="inline-flex items-center justify-center gap-1 text-black font-semibold text-[13px] border border-orange-500 rounded-full px-5 py-2 transition-colors hover:bg-orange-500 hover:text-white w-fit mt-auto whitespace-nowrap"
-              aria-label="Learn more about Website Services"
+              aria-label={`Learn more about ${heroData.floatingCards && heroData.floatingCards[0] ? heroData.floatingCards[0].heading : "Website Services"}`}
             >
-              Explore Website Services <ChevronRight size={14} />
+              Explore {heroData.floatingCards && heroData.floatingCards[0] ? heroData.floatingCards[0].heading : "Web Services"} <ChevronRight size={14} />
             </Link>
           </div>
 
@@ -124,7 +124,7 @@ function HeroSection({ data }) {
           <div className="w-full lg:w-[360px] bg-white rounded-[2.5rem] p-10 shadow-[0_20px_50px_rgb(0,0,0,0.15)] z-30 transform lg:rotate-3 lg:-translate-y-0 transition-all duration-500 hover:rotate-0 hover:-translate-y-2 hover:z-40 flex flex-col items-center mx-[-10px] lg:mx-0 flex-1 lg:flex-none relative h-full min-h-[420px]">
             <div className="w-24 h-24 bg-[#7bd29b] rounded-full flex items-center justify-center text-white mb-6 shadow-[0_8px_20px_rgba(123,210,155,0.3)]">
               <lord-icon
-                src="https://cdn.lordicon.com/mubdgyyw.json"
+                src="https://cdn.lordicon.com/unukghxb.json"
                 trigger="loop"
                 colors="primary:#ffffff,secondary:#ffffff"
                 style={{ width: "56px", height: "56px" }}
@@ -132,20 +132,20 @@ function HeroSection({ data }) {
             </div>
             <h3 className="text-gray-900 font-bold text-[22px] mb-4 text-center w-full">
               {heroData.floatingCards && heroData.floatingCards[1]
-                ? heroData.floatingCards[2].heading
-                : "Woocommerce Development"}
+                ? heroData.floatingCards[1].heading
+                : "AI & ML Consulting"}
             </h3>
             <p className="text-gray-700 text-[14px] leading-relaxed text-center font-bold mb-8 flex-grow w-full">
               {heroData.floatingCards && heroData.floatingCards[1]
-                ? heroData.floatingCards[2].description.replace(/<[^>]*>/g, "")
-                : "Launch powerful online stores with secure payments, optimized performance, and conversion-focused design."}
+                ? heroData.floatingCards[1].description.replace(/<[^>]*>/g, "")
+                : "We design and build scalable AI solutions optimized for speed, intelligence, and a superior user experience."}
             </p>
             <Link
-              href="/contact"
+              href="/service/ai-ml-consulting"
               className="inline-flex items-center justify-center gap-1 text-black font-semibold text-[13px] border border-orange-500 rounded-full px-5 py-2 transition-colors hover:bg-orange-500 hover:text-white w-fit mt-auto whitespace-nowrap"
-              aria-label="Learn more about WooCommerce Development"
+              aria-label={`Learn more about ${heroData.floatingCards && heroData.floatingCards[1] ? heroData.floatingCards[1].heading : "AI & ML Consulting"}`}
             >
-              Get Started Today   <ChevronRight size={16} />
+              Explore {heroData.floatingCards && heroData.floatingCards[1] ? heroData.floatingCards[1].heading : "AI Solutions"}   <ChevronRight size={16} />
             </Link>
           </div>
 
@@ -160,21 +160,21 @@ function HeroSection({ data }) {
               ></lord-icon>
             </div>
             <h3 className="text-gray-900 font-bold text-xl mb-4 text-center w-full">
-              {heroData.floatingCards && heroData.floatingCards[1]
-                ? heroData.floatingCards[1].heading
+              {heroData.floatingCards && heroData.floatingCards[2]
+                ? heroData.floatingCards[2].heading
                 : "Custom Software"}
             </h3>
             <p className="text-gray-700 text-[13px] leading-relaxed text-center font-bold mb-8 flex-grow w-full">
-              {heroData.floatingCards && heroData.floatingCards[1]
-                ? heroData.floatingCards[1].description.replace(/<[^>]*>/g, "")
+              {heroData.floatingCards && heroData.floatingCards[2]
+                ? heroData.floatingCards[2].description.replace(/<[^>]*>/g, "")
                 : "Tailored digital solutions built to solve complex business challenges and support long-term growth."}
             </p>
             <Link
-              href="/product/woocommerce-development"
+              href="/contact"
               className="inline-flex items-center justify-center gap-1 text-black font-semibold text-[13px] border border-orange-500 rounded-full px-5 py-2 transition-colors hover:bg-orange-500 hover:text-white w-fit mt-auto whitespace-nowrap"
-              aria-label="Get started with custom software development"
+              aria-label={`Learn more about ${heroData.floatingCards && heroData.floatingCards[2] ? heroData.floatingCards[2].heading : "Custom Software"}`}
             >
-              View WooCommerce Solutions <ChevronRight size={14} />
+              Get Started Today <ChevronRight size={14} />
             </Link>
           </div>
         </div>
