@@ -36,9 +36,9 @@ const DEFAULT_HERO_DATA = {
         "Tailored digital solutions built to solve complex business challenges and support long-term growth.",
     },
     {
-      heading: "E-commerce Solutions",
+      heading: "AI & ML Consulting",
       description:
-        "Launch powerful online stores with secure payments, optimized performance, and conversion-focused design.",
+        "We design and build scalable AI solutions optimized for speed, intelligence, and a superior user experience.",
     },
   ],
 };
@@ -114,9 +114,9 @@ function HeroSection({ data }) {
             <Link
               href="/service/website-services"
               className="inline-flex items-center justify-center gap-1 text-black font-semibold text-[13px] border border-orange-500 rounded-full px-5 py-2 transition-colors hover:bg-orange-500 hover:text-white w-fit mt-auto whitespace-nowrap"
-              aria-label={`Learn more about ${heroData.floatingCards && heroData.floatingCards[0] ? heroData.floatingCards[0].heading : "Website Services"}`}
+              aria-label="Explore Website Services"
             >
-              Explore {heroData.floatingCards && heroData.floatingCards[0] ? heroData.floatingCards[0].heading : "Web Services"} <ChevronRight size={14} />
+              Explore Website Services <ChevronRight size={14} />
             </Link>
           </div>
 
@@ -124,7 +124,7 @@ function HeroSection({ data }) {
           <div className="w-full lg:w-[360px] bg-white rounded-[2.5rem] p-10 shadow-[0_20px_50px_rgb(0,0,0,0.15)] z-30 transform lg:rotate-3 lg:-translate-y-0 transition-all duration-500 hover:rotate-0 hover:-translate-y-2 hover:z-40 flex flex-col items-center mx-[-10px] lg:mx-0 flex-1 lg:flex-none relative h-full min-h-[420px]">
             <div className="w-24 h-24 bg-[#7bd29b] rounded-full flex items-center justify-center text-white mb-6 shadow-[0_8px_20px_rgba(123,210,155,0.3)]">
               <lord-icon
-                src="https://cdn.lordicon.com/cllunfud.json"
+                src="https://cdn.lordicon.com/lsxfpzzn.json"
                 trigger="loop"
                 colors="primary:#ffffff,secondary:#ffffff"
                 style={{ width: "56px", height: "56px" }}
@@ -143,9 +143,9 @@ function HeroSection({ data }) {
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-1 text-black font-semibold text-[13px] border border-orange-500 rounded-full px-5 py-2 transition-colors hover:bg-orange-500 hover:text-white w-fit mt-auto whitespace-nowrap"
-              aria-label="Explore Custom Software"
+              aria-label="Get Started Today"
             >
-              Explore Custom Software   <ChevronRight size={16} />
+              Get Started Today   <ChevronRight size={16} />
             </Link>
           </div>
 
@@ -172,9 +172,9 @@ function HeroSection({ data }) {
             <Link
               href="/service/ai-ml-consulting"
               className="inline-flex items-center justify-center gap-1 text-black font-semibold text-[13px] border border-orange-500 rounded-full px-5 py-2 transition-colors hover:bg-orange-500 hover:text-white w-fit mt-auto whitespace-nowrap"
-              aria-label="Get Started Today"
+              aria-label="Explore AI Solutions"
             >
-              Get Started Today <ChevronRight size={14} />
+              Explore AI Solutions <ChevronRight size={14} />
             </Link>
           </div>
         </div>
