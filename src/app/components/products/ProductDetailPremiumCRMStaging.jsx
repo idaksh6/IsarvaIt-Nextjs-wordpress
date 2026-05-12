@@ -363,6 +363,9 @@ export default function ProductDetailPremiumCRMStaging({
         </div>
       </section>
 
+      {/* 2.5 Vertical Tab Section: Powerful GO1 CRM Features */}
+      <CRMTabSection />
+
       {/* 3. CRM Feature Section (Standard Orbit Layout) */}
       <div id="crm-features-section">
         <CRMFeatureSection />
@@ -1044,6 +1047,215 @@ function CRMFeatureSection() {
           })}
         </div>
       </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
+   CRM TAB SECTION (VERTICAL TABS)
+───────────────────────────────────────────────────────────── */
+const crmTabData = [
+  {
+    id: "lead",
+    title: "Lead Management",
+    subtitle: "Capture, organize, and convert leads instantly.",
+    description: "Capture, organize, and convert leads instantly using the mobile CRM app. Lead creation and capture are seamless from mobile or web.",
+    points: [
+      { label: "Lead creation", text: "Create and capture leads instantly from mobile or web." },
+      { label: "Lead Tracking", text: "Track lead progress and sources across the sales funnel." }
+    ],
+    image: "/products/crm/mockups/leads_mobile.png"
+  },
+  {
+    id: "pipeline",
+    title: "Deal & Pipeline Management",
+    subtitle: "Visualize your entire sales funnel in real-time.",
+    description: "Visualize your entire sales funnel using powerful sales pipeline software designed for real-time tracking of deal value and probability.",
+    points: [
+      { label: "Visual deal stages", text: "View and move deals easily across each sales stage." },
+      { label: "Opportunity tracking", text: "Track deal value, probability, and progress in real time." }
+    ],
+    image: "/products/crm/mockups/deals_mobile.png"
+  },
+  {
+    id: "customer",
+    title: "Customer Management",
+    subtitle: "A centralized CRM for small business teams.",
+    description: "A centralized CRM for small business teams to manage customer data, interactions, and sales history in one place with detailed profiles.",
+    points: [
+      { label: "Customer Profiles", text: "Store all customer details in one centralized profile." },
+      { label: "Sales & Activity History", text: "View past sales, interactions, and follow-ups easily." }
+    ],
+    image: "/products/crm/mockups/customer_mobile.png"
+  },
+  {
+    id: "quotation",
+    title: "Quotations & Sales Orders",
+    subtitle: "Turn opportunities into revenue smoothly.",
+    description: "Turn opportunities into revenue smoothly using mobile-friendly sales tools. Create and track quotes and sales orders efficiently.",
+    points: [
+      { label: "Quote & Order Tracking", text: "Create and track quotes and sales orders." },
+      { label: "Order Status Tracking", text: "Track order status from start to finish." }
+    ],
+    image: "/products/crm/Company-management.jpg"
+  },
+  {
+    id: "tasks",
+    title: "Tasks & Schedules",
+    subtitle: "Monitor tasks, meetings, and schedules in real time.",
+    description: "Use GO1 CRM as a sales tracking app to monitor tasks, meetings, and follow-ups in real time, linked to leads and customers.",
+    points: [
+      { label: "Task Scheduling", text: "Plan and track daily tasks and meetings easily." },
+      { label: "Linked Activities", text: "Manage activities connected to leads, deals, and customers." }
+    ],
+    image: "/products/crm/mockups/tasks_mobile.png"
+  },
+  {
+    id: "mobile",
+    title: "Android CRM App",
+    subtitle: "A powerful Android mobile CRM app.",
+    description: "A powerful Android mobile CRM app designed for real-world sales execution with real-time sync between mobile and web.",
+    points: [
+      { label: "Android-First App", text: "Built for smooth, mobile-first sales execution." },
+      { label: "Real-Time Sync", text: "Sync data instantly between mobile and web." }
+    ],
+    image: "/products/crm/mockups/sync_overview.png"
+  }
+];
+
+function CRMTabSection() {
+  const [activeTab, setActiveTab] = useState(crmTabData[0].id);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const currentTab = crmTabData.find(t => t.id === activeTab);
+
+  return (
+    <section className="py-16 lg:py-32 bg-slate-50 overflow-hidden">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-12 lg:mb-20">
+          <h2 className="text-3xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
+            Powerful <span className="text-[#0EA5E9]">GO1 CRM</span> Features
+          </h2>
+          <p className="text-gray-600 max-w-3xl mx-auto text-base lg:text-lg leading-relaxed">
+            GO1 CRM provides powerful tools to manage leads, pipelines, tasks, and customer relationships — all in one scalable cloud-based platform.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          {/* Left Side: Vertical Tabs (Horizontal on mobile) */}
+          <div className="lg:col-span-4 flex lg:flex-col overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0 gap-3 scrollbar-hide no-scrollbar">
+            {crmTabData.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`flex-shrink-0 lg:flex-shrink w-[260px] lg:w-full text-left p-5 lg:p-6 rounded-2xl transition-all duration-300 border-2 ${activeTab === tab.id
+                  ? "bg-white border-[#0EA5E9] shadow-xl lg:translate-x-2"
+                  : "bg-white/40 lg:bg-transparent border-transparent hover:bg-white/60"
+                  }`}
+              >
+                <h3 className={`text-lg lg:text-xl font-bold ${activeTab === tab.id ? "text-[#0EA5E9]" : "text-gray-900"}`}>
+                  {tab.title}
+                </h3>
+                <p className="text-[12px] lg:text-sm text-gray-500 mt-1 line-clamp-1">{tab.subtitle}</p>
+              </button>
+            ))}
+          </div>
+
+          {/* Right Side: Content Area */}
+          <div className="lg:col-span-8 bg-white rounded-[24px] lg:rounded-[32px] p-6 lg:p-12 shadow-xl border border-slate-100 min-h-[500px] lg:min-h-[650px] relative overflow-hidden flex flex-col justify-center">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.4 }}
+                className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12 items-center w-full"
+              >
+                {/* Content */}
+                <div className="order-2 md:order-1">
+                  <h3 className="text-2xl lg:text-3xl font-black text-gray-900 mb-4">{currentTab.title}</h3>
+                  <p className="text-sm lg:text-base text-gray-600 mb-6 lg:mb-8 leading-relaxed">{currentTab.description}</p>
+                  
+                  <div className="space-y-4 lg:space-y-6 mb-8 lg:mb-10">
+                    {currentTab.points.map((pt, i) => (
+                      <div key={i} className="flex gap-4">
+                        <div className="w-5 h-5 lg:w-6 lg:h-6 rounded-full bg-sky-100 flex items-center justify-center flex-shrink-0 mt-1">
+                          <svg className="w-3 h-3 lg:w-3.5 lg:h-3.5 text-sky-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                        <div>
+                          <p className="font-bold text-gray-900 text-xs lg:text-sm mb-0.5">{pt.label}</p>
+                          <p className="text-gray-500 text-xs lg:text-sm leading-snug">{pt.text}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Image with Popup trigger */}
+                <div className="relative order-1 md:order-2">
+                  <div className="absolute inset-0 bg-[#0EA5E9] opacity-5 blur-3xl rounded-full"></div>
+                  <motion.div
+                    initial={{ scale: 0.95, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ delay: 0.2 }}
+                    className="relative z-10 cursor-zoom-in group"
+                    onClick={() => setSelectedImage(currentTab.image)}
+                  >
+                    <img
+                      src={currentTab.image}
+                      alt={currentTab.title}
+                      className="w-full h-auto max-h-[350px] lg:max-h-[500px] object-contain drop-shadow-2xl rounded-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/5 rounded-2xl">
+                      <div className="bg-white/90 p-2 rounded-full shadow-lg">
+                        <svg className="w-6 h-6 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
+      </div>
+
+      {/* Image Popup Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+            className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 lg:p-10 cursor-zoom-out"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative max-w-5xl w-full flex justify-center"
+            >
+              <img
+                src={selectedImage}
+                alt="Product Preview"
+                className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+              />
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute -top-12 right-0 lg:-right-12 text-white hover:text-sky-400 transition-colors"
+              >
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
