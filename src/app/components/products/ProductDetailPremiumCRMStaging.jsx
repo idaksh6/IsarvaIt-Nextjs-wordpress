@@ -1107,7 +1107,7 @@ const crmTabData = [
     id: "tasks",
     title: "Tasks & Schedules",
     subtitle: "Monitor tasks, meetings, and schedules in real time.",
-    description: "Use GO1 CRM as a sales tracking app to monitor tasks, meetings, and follow-ups in real time, linked to leads and customers.",
+    description: "Use Isarva CRM as a sales tracking app to monitor tasks, meetings, and follow-ups in real time, linked to leads and customers.",
     color: "from-[#EC4899] to-[#DB2777]",
     points: [
       { label: "Task Scheduling", text: "Plan and track daily tasks and meetings easily." },
@@ -1139,10 +1139,10 @@ function CRMTabSection() {
       <div className="container mx-auto px-6">
         <div className="text-center mb-12 lg:mb-20">
           <h2 className="text-3xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
-            Powerful <span className="text-[#0EA5E9]">GO1 CRM</span> Features
+            Powerful <span className="text-[#0EA5E9]">Isarva CRM</span> Features
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto text-base lg:text-lg leading-relaxed">
-            GO1 CRM provides powerful tools to manage leads, pipelines, tasks, and customer relationships — all in one scalable cloud-based platform.
+            Isarva CRM provides powerful tools to manage leads, pipelines, tasks, and customer relationships — all in one scalable cloud-based platform.
           </p>
         </div>
 
