@@ -48,7 +48,7 @@ export default function AboutHeroSlider() {
           transition={{ duration: 0.4 }}
           className="relative w-[250px] h-[420px] flex-shrink-0 snap-center rounded-[2.5rem] overflow-hidden ring-2 ring-white bg-[#1a1f24]"
         >
-          <Image src="/partners/expertise/mountain_v2.png" alt="Strong Foundations" fill className="object-cover" />
+          <Image src="/partners/expertise/kailash_final.png" alt="Strong Foundations" fill className="object-cover object-bottom scale-150" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent flex flex-col justify-end p-8 text-left">
             <h3 className="text-white font-bold text-[clamp(1.3rem,5vw,2.5rem)] leading-tight mb-2">Strong Foundations</h3>
             <div className="w-16 h-1 bg-green-500 mb-4" />
@@ -113,7 +113,7 @@ export default function AboutHeroSlider() {
 
         {/* Card 3 - Desktop (Main Center) */}
         <div className="relative lg:w-[20vw] lg:h-[30vw] xl:w-[450px] xl:h-[580px] rounded-[3.5rem] overflow-hidden shadow-2xl z-20 transform hover:-translate-y-2 transition-transform duration-500 ring-4 ring-white group">
-          <Image src="/partners/expertise/mountain_v2.png" alt="Strong Foundations" fill className="object-cover" />
+          <Image src="/partners/expertise/kailash_final.png" alt="Strong Foundations" fill className="object-cover object-bottom scale-150" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent flex flex-col justify-end p-12 text-left">
             <h3 className="text-white font-bold text-[clamp(1.6rem,2.5vw,2.5rem)] leading-tight mb-2">Strong <br /> Foundations</h3>
             <div className="w-16 h-1 bg-green-500 mb-4" />
