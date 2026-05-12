@@ -206,9 +206,10 @@ export default function ProductDetailPremiumCRMStaging({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12 relative z-20"
+          className="flex flex-col sm:flex-row items-center justify-center gap-10 mt-12 relative z-20"
         >
-          <div className="border-2 border-black/80 rounded-xl px-4 py-2 flex items-center gap-3 bg-transparent h-[60px] min-w-[200px]">
+          {/* Google Play - Shadow Left */}
+          <div className="border-2 border-black rounded-xl px-4 py-2 flex items-center gap-3 bg-white h-[60px] min-w-[200px] shadow-none transition-all hover:translate-x-[4px] hover:-translate-y-[4px] hover:shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)] cursor-default">
             <img 
               src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Play_Arrow_logo.svg" 
               alt="Google Play" 
@@ -219,7 +220,9 @@ export default function ProductDetailPremiumCRMStaging({
               <span className="text-xl font-bold text-black">Google Play</span>
             </div>
           </div>
-          <div className="border-2 border-black/80 rounded-xl px-4 py-2 flex items-center gap-3 bg-transparent h-[60px] min-w-[200px]">
+
+          {/* App Store - Shadow Right */}
+          <div className="border-2 border-black rounded-xl px-4 py-2 flex items-center gap-3 bg-white h-[60px] min-w-[200px] shadow-none transition-all hover:-translate-x-[4px] hover:-translate-y-[4px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] cursor-default">
             <img 
               src="https://www.vectorlogo.zone/logos/apple/apple-icon.svg" 
               alt="App Store" 
