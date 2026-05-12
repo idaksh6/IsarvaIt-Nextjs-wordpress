@@ -93,9 +93,9 @@ function HeroSection({ data }) {
         <div className="relative w-full max-w-[1024px] mx-auto  flex-col lg:flex-row items-center justify-center gap-6 lg:gap-0 mt-12 lg:flex hidden pb-20 px-4">
           {/* Card 1 - Left */}
           <div className="w-full lg:w-[320px] bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] z-10 lg:translate-x-4 transition-all duration-300  hover:-translate-y-2 flex flex-col items-center flex-1 lg:flex-none h-full min-h-[380px]">
-            <div className="w-20 h-20 bg-[#89c0fe] rounded-full flex items-center justify-center text-white mb-6">
+            <div className="w-20 h-20 bg-[#63a7f9] rounded-full flex items-center justify-center text-white mb-6">
               <lord-icon
-                src="https://cdn.lordicon.com/qhgmphtg.json"
+                src="https://cdn.lordicon.com/ogjpwrxe.json"
                 trigger="loop"
                 colors="primary:#ffffff,secondary:#ffffff"
                 style={{ width: "48px", height: "48px" }}
@@ -124,7 +124,7 @@ function HeroSection({ data }) {
           <div className="w-full lg:w-[360px] bg-white rounded-[2.5rem] p-10 shadow-[0_20px_50px_rgb(0,0,0,0.15)] z-30 transform lg:rotate-3 lg:-translate-y-0 transition-all duration-500 hover:rotate-0 hover:-translate-y-2 hover:z-40 flex flex-col items-center mx-[-10px] lg:mx-0 flex-1 lg:flex-none relative h-full min-h-[420px]">
             <div className="w-24 h-24 bg-[#7bd29b] rounded-full flex items-center justify-center text-white mb-6 shadow-[0_8px_20px_rgba(123,210,155,0.3)]">
               <lord-icon
-                src="https://cdn.lordicon.com/nocovpqy.json"
+                src="https://cdn.lordicon.com/hmpomorl.json"
                 trigger="loop"
                 colors="primary:#ffffff,secondary:#ffffff"
                 style={{ width: "56px", height: "56px" }}
@@ -153,7 +153,7 @@ function HeroSection({ data }) {
           <div className="w-full lg:w-[320px] bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] z-20 lg:-translate-x-4 transition-all duration-300 hover:-translate-y-2 flex flex-col items-center flex-1 lg:flex-none h-full min-h-[380px]">
             <div className="w-20 h-20 bg-[#a37eea] rounded-full flex items-center justify-center text-white mb-6">
               <lord-icon
-                src="https://cdn.lordicon.com/pwtfzzzo.json"
+                src="https://cdn.lordicon.com/lbcxnxti.json"
                 trigger="loop"
                 colors="primary:#ffffff,secondary:#ffffff"
                 style={{ width: "48px", height: "48px" }}
