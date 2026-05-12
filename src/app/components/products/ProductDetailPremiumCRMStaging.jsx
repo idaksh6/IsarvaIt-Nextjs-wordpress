@@ -200,6 +200,37 @@ export default function ProductDetailPremiumCRMStaging({
             </div>
           </div>
         </motion.div>
+
+        {/* App Download Badges (Static) */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12 relative z-20"
+        >
+          <div className="border-2 border-black/80 rounded-xl px-4 py-2 flex items-center gap-3 bg-transparent h-[60px] min-w-[200px]">
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Play_Arrow_logo.svg" 
+              alt="Google Play" 
+              className="w-8 h-8"
+            />
+            <div className="flex flex-col items-start leading-none">
+              <span className="text-[10px] font-bold text-gray-600 uppercase">GET IT ON</span>
+              <span className="text-xl font-bold text-black">Google Play</span>
+            </div>
+          </div>
+          <div className="border-2 border-black/80 rounded-xl px-4 py-2 flex items-center gap-3 bg-transparent h-[60px] min-w-[200px]">
+            <img 
+              src="https://www.vectorlogo.zone/logos/apple/apple-icon.svg" 
+              alt="App Store" 
+              className="w-7 h-7 object-contain"
+            />
+            <div className="flex flex-col items-start leading-none">
+              <span className="text-[10px] font-bold text-gray-600 uppercase">Download on the</span>
+              <span className="text-xl font-bold text-black">App Store</span>
+            </div>
+          </div>
+        </motion.div>
       </section>
 
       {/* 2. Why Businesses Need a CRM Section */}
