@@ -193,7 +193,7 @@ export default function ProductDetailPremiumCRMStaging({
           <div className="dashboard-main-img">
             <div className="relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)] bg-white">
               <img
-                src="/products/crm/CRM-dashboard.jpg"
+                src="/products/crm/CRM-dashboard-v2.png"
                 alt="CRM Dashboard"
                 className="w-full object-contain lg:h-[668px] h-full shadow-2xl"
               />
@@ -202,7 +202,7 @@ export default function ProductDetailPremiumCRMStaging({
         </motion.div>
 
         {/* App Download Badges (Static) */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -210,9 +210,9 @@ export default function ProductDetailPremiumCRMStaging({
         >
           {/* Google Play - Shadow Left */}
           <div className="border-2 border-black rounded-xl px-4 py-2 flex items-center gap-3 bg-white h-[60px] min-w-[200px] shadow-none transition-all hover:translate-x-[4px] hover:-translate-y-[4px] hover:shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)] cursor-default">
-            <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Play_Arrow_logo.svg" 
-              alt="Google Play" 
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Play_Arrow_logo.svg"
+              alt="Google Play"
               className="w-8 h-8"
             />
             <div className="flex flex-col items-start leading-none">
@@ -223,9 +223,9 @@ export default function ProductDetailPremiumCRMStaging({
 
           {/* App Store - Shadow Right */}
           <div className="border-2 border-black rounded-xl px-4 py-2 flex items-center gap-3 bg-white h-[60px] min-w-[200px] shadow-none transition-all hover:-translate-x-[4px] hover:-translate-y-[4px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] cursor-default">
-            <img 
-              src="https://www.vectorlogo.zone/logos/apple/apple-icon.svg" 
-              alt="App Store" 
+            <img
+              src="https://www.vectorlogo.zone/logos/apple/apple-icon.svg"
+              alt="App Store"
               className="w-7 h-7 object-contain"
             />
             <div className="flex flex-col items-start leading-none">
@@ -1175,7 +1175,7 @@ function CRMTabSection() {
                 <div className="order-2 md:order-1">
                   <h3 className="text-2xl lg:text-3xl font-black text-gray-900 mb-4">{currentTab.title}</h3>
                   <p className="text-sm lg:text-base text-gray-600 mb-6 lg:mb-8 leading-relaxed">{currentTab.description}</p>
-                  
+
                   <div className="space-y-4 lg:space-y-6 mb-8 lg:mb-10">
                     {currentTab.points.map((pt, i) => (
                       <div key={i} className="flex gap-4">
