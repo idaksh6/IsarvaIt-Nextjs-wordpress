@@ -337,7 +337,7 @@ export default function ProductDetailPremiumCRMStaging({
                 </div>
               </div>
 
-              <div className="mt-8">
+              <div className="mt-8 flex justify-center lg:justify-start">
                 <button
                   onClick={() => setIsBrochureModalOpen(true)}
                   className="press-illusion-btn-orange bg-orange-600 text-white font-bold px-6 py-2 text-base items-center space-x-2 inline-flex cursor-pointer"
@@ -1205,13 +1205,6 @@ function CRMTabSection() {
                       </div>
                     ))}
                   </div>
-
-                  <button className={`font-bold text-sm lg:text-base flex items-center gap-2 group bg-clip-text text-transparent bg-gradient-to-r ${currentTab.color}`}>
-                    Learn More
-                    <svg className="w-4 h-4 transition-transform group-hover:translate-x-1 stroke-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
                 </div>
 
                 {/* Image with Popup trigger */}
