@@ -50,13 +50,15 @@ export default function Footer() {
 
             <div className="flex items-center gap-4 mt-6 lg:ml-auto mx-auto lg:mx-0 w-fit lg:justify-end justify-center">
               <Link target="_blank" href="https://facebook.com/isarvait" className="w-11 h-11 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-all duration-300 shadow-xl hover:shadow-[#1877F2]/40 group">
-                <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" />
               </Link>
               <Link target="_blank" href="https://instagram.com/isarvait" className="w-11 h-11 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-[#E4405F] hover:border-[#E4405F] transition-all duration-300 shadow-xl hover:shadow-[#E4405F]/40 group">
-                <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2c2.717 0 3.056.01 4.122.058 1.066.048 1.79.219 2.43.469.66.255 1.22.597 1.777 1.154.557.557.899 1.117 1.154 1.777.25.64.421 1.364.469 2.43.049 1.066.058 1.405.058 4.122s-.01 3.056-.058 4.122c-.048 1.066-.219 1.79-.469 2.43a4.996 4.996 0 01-1.154 1.777 4.996 4.996 0 01-1.777 1.154c-.64.25-1.364.421-2.43.469-1.066.049-1.405.058-4.122.058s-3.056-.01-4.122-.058c-1.066-.048-1.79-.219-2.43-.469a4.996 4.996 0 01-1.777-1.154 4.996 4.996 0 01-1.154-1.777c-.25-.64-.421-1.364-.469-2.43C2.01 15.056 2 14.717 2 12s.01-3.056.058-4.122c.048-1.066.219-1.79.469-2.43.255-.66.597-1.22 1.154-1.777.557-.557 1.117-.899 1.777-1.154.64-.25 1.364-.421 2.43-.469C8.944 2.01 9.283 2 12 2zm0 4.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zm6.537.828a1.2 1.2 0 10-2.4 0 1.2 1.2 0 002.4 0zM12 8.667a3.333 3.333 0 110 6.666 3.333 3.333 0 010-6.666z"/>
+                </svg>
               </Link>
               <Link target="_blank" href="https://linkedin.com/company/isarvait" className="w-11 h-11 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-[#0A66C2] hover:border-[#0A66C2] transition-all duration-300 shadow-xl hover:shadow-[#0A66C2]/40 group">
-                <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" />
               </Link>
             </div>
           </div>
