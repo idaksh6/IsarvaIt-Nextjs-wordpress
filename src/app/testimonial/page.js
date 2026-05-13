@@ -107,6 +107,17 @@ const testimonials = [
     highlight: "Real improvement in brand discovery.",
     rating: 5,
     tag: "F&B"
+  },
+  {
+    id: 10,
+    name: "Prajwal Shetty",
+    role: "Secretory",
+    company: "Vidvath Education Foundation",
+    image: "/Testimonials/prajwal-shetty.jpg",
+    text: "The Website redesign has completely transformed our digital presence. We’ve seen a significant increase in online admissions and talent test registrations. The website is now faster, mobile-friendly, and truly reflects the high standards of Vidvath PU College. ISarva Infotech delivered exactly what we needed to grow.",
+    highlight: "Website Redesign has completely transformed our digital presence.",
+    rating: 5,
+    tag: "Web Transformation"
   }
 ];
 
@@ -380,7 +391,7 @@ export default function TestimonialPage() {
                   {/* Content */}
                   <div className="flex flex-col items-center mb-8">
                     <h5 className="font-display font-bold text-2xl text-[#1a1f24] mb-1">{testimonials[currentSlide].name}</h5>
-                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#10b981] mb-4">
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#10b981] mb-4 text-center ">
                       {testimonials[currentSlide].role} @ {testimonials[currentSlide].company}
                     </p>
 
@@ -450,7 +461,7 @@ export default function TestimonialPage() {
                 {/* 2. Rating & Tag Header */}
                 <div className="flex flex-col items-center mb-8">
                   <h5 className="font-display font-bold text-2xl text-[#1a1f24] mb-1">{t.name}</h5>
-                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#10b981] mb-4">{t.role} @ {t.company}</p>
+                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#10b981] mb-4 text-center ">{t.role} @ {t.company}</p>
 
                   <div className="flex gap-1.5 px-4 py-2 bg-white rounded-full border border-black/5 shadow-sm">
                     {[...Array(t.rating)].map((_, i) => (

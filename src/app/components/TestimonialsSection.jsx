@@ -93,6 +93,16 @@ const defaultTestimonials = [
     rating: 5,
     text: "Captured the essence of our brand perfectly. Clean, inviting website that beautifully showcases our offerings and makes ordering effortless.",
   },
+  {
+    id: 9,
+    name: "Prajwal Shetty",
+    role: "Secretory",
+    company: "Vidvath Education Foundation",
+    initials: "PS",
+    gradient: "linear-gradient(135deg, #065f46 0%, #10b981 100%)",
+    rating: 5,
+    text: "The redesign has completely transformed our digital presence. We’ve seen a significant increase in online admissions and talent test registrations.",
+  },
 ];
 
 function TestimonialsSection({ data }) {
