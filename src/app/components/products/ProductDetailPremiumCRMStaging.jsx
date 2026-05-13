@@ -479,7 +479,7 @@ export default function ProductDetailPremiumCRMStaging({
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <span className="inline-block text-xs font-black text-white/90 tracking-[0.25em] uppercase mb-4 bg-white/20 px-5 py-2 rounded-full backdrop-blur-sm">
-                  STAGING ENVIRONMENT
+                  GET STARTED TODAY
                 </span>
 
                 <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-[1] mb-6">
@@ -758,10 +758,10 @@ function FaqAccordion() {
 const crmFeatures = [
   {
     id: "leads",
-    label: "Lead Management",
+    label: "Leads Management",
     icon: "🎯",
     color: "#0EA5E9",
-    desc: "Captures, tracks, and manages potential customers across multiple channels, helping teams prioritize and convert leads efficiently. Create leads from mobile or web and track progress across the sales funnel.",
+    desc: "Capture, track, and nurture leads from multiple sources. Score leads based on engagement and readiness, and seamlessly convert qualified leads into opportunities for your sales team.",
     image: "/products/crm/Leads-management.jpg",
   },
   {
@@ -769,40 +769,48 @@ const crmFeatures = [
     label: "Deals Management",
     icon: "💼",
     color: "#0284C7",
-    desc: "Tracks and manages every sales opportunity from initial engagement to closure. Monitor deal stages in real-time and manage your pipeline visually using a Kanban view for better forecasting.",
+    desc: "Manage the entire sales pipeline from opportunity to closure. Track deal stages, assign values, set probabilities, and forecast revenue with visual pipeline management and customizable deal stages.",
     image: "/products/crm/Deals-management.jpg",
   },
   {
-    id: "customer",
-    label: "Customer Management",
-    icon: "👥",
+    id: "companies",
+    label: "Company Management",
+    icon: "🏢",
     color: "#3B82F6",
-    desc: "Stores information about individuals linked to companies or leads. Enables personalized communication, tracks complete interaction history, and maintains detailed customer profiles.",
+    desc: "Maintain comprehensive company profiles with detailed information, interaction history, and hierarchical relationships. Link companies to contacts, deals, and activities for complete visibility.",
+    image: "/products/crm/Company-management.jpg",
+  },
+  {
+    id: "contacts",
+    label: "Contact Person Management",
+    icon: "👥",
+    color: "#0EA5E9",
+    desc: "Build and maintain a centralized database of contact persons with complete profiles, communication preferences, interaction history, and relationship mapping to companies and deals.",
     image: "/products/crm/Contact-Person.jpg",
   },
   {
-    id: "quotation",
-    label: "Quotation Management",
-    icon: "📄",
-    color: "#0EA5E9",
-    desc: "Turn opportunities into revenue smoothly using mobile-friendly sales tools. Generate quotations efficiently, track approval status in real-time, and download instant PDFs for quick sharing.",
-    image: "/products/crm/Company-management.jpg", // Using this as placeholder or similar
-  },
-  {
-    id: "activity",
-    label: "Tasks, Meetings & Notices",
-    icon: "📅",
-    color: "#0284C7",
-    desc: "Use Isarva CRM as a sales tracking app to monitor tasks, meetings, and notices in real time. Schedule activities and link them directly to leads, deals, and customers for seamless coordination.",
-    image: "/products/crm/Calender.jpg",
-  },
-  {
     id: "analytics",
-    label: "Analytics & Reporting",
+    label: "Reporting & Analytics",
     icon: "📊",
-    color: "#3B82F6",
-    desc: "Transforms raw CRM data into actionable insights. Provides operational reports for daily monitoring, user performance tracking, and advanced analytics for long-term strategic planning.",
+    color: "#0284C7",
+    desc: "Access powerful dashboards and reports to track sales performance, conversion rates, pipeline health, and revenue forecasts. Generate custom reports and export data for deeper analysis.",
     image: "/products/crm/Analytics-Reports.jpg",
+  },
+  {
+    id: "user-access",
+    label: "User Management & Access Control",
+    icon: "🔐",
+    color: "#3B82F6",
+    desc: "Manage team members with role-based permissions, control data access, and define workflows. Assign territories, set quotas, and monitor individual and team performance metrics.",
+    image: "/products/crm/User-Management.jpg",
+  },
+  {
+    id: "meeting-calendar",
+    label: "Meeting Calendar",
+    icon: "📅",
+    color: "#0EA5E9",
+    desc: "Schedule and manage meetings with clients and team members. Sync with your calendar, set reminders, track meeting outcomes, and maintain a complete history of all customer interactions and appointments.",
+    image: "/products/crm/Calender.jpg",
   },
 ];
 
@@ -823,13 +831,13 @@ function CRMFeatureSection() {
         {/* Section Header */}
         <div className="text-center mb-10">
           <span className="block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-2.5">
-            STAGING FEATURES
+            SOFTWARE FEATURES
           </span>
           <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-[1] mb-3.5">
-            Modern Features Of <span className="text-[#0EA5E9]">CRM</span> Staging
+            Key Features Of <span className="text-[#0EA5E9]">CRM</span> Application
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">
-            Testing high-performance customer relationship management features designed for the next generation of sales excellence.
+            Comprehensive customer relationship management features designed to drive sales excellence and customer satisfaction.
           </p>
         </div>
 
@@ -889,7 +897,7 @@ function CRMFeatureSection() {
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
                   className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[13px] font-semibold ${activeId === feature.id
-                    ? "bg-gray-900 border-sky-600 text-white shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
+                    ? "bg-gray-900 border-sky-600 text-gray-800 shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
                     : "border-sky-300 text-gray-800 hover:border-sky-500 hover:shadow-md"
                     }`}
                 >
@@ -1170,7 +1178,7 @@ function CRMTabSection() {
           <div className="lg:col-span-8 relative">
             {/* Dynamic Gradient Glow Shadow */}
             <div className={`absolute -inset-4 bg-gradient-to-br ${currentTab.color} opacity-20 blur-2xl rounded-[40px] transition-all duration-700`}></div>
-            
+
             <div className="bg-white rounded-[24px] lg:rounded-[32px] p-6 lg:p-12 shadow-xl border border-slate-100 min-h-[500px] lg:min-h-[650px] relative overflow-hidden flex flex-col justify-center">
               {/* Edge Shades / Decorative Blobs */}
               <div className={`absolute -top-20 -left-20 w-64 h-64 bg-gradient-to-br ${currentTab.color} opacity-[0.07] rounded-full blur-[80px]`}></div>
@@ -1185,58 +1193,58 @@ function CRMTabSection() {
                   transition={{ duration: 0.4 }}
                   className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12 items-center w-full relative z-10"
                 >
-                {/* Content */}
-                <div className="order-2 md:order-1">
-                  <h3 className="text-2xl lg:text-3xl font-black text-gray-900 mb-4">{currentTab.title}</h3>
-                  <p className="text-sm lg:text-base text-gray-600 mb-6 lg:mb-8 leading-relaxed">{currentTab.description}</p>
+                  {/* Content */}
+                  <div className="order-2 md:order-1">
+                    <h3 className="text-2xl lg:text-3xl font-black text-gray-900 mb-4">{currentTab.title}</h3>
+                    <p className="text-sm lg:text-base text-gray-600 mb-6 lg:mb-8 leading-relaxed">{currentTab.description}</p>
 
-                  <div className="space-y-4 lg:space-y-6 mb-8 lg:mb-10">
-                    {currentTab.points.map((pt, i) => (
-                      <div key={i} className="flex gap-4">
-                        <div className={`w-5 h-5 lg:w-6 lg:h-6 rounded-full bg-gradient-to-br ${currentTab.color} flex items-center justify-center flex-shrink-0 mt-1`}>
-                          <svg className="w-3 h-3 lg:w-3.5 lg:h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    <div className="space-y-4 lg:space-y-6 mb-8 lg:mb-10">
+                      {currentTab.points.map((pt, i) => (
+                        <div key={i} className="flex gap-4">
+                          <div className={`w-5 h-5 lg:w-6 lg:h-6 rounded-full bg-gradient-to-br ${currentTab.color} flex items-center justify-center flex-shrink-0 mt-1`}>
+                            <svg className="w-3 h-3 lg:w-3.5 lg:h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                            </svg>
+                          </div>
+                          <div>
+                            <p className="font-bold text-gray-900 text-xs lg:text-sm mb-0.5">{pt.label}</p>
+                            <p className="text-gray-500 text-xs lg:text-sm leading-snug">{pt.text}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Image with Popup trigger */}
+                  <div className="relative order-1 md:order-2">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${currentTab.color} opacity-10 blur-3xl rounded-full`}></div>
+                    <motion.div
+                      initial={{ scale: 0.95, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ delay: 0.2 }}
+                      className="relative z-10 cursor-zoom-in group"
+                      onClick={() => setSelectedImage(currentTab.image)}
+                    >
+                      <img
+                        src={currentTab.image}
+                        alt={currentTab.title}
+                        className="w-full h-auto max-h-[350px] lg:max-h-[500px] object-contain drop-shadow-2xl rounded-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/5 rounded-2xl">
+                        <div className="bg-white/90 p-2 rounded-full shadow-lg">
+                          <svg className="w-6 h-6 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
                           </svg>
                         </div>
-                        <div>
-                          <p className="font-bold text-gray-900 text-xs lg:text-sm mb-0.5">{pt.label}</p>
-                          <p className="text-gray-500 text-xs lg:text-sm leading-snug">{pt.text}</p>
-                        </div>
                       </div>
-                    ))}
+                    </motion.div>
                   </div>
-                </div>
-
-                {/* Image with Popup trigger */}
-                <div className="relative order-1 md:order-2">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${currentTab.color} opacity-10 blur-3xl rounded-full`}></div>
-                  <motion.div
-                    initial={{ scale: 0.95, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ delay: 0.2 }}
-                    className="relative z-10 cursor-zoom-in group"
-                    onClick={() => setSelectedImage(currentTab.image)}
-                  >
-                    <img
-                      src={currentTab.image}
-                      alt={currentTab.title}
-                      className="w-full h-auto max-h-[350px] lg:max-h-[500px] object-contain drop-shadow-2xl rounded-2xl transition-transform duration-500 group-hover:scale-[1.02]"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/5 rounded-2xl">
-                      <div className="bg-white/90 p-2 rounded-full shadow-lg">
-                        <svg className="w-6 h-6 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                        </svg>
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+                </motion.div>
+              </AnimatePresence>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
       {/* Image Popup Modal */}
       <AnimatePresence>
