@@ -309,7 +309,7 @@ export default function SupportSystemCaseStudyClient() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-12 md:mb-16">
               {[
                 { title: "Requirement Mapping", text: "Studied existing manual processes and identified gaps" },
-                { title: "System Setup", text: "Configured ISS modules to match project lifecycle" },
+                { title: "System Setup", text: "Configured ISS modules to match project and ticket lifecycle " },
                 { title: "Data Migration", text: "Shifted spreadsheets and records into a centralized system" },
                 { title: "Role Configuration", text: "Defined access levels for security and clarity" },
                 { title: "Training & Change Management", text: "Ensured team adoption through guided training" },
@@ -341,11 +341,13 @@ export default function SupportSystemCaseStudyClient() {
               </div>
 
               <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4 text-emerald-700">Streamlining the Project Lifecycle</h3>
-                <p className="text-sm md:text-base text-gray-700 mb-4">We simplified how the Company moves a project from a "rough idea" to a "live website":</p>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4 text-emerald-700">Streamlining Project and Ticket LifeCycle</h3>
+                <p className="text-sm md:text-base text-gray-700 mb-4">We simplified how your team moves work from a "rough idea" or "client issue" to a successful finish:</p>
                 <ul className="list-disc pl-5 md:pl-6 space-y-2 text-gray-700 text-sm md:text-base">
-                  <li><strong>The Progress Tracker:</strong> A simple drag-and-drop system to move tasks from Doing to Done</li>
-                  <li><strong>The Due-Date Radar:</strong> Countdown-based alerts for project deadlines, enabling proactive action</li>
+                  <li><strong>The Progress Tracker:</strong> A simple drag-and-drop system to move tasks and tickets from "In Progress" to "Completed" instantly.</li>
+                  <li><strong>The Due-Date Radar:</strong> Countdown-based alerts for deadlines and support response times to keep your team proactive.</li>
+                  <li><strong>Private Team Collaboration:</strong> Add internal comments and flag team members on tickets for quick help without the client seeing the "behind-the-scenes" talk.</li>
+                  <li><strong>Effort Tracking:</strong> Every ticket automatically tracks worked hours, so you know exactly how much time and effort each support request actually took.</li>
                 </ul>
               </div>
 
@@ -403,7 +405,7 @@ export default function SupportSystemCaseStudyClient() {
                   </div>
                   <div className="bg-white p-5 md:p-6 rounded-2xl shadow-sm">
                     <div className="text-2xl md:text-3xl font-bold text-emerald-600 mb-1">Anywhere Access</div>
-                    <div className="text-sm md:text-base text-gray-800 font-medium">100% Cloud-Based Operations</div>
+                    <div className="text-sm md:text-base text-gray-800 font-medium">Allows access from any location with no device restriction</div>
                   </div>
                 </div>
               </div>
@@ -511,7 +513,7 @@ export default function SupportSystemCaseStudyClient() {
 
               <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 md:mb-8">EXPLORE ISARVA SUPPORT PRODUCT — ENQUIRE NOW</h2>
 
-              <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 md:py-4 px-8 md:px-10 rounded-full transition-all shadow-lg hover:shadow-emerald-500/30 mb-6 md:mb-8 text-sm md:text-base">
+              <Link href="/contact" className="press-illusion-btn-orange bg-orange-600 text-white font-bold py-3 md:py-4 px-8 md:px-10 rounded-full transition-all shadow-lg hover:shadow-orange-500/30 mb-6 md:mb-8 text-sm md:text-base flex items-center justify-center gap-2 w-fit mx-auto">
                 Enquire Now <ArrowRight size={18} />
               </Link>
 
