@@ -97,6 +97,7 @@ export default function ProductDetailPremiumCRMStaging({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -191,7 +192,7 @@ export default function ProductDetailPremiumCRMStaging({
             ></div>
           </div>
           <div className="dashboard-main-img">
-            <div className="relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)] bg-white">
+            <div className="relative overflow-hidden  ">
               <img
                 src="/products/crm/CRM-dashboard-v3.png"
                 alt="CRM Dashboard"
@@ -242,12 +243,22 @@ export default function ProductDetailPremiumCRMStaging({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 lg:text-left text-center">
             {/* Left Side - Image (Sticky on Desktop) */}
             <div className="relative lg:sticky lg:top-28 lg:self-start">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <div
+                className="relative z-10 cursor-zoom-in group"
+                onClick={() => setSelectedImage("/products/crm/mockups/sync_overview.png")}
+              >
                 <img
-                  src="/products/crm/Leads-management.jpg"
-                  alt="CRM Dashboard"
-                  className="w-full h-auto object-cover"
+                  src="/products/crm/mockups/sync_overview.png"
+                  alt="CRM Sync Overview Mockup"
+                  className="w-full h-auto max-h-[350px] lg:max-h-[500px] object-contain drop-shadow-2xl rounded-2xl transition-transform duration-500 group-hover:scale-[1.02]"
                 />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/5 rounded-2xl">
+                  <div className="bg-white/90 p-2 rounded-full shadow-lg">
+                    <svg className="w-6 h-6 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                    </svg>
+                  </div>
+                </div>
               </div>
               {/* Decorative elements */}
               <div className="absolute -top-6 -left-6 w-32 h-32 bg-[#0EA5E9] opacity-10 rounded-full blur-3xl"></div>
@@ -364,7 +375,7 @@ export default function ProductDetailPremiumCRMStaging({
       </section>
 
       {/* 2.5 Vertical Tab Section: Powerful GO1 CRM Features */}
-      <CRMTabSection />
+      <CRMTabSection setSelectedImage={setSelectedImage} />
 
       {/* 3. CRM Feature Section (Standard Orbit Layout) */}
       <div id="crm-features-section">
@@ -634,6 +645,40 @@ export default function ProductDetailPremiumCRMStaging({
         isOpen={isBrochureModalOpen}
         onClose={() => setIsBrochureModalOpen(false)}
       />
+
+      {/* Image Popup Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+            className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 lg:p-10 cursor-zoom-out"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative max-w-5xl w-full flex justify-center"
+            >
+              <img
+                src={selectedImage}
+                alt="Product Preview"
+                className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+              />
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute -top-12 right-0 lg:-right-12 text-white hover:text-sky-400 transition-colors"
+              >
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
@@ -1133,13 +1178,12 @@ const crmTabData = [
       { label: "Android-First App", text: "Built for smooth, mobile-first sales execution." },
       { label: "Real-Time Sync", text: "Sync data instantly between mobile and web." }
     ],
-    image: "/products/crm/mockups/sync_overview.png"
+    image: "/products/crm/mockups/sync_overview_v2.png"
   }
 ];
 
-function CRMTabSection() {
+function CRMTabSection({ setSelectedImage }) {
   const [activeTab, setActiveTab] = useState(crmTabData[0].id);
-  const [selectedImage, setSelectedImage] = useState(null);
   const currentTab = crmTabData.find(t => t.id === activeTab);
 
   return (
@@ -1246,39 +1290,6 @@ function CRMTabSection() {
         </div>
       </div>
 
-      {/* Image Popup Modal */}
-      <AnimatePresence>
-        {selectedImage && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedImage(null)}
-            className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 lg:p-10 cursor-zoom-out"
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="relative max-w-5xl w-full flex justify-center"
-            >
-              <img
-                src={selectedImage}
-                alt="Product Preview"
-                className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
-              />
-              <button
-                onClick={() => setSelectedImage(null)}
-                className="absolute -top-12 right-0 lg:-right-12 text-white hover:text-sky-400 transition-colors"
-              >
-                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 }
