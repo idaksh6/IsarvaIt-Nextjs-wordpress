@@ -115,7 +115,7 @@ const TAB_THEMES = {
   "ess": { bg: "bg-amber-500", gradient: "from-[#F59E0B] to-[#D97706]", shadow: "shadow-amber-500/20", text: "text-amber-600", lightBg: "bg-amber-50", hoverBorder: "hover:border-amber-200", accent: "amber" }
 };
 
-export default function ProductDetailPremiumHRMSStaging({
+export default function ProductDetailPremiumHRMS({
   product,
   relatedProducts,
   allProducts,
@@ -792,7 +792,7 @@ function HrmsFeatureSection() {
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
                   className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[14px] font-semibold whitespace-nowrap ${activeId === feature.id
-                    ? "bg-gray-900 border-green-600 text-white shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
+                    ? "bg-gray-900 border-green-600 text-gray-800 shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
                     : "border-green-300 text-gray-800 hover:border-green-500 hover:shadow-md"
                     }`}
                 >

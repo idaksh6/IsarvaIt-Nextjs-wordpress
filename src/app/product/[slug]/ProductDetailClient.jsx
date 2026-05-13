@@ -19,7 +19,7 @@ import ProductDetailPremiumCRMStaging from "../../components/products/ProductDet
 import ProductDetailPremiumSupport from "../../components/products/ProductDetailPremiumSupport";
 import ProductDetailPremiumGodownStaging from "../../components/products/ProductDetailPremiumGodownStaging";
 
-import ProductDetailPremiumHRMSStaging from "../../components/products/ProductDetailPremiumHRMSStaging";
+import ProductDetailPremiumHRMS from "../../components/products/ProductDetailPremiumHRMS";
 
 export default function ProductDetailClient({ product, relatedProducts, allProducts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -27,7 +27,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   // Use Staging View for HRMS Software (Now Live)
   if (product.slug === 'hrms-software') {
     return (
-      <ProductDetailPremiumHRMSStaging 
+      <ProductDetailPremiumHRMS 
         product={product} 
         relatedProducts={relatedProducts} 
         allProducts={allProducts}
