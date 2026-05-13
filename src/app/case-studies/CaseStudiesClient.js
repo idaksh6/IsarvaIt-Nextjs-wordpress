@@ -9,7 +9,7 @@ import Link from "next/link";
 const CASE_STUDIES = [
   {
     id: 1,
-    title: "Transforming a Web Design Company with ISS",
+    title: "Transforming a Web Design Company with Isarva Support System",
     client: "Mid-Sized Website Design Agency",
     industry: "Web Design",
     product: "Isarva Support System",
