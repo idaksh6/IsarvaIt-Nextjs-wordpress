@@ -207,7 +207,7 @@ export default function ProductDetailPremiumCRMStaging({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-10 mt-12 relative z-20"
+          className="flex flex-col sm:flex-row items-center justify-center gap-10  relative z-20"
         >
           {/* Google Play - Shadow Left */}
           <div className="border-2 border-black rounded-xl px-4 py-2 flex items-center gap-3 bg-white h-[60px] min-w-[200px] shadow-none transition-all hover:translate-x-[4px] hover:-translate-y-[4px] hover:shadow-[-4px_4px_0px_0px_rgba(0,0,0,1)] cursor-default">
