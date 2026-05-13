@@ -5,8 +5,8 @@
 
 export const productsData = [
   {
-    slug: "hrms-software",
-    title: "HRMS Software",
+    slug: "hrms-software-old",
+    title: "HRMS Software (Old)",
     category: "Human Resources",
     icon: "👥",
     tagline: "Comprehensive HR Management Solution",
@@ -42,15 +42,15 @@ export const productsData = [
     bgGradient: "from-blue-50 via-indigo-50 to-white",
   },
   {
-    slug: "hrms-software-staging",
-    title: "HRMS Software (Staging)",
+    slug: "hrms-software",
+    title: "HRMS Software",
     category: "Human Resources",
     icon: "👥",
-    tagline: "HR Management Workspace (Staging)",
+    tagline: "HR Management Workspace",
     shortDescription:
-      "Staging version of the HRMS solution for testing new features and workflow improvements.",
+      "A complete, modern HRMS solution for streamlining employee management and tracking performance.",
     description:
-      "This is a staging environment for the HRMS Software. Use this space to test new employee management features, payroll logic, and attendance tracking enhancements before they are deployed to production.",
+      "Transform your HR department with our powerful HRMS software. Effortlessly manage employee data, automate payroll processing, track attendance, and drive performance all from a unified workspace.",
     features: [
       "Employee Information Management",
       "Payroll Processing & Tax Compliance",

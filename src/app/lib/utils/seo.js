@@ -88,10 +88,11 @@ export function generateMetadata({
 }
 
 export function generateProductMetadata(product) {
-  const isStaging = product.slug?.includes("-staging");
+  const isNoIndex = product.slug?.includes("-staging") || product.slug?.includes("-old");
+  const prefix = product.slug?.includes("-staging") ? "[STAGING] " : product.slug?.includes("-old") ? "[OLD] " : "";
 
   return generateMetadata({
-    title: isStaging ? `[STAGING] ${product.title}` : product.title,
+    title: `${prefix}${product.title}`,
     description: product.shortDescription || product.description,
     keywords: [
       product.title,
@@ -102,7 +103,7 @@ export function generateProductMetadata(product) {
     ],
     url: `/product/${product.slug}`,
     type: "website",
-    noIndex: isStaging,
+    noIndex: isNoIndex,
   });
 }
 

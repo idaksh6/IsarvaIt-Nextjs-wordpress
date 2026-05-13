@@ -24,8 +24,8 @@ import ProductDetailPremiumHRMSStaging from "../../components/products/ProductDe
 export default function ProductDetailClient({ product, relatedProducts, allProducts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Use Staging View for HRMS Software Staging
-  if (product.slug === 'hrms-software-staging') {
+  // Use Staging View for HRMS Software (Now Live)
+  if (product.slug === 'hrms-software') {
     return (
       <ProductDetailPremiumHRMSStaging 
         product={product} 
@@ -35,8 +35,8 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
     );
   }
 
-  // Use Premium View for HRMS Software
-  if (product.slug === 'hrms-software') {
+  // Use Premium View for HRMS Software (Old)
+  if (product.slug === 'hrms-software-old') {
     return (
       <ProductDetailPremium 
         product={product} 
