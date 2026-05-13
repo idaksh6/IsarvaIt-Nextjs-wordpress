@@ -30,42 +30,6 @@ const CASE_STUDIES = [
     color: "from-blue-400 to-indigo-600",
     bgLight: "bg-blue-50",
     textDark: "text-blue-700"
-  },
-  {
-    id: 3,
-    title: "Scaling Sales by 300% with Smart Pipelines",
-    client: "Tech Startups Inc",
-    industry: "Technology",
-    product: "CRM Application",
-    slug: "#",
-    tags: ["Sales Pipeline", "Lead Tracking", "Analytics"],
-    color: "from-orange-400 to-red-600",
-    bgLight: "bg-orange-50",
-    textDark: "text-orange-700"
-  },
-  {
-    id: 4,
-    title: "Zero Stock-outs Across 5 Warehouses",
-    client: "National Retail Chain",
-    industry: "Retail",
-    product: "Retail Billing Software",
-    slug: "#",
-    tags: ["Multi-Branch", "Inventory Control", "Cloud"],
-    color: "from-purple-400 to-pink-600",
-    bgLight: "bg-purple-50",
-    textDark: "text-purple-700"
-  },
-  {
-    id: 5,
-    title: "Automating Patient Document Flows",
-    client: "City General Hospital",
-    industry: "Healthcare",
-    product: "Document Management",
-    slug: "#",
-    tags: ["Security", "Compliance", "Version Control"],
-    color: "from-teal-400 to-cyan-600",
-    bgLight: "bg-teal-50",
-    textDark: "text-teal-700"
   }
 ];
 
