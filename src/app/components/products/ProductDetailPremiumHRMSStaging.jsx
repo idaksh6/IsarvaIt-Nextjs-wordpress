@@ -169,7 +169,7 @@ export default function ProductDetailPremiumHRMSStaging({
       </div>
 
       {/* 2. Enhanced Vertical Sidebar Tabs (Desktop) & Floating Top Bar (Mobile) */}
-      <div ref={contentTopRef} className="relative z-40 max-w-7xl mx-auto px-4 md:px-6 pt-24 lg:pt-48 pb-12 lg:pb-32">
+      <div ref={contentTopRef} className="relative z-40 container mx-auto px-4 md:px-6 pt-24 lg:pt-48 pb-12 lg:pb-32">
         {/* Mobile View (Horizontal Scroll) - Restored previous centered design but kept stickiness */}
         <div className="lg:hidden sticky top-28 z-[60] flex justify-center py-4 px-2 mb-10 bg-transparent">
           <div className="inline-flex items-center bg-white/80 backdrop-blur-2xl border border-white/50 p-1.5 shadow-xl rounded-full overflow-x-auto no-scrollbar max-w-full">
@@ -181,7 +181,7 @@ export default function ProductDetailPremiumHRMSStaging({
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`px-5 py-2.5 rounded-full font-bold text-[10px] uppercase tracking-widest transition-all duration-500 relative ${isActive ? "text-white" : "text-gray-500"}`}
+                    className={`px-5 py-2.5 rounded-full font-bold text-[14px] uppercase tracking-widest transition-all duration-500 relative ${isActive ? "text-white" : "text-gray-500"}`}
                   >
                     {isActive && (
                       <motion.div
@@ -267,7 +267,7 @@ export default function ProductDetailPremiumHRMSStaging({
                       <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border text-[10px] font-black uppercase tracking-[0.2em] mb-6 ${TAB_THEMES[activeTab].lightBg} ${TAB_THEMES[activeTab].text} border-white/50 shadow-sm`}
+                        className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border text-[14px] font-black uppercase tracking-[0.2em] mb-6 ${TAB_THEMES[activeTab].lightBg} ${TAB_THEMES[activeTab].text} border-white/50 shadow-sm`}
                       >
                         <span className="relative flex h-2 w-2">
                           <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${TAB_THEMES[activeTab].bg}`}></span>
@@ -302,7 +302,7 @@ export default function ProductDetailPremiumHRMSStaging({
                     >
                       <button
                         onClick={() => setIsModalOpen(true)}
-                        className="press-illusion-btn-orange w-full sm:w-auto sm:min-w-[240px] px-8 py-4 font-black uppercase tracking-[0.2em] text-xs flex items-center justify-center gap-3"
+                        className="press-illusion-btn-orange w-full sm:w-auto sm:min-w-[240px] px-8 py-4 font-black uppercase tracking-[0.2em] text-[14px] flex items-center justify-center gap-3"
                       >
                         Get Started Free
                       </button>
@@ -348,7 +348,7 @@ export default function ProductDetailPremiumHRMSStaging({
                         <div className={`w-8 h-8 rounded-full ${TAB_THEMES[activeTab].lightBg} flex items-center justify-center ${TAB_THEMES[activeTab].text} transition-colors flex-shrink-0 shadow-inner aspect-square`}>
                           <span className="text-xs font-black">✓</span>
                         </div>
-                        <span className="text-[11px] font-black text-gray-700 leading-tight uppercase tracking-tight">{f}</span>
+                        <span className="text-[14px] font-black text-gray-700 leading-tight uppercase tracking-tight">{f}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -360,7 +360,7 @@ export default function ProductDetailPremiumHRMSStaging({
                     <div className="flex flex-col items-start text-left">
                       <div className={`w-12 h-1 ${TAB_THEMES[activeTab].bg} rounded-full mb-6`}></div>
                       <h2 className="text-2xl lg:text-4xl font-black text-gray-900 mb-4 uppercase tracking-tighter">Deep Dive: {activeContent.title}</h2>
-                      <p className="text-base lg:text-lg text-gray-500 mb-10 font-medium leading-relaxed max-w-2xl">{activeContent.description}</p>
+                      <p className="text-base lg:text-lg text-gray-500 mb-10 font-medium leading-relaxed ">{activeContent.description}</p>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-12 w-full">
                         {activeContent.features.map((f, i) => (
@@ -368,7 +368,7 @@ export default function ProductDetailPremiumHRMSStaging({
                             <div className={`w-7 h-7 rounded-full ${TAB_THEMES[activeTab].lightBg} flex items-center justify-center ${TAB_THEMES[activeTab].text} group-hover:${TAB_THEMES[activeTab].bg} group-hover:text-white transition-colors flex-shrink-0 aspect-square shadow-inner`}>
                               <span className="text-[10px] font-black">✓</span>
                             </div>
-                            <span className="text-[11px] font-black text-gray-600 group-hover:text-gray-900 uppercase tracking-tight leading-tight">{f}</span>
+                            <span className="text-[14px] font-black text-gray-600 group-hover:text-gray-900 uppercase tracking-tight leading-tight">{f}</span>
                           </div>
                         ))}
                       </div>
@@ -407,14 +407,13 @@ export default function ProductDetailPremiumHRMSStaging({
               </div>
               <div className="relative z-10 px-4 md:px-12">
                 <div className="flex flex-col mb-16">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 text-red-600 font-bold text-xs mb-6 w-fit uppercase tracking-widest">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 text-red-600 font-bold text-[14px] mb-6 w-fit uppercase tracking-widest">
                     The Problem
                   </div>
                   <h2 className="text-3xl lg:text-5xl font-black text-gray-900 leading-[1.1] mb-6 tracking-tighter uppercase">
-                    Traditional HR <br />
-                    <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500 py-2">Is Broken.</span>
+                    Traditional HR <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500 py-2">Is Broken.</span>
                   </h2>
-                  <p className="text-lg text-gray-500 font-medium leading-relaxed max-w-xl uppercase tracking-tight">Organizations are stuck with outdated systems that waste time, frustrate employees, and hold back growth. It's time for a change.</p>
+                  <p className="text-lg text-gray-500 font-medium leading-relaxed  uppercase tracking-tight">Organizations are stuck with outdated systems that waste time, frustrate employees, and hold back growth. It's time for a change.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -429,7 +428,7 @@ export default function ProductDetailPremiumHRMSStaging({
                         {item.icon}
                       </div>
                       <h3 className="text-xl font-black text-gray-900 mb-2 uppercase tracking-tighter">{item.title}</h3>
-                      <p className="text-xs text-gray-500 font-bold uppercase tracking-tight">{item.desc}</p>
+                      <p className="text-[14px] text-gray-500 font-bold uppercase tracking-tight">{item.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -451,7 +450,7 @@ export default function ProductDetailPremiumHRMSStaging({
                         {card.items.slice(0, 3).map((item, j) => (
                           <div key={j} className="flex items-center gap-3">
                             <div className="w-5 h-5 rounded-full bg-white shadow-sm flex items-center justify-center text-[10px] font-black text-blue-600">✓</div>
-                            <span className="text-[10px] font-black text-gray-500 uppercase tracking-tight">{item}</span>
+                            <span className="text-[14px] font-black text-gray-500 uppercase tracking-tight">{item}</span>
                           </div>
                         ))}
                       </div>
@@ -468,7 +467,7 @@ export default function ProductDetailPremiumHRMSStaging({
 
                 <div className="relative z-10 flex flex-col items-center">
                   <h2 className="text-4xl lg:text-6xl font-black text-gray-900 mb-6 tracking-tighter uppercase leading-[1.1]">Build the <br /> future today.</h2>
-                  <p className="text-gray-500 mb-10 max-w-xl font-bold uppercase tracking-widest text-xs">Join 10,000+ teams transforming their workplace.</p>
+                  <p className="text-gray-500 mb-10 max-w-xl font-bold uppercase tracking-widest text-[14px]">Join 10,000+ teams transforming their workplace.</p>
                   <button
                     onClick={() => setIsModalOpen(true)}
                     className="press-illusion-btn-orange w-full sm:w-auto sm:min-w-[280px] px-12 py-6 font-black uppercase tracking-[0.2em] text-sm flex items-center justify-center gap-3"
@@ -724,7 +723,7 @@ function HrmsFeatureSection() {
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-14">
-          <span className="block text-[10px] font-black text-[#22C55E] tracking-[0.28em] uppercase mb-2.5">
+          <span className="block text-[14px] font-black text-[#22C55E] tracking-[0.28em] uppercase mb-2.5">
             KEY FEATURES
           </span>
           <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-[1] mb-3.5">
@@ -752,7 +751,7 @@ function HrmsFeatureSection() {
                 <button
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
-                  className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[13px] font-semibold whitespace-nowrap ${activeId === feature.id
+                  className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[14px] font-semibold whitespace-nowrap ${activeId === feature.id
                     ? "bg-gray-900 border-green-600 text-gray-800 shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
                     : "border-green-300 text-gray-800 hover:border-green-500 hover:shadow-md"
                     }`}
@@ -792,7 +791,7 @@ function HrmsFeatureSection() {
                 <button
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
-                  className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[13px] font-semibold whitespace-nowrap ${activeId === feature.id
+                  className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[14px] font-semibold whitespace-nowrap ${activeId === feature.id
                     ? "bg-gray-900 border-green-600 text-white shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
                     : "border-green-300 text-gray-800 hover:border-green-500 hover:shadow-md"
                     }`}
@@ -939,7 +938,7 @@ function HrmsFeatureSection() {
                             className="w-full h-auto object-contain bg-white"
                           />
                         </div>
-                        <p className="text-[#6b7280] text-[13px] leading-relaxed m-0">
+                        <p className="text-[#6b7280] text-[14px] leading-relaxed m-0">
                           {feature.desc}
                         </p>
                       </div>
