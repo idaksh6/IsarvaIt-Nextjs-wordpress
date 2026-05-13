@@ -12,6 +12,7 @@ const navLinks = [
     href: "/about",
     children: [
       { label: "About Us", href: "/about" },
+      { label: "Partners", href: "/partners" },
       { label: "Testimonials", href: "/testimonial" },
       { label: "Blog", href: "/blog" },
       { label: "Careers", href: "/careers" },
@@ -175,7 +176,7 @@ export default function Header() {
                               <div className="flex items-center gap-3">
                                 <div className="w-10 h-10 rounded-xl bg-white group-hover:bg-[#10b981] flex items-center justify-center transition-colors shadow-sm">
                                   <span className="text-lg group-hover:scale-110 transition-transform">
-                                    {child.label === "Testimonials" ? "💬" : child.label === "Careers" ? "💼" : "📝"}
+                                    {child.label === "Testimonials" ? "💬" : child.label === "Partners" ? "🤝" : child.label === "Careers" ? "💼" : child.label === "Blog" ? "✍️" : "ℹ️"}
                                   </span>
                                 </div>
                                 <span className="font-bold text-gray-800 group-hover:text-emerald-600 transition-colors uppercase tracking-tight text-sm">
@@ -664,7 +665,7 @@ export default function Header() {
                       >
                         <div className="w-10 h-10 bg-gradient-to-br from-green-100 to-emerald-100 group-hover:from-green-400 group-hover:to-emerald-500 rounded-xl flex items-center justify-center transition-all duration-300">
                           <span className="text-lg group-hover:scale-110 transition-transform duration-300">
-                            {index === 0 ? "🏠" : "📝"}
+                            {index === 0 ? "🏠" : index === 1 ? "ℹ️" : "📝"}
                           </span>
                         </div>
                         <div className="flex-1">
