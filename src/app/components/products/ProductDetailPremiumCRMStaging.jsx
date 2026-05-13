@@ -193,7 +193,7 @@ export default function ProductDetailPremiumCRMStaging({
           <div className="dashboard-main-img">
             <div className="relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)] bg-white">
               <img
-                src="/products/crm/CRM-dashboard-v2.png"
+                src="/products/crm/CRM-dashboard-v3.png"
                 alt="CRM Dashboard"
                 className="w-full object-contain lg:h-[668px] h-full shadow-2xl"
               />
@@ -1097,7 +1097,7 @@ const crmTabData = [
       { label: "Customer Profiles", text: "Store all customer details in one centralized profile." },
       { label: "Sales & Activity History", text: "View past sales, interactions, and follow-ups easily." }
     ],
-    image: "/products/crm/mockups/customer_mobile.png"
+    image: "/products/crm/mockups/customer_mobile_v2.png"
   },
   {
     id: "quotation",
@@ -1109,7 +1109,7 @@ const crmTabData = [
       { label: "Quote & Order Tracking", text: "Create and track quotes and sales orders." },
       { label: "Order Status Tracking", text: "Track order status from start to finish." }
     ],
-    image: "/products/crm/Company-management.jpg"
+    image: "/products/crm/mockups/quotations_v2.png"
   },
   {
     id: "tasks",
