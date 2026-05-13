@@ -14,7 +14,7 @@ const CASE_STUDIES = [
     industry: "Web Design",
     product: "Isarva Support System",
     slug: "/case-studies/support-system-case-study",
-    tags: ["Zero Errors", "Automated Renewals", "Ticketing", "Project Management"],
+    tags: ["Zero Errors", "Auto-Pilot Tracking", "Ticketing", "Project Management"],
     color: "from-emerald-400 to-green-600",
     bgLight: "bg-emerald-50",
     textDark: "text-emerald-700"
@@ -83,7 +83,7 @@ export default function CaseStudiesClient() {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 tracking-tight leading-tight mb-6"
           >
-            Customer Success <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">Stories</span>
+            Transforming Businesses with <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">Isarva Solutions</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -91,7 +91,7 @@ export default function CaseStudiesClient() {
             transition={{ delay: 0.2 }}
             className="text-lg md:text-xl text-gray-600"
           >
-            Discover how businesses across industries are transforming their operations and scaling efficiently with Isarva software solutions.
+            Our case studies highlight the real-world impact of our work, showcasing how we help businesses overcome challenges and achieve success. Each project reflects our commitment to innovation, strategy, and measurable results. From initial ideas to final execution, we focus on creating solutions that truly make a difference. Explore these success stories to see how we turn visions into reality across diverse industries.
           </motion.p>
         </div>
 
