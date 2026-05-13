@@ -5,43 +5,6 @@
 
 export const productsData = [
   {
-    slug: "hrms-software-old",
-    title: "HRMS Software (Old)",
-    category: "Human Resources",
-    icon: "👥",
-    tagline: "Comprehensive HR Management Solution",
-    shortDescription:
-      "Complete HRMS solution for employee management, payroll, attendance, and performance tracking.",
-    description:
-      "Transform your HR operations with our comprehensive HRMS software. ",
-    features: [
-      "Employee Information Management",
-      "Payroll Processing & Tax Compliance",
-      "Attendance & Leave Tracking",
-      "Performance Management",
-      "Recruitment & Onboarding",
-      "Employee Self-Service Portal",
-      "Reports & Analytics Dashboard",
-      "Mobile App for Employees",
-    ],
-    technologies: [
-      "React",
-      "Node.js",
-      "PostgreSQL",
-      "Redis",
-      "Cloud Infrastructure",
-    ],
-    benefits: [
-      "Streamlined HR Operations",
-      "Reduced Administrative Costs",
-      "Improved Employee Satisfaction",
-      "Data-Driven HR Decisions",
-      "Regulatory Compliance",
-    ],
-    color: "from-blue-500 to-indigo-600",
-    bgGradient: "from-blue-50 via-indigo-50 to-white",
-  },
-  {
     slug: "hrms-software",
     title: "HRMS Software",
     category: "Human Resources",
