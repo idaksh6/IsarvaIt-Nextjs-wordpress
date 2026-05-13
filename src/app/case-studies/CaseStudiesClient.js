@@ -12,9 +12,9 @@ const CASE_STUDIES = [
     title: "Transforming a Web Design Company with ISS",
     client: "Mid-Sized Website Design Agency",
     industry: "Web Design",
-    product: "Isarva ISS",
-    slug: "/case-studies/iss-case-study",
-    tags: ["Zero Errors", "Automated Renewals", "Ticketing"],
+    product: "Isarva Support System",
+    slug: "/case-studies/support-system-case-study",
+    tags: ["Zero Errors", "Automated Renewals", "Ticketing", "Project Management"],
     color: "from-emerald-400 to-green-600",
     bgLight: "bg-emerald-50",
     textDark: "text-emerald-700"
@@ -45,10 +45,10 @@ export default function CaseStudiesClient() {
   // Filter logic
   const filteredStudies = useMemo(() => {
     return CASE_STUDIES.filter(study => {
-      const matchesSearch = 
-        study.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+      const matchesSearch =
+        study.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         study.client.toLowerCase().includes(searchQuery.toLowerCase());
-      
+
       const matchesIndustry = activeIndustry === "All" || study.industry === activeIndustry;
       const matchesProduct = activeProduct === "All" || study.product === activeProduct;
 
@@ -65,10 +65,10 @@ export default function CaseStudiesClient() {
       </div>
 
       <main className="relative z-10 pt-32 pb-24 px-6 max-w-7xl mx-auto">
-        
+
         {/* HEADER */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center justify-center p-2 bg-white rounded-full shadow-sm border border-gray-100 mb-6"
@@ -77,7 +77,7 @@ export default function CaseStudiesClient() {
               <Sparkles size={14} /> Our Work
             </span>
           </motion.div>
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -85,7 +85,7 @@ export default function CaseStudiesClient() {
           >
             Customer Success <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">Stories</span>
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -96,7 +96,7 @@ export default function CaseStudiesClient() {
         </div>
 
         {/* SEARCH & FILTER BAR */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
@@ -107,9 +107,9 @@ export default function CaseStudiesClient() {
             <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none text-gray-400">
               <Search size={20} />
             </div>
-            <input 
-              type="text" 
-              placeholder="Search by title or client..." 
+            <input
+              type="text"
+              placeholder="Search by title or client..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-12 pr-4 py-3 bg-gray-50/50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all text-gray-700"
@@ -122,7 +122,7 @@ export default function CaseStudiesClient() {
           <div className="flex flex-col sm:flex-row gap-4 flex-1">
             <div className="flex-1 flex items-center gap-3">
               <Briefcase size={18} className="text-gray-400 shrink-0 ml-2" />
-              <select 
+              <select
                 value={activeIndustry}
                 onChange={(e) => setActiveIndustry(e.target.value)}
                 className="w-full bg-transparent text-gray-700 font-medium py-3 focus:outline-none cursor-pointer"
@@ -130,12 +130,12 @@ export default function CaseStudiesClient() {
                 {INDUSTRIES.map(ind => <option key={ind} value={ind}>{ind === "All" ? "All Industries" : ind}</option>)}
               </select>
             </div>
-            
+
             <div className="hidden sm:block w-px bg-gray-100"></div>
-            
+
             <div className="flex-1 flex items-center gap-3">
               <Tag size={18} className="text-gray-400 shrink-0 ml-2" />
-              <select 
+              <select
                 value={activeProduct}
                 onChange={(e) => setActiveProduct(e.target.value)}
                 className="w-full bg-transparent text-gray-700 font-medium py-3 focus:outline-none cursor-pointer"
@@ -169,7 +169,7 @@ export default function CaseStudiesClient() {
                 {/* Card Header / Image Placeholder */}
                 <div className={`h-48 bg-gradient-to-br ${study.color} relative p-6 flex flex-col justify-between`}>
                   <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  
+
                   <div className="flex justify-between items-start relative z-10">
                     <span className="bg-white/90 backdrop-blur-sm text-gray-900 text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">
                       {study.industry}
@@ -178,7 +178,7 @@ export default function CaseStudiesClient() {
                       <ArrowRight size={20} />
                     </div>
                   </div>
-                  
+
                   <div className="relative z-10 mt-auto">
                     <h3 className="text-white/90 text-sm font-medium mb-1">Product Used:</h3>
                     <p className="text-white font-bold text-lg">{study.product}</p>
@@ -193,12 +193,12 @@ export default function CaseStudiesClient() {
                   <p className="text-gray-500 mb-6 font-medium">
                     Client: <span className="text-gray-900">{study.client}</span>
                   </p>
-                  
+
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 mt-auto mb-8">
                     {study.tags.map((tag, i) => (
-                      <span 
-                        key={i} 
+                      <span
+                        key={i}
                         className={`text-xs font-bold px-3 py-1 rounded-md ${study.bgLight} ${study.textDark}`}
                       >
                         {tag}
@@ -206,7 +206,7 @@ export default function CaseStudiesClient() {
                     ))}
                   </div>
 
-                  <Link 
+                  <Link
                     href={study.slug}
                     className="inline-flex items-center justify-center w-full py-4 rounded-xl font-bold text-[14px] bg-gray-50 text-gray-900 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300"
                   >
@@ -225,7 +225,7 @@ export default function CaseStudiesClient() {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">No results found</h3>
               <p className="text-gray-500">Try adjusting your filters or search query.</p>
-              <button 
+              <button
                 onClick={() => { setSearchQuery(""); setActiveIndustry("All"); setActiveProduct("All"); }}
                 className="mt-6 px-6 py-2 bg-emerald-100 text-emerald-700 font-bold rounded-full hover:bg-emerald-200 transition-colors"
               >

@@ -148,7 +148,7 @@ export default function AboutPage() {
                 <TrendingUp className="w-48 h-48 md:w-64 md:h-64" />
               </div>
               <div className="relative z-10">
-                <span className="text-[#10b981] font-black tracking-[0.2em] uppercase text-[clamp(0.6rem,1.2w,0.8rem)] mb-6 block">Future Outlook</span>
+                <span className="text-[#10b981] font-black tracking-[0.2em] uppercase text-[14px] mb-6 block">Future Outlook</span>
                 <h2 className="text-4xl lg:text-5xl font-display font-bold mb-6 md:mb-8 leading-[1] tracking-tight">Our Vision</h2>
                 <p className="text-xl text-[#FDF8F2]/80 leading-relaxed font-light">
                   To empower global enterprises through transformative technology — driving progress, enriching experiences, and enabling smarter, sustainable growth.
@@ -161,7 +161,7 @@ export default function AboutPage() {
                 <Cpu className="w-48 h-48 md:w-64 md:h-64" />
               </div>
               <div className="relative z-10">
-                <span className="text-[#1a1f24] font-black tracking-[0.2em] uppercase text-[clamp(0.6rem,1.2vw,0.8rem)] mb-6 block">Day-to-day Execution</span>
+                <span className="text-[#1a1f24] font-black tracking-[0.2em] uppercase text-[14px] mb-6 block">Day-to-day Execution</span>
                 <h2 className="text-4xl lg:text-5xl font-display font-bold mb-6 md:mb-8 leading-[1] tracking-tight">Our Mission</h2>
                 <p className="text-xl text-white/90 leading-relaxed font-light">
                   We deliver scalable, innovative tech solutions that help enterprises and startups achieve growth, efficiency, and impact—driven by expertise and a commitment to client success.
