@@ -17,7 +17,11 @@ const CASE_STUDIES = [
     tags: ["Zero Errors", "Auto-Pilot Tracking", "Ticketing", "Project Management"],
     color: "from-emerald-400 to-green-600",
     bgLight: "bg-emerald-50",
-    textDark: "text-emerald-700"
+    textDark: "text-emerald-700",
+    hoverBorder: "group-hover:border-emerald-500/50",
+    hoverBg: "group-hover:bg-emerald-600",
+    buttonBorder: "border-emerald-600/20",
+    hoverShadow: "hover:shadow-emerald-500/20"
   },
   {
     id: 2,
@@ -29,19 +33,27 @@ const CASE_STUDIES = [
     tags: ["Payroll Automation", "Attendance", "Compliance"],
     color: "from-blue-400 to-indigo-600",
     bgLight: "bg-blue-50",
-    textDark: "text-blue-700"
+    textDark: "text-blue-700",
+    hoverBorder: "group-hover:border-blue-500/50",
+    hoverBg: "group-hover:bg-blue-600",
+    buttonBorder: "border-blue-600/20",
+    hoverShadow: "hover:shadow-blue-500/20"
   },
   {
     id: 3,
     title: "Beth Living achieves 49% increase in leads through UI/UX redesign",
     client: "Beth Living",
-    industry: "Home Décor",
+    industry: "Home Decor",
     product: "UI/UX Redesign",
     slug: "/case-studies/beth-living-case-study",
     tags: ["Lead Generation", "UI/UX", "Performance"],
     color: "from-amber-400 to-orange-600",
     bgLight: "bg-amber-50",
-    textDark: "text-amber-700"
+    textDark: "text-amber-700",
+    hoverBorder: "group-hover:border-amber-500/50",
+    hoverBg: "group-hover:bg-amber-600",
+    buttonBorder: "border-amber-600/20",
+    hoverShadow: "hover:shadow-amber-500/20"
   }
 ];
 
@@ -176,19 +188,22 @@ export default function CaseStudiesClient() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
                 key={study.id}
-                className="group flex flex-col h-full bg-white rounded-[2rem] overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300"
+                className={`group flex flex-col h-full bg-white rounded-[2rem] overflow-hidden border-2 border-gray-100 ${study.hoverBorder} shadow-sm hover:shadow-xl ${study.hoverShadow} transition-all duration-300`}
               >
                 {/* Card Header / Image Placeholder */}
                 <div className={`h-48 bg-gradient-to-br ${study.color} relative p-6 flex flex-col justify-between`}>
-                  <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
                   <div className="flex justify-between items-start relative z-10">
-                    <span className="bg-white/90 backdrop-blur-sm text-gray-900 text-xs font-bold px-3 py-1.5 rounded-full shadow-sm">
+                    <span className="bg-white/95 backdrop-blur-sm text-gray-900 text-[10px] font-black px-3 py-1.5 rounded-full shadow-sm uppercase tracking-wider">
                       {study.industry}
                     </span>
-                    <div className="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all">
+                    <Link
+                      href={study.slug}
+                      className="w-10 h-10 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300"
+                    >
                       <ArrowRight size={20} />
-                    </div>
+                    </Link>
                   </div>
 
                   <div className="relative z-10 mt-auto">
@@ -220,7 +235,7 @@ export default function CaseStudiesClient() {
 
                   <Link
                     href={study.slug}
-                    className="inline-flex items-center justify-center w-full py-4 rounded-xl font-bold text-[14px] bg-gray-50 text-gray-900 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300"
+                    className={`inline-flex items-center justify-center w-full py-4 rounded-xl font-bold text-[14px] bg-gray-50 text-gray-900 border-2 ${study.buttonBorder} ${study.hoverBg} group-hover:text-white group-hover:border-transparent transition-all duration-300`}
                   >
                     Read Full Story
                   </Link>
