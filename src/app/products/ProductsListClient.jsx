@@ -10,7 +10,10 @@ export default function ProductsListClient({ productsData }) {
   // Filter products based on search query and exclude staging items
   const filteredProducts = useMemo(() => {
     // First, exclude any items that are meant for staging only
-    let baseProducts = productsData.filter(product => !product.slug?.includes("staging"));
+    let baseProducts = productsData.filter(product => 
+      !product.slug?.includes("staging") && 
+      !product.slug?.includes("-old")
+    );
 
     if (!searchQuery.trim()) {
       return baseProducts;
