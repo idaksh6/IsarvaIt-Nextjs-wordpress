@@ -293,8 +293,8 @@ export default function HrmsCaseStudyClient() {
                 { title: "Scalable Architecture", desc: "Architected to handle large employee counts and high data volumes without performance degradation.", icon: <Server /> },
                 { title: "Anywhere Access", desc: "Cloud deployment allows managers to securely log in and perform operations from any office, site, or mobile device.", icon: <DownloadCloud /> }
               ].map((mod, i) => (
-                <div key={i} className="bg-[#FDF8F2] p-6 md:p-8 rounded-2xl shadow-sm border border-blue-50 hover:shadow-lg transition-all md:hover:-translate-y-1">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-4 md:mb-6">
+                <div key={i} className="bg-[#FDF8F2] p-6 md:p-8 rounded-2xl shadow-sm border border-blue-50 hover:shadow-lg transition-all md:hover:-translate-y-1 flex flex-col items-center text-center md:items-start md:text-left">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-4 md:mb-6 mx-auto md:mx-0">
                     {mod.icon}
                   </div>
                   <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">{mod.title}</h3>
@@ -425,8 +425,8 @@ export default function HrmsCaseStudyClient() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
-              <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100">
-                <div className="text-blue-500 mb-4"><FileText size={32} /></div>
+              <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center text-center md:items-start md:text-left">
+                <div className="text-blue-500 mb-4 mx-auto md:mx-0"><FileText size={32} /></div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Attendance & Leave</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li>• Daily & Monthly Attendance</li>
@@ -435,8 +435,8 @@ export default function HrmsCaseStudyClient() {
                   <li>• Absenteeism Flagging</li>
                 </ul>
               </div>
-              <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100">
-                <div className="text-blue-500 mb-4"><Calculator size={32} /></div>
+              <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center text-center md:items-start md:text-left">
+                <div className="text-blue-500 mb-4 mx-auto md:mx-0"><Calculator size={32} /></div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Payroll & Compensation</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li>• Salary, OT & Incentive Registers</li>
@@ -445,8 +445,8 @@ export default function HrmsCaseStudyClient() {
                   <li>• CTC & Arrear Reports</li>
                 </ul>
               </div>
-              <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100">
-                <div className="text-blue-500 mb-4"><FileCheck size={32} /></div>
+              <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center text-center md:items-start md:text-left">
+                <div className="text-blue-500 mb-4 mx-auto md:mx-0"><FileCheck size={32} /></div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Statutory Compliance</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li>• EPF/ESIC Monthly Contribution</li>
@@ -556,7 +556,7 @@ export default function HrmsCaseStudyClient() {
                 { title: "Secure, Centralised Data", desc: "No risk of Excel file loss or unauthorized modifications. Admin-only control over secure cloud records." },
                 { title: "Anywhere, Anytime Access", desc: "HR can process operations from any location, office, or remote site without local file dependencies." }
               ].map((res, i) => (
-                <div key={i} className="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow">
+                <div key={i} className="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow flex flex-col items-center text-center md:items-start md:text-left">
                   <h4 className="text-lg md:text-xl font-bold text-blue-700 mb-2 md:mb-3">{res.title}</h4>
                   <p className="text-sm md:text-base text-gray-600 leading-relaxed">{res.desc}</p>
                 </div>

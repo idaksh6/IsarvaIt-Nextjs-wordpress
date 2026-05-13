@@ -224,8 +224,8 @@ export default function BethLivingCaseStudyClient() {
                 { title: "Redesigned Lead Forms", desc: "Custom forms for 'Locate a Dealer' and 'Request Quote' with better validation and logic.", icon: <MousePointer2 /> },
                 { title: "CRM Integration", desc: "Automated lead capture to reduce manual entry and allow sales teams to respond faster.", icon: <Activity /> }
               ].map((sol, i) => (
-                <div key={i} className="bg-[#FDF8F2] p-6 md:p-8 rounded-2xl shadow-sm border border-amber-50 hover:shadow-lg transition-all md:hover:-translate-y-1">
-                  <div className="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-6">
+                <div key={i} className="bg-[#FDF8F2] p-6 md:p-8 rounded-2xl shadow-sm border border-amber-50 hover:shadow-lg transition-all md:hover:-translate-y-1 flex flex-col items-center text-center md:items-start md:text-left">
+                  <div className="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0">
                     {sol.icon}
                   </div>
                   <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">{sol.title}</h3>
@@ -248,7 +248,7 @@ export default function BethLivingCaseStudyClient() {
                 { value: "25%", label: "Bounce Rate Reduction", sub: "Faster page loads" },
                 { value: "60%", label: "Rise in Dealer Inquiries", sub: "Better CTA visibility" }
               ].map((stat, i) => (
-                <div key={i} className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-amber-50 text-center">
+                <div key={i} className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-amber-50 flex flex-col items-center text-center">
                   <div className="text-3xl md:text-4xl font-bold text-amber-600 mb-1">{stat.value}</div>
                   <div className="text-base font-bold text-gray-900 mb-1">{stat.label}</div>
                   <div className="text-xs text-gray-500 uppercase tracking-wider">{stat.sub}</div>

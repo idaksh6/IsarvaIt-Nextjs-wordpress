@@ -281,8 +281,8 @@ export default function SupportSystemCaseStudyClient() {
                 { title: "Backup Management", desc: "To track the Backup Locations and maintain History", icon: <Server /> },
                 { title: "Advanced Reports and Analytics", desc: "Turns business data into clear, easy-to-read charts that help you make better decisions faster", icon: <TrendingUp /> }
               ].map((mod, i) => (
-                <div key={i} className="bg-[#FDF8F2] p-6 md:p-8 rounded-2xl shadow-sm border border-emerald-50 hover:shadow-lg transition-all md:hover:-translate-y-1">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-4 md:mb-6">
+                <div key={i} className="bg-[#FDF8F2] p-6 md:p-8 rounded-2xl shadow-sm border border-emerald-50 hover:shadow-lg transition-all md:hover:-translate-y-1 flex flex-col items-center text-center md:items-start md:text-left">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-4 md:mb-6 mx-auto md:mx-0">
                     {mod.icon}
                   </div>
                   <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">{mod.title}</h3>
@@ -438,7 +438,7 @@ export default function SupportSystemCaseStudyClient() {
                 { title: "Secure Data Management", desc: "All project data, client credentials, documents, and communication history are stored securely in one system. There is no risk of data loss, duplication, or unauthorized access, as role-based permissions control visibility." },
                 { title: "Anywhere, Anytime Access", desc: "Being a web-based system, ISS allows teams and management to access project data, Company tickets, and reports from any location. This ensures continuity of operations without dependency on local files or specific systems." }
               ].map((res, i) => (
-                <div key={i} className="bg-[#FDF8F2] p-6 md:p-8 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow">
+                <div key={i} className="bg-[#FDF8F2] p-6 md:p-8 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow flex flex-col items-center text-center md:items-start md:text-left">
                   <h4 className="text-lg md:text-xl font-bold text-emerald-700 mb-2 md:mb-3">{res.title}</h4>
                   <p className="text-sm md:text-base text-gray-600 leading-relaxed">{res.desc}</p>
                 </div>
