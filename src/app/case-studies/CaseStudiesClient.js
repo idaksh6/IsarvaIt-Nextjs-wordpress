@@ -10,7 +10,7 @@ const CASE_STUDIES = [
   {
     id: 1,
     title: "Transforming a Web Design Company with Isarva Support System",
-    client: "Mid-Sized Website Design Agency",
+    client: "Mid-Sized Website Design Company",
     industry: "Web Design",
     product: "Isarva Support System",
     slug: "/case-studies/support-system-case-study",
