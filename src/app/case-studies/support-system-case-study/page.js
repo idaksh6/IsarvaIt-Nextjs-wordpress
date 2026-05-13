@@ -1,4 +1,4 @@
-import IssCaseStudyClient from "./IssCaseStudyClient";
+import SupportSystemCaseStudyClient from "./SupportSystemCaseStudyClient";
 
 export const metadata = {
   title: "Case Study: Transforming a Web Design Company | Isarva ISS",
@@ -13,6 +13,6 @@ export const metadata = {
   },
 };
 
-export default function IssCaseStudyPage() {
-  return <IssCaseStudyClient />;
+export default function SupportSystemCaseStudyPage() {
+  return <SupportSystemCaseStudyClient />;
 }
