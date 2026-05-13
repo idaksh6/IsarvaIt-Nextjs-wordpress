@@ -30,6 +30,18 @@ const CASE_STUDIES = [
     color: "from-blue-400 to-indigo-600",
     bgLight: "bg-blue-50",
     textDark: "text-blue-700"
+  },
+  {
+    id: 3,
+    title: "Beth Living achieves 49% increase in leads through UI/UX redesign",
+    client: "Beth Living",
+    industry: "Home Décor",
+    product: "UI/UX Redesign",
+    slug: "/case-studies/beth-living-case-study",
+    tags: ["Lead Generation", "UI/UX", "Performance"],
+    color: "from-amber-400 to-orange-600",
+    bgLight: "bg-amber-50",
+    textDark: "text-amber-700"
   }
 ];
 
