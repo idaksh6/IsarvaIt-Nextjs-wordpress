@@ -79,43 +79,6 @@ export const productsData = [
     bgGradient: "from-blue-50 via-indigo-50 to-white",
   },
   {
-    slug: "hrms-software-staging",
-    title: "HRMS Software Staging",
-    category: "Human Resources",
-    icon: "👥",
-    tagline: "HR Management Workspace (Staging)",
-    shortDescription:
-      "A complete, modern HRMS solution for streamlining employee management and tracking performance.",
-    description:
-      "Transform your HR department with our powerful HRMS software. Effortlessly manage employee data, automate payroll processing, track attendance, and drive performance all from a unified workspace.",
-    features: [
-      "Employee Information Management",
-      "Payroll Processing & Tax Compliance",
-      "Attendance & Leave Tracking",
-      "Performance Management",
-      "Recruitment & Onboarding",
-      "Employee Self-Service Portal",
-      "Reports & Analytics Dashboard",
-      "Mobile App for Employees",
-    ],
-    technologies: [
-      "React",
-      "Node.js",
-      "PostgreSQL",
-      "Redis",
-      "Cloud Infrastructure",
-    ],
-    benefits: [
-      "Risk-Free Testing",
-      "UI/UX Experimentation",
-      "Feature Validation",
-      "Team Feedback Loop",
-      "Deployment Readiness",
-    ],
-    color: "from-blue-500 to-indigo-600",
-    bgGradient: "from-blue-50 via-indigo-50 to-white",
-  },
-  {
     slug: "support-application",
     title: "Support Application",
     category: "Customer Support",
