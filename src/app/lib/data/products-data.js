@@ -42,6 +42,80 @@ export const productsData = [
     bgGradient: "from-blue-50 via-indigo-50 to-white",
   },
   {
+    slug: "hrms-software-old",
+    title: "HRMS Software (Old)",
+    category: "Human Resources",
+    icon: "👥",
+    tagline: "Comprehensive HR Management Solution",
+    shortDescription:
+      "Complete HRMS solution for employee management, payroll, attendance, and performance tracking.",
+    description:
+      "Transform your HR operations with our comprehensive HRMS software. ",
+    features: [
+      "Employee Information Management",
+      "Payroll Processing & Tax Compliance",
+      "Attendance & Leave Tracking",
+      "Performance Management",
+      "Recruitment & Onboarding",
+      "Employee Self-Service Portal",
+      "Reports & Analytics Dashboard",
+      "Mobile App for Employees",
+    ],
+    technologies: [
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "Redis",
+      "Cloud Infrastructure",
+    ],
+    benefits: [
+      "Streamlined HR Operations",
+      "Reduced Administrative Costs",
+      "Improved Employee Satisfaction",
+      "Data-Driven HR Decisions",
+      "Regulatory Compliance",
+    ],
+    color: "from-blue-500 to-indigo-600",
+    bgGradient: "from-blue-50 via-indigo-50 to-white",
+  },
+  {
+    slug: "hrms-software-staging",
+    title: "HRMS Software Staging",
+    category: "Human Resources",
+    icon: "👥",
+    tagline: "HR Management Workspace (Staging)",
+    shortDescription:
+      "A complete, modern HRMS solution for streamlining employee management and tracking performance.",
+    description:
+      "Transform your HR department with our powerful HRMS software. Effortlessly manage employee data, automate payroll processing, track attendance, and drive performance all from a unified workspace.",
+    features: [
+      "Employee Information Management",
+      "Payroll Processing & Tax Compliance",
+      "Attendance & Leave Tracking",
+      "Performance Management",
+      "Recruitment & Onboarding",
+      "Employee Self-Service Portal",
+      "Reports & Analytics Dashboard",
+      "Mobile App for Employees",
+    ],
+    technologies: [
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "Redis",
+      "Cloud Infrastructure",
+    ],
+    benefits: [
+      "Risk-Free Testing",
+      "UI/UX Experimentation",
+      "Feature Validation",
+      "Team Feedback Loop",
+      "Deployment Readiness",
+    ],
+    color: "from-blue-500 to-indigo-600",
+    bgGradient: "from-blue-50 via-indigo-50 to-white",
+  },
+  {
     slug: "support-application",
     title: "Support Application",
     category: "Customer Support",
@@ -112,6 +186,43 @@ export const productsData = [
       "Streamlined Sales Process",
       "Data-Driven Decisions",
       "Enhanced Team Collaboration",
+    ],
+    color: "from-sky-500 to-blue-600",
+    bgGradient: "from-sky-50 via-blue-50 to-white",
+  },
+  {
+    slug: "crm-application-staging",
+    title: "CRM Application Staging",
+    category: "Customer Relationship Management",
+    icon: "👔",
+    tagline: "CRM Workspace (Staging)",
+    shortDescription:
+      "Staging version of the CRM solution for testing new features and UI improvements.",
+    description:
+      "This is a staging environment for the CRM Application. Use this space to test new integrations, workflow automations, and UI enhancements before they are deployed to production.",
+    features: [
+      "Lead & Contact Management",
+      "Sales Pipeline Tracking",
+      "Email Integration & Automation",
+      "Customer Interaction History",
+      "Task & Activity Management",
+      "Sales Analytics & Reports",
+      "Mobile CRM App",
+      "Integration with Email & Calendar",
+    ],
+    technologies: [
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "Redis",
+      "Email API Integration",
+    ],
+    benefits: [
+      "Risk-Free Testing",
+      "UI/UX Experimentation",
+      "Feature Validation",
+      "Team Feedback Loop",
+      "Deployment Readiness",
     ],
     color: "from-sky-500 to-blue-600",
     bgGradient: "from-sky-50 via-blue-50 to-white",
@@ -451,9 +562,40 @@ export const productsData = [
     color: "from-emerald-600 to-teal-600",
     bgGradient: "from-emerald-50 via-teal-50 to-white",
   },
+  {
+    slug: "godown-management-staging",
+    title: "Smart Godown & Inventory Management System",
+    category: "Warehouse Management",
+    icon: "📦",
+    tagline: "Track. Manage. Control. Grow.",
+    shortDescription:
+      "Everything you need to manage your warehouse, stock, events, rentals, and payments — all in one place.",
+    description:
+      "Our Smart Godown & Inventory Management System provides comprehensive tracking and control over your entire warehouse operations. From simple stock tracking to complex event and rental management, stay ahead with real-time insights and automated status updates.",
+    features: [
+      "Real-Time Inventory Tracking",
+      "Smart Dashboard Analytics",
+      "Event & Rental Management",
+      "Financial & Payment Tracking",
+      "Automated Status Updates",
+      "QR & Barcode Generation",
+      "Multi-Level Category System",
+      "Advanced Insight Reports",
+    ],
+    technologies: ["React", "Next.js", "PostgreSQL", "Node.js", "Cloud Infrastructure"],
+    benefits: [
+      "Optimized Warehouse Space",
+      "Minimum Stock-out Risks",
+      "Crystal Clear Financial Control",
+      "Automated Workflow Efficiency",
+      "Data-Driven Decisions",
+    ],
+    color: "from-teal-500 to-cyan-600",
+    bgGradient: "from-teal-50 via-cyan-50 to-white",
+  },
 ];
 
-// Helper functions
+// Helper functions to filter out internal/staging/old content from the UI
 export const getProductBySlug = (slug) => {
   return productsData.find((product) => product.slug === slug);
 };
@@ -463,14 +605,18 @@ export const getAllProductSlugs = () => {
 };
 
 export const getProductsByCategory = (category) => {
-  return productsData.filter((product) => product.category === category && !product.slug?.includes("staging"));
+  return productsData.filter((product) => 
+    product.category === category && 
+    !product.slug?.includes("staging") && 
+    !product.slug?.includes("-old")
+  );
 };
 
 export const getAllCategories = () => {
   const categories = [
     ...new Set(
       productsData
-        .filter(p => !p.slug?.includes("staging"))
+        .filter(p => !p.slug?.includes("staging") && !p.slug?.includes("-old"))
         .map((product) => product.category)
     ),
   ];
