@@ -14,6 +14,16 @@ if (typeof window !== "undefined") {
 
 const defaultTestimonials = [
   {
+    id: 9,
+    name: "Prajwal Shetty",
+    role: "Secretory",
+    company: "Vidvath Education Foundation",
+    initials: "PS",
+    gradient: "linear-gradient(135deg, #065f46 0%, #10b981 100%)",
+    rating: 5,
+    text: "The redesign has completely transformed our digital presence. We’ve seen a significant increase in online admissions and talent test registrations.",
+  },
+  {
     id: 1,
     name: "Jagdish Bhat",
     role: "CEO",
@@ -92,16 +102,6 @@ const defaultTestimonials = [
     gradient: "linear-gradient(135deg, #581c87 0%, #a855f7 100%)",
     rating: 5,
     text: "Captured the essence of our brand perfectly. Clean, inviting website that beautifully showcases our offerings and makes ordering effortless.",
-  },
-  {
-    id: 9,
-    name: "Prajwal Shetty",
-    role: "Secretory",
-    company: "Vidvath Education Foundation",
-    initials: "PS",
-    gradient: "linear-gradient(135deg, #065f46 0%, #10b981 100%)",
-    rating: 5,
-    text: "The redesign has completely transformed our digital presence. We’ve seen a significant increase in online admissions and talent test registrations.",
   },
 ];
 

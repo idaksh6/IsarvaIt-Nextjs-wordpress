@@ -9,6 +9,17 @@ import { Star, Quote, PlayCircle, CheckCircle2, Award, Zap, X, Briefcase } from 
 
 const testimonials = [
   {
+    id: 10,
+    name: "Prajwal Shetty",
+    role: "Secretory",
+    company: "Vidvath Education Foundation",
+    image: "/Testimonials/prajwal-shetty.jpg",
+    text: "The Website redesign has completely transformed our digital presence. We’ve seen a significant increase in online admissions and talent test registrations. The website is now faster, mobile-friendly, and truly reflects the high standards of Vidvath PU College. ISarva Infotech delivered exactly what we needed to grow.",
+    highlight: "Website Redesign has completely transformed our digital presence.",
+    rating: 5,
+    tag: "Web Transformation"
+  },
+  {
     id: 1,
     name: "Jagdish Bhat",
     role: "CEO",
@@ -107,17 +118,6 @@ const testimonials = [
     highlight: "Real improvement in brand discovery.",
     rating: 5,
     tag: "F&B"
-  },
-  {
-    id: 10,
-    name: "Prajwal Shetty",
-    role: "Secretory",
-    company: "Vidvath Education Foundation",
-    image: "/Testimonials/prajwal-shetty.jpg",
-    text: "The Website redesign has completely transformed our digital presence. We’ve seen a significant increase in online admissions and talent test registrations. The website is now faster, mobile-friendly, and truly reflects the high standards of Vidvath PU College. ISarva Infotech delivered exactly what we needed to grow.",
-    highlight: "Website Redesign has completely transformed our digital presence.",
-    rating: 5,
-    tag: "Web Transformation"
   }
 ];
 
@@ -380,7 +380,17 @@ export default function TestimonialPage() {
                   {/* Client Photo */}
                   <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-32 h-32 rounded-full border-[8px] border-white shadow-2xl overflow-hidden bg-white z-20">
                     {testimonials[currentSlide].image ? (
-                      <Image src={testimonials[currentSlide].image} alt={testimonials[currentSlide].name} fill className={currentSlide === 1 ? "object-contain" : "object-cover"} />
+                      <Image 
+                        src={testimonials[currentSlide].image} 
+                        alt={testimonials[currentSlide].name} 
+                        fill 
+                        className={
+                          testimonials[currentSlide].name === "Gunashree" || 
+                          testimonials[currentSlide].name === "Prajwal Shetty" 
+                            ? "object-contain" 
+                            : "object-cover"
+                        } 
+                      />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center font-bold text-3xl text-[#10b981] bg-[#10b981]/5">
                         {testimonials[currentSlide].name[0]}
@@ -452,7 +462,17 @@ export default function TestimonialPage() {
                 {/* 1. Client Photo Centered and Overlapping */}
                 <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-32 h-32 rounded-full border-[8px] border-white shadow-2xl overflow-hidden bg-white z-20 group-hover:scale-105 transition-transform duration-500">
                   {t.image ? (
-                    <Image src={t.image} alt={t.name} fill className={idx === 1 ? "object-contain" : "object-cover"} />
+                    <Image 
+                      src={t.image} 
+                      alt={t.name} 
+                      fill 
+                      className={
+                        t.name === "Gunashree" || 
+                        t.name === "Prajwal Shetty" 
+                          ? "object-contain" 
+                          : "object-cover"
+                      } 
+                    />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center font-bold text-3xl text-[#10b981] bg-[#10b981]/5">{t.name[0]}</div>
                   )}
