@@ -423,7 +423,7 @@ export default function ProductDetailPremiumHRMS({
                     { title: "Frustrated Workers", icon: "😠", desc: "Hard-to-use software ruins productivity.", color: "amber" },
                     { title: "Risky Security", icon: "🔓", desc: "Old ways leave you open to legal threats.", color: "slate" }
                   ].map((item, idx) => (
-                    <div key={idx} className="group p-8 rounded-[32px] border border-gray-100 hover:shadow-xl transition-all duration-500 bg-white">
+                    <div key={idx} className="group p-8 rounded-[32px] border border-gray-100 hover:shadow-xl transition-all duration-500 bg-white flex flex-col items-center md:items-start text-center md:text-left">
                       <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 bg-${item.color}-50 text-${item.color}-600 font-bold text-2xl`}>
                         {item.icon}
                       </div>
@@ -461,7 +461,7 @@ export default function ProductDetailPremiumHRMS({
             </section>
 
             {/* 7. Final CTA Section */}
-            <section className="py-16">
+            <section className="pb-4 lg:py-16">
               <div className="relative rounded-[3rem] bg-gradient-to-br from-white to-gray-50 py-16 px-8 lg:px-16 overflow-hidden text-center shadow-[0_40px_80px_rgba(0,0,0,0.05)] border border-gray-100">
                 <div className={`absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-br ${TAB_THEMES[activeTab].gradient} opacity-5 blur-[100px]`}></div>
 
