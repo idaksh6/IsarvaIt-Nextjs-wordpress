@@ -14,6 +14,7 @@ export default function CareerApplicationForm({ jobTitle, jobSlug }) {
   const [resume, setResume] = useState(null);
   const [resumeFileName, setResumeFileName] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
 
   // Prefetch thank you page for faster redirection
