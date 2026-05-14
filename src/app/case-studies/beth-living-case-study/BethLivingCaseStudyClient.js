@@ -306,11 +306,8 @@ export default function BethLivingCaseStudyClient() {
               Are you not able to achieve your business goals with your existing website? A modern UI/UX refresh and performance optimization by Isarva can help you serve your customers better.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/services/website-solutions" className="press-illusion-btn-orange bg-orange-600 text-white font-bold py-4 px-10 rounded-full transition-all shadow-lg hover:shadow-orange-500/30 flex items-center gap-2">
-                Explore Website Solutions <ArrowRight size={18} />
-              </Link>
-              <Link href="/contact" className="flex items-center gap-2 text-gray-700 font-bold hover:text-amber-600 transition-colors py-4 px-6">
-                <PhoneCall size={18} /> Get Free Audit
+              <Link href="/contact" className="press-illusion-btn-orange bg-orange-600 text-white font-bold py-4 px-10 rounded-full transition-all shadow-lg hover:shadow-orange-500/30 flex items-center gap-2">
+                Discuss Your Project <ArrowRight size={18} />
               </Link>
             </div>
             <p className="mt-8 text-sm text-gray-400 font-medium tracking-wide italic">

@@ -63,14 +63,14 @@ export default function SupportSystemCaseStudyClient() {
               variants={fadeInUp}
               className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight mb-6"
             >
-              Transforming a Web Design Company with <span className="text-emerald-600">Isarva ISS</span>
+              Transforming a Web Design Company with <span className="text-emerald-600">Isarva Support System</span>
             </motion.h1>
 
             <motion.p
               variants={fadeInUp}
               className="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed"
             >
-              How Isarva ISS Transformed a Web Design Company from Manual Chaos to a Structured, Data-Driven Workflow
+              How Isarva Support System Transformed a Web Design Company from Manual Chaos to a Structured, Data-Driven Workflow
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-3 md:gap-4 text-sm font-medium text-gray-500 mb-8 md:mb-12">
@@ -167,7 +167,7 @@ export default function SupportSystemCaseStudyClient() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                     <div>
                       <p className="text-xs md:text-sm text-emerald-600 font-bold mb-1 uppercase tracking-wider">Solution Deployed</p>
-                      <p className="font-medium text-gray-900 text-base md:text-lg">Isarva Internal Support System (ISS) — centralized web-based platform accessible from everywhere</p>
+                      <p className="font-medium text-gray-900 text-base md:text-lg">Isarva Support System — centralized web-based platform accessible from everywhere</p>
                     </div>
                     <div>
                       <p className="text-xs md:text-sm text-emerald-600 font-bold mb-1 uppercase tracking-wider">Go-Live Duration</p>
@@ -224,7 +224,7 @@ export default function SupportSystemCaseStudyClient() {
               {/* Data Rows */}
               <div className="divide-y divide-gray-100">
                 {[
-                  { c: "Manual spreadsheets & scattered data", s: "Centralized ISS platform" },
+                  { c: "Manual spreadsheets & scattered data", s: "Centralized Support System platform" },
                   { c: "No Real-Time Tracking", s: "Live Project Dashboards" },
                   { c: "Missed Renewals", s: "Automated Renewal Alerts" },
                   { c: "Unstructured Company Handling", s: "Integrated Ticketing System" },
@@ -263,7 +263,7 @@ export default function SupportSystemCaseStudyClient() {
             <div className="text-center mb-10 md:mb-16 max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Solution Overview — Isarva Support</h2>
               <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                To address these challenges, Isarva implemented the Internal Support System (ISS) — a unified platform combining project management, Ticket handling, and operational tracking.<br className="hidden md:block" />
+                To address these challenges, Isarva implemented the Support System — a unified platform combining project management, Ticket handling, and operational tracking.<br className="hidden md:block" />
                 A key component was the Support Application, which streamlined post-launch activities like client issue tracking, renewals, and service management.
               </p>
             </div>
@@ -309,7 +309,7 @@ export default function SupportSystemCaseStudyClient() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-12 md:mb-16">
               {[
                 { title: "Requirement Mapping", text: "Studied existing manual processes and identified gaps" },
-                { title: "System Setup", text: "Configured ISS modules to match project and ticket lifecycle " },
+                { title: "System Setup", text: "Configured Support System modules to match project and ticket lifecycle " },
                 { title: "Data Migration", text: "Shifted spreadsheets and records into a centralized system" },
                 { title: "Role Configuration", text: "Defined access levels for security and clarity" },
                 { title: "Training & Change Management", text: "Ensured team adoption through guided training" },
@@ -412,7 +412,7 @@ export default function SupportSystemCaseStudyClient() {
 
               <div className="space-y-6 md:space-y-8">
                 {[
-                  { title: "Zero Operational Errors", desc: "Since go-live, the website designing company has experienced zero errors in project tracking, Ticket handling, renewal, user and client management. Previously, manual spreadsheets and email-based coordination led to missed updates and inconsistencies. With ISS, all activities are system-driven, ensuring accuracy and reliability across operations." },
+                  { title: "Zero Operational Errors", desc: "Since go-live, the website designing company has experienced zero errors in project tracking, Ticket handling, renewal, user and client management. Previously, manual spreadsheets and email-based coordination led to missed updates and inconsistencies. With the Support System, all activities are system-driven, ensuring accuracy and reliability across operations." },
                   { title: "Reduced Coordination Effort", desc: "Daily follow-ups, status checks, and manual tracking have been significantly reduced. Project updates, task progress, and Company tickets are now visible in real time, eliminating the need for constant internal communication and freeing up team bandwidth for execution." },
                   { title: "Centralized Company Tracking", desc: "All client requests are now managed through a structured ticketing system. Each issue is linked to its respective project with complete history tracking. There are no lost requests, no dependency on individual emails, and no confusion in ownership." }
                 ].map((res, i) => (
@@ -436,7 +436,7 @@ export default function SupportSystemCaseStudyClient() {
                 { title: "Data-Driven Productivity Insights", desc: "The analytics module provides clear insights into billable vs non-billable hours, project effort distribution, and team performance. This allows the Company to optimize resource allocation and improve overall profitability." },
                 { title: "Automated Accountability & Reporting", desc: "Daily activity tracking and automated reminders ensure consistent reporting across the team. Management no longer needs to manually follow up, as the system enforces discipline through structured workflows." },
                 { title: "Secure Data Management", desc: "All project data, client credentials, documents, and communication history are stored securely in one system. There is no risk of data loss, duplication, or unauthorized access, as role-based permissions control visibility." },
-                { title: "Anywhere, Anytime Access", desc: "Being a web-based system, ISS allows teams and management to access project data, Company tickets, and reports from any location. This ensures continuity of operations without dependency on local files or specific systems." }
+                { title: "Anywhere, Anytime Access", desc: "Being a web-based system, the Support System allows teams and management to access project data, Company tickets, and reports from any location. This ensures continuity of operations without dependency on local files or specific systems." }
               ].map((res, i) => (
                 <div key={i} className="bg-[#FDF8F2] p-6 md:p-8 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow flex flex-col items-center text-center md:items-start md:text-left">
                   <h4 className="text-lg md:text-xl font-bold text-emerald-700 mb-2 md:mb-3">{res.title}</h4>

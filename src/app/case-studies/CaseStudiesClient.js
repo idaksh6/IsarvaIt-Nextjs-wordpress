@@ -107,7 +107,7 @@ export default function CaseStudiesClient() {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 tracking-tight leading-tight mb-6"
           >
-            Transforming Businesses with <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">Isarva Solutions</span>
+            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">Case Studies</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

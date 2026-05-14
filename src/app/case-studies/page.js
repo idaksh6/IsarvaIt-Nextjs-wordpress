@@ -1,7 +1,7 @@
 import CaseStudiesClient from "./CaseStudiesClient";
 
 export const metadata = {
-  title: "Customer Success Stories | Isarva Infotech",
+  title: "Case Studies | Isarva Infotech",
   description: "Discover how businesses across industries are transforming their operations and scaling efficiently with Isarva software solutions.",
   robots: {
     index: false,
