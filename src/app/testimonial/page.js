@@ -161,6 +161,8 @@ export default function TestimonialPage() {
     setTouchEnd(0);
   };
 
+  const videoTestimonial = testimonials.find(t => t.youtubeId) || testimonials[0];
+
   return (
     <div className="min-h-screen bg-[#FDF8F2]  text-[#1a1f24] pt-24">
 
@@ -310,22 +312,22 @@ export default function TestimonialPage() {
             >
               <div className="relative w-full h-[400px] bg-[#1a1f24] rounded-[2.5rem] overflow-hidden shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] border-4 border-white">
                 <iframe
-                  src={`https://www.youtube.com/embed/${testimonials[1].youtubeId}?rel=0&modestbranding=1&showinfo=0`}
+                  src={`https://www.youtube.com/embed/${videoTestimonial.youtubeId}?rel=0&modestbranding=1&showinfo=0`}
                   className="absolute inset-0 w-full h-full border-0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  title={`Customer testimonial video from ${testimonials[1].name}`}
+                  title={`Customer testimonial video from ${videoTestimonial.name}`}
                 ></iframe>
               </div>
 
               {/* Optional: Simple client info below direct video */}
               <div className="mt-8 flex items-center gap-4 px-6">
                 <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#10b981] shadow-lg relative">
-                  <Image src={testimonials[1].image} fill alt={testimonials[1].name} className="object-contain" loading="lazy" />
+                  <Image src={videoTestimonial.image} fill alt={videoTestimonial.name} className="object-contain" loading="lazy" />
                 </div>
                 <div>
-                  <h3 className="text-[#1a1f24] text-xl font-display font-bold leading-tight">{testimonials[1].name}</h3>
-                  <p className="text-[#10b981] font-black tracking-widest text-[10px] uppercase">CEO @ {testimonials[1].company}</p>
+                  <h3 className="text-[#1a1f24] text-xl font-display font-bold leading-tight">{videoTestimonial.name}</h3>
+                  <p className="text-[#10b981] font-black tracking-widest text-[10px] uppercase">{videoTestimonial.role} @ {videoTestimonial.company}</p>
                 </div>
               </div>
             </motion.div>
