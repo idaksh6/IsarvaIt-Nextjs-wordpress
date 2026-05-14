@@ -23,17 +23,18 @@ export default function ExpenseTrackerBrochureModal({
   // Use category ID 39 for Expense Tracker
   const categoryId = 39;
 
-  // Prevent body scroll when modal is open
+  // Prevent body scroll and prefetch thank you page when modal is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      router.prefetch('/thank-you');
     } else {
       document.body.style.overflow = "unset";
     }
     return () => {
       document.body.style.overflow = "unset";
     };
-  }, [isOpen]);
+  }, [isOpen, router]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

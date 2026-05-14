@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { 
@@ -107,8 +107,12 @@ export default function InternshipsPage() {
   const [resume, setResume] = useState(null);
   const [resumeFileName, setResumeFileName] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
+
+  // Prefetch thank you page for faster redirection
+  useEffect(() => {
+    router.prefetch('/thank-you');
+  }, [router]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

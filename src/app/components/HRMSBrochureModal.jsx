@@ -23,17 +23,18 @@ export default function HRMSBrochureModal({
   // Use category ID 1 for HRMS
   const categoryId = 1;
 
-  // Prevent body scroll when modal is open
+  // Prevent body scroll and prefetch thank you page when modal is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      router.prefetch('/thank-you');
     } else {
       document.body.style.overflow = "unset";
     }
     return () => {
       document.body.style.overflow = "unset";
     };
-  }, [isOpen]);
+  }, [isOpen, router]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

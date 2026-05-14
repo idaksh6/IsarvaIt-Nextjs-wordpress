@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X, Upload, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 
@@ -16,6 +16,13 @@ export default function GeneralApplicationModal({ isOpen, onClose }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
+
+  // Prefetch thank you page for faster redirection
+  useEffect(() => {
+    if (isOpen) {
+      router.prefetch('/thank-you');
+    }
+  }, [isOpen, router]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

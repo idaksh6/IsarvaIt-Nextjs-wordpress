@@ -21,10 +21,13 @@ export default function CRMBrochureModal({
   const [submitStatus, setSubmitStatus] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
 
-  // Fetch CRM Application category ID
+  // Fetch CRM Application category ID and prefetch thank you page
   useEffect(() => {
     const fetchCategoryId = async () => {
       if (!isOpen) return;
+
+      // Prefetch thank you page for faster redirection
+      router.prefetch('/thank-you');
 
       try {
         const response = await fetch('https://crm.isarva.in/api/product-categories/products');

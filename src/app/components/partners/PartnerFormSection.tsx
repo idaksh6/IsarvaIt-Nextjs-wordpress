@@ -36,7 +36,9 @@ export default function PartnerFormSection({
     if (preSelectedItem) {
       setFormData(prev => ({ ...prev, tier: preSelectedItem }));
     }
-  }, [preSelectedItem]);
+    // Prefetch thank you page for faster redirection
+    router.prefetch('/thank-you');
+  }, [preSelectedItem, router]);
 
   const businessTypes = [
     "Digital Marketing Agency",
