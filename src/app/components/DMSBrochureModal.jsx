@@ -2,11 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
+import { useRouter } from "next/navigation";
 
 export default function DMSBrochureModal({ 
   isOpen, 
   onClose
 }) {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -95,11 +97,12 @@ export default function DMSBrochureModal({
           message: ""
         });
 
-        // Close modal after 2 seconds
+        // Redirect to thank you page after 1.5 seconds
         setTimeout(() => {
           onClose();
           setSubmitStatus(null);
-        }, 2000);
+          router.push(`/thank-you?type=product&item=${encodeURIComponent(submissionData.itemName)}`);
+        }, 1500);
       } else {
         setSubmitStatus('error');
         // Parse error message for user-friendly display
