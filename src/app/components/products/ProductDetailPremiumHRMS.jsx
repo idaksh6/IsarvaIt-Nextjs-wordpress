@@ -202,7 +202,7 @@ export default function ProductDetailPremiumHRMS({
           </div>
         </div>
 
-        <div ref={contentTopRef} className="max-w-7xl mx-auto px-6 pt-10 lg:pt-0">
+        <div ref={contentTopRef} className="w-full lg:container mx-auto px-6 pt-10 lg:pt-0">
 
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
 
@@ -726,7 +726,7 @@ function HrmsFeatureSection() {
 
   return (
     <section className="py-10 lg:py-20 overflow-hidden bg-[#F7F7F7]">
-      <div className="container mx-auto px-6">
+      <div className="w-full lg:container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-14">
           <span className="block text-[14px] font-black text-[#22C55E] tracking-[0.28em] uppercase mb-2.5">
