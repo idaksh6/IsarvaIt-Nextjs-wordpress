@@ -245,7 +245,9 @@ export default function ContactFormModal({
         let type = 'contact';
         const pageTypeLower = (preSelectedType || '').toLowerCase();
 
-        if (pageTypeLower.includes('product')) {
+        if (pageTypeLower.includes('brochure')) {
+          type = 'brochure';
+        } else if (pageTypeLower.includes('product')) {
           type = 'product';
         } else if (pageTypeLower.includes('service')) {
           type = 'service';

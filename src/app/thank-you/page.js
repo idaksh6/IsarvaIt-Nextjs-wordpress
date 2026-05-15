@@ -82,6 +82,18 @@ function ThankYouContent() {
             "Get ready to scale your business with Isarva Infotech"
           ]
         };
+      case "brochure":
+        return {
+          title: "Brochure Downloaded Successfully!",
+          subtitle: itemName
+            ? `Your ${itemName} brochure is on its way to your device!`
+            : "Your product brochure is being downloaded!",
+          nextSteps: [
+            "Your brochure download has started automatically",
+            "Please check your browser's download folder",
+            "Our team will follow up shortly to answer any questions"
+          ]
+        };
       case "industry":
       default:
         return {

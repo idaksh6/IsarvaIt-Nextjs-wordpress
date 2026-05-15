@@ -102,7 +102,7 @@ export default function PetroCareBrochureModal({
         setTimeout(() => {
           onClose();
           setSubmitStatus(null);
-          router.push(`/thank-you?type=product&item=${encodeURIComponent(submissionData.itemName)}`);
+          router.push(`/thank-you?type=brochure&item=${encodeURIComponent(submissionData.itemName)}`);
         }, 1500);
       } else {
         setSubmitStatus('error');
