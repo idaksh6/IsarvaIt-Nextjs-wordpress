@@ -367,7 +367,7 @@ function SupportFeatureSection({ onImageClick }) {
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
                   className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[13px] font-semibold ${activeId === feature.id
-                    ? "bg-gray-900 border-purple-600 text-black shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
+                    ? "bg-purple-50 border-purple-600 text-gray-800 shadow-[0_4px_16px_rgba(147,51,234,0.15)]"
                     : "border-purple-300 text-gray-800 hover:border-purple-500 hover:shadow-md"
                     }`}
                 >
@@ -408,7 +408,7 @@ function SupportFeatureSection({ onImageClick }) {
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
                   className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[13px] font-semibold ${activeId === feature.id
-                    ? "bg-gray-900 border-purple-600 text-black shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
+                    ? "bg-purple-50 border-purple-600 text-gray-800 shadow-[0_4px_16px_rgba(147,51,234,0.15)]"
                     : "border-purple-300 text-gray-800 hover:border-purple-500 hover:shadow-md"
                     }`}
                 >
@@ -1044,7 +1044,7 @@ function AnalyticsSection({ onImageClick }) {
                 key={item.title}
                 onClick={() => setActiveAnalysisIdx(index)}
                 className={`flex items-center gap-3 px-4 md:px-10 py-5 rounded-full font-black text-sm transition-all duration-500 overflow-hidden relative shadow-lg ${activeAnalysisIdx === index
-                  ? "text-white scale-105"
+                  ? "text-gray-500 scale-105"
                   : "bg-white text-gray-500 border border-gray-100 hover:border-purple-200 hover:text-[#9333EA]"
                   }`}
               >
@@ -1756,7 +1756,7 @@ export default function ProductDetailPremiumSupportStaging({
               .filter(p => {
                 // Exclude current product
                 if (p.slug === product.slug) return false;
-                
+
                 // Exclude any staging, old, or hidden products
                 const isHidden = p.slug.includes('staging') || p.slug.includes('-old') || p.slug === 'bill-soft';
                 if (isHidden) return false;

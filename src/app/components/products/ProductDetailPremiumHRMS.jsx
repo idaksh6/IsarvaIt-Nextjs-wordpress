@@ -537,7 +537,7 @@ export default function ProductDetailPremiumHRMS({
 
               <div className="mt-6 text-white text-center">
                 <h3 className="text-2xl font-black uppercase tracking-widest">{activeContent.title}</h3>
-                <p className="text-white/60 font-medium mt-1 uppercase text-sm tracking-widest">{activeContent.subtitle}</p>
+                <p className="text-white/60 font-bold mt-1 uppercase text-sm tracking-widest">{activeContent.subtitle}</p>
               </div>
             </motion.div>
           </motion.div>
@@ -758,7 +758,7 @@ function HrmsFeatureSection() {
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
                   className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[14px] font-semibold whitespace-nowrap ${activeId === feature.id
-                    ? "bg-gray-900 border-green-600 text-gray-800 shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
+                    ? "bg-green-50 border-green-600 text-gray-800 shadow-[0_4px_16px_rgba(34,197,94,0.15)]"
                     : "border-green-300 text-gray-800 hover:border-green-500 hover:shadow-md"
                     }`}
                 >
@@ -798,7 +798,7 @@ function HrmsFeatureSection() {
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
                   className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[14px] font-semibold whitespace-nowrap ${activeId === feature.id
-                    ? "bg-gray-900 border-green-600 text-gray-800 shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
+                    ? "bg-green-50 border-green-600 text-gray-800 shadow-[0_4px_16px_rgba(34,197,94,0.15)]"
                     : "border-green-300 text-gray-800 hover:border-green-500 hover:shadow-md"
                     }`}
                 >
