@@ -556,6 +556,39 @@ export const productsData = [
     color: "from-teal-500 to-cyan-600",
     bgGradient: "from-teal-50 via-cyan-50 to-white",
   },
+  {
+    slug: "bill-soft",
+    title: "Isarva BillSoft",
+    category: "Billing & Inventory",
+    icon: "🧾",
+    tagline: "All-in-One Business Management Solution",
+    shortDescription:
+      "A complete business management solution designed to handle billing, inventory, branches, and financial operations seamlessly.",
+    description:
+      "Isarva BillSoft is an all-in-one business management solution designed to handle billing, inventory, branches, and financial operations seamlessly. It’s built not just for stock tracking—but for real business workflows including sales, purchases, approvals, and multi-branch operations.",
+    features: [
+      "Multi-branch & multi-warehouse management",
+      "Role-based user access control",
+      "Smart billing with auto calculations",
+      "Stock transfer with approval workflow",
+      "Real-time customer/vendor ledger tracking",
+      "Integrated sales & purchase invoice, and payments",
+      "Financial year and expense tracking",
+      "Custom themes for personalized UI",
+      "Add customers/products directly during billing",
+      "Detailed reporting (ledger & item-wise)",
+    ],
+    technologies: ["React", "Next.js", "PostgreSQL", "Node.js", "Cloud Infrastructure"],
+    benefits: [
+      "Real-time AI Business Insights",
+      "Automated Sales & Purchase Workflow",
+      "Seamless Multi-Branch Operation",
+      "Advanced Inventory & Warehouse Control",
+      "Professional Invoicing & Quotations",
+    ],
+    color: "from-blue-500 to-cyan-500",
+    bgGradient: "from-blue-50 via-cyan-50 to-white",
+  },
 ];
 
 // Helper functions to filter out internal/staging/old content from the UI

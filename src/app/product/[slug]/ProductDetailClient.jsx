@@ -16,6 +16,7 @@ import ProductDetailPremiumDealer from "../../components/products/ProductDetailP
 import ProductDetailPremiumExpense from "../../components/products/ProductDetailPremiumExpense";
 import ProductDetailPremiumCRM from "../../components/products/ProductDetailPremiumCRM";
 import ProductDetailPremiumCRMOld from "../../components/products/ProductDetailPremiumCRMOld";
+import ProductDetailPremiumBillSoft from "../../components/products/ProductDetailPremiumBillSoft";
 import ProductDetailPremiumSupport from "../../components/products/ProductDetailPremiumSupport";
 import ProductDetailPremiumGodownStaging from "../../components/products/ProductDetailPremiumGodownStaging";
 
@@ -178,6 +179,17 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
     );
   }
 
+
+  // Use Premium View for BillSoft
+  if (product.slug === 'bill-soft') {
+    return (
+      <ProductDetailPremiumBillSoft 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
 
   // Use Staging View for Support Application (now live)
   if (product.slug === 'support-application') {

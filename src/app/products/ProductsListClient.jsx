@@ -12,7 +12,8 @@ export default function ProductsListClient({ productsData }) {
     // First, exclude any items that are meant for staging only
     let baseProducts = productsData.filter(product => 
       !product.slug?.includes("staging") && 
-      !product.slug?.includes("-old")
+      !product.slug?.includes("-old") &&
+      product.slug !== "bill-soft"
     );
 
     if (!searchQuery.trim()) {

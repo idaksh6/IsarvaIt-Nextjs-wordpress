@@ -355,7 +355,7 @@ export default function ProductDetailPremiumCRMOld({
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {allProducts
-              .filter(p => p.slug !== product.slug && !p.slug.includes("staging"))
+              .filter(p => p.slug !== product.slug && !p.slug.includes("staging") && !p.slug.includes("-old") && p.slug !== "bill-soft")
               .slice(0, 3)
               .map((prod, index) => (
                 <motion.div
