@@ -64,7 +64,7 @@ const IdealPartners = () => {
           <div className="w-24 h-1.5 bg-[#ea580c] mx-auto rounded-full" />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
           {partners.map((item, index) => (
             <motion.div
               key={index}
@@ -73,7 +73,7 @@ const IdealPartners = () => {
               initial="initial"
               whileInView="whileInView"
               viewport={viewportConfig}
-              className="flex flex-col items-center p-8 md:p-12 rounded-[40px] bg-white border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 group relative overflow-hidden"
+              className={`flex flex-col items-center p-8 md:p-12 rounded-[40px] bg-white border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 group relative overflow-hidden ${index === 2 ? "sm:col-span-2 lg:col-span-1" : ""}`}
             >
               {/* Card background decoration */}
               <div className="absolute top-0 right-0 p-4 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-500">
