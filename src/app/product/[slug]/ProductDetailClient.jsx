@@ -15,7 +15,7 @@ import ProductDetailPremiumDispatcher from "../../components/products/ProductDet
 import ProductDetailPremiumDealer from "../../components/products/ProductDetailPremiumDealer";
 import ProductDetailPremiumExpense from "../../components/products/ProductDetailPremiumExpense";
 import ProductDetailPremiumCRM from "../../components/products/ProductDetailPremiumCRM";
-import ProductDetailPremiumCRMStaging from "../../components/products/ProductDetailPremiumCRMStaging";
+import ProductDetailPremiumCRMOld from "../../components/products/ProductDetailPremiumCRMOld";
 import ProductDetailPremiumSupport from "../../components/products/ProductDetailPremiumSupport";
 import ProductDetailPremiumGodownStaging from "../../components/products/ProductDetailPremiumGodownStaging";
 
@@ -156,7 +156,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
     );
   }
 
-  // Use Premium View for CRM Application
+  // Use Premium View for CRM Application (Now Live)
   if (product.slug === 'crm-application') {
     return (
       <ProductDetailPremiumCRM 
@@ -167,10 +167,10 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
     );
   }
 
-  // Use Premium View for CRM Application Staging
-  if (product.slug === 'crm-application-staging') {
+  // Use Premium View for CRM Application (Old)
+  if (product.slug === 'crm-application-old') {
     return (
-      <ProductDetailPremiumCRMStaging 
+      <ProductDetailPremiumCRMOld 
         product={product} 
         relatedProducts={relatedProducts} 
         allProducts={allProducts}

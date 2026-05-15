@@ -117,8 +117,8 @@ export const productsData = [
   },
 
   {
-    slug: "crm-application",
-    title: "CRM Application",
+    slug: "crm-application-old",
+    title: "CRM Application (Old)",
     category: "Customer Relationship Management",
     icon: "👔",
     tagline: "Complete Customer Relationship Management",
@@ -154,15 +154,15 @@ export const productsData = [
     bgGradient: "from-sky-50 via-blue-50 to-white",
   },
   {
-    slug: "crm-application-staging",
-    title: "CRM Application Staging",
+    slug: "crm-application",
+    title: "CRM Application",
     category: "Customer Relationship Management",
     icon: "👔",
-    tagline: "CRM Workspace (Staging)",
+    tagline: "Complete Customer Relationship Management",
     shortDescription:
-      "Staging version of the CRM solution for testing new features and UI improvements.",
+      "Powerful CRM solution for managing leads, contacts, sales pipeline, and customer interactions.",
     description:
-      "This is a staging environment for the CRM Application. Use this space to test new integrations, workflow automations, and UI enhancements before they are deployed to production.",
+      "Transform your customer relationships with our comprehensive CRM application. Manage your entire sales pipeline, track customer interactions, automate follow-ups, and gain valuable insights to close more deals and retain customers.",
     features: [
       "Lead & Contact Management",
       "Sales Pipeline Tracking",
@@ -181,11 +181,11 @@ export const productsData = [
       "Email API Integration",
     ],
     benefits: [
-      "Risk-Free Testing",
-      "UI/UX Experimentation",
-      "Feature Validation",
-      "Team Feedback Loop",
-      "Deployment Readiness",
+      "Improved Sales Conversion",
+      "Better Customer Retention",
+      "Streamlined Sales Process",
+      "Data-Driven Decisions",
+      "Enhanced Team Collaboration",
     ],
     color: "from-sky-500 to-blue-600",
     bgGradient: "from-sky-50 via-blue-50 to-white",
