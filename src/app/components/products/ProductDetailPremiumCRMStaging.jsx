@@ -128,7 +128,7 @@ export default function ProductDetailPremiumCRMStaging({
         <div className="absolute top-20 right-10 w-[400px] h-[400px] bg-[#0EA5E9] opacity-[0.04] rounded-full blur-3xl pointer-events-none"></div>
         <div className="absolute bottom-20 left-10 w-[350px] h-[350px] bg-[#0284C7] opacity-[0.03] rounded-full blur-3xl pointer-events-none"></div>
 
-        <div className="container mx-auto px-6 relative z-10 text-center">
+        <div className="w-full lg:container mx-auto px-6 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -239,7 +239,7 @@ export default function ProductDetailPremiumCRMStaging({
 
       {/* 2. Why Businesses Need a CRM Section */}
       <section className="lg:py-32 py-14 bg-white">
-        <div className="container mx-auto px-6">
+        <div className="w-full lg:container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 lg:text-left text-center">
             {/* Left Side - Image (Sticky on Desktop) */}
             <div className="relative lg:sticky lg:top-28 lg:self-start">
@@ -384,7 +384,7 @@ export default function ProductDetailPremiumCRMStaging({
 
       {/* 4. How Isarva CRM Works Section */}
       <section className="py-10 lg:py-24 bg-white relative overflow-hidden">
-        <div className="container mx-auto px-6">
+        <div className="w-full lg:container mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-3 bg-white px-4 py-2 rounded-full border border-[#0EA5E9]/20 shadow-sm">
               PROCESS
@@ -413,7 +413,7 @@ export default function ProductDetailPremiumCRMStaging({
 
       {/* 5. Why Choose Isarva CRM Section */}
       <section className="py-10 lg:py-24 bg-slate-50 relative overflow-hidden">
-        <div className="container mx-auto px-6">
+        <div className="w-full lg:container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6">
               Why Choose Isarva CRM
@@ -435,7 +435,7 @@ export default function ProductDetailPremiumCRMStaging({
 
       {/* 6. FAQ Section */}
       <section className="py-10 lg:py-24 bg-white relative overflow-hidden">
-        <div className="container mx-auto px-6 max-w-7xl">
+        <div className="w-full lg:container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -465,7 +465,7 @@ export default function ProductDetailPremiumCRMStaging({
         {/* Background Decoration */}
         <div className="absolute inset-0 bg-gradient-to-br from-sky-50 via-transparent to-blue-50"></div>
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="w-full lg:container mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -532,7 +532,7 @@ export default function ProductDetailPremiumCRMStaging({
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230EA5E9' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="w-full lg:container mx-auto px-6 relative z-10">
           <div className="text-center mb-14">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -872,7 +872,7 @@ function CRMFeatureSection() {
 
   return (
     <section className="py-10 lg:py-20 overflow-hidden bg-[#F7F7F7]">
-      <div className="container mx-auto px-6">
+      <div className="w-full lg:container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-10">
           <span className="block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-2.5">
@@ -902,14 +902,18 @@ function CRMFeatureSection() {
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
                   className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[13px] font-semibold ${activeId === feature.id
-                    ? "bg-gray-900 border-sky-600 text-gray-800 shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
-                    : "border-sky-300 text-gray-800 hover:border-sky-500 hover:shadow-md"
+                    ? "bg-gray-900 text-white shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
+                    : "text-gray-800 hover:shadow-md"
                     }`}
+                  style={{ borderColor: activeId === feature.id ? feature.color : '#e5e7eb' }}
                 >
                   <span className="text-sm leading-none">{feature.icon}</span>
                   <span className="max-w-[180px] truncate">{feature.label}</span>
                   {activeId === feature.id && (
-                    <span className="absolute -right-[7px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[7px] border-t-transparent border-b-[7px] border-b-transparent border-l-[7px] border-l-sky-900" />
+                    <span 
+                      className="absolute -right-[7px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[7px] border-t-transparent border-b-[7px] border-b-transparent border-l-[7px]" 
+                      style={{ borderLeftColor: '#111827' }}
+                    />
                   )}
                 </button>
               ))}
@@ -942,14 +946,18 @@ function CRMFeatureSection() {
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
                   className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[13px] font-semibold ${activeId === feature.id
-                    ? "bg-gray-900 border-sky-600 text-gray-800 shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
-                    : "border-sky-300 text-gray-800 hover:border-sky-500 hover:shadow-md"
+                    ? "bg-gray-900 text-white shadow-[0_4px_16px_rgba(0,0,0,0.2)]"
+                    : "text-gray-800 hover:shadow-md"
                     }`}
+                  style={{ borderColor: activeId === feature.id ? feature.color : '#e5e7eb' }}
                 >
                   <span className="max-w-[180px] truncate">{feature.label}</span>
                   <span className="text-sm leading-none">{feature.icon}</span>
                   {activeId === feature.id && (
-                    <span className="absolute -left-[7px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[7px] border-t-transparent border-b-[7px] border-b-transparent border-r-[7px] border-r-sky-900" />
+                    <span 
+                      className="absolute -left-[7px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[7px] border-t-transparent border-b-[7px] border-b-transparent border-r-[7px]" 
+                      style={{ borderRightColor: '#111827' }}
+                    />
                   )}
                 </button>
               ))}
@@ -983,9 +991,13 @@ function CRMFeatureSection() {
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
                   className={`flex items-center gap-2 py-2.5 px-5 rounded-lg font-semibold text-sm transition-all duration-200 ${activeId === feature.id
-                    ? "bg-[#0EA5E9] text-white shadow-lg scale-105"
-                    : "bg-white border border-gray-200 text-gray-700 hover:border-[#0EA5E9] hover:shadow-md"
+                    ? "text-white shadow-lg scale-105"
+                    : "bg-white border border-gray-200 text-gray-700 hover:shadow-md"
                     }`}
+                  style={{ 
+                    backgroundColor: activeId === feature.id ? feature.color : 'white',
+                    borderColor: activeId === feature.id ? feature.color : '#e5e7eb'
+                  }}
                 >
                   <span className="text-base">{feature.icon}</span>
                   <span>{feature.label}</span>
@@ -1186,9 +1198,21 @@ function CRMTabSection({ setSelectedImage }) {
   const [activeTab, setActiveTab] = useState(crmTabData[0].id);
   const currentTab = crmTabData.find(t => t.id === activeTab);
 
+  const scrollToTab = (tabId) => {
+    setActiveTab(tabId);
+    const element = document.getElementById(`crm-tab-${tabId}`);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "start",
+      });
+    }
+  };
+
   return (
     <section className="py-16 lg:py-32 bg-slate-50 overflow-hidden">
-      <div className="container mx-auto px-6">
+      <div className="w-full lg:container mx-auto px-6">
         <div className="text-center mb-12 lg:mb-20">
           <h2 className="text-3xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
             Powerful <span className="text-[#0EA5E9]">Isarva CRM</span> Features
@@ -1198,22 +1222,43 @@ function CRMTabSection({ setSelectedImage }) {
           </p>
         </div>
 
+        {/* Mobile Sticky Tab Bar (HRMS Style) */}
+        <div className="lg:hidden sticky top-[102px] z-[60] bg-white border-b border-gray-200 -mx-6 mb-8">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="flex overflow-x-auto no-scrollbar py-2 scroll-smooth" style={{ scrollPadding: '1.5rem' }}>
+              {crmTabData.map((tab) => (
+                <button
+                  key={tab.id}
+                  id={`crm-tab-${tab.id}`}
+                  onClick={() => scrollToTab(tab.id)}
+                  className={`flex-shrink-0 px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest transition-all duration-300 mr-4 ${activeTab === tab.id
+                    ? `bg-gradient-to-r ${tab.color} text-white shadow-lg`
+                    : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
+                    }`}
+                >
+                  {tab.title}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          {/* Left Side: Vertical Tabs (Horizontal on mobile) */}
-          <div className="lg:col-span-4 flex lg:flex-col overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0 gap-3 scrollbar-hide no-scrollbar">
+          {/* Desktop Sidebar (Left Side) */}
+          <div className="hidden lg:flex lg:col-span-4 flex-col gap-3">
             {crmTabData.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex-shrink-0 lg:flex-shrink w-[260px] lg:w-full text-left p-5 lg:p-6 rounded-2xl transition-all duration-300 border-2 ${activeTab === tab.id
-                  ? `bg-gradient-to-br ${tab.color} border-transparent shadow-xl lg:translate-x-2`
-                  : "bg-white/40 lg:bg-transparent border-transparent hover:bg-white/60"
+                className={`text-left p-6 rounded-2xl transition-all duration-300 border-2 ${activeTab === tab.id
+                  ? `bg-gradient-to-br ${tab.color} border-transparent shadow-xl translate-x-2`
+                  : "bg-white/40 border-transparent hover:bg-white/60"
                   }`}
               >
                 <h3 className={`text-lg lg:text-xl font-bold ${activeTab === tab.id ? "text-white" : "text-gray-900"}`}>
                   {tab.title}
                 </h3>
-                <p className={`text-[12px] lg:text-sm mt-1 line-clamp-1 ${activeTab === tab.id ? "text-white/80" : "text-gray-500"}`}>{tab.subtitle}</p>
+                <p className={`text-sm mt-1 line-clamp-1 ${activeTab === tab.id ? "text-white/80" : "text-gray-500"}`}>{tab.subtitle}</p>
               </button>
             ))}
           </div>
