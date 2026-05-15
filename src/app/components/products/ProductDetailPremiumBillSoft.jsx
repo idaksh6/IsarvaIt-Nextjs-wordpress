@@ -479,21 +479,28 @@ export default function ProductDetailPremiumBillSoft({
                   <h2 className="text-3xl lg:text-5xl font-black text-gray-900 mb-12 uppercase tracking-tighter text-center">Frequently Asked Questions</h2>
                   <div className="space-y-4 max-w-4xl mx-auto">
                     {[
-                      { q: "What is Isarva BillSoft Application?", a: "It is a complete billing, inventory, and business management system designed for multi-branch operations." },
-                      { q: "Can I manage multiple branches in one system?", a: "Yes, you can add multiple branches and switch between them anytime." },
-                      { q: "Does it support GST billing?", a: "Yes, GST is automatically applied based on product configuration." },
-                      { q: "Can I track customer and vendor balances?", a: "Yes, ledger reports show complete transaction history and closing balances." },
-                      { q: "Is stock transfer between warehouses possible?", a: "Yes, with a proper approval workflow including transit and receiving stages." },
-                      { q: "Can I customize the look of the application?", a: "Yes, you can choose from 13 different theme colors." },
+                      { q: "Is BillSoft suitable for small retail shops?", a: "Absolutely! Isarva BillSoft is built to scale. Whether you have a single shop or multiple branches, our software adapts to your volume and inventory needs." },
+                      { q: "Can I manage multiple branches in BillSoft?", a: "Yes, BillSoft's core architecture supports multi-branch and multi-warehouse operations with centralized control and reporting." },
+                      { q: "How does the AI insights feature work?", a: "Our AI engine analyzes your historical sales and purchase data to predict future revenue trends and identify settlement values." },
                       { q: "Does the system track payments?", a: "Yes, both incoming and outgoing payments through Payment In and Payment Out are fully managed and recorded." },
                       { q: "What are the main modules available in Isarva BillSoft?", a: "The main modules include Sales Invoice, Purchase Invoice, Payment In, and Payment Out, Proforma Invoice, Quotations." }
                     ].map((item, i) => (
-                      <details key={i} className="group border-b border-gray-100 last:border-0 pb-4">
-                        <summary className="flex justify-between items-center font-bold text-gray-900 cursor-pointer list-none py-4">
-                          <span className="pr-8">{item.q}</span>
-                          <span className="text-sky-600 transition-transform group-open:rotate-45">+</span>
+                      <details
+                        key={i}
+                        className="group bg-white rounded-[2rem] border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_15px_40px_rgba(14,165,233,0.08)] transition-all duration-500 overflow-hidden"
+                      >
+                        <summary className="flex justify-between items-center font-bold text-gray-900 cursor-pointer list-none p-8 select-none">
+                          <span className="pr-8 text-lg">{item.q}</span>
+                          <div className="w-10 h-10 rounded-full bg-sky-50 flex items-center justify-center text-sky-600 transition-all duration-500 group-open:rotate-45 group-open:bg-sky-600 group-open:text-white group-hover:scale-110">
+                            <span className="text-2xl leading-none">+</span>
+                          </div>
                         </summary>
-                        <p className="text-gray-500 font-medium leading-relaxed pb-4 px-2">{item.a}</p>
+                        <div className="px-8 pb-8">
+                          <div className="h-px w-full bg-gray-50 mb-6" />
+                          <p className="text-gray-500 font-medium leading-relaxed text-[15px]">
+                            {item.a}
+                          </p>
+                        </div>
                       </details>
                     ))}
                   </div>
