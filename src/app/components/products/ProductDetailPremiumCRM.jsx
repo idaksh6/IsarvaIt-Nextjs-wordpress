@@ -910,8 +910,8 @@ function CRMFeatureSection() {
                   <span className="text-sm leading-none">{feature.icon}</span>
                   <span className="max-w-[180px] truncate">{feature.label}</span>
                   {activeId === feature.id && (
-                    <span 
-                      className="absolute -right-[7px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[7px] border-t-transparent border-b-[7px] border-b-transparent border-l-[7px]" 
+                    <span
+                      className="absolute -right-[7px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[7px] border-t-transparent border-b-[7px] border-b-transparent border-l-[7px]"
                       style={{ borderLeftColor: '#111827' }}
                     />
                   )}
@@ -954,8 +954,8 @@ function CRMFeatureSection() {
                   <span className="max-w-[180px] truncate">{feature.label}</span>
                   <span className="text-sm leading-none">{feature.icon}</span>
                   {activeId === feature.id && (
-                    <span 
-                      className="absolute -left-[7px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[7px] border-t-transparent border-b-[7px] border-b-transparent border-r-[7px]" 
+                    <span
+                      className="absolute -left-[7px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[7px] border-t-transparent border-b-[7px] border-b-transparent border-r-[7px]"
                       style={{ borderRightColor: '#111827' }}
                     />
                   )}
@@ -994,7 +994,7 @@ function CRMFeatureSection() {
                     ? "text-white shadow-lg scale-105"
                     : "bg-white border border-gray-200 text-gray-700 hover:shadow-md"
                     }`}
-                  style={{ 
+                  style={{
                     backgroundColor: activeId === feature.id ? feature.color : 'white',
                     borderColor: activeId === feature.id ? feature.color : '#e5e7eb'
                   }}
