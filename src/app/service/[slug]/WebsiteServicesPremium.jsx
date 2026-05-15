@@ -581,19 +581,19 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
               {/* Left image */}
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-br from-orange-100/60 to-rose-100/60 blur-[50px] rounded-3xl" />
+                {/* Badge moved here to avoid clipping by overflow-hidden */}
+                <div className="absolute -top-3 left-6 z-20">
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-orange-500 to-rose-500 text-white text-[10px] md:text-xs font-black shadow-[0_8px_20px_rgba(244,63,94,0.3)] uppercase tracking-wider whitespace-nowrap">
+                    ✨ Before → After Transformation
+                  </span>
+                </div>
                 <div className="relative rounded-3xl overflow-hidden border border-orange-100 shadow-2xl">
                   <img
                     src="/website_redesign_service.png"
                     alt="Website Redesign Service — Before & After"
-                    className="w-full  object-cover"
+                    className="w-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-                  {/* Badge on image */}
-                  <div className="absolute -top-0 left-1">
-                    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-orange-500 to-rose-500 text-white text-sm font-bold shadow-lg">
-                      ✨ Before → After Transformation
-                    </span>
-                  </div>
                   <div className="absolute bottom-6 right-6 float-badge rounded-xl px-4 py-3">
                     <div className="text-gray-900 text-sm font-bold">
                       Avg. 3× More Conversions
