@@ -443,7 +443,7 @@ export default function ProductDetailPremiumHRMS({
               </section>
 
               {/* 6. Complete HR Suite Section */}
-              <section className="py-16 bg-white relative overflow-hidden border border-gray-100 rounded-[3rem] mb-16">
+              <section className="py-16 bg-white relative overflow-hidden border border-gray-100 rounded-[3rem] ">
                 <div className="px-4 md:px-12">
                   <div className="mb-16">
                     <h2 className="text-3xl lg:text-5xl font-black text-gray-900 mb-6 tracking-tighter uppercase">Complete HR Suite – <span className={TAB_THEMES[activeTab].text}>All-in-One HRMS Features</span></h2>
@@ -468,7 +468,7 @@ export default function ProductDetailPremiumHRMS({
               </section>
 
               {/* 7. Final CTA Section */}
-              <section className="pb-4 lg:py-16">
+              <section className="pb-0 lg:py-16 lg:pb-0">
                 <div className="relative rounded-[3rem] bg-gradient-to-br from-white to-gray-50 py-16 px-8 lg:px-16 overflow-hidden text-center shadow-[0_40px_80px_rgba(0,0,0,0.05)] border border-gray-100">
                   <div className={`absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-br ${TAB_THEMES[activeTab].gradient} opacity-5 blur-[100px]`}></div>
 
