@@ -129,7 +129,7 @@ export default function ProductDetailPremiumHRMS({
   // Scroll to top of content area when tab changes
   useEffect(() => {
     if (contentTopRef.current) {
-      const offset = 120; // Space for sticky header + tabs
+      const offset = 160; // Space for sticky header (102px) + tabs (~58px)
       const elementPosition = contentTopRef.current.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -168,11 +168,13 @@ export default function ProductDetailPremiumHRMS({
         <div className="absolute inset-0 bg-grid-slate-200/[0.05] [mask-image:linear-gradient(to_bottom,white,transparent,white)]" />
       </div>
 
-      {/* 2. Enhanced Vertical Sidebar Tabs (Desktop) & Floating Top Bar (Mobile) */}
-      <div ref={contentTopRef} className="relative z-40 container mx-auto px-4 md:px-6 pt-24 lg:pt-48 pb-12 lg:pb-32">
-        {/* Mobile View (Horizontal Scroll) - Restored previous centered design but kept stickiness */}
-        <div className="lg:hidden sticky top-28 z-[60] flex justify-center py-4 px-2 mb-10 bg-transparent">
-          <div className="inline-flex items-center bg-white/80 backdrop-blur-2xl border border-white/50 p-1.5 shadow-xl rounded-full overflow-x-auto no-scrollbar max-w-full">
+      <div className="relative z-40 pt-24 lg:pt-48 pb-12 lg:pb-32">
+        {/* Mobile View (Horizontal Scroll) - Full-width white background bar with constrained content */}
+        <div className="lg:hidden sticky top-[102px] z-[60] bg-white border-b border-gray-100 shadow-sm w-full overflow-hidden">
+          <div
+            className="max-w-7xl mx-auto px-6 py-2 overflow-x-auto no-scrollbar w-full"
+            style={{ scrollPaddingLeft: '1.5rem', scrollPaddingRight: '1.5rem' }}
+          >
             <div className="flex items-center space-x-1 whitespace-nowrap">
               {TABS.map((tab) => {
                 const isActive = activeTab === tab.id;
@@ -180,8 +182,11 @@ export default function ProductDetailPremiumHRMS({
                 return (
                   <button
                     key={tab.id}
-                    onClick={() => setActiveTab(tab.id)}
-                    className={`px-5 py-2.5 rounded-full font-bold text-[14px] uppercase tracking-widest transition-all duration-500 relative ${isActive ? "text-white" : "text-gray-500"}`}
+                    onClick={(e) => {
+                      setActiveTab(tab.id);
+                      e.currentTarget.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+                    }}
+                    className={`px-5 py-2.5 rounded-full font-bold text-[12px] uppercase tracking-wider transition-all duration-300 relative ${isActive ? "text-white" : "text-gray-400"}`}
                   >
                     {isActive && (
                       <motion.div
@@ -196,6 +201,8 @@ export default function ProductDetailPremiumHRMS({
             </div>
           </div>
         </div>
+
+        <div ref={contentTopRef} className="max-w-7xl mx-auto px-6 pt-10 lg:pt-0">
 
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
 
@@ -478,11 +485,10 @@ export default function ProductDetailPremiumHRMS({
               </div>
             </section>
           </main>
+          </div>
         </div>
-
       </div>
 
-      {/* Ported Key Features Section (Orbit) - Full Width Section */}
       <HrmsFeatureSection />
 
       <ContactFormModal
