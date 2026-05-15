@@ -8,6 +8,137 @@ import ContactFormModal from "../../components/ContactFormModal";
 
 const PRIMARY_COLOR = "#0EA5E9"; // Sky Blue
 
+function ThemeSlider({ onImageClick }) {
+  const themes = [
+    { name: "Empire Emerald", img: "Vibrant-color-3.jpg", color: "from-emerald-500/20 to-teal-500/20" },
+    { name: "Sunset Glow", img: "Vibrant-color-2.jpg", color: "from-orange-500/20 to-rose-500/20" },
+    { name: "Vibrant Violet", img: "Vibrant-color-1.jpg", color: "from-violet-500/20 to-fuchsia-500/20" },
+  ];
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(0);
+
+  const next = () => {
+    setDirection(1);
+    setCurrent((prev) => (prev === 0 ? themes.length - 1 : prev - 1));
+  };
+  const prev = () => {
+    setDirection(-1);
+    setCurrent((prev) => (prev === themes.length - 1 ? 0 : prev + 1));
+  };
+
+  // Auto Slide Effect
+  useEffect(() => {
+    const timer = setInterval(() => {
+      next();
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [current]);
+
+  const variants = {
+    initial: (direction) => ({
+      opacity: 0,
+      scale: 0.9,
+      x: direction > 0 ? 150 : -150,
+      filter: "blur(8px)",
+    }),
+    animate: {
+      opacity: 1,
+      scale: 1,
+      x: 0,
+      filter: "blur(0px)",
+      transition: {
+        duration: 1,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
+    exit: (direction) => ({
+      opacity: 0,
+      scale: 1.05,
+      x: direction > 0 ? -150 : 150,
+      filter: "blur(8px)",
+      transition: {
+        duration: 0.8,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    }),
+  };
+
+  return (
+    <div className="relative w-full group/slider">
+      {/* Image Container */}
+      <div className="relative aspect-[16/9] md:aspect-[21/9] rounded-[1rem] lg:rounded-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] border-8 border-white bg-white">
+        {/* Background Morphing Gradient */}
+        <motion.div
+          animate={{
+            background: `radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.05) 100%)`,
+          }}
+          className={`absolute inset-0 z-10 pointer-events-none transition-all duration-1000 bg-gradient-to-br ${themes[current].color}`}
+        />
+
+        <AnimatePresence mode="wait" custom={direction}>
+          <motion.div
+            key={current}
+            custom={direction}
+            variants={variants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            className="w-full h-full relative cursor-zoom-in"
+            onClick={() => onImageClick(`/products/billsoft/${themes[current].img}`)}
+          >
+            <img
+              src={`/products/billsoft/${themes[current].img}`}
+              alt={themes[current].name}
+              className="w-full h-full object-cover"
+            />
+            {/* Shimmer Effect */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-transparent pointer-events-none" />
+
+            {/* Popup Indicator Icon */}
+            <div className="absolute top-6 right-6 z-50 opacity-0 group-hover/slider:opacity-100 transition-opacity duration-300">
+              <div className="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-2xl border border-white/30 text-white flex items-center justify-center shadow-2xl">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                </svg>
+              </div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {/* Refined Navigation - Below Image */}
+      <div className="mt-8 flex items-center justify-center gap-6">
+        <button
+          onClick={(e) => { e.stopPropagation(); prev(); }}
+          className="w-10 h-10 rounded-full bg-white border border-gray-100 text-gray-900 flex items-center justify-center hover:bg-sky-600 hover:text-white transition-all duration-300 shadow-xl"
+        >
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <div className="flex gap-2">
+          {themes.map((_, i) => (
+            <div
+              key={i}
+              className={`h-1.5 rounded-full transition-all duration-500 ${i === current ? "w-8 bg-sky-600 shadow-[0_0_15px_rgba(14,165,233,0.5)]" : "w-1.5 bg-gray-200"}`}
+            />
+          ))}
+        </div>
+
+        <button
+          onClick={(e) => { e.stopPropagation(); next(); }}
+          className="w-10 h-10 rounded-full bg-white border border-gray-100 text-gray-900 flex items-center justify-center hover:bg-sky-600 hover:text-white transition-all duration-300 shadow-xl"
+        >
+          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  );
+}
+
 const TABS = [
   { id: "dashboard", label: "Dashboard", icon: "📊" },
   { id: "sales", label: "Sales Invoice", icon: "💰" },
@@ -219,9 +350,15 @@ export default function ProductDetailPremiumBillSoft({
   const [isScrolled, setIsScrolled] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const contentTopRef = useRef(null);
+  const isFirstMount = useRef(true);
 
-  // Scroll to top of content area when tab changes
+  // Scroll to top of content area when tab changes (but not on initial load)
   useEffect(() => {
+    if (isFirstMount.current) {
+      isFirstMount.current = false;
+      return;
+    }
+
     if (contentTopRef.current) {
       const offset = 160; // Space for sticky header (102px) + tabs (~58px)
       const elementPosition = contentTopRef.current.getBoundingClientRect().top;
@@ -259,7 +396,7 @@ export default function ProductDetailPremiumBillSoft({
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="max-w-4xl mx-auto"
+              className="max-w-5xl mx-auto"
             >
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-50 text-sky-600 font-black text-xs uppercase tracking-widest mb-6">
                 Business Management Solution
@@ -271,19 +408,12 @@ export default function ProductDetailPremiumBillSoft({
                 Isarva BillSoft is an all-in-one business management solution designed to handle billing, inventory, branches, and financial operations seamlessly. It’s built not just for stock tracking—but for real business workflows including sales, purchases, approvals, and multi-branch operations.
               </p>
 
-              {/* Intro Image - Responsive Swap */}
-              <div className="relative rounded-[2.5rem] overflow-hidden border border-gray-100 shadow-2xl bg-white p-2 mb-10">
-                <div className="hidden lg:block relative w-full overflow-hidden rounded-[2rem]">
+              {/* Intro Image - Mockup */}
+              <div className="relative overflow-hidden   p-2 mb-10">
+                <div className="relative w-full overflow-hidden rounded-[2rem]">
                   <img
-                    src="/products/billsoft/what_billsoft_covers.png"
-                    alt="Key Features of BillSoft"
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-                <div className="lg:hidden relative w-full overflow-hidden rounded-[2rem]">
-                  <img
-                    src="/products/billsoft/what_billsoft_covers_mobile_view.png"
-                    alt="Key Features of BillSoft"
+                    src="/products/billsoft/Billsoft-mockup.png"
+                    alt="Isarva BillSoft Mockup"
                     className="w-full h-auto object-cover"
                   />
                 </div>
@@ -446,6 +576,28 @@ export default function ProductDetailPremiumBillSoft({
 
 
 
+              {/* What BillSoft Covers Section */}
+              <section className="pb-8 lg:pb-16">
+                <div className="container mx-auto px-6">
+                  <div className="relative rounded-[2.5rem] overflow-hidden border border-gray-100 shadow-2xl bg-white p-2 ">
+                    <div className="hidden lg:block relative w-full overflow-hidden rounded-[2rem]">
+                      <img
+                        src="/products/billsoft/what_billsoft_covers.png"
+                        alt="What BillSoft Covers"
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
+                    <div className="lg:hidden relative w-full overflow-hidden rounded-[2rem]">
+                      <img
+                        src="/products/billsoft/what_billsoft_covers_mobile_view.png"
+                        alt="What BillSoft Covers"
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </section>
+
               {/* Theme Customization Section */}
               <section className="py-16 bg-white border border-gray-100 rounded-[3rem] mb-16 overflow-hidden">
                 <div className="px-8 lg:px-12 text-center lg:text-left">
@@ -459,19 +611,13 @@ export default function ProductDetailPremiumBillSoft({
                     Choose from 13 beautiful themes like Sunset Glow, Vibrant Violet, and Empire Emerald to match your business style.
                   </p>
 
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {["Vibrant-color-3.jpg", "Vibrant-color-2.jpg", "Vibrant-color-1.jpg"].map((img, i) => (
-                      <div key={i} className="relative rounded-2xl overflow-hidden shadow-lg border-2 border-white hover:scale-105 transition-transform duration-500">
-                        <img
-                          src={`/products/billsoft/${img}`}
-                          alt={`BillSoft Theme ${i + 1}`}
-                          className="w-full h-auto object-cover"
-                        />
-                      </div>
-                    ))}
+                  <div className="relative max-w-4xl mx-auto group">
+                    <ThemeSlider onImageClick={setSelectedImage} />
                   </div>
                 </div>
               </section>
+
+
 
               {/* FAQ Section */}
               <section className="py-16 bg-white border border-gray-100 rounded-[3rem] mb-16">
@@ -479,11 +625,14 @@ export default function ProductDetailPremiumBillSoft({
                   <h2 className="text-3xl lg:text-5xl font-black text-gray-900 mb-12 uppercase tracking-tighter text-center">Frequently Asked Questions</h2>
                   <div className="space-y-4 max-w-4xl mx-auto">
                     {[
-                      { q: "Is BillSoft suitable for small retail shops?", a: "Absolutely! Isarva BillSoft is built to scale. Whether you have a single shop or multiple branches, our software adapts to your volume and inventory needs." },
-                      { q: "Can I manage multiple branches in BillSoft?", a: "Yes, BillSoft's core architecture supports multi-branch and multi-warehouse operations with centralized control and reporting." },
-                      { q: "How does the AI insights feature work?", a: "Our AI engine analyzes your historical sales and purchase data to predict future revenue trends and identify settlement values." },
+                      { q: "What is Isarva BillSoft Application?", a: "It is a complete billing, inventory, and business management system designed for multi-branch operations." },
+                      { q: "Can I manage multiple branches in one system?", a: "Yes, you can add multiple branches and switch between them anytime." },
+                      { q: "Does it support GST billing?", a: "Yes, GST is automatically applied based on product configuration." },
+                      { q: "Can I track customer and vendor balances?", a: "Yes, ledger reports show complete transaction history and closing balances." },
+                      { q: "Is stock transfer between warehouses possible?", a: "Yes, with a proper approval workflow including transit and receiving stages." },
+                      { q: "Can I customize the look of the application?", a: "Yes, you can choose from 13 different theme colors." },
                       { q: "Does the system track payments?", a: "Yes, both incoming and outgoing payments through Payment In and Payment Out are fully managed and recorded." },
-                      { q: "What are the main modules available in Isarva BillSoft?", a: "The main modules include Sales Invoice, Purchase Invoice, Payment In, and Payment Out, Proforma Invoice, Quotations." }
+                      { q: "What are the main modules available in Isarva BillSoft?", a: "The main modules include Sales Invoice, Purchase Invoice, Payment In, and Payment Out. , Proforma Invoice , Quotations" }
                     ].map((item, i) => (
                       <details
                         key={i}
@@ -508,7 +657,7 @@ export default function ProductDetailPremiumBillSoft({
               </section>
 
               {/* Final CTA Section */}
-              <section className="py-24 bg-white relative overflow-hidden border border-gray-100 rounded-[3rem] mb-16 ">
+              <section className="py-24 bg-white relative overflow-hidden border border-gray-100 rounded-[3rem]  ">
                 <div className="absolute inset-0 z-0">
                   <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-sky-500/5 rounded-full blur-[100px]" />
                   <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px]" />
