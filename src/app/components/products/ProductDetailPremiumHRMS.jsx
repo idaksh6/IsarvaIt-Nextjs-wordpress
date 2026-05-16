@@ -468,7 +468,7 @@ export default function ProductDetailPremiumHRMS({
               </section>
 
               {/* 7. Final CTA Section */}
-              <section className="pb-0 lg:py-16 lg:pb-0">
+              <section className="pb-0 lg:py-16 lg:pb-0 pt-16">
                 <div className="relative rounded-[3rem] bg-gradient-to-br from-white to-gray-50 py-16 px-8 lg:px-16 overflow-hidden text-center shadow-[0_40px_80px_rgba(0,0,0,0.05)] border border-gray-100">
                   <div className={`absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-br ${TAB_THEMES[activeTab].gradient} opacity-5 blur-[100px]`}></div>
 
