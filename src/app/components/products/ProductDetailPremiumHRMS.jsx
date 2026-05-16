@@ -204,7 +204,7 @@ export default function ProductDetailPremiumHRMS({
 
         <div ref={contentTopRef} className="w-full lg:container mx-auto px-6 pt-10 lg:pt-0">
 
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+          <div className="flex flex-col lg:flex-row gap-0 lg:gap-12">
 
             {/* Sidebar Sidebar */}
             <aside className="lg:w-72 flex-shrink-0">

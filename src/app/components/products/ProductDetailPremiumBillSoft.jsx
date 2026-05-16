@@ -410,7 +410,7 @@ export default function ProductDetailPremiumBillSoft({
 
               {/* Intro Image - Mockup */}
               <div className="relative overflow-hidden   p-2 mb-10">
-                <div className="relative w-full overflow-hidden rounded-[2rem]">
+                <div className="relative w-full overflow-hidden">
                   <img
                     src="/products/billsoft/Billsoft-mockup.png"
                     alt="Isarva BillSoft Mockup"
@@ -453,7 +453,7 @@ export default function ProductDetailPremiumBillSoft({
         </div>
 
         <div ref={contentTopRef} className="w-full lg:container mx-auto px-6 pt-10 lg:pt-0 pb-12 lg:pb-32">
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+          <div className="flex flex-col lg:flex-row gap-0 lg:gap-12">
             {/* Desktop Sidebar */}
             <aside className="lg:w-80 flex-shrink-0">
               <div className="lg:sticky lg:top-32 space-y-4">
@@ -611,7 +611,7 @@ export default function ProductDetailPremiumBillSoft({
                     Choose from 13 beautiful themes like Sunset Glow, Vibrant Violet, and Empire Emerald to match your business style.
                   </p>
 
-                  <div className="relative max-w-4xl mx-auto group">
+                  <div className="relative  group">
                     <ThemeSlider onImageClick={setSelectedImage} />
                   </div>
                 </div>
@@ -623,7 +623,7 @@ export default function ProductDetailPremiumBillSoft({
               <section className="py-16 bg-white border border-gray-100 rounded-[3rem] mb-16">
                 <div className="px-8 lg:px-12">
                   <h2 className="text-3xl lg:text-5xl font-black text-gray-900 mb-12 uppercase tracking-tighter text-center">Frequently Asked Questions</h2>
-                  <div className="space-y-4 max-w-4xl mx-auto">
+                  <div className="space-y-4 ">
                     {[
                       { q: "What is Isarva BillSoft Application?", a: "It is a complete billing, inventory, and business management system designed for multi-branch operations." },
                       { q: "Can I manage multiple branches in one system?", a: "Yes, you can add multiple branches and switch between them anytime." },
