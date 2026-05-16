@@ -371,7 +371,7 @@ export default function ProductDetailPremiumHRMS({
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-12 w-full">
                           {activeContent.features.map((f, i) => (
-                            <div key={i} className={`flex items-center gap-4 p-4 rounded-[20px] bg-gray-50/50 border border-transparent ${TAB_THEMES[activeTab].hoverBorder} transition-all group hover:bg-white hover:shadow-md`}>
+                            <div key={i} className={`flex items-center gap-4 p-4 px-0 rounded-[20px] bg-gray-50/50 border border-transparent ${TAB_THEMES[activeTab].hoverBorder} transition-all group hover:bg-white hover:shadow-md`}>
                               <div className={`w-7 h-7 rounded-full ${TAB_THEMES[activeTab].lightBg} flex items-center justify-center ${TAB_THEMES[activeTab].text} group-hover:${TAB_THEMES[activeTab].bg} group-hover:text-white transition-colors flex-shrink-0 aspect-square shadow-inner`}>
                                 <span className="text-[10px] font-black">✓</span>
                               </div>
@@ -407,20 +407,27 @@ export default function ProductDetailPremiumHRMS({
               {/* These sections are outside AnimatePresence so they don't flash on tab change, but scroll alongside */}
 
               {/* 4. The "Broken HR" Modern Section */}
-              <section className="relative py-16 bg-white overflow-hidden border-y border-gray-100 rounded-[3rem] mb-16">
+              <section className="relative p-8 lg:p-12  bg-white overflow-hidden border-y border-gray-100 rounded-[3rem] mb-16">
                 <div className="absolute inset-0 z-0">
                   <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-rose-500/5 rounded-full blur-[100px]" />
                   <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px]" />
                 </div>
-                <div className="relative z-10 px-4 md:px-12">
-                  <div className="flex flex-col mb-4 md:mb-16">
+                <div className="relative z-10 ">
+                  <div className="flex flex-col items-center lg:items-start mb-4 md:mb-16 text-center lg:text-left">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 text-red-600 font-bold text-[14px] mb-6 w-fit uppercase tracking-widest">
                       The Problem
                     </div>
+
                     <h2 className="text-3xl lg:text-5xl font-black text-gray-900 leading-[1.1] mb-6 tracking-tighter uppercase">
-                      Traditional HR <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500 py-2">Is Broken.</span>
+                      Traditional HR{" "}
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500 py-2">
+                        Is Broken.
+                      </span>
                     </h2>
-                    <p className="text-base lg:text-lg text-gray-500 font-medium leading-relaxed ">Organizations are stuck with outdated systems that waste time, frustrate employees, and hold back growth. It's time for a change.</p>
+
+                    <p className="text-base lg:text-lg text-gray-500 font-medium leading-relaxed">
+                      Organizations are stuck with outdated systems that waste time, frustrate employees, and hold back growth. It's time for a change.
+                    </p>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -443,8 +450,8 @@ export default function ProductDetailPremiumHRMS({
               </section>
 
               {/* 6. Complete HR Suite Section */}
-              <section className="py-16 bg-white relative overflow-hidden border border-gray-100 rounded-[3rem] ">
-                <div className="px-4 md:px-12">
+              <section className="bg-white relative overflow-hidden border border-gray-100 rounded-[3rem] ">
+                <div className="p-8 lg:p-12">
                   <div className="mb-16">
                     <h2 className="text-3xl lg:text-5xl font-black text-gray-900 mb-6 tracking-tighter uppercase">Complete HR Suite – <span className={TAB_THEMES[activeTab].text}>All-in-One HRMS Features</span></h2>
                     <p className="text-base lg:text-lg text-gray-500 mb:4 lg:1mb-10 font-medium leading-relaxed ">Streamline and manage your entire HR operations with a powerful, integrated HRMS platform designed for modern businesses.</p>

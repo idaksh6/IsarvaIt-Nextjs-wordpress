@@ -26,7 +26,7 @@ export default function AboutPage() {
     <div className="bg-[#FDF8F2] overflow-hidden font-sans text-[#1a1f24]">
 
       {/* 1. HERO SECTION */}
-      <section className="relative pt-52 lg:pt-48 pb-10 lg:pb-20 overflow-hidden bg-gradient-to-b from-[#F0F7F4] to-[#FDF8F2]">
+      <section className="relative pt-36 lg:pt-48 pb-10 lg:pb-20 overflow-hidden bg-gradient-to-b from-[#F0F7F4] to-[#FDF8F2]">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#10b981] opacity-[0.03] rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute -bottom-24 -left-24 w-[600px] h-[600px] bg-[#84cc16] opacity-[0.05] rounded-full blur-[100px] pointer-events-none"></div>
         <div className="hero-noise-overlay"></div>
