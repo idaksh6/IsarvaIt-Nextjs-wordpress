@@ -382,11 +382,11 @@ export default function ProductDetailPremiumBillSoft({
   const activeContent = TAB_CONTENT[activeTab] || TAB_CONTENT["dashboard"];
 
   return (
-    <div className={`relative font-sans selection:bg-sky-100 selection:text-sky-900 bg-white`}>
-      {/* --- Dynamic Shifting Background --- */}
-      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className={`absolute inset-0 opacity-10 transition-colors duration-500 bg-gradient-to-br ${TAB_THEMES[activeTab].gradient} blur-[120px] scale-125`} />
-        <div className={`absolute top-[-5%] left-[-5%] w-[40%] h-[40%] rounded-full opacity-[0.08] blur-[100px] ${TAB_THEMES[activeTab].bg}`} />
+    <div className={`relative font-sans selection:bg-sky-100 selection:text-sky-900 bg-[#FDF8F2]`}>
+      {/* Background Decor */}
+      <div className="absolute top-0 inset-x-0 h-screen overflow-hidden pointer-events-none z-0">
+        <div className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-emerald-100/40 rounded-full blur-[120px]" />
+        <div className="absolute top-[20%] -right-[10%] w-[40%] h-[60%] bg-green-100/30 rounded-full blur-[100px]" />
       </div>
 
       <div className="relative z-40 pt-36 lg:pt-52">
