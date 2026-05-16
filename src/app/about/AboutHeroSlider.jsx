@@ -20,7 +20,7 @@ export default function AboutHeroSlider() {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-8 text-left">
             <h4 className="text-white font-bold text-[clamp(1.2rem,5vw,2.5rem)] mb-1 leading-tight">Connectivity</h4>
             <div className="w-10 h-0.5 bg-cyan-400 mb-2" />
-            <p className="text-white/70 text-[clamp(0.8rem,3vw,1rem)] leading-tight line-clamp-3 font-medium">We build systems that communicate effortlessly through APIs and cloud services.</p>
+            <p className="text-white/70 text-[clamp(0.8rem,3vw,1rem)] leading-tight  font-medium">We build systems that communicate effortlessly through APIs and cloud services.</p>
           </div>
         </motion.div>
 
@@ -36,7 +36,7 @@ export default function AboutHeroSlider() {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-8 text-left">
             <h4 className="text-white font-bold text-[clamp(1.2rem,5vw,2.5rem)] mb-1 leading-tight">Seamless Flow</h4>
             <div className="w-12 h-0.5 bg-blue-500 mb-2" />
-            <p className="text-white/70 text-[clamp(0.8rem,3vw,1rem)] leading-tight line-clamp-3 font-medium">We design intuitive user experiences that create smooth digital journeys.</p>
+            <p className="text-white/70 text-[clamp(0.8rem,3vw,1rem)] leading-tight  font-medium">We design intuitive user experiences that create smooth digital journeys.</p>
           </div>
         </motion.div>
 
@@ -68,7 +68,7 @@ export default function AboutHeroSlider() {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-8 text-left">
             <h4 className="text-white font-bold text-[clamp(1.2rem,5vw,2.5rem)] mb-1 leading-tight">Scalability</h4>
             <div className="w-12 h-0.5 bg-purple-500 mb-2" />
-            <p className="text-white/70 text-[clamp(0.8rem,3vw,1rem)] leading-tight line-clamp-3 font-medium">Future-ready solutions that scale with your business and unlock possibilities.</p>
+            <p className="text-white/70 text-[clamp(0.8rem,3vw,1rem)] leading-tight  font-medium">Future-ready solutions that scale with your business and unlock possibilities.</p>
           </div>
         </motion.div>
 
@@ -84,7 +84,7 @@ export default function AboutHeroSlider() {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-8 text-left">
             <h4 className="text-white font-bold text-[clamp(1.2rem,5vw,2.5rem)] mb-1 leading-tight">Performance</h4>
             <div className="w-10 h-0.5 bg-orange-500 mb-2" />
-            <p className="text-white/70 text-[clamp(0.8rem,3vw,1rem)] leading-tight line-clamp-3 font-medium">High-speed, optimized solutions that drive results and innovation.</p>
+            <p className="text-white/70 text-[clamp(0.8rem,3vw,1rem)] leading-tight  font-medium">High-speed, optimized solutions that drive results and innovation.</p>
           </div>
         </motion.div>
       </div>
@@ -97,7 +97,7 @@ export default function AboutHeroSlider() {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-6 text-left transition-opacity duration-500">
             <h4 className="text-white font-bold text-[clamp(1.2rem,1.5vw,1.8rem)] mb-1 leading-tight">Connectivity</h4>
             <div className="w-8 h-0.5 bg-cyan-400 mb-2" />
-            <p className="text-white/70 text-[clamp(0.7rem,1vw,0.85rem)] leading-tight line-clamp-3">We build systems that communicate effortlessly through APIs and cloud services.</p>
+            <p className="text-white/70 text-[clamp(0.7rem,1vw,0.85rem)] leading-tight ">We build systems that communicate effortlessly through APIs and cloud services.</p>
           </div>
         </div>
 
@@ -107,7 +107,7 @@ export default function AboutHeroSlider() {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-8 text-left transition-opacity duration-500">
             <h4 className="text-white font-bold text-[clamp(1.5rem,2vw,2.2rem)] mb-1 leading-tight">Seamless Flow</h4>
             <div className="w-10 h-0.5 bg-blue-500 mb-2" />
-            <p className="text-white/70 text-[clamp(0.75rem,1.1vw,0.95rem)] leading-tight line-clamp-3">We design intuitive user experiences that create smooth digital journeys.</p>
+            <p className="text-white/70 text-[clamp(0.75rem,1.1vw,0.95rem)] leading-tight ">We design intuitive user experiences that create smooth digital <br />journeys.</p>
           </div>
         </div>
 
@@ -127,7 +127,7 @@ export default function AboutHeroSlider() {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-8 text-left transition-opacity duration-500">
             <h4 className="text-white font-bold text-[clamp(1.5rem,2vw,2.2rem)] mb-1 leading-tight">Scalability</h4>
             <div className="w-10 h-0.5 bg-purple-500 mb-2" />
-            <p className="text-white/70 text-[clamp(0.75rem,1.1vw,0.95rem)] leading-tight line-clamp-3">Future-ready solutions that scale with your business and unlock possibilities.</p>
+            <p className="text-white/70 text-[clamp(0.75rem,1.1vw,0.95rem)] leading-tight ">Future-ready solutions that scale with your business and unlock possibilities.</p>
           </div>
         </div>
 
@@ -137,10 +137,10 @@ export default function AboutHeroSlider() {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-6 text-left transition-opacity duration-500">
             <h4 className="text-white font-bold text-[clamp(1.2rem,1.5vw,1.8rem)] mb-1 leading-tight">Performance</h4>
             <div className="w-8 h-0.5 bg-orange-500 mb-2" />
-            <p className="text-white/70 text-[clamp(0.7rem,1vw,0.85rem)] leading-tight line-clamp-3">High-speed, optimized solutions that drive results and innovation.</p>
+            <p className="text-white/70 text-[clamp(0.7rem,1vw,0.85rem)] leading-tight ">High-speed, optimized solutions that drive results and <br /> innovation.</p>
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
