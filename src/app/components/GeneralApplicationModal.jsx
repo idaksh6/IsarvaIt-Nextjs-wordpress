@@ -153,137 +153,126 @@ export default function GeneralApplicationModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-      <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl max-h-[90vh] overflow-y-auto">
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-6 right-6 p-2 rounded-full hover:bg-gray-100 transition-colors"
-          disabled={isSubmitting}
-        >
-          <X className="w-6 h-6 text-gray-600" />
-        </button>
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+      {/* Backdrop */}
+      <div 
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        onClick={onClose}
+      ></div>
 
-        {/* Modal Content */}
-        <div className="p-8 md:p-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            General Application
-          </h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Don't see your perfect role? Send us your profile and let's see where you fit in!
-          </p>
+      {/* Modal */}
+      <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-xl md:max-w-3xl flex flex-col overflow-hidden">
+        {/* Header */}
+        <div className="bg-gradient-to-r from-emerald-500 to-teal-600 px-6 py-4 text-white flex-shrink-0 flex items-center justify-between gap-4">
+          <h2 className="text-xl font-bold tracking-tight">General Application</h2>
+          <button
+            onClick={onClose}
+            className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition-colors text-white"
+            disabled={isSubmitting}
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Name Field */}
-            <div>
-              <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
-                Full Name *
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-200 outline-none text-gray-900"
-                placeholder="Enter your full name"
-              />
-            </div>
+        {/* Form Body */}
+        <div className="flex-1 overflow-y-auto">
+          <form onSubmit={handleSubmit} className="p-4 md:p-6 space-y-3 md:space-y-4">
+            <p className="text-sm text-gray-600 hidden md:block">
+              Don't see your perfect role? Send us your profile and let's see where you fit in!
+            </p>
 
-            {/* Email Field */}
-            <div>
-              <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
-                Email Address *
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-200 outline-none text-gray-900"
-                placeholder="email@example.com"
-              />
-            </div>
-
-            {/* Phone Field */}
-            <div>
-              <label htmlFor="phone" className="block text-sm font-semibold text-gray-900 mb-2">
-                Phone Number *
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-200 outline-none text-gray-900"
-                placeholder="+91 98765 43210"
-              />
-            </div>
-
-            {/* Resume Upload */}
-            <div>
-              <label htmlFor="resume" className="block text-sm font-semibold text-gray-900 mb-2">
-                Attach Resume (PDF or Word, Max 5MB)
-              </label>
-              <div className="relative">
+            {/* Row 1: Name & Email */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+              <div>
+                <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 uppercase tracking-tight">Full Name *</label>
                 <input
-                  type="file"
-                  id="resume"
-                  name="resume"
-                  onChange={handleFileChange}
-                  accept=".pdf,.doc,.docx"
-                  className="hidden"
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm"
+                  placeholder="Full Name *"
                 />
-                <label
-                  htmlFor="resume"
-                  className="w-full px-4 py-3 rounded-xl border-2 border-dashed border-gray-300 hover:border-emerald-500 transition-all duration-200 cursor-pointer flex items-center justify-center gap-3 bg-gray-50 hover:bg-emerald-50"
-                >
-                  <Upload className="w-5 h-5 text-gray-600" />
-                  <span className="text-gray-700 font-medium">
-                    {resumeFileName || "Click to upload your resume"}
-                  </span>
-                </label>
               </div>
-              {resumeFileName && (
-                <p className="mt-2 text-sm text-emerald-600 flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4" />
-                  {resumeFileName}
-                </p>
-              )}
+              <div>
+                <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 uppercase tracking-tight">Email Address *</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm"
+                  placeholder="Email Address *"
+                />
+              </div>
             </div>
 
-            {/* Error Message */}
+            {/* Row 2: Phone & Resume */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+              <div>
+                <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 uppercase tracking-tight">Phone Number *</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm"
+                  placeholder="Phone Number *"
+                />
+              </div>
+              <div>
+                <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 uppercase tracking-tight">Resume (PDF/Word) *</label>
+                <div className="relative">
+                  <input
+                    type="file"
+                    id="resume"
+                    onChange={handleFileChange}
+                    accept=".pdf,.doc,.docx"
+                    className="hidden"
+                  />
+                  <label
+                    htmlFor="resume"
+                    className="w-full px-4 py-2.5 border-2 border-dashed border-gray-200 rounded-xl hover:border-emerald-500 transition-all cursor-pointer flex items-center gap-2 bg-gray-50/50 text-sm"
+                  >
+                    <Upload className="w-4 h-4 text-gray-500" />
+                    <span className="truncate text-gray-600">
+                      {resumeFileName || "Upload Resume *"}
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            {/* Status Messages */}
             {submitStatus === "error" && errorMessage && (
-              <div className="p-4 bg-red-50 border border-red-200 rounded-xl flex items-start gap-3">
-                <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
-                <p className="text-red-800 text-sm font-medium">{errorMessage}</p>
+              <div className="p-2.5 bg-red-50 border border-red-100 rounded-lg flex items-center gap-2">
+                <AlertCircle className="w-4 h-4 text-red-600 flex-shrink-0" />
+                <p className="text-red-800 text-[11px] font-bold leading-tight">{errorMessage}</p>
               </div>
             )}
 
             {/* Submit Button */}
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-[#10b981] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all hover:scale-105 hover:shadow-xl active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-3"
-            >
-              {isSubmitting ? (
-                <>
-                  <Loader2 className="w-5 h-5 animate-spin" />
-                  <span>Submitting...</span>
-                </>
-              ) : (
-                <>
+            <div className="pt-1">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-black py-3 px-6 rounded-xl hover:from-emerald-600 hover:to-teal-700 transition-all shadow-lg shadow-emerald-100 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    <span>Submitting...</span>
+                  </>
+                ) : (
                   <span>Submit Application</span>
-                </>
-              )}
-            </button>
+                )}
+              </button>
+            </div>
 
-            <p className="text-center text-sm text-gray-600 mt-4">
+            <p className="text-center text-[10px] text-gray-500">
               By applying, you agree to our terms and privacy policy
             </p>
           </form>

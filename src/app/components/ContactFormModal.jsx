@@ -344,125 +344,96 @@ export default function ContactFormModal({
       ></div>
 
       {/* Modal */}
-      <div className="relative bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col">
-        {/* Header */}
-        <div className="bg-gradient-to-r from-orange-400 to-orange-600 px-6 md:px-8 py-4 md:py-6 rounded-t-3xl flex-shrink-0">
-          <div className="flex items-center justify-between">
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-1">Request a Demo</h2>
-              <p className="text-orange-50">Let's discuss how we can help your business</p>
-            </div>
-            <button
-              onClick={onClose}
-              className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-xl flex items-center justify-center transition-colors duration-200"
-              aria-label="Close modal"
-            >
-              <svg
-                className="w-5 h-5 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
+      <div className="relative bg-white rounded-3xl shadow-2xl max-w-xl md:max-w-3xl w-full flex flex-col overflow-hidden">
+        {/* Compact Header */}
+        <div className="bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-4 flex-shrink-0 flex items-center justify-between">
+          <h2 className="text-xl font-bold text-white tracking-tight">Request a Demo</h2>
+          <button
+            onClick={onClose}
+            className="text-white/80 hover:text-white transition-colors"
+            aria-label="Close modal"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
 
-        {/* Scrollable Form Container */}
-        <div className="overflow-y-auto flex-1 scrollbar-thin">
-          {/* Form */}
-          <form onSubmit={handleSubmit} id="main-enquiry-submit" className="p-5 md:p-8">
-            <div className="space-y-6">
-              {/* Name */}
+        {/* Ultra-Compact Form Body */}
+        <div className="flex-1">
+          <form onSubmit={handleSubmit} id="main-enquiry-submit" className="p-4 md:p-6 space-y-3 md:space-y-4">
+            {/* Row 1: Name & Email */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Full Name *
-                </label>
+                <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 uppercase tracking-tight">Full Name *</label>
                 <input
                   type="text"
-                  id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-900 focus:border-orange-400 focus:outline-none transition-colors duration-200"
-                  placeholder="Enter your full name"
+                  className="w-full px-3 md:px-4 py-2.5 rounded-xl border-2 border-gray-100 text-gray-900 focus:border-orange-400 focus:outline-none transition-all bg-gray-50/50 text-sm"
+                  placeholder="Full Name *"
                 />
               </div>
-
-              {/* Email */}
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Email Address *
-                </label>
+                <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 uppercase tracking-tight">Email Address *</label>
                 <input
                   type="email"
-                  id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-900 focus:border-orange-400 focus:outline-none transition-colors duration-200"
-                  placeholder="email@example.com"
+                  className="w-full px-3 md:px-4 py-2.5 rounded-xl border-2 border-gray-100 text-gray-900 focus:border-orange-400 focus:outline-none transition-all bg-gray-50/50 text-sm"
+                  placeholder="Email Address *"
                 />
               </div>
+            </div>
 
-              {/* Phone */}
+            {/* Row 2: Phone & Company */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
               <div>
-                <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Phone Number *
-                </label>
+                <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 uppercase tracking-tight">Phone Number *</label>
                 <input
                   type="tel"
-                  id="phone"
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-900 focus:border-orange-400 focus:outline-none transition-colors duration-200"
-                  placeholder="+1 (555) 000-0000"
+                  className="w-full px-3 md:px-4 py-2.5 rounded-xl border-2 border-gray-100 text-gray-900 focus:border-orange-400 focus:outline-none transition-all bg-gray-50/50 text-sm"
+                  placeholder="Phone Number *"
                 />
               </div>
-
-              {/* Company */}
               <div>
-                <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Company Name *
-                </label>
+                <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 uppercase tracking-tight">Company Name *</label>
                 <input
                   type="text"
-                  id="company"
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-900 focus:border-orange-400 focus:outline-none transition-colors duration-200"
-                  placeholder="Your Company"
+                  className="w-full px-3 md:px-4 py-2.5 rounded-xl border-2 border-gray-100 text-gray-900 focus:border-orange-400 focus:outline-none transition-all bg-gray-50/50 text-sm"
+                  placeholder="Company Name *"
                 />
               </div>
+            </div>
 
-              {/* Selected Item Dropdown */}
-              <div>
-                <label htmlFor="selectedItem" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Interested In {preSelectedType ? `(${preSelectedType})` : ""} *
-                </label>
+            {/* Row 3: Dropdown */}
+            <div>
+              <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 uppercase tracking-tight">
+                Interested In {preSelectedType ? `(${preSelectedType})` : ""} *
+              </label>
+              <div className="relative group">
                 <select
-                  id="selectedItem"
                   name="selectedItem"
                   value={formData.selectedItem}
                   onChange={handleChange}
                   required
                   disabled={isLoadingCategories}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-black focus:border-orange-400 focus:outline-none transition-colors duration-200 bg-white disabled:bg-gray-100 disabled:cursor-not-allowed"
+                  className="w-full px-3 md:px-4 py-2.5 rounded-xl border-2 border-gray-100 text-gray-900 focus:border-orange-400 focus:outline-none transition-all bg-gray-50/50 text-sm disabled:cursor-not-allowed appearance-none pr-10"
                 >
                   <option value="">
-                    {isLoadingCategories ? "Loading..." : `Select ${preSelectedType || "an option"}`}
+                    {isLoadingCategories ? "Loading..." : `Select ${preSelectedType || "Product"}`}
                   </option>
                   {categories.map((category) => (
                     <option key={category.id} value={category.category_name}>
@@ -470,93 +441,58 @@ export default function ContactFormModal({
                     </option>
                   ))}
                 </select>
-              </div>
-
-              {/* Message */}
-              <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows="4"
-                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 text-gray-900 focus:border-orange-400 focus:outline-none transition-colors duration-200 resize-none"
-                  placeholder="Tell us about your requirements..."
-                ></textarea>
+                <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-gray-400 group-focus-within:text-orange-500 transition-colors">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
               </div>
             </div>
 
-            {/* Submit Status */}
-            {submitStatus === "success" && (
-              <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-xl">
-                <div className="flex items-center gap-2 text-green-700">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span className="font-semibold">Thank you! We'll contact you soon.</span>
-                </div>
-              </div>
-            )}
+            {/* Row 4: Message */}
+            <div>
+              <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 uppercase tracking-tight">Message (Optional)</label>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows="2"
+                className="w-full px-3 md:px-4 py-2 rounded-xl border-2 border-gray-100 text-gray-900 focus:border-orange-400 focus:outline-none transition-all bg-gray-50/50 text-sm resize-none"
+                placeholder="Message (Optional)..."
+              ></textarea>
+            </div>
 
-            {submitStatus === "error" && (
-              <div className="mt-6 p-4 bg-red-50 border border-red-200 rounded-xl">
-                <div className="flex items-center gap-2 text-red-700">
-                  <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
-                  </svg>
-                  <div className="flex-1">
-                    <span className="font-semibold block">Failed to submit</span>
-                    <span className="text-sm">{errorMessage || "Something went wrong. Please try again."}</span>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* Submit Button */}
-            <div className="mt-8 flex gap-4 lg:flex-row flex-col">
+            {/* Compact Submit */}
+            <div className="pt-1">
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="flex-1 press-illusion-btn-orange bg-orange-500 text-white font-bold px-8 py-4 text-lg items-center justify-center space-x-2 inline-flex disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-orange-500 hover:bg-orange-600 text-white font-black py-3 px-6 rounded-xl transition-all shadow-lg shadow-orange-200 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {isSubmitting ? (
-                  <>
-                    <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    <span>Submitting...</span>
-                  </>
+                  <span className="animate-pulse">Submitting...</span>
                 ) : (
                   <>
                     <span>Submit Request</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 17 9"
-                      className="h-2 w-4"
-                    >
-                      <path
-                        fill="currentColor"
-                        fillRule="evenodd"
-                        d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
-                        clipRule="evenodd"
-                      ></path>
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </>
                 )}
               </button>
-              <button
-                type="button"
-                onClick={onClose}
-                className="px-8 py-4 text-lg font-bold text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-xl transition-colors duration-200"
-              >
-                Cancel
-              </button>
             </div>
+
+            {/* Status Messages - Inline */}
+            {submitStatus === "success" && (
+              <p className="text-center text-xs font-bold text-green-600 animate-bounce">
+                ✓ Success! We'll contact you soon.
+              </p>
+            )}
+            {submitStatus === "error" && (
+              <p className="text-center text-xs font-bold text-red-500">
+                ⚠ {errorMessage || "Check details"}
+              </p>
+            )}
           </form>
         </div>
       </div>

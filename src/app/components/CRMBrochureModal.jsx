@@ -220,152 +220,129 @@ export default function CRMBrochureModal({
       ></div>
 
       {/* Modal */}
-      <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
-        {/* Close Button */}
-        <button
-          onClick={handleClose}
-          className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors z-10"
-          disabled={isSubmitting}
-        >
-          <svg className="w-5 h-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-
+      <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-xl md:max-w-3xl flex flex-col overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-to-r from-sky-500 to-blue-600 px-8 py-6 text-white">
-          <h2 className="text-2xl font-bold">Download CRM Brochure</h2>
-          <p className="text-sky-100 mt-2">Fill in your details to get instant access</p>
+        <div className="bg-gradient-to-r from-sky-500 to-blue-600 px-6 py-4 text-white flex-shrink-0 flex items-center justify-between gap-4">
+          <h2 className="text-xl font-bold tracking-tight">Download CRM Brochure</h2>
+          <button
+            onClick={handleClose}
+            className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition-colors text-white"
+            disabled={isSubmitting}
+          >
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
 
-        {/* Form */}
-        <form onSubmit={handleSubmit} className="p-8 space-y-5">
-          {/* Name */}
-          <div>
-            <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-              Full Name <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 border text-gray-700 border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition-all"
-              placeholder="Enter your full name"
-            />
-          </div>
-
-          {/* Email */}
-          <div>
-            <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-              Email Address <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 border border-gray-300 text-gray-700 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition-all"
-              placeholder="your.email@company.com"
-            />
-          </div>
-
-          {/* Phone */}
-          <div>
-            <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-              Phone Number <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 border border-gray-300 text-gray-700 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition-all"
-              placeholder="+91 00000 00000"
-            />
-          </div>
-
-          {/* Company */}
-          <div>
-            <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2">
-              Company Name <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              id="company"
-              name="company"
-              value={formData.company}
-              onChange={handleChange}
-              required
-              className="w-full px-4 py-3 border text-gray-700 border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition-all"
-              placeholder="Your company name"
-            />
-          </div>
-
-          {/* Message */}
-          <div>
-            <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-              Additional Comments
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              rows={3}
-              className="w-full px-4 py-3 border border-gray-300 text-gray-700 rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-transparent outline-none transition-all resize-none"
-              placeholder="Any specific requirements or questions?"
-            ></textarea>
-          </div>
-
-          {/* Status Messages */}
-          {submitStatus === 'success' && (
-            <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
-              <p className="font-semibold">Success! 🎉</p>
-              <p className="text-sm">Your brochure is downloading now...</p>
+        {/* Form Body */}
+        <div className="flex-1 overflow-y-auto">
+          <form onSubmit={handleSubmit} className="p-4 md:p-6 space-y-3 md:space-y-4">
+            {/* Row 1: Name & Email */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+              <div>
+                <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 uppercase tracking-tight">Full Name *</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-sky-500 outline-none transition-all bg-gray-50/50 text-sm"
+                  placeholder="Full Name *"
+                />
+              </div>
+              <div>
+                <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 uppercase tracking-tight">Email Address *</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-sky-500 outline-none transition-all bg-gray-50/50 text-sm"
+                  placeholder="Email Address *"
+                />
+              </div>
             </div>
-          )}
 
-          {submitStatus === 'error' && (
-            <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
-              <p className="font-semibold">Error</p>
-              <p className="text-sm">{errorMessage}</p>
+            {/* Row 2: Phone & Company */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+              <div>
+                <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 uppercase tracking-tight">Phone Number *</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-sky-500 outline-none transition-all bg-gray-50/50 text-sm"
+                  placeholder="Phone Number *"
+                />
+              </div>
+              <div>
+                <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 uppercase tracking-tight">Company Name *</label>
+                <input
+                  type="text"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-sky-500 outline-none transition-all bg-gray-50/50 text-sm"
+                  placeholder="Company Name *"
+                />
+              </div>
             </div>
-          )}
 
-          {/* Submit Button */}
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full bg-gradient-to-r from-sky-500 to-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:from-sky-600 hover:to-blue-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-          >
-            {isSubmitting ? (
-              <>
-                <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-                <span>Submitting...</span>
-              </>
-            ) : (
-              <>
-                <span>Download Brochure</span>
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
-                </svg>
-              </>
+            {/* Message */}
+            <div>
+              <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 uppercase tracking-tight">Comments (Optional)</label>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows={2}
+                className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-sky-500 outline-none transition-all bg-gray-50/50 text-sm resize-none"
+                placeholder="Any specific requirements?"
+              ></textarea>
+            </div>
+
+            {/* Status Messages */}
+            {submitStatus === 'success' && (
+              <p className="text-center text-xs font-bold text-green-600 animate-bounce">
+                ✓ Success! Your brochure is downloading...
+              </p>
             )}
-          </button>
-        </form>
+            {submitStatus === 'error' && (
+              <p className="text-center text-xs font-bold text-red-500">
+                ⚠ {errorMessage || "Check details"}
+              </p>
+            )}
+
+            {/* Submit Button */}
+            <div className="pt-1">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-sky-500 to-blue-600 text-white font-black py-3 px-6 rounded-xl hover:from-sky-600 hover:to-blue-700 transition-all shadow-lg shadow-sky-100 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              >
+                {isSubmitting ? (
+                  <span className="animate-pulse">Submitting...</span>
+                ) : (
+                  <>
+                    <span>Download Brochure</span>
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
+                    </svg>
+                  </>
+                )}
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
 
-  return createPortal(modalContent, document.body);
+  return typeof window !== 'undefined' ? createPortal(modalContent, document.body) : null;
 }
