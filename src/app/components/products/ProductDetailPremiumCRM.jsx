@@ -385,7 +385,7 @@ export default function ProductDetailPremiumCRM({
       {/* 4. How Isarva CRM Works Section */}
       <section className="py-10 lg:py-24 bg-white relative overflow-hidden">
         <div className="w-full lg:container mx-auto px-6">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-3 bg-white px-4 py-2 rounded-full border border-[#0EA5E9]/20 shadow-sm">
               PROCESS
             </span>
@@ -414,7 +414,7 @@ export default function ProductDetailPremiumCRM({
       {/* 5. Why Choose Isarva CRM Section */}
       <section className="py-10 lg:py-24 bg-slate-50 relative overflow-hidden">
         <div className="w-full lg:container mx-auto px-6">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               Why Choose <span className="text-[#0EA5E9]">Isarva CRM</span>
             </h2>
@@ -436,7 +436,7 @@ export default function ProductDetailPremiumCRM({
       {/* 6. FAQ Section */}
       <section className="py-10 lg:py-24 bg-white relative overflow-hidden">
         <div className="w-full lg:container mx-auto px-6 max-w-7xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -508,15 +508,7 @@ export default function ProductDetailPremiumCRM({
                     onClick={() => setIsModalOpen(true)}
                     className="press-illusion-btn-orange bg-orange-600 text-white px-8 py-4 rounded-full font-bold text-base flex items-center gap-3 transition-all hover:scale-105"
                   >
-                    <svg
-                      className="w-5 h-5 transition-transform group-hover:translate-x-1"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={3}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                    </svg>
+
                     <span>Request Demo</span>
                   </button>
                 </div>
@@ -552,7 +544,7 @@ export default function ProductDetailPremiumCRM({
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
             {allProducts
               .filter(p => p.slug !== product.slug && !p.slug.includes("staging") && !p.slug.includes("-old") && p.slug !== "bill-soft")
               .slice(0, 3)
@@ -700,7 +692,7 @@ function FaqAccordion() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4, delay: (index % 3) * 0.05 }}
-        className={`group relative bg-white border-2 transition-all duration-300 overflow-hidden h-full flex flex-col ${isOpen
+        className={`group relative bg-white border-2 transition-all duration-300 overflow-hidden flex flex-col ${isOpen
           ? "border-[#0EA5E9] shadow-[0_8px_30px_rgba(14,165,233,0.15)]"
           : "border-gray-200 hover:border-gray-300 hover:shadow-md"
           }`}
@@ -791,7 +783,7 @@ function FaqAccordion() {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
       {faqData.map((faq, index) => renderFaqItem(faq, index))}
     </div>
   );
@@ -1051,9 +1043,9 @@ function CRMFeatureSection() {
               <div key={feature.id} className="border-b border-gray-200">
                 <button
                   onClick={() => setMobileOpenId(isOpen ? null : feature.id)}
-                  className="group w-full flex items-center justify-between p-4 bg-transparent border-none cursor-pointer"
+                  className="group w-full flex  justify-between p-4 bg-transparent border-none cursor-pointer"
                 >
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-start gap-3 text-left flex-1">
                     <div
                       className={`w-10 h-10 rounded-xl flex items-center justify-center text-lg transition-all duration-200 ${isOpen
                         ? "bg-gradient-to-br from-[#0EA5E9] to-[#0284C7] shadow-md scale-110"
@@ -1064,7 +1056,10 @@ function CRMFeatureSection() {
                         {feature.icon}
                       </span>
                     </div>
-                    <span className={`font-semibold text-sm ${isOpen ? "text-[#0EA5E9]" : "text-gray-800"}`}>
+                    <span
+                      className={`font-semibold text-sm leading-snug text-left block flex-1 ${isOpen ? "text-[#0EA5E9]" : "text-gray-800"
+                        }`}
+                    >
                       {feature.label}
                     </span>
                   </div>

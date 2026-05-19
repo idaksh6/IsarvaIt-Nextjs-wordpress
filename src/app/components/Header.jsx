@@ -603,7 +603,15 @@ export default function Header() {
                     {link.children ? (
                       <div className="border-2 border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm mb-2">
                         <button
-                          onClick={() => setIsMobileAboutOpen(!isMobileAboutOpen)}
+                          onClick={() => {
+                            const nextState = !isMobileAboutOpen;
+                            setIsMobileAboutOpen(nextState);
+                            if (nextState) {
+                              setIsMobileProductsOpen(false);
+                              setIsMobileServicesOpen(false);
+                              setIsMobileIndustriesOpen(false);
+                            }
+                          }}
                           className="flex items-center justify-between w-full p-4 text-gray-800 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 transition-all duration-300"
                         >
                           <div className="flex items-center gap-3">
@@ -699,7 +707,15 @@ export default function Header() {
                   className="border-2 border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm"
                 >
                   <button
-                    onClick={() => setIsMobileProductsOpen(!isMobileProductsOpen)}
+                    onClick={() => {
+                      const nextState = !isMobileProductsOpen;
+                      setIsMobileProductsOpen(nextState);
+                      if (nextState) {
+                        setIsMobileAboutOpen(false);
+                        setIsMobileServicesOpen(false);
+                        setIsMobileIndustriesOpen(false);
+                      }
+                    }}
                     className="flex items-center justify-between w-full p-4 text-gray-800 hover:bg-gradient-to-r hover:from-violet-50 hover:to-purple-50 transition-all duration-300"
                   >
                     <div className="flex items-center gap-3">
@@ -787,7 +803,15 @@ export default function Header() {
                   className="border-2 border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm"
                 >
                   <button
-                    onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                    onClick={() => {
+                      const nextState = !isMobileServicesOpen;
+                      setIsMobileServicesOpen(nextState);
+                      if (nextState) {
+                        setIsMobileAboutOpen(false);
+                        setIsMobileProductsOpen(false);
+                        setIsMobileIndustriesOpen(false);
+                      }
+                    }}
                     className="flex items-center justify-between w-full p-4 text-gray-800 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 transition-all duration-300"
                   >
                     <div className="flex items-center gap-3">
@@ -866,7 +890,15 @@ export default function Header() {
                   className="border-2 border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm"
                 >
                   <button
-                    onClick={() => setIsMobileIndustriesOpen(!isMobileIndustriesOpen)}
+                    onClick={() => {
+                      const nextState = !isMobileIndustriesOpen;
+                      setIsMobileIndustriesOpen(nextState);
+                      if (nextState) {
+                        setIsMobileAboutOpen(false);
+                        setIsMobileProductsOpen(false);
+                        setIsMobileServicesOpen(false);
+                      }
+                    }}
                     className="flex items-center justify-between w-full p-4 text-gray-800 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 transition-all duration-300"
                   >
                     <div className="flex items-center gap-3">
