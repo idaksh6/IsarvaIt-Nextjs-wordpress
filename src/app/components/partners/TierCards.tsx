@@ -78,7 +78,7 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
           <p className="text-gray-500 text-xl font-body">Choose the growth level that matches your ambition.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-20">
           {/* Gold Tier */}
           <motion.div
             variants={goldVariants}
@@ -115,13 +115,13 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
               </div>
 
               <div className="p-5 sm:p-6 lg:p-8 relative z-10 flex flex-col flex-1 h-full">
-                <p className="text-[#EAB308] font-bold mb-8 uppercase tracking-widest text-xs">For high-volume strategic partners</p>
+                <p className="text-[#EAB308] font-bold mb-8 uppercase tracking-widest text-xs text-center lg:text-left">For high-volume strategic partners</p>
 
-                <div className="flex flex-col mb-10">
-                  <span className="text-[10px] font-black text-amber-500 uppercase tracking-[0.3em] mb-2">Max Earning Rate</span>
-                  <div className="flex flex-col">
-                    <span className="font-display text-7xl sm:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-orange-600 leading-none tracking-tight">30%</span>
-                    <span className="text-lg sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-orange-600 leading-none uppercase tracking-wider mt-2">Commission</span>
+                <div className="flex flex-col items-center lg:items-start mb-10">
+                  <span className="text-[10px] font-black text-amber-500 uppercase tracking-[0.3em] mb-2 text-center lg:text-left">Max Earning Rate</span>
+                  <div className="flex flex-col items-center lg:items-start">
+                    <span className="font-display text-7xl sm:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-orange-600 leading-none tracking-tight text-center lg:text-left">30%</span>
+                    <span className="text-lg sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-orange-600 leading-none uppercase tracking-wider mt-2 text-center lg:text-left">Commission</span>
                   </div>
                 </div>
 
@@ -181,13 +181,13 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
             </div>
 
             <div className="p-5 sm:p-6 lg:p-8 relative z-10 flex flex-col flex-1 h-full">
-              <p className="text-slate-500 font-black mb-8 font-body uppercase tracking-widest text-xs">Foundation for growing agencies</p>
+              <p className="text-slate-500 font-black mb-8 font-body uppercase tracking-widest text-xs text-center lg:text-left">Foundation for growing agencies</p>
 
-              <div className="flex flex-col mb-10">
-                <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-2">Earning Rate</span>
-                <div className="flex flex-col">
-                  <span className="font-display text-6xl sm:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-400 via-slate-500 to-slate-600 leading-none tracking-tight">20%</span>
-                  <span className="text-base sm:text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-400 via-slate-500 to-slate-600 leading-none uppercase tracking-wider mt-2">Commission</span>
+              <div className="flex flex-col items-center lg:items-start mb-10">
+                <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-2 text-center lg:text-left">Earning Rate</span>
+                <div className="flex flex-col items-center lg:items-start">
+                  <span className="font-display text-6xl sm:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-400 via-slate-500 to-slate-600 leading-none tracking-tight text-center lg:text-left">20%</span>
+                  <span className="text-base sm:text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-400 via-slate-500 to-slate-600 leading-none uppercase tracking-wider mt-2 text-center lg:text-left">Commission</span>
                 </div>
               </div>
 
@@ -236,13 +236,13 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
             </div>
 
             <div className="p-5 sm:p-6 lg:p-8 relative z-10 flex flex-col flex-1 h-full">
-              <p className="text-orange-900 font-black mb-8 uppercase tracking-widest text-xs">Commission-Based Entry</p>
+              <p className="text-orange-900 font-black mb-8 uppercase tracking-widest text-xs text-center lg:text-left">Commission-Based Entry</p>
 
-              <div className="flex flex-col mb-10">
-                <span className="text-[10px] font-black text-orange-600 uppercase tracking-[0.3em] mb-2">Earning Rate</span>
-                <div className="flex flex-col">
-                  <span className="font-display text-5xl sm:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-orange-700 to-orange-800 leading-none tracking-tight">10%</span>
-                  <span className="text-xs sm:text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-orange-700 to-orange-800 leading-none uppercase tracking-wider mt-2">Commission</span>
+              <div className="flex flex-col items-center lg:items-start mb-10">
+                <span className="text-[10px] font-black text-orange-600 uppercase tracking-[0.3em] mb-2 text-center lg:text-left">Earning Rate</span>
+                <div className="flex flex-col items-center lg:items-start">
+                  <span className="font-display text-5xl sm:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-orange-700 to-orange-800 leading-none tracking-tight text-center lg:text-left">10%</span>
+                  <span className="text-xs sm:text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-orange-700 to-orange-800 leading-none uppercase tracking-wider mt-2 text-center lg:text-left">Commission</span>
                 </div>
               </div>
 

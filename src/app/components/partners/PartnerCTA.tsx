@@ -35,7 +35,7 @@ const headingVariants: Variants = {
 
 const PartnerCTA = ({ onApply }: { onApply: () => void }) => {
   return (
-    <section className=" pb-16 md:py-24 px-4 md:px-6 pt-0 bg-white">
+    <section className="pt-0 md:pt-0 lg:pt-24 pb-16 px-4 md:px-6 bg-white">
       <motion.div
         variants={containerVariants}
         initial="initial"

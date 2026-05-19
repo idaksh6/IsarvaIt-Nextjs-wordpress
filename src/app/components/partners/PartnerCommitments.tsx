@@ -5,12 +5,12 @@ import { motion, Variants } from "framer-motion";
 import { Shield, MessageSquare, Headset, BookOpen, UserCheck, Clock } from "lucide-react";
 
 const commitments = [
-  { text: "End-to-End Technical Delivery", icon: <Shield className="w-8 h-8"/> },
-  { text: "Transparent Communication Channels", icon: <MessageSquare className="w-8 h-8"/> },
-  { text: "Priority Support for Partner Clients", icon: <Headset className="w-8 h-8"/> },
-  { text: "Regular Knowledge Sharing Sessions", icon: <BookOpen className="w-8 h-8"/> },
-  { text: "Dedicated Partner Success Desk", icon: <UserCheck className="w-8 h-8"/> },
-  { text: "Strict Project Timelines & QC", icon: <Clock className="w-8 h-8"/> },
+  { text: "End-to-End Technical Delivery", icon: <Shield className="w-8 h-8" /> },
+  { text: "Transparent Communication Channels", icon: <MessageSquare className="w-8 h-8" /> },
+  { text: "Priority Support for Partner Clients", icon: <Headset className="w-8 h-8" /> },
+  { text: "Regular Knowledge Sharing Sessions", icon: <BookOpen className="w-8 h-8" /> },
+  { text: "Dedicated Partner Success Desk", icon: <UserCheck className="w-8 h-8" /> },
+  { text: "Strict Project Timelines & QC", icon: <Clock className="w-8 h-8" /> },
 ];
 
 const viewportConfig = { once: true };
@@ -55,10 +55,10 @@ const PartnerCommitments = () => {
               initial="initial"
               whileInView="whileInView"
               viewport={viewportConfig}
-              className="p-8 md:p-10 rounded-[24px] md:rounded-[32px] border border-emerald-200/60 hover:border-emerald-400 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group bg-gradient-to-br from-white to-emerald-100/70 relative overflow-hidden flex flex-col items-center text-center sm:items-start sm:text-left"
+              className="p-8 md:p-10 rounded-[24px] md:rounded-[32px] border border-emerald-200/60 hover:border-emerald-400 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group bg-gradient-to-br from-white to-emerald-100/70 relative overflow-hidden flex flex-col items-center text-center lg:items-start lg:text-left"
             >
               <div className="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                 {item.icon}
+                {item.icon}
               </div>
               <h3 className="text-2xl font-bold text-[#111827] leading-tight">{item.text}</h3>
             </motion.div>
