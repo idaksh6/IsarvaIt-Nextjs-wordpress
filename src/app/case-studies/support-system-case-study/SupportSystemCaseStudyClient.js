@@ -122,8 +122,8 @@ export default function SupportSystemCaseStudyClient() {
         </section>
 
         {/* EXECUTIVE SUMMARY */}
-        <section className="py-16 md:py-20 px-4 md:px-6 bg-white border-y border-gray-100">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 md:py-20 bg-white border-y border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
             <h2 className="text-2xl text-gray-900 mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               <Activity className="text-emerald-500" /> Executive Summary
             </h2>
@@ -134,7 +134,7 @@ export default function SupportSystemCaseStudyClient() {
         </section>
 
         {/* CLIENT PROFILE */}
-        <section className="py-16 md:py-20 px-4 md:px-6 max-w-5xl mx-auto">
+        <section className="py-16 md:py-20 px-4 md:px-6 max-w-7xl mx-auto">
           <h2 className="text-gray-900 mb-8 md:mb-10 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Client Profile</h2>
           <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
             <div className="p-6 md:p-10">
@@ -181,8 +181,8 @@ export default function SupportSystemCaseStudyClient() {
         </section>
 
         {/* BUSINESS CHALLENGES */}
-        <section className="py-16 md:py-20 px-4 md:px-6 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 md:py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
             <h2 className="text-gray-900 mb-6 text-center md:text-left text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Business Challenges</h2>
             <p className="text-base md:text-lg text-gray-600 mb-8 text-center md:text-left">Before implementing the Isarva Support System, the Company relied on manual entries and disconnected tools, which created operational inefficiencies:</p>
             <ul className="space-y-4">
@@ -204,8 +204,8 @@ export default function SupportSystemCaseStudyClient() {
         </section>
 
         {/* CHALLENGES VS SOLUTIONS */}
-        <section className="py-16 md:py-20 px-4 md:px-6 bg-[#FDF8F2]">
-          <div className="max-w-5xl mx-auto">
+        <section className="py-16 md:py-20 bg-[#FDF8F2]">
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Challenges vs. Isarva Solutions</h2>
             </div>
@@ -258,8 +258,8 @@ export default function SupportSystemCaseStudyClient() {
         </section>
 
         {/* SOLUTION OVERVIEW & CORE MODULES */}
-        <section className="py-16 md:py-20 px-4 md:px-6 bg-white">
-          <div className="max-w-6xl mx-auto">
+        <section className="py-16 md:py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
             <div className="text-center mb-10 md:mb-16 max-w-4xl mx-auto">
               <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Solution Overview — Isarva Support</h2>
               <p className="text-base md:text-lg text-gray-600 leading-relaxed">
@@ -301,8 +301,8 @@ export default function SupportSystemCaseStudyClient() {
         </section>
 
         {/* IMPLEMENTATION APPROACH */}
-        <section className="py-16 md:py-20 px-4 md:px-6 bg-[#FDF8F2] border-t border-gray-100">
-          <div className="max-w-6xl mx-auto">
+        <section className="py-16 md:py-20 bg-[#FDF8F2] border-t border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
             <h2 className="text-gray-900 mb-6 md:mb-8 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Implementation Approach</h2>
             <p className="text-base md:text-lg text-gray-600 mb-10 text-center max-w-3xl mx-auto">Isarva followed a structured implementation methodology to ensure the solution precisely matched the client's operational reality:</p>
 
@@ -385,8 +385,8 @@ export default function SupportSystemCaseStudyClient() {
         </section>
 
         {/* RESULTS & IMPACT */}
-        <section className="py-16 md:py-20 px-4 md:px-6 bg-white border-t border-gray-100">
-          <div className="max-w-6xl mx-auto">
+        <section className="py-16 md:py-20 bg-white border-t border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
             <h2 className="text-gray-900 mb-10 md:mb-16 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Results & Business Impact</h2>
 
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-12 md:mb-16">
@@ -448,8 +448,8 @@ export default function SupportSystemCaseStudyClient() {
         </section>
 
         {/* TESTIMONIAL */}
-        <section className="py-16 md:py-20 px-4 md:px-6 bg-[#FDF8F2]">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 md:py-20 bg-[#FDF8F2]">
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
             <div className="bg-white rounded-3xl p-8 md:p-14 shadow-xl border border-gray-100 relative">
               <div className="absolute -top-2 -left-2 md:-top-6 md:-left-6 text-emerald-200">
                 <svg width="60" height="60" className="md:w-[80px] md:h-[80px]" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
@@ -471,8 +471,8 @@ export default function SupportSystemCaseStudyClient() {
         </section>
 
         {/* ABOUT & CTA SECTION */}
-        <section className="py-16 md:py-20 px-4 md:px-6 bg-white border-t border-gray-100">
-          <div className="max-w-5xl mx-auto">
+        <section className="py-16 md:py-20 bg-white border-t border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
             <div className="text-center mb-10 md:mb-16">
               <h2 className="text-gray-900 mb-4 md:mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">About Isarva Support Application</h2>
               <p className="text-base md:text-lg text-gray-600 mb-4 leading-relaxed max-w-4xl mx-auto">

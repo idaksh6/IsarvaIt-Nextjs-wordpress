@@ -88,7 +88,7 @@ export default function CaseStudiesClient() {
         <div className="absolute top-[10%] -right-[10%] w-[40%] h-[60%] bg-blue-200/20 rounded-full blur-[100px]" />
       </div>
 
-      <main className="relative z-10 pt-32 pb-24 px-6 max-w-7xl mx-auto">
+      <main className="relative z-10 pt-32 pb-12 md:pb-24 px-6 max-w-7xl mx-auto">
 
         {/* HEADER */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -213,10 +213,10 @@ export default function CaseStudiesClient() {
                 </div>
 
                 {/* Card Content */}
-                <div className="p-8 flex flex-col flex-1">
-                  <h2 className="text-2xl text-gray-900 mb-4 group-hover:text-emerald-600 transition-colors text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-emerald-600 transition-colors">
                     {study.title}
-                  </h2>
+                  </h3>
                   <p className="text-gray-500 mb-6 font-medium">
                     Client: <span className="text-gray-900">{study.client}</span>
                   </p>

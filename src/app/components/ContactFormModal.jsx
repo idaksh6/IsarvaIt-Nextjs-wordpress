@@ -435,11 +435,14 @@ export default function ContactFormModal({
                   <option value="">
                     {isLoadingCategories ? "Loading..." : `Select ${preSelectedType || "Product"}`}
                   </option>
-                  {categories.map((category) => (
-                    <option key={category.id} value={category.category_name}>
-                      {category.category_name}
-                    </option>
-                  ))}
+                  {categories.map((category) => {
+                    const displayName = category.category_name.replace(/\bcrm\b/gi, 'CRM');
+                    return (
+                      <option key={category.id} value={category.category_name}>
+                        {displayName}
+                      </option>
+                    );
+                  })}
                 </select>
                 <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-gray-400 group-focus-within:text-orange-500 transition-colors">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

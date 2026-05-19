@@ -123,8 +123,8 @@ export default function BethLivingCaseStudyClient() {
         </section>
 
         {/* ABOUT BETH LIVING */}
-        <section className="py-16 md:py-20 px-4 md:px-6 bg-white border-y border-gray-100">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 md:py-20 bg-white border-y border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
             <h2 className="text-2xl text-gray-900 mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               <Heart className="text-amber-500" /> About Beth Living
             </h2>
@@ -138,7 +138,7 @@ export default function BethLivingCaseStudyClient() {
         </section>
 
         {/* THE REQUIREMENT */}
-        <section className="py-16 md:py-20 px-4 md:px-6 max-w-5xl mx-auto">
+        <section className="py-16 md:py-20 px-4 md:px-6 max-w-7xl mx-auto">
           <h2 className="text-gray-900 mb-8 md:mb-10 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">The Requirement</h2>
           <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 p-8 md:p-12">
             <p className="text-lg text-gray-700 mb-8 font-medium">Beth Living wanted a modern website that could achieve the following business goals:</p>
@@ -163,8 +163,8 @@ export default function BethLivingCaseStudyClient() {
         </section>
 
         {/* BUSINESS CHALLENGES COMPARISON */}
-        <section className="py-16 md:py-20 px-4 md:px-6 bg-[#FDF8F2]">
-          <div className="max-w-5xl mx-auto">
+        <section className="py-16 md:py-20 bg-[#FDF8F2]">
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-gray-900 mb-4 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Requirement vs. Isarva Solutions</h2>
               <p className="text-gray-600 max-w-2xl mx-auto text-center">How we revamped Beth Living’s digital presence with a focus on performance and UI/UX optimization.</p>
@@ -214,8 +214,8 @@ export default function BethLivingCaseStudyClient() {
         </section>
 
         {/* CORE SOLUTIONS DEPLOYED */}
-        <section className="py-16 md:py-20 px-4 md:px-6 bg-white">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-16 md:py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
             <h2 className="text-gray-900 mb-10 md:mb-16 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Solutions for Beth Living</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
               {[
@@ -237,8 +237,8 @@ export default function BethLivingCaseStudyClient() {
         </section>
 
         {/* RESULTS & BUSINESS IMPACT */}
-        <section className="py-16 md:py-20 px-4 md:px-6 bg-[#FDF8F2] border-t border-gray-100">
-          <div className="max-w-6xl mx-auto">
+        <section className="py-16 md:py-20 bg-[#FDF8F2] border-t border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
             <h2 className="text-gray-900 mb-10 md:mb-16 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Results & Business Impact</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -276,8 +276,8 @@ export default function BethLivingCaseStudyClient() {
         </section>
 
         {/* TESTIMONIAL */}
-        <section className="py-16 md:py-20 px-4 md:px-6 bg-white">
-          <div className="max-w-4xl mx-auto">
+        <section className="py-16 md:py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
             <div className="bg-[#FDF8F2] rounded-3xl p-8 md:p-14 shadow-lg border border-amber-100 relative">
               <div className="absolute -top-2 -left-2 md:-top-6 md:-left-6 text-amber-200">
                 <svg width="60" height="60" className="md:w-[80px] md:h-[80px]" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
@@ -299,8 +299,8 @@ export default function BethLivingCaseStudyClient() {
         </section>
 
         {/* CTA SECTION */}
-        <section className="py-16 md:py-20 px-4 md:px-6 bg-[#FDF8F2] border-t border-gray-100">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="py-16 md:py-20 bg-[#FDF8F2] border-t border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 text-center">
             <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Need a Redesign Partner?</h2>
             <p className="text-lg text-gray-600 mb-10 leading-relaxed">
               Are you not able to achieve your business goals with your existing website? A modern UI/UX refresh and performance optimization by Isarva can help you serve your customers better.
