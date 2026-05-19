@@ -124,10 +124,10 @@ export default function SupportSystemCaseStudyClient() {
         {/* EXECUTIVE SUMMARY */}
         <section className="py-16 md:py-20 bg-white border-y border-gray-100">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
-            <h2 className="text-2xl text-gray-900 mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            <h2 className="text-2xl text-gray-900 mb-6 flex items-center justify-center md:justify-start gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               <Activity className="text-emerald-500" /> Executive Summary
             </h2>
-            <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed text-center md:text-left">
               A busy Web Design Company was struggling with "organized chaos." With dozens of websites under construction and hundreds of existing clients, they were losing track of billable hours, missing renewal dates, and struggling to keep team members focused on the right tasks.
             </p>
           </div>
@@ -231,7 +231,7 @@ export default function SupportSystemCaseStudyClient() {
                   { c: "Lack of productivity Insights", s: "Powerful Analytics and Reporting Module" },
                   { c: "No Role-Based Security", s: "Controlled user-level access" }
                 ].map((item, i) => (
-                  <div key={i} className="grid grid-cols-1 md:grid-cols-2 p-5 md:p-8 hover:bg-emerald-50/30 transition-colors group relative">
+                  <div key={i} className="grid grid-cols-1 md:grid-cols-2 p-5 md:p-6 hover:bg-emerald-50/30 transition-colors group relative">
                     {/* Arrow for Desktop */}
                     <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white border border-gray-100 rounded-full items-center justify-center text-gray-300 group-hover:text-emerald-500 group-hover:border-emerald-200 transition-all shadow-sm z-10">
                       <ArrowRight size={20} />
@@ -262,8 +262,10 @@ export default function SupportSystemCaseStudyClient() {
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <div className="text-center mb-10 md:mb-16 max-w-4xl mx-auto">
               <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Solution Overview — Isarva Support</h2>
-              <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-                To address these challenges, Isarva implemented the Support System — a unified platform combining project management, Ticket handling, and operational tracking.<br className="hidden md:block" />
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-3 text-center">
+                To address these challenges, Isarva implemented the Support System — a unified platform combining project management, Ticket handling, and operational tracking.
+              </p>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed text-center">
                 A key component was the Support Application, which streamlined post-launch activities like client issue tracking, renewals, and service management.
               </p>
             </div>
@@ -291,9 +293,9 @@ export default function SupportSystemCaseStudyClient() {
               ))}
             </div>
 
-            <div className="mt-10 md:mt-12 bg-gradient-to-br from-emerald-600 to-green-700 rounded-3xl p-6 md:p-10 text-white shadow-xl">
+            <div className="mt-10 md:mt-12 bg-gradient-to-br from-emerald-600 to-green-700 rounded-3xl p-6 md:p-10 text-white shadow-xl text-center md:text-left">
               <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">Project History and Worked Hour Track</h3>
-              <p className="text-emerald-50 text-sm md:text-base leading-relaxed max-w-4xl">
+              <p className="text-emerald-50 text-sm md:text-base leading-relaxed ">
                 The system includes a dedicated History section that records all changes made to project details, including who made the change and when it was made. This ensures complete transparency and accountability, allowing teams to track who worked on what, monitor contributions, and compare estimated versus actual time spent on each project.
               </p>
             </div>

@@ -125,13 +125,13 @@ export default function BethLivingCaseStudyClient() {
         {/* ABOUT BETH LIVING */}
         <section className="py-16 md:py-20 bg-white border-y border-gray-100">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
-            <h2 className="text-2xl text-gray-900 mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            <h2 className="text-2xl text-gray-900 mb-6 flex items-center justify-center md:justify-start gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               <Heart className="text-amber-500" /> About Beth Living
             </h2>
-            <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6">
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6 text-center md:text-left">
               Beth Living is India’s first stainless steel modular home décor brand. It offers kitchens, bedrooms, living and dining furniture, work-from-home setups, and bathroom interiors — all designed as a modern, eco-friendly alternative to wood.
             </p>
-            <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed text-center md:text-left">
               With hygienic, fireproof, pest-proof, water-resistant, and eco-conscious products, Beth Living is redefining the durability and sustainability standards of the modular furniture industry.
             </p>
           </div>

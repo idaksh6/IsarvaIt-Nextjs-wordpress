@@ -125,13 +125,13 @@ export default function HrmsCaseStudyClient() {
         {/* EXECUTIVE SUMMARY */}
         <section className="py-16 md:py-20 bg-white border-y border-gray-100">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
-            <h2 className="text-2xl text-gray-900 mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            <h2 className="text-2xl text-gray-900 mb-6 flex items-center justify-center md:justify-start gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               <Activity className="text-blue-500" /> Executive Summary
             </h2>
-            <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-4">
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-4 text-center md:text-left">
               A prominent mid-sized construction company operating across multiple project sites faced mounting challenges in managing its workforce manually. With a fluctuating, contract-based labour pool, complex overtime (OT) policies, incentive structures, and statutory compliance obligations, the company's HR team was investing enormous time in error-prone spreadsheet work every month.
             </p>
-            <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed text-center md:text-left">
               Isarva identified these pain points and delivered a purpose-built, cloud-deployed HRMS solution that fully automated attendance tracking, payroll computation, OT and incentive processing, EPF/ESIC compliance, and bank salary upload — all within a single, intuitive platform. After more than eight months of live operation, the company reports zero calculation errors, significantly reduced HR effort, and complete payroll accuracy.
             </p>
           </div>
