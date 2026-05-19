@@ -371,11 +371,17 @@ export default function ProductDetailPremiumHRMS({
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-12 w-full">
                           {activeContent.features.map((f, i) => (
-                            <div key={i} className={`flex items-center gap-4 p-4 px-0 rounded-[20px] bg-gray-50/50 border border-transparent ${TAB_THEMES[activeTab].hoverBorder} transition-all group hover:bg-white hover:shadow-md`}>
-                              <div className={`w-7 h-7 rounded-full ${TAB_THEMES[activeTab].lightBg} flex items-center justify-center ${TAB_THEMES[activeTab].text} group-hover:${TAB_THEMES[activeTab].bg} group-hover:text-white transition-colors flex-shrink-0 aspect-square shadow-inner`}>
+                            <div
+                              key={i}
+                              className={`flex items-center gap-4 p-4 px-4  rounded-[20px] bg-white border ${TAB_THEMES[activeTab].hoverBorder} shadow-md`}
+                            >
+                              <div className="w-7 h-7 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 flex-shrink-0 aspect-square shadow-inner">
                                 <span className="text-[10px] font-black">✓</span>
                               </div>
-                              <span className="text-[14px] font-black text-gray-600 group-hover:text-gray-900 uppercase tracking-tight leading-tight">{f}</span>
+
+                              <span className="text-[14px] font-black text-gray-700 uppercase tracking-tight leading-tight">
+                                {f}
+                              </span>
                             </div>
                           ))}
                         </div>
