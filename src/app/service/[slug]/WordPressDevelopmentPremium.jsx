@@ -191,7 +191,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
               <span className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-3 block">
                 Bespoke Solutions
               </span>
-              <h2 className="text-gray-900 mb-6 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Built For Ambition
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed">
@@ -352,7 +352,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
         {/* ─── VISUAL ECOSYSTEM GRID ───────────────────────────────────────────── */}
         <section className="py-16 lg:py-32 bg-sky-50 relative border-y border-sky-100">
           <div className="max-w-7xl mx-auto px-6 text-center">
-            <h2 className="text-gray-900 mb-4 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               The WordPress Ecosystem
             </h2>
             <p className="text-lg text-gray-600 mb-16 max-w-2xl mx-auto">
@@ -390,7 +390,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
         <section className="py-16 lg:py-32 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-gray-900 mb-6 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Complete Range of WP Services
               </h2>
               <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full" />
@@ -443,7 +443,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
                   <span className="text-sky-300 font-bold uppercase tracking-widest text-sm mb-4 block">
                     Dedicated Experts
                   </span>
-                  <h2 className="text-white mb-6 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                  <h2 className="text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                     Your Trusted WordPress Partners
                   </h2>
                   <p className="text-lg text-blue-100 mb-10 leading-relaxed">

@@ -32,7 +32,7 @@ export default function ContactSection() {
         <div className="contact-content">
           {/* Header */}
           <div className="mb-12">
-            <h2 id="contact-section-heading" className="text-white mb-4 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            <h2 id="contact-section-heading" className="text-white mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               Ready to Get Started?
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">

@@ -612,7 +612,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                 <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-orange-50 border border-orange-200 text-orange-700 font-semibold text-sm mb-6">
                   🆕 New Service
                 </div>
-                <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                   Got an Old Website?
                   <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-rose-500">
@@ -693,7 +693,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                 </svg>
                 All Services
               </div>
-              <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 What We Offer
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -822,7 +822,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                 </svg>
                 Core Capabilities
               </div>
-              <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Everything Your Website
                 <br className="hidden lg:block" /> Needs to Win
               </h2>
@@ -873,7 +873,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                 </svg>
                 How We Work
               </div>
-              <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Our Proven Process
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -979,7 +979,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                 <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-semibold text-sm mb-8">
                   🏆 Why Isarva Infotech
                 </div>
-                <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                   We Don't Just Build Websites.{" "}
                   <span className="text-emerald-600">
                     We Build Growth Engines.
@@ -1104,7 +1104,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-emerald-200 text-emerald-700 font-semibold text-sm mb-6 shadow-sm">
                 You Might Also Like
               </div>
-              <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Explore Related Services
               </h2>
               <p className="text-xl text-gray-600">

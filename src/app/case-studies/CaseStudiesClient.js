@@ -214,7 +214,7 @@ export default function CaseStudiesClient() {
 
                 {/* Card Content */}
                 <div className="p-8 flex flex-col flex-1">
-                  <h2 className="text-2xl text-gray-900 mb-4 group-hover:text-emerald-600 transition-colors er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                  <h2 className="text-2xl text-gray-900 mb-4 group-hover:text-emerald-600 transition-colors text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                     {study.title}
                   </h2>
                   <p className="text-gray-500 mb-6 font-medium">

@@ -163,7 +163,7 @@ function ThankYouContent() {
               <div className="p-3 bg-emerald-100 rounded-xl">
                 <Clock className="w-6 h-6 text-emerald-600" />
               </div>
-              <h2 className="text-2xl font-display text-[#1a1f24] er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="text-2xl font-display text-[#1a1f24] text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 What Happens Next?
               </h2>
             </div>

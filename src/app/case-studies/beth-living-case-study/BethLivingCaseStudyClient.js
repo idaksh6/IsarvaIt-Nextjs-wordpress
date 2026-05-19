@@ -125,7 +125,7 @@ export default function BethLivingCaseStudyClient() {
         {/* ABOUT BETH LIVING */}
         <section className="py-16 md:py-20 px-4 md:px-6 bg-white border-y border-gray-100">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl text-gray-900 mb-6 flex items-center gap-3 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            <h2 className="text-2xl text-gray-900 mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               <Heart className="text-amber-500" /> About Beth Living
             </h2>
             <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-6">
@@ -139,7 +139,7 @@ export default function BethLivingCaseStudyClient() {
 
         {/* THE REQUIREMENT */}
         <section className="py-16 md:py-20 px-4 md:px-6 max-w-5xl mx-auto">
-          <h2 className="text-gray-900 mb-8 md:mb-10 text-center er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">The Requirement</h2>
+          <h2 className="text-gray-900 mb-8 md:mb-10 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">The Requirement</h2>
           <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 p-8 md:p-12">
             <p className="text-lg text-gray-700 mb-8 font-medium">Beth Living wanted a modern website that could achieve the following business goals:</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -166,7 +166,7 @@ export default function BethLivingCaseStudyClient() {
         <section className="py-16 md:py-20 px-4 md:px-6 bg-[#FDF8F2]">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-gray-900 mb-4 text-center er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Requirement vs. Isarva Solutions</h2>
+              <h2 className="text-gray-900 mb-4 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Requirement vs. Isarva Solutions</h2>
               <p className="text-gray-600 max-w-2xl mx-auto text-center">How we revamped Beth Living’s digital presence with a focus on performance and UI/UX optimization.</p>
             </div>
             
@@ -216,7 +216,7 @@ export default function BethLivingCaseStudyClient() {
         {/* CORE SOLUTIONS DEPLOYED */}
         <section className="py-16 md:py-20 px-4 md:px-6 bg-white">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-gray-900 mb-10 md:mb-16 text-center er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Solutions for Beth Living</h2>
+            <h2 className="text-gray-900 mb-10 md:mb-16 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Solutions for Beth Living</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
               {[
                 { title: "Site Cleanup & Optimization", desc: "Removed redundant elements, simplified navigation, and optimized assets for a 40% faster load time.", icon: <Settings /> },
@@ -239,7 +239,7 @@ export default function BethLivingCaseStudyClient() {
         {/* RESULTS & BUSINESS IMPACT */}
         <section className="py-16 md:py-20 px-4 md:px-6 bg-[#FDF8F2] border-t border-gray-100">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-gray-900 mb-10 md:mb-16 text-center er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Results & Business Impact</h2>
+            <h2 className="text-gray-900 mb-10 md:mb-16 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Results & Business Impact</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               {[
@@ -301,7 +301,7 @@ export default function BethLivingCaseStudyClient() {
         {/* CTA SECTION */}
         <section className="py-16 md:py-20 px-4 md:px-6 bg-[#FDF8F2] border-t border-gray-100">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-gray-900 mb-6 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Need a Redesign Partner?</h2>
+            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Need a Redesign Partner?</h2>
             <p className="text-lg text-gray-600 mb-10 leading-relaxed">
               Are you not able to achieve your business goals with your existing website? A modern UI/UX refresh and performance optimization by Isarva can help you serve your customers better.
             </p>

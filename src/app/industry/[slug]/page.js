@@ -294,7 +294,7 @@ export default async function IndustryDetailPage({ params }) {
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               {industry.slug === 'banking-financial-services' 
                 ? 'Explore Our BFS Services' 
                 : industry.slug === 'education'
@@ -374,7 +374,7 @@ export default async function IndustryDetailPage({ params }) {
           
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Our Banking Services
               </h2>
               <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
@@ -433,7 +433,7 @@ export default async function IndustryDetailPage({ params }) {
               </svg>
               Business Impact
             </div>
-            <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               Benefits You'll Enjoy
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
@@ -469,7 +469,7 @@ export default async function IndustryDetailPage({ params }) {
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               Other Industries We Serve
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
@@ -595,7 +595,7 @@ export default async function IndustryDetailPage({ params }) {
             Let's Get Started
           </div>
 
-          <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+          <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
             Ready to Transform Your {industry.title} Business?
           </h2>
           

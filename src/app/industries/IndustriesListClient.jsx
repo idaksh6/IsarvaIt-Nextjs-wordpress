@@ -234,7 +234,7 @@ export default function IndustriesListClient({ industriesData }) {
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-gray-900 mb-6 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               Why Choose Our Industry Solutions?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -300,7 +300,7 @@ export default function IndustriesListClient({ industriesData }) {
             <span className="w-2 h-2 bg-emerald-600 rounded-full animate-pulse"></span>
             Ready to Get Started?
           </div>
-          <h2 className="text-gray-900 mb-6 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+          <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
             Let's Transform Your Industry Together
           </h2>
           <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">

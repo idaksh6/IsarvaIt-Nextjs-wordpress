@@ -164,7 +164,7 @@ export default function GeneralApplicationModal({ isOpen, onClose }) {
       <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-xl md:max-w-3xl flex flex-col overflow-hidden">
         {/* Header */}
         <div className="bg-gradient-to-r from-emerald-500 to-teal-600 px-6 py-4 text-white flex-shrink-0 flex items-center justify-between gap-4">
-          <h2 className="text-xl er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">General Application</h2>
+          <h2 className="text-xl text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">General Application</h2>
           <button
             onClick={onClose}
             className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition-colors text-white"

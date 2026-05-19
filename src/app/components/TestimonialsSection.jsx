@@ -243,7 +243,7 @@ function TestimonialsSection({ data }) {
         </div>
 
         <h2
-          className="ts-title mb-5 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase"
+          className="ts-title mb-5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase"
           style={{
             background:
               "linear-gradient(135deg, #1e1b4b 0%, #1e1b4b 50%, #1e1b4b 100%)",

@@ -116,7 +116,7 @@ export default async function BlogPostPage({ params }) {
         <section className="bg-gray-50 py-20">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-12">
-              <h2 className="text-gray-900 mb-4 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Related Articles
               </h2>
               <p className="text-gray-600 text-lg">

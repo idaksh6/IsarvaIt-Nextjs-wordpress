@@ -156,7 +156,7 @@ export default function ProductDetailPremiumWooCommerce({
 
             {/* Right Side - Content */}
             <div>
-              <h2 className="text-[#000000] mb-6 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="text-[#000000] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Power Your Online Business with{" "}
                 <span className="text-[#A855F7]">WooCommerce</span>
               </h2>
@@ -195,7 +195,7 @@ export default function ProductDetailPremiumWooCommerce({
               <span className="inline-block text-[10px] font-black text-[#A855F7] tracking-[0.28em] uppercase mb-3 bg-[#A855F7]/10 px-4 py-2 rounded-full">
                 OUR SERVICES
               </span>
-              <h2 className="text-[#0a0a0a] mb-4 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="text-[#0a0a0a] mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 What we offer with <span className="text-[#A855F7]">WooCommerce</span>
               </h2>
             </motion.div>
@@ -266,7 +266,7 @@ export default function ProductDetailPremiumWooCommerce({
                   GET STARTED TODAY
                 </span>
 
-                <h2 className="text-white mb-6 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                <h2 className="text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                   Ready to launch your <br className="hidden md:block" />
                   online store?
                 </h2>
@@ -317,7 +317,7 @@ export default function ProductDetailPremiumWooCommerce({
               <span className="inline-block text-[10px] font-black text-[#A855F7] tracking-[0.28em] uppercase mb-3 bg-[#A855F7]/10 px-4 py-2 rounded-full">
                 MORE PRODUCTS
               </span>
-              <h2 className="text-[#0a0a0a] mb-4 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="text-[#0a0a0a] mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Explore Our More Products
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -623,7 +623,7 @@ function WooCommerceFeatureSection() {
           <span className="block text-[10px] font-black text-[#A855F7] tracking-[0.28em] uppercase mb-2.5">
             KEY FEATURES
           </span>
-          <h2 className="text-[#0a0a0a] mb-3.5 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+          <h2 className="text-[#0a0a0a] mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
             Key Features Of Our <span className="text-[#A855F7]">WooCommerce</span> Development
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">
@@ -877,7 +877,7 @@ function WooCommerceFAQSection() {
             <span className="inline-block text-[10px] font-black text-[#A855F7] tracking-[0.28em] uppercase mb-3 bg-[#A855F7]/10 px-4 py-2 rounded-full">
               FAQ
             </span>
-            <h2 className="text-[#0a0a0a] mb-4 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            <h2 className="text-[#0a0a0a] mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               Frequently Asked Questions
             </h2>
             <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">

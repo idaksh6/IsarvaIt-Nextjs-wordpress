@@ -281,7 +281,7 @@ export default function InternshipsPage() {
             >
               Your Experience
             </motion.div>
-            <h2 className="font-display text-[#1a1f24] mb-6 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">What You Can Expect</h2>
+            <h2 className="font-display text-[#1a1f24] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">What You Can Expect</h2>
             <div className="w-24 h-1.5 bg-[#10b981] mx-auto rounded-full"></div>
           </div>
 
@@ -318,7 +318,7 @@ export default function InternshipsPage() {
             >
               Ideal Candidate
             </motion.div>
-            <h2 className="font-display text-[#1a1f24] mb-6 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Who We're Looking For</h2>
+            <h2 className="font-display text-[#1a1f24] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Who We're Looking For</h2>
             <p className="text-xl text-[#53606b] max-w-4xl mx-auto leading-relaxed font-medium">
               At Isarva Infotech, we're on the lookout for passionate and driven individuals who are eager to make a difference. Our ideal intern is someone who is not only enthusiastic about learning but also committed to contributing to our projects in meaningful ways. We value candidates who bring a positive attitude, a willingness to take on challenges, and the ability to think critically.
             </p>
@@ -357,7 +357,7 @@ export default function InternshipsPage() {
             >
               Your Journey Starts Here
             </motion.div>
-            <h2 className="font-display text-[#1a1f24] mb-6 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Join Us</h2>
+            <h2 className="font-display text-[#1a1f24] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Join Us</h2>
             <p className="text-xl text-[#53606b] max-w-4xl mx-auto leading-relaxed font-medium">
               Kick-start your career by joining Isarva Infotech, where innovation meets opportunity. As an intern, you'll have the chance to explore your potential, build your skills, and gain invaluable experience in a thriving and supportive environment.
             </p>
@@ -404,7 +404,7 @@ export default function InternshipsPage() {
             >
               Ready to Start?
             </motion.div>
-            <h2 className="font-display text-[#1a1f24] mb-6 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Internship Application Form</h2>
+            <h2 className="font-display text-[#1a1f24] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Internship Application Form</h2>
             <p className="text-lg text-[#53606b] font-medium">
               Please Fill Out the Form Below to Submit Your Internship Application!
             </p>

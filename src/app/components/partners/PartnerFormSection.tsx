@@ -182,7 +182,7 @@ export default function PartnerFormSection({
                   <Sparkles className="w-3 h-3" />
                   Connect with us
                 </div>
-                <h2 className="text-gray-900 mb-6 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                   Ready to Start Your <span className="text-emerald-600">Journey?</span>
                 </h2>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">

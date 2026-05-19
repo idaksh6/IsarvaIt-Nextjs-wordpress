@@ -11,7 +11,7 @@ export default function BlogSection({ posts }) {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end lg:text-left text-center justify-between mb-16 gap-6">
           <div className="lg:max-w-2xl max-w-full">
-            <h2 className="text-gray-900 mb-6 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               Latest From <span className="text-green-500">Our Blog</span>
             </h2>
             <p className="text-xl text-gray-600">

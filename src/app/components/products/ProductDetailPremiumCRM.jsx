@@ -111,7 +111,7 @@ export default function ProductDetailPremiumCRM({
   return (
     <div className="bg-white font-sans selection:bg-sky-100 selection:text-sky-900">
       {/* 1. Centered Hero Section */}
-      <section className="relative pt-40 lg:pb-32 pb-10 overflow-hidden bg-gradient-to-b from-[#f0f9ff] via-[#e0f2fe] to-white">
+      <section className="relative pt-40 lg:pb-24 pb-10 overflow-hidden bg-gradient-to-b from-[#f0f9ff] via-[#e0f2fe] to-white">
         {/* Noise Texture Overlay */}
         <div
           className="absolute inset-0 opacity-[0.15] pointer-events-none"
@@ -175,7 +175,7 @@ export default function ProductDetailPremiumCRM({
           transition={{ duration: 1, delay: 0.2 }}
           className="hero-dashboard-wrapper"
         >
-          <div className="dashboard-animation left">
+          <div className="dashboard-animation left" style={{ transform: "translateY(-48%)" }}>
             <div
               className="scroll-img"
               style={{
@@ -183,7 +183,7 @@ export default function ProductDetailPremiumCRM({
               }}
             ></div>
           </div>
-          <div className="dashboard-animation right">
+          <div className="dashboard-animation right" style={{ transform: "translateY(-48%)" }}>
             <div
               className="scroll-img"
               style={{
@@ -196,7 +196,7 @@ export default function ProductDetailPremiumCRM({
               <img
                 src="/products/crm/CRM-dashboard-v3.png"
                 alt="CRM Dashboard"
-                className="w-full object-contain lg:h-[668px] h-full shadow-2xl"
+                className="w-full object-contain lg:h-[570px] h-full shadow-2xl"
               />
             </div>
           </div>
@@ -238,7 +238,7 @@ export default function ProductDetailPremiumCRM({
       </section>
 
       {/* 2. Why Businesses Need a CRM Section */}
-      <section className="lg:py-32 py-14 bg-white">
+      <section className="lg:py-24 py-10 bg-white">
         <div className="w-full lg:container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 lg:text-left text-center">
             {/* Left Side - Image (Sticky on Desktop) */}
@@ -267,7 +267,7 @@ export default function ProductDetailPremiumCRM({
 
             {/* Right Side - Content */}
             <div>
-              <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Why Businesses Need{" "}
                 <span className="text-[#0EA5E9]">Isarva CRM</span>
               </h2>
@@ -277,7 +277,7 @@ export default function ProductDetailPremiumCRM({
               </p>
 
               <div className="space-y-6">
-                <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7] flex items-center justify-center shadow-lg">
                     <span className="text-2xl">📊</span>
                   </div>
@@ -291,7 +291,7 @@ export default function ProductDetailPremiumCRM({
                   </div>
                 </div>
 
-                <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7] flex items-center justify-center shadow-lg">
                     <span className="text-2xl">🚀</span>
                   </div>
@@ -305,7 +305,7 @@ export default function ProductDetailPremiumCRM({
                   </div>
                 </div>
 
-                <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7] flex items-center justify-center shadow-lg">
                     <span className="text-2xl">🤝</span>
                   </div>
@@ -319,7 +319,7 @@ export default function ProductDetailPremiumCRM({
                   </div>
                 </div>
 
-                <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7] flex items-center justify-center shadow-lg">
                     <span className="text-2xl">📈</span>
                   </div>
@@ -333,7 +333,7 @@ export default function ProductDetailPremiumCRM({
                   </div>
                 </div>
 
-                <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7] flex items-center justify-center shadow-lg">
                     <span className="text-2xl">⚡</span>
                   </div>
@@ -389,8 +389,8 @@ export default function ProductDetailPremiumCRM({
             <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-3 bg-white px-4 py-2 rounded-full border border-[#0EA5E9]/20 shadow-sm">
               PROCESS
             </span>
-            <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
-              How Isarva CRM Works
+            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              How <span className="text-[#0EA5E9]">Isarva CRM</span> Works
             </h2>
           </div>
 
@@ -415,8 +415,8 @@ export default function ProductDetailPremiumCRM({
       <section className="py-10 lg:py-24 bg-slate-50 relative overflow-hidden">
         <div className="w-full lg:container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
-              Why Choose Isarva CRM
+            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              Why Choose <span className="text-[#0EA5E9]">Isarva CRM</span>
             </h2>
             <div className="w-24 h-1 bg-sky-400 mx-auto rounded-full"></div>
           </div>
@@ -446,7 +446,7 @@ export default function ProductDetailPremiumCRM({
               <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-3 bg-white px-4 py-2 rounded-full border border-[#0EA5E9]/20 shadow-sm">
                 FAQ
               </span>
-              <h2 className="text-gray-900 mb-4 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Everything you need to know
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -493,7 +493,7 @@ export default function ProductDetailPremiumCRM({
                   GET STARTED TODAY
                 </span>
 
-                <h2 className="text-white mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                <h2 className="text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                   Ready to test our new <br className="hidden md:block" />
                   CRM features?
                 </h2>
@@ -543,7 +543,7 @@ export default function ProductDetailPremiumCRM({
               <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-3 bg-white px-4 py-2 rounded-full border border-[#0EA5E9]/20 shadow-sm">
                 MORE PRODUCTS
               </span>
-              <h2 className="text-gray-900 mb-4 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Explore Our More Products
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -878,7 +878,7 @@ function CRMFeatureSection() {
           <span className="block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-2.5">
             SOFTWARE FEATURES
           </span>
-          <h2 className="text-gray-900 mb-3.5 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+          <h2 className="text-gray-900 mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
             Key Features Of <span className="text-[#0EA5E9]">CRM</span> Application
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">
@@ -1211,10 +1211,10 @@ function CRMTabSection({ setSelectedImage }) {
   };
 
   return (
-    <section className="py-16 lg:py-32 bg-slate-50 overflow-hidden">
+    <section className="py-10 lg:py-24 bg-slate-50 overflow-hidden">
       <div className="w-full lg:container mx-auto px-6">
-        <div className="text-center mb-12 lg:mb-20">
-          <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+        <div className="text-center mb-14 ">
+          <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
             Powerful <span className="text-[#0EA5E9]">Isarva CRM</span> Features
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto text-base lg:text-lg leading-relaxed">
@@ -1268,7 +1268,7 @@ function CRMTabSection({ setSelectedImage }) {
             {/* Dynamic Gradient Glow Shadow */}
             <div className={`absolute -inset-4 bg-gradient-to-br ${currentTab.color} opacity-20 blur-2xl rounded-[40px] transition-all duration-700`}></div>
 
-            <div className="bg-white rounded-[24px] lg:rounded-[32px] p-6 lg:p-12 shadow-xl border border-slate-100 min-h-[500px] lg:min-h-[650px] relative overflow-hidden flex flex-col justify-center">
+            <div className="bg-white rounded-[24px] lg:rounded-[32px] p-6 lg:p-12 shadow-xl border border-slate-100 relative overflow-hidden flex flex-col">
               {/* Edge Shades / Decorative Blobs */}
               <div className={`absolute -top-20 -left-20 w-64 h-64 bg-gradient-to-br ${currentTab.color} opacity-[0.07] rounded-full blur-[80px]`}></div>
               <div className={`absolute -bottom-20 -right-20 w-64 h-64 bg-gradient-to-br ${currentTab.color} opacity-[0.07] rounded-full blur-[80px]`}></div>
@@ -1283,13 +1283,13 @@ function CRMTabSection({ setSelectedImage }) {
                   className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12 items-center w-full relative z-10"
                 >
                   {/* Content */}
-                  <div className="order-2 md:order-1">
-                    <h3 className="text-2xl lg:text-3xl font-black text-gray-900 mb-4">{currentTab.title}</h3>
-                    <p className="text-sm lg:text-base text-gray-600 mb-6 lg:mb-8 leading-relaxed">{currentTab.description}</p>
+                  <div className="order-2 md:order-1 flex flex-col items-center md:items-start text-center md:text-left">
+                    <h3 className="text-2xl lg:text-3xl font-black text-gray-900 mb-4 w-full">{currentTab.title}</h3>
+                    <p className="text-sm lg:text-base text-gray-600 mb-6 lg:mb-8 leading-relaxed w-full">{currentTab.description}</p>
 
-                    <div className="space-y-4 lg:space-y-6 mb-8 lg:mb-10">
+                    <div className="space-y-4 lg:space-y-6 mb-0 lg:mb-10 w-full flex flex-col items-center md:items-start">
                       {currentTab.points.map((pt, i) => (
-                        <div key={i} className="flex gap-4">
+                        <div key={i} className="flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-4 text-center sm:text-left">
                           <div className={`w-5 h-5 lg:w-6 lg:h-6 rounded-full bg-gradient-to-br ${currentTab.color} flex items-center justify-center flex-shrink-0 mt-1`}>
                             <svg className="w-3 h-3 lg:w-3.5 lg:h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
                               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
