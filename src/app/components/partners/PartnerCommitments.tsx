@@ -39,7 +39,7 @@ const PartnerCommitments = () => {
             initial="initial"
             whileInView="whileInView"
             viewport={viewportConfig}
-            className="text-4xl md:text-6xl font-bold text-[#111827] mb-6 uppercase"
+            className="text-[#111827] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase"
           >
             Partner <span className="text-emerald-600">Commitments</span>
           </motion.h2>

@@ -252,7 +252,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
               <span className="text-teal-600 font-black tracking-widest text-xs uppercase mb-6 inline-block">MOBILE OPTIMIZED</span>
-              <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-8 leading-[1]">Your Warehouse in <br /><span className="text-teal-600">Your Pocket.</span></h2>
+              <h2 className="text-slate-900 mb-8 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Your Warehouse in <br /><span className="text-teal-600">Your Pocket.</span></h2>
               <p className="text-slate-500 text-lg mb-8 leading-relaxed font-medium">Access your entire godown operation from anywhere. Our mobile-first design ensures you stay in control even when you're on the move.</p>
               
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -376,7 +376,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
             
             <div>
               <span className="text-teal-600 font-black tracking-widest text-xs uppercase mb-6 inline-block">MASTER SETUP</span>
-              <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-8 leading-[1]">Foundation for <br /><span className="text-teal-600">Enterprise Scale.</span></h2>
+              <h2 className="text-slate-900 mb-8 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Foundation for <br /><span className="text-teal-600">Enterprise Scale.</span></h2>
               
               <div className="space-y-8">
                  <div>
@@ -410,7 +410,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
       <section id="features" className="py-24 bg-[#FCFDFF] relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-4">Powerful Features for Modern Warehouses</h2>
+            <h2 className="text-slate-900 mb-4 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Powerful Features for Modern Warehouses</h2>
             <p className="text-lg text-slate-500 max-w-2xl mx-auto">Designed to work for you. Every feature is built with simplicity and automation in mind.</p>
           </div>
 
@@ -446,7 +446,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
           <div className="flex flex-col lg:flex-row items-center gap-20">
             <div className="lg:w-1/2">
               <span className="text-teal-400 font-black tracking-widest text-xs uppercase mb-6 inline-block">AUTOMATION THAT WORKS</span>
-              <h2 className="text-4xl lg:text-6xl font-black mb-8 leading-[1]">Smart Status Updates— <br /><span className="text-teal-400">Zero Manual Work.</span></h2>
+              <h2 className="mb-8 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Smart Status Updates— <br /><span className="text-teal-400">Zero Manual Work.</span></h2>
               <p className="text-slate-400 text-lg mb-10 leading-relaxed font-medium">Our system automatically detects inventory returns and updates statuses in real-time. Whether it's partially back or fully returned, the system knows what to do.</p>
               
               <div className="space-y-6">
@@ -545,7 +545,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
 
             <div className="order-1 lg:order-2">
               <span className="text-teal-600 font-black tracking-widest text-xs uppercase mb-6 inline-block">ACCOUNTABILITY & CONDITION</span>
-              <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-8 leading-[1]">Meticulous Return <br /><span className="text-teal-600">Management.</span></h2>
+              <h2 className="text-slate-900 mb-8 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Meticulous Return <br /><span className="text-teal-600">Management.</span></h2>
               <div className="space-y-10">
                 <div className="flex gap-6">
                   <div className="w-12 h-12 rounded-2xl bg-teal-50 flex items-center justify-center text-2xl flex-shrink-0 text-teal-600">🛡️</div>
@@ -578,7 +578,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
       <section id="reports" className="py-24 bg-slate-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-4">Powerful Insight Reports</h2>
+            <h2 className="text-slate-900 mb-4 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Powerful Insight Reports</h2>
             <p className="text-lg text-slate-500 max-w-2xl mx-auto">Make data-driven decisions with real-time reporting. Export everything in seconds.</p>
           </div>
 
@@ -628,7 +628,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
         <div className="max-w-7xl mx-auto px-6">
           <div className="bg-slate-50 rounded-[4rem] p-12 lg:p-20 relative overflow-hidden">
             <div className="text-center mb-16 relative z-10">
-               <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-6">Why Our Godown System Stands Out</h2>
+               <h2 className="text-slate-900 mb-6 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Why Our Godown System Stands Out</h2>
                <p className="text-slate-500 max-w-xl mx-auto font-medium">The "Smart Features" that do the heavy lifting for you.</p>
             </div>
             
@@ -657,7 +657,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
       {/* ── CTA FOOTER ── */}
       <section className="py-24 bg-teal-50 relative overflow-hidden">
          <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-            <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-8">Revolutionize Your <br />Warehouse Management Today</h2>
+            <h2 className="text-slate-900 mb-8 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Revolutionize Your <br />Warehouse Management Today</h2>
             <p className="text-slate-500 text-lg mb-12 font-medium">Join businesses that have scaled their operations by 40% with our automated tracking system.</p>
             <div className="flex flex-wrap justify-center gap-4">
                <button 
@@ -679,7 +679,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-black text-slate-900 mb-4">Related Solutions</h2>
+            <h2 className="text-slate-900 mb-4 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Related Solutions</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {relatedProducts.slice(0, 3).map((targetProduct) => (

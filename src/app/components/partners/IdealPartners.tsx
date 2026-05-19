@@ -58,7 +58,7 @@ const IdealPartners = () => {
           viewport={viewportConfig}
           className="mb-16 md:mb-24"
         >
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-[#111827] uppercase tracking-tighter">
+          <h2 className="mb-6 text-[#111827] er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
             Who We're <span className="text-[#ea580c]">Looking For</span>
           </h2>
           <div className="w-24 h-1.5 bg-[#ea580c] mx-auto rounded-full" />

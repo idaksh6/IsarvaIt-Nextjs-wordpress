@@ -319,7 +319,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
           
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Key Features
               </h2>
               <p className="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -355,7 +355,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
           
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Technology Stack
               </h2>
               <p className="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -382,7 +382,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
           
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Business Benefits
               </h2>
               <p className="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -419,7 +419,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
           
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Related Products
               </h2>
               <p className="text-xl text-gray-700 max-w-3xl mx-auto">

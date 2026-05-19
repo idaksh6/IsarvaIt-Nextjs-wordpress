@@ -31,7 +31,7 @@ export default function CtaSection() {
                   GET IN TOUCH
                 </span>
 
-                <h2 className="text-[clamp(36px,5vw,56px)] font-black text-[#134326] leading-tight mb-4">
+                <h2 className="text-[#134326] mb-4 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                   Ready to Get Started?
                 </h2>
 

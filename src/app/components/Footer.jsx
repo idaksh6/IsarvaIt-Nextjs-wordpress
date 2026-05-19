@@ -177,7 +177,7 @@ export default function Footer() {
 
         {/* Huge Background Text Watermark */}
         <div className="absolute top-10 left-0 right-0 text-center select-none pointer-events-none opacity-[0.02] z-[1]">
-          <h2 className="lg:text-[24rem] text-[10rem]  font-black tracking-tighter text-white uppercase leading-none">
+          <h2 className="lg:text-[24rem] text-[10rem] er text-white leading-none er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
             Isarva
           </h2>
         </div>

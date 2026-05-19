@@ -38,7 +38,7 @@ export default function NotFound() {
         </div>
 
         <div className="mt-16 bg-gray-50 rounded-2xl p-8 border border-gray-100">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Popular Articles</h2>
+          <h2 className="text-2xl text-gray-900 mb-4 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Popular Articles</h2>
           <p className="text-gray-600 mb-4">
             Check out some of our most popular content while you're here:
           </p>

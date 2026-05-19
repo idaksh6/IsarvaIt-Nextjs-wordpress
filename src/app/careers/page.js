@@ -266,7 +266,7 @@ export default function CareerPage() {
             >
               Our Foundation
             </motion.div>
-            <h2 className="text-4xl lg:text-5xl font-display font-bold text-[#1a1f24] mb-6">Why Choose Isarva Infotech?</h2>
+            <h2 className="font-display text-[#1a1f24] mb-6 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Why Choose Isarva Infotech?</h2>
             <div className="w-24 h-1.5 bg-[#10b981] mx-auto rounded-full"></div>
           </div>
 
@@ -301,7 +301,7 @@ export default function CareerPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 px-4">
             <div className="lg:text-left text-center">
               <span className="text-[#10b981] font-black tracking-[0.3em] uppercase text-xs mb-4 inline-block">Career Opportunities</span>
-              <h2 className="text-4xl lg:text-5xl font-display font-bold text-[#1a1f24] leading-tight">Find Your Calling</h2>
+              <h2 className="font-display text-[#1a1f24] er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Find Your Calling</h2>
             </div>
 
             {/* Minimalist Search Bar */}

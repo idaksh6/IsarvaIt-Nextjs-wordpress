@@ -562,7 +562,7 @@ export default function Header() {
 
                 <div className="relative flex items-center justify-between mb-4">
                   <div>
-                    <h2 className="text-white text-xl font-bold mb-1">Menu</h2>
+                    <h2 className="text-white text-xl mb-1 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Menu</h2>
                     <p className="text-white/80 text-sm">Explore our solutions</p>
                   </div>
 

@@ -25,7 +25,7 @@ export default function FeaturedSection({ posts }) {
                 <span className="px-4 py-1.5 bg-emerald-500 text-white rounded-full text-xs font-bold uppercase tracking-widest mb-4 flex w-fit lg:mx-0 mx-auto lg:justify-start justify-center items-center gap-2">
                   {mainPost.categoryName}
                 </span>
-                <h2 className="text-xl md:text-4xl font-bold text-white leading-tight max-w-2xl lg:text-left text-center">
+                <h2 className="text-xl text-white max-w-2xl lg:text-left text-center er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                   {mainPost.title}
                 </h2>
               </div>

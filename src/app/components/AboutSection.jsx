@@ -139,7 +139,7 @@ export default function AboutSection() {
           </div>
 
           {/* Headline */}
-          <h2 className="text-[clamp(28px,3.5vw,44px)] font-extrabold text-slate-900 leading-[1.12] tracking-tight mb-5">
+          <h2 className="text-slate-900 mb-5 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
             We craft{" "}
             <span className="bg-gradient-to-r from-emerald-500 to-lime-500 bg-clip-text text-transparent">
               awesome websites

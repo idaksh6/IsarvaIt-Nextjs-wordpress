@@ -347,7 +347,7 @@ export default function ContactFormModal({
       <div className="relative bg-white rounded-3xl shadow-2xl max-w-xl md:max-w-3xl w-full flex flex-col overflow-hidden">
         {/* Compact Header */}
         <div className="bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-4 flex-shrink-0 flex items-center justify-between">
-          <h2 className="text-xl font-bold text-white tracking-tight">Request a Demo</h2>
+          <h2 className="text-xl text-white er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Request a Demo</h2>
           <button
             onClick={onClose}
             className="text-white/80 hover:text-white transition-colors"

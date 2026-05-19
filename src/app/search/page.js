@@ -259,7 +259,7 @@ function SearchResults() {
         {!query && !isLoading && (
           <div className="text-center py-20">
             <div className="text-6xl mb-4">🔍</div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">
+            <h2 className="text-2xl text-gray-900 mb-2 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               Start Your Search
             </h2>
             <p className="text-gray-600">
@@ -272,7 +272,7 @@ function SearchResults() {
         {query && !isLoading && totalResults === 0 && (
           <div className="text-center py-20">
             <div className="text-6xl mb-4">😔</div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">
+            <h2 className="text-2xl text-gray-900 mb-2 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               No Results Found
             </h2>
             <p className="text-gray-600 mb-8">
@@ -294,7 +294,7 @@ function SearchResults() {
             {/* Pages */}
             {results.pages.length > 0 && (
               <section>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <h2 className="text-2xl text-gray-900 mb-6 flex items-center gap-3 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                   <span className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center">
                     <svg
                       className="w-5 h-5 text-teal-600"
@@ -350,7 +350,7 @@ function SearchResults() {
             {/* Products */}
             {results.products.length > 0 && (
               <section>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <h2 className="text-2xl text-gray-900 mb-6 flex items-center gap-3 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                   <span className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
                     <svg
                       className="w-5 h-5 text-emerald-600"
@@ -406,7 +406,7 @@ function SearchResults() {
             {/* Services */}
             {results.services.length > 0 && (
               <section>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <h2 className="text-2xl text-gray-900 mb-6 flex items-center gap-3 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                   <span className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
                     <svg
                       className="w-5 h-5 text-blue-600"
@@ -462,7 +462,7 @@ function SearchResults() {
             {/* Industries */}
             {results.industries.length > 0 && (
               <section>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <h2 className="text-2xl text-gray-900 mb-6 flex items-center gap-3 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                   <span className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
                     <svg
                       className="w-5 h-5 text-purple-600"
@@ -518,7 +518,7 @@ function SearchResults() {
             {/* Careers */}
             {results.careers.length > 0 && (
               <section>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <h2 className="text-2xl text-gray-900 mb-6 flex items-center gap-3 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                   <span className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
                     <svg
                       className="w-5 h-5 text-orange-600"
@@ -580,7 +580,7 @@ function SearchResults() {
             )}
             {results.blogs.length > 0 && (
               <section>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <h2 className="text-2xl text-gray-900 mb-6 flex items-center gap-3 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                   <span className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
                     <svg
                       className="w-5 h-5 text-orange-600"

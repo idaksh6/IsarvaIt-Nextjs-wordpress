@@ -339,7 +339,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-100">
                 What We Offer
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-gray-900 mb-4 leading-[1.2]">
+              <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Explore Our WordPress <span className="text-blue-600">Development Services</span>
               </h2>
               <p className="text-base sm:text-lg text-gray-500 font-medium max-w-2xl mx-auto">
@@ -381,7 +381,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-100">
                   Figma to WordPress
                 </div>
-                <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-gray-900 mb-6 leading-[1.15]">
+                <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                   Your Design, <br className="hidden sm:block" />
                   <span className="text-blue-600">Brought to Life.</span>
                 </h2>
@@ -507,7 +507,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-100">
                 Architecture
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-gray-900 mb-4 leading-[1.2]">
+              <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Your WordPress <span className="text-blue-600">Ecosystem</span>
               </h2>
               <p className="text-base sm:text-lg text-gray-500 font-medium max-w-2xl mx-auto">
@@ -645,7 +645,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 font-bold text-[10px] uppercase tracking-wider mb-6 border border-blue-100">
                 Core Capabilities
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-gray-900 mb-6 tracking-tight leading-tight">
+              <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Engineered for <span className="text-blue-600">Success</span>
               </h2>
               <p className="text-base sm:text-xl text-gray-500 font-medium">Enterprise WordPress expertise tailored to your digital growth.</p>
@@ -730,7 +730,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-100">
                 Enterprise Solutions
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-gray-900 mb-4 leading-[1.2]">
+              <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 WordPress for <span className="text-blue-600">Growth</span>
               </h2>
             </div>
@@ -786,7 +786,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
             <div className="flex flex-col lg:flex-row items-start gap-16 lg:gap-24">
               <div className="w-full lg:w-1/2">
-                <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-4 leading-[1.1] tracking-tight text-center lg:text-left">
+                <h2 className="text-gray-900 mb-6 er text-center lg:text-left er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                   Things We're <br className="hidden lg:block" />
                   <span className="text-blue-600">Really Good At</span>
                 </h2>
@@ -834,7 +834,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-sky-50 text-sky-600 font-bold text-xs uppercase tracking-wider mb-6 border border-sky-100">
                 AI-Enhanced
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-gray-900 mb-6 leading-[1.2]">
+              <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Supercharged <span className="text-sky-500">with AI</span>
               </h2>
             </div>
@@ -883,7 +883,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               <img src="/wp_process_team_new.png" alt="Team" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-950/95 via-blue-900/70 to-transparent transition-all duration-700 flex items-center">
                 <div className="px-10 lg:px-24 max-w-2xl text-left">
-                  <h2 className="text-4xl lg:text-7xl font-black text-white mb-8 leading-tight">Your Trusted Development Partner</h2>
+                  <h2 className="text-white mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Your Trusted Development Partner</h2>
                   <p className="text-xl text-white/90 mb-10 font-bold leading-relaxed">
                     Collaborate with a team that speaks your language and understands your business goals.
                   </p>
@@ -933,7 +933,7 @@ function ProcessSlider({ servicesData, setIsModalOpen }) {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-100">
             Process
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black text-gray-900 mb-4 leading-[1.2]">
+          <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
             Our CMS <span className="text-blue-600">Migration Process</span>
           </h2>
           <p className="text-base sm:text-lg text-gray-500 font-medium max-w-2xl mx-auto">

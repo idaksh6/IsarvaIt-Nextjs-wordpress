@@ -287,7 +287,7 @@ export default function ProductDetailPremiumHRMS({
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: 0.2 }}
-                          className="text-4xl lg:text-5xl font-black text-gray-900 leading-[1.1] mb-4 tracking-tighter uppercase"
+                          className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold font-black text-gray-900 leading-[1.25] mb-4 tracking-tighter uppercase"
                         >
                           {activeContent.title}
                         </motion.h1>
@@ -366,7 +366,7 @@ export default function ProductDetailPremiumHRMS({
                     <div className="relative rounded-[3rem] bg-white p-8 lg:p-12 border border-gray-100 shadow-[0_15px_40px_rgba(0,0,0,0.03)] overflow-hidden">
                       <div className="flex flex-col items-start text-left">
                         <div className={`w-12 h-1 ${TAB_THEMES[activeTab].bg} rounded-full mb-6`}></div>
-                        <h2 className="text-2xl lg:text-4xl font-black text-gray-900 mb-4 uppercase tracking-tighter">Deep Dive: {activeContent.title}</h2>
+                        <h2 className="text-gray-900 mb-4 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Deep Dive: {activeContent.title}</h2>
                         <p className="text-base lg:text-lg text-gray-500 mb-4 lg:mb-10 font-medium leading-relaxed ">{activeContent.description}</p>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-12 w-full">
@@ -419,14 +419,14 @@ export default function ProductDetailPremiumHRMS({
                   <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px]" />
                 </div>
                 <div className="relative z-10 ">
-                  <div className="flex flex-col items-center lg:items-start mb-4 md:mb-16 text-center lg:text-left">
+                  <div className="flex flex-col items-center lg:items-start mb-4 md:mb-10 text-center lg:text-left">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 text-red-600 font-bold text-[14px] mb-6 w-fit uppercase tracking-widest">
                       The Problem
                     </div>
 
-                    <h2 className="text-3xl lg:text-5xl font-black text-gray-900 leading-[1.1] mb-6 tracking-tighter uppercase">
+                    <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                       Traditional HR{" "}
-                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500 py-2">
+                      <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500 py-2">
                         Is Broken.
                       </span>
                     </h2>
@@ -458,11 +458,11 @@ export default function ProductDetailPremiumHRMS({
               {/* 6. Complete HR Suite Section */}
               <section className="bg-white relative overflow-hidden border border-gray-100 rounded-[3rem] ">
                 <div className="p-8 lg:p-12">
-                  <div className="mb-16">
-                    <h2 className="text-3xl lg:text-5xl font-black text-gray-900 mb-6 tracking-tighter uppercase">Complete HR Suite – <span className={TAB_THEMES[activeTab].text}>All-in-One HRMS Features</span></h2>
+                  <div className="mb-4 md:mb-10">
+                    <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Complete HR Suite – <span className={TAB_THEMES[activeTab].text}>All-in-One HRMS Features</span></h2>
                     <p className="text-base lg:text-lg text-gray-500 mb:4 lg:1mb-10 font-medium leading-relaxed ">Streamline and manage your entire HR operations with a powerful, integrated HRMS platform designed for modern businesses.</p>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {SECTION_6_FEATURES.map((card, idx) => (
                       <div key={idx} className="p-8 rounded-[40px] bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-xl transition-all duration-500">
                         <h3 className="text-xl font-black text-gray-900 mb-6 uppercase tracking-tighter">{card.title}</h3>
@@ -486,7 +486,7 @@ export default function ProductDetailPremiumHRMS({
                   <div className={`absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-br ${TAB_THEMES[activeTab].gradient} opacity-5 blur-[100px]`}></div>
 
                   <div className="relative z-10 flex flex-col items-center">
-                    <h2 className="text-4xl lg:text-6xl font-black text-gray-900 mb-6 tracking-tighter uppercase leading-[1.1]">Build the <br /> future today.</h2>
+                    <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Build the <br /> future today.</h2>
                     <p className="text-gray-500 mb-10 max-w-xl font-bold uppercase tracking-widest text-[14px]">Join 10,000+ teams transforming their workplace.</p>
                     <button
                       onClick={() => setIsModalOpen(true)}
@@ -745,7 +745,7 @@ function HrmsFeatureSection() {
           <span className="block text-[14px] font-black text-[#22C55E] tracking-[0.28em] uppercase mb-2.5">
             KEY FEATURES
           </span>
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0a0a0a] leading-[1] mb-3.5">
+          <h2 className="text-gray-900 mb-3.5 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
             Key Features Of <span className="text-[#22C55E]">HRMS</span> Software
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">

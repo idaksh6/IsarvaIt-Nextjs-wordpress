@@ -151,7 +151,7 @@ export default async function ServiceDetailPage({ params }) {
                 </svg>
                 Our Specialized Services
               </div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 What We Offer Under {service.title}
               </h2>
               <p className="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -250,7 +250,7 @@ export default async function ServiceDetailPage({ params }) {
               </svg>
               <span className="text-emerald-700 font-semibold text-sm">Key Features</span>
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+            <h2 className="text-gray-900 mb-4 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               {service.slug === "odoo-apps-support-and-maintenance" 
                 ? "Comprehensive Support Services" 
                 : service.slug === "ai-ml-consulting"
@@ -384,7 +384,7 @@ export default async function ServiceDetailPage({ params }) {
               </svg>
               Business Impact
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               {service.slug === "odoo-apps-support-and-maintenance" 
                 ? "Why Choose Isarva for Odoo Support?" 
                 : service.slug === "ai-ml-consulting"
@@ -584,7 +584,7 @@ export default async function ServiceDetailPage({ params }) {
               </svg>
               You Might Also Like
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-gray-900 mb-6 er er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               Explore Related Services
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -678,7 +678,7 @@ export default async function ServiceDetailPage({ params }) {
             Let's Get Started
           </div>
 
-          <h2 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-white mb-6 leading-tight">
+          <h2 className="text-white mb-6 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
             {service.slug === "odoo-apps-support-and-maintenance" 
               ? "Ready to Optimize Your Odoo Experience?" 
               : "Ready to Transform Your Business?"

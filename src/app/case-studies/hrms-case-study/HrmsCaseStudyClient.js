@@ -125,7 +125,7 @@ export default function HrmsCaseStudyClient() {
         {/* EXECUTIVE SUMMARY */}
         <section className="py-16 md:py-20 px-4 md:px-6 bg-white border-y border-gray-100">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+            <h2 className="text-2xl text-gray-900 mb-6 flex items-center gap-3 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               <Activity className="text-blue-500" /> Executive Summary
             </h2>
             <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-4">
@@ -139,7 +139,7 @@ export default function HrmsCaseStudyClient() {
 
         {/* CLIENT PROFILE */}
         <section className="py-16 md:py-20 px-4 md:px-6 max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 md:mb-10 text-center">Client Profile</h2>
+          <h2 className="text-gray-900 mb-8 md:mb-10 text-center er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Client Profile</h2>
           <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
             <div className="p-6 md:p-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-12 gap-y-6 md:gap-y-8">
@@ -187,7 +187,7 @@ export default function HrmsCaseStudyClient() {
         {/* BUSINESS CHALLENGES */}
         <section className="py-16 md:py-20 px-4 md:px-6 bg-white">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center md:text-left">Business Challenges</h2>
+            <h2 className="text-gray-900 mb-6 text-center md:text-left er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Business Challenges</h2>
             <p className="text-base md:text-lg text-gray-600 mb-8 text-center md:text-left">Before engaging Isarva, the company's HR and payroll operations were entirely manual. The following challenges were identified:</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -216,7 +216,7 @@ export default function HrmsCaseStudyClient() {
         <section className="py-16 md:py-20 px-4 md:px-6 bg-[#FDF8F2]">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Challenges vs. Isarva Solutions</h2>
+              <h2 className="text-gray-900 mb-4 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Challenges vs. Isarva Solutions</h2>
             </div>
 
             <div className="bg-white rounded-2xl md:rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
@@ -271,7 +271,7 @@ export default function HrmsCaseStudyClient() {
         <section className="py-16 md:py-20 px-4 md:px-6 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-10 md:mb-16 max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Solution Overview — Isarva HRMS</h2>
+              <h2 className="text-gray-900 mb-6 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Solution Overview — Isarva HRMS</h2>
               <p className="text-base md:text-lg text-gray-600 leading-relaxed">
                 Isarva HRMS is a comprehensive, enterprise-grade Human Resource Management System purpose-built to handle the complexity of diverse workforce structures. For this construction company, Isarva delivered a fully tailored configuration deployed on a dedicated cloud server — ensuring data security, high availability, and remote accessibility across all project sites.
               </p>
@@ -308,7 +308,7 @@ export default function HrmsCaseStudyClient() {
         {/* HR LETTER GENERATION */}
         <section className="py-16 md:py-20 px-4 md:px-6 bg-[#FDF8F2] border-t border-gray-100">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">HR Letter Generation</h2>
+            <h2 className="text-gray-900 mb-6 text-center er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">HR Letter Generation</h2>
             <p className="text-base md:text-lg text-gray-600 mb-10 md:mb-16 text-center max-w-4xl mx-auto">
               Managing employee lifecycle documentation is critical. Isarva HRMS includes a built-in HR Letter Generation module to produce professionally formatted, company-branded letters instantly, eliminating manual drafting and copy-paste errors.
             </p>
@@ -355,7 +355,7 @@ export default function HrmsCaseStudyClient() {
         {/* EMPLOYEE-WISE SALARY CONFIGURATION */}
         <section className="py-16 md:py-20 px-4 md:px-6 bg-white border-t border-gray-100">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">Employee-Wise Salary Configuration</h2>
+            <h2 className="text-gray-900 mb-6 text-center er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Employee-Wise Salary Configuration</h2>
             <p className="text-base md:text-lg text-gray-600 mb-10 md:mb-16 text-center max-w-4xl mx-auto">
               In construction, the workforce spans daily-wage workers, skilled tradesmen, supervisors, and senior management. Isarva HRMS provides complete control to enable or disable individual earnings and statutory deductions per employee without affecting others.
             </p>
@@ -419,7 +419,7 @@ export default function HrmsCaseStudyClient() {
         {/* REPORTS & EXPORTS */}
         <section className="py-16 md:py-20 px-4 md:px-6 bg-[#FDF8F2] border-t border-gray-100">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">Reports & Export Options</h2>
+            <h2 className="text-gray-900 mb-6 text-center er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Reports & Export Options</h2>
             <p className="text-base md:text-lg text-gray-600 mb-10 md:mb-16 text-center max-w-4xl mx-auto">
               A comprehensive reporting suite for all stakeholders—HR, Finance, Management, and Compliance teams. Available in PDF, Excel, CSV, and Macro formats.
             </p>
@@ -479,7 +479,7 @@ export default function HrmsCaseStudyClient() {
         {/* IMPLEMENTATION APPROACH */}
         <section className="py-16 md:py-20 px-4 md:px-6 bg-white border-t border-gray-100">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 md:mb-8 text-center">Implementation Approach</h2>
+            <h2 className="text-gray-900 mb-6 md:mb-8 text-center er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Implementation Approach</h2>
             <p className="text-base md:text-lg text-gray-600 mb-10 md:mb-16 text-center max-w-3xl mx-auto">Isarva followed a structured implementation methodology to ensure the solution precisely matched the client's operational reality:</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -506,7 +506,7 @@ export default function HrmsCaseStudyClient() {
         {/* RESULTS & IMPACT */}
         <section className="py-16 md:py-20 px-4 md:px-6 bg-[#FDF8F2] border-t border-gray-100">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10 md:mb-16 text-center">Results & Business Impact</h2>
+            <h2 className="text-gray-900 mb-10 md:mb-16 text-center er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Results & Business Impact</h2>
 
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-12 md:mb-16">
               <div className="bg-white p-6 md:p-10 rounded-3xl border border-blue-100 relative overflow-hidden h-full shadow-lg">
@@ -592,7 +592,7 @@ export default function HrmsCaseStudyClient() {
         <section className="py-16 md:py-20 px-4 md:px-6 bg-[#FDF8F2] border-t border-gray-100">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-6">Explore Isarva HRMS Products</h2>
+              <h2 className="text-gray-900 mb-4 md:mb-6 er text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Explore Isarva HRMS Products</h2>
               <p className="text-base md:text-lg text-gray-600 mb-4 leading-relaxed max-w-4xl mx-auto">
                 Isarva offers two powerful HRMS platforms designed for different organisational needs. Whether you are a construction company managing a contract workforce or a corporate organisation looking for a fully featured HR suite, we have the right solution.
               </p>
