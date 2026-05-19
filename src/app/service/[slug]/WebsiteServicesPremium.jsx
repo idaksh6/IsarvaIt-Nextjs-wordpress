@@ -1139,14 +1139,14 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                   className="group"
                 >
                   <div className="h-full p-8 bg-white rounded-2xl border-2 border-gray-100 hover:border-emerald-300 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                    <div className="w-14 h-14 rounded-2xl  bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-2xl mb-6 shadow-md shadow-emerald-100 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-2xl mx-auto md:mx-0 mb-6 shadow-md shadow-emerald-100 group-hover:scale-110 transition-transform duration-300">
                       {r.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-emerald-700 transition-colors">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-emerald-700 transition-colors text-center md:text-left">
                       {r.title}
                     </h3>
-                    <p className="text-gray-600 mb-6">{r.desc}</p>
-                    <div className="flex items-center gap-2 text-emerald-600 font-bold opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                    <p className="text-gray-600 mb-6 text-center md:text-left">{r.desc}</p>
+                    <div className="flex items-center justify-center md:justify-start gap-2 text-emerald-600 font-bold opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                       <span>Explore</span>
                       <svg
                         className="w-4 h-4"

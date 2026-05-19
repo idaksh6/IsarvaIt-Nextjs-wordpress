@@ -603,23 +603,23 @@ export default async function ServiceDetailPage({ params }) {
                 <div className="h-full rounded-3xl p-8 bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg transition-all duration-300">
                   <div className="relative">
                     {/* Icon */}
-                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center mb-6 shadow-lg transition-all duration-300 relative overflow-hidden">
+                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center mx-auto md:mx-0 mb-6 shadow-lg transition-all duration-300 relative overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-tr from-white/0 to-white/30"></div>
                       <span className="text-4xl relative z-10">{relatedService.icon}</span>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center md:text-left">
                       {relatedService.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-gray-700 leading-relaxed mb-6">
+                    <p className="text-gray-700 leading-relaxed mb-6 text-center md:text-left">
                       {relatedService.shortDescription}
                     </p>
 
                     {/* CTA */}
-                    <div className="flex items-center gap-2 text-emerald-600 font-bold">
+                    <div className="flex items-center justify-center md:justify-start gap-2 text-emerald-600 font-bold">
                       <span>Explore Service</span>
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
