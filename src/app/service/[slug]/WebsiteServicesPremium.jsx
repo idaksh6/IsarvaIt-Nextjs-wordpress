@@ -348,6 +348,18 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
           border: 1px solid rgba(16,185,129,0.2);
           box-shadow: 0 4px 16px rgba(16,185,129,0.1);
         }
+        @media (max-width: 480px) {
+          .team-info-container {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+          }
+        }
+        @media (max-width: 400px) {
+          .team-btn-custom {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+          }
+        }
       `}</style>
 
       <div className="bg-white overflow-hidden">
@@ -579,9 +591,9 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               {/* Left image */}
-              <div className="relative">
+              <div className="relative pb-8 lg:pb-0">
                 <div className="absolute -inset-4 bg-gradient-to-br from-orange-100/60 to-rose-100/60 blur-[50px] rounded-3xl" />
-                
+
                 {/* Badge moved above the image container */}
                 <div className="relative z-20 mb-6 flex justify-center lg:justify-start">
                   <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-orange-500 to-rose-500 text-white text-[10px] md:text-xs font-black shadow-[0_8px_20px_rgba(244,63,94,0.3)] uppercase tracking-wider whitespace-nowrap">
@@ -589,18 +601,39 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                   </span>
                 </div>
 
-                <div className="relative rounded-3xl overflow-hidden border border-orange-100 shadow-2xl">
-                  <img
-                    src="/website_redesign_service.png"
-                    alt="Website Redesign Service — Before & After"
-                    className="w-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-                  <div className="absolute bottom-6 right-6 float-badge rounded-xl px-4 py-3">
+                <div className="relative">
+                  {/* Image container with overflow-hidden to keep image rounded */}
+                  <div className="rounded-3xl overflow-hidden border border-orange-100 shadow-2xl">
+                    <img
+                      src="/website_redesign_service.png"
+                      alt="Website Redesign Service — Before & After"
+                      className="w-full object-cover rounded-3xl"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-3xl" />
+                  </div>
+
+                  {/* Floating badge for desktop only (bottom-right) */}
+                  <div
+                    className="hidden lg:block absolute bottom-6 right-6 float-badge rounded-xl px-4 py-3 z-20"
+                    style={{ borderColor: 'rgba(249, 115, 22, 0.25)', boxShadow: '0 8px 32px rgba(249, 115, 22, 0.12)' }}
+                  >
                     <div className="text-gray-900 text-sm font-bold">
                       Avg. 3× More Conversions
                     </div>
                     <div className="text-orange-600 text-xs font-semibold mt-0.5">
+                      After redesign
+                    </div>
+                  </div>
+
+                  {/* Overlapping badge for mobile only (centered and hanging over the bottom border) */}
+                  <div
+                    className="lg:hidden absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-20 float-badge rounded-xl px-4 py-2 shadow-2xl border"
+                    style={{ borderColor: 'rgba(249, 115, 22, 0.25)', boxShadow: '0 8px 30px rgba(249, 115, 22, 0.15)' }}
+                  >
+                    <div className="text-gray-900 text-xs font-extrabold text-center tracking-tight whitespace-nowrap">
+                      Avg. 3× More Conversions
+                    </div>
+                    <div className="text-orange-600 text-[10px] font-bold text-center mt-0.5 uppercase tracking-wider">
                       After redesign
                     </div>
                   </div>
@@ -907,11 +940,11 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
               <img
                 src="/web_process_team.png"
                 alt="Isarva Website Development Team"
-                className="w-full h-[400px] lg:h-[480px] object-cover"
+                className="w-full h-[480px] object-cover"
               />
               {/* Overlay with info */}
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/60 flex items-center lg:text-left text-center">
-                <div className="px-10 lg:px-16 max-w-xl">
+                <div className="px-10 lg:px-16 max-w-xl team-info-container">
                   <p className="text-emerald-400 text-sm font-bold uppercase tracking-widest mb-3">
                     Our Expert Team
                   </p>
@@ -927,7 +960,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                   </p>
                   <button
                     onClick={() => setIsModalOpen(true)}
-                    className="inline-flex items-center gap-3 px-8 py-4 text-base font-bold text-emerald-700 bg-white rounded-xl hover:bg-emerald-50 transition-all duration-300 shadow-xl transform hover:-translate-y-1"
+                    className="inline-flex items-center gap-3 px-8 py-4 text-base font-bold text-emerald-700 bg-white rounded-xl hover:bg-emerald-50 transition-all duration-300 shadow-xl transform hover:-translate-y-1 team-btn-custom"
                   >
                     Work With Our Team
                     <svg

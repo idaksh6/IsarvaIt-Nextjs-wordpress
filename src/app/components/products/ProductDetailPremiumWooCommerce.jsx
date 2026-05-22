@@ -31,7 +31,7 @@ export default function ProductDetailPremiumWooCommerce({
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("openContactModal", handleOpenModal);
-    
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("openContactModal", handleOpenModal);
@@ -109,7 +109,7 @@ export default function ProductDetailPremiumWooCommerce({
           className="hero-dashboard-wrapper"
         >
           <div className="dashboard-animation left">
-            <div 
+            <div
               className="scroll-img"
               style={{
                 backgroundImage: `url('/products/woocommerce/Woo-commerce-slide-1.jpg'), url('/products/woocommerce/Woo-commerce-slide-2.jpg')`
@@ -117,7 +117,7 @@ export default function ProductDetailPremiumWooCommerce({
             ></div>
           </div>
           <div className="dashboard-animation right">
-            <div 
+            <div
               className="scroll-img"
               style={{
                 backgroundImage: `url('/products/woocommerce/Woo-commerce-slide-3.jpg'), url('/products/woocommerce/Woo-commerce-slide-4.jpg')`
@@ -138,7 +138,7 @@ export default function ProductDetailPremiumWooCommerce({
 
       {/* 2. Core WooCommerce Section */}
       <section className="lg:py-32 py-14 bg-white">
-        <div className="container mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 lg:text-left text-center">
             {/* Left Side - Image (Sticky on Desktop) */}
             <div className="relative lg:sticky lg:top-28 lg:self-start">
@@ -184,7 +184,7 @@ export default function ProductDetailPremiumWooCommerce({
 
       {/* 4. What We Offer Section */}
       <section className="lg:py-32 py-14 bg-white">
-        <div className="container mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -305,8 +305,8 @@ export default function ProductDetailPremiumWooCommerce({
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A855F7' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
-        
-        <div className="container mx-auto px-6 relative z-10">
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-14">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -617,7 +617,7 @@ function WooCommerceFeatureSection() {
 
   return (
     <section className="py-20 overflow-hidden bg-[#F7F7F7]">
-      <div className="container mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-14">
           <span className="block text-[10px] font-black text-[#A855F7] tracking-[0.28em] uppercase mb-2.5">
@@ -727,11 +727,10 @@ function WooCommerceFeatureSection() {
                 <button
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
-                  className={`flex items-center gap-2 py-2.5 px-5 rounded-lg font-semibold text-sm transition-all duration-200 ${
-                    activeId === feature.id
-                      ? "bg-[#0EA5E9] text-white shadow-lg scale-105"
-                      : "bg-white border border-gray-200 text-gray-700 hover:border-[#0EA5E9] hover:shadow-md"
-                  }`}
+                  className={`flex items-center gap-2 py-2.5 px-5 rounded-lg font-semibold text-sm transition-all duration-200 ${activeId === feature.id
+                    ? "bg-[#0EA5E9] text-white shadow-lg scale-105"
+                    : "bg-white border border-gray-200 text-gray-700 hover:border-[#0EA5E9] hover:shadow-md"
+                    }`}
                 >
                   <span className="text-base">{feature.icon}</span>
                   <span>{feature.label}</span>
@@ -902,26 +901,23 @@ function WooCommerceFAQSection() {
                   className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors duration-200"
                 >
                   <div className="flex items-start gap-4 flex-1">
-                    <div className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${
-                      openIndex === index
-                        ? "bg-gradient-to-br from-[#A855F7] to-[#9333ea] shadow-md"
-                        : "bg-gray-100"
-                    }`}>
+                    <div className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${openIndex === index
+                      ? "bg-gradient-to-br from-[#A855F7] to-[#9333ea] shadow-md"
+                      : "bg-gray-100"
+                      }`}>
                       <span className={`text-xl ${openIndex === index ? "text-white" : "text-gray-600"}`}>
                         ❓
                       </span>
                     </div>
-                    <span className={`font-bold text-lg pr-4 transition-colors ${
-                      openIndex === index ? "text-[#A855F7]" : "text-gray-900"
-                    }`}>
+                    <span className={`font-bold text-lg pr-4 transition-colors ${openIndex === index ? "text-[#A855F7]" : "text-gray-900"
+                      }`}>
                       {faq.question}
                     </span>
                   </div>
-                  <div className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${
-                    openIndex === index
-                      ? "bg-[#A855F7] rotate-180"
-                      : "bg-gray-100"
-                  }`}>
+                  <div className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${openIndex === index
+                    ? "bg-[#A855F7] rotate-180"
+                    : "bg-gray-100"
+                    }`}>
                     <svg
                       className={`w-5 h-5 transition-colors ${openIndex === index ? "text-white" : "text-gray-600"}`}
                       fill="none"

@@ -131,7 +131,7 @@ export default function ProductDetailPremiumMarine({
 
       {/* 2. Core Marine Service Section */}
       <section className="lg:py-32 py-14 bg-white">
-        <div className="container mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 lg:text-left text-center">
             {/* Left Side - Image (Sticky on Desktop) */}
             <div className="relative lg:sticky lg:top-28 lg:self-start">
@@ -200,7 +200,7 @@ export default function ProductDetailPremiumMarine({
         {/* Background Decoration */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-transparent to-cyan-50"></div>
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -267,7 +267,7 @@ export default function ProductDetailPremiumMarine({
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232563EB' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-14">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -305,7 +305,7 @@ export default function ProductDetailPremiumMarine({
                   >
                     <div className="relative rounded-3xl p-8 h-full bg-white border-2 border-gray-100 shadow-lg flex flex-col">
                       <div className="relative text-center md:text-left flex-grow">
-                         {/* Icon */}
+                        {/* Icon */}
                         <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#2563EB] to-[#1E40AF] flex items-center justify-center mb-6 shadow-lg mx-auto md:mx-0">
                           <span className="text-3xl">{prod.icon}</span>
                         </div>
@@ -551,7 +551,7 @@ function MarineFeatureSection() {
 
   return (
     <section className="py-20 overflow-hidden bg-[#F7F7F7]">
-      <div className="container mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-10">
           <span className="block text-[10px] font-black text-[#2563EB] tracking-[0.28em] uppercase mb-2.5">

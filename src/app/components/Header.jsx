@@ -23,9 +23,9 @@ const navLinks = [
 const servicesData = [
   { label: "Website Services", href: "/service/website-services", icon: "🌐" },
   { label: "WordPress Development", href: "/service/wordpress-development", icon: "📝" },
-  { label: "Cloud Services", href: "/service/cloud", icon: "☁️" },
-  { label: "Odoo Apps Support", href: "/service/odoo-apps-support-and-maintenance", icon: "📦" },
   { label: "AI & ML Consulting", href: "/service/ai-ml-consulting", icon: "🤖" },
+  { label: "Website Maintenance AMC", href: "/service/website-maintenance-amc", icon: "🛠️" },
+  { label: "Cloud Services", href: "/service/cloud", icon: "☁️" },
   { label: "Staffing Services", href: "/service/staffing", icon: "👥" },
   { label: "Digital Marketing", href: "/service/digital-marketing", icon: "📱" },
   { label: "Statamic Development", href: "/service/statamic-development", icon: "✨" },
@@ -35,6 +35,7 @@ const servicesData = [
   { label: "Training", href: "/service/training", icon: "📚" },
   { label: "GPS Tracking", href: "/service/gps-tracking", icon: "📍" },
   { label: "WordPress Training", href: "/service/wordpress-training", icon: "🎓" },
+  { label: "Odoo Apps Support", href: "/service/odoo-apps-support-and-maintenance", icon: "📦" },
 
 ];
 
@@ -260,7 +261,7 @@ export default function Header() {
                             });
                           }
                         }}
-                        className="product-click-trigger group flex items-start gap-3 p-4 rounded-xl hover:bg-violet-50 transition-all duration-200"
+                        className="product-click-trigger group flex items-center gap-3 p-4 rounded-xl hover:bg-violet-50 transition-all duration-200"
                         data-product-name={product.label}
                       >
                         <span className="text-2xl mt-0.5 group-hover:scale-110 transition-transform duration-200">
@@ -351,7 +352,7 @@ export default function Header() {
                         href={service.href}
                         prefetch={true}
                         onClick={() => setIsServicesOpen(false)}
-                        className="group flex items-start gap-3 p-4 rounded-xl hover:bg-emerald-50 transition-all duration-200"
+                        className="group flex items-center gap-3 p-4 rounded-xl hover:bg-emerald-50 transition-all duration-200"
                       >
                         <span className="text-2xl mt-0.5 group-hover:scale-110 transition-transform duration-200">
                           {service.icon}
@@ -441,13 +442,13 @@ export default function Header() {
                         href={industry.href}
                         prefetch={true}
                         onClick={() => setIsIndustriesOpen(false)}
-                        className="group flex items-start gap-3 p-4 rounded-xl hover:bg-blue-50 transition-all duration-200"
+                        className="group flex items-center gap-3 p-4 rounded-xl hover:bg-blue-50 transition-all duration-200"
                       >
                         <span className="text-2xl mt-0.5 group-hover:scale-110 transition-transform duration-200">
                           {industry.icon}
                         </span>
                         <div>
-                          <h4 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors text-sm">
+                          <h4 className=" font-semibold text-gray-900 group-hover:text-blue-600 transition-colors text-sm ">
                             {industry.label}
                           </h4>
                         </div>

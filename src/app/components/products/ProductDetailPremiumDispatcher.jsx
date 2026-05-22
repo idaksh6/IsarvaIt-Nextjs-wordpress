@@ -102,7 +102,7 @@ export default function ProductDetailPremiumDispatcher({
           className="hero-dashboard-wrapper"
         >
           <div className="dashboard-animation left">
-            <div 
+            <div
               className="scroll-img"
               style={{
                 backgroundImage: `url('/products/dispatcher%20Panel/Dispatcher-slide1.jpg'), url('/products/dispatcher%20Panel/Dispatcher-slide2.jpg')`
@@ -110,7 +110,7 @@ export default function ProductDetailPremiumDispatcher({
             ></div>
           </div>
           <div className="dashboard-animation right">
-            <div 
+            <div
               className="scroll-img"
               style={{
                 backgroundImage: `url('/products/dispatcher%20Panel/Dispatcher-slide3.jpg'), url('/products/dispatcher%20Panel/Dispatcher-slide4.jpg')`
@@ -131,7 +131,7 @@ export default function ProductDetailPremiumDispatcher({
 
       {/* 2. Core Dispatcher Section */}
       <section className="lg:py-32 py-14 bg-white">
-        <div className="container mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 lg:text-left text-center">
             {/* Left Side - Image (Sticky on Desktop) */}
             <div className="relative lg:sticky lg:top-28 lg:self-start">
@@ -244,16 +244,16 @@ export default function ProductDetailPremiumDispatcher({
                     className="press-illusion-btn-white bg-white text-orange-600 !px-8 !py-4 font-bold transition-all duration-300"
                   >
                     <span className="relative z-10 flex items-center gap-3">
-                    <svg
-                      className="w-5 h-5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={3}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                    </svg>
-                    <span>Request Demo Now</span>
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={3}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                      </svg>
+                      <span>Request Demo Now</span>
                     </span>
                   </button>
                 </div>
@@ -268,8 +268,8 @@ export default function ProductDetailPremiumDispatcher({
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23EF4444' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
-        
-        <div className="container mx-auto px-6 relative z-10">
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-14">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -501,7 +501,7 @@ function DispatcherFeatureSection() {
 
   return (
     <section className="py-20 overflow-hidden bg-[#F7F7F7]">
-      <div className="container mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-10">
           <span className="block text-[10px] font-black text-[#EF4444] tracking-[0.28em] uppercase mb-2.5">
@@ -520,21 +520,19 @@ function DispatcherFeatureSection() {
           <div className="inline-flex bg-white rounded-full p-1.5 shadow-lg border border-gray-200">
             <button
               onClick={() => setActiveTab("features")}
-              className={`px-8 py-3 rounded-full font-bold text-sm transition-all duration-300 ${
-                activeTab === "features"
-                  ? "bg-gradient-to-r from-[#EF4444] to-[#DC2626] text-white shadow-md"
-                  : "text-gray-600 hover:text-gray-900"
-              }`}
+              className={`px-8 py-3 rounded-full font-bold text-sm transition-all duration-300 ${activeTab === "features"
+                ? "bg-gradient-to-r from-[#EF4444] to-[#DC2626] text-white shadow-md"
+                : "text-gray-600 hover:text-gray-900"
+                }`}
             >
               Features
             </button>
             <button
               onClick={() => setActiveTab("reports")}
-              className={`px-8 py-3 rounded-full font-bold text-sm transition-all duration-300 ${
-                activeTab === "reports"
-                  ? "bg-gradient-to-r from-[#EF4444] to-[#DC2626] text-white shadow-md"
-                  : "text-gray-600 hover:text-gray-900"
-              }`}
+              className={`px-8 py-3 rounded-full font-bold text-sm transition-all duration-300 ${activeTab === "reports"
+                ? "bg-gradient-to-r from-[#EF4444] to-[#DC2626] text-white shadow-md"
+                : "text-gray-600 hover:text-gray-900"
+                }`}
             >
               Reports
             </button>
@@ -637,11 +635,10 @@ function DispatcherFeatureSection() {
                 <button
                   key={feature.id}
                   onClick={() => setActiveId(feature.id)}
-                  className={`flex items-center gap-2 py-2.5 px-5 rounded-lg font-semibold text-sm transition-all duration-200 ${
-                    activeId === feature.id
-                      ? "bg-[#0EA5E9] text-white shadow-lg scale-105"
-                      : "bg-white border border-gray-200 text-gray-700 hover:border-[#0EA5E9] hover:shadow-md"
-                  }`}
+                  className={`flex items-center gap-2 py-2.5 px-5 rounded-lg font-semibold text-sm transition-all duration-200 ${activeId === feature.id
+                    ? "bg-[#0EA5E9] text-white shadow-lg scale-105"
+                    : "bg-white border border-gray-200 text-gray-700 hover:border-[#0EA5E9] hover:shadow-md"
+                    }`}
                 >
                   <span className="text-base">{feature.icon}</span>
                   <span>{feature.label}</span>

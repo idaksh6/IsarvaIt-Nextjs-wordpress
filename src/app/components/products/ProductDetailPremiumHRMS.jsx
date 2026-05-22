@@ -740,7 +740,7 @@ function HrmsFeatureSection() {
 
   return (
     <section className="py-10 lg:py-20 overflow-hidden bg-[#F7F7F7]">
-      <div className="w-full lg:container mx-auto px-6">
+      <div className="w-full max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-14">
           <span className="block text-[14px] font-black text-[#22C55E] tracking-[0.28em] uppercase mb-2.5">

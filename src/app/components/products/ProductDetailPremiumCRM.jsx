@@ -128,7 +128,7 @@ export default function ProductDetailPremiumCRM({
         <div className="absolute top-20 right-10 w-[400px] h-[400px] bg-[#0EA5E9] opacity-[0.04] rounded-full blur-3xl pointer-events-none"></div>
         <div className="absolute bottom-20 left-10 w-[350px] h-[350px] bg-[#0284C7] opacity-[0.03] rounded-full blur-3xl pointer-events-none"></div>
 
-        <div className="w-full lg:container mx-auto px-6 relative z-10 text-center">
+        <div className="w-full max-w-7xl mx-auto px-6 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -239,7 +239,7 @@ export default function ProductDetailPremiumCRM({
 
       {/* 2. Why Businesses Need a CRM Section */}
       <section className="lg:py-24 py-10 bg-white">
-        <div className="w-full lg:container mx-auto px-6">
+        <div className="w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 lg:text-left text-center">
             {/* Left Side - Image (Sticky on Desktop) */}
             <div className="relative lg:sticky lg:top-28 lg:self-start">
@@ -384,7 +384,7 @@ export default function ProductDetailPremiumCRM({
 
       {/* 4. How Isarva CRM Works Section */}
       <section className="py-10 lg:py-24 bg-white relative overflow-hidden">
-        <div className="w-full lg:container mx-auto px-6">
+        <div className="w-full max-w-7xl mx-auto px-6">
           <div className="text-center mb-8 md:mb-16">
             <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-3 bg-white px-4 py-2 rounded-full border border-[#0EA5E9]/20 shadow-sm">
               PROCESS
@@ -413,7 +413,7 @@ export default function ProductDetailPremiumCRM({
 
       {/* 5. Why Choose Isarva CRM Section */}
       <section className="py-10 lg:py-24 bg-slate-50 relative overflow-hidden">
-        <div className="w-full lg:container mx-auto px-6">
+        <div className="w-full max-w-7xl mx-auto px-6">
           <div className="text-center mb-8 md:mb-16">
             <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               Why Choose <span className="text-[#0EA5E9]">Isarva CRM</span>
@@ -433,9 +433,126 @@ export default function ProductDetailPremiumCRM({
         </div>
       </section>
 
+      {/* 6. Mobile App CTA Section */}
+      <section className="py-10 lg:py-20 bg-white relative overflow-hidden">
+        <div className="w-full lg:container mx-auto px-6 max-w-7xl">
+          <div className="relative">
+            {/* Offset white border background */}
+            <div className="absolute inset-0 translate-x-3 translate-y-3 lg:translate-x-4 lg:translate-y-4 rounded-[2.5rem] border-[1.5px] border-gray-300 bg-white z-0 hidden md:block"></div>
+
+            {/* Main Yellow Box */}
+            <div className="bg-[#FACC15] rounded-[2.5rem] p-8 lg:p-12 xl:p-16 flex flex-col lg:flex-row items-center gap-10 lg:gap-16 relative z-10 border border-gray-100/50 shadow-sm">
+
+              {/* Left Side: Images */}
+              <div className="w-full lg:w-1/2 flex justify-center lg:justify-center relative">
+                {/* Decorative Elements */}
+                {/* <div className="absolute top-0 right-10 opacity-60 hidden md:block">
+                  <svg width="80" height="40" viewBox="0 0 80 40" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4" className="text-gray-900">
+                    <path d="M5,35 Q20,5 40,20 T75,10" fill="none" />
+                  </svg>
+                </div> */}
+                {/* <div className="absolute top-10 right-0 opacity-60 hidden md:block">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gray-900">
+                    <rect x="6" y="6" width="12" height="12" rx="2" transform="rotate(15 12 12)" />
+                    <circle cx="12" cy="16" r="1" fill="currentColor" />
+                    <path d="M9 10h6" strokeLinecap="round" />
+                  </svg>
+                </div> */}
+                {/* <div className="absolute top-5 right-20 opacity-60 hidden md:block">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gray-900">
+                    <path d="M12 2v20m10-10H2" strokeLinecap="round" transform="rotate(45 12 12)" />
+                  </svg>
+                </div> */}
+
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="relative z-10 w-full max-w-[500px]"
+                >
+                  <img
+                    src="/products/crm/mockups/CRM-mobile-mockup.png"
+                    alt="Isarva CRM Mobile App"
+                    className="w-full h-auto object-contain mix-blend-multiply scale-105"
+                  />
+                </motion.div>
+              </div>
+
+              {/* Right Side: Content */}
+              <div className="w-full lg:w-1/2 flex flex-col gap-6">
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 leading-[1.15]"
+                >
+                  Say hello with Isarva CRM Mobile App
+                </motion.h2>
+
+                <motion.ul
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="space-y-4 text-gray-900 font-semibold lg:text-base xl:text-lg"
+                >
+                  {[
+                    "Get organized and take control every day",
+                    "Access and manage information anytime and anywhere",
+                    "Access deals, track conversations, and log activities directly from the app",
+                    "Track your daily schedule and achieve your goals",
+                    "Communicate seamlessly with your team and clients"
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <svg className="w-5 h-5 flex-shrink-0 text-gray-900 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+                      </svg>
+                      <span className="leading-snug">{item}</span>
+                    </li>
+                  ))}
+                </motion.ul>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className="flex flex-col sm:flex-row gap-4 mt-4"
+                >
+                  {/* Google Play Button */}
+                  <a href="#" className="bg-[#2A2A2A] hover:bg-black text-white px-6 py-3 rounded-xl flex items-center justify-center gap-3 transition-colors shadow-lg shadow-black/10">
+                    <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M17.523 15.341l-2.433-2.435 2.443-2.445 3.327 1.884a1 1 0 010 1.737l-3.337 1.88-3.136-1.78zM3.469 3.018a1.5 1.5 0 00-.469 1.092v15.78a1.5 1.5 0 00.469 1.092l10.87-10.87L3.469 3.018zM14.896 11.664l-1.077-1.078L4.624 2.221a1.5 1.5 0 011.696-.06l8.576 4.847-1.127 1.135L14.896 11.664zM14.896 14.153l-1.127-1.135 8.576-4.847a1.5 1.5 0 011.696.06L4.624 21.84a1.5 1.5 0 001.696.06l8.576-4.847z" />
+                    </svg>
+                    <div className="flex flex-col items-start">
+                      <span className="text-[10px] uppercase tracking-wider opacity-80 leading-none">Get it on</span>
+                      <span className="text-[17px] font-bold leading-tight">Playstore</span>
+                    </div>
+                  </a>
+
+                  {/* App Store Button */}
+                  <a href="#" className="bg-[#2A2A2A] hover:bg-black text-white px-6 py-3 rounded-xl flex items-center justify-center gap-3 transition-colors shadow-lg shadow-black/10">
+                    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.19 2.31-.88 3.5-.8 1.5.05 2.76.65 3.52 1.63-3.13 1.78-2.61 6.07.41 7.23-.73 1.73-1.57 3.23-2.51 4.11zm-3.54-15c-.24 1.63-1.42 3.12-3.11 3.29-.31-1.65 1.11-3.23 2.92-3.48.06.06.13.13.19.19z" />
+                    </svg>
+                    <div className="flex flex-col items-start">
+                      <span className="text-[10px] uppercase tracking-wider opacity-80 leading-none">Download from</span>
+                      <span className="text-[17px] font-bold leading-tight">Appstore</span>
+                    </div>
+                  </a>
+                </motion.div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 6. FAQ Section */}
       <section className="py-10 lg:py-24 bg-white relative overflow-hidden">
-        <div className="w-full lg:container mx-auto px-6 max-w-7xl">
+        <div className="w-full max-w-7xl mx-auto px-6 max-w-7xl">
           <div className="text-center mb-8 md:mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -524,7 +641,7 @@ export default function ProductDetailPremiumCRM({
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230EA5E9' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
 
-        <div className="w-full lg:container mx-auto px-6 relative z-10">
+        <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-14">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -864,7 +981,7 @@ function CRMFeatureSection() {
 
   return (
     <section className="py-10 lg:py-20 overflow-hidden bg-[#F7F7F7]">
-      <div className="w-full lg:container mx-auto px-6">
+      <div className="w-full max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-10">
           <span className="block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-2.5">
@@ -1125,7 +1242,7 @@ const crmTabData = [
       { label: "Lead creation", text: "Create and capture leads instantly from mobile or web." },
       { label: "Lead Tracking", text: "Track lead progress and sources across the sales funnel." }
     ],
-    image: "/products/crm/mockups/leads_mobile.png"
+    image: "/products/crm/mockups/Leads-management.jpg"
   },
   {
     id: "pipeline",
@@ -1137,7 +1254,7 @@ const crmTabData = [
       { label: "Visual deal stages", text: "View and move deals easily across each sales stage." },
       { label: "Opportunity tracking", text: "Track deal value, probability, and progress in real time." }
     ],
-    image: "/products/crm/mockups/deals_mobile.png"
+    image: "/products/crm/mockups/Deals-management .jpg"
   },
   {
     id: "customer",
@@ -1149,7 +1266,7 @@ const crmTabData = [
       { label: "Customer Profiles", text: "Store all customer details in one centralized profile." },
       { label: "Sales & Activity History", text: "View past sales, interactions, and follow-ups easily." }
     ],
-    image: "/products/crm/mockups/customer_mobile_v2.png"
+    image: "/products/crm/mockups/Customer-management.png"
   },
   {
     id: "quotation",
@@ -1161,7 +1278,7 @@ const crmTabData = [
       { label: "Quote & Order Tracking", text: "Create and track quotes and sales orders." },
       { label: "Order Status Tracking", text: "Track order status from start to finish." }
     ],
-    image: "/products/crm/mockups/quotations_v2.png"
+    image: "/products/crm/mockups/Quoatation.jpg"
   },
   {
     id: "tasks",
@@ -1173,19 +1290,19 @@ const crmTabData = [
       { label: "Task Scheduling", text: "Plan and track daily tasks and meetings easily." },
       { label: "Linked Activities", text: "Manage activities connected to leads, deals, and customers." }
     ],
-    image: "/products/crm/mockups/tasks_mobile.png"
+    image: "/products/crm/mockups/Tasks.jpg"
   },
   {
     id: "mobile",
-    title: "Android CRM App",
+    title: "Mobile CRM App",
     subtitle: "A powerful Android mobile CRM app.",
-    description: "A powerful Android mobile CRM app designed for real-world sales execution with real-time sync between mobile and web.",
+    description: "A powerful Mobile CRM App designed for real-world sales execution with real-time synchronization between mobile and web platforms.",
     color: "from-[#3B82F6] to-[#1D4ED8]",
     points: [
-      { label: "Android-First App", text: "Built for smooth, mobile-first sales execution." },
-      { label: "Real-Time Sync", text: "Sync data instantly between mobile and web." }
+      { label: "Mobile-First Experience", text: "Built for smooth and efficient sales operations on mobile devices with an intuitive user-friendly interface." },
+      { label: "Real-Time Sync", text: "Instantly sync Leads, Deals, Tasks, Meetings, and customer activities between mobile and web applications." }
     ],
-    image: "/products/crm/mockups/sync_overview_v2.png"
+    image: "/products/crm/mockups/Android-crm.png"
   }
 ];
 
@@ -1207,7 +1324,7 @@ function CRMTabSection({ setSelectedImage }) {
 
   return (
     <section className="py-10 lg:py-24 bg-slate-50 overflow-hidden">
-      <div className="w-full lg:container mx-auto px-6">
+      <div className="w-full max-w-7xl mx-auto px-6">
         <div className="text-center mb-14 ">
           <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
             Powerful <span className="text-[#0EA5E9]">Isarva CRM</span> Features
@@ -1275,7 +1392,7 @@ function CRMTabSection({ setSelectedImage }) {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.4 }}
-                  className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12 items-center w-full relative z-10"
+                  className=" flex flex-col gap-3 items-center w-full relative z-10"
                 >
                   {/* Content */}
                   <div className="order-2 md:order-1 flex flex-col items-center md:items-start text-center md:text-left">
@@ -1306,21 +1423,13 @@ function CRMTabSection({ setSelectedImage }) {
                       initial={{ scale: 0.95, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ delay: 0.2 }}
-                      className="relative z-10 cursor-zoom-in group"
-                      onClick={() => setSelectedImage(currentTab.image)}
+                      className="relative z-10"
                     >
                       <img
                         src={currentTab.image}
                         alt={currentTab.title}
-                        className="w-full h-auto max-h-[350px] lg:max-h-[500px] object-contain drop-shadow-2xl rounded-2xl transition-transform duration-500 group-hover:scale-[1.02]"
+                        className="w-full h-auto max-h-[350px] lg:max-h-[500px] object-contain drop-shadow-2xl rounded-2xl"
                       />
-                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/5 rounded-2xl">
-                        <div className="bg-white/90 p-2 rounded-full shadow-lg">
-                          <svg className="w-6 h-6 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                          </svg>
-                        </div>
-                      </div>
                     </motion.div>
                   </div>
                 </motion.div>
