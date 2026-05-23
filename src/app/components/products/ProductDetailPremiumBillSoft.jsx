@@ -373,8 +373,8 @@ export default function ProductDetailPremiumBillSoft({
   const [bannerIdx, setBannerIdx] = useState(0);
   const bannerImages = [
     {
-      desktop: "/products/billsoft/Dashboard.jpg",
-      mobile: "/products/billsoft/Dashboard.jpg"
+      desktop: "/products/billsoft/Yellow-Dashbaord.jpg",
+      mobile: "/products/billsoft/Yellow-Dashbaord.jpg"
     },
     {
       desktop: "/products/billsoft/billsoft-invoice-workflow-1.png",
@@ -496,12 +496,12 @@ export default function ProductDetailPremiumBillSoft({
 
         <div className="relative z-40 pt-0">
           {/* Intro Section Above Tabs */}
-          <section className="wp-aurora-gradient relative pt-36 lg:pt-52 pb-16 lg:pb-32 overflow-hidden">
+          <section className="wp-aurora-gradient relative pt-36 lg:pt-40 pb-16 lg:pb-32 overflow-hidden">
             <div className="absolute inset-0 aurora-mesh pointer-events-none" />
             <div className="absolute inset-0 hero-grid opacity-[0.2] pointer-events-none" />
 
 
-            <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10 w-full">
+            <div className="max-w-7xl mx-auto px-6 sm:px-6 relative z-10 w-full">
 
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -525,7 +525,7 @@ export default function ProductDetailPremiumBillSoft({
                     </h1>
                   </div>
 
-                  <div className="text-lg lg:text-xl text-gray-600 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0 font-medium border-l-2 border-sky-200 pl-8 space-y-4">
+                  <div className="text-lg lg:text-xl text-gray-600 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0 font-medium border-0 lg:border-l-2 border-sky-200 pl-0 lg:pl-8 space-y-4">
                     <p>Isarva BillSoft is an <span className="text-blue-600 font-bold">all-in-one business management solution</span> designed to handle billing, inventory, branches, and financial operations seamlessly.</p>
                     <p>It’s built not just for stock tracking—but for <span className="text-[#6f3ce3] font-bold">real business workflows</span> including sales, purchases, approvals, and multi-branch operations.</p>
                   </div>
@@ -610,16 +610,9 @@ export default function ProductDetailPremiumBillSoft({
                     ))}
                   </div>
                   <div className="relative h-[300px] sm:h-[450px] lg:h-[600px] w-full px-4 sm:px-0">
-                    {/* Decorative Blobs */}
-                    {bannerIdx === 0 && (
-                      <>
-                        <div className="absolute -top-20 -right-20 w-64 h-64 bg-sky-400 rounded-full decorative-blob" />
-                        <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-blue-300 rounded-full decorative-blob" style={{ animationDelay: '-5s' }} />
-                      </>
-                    )}
 
 
-                    <div className={`absolute top-0 right-4 lg:right-0 w-[80%] lg:w-[500px] h-[80%] lg:h-[500px] z-10 flex items-center justify-center transition-all duration-500
+                    <div className={`absolute top-0 right-0 lg:right-0 w-[100%] lg:w-[500px] h-[100%] lg:h-[500px] z-10 flex items-center justify-center transition-all duration-500
                       ${bannerIdx === 0
                         ? "image-card image-3d-card border-4 sm:border-8 border-white shadow-2xl bg-white"
                         : "border-none bg-transparent shadow-none"
@@ -637,7 +630,7 @@ export default function ProductDetailPremiumBillSoft({
 
                     {/* Floating Sales Invoice Dashboard */}
                     {bannerIdx === 0 && (
-                      <div className="absolute bottom-2 left-4 lg:-bottom-6 lg:-left-6 w-[55%] lg:w-[250px] h-[50%] lg:h-[280px] image-card wp-float2 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] border-2 sm:border-4 border-white transform -rotate-3 hover:rotate-0 transition-all duration-500 bg-white z-20">
+                      <div className="hidden lg:block absolute bottom-2 left-4 lg:-bottom-6 lg:-left-6 w-[55%] lg:w-[250px] h-[50%] lg:h-[280px] image-card wp-float2 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] border-2 sm:border-4 border-white transform -rotate-3 hover:rotate-0 transition-all duration-500 bg-white z-20">
                         <img src="/products/billsoft/Sales-invoice.jpg" alt="Sales Invoice Dashboard" className="w-full h-full object-cover" />
                       </div>
                     )}
@@ -693,7 +686,7 @@ export default function ProductDetailPremiumBillSoft({
             </div>
           </div>
 
-          <div ref={contentTopRef} className="w-full lg:container mx-auto px-6 pt-10 lg:pt-24 pb-12 lg:pb-24">
+          <div ref={contentTopRef} className="w-full lg:container mx-auto px-6 pt-4 lg:pt-24 pb-12 lg:pb-24">
             <div className="flex flex-col lg:flex-row gap-0 lg:gap-12">
               {/* Desktop Sidebar */}
               <aside className="lg:w-80 flex-shrink-0">
@@ -742,7 +735,7 @@ export default function ProductDetailPremiumBillSoft({
                     transition={{ duration: 0.4 }}
                   >
                     <section className="pt-4 pb-12">
-                      <div className="flex flex-col gap-6 mb-12">
+                      <div className="flex flex-col gap-6 mb-6 lg:mb-12 text-center lg:text-left">
                         <div className="max-w-none">
                           <motion.div
                             className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border text-[12px] font-black uppercase tracking-[0.2em] mb-6 ${TAB_THEMES[activeTab].lightBg} ${TAB_THEMES[activeTab].text} border-white/50 shadow-sm`}
@@ -763,7 +756,7 @@ export default function ProductDetailPremiumBillSoft({
                           </p>
                         </div>
 
-                        <div className="flex flex-col sm:flex-row gap-4">
+                        <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
                           <button
                             onClick={() => setIsModalOpen(true)}
                             className="press-illusion-btn-orange px-8 py-4 font-black uppercase tracking-widest text-xs flex items-center justify-center gap-3"
@@ -996,7 +989,7 @@ export default function ProductDetailPremiumBillSoft({
                           </p>
 
                           {/* Category Badge */}
-                          <div className="absolute -top-11 -right-2 bg-white text-sky-600 text-[10px] font-black px-3 py-1 rounded-full border border-sky-100 shadow-md uppercase tracking-wider">
+                          <div className="absolute -top-11 left-1/2 -translate-x-1/2 md:left-auto md:-right-2 md:translate-x-0 bg-white text-sky-600 text-[10px] font-black px-3 py-1 rounded-full border border-sky-100 shadow-md uppercase tracking-wider whitespace-nowrap">
                             {prod.category}
                           </div>
                         </div>
