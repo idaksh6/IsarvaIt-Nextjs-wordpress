@@ -372,8 +372,14 @@ export default function ProductDetailPremiumBillSoft({
   // Banner tab state for 3D card image switching
   const [bannerIdx, setBannerIdx] = useState(0);
   const bannerImages = [
-    "/products/billsoft/Billsoft-mockup.png",
-    "/products/billsoft/billsoft-invoice-workflow.png"
+    {
+      desktop: "/products/billsoft/Dashboard.jpg",
+      mobile: "/products/billsoft/Dashboard.jpg"
+    },
+    {
+      desktop: "/products/billsoft/billsoft-invoice-workflow-1.png",
+      mobile: "/products/billsoft/billsoft-invoice-workflow-mobile-1.png"
+    }
   ];
   const contentTopRef = useRef(null);
   const isFirstMount = useRef(true);
@@ -618,20 +624,23 @@ export default function ProductDetailPremiumBillSoft({
                         ? "image-card image-3d-card border-4 sm:border-8 border-white shadow-2xl bg-white"
                         : "border-none bg-transparent shadow-none"
                       }`}>
-                      <img
-                        src={bannerImages[bannerIdx]}
-                        alt="Isarva BillSoft Banner"
-                        className={`w-full h-full transition-all duration-500 ${bannerIdx === 0 ? "object-cover" : "object-contain"}`}
-                      />
+                      <picture className="w-full h-full block">
+                        <source media="(max-width: 639px)" srcSet={bannerImages[bannerIdx].mobile} />
+                        <img
+                          src={bannerImages[bannerIdx].desktop}
+                          alt="Isarva BillSoft Banner"
+                          className={`w-full h-full transition-all duration-500 ${bannerIdx === 0 ? "object-cover" : "object-contain"}`}
+                        />
+                      </picture>
                       {bannerIdx === 0 && <div className="absolute inset-0 bg-gradient-to-tr from-sky-900/10 to-transparent" />}
                     </div>
 
                     {/* Floating Sales Invoice Dashboard */}
-                    <div className={`absolute bottom-2 left-4 lg:-bottom-6 lg:-left-6 w-[55%] lg:w-[250px] h-[50%] lg:h-[280px] image-card wp-float2 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] border-2 sm:border-4 border-white transform -rotate-3 hover:rotate-0 transition-all duration-500 bg-white
-                      ${bannerIdx === 0 ? "z-20" : "z-0"}
-                    `}>
-                      <img src="/products/billsoft/Sales-invoice.jpg" alt="Sales Invoice Dashboard" className="w-full h-full object-cover" />
-                    </div>
+                    {bannerIdx === 0 && (
+                      <div className="absolute bottom-2 left-4 lg:-bottom-6 lg:-left-6 w-[55%] lg:w-[250px] h-[50%] lg:h-[280px] image-card wp-float2 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] border-2 sm:border-4 border-white transform -rotate-3 hover:rotate-0 transition-all duration-500 bg-white z-20">
+                        <img src="/products/billsoft/Sales-invoice.jpg" alt="Sales Invoice Dashboard" className="w-full h-full object-cover" />
+                      </div>
+                    )}
 
                     {/* Floating Tech Tag */}
                     {bannerIdx === 0 && (
@@ -771,7 +780,7 @@ export default function ProductDetailPremiumBillSoft({
                       </div>
 
                       {/* Module Image Visual */}
-                      <div className="relative mb-16">
+                      <div className="relative mb-10 lg:mb-16">
                         <div className="relative z-10 p-2 bg-white rounded-[2.5rem] border border-gray-100 shadow-2xl cursor-pointer group overflow-hidden" onClick={() => setSelectedImage(activeContent.image)}>
                           <div className="rounded-[2rem] overflow-hidden relative aspect-[16/9] bg-gray-50">
                             <img
@@ -884,7 +893,7 @@ export default function ProductDetailPremiumBillSoft({
           </section>
 
           {/* FAQ Section */}
-          <section className="py-10 lg:py-16 bg-white border border-gray-100 rounded-[3rem] mb-0 lg:mb-16 ">
+          <section className="py-10 lg:py-16 bg-white border border-gray-100 rounded-[3rem] mb-10 lg:mb-24 ">
             <div className="px-8 lg:px-12">
               <h2 className="text-gray-900 mb-12 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Frequently Asked Questions</h2>
               <div className="space-y-4">
@@ -925,7 +934,7 @@ export default function ProductDetailPremiumBillSoft({
 
 
         {/* Related Products Section */}
-        <section className="py-10 lg:py-20 bg-gray-50/50">
+        <section className="py-10 lg:py-20 bg-white">
           <div className="w-full lg:container mx-auto px-6">
             <div className="text-center mb-16">
               <motion.div
