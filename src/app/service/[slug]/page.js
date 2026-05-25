@@ -21,7 +21,7 @@ export const dynamic = 'force-static';
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const service = getServiceBySlug(slug);
-  
+
   if (!service) {
     return {
       title: 'Service Not Found',
@@ -63,7 +63,7 @@ export default async function ServiceDetailPage({ params }) {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section 
+      <section
         className="relative pt-32 lg:pt-40 pb-24 overflow-hidden bg-gradient-to-br from-emerald-50 via-teal-50 to-white"
       >
         {/* Background Decorations */}
@@ -95,8 +95,8 @@ export default async function ServiceDetailPage({ params }) {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-emerald-100 to-teal-100 text-emerald-800 font-semibold text-sm mb-6 border border-emerald-200 shadow-md">
+            <div className="text-center lg:text-left">
+              <div className="flex w-fit mx-auto lg:mx-0 items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-emerald-100 to-teal-100 text-emerald-800 font-semibold text-sm mb-6 border border-emerald-200 shadow-md">
                 <span className="text-2xl">{service.icon}</span>
                 <span>Premium Service</span>
               </div>
@@ -106,7 +106,7 @@ export default async function ServiceDetailPage({ params }) {
               <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-10">
                 {service.description}
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap justify-center lg:justify-start gap-4">
                 <ServiceDetailClient service={service} servicesData={servicesData} />
                 <Link
                   href={service.subServices ? "#sub-services" : "#features"}
@@ -123,8 +123,8 @@ export default async function ServiceDetailPage({ params }) {
                 <div className="relative rounded-3xl bg-white/70 backdrop-blur-xl border border-white/80 shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
                   <div className="relative w-full h-[500px] lg:h-[600px]">
                     {/* Service Image */}
-                    <img 
-                      src={service.heroImage || "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=1200&fit=crop&q=80"} 
+                    <img
+                      src={service.heroImage || "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=1200&fit=crop&q=80"}
                       alt={service.title}
                       className="w-full h-full object-cover"
                     />
@@ -142,7 +142,7 @@ export default async function ServiceDetailPage({ params }) {
       {service.subServices && service.subServices.length > 0 && (
         <section id="sub-services" className="py-20 lg:py-32 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(16,185,129,0.05),transparent_50%)]"></div>
-          
+
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center mb-16">
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-100 text-emerald-700 font-semibold text-sm mb-6">
@@ -180,11 +180,11 @@ export default async function ServiceDetailPage({ params }) {
                     className="group relative block"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/10 to-teal-400/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
-                    
+
                     <div className="relative h-full bg-white rounded-3xl border-2 border-gray-100 hover:border-emerald-200 shadow-lg hover:shadow-2xl transition-all duration-300 p-8 overflow-hidden">
                       {/* Decorative corner */}
                       <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-400/10 to-transparent rounded-bl-[100px] transform group-hover:scale-150 transition-transform duration-500"></div>
-                      
+
                       <div className="relative z-10">
                         <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                           <span className="text-3xl">{subService.icon}</span>
@@ -243,7 +243,7 @@ export default async function ServiceDetailPage({ params }) {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           {/* Header */}
-          <div className="max-w-3xl mb-16">
+          <div className="max-w-3xl mb-16 mx-auto lg:mx-0 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-50 border border-emerald-200 mb-6">
               <svg className="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -251,71 +251,71 @@ export default async function ServiceDetailPage({ params }) {
               <span className="text-emerald-700 font-semibold text-sm">Key Features</span>
             </div>
             <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
-              {service.slug === "odoo-apps-support-and-maintenance" 
-                ? "Comprehensive Support Services" 
+              {service.slug === "odoo-apps-support-and-maintenance"
+                ? "Comprehensive Support Services"
                 : service.slug === "ai-ml-consulting"
-                ? "Why You Need Consulting Services"
-                : service.slug === "staffing"
-                ? "Explore Our Staffing Services"
-                : service.slug === "consulting-services"
-                ? "Transform Your Business with Innovative Technology Strategy"
-                : service.slug === "erp-services"
-                ? "Explore Our ERP Services"
-                : service.slug === "offshore-development"
-                ? "Explore Our Offshore Development Services"
-                : service.slug === "training"
-                ? "Explore Our Training Development Services"
-                : service.slug === "wordpress-development"
-                ? "Explore Our WordPress Development Services"
-                : service.slug === "statamic-development"
-                ? "Explore Our Statamic Development Services"
-                : service.slug === "gps-tracking"
-                ? "Explore Our GPS Tracking Services"
-                : service.slug === "wordpress-training"
-                ? "Start Your WordPress Adventure"
-                : service.slug === "digital-marketing"
-                ? "Explore Our Digital Marketing Services"
-                : service.slug === "seo"
-                ? "SEO Services"
-                : service.slug === "social-media-marketing"
-                ? "Social Media Marketing"
-                : service.slug === "google-ads"
-                ? "Google Ads"
-                : "Everything You Need to Succeed"
+                  ? "Why You Need Consulting Services"
+                  : service.slug === "staffing"
+                    ? "Explore Our Staffing Services"
+                    : service.slug === "consulting-services"
+                      ? "Transform Your Business with Innovative Technology Strategy"
+                      : service.slug === "erp-services"
+                        ? "Explore Our ERP Services"
+                        : service.slug === "offshore-development"
+                          ? "Explore Our Offshore Development Services"
+                          : service.slug === "training"
+                            ? "Explore Our Training Development Services"
+                            : service.slug === "wordpress-development"
+                              ? "Explore Our WordPress Development Services"
+                              : service.slug === "statamic-development"
+                                ? "Explore Our Statamic Development Services"
+                                : service.slug === "gps-tracking"
+                                  ? "Explore Our GPS Tracking Services"
+                                  : service.slug === "wordpress-training"
+                                    ? "Start Your WordPress Adventure"
+                                    : service.slug === "digital-marketing"
+                                      ? "Explore Our Digital Marketing Services"
+                                      : service.slug === "seo"
+                                        ? "SEO Services"
+                                        : service.slug === "social-media-marketing"
+                                          ? "Social Media Marketing"
+                                          : service.slug === "google-ads"
+                                            ? "Google Ads"
+                                            : "Everything You Need to Succeed"
               }
             </h2>
             <p className="text-xl text-gray-700 leading-relaxed">
-              {service.slug === "odoo-apps-support-and-maintenance" 
+              {service.slug === "odoo-apps-support-and-maintenance"
                 ? "We ensure that your Odoo applications—from Finance to HR—are always up-to-date, secure, and performing at their peak."
                 : service.slug === "ai-ml-consulting"
-                ? "Align your business objectives with the right AI and ML solutions with our consulting services."
-                : service.slug === "staffing"
-                ? "At Isarva Infotech, we believe in going beyond conventional recruitment. Our expert staffing services are designed to craft customized strategies that build high-performing teams, empowering your business to achieve its true potential."
-                : service.slug === "consulting-services"
-                ? "Unlock the full potential of your business with our expert consulting services, designed to meet your unique needs. From strategic planning to operational improvement, we offer a full suite of solutions to ensure your organization is both effective and efficient."
-                : service.slug === "erp-services"
-                ? "Unlock the full potential of your business operations with our expert ERP services, designed to meet your unique business needs. From custom software development to implementation and integration, we offer a full suite of solutions to ensure your business runs smoothly and efficiently."
-                : service.slug === "offshore-development"
-                ? "Unlock the full potential of your project with our expert offshore development services, designed to meet your unique business needs. From custom software development to IT consulting, we offer a full suite of solutions to ensure your project is both efficient and effective."
-                : service.slug === "training"
-                ? "Unlock the full potential of your team with our expert training development services, designed to meet your unique organizational needs. From custom course creation to instructor-led training, we offer a full suite of solutions to ensure your employees are equipped with the skills and knowledge they need to succeed."
-                : service.slug === "wordpress-development"
-                ? "Unlock the full potential of your online presence with our expert WordPress development services, designed to meet your unique business needs. From custom themes and plugins to seamless integrations, we offer a full suite of solutions to ensure your website is both stunning and high-performing."
-                : service.slug === "statamic-development"
-                ? "Unleash the full potential of your website with our expert Statamic development services, designed to meet your unique business needs. From custom themes to addon development, we offer a full suite of solutions to ensure your online presence is both powerful and engaging."
-                : service.slug === "gps-tracking"
-                ? "Unlock the full potential of your fleet or assets with our expert GPS tracking services, designed to meet your unique business needs. From custom tracking solutions to real-time monitoring, we offer a full suite of solutions to ensure your operations are both efficient and effective."
-                : service.slug === "wordpress-training"
-                ? "Whether you're a beginner or an experienced user, our expert instructors will guide you through every step of the process, from setting up your WordPress site to customizing themes and plugins. With hands-on practice and real-world examples, you'll gain the skills and confidence to create amazing websites that stand out from the crowd."
-                : service.slug === "digital-marketing"
-                ? "Unlock the full potential of your online presence with our expert digital marketing services, designed to meet your unique business needs. From search engine optimization to social media management, we offer a full suite of solutions to ensure your brand is visible, credible, and successful online."
-                : service.slug === "seo"
-                ? "Our SEO service will help your company rank higher in search results, boost your sales, and allow you to target the right audience for your product or service."
-                : service.slug === "social-media-marketing"
-                ? "We excel in supporting small and medium businesses by crafting customized digital marketing and branding solutions, including social media strategy development, content creation, campaign execution, account management, and optimization to enhance visibility and engagement."
-                : service.slug === "google-ads"
-                ? "Google Ads allows businesses to set budgets and deploy creative strategies, reaching audiences actively searching for products and services similar to theirs. Additionally, Google Ads uniquely provides detailed insights to measure return on investment (ROI)."
-                : "Comprehensive capabilities designed to deliver exceptional results for your business"
+                  ? "Align your business objectives with the right AI and ML solutions with our consulting services."
+                  : service.slug === "staffing"
+                    ? "At Isarva Infotech, we believe in going beyond conventional recruitment. Our expert staffing services are designed to craft customized strategies that build high-performing teams, empowering your business to achieve its true potential."
+                    : service.slug === "consulting-services"
+                      ? "Unlock the full potential of your business with our expert consulting services, designed to meet your unique needs. From strategic planning to operational improvement, we offer a full suite of solutions to ensure your organization is both effective and efficient."
+                      : service.slug === "erp-services"
+                        ? "Unlock the full potential of your business operations with our expert ERP services, designed to meet your unique business needs. From custom software development to implementation and integration, we offer a full suite of solutions to ensure your business runs smoothly and efficiently."
+                        : service.slug === "offshore-development"
+                          ? "Unlock the full potential of your project with our expert offshore development services, designed to meet your unique business needs. From custom software development to IT consulting, we offer a full suite of solutions to ensure your project is both efficient and effective."
+                          : service.slug === "training"
+                            ? "Unlock the full potential of your team with our expert training development services, designed to meet your unique organizational needs. From custom course creation to instructor-led training, we offer a full suite of solutions to ensure your employees are equipped with the skills and knowledge they need to succeed."
+                            : service.slug === "wordpress-development"
+                              ? "Unlock the full potential of your online presence with our expert WordPress development services, designed to meet your unique business needs. From custom themes and plugins to seamless integrations, we offer a full suite of solutions to ensure your website is both stunning and high-performing."
+                              : service.slug === "statamic-development"
+                                ? "Unleash the full potential of your website with our expert Statamic development services, designed to meet your unique business needs. From custom themes to addon development, we offer a full suite of solutions to ensure your online presence is both powerful and engaging."
+                                : service.slug === "gps-tracking"
+                                  ? "Unlock the full potential of your fleet or assets with our expert GPS tracking services, designed to meet your unique business needs. From custom tracking solutions to real-time monitoring, we offer a full suite of solutions to ensure your operations are both efficient and effective."
+                                  : service.slug === "wordpress-training"
+                                    ? "Whether you're a beginner or an experienced user, our expert instructors will guide you through every step of the process, from setting up your WordPress site to customizing themes and plugins. With hands-on practice and real-world examples, you'll gain the skills and confidence to create amazing websites that stand out from the crowd."
+                                    : service.slug === "digital-marketing"
+                                      ? "Unlock the full potential of your online presence with our expert digital marketing services, designed to meet your unique business needs. From search engine optimization to social media management, we offer a full suite of solutions to ensure your brand is visible, credible, and successful online."
+                                      : service.slug === "seo"
+                                        ? "Our SEO service will help your company rank higher in search results, boost your sales, and allow you to target the right audience for your product or service."
+                                        : service.slug === "social-media-marketing"
+                                          ? "We excel in supporting small and medium businesses by crafting customized digital marketing and branding solutions, including social media strategy development, content creation, campaign execution, account management, and optimization to enhance visibility and engagement."
+                                          : service.slug === "google-ads"
+                                            ? "Google Ads allows businesses to set budgets and deploy creative strategies, reaching audiences actively searching for products and services similar to theirs. Additionally, Google Ads uniquely provides detailed insights to measure return on investment (ROI)."
+                                            : "Comprehensive website maintenance solutions designed to ensure seamless performance, stronger security, and long-term digital success."
               }
             </p>
           </div>
@@ -326,7 +326,7 @@ export default async function ServiceDetailPage({ params }) {
               {/* First 4 features */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
                 {service.features.slice(0, 4).map((feature, index) => (
-                  <FeatureItem 
+                  <FeatureItem
                     key={index}
                     feature={feature}
                     index={index}
@@ -348,7 +348,7 @@ export default async function ServiceDetailPage({ params }) {
               {/* Remaining 3 features */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {service.features.slice(4).map((feature, index) => (
-                  <FeatureItem 
+                  <FeatureItem
                     key={index + 4}
                     feature={feature}
                     index={index + 4}
@@ -360,7 +360,7 @@ export default async function ServiceDetailPage({ params }) {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {service.features.map((feature, index) => (
-                <FeatureItem 
+                <FeatureItem
                   key={index}
                   feature={feature}
                   index={index}
@@ -385,35 +385,35 @@ export default async function ServiceDetailPage({ params }) {
               Business Impact
             </div>
             <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
-              {service.slug === "odoo-apps-support-and-maintenance" 
-                ? "Why Choose Isarva for Odoo Support?" 
+              {service.slug === "odoo-apps-support-and-maintenance"
+                ? "Why Choose Isarva for Odoo Support?"
                 : service.slug === "ai-ml-consulting"
-                ? "Consulting Services for Businesses"
-                : service.slug === "wordpress-training"
-                ? "Why WordPress"
-                : service.slug === "seo"
-                ? "Elevate Your Search Engine Visibility"
-                : service.slug === "social-media-marketing"
-                ? "Results-Driven Social Media"
-                : service.slug === "google-ads"
-                ? "Reach Right Audience at the Right Time"
-                : "Benefits You'll Unlock"
+                  ? "Consulting Services for Businesses"
+                  : service.slug === "wordpress-training"
+                    ? "Why WordPress"
+                    : service.slug === "seo"
+                      ? "Elevate Your Search Engine Visibility"
+                      : service.slug === "social-media-marketing"
+                        ? "Results-Driven Social Media"
+                        : service.slug === "google-ads"
+                          ? "Reach Right Audience at the Right Time"
+                          : "Benefits You'll Unlock"
               }
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              {service.slug === "odoo-apps-support-and-maintenance" 
+              {service.slug === "odoo-apps-support-and-maintenance"
                 ? "We are your trusted partner for creating sustainable value through Odoo ERP solutions."
                 : service.slug === "ai-ml-consulting"
-                ? "We help you create scalable products and services with intuitive design and robust implementation, aiming to meet both your business objectives and your customers' expectations."
-                : service.slug === "wordpress-training"
-                ? "Master WordPress, shape your career. Whether you're a beginner or expert, our WordPress training covers everything you need."
-                : service.slug === "seo"
-                ? "The cornerstone of our digital marketing effort is based on the extensive research and analysis of keywords, competition and market intelligence. This approach helps us to decide the relevant keywords and titles for your website and to create optimized web pages that will be visible on the search engine result page."
-                : service.slug === "social-media-marketing"
-                ? "Our social media marketing agency builds strategic, creative and efficient social media campaigns to help your business grow. Helping you identify your audience's needs, we create personas, content and micro-messaging tailored to your brand and industry. Using data and analytics, we devise a plan to increase engagement & conversion rates; build brand awareness; make the investment in paid advertising or marketing collateral required."
-                : service.slug === "google-ads"
-                ? "Google Ads is the perfect way to reach the right people with the right message. With Google ads campaigns your business gets maximum ROI conversions. Whether you're looking to increase sales, drive traffic to your website, or increase awareness of your brand, Google Ads has you covered."
-                : "Measurable value that transforms your business operations"
+                  ? "We help you create scalable products and services with intuitive design and robust implementation, aiming to meet both your business objectives and your customers' expectations."
+                  : service.slug === "wordpress-training"
+                    ? "Master WordPress, shape your career. Whether you're a beginner or expert, our WordPress training covers everything you need."
+                    : service.slug === "seo"
+                      ? "The cornerstone of our digital marketing effort is based on the extensive research and analysis of keywords, competition and market intelligence. This approach helps us to decide the relevant keywords and titles for your website and to create optimized web pages that will be visible on the search engine result page."
+                      : service.slug === "social-media-marketing"
+                        ? "Our social media marketing agency builds strategic, creative and efficient social media campaigns to help your business grow. Helping you identify your audience's needs, we create personas, content and micro-messaging tailored to your brand and industry. Using data and analytics, we devise a plan to increase engagement & conversion rates; build brand awareness; make the investment in paid advertising or marketing collateral required."
+                        : service.slug === "google-ads"
+                          ? "Google Ads is the perfect way to reach the right people with the right message. With Google ads campaigns your business gets maximum ROI conversions. Whether you're looking to increase sales, drive traffic to your website, or increase awareness of your brand, Google Ads has you covered."
+                          : "Gain long-term value and operational confidence with proactive website maintenance and expert support."
               }
             </p>
           </div>
@@ -575,7 +575,7 @@ export default async function ServiceDetailPage({ params }) {
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-200/20 blur-[120px] rounded-full"></div>
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-teal-200/20 blur-[120px] rounded-full"></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-emerald-200 text-emerald-700 font-semibold text-sm mb-6 shadow-sm">
@@ -647,7 +647,7 @@ export default async function ServiceDetailPage({ params }) {
       </section>
 
       {/* CTA Section */}
-      <section 
+      <section
         className="py-20 lg:py-32 bg-gradient-to-br from-emerald-600 via-teal-600 to-green-600 relative overflow-hidden"
       >
         {/* Decorative elements */}
@@ -662,13 +662,13 @@ export default async function ServiceDetailPage({ params }) {
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1"/>
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#grid)" />
           </svg>
         </div>
-        
+
         <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/20 backdrop-blur-md text-white font-semibold text-sm mb-8 border border-white/30 shadow-lg">
             <span className="flex h-3 w-3 relative">
@@ -679,19 +679,19 @@ export default async function ServiceDetailPage({ params }) {
           </div>
 
           <h2 className="text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
-            {service.slug === "odoo-apps-support-and-maintenance" 
-              ? "Ready to Optimize Your Odoo Experience?" 
+            {service.slug === "odoo-apps-support-and-maintenance"
+              ? "Ready to Optimize Your Odoo Experience?"
               : "Ready to Transform Your Business?"
             }
           </h2>
-          
+
           <p className="text-xl lg:text-2xl text-emerald-50 mb-12 max-w-3xl mx-auto leading-relaxed">
             {service.slug === "odoo-apps-support-and-maintenance"
               ? "Get in touch with us today to discuss your support and maintenance needs. Let's ensure your business runs like a well-oiled machine."
               : `Partner with our experts to unlock the full potential of ${service.title.toLowerCase()}. Let's create something amazing together.`
             }
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link
               href="/contact"
@@ -707,7 +707,7 @@ export default async function ServiceDetailPage({ params }) {
               {/* Shine effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-30 transform -skew-x-12 group-hover:translate-x-full transition-all duration-700"></div>
             </Link>
-            
+
             <Link
               href="/services"
               prefetch={true}

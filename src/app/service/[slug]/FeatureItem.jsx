@@ -92,9 +92,9 @@ export default function FeatureItem({ feature, index, isEven }) {
       }}
     >
       {/* Card */}
-      <div className="h-full bg-white rounded-2xl border-2 border-gray-100 hover:border-emerald-300 p-8 transition-all duration-300">
+      <div className="h-full bg-white rounded-2xl border-2 border-gray-100 hover:border-emerald-300 p-8 transition-all duration-300 text-center md:text-left">
         {/* Icon Container */}
-        <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-100 flex items-center justify-center mb-6 transition-all duration-300">
+        <div className="w-16 h-16 mx-auto md:mx-0 rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-100 flex items-center justify-center mb-6 transition-all duration-300">
           {icon}
         </div>
 
@@ -111,7 +111,7 @@ export default function FeatureItem({ feature, index, isEven }) {
         )}
 
         {/* Decorative Line */}
-        <div className="w-12 h-1 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full mb-4 mt-4"></div>
+        <div className="w-12 h-1 mx-auto md:mx-0 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full mb-4 mt-4"></div>
 
         {/* Number Badge */}
         <div className="absolute top-6 right-6 w-8 h-8 rounded-lg bg-gray-50 border border-gray-200 flex items-center justify-center transition-all duration-300">

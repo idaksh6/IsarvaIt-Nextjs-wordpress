@@ -172,12 +172,12 @@ export default function CRMBrochureModal({
                 }
               }
             } else if (data.error.toLowerCase().includes('mobile') || data.error.toLowerCase().includes('phone')) {
-              friendlyError = (data.error.toLowerCase().includes('registered') || data.error.toLowerCase().includes('taken')) 
-                ? 'This phone number is already registered.' 
+              friendlyError = (data.error.toLowerCase().includes('registered') || data.error.toLowerCase().includes('taken'))
+                ? 'This phone number is already registered.'
                 : 'Please enter a valid phone number.';
             } else if (data.error.toLowerCase().includes('email')) {
-              friendlyError = (data.error.toLowerCase().includes('registered') || data.error.toLowerCase().includes('taken')) 
-                ? 'This email address is already registered.' 
+              friendlyError = (data.error.toLowerCase().includes('registered') || data.error.toLowerCase().includes('taken'))
+                ? 'This email address is already registered.'
                 : 'Please enter a valid email address.';
             } else {
               friendlyError = data.error;
@@ -186,10 +186,10 @@ export default function CRMBrochureModal({
             friendlyError = data.error;
           }
         }
-        
+
         // Remove "CRM API error (409):" prefix if it somehow leaked through
         friendlyError = friendlyError.replace(/CRM API error \(\d+\):\s*/g, '');
-        
+
         setErrorMessage(friendlyError);
       }
     } catch (error) {
@@ -248,7 +248,7 @@ export default function CRMBrochureModal({
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-sky-500 outline-none transition-all bg-gray-50/50 text-sm"
+                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-sky-500 outline-none transition-all bg-gray-50/50 text-sm text-black"
                   placeholder="Full Name *"
                 />
               </div>
@@ -260,7 +260,7 @@ export default function CRMBrochureModal({
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-sky-500 outline-none transition-all bg-gray-50/50 text-sm"
+                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-sky-500 outline-none transition-all bg-gray-50/50 text-sm text-black"
                   placeholder="Email Address *"
                 />
               </div>
@@ -276,7 +276,7 @@ export default function CRMBrochureModal({
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-sky-500 outline-none transition-all bg-gray-50/50 text-sm"
+                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-sky-500 outline-none transition-all bg-gray-50/50 text-sm text-black"
                   placeholder="Phone Number *"
                 />
               </div>
@@ -288,7 +288,7 @@ export default function CRMBrochureModal({
                   value={formData.company}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-sky-500 outline-none transition-all bg-gray-50/50 text-sm"
+                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-sky-500 outline-none transition-all bg-gray-50/50 text-sm text-black"
                   placeholder="Company Name *"
                 />
               </div>
@@ -302,7 +302,7 @@ export default function CRMBrochureModal({
                 value={formData.message}
                 onChange={handleChange}
                 rows={2}
-                className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-sky-500 outline-none transition-all bg-gray-50/50 text-sm resize-none"
+                className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-sky-500 outline-none transition-all bg-gray-50/50 text-sm resize-none text-black"
                 placeholder="Any specific requirements?"
               ></textarea>
             </div>

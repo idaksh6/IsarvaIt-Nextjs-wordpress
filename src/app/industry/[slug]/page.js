@@ -15,7 +15,7 @@ export const dynamic = 'force-static';
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const industry = getIndustryBySlug(slug);
-  
+
   if (!industry) {
     return {
       title: 'Industry Not Found',
@@ -45,7 +45,7 @@ export default async function IndustryDetailPage({ params }) {
   // Function to get icon based on service title
   const getServiceIcon = (title) => {
     const titleLower = title.toLowerCase();
-    
+
     // Banking & Financial Services
     if (titleLower.includes('digital transformation')) {
       return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />;
@@ -71,7 +71,7 @@ export default async function IndustryDetailPage({ params }) {
     if (titleLower.includes('corporate banking') || titleLower.includes('retail banking')) {
       return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />;
     }
-    
+
     // Education
     if (titleLower.includes('mobile learning') || titleLower.includes('mobile')) {
       return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />;
@@ -97,7 +97,7 @@ export default async function IndustryDetailPage({ params }) {
     if (titleLower.includes('customized learning') || titleLower.includes('personalized')) {
       return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />;
     }
-    
+
     // Insurance
     if (titleLower.includes('underwriting')) {
       return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />;
@@ -118,9 +118,9 @@ export default async function IndustryDetailPage({ params }) {
       return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />;
     }
     if (titleLower.includes('automation')) {
-      return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />; 
+      return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />;
     }
-    
+
     // Healthcare
     if (titleLower.includes('clinical trial')) {
       return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />;
@@ -143,7 +143,7 @@ export default async function IndustryDetailPage({ params }) {
     if (titleLower.includes('patient care') || titleLower.includes('transform patient')) {
       return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />;
     }
-    
+
     // Manufacturing
     if (titleLower.includes('digitalization')) {
       return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />;
@@ -163,7 +163,7 @@ export default async function IndustryDetailPage({ params }) {
     if (titleLower.includes('flow-driven') || titleLower.includes('workflow')) {
       return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />;
     }
-    
+
     // Media & Entertainment
     if (titleLower.includes('accelerate') || titleLower.includes('business')) {
       return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />;
@@ -186,7 +186,7 @@ export default async function IndustryDetailPage({ params }) {
     if (titleLower.includes('video')) {
       return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />;
     }
-    
+
     // BPO Services
     if (titleLower.includes('inbound')) {
       return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />;
@@ -212,7 +212,7 @@ export default async function IndustryDetailPage({ params }) {
     if (titleLower.includes('understanding bpo') || titleLower.includes('bpo')) {
       return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />;
     }
-    
+
     // Default icon (checkmark)
     return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />;
   };
@@ -220,7 +220,7 @@ export default async function IndustryDetailPage({ params }) {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section 
+      <section
         className={`relative pt-32 lg:pt-40 pb-20 overflow-hidden bg-gradient-to-b ${industry.softColor}`}
       >
         {/* Background Decorations - Soft with Noise */}
@@ -273,8 +273,8 @@ export default async function IndustryDetailPage({ params }) {
                 <div className={`absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-br ${industry.color} opacity-20 blur-[120px] rounded-full`}></div>
                 <div className="relative rounded-3xl bg-white/90 backdrop-blur-md border border-white/60 shadow-2xl overflow-hidden">
                   <div className="aspect-[4/3] relative">
-                    <img 
-                      src={industry.heroImage} 
+                    <img
+                      src={industry.heroImage}
                       alt={industry.title}
                       className="w-full h-full object-cover"
                     />
@@ -291,43 +291,43 @@ export default async function IndustryDetailPage({ params }) {
       <section className={`py-20 lg:py-32 bg-gradient-to-b ${industry.softColor} relative overflow-hidden`}>
         <div className="absolute inset-0 hero-noise-overlay opacity-[0.08]"></div>
         <div className={`absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-gradient-to-br ${industry.color} opacity-10 blur-[100px] rounded-full`}></div>
-        
+
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
-              {industry.slug === 'banking-financial-services' 
-                ? 'Explore Our BFS Services' 
+              {industry.slug === 'banking-financial-services'
+                ? 'Explore Our BFS Services'
                 : industry.slug === 'education'
-                ? 'Explore Our Education Services'
-                : industry.slug === 'insurance'
-                ? 'Explore Our Insurance IT Services'
-                : industry.slug === 'healthcare-life-sciences'
-                ? 'Explore Our Healthcare & Life Sciences Services'
-                : industry.slug === 'manufacturing'
-                ? 'Explore Our Manufacturing Services'
-                : industry.slug === 'media-entertainment'
-                ? 'Explore Our Media & Entertainment Services'
-                : industry.slug === 'bpo-services-ites'
-                ? 'Isarva BPO Services'
-                : `Our Solutions for ${industry.title}`
+                  ? 'Explore Our Education Services'
+                  : industry.slug === 'insurance'
+                    ? 'Explore Our Insurance IT Services'
+                    : industry.slug === 'healthcare-life-sciences'
+                      ? 'Explore Our Healthcare & Life Sciences Services'
+                      : industry.slug === 'manufacturing'
+                        ? 'Explore Our Manufacturing Services'
+                        : industry.slug === 'media-entertainment'
+                          ? 'Explore Our Media & Entertainment Services'
+                          : industry.slug === 'bpo-services-ites'
+                            ? 'Isarva BPO Services'
+                            : `Our Solutions for ${industry.title}`
               }
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              {industry.slug === 'banking-financial-services' 
+              {industry.slug === 'banking-financial-services'
                 ? 'Unlock the full potential of your banking and financial services operations with our expert solutions, designed to meet your unique business needs.'
                 : industry.slug === 'education'
-                ? 'Unlock the full potential of your educational institution with our expert solutions, designed to meet your unique needs. From custom software development to implementation and integration, we offer a full suite of solutions to ensure your institution runs smoothly and efficiently, while also enhancing the learning experience for your students.'
-                : industry.slug === 'insurance'
-                ? 'Streamline your insurance operations with our expert IT solutions, designed to meet the unique needs of your business. From policy administration to claims management, we offer a full suite of solutions to help you reduce costs, improve efficiency, and enhance customer satisfaction.'
-                : industry.slug === 'healthcare-life-sciences'
-                ? 'Unlock the full potential of your healthcare or life sciences organization with our expert IT solutions, designed to meet your unique industry needs. From custom software development to implementation and integration, we offer a full suite of solutions to ensure your organization runs smoothly, efficiently, and compliantly.'
-                : industry.slug === 'manufacturing'
-                ? 'Maximize your production efficiency and reduce costs with our tailored manufacturing solutions. Our expert team provides a range of services, from custom software development to implementation and integration, to help you optimize your manufacturing operations and stay ahead of the competition.'
-                : industry.slug === 'media-entertainment'
-                ? 'Elevate your creative workflow, streamline your operations, and deliver exceptional customer experiences with our tailored IT solutions. From content management to distribution, we offer a range of services designed to meet the unique needs of the media and entertainment industry. Our experts will work closely with you to understand your business goals and develop a customized solution that drives innovation and growth.'
-                : industry.slug === 'bpo-services-ites'
-                ? 'Isarva offers BPO solutions, including inbound and outbound call center services, to boost customer experience, cut costs, and support strategic business focus. We\'re expanding in Mangalore, creating new opportunities with a self-funded, innovative approach.'
-                : 'Comprehensive technology solutions designed specifically for your industry'
+                  ? 'Unlock the full potential of your educational institution with our expert solutions, designed to meet your unique needs. From custom software development to implementation and integration, we offer a full suite of solutions to ensure your institution runs smoothly and efficiently, while also enhancing the learning experience for your students.'
+                  : industry.slug === 'insurance'
+                    ? 'Streamline your insurance operations with our expert IT solutions, designed to meet the unique needs of your business. From policy administration to claims management, we offer a full suite of solutions to help you reduce costs, improve efficiency, and enhance customer satisfaction.'
+                    : industry.slug === 'healthcare-life-sciences'
+                      ? 'Unlock the full potential of your healthcare or life sciences organization with our expert IT solutions, designed to meet your unique industry needs. From custom software development to implementation and integration, we offer a full suite of solutions to ensure your organization runs smoothly, efficiently, and compliantly.'
+                      : industry.slug === 'manufacturing'
+                        ? 'Maximize your production efficiency and reduce costs with our tailored manufacturing solutions. Our expert team provides a range of services, from custom software development to implementation and integration, to help you optimize your manufacturing operations and stay ahead of the competition.'
+                        : industry.slug === 'media-entertainment'
+                          ? 'Elevate your creative workflow, streamline your operations, and deliver exceptional customer experiences with our tailored IT solutions. From content management to distribution, we offer a range of services designed to meet the unique needs of the media and entertainment industry. Our experts will work closely with you to understand your business goals and develop a customized solution that drives innovation and growth.'
+                          : industry.slug === 'bpo-services-ites'
+                            ? 'Isarva offers BPO solutions, including inbound and outbound call center services, to boost customer experience, cut costs, and support strategic business focus. We\'re expanding in Mangalore, creating new opportunities with a self-funded, innovative approach.'
+                            : 'Comprehensive technology solutions designed specifically for your industry'
               }
             </p>
           </div>
@@ -338,9 +338,9 @@ export default async function IndustryDetailPage({ params }) {
               const isObject = typeof solution === 'object';
               const title = isObject ? solution.title : solution;
               const description = isObject ? solution.description : null;
-              
+
               return (
-                <div 
+                <div
                   key={index}
                   className="relative rounded-3xl p-8 bg-white/80 backdrop-blur-sm border border-white/60 shadow-lg hover:shadow-2xl transition-all duration-300 group"
                 >
@@ -356,7 +356,7 @@ export default async function IndustryDetailPage({ params }) {
                     </h3>
                     {description && (
                       <p className="text-gray-700 leading-relaxed text-[15px]">
-                        { description}
+                        {description}
                       </p>
                     )}
                   </div>
@@ -371,7 +371,7 @@ export default async function IndustryDetailPage({ params }) {
       {industry.bankingSegments && (
         <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
           <div className="absolute inset-0 hero-noise-overlay opacity-[0.03]"></div>
-          
+
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center mb-16">
               <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
@@ -384,7 +384,7 @@ export default async function IndustryDetailPage({ params }) {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {industry.bankingSegments.map((segment, index) => (
-                <div 
+                <div
                   key={index}
                   className="relative rounded-3xl p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-100 hover:border-blue-300 shadow-lg hover:shadow-2xl transition-all duration-300 group"
                 >
@@ -411,22 +411,22 @@ export default async function IndustryDetailPage({ params }) {
       {/* Benefits Section */}
       <section className="py-16 lg:py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(16,185,129,0.05),transparent_50%)]"></div>
-        
+
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white font-semibold text-sm mb-6 border-2 border-gray-200 text-gray-900 shadow-sm">
-              <svg 
-                className="w-4 h-4" 
-                fill="currentColor" 
+              <svg
+                className="w-4 h-4"
+                fill="currentColor"
                 viewBox="0 0 20 20"
                 style={{
                   color: industry.accentColor === 'blue' ? '#3b82f6' :
-                         industry.accentColor === 'purple' ? '#a855f7' :
-                         industry.accentColor === 'teal' ? '#14b8a6' :
-                         industry.accentColor === 'rose' ? '#f43f5e' :
-                         industry.accentColor === 'orange' ? '#f97316' :
-                         industry.accentColor === 'pink' ? '#ec4899' :
-                         industry.accentColor === 'emerald' ? '#10b981' : '#3b82f6'
+                    industry.accentColor === 'purple' ? '#a855f7' :
+                      industry.accentColor === 'teal' ? '#14b8a6' :
+                        industry.accentColor === 'rose' ? '#f43f5e' :
+                          industry.accentColor === 'orange' ? '#f97316' :
+                            industry.accentColor === 'pink' ? '#ec4899' :
+                              industry.accentColor === 'emerald' ? '#10b981' : '#3b82f6'
                 }}
               >
                 <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
@@ -466,7 +466,7 @@ export default async function IndustryDetailPage({ params }) {
       {/* Related Industries Section */}
       <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
         <div className="absolute inset-0 hero-noise-overlay opacity-[0.03]"></div>
-        
+
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
@@ -487,7 +487,7 @@ export default async function IndustryDetailPage({ params }) {
               >
                 <div className="relative h-full rounded-3xl p-8 bg-white border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
                   <div className={`absolute inset-0 bg-gradient-to-br ${relatedIndustry.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
-                  
+
                   <div className="relative">
                     <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${relatedIndustry.color} opacity-90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 mb-6`}>
                       <span className="text-4xl">{relatedIndustry.icon}</span>
@@ -529,7 +529,7 @@ export default async function IndustryDetailPage({ params }) {
       </section>
 
       {/* CTA Section */}
-      <section 
+      <section
         className={`py-20 lg:py-32 bg-gradient-to-br ${industry.softColor} relative overflow-hidden`}
       >
         {/* Checkered background pattern */}
@@ -537,11 +537,11 @@ export default async function IndustryDetailPage({ params }) {
           <svg className="w-full h-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern id="checkerboard" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-                <rect x="0" y="0" width="20" height="20" fill="currentColor"/>
-                <rect x="20" y="20" width="20" height="20" fill="currentColor"/>
+                <rect x="0" y="0" width="20" height="20" fill="currentColor" />
+                <rect x="20" y="20" width="20" height="20" fill="currentColor" />
               </pattern>
             </defs>
-            <rect width="100%" height="100%" fill="url(#checkerboard)" className="text-gray-900"/>
+            <rect width="100%" height="100%" fill="url(#checkerboard)" className="text-gray-900" />
           </svg>
         </div>
 
@@ -557,38 +557,38 @@ export default async function IndustryDetailPage({ params }) {
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
-                <circle cx="2" cy="2" r="1" fill="currentColor" className="text-gray-900"/>
+                <circle cx="2" cy="2" r="1" fill="currentColor" className="text-gray-900" />
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#dots)" />
           </svg>
         </div>
-        
+
         <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white backdrop-blur-md text-gray-900 font-semibold text-sm mb-8 border-2 border-gray-200 shadow-lg">
             <span className="flex h-3 w-3 relative">
-              <span 
+              <span
                 className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"
-                style={{ 
+                style={{
                   backgroundColor: industry.accentColor === 'blue' ? '#3b82f6' :
-                                  industry.accentColor === 'purple' ? '#a855f7' :
-                                  industry.accentColor === 'teal' ? '#14b8a6' :
-                                  industry.accentColor === 'rose' ? '#f43f5e' :
-                                  industry.accentColor === 'orange' ? '#f97316' :
-                                  industry.accentColor === 'pink' ? '#ec4899' :
-                                  industry.accentColor === 'emerald' ? '#10b981' : '#10b981'
+                    industry.accentColor === 'purple' ? '#a855f7' :
+                      industry.accentColor === 'teal' ? '#14b8a6' :
+                        industry.accentColor === 'rose' ? '#f43f5e' :
+                          industry.accentColor === 'orange' ? '#f97316' :
+                            industry.accentColor === 'pink' ? '#ec4899' :
+                              industry.accentColor === 'emerald' ? '#10b981' : '#10b981'
                 }}
               ></span>
-              <span 
+              <span
                 className="relative inline-flex rounded-full h-3 w-3"
-                style={{ 
+                style={{
                   backgroundColor: industry.accentColor === 'blue' ? '#3b82f6' :
-                                  industry.accentColor === 'purple' ? '#a855f7' :
-                                  industry.accentColor === 'teal' ? '#14b8a6' :
-                                  industry.accentColor === 'rose' ? '#f43f5e' :
-                                  industry.accentColor === 'orange' ? '#f97316' :
-                                  industry.accentColor === 'pink' ? '#ec4899' :
-                                  industry.accentColor === 'emerald' ? '#10b981' : '#10b981'
+                    industry.accentColor === 'purple' ? '#a855f7' :
+                      industry.accentColor === 'teal' ? '#14b8a6' :
+                        industry.accentColor === 'rose' ? '#f43f5e' :
+                          industry.accentColor === 'orange' ? '#f97316' :
+                            industry.accentColor === 'pink' ? '#ec4899' :
+                              industry.accentColor === 'emerald' ? '#10b981' : '#10b981'
                 }}
               ></span>
             </span>
@@ -598,11 +598,11 @@ export default async function IndustryDetailPage({ params }) {
           <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
             Ready to Transform Your {industry.title} Business?
           </h2>
-          
+
           <p className="text-xl lg:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto leading-relaxed">
             Partner with our experts to unlock the full potential of your {industry.title.toLowerCase()} operations. Let's create innovative solutions together.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link
               href="/contact"
@@ -617,7 +617,7 @@ export default async function IndustryDetailPage({ params }) {
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transform -skew-x-12 group-hover:translate-x-full transition-all duration-700"></div>
             </Link>
-            
+
             <Link
               href="/industries"
               prefetch={true}

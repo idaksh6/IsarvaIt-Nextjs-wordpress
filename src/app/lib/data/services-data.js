@@ -873,18 +873,42 @@ export const servicesData = [
     slug: "website-maintenance-amc",
     title: "Website Maintenance – AMC",
     icon: "🔧",
-    heroImage: "/Services/Cloud services/Banner-image.jpg",
+    heroImage: "/Services/Cloud services/Web-maintenance-banner.png",
     shortDescription: "Comprehensive annual maintenance contracts for your website",
-    description: "Keep your website running smoothly with our Annual Maintenance Contracts. We provide ongoing support, updates, and security monitoring to ensure your site remains secure, fast, and up-to-date.",
+    description: "Keep your website secure, fast, and updated with Isarva Infotech AMC services. We handle maintenance, security, updates, and support so you can focus on business growth.",
     features: [
-      "Regular Updates & Patches",
-      "Security Monitoring",
-      "Performance Optimization",
-      "Content Updates",
-      "Backup & Recovery",
-      "24/7 Technical Support",
-      "Uptime Monitoring",
-      "Bug Fixes & Troubleshooting"
+      {
+        title: "Regular Updates & Patches",
+        description: "Stay updated with timely CMS, plugin, and theme updates that improve functionality, fix bugs, and keep your website compatible with the latest technologies."
+      },
+      {
+        title: "Security Monitoring",
+        description: "Protect your website from cyber threats with continuous security monitoring, vulnerability checks, malware prevention, and proactive security measures."
+      },
+      {
+        title: "Performance Optimization",
+        description: "Improve loading speed and overall user experience through image optimization, caching, code refinement, and ongoing performance tuning."
+      },
+      {
+        title: "Content Updates",
+        description: "Keep your website fresh and relevant with regular updates to text, images, banners, videos, blogs, and business information."
+      },
+      {
+        title: "Backup & Recovery",
+        description: "Safeguard your website with scheduled backups and quick recovery solutions to minimize data loss and restore operations when needed."
+      },
+      {
+        title: "24/7 Technical Support",
+        description: "Access reliable technical assistance whenever you need it, ensuring quick resolutions and uninterrupted website performance."
+      },
+      {
+        title: "Uptime Monitoring",
+        description: "We continuously monitor website availability to detect and resolve issues early, helping maintain maximum uptime and reliability."
+      },
+      {
+        title: "Bug Fixes & Troubleshooting",
+        description: "Our experts quickly identify and fix technical errors, broken features, and functionality issues to ensure smooth website operations."
+      }
     ],
     technologies: ["cPanel", "WordPress", "SSL Certificates", "CDN", "Monitoring Tools"],
     benefits: [

@@ -522,7 +522,7 @@ export default function ProductDetailPremiumCRM({
                   className="flex flex-col sm:flex-row gap-4 mt-4"
                 >
                   {/* Google Play Button */}
-                  <a href="#" className="bg-[#2A2A2A] hover:bg-black text-white px-6 py-3 rounded-xl flex items-center justify-center gap-3 transition-colors shadow-lg shadow-black/10">
+                  <button type="button" className="bg-[#2A2A2A] hover:bg-black text-white px-6 py-3 rounded-xl flex items-center justify-center gap-3 transition-colors shadow-lg shadow-black/10">
                     <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M17.523 15.341l-2.433-2.435 2.443-2.445 3.327 1.884a1 1 0 010 1.737l-3.337 1.88-3.136-1.78zM3.469 3.018a1.5 1.5 0 00-.469 1.092v15.78a1.5 1.5 0 00.469 1.092l10.87-10.87L3.469 3.018zM14.896 11.664l-1.077-1.078L4.624 2.221a1.5 1.5 0 011.696-.06l8.576 4.847-1.127 1.135L14.896 11.664zM14.896 14.153l-1.127-1.135 8.576-4.847a1.5 1.5 0 011.696.06L4.624 21.84a1.5 1.5 0 001.696.06l8.576-4.847z" />
                     </svg>
@@ -530,10 +530,10 @@ export default function ProductDetailPremiumCRM({
                       <span className="text-[10px] uppercase tracking-wider opacity-80 leading-none">Get it on</span>
                       <span className="text-[17px] font-bold leading-tight">Playstore</span>
                     </div>
-                  </a>
+                  </button>
 
                   {/* App Store Button */}
-                  <a href="#" className="bg-[#2A2A2A] hover:bg-black text-white px-6 py-3 rounded-xl flex items-center justify-center gap-3 transition-colors shadow-lg shadow-black/10">
+                  <button type="button" className="bg-[#2A2A2A] hover:bg-black text-white px-6 py-3 rounded-xl flex items-center justify-center gap-3 transition-colors shadow-lg shadow-black/10">
                     <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.19 2.31-.88 3.5-.8 1.5.05 2.76.65 3.52 1.63-3.13 1.78-2.61 6.07.41 7.23-.73 1.73-1.57 3.23-2.51 4.11zm-3.54-15c-.24 1.63-1.42 3.12-3.11 3.29-.31-1.65 1.11-3.23 2.92-3.48.06.06.13.13.19.19z" />
                     </svg>
@@ -541,7 +541,7 @@ export default function ProductDetailPremiumCRM({
                       <span className="text-[10px] uppercase tracking-wider opacity-80 leading-none">Download from</span>
                       <span className="text-[17px] font-bold leading-tight">Appstore</span>
                     </div>
-                  </a>
+                  </button>
                 </motion.div>
               </div>
 
@@ -916,7 +916,7 @@ const crmFeatures = [
     icon: "🎯",
     color: "#0EA5E9",
     desc: "Capture, track, and nurture leads from multiple sources. Score leads based on engagement and readiness, and seamlessly convert qualified leads into opportunities for your sales team.",
-    image: "/products/crm/Leads-management.jpg",
+    image: "/products/crm/mockups/Leads-by-status.jpg",
   },
   {
     id: "deals",
@@ -1242,7 +1242,7 @@ const crmTabData = [
       { label: "Lead creation", text: "Create and capture leads instantly from mobile or web." },
       { label: "Lead Tracking", text: "Track lead progress and sources across the sales funnel." }
     ],
-    image: "/products/crm/mockups/Leads-management.jpg"
+    image: "/products/crm/mockups/Leads-by-status.jpg"
   },
   {
     id: "pipeline",
@@ -1266,7 +1266,7 @@ const crmTabData = [
       { label: "Customer Profiles", text: "Store all customer details in one centralized profile." },
       { label: "Sales & Activity History", text: "View past sales, interactions, and follow-ups easily." }
     ],
-    image: "/products/crm/mockups/Customer-management.png"
+    image: "/products/crm/mockups/Customer-management.jpg"
   },
   {
     id: "quotation",
@@ -1278,7 +1278,7 @@ const crmTabData = [
       { label: "Quote & Order Tracking", text: "Create and track quotes and sales orders." },
       { label: "Order Status Tracking", text: "Track order status from start to finish." }
     ],
-    image: "/products/crm/mockups/Quoatation.jpg"
+    image: "/products/crm/mockups/Quoatation-1.jpg"
   },
   {
     id: "tasks",
@@ -1293,6 +1293,18 @@ const crmTabData = [
     image: "/products/crm/mockups/Tasks.jpg"
   },
   {
+    id: "reports",
+    title: "Reports & Analytics",
+    subtitle: "Access powerful dashboards and reports to track sales performance",
+    description: "Access powerful dashboards and reports to track sales performance, conversion rates, pipeline health, and revenue forecasts. Generate custom reports and export data for deeper analysis.",
+    color: "from-[#06B6D4] to-[#0891B2]",
+    points: [
+      { label: "Sales Reports", text: "Track deals progress, sales targets, and revenue performance." },
+      { label: "Performance Reports", text: "Monitor lead conversion, user activities, and team productivity." }
+    ],
+    image: "/products/crm/mockups/Tasks.jpg"
+  },
+  {
     id: "mobile",
     title: "Mobile CRM App",
     subtitle: "A powerful Android mobile CRM app.",
@@ -1302,12 +1314,23 @@ const crmTabData = [
       { label: "Mobile-First Experience", text: "Built for smooth and efficient sales operations on mobile devices with an intuitive user-friendly interface." },
       { label: "Real-Time Sync", text: "Instantly sync Leads, Deals, Tasks, Meetings, and customer activities between mobile and web applications." }
     ],
-    image: "/products/crm/mockups/Android-crm.png"
+    image: "/products/crm/mockups/Android-crm-1.png"
   }
+];
+
+const mobileLeftFeatures = [
+  { id: 'contact', label: 'Smart Contact Management', icon: '👤', color: '#3B82F6' },
+  { id: 'lead', label: 'Lead Tracking System', icon: '🎯', color: '#10B981' }
+];
+
+const mobileRightFeatures = [
+  { id: 'deal', label: 'Deal Pipeline Tracking', icon: '📊', color: '#8B5CF6' },
+  { id: 'push', label: 'Instant Push Notifications', icon: '🔔', color: '#F59E0B' }
 ];
 
 function CRMTabSection({ setSelectedImage }) {
   const [activeTab, setActiveTab] = useState(crmTabData[0].id);
+  const [activeId, setActiveId] = useState(null);
   const currentTab = crmTabData.find(t => t.id === activeTab);
 
   const scrollToTab = (tabId) => {
@@ -1357,30 +1380,32 @@ function CRMTabSection({ setSelectedImage }) {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           {/* Desktop Sidebar (Left Side) */}
-          <div className="hidden lg:flex lg:col-span-4 flex-col gap-3">
-            {crmTabData.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`text-left p-6 rounded-2xl transition-all duration-300 border-2 ${activeTab === tab.id
-                  ? `bg-gradient-to-br ${tab.color} border-transparent shadow-xl translate-x-2`
-                  : "bg-white/40 border-transparent hover:bg-white/60"
-                  }`}
-              >
-                <h3 className={`text-lg lg:text-xl font-bold ${activeTab === tab.id ? "text-white" : "text-gray-900"}`}>
-                  {tab.title}
-                </h3>
-                <p className={`text-sm mt-1 line-clamp-1 ${activeTab === tab.id ? "text-white/80" : "text-gray-500"}`}>{tab.subtitle}</p>
-              </button>
-            ))}
+          <div className="hidden lg:block lg:col-span-4 w-full">
+            <div className="flex flex-col gap-6 w-full">
+              {crmTabData.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`text-left p-6 rounded-2xl transition-all duration-300 border-2 ${activeTab === tab.id
+                    ? `bg-gradient-to-br ${tab.color} border-transparent shadow-xl translate-x-2`
+                    : "bg-white/40 border-transparent hover:bg-white/60"
+                    }`}
+                >
+                  <h3 className={`text-lg lg:text-xl font-bold ${activeTab === tab.id ? "text-white" : "text-gray-900"}`}>
+                    {tab.title}
+                  </h3>
+                  <p className={`text-sm mt-1 line-clamp-1 ${activeTab === tab.id ? "text-white/80" : "text-gray-500"}`}>{tab.subtitle}</p>
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Right Side: Content Area */}
-          <div className="lg:col-span-8 relative">
+          <div className="lg:col-span-8 relative lg:sticky lg:top-32 self-start h-max w-full mt-0">
             {/* Dynamic Gradient Glow Shadow */}
             <div className={`absolute -inset-4 bg-gradient-to-br ${currentTab.color} opacity-20 blur-2xl rounded-[40px] transition-all duration-700`}></div>
 
-            <div className="bg-white rounded-[24px] lg:rounded-[32px] p-6 lg:p-12 shadow-xl border border-slate-100 relative overflow-hidden flex flex-col">
+            <div className="bg-white rounded-[24px] lg:rounded-[32px] p-6 lg:p-10 lg:pt-8 shadow-xl border border-slate-100 relative overflow-hidden flex flex-col w-full mt-0">
               {/* Edge Shades / Decorative Blobs */}
               <div className={`absolute -top-20 -left-20 w-64 h-64 bg-gradient-to-br ${currentTab.color} opacity-[0.07] rounded-full blur-[80px]`}></div>
               <div className={`absolute -bottom-20 -right-20 w-64 h-64 bg-gradient-to-br ${currentTab.color} opacity-[0.07] rounded-full blur-[80px]`}></div>
@@ -1417,21 +1442,117 @@ function CRMTabSection({ setSelectedImage }) {
                   </div>
 
                   {/* Image with Popup trigger */}
-                  <div className="relative order-1 md:order-2">
+                  <div className="relative order-1 md:order-2 flex justify-center w-full">
                     <div className={`absolute inset-0 bg-gradient-to-br ${currentTab.color} opacity-10 blur-3xl rounded-full`}></div>
                     <motion.div
                       initial={{ scale: 0.95, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ delay: 0.2 }}
-                      className="relative z-10"
+                      className="relative z-10 inline-block w-full "
                     >
                       <img
                         src={currentTab.image}
                         alt={currentTab.title}
                         className="w-full h-auto max-h-[350px] lg:max-h-[500px] object-contain drop-shadow-2xl rounded-2xl"
                       />
+                      {currentTab.id === "mobile" && (
+                        <>
+                          {/* Desktop Floating Features (Left) */}
+                          <div className="hidden lg:flex absolute -left-4 xl:left-0 top-1/2 -translate-y-1/2 flex-col items-end gap-12 z-10 w-[240px] xl:w-[280px]">
+                            {mobileLeftFeatures.map((feature, idx) => (
+                              <motion.button
+                                key={feature.id}
+                                initial={{ opacity: 0, x: -30 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.3 + idx * 0.15 }}
+                                whileHover={{ scale: 1.05 }}
+                                onClick={() => setActiveId(feature.id)}
+                                className={`relative group bg-white/95 backdrop-blur-md border rounded-2xl transition-all duration-300 ease-in-out cursor-pointer flex items-center gap-3 p-2.5 pr-5 text-[13px] lg:text-sm font-semibold shadow-xl ${activeId === feature.id
+                                  ? "ring-2 ring-offset-2 shadow-[0_10px_40px_rgba(0,0,0,0.15)] z-20"
+                                  : "border-gray-100 text-gray-700 hover:shadow-2xl"
+                                  }`}
+                                style={{
+                                  borderColor: activeId === feature.id ? feature.color : '#f3f4f6',
+                                  color: activeId === feature.id ? feature.color : '#374151',
+                                  '--tw-ring-color': feature.color
+                                }}
+                              >
+                                <div className="flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center bg-gray-50 border border-gray-100 group-hover:scale-110 transition-transform">
+                                  <span className="text-base">{feature.icon}</span>
+                                </div>
+                                <span className="max-w-[150px] text-left leading-tight">{feature.label}</span>
+
+                                {/* Connecting Line & Dot */}
+                                <div className="absolute top-1/2 -right-8 w-8 h-[2px] bg-gradient-to-r from-gray-200 to-transparent"></div>
+                                <div className="absolute top-1/2 -right-[1.1rem] w-3 h-3 rounded-full border-[2.5px] transform -translate-y-1/2 bg-white" style={{ borderColor: feature.color }}></div>
+                              </motion.button>
+                            ))}
+                          </div>
+
+                          {/* Desktop Floating Features (Right) */}
+                          <div className="hidden lg:flex absolute -right-4 xl:right-0 top-1/2 -translate-y-1/2 flex-col items-start gap-12 z-10 w-[240px] xl:w-[280px]">
+                            {mobileRightFeatures.map((feature, idx) => (
+                              <motion.button
+                                key={feature.id}
+                                initial={{ opacity: 0, x: 30 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.3 + idx * 0.15 }}
+                                whileHover={{ scale: 1.05 }}
+                                onClick={() => setActiveId(feature.id)}
+                                className={`relative group bg-white/95 backdrop-blur-md border rounded-2xl transition-all duration-300 ease-in-out cursor-pointer flex items-center gap-3 p-2.5 pr-5 text-[13px] lg:text-sm font-semibold shadow-xl ${activeId === feature.id
+                                  ? "ring-2 ring-offset-2 shadow-[0_10px_40px_rgba(0,0,0,0.15)] z-20"
+                                  : "border-gray-100 text-gray-700 hover:shadow-2xl"
+                                  }`}
+                                style={{
+                                  borderColor: activeId === feature.id ? feature.color : '#f3f4f6',
+                                  color: activeId === feature.id ? feature.color : '#374151',
+                                  '--tw-ring-color': feature.color
+                                }}
+                              >
+                                {/* Connecting Line & Dot */}
+                                <div className="absolute top-1/2 -left-8 w-8 h-[2px] bg-gradient-to-l from-gray-200 to-transparent"></div>
+                                <div className="absolute top-1/2 -left-[1.1rem] w-3 h-3 rounded-full border-[2.5px] transform -translate-y-1/2 bg-white" style={{ borderColor: feature.color }}></div>
+
+                                <div className="flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center bg-gray-50 border border-gray-100 group-hover:scale-110 transition-transform">
+                                  <span className="text-base">{feature.icon}</span>
+                                </div>
+                                <span className="max-w-[150px] text-left leading-tight">{feature.label}</span>
+                              </motion.button>
+                            ))}
+                          </div>
+                        </>
+                      )}
                     </motion.div>
                   </div>
+
+                  {/* Mobile Responsive Features Grid */}
+                  {currentTab.id === "mobile" && (
+                    <div className="w-full lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6 order-3">
+                      {[...mobileLeftFeatures, ...mobileRightFeatures].map((feature, idx) => (
+                        <motion.button
+                          key={feature.id}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.2 + idx * 0.1 }}
+                          onClick={() => setActiveId(feature.id)}
+                          className={`relative bg-white border rounded-2xl transition-all duration-300 ease-in-out cursor-pointer flex items-center gap-4 p-3.5 text-sm font-bold shadow-sm ${activeId === feature.id
+                            ? "ring-2 ring-offset-1 shadow-lg"
+                            : "border-gray-100 text-gray-700 active:scale-95"
+                            }`}
+                          style={{
+                            borderColor: activeId === feature.id ? feature.color : '#f3f4f6',
+                            color: activeId === feature.id ? feature.color : '#374151',
+                            '--tw-ring-color': feature.color
+                          }}
+                        >
+                          <div className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center bg-gray-50 border border-gray-100">
+                            <span className="text-lg">{feature.icon}</span>
+                          </div>
+                          <span className="text-left leading-tight">{feature.label}</span>
+                        </motion.button>
+                      ))}
+                    </div>
+                  )}
                 </motion.div>
               </AnimatePresence>
             </div>
