@@ -97,7 +97,7 @@ const WhiteLabelServices = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-20 md:mb-24">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -119,9 +119,9 @@ const WhiteLabelServices = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-slate-600 font-medium leading-relaxed"
+            className="text-xl text-slate-600 leading-relaxed"
           >
-            A full suite of digital services designed to help your agency offer 
+            A full suite of digital services designed to help your agency offer
             more value without increasing your internal workload.
           </motion.p>
         </div>
@@ -149,17 +149,17 @@ const WhiteLabelServices = () => {
                   </span>
                 </div>
                 <div className="absolute bottom-6 left-8 right-8">
-                   <h3 className="text-2xl font-black text-white font-display uppercase tracking-tight leading-tight">
+                  <h3 className="text-2xl font-black text-white font-display uppercase tracking-tight leading-tight">
                     {service.title}
                   </h3>
                 </div>
               </div>
-              
+
               <div className="p-10 flex flex-col flex-grow">
-                <p className="text-slate-600 mb-8 font-medium leading-relaxed text-lg">
+                <p className="text-slate-600 mb-8 leading-relaxed text-base">
                   {service.description}
                 </p>
-                
+
                 <div className="mt-auto">
                   <div className="flex items-center gap-2 mb-6">
                     <div className="h-[1px] flex-grow bg-slate-100" />

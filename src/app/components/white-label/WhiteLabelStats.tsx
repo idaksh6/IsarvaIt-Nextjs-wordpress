@@ -27,12 +27,12 @@ const WhiteLabelStats = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-20 md:mb-24">
+        <div className="text-center mb-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-black uppercase tracking-widest mb-6"
+            className="inline-block px-4 py-1.5 rounded-full bg-blue-500 text-white text-xs font-black uppercase tracking-widest mb-6"
           >
             By The Numbers
           </motion.div>
@@ -47,7 +47,7 @@ const WhiteLabelStats = () => {
         </div>
 
         {/* Row 1: Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8 mb-16 md:mb-20">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8 mb-10">
           {stats.map((stat, i) => (
             <motion.div
               key={i}
@@ -55,7 +55,7 @@ const WhiteLabelStats = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="bg-slate-50 p-8 rounded-[40px] border border-slate-100 text-center flex flex-col items-center justify-center min-h-[200px] group hover:bg-white hover:shadow-2xl hover:shadow-blue-900/5 hover:-translate-y-2 transition-all duration-500"
+              className="bg-white p-8 rounded-[40px] border border-slate-100 text-center flex flex-col items-center justify-center min-h-[200px] shadow-xl shadow-blue-500/20 group hover:bg-white hover:shadow-2xl hover:shadow-blue-900/5 hover:-translate-y-2 transition-all duration-500"
             >
               <div className="text-5xl md:text-6xl font-black text-blue-600 mb-4 font-display group-hover:scale-110 transition-transform duration-500">
                 {stat.value}

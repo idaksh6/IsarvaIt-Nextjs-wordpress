@@ -45,7 +45,7 @@ const WhiteLabelCTA = ({ onContact }: { onContact: () => void }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-xl lg:text-2xl text-slate-600 mb-16 leading-relaxed font-medium max-w-2xl mx-auto"
+              className="text-xl lg:text-2xl text-slate-600 mb-16 leading-relaxed max-w-2xl mx-auto"
             >
               Scale your agency with a reliable white-label partner.
               Expert execution, fast delivery, and complete confidentiality—guaranteed.
@@ -60,7 +60,7 @@ const WhiteLabelCTA = ({ onContact }: { onContact: () => void }) => {
             >
               <button
                 onClick={onContact}
-                className="press-illusion-btn-orange w-full sm:w-auto px-12 py-6 text-white font-black rounded-2xl transition-all flex items-center justify-center gap-3 group shadow-2xl text-lg uppercase tracking-widest"
+                className="press-illusion-btn-orange w-full sm:w-auto px-12 py-6 text-white font-black "
               >
                 Become a Partner
                 <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />

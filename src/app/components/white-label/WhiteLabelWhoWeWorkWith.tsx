@@ -2,13 +2,13 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  Megaphone, 
-  Palette, 
-  UserCircle, 
-  Rocket, 
-  Code2, 
-  Award 
+import {
+  Megaphone,
+  Palette,
+  UserCircle,
+  Rocket,
+  Code2,
+  Award
 } from "lucide-react";
 
 const partners = [
@@ -27,7 +27,7 @@ const WhiteLabelWhoWeWorkWith = () => {
       <div className="absolute inset-0 z-0 opacity-40 bg-dots pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-20 md:mb-24">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -40,12 +40,12 @@ const WhiteLabelWhoWeWorkWith = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-slate-900 mb-8 font-display text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase"
+            className="text-slate-900 mb-8 font-display text-4xl lg:text-6xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase"
           >
             Who We <span className="text-blue-600">Work With</span>
           </motion.h2>
-          <p className="text-xl text-slate-600 font-medium leading-relaxed">
-            We partner with businesses looking to grow through white-label solutions, 
+          <p className="text-xl text-slate-600 leading-relaxed">
+            We partner with businesses looking to grow through white-label solutions,
             serving as their trusted backend development arm across various industries.
           </p>
         </div>
@@ -66,7 +66,7 @@ const WhiteLabelWhoWeWorkWith = () => {
               <h3 className="text-2xl font-black text-slate-900 font-display uppercase tracking-tight group-hover:text-blue-600 transition-colors">
                 {partner.name}
               </h3>
-              
+
               <div className={`w-12 h-1.5 ${partner.dash} group-hover:w-full group-hover:bg-blue-600 transition-all duration-700 rounded-full`} />
             </motion.div>
           ))}

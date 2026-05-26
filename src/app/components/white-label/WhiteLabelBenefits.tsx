@@ -20,7 +20,7 @@ const WhiteLabelBenefits = () => {
       <div className="absolute inset-0 z-0 opacity-40 bg-mesh-blue pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-20 md:mb-24">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -37,8 +37,8 @@ const WhiteLabelBenefits = () => {
           >
             Benefits of <span className="text-blue-600">Partnering</span>
           </motion.h2>
-          <p className="text-xl text-slate-600 font-medium leading-relaxed">
-            Unlocking exclusive advantages designed to accelerate your agency's growth 
+          <p className="text-xl text-slate-600 leading-relaxed">
+            Unlocking exclusive advantages designed to accelerate your agency's growth
             and streamline your development operations.
           </p>
         </div>

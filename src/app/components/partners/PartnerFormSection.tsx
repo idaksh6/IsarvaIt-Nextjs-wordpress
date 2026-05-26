@@ -103,7 +103,7 @@ export default function PartnerFormSection({
         }, 1500);
       } else {
         setErrorMessage("");
-        
+
         let friendlyError = "Something went wrong. Please try again.";
         if (typeof data.error === "string") {
           try {
@@ -127,10 +127,10 @@ export default function PartnerFormSection({
             friendlyError = data.error;
           }
         }
-        
+
         // Remove "CRM API error" prefix
         friendlyError = friendlyError.replace(/CRM API error \(\d+\):\s*/g, '');
-        
+
         setErrorMessage(friendlyError);
       }
     } catch (error) {
@@ -168,7 +168,7 @@ export default function PartnerFormSection({
 
       <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
         <div className="mx-auto">
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center lg:items-start">
 
             {/* Content Side */}
             <div className="lg:w-1/3">
@@ -282,7 +282,7 @@ export default function PartnerFormSection({
                       />
                     </div>
                   </div>
-                  
+
                   {/* Partnership Tier Selection */}
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-gray-700 flex items-center gap-2 font-body">

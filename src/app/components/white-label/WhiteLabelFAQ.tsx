@@ -49,7 +49,7 @@ const WhiteLabelFAQ = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16 md:mb-20">
+          <div className="text-center mb-10 md:mb-20">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -66,7 +66,7 @@ const WhiteLabelFAQ = () => {
             >
               Common <span className="text-blue-600">Questions</span>
             </motion.h2>
-            <p className="text-xl text-slate-600 font-medium leading-relaxed">
+            <p className="text-xl text-slate-600 leading-relaxed">
               Everything you need to know about our white-label partnership model.
             </p>
           </div>
@@ -83,11 +83,10 @@ const WhiteLabelFAQ = () => {
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className={`w-full text-left p-6 md:p-8 rounded-[32px] border transition-all duration-300 flex items-center justify-between gap-4 ${
-                    openIndex === index 
-                    ? "bg-blue-50 border-blue-200 shadow-xl shadow-blue-600/5" 
+                  className={`w-full text-left p-6 md:p-8 rounded-[32px] border transition-all duration-300 flex items-center justify-between gap-4 ${openIndex === index
+                    ? "bg-blue-50 border-blue-200 shadow-xl shadow-blue-600/5"
                     : "bg-slate-50/50 border-slate-100 hover:border-blue-200"
-                  }`}
+                    }`}
                 >
                   <span className={`text-lg md:text-xl font-black font-display uppercase tracking-tight ${openIndex === index ? "text-blue-600" : "text-slate-900"}`}>
                     {faq.question}
@@ -103,7 +102,7 @@ const WhiteLabelFAQ = () => {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="p-8 md:p-10 pb-10 md:pb-12 text-slate-600 text-lg leading-relaxed font-medium bg-white/50 rounded-b-[32px] border-x border-b border-blue-100">
+                      <div className="p-8 md:p-10 pb-10 md:pb-12 text-slate-600 text-xl  leading-relaxed bg-white/50 rounded-b-[32px] border-x border-b border-blue-100">
                         {faq.answer}
                       </div>
                     </motion.div>
