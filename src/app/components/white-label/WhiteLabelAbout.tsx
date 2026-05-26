@@ -57,7 +57,7 @@ const benefits = [
 
 const WhiteLabelAbout = () => {
   return (
-    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+    <section className="py-10 lg:py-16 bg-white relative overflow-hidden">
       {/* Background Decorative elements */}
       <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] left-[-5%] w-[40%] h-[40%] bg-blue-100/40 rounded-full blur-[120px] mix-blend-multiply" />

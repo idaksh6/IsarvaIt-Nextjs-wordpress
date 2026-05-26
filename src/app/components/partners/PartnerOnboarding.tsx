@@ -46,10 +46,10 @@ const stepVariants: Variants = {
   whileInView: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { 
-      duration: 0.5, 
+    transition: {
+      duration: 0.5,
       ease: [0.23, 1, 0.32, 1],
-      delay: i * 0.1 
+      delay: i * 0.1
     }
   }),
   hover: { y: -12, scale: 1.02, transition: { duration: 0.3 } }
@@ -57,7 +57,7 @@ const stepVariants: Variants = {
 
 const PartnerOnboarding = () => {
   return (
-    <section className="py-16 md:py-24 bg-[#FDF8F2] relative overflow-hidden">
+    <section className="py-10 lg:py-16 bg-[#FDF8F2] relative overflow-hidden">
 
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
@@ -66,7 +66,7 @@ const PartnerOnboarding = () => {
           initial="initial"
           whileInView="whileInView"
           viewport={viewportConfig}
-          className="mb-12 md:mb-24 text-[#111827] text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase"
+          className="mb-10 text-[#111827] text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase"
         >
           Your Journey to <span className="text-emerald-600">Growth</span>
         </motion.h2>
@@ -81,7 +81,7 @@ const PartnerOnboarding = () => {
               whileInView="whileInView"
               whileHover="hover"
               viewport={viewportConfig}
-              className="relative p-8 lg:p-10 rounded-[32px] md:rounded-[40px] bg-white border border-gray-100 shadow-sm hover:shadow-2xl hover:border-emerald-100 transition-all duration-500 group cursor-default"
+              className="relative p-4 lg:p-6 rounded-[32px] md:rounded-[40px] bg-white border border-gray-100 shadow-sm hover:shadow-2xl hover:border-emerald-100 transition-all duration-500 group cursor-default"
             >
               <div className={`text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-br ${step.gradient} opacity-10 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 mb-6 md:mb-8 pointer-events-none`}>
                 {step.number}
@@ -92,15 +92,15 @@ const PartnerOnboarding = () => {
               <p className="text-gray-500 text-base md:text-lg leading-relaxed relative z-10">
                 {step.desc}
               </p>
-              
+
               {/* Decorative Light Aligned Dots Pattern on Hover */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-[32px] md:rounded-[40px] pointer-events-none -z-10"
-                   style={{
-                     backgroundImage: `radial-gradient(circle at 1.5px 1.5px, #10b98115 1px, transparent 0)`,
-                     backgroundSize: '16px 16px'
-                   }}
+                style={{
+                  backgroundImage: `radial-gradient(circle at 1.5px 1.5px, #10b98115 1px, transparent 0)`,
+                  backgroundSize: '16px 16px'
+                }}
               />
-              
+
             </motion.div>
           ))}
         </div>

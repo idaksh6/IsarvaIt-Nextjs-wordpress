@@ -1044,7 +1044,7 @@ function AnalyticsSection({ onImageClick }) {
                 key={item.title}
                 onClick={() => setActiveAnalysisIdx(index)}
                 className={`flex items-center gap-3 px-4 md:px-10 py-5 rounded-full font-black text-sm transition-all duration-500 overflow-hidden relative shadow-lg ${activeAnalysisIdx === index
-                  ? "text-gray-500 scale-105"
+                  ? "text-white-500 scale-105"
                   : "bg-white text-gray-500 border border-gray-100 hover:border-purple-200 hover:text-[#9333EA]"
                   }`}
               >

@@ -6,7 +6,7 @@ import { ArrowRight, Phone, Mail } from "lucide-react";
 
 const WhiteLabelCTA = ({ onContact }: { onContact: () => void }) => {
   return (
-    <section className="py-10 md:py-16 bg-blue-50/50 px-6 relative overflow-hidden">
+    <section className="py-10 lg:py-16 bg-blue-50/50 px-6 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}

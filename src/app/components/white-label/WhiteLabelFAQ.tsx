@@ -43,7 +43,7 @@ const WhiteLabelFAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-t from-slate-50 to-[#F8FAFC] relative overflow-hidden flex items-center justify-center min-h-screen">
+    <section className="py-10 lg:py-16 bg-gradient-to-t from-slate-50 to-[#F8FAFC] relative overflow-hidden flex items-center justify-center min-h-screen">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-blue-50/30 rounded-full blur-[120px] -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">

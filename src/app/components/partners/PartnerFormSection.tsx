@@ -41,10 +41,10 @@ export default function PartnerFormSection({
   }, [preSelectedItem, router]);
 
   const businessTypes = [
-    "Digital Marketing Agency",
-    "IT Services Provider",
+    "Digital Marketing",
+    "IT Services",
     "Independent Consultant",
-    "Software Development Company",
+    "Software Development",
     "Other"
   ];
 
@@ -159,7 +159,7 @@ export default function PartnerFormSection({
   };
 
   return (
-    <section id={id} className="py-16 md:py-24 relative overflow-hidden bg-white">
+    <section id={id} className="py-10 lg:py-16 relative overflow-hidden bg-white">
       {/* Background Accents */}
       <div className="absolute inset-0 pointer-events-none opacity-40">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3" />
@@ -214,7 +214,7 @@ export default function PartnerFormSection({
                 initial="initial"
                 whileInView="whileInView"
                 viewport={viewportConfig}
-                className="bg-white rounded-[32px] p-6 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-gray-100"
+                className="bg-white rounded-[24px] md:rounded-[32px] p-5 sm:p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-gray-100"
               >
                 <form onSubmit={handleSubmit} className="space-y-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -230,7 +230,7 @@ export default function PartnerFormSection({
                         onChange={handleChange}
                         required
                         placeholder="Enter your full name"
-                        className="w-full h-14 px-5 rounded-2xl border-2 border-gray-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium"
+                        className="w-full h-14 px-4 md:px-5 truncate rounded-2xl border-2 border-gray-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium"
                       />
                     </div>
 
@@ -246,7 +246,7 @@ export default function PartnerFormSection({
                         onChange={handleChange}
                         required
                         placeholder="email@example.com"
-                        className="w-full h-14 px-5 rounded-2xl border-2 border-gray-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium"
+                        className="w-full h-14 px-4 md:px-5 truncate rounded-2xl border-2 border-gray-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium"
                       />
                     </div>
 
@@ -262,7 +262,7 @@ export default function PartnerFormSection({
                         onChange={handleChange}
                         required
                         placeholder="+91 98XXX XXXXX"
-                        className="w-full h-14 px-5 rounded-2xl border-2 border-gray-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium"
+                        className="w-full h-14 px-4 md:px-5 truncate rounded-2xl border-2 border-gray-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium"
                       />
                     </div>
 
@@ -278,7 +278,7 @@ export default function PartnerFormSection({
                         onChange={handleChange}
                         required
                         placeholder="Your Company Hub"
-                        className="w-full h-14 px-5 rounded-2xl border-2 border-gray-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium"
+                        className="w-full h-14 px-4 md:px-5 truncate rounded-2xl border-2 border-gray-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium"
                       />
                     </div>
                   </div>
@@ -294,7 +294,7 @@ export default function PartnerFormSection({
                         value={formData.tier}
                         onChange={handleChange}
                         required
-                        className="w-full h-14 px-5 rounded-2xl border-2 border-gray-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium bg-white appearance-none cursor-pointer"
+                        className="w-full h-14 pl-4 md:pl-5 pr-10 md:pr-12 truncate rounded-2xl border-2 border-gray-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium bg-white appearance-none cursor-pointer"
                       >
                         <option value="General Partner Inquiry">General Partner Inquiry</option>
                         <option value="Gold Tier Inquiry">Gold Tier Inquiry</option>
@@ -313,9 +313,9 @@ export default function PartnerFormSection({
                         value={formData.selectedItem}
                         onChange={handleChange}
                         required
-                        className="w-full h-14 px-5 rounded-2xl border-2 border-gray-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium bg-white appearance-none cursor-pointer"
+                        className="w-full h-14 pl-4 md:pl-5 pr-10 md:pr-12 truncate rounded-2xl border-2 border-gray-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium bg-white appearance-none cursor-pointer"
                       >
-                        <option value="">Select your business type</option>
+                        <option value="">Select business type</option>
                         {businessTypes.map((type) => (
                           <option key={type} value={type}>{type}</option>
                         ))}
@@ -339,7 +339,7 @@ export default function PartnerFormSection({
                         onChange={handleChange}
                         required
                         placeholder="Type your business category"
-                        className="w-full h-14 px-5 rounded-2xl border-2 border-emerald-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium"
+                        className="w-full h-14 px-4 md:px-5 truncate rounded-2xl border-2 border-emerald-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium"
                       />
                     </motion.div>
                   )}
@@ -352,7 +352,7 @@ export default function PartnerFormSection({
                       onChange={handleChange}
                       rows={4}
                       placeholder="Tell us a bit about your current reach or client base..."
-                      className="w-full p-5 rounded-2xl border-2 border-gray-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium resize-none"
+                      className="w-full p-4 md:p-5 rounded-2xl border-2 border-gray-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium resize-none"
                     />
                   </div>
 
