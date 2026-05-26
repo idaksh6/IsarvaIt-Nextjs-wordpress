@@ -84,9 +84,8 @@ export default function FeatureItem({ feature, index, isEven }) {
   return (
     <div
       ref={itemRef}
-      className={`group relative transition-all duration-500 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}
+      className={`group relative transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        }`}
       style={{
         transitionDelay: `${(index % 3) * 100}ms`
       }}
@@ -95,7 +94,11 @@ export default function FeatureItem({ feature, index, isEven }) {
       <div className="h-full bg-white rounded-2xl border-2 border-gray-100 hover:border-emerald-300 p-8 transition-all duration-300 text-center md:text-left">
         {/* Icon Container */}
         <div className="w-16 h-16 mx-auto md:mx-0 rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-100 flex items-center justify-center mb-6 transition-all duration-300">
-          {icon}
+          {typeof feature === 'object' && feature.icon ? (
+            <img src={feature.icon} alt={feature.title || "Feature Icon"} className="w-8 h-8 object-contain" />
+          ) : (
+            icon
+          )}
         </div>
 
         {/* Feature Title */}

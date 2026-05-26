@@ -54,12 +54,16 @@ export default function BenefitItem({ benefit, index }) {
   return (
     <div className="relative">
       <div className="h-full rounded-3xl p-8 bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg transition-all duration-300">
-        <div className="relative">
+        <div className="relative text-center md:text-left">
           {/* Icon */}
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 via-teal-500 to-green-500 flex items-center justify-center mb-6 shadow-lg transition-all duration-300 relative overflow-hidden">
+          <div className="w-16 h-16 mx-auto md:mx-0 rounded-2xl bg-gradient-to-br from-emerald-400 via-teal-500 to-green-500 flex items-center justify-center mb-6 shadow-lg transition-all duration-300 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-tr from-white/0 to-white/30"></div>
             <div className="relative z-10">
-              {icon}
+              {typeof benefit === 'object' && benefit.icon ? (
+                <img src={benefit.icon} alt={benefit.title || "Benefit Icon"} className="w-8 h-8 object-contain" />
+              ) : (
+                icon
+              )}
             </div>
           </div>
 
@@ -76,9 +80,9 @@ export default function BenefitItem({ benefit, index }) {
           )}
 
           {/* Index number */}
-          <div className="absolute bottom-6 right-6 text-7xl font-black text-gray-50 select-none">
+          {/* <div className="absolute bottom-6 right-6 text-7xl font-black text-gray-50 select-none">
             {String(index + 1).padStart(2, '0')}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

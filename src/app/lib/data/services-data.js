@@ -873,50 +873,78 @@ export const servicesData = [
     slug: "website-maintenance-amc",
     title: "Website Maintenance – AMC",
     icon: "🔧",
-    heroImage: "/Services/Cloud services/Web-maintenance-banner.png",
+    heroImage: "/Services/website-maintenence/AMC-image.jpg",
     shortDescription: "Comprehensive annual maintenance contracts for your website",
     description: "Keep your website secure, fast, and updated with Isarva Infotech AMC services. We handle maintenance, security, updates, and support so you can focus on business growth.",
     features: [
       {
         title: "Regular Updates & Patches",
-        description: "Stay updated with timely CMS, plugin, and theme updates that improve functionality, fix bugs, and keep your website compatible with the latest technologies."
+        description: "Stay updated with timely CMS, plugin, and theme updates that improve functionality, fix bugs, and keep your website compatible with the latest technologies.",
+        icon: "/Services/website-maintenence/regular-updates-patches.svg"
       },
       {
         title: "Security Monitoring",
-        description: "Protect your website from cyber threats with continuous security monitoring, vulnerability checks, malware prevention, and proactive security measures."
+        description: "Protect your website from cyber threats with continuous security monitoring, vulnerability checks, malware prevention, and proactive security measures.",
+        icon: "/Services/website-maintenence/security-monitoring.svg"
       },
       {
         title: "Performance Optimization",
-        description: "Improve loading speed and overall user experience through image optimization, caching, code refinement, and ongoing performance tuning."
+        description: "Improve loading speed and overall user experience through image optimization, caching, code refinement, and ongoing performance tuning.",
+        icon: "/Services/website-maintenence/performance-optimization.svg"
       },
       {
         title: "Content Updates",
-        description: "Keep your website fresh and relevant with regular updates to text, images, banners, videos, blogs, and business information."
+        description: "Keep your website fresh and relevant with regular updates to text, images, banners, videos, blogs, and business information.",
+        icon: "/Services/website-maintenence/content-updates.svg"
       },
       {
         title: "Backup & Recovery",
-        description: "Safeguard your website with scheduled backups and quick recovery solutions to minimize data loss and restore operations when needed."
+        description: "Safeguard your website with scheduled backups and quick recovery solutions to minimize data loss and restore operations when needed.",
+        icon: "/Services/website-maintenence/backup-recovery.svg"
       },
       {
         title: "24/7 Technical Support",
-        description: "Access reliable technical assistance whenever you need it, ensuring quick resolutions and uninterrupted website performance."
+        description: "Access reliable technical assistance whenever you need it, ensuring quick resolutions and uninterrupted website performance.",
+        icon: "/Services/website-maintenence/technical-support.svg"
       },
       {
         title: "Uptime Monitoring",
-        description: "We continuously monitor website availability to detect and resolve issues early, helping maintain maximum uptime and reliability."
+        description: "We continuously monitor website availability to detect and resolve issues early, helping maintain maximum uptime and reliability.",
+        icon: "/Services/website-maintenence/uptime-monitoring.svg"
       },
       {
         title: "Bug Fixes & Troubleshooting",
-        description: "Our experts quickly identify and fix technical errors, broken features, and functionality issues to ensure smooth website operations."
+        description: "Our experts quickly identify and fix technical errors, broken features, and functionality issues to ensure smooth website operations.",
+        icon: "/Services/website-maintenence/bug-fixes.svg"
       }
     ],
     technologies: ["cPanel", "WordPress", "SSL Certificates", "CDN", "Monitoring Tools"],
     benefits: [
-      "Peace of Mind",
-      "Reduced Downtime",
-      "Enhanced Security",
-      "Consistent Performance",
-      "Cost-Effective Support"
+      {
+        title: "Peace of Mind",
+        description: "Focus on your business while we manage updates, security, and website health with a proactive maintenance approach.",
+        icon: "/Services/website-maintenence/benefits/peace-of-mind.svg"
+      },
+      {
+        title: "Reduced Downtime",
+        description: "Minimize disruptions and keep your website available with ongoing monitoring and rapid issue resolution.",
+        icon: "/Services/website-maintenence/benefits/reduced-downtime.svg"
+      },
+      {
+        title: "Enhanced Security",
+        description: "Strengthen your website against cyber risks with regular security updates and continuous protection measures.",
+        icon: "/Services/website-maintenence/benefits/enhanced-security.svg"
+      },
+      {
+        title: "Consistent Performance",
+        description: "Deliver a smooth and reliable user experience through ongoing optimization and maintenance.",
+        icon: "/Services/website-maintenence/benefits/consistent-performance.svg"
+      },
+      {
+        title: "Cost-Effective Support",
+        description: "Avoid expensive emergency fixes and unexpected technical problems with affordable, planned maintenance solutions.",
+        icon: "/Services/website-maintenence/benefits/cost-effective.svg"
+      }
     ]
   },
   {
