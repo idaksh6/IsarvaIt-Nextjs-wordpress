@@ -70,7 +70,7 @@ const WhiteLabelAbout = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block px-5 py-2 rounded-full bg-gradient-to-r from-blue-50 to-purple-50 border border-purple-100 text-purple-700 text-xs font-black uppercase tracking-widest mb-6 shadow-sm"
+            className="inline-block px-5 py-2 rounded-full bg-gradient-to-r from-blue-50 to-purple-50 border border-purple-100 text-blue-700 text-xs font-black uppercase tracking-widest mb-6 shadow-sm"
           >
             The Partnership Advantage
           </motion.div>
@@ -87,7 +87,7 @@ const WhiteLabelAbout = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-slate-600 leading-relaxed"
+            className="text-xl text-gray-600 leading-relaxed"
           >
             We empower agencies to deliver premium digital solutions under their own brand,
             providing the technical muscle needed to scale rapidly and efficiently.
@@ -111,10 +111,10 @@ const WhiteLabelAbout = () => {
                 <div className={`w-14 h-14 rounded-2xl ${benefit.bg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-sm border border-white`}>
                   <benefit.icon className={`w-7 h-7 ${benefit.color}`} />
                 </div>
-                <h3 className="text-2xl font-black text-slate-900 mb-4 font-display group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-slate-900 group-hover:to-slate-600 transition-colors">
+                <h3 className="text-2xl font-black text-gray-900 mb-4 font-display group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-slate-900 group-hover:to-slate-600 transition-colors">
                   {benefit.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed">
                   {benefit.description}
                 </p>
               </div>

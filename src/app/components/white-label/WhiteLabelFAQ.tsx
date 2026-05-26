@@ -43,13 +43,12 @@ const WhiteLabelFAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-t from-slate-50 to-[#F8FAFC] relative overflow-hidden">
-      {/* Background Decorative element */}
+    <section className="py-16 md:py-24 bg-gradient-to-t from-slate-50 to-[#F8FAFC] relative overflow-hidden flex items-center justify-center min-h-screen">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-blue-50/30 rounded-full blur-[120px] -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-10 md:mb-20">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -66,12 +65,12 @@ const WhiteLabelFAQ = () => {
             >
               Common <span className="text-blue-600">Questions</span>
             </motion.h2>
-            <p className="text-xl text-slate-600 leading-relaxed">
+            <p className="text-xl text-gray-600 leading-relaxed">
               Everything you need to know about our white-label partnership model.
             </p>
           </div>
 
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}
@@ -79,20 +78,22 @@ const WhiteLabelFAQ = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group"
+                className={`rounded-[32px] border shadow-md overflow-hidden transition-colors duration-300 flex flex-col self-start
+                  ${openIndex === index
+                    ? "bg-blue-50 border-blue-200"
+                    : "bg-white border-slate-100"
+                  }`}
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className={`w-full text-left p-6 md:p-8 rounded-[32px] border transition-all duration-300 flex items-center justify-between gap-4 ${openIndex === index
-                    ? "bg-blue-50 border-blue-200 shadow-xl shadow-blue-600/5"
-                    : "bg-slate-50/50 border-slate-100 hover:border-blue-200"
-                    }`}
+                  className={`w-full text-left p-6 md:p-8 flex items-center justify-between gap-4 bg-transparent transition-all duration-300 ${openIndex === index ? "" : "min-h-[104px] md:min-h-[110px]"}`}
                 >
-                  <span className={`text-lg md:text-xl font-black font-display uppercase tracking-tight ${openIndex === index ? "text-blue-600" : "text-slate-900"}`}>
+                  <span className={`text-lg md:text-xl font-black font-display tracking-tight ${openIndex === index ? "text-blue-600" : "text-slate-900"}`}>
                     {faq.question}
                   </span>
-                  <ChevronDown className={`w-6 h-6 flex-shrink-0 transition-transform duration-500 ${openIndex === index ? "rotate-180 text-blue-600" : "text-slate-400 group-hover:text-blue-600"}`} />
+                  <ChevronDown className={`w-6 h-6 flex-shrink-0 transition-transform duration-500 ${openIndex === index ? "rotate-180 text-blue-600" : "text-slate-400"}`} />
                 </button>
+
                 <AnimatePresence>
                   {openIndex === index && (
                     <motion.div
@@ -102,7 +103,7 @@ const WhiteLabelFAQ = () => {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="p-8 md:p-10 pb-10 md:pb-12 text-slate-600 text-xl  leading-relaxed bg-white/50 rounded-b-[32px] border-x border-b border-blue-100">
+                      <div className="px-6 md:px-8 pb-8 md:pb-10 text-gray-600 text-base leading-relaxed">
                         {faq.answer}
                       </div>
                     </motion.div>

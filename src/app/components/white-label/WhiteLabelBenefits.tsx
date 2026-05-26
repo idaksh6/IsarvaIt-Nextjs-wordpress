@@ -37,7 +37,7 @@ const WhiteLabelBenefits = () => {
           >
             Benefits of <span className="text-blue-600">Partnering</span>
           </motion.h2>
-          <p className="text-xl text-slate-600 leading-relaxed">
+          <p className="text-xl text-gray-600 leading-relaxed">
             Unlocking exclusive advantages designed to accelerate your agency's growth
             and streamline your development operations.
           </p>
@@ -56,7 +56,7 @@ const WhiteLabelBenefits = () => {
               <div className={`w-20 h-20 rounded-3xl ${benefit.bg} ${benefit.color} flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-sm`}>
                 <benefit.icon className="w-10 h-10" />
               </div>
-              <h3 className="text-2xl font-black text-slate-900 font-display uppercase tracking-tight group-hover:text-blue-600 transition-colors">
+              <h3 className="text-2xl font-black text-slate-900 font-display tracking-tight group-hover:text-blue-600 transition-colors">
                 {benefit.title}
               </h3>
             </motion.div>

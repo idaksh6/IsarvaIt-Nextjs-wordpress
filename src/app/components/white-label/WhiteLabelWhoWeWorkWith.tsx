@@ -44,7 +44,7 @@ const WhiteLabelWhoWeWorkWith = () => {
           >
             Who We <span className="text-blue-600">Work With</span>
           </motion.h2>
-          <p className="text-xl text-slate-600 leading-relaxed">
+          <p className="text-xl text-gray-600 leading-relaxed">
             We partner with businesses looking to grow through white-label solutions,
             serving as their trusted backend development arm across various industries.
           </p>
@@ -63,7 +63,7 @@ const WhiteLabelWhoWeWorkWith = () => {
               <div className={`w-16 h-16 rounded-2xl bg-white ${partner.color} flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-sm`}>
                 <partner.icon className="w-8 h-8" />
               </div>
-              <h3 className="text-2xl font-black text-slate-900 font-display uppercase tracking-tight group-hover:text-blue-600 transition-colors">
+              <h3 className="text-2xl font-black text-slate-900 font-display tracking-tight group-hover:text-blue-600 transition-colors">
                 {partner.name}
               </h3>
 

@@ -8,7 +8,7 @@ import heroImage from "../../../../public/white_label_abstract.png";
 
 const WhiteLabelHero = ({ onContact }: { onContact: () => void }) => {
   return (
-    <section className="relative min-h-screen flex items-center pt-24 sm:pt-32 md:pt-40 pb-12 sm:pb-16 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-indigo-50/50">
+    <section className="relative min-h-screen flex items-center pt-32 md:pt-40 pb-12 sm:pb-16 overflow-hidden bg-gradient-to-br from-slate-50 via-white to-indigo-50/50">
       {/* Vibrant Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] right-[-5%] w-[50%] h-[50%] bg-blue-300/20 rounded-full blur-[120px] mix-blend-multiply animate-pulse" />
@@ -47,7 +47,7 @@ const WhiteLabelHero = ({ onContact }: { onContact: () => void }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-xl lg:text-2xl text-slate-600 max-w-xl mx-auto lg:mx-0 mb-6 md:mb-10 leading-relaxed "
+              className="text-xl lg:text-2xl text-gray-600 max-w-xl mx-auto lg:mx-0 mb-6 md:mb-10 leading-relaxed "
             >
               Deliver world-class digital solutions behind the scenes. Our white-label team acts as your invisible tech arm, helping you grow while we handle the heavy lifting.
             </motion.p>
@@ -74,13 +74,13 @@ const WhiteLabelHero = ({ onContact }: { onContact: () => void }) => {
               transition={{ delay: 0.6 }}
               className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-sm mx-auto lg:mx-0"
             >
-              <div className="flex items-center gap-3">
+              <div className="flex items-center justify-center sm:justify-start gap-3">
                 <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center">
                   <CheckCircle2 className="w-5 h-5 text-emerald-500" />
                 </div>
                 <span className="text-slate-700 font-bold text-sm">100% White-Label</span>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center justify-center sm:justify-start gap-3">
                 <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center">
                   <CheckCircle2 className="w-5 h-5 text-blue-500" />
                 </div>
