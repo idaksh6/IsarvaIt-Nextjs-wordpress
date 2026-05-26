@@ -20,7 +20,7 @@ const features = [
 
 const WhiteLabelStats = () => {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 to-[#F8FAFC] relative overflow-hidden">
+    <section className="py-10 lg:py-16 bg-gradient-to-b from-slate-50 to-[#F8FAFC] relative overflow-hidden">
       {/* Decorative background */}
       <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
         <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-blue-500 rounded-full blur-[150px]" />

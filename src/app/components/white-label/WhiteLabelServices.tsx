@@ -17,7 +17,6 @@ const services = [
     title: "Custom WordPress",
     description: "We build custom WordPress websites tailored to your clients needs, fully managed and delivered under your brand.",
     image: imgCustomWP,
-    category: "Development",
     deliverables: [
       "Custom-designed, responsive sites",
       "Theme & plugin customization",
@@ -29,7 +28,6 @@ const services = [
     title: "WooCommerce / E-com",
     description: "We build WooCommerce based  e-commerce websites ensuring a seamless shopping experience for your clients.",
     image: imgEcom,
-    category: "E-Commerce",
     deliverables: [
       "Fully functional E-Com stores",
       "Product catalog & inventory",
@@ -41,7 +39,6 @@ const services = [
     title: "Website Redesign",
     description: "We revamp outdated websites into visually appealing websites based on current trends and styles.",
     image: imgRedesign,
-    category: "Modernization",
     deliverables: [
       "Modern UI/UX redesign",
       "Speed optimization",
@@ -53,7 +50,6 @@ const services = [
     title: "Maintenance & AMC",
     description: "We provide white-label website maintenance that performs without the need of an in-house team.",
     image: imgMaintenance,
-    category: "Support",
     deliverables: [
       "Regular updates & backups",
       "Security & bug fixes",
@@ -65,7 +61,6 @@ const services = [
     title: "UI/UX Design",
     description: "We design user-friendly interfaces and modern designs to improve engagement, conversions, and brand value.",
     image: imgUIDesign,
-    category: "Design",
     deliverables: [
       "User-centric interface design",
       "Wireframes & prototypes",
@@ -77,7 +72,6 @@ const services = [
     title: "Growth & SEO",
     description: "We deliver SEO services to improve search rankings and drive consistent organic growth for your clients.",
     image: imgGrowth,
-    category: "Marketing",
     deliverables: [
       "Keyword research & strategy",
       "On-page SEO optimization",
@@ -89,7 +83,7 @@ const services = [
 
 const WhiteLabelServices = () => {
   return (
-    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+    <section className="py-10 lg:py-16 bg-white relative overflow-hidden">
       {/* Background Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] bg-blue-100/40 rounded-full blur-[120px]" />
@@ -143,11 +137,7 @@ const WhiteLabelServices = () => {
                   className="object-cover group-hover:scale-110 transition-transform duration-700 w-full h-full"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
-                <div className="absolute top-6 right-6">
-                  <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-[10px] font-black uppercase tracking-widest">
-                    {service.category}
-                  </span>
-                </div>
+
                 <div className="absolute bottom-6 left-10 right-10">
                   <h3 className="text-2xl font-black text-white font-display uppercase tracking-tight leading-tight">
                     {service.title}

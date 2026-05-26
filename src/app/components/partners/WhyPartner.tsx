@@ -3,12 +3,12 @@
 import React from "react";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
-import { 
-  Users, 
-  TrendingUp, 
-  ShieldCheck, 
-  Zap, 
-  BarChart3 
+import {
+  Users,
+  TrendingUp,
+  ShieldCheck,
+  Zap,
+  BarChart3
 } from "lucide-react";
 
 const props = [
@@ -78,23 +78,23 @@ const cardVariants: Variants = {
 
 const WhyPartner = () => {
   return (
-    <section className="py-16 md:py-24 relative overflow-hidden bg-white">
+    <section className="py-10 lg:py-16 relative overflow-hidden bg-white">
       {/* Antigravity background elements */}
-      <motion.div 
+      <motion.div
         variants={bgVariants1}
         animate="animate"
         className="absolute top-40 left-10 w-64 h-64 bg-blue-600/5 rounded-full blur-3xl pointer-events-none"
       />
 
 
-      <motion.div 
+      <motion.div
         variants={bgVariants2}
         animate="animate"
         className="absolute bottom-20 right-20 w-80 h-80 bg-blue-600/5 rounded-full blur-3xl pointer-events-none"
       />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-10">
           <motion.h2
             variants={headingVariants}
             initial="initial"
@@ -114,7 +114,7 @@ const WhyPartner = () => {
             </div>
           ))}
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mx-auto mt-6 md:mt-8">
           {props.slice(3).map((item, index) => (
             <ValueCard key={index + 3} {...item} index={index + 3} />
@@ -127,7 +127,7 @@ const WhyPartner = () => {
 
 const ValueCard = ({ icon, title, desc, index, color }: { icon: any, title: string, desc: string, index: number, color?: string }) => {
   const themeColor = color || 'blue';
-  
+
   const colorVariants: Record<string, string> = {
     emerald: "from-emerald-600/0 to-emerald-100/50 bg-emerald-50",
     blue: "from-blue-600/0 to-blue-100/50 bg-blue-50",
@@ -155,7 +155,7 @@ const ValueCard = ({ icon, title, desc, index, color }: { icon: any, title: stri
     >
       {/* Subtle glow on hover */}
       <div className={`absolute inset-0 bg-gradient-to-br ${colorVariants[themeColor].split(' ').slice(0, 2).join(' ')} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-      
+
       <div className="relative z-10 flex flex-col items-center text-center sm:items-start sm:text-left">
         <div className={`mb-5 md:mb-8 p-3 md:p-4 rounded-2xl bg-gray-50/50 group-hover:scale-110 group-hover:${colorVariants[themeColor].split(' ')[2]} transition-all duration-300 inline-block`}>
           {icon}

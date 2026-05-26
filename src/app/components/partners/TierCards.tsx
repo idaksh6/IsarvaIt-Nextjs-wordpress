@@ -59,13 +59,13 @@ const footerVariants: Variants = {
 
 const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
   return (
-    <section className="py-16 md:py-24 relative overflow-hidden bg-[#FDF8F2]">
+    <section className="py-10 lg:py-16 relative overflow-hidden bg-[#FDF8F2]">
       {/* Background Subtle mesh and Grid for consistency */}
       <div className="absolute inset-0 z-0 opacity-20 bg-mesh-green pointer-events-none" />
       <div className="absolute inset-0 z-0 bg-dots opacity-[0.05] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-12 md:mb-20">
+        <div className="text-center mb-10 md:mb-12">
           <motion.h2
             variants={headingVariants}
             initial="initial"
@@ -78,7 +78,7 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
           <p className="text-gray-500 text-xl font-body">Choose the growth level that matches your ambition.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-10 lg:mb-20">
           {/* Gold Tier */}
           <motion.div
             variants={goldVariants}
@@ -271,7 +271,7 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
           </motion.div>
         </div>
 
-        <div className="mt-16 text-center">
+        <div className="mt-4 lg:mt-16 text-center">
           <motion.p
             variants={footerVariants}
             initial="initial"

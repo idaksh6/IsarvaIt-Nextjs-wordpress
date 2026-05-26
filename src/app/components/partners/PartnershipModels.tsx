@@ -164,9 +164,9 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
   const activeModel = models.find(m => m.id === activeTab) || models[0];
 
   return (
-    <section id="models" className="py-16 md:py-28 px-4 sm:px-6 md:px-8 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-10 md:mb-16">
+    <section id="models" className="py-10 lg:py-16 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+                  <div className="text-center mb-10 ">
           <motion.h2
             variants={headingVariants}
             initial="initial"
@@ -182,19 +182,18 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
         </div>
 
         {/* Tab Switcher - Now with horizontal scroll on mobile */}
-        <div className="flex flex-nowrap lg:flex-wrap items-center justify-start lg:justify-center gap-4 mb-8 md:mb-10 overflow-x-auto pb-4 lg:pb-0 scrollbar-hide no-scrollbar -mx-4 px-4 lg:mx-0 lg:px-0">
+                  <div className="flex flex-nowrap lg:flex-wrap items-center justify-center lg:justify-center gap-4 mb-8 md:mb-10 overflow-x-auto pb-4 lg:pb-0 scrollbar-hide no-scrollbar -mx-4 px-4 lg:mx-0 lg:px-0">
           {models.map((model) => (
             <button
               key={model.id}
               onClick={() => setActiveTab(model.id)}
-              className={`relative px-8 py-5 rounded-2xl text-sm sm:text-base font-bold transition-all duration-300 border-2 font-display tracking-tight flex-shrink-0 min-w-max ${
-                activeTab === model.id 
-                  ? "bg-gradient-to-br from-emerald-50 to-white border-emerald-500 text-emerald-700 shadow-xl shadow-emerald-500/10" 
-                  : "bg-gray-50/50 border-gray-100 text-gray-400 hover:bg-white hover:border-emerald-200 hover:text-gray-600"
-              }`}
+              className={`relative px-8 py-5 rounded-2xl text-sm sm:text-base font-bold transition-all duration-300 border-2 font-display tracking-tight flex-shrink-0 min-w-max ${activeTab === model.id
+                ? "bg-gradient-to-br from-emerald-50 to-white border-emerald-500 text-emerald-700 shadow-xl shadow-emerald-500/10"
+                : "bg-gray-50/50 border-gray-100 text-gray-400 hover:bg-white hover:border-emerald-200 hover:text-gray-600"
+                }`}
             >
               <div className="flex flex-row items-center justify-center gap-3">
-                <span className="text-xl sm:text-2xl shrink-0">{model.icon}</span> 
+                <span className="text-xl sm:text-2xl shrink-0">{model.icon}</span>
                 <span className="whitespace-nowrap">
                   {model.title}
                 </span>
@@ -260,8 +259,8 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 relative">
                       {activeModel.path.map((item, idx) => (
-                        <motion.div 
-                          key={idx} 
+                        <motion.div
+                          key={idx}
                           variants={pathItemVariants}
                           whileHover="hover"
                           className="relative group/path flex md:block gap-5 items-start cursor-default"
@@ -291,7 +290,7 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
                 {/* Earnings Card & Extras */}
                 <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 md:gap-6">
                   <div className="sm:col-span-12 lg:col-span-7">
-                    <div className="bg-gradient-to-br from-emerald-50 to-white p-6 sm:p-8 md:p-10 rounded-[32px] text-emerald-900 border border-emerald-100 h-full relative overflow-hidden group/earn">
+                    <div className="bg-gradient-to-br from-emerald-50 to-white p-6 sm:p-8 md:p-10 rounded-[32px] text-emerald-900 border border-emerald-100 h-full relative overflow-hidden group/earn text-center md:text-left">
                       <div className="absolute -top-10 -right-10 w-40 h-40 bg-emerald-500/5 rounded-full blur-3xl group-hover/earn:bg-emerald-500/10 transition-all duration-700" />
 
                       <p className="text-emerald-600 text-[10px] font-black tracking-widest uppercase mb-6">Revenue Advantage</p>
@@ -313,7 +312,7 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
                       </div>
                       <button
                         onClick={onApply}
-                        className="press-illusion-btn-orange w-full py-5 rounded-2xl text-[13px] md:text-sm font-black uppercase tracking-widest transition-all"
+                        className="press-illusion-btn-orange w-full py-5 rounded-2xl text-[13px] md:text-sm font-black uppercase tracking-widest whitespace-nowrap transition-all"
                       >
                         Partner Now
                       </button>

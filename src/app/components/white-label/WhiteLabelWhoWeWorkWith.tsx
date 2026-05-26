@@ -22,7 +22,7 @@ const partners = [
 
 const WhiteLabelWhoWeWorkWith = () => {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 to-[#F8FAFC] relative overflow-hidden">
+    <section className="py-10 lg:py-16 bg-gradient-to-b from-slate-50 to-[#F8FAFC] relative overflow-hidden">
       {/* Background Decorative elements */}
       <div className="absolute inset-0 z-0 opacity-40 bg-dots pointer-events-none" />
 

@@ -56,7 +56,7 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
   };
 
   return (
-    <section className="relative min-h-screen md:min-h-[90vh] flex items-center overflow-hidden pt-24 pb-10 lg:pt-32 md:pb-24 bg-gradient-to-br from-[#f0fdf4] via-[#ecfdf5] to-white">
+    <section className="relative min-h-screen md:min-h-[90vh] flex items-center overflow-hidden pt-32 pb-10 lg:pt-32 md:pb-24 bg-gradient-to-br from-[#f0fdf4] via-[#ecfdf5] to-white">
       {/* Background Subtle mesh and Grid */}
       <div className="absolute inset-0 z-0 opacity-40 bg-mesh-green pointer-events-none" />
       <div className="absolute inset-0 z-0 bg-dots opacity-[0.1] pointer-events-none" />
@@ -144,10 +144,10 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
               variants={collageVariants}
               initial="initial"
               animate="animate"
-              className="relative z-10 w-full max-w-[500px] aspect-square rounded-[48px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.12)] bg-slate-50 border-4 border-white/30"
+              className="relative z-10 w-full max-w-[650px] aspect-square rounded-[48px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.12)] bg-slate-50 border-4 border-white/30"
             >
               <img
-                src="partners/sky-coin.png"
+                src="/partners/sky-coin.png"
                 alt="Partner Ecosystem"
                 className="w-full h-full object-cover"
               />

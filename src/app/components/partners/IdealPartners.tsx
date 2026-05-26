@@ -43,7 +43,7 @@ const cardVariants: Variants = {
 
 const IdealPartners = () => {
   return (
-    <section className="py-16 md:py-32 bg-[#FDF8F2] relative overflow-hidden">
+    <section className="py-10 lg:py-16 bg-[#FDF8F2] relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] bg-orange-100/30 rounded-full blur-[100px]" />
@@ -56,7 +56,7 @@ const IdealPartners = () => {
           initial="initial"
           whileInView="whileInView"
           viewport={viewportConfig}
-          className="mb-16 md:mb-24"
+          className="mb-10"
         >
           <h2 className="mb-6 text-[#111827] text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
             Who We're <span className="text-[#ea580c]">Looking For</span>
@@ -84,14 +84,14 @@ const IdealPartners = () => {
               <div className={`w-20 h-20 rounded-3xl bg-gradient-to-br ${item.color} flex items-center justify-center text-white mb-8 shadow-lg group-hover:scale-110 transition-transform duration-500`}>
                 {item.icon}
               </div>
-              
-              <h3 className="text-2xl md:text-3xl font-black text-[#111827] uppercase leading-tight mb-6 relative z-10">
+
+              <h3 className="text-2xl  font-black text-[#111827]  leading-tight mb-6 relative z-10">
                 {item.title}
               </h3>
               <p className="text-gray-500 text-lg leading-relaxed relative z-10 max-w-xs">
                 {item.desc}
               </p>
-              
+
               {/* Bottom accent line */}
               <div className={`absolute bottom-0 left-0 h-1.5 w-0 bg-gradient-to-r ${item.color} group-hover:w-full transition-all duration-700`} />
             </motion.div>
