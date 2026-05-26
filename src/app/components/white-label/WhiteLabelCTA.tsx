@@ -6,7 +6,7 @@ import { ArrowRight, Phone, Mail } from "lucide-react";
 
 const WhiteLabelCTA = ({ onContact }: { onContact: () => void }) => {
   return (
-    <section className="py-16 md:py-24 bg-blue-50/50 px-6 relative overflow-hidden">
+    <section className="py-10 md:py-16 bg-blue-50/50 px-6 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -36,8 +36,8 @@ const WhiteLabelCTA = ({ onContact }: { onContact: () => void }) => {
               viewport={{ once: true }}
               className="text-slate-900 mb-8 font-display text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase"
             >
-              Ready to Grow <br />
-              <span className="text-blue-600">Without Limits?</span>
+              Ready to Grow
+              <span className="text-blue-600"> Without Limits?</span>
             </motion.h2>
 
             <motion.p
@@ -45,7 +45,7 @@ const WhiteLabelCTA = ({ onContact }: { onContact: () => void }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-xl lg:text-2xl text-slate-600 mb-16 leading-relaxed max-w-2xl mx-auto"
+              className="text-xl lg:text-2xl text-gray-600 mb-16 leading-relaxed max-w-2xl mx-auto"
             >
               Scale your agency with a reliable white-label partner.
               Expert execution, fast delivery, and complete confidentiality—guaranteed.

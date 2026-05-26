@@ -47,24 +47,26 @@ const WhiteLabelStats = () => {
         </div>
 
         {/* Row 1: Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8 mb-10">
-          {stats.map((stat, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="bg-white p-8 rounded-[40px] border border-slate-100 text-center flex flex-col items-center justify-center min-h-[200px] shadow-xl shadow-blue-500/20 group hover:bg-white hover:shadow-2xl hover:shadow-blue-900/5 hover:-translate-y-2 transition-all duration-500"
-            >
-              <div className="text-5xl md:text-6xl font-black text-blue-600 mb-4 font-display group-hover:scale-110 transition-transform duration-500">
-                {stat.value}
-              </div>
-              <div className="text-[10px] md:text-xs font-black text-slate-400 uppercase tracking-[0.2em] leading-tight">
-                {stat.label}
-              </div>
-            </motion.div>
-          ))}
+        <div className="mb-10">
+          <div className="flex flex-wrap justify-center gap-4 lg:gap-4 xl:gap-8">
+            {stats.map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                className="w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.67rem)] lg:w-[calc(20%-0.8rem)] xl:w-[calc(20%-1.6rem)] bg-white p-4 md:p-6 lg:p-4 xl:p-8 rounded-[32px] md:rounded-[40px] border border-slate-100 text-center flex flex-col items-center justify-center min-h-[140px] md:min-h-[160px] lg:min-h-[180px] xl:min-h-[200px] shadow-xl shadow-blue-500/20 group hover:bg-white hover:shadow-2xl hover:shadow-blue-900/5 hover:-translate-y-2 transition-all duration-500"
+              >
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-6xl font-black text-blue-600 mb-2 lg:mb-4 font-display group-hover:scale-110 transition-transform duration-500">
+                  {stat.value}
+                </div>
+                <div className="text-[10px] sm:text-[14px] md:text-xs font-black text-slate-400  tracking-wider sm:tracking-[0.2em] leading-tight">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* Row 2: Features */}
@@ -76,12 +78,12 @@ const WhiteLabelStats = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5 + i * 0.1, duration: 0.5 }}
-              className="group flex items-center gap-6 bg-white p-6 rounded-3xl border border-slate-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300"
+              className="group flex items-center md:items-center  gap-6 bg-white p-6 rounded-3xl border border-slate-100 hover:shadow-xl hover:border-blue-200 transition-all duration-300"
             >
               <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 transition-colors duration-500">
                 <div className="w-3 h-3 rounded-full bg-blue-600 group-hover:bg-white transition-colors" />
               </div>
-              <span className="text-slate-800 font-black text-sm uppercase tracking-tight leading-tight">{feature}</span>
+              <span className="text-slate-800 font-black text-sm tracking-tight leading-tight">{feature}</span>
             </motion.div>
           ))}
         </div>

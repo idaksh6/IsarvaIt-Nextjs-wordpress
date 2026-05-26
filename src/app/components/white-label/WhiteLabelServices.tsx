@@ -15,7 +15,7 @@ import imgGrowth from "../../../../public/wp_growth_primary.png";
 const services = [
   {
     title: "Custom WordPress",
-    description: "We build custom WordPress websites tailored to your clients’ needs, fully managed and delivered under your brand.",
+    description: "We build custom WordPress websites tailored to your clients needs, fully managed and delivered under your brand.",
     image: imgCustomWP,
     category: "Development",
     deliverables: [
@@ -27,7 +27,7 @@ const services = [
   },
   {
     title: "WooCommerce / E-com",
-    description: "We build WooCommerce based e-commerce websites ensuring a seamless shopping experience for your clients.",
+    description: "We build WooCommerce based  e-commerce websites ensuring a seamless shopping experience for your clients.",
     image: imgEcom,
     category: "E-Commerce",
     deliverables: [
@@ -119,7 +119,7 @@ const WhiteLabelServices = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-slate-600 leading-relaxed"
+            className="text-xl text-gray-600 leading-relaxed"
           >
             A full suite of digital services designed to help your agency offer
             more value without increasing your internal workload.
@@ -148,15 +148,15 @@ const WhiteLabelServices = () => {
                     {service.category}
                   </span>
                 </div>
-                <div className="absolute bottom-6 left-8 right-8">
+                <div className="absolute bottom-6 left-10 right-10">
                   <h3 className="text-2xl font-black text-white font-display uppercase tracking-tight leading-tight">
                     {service.title}
                   </h3>
                 </div>
               </div>
 
-              <div className="p-10 flex flex-col flex-grow">
-                <p className="text-slate-600 mb-8 leading-relaxed text-base">
+              <div className="p-8 flex flex-col flex-grow">
+                <p className="text-gray-600 mb-8 leading-relaxed text-base">
                   {service.description}
                 </p>
 

@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { motion, Variants } from "framer-motion";
-import { Send, User, Mail, Phone, Building2, ChevronRight, Sparkles } from "lucide-react";
+import { Send, User, Mail, Phone, Building2, ChevronRight, ChevronDown, Sparkles } from "lucide-react";
 
 interface PartnerFormSectionProps {
   id?: string;
@@ -14,7 +14,7 @@ interface PartnerFormSectionProps {
 export default function PartnerFormSection({
   id = "partner-inquiry-form",
   preSelectedType = "General",
-  preSelectedItem = "Channel Partner Inquiry"
+  preSelectedItem = "General Partner Inquiry"
 }: PartnerFormSectionProps) {
   const router = useRouter();
   const [formData, setFormData] = useState({
@@ -179,7 +179,7 @@ export default function PartnerFormSection({
                 viewport={viewportConfig}
               >
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold uppercase tracking-wider mb-6">
-                  <Sparkles className="w-3 h-3" />
+
                   Connect with us
                 </div>
                 <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
@@ -221,7 +221,7 @@ export default function PartnerFormSection({
                     {/* Name */}
                     <div className="space-y-2">
                       <label className="text-sm font-bold text-gray-700 flex items-center gap-2 font-body">
-                        <User className="w-4 h-4 text-emerald-500" /> Full Name
+                        <User className="w-4 h-4 text-emerald-500" /> Full Name *
                       </label>
                       <input
                         type="text"
@@ -237,7 +237,7 @@ export default function PartnerFormSection({
                     {/* Email */}
                     <div className="space-y-2">
                       <label className="text-sm font-bold text-gray-700 flex items-center gap-2 font-body">
-                        <Mail className="w-4 h-4 text-emerald-500" /> Professional Email
+                        <Mail className="w-4 h-4 text-emerald-500" /> Professional Email *
                       </label>
                       <input
                         type="email"
@@ -253,7 +253,7 @@ export default function PartnerFormSection({
                     {/* Phone */}
                     <div className="space-y-2">
                       <label className="text-sm font-bold text-gray-700 flex items-center gap-2 font-body">
-                        <Phone className="w-4 h-4 text-emerald-500" /> Phone Number
+                        <Phone className="w-4 h-4 text-emerald-500" /> Phone Number *
                       </label>
                       <input
                         type="tel"
@@ -284,41 +284,44 @@ export default function PartnerFormSection({
                   </div>
 
                   {/* Partnership Tier Selection */}
-                  <div className="space-y-2">
+                  <div className="space-y-2 relative">
                     <label className="text-sm font-bold text-gray-700 flex items-center gap-2 font-body">
                       <Sparkles className="w-4 h-4 text-emerald-500" /> Interested Partnership Tier*
                     </label>
-                    <select
-                      name="tier"
-                      value={formData.tier}
-                      onChange={handleChange}
-                      required
-                      className="w-full h-14 px-5 rounded-2xl border-2 border-gray-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium bg-white appearance-none cursor-pointer"
-                    >
-                      <option value="General Partner Inquiry">General Partner Inquiry</option>
-                      <option value="Gold Tier Inquiry">Gold Tier Inquiry</option>
-                      <option value="Silver Tier Inquiry">Silver Tier Inquiry</option>
-                      <option value="Bronze Tier Inquiry">Bronze Tier Inquiry</option>
-                      <option value="Partnership Model Inquiry">Partnership Model Inquiry</option>
-                    </select>
+                    <div className="relative">
+                      <select
+                        name="tier"
+                        value={formData.tier}
+                        onChange={handleChange}
+                        required
+                        className="w-full h-14 px-5 rounded-2xl border-2 border-gray-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium bg-white appearance-none cursor-pointer"
+                      >
+                        <option value="General Partner Inquiry">General Partner Inquiry</option>
+                        <option value="Gold Tier Inquiry">Gold Tier Inquiry</option>
+                        <option value="Silver Tier Inquiry">Silver Tier Inquiry</option>
+                        <option value="Bronze Tier Inquiry">Bronze Tier Inquiry</option>
+                        <option value="Partnership Model Inquiry">Partnership Model Inquiry</option>
+                      </select>
+                      <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500 w-5 h-5" />
+                    </div>
                   </div>
-
                   <div className="space-y-2">
                     <label className="text-sm font-bold text-gray-700">Type of Business*</label>
-                    <select
-                      name="selectedItem"
-                      value={formData.selectedItem}
-                      onChange={handleChange}
-                      required
-                      className="w-full h-14 px-5 rounded-2xl border-2 border-gray-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium bg-white appearance-none cursor-pointer"
-                    >
-                      <option value="">Select your business type</option>
-                      {businessTypes.map((type) => (
-                        <option key={type} value={type}>
-                          {type}
-                        </option>
-                      ))}
-                    </select>
+                    <div className="relative">
+                      <select
+                        name="selectedItem"
+                        value={formData.selectedItem}
+                        onChange={handleChange}
+                        required
+                        className="w-full h-14 px-5 rounded-2xl border-2 border-gray-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium bg-white appearance-none cursor-pointer"
+                      >
+                        <option value="">Select your business type</option>
+                        {businessTypes.map((type) => (
+                          <option key={type} value={type}>{type}</option>
+                        ))}
+                      </select>
+                      <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500 w-5 h-5" />
+                    </div>
                   </div>
 
                   {formData.selectedItem === "Other" && (

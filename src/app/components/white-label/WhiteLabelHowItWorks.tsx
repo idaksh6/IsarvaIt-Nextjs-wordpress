@@ -60,7 +60,7 @@ const WhiteLabelHowItWorks = () => {
           >
             How We <span className="text-blue-600">Work Together</span>
           </motion.h2>
-          <p className="text-xl text-slate-600 leading-relaxed">
+          <p className="text-xl text-gray-600 leading-relaxed">
             A seamless, transparent process designed to integrate perfectly with your agency workflow,
             ensuring maximum efficiency and client satisfaction.
           </p>
@@ -96,10 +96,10 @@ const WhiteLabelHowItWorks = () => {
                   <div className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-100 rounded-[22px] -z-10 transition-opacity duration-500`} />
                 </div>
 
-                <h3 className="text-xl font-black text-slate-900 mb-4 font-display uppercase tracking-tight group-hover:text-blue-600 transition-colors">
+                <h3 className="text-xl font-black text-slate-900 mb-4 font-display tracking-tight group-hover:text-blue-600 transition-colors">
                   {step.title}
                 </h3>
-                <p className="text-slate-600 text-lg leading-relaxed">
+                <p className="text-gray-600 text-base leading-relaxed">
                   {step.description}
                 </p>
               </motion.div>
