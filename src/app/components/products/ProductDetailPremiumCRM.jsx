@@ -916,7 +916,7 @@ const crmFeatures = [
     icon: "🎯",
     color: "#0EA5E9",
     desc: "Capture, track, and nurture leads from multiple sources. Score leads based on engagement and readiness, and seamlessly convert qualified leads into opportunities for your sales team.",
-    image: "/products/crm/mockups/Leads-by-status.jpg",
+    image: "/products/crm/mockups/Leads-management.jpg",
   },
   {
     id: "deals",
@@ -1242,7 +1242,7 @@ const crmTabData = [
       { label: "Lead creation", text: "Create and capture leads instantly from mobile or web." },
       { label: "Lead Tracking", text: "Track lead progress and sources across the sales funnel." }
     ],
-    image: "/products/crm/mockups/Leads-by-status.jpg"
+    image: "/products/crm/mockups/Leads-management.jpg"
   },
   {
     id: "pipeline",
@@ -1302,7 +1302,7 @@ const crmTabData = [
       { label: "Sales Reports", text: "Track deals progress, sales targets, and revenue performance." },
       { label: "Performance Reports", text: "Monitor lead conversion, user activities, and team productivity." }
     ],
-    image: "/products/crm/mockups/Tasks.jpg"
+    image: "/products/crm/mockups/Leads-by-status.jpg"
   },
   {
     id: "mobile",
@@ -1421,7 +1421,7 @@ function CRMTabSection({ setSelectedImage }) {
                 >
                   {/* Content */}
                   <div className="order-2 md:order-1 flex flex-col items-center md:items-start text-center md:text-left">
-                    <h3 className="text-2xl lg:text-3xl font-black text-gray-900 mb-4 w-full">{currentTab.title}</h3>
+                    <h3 className="text-2xl lg:text-3xl font-black text-gray-900 mt-2 md:mt-0 mb-4 w-full">{currentTab.title}</h3>
                     <p className="text-sm lg:text-base text-gray-600 mb-6 lg:mb-8 leading-relaxed w-full">{currentTab.description}</p>
 
                     <div className="space-y-4 lg:space-y-6 mb-0 lg:mb-10 w-full flex flex-col items-center md:items-start">
@@ -1433,7 +1433,7 @@ function CRMTabSection({ setSelectedImage }) {
                             </svg>
                           </div>
                           <div>
-                            <p className="font-bold text-gray-900 text-xs lg:text-sm mb-0.5">{pt.label}</p>
+                            <p className="font-bold text-gray-900 text-[1rem] mb-0.5">{pt.label}</p>
                             <p className="text-gray-500 text-xs lg:text-sm leading-snug">{pt.text}</p>
                           </div>
                         </div>
