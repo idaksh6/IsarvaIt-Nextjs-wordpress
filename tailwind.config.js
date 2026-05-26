@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/components/partners/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   // Minimal safelist - only critical dynamic classes
   safelist: [],
