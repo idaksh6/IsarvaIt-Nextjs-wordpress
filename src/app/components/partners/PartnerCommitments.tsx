@@ -31,7 +31,7 @@ const cardVariants: Variants = {
 
 const PartnerCommitments = () => {
   return (
-    <section className="py-16 md:py-24 bg-white relative overflow-hidden">
+    <section className="py-10 lg:py-16 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-10">
           <motion.h2

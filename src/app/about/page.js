@@ -79,7 +79,7 @@ export default function AboutPage() {
 
           {/* Right Column: Cream Content Area with Full-Width Image */}
           <div className="flex-1 bg-[#FDF8F2] p-6 md:p-16 lg:p-20 section-animate" style={{ animationDelay: '0.2s' }}>
-            <h2 className="lg:text-left text-center font-display text-[#16423C] mb-12 max-w-4xl text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            <h2 className="lg:text-left text-center font-display text-[#16423C] mb-6 lg:mb-12 max-w-4xl text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               Standing at the forefront of digital transformation.
             </h2>
 
@@ -94,9 +94,9 @@ export default function AboutPage() {
             </div>
 
             {/* Clean Feature List (2x2 Grid) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
-              <div className="flex gap-6">
-                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#16423C]/5 flex items-center justify-center border border-[#16423C]/10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-10">
+              <div className="flex gap-4 md:gap-6">
+                <div className="flex-none w-12 h-12 rounded-xl bg-[#16423C]/5 flex items-center justify-center border border-[#16423C]/10">
                   <Users className="w-6 h-6 text-[#10b981]" />
                 </div>
                 <div>
@@ -105,8 +105,8 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="flex gap-6">
-                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#16423C]/5 flex items-center justify-center border border-[#16423C]/10">
+              <div className="flex gap-4 md:gap-6">
+                <div className="flex-none w-12 h-12 rounded-xl bg-[#16423C]/5 flex items-center justify-center border border-[#16423C]/10">
                   <Lightbulb className="w-6 h-6 text-[#10b981]" />
                 </div>
                 <div>
@@ -115,8 +115,8 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="flex gap-6">
-                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#16423C]/5 flex items-center justify-center border border-[#16423C]/10">
+              <div className="flex gap-4 md:gap-6">
+                <div className="flex-none w-12 h-12 rounded-xl bg-[#16423C]/5 flex items-center justify-center border border-[#16423C]/10">
                   <TrendingUp className="w-6 h-6 text-[#10b981]" />
                 </div>
                 <div>
@@ -125,8 +125,8 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="flex gap-6">
-                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[#16423C]/5 flex items-center justify-center border border-[#16423C]/10">
+              <div className="flex gap-4 md:gap-6">
+                <div className="flex-none w-12 h-12 rounded-xl bg-[#16423C]/5 flex items-center justify-center border border-[#16423C]/10">
                   <Sparkles className="w-6 h-6 text-[#10b981]" />
                 </div>
                 <div>
@@ -140,15 +140,15 @@ export default function AboutPage() {
       </section>
 
       {/* 4. MISSION & VISION SECTION */}
-      <section className="lg:py-24 py-10 bg-white">
+      <section className="lg:py-16 py-10 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-20 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch">
             <div className="bg-[#1a1f24] text-white p-10 md:p-16 rounded-[3rem] md:rounded-[4rem] relative overflow-hidden section-animate">
               <div className="absolute top-0 right-0 p-10 opacity-10 text-[#10b981]">
                 <TrendingUp className="w-48 h-48 md:w-64 md:h-64" />
               </div>
               <div className="relative z-10">
-                <span className="text-[#10b981] font-black tracking-[0.2em] uppercase text-[14px] mb-6 block">Future Outlook</span>
+                <span className="text-[#10b981] font-black tracking-[0.2em] uppercase text-[14px] mb-2 lg:mb-6 block">Future Outlook</span>
                 <h2 className="font-display mb-6 md:mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Our Vision</h2>
                 <p className="text-xl text-[#FDF8F2]/80 leading-relaxed font-light">
                   To empower global enterprises through transformative technology — driving progress, enriching experiences, and enabling smarter, sustainable growth.
@@ -161,9 +161,9 @@ export default function AboutPage() {
                 <Cpu className="w-48 h-48 md:w-64 md:h-64" />
               </div>
               <div className="relative z-10">
-                <span className="text-[#1a1f24] font-black tracking-[0.2em] uppercase text-[14px] mb-6 block">Day-to-day Execution</span>
+                <span className="text-[#1a1f24] font-black tracking-[0.2em] uppercase text-[14px] mb-2 lg:mb-6 block">Day-to-day Execution</span>
                 <h2 className="font-display mb-6 md:mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Our Mission</h2>
-                <p className="text-xl text-white/90 leading-relaxed font-light">
+                <p className="text-xl text-white/90 leading-relaxed font-white">
                   We deliver scalable, innovative tech solutions that help enterprises and startups achieve growth, efficiency, and impact—driven by expertise and a commitment to client success.
                 </p>
               </div>
@@ -173,14 +173,14 @@ export default function AboutPage() {
       </section>
 
       {/* 5. IMPACT & CULTURE SECTION */}
-      <section className="lg:py-24 py-10 bg-[#FDF8F2] overflow-hidden">
+      <section className="lg:py-16 py-10 bg-[#FDF8F2] overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col lg:flex-row gap-20 items-center">
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-center">
             <div className="w-full lg:w-1/2 section-animate lg:text-left text-center">
               <h2 className="font-display text-[#1a1f24] mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
-                Technology should create opportunity — <span className="italic font-normal text-[#10b981]">not just efficiency.</span>
+                Technology should create opportunity — <span className="italic  text-[#10b981]">not just efficiency.</span>
               </h2>
-              <div className="space-y-6 text-[#53606b] text-lg leading-relaxed mb-10">
+              <div className="space-y-6 text-gray-600 text-lg leading-relaxed mb-10">
                 <p>
                   As a people-first, innovation-led company, we turn complexity into clarity. Whether it’s building bespoke enterprise platforms, driving cloud adoption, or advancing intelligent automation, every solution is crafted by aligning deep technical expertise with a sharp understanding of strategic business goals.
                 </p>
@@ -251,14 +251,14 @@ export default function AboutPage() {
       </section>
 
       {/* 5.5 JOIN OUR TEAM SECTION */}
-      <section className="lg:py-24 py-10 bg-[#FDF8F2] relative overflow-hidden">
+      <section className="lg:py-16 py-10  pt-0 lg:pt-0 bg-[#FDF8F2] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="bg-white rounded-[4rem] p-12 md:p-20 shadow-2xl border border-[#10b981]/5 flex flex-col lg:flex-row items-center justify-between gap-12">
+          <div className="bg-white rounded-[4rem] p-10 lg:p-20 shadow-2xl border border-[#10b981]/5 flex flex-col lg:flex-row items-center justify-between gap-12">
             <div className="lg:w-3/5 text-center lg:text-left">
               <span className="text-[#10b981] font-black tracking-[0.2em] uppercase text-[clamp(0.65rem,1.3vw,0.85rem)] mb-4 inline-block">Join our mission</span>
               <h2 className="font-display text-[#1a1f24] mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
-                Shape the future <br />
-                <span className="text-[#10b981]">at Isarva Infotech.</span>
+                Shape the future at<br />
+                <span className="text-[#10b981]"> Isarva Infotech.</span>
               </h2>
               <p className="text-xl text-[#53606b] mb-10 max-w-2xl font-medium leading-relaxed">
                 We’re looking for bold thinkers who believe technology can solve the world's most complex challenges. Explore our open roles and find where you belong.
@@ -297,7 +297,7 @@ export default function AboutPage() {
       </section>
 
       {/* 6. CTA SECTION */}
-      <section className="py-24 relative bg-[#1a1f24] text-white overflow-hidden">
+      <section className="py-10 lg:py-16 relative bg-[#1a1f24] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image src="/agency_design_process_abstract_1773850147849.png" alt="Abstract" fill className="object-cover opacity-[0.08] mix-blend-screen" />
         </div>
