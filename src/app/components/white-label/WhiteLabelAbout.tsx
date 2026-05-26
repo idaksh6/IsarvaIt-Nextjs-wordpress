@@ -65,7 +65,7 @@ const WhiteLabelAbout = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-20 md:mb-24">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -87,9 +87,9 @@ const WhiteLabelAbout = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl lg:text-2xl text-slate-600 font-medium leading-relaxed"
+            className="text-xl text-slate-600 leading-relaxed"
           >
-            We empower agencies to deliver premium digital solutions under their own brand, 
+            We empower agencies to deliver premium digital solutions under their own brand,
             providing the technical muscle needed to scale rapidly and efficiently.
           </motion.p>
         </div>
@@ -104,19 +104,17 @@ const WhiteLabelAbout = () => {
               transition={{ delay: index * 0.1, duration: 0.6 }}
               className="relative"
             >
-              <div
-                className={`h-full p-8 rounded-[32px] bg-white/80 backdrop-blur-xl border border-slate-100 shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-500 relative overflow-hidden group hover:-translate-y-2`}
-              >
+              <div className="h-full p-8 rounded-[32px] bg-white/80 backdrop-blur-xl border border-slate-100 shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-500 relative overflow-hidden group hover:-translate-y-2 flex flex-col items-center md:items-start text-center md:text-left">
                 {/* Vibrant Hover Gradient Background */}
                 <div className={`absolute top-0 right-0 w-32 h-32 rounded-bl-full opacity-0 group-hover:opacity-10 transition-opacity duration-500 bg-gradient-to-bl ${benefit.color === 'text-blue-600' ? 'from-blue-500' : benefit.color === 'text-emerald-600' ? 'from-emerald-500' : benefit.color === 'text-amber-600' ? 'from-amber-500' : benefit.color === 'text-purple-600' ? 'from-purple-500' : benefit.color === 'text-cyan-600' ? 'from-cyan-500' : 'from-rose-500'}`} />
-                
+
                 <div className={`w-14 h-14 rounded-2xl ${benefit.bg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-sm border border-white`}>
                   <benefit.icon className={`w-7 h-7 ${benefit.color}`} />
                 </div>
                 <h3 className="text-2xl font-black text-slate-900 mb-4 font-display group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-slate-900 group-hover:to-slate-600 transition-colors">
                   {benefit.title}
                 </h3>
-                <p className="text-slate-600 font-medium leading-relaxed">
+                <p className="text-slate-600 leading-relaxed">
                   {benefit.description}
                 </p>
               </div>

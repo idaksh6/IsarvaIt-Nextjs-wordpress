@@ -41,9 +41,9 @@ const WhiteLabelHowItWorks = () => {
     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0 z-0 opacity-40 bg-mesh-blue pointer-events-none" />
-      
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-20 md:mb-24">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -60,8 +60,8 @@ const WhiteLabelHowItWorks = () => {
           >
             How We <span className="text-blue-600">Work Together</span>
           </motion.h2>
-          <p className="text-xl text-slate-600 font-medium leading-relaxed">
-            A seamless, transparent process designed to integrate perfectly with your agency workflow, 
+          <p className="text-xl text-slate-600 leading-relaxed">
+            A seamless, transparent process designed to integrate perfectly with your agency workflow,
             ensuring maximum efficiency and client satisfaction.
           </p>
         </div>
@@ -69,7 +69,7 @@ const WhiteLabelHowItWorks = () => {
         <div className="relative">
           {/* Connection Line (Desktop) */}
           <div className="hidden lg:block absolute top-[40px] left-[10%] right-[10%] h-[2px] bg-slate-200 z-0">
-            <motion.div 
+            <motion.div
               initial={{ width: "0%" }}
               whileInView={{ width: "100%" }}
               viewport={{ once: true }}
@@ -95,11 +95,11 @@ const WhiteLabelHowItWorks = () => {
                   {/* Hover background */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-100 rounded-[22px] -z-10 transition-opacity duration-500`} />
                 </div>
-                
+
                 <h3 className="text-xl font-black text-slate-900 mb-4 font-display uppercase tracking-tight group-hover:text-blue-600 transition-colors">
                   {step.title}
                 </h3>
-                <p className="text-slate-600 text-base leading-relaxed font-medium">
+                <p className="text-slate-600 text-lg leading-relaxed">
                   {step.description}
                 </p>
               </motion.div>

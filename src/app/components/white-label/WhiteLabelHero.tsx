@@ -35,7 +35,7 @@ const WhiteLabelHero = ({ onContact }: { onContact: () => void }) => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-5xl lg:text-7xl font-black text-slate-900 leading-[1] mb-6 font-display tracking-tight uppercase"
+              className="text-[clamp(2.25rem,5vw,3.75rem)] text-slate-900 leading-[1] mb-6 font-display font-extrabold  tracking-tight uppercase"
             >
               Scale Your Agency <br />
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-rose-500 bg-clip-text text-transparent drop-shadow-sm">
@@ -47,7 +47,7 @@ const WhiteLabelHero = ({ onContact }: { onContact: () => void }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-xl lg:text-2xl text-slate-600 max-w-xl mx-auto lg:mx-0 mb-6 md:mb-10 leading-relaxed font-medium"
+              className="text-xl lg:text-2xl text-slate-600 max-w-xl mx-auto lg:mx-0 mb-6 md:mb-10 leading-relaxed "
             >
               Deliver world-class digital solutions behind the scenes. Our white-label team acts as your invisible tech arm, helping you grow while we handle the heavy lifting.
             </motion.p>
