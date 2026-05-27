@@ -8,7 +8,7 @@ const caseStudies = [
   {
     url: "ameapower.com",
     link: "https://ameapower.com",
-    image: "/Services/website-maintenence/Ameapower.jpg",
+    image: "/Services/website-maintenence/ameapower.jpg",
     work: [
       "Regular Backup",
       "Core & Plugin Update",
@@ -41,7 +41,7 @@ const caseStudies = [
   {
     url: "mangaloreclub.com",
     link: "https://mangaloreclub.com/",
-    image: "/Services/website-maintenence/Mangalore-club.jpg",
+    image: "/Services/website-maintenence/mangalore-club.jpg",
     work: [
       "Regular Backup",
       "Core & Plugin Update",
@@ -63,7 +63,7 @@ const caseStudies = [
   {
     url: "snspt.org",
     link: "https://www.snspt.org/",
-    image: "/Services/website-maintenence/Snspt.jpg",
+    image: "/Services/website-maintenence/snspt.jpg",
     work: [
       "Regular Backup",
       "Core & Plugin Update",
