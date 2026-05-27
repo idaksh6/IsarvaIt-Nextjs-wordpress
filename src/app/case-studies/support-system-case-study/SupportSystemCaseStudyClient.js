@@ -45,7 +45,7 @@ export default function SupportSystemCaseStudyClient() {
 
       <main className="relative z-10">
         {/* HERO SECTION */}
-        <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4 md:px-6 max-w-7xl mx-auto">
+        <section className="pt-32 pb-16 md:pt-40 md:pb-16 px-4 md:px-6 max-w-7xl mx-auto">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -122,7 +122,7 @@ export default function SupportSystemCaseStudyClient() {
         </section>
 
         {/* EXECUTIVE SUMMARY */}
-        <section className="py-16 md:py-20 bg-white border-y border-gray-100">
+        <section className="py-10 lg:py-16 bg-white border-y border-gray-100">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <h2 className="text-2xl text-gray-900 mb-6 flex items-center justify-center md:justify-start gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               <Activity className="text-emerald-500" /> Executive Summary
@@ -134,7 +134,7 @@ export default function SupportSystemCaseStudyClient() {
         </section>
 
         {/* CLIENT PROFILE */}
-        <section className="py-16 md:py-20 px-4 md:px-6 max-w-7xl mx-auto">
+        <section className="py-10 lg:py-16 px-4 md:px-6 max-w-7xl mx-auto">
           <h2 className="text-gray-900 mb-8 md:mb-10 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Client Profile</h2>
           <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
             <div className="p-6 md:p-10">
@@ -181,7 +181,7 @@ export default function SupportSystemCaseStudyClient() {
         </section>
 
         {/* BUSINESS CHALLENGES */}
-        <section className="py-16 md:py-20 bg-white">
+        <section className="py-10 lg:py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <h2 className="text-gray-900 mb-6 text-center md:text-left text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Business Challenges</h2>
             <p className="text-base md:text-lg text-gray-600 mb-8 text-center md:text-left">Before implementing the Isarva Support System, the Company relied on manual entries and disconnected tools, which created operational inefficiencies:</p>
@@ -204,7 +204,7 @@ export default function SupportSystemCaseStudyClient() {
         </section>
 
         {/* CHALLENGES VS SOLUTIONS */}
-        <section className="py-16 md:py-20 bg-[#FDF8F2]">
+        <section className="py-10 lg:py-16 bg-[#FDF8F2]">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Challenges vs. Isarva Solutions</h2>
@@ -213,10 +213,10 @@ export default function SupportSystemCaseStudyClient() {
             <div className="bg-white rounded-2xl md:rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
               {/* Header Row */}
               <div className="hidden md:grid grid-cols-2 bg-gray-50 border-b border-gray-100 p-6">
-                <div className="font-bold text-gray-900 uppercase tracking-wider text-sm flex items-center gap-2">
+                <div className="font-bold text-gray-900 uppercase tracking-wider text-[20px] flex items-center gap-2">
                   <AlertTriangle size={18} className="text-red-500" /> Business Challenge
                 </div>
-                <div className="font-bold text-emerald-700 uppercase tracking-wider text-sm flex items-center gap-2 md:pl-12">
+                <div className="font-bold text-emerald-700 uppercase tracking-wider text-[20px] flex items-center gap-2 md:pl-12">
                   <CheckCircle size={18} className="text-emerald-500" /> Isarva Support Solution
                 </div>
               </div>
@@ -258,9 +258,9 @@ export default function SupportSystemCaseStudyClient() {
         </section>
 
         {/* SOLUTION OVERVIEW & CORE MODULES */}
-        <section className="py-16 md:py-20 bg-white">
+        <section className="py-10 lg:py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
-            <div className="text-center mb-10 md:mb-16 max-w-4xl mx-auto">
+            <div className="text-center mb-10 lg:mb-16 max-w-4xl mx-auto">
               <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Solution Overview — Isarva Support</h2>
               <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-3 text-center">
                 To address these challenges, Isarva implemented the Support System — a unified platform combining project management, Ticket handling, and operational tracking.
@@ -303,7 +303,7 @@ export default function SupportSystemCaseStudyClient() {
         </section>
 
         {/* IMPLEMENTATION APPROACH */}
-        <section className="py-16 md:py-20 bg-[#FDF8F2] border-t border-gray-100">
+        <section className="py-10 lg:py-16 bg-[#FDF8F2] border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <h2 className="text-gray-900 mb-6 md:mb-8 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Implementation Approach</h2>
             <p className="text-base md:text-lg text-gray-600 mb-10 text-center max-w-3xl mx-auto">Isarva followed a structured implementation methodology to ensure the solution precisely matched the client's operational reality:</p>
@@ -387,12 +387,12 @@ export default function SupportSystemCaseStudyClient() {
         </section>
 
         {/* RESULTS & IMPACT */}
-        <section className="py-16 md:py-20 bg-white border-t border-gray-100">
+        <section className="py-10 lg:py-16 bg-white border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <h2 className="text-gray-900 mb-10 md:mb-16 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Results & Business Impact</h2>
 
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-12 md:mb-16">
-              <div className="bg-[#FDF8F2] p-6 md:p-10 rounded-3xl border border-emerald-100 relative overflow-hidden h-full">
+              <div className="bg-[#FDF8F2] p-6 md:p-10 rounded-3xl border border-emerald-100 relative overflow-hidden h-full text-center md:text-left">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-100/50 rounded-full blur-[80px]" />
                 <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 md:mb-8 relative z-10">Impact Snapshot</h3>
 
@@ -450,7 +450,7 @@ export default function SupportSystemCaseStudyClient() {
         </section>
 
         {/* TESTIMONIAL */}
-        <section className="py-16 md:py-20 bg-[#FDF8F2]">
+        <section className="py-10 lg:py-16 bg-[#FDF8F2]">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <div className="bg-white rounded-3xl p-8 md:p-14 shadow-xl border border-gray-100 relative">
               <div className="absolute -top-2 -left-2 md:-top-6 md:-left-6 text-emerald-200">
@@ -473,7 +473,7 @@ export default function SupportSystemCaseStudyClient() {
         </section>
 
         {/* ABOUT & CTA SECTION */}
-        <section className="py-16 md:py-20 bg-white border-t border-gray-100">
+        <section className="py-10 lg:py-16 bg-white border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <div className="text-center mb-10 md:mb-16">
               <h2 className="text-gray-900 mb-4 md:mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">About Isarva Support Application</h2>

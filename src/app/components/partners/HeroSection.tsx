@@ -84,7 +84,7 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
               initial="initial"
               animate="animate"
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="font-display text-5xl lg:text-7xl font-black text-[#111827] leading-[1] mb-4 md:mb-6 tracking-tight uppercase"
+              className="font-display text-[clamp(2.25rem,5vw,3.75rem)] font-black text-[#111827] leading-[1] mb-4 md:mb-6 tracking-tight "
             >
               <span className="bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent">Scale Beyond</span> <br />
               <span className="text-emerald-600">Gravity</span>
@@ -94,7 +94,7 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-xl lg:text-2xl text-gray-500 font-medium max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed font-body"
+              className="mt-4 text-xl lg:text-2xl text-[#53606b] leading-relaxed font-medium mx-auto lg:mx-0 mb-10"
             >
               Empower your business with Isarva Infotech's Channel Partner Program. Deliver world-class enterprise solutions without the overhead of an in-house team.
             </motion.p>

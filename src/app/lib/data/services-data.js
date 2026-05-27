@@ -916,6 +916,11 @@ export const servicesData = [
         title: "Bug Fixes & Troubleshooting",
         description: "Our experts quickly identify and fix technical errors, broken features, and functionality issues to ensure smooth website operations.",
         icon: "/Services/website-maintenence/bug-fixes.svg"
+      },
+      {
+        title: "Monthly Health Audits",
+        description: "Receive comprehensive monthly audits detailing your website's performance, security status, and optimization recommendations.",
+        icon: "/Services/website-maintenence/health-audits.svg"
       }
     ],
     technologies: ["cPanel", "WordPress", "SSL Certificates", "CDN", "Monitoring Tools"],
@@ -944,6 +949,11 @@ export const servicesData = [
         title: "Cost-Effective Support",
         description: "Avoid expensive emergency fixes and unexpected technical problems with affordable, planned maintenance solutions.",
         icon: "/Services/website-maintenence/benefits/cost-effective.svg"
+      },
+      {
+        title: "Transparent Reporting",
+        description: "Receive detailed monthly reports on updates performed, security status, and overall website health.",
+        icon: "/Services/website-maintenence/benefits/progress-reports.svg"
       }
     ]
   },

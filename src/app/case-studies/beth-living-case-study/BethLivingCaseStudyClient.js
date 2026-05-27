@@ -2,10 +2,10 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  CheckCircle2, 
-  TrendingUp, 
-  Clock, 
+import {
+  CheckCircle2,
+  TrendingUp,
+  Clock,
   ArrowRight,
   Server,
   Zap,
@@ -41,7 +41,7 @@ const staggerContainer = {
 export default function BethLivingCaseStudyClient() {
   return (
     <div className="min-h-screen bg-[#FDF8F2] text-gray-800 selection:bg-amber-200 selection:text-amber-900 overflow-hidden font-sans">
-      
+
       {/* Background Decor */}
       <div className="absolute top-0 inset-x-0 h-screen overflow-hidden pointer-events-none z-0">
         <div className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-amber-100/40 rounded-full blur-[120px]" />
@@ -51,33 +51,33 @@ export default function BethLivingCaseStudyClient() {
       <main className="relative z-10">
         {/* HERO SECTION */}
         <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-4 md:px-6 max-w-7xl mx-auto">
-          <motion.div 
+          <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
             className="text-center max-w-4xl mx-auto"
           >
-            <motion.span 
+            <motion.span
               variants={fadeInUp}
               className="inline-block py-1.5 px-4 mb-6 rounded-full bg-amber-100 text-amber-800 text-sm font-semibold tracking-wide uppercase border border-amber-200"
             >
               Case Study
             </motion.span>
-            
-            <motion.h1 
+
+            <motion.h1
               variants={fadeInUp}
               className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight mb-6"
             >
               Beth Living Achieves <span className="text-amber-600">49% Increase</span> in Leads through UI/UX Redesign
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.p
               variants={fadeInUp}
               className="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed"
             >
               A combination of UI/UX refresh, improved hosting, and optimized lead capture by Isarva helped Beth Living redefine its digital presence.
             </motion.p>
-            
+
             <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-3 md:gap-4 text-sm font-medium text-gray-500 mb-8 md:mb-12">
               <span className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100 text-gray-700">
                 <Briefcase size={16} className="text-amber-500" /> Home Décor Industry
@@ -101,7 +101,7 @@ export default function BethLivingCaseStudyClient() {
           </motion.div>
 
           {/* Highlight Stats */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
@@ -123,7 +123,7 @@ export default function BethLivingCaseStudyClient() {
         </section>
 
         {/* ABOUT BETH LIVING */}
-        <section className="py-16 md:py-20 bg-white border-y border-gray-100">
+        <section className="py-10 lg:py-16 bg-white border-y border-gray-100">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <h2 className="text-2xl text-gray-900 mb-6 flex items-center justify-center md:justify-start gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               <Heart className="text-amber-500" /> About Beth Living
@@ -138,10 +138,10 @@ export default function BethLivingCaseStudyClient() {
         </section>
 
         {/* THE REQUIREMENT */}
-        <section className="py-16 md:py-20 px-4 md:px-6 max-w-7xl mx-auto">
+        <section className="pt-10 lg:pt-16  px-4 md:px-6 max-w-7xl mx-auto">
           <h2 className="text-gray-900 mb-8 md:mb-10 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">The Requirement</h2>
           <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 p-8 md:p-12">
-            <p className="text-lg text-gray-700 mb-8 font-medium">Beth Living wanted a modern website that could achieve the following business goals:</p>
+            <p className="text-lg text-gray-700 mb-8 font-medium text-center md:text-left">Beth Living wanted a modern website that could achieve the following business goals:</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {[
                 { title: "Engaging Showcase", desc: "Highlight its eco-friendly, durable product range in a modern way." },
@@ -150,7 +150,7 @@ export default function BethLivingCaseStudyClient() {
                 { title: "Lead Generation", desc: "Increase capture via 'Locate a Dealer' and 'Request a Quote' CTAs." },
                 { title: "Mobile Performance", desc: "Deliver faster load times and a superior mobile experience." }
               ].map((req, idx) => (
-                <div key={idx} className="flex gap-4 p-5 bg-amber-50/50 rounded-2xl border border-amber-100/50 hover:bg-amber-50 transition-colors">
+                <div key={idx} className="flex gap-3 p-5 bg-amber-50/50 rounded-2xl border border-amber-100/50 hover:bg-amber-50 transition-colors">
                   <div className="mt-1 text-amber-600"><CheckCircle2 size={20} /></div>
                   <div>
                     <h4 className="font-bold text-gray-900 mb-1">{req.title}</h4>
@@ -163,20 +163,20 @@ export default function BethLivingCaseStudyClient() {
         </section>
 
         {/* BUSINESS CHALLENGES COMPARISON */}
-        <section className="py-16 md:py-20 bg-[#FDF8F2]">
+        <section className="py-10 lg:py-16 bg-[#FDF8F2]">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-gray-900 mb-4 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Requirement vs. Isarva Solutions</h2>
               <p className="text-gray-600 max-w-2xl mx-auto text-center">How we revamped Beth Living’s digital presence with a focus on performance and UI/UX optimization.</p>
             </div>
-            
+
             <div className="bg-white rounded-2xl md:rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
               {/* Header Row */}
               <div className="hidden md:grid grid-cols-2 bg-gray-50 border-b border-gray-100 p-6">
-                <div className="font-bold text-gray-900 uppercase tracking-wider text-sm flex items-center gap-2">
+                <div className="font-bold text-gray-900 uppercase tracking-wider text-[20px] flex items-center gap-2">
                   <AlertTriangle size={18} className="text-amber-600" /> Requirement
                 </div>
-                <div className="font-bold text-amber-700 uppercase tracking-wider text-sm flex items-center gap-2 md:pl-12">
+                <div className="font-bold text-amber-700 uppercase tracking-wider text-[20px] flex items-center gap-2 md:pl-12">
                   <CheckCircle size={18} className="text-amber-500" /> Isarva Solution
                 </div>
               </div>
@@ -190,7 +190,7 @@ export default function BethLivingCaseStudyClient() {
                   { r: "Manual lead data entry and slow sales response", s: "Seamless CRM integration for faster lead processing and tracking" },
                   { r: "Complex navigation across diverse product lines", s: "Simplified UI/UX flow for modular kitchens, bedrooms, and bathrooms" }
                 ].map((item, i) => (
-                  <div key={i} className="grid grid-cols-1 md:grid-cols-2 p-5 md:p-8 hover:bg-amber-50/30 transition-colors group relative">
+                  <div key={i} className="grid grid-cols-1 md:grid-cols-2 p-5 md:p-6 hover:bg-amber-50/30 transition-colors group relative">
                     <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white border border-gray-100 rounded-full items-center justify-center text-gray-300 group-hover:text-amber-500 group-hover:border-amber-200 transition-all shadow-sm z-10">
                       <ArrowRight size={20} />
                     </div>
@@ -214,7 +214,7 @@ export default function BethLivingCaseStudyClient() {
         </section>
 
         {/* CORE SOLUTIONS DEPLOYED */}
-        <section className="py-16 md:py-20 bg-white">
+        <section className="py-10 lg:py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <h2 className="text-gray-900 mb-10 md:mb-16 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Solutions for Beth Living</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
@@ -237,10 +237,10 @@ export default function BethLivingCaseStudyClient() {
         </section>
 
         {/* RESULTS & BUSINESS IMPACT */}
-        <section className="py-16 md:py-20 bg-[#FDF8F2] border-t border-gray-100">
+        <section className="py-10 lg:py-16 bg-[#FDF8F2] border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <h2 className="text-gray-900 mb-10 md:mb-16 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Results & Business Impact</h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               {[
                 { value: "49%", label: "Increase in Leads", sub: "Within 3 months post-launch" },
@@ -276,7 +276,7 @@ export default function BethLivingCaseStudyClient() {
         </section>
 
         {/* TESTIMONIAL */}
-        <section className="py-16 md:py-20 bg-white">
+        <section className="py-10 lg:py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <div className="bg-[#FDF8F2] rounded-3xl p-8 md:p-14 shadow-lg border border-amber-100 relative">
               <div className="absolute -top-2 -left-2 md:-top-6 md:-left-6 text-amber-200">
@@ -299,7 +299,7 @@ export default function BethLivingCaseStudyClient() {
         </section>
 
         {/* CTA SECTION */}
-        <section className="py-16 md:py-20 bg-[#FDF8F2] border-t border-gray-100">
+        <section className="py-10 lg:py-16 bg-[#FDF8F2] border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 md:px-6 text-center">
             <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Need a Redesign Partner?</h2>
             <p className="text-lg text-gray-600 mb-10 leading-relaxed">

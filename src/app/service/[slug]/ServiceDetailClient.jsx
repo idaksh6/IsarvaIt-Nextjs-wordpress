@@ -12,7 +12,7 @@ export default function ServiceDetailClient({ service, servicesData }) {
         onClick={() => setIsModalOpen(true)}
         className="press-illusion-btn-orange bg-orange-500 text-white font-bold px-8 py-4 text-lg items-center space-x-2 inline-flex"
       >
-        <span>Request Demo</span>
+        <span>{service.slug === "website-maintenance-amc" ? "Request Quote" : "Request Demo"}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

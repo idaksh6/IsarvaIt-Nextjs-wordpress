@@ -7,6 +7,11 @@ import BenefitItem from "./BenefitItem";
 import WebsiteServicesPremium from "./WebsiteServicesPremium";
 import WordPressDevelopmentPremium from "./WordPressDevelopmentPremium";
 import WordPressDevelopmentPremiumStaging from "./WordPressDevelopmentPremiumStaging";
+import WebsiteMaintenanceFAQ from "./website-maintenance-amc/WebsiteMaintenanceFAQ";
+import WebsiteMaintenanceHeadaches from "./website-maintenance-amc/WebsiteMaintenanceHeadaches";
+import WebsiteMaintenanceProcess from "./website-maintenance-amc/WebsiteMaintenanceProcess";
+import WebsiteMaintenanceServices from "./website-maintenance-amc/WebsiteMaintenanceServices";
+import WebsiteMaintenanceCaseStudies from "./website-maintenance-amc/WebsiteMaintenanceCaseStudies";
 import { generateServiceMetadata } from "../../lib/utils/seo";
 
 export async function generateStaticParams() {
@@ -140,7 +145,7 @@ export default async function ServiceDetailPage({ params }) {
 
       {/* Sub-Services Section - Only shown if service has subServices */}
       {service.subServices && service.subServices.length > 0 && (
-        <section id="sub-services" className="py-20 lg:py-32 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        <section id="sub-services" className="py-10 lg:py-16 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(16,185,129,0.05),transparent_50%)]"></div>
 
           <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -234,7 +239,7 @@ export default async function ServiceDetailPage({ params }) {
       )}
 
       {/* Features Section - Clean Professional Design */}
-      <section id="features" className="py-20 lg:py-32 bg-white relative overflow-hidden">
+      <section id="features" className="py-10 lg:py-16 bg-white relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 right-1/4 w-96 h-96 bg-emerald-100 rounded-full blur-3xl"></div>
@@ -373,7 +378,7 @@ export default async function ServiceDetailPage({ params }) {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      <section className="py-10 lg:py-16 bg-gray-50 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(16,185,129,0.05),transparent_50%)]"></div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -569,8 +574,19 @@ export default async function ServiceDetailPage({ params }) {
         </div>
       </section>
 
+      {/* FAQ Section specifically for Website Maintenance */}
+      {service.slug === "website-maintenance-amc" && (
+        <>
+          <WebsiteMaintenanceFAQ />
+          <WebsiteMaintenanceHeadaches />
+          <WebsiteMaintenanceProcess />
+          <WebsiteMaintenanceServices />
+          <WebsiteMaintenanceCaseStudies />
+        </>
+      )}
+
       {/* Related Services Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
+      <section className="py-10 lg:py-16 bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-200/20 blur-[120px] rounded-full"></div>
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-teal-200/20 blur-[120px] rounded-full"></div>
@@ -648,7 +664,7 @@ export default async function ServiceDetailPage({ params }) {
 
       {/* CTA Section */}
       <section
-        className="py-20 lg:py-32 bg-gradient-to-br from-emerald-600 via-teal-600 to-green-600 relative overflow-hidden"
+        className="py-10 lg:py-16 bg-gradient-to-br from-emerald-600 via-teal-600 to-green-600 relative overflow-hidden"
       >
         {/* Decorative elements */}
         <div className="absolute inset-0 opacity-20">

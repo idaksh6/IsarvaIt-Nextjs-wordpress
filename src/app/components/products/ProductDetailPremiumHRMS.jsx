@@ -287,7 +287,7 @@ export default function ProductDetailPremiumHRMS({
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: 0.2 }}
-                          className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold font-black text-gray-900 leading-[1.25] mb-4 tracking-tighter uppercase text-center lg:text-left"
+                          className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold font-black text-gray-900 leading-[1.25] mb-4 tracking-tighter text-center lg:text-left"
                         >
                           {activeContent.title}
                         </motion.h1>
