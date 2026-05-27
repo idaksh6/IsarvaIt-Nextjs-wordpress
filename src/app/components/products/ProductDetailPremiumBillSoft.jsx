@@ -75,8 +75,7 @@ function ThemeSlider({ onImageClick }) {
               loading="eager"
             />
 
-            {/* Gradient Overlay */}
-            <div className={`absolute inset-0 bg-gradient-to-br ${themes[currentIndex].color} opacity-30 pointer-events-none`} />
+
 
             {/* Shimmer Effect */}
             <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-transparent pointer-events-none" />
@@ -176,6 +175,7 @@ const TABS = [
 
 const TAB_CONTENT = {
   "dashboard": {
+    layoutType: "classic",
     title: "Smart Business Dashboard",
     subtitle: "Real-time AI insights for your business",
     description: "Get a bird’s-eye view of your business performance with real-time AI insights. The intelligent analytics section helps you understand your business performance with projected settlement values, AI-powered revenue insights, yearly revenue overview graphs, recent activity tracking, and top-selling product analysis. Key business statistics such as total revenue, active users, conversion rates, and average response time are also displayed clearly so you can monitor business growth at a glance.",
@@ -190,6 +190,7 @@ const TAB_CONTENT = {
     ]
   },
   "sales": {
+    layoutType: "split",
     title: "Professional Sales Invoices",
     subtitle: "Smooth and flexible billing workflow",
     description: "Create professional sales invoices quickly with a smooth and flexible workflow. Sales numbers are automatically generated, and you can select existing customers or create new customers instantly while creating the invoice. Products can be selected from your catalog or added on the spot. The system supports tax inclusive and exclusive pricing, GST configuration, warehouse selection, discounts before or after tax, item-wise discounts, additional charges, and payment adjustments.",
@@ -204,6 +205,7 @@ const TAB_CONTENT = {
     ]
   },
   "purchase": {
+    layoutType: "split",
     title: "Vendor Purchase Management",
     subtitle: "Organized records and outstanding dues",
     description: "Manage vendor purchases with the same smooth workflow used in Sales Invoices. Create purchase bills by selecting existing vendors or adding new vendors instantly during invoice creation. Add products, taxes, warehouse details, discounts, additional charges, payment details, notes, and signatures with full flexibility. The system helps you maintain organized purchase records, outstanding dues, and payment tracking while keeping inventory and accounts updated automatically.",
@@ -218,6 +220,7 @@ const TAB_CONTENT = {
     ]
   },
   "quotation": {
+    layoutType: "classic",
     title: "Detailed Quotations",
     subtitle: "Convert estimations into invoices instantly",
     description: "Create detailed quotations for customers, vendors, or suppliers with flexible pricing and discount options. Quotations can be generated using existing party details or by creating new entries instantly. Add products, additional charges, item-wise discounts, overall discounts before or after tax, and include notes and signatures for professional presentation. When finalized, quotations can be directly converted into Sales Invoices or Purchase Invoices without re-entering data.",
@@ -232,6 +235,7 @@ const TAB_CONTENT = {
     ]
   },
   "payments": {
+    layoutType: "classic",
     title: "Payment In & Payment Out",
     subtitle: "Accurate tracking of every transaction",
     description: "Track all incoming and outgoing payments accurately with dedicated modules. Payment In helps manage customer payment collections with due allocation against pending invoices, while Payment Out ensures accurate vendor payout tracking and complete history management. Receipts can be created by selecting customers, allocating outstanding dues, and recording payment details for organized collection tracking.",
@@ -246,6 +250,7 @@ const TAB_CONTENT = {
     ]
   },
   "proforma": {
+    layoutType: "split",
     title: "Proforma Invoices",
     subtitle: "Formal pre-invoices for deal confirmation",
     description: "Proforma Invoices act as formal pre-invoices shared before a sale or purchase is finalized. They help businesses present estimated billing details professionally before confirming the transaction. You can create Proforma Invoices for both sales and purchases by selecting customers or vendors, adding products, taxes, discounts, and signatures. Once approved, they can be directly converted into Sales or Purchase Invoices.",
@@ -260,6 +265,7 @@ const TAB_CONTENT = {
     ]
   },
   "expenses": {
+    layoutType: "split",
     title: "Daily Expense Tracking",
     subtitle: "Organized spending records by category",
     description: "Manage daily business expenses with proper categorization and tracking. Record details such as expense type, category, invoice references, payment mode, and additional notes. The manage page provides a clear summary of total debit/credit amounts and expense tracking by date range. Expenses are maintained branch-wise, making it easier to manage accounts for multiple business locations.",
@@ -274,6 +280,7 @@ const TAB_CONTENT = {
     ]
   },
   "parties": {
+    layoutType: "classic",
     title: "Centralized Party Management",
     subtitle: "Complete customer and vendor profiles",
     description: "Manage both customers and vendors in one centralized location. Store complete business relationship details including contact information, GSTIN, addresses, opening balances, and multiple bank accounts. You can monitor transaction history, running balances, and generate detailed reports whenever needed including ledger statements from opening to closing balance.",
@@ -288,6 +295,7 @@ const TAB_CONTENT = {
     ]
   },
   "products": {
+    layoutType: "split",
     title: "Smart Product Catalog",
     subtitle: "Warehouse-wise inventory and pricing",
     description: "Maintain a complete product catalog with pricing, tax settings, and category management. Products can be managed warehouse-wise to understand stock availability across storage locations. Bulk price update functionality allows you to update sales and purchase prices for multiple products at once, making price management much faster and easier. Products can also be activated or deactivated as needed.",
@@ -302,6 +310,7 @@ const TAB_CONTENT = {
     ]
   },
   "warehouse": {
+    layoutType: "split",
     title: "Warehouse & Stock Transfer",
     subtitle: "Structured approval workflow for inventory",
     description: "Manage multiple warehouses and monitor stock availability across each location. The Stock Transfer module helps move products between warehouses while maintaining accurate inventory records through a structured approval workflow (Draft, Pending, Approved, In Transit, Received) ensuring complete visibility of stock movement.",
@@ -316,6 +325,7 @@ const TAB_CONTENT = {
     ]
   },
   "branch": {
+    layoutType: "classic",
     title: "Multi-Branch Concept",
     subtitle: "Independent workspaces under one platform",
     description: "Billsoft supports multi-branch business operations with separate workspaces for each branch. Every branch can maintain its own data, transactions, and records independently within the same system. Users can switch branches after login, while activities like sales, purchases, and reports remain limited to the selected branch, making it ideal for businesses operating across multiple locations.",
@@ -330,6 +340,7 @@ const TAB_CONTENT = {
     ]
   },
   "financial": {
+    layoutType: "classic",
     title: "Financial Year Management",
     subtitle: "Structured accounting periods",
     description: "Organize all accounting activities into structured yearly periods such as April to March. You can create, activate, close, or reopen financial years whenever required. The system prevents overlapping financial year dates, helping maintain clean and accurate accounting records during year-end processes and historical data audits.",
@@ -346,18 +357,18 @@ const TAB_CONTENT = {
 };
 
 const TAB_THEMES = {
-  "dashboard": { bg: "bg-sky-600", gradient: "from-[#0EA5E9] to-[#0284C7]", shadow: "shadow-sky-500/20", text: "text-sky-600", lightBg: "bg-sky-50", hoverBorder: "hover:border-sky-200", accent: "sky" },
-  "sales": { bg: "bg-emerald-600", gradient: "from-[#10B981] to-[#059669]", shadow: "shadow-emerald-500/20", text: "text-emerald-600", lightBg: "bg-emerald-50", hoverBorder: "hover:border-emerald-200", accent: "emerald" },
-  "purchase": { bg: "bg-rose-600", gradient: "from-[#E11D48] to-[#BE123C]", shadow: "shadow-rose-500/20", text: "text-rose-600", lightBg: "bg-rose-50", hoverBorder: "hover:border-rose-200", accent: "rose" },
-  "quotation": { bg: "bg-violet-600", gradient: "from-[#7C3AED] to-[#6D28D9]", shadow: "shadow-violet-500/20", text: "text-violet-600", lightBg: "bg-violet-50", hoverBorder: "hover:border-violet-200", accent: "violet" },
-  "payments": { bg: "bg-amber-500", gradient: "from-[#F59E0B] to-[#D97706]", shadow: "shadow-amber-500/20", text: "text-amber-600", lightBg: "bg-amber-50", hoverBorder: "hover:border-amber-200", accent: "amber" },
-  "proforma": { bg: "bg-blue-600", gradient: "from-[#2563EB] to-[#1E40AF]", shadow: "shadow-blue-500/20", text: "text-blue-600", lightBg: "bg-blue-50", hoverBorder: "hover:border-blue-200", accent: "blue" },
-  "expenses": { bg: "bg-slate-600", gradient: "from-[#475569] to-[#1E293B]", shadow: "shadow-slate-500/20", text: "text-slate-600", lightBg: "bg-slate-50", hoverBorder: "hover:border-slate-200", accent: "slate" },
-  "parties": { bg: "bg-indigo-600", gradient: "from-[#4F46E5] to-[#3730A3]", shadow: "shadow-indigo-500/20", text: "text-indigo-600", lightBg: "bg-indigo-50", hoverBorder: "hover:border-indigo-200", accent: "indigo" },
-  "products": { bg: "bg-teal-600", gradient: "from-[#0D9488] to-[#0F766E]", shadow: "shadow-teal-500/20", text: "text-teal-600", lightBg: "bg-teal-50", hoverBorder: "hover:border-teal-200", accent: "teal" },
-  "warehouse": { bg: "bg-orange-600", gradient: "from-[#EA580C] to-[#C2410C]", shadow: "shadow-orange-500/20", text: "text-orange-600", lightBg: "bg-orange-50", hoverBorder: "hover:border-orange-200", accent: "orange" },
-  "branch": { bg: "bg-fuchsia-600", gradient: "from-[#C026D3] to-[#86198F]", shadow: "shadow-fuchsia-500/20", text: "text-fuchsia-600", lightBg: "bg-fuchsia-50", hoverBorder: "hover:border-fuchsia-200", accent: "fuchsia" },
-  "financial": { bg: "bg-cyan-600", gradient: "from-[#0891B2] to-[#164E63]", shadow: "shadow-cyan-500/20", text: "text-cyan-600", lightBg: "bg-cyan-50", hoverBorder: "hover:border-cyan-200", accent: "cyan" },
+  "dashboard": { bg: "bg-sky-600", gradient: "from-[#0EA5E9] to-[#0284C7]", shadow: "shadow-sky-500/20", text: "text-sky-600", lightBg: "bg-sky-100", hoverBorder: "hover:border-sky-200", accent: "sky" },
+  "sales": { bg: "bg-emerald-600", gradient: "from-[#10B981] to-[#059669]", shadow: "shadow-emerald-500/20", text: "text-emerald-600", lightBg: "bg-emerald-100", hoverBorder: "hover:border-emerald-200", accent: "emerald" },
+  "purchase": { bg: "bg-rose-600", gradient: "from-[#E11D48] to-[#BE123C]", shadow: "shadow-rose-500/20", text: "text-rose-600", lightBg: "bg-rose-100", hoverBorder: "hover:border-rose-200", accent: "rose" },
+  "quotation": { bg: "bg-violet-600", gradient: "from-[#7C3AED] to-[#6D28D9]", shadow: "shadow-violet-500/20", text: "text-violet-600", lightBg: "bg-violet-100", hoverBorder: "hover:border-violet-200", accent: "violet" },
+  "payments": { bg: "bg-amber-500", gradient: "from-[#F59E0B] to-[#D97706]", shadow: "shadow-amber-500/20", text: "text-amber-600", lightBg: "bg-amber-100", hoverBorder: "hover:border-amber-200", accent: "amber" },
+  "proforma": { bg: "bg-blue-600", gradient: "from-[#2563EB] to-[#1E40AF]", shadow: "shadow-blue-500/20", text: "text-blue-600", lightBg: "bg-blue-100", hoverBorder: "hover:border-blue-200", accent: "blue" },
+  "expenses": { bg: "bg-slate-600", gradient: "from-[#475569] to-[#1E293B]", shadow: "shadow-slate-500/20", text: "text-slate-600", lightBg: "bg-slate-100", hoverBorder: "hover:border-slate-200", accent: "slate" },
+  "parties": { bg: "bg-indigo-600", gradient: "from-[#4F46E5] to-[#3730A3]", shadow: "shadow-indigo-500/20", text: "text-indigo-600", lightBg: "bg-indigo-100", hoverBorder: "hover:border-indigo-200", accent: "indigo" },
+  "products": { bg: "bg-teal-600", gradient: "from-[#0D9488] to-[#0F766E]", shadow: "shadow-teal-500/20", text: "text-teal-600", lightBg: "bg-teal-100", hoverBorder: "hover:border-teal-200", accent: "teal" },
+  "warehouse": { bg: "bg-orange-600", gradient: "from-[#EA580C] to-[#C2410C]", shadow: "shadow-orange-500/20", text: "text-orange-600", lightBg: "bg-orange-100", hoverBorder: "hover:border-orange-200", accent: "orange" },
+  "branch": { bg: "bg-fuchsia-600", gradient: "from-[#C026D3] to-[#86198F]", shadow: "shadow-fuchsia-500/20", text: "text-fuchsia-600", lightBg: "bg-fuchsia-100", hoverBorder: "hover:border-fuchsia-200", accent: "fuchsia" },
+  "financial": { bg: "bg-cyan-600", gradient: "from-[#0891B2] to-[#164E63]", shadow: "shadow-cyan-500/20", text: "text-cyan-600", lightBg: "bg-cyan-100", hoverBorder: "hover:border-cyan-200", accent: "cyan" },
 };
 
 export default function ProductDetailPremiumBillSoft({
@@ -613,9 +624,9 @@ export default function ProductDetailPremiumBillSoft({
 
 
                     <div className={`absolute top-0 right-0 lg:right-0 w-[100%] lg:w-[500px] h-[100%] lg:h-[500px] z-10 flex items-center justify-center transition-all duration-500
-                      ${bannerIdx === 0
+  ${bannerIdx === 0
                         ? "image-card image-3d-card border-4 sm:border-8 border-white shadow-2xl bg-white"
-                        : "border-none bg-transparent shadow-none"
+                        : "border border-sky-100 bg-white/60 backdrop-blur-sm shadow-xl rounded-2xl"
                       }`}>
                       <picture className="w-full h-full block">
                         <source media="(max-width: 639px)" srcSet={bannerImages[bannerIdx].mobile} />
@@ -691,7 +702,7 @@ export default function ProductDetailPremiumBillSoft({
               {/* Desktop Sidebar */}
               <aside className="lg:w-80 flex-shrink-0">
                 <div className="lg:sticky lg:top-32 space-y-4">
-                  <div className="hidden lg:flex flex-col bg-white/60 backdrop-blur-3xl border border-white/50 p-3 shadow-[0_20px_50px_rgba(0,0,0,0.06)] rounded-[2.5rem]">
+                  <div className="hidden lg:flex flex-col bg-white/60 backdrop-blur-3xl border border-white/50 p-3 shadow-[0_20px_50px_rgba(14,165,233,0.15)] rounded-[2.5rem]">
                     <div className="flex flex-col space-y-1">
                       {TABS.map((tab) => {
                         const isActive = activeTab === tab.id;
@@ -734,106 +745,169 @@ export default function ProductDetailPremiumBillSoft({
                     exit={{ opacity: 0, x: -20 }}
                     transition={{ duration: 0.4 }}
                   >
-                    <section className="pt-4 pb-12">
-                      <div className="flex flex-col gap-6 mb-6 lg:mb-12 text-center lg:text-left">
-                        <div className="max-w-none">
-                          <motion.div
-                            className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border text-[12px] font-black uppercase tracking-[0.2em] mb-6 ${TAB_THEMES[activeTab].lightBg} ${TAB_THEMES[activeTab].text} border-white/50 shadow-sm`}
-                          >
-                            <span className="relative flex h-2 w-2">
-                              <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${TAB_THEMES[activeTab].bg}`}></span>
-                              <span className={`relative inline-flex rounded-full h-2 w-2 ${TAB_THEMES[activeTab].bg}`}></span>
-                            </span>
-                            {TABS.find(t => t.id === activeTab)?.label} MODULE
-                          </motion.div>
+                    {/* Render Content Based on Layout Type */}
+                    {(!activeContent.layoutType || activeContent.layoutType === "classic") && (
+                      <section className="pt-4 pb-12">
+                        <div className="flex flex-col gap-6 mb-6 lg:mb-12 text-center lg:text-left">
+                          <div className="max-w-none">
+                            <motion.div
+                              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border text-[12px] font-black uppercase tracking-[0.2em] mb-6 ${TAB_THEMES[activeTab].lightBg} ${TAB_THEMES[activeTab].text} border-white/50 shadow-sm`}
+                            >
+                              <span className="relative flex h-2 w-2">
+                                <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${TAB_THEMES[activeTab].bg}`}></span>
+                                <span className={`relative inline-flex rounded-full h-2 w-2 ${TAB_THEMES[activeTab].bg}`}></span>
+                              </span>
+                              {TABS.find(t => t.id === activeTab)?.label} MODULE
+                            </motion.div>
 
-                          <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
-                            {activeContent.title}
-                          </h2>
+                            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                              {activeContent.title}
+                            </h2>
 
-                          <p className="text-base text-gray-500 font-medium leading-relaxed">
-                            {activeContent.description}
-                          </p>
-                        </div>
-
-                        <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-                          <button
-                            onClick={() => setIsModalOpen(true)}
-                            className="press-illusion-btn-orange px-8 py-4 font-black uppercase tracking-widest text-xs flex items-center justify-center gap-3"
-                          >
-                            Request Free Demo
-                          </button>
-                          <Link
-                            href="/contact"
-                            className="px-8 py-4 bg-white border border-gray-200 rounded-xl font-black uppercase tracking-widest text-xs text-gray-700 hover:bg-gray-50 transition-colors flex items-center justify-center"
-                          >
-                            Contact Sales
-                          </Link>
-                        </div>
-                      </div>
-
-                      {/* Module Image Visual */}
-                      <div className="relative mb-10 lg:mb-16">
-                        <div className="relative z-10 p-2 bg-white rounded-[2.5rem] border border-gray-100 shadow-2xl cursor-pointer group overflow-hidden" onClick={() => setSelectedImage(activeContent.image)}>
-                          <div className="rounded-[2rem] overflow-hidden relative aspect-[16/9] bg-gray-50">
-                            <img
-                              src={activeContent.image}
-                              alt={activeContent.title}
-                              className="w-full h-full object-contain"
-                            />
+                            <p className="text-base text-gray-500 font-medium leading-relaxed">
+                              {activeContent.description}
+                            </p>
                           </div>
-                          <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/5 backdrop-blur-[1px]">
-                            <div className={`bg-white/90 backdrop-blur-sm ${TAB_THEMES[activeTab].text} p-4 rounded-full shadow-2xl`}>
-                              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+
+                          <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                            <button
+                              onClick={() => setIsModalOpen(true)}
+                              className="press-illusion-btn-orange text-white w-fit font-bold px-8 py-3 text-base flex items-center space-x-2 transition-all duration-300 mx-auto lg:mx-0"
+                            >
+                              Request Free Demo
+                            </button>
+                            <Link
+                              href="/contact"
+                              className="px-8 py-4 bg-white border border-gray-200 rounded-xl font-black uppercase tracking-widest text-xs text-gray-700 hover:bg-gray-50 transition-colors flex items-center justify-center"
+                            >
+                              Contact Sales
+                            </Link>
+                          </div>
+                        </div>
+
+                        {/* Module Image Visual */}
+                        <div className="relative mb-10 lg:mb-16">
+                          <div className="relative z-10 p-2 bg-white rounded-[2.5rem] border border-gray-100 shadow-2xl cursor-pointer group overflow-hidden" onClick={() => setSelectedImage(activeContent.image)}>
+                            <div className="rounded-[2rem] overflow-hidden relative aspect-[16/9] bg-gray-50">
+                              <img
+                                src={activeContent.image}
+                                alt={activeContent.title}
+                                className="w-full h-full object-contain"
+                              />
+                            </div>
+                            <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/5 backdrop-blur-[1px]">
+                              <div className={`bg-white/90 backdrop-blur-sm ${TAB_THEMES[activeTab].text} p-4 rounded-full shadow-2xl`}>
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
 
-                      {/* Features List */}
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {activeContent.features.map((f, i) => (
-                          <div
-                            key={i}
-                            className={`flex items-center gap-4 p-5 rounded-[24px] bg-white border border-gray-100 ${TAB_THEMES[activeTab].hoverBorder} transition-all group shadow-sm hover:shadow-md`}
-                          >
-                            <div className={`w-8 h-8 rounded-full ${TAB_THEMES[activeTab].lightBg} flex items-center justify-center ${TAB_THEMES[activeTab].text} flex-shrink-0 shadow-inner`}>
-                              <span className="text-[10px] font-black">✓</span>
+                        {/* Features List */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          {activeContent.features.map((f, i) => (
+                            <div
+                              key={i}
+                              className={`flex items-center gap-4 p-5 rounded-[24px] bg-white border border-gray-100 ${TAB_THEMES[activeTab].hoverBorder} transition-all group shadow-sm hover:shadow-md`}
+                            >
+                              <div className={`w-8 h-8 rounded-full ${TAB_THEMES[activeTab].lightBg} flex items-center justify-center ${TAB_THEMES[activeTab].text} flex-shrink-0 shadow-inner`}>
+                                <span className="text-[10px] font-black">✓</span>
+                              </div>
+                              <span className="text-[14px] font-black text-gray-700 uppercase tracking-tight">{f}</span>
                             </div>
-                            <span className="text-[14px] font-black text-gray-700 uppercase tracking-tight">{f}</span>
+                          ))}
+                        </div>
+                      </section>
+                    )}
+
+                    {activeContent.layoutType === "split" && (
+                      <section className="pt-4 pb-12">
+                        <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 lg:gap-12 items-center mb-10 lg:mb-12">
+                          <div className="xl:col-span-5 flex flex-col gap-6 text-center xl:text-left">
+                            <motion.div
+                              className={`inline-flex self-center xl:self-start items-center gap-2 px-4 py-2 rounded-full border text-[12px] font-black uppercase tracking-[0.2em] ${TAB_THEMES[activeTab].lightBg} ${TAB_THEMES[activeTab].text} border-white/50 shadow-sm`}
+                            >
+                              <span className="relative flex h-2 w-2">
+                                <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${TAB_THEMES[activeTab].bg}`}></span>
+                                <span className={`relative inline-flex rounded-full h-2 w-2 ${TAB_THEMES[activeTab].bg}`}></span>
+                              </span>
+                              {TABS.find(t => t.id === activeTab)?.label}
+                            </motion.div>
+
+                            <h2 className="text-gray-900 text-3xl lg:text-4xl font-black leading-tight tracking-tighter uppercase">
+                              {activeContent.title}
+                            </h2>
+
+                            <p className="text-base text-gray-500 font-medium leading-relaxed">
+                              {activeContent.description}
+                            </p>
+
+                            <div className="flex flex-col sm:flex-row justify-center xl:justify-start gap-4 mt-4">
+                              <button onClick={() => setIsModalOpen(true)} className="press-illusion-btn-orange text-white w-fit font-bold px-8 py-3 text-base flex items-center space-x-2 transition-all duration-300 mx-auto xl:mx-0">
+                                Request Free Demo
+                              </button>
+                            </div>
                           </div>
-                        ))}
-                      </div>
-                    </section>
+
+                          <div className="xl:col-span-7 relative">
+                            <div className="relative z-10 p-2 bg-white rounded-[2.5rem] border border-gray-100 shadow-2xl cursor-pointer group overflow-hidden" onClick={() => setSelectedImage(activeContent.image)}>
+                              <div className="rounded-[2rem] overflow-hidden relative aspect-[16/9] bg-gray-50">
+                                <img src={activeContent.image} alt={activeContent.title} className="w-full h-full object-contain" />
+                              </div>
+                              <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/5 backdrop-blur-[1px]">
+                                <div className={`bg-white/90 backdrop-blur-sm ${TAB_THEMES[activeTab].text} p-4 rounded-full shadow-2xl`}>
+                                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                          {activeContent.features.map((f, i) => (
+                            <div key={i} className={`flex items-center gap-3 bg-white p-4 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow ${TAB_THEMES[activeTab].hoverBorder}`}>
+                              <div className={`w-8 h-8 rounded-full ${TAB_THEMES[activeTab].lightBg} flex items-center justify-center ${TAB_THEMES[activeTab].text} flex-shrink-0`}>
+                                <span className="text-[10px] font-black">✓</span>
+                              </div>
+                              <span className="text-[13px] font-black text-gray-700 uppercase tracking-tight text-left leading-snug">{f}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </section>
+                    )}
+
+
                   </motion.div>
                 </AnimatePresence>
 
 
 
                 {/* What BillSoft Covers Section */}
-                <section className="pb-8 lg:pb-16">
-                  <div className="container mx-auto ">
-                    <div className="relative rounded-[2.5rem] overflow-hidden border border-gray-100 shadow-2xl bg-white p-2 ">
-                      <div className="hidden lg:block relative w-full overflow-hidden rounded-[2rem]">
-                        <img
-                          src="/products/billsoft/what_billsoft_covers.png"
-                          alt="What BillSoft Covers"
-                          className="w-full h-auto object-cover"
-                        />
-                      </div>
-                      <div className="lg:hidden relative w-full overflow-hidden rounded-[2rem]">
-                        <img
-                          src="/products/billsoft/what_billsoft_covers_mobile_view.png"
-                          alt="What BillSoft Covers"
-                          className="w-full h-auto object-cover"
-                        />
+                {activeTab === "dashboard" && (
+                  <section className="pb-8 lg:pb-16">
+                    <div className="container mx-auto ">
+                      <div className="relative rounded-[2.5rem] overflow-hidden border border-gray-100 shadow-2xl bg-white p-2 ">
+                        <div className="hidden lg:block relative w-full overflow-hidden rounded-[2rem]">
+                          <img
+                            src="/products/billsoft/what_billsoft_covers.png"
+                            alt="What BillSoft Covers"
+                            className="w-full h-auto object-cover"
+                          />
+                        </div>
+                        <div className="lg:hidden relative w-full overflow-hidden rounded-[2rem]">
+                          <img
+                            src="/products/billsoft/what_billsoft_covers_mobile_view.png"
+                            alt="What BillSoft Covers"
+                            className="w-full h-auto object-cover"
+                          />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </section>
+                  </section>
+                )}
 
                 {/* Final CTA Section */}
-                <section className="py-10 lg:py-24 bg-white relative overflow-hidden border border-gray-100 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.06)]">
+                <section className="py-10 lg:py-16 bg-white relative overflow-hidden border border-gray-100 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.06)]">
 
 
                   <div className="relative z-10 px-8 lg:px-16 text-center max-w-4xl mx-auto">
@@ -849,7 +923,7 @@ export default function ProductDetailPremiumBillSoft({
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                       <button
                         onClick={() => setIsModalOpen(true)}
-                        className="press-illusion-btn-orange w-auto px-12 py-6 font-black uppercase tracking-[0.2em] text-sm flex items-center justify-center gap-3 mx-auto"
+                        className="press-illusion-btn-orange text-white w-fit font-bold px-8 py-3 text-base flex items-center space-x-2 transition-all duration-300 mx-auto"
                       >
                         Request Free Demo
                       </button>
@@ -865,7 +939,7 @@ export default function ProductDetailPremiumBillSoft({
         {/* Full-width Repeated Sections */}
         <div className="w-full lg:container mx-auto px-6 pb-16">
           {/* Theme Customization Section */}
-          <section className="py-16 lg:py-20 bg-white border border-gray-100 rounded-[3rem] mb-10 lg:mb-16 overflow-hidden">
+          <section className="py-10 lg:py-16 bg-white border border-gray-100 rounded-[3rem] mb-10 lg:mb-16 overflow-hidden">
             <div className="px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center text-center lg:text-left">
               <div>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-fuchsia-50 text-fuchsia-600 font-bold text-xs mb-6 uppercase tracking-widest">
@@ -886,10 +960,10 @@ export default function ProductDetailPremiumBillSoft({
           </section>
 
           {/* FAQ Section */}
-          <section className="py-10 lg:py-16 bg-white border border-gray-100 rounded-[3rem] mb-10 lg:mb-24 ">
+          <section className="py-10 lg:py-16 bg-white border border-gray-100 rounded-[3rem]">
             <div className="px-8 lg:px-12">
               <h2 className="text-gray-900 mb-12 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Frequently Asked Questions</h2>
-              <div className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
                 {[
                   { q: "What is Isarva BillSoft Application?", a: "It is a complete billing, inventory, and business management system designed for multi-branch operations." },
                   { q: "Can I manage multiple branches in one system?", a: "Yes, you can add multiple branches and switch between them anytime." },
@@ -902,16 +976,16 @@ export default function ProductDetailPremiumBillSoft({
                 ].map((item, i) => (
                   <details
                     key={i}
-                    className="group bg-white rounded-[2rem] border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_15px_40px_rgba(14,165,233,0.08)] transition-all duration-500 overflow-hidden"
+                    name="faq-accordion"
+                    className="group bg-white rounded-[2rem] border border-gray-100 shadow-[0_8px_30px_rgba(14,165,233,0.12)] hover:shadow-[0_15px_40px_rgba(14,165,233,0.2)] transition-all duration-500 overflow-hidden"
                   >
-                    <summary className="flex justify-between items-center font-bold text-gray-900 cursor-pointer list-none p-6 lg:p-8 select-none">
+                    <summary className="flex justify-between items-center font-bold text-gray-900 cursor-pointer list-none px-6 lg:px-8 py-4 lg:py-5 select-none">
                       <span className="pr-4 lg:pr-8 text-base lg:text-lg">{item.q}</span>
                       <div className="w-10 h-10 rounded-full bg-sky-50 flex items-center justify-center text-sky-600 transition-all duration-500 group-open:rotate-45 group-open:bg-sky-600 group-open:text-white group-hover:scale-110 shrink-0">
                         <span className="text-2xl leading-none">+</span>
                       </div>
                     </summary>
-                    <div className="px-8 pb-8">
-                      <div className="h-px w-full bg-gray-50 mb-6" />
+                    <div className="px-6 lg:px-8 pb-5 lg:pb-6 pt-0">
                       <p className="text-gray-500 font-medium leading-relaxed text-[15px]">
                         {item.a}
                       </p>
@@ -927,7 +1001,7 @@ export default function ProductDetailPremiumBillSoft({
 
 
         {/* Related Products Section */}
-        <section className="py-10 lg:py-20 bg-white">
+        <section className="py-10 lg:py-16 bg-white">
           <div className="w-full lg:container mx-auto px-6">
             <div className="text-center mb-16">
               <motion.div
@@ -941,7 +1015,7 @@ export default function ProductDetailPremiumBillSoft({
                 <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                   Explore Our More Products
                 </h2>
-                <p className="text-gray-500 max-w-[600px] mx-auto text-base leading-relaxed font-bold">
+                <p className="text-gray-500 max-w-[600px] mx-auto text-base leading-relaxed">
                   Discover our comprehensive suite of software solutions designed to transform your business operations.
                 </p>
               </motion.div>
@@ -989,7 +1063,7 @@ export default function ProductDetailPremiumBillSoft({
                           </p>
 
                           {/* Category Badge */}
-                          <div className="absolute -top-11 left-1/2 -translate-x-1/2 md:left-auto md:-right-2 md:translate-x-0 bg-white text-sky-600 text-[10px] font-black px-3 py-1 rounded-full border border-sky-100 shadow-md uppercase tracking-wider whitespace-nowrap">
+                          <div className="absolute -top-11 left-1/2 -translate-x-1/2 lg:left-auto lg:-right-2 lg:translate-x-0 bg-white text-sky-600 text-[10px] font-black px-3 py-1 rounded-full border border-sky-100 shadow-md uppercase tracking-wider whitespace-nowrap">
                             {prod.category}
                           </div>
                         </div>
@@ -1155,10 +1229,10 @@ function BillsoftFeatureSection() {
   const activeFeature = billsoftFeatures.find((f) => f.id === activeId);
 
   return (
-    <section className="py-10 lg:py-20 overflow-hidden bg-gray-50/50">
+    <section className="py-10 lg:py-16 overflow-hidden bg-gray-50/50">
       <div className="w-full lg:container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-6 ">
           <span className="block text-[14px] font-black text-sky-600 tracking-[0.28em] uppercase mb-2.5">
             KEY FEATURES
           </span>

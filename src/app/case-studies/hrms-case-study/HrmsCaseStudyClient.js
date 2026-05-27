@@ -123,7 +123,7 @@ export default function HrmsCaseStudyClient() {
         </section>
 
         {/* EXECUTIVE SUMMARY */}
-        <section className="py-16 md:py-20 bg-white border-y border-gray-100">
+        <section className="py-10 lg:py-16 bg-white border-y border-gray-100">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <h2 className="text-2xl text-gray-900 mb-6 flex items-center justify-center md:justify-start gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               <Activity className="text-blue-500" /> Executive Summary
@@ -138,7 +138,7 @@ export default function HrmsCaseStudyClient() {
         </section>
 
         {/* CLIENT PROFILE */}
-        <section className="py-16 md:py-20 px-4 md:px-6 max-w-7xl mx-auto">
+        <section className="py-10 lg:py-16 px-4 md:px-6 max-w-7xl mx-auto">
           <h2 className="text-gray-900 mb-8 md:mb-10 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Client Profile</h2>
           <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
             <div className="p-6 md:p-10">
@@ -185,7 +185,7 @@ export default function HrmsCaseStudyClient() {
         </section>
 
         {/* BUSINESS CHALLENGES */}
-        <section className="py-16 md:py-20 bg-white">
+        <section className="py-10 lg:py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <h2 className="text-gray-900 mb-6 text-center md:text-left text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Business Challenges</h2>
             <p className="text-base md:text-lg text-gray-600 mb-8 text-center md:text-left">Before engaging Isarva, the company's HR and payroll operations were entirely manual. The following challenges were identified:</p>
@@ -213,7 +213,7 @@ export default function HrmsCaseStudyClient() {
         </section>
 
         {/* CHALLENGES VS SOLUTIONS */}
-        <section className="py-16 md:py-20 bg-[#FDF8F2]">
+        <section className="py-10 lg:py-16 bg-[#FDF8F2]">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Challenges vs. Isarva Solutions</h2>
@@ -222,10 +222,10 @@ export default function HrmsCaseStudyClient() {
             <div className="bg-white rounded-2xl md:rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
               {/* Header Row */}
               <div className="hidden md:grid grid-cols-2 bg-gray-50 border-b border-gray-100 p-6">
-                <div className="font-bold text-gray-900 uppercase tracking-wider text-sm flex items-center gap-2">
+                <div className="font-bold text-gray-900 uppercase tracking-wider text-[20px] flex items-center gap-2">
                   <AlertTriangle size={18} className="text-red-500" /> Business Challenge
                 </div>
-                <div className="font-bold text-blue-700 uppercase tracking-wider text-sm flex items-center gap-2 md:pl-12">
+                <div className="font-bold text-blue-700 uppercase tracking-wider text-[20px] flex items-center gap-2 md:pl-12">
                   <CheckCircle size={18} className="text-blue-500" /> Isarva HRMS Solution
                 </div>
               </div>
@@ -268,7 +268,7 @@ export default function HrmsCaseStudyClient() {
         </section>
 
         {/* SOLUTION OVERVIEW & CORE MODULES */}
-        <section className="py-16 md:py-20 bg-white">
+        <section className="py-10 lg:py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <div className="text-center mb-10 md:mb-16 max-w-4xl mx-auto">
               <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Solution Overview — Isarva HRMS</h2>
@@ -306,7 +306,7 @@ export default function HrmsCaseStudyClient() {
         </section>
 
         {/* HR LETTER GENERATION */}
-        <section className="py-16 md:py-20 bg-[#FDF8F2] border-t border-gray-100">
+        <section className="py-10 lg:py-16 bg-[#FDF8F2] border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <h2 className="text-gray-900 mb-6 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">HR Letter Generation</h2>
             <p className="text-base md:text-lg text-gray-600 mb-10 md:mb-16 text-center max-w-4xl mx-auto">
@@ -314,7 +314,7 @@ export default function HrmsCaseStudyClient() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12">
-              <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="bg-white p-6 md:p-5 lg:p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                 <h3 className="text-xl md:text-2xl font-bold text-blue-700 mb-4">1. Offer Letter</h3>
                 <p className="text-sm md:text-base text-gray-600 mb-6">Generated instantly when a candidate is selected, using a configurable template with company letterhead, logo, and authorised signature.</p>
                 <ul className="space-y-3 text-sm text-gray-700">
@@ -323,7 +323,7 @@ export default function HrmsCaseStudyClient() {
                   <li className="flex gap-2"><CheckCircle2 className="text-blue-500 w-5 h-5 flex-shrink-0" /> Probation terms auto-inserted</li>
                 </ul>
               </div>
-              <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="bg-white p-6 md:p-5 lg:p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                 <h3 className="text-xl md:text-2xl font-bold text-blue-700 mb-4">2. Joining / Appointment Letter</h3>
                 <p className="text-sm md:text-base text-gray-600 mb-6">Confirms employment on joining day, detailing designation, reporting manager, location, and contract duration for site workers.</p>
                 <ul className="space-y-3 text-sm text-gray-700">
@@ -332,7 +332,7 @@ export default function HrmsCaseStudyClient() {
                   <li className="flex gap-2"><CheckCircle2 className="text-blue-500 w-5 h-5 flex-shrink-0" /> Bulk generation for mass mobilisation</li>
                 </ul>
               </div>
-              <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="bg-white p-6 md:p-5 lg:p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                 <h3 className="text-xl md:text-2xl font-bold text-blue-700 mb-4">3. Experience Letter</h3>
                 <p className="text-sm md:text-base text-gray-600 mb-6">Instantly generated on exit, detailing joining date, last working date, and a standard testimony of conduct.</p>
                 <ul className="space-y-3 text-sm text-gray-700">
@@ -343,7 +343,7 @@ export default function HrmsCaseStudyClient() {
               </div>
             </div>
 
-            <div className="bg-blue-50 p-6 md:p-8 rounded-2xl flex flex-wrap justify-center gap-4 text-sm font-medium text-blue-900 border border-blue-100">
+            <div className="bg-blue-50 p-6 md:p-8 rounded-2xl flex flex-wrap justify-between gap-4 text-sm font-medium text-blue-900 border border-blue-100">
               <span className="flex items-center gap-2"><CheckCircle size={16} className="text-blue-500" /> Company letterhead & logo</span>
               <span className="flex items-center gap-2"><CheckCircle size={16} className="text-blue-500" /> Logged with issue timestamp</span>
               <span className="flex items-center gap-2"><CheckCircle size={16} className="text-blue-500" /> Linked to employee record</span>
@@ -353,7 +353,7 @@ export default function HrmsCaseStudyClient() {
         </section>
 
         {/* EMPLOYEE-WISE SALARY CONFIGURATION */}
-        <section className="py-16 md:py-20 bg-white border-t border-gray-100">
+        <section className="py-10 lg:py-16 bg-white border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <h2 className="text-gray-900 mb-6 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Employee-Wise Salary Configuration</h2>
             <p className="text-base md:text-lg text-gray-600 mb-10 md:mb-16 text-center max-w-4xl mx-auto">
@@ -417,17 +417,25 @@ export default function HrmsCaseStudyClient() {
         </section>
 
         {/* REPORTS & EXPORTS */}
-        <section className="py-16 md:py-20 bg-[#FDF8F2] border-t border-gray-100">
+        <section className="py-10 lg:py-16 bg-[#FDF8F2] border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <h2 className="text-gray-900 mb-6 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Reports & Export Options</h2>
             <p className="text-base md:text-lg text-gray-600 mb-10 md:mb-16 text-center max-w-4xl mx-auto">
               A comprehensive reporting suite for all stakeholders—HR, Finance, Management, and Compliance teams. Available in PDF, Excel, CSV, and Macro formats.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
-              <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center text-center md:items-start md:text-left">
-                <div className="text-blue-500 mb-4 mx-auto md:mx-0"><FileText size={32} /></div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Attendance & Leave</h3>
+            <div className="flex flex-wrap gap-6 md:gap-8 mb-6 md:mb-12">
+
+              {/* Attendance & Leave */}
+              <div className="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center text-center md:items-start md:text-left">
+                <div className="text-blue-500 mb-4 mx-auto md:mx-0">
+                  <FileText size={32} />
+                </div>
+
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  Attendance & Leave
+                </h3>
+
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li>• Daily & Monthly Attendance</li>
                   <li>• Late Arrival & Early Departure</li>
@@ -435,9 +443,17 @@ export default function HrmsCaseStudyClient() {
                   <li>• Absenteeism Flagging</li>
                 </ul>
               </div>
-              <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center text-center md:items-start md:text-left">
-                <div className="text-blue-500 mb-4 mx-auto md:mx-0"><Calculator size={32} /></div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Payroll & Compensation</h3>
+
+              {/* Payroll & Compensation */}
+              <div className="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center text-center md:items-start md:text-left">
+                <div className="text-blue-500 mb-4 mx-auto md:mx-0">
+                  <Calculator size={32} />
+                </div>
+
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  Payroll & Compensation
+                </h3>
+
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li>• Salary, OT & Incentive Registers</li>
                   <li>• Payslips (Bulk PDF)</li>
@@ -445,9 +461,17 @@ export default function HrmsCaseStudyClient() {
                   <li>• CTC & Arrear Reports</li>
                 </ul>
               </div>
-              <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center text-center md:items-start md:text-left">
-                <div className="text-blue-500 mb-4 mx-auto md:mx-0"><FileCheck size={32} /></div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Statutory Compliance</h3>
+
+              {/* Statutory Compliance */}
+              <div className="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center text-center md:items-start md:text-left">
+                <div className="text-blue-500 mb-4 mx-auto md:mx-0">
+                  <FileCheck size={32} />
+                </div>
+
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  Statutory Compliance
+                </h3>
+
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li>• EPF/ESIC Monthly Contribution</li>
                   <li>• EPF ECR File (Upload Ready)</li>
@@ -455,29 +479,50 @@ export default function HrmsCaseStudyClient() {
                   <li>• PT, TDS (Form 16), LWF Summaries</li>
                 </ul>
               </div>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-              <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 flex items-start gap-4">
+              {/* Employee & HR Reports */}
+              <div className="w-full md:w-[calc(50%-16px)] lg:w-[calc(50%-16px)] bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center md:items-start gap-4 text-center md:text-left">
                 <Users className="text-blue-500 w-8 h-8 flex-shrink-0" />
+
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Employee & HR Reports</h3>
-                  <p className="text-sm text-gray-600">Employee Master, New Joiners, Attrition, Contract Expiry, Headcount, HR Letter Register, and Birthdays.</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                    Employee & HR Reports
+                  </h3>
+
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    <li>• Employee Master</li>
+                    <li>• New Joiners</li>
+                    <li>• Contract Expiry Tracking</li>
+                    <li>• Headcount Reports</li>
+
+
+                  </ul>
                 </div>
               </div>
-              <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 flex items-start gap-4">
+
+              {/* Bank & Disbursement */}
+              <div className="w-full md:w-[calc(50%-16px)] lg:w-[calc(50%-16px)] bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center md:items-start gap-4 text-center md:text-left">
                 <Banknote className="text-blue-500 w-8 h-8 flex-shrink-0" />
+
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Bank & Disbursement</h3>
-                  <p className="text-sm text-gray-600">Canara Bank Salary/OT/Incentive Bulk Upload Macro files, Payment Summaries, and Transfer Confirmations.</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                    Bank & Disbursement
+                  </h3>
+
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    <li>• Canara Bank Salary/OT/Incentive Bulk Upload Macro files</li>
+                    <li>• Payment Summaries</li>
+                    <li>• Transfer Confirmations</li>
+                  </ul>
                 </div>
               </div>
+
             </div>
           </div>
         </section>
 
         {/* IMPLEMENTATION APPROACH */}
-        <section className="py-16 md:py-20 bg-white border-t border-gray-100">
+        <section className="py-10 lg:py-16 bg-white border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <h2 className="text-gray-900 mb-6 md:mb-8 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Implementation Approach</h2>
             <p className="text-base md:text-lg text-gray-600 mb-10 md:mb-16 text-center max-w-3xl mx-auto">Isarva followed a structured implementation methodology to ensure the solution precisely matched the client's operational reality:</p>
@@ -504,12 +549,12 @@ export default function HrmsCaseStudyClient() {
         </section>
 
         {/* RESULTS & IMPACT */}
-        <section className="py-16 md:py-20 bg-[#FDF8F2] border-t border-gray-100">
+        <section className="py-10 lg:py-16 bg-[#FDF8F2] border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <h2 className="text-gray-900 mb-10 md:mb-16 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Results & Business Impact</h2>
 
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-12 md:mb-16">
-              <div className="bg-white p-6 md:p-10 rounded-3xl border border-blue-100 relative overflow-hidden h-full shadow-lg">
+              <div className="bg-white p-6 md:p-10 rounded-3xl border border-blue-100 relative overflow-hidden h-full shadow-lg text-center md:text-left">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full blur-[80px]" />
                 <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 md:mb-8 relative z-10">Impact Snapshot</h3>
 
@@ -566,10 +611,10 @@ export default function HrmsCaseStudyClient() {
         </section>
 
         {/* TESTIMONIAL */}
-        <section className="py-16 md:py-20 bg-white">
+        <section className="py-10 lg:py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <div className="bg-[#FDF8F2] rounded-3xl p-8 md:p-14 shadow-lg border border-blue-100 relative">
-              <div className="absolute -top-2 -left-2 md:-top-6 md:-left-6 text-blue-200">
+              <div className="absolute -top-2 -left-2 md:-top-6 md:-left-5 text-blue-200">
                 <svg width="60" height="60" className="md:w-[80px] md:h-[80px]" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
               </div>
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-medium italic relative z-10 mb-6 md:mb-8 mt-2 md:mt-0">
@@ -589,7 +634,7 @@ export default function HrmsCaseStudyClient() {
         </section>
 
         {/* CTA / ABOUT ISARVA HRMS */}
-        <section className="py-16 md:py-20 bg-[#FDF8F2] border-t border-gray-100">
+        <section className="py-10 lg:py-16 bg-[#FDF8F2] border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <div className="text-center mb-10 md:mb-16">
               <h2 className="text-gray-900 mb-4 md:mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Explore Isarva HRMS Products</h2>
