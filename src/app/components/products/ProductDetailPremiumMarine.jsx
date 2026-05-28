@@ -34,7 +34,7 @@ export default function ProductDetailPremiumMarine({
   return (
     <div className="bg-white font-sans selection:bg-blue-100 selection:text-blue-900">
       {/* 1. Centered Hero Section */}
-      <section className="relative pt-40 lg:pb-32 pb-10 overflow-hidden bg-gradient-to-b from-[#eff6ff] via-[#ecfeff] to-white">
+      <section className="relative pt-40  overflow-hidden bg-gradient-to-b from-[#eff6ff] via-[#ecfeff] to-white">
         {/* Noise Texture Overlay */}
         <div
           className="absolute inset-0 opacity-[0.15] pointer-events-none"
@@ -65,7 +65,6 @@ export default function ProductDetailPremiumMarine({
               <span className="text-[#000000]">
                 Management
               </span>
-              <span style={{ color: BLUE }}>.</span>
             </h1>
             <p className="text-base text-[#444444] mb-8 max-w-3xl mx-auto leading-relaxed">
               Marine Service Software, handles a variety of marine services for their clients. This application allows Marine staff to enter received enquiries, generate quotations, and upon approval, carry out the requested services. The application generates nearly 40 different types of service reports. Additionally, it includes a user management system to handle services at different locations.

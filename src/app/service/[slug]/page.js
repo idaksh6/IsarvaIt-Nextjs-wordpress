@@ -13,6 +13,7 @@ import WebsiteMaintenanceProcess from "./website-maintenance-amc/WebsiteMaintena
 import WebsiteMaintenanceServices from "./website-maintenance-amc/WebsiteMaintenanceServices";
 import WebsiteMaintenanceCaseStudies from "./website-maintenance-amc/WebsiteMaintenanceCaseStudies";
 import { generateServiceMetadata } from "../../lib/utils/seo";
+import NewsAndMagazinePortal from "./NewsAndMagazinePortal";
 
 export async function generateStaticParams() {
   return getAllServiceSlugs().map((slug) => ({
@@ -57,6 +58,11 @@ export default async function ServiceDetailPage({ params }) {
   // ── Premium page for WordPress Development STAGING ────────────────
   if (slug === "wordpress-development-staging") {
     return <WordPressDevelopmentPremiumStaging service={service} servicesData={servicesData} />;
+  }
+
+  // ── Premium page for News and Magazine Portal ──────────────
+  if (slug === "news-and-magazine-portal") {
+    return <NewsAndMagazinePortal service={service} servicesData={servicesData} />;
   }
 
   // Get related services (3 random services excluding current)

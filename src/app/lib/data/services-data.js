@@ -998,6 +998,132 @@ export const servicesData = [
     benefits: [
       { title: "Iterative Feedback", description: "Design changes can be tested here before production deployment." }
     ]
+  },
+  {
+    slug: "news-and-magazine-portal",
+    title: "News and Magazine Portal",
+    icon: "📰",
+    heroImage: "/Services/News-portal/Hero-mockup.png",
+    shortDescription: "Custom news portal and digital media platform development",
+    description: "Build a High-Impact Digital Media Presence with Custom News Portals. Professional news portal development services for digital publishers, journalists, and media houses. We create fast, scalable, and SEO-optimized news platforms.",
+    noIndex: true,
+    features: [
+      {
+        title: "Advanced CMS for Editors",
+        description: "A user-friendly backend designed for journalists to draft, edit, and publish stories in seconds."
+      },
+      {
+        title: "Breaking News Alerts",
+        description: "Real-time ticker and push notifications to keep your audience updated on the latest headlines."
+      },
+      {
+        title: "AMP & Mobile Optimization",
+        description: "Lightning-fast loading speeds on mobile devices via Google Accelerated Mobile Pages (AMP) integration."
+      },
+      {
+        title: "Multimedia Integration",
+        description: "Seamless support for high-res images, embedded video streaming, and podcast galleries."
+      },
+      {
+        title: "Interactive Commenting",
+        description: "Built-in discussion modules and social media login for higher audience engagement."
+      },
+      {
+        title: "Ad Management & Monetization",
+        description: "Integrated slots for Google AdSense, sponsored content, and banner advertisements."
+      },
+      {
+        title: "Reader Analytics",
+        description: "Deep insights into which stories are trending and where your traffic is coming from."
+      },
+      {
+        title: "Social Sharing & Viral Optimization",
+        description: "Empower readers to share stories instantly with integrated quick-sharing bars and custom open-graph media tags."
+      },
+      {
+        title: "Dynamic Paywall & Subscriptions",
+        description: "Easily lock premium content behind customizable paywalls and membership portals to drive reader revenue."
+      }
+    ],
+    technologies: ["Next.js", "WordPress REST API", "Node.js", "GraphQL", "AMP", "Google AdSense"],
+    benefits: [
+      {
+        title: "High-Traffic Scaling",
+        description: "Infrastructure setup designed to handle viral news stories and thousands of concurrent visitors."
+      },
+      {
+        title: "Monetization Ready",
+        description: "Advanced ad slots, sponsored content management, and premium subscription configuration."
+      },
+      {
+        title: "Mobile-First Design",
+        description: "Fully responsive, fast layouts designed to keep mobile readers engaged and returning."
+      }
+    ],
+    servicesList: [
+      {
+        title: "Custom Portal Setup",
+        description: "Launch your media brand with a fully configured news engine tailored to your niche (Politics, Tech, Sports, etc.)."
+      },
+      {
+        title: "Editorial Workflow Management",
+        description: "Multi-level user roles (Editor, Author, Contributor) to streamline your newsroom operations."
+      },
+      {
+        title: "Dynamic Category Management",
+        description: "Organize content into unlimited categories and tags for easy navigation and SEO."
+      },
+      {
+        title: "Social Media Integration",
+        description: "Automated sharing tools to push your articles to Facebook, X (Twitter), and LinkedIn instantly."
+      },
+      {
+        title: "Newsletter & Subscriptions",
+        description: "Build a loyal reader base with automated email digests and premium membership options."
+      },
+      {
+        title: "SEO for Publishers",
+        description: "Specialized optimization including Schema markup (NewsArticle), XML sitemaps, and keyword tracking."
+      },
+      {
+        title: "High-Traffic Scaling",
+        description: "Infrastructure setup designed to handle viral news stories and thousands of concurrent visitors."
+      },
+      {
+        title: "Multi-Language Support",
+        description: "Reach a global audience with localized content and right-to-left (RTL) language support."
+      },
+      {
+        title: "Ongoing Maintenance",
+        description: "Regular security patches and feature updates to keep your portal ahead of the competition."
+      }
+    ],
+    faqs: [
+      {
+        question: "Can the portal handle thousands of visitors at once?",
+        answer: "Yes, we optimize the architecture and use caching mechanisms to ensure stability during traffic spikes."
+      },
+      {
+        question: "Does it support video news and live streaming?",
+        answer: "Absolutely. We can integrate YouTube, Vimeo, or private streaming servers for video-centric reporting."
+      },
+      {
+        question: "Is the news portal SEO-friendly?",
+        answer: "Yes, we implement technical SEO specifically for news, including Google News sitemaps and Rich Snippets."
+      },
+      {
+        question: "Can I monetize the site with ads?",
+        answer: "Yes, we provide dedicated slots for display ads, affiliate links, and sponsored posts."
+      },
+      {
+        question: "Do you provide a mobile app for the news portal?",
+        answer: "Yes, we offer optional Android and iOS app development that syncs directly with your portal’s CMS."
+      },
+      {
+        question: "Can we migrate our existing articles and media archives?",
+        answer: "Absolutely. We offer seamless migration services from platforms like WordPress, Drupal, or custom databases while preserving all your content, images, and SEO URLs."
+      }
+    ]
   }
 ];
 

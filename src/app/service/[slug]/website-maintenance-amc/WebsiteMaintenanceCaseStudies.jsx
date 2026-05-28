@@ -162,7 +162,7 @@ const WebsiteMaintenanceCaseStudies = () => {
         <div className="relative -mr-6 lg:-mr-[calc(50vw-50%)]">
           <div
             ref={scrollContainerRef}
-            className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-8 pt-4 pr-6 lg:pr-0"
+            className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pr-6 lg:pr-0"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {caseStudies.map((study, index) => (
@@ -227,8 +227,8 @@ const WebsiteMaintenanceCaseStudies = () => {
               </motion.div>
             ))}
             {/* Spacers for exact snap alignment at the end */}
-            <div 
-              className="flex-shrink-0 snap-end hidden lg:block" 
+            <div
+              className="flex-shrink-0 snap-end hidden lg:block"
               style={{ width: "calc(max(0px, (100vw - 1400px) / 2))" }}
             ></div>
             <div className="flex-shrink-0 snap-end w-px lg:hidden"></div>

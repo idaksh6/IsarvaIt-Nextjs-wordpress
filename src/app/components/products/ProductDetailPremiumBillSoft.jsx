@@ -388,6 +388,7 @@ export default function ProductDetailPremiumBillSoft({
   const [activeInnerTab, setActiveInnerTab] = useState(0);
   // Banner tab state for 3D card image switching
   const [bannerIdx, setBannerIdx] = useState(0);
+  const [openFaq, setOpenFaq] = useState(null);
   const bannerImages = [
     {
       desktop: "/products/billsoft/Yellow-Dashboard.jpg",
@@ -618,7 +619,7 @@ export default function ProductDetailPremiumBillSoft({
                         ? "image-card border-4 sm:border-8 border-white shadow-2xl bg-white"
                         : "border border-sky-100 bg-white/80 backdrop-blur-sm shadow-[0_0_30px_6px_rgba(14,165,233,0.4)] rounded-2xl"
                       }`}>
-                      
+
                       {/* Decorative Dot Pattern inside the box */}
                       {bannerIdx === 1 && (
                         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#0ea5e9 2.5px, transparent 2.5px)', backgroundSize: '30px 30px', opacity: 0.15 }}></div>
@@ -976,7 +977,7 @@ export default function ProductDetailPremiumBillSoft({
         <div className="w-full max-w-7xl mx-auto px-6 py-16">
           {/* Theme Customization Section */}
           <section className="py-10 lg:py-16 bg-white border border-gray-100 rounded-[3rem]  overflow-hidden">
-            <div className="px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center text-center lg:text-left">
+            <div className="px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center text-center lg:text-left">
               <div>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-fuchsia-50 text-fuchsia-600 font-bold text-xs mb-6 uppercase tracking-widest">
                   Personalized Experience
@@ -985,7 +986,7 @@ export default function ProductDetailPremiumBillSoft({
                   Stunning <span className="text-fuchsia-600">Theme</span> Customization
                 </h2>
                 <p className="text-lg text-gray-500 font-medium mb-0 max-w-xl mx-auto lg:mx-0">
-                  Choose beautiful themes like Sunset Glow, Vibrant Violet, and Empire Emerald to match your business style.
+                  Your business software shouldn't feel rigid or uninspiring. With Isarva BillSoft, you have the power to transform your daily workspace into a visually stunning environment that aligns perfectly with your company's branding and aesthetic preferences.Choose beautiful themes like Sunset Glow, Vibrant Violet, and Empire Emerald to match your business style.
                 </p>
               </div>
 
@@ -1017,25 +1018,32 @@ export default function ProductDetailPremiumBillSoft({
                 { q: "What are the main modules available in Isarva BillSoft?", a: "The main modules include Sales Invoice, Purchase Invoice, Payment In, and Payment Out. , Proforma Invoice , Quotations" },
                 { q: "Can the application be customized? ", a: "Yes. Based on customer-specific requirements, the Isarva BillSoft application is fully customizable. " },
                 { q: " Does Isarva Billsoft provide Mult-Warehouse Concept.", a: "Yes. Multi- Warehouse Concept is supported in the application" }
-              ].map((item, i) => (
-                <details
-                  key={i}
-                  name="faq-accordion"
-                  className="group bg-white rounded-[2rem] border border-gray-100 shadow-[0_8px_30px_rgba(14,165,233,0.12)] hover:shadow-[0_15px_40px_rgba(14,165,233,0.2)] transition-all duration-500 overflow-hidden"
-                >
-                  <summary className="flex justify-between items-center font-bold text-gray-900 cursor-pointer list-none px-6 lg:px-8 py-4 lg:py-5 select-none">
-                    <span className="pr-4 lg:pr-8 text-base lg:text-lg">{item.q}</span>
-                    <div className="w-10 h-10 rounded-full bg-sky-50 flex items-center justify-center text-sky-600 transition-all duration-500 group-open:rotate-45 group-open:bg-sky-600 group-open:text-white group-hover:scale-110 shrink-0">
-                      <span className="text-2xl leading-none">+</span>
+              ].map((item, i) => {
+                const isOpen = openFaq === i;
+                return (
+                  <div
+                    key={i}
+                    className="group bg-white rounded-[2rem] border border-gray-100 shadow-[0_8px_30px_rgba(14,165,233,0.12)] hover:shadow-[0_15px_40px_rgba(14,165,233,0.2)] transition-all duration-500 overflow-hidden cursor-pointer"
+                    onClick={() => setOpenFaq(isOpen ? null : i)}
+                  >
+                    <div className="flex justify-between items-center font-bold text-gray-900 list-none px-6 lg:px-8 py-4 lg:py-5 select-none min-h-[96px]">
+                      <span className="pr-4 lg:pr-8 text-base lg:text-lg">{item.q}</span>
+                      <div className={`w-10 h-10 rounded-full bg-sky-50 flex items-center justify-center text-sky-600 transition-all duration-500 shrink-0 ${isOpen ? 'rotate-45 bg-sky-600 text-white' : 'group-hover:scale-110'}`}>
+                        <span className="text-2xl leading-none">+</span>
+                      </div>
                     </div>
-                  </summary>
-                  <div className="px-6 lg:px-8 pb-5 lg:pb-6 pt-0">
-                    <p className="text-gray-500 font-medium leading-relaxed text-[15px]">
-                      {item.a}
-                    </p>
+                    <div className={`grid transition-all duration-500 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                      <div className="overflow-hidden">
+                        <div className="px-6 lg:px-8 pb-5 lg:pb-6 pt-0">
+                          <p className="text-gray-500 font-medium leading-relaxed text-[15px]">
+                            {item.a}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </details>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
@@ -1386,7 +1394,7 @@ function BillsoftUniqueFeatures() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           {uniqueFeaturesData.map((feat, i) => (
-            <div key={i} className="group relative bg-white/80 backdrop-blur-xl rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 border border-white hover:border-blue-100 hover:-translate-y-2 overflow-hidden">
+            <div key={i} className="group relative bg-white/80 backdrop-blur-xl rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 border border-white hover:border-blue-100 hover:-translate-y-2 overflow-hidden flex flex-col items-center text-center md:items-start md:text-left">
               <div className={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${feat.color} opacity-80 group-hover:opacity-100 transition-opacity`}></div>
 
               <div className={`w-14 h-14 rounded-2xl mb-6 flex items-center justify-center text-3xl shadow-xl shadow-blue-900/10 bg-gradient-to-br ${feat.color} text-white transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500`}>
@@ -1398,9 +1406,9 @@ function BillsoftUniqueFeatures() {
                 {feat.description}
               </p>
 
-              <ul className="space-y-3">
+              <ul className="space-y-3 w-full">
                 {feat.points.map((point, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-sm text-gray-600 font-medium">
+                  <li key={idx} className="flex items-start gap-3 text-sm text-gray-600 font-medium text-left">
                     <div className={`w-5 h-5 rounded-full bg-gradient-to-br ${feat.color} flex items-center justify-center flex-shrink-0 mt-0.5 text-white shadow-sm`}>
                       <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" />

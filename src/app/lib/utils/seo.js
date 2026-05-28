@@ -109,18 +109,19 @@ export function generateProductMetadata(product) {
 
 export function generateServiceMetadata(service) {
   const isStaging = service.slug?.includes("-staging");
+  const isNoIndex = isStaging || !!service.noIndex || service.slug === "news-and-magazine-portal";
 
   return generateMetadata({
     title: isStaging ? `[STAGING] ${service.title}` : service.title,
     description: service.shortDescription || service.description,
     keywords: [
       service.title,
-      ...service.features?.map(f => f.title).slice(0, 5) || [],
+      ...service.features?.map(f => (typeof f === "string" ? f : f.title || "")).slice(0, 5) || [],
       "professional services",
       "IT services",
     ],
     url: `/service/${service.slug}`,
-    noIndex: isStaging,
+    noIndex: isNoIndex,
   });
 }
 
