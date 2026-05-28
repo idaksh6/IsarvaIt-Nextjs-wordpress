@@ -269,16 +269,39 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
                   Empower Your Media Business with a Modern News Portal
                 </h2>
 
-                <div className="space-y-6 text-slate-600 text-lg leading-relaxed font-medium">
-                  <p>
-                    In the digital-first era, speed and accessibility are everything. Our custom news portal development services transform traditional reporting into a dynamic digital experience. Whether you are a local news outlet or a global media house, we build platforms that handle high traffic while delivering a seamless reading experience.
-                  </p>
-                  <p>
-                    We specialize in creating fully customized news solutions that go beyond simple blogging. From integrated breaking news alerts and multimedia galleries to advanced category management and subscription models, we build exactly what your editorial team needs to succeed.
-                  </p>
-                  <p>
-                    Our development approach focuses on core vitals: speed, mobile-first design, and monetization. We optimize every article for discoverability, implement robust security for high-traffic surges, and create intuitive navigation that keeps readers engaged.
-                  </p>
+                <div className="space-y-4 mt-8">
+                  {/* Point 1 */}
+                  <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 p-5 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-xl shadow-violet-500/15 hover:shadow-2xl hover:shadow-violet-500/30 hover:-translate-y-1 transition-all duration-300 group">
+                    <div className="w-12 h-12 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-violet-100 transition-all duration-300">
+                      <Globe className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-slate-900 mb-1.5">Dynamic Digital Experience</h4>
+                      <p className="text-sm text-slate-600 leading-relaxed font-medium">Built for speed and accessibility, handling high traffic surges seamlessly for both local outlets and global media houses.</p>
+                    </div>
+                  </div>
+                  
+                  {/* Point 2 */}
+                  <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 p-5 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-xl shadow-pink-500/15 hover:shadow-2xl hover:shadow-pink-500/30 hover:-translate-y-1 transition-all duration-300 group">
+                    <div className="w-12 h-12 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-pink-100 transition-all duration-300">
+                      <Layers className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-slate-900 mb-1.5">Custom Editorial Solutions</h4>
+                      <p className="text-sm text-slate-600 leading-relaxed font-medium">Beyond simple blogging. Includes integrated breaking news, multimedia galleries, advanced categories, and subscription models.</p>
+                    </div>
+                  </div>
+
+                  {/* Point 3 */}
+                  <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 p-5 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-xl shadow-cyan-500/15 hover:shadow-2xl hover:shadow-cyan-500/30 hover:-translate-y-1 transition-all duration-300 group">
+                    <div className="w-12 h-12 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-cyan-100 transition-all duration-300">
+                      <BarChart2 className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-slate-900 mb-1.5">Optimized Core Vitals</h4>
+                      <p className="text-sm text-slate-600 leading-relaxed font-medium">Focused on speed, mobile-first design, discoverability, robust security, and maximizing monetization and engagement.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
