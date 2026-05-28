@@ -159,7 +159,7 @@ export default function Footer() {
                 { label: "Services", href: "/services" },
                 { label: "Products", href: "/products" },
                 { label: "Industries", href: "/industries" },
-                { label: "Contact Us", href: "/contact" },
+                { label: "White Label Partner", href: "/white-label" },
                 { label: "Partnership", href: "/partners" },
               ].map((link) => (
                 <li key={link.label}>

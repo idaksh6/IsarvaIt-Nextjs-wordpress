@@ -13,6 +13,7 @@ function ThemeSlider({ onImageClick }) {
     { name: "Empire Emerald", img: "Vibrant-color-3.jpg", color: "from-emerald-500/20 to-teal-500/20" },
     { name: "Sunset Glow", img: "Vibrant-color-2.jpg", color: "from-orange-500/20 to-rose-500/20" },
     { name: "Vibrant Violet", img: "Vibrant-color-1.jpg", color: "from-violet-500/20 to-fuchsia-500/20" },
+    { name: "Yellow-Dashboard", img: "Yellow-Dashboard.jpg", color: "from-yellow-500/20 to-yellow-500/20" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -315,6 +316,10 @@ const TAB_CONTENT = {
     subtitle: "Structured approval workflow for inventory",
     description: "Manage multiple warehouses and monitor stock availability across each location. The Stock Transfer module helps move products between warehouses while maintaining accurate inventory records through a structured approval workflow (Draft, Pending, Approved, In Transit, Received) ensuring complete visibility of stock movement.",
     image: "/products/billsoft/Create-stock-transfer.jpg",
+    images: [
+      { src: "/products/billsoft/Create-stock-transfer.jpg", label: "Stock Transfer" },
+      { src: "/products/billsoft/Warehouse-management.jpg", label: "Warehouse Management" }
+    ],
     features: [
       "Multi-Warehouse Monitoring",
       "Approval Workflow (Draft-Received)",
@@ -380,12 +385,13 @@ export default function ProductDetailPremiumBillSoft({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [activeInnerTab, setActiveInnerTab] = useState(0);
   // Banner tab state for 3D card image switching
   const [bannerIdx, setBannerIdx] = useState(0);
   const bannerImages = [
     {
-      desktop: "/products/billsoft/Yellow-Dashbaord.jpg",
-      mobile: "/products/billsoft/Yellow-Dashbaord.jpg"
+      desktop: "/products/billsoft/Yellow-Dashboard.jpg",
+      mobile: "/products/billsoft/Yellow-Dashboard.jpg"
     },
     {
       desktop: "/products/billsoft/billsoft-invoice-workflow-1.png",
@@ -412,6 +418,7 @@ export default function ProductDetailPremiumBillSoft({
         behavior: 'smooth'
       });
     }
+    setActiveInnerTab(0);
   }, [activeTab]);
 
   useEffect(() => {
@@ -507,7 +514,7 @@ export default function ProductDetailPremiumBillSoft({
 
         <div className="relative z-40 pt-0">
           {/* Intro Section Above Tabs */}
-          <section className="wp-aurora-gradient relative pt-36 lg:pt-40 pb-16 lg:pb-32 overflow-hidden">
+          <section className="relative pt-36 lg:pt-40 pb-10 lg:pb-16 overflow-hidden" style={{ backgroundColor: 'rgb(253, 248, 242)' }}>
             <div className="absolute inset-0 aurora-mesh pointer-events-none" />
             <div className="absolute inset-0 hero-grid opacity-[0.2] pointer-events-none" />
 
@@ -515,7 +522,7 @@ export default function ProductDetailPremiumBillSoft({
             <div className="max-w-7xl mx-auto px-6 sm:px-6 relative z-10 w-full">
 
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                 <div className="text-center lg:text-left">
                   <div className="relative inline-flex items-center justify-center lg:gap-3 gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-sky-50/50 to-blue-50/50 border border-sky-100/50 mb-8 backdrop-blur-sm">
                     <div className="w-2 h-2 rounded-full bg-sky-500 animate-pulse shrink-0" />
@@ -565,22 +572,7 @@ export default function ProductDetailPremiumBillSoft({
                       </span>
                     </button>
 
-                    <button
-                      onClick={() => {
-                        if (contentTopRef.current) {
-                          const offset = 160;
-                          const elementPosition = contentTopRef.current.getBoundingClientRect().top;
-                          const offsetPosition = elementPosition + window.pageYOffset - offset;
-                          window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                          });
-                        }
-                      }}
-                      className="inline-flex items-center gap-3 px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-sky-800 bg-white border border-sky-100 rounded-xl hover:bg-sky-50 transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-1"
-                    >
-                      View Modules
-                    </button>
+
                   </div>
 
                   <div className="mt-16 hidden lg:grid grid-cols-3 gap-4 sm:gap-8 justify-center lg:justify-start">
@@ -621,19 +613,23 @@ export default function ProductDetailPremiumBillSoft({
                     ))}
                   </div>
                   <div className="relative h-[300px] sm:h-[450px] lg:h-[600px] w-full px-4 sm:px-0">
-
-
-                    <div className={`absolute top-0 right-0 lg:right-0 w-[100%] lg:w-[500px] h-[100%] lg:h-[500px] z-10 flex items-center justify-center transition-all duration-500
+                    <div className={`absolute top-0 right-0 lg:right-0 w-full h-[100%] p-6 z-10 flex items-center justify-center transition-all duration-500 hover:scale-[1.02] overflow-hidden
   ${bannerIdx === 0
-                        ? "image-card image-3d-card border-4 sm:border-8 border-white shadow-2xl bg-white"
-                        : "border border-sky-100 bg-white/60 backdrop-blur-sm shadow-xl rounded-2xl"
+                        ? "image-card border-4 sm:border-8 border-white shadow-2xl bg-white"
+                        : "border border-sky-100 bg-white/80 backdrop-blur-sm shadow-[0_0_30px_6px_rgba(14,165,233,0.4)] rounded-2xl"
                       }`}>
-                      <picture className="w-full h-full block">
+                      
+                      {/* Decorative Dot Pattern inside the box */}
+                      {bannerIdx === 1 && (
+                        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#0ea5e9 2.5px, transparent 2.5px)', backgroundSize: '30px 30px', opacity: 0.15 }}></div>
+                      )}
+
+                      <picture className="w-full h-full block relative z-10">
                         <source media="(max-width: 639px)" srcSet={bannerImages[bannerIdx].mobile} />
                         <img
                           src={bannerImages[bannerIdx].desktop}
                           alt="Isarva BillSoft Banner"
-                          className={`w-full h-full transition-all duration-500 ${bannerIdx === 0 ? "object-cover" : "object-contain"}`}
+                          className={`w-full h-full transition-all duration-500 relative z-10 ${bannerIdx === 0 ? "object-cover" : "object-contain"}`}
                         />
                       </picture>
                       {bannerIdx === 0 && <div className="absolute inset-0 bg-gradient-to-tr from-sky-900/10 to-transparent" />}
@@ -641,8 +637,8 @@ export default function ProductDetailPremiumBillSoft({
 
                     {/* Floating Sales Invoice Dashboard */}
                     {bannerIdx === 0 && (
-                      <div className="hidden lg:block absolute bottom-2 left-4 lg:-bottom-6 lg:-left-6 w-[55%] lg:w-[250px] h-[50%] lg:h-[280px] image-card wp-float2 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] border-2 sm:border-4 border-white transform -rotate-3 hover:rotate-0 transition-all duration-500 bg-white z-20">
-                        <img src="/products/billsoft/Sales-invoice.jpg" alt="Sales Invoice Dashboard" className="w-full h-full object-cover" />
+                      <div className="hidden lg:block absolute bottom-2 left-4 lg:-bottom-6 lg:-left-6 w-[55%] lg:w-[250px] h-[50%] lg:h-[280px] image-card wp-float2 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] border-2 sm:border-4 border-white transform -rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 bg-white z-20">
+                        <img src="/products/billsoft/Banner-child-image.jpg" alt="Sales Invoice Dashboard" className="w-full h-full object-cover" />
                       </div>
                     )}
 
@@ -697,162 +693,121 @@ export default function ProductDetailPremiumBillSoft({
             </div>
           </div>
 
-          <div ref={contentTopRef} className="w-full lg:container mx-auto px-6 pt-4 lg:pt-24 pb-12 lg:pb-24">
-            <div className="flex flex-col lg:flex-row gap-0 lg:gap-12">
-              {/* Desktop Sidebar */}
-              <aside className="lg:w-80 flex-shrink-0">
-                <div className="lg:sticky lg:top-32 space-y-4">
-                  <div className="hidden lg:flex flex-col bg-white/60 backdrop-blur-3xl border border-white/50 p-3 shadow-[0_20px_50px_rgba(14,165,233,0.15)] rounded-[2.5rem]">
-                    <div className="flex flex-col space-y-1">
-                      {TABS.map((tab) => {
-                        const isActive = activeTab === tab.id;
-                        const theme = TAB_THEMES[tab.id];
-                        return (
-                          <button
-                            key={tab.id}
-                            onClick={() => setActiveTab(tab.id)}
-                            className={`group relative flex items-center gap-4 px-6 py-4 rounded-[1.8rem] font-bold text-xs uppercase tracking-widest transition-all duration-500 overflow-hidden ${isActive
-                              ? "text-white shadow-lg"
-                              : "text-gray-500 hover:text-gray-900 hover:bg-gray-50/50"
-                              }`}
-                          >
-                            {isActive && (
-                              <motion.div
-                                layoutId="activeTabDesktop"
-                                className={`absolute inset-0 bg-gradient-to-r ${theme.gradient} z-0`}
-                                transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                              />
-                            )}
-                            <div className={`relative z-10 w-8 h-8 rounded-xl flex items-center justify-center transition-all duration-500 ${isActive ? "bg-white/20" : theme.lightBg + " " + theme.text}`}>
-                              <span className="text-base">{tab.icon}</span>
-                            </div>
-                            <span className="relative z-10 flex-1 text-left">{tab.label}</span>
-                          </button>
-                        );
-                      })}
+          <div ref={contentTopRef} className="wp-aurora-gradient w-full  px-6 pt-4 lg:pt-16 pb-10 lg:pb-16">
+            <div className="lg:container mx-auto">
+              <div className="flex flex-col lg:flex-row gap-0 lg:gap-12">
+                {/* Desktop Sidebar */}
+                <aside className="lg:w-80 flex-shrink-0">
+                  <div className="lg:sticky lg:top-32 space-y-4">
+                    <div className="hidden lg:flex flex-col bg-white/60 backdrop-blur-3xl border border-white/50 p-3 shadow-[0_20px_50px_rgba(14,165,233,0.15)] rounded-[2.5rem]">
+                      <div className="flex flex-col space-y-1">
+                        {TABS.map((tab) => {
+                          const isActive = activeTab === tab.id;
+                          const theme = TAB_THEMES[tab.id];
+                          return (
+                            <button
+                              key={tab.id}
+                              onClick={() => setActiveTab(tab.id)}
+                              className={`group relative flex items-center gap-4 px-6 py-4 rounded-[1.8rem] font-bold text-xs uppercase tracking-widest transition-all duration-500 overflow-hidden ${isActive
+                                ? "text-white shadow-lg"
+                                : "text-gray-500 hover:text-gray-900 hover:bg-gray-50/50"
+                                }`}
+                            >
+                              {isActive && (
+                                <motion.div
+                                  layoutId="activeTabDesktop"
+                                  className={`absolute inset-0 bg-gradient-to-r ${theme.gradient} z-0`}
+                                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                                />
+                              )}
+                              <div className={`relative z-10 w-8 h-8 rounded-xl flex items-center justify-center transition-all duration-500 ${isActive ? "bg-white/20" : theme.lightBg + " " + theme.text}`}>
+                                <span className="text-base">{tab.icon}</span>
+                              </div>
+                              <span className="relative z-10 flex-1 text-left">{tab.label}</span>
+                            </button>
+                          );
+                        })}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </aside>
+                </aside>
 
-              {/* Main Content Area */}
-              <main className="flex-1 min-w-0">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={activeTab}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    {/* Render Content Based on Layout Type */}
-                    {(!activeContent.layoutType || activeContent.layoutType === "classic") && (
-                      <section className="pt-4 pb-12">
-                        <div className="flex flex-col gap-6 mb-6 lg:mb-12 text-center lg:text-left">
-                          <div className="max-w-none">
-                            <motion.div
-                              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border text-[12px] font-black uppercase tracking-[0.2em] mb-6 ${TAB_THEMES[activeTab].lightBg} ${TAB_THEMES[activeTab].text} border-white/50 shadow-sm`}
-                            >
-                              <span className="relative flex h-2 w-2">
-                                <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${TAB_THEMES[activeTab].bg}`}></span>
-                                <span className={`relative inline-flex rounded-full h-2 w-2 ${TAB_THEMES[activeTab].bg}`}></span>
-                              </span>
-                              {TABS.find(t => t.id === activeTab)?.label} MODULE
-                            </motion.div>
+                {/* Main Content Area */}
+                <main className="flex-1 min-w-0">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={activeTab}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -20 }}
+                      transition={{ duration: 0.4 }}
+                    >
+                      {/* Render Content Based on Layout Type */}
+                      {(!activeContent.layoutType || activeContent.layoutType === "classic") && (
+                        <section className="pt-4 pb-12">
+                          <div className="flex flex-col gap-6 mb-6 lg:mb-12 text-center lg:text-left">
+                            <div className="max-w-none">
+                              <motion.div
+                                className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border text-[12px] font-black uppercase tracking-[0.2em] mb-6 ${TAB_THEMES[activeTab].lightBg} ${TAB_THEMES[activeTab].text} border-white/50 shadow-sm`}
+                              >
+                                <span className="relative flex h-2 w-2">
+                                  <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${TAB_THEMES[activeTab].bg}`}></span>
+                                  <span className={`relative inline-flex rounded-full h-2 w-2 ${TAB_THEMES[activeTab].bg}`}></span>
+                                </span>
+                                {TABS.find(t => t.id === activeTab)?.label} MODULE
+                              </motion.div>
 
-                            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
-                              {activeContent.title}
-                            </h2>
+                              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                                {activeContent.title}
+                              </h2>
 
-                            <p className="text-base text-gray-500 font-medium leading-relaxed">
-                              {activeContent.description}
-                            </p>
-                          </div>
-
-                          <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-                            <button
-                              onClick={() => setIsModalOpen(true)}
-                              className="press-illusion-btn-orange text-white w-fit font-bold px-8 py-3 text-base flex items-center space-x-2 transition-all duration-300 mx-auto lg:mx-0"
-                            >
-                              Request Free Demo
-                            </button>
-                            <Link
-                              href="/contact"
-                              className="px-8 py-4 bg-white border border-gray-200 rounded-xl font-black uppercase tracking-widest text-xs text-gray-700 hover:bg-gray-50 transition-colors flex items-center justify-center"
-                            >
-                              Contact Sales
-                            </Link>
-                          </div>
-                        </div>
-
-                        {/* Module Image Visual */}
-                        <div className="relative mb-10 lg:mb-16">
-                          <div className="relative z-10 p-2 bg-white rounded-[2.5rem] border border-gray-100 shadow-2xl cursor-pointer group overflow-hidden" onClick={() => setSelectedImage(activeContent.image)}>
-                            <div className="rounded-[2rem] overflow-hidden relative aspect-[16/9] bg-gray-50">
-                              <img
-                                src={activeContent.image}
-                                alt={activeContent.title}
-                                className="w-full h-full object-contain"
-                              />
+                              <p className="text-base text-gray-500 font-medium leading-relaxed">
+                                {activeContent.description}
+                              </p>
                             </div>
-                            <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/5 backdrop-blur-[1px]">
-                              <div className={`bg-white/90 backdrop-blur-sm ${TAB_THEMES[activeTab].text} p-4 rounded-full shadow-2xl`}>
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
 
-                        {/* Features List */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                          {activeContent.features.map((f, i) => (
-                            <div
-                              key={i}
-                              className={`flex items-center gap-4 p-5 rounded-[24px] bg-white border border-gray-100 ${TAB_THEMES[activeTab].hoverBorder} transition-all group shadow-sm hover:shadow-md`}
-                            >
-                              <div className={`w-8 h-8 rounded-full ${TAB_THEMES[activeTab].lightBg} flex items-center justify-center ${TAB_THEMES[activeTab].text} flex-shrink-0 shadow-inner`}>
-                                <span className="text-[10px] font-black">✓</span>
-                              </div>
-                              <span className="text-[14px] font-black text-gray-700 uppercase tracking-tight">{f}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </section>
-                    )}
-
-                    {activeContent.layoutType === "split" && (
-                      <section className="pt-4 pb-12">
-                        <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 lg:gap-12 items-center mb-10 lg:mb-12">
-                          <div className="xl:col-span-5 flex flex-col gap-6 text-center xl:text-left">
-                            <motion.div
-                              className={`inline-flex self-center xl:self-start items-center gap-2 px-4 py-2 rounded-full border text-[12px] font-black uppercase tracking-[0.2em] ${TAB_THEMES[activeTab].lightBg} ${TAB_THEMES[activeTab].text} border-white/50 shadow-sm`}
-                            >
-                              <span className="relative flex h-2 w-2">
-                                <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${TAB_THEMES[activeTab].bg}`}></span>
-                                <span className={`relative inline-flex rounded-full h-2 w-2 ${TAB_THEMES[activeTab].bg}`}></span>
-                              </span>
-                              {TABS.find(t => t.id === activeTab)?.label}
-                            </motion.div>
-
-                            <h2 className="text-gray-900 text-3xl lg:text-4xl font-black leading-tight tracking-tighter uppercase">
-                              {activeContent.title}
-                            </h2>
-
-                            <p className="text-base text-gray-500 font-medium leading-relaxed">
-                              {activeContent.description}
-                            </p>
-
-                            <div className="flex flex-col sm:flex-row justify-center xl:justify-start gap-4 mt-4">
-                              <button onClick={() => setIsModalOpen(true)} className="press-illusion-btn-orange text-white w-fit font-bold px-8 py-3 text-base flex items-center space-x-2 transition-all duration-300 mx-auto xl:mx-0">
+                            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                              <button
+                                onClick={() => setIsModalOpen(true)}
+                                className="press-illusion-btn-orange text-white w-fit font-bold px-8 py-3 text-base flex items-center space-x-2 transition-all duration-300 mx-auto lg:mx-0"
+                              >
                                 Request Free Demo
                               </button>
+                              <Link
+                                href="/contact"
+                                className="press-illusion-btn-green text-white w-fit font-bold px-8 py-3 text-base flex items-center space-x-2 transition-all duration-300 mx-auto lg:mx-0"
+                              >
+                                Contact Sales
+                              </Link>
                             </div>
                           </div>
 
-                          <div className="xl:col-span-7 relative">
-                            <div className="relative z-10 p-2 bg-white rounded-[2.5rem] border border-gray-100 shadow-2xl cursor-pointer group overflow-hidden" onClick={() => setSelectedImage(activeContent.image)}>
+                          {/* Module Image Visual */}
+                          <div className="relative mb-10 lg:mb-16">
+                            {activeContent.images && (
+                              <div className="flex flex-wrap justify-center gap-2 mb-4">
+                                {activeContent.images.map((imgObj, idx) => (
+                                  <button
+                                    key={idx}
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      setActiveInnerTab(idx);
+                                    }}
+                                    className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 ${activeInnerTab === idx ? TAB_THEMES[activeTab].bg + ' text-white shadow-md scale-105' : 'bg-gray-100 text-gray-500 hover:bg-gray-200 hover:scale-105'}`}
+                                  >
+                                    {imgObj.label}
+                                  </button>
+                                ))}
+                              </div>
+                            )}
+                            <div className="relative z-10 p-2 bg-white rounded-[2.5rem] border border-gray-100 shadow-2xl cursor-pointer group overflow-hidden" onClick={() => setSelectedImage(activeContent.images ? activeContent.images[activeInnerTab].src : activeContent.image)}>
                               <div className="rounded-[2rem] overflow-hidden relative aspect-[16/9] bg-gray-50">
-                                <img src={activeContent.image} alt={activeContent.title} className="w-full h-full object-contain" />
+                                <img
+                                  key={activeContent.images ? activeContent.images[activeInnerTab].src : activeContent.image}
+                                  src={activeContent.images ? activeContent.images[activeInnerTab].src : activeContent.image}
+                                  alt={activeContent.title}
+                                  className="w-full h-full object-contain transition-opacity duration-300"
+                                />
                               </div>
                               <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/5 backdrop-blur-[1px]">
                                 <div className={`bg-white/90 backdrop-blur-sm ${TAB_THEMES[activeTab].text} p-4 rounded-full shadow-2xl`}>
@@ -861,85 +816,166 @@ export default function ProductDetailPremiumBillSoft({
                               </div>
                             </div>
                           </div>
-                        </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                          {activeContent.features.map((f, i) => (
-                            <div key={i} className={`flex items-center gap-3 bg-white p-4 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow ${TAB_THEMES[activeTab].hoverBorder}`}>
-                              <div className={`w-8 h-8 rounded-full ${TAB_THEMES[activeTab].lightBg} flex items-center justify-center ${TAB_THEMES[activeTab].text} flex-shrink-0`}>
-                                <span className="text-[10px] font-black">✓</span>
+                          {/* Features List */}
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {activeContent.features.map((f, i) => (
+                              <div
+                                key={i}
+                                className={`flex items-center gap-4 p-5 rounded-[24px] bg-white border border-gray-100 ${TAB_THEMES[activeTab].hoverBorder} transition-all group shadow-sm hover:shadow-md`}
+                              >
+                                <div className={`w-8 h-8 rounded-full ${TAB_THEMES[activeTab].lightBg} flex items-center justify-center ${TAB_THEMES[activeTab].text} flex-shrink-0 shadow-inner`}>
+                                  <span className="text-[10px] font-black">✓</span>
+                                </div>
+                                <span className="text-[14px] font-black text-gray-700 uppercase tracking-tight">{f}</span>
                               </div>
-                              <span className="text-[13px] font-black text-gray-700 uppercase tracking-tight text-left leading-snug">{f}</span>
+                            ))}
+                          </div>
+                        </section>
+                      )}
+
+                      {activeContent.layoutType === "split" && (
+                        <section className="pt-4 pb-12">
+                          <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 lg:gap-12 items-center mb-10 lg:mb-12">
+                            <div className="xl:col-span-5 flex flex-col gap-6 text-center xl:text-left">
+                              <motion.div
+                                className={`inline-flex self-center xl:self-start items-center gap-2 px-4 py-2 rounded-full border text-[12px] font-black uppercase tracking-[0.2em] ${TAB_THEMES[activeTab].lightBg} ${TAB_THEMES[activeTab].text} border-white/50 shadow-sm`}
+                              >
+                                <span className="relative flex h-2 w-2">
+                                  <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${TAB_THEMES[activeTab].bg}`}></span>
+                                  <span className={`relative inline-flex rounded-full h-2 w-2 ${TAB_THEMES[activeTab].bg}`}></span>
+                                </span>
+                                {TABS.find(t => t.id === activeTab)?.label}
+                              </motion.div>
+
+                              <h2 className="text-gray-900 text-3xl lg:text-4xl font-black leading-tight tracking-tighter uppercase">
+                                {activeContent.title}
+                              </h2>
+
+                              <p className="text-base text-gray-500 font-medium leading-relaxed">
+                                {activeContent.description}
+                              </p>
+
+                              <div className="flex flex-col sm:flex-row justify-center xl:justify-start gap-4 mt-4">
+                                <button onClick={() => setIsModalOpen(true)} className="press-illusion-btn-orange text-white w-fit font-bold px-8 py-3 text-base flex items-center space-x-2 transition-all duration-300 mx-auto xl:mx-0">
+                                  Request Free Demo
+                                </button>
+                              </div>
                             </div>
-                          ))}
+
+                            <div className="xl:col-span-7 relative">
+                              {activeContent.images && (
+                                <div className="flex flex-wrap justify-center gap-2 mb-4">
+                                  {activeContent.images.map((imgObj, idx) => (
+                                    <button
+                                      key={idx}
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        setActiveInnerTab(idx);
+                                      }}
+                                      className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 ${activeInnerTab === idx ? TAB_THEMES[activeTab].bg + ' text-white shadow-md scale-105' : 'bg-gray-100 text-gray-500 hover:bg-gray-200 hover:scale-105'}`}
+                                    >
+                                      {imgObj.label}
+                                    </button>
+                                  ))}
+                                </div>
+                              )}
+                              <div className="relative z-10 p-2 bg-white rounded-[2.5rem] border border-gray-100 shadow-2xl cursor-pointer group overflow-hidden" onClick={() => setSelectedImage(activeContent.images ? activeContent.images[activeInnerTab].src : activeContent.image)}>
+                                <div className="rounded-[2rem] overflow-hidden relative aspect-[16/9] bg-gray-50">
+                                  <img
+                                    key={activeContent.images ? activeContent.images[activeInnerTab].src : activeContent.image}
+                                    src={activeContent.images ? activeContent.images[activeInnerTab].src : activeContent.image}
+                                    alt={activeContent.title}
+                                    className="w-full h-full object-contain transition-opacity duration-300"
+                                  />
+                                </div>
+                                <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/5 backdrop-blur-[1px]">
+                                  <div className={`bg-white/90 backdrop-blur-sm ${TAB_THEMES[activeTab].text} p-4 rounded-full shadow-2xl`}>
+                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            {activeContent.features.map((f, i) => (
+                              <div key={i} className={`flex items-center gap-3 bg-white p-4 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow ${TAB_THEMES[activeTab].hoverBorder}`}>
+                                <div className={`w-8 h-8 rounded-full ${TAB_THEMES[activeTab].lightBg} flex items-center justify-center ${TAB_THEMES[activeTab].text} flex-shrink-0`}>
+                                  <span className="text-[10px] font-black">✓</span>
+                                </div>
+                                <span className="text-[13px] font-black text-gray-700 uppercase tracking-tight text-left leading-snug">{f}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </section>
+                      )}
+
+
+                    </motion.div>
+                  </AnimatePresence>
+
+
+
+                  {/* What BillSoft Covers Section */}
+                  {activeTab === "dashboard" && (
+                    <section className="pb-8 lg:pb-16">
+                      <div className="container mx-auto ">
+                        <div className="relative rounded-[2.5rem] overflow-hidden border border-gray-100 shadow-2xl bg-white p-2 ">
+                          <div className="hidden lg:block relative w-full overflow-hidden rounded-[2rem]">
+                            <img
+                              src="/products/billsoft/what_billsoft_covers.png"
+                              alt="What BillSoft Covers"
+                              className="w-full h-auto object-cover"
+                            />
+                          </div>
+                          <div className="lg:hidden relative w-full overflow-hidden rounded-[2rem]">
+                            <img
+                              src="/products/billsoft/what_billsoft_covers_mobile_view.png"
+                              alt="What BillSoft Covers"
+                              className="w-full h-auto object-cover"
+                            />
+                          </div>
                         </div>
-                      </section>
-                    )}
+                      </div>
+                    </section>
+                  )}
+
+                  {/* Final CTA Section */}
+                  <section className="py-10 lg:py-16 bg-white relative overflow-hidden border border-gray-100 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.06)]">
 
 
-                  </motion.div>
-                </AnimatePresence>
-
-
-
-                {/* What BillSoft Covers Section */}
-                {activeTab === "dashboard" && (
-                  <section className="pb-8 lg:pb-16">
-                    <div className="container mx-auto ">
-                      <div className="relative rounded-[2.5rem] overflow-hidden border border-gray-100 shadow-2xl bg-white p-2 ">
-                        <div className="hidden lg:block relative w-full overflow-hidden rounded-[2rem]">
-                          <img
-                            src="/products/billsoft/what_billsoft_covers.png"
-                            alt="What BillSoft Covers"
-                            className="w-full h-auto object-cover"
-                          />
-                        </div>
-                        <div className="lg:hidden relative w-full overflow-hidden rounded-[2rem]">
-                          <img
-                            src="/products/billsoft/what_billsoft_covers_mobile_view.png"
-                            alt="What BillSoft Covers"
-                            className="w-full h-auto object-cover"
-                          />
-                        </div>
+                    <div className="relative z-10 px-8 lg:px-16 text-center max-w-4xl mx-auto">
+                      <span className="inline-block px-4 py-2 rounded-full bg-sky-50 text-sky-600 font-black text-xs uppercase tracking-widest mb-6">
+                        Ready to Scale?
+                      </span>
+                      <h2 className="text-gray-900 mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                        Build Your <span className="text-sky-600">Business</span> Future.
+                      </h2>
+                      <p className="text-lg lg:text-xl text-gray-500 font-medium leading-relaxed mb-10 max-w-2xl mx-auto">
+                        Join hundreds of businesses transforming their operations with Isarva BillSoft. Start your digital journey today.
+                      </p>
+                      <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                        <button
+                          onClick={() => setIsModalOpen(true)}
+                          className="press-illusion-btn-orange text-white w-fit font-bold px-8 py-3 text-base flex items-center space-x-2 transition-all duration-300 mx-auto"
+                        >
+                          Request Free Demo
+                        </button>
                       </div>
                     </div>
                   </section>
-                )}
 
-                {/* Final CTA Section */}
-                <section className="py-10 lg:py-16 bg-white relative overflow-hidden border border-gray-100 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.06)]">
-
-
-                  <div className="relative z-10 px-8 lg:px-16 text-center max-w-4xl mx-auto">
-                    <span className="inline-block px-4 py-2 rounded-full bg-sky-50 text-sky-600 font-black text-xs uppercase tracking-widest mb-6">
-                      Ready to Scale?
-                    </span>
-                    <h2 className="text-gray-900 mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
-                      Build Your <span className="text-sky-600">Business</span> Future.
-                    </h2>
-                    <p className="text-lg lg:text-xl text-gray-500 font-medium leading-relaxed mb-10 max-w-2xl mx-auto">
-                      Join hundreds of businesses transforming their operations with Isarva BillSoft. Start your digital journey today.
-                    </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                      <button
-                        onClick={() => setIsModalOpen(true)}
-                        className="press-illusion-btn-orange text-white w-fit font-bold px-8 py-3 text-base flex items-center space-x-2 transition-all duration-300 mx-auto"
-                      >
-                        Request Free Demo
-                      </button>
-                    </div>
-                  </div>
-                </section>
-
-              </main>
+                </main>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Full-width Repeated Sections */}
-        <div className="w-full lg:container mx-auto px-6 pb-16">
+        <div className="w-full max-w-7xl mx-auto px-6 py-16">
           {/* Theme Customization Section */}
-          <section className="py-10 lg:py-16 bg-white border border-gray-100 rounded-[3rem] mb-10 lg:mb-16 overflow-hidden">
+          <section className="py-10 lg:py-16 bg-white border border-gray-100 rounded-[3rem]  overflow-hidden">
             <div className="px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center text-center lg:text-left">
               <div>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-fuchsia-50 text-fuchsia-600 font-bold text-xs mb-6 uppercase tracking-widest">
@@ -959,50 +995,54 @@ export default function ProductDetailPremiumBillSoft({
             </div>
           </section>
 
-          {/* FAQ Section */}
-          <section className="py-10 lg:py-16 bg-white border border-gray-100 rounded-[3rem]">
-            <div className="px-8 lg:px-12">
-              <h2 className="text-gray-900 mb-12 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Frequently Asked Questions</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
-                {[
-                  { q: "What is Isarva BillSoft Application?", a: "It is a complete billing, inventory, and business management system designed for multi-branch operations." },
-                  { q: "Can I manage multiple branches in one system?", a: "Yes, you can add multiple branches and switch between them anytime." },
-                  { q: "Does it support GST billing?", a: "Yes, GST is automatically applied based on product configuration." },
-                  { q: "Can I track customer and vendor balances?", a: "Yes, ledger reports show complete transaction history and closing balances." },
-                  { q: "Is stock transfer between warehouses possible?", a: "Yes, with a proper approval workflow including transit and receiving stages." },
-                  { q: "Can I customize the look of the application?", a: "Yes, you can choose different theme colors." },
-                  { q: "Does the system track payments?", a: "Yes, both incoming and outgoing payments through Payment In and Payment Out are fully managed and recorded." },
-                  { q: "What are the main modules available in Isarva BillSoft?", a: "The main modules include Sales Invoice, Purchase Invoice, Payment In, and Payment Out. , Proforma Invoice , Quotations" }
-                ].map((item, i) => (
-                  <details
-                    key={i}
-                    name="faq-accordion"
-                    className="group bg-white rounded-[2rem] border border-gray-100 shadow-[0_8px_30px_rgba(14,165,233,0.12)] hover:shadow-[0_15px_40px_rgba(14,165,233,0.2)] transition-all duration-500 overflow-hidden"
-                  >
-                    <summary className="flex justify-between items-center font-bold text-gray-900 cursor-pointer list-none px-6 lg:px-8 py-4 lg:py-5 select-none">
-                      <span className="pr-4 lg:pr-8 text-base lg:text-lg">{item.q}</span>
-                      <div className="w-10 h-10 rounded-full bg-sky-50 flex items-center justify-center text-sky-600 transition-all duration-500 group-open:rotate-45 group-open:bg-sky-600 group-open:text-white group-hover:scale-110 shrink-0">
-                        <span className="text-2xl leading-none">+</span>
-                      </div>
-                    </summary>
-                    <div className="px-6 lg:px-8 pb-5 lg:pb-6 pt-0">
-                      <p className="text-gray-500 font-medium leading-relaxed text-[15px]">
-                        {item.a}
-                      </p>
-                    </div>
-                  </details>
-                ))}
-              </div>
-            </div>
-          </section>
+
         </div>
 
+        <BillsoftUniqueFeatures />
         <BillsoftFeatureSection />
 
+        {/* FAQ Section */}
+        <section className="py-10 lg:py-16  wp-aurora-gradient">
+          <div className="w-full max-w-7xl px-6 rounded-[3rem] mx-auto" >
+            <h2 className="text-gray-900 mb-12 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Frequently Asked Questions</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+              {[
+                { q: "What is Isarva BillSoft Application?", a: "It is a complete billing, inventory, and business management system designed for multi-branch operations." },
+                { q: "Can I manage multiple branches in one system?", a: "Yes, you can add multiple branches and switch between them anytime." },
+                { q: "Does it support GST billing?", a: "Yes, GST is automatically applied based on product configuration." },
+                { q: "Can I track customer and vendor balances?", a: "Yes, ledger reports show complete transaction history and closing balances." },
+                { q: "Is stock transfer between warehouses possible?", a: "Yes, with a proper approval workflow including transit and receiving stages." },
+                { q: "Can I customize the look of the application?", a: "Yes, you can choose different theme colors." },
+                { q: "Does the system track payments?", a: "Yes, both incoming and outgoing payments through Payment In and Payment Out are fully managed and recorded." },
+                { q: "What are the main modules available in Isarva BillSoft?", a: "The main modules include Sales Invoice, Purchase Invoice, Payment In, and Payment Out. , Proforma Invoice , Quotations" },
+                { q: "Can the application be customized? ", a: "Yes. Based on customer-specific requirements, the Isarva BillSoft application is fully customizable. " },
+                { q: " Does Isarva Billsoft provide Mult-Warehouse Concept.", a: "Yes. Multi- Warehouse Concept is supported in the application" }
+              ].map((item, i) => (
+                <details
+                  key={i}
+                  name="faq-accordion"
+                  className="group bg-white rounded-[2rem] border border-gray-100 shadow-[0_8px_30px_rgba(14,165,233,0.12)] hover:shadow-[0_15px_40px_rgba(14,165,233,0.2)] transition-all duration-500 overflow-hidden"
+                >
+                  <summary className="flex justify-between items-center font-bold text-gray-900 cursor-pointer list-none px-6 lg:px-8 py-4 lg:py-5 select-none">
+                    <span className="pr-4 lg:pr-8 text-base lg:text-lg">{item.q}</span>
+                    <div className="w-10 h-10 rounded-full bg-sky-50 flex items-center justify-center text-sky-600 transition-all duration-500 group-open:rotate-45 group-open:bg-sky-600 group-open:text-white group-hover:scale-110 shrink-0">
+                      <span className="text-2xl leading-none">+</span>
+                    </div>
+                  </summary>
+                  <div className="px-6 lg:px-8 pb-5 lg:pb-6 pt-0">
+                    <p className="text-gray-500 font-medium leading-relaxed text-[15px]">
+                      {item.a}
+                    </p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Related Products Section */}
         <section className="py-10 lg:py-16 bg-white">
-          <div className="w-full lg:container mx-auto px-6">
+          <div className="w-full max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -1176,7 +1216,8 @@ const billsoftFeatures = [
     icon: "📊",
     color: "#F59E0B",
     desc: "Monitor complete payment history, balances, and transaction activities for every customer and vendor.",
-    image: "/products/billsoft/Legder-statement.jpg",
+    image: "/products/billsoft/ledger-statement-1.jpg",
+
   },
   {
     id: "sales-purchase",
@@ -1220,6 +1261,163 @@ const billsoftFeatures = [
   },
 ];
 
+const uniqueFeaturesData = [
+  {
+    title: "AI Neural Intelligence Dashboard",
+    description: "Predicts projected settlement values based on current monthly trends and historical transaction patterns.",
+    points: [
+      "Monthly settlement forecasting",
+      "Revenue growth prediction",
+      "Deep Revenue Analytics (MoM)",
+      "Smart analytics widgets",
+    ],
+    color: "from-sky-400 to-blue-600",
+    icon: "🧠"
+  },
+  {
+    title: "Smart Service Module",
+    description: "Efficiently create and manage custom service entries with professional quotation generation.",
+    points: [
+      "Manual item & service creation",
+      "Custom subject banners",
+      "Service quotation preparation",
+      "Easy document sharing",
+    ],
+    color: "from-teal-400 to-emerald-500",
+    icon: "⚙️"
+  },
+  {
+    title: "Dynamic Invoice Templates",
+    description: "Multiple professionally designed Invoice Templates tailored for different presentation styles.",
+    points: [
+      "Clean corporate structures",
+      "Modern billing formats",
+      "Compact & detailed views",
+      "Branding consistency",
+    ],
+    color: "from-orange-400 to-rose-500",
+    icon: "📄"
+  },
+  {
+    title: "Theme Personalization",
+    description: "13 modern UI themes to personalize the overall appearance based on your branding preferences.",
+    points: [
+      "Professionally crafted palettes",
+      "Custom dashboard layouts",
+      "Menu styling enhancements",
+      "Engaging UX on all devices",
+    ],
+    color: "from-purple-400 to-fuchsia-500",
+    icon: "🎨"
+  },
+  {
+    title: "Multi-Branch Management",
+    description: "Powerful Multi-Branch Architecture for businesses operating across multiple locations.",
+    points: [
+      "Separate branch-level data",
+      "Smooth branch switching",
+      "Independent tracking",
+      "Centralized administration",
+    ],
+    color: "from-blue-400 to-indigo-500",
+    icon: "🏢"
+  },
+  {
+    title: "Flexible Signature Management",
+    description: "Dual signature support for enhanced convenience and professionalism across documents.",
+    points: [
+      "Draw signatures manually",
+      "Upload digital images",
+      "Apply across invoices",
+      "Secure management",
+    ],
+    color: "from-amber-400 to-orange-500",
+    icon: "✍️"
+  },
+  {
+    title: "Mobile Office Experience",
+    description: "Seamless usability across all devices, enabling you to operate your business anytime, anywhere.",
+    points: [
+      "Adaptive responsive layouts",
+      "Touch-friendly controls",
+      "Collapsible smart navigation",
+      "Optimized dashboard view",
+    ],
+    color: "from-pink-400 to-rose-500",
+    icon: "📱"
+  },
+  {
+    title: "Advanced Business Intelligence",
+    description: "Detailed operational and financial insights through interactive visual reports.",
+    points: [
+      "Revenue trend monitoring",
+      "Branch performance comparison",
+      "Settlement & summaries",
+      "Data-driven insights",
+    ],
+    color: "from-indigo-400 to-violet-600",
+    icon: "📈"
+  }
+];
+
+function BillsoftUniqueFeatures() {
+  return (
+    <section className="py-10 lg:py-16 relative overflow-hidden bg-white">
+      {/* Vibrant Gradient Backgrounds */}
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-sky-50 via-white to-blue-50/50"></div>
+
+      {/* Decorative colored blobs to add vibrancy */}
+      <div className="absolute top-[-10%] left-[-5%] w-[40vw] h-[40vw] rounded-full bg-sky-300/30 mix-blend-multiply filter blur-[100px]"></div>
+      <div className="absolute top-[20%] right-[-10%] w-[35vw] h-[35vw] rounded-full bg-fuchsia-300/30 mix-blend-multiply filter blur-[100px]"></div>
+      <div className="absolute bottom-[-10%] left-[20%] w-[45vw] h-[45vw] rounded-full bg-emerald-300/30 mix-blend-multiply filter blur-[100px]"></div>
+
+      <div className="max-w-7xl mx-auto px-6 sm:px-6 relative z-10 w-full">
+        <div className="text-center mb-12">
+          <span className="block text-[14px] font-black text-sky-600 tracking-[0.28em] uppercase mb-2.5">
+            Exclusive Capabilities
+          </span>
+          <h2 className="text-gray-900 mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            Unique Features Of <span className="text-sky-600">BillSoft</span> Software
+          </h2>
+          <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">
+            Explore our powerful business features and intelligent capabilities that are rarely available in conventional billing software platforms.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+          {uniqueFeaturesData.map((feat, i) => (
+            <div key={i} className="group relative bg-white/80 backdrop-blur-xl rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 border border-white hover:border-blue-100 hover:-translate-y-2 overflow-hidden">
+              <div className={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${feat.color} opacity-80 group-hover:opacity-100 transition-opacity`}></div>
+
+              <div className={`w-14 h-14 rounded-2xl mb-6 flex items-center justify-center text-3xl shadow-xl shadow-blue-900/10 bg-gradient-to-br ${feat.color} text-white transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500`}>
+                {feat.icon}
+              </div>
+
+              <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">{feat.title}</h3>
+              <p className="text-gray-500 text-sm mb-6 leading-relaxed font-medium">
+                {feat.description}
+              </p>
+
+              <ul className="space-y-3">
+                {feat.points.map((point, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-sm text-gray-600 font-medium">
+                    <div className={`w-5 h-5 rounded-full bg-gradient-to-br ${feat.color} flex items-center justify-center flex-shrink-0 mt-0.5 text-white shadow-sm`}>
+                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function BillsoftFeatureSection() {
   const [activeId, setActiveId] = useState("branch");
   const [mobileOpenId, setMobileOpenId] = useState("branch");
@@ -1230,7 +1428,7 @@ function BillsoftFeatureSection() {
 
   return (
     <section className="py-10 lg:py-16 overflow-hidden bg-gray-50/50">
-      <div className="w-full lg:container mx-auto px-6">
+      <div className="w-full max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-6 ">
           <span className="block text-[14px] font-black text-sky-600 tracking-[0.28em] uppercase mb-2.5">
