@@ -241,7 +241,7 @@ export default function ProductDetailPremiumDispatcher({
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <button
                     onClick={() => setIsModalOpen(true)}
-                    className="press-illusion-btn-white bg-white text-orange-600 !px-8 !py-4 font-bold transition-all duration-300"
+                    className="bg-white text-[#EF4444] !px-8 !py-4 font-bold transition-all duration-300 rounded-xl hover:bg-[#DC2626] hover:text-white shadow-[0_6px_0_#DC2626] hover:shadow-[0_3px_0_#DC2626] hover:translate-y-[3px]"
                   >
                     <span className="relative z-10 flex items-center gap-3">
                       <svg

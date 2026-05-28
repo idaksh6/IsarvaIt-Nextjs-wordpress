@@ -614,7 +614,7 @@ export default async function ServiceDetailPage({ params }) {
                 key={relatedService.slug}
                 href={`/service/${relatedService.slug}`}
                 prefetch={true}
-                className="group relative"
+                className="relative"
               >
                 <div className="h-full rounded-3xl p-8 bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg transition-all duration-300">
                   <div className="relative">
@@ -708,28 +708,32 @@ export default async function ServiceDetailPage({ params }) {
             }
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mt-6 md:mt-10">
             <Link
               href="/contact"
               prefetch={true}
-              className="group relative inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-emerald-600 bg-white rounded-xl hover:bg-gray-50 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 overflow-hidden"
+              className="btn-premium-orange group !px-10 !py-5"
             >
-              <span className="relative z-10 flex items-center gap-3">
+              <div className="shimmer absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+              <span className="relative z-10 flex items-center gap-3 font-black tracking-wider text-base">
                 Get Started Today
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </span>
-              {/* Shine effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-30 transform -skew-x-12 group-hover:translate-x-full transition-all duration-700"></div>
             </Link>
 
             <Link
               href="/services"
               prefetch={true}
-              className="inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-white bg-white/10 backdrop-blur-md border-2 border-white/30 rounded-xl hover:bg-white/20 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="group relative inline-flex items-center justify-center gap-3 px-10 py-5 font-black tracking-wider text-base text-gray-700 transition-all duration-300 rounded-full bg-white border-2 border-gray-100 hover:border-emerald-200 hover:text-emerald-700 shadow-sm hover:shadow-xl"
             >
-              Browse All Services
+              <span className="relative z-10 flex items-center gap-3">
+                Browse All Services
+                <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
             </Link>
           </div>
 
