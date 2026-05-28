@@ -27,20 +27,24 @@ export default function sitemap() {
   }));
 
   // Dynamic product pages
-  const products = productsData.map((product) => ({
-    url: `${baseUrl}/product/${product.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly',
-    priority: 0.9,
-  }));
+  const products = productsData
+    .filter((product) => !product.slug?.includes("-staging") && !product.slug?.includes("-old") && product.slug !== "bill-soft" && !product.noIndex)
+    .map((product) => ({
+      url: `${baseUrl}/product/${product.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    }));
 
   // Dynamic service pages
-  const services = servicesData.map((service) => ({
-    url: `${baseUrl}/service/${service.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly',
-    priority: 0.9,
-  }));
+  const services = servicesData
+    .filter((service) => !service.slug?.includes("-staging") && !service.noIndex && service.slug !== "news-and-magazine-portal")
+    .map((service) => ({
+      url: `${baseUrl}/service/${service.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    }));
 
   const industries = industriesData.map((industry) => ({
     url: `${baseUrl}/industry/${industry.slug}`,
