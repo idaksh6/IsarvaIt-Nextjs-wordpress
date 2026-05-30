@@ -253,7 +253,7 @@ export default function ProductsListClient({ productsData }) {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
               Why Choose Our Products?
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -319,7 +319,7 @@ export default function ProductsListClient({ productsData }) {
             <span className="w-2 h-2 bg-emerald-600 rounded-full animate-pulse"></span>
             Ready to Get Started?
           </div>
-          <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+          <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
             Can't Find What You're Looking For?
           </h2>
           <p className="text-xl text-gray-700 mb-10 max-w-2xl mx-auto">

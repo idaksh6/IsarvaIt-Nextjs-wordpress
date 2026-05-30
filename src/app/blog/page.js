@@ -64,7 +64,7 @@ export default async function BlogPage({ searchParams }) {
             ) : (
               <div className="max-w-7xl mx-auto px-6 py-20 text-center">
                 <div className="text-8xl mb-6 grayscale opacity-20 select-none">🔍</div>
-                <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">No articles found</h2>
+                <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">No articles found</h2>
                 <p className="text-lg text-gray-400 max-w-md mx-auto font-medium leading-relaxed">
                   We couldn't find any articles matching your search or category selection. 
                   Try adjusting your filters or search terms.

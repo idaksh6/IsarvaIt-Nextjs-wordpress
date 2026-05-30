@@ -148,7 +148,7 @@ export default function ProductDetailPremiumMarine({
 
             {/* Right Side - Content */}
             <div>
-              <h2 className="text-[#000000] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="text-[#000000] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
                 Complete System for{" "}
                 <span className="text-[#2563EB]">Marine Operations Excellence</span>
               </h2>
@@ -227,7 +227,7 @@ export default function ProductDetailPremiumMarine({
                   GET STARTED TODAY
                 </span>
 
-                <h2 className="text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                <h2 className="text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
                   Ready to streamline your <br className="hidden md:block" />
                   marine service operations?
                 </h2>
@@ -277,7 +277,7 @@ export default function ProductDetailPremiumMarine({
               <span className="inline-block text-[10px] font-black text-[#2563EB] tracking-[0.28em] uppercase mb-3 bg-[#2563EB]/10 px-4 py-2 rounded-full">
                 MORE PRODUCTS
               </span>
-              <h2 className="text-[#0a0a0a] mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="text-[#0a0a0a] mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
                 Explore Our More Products
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -556,7 +556,7 @@ function MarineFeatureSection() {
           <span className="block text-[10px] font-black text-[#2563EB] tracking-[0.28em] uppercase mb-2.5">
             SOFTWARE FEATURES
           </span>
-          <h2 className="text-[#0a0a0a] mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+          <h2 className="text-[#0a0a0a] mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
             Key Features Of <span className="text-[#2563EB]">Marine Service</span> Software
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">

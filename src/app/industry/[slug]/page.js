@@ -221,7 +221,7 @@ export default async function IndustryDetailPage({ params }) {
     <div className="bg-white">
       {/* Hero Section */}
       <section
-        className={`relative pt-32 lg:pt-40 pb-20 overflow-hidden bg-gradient-to-b ${industry.softColor}`}
+        className={`relative pt-32 lg:pt-40 pb-12 lg:pb-16 overflow-hidden bg-gradient-to-b ${industry.softColor}`}
       >
         {/* Background Decorations - Soft with Noise */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none" style={{ transform: "translateZ(0)" }}>
@@ -260,7 +260,7 @@ export default async function IndustryDetailPage({ params }) {
               <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-bold text-gray-900 mb-6 tracking-tight leading-[1]">
                 {industry.title}
               </h1>
-              <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8">
+              <p className="text-base lg:text-xl text-gray-500 font-medium leading-relaxed mb-8">
                 {industry.description}
               </p>
               <div className="flex flex-wrap gap-4">
@@ -288,13 +288,13 @@ export default async function IndustryDetailPage({ params }) {
       </section>
 
       {/* Solutions Section */}
-      <section className={`py-20 lg:py-32 bg-gradient-to-b ${industry.softColor} relative overflow-hidden`}>
+      <section className={`py-12 lg:py-16 bg-gradient-to-b ${industry.softColor} relative overflow-hidden`}>
         <div className="absolute inset-0 hero-noise-overlay opacity-[0.08]"></div>
         <div className={`absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-gradient-to-br ${industry.color} opacity-10 blur-[100px] rounded-full`}></div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+          <div className="text-center mb-10">
+            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
               {industry.slug === 'banking-financial-services'
                 ? 'Explore Our BFS Services'
                 : industry.slug === 'education'
@@ -312,7 +312,7 @@ export default async function IndustryDetailPage({ params }) {
                             : `Our Solutions for ${industry.title}`
               }
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base lg:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
               {industry.slug === 'banking-financial-services'
                 ? 'Unlock the full potential of your banking and financial services operations with our expert solutions, designed to meet your unique business needs.'
                 : industry.slug === 'education'
@@ -345,8 +345,8 @@ export default async function IndustryDetailPage({ params }) {
                   className="relative rounded-3xl p-8 bg-white/80 backdrop-blur-sm border border-white/60 shadow-lg hover:shadow-2xl transition-all duration-300 group"
                 >
                   <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${industry.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
-                  <div className="relative">
-                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${industry.color} opacity-90 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <div className="relative text-center">
+                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${industry.color} opacity-90 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 mx-auto`}>
                       <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         {getServiceIcon(title)}
                       </svg>
@@ -369,15 +369,15 @@ export default async function IndustryDetailPage({ params }) {
 
       {/* Banking Segments Section - Only for Banking Industry */}
       {industry.bankingSegments && (
-        <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
+        <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
           <div className="absolute inset-0 hero-noise-overlay opacity-[0.03]"></div>
 
           <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="text-center mb-16">
-              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            <div className="text-center mb-10">
+              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
                 Our Banking Services
               </h2>
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-base lg:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
                 Specialized solutions for different banking segments
               </p>
             </div>
@@ -388,8 +388,8 @@ export default async function IndustryDetailPage({ params }) {
                   key={index}
                   className="relative rounded-3xl p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-100 hover:border-blue-300 shadow-lg hover:shadow-2xl transition-all duration-300 group"
                 >
-                  <div className="relative text-center md:text-left">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 mx-auto md:mx-0">
+                  <div className="relative text-center">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 mx-auto">
                       <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         {getServiceIcon(segment.title)}
                       </svg>
@@ -409,11 +409,11 @@ export default async function IndustryDetailPage({ params }) {
       )}
 
       {/* Benefits Section */}
-      <section className="py-16 lg:py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      <section className="py-12 lg:py-16 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(16,185,129,0.05),transparent_50%)]"></div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white font-semibold text-sm mb-6 border-2 border-gray-200 text-gray-900 shadow-sm">
               <svg
                 className="w-4 h-4"
@@ -433,7 +433,7 @@ export default async function IndustryDetailPage({ params }) {
               </svg>
               Business Impact
             </div>
-            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
               Benefits You'll Enjoy
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
@@ -464,15 +464,15 @@ export default async function IndustryDetailPage({ params }) {
       </section>
 
       {/* Related Industries Section */}
-      <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
+      <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
         <div className="absolute inset-0 hero-noise-overlay opacity-[0.03]"></div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+          <div className="text-center mb-10">
+            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
               Other Industries We Serve
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base lg:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
               Explore solutions for other industry sectors
             </p>
           </div>
@@ -488,8 +488,8 @@ export default async function IndustryDetailPage({ params }) {
                 <div className="relative h-full rounded-3xl p-8 bg-white border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
                   <div className={`absolute inset-0 bg-gradient-to-br ${relatedIndustry.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
 
-                  <div className="relative">
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${relatedIndustry.color} opacity-90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 mb-6`}>
+                  <div className="relative text-center">
+                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${relatedIndustry.color} opacity-90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 mb-6 mx-auto`}>
                       <span className="text-4xl">{relatedIndustry.icon}</span>
                     </div>
 
@@ -501,7 +501,7 @@ export default async function IndustryDetailPage({ params }) {
                       {relatedIndustry.shortDescription}
                     </p>
 
-                    <div className={`flex items-center gap-2 text-${relatedIndustry.accentColor}-600 font-semibold group-hover:gap-3 transition-all duration-200`}>
+                    <div className={`flex items-center justify-center gap-2 text-${relatedIndustry.accentColor}-600 font-semibold group-hover:gap-3 transition-all duration-200`}>
                       <span>Explore</span>
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -513,7 +513,7 @@ export default async function IndustryDetailPage({ params }) {
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-8">
             <Link
               href="/industries"
               prefetch={true}
@@ -530,7 +530,7 @@ export default async function IndustryDetailPage({ params }) {
 
       {/* CTA Section */}
       <section
-        className={`py-20 lg:py-32 bg-gradient-to-br ${industry.softColor} relative overflow-hidden`}
+        className={`py-12 lg:py-16 bg-gradient-to-br ${industry.softColor} relative overflow-hidden`}
       >
         {/* Checkered background pattern */}
         <div className="absolute inset-0">
@@ -595,7 +595,7 @@ export default async function IndustryDetailPage({ params }) {
             Let's Get Started
           </div>
 
-          <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+          <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
             Ready to Transform Your {industry.title} Business?
           </h2>
 
@@ -628,7 +628,7 @@ export default async function IndustryDetailPage({ params }) {
           </div>
 
           {/* Trust indicators */}
-          <div className="mt-16 pt-12 border-t border-gray-300">
+          <div className="mt-10 pt-8 border-t border-gray-300">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
                 <div className={`text-4xl font-bold mb-2 bg-gradient-to-r ${industry.color} bg-clip-text text-transparent`}>100+</div>

@@ -172,7 +172,7 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
             initial="initial"
             whileInView="whileInView"
             viewport={viewportConfig}
-            className="text-[#111827] mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase"
+            className="text-[#111827] mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize"
           >
             Partnership <span className="text-emerald-600">Models</span>
           </motion.h2>

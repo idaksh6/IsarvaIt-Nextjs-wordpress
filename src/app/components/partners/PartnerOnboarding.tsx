@@ -66,7 +66,7 @@ const PartnerOnboarding = () => {
           initial="initial"
           whileInView="whileInView"
           viewport={viewportConfig}
-          className="mb-10 text-[#111827] text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase"
+          className="mb-10 text-[#111827] text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize"
         >
           Your Journey to <span className="text-emerald-600">Growth</span>
         </motion.h2>

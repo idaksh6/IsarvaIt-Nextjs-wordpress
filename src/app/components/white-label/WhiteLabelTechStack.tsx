@@ -31,7 +31,7 @@ const WhiteLabelTechStack = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-slate-900 font-display text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase"
+            className="text-slate-900 font-display text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize"
           >
             Modern <span className="text-blue-600">Tech Stack</span>
           </motion.h2>

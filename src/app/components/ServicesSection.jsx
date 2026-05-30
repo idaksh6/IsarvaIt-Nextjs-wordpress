@@ -53,7 +53,7 @@ function ServicesSection({ data }) {
         <div className="services-heading text-center mb-16 lg:mb-20">
 
           {heading && (
-            <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
               {decodeHTMLEntities(heading)}
             </h2>
           )}

@@ -502,7 +502,7 @@ function ProductDesktop() {
             />
           </div>
 
-          <h2 className="text-[#0a0d14] mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+          <h2 className="text-[#0a0d14] mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
             Software Built for{" "}
             <span className="text-[#2bc735]">Every Industry</span>
           </h2>
@@ -744,7 +744,7 @@ function ProductDesktop() {
                     </svg>
                   </div>
                   <div>
-                    <h2 className="text-gray-900 text-lg leading-5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                    <h2 className="text-gray-900 text-lg leading-5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
                       Products
                     </h2>
                     <p className="text-gray-500 text-xs">
@@ -1008,7 +1008,7 @@ const ProductDetailModal = ({ product, onClose }) => {
     <div className="absolute inset-4 bg-white/95 backdrop-blur-sm rounded-xl border border-gray-300 p-6 overflow-auto z-10 shadow-2xl">
       <div className="flex justify-between items-start mb-6">
         <div>
-          <h2 className="text-gray-900 text-2xl mb-2 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">{product.name}</h2>
+          <h2 className="text-gray-900 text-2xl mb-2 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">{product.name}</h2>
           <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
             {product.category}
           </span>
@@ -1158,7 +1158,7 @@ const MobileProductModal = ({ product, onClose }) => {
           <div className="px-6 py-4 border-b border-gray-100">
             <div className="flex items-start justify-between">
               <div className="flex-1 pr-4">
-                <h2 className="text-xl text-gray-900 mb-2 line-clamp-2 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                <h2 className="text-xl text-gray-900 mb-2 line-clamp-2 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
                   {product.name}
                 </h2>
                 <div className="flex items-center gap-2 flex-wrap">

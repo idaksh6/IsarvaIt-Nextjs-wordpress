@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -758,7 +758,7 @@ export default function ProductDetailPremiumBillSoft({
                                 {TABS.find(t => t.id === activeTab)?.label} MODULE
                               </motion.div>
 
-                              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
                                 {activeContent.title}
                               </h2>
 
@@ -849,7 +849,7 @@ export default function ProductDetailPremiumBillSoft({
                                 {TABS.find(t => t.id === activeTab)?.label}
                               </motion.div>
 
-                              <h2 className="text-gray-900 text-3xl lg:text-4xl font-black leading-tight tracking-tighter uppercase">
+                              <h2 className="text-gray-900 text-3xl lg:text-4xl font-black leading-tight tracking-tighter capitalize">
                                 {activeContent.title}
                               </h2>
 
@@ -950,7 +950,7 @@ export default function ProductDetailPremiumBillSoft({
                       <span className="inline-block px-4 py-2 rounded-full bg-sky-50 text-sky-600 font-black text-xs uppercase tracking-widest mb-6">
                         Ready to Scale?
                       </span>
-                      <h2 className="text-gray-900 mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                      <h2 className="text-gray-900 mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
                         Build Your <span className="text-sky-600">Business</span> Future.
                       </h2>
                       <p className="text-lg lg:text-xl text-gray-500 font-medium leading-relaxed mb-10 max-w-2xl mx-auto">
@@ -982,7 +982,7 @@ export default function ProductDetailPremiumBillSoft({
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-fuchsia-50 text-fuchsia-600 font-bold text-xs mb-6 uppercase tracking-widest">
                   Personalized Experience
                 </div>
-                <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
                   Stunning <span className="text-fuchsia-600">Theme</span> Customization
                 </h2>
                 <p className="text-lg text-gray-500 font-medium mb-0 max-w-xl mx-auto lg:mx-0">
@@ -1005,7 +1005,7 @@ export default function ProductDetailPremiumBillSoft({
         {/* FAQ Section */}
         <section className="py-10 lg:py-16  wp-aurora-gradient">
           <div className="w-full max-w-7xl px-6 rounded-[3rem] mx-auto" >
-            <h2 className="text-gray-900 mb-12 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Frequently Asked Questions</h2>
+            <h2 className="text-gray-900 mb-12 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Frequently Asked Questions</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
               {[
                 { q: "What is Isarva BillSoft Application?", a: "It is a complete billing, inventory, and business management system designed for multi-branch operations." },
@@ -1060,7 +1060,7 @@ export default function ProductDetailPremiumBillSoft({
                 <span className="inline-block text-[10px] font-black text-sky-600 tracking-[0.28em] uppercase mb-3 bg-sky-50 px-4 py-2 rounded-full border border-sky-100">
                   MORE PRODUCTS
                 </span>
-                <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
                   Explore Our More Products
                 </h2>
                 <p className="text-gray-500 max-w-[600px] mx-auto text-base leading-relaxed">
@@ -1384,7 +1384,7 @@ function BillsoftUniqueFeatures() {
           <span className="block text-[14px] font-black text-sky-600 tracking-[0.28em] uppercase mb-2.5">
             Exclusive Capabilities
           </span>
-          <h2 className="text-gray-900 mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+          <h2 className="text-gray-900 mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
             Unique Features Of <span className="text-sky-600">BillSoft</span> Software
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">
@@ -1442,7 +1442,7 @@ function BillsoftFeatureSection() {
           <span className="block text-[14px] font-black text-sky-600 tracking-[0.28em] uppercase mb-2.5">
             KEY FEATURES
           </span>
-          <h2 className="text-gray-900 mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+          <h2 className="text-gray-900 mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
             Key Features Of <span className="text-sky-600">BillSoft</span> Software
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">

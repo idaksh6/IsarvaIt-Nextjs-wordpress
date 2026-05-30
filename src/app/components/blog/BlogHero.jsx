@@ -24,7 +24,7 @@ export default function BlogHero() {
       {/* Decorative background elements */}
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center text-center">
-          <h1 className="text-7xl md:text-9xl font-black text-gray-900 mb-6 tracking-tighter uppercase opacity-5 absolute -top-10 select-none pointer-events-none">
+          <h1 className="text-7xl md:text-9xl font-black text-gray-900 mb-6 tracking-tighter capitalize opacity-5 absolute -top-10 select-none pointer-events-none">
             INSIGHTS
           </h1>
           <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-bold text-gray-900 mb-6 tracking-tight leading-[1]">

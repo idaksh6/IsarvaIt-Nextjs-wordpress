@@ -233,7 +233,7 @@ export default function TestimonialPage() {
             >
               Visual Proof
             </motion.span>
-            <h2 className="font-display text-[#1a1f24] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Success Stories on Camera</h2>
+            <h2 className="font-display text-[#1a1f24] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Success Stories on Camera</h2>
             <div className="w-24 h-1.5 bg-[#10b981] mx-auto rounded-full"></div>
           </div>
 

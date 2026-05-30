@@ -71,7 +71,7 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
             initial="initial"
             whileInView="whileInView"
             viewport={viewportConfig}
-            className="text-[#111827] mb-4 md:mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase"
+            className="text-[#111827] mb-4 md:mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize"
           >
             Partner <span className="text-[#EAB308]">Tiers</span>
           </motion.h2>

@@ -149,7 +149,7 @@ export default function ProductDetailPremiumExpense({
 
             {/* Right Side - Content */}
             <div>
-              <h2 className="text-[#000000] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="text-[#000000] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
                 Automate Expense Workflows with{" "}
                 <span className="text-[#10B981]">Advanced Approval Management</span>
               </h2>
@@ -228,7 +228,7 @@ export default function ProductDetailPremiumExpense({
                   GET STARTED TODAY
                 </span>
 
-                <h2 className="text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                <h2 className="text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
                   Ready to streamline your <br className="hidden md:block" />
                   expense management?
                 </h2>
@@ -278,7 +278,7 @@ export default function ProductDetailPremiumExpense({
               <span className="inline-block text-[10px] font-black text-[#10B981] tracking-[0.28em] uppercase mb-3 bg-[#10B981]/10 px-4 py-2 rounded-full">
                 MORE PRODUCTS
               </span>
-              <h2 className="text-[#0a0a0a] mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="text-[#0a0a0a] mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
                 Explore Our More Products
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -569,7 +569,7 @@ function ExpenseFeatureSection() {
           <span className="block text-[10px] font-black text-[#10B981] tracking-[0.28em] uppercase mb-2.5">
             SOFTWARE FEATURES
           </span>
-          <h2 className="text-[#0a0a0a] mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+          <h2 className="text-[#0a0a0a] mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
             Key Features Of <span className="text-[#10B981]">Expense Management</span> Software
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">

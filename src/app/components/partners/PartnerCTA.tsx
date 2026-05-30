@@ -78,7 +78,7 @@ const PartnerCTA = ({ onApply }: { onApply: () => void }) => {
               variants={headingVariants}
               initial="initial"
               whileInView="whileInView"
-              className="font-display text-[#111827] mb-6 md:mb-8 md:leading-none text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase"
+              className="font-display text-[#111827] mb-6 md:mb-8 md:leading-none text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize"
             >
               Ready to Grow <br /> <span className="text-emerald-600">Without Limits?</span>
             </motion.h2>

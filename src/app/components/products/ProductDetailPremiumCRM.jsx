@@ -267,7 +267,7 @@ export default function ProductDetailPremiumCRM({
 
             {/* Right Side - Content */}
             <div>
-              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
                 Why Businesses Need{" "}
                 <span className="text-[#0EA5E9]">Isarva CRM</span>
               </h2>
@@ -389,7 +389,7 @@ export default function ProductDetailPremiumCRM({
             <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-3 bg-white px-4 py-2 rounded-full border border-[#0EA5E9]/20 shadow-sm">
               PROCESS
             </span>
-            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
               How <span className="text-[#0EA5E9]">Isarva CRM</span> Works
             </h2>
           </div>
@@ -415,7 +415,7 @@ export default function ProductDetailPremiumCRM({
       <section className="py-10 lg:py-24 bg-slate-50 relative overflow-hidden">
         <div className="w-full max-w-7xl mx-auto px-6">
           <div className="text-center mb-8 md:mb-16">
-            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
               Why Choose <span className="text-[#0EA5E9]">Isarva CRM</span>
             </h2>
             <div className="w-24 h-1 bg-sky-400 mx-auto rounded-full"></div>
@@ -563,7 +563,7 @@ export default function ProductDetailPremiumCRM({
               <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-3 bg-white px-4 py-2 rounded-full border border-[#0EA5E9]/20 shadow-sm">
                 FAQ
               </span>
-              <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
                 Everything you need to know
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -610,7 +610,7 @@ export default function ProductDetailPremiumCRM({
                   GET STARTED TODAY
                 </span>
 
-                <h2 className="text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                <h2 className="text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
                   Ready to test our new <br className="hidden md:block" />
                   CRM features?
                 </h2>
@@ -652,7 +652,7 @@ export default function ProductDetailPremiumCRM({
               <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-3 bg-white px-4 py-2 rounded-full border border-[#0EA5E9]/20 shadow-sm">
                 MORE PRODUCTS
               </span>
-              <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
                 Explore Our More Products
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -987,7 +987,7 @@ function CRMFeatureSection() {
           <span className="block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-2.5">
             SOFTWARE FEATURES
           </span>
-          <h2 className="text-gray-900 mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+          <h2 className="text-gray-900 mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
             Key Features Of <span className="text-[#0EA5E9]">CRM</span> Application
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">
@@ -1349,7 +1349,7 @@ function CRMTabSection({ setSelectedImage }) {
     <section className="py-10 lg:py-24 bg-slate-50 overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-6">
         <div className="text-center mb-14 ">
-          <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+          <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
             Powerful <span className="text-[#0EA5E9]">Isarva CRM</span> Features
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto text-base lg:text-lg leading-relaxed">

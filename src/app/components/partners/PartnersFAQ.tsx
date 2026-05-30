@@ -65,7 +65,7 @@ const PartnersFAQ = () => {
             initial="initial"
             whileInView="whileInView"
             viewport={viewportConfig}
-            className="text-[#111827] text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase"
+            className="text-[#111827] text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize"
           >
             Common <span className="text-emerald-600">Questions</span>
           </motion.h2>
