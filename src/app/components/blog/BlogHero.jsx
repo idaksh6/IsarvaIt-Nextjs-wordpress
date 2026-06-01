@@ -20,7 +20,7 @@ export default function BlogHero() {
   };
 
   return (
-    <section className="bg-premium-noise blog-list-gradient pt-40 pb-16 relative overflow-hidden">
+    <section className="bg-premium-noise blog-list-gradient pt-32 lg:pt-40 pb-12 lg:pb-16 relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center text-center">
@@ -30,7 +30,7 @@ export default function BlogHero() {
           <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-bold text-gray-900 mb-6 tracking-tight leading-[1]">
             Isarva Blog
           </h1>
-          <p className="text-xl lg:text-2xl text-gray-600 max-w-2xl mx-auto font-medium leading-relaxed">
+          <p className="text-base lg:text-xl text-gray-600 max-w-2xl mx-auto font-medium leading-relaxed">
             Expert insights on web hosting, WordPress development, and growing
             your digital presence in the AI era.
           </p>

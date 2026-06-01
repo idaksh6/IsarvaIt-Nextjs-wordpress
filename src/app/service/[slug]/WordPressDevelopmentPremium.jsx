@@ -116,7 +116,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
                   Powerful WP Sites
                 </h1>
 
-                <p className="text-lg lg:text-xl text-gray-600 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
+                <p className="text-base lg:text-xl text-gray-600 leading-relaxed font-medium mb-10 max-w-2xl mx-auto lg:mx-0">
                   {service.description ||
                     "Unlock the absolute best in WordPress development. Custom themes, intuitive dashboards, high-speed performance, and eCommerce solutions tailored to your brand."}
                 </p>

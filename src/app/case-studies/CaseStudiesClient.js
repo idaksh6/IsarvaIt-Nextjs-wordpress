@@ -88,10 +88,10 @@ export default function CaseStudiesClient() {
         <div className="absolute top-[10%] -right-[10%] w-[40%] h-[60%] bg-blue-200/20 rounded-full blur-[100px]" />
       </div>
 
-      <main className="relative z-10 pt-32 pb-12 md:pb-24 px-6 max-w-7xl mx-auto">
+      <main className="relative z-10 pt-32 lg:pt-40 pb-12 lg:pb-16 px-6 max-w-7xl mx-auto">
 
         {/* HEADER */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -113,7 +113,7 @@ export default function CaseStudiesClient() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl text-gray-600"
+            className="text-base lg:text-xl text-gray-600 font-medium leading-relaxed"
           >
             Our case studies highlight the real-world impact of our work, showcasing how we help businesses overcome challenges and achieve success. Each project reflects our commitment to innovation, strategy, and measurable results. From initial ideas to final execution, we focus on creating solutions that truly make a difference. Explore these success stories to see how we turn visions into reality across diverse industries.
           </motion.p>
@@ -214,19 +214,24 @@ export default function CaseStudiesClient() {
 
                 {/* Card Content */}
                 <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-emerald-600 transition-colors">
-                    {study.title}
-                  </h3>
-                  <p className="text-gray-500 mb-6 font-medium">
-                    Client: <span className="text-gray-900">{study.client}</span>
-                  </p>
+                  <div className="min-h-[5.5rem] mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900 line-clamp-3 leading-tight group-hover:text-emerald-600 transition-colors">
+                      {study.title}
+                    </h3>
+                  </div>
+
+                  <div className="min-h-[3rem] mb-4">
+                    <p className="text-gray-500 font-medium">
+                      Client: <span className="text-gray-900">{study.client}</span>
+                    </p>
+                  </div>
 
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mt-auto mb-8">
+                  <div className="min-h-[4.5rem] flex flex-wrap gap-2 content-start mb-8">
                     {study.tags.map((tag, i) => (
                       <span
                         key={i}
-                        className={`text-xs font-bold px-3 py-1 rounded-md ${study.bgLight} ${study.textDark}`}
+                        className={`text-xs font-bold px-3 py-1 rounded-md h-fit ${study.bgLight} ${study.textDark}`}
                       >
                         {tag}
                       </span>
@@ -235,7 +240,7 @@ export default function CaseStudiesClient() {
 
                   <Link
                     href={study.slug}
-                    className={`inline-flex items-center justify-center w-full py-4 rounded-xl font-bold text-[14px] bg-gray-50 text-gray-900 border-2 ${study.buttonBorder} ${study.hoverBg} group-hover:text-white group-hover:border-transparent transition-all duration-300`}
+                    className={`mt-auto inline-flex items-center justify-center w-full py-4 rounded-xl font-bold text-[14px] bg-gray-50 text-gray-900 border-2 ${study.buttonBorder} ${study.hoverBg} group-hover:text-white group-hover:border-transparent transition-all duration-300`}
                   >
                     Read Full Story
                   </Link>

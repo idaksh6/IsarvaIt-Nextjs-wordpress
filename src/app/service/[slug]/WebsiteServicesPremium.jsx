@@ -485,7 +485,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                   <br />
                   Presence
                 </h1>
-                <p className="text-lg lg:text-xl text-gray-600 leading-relaxed mb-10 max-w-xl">
+                <p className="text-base lg:text-xl text-gray-600 leading-relaxed font-medium mb-10 max-w-xl">
                   From brand-new websites to full redesigns and ongoing
                   maintenance — we craft digital experiences that engage
                   visitors, build trust, and drive real business results.

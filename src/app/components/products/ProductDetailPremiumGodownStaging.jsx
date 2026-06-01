@@ -247,7 +247,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
       </section>
 
       {/* ── MOBILE VIEW SECTION ── */}
-      <section className="py-24 bg-white relative">
+      <section className="py-12 lg:py-16 bg-white relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
@@ -330,7 +330,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
       </section>
 
       {/* ── MASTER SETUP & QR SECTION ── */}
-      <section className="py-24 bg-slate-50 relative">
+      <section className="py-12 lg:py-16 bg-slate-50 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="relative">
@@ -407,7 +407,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
       </section>
 
       {/* ── CORE MODULES SECTION ── */}
-      <section id="features" className="py-24 bg-[#FCFDFF] relative">
+      <section id="features" className="py-12 lg:py-16 bg-[#FCFDFF] relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <h2 className="text-slate-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Powerful Features for Modern Warehouses</h2>
@@ -440,7 +440,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
       </section>
 
       {/* ── SMART STATUS UPDATES VISUALIZER ── */}
-      <section className="py-32 bg-slate-900 text-white overflow-hidden relative">
+      <section className="py-12 lg:py-16 bg-slate-900 text-white overflow-hidden relative">
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" style={{ backgroundImage: "radial-gradient(white 1px, transparent 1px)", backgroundSize: "30px 30px" }}></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-20">
@@ -505,7 +505,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
       </section>
 
       {/* ── RETURN PROCESS & QUALITY CHECK ── */}
-      <section className="py-32 bg-white overflow-hidden">
+      <section className="py-12 lg:py-16 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="order-2 lg:order-1 relative">
@@ -575,9 +575,9 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
       </section>
 
       {/* ── INSIGHT REPORTS SECTION ── */}
-      <section id="reports" className="py-24 bg-slate-50 relative overflow-hidden">
+      <section id="reports" className="py-12 lg:py-16 bg-slate-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-slate-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Powerful Insight Reports</h2>
             <p className="text-lg text-slate-500 max-w-2xl mx-auto">Make data-driven decisions with real-time reporting. Export everything in seconds.</p>
           </div>
@@ -624,10 +624,10 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
       </section>
 
       {/* ── WHY STAND OUT SECTION ── */}
-      <section className="py-24 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="bg-slate-50 rounded-[4rem] p-12 lg:p-20 relative overflow-hidden">
-            <div className="text-center mb-16 relative z-10">
+            <div className="text-center mb-10 relative z-10">
                <h2 className="text-slate-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Why Our Godown System Stands Out</h2>
                <p className="text-slate-500 max-w-xl mx-auto font-medium">The "Smart Features" that do the heavy lifting for you.</p>
             </div>
@@ -655,7 +655,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
       </section>
 
       {/* ── CTA FOOTER ── */}
-      <section className="py-24 bg-teal-50 relative overflow-hidden">
+      <section className="py-12 lg:py-16 bg-teal-50 relative overflow-hidden">
          <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
             <h2 className="text-slate-900 mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Revolutionize Your <br />Warehouse Management Today</h2>
             <p className="text-slate-500 text-lg mb-12 font-medium">Join businesses that have scaled their operations by 40% with our automated tracking system.</p>
@@ -676,9 +676,9 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
       </section>
 
       {/* ── RELATED PRODUCTS ── */}
-      <section className="py-24 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-slate-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Related Solutions</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

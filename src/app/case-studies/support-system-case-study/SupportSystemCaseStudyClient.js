@@ -68,7 +68,7 @@ export default function SupportSystemCaseStudyClient() {
 
             <motion.p
               variants={fadeInUp}
-              className="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed"
+              className="text-base lg:text-xl text-gray-600 mb-10 leading-relaxed font-medium"
             >
               How Isarva Support System Transformed a Web Design Company from Manual Chaos to a Structured, Data-Driven Workflow
             </motion.p>
@@ -283,8 +283,8 @@ export default function SupportSystemCaseStudyClient() {
                 { title: "Backup Management", desc: "To track the Backup Locations and maintain History", icon: <Server /> },
                 { title: "Advanced Reports and Analytics", desc: "Turns business data into clear, easy-to-read charts that help you make better decisions faster", icon: <TrendingUp /> }
               ].map((mod, i) => (
-                <div key={i} className="bg-[#FDF8F2] p-6 md:p-8 rounded-2xl shadow-sm border border-emerald-50 hover:shadow-lg transition-all md:hover:-translate-y-1 flex flex-col items-center text-center md:items-start md:text-left">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-4 md:mb-6 mx-auto md:mx-0">
+                <div key={i} className="bg-[#FDF8F2] p-6 md:p-8 rounded-2xl shadow-sm border border-emerald-50 hover:shadow-lg transition-all md:hover:-translate-y-1 flex flex-col items-center text-center">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-4 md:mb-6">
                     {mod.icon}
                   </div>
                   <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">{mod.title}</h3>
@@ -513,7 +513,7 @@ export default function SupportSystemCaseStudyClient() {
                 Isarva works closely with every client to understand their specific workflows and delivers a tailored configuration — not a one-size-fits-all product — so that teams can start working efficiently from day one with minimal effort.
               </p>
 
-              <h2 className="text-xl md:text-2xl text-gray-900 mb-6 md:mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">EXPLORE ISARVA SUPPORT PRODUCT — ENQUIRE NOW</h2>
+              <h2 className="text-xl md:text-2xl text-gray-900 mb-6 md:mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Explore Isarva Support Product — Enquire Now</h2>
 
               <Link href="/contact" className="press-illusion-btn-orange bg-orange-600 text-white font-bold py-3 md:py-4 px-8 md:px-10 rounded-full transition-all shadow-lg hover:shadow-orange-500/30 mb-6 md:mb-8 text-sm md:text-base flex items-center justify-center gap-2 w-fit mx-auto">
                 Enquire Now <ArrowRight size={18} />

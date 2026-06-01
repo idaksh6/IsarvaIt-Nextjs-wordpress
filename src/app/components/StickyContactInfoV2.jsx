@@ -62,7 +62,7 @@ export default function StickyContactInfoV2({ socialLinks, showMap = true }) {
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-4 tracking-tight">
               Get in Touch
             </h1>
-            <p className="text-xl text-gray-700 leading-relaxed">
+            <p className="text-base lg:text-xl text-gray-700 leading-relaxed font-medium">
               Have a project in mind? We'd love to hear about it. Send us a message
               and we'll respond within 24 hours.
             </p>

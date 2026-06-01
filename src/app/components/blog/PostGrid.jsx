@@ -42,8 +42,8 @@ export default function PostGrid({ posts, title = "Latest Articles" }) {
   const visiblePosts = posts.slice(0, visibleCount);
 
   return (
-    <section className="max-w-7xl mx-auto px-6 lg:py-16 py-10 border-t border-gray-100">
-      <div className="flex items-center lg:justify-between justify-center lg:mb-16 mb-10">
+    <section className="max-w-7xl mx-auto px-6 py-12 lg:py-16 border-t border-gray-100">
+      <div className="flex items-center lg:justify-between justify-center mb-10">
         <h2 className="text-gray-900 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
           {title}
         </h2>

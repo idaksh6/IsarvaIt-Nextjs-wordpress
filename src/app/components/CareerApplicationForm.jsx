@@ -83,16 +83,12 @@ export default function CareerApplicationForm({ jobTitle, jobSlug }) {
         submitData.append('resume', resume);
       }
 
-      console.log('Submitting job application...');
-
       const response = await fetch('/api/job-application', {
         method: 'POST',
         body: submitData,
       });
 
       const data = await response.json();
-      console.log('Response data:', data);
-
       if (data.success) {
         // Redirect immediately to thank you page with job context
         const queryParams = new URLSearchParams({
@@ -103,7 +99,6 @@ export default function CareerApplicationForm({ jobTitle, jobSlug }) {
         // Don't set isSubmitting to false - we're redirecting away
         router.push(`/thank-you?${queryParams.toString()}`);
       } else {
-        console.error('Application submission failed:', data);
         setSubmitStatus("error");
         
                 // Parse error message for user-friendly display
@@ -142,7 +137,6 @@ export default function CareerApplicationForm({ jobTitle, jobSlug }) {
         }, 7000);
       }
     } catch (error) {
-      console.error('Application submission error:', error);
       setSubmitStatus("error");
       setErrorMessage("Network error. Please check your connection and try again.");
       setIsSubmitting(false);

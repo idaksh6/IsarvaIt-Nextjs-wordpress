@@ -78,7 +78,7 @@ const cardVariants: Variants = {
 
 const WhyPartner = () => {
   return (
-    <section className="py-10 lg:py-16 relative overflow-hidden bg-white">
+    <section className="py-12 lg:py-16 relative overflow-hidden bg-white">
       {/* Antigravity background elements */}
       <motion.div
         variants={bgVariants1}
@@ -156,7 +156,7 @@ const ValueCard = ({ icon, title, desc, index, color }: { icon: any, title: stri
       {/* Subtle glow on hover */}
       <div className={`absolute inset-0 bg-gradient-to-br ${colorVariants[themeColor].split(' ').slice(0, 2).join(' ')} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
-      <div className="relative z-10 flex flex-col items-center text-center sm:items-start sm:text-left">
+      <div className="relative z-10 flex flex-col items-center text-center">
         <div className={`mb-5 md:mb-8 p-3 md:p-4 rounded-2xl bg-gray-50/50 group-hover:scale-110 group-hover:${colorVariants[themeColor].split(' ')[2]} transition-all duration-300 inline-block`}>
           {icon}
         </div>

@@ -1303,6 +1303,7 @@ h6,
 /* ─── Performance Optimizations ───────────────────────── */
 img {
   content-visibility: auto;
+  width: auto;
   height: auto;
 }
 

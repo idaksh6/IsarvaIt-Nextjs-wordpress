@@ -57,9 +57,9 @@ const PartnersFAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-10 lg:py-16 pb-4 lg:pb-4 bg-white relative overflow-hidden">
+    <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-10 md:mb-16">
+        <div className="text-center mb-10">
           <motion.h2
             variants={headingVariants}
             initial="initial"

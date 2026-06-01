@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import {
   motion,
   AnimatePresence,
@@ -89,6 +89,47 @@ const faqData = [
   }
 ];
 
+const storeBadgeClassName =
+  "group inline-flex min-h-[58px] min-w-[210px] cursor-default items-center gap-3.5 rounded-2xl border-2 border-orange-400 bg-white px-4 py-3 shadow-[0_8px_24px_rgba(14,165,233,0.18),0_6px_20px_rgba(249,115,22,0.22)] ring-1 ring-sky-100 transition-all hover:scale-[1.03] hover:border-orange-500 hover:shadow-[0_12px_28px_rgba(14,165,233,0.22),0_10px_24px_rgba(249,115,22,0.3)]";
+
+function GooglePlayStoreBadge() {
+  return (
+    <div className={storeBadgeClassName} aria-label="Get it on Google Play">
+      <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-sky-50 to-orange-50 shadow-inner ring-1 ring-sky-100">
+        <svg className="h-6 w-6" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="#4285F4" d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12 3.84 21.85C3.34 21.61 3 21.09 3 20.5Z" />
+          <path fill="#34A853" d="M16.81 15.12 6.05 21.34 14.54 12.85 16.81 15.12Z" />
+          <path fill="#FBBC04" d="M20.16 10.81C20.5 11.08 20.75 11.5 20.75 12c0 .5-.22.9-.57 1.18L17.89 14.5 15.39 12 17.89 9.5 20.16 10.81Z" />
+          <path fill="#EA4335" d="M6.05 2.66 16.81 8.88 14.54 11.15 6.05 2.66Z" />
+        </svg>
+      </span>
+      <div className="flex flex-col items-start leading-tight">
+        <span className="text-[10px] font-bold uppercase tracking-wider text-orange-600">Get it on</span>
+        <span className="text-[17px] font-extrabold text-sky-900">Google Play</span>
+      </div>
+    </div>
+  );
+}
+
+function AppStoreBadge() {
+  return (
+    <div className={storeBadgeClassName} aria-label="Download on the App Store">
+      <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-sky-50 to-orange-50 shadow-inner ring-1 ring-sky-100">
+        <svg className="h-7 w-7" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            fill="#0369A1"
+            d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+          />
+        </svg>
+      </span>
+      <div className="flex flex-col items-start leading-tight">
+        <span className="text-[10px] font-bold uppercase tracking-wider text-orange-600">Download on the</span>
+        <span className="text-[17px] font-extrabold text-sky-900">App Store</span>
+      </div>
+    </div>
+  );
+}
+
 export default function ProductDetailPremiumCRM({
   product,
   relatedProducts,
@@ -141,7 +182,7 @@ export default function ProductDetailPremiumCRM({
               </span>
               <span style={{ color: SKY }}>.</span>
             </h1>
-            <p className="text-base text-[#444444] mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base lg:text-xl text-[#444444] mb-8 max-w-3xl mx-auto leading-relaxed font-medium">
               Isarva CRM is a cloud-based application designed to manage and nurture business relationships with leads, deals, companies, and contacts. It provides powerful tools for tracking opportunities, organizing customer data, and delivering actionable insights to improve sales performance and customer satisfaction.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -238,7 +279,7 @@ export default function ProductDetailPremiumCRM({
       </section>
 
       {/* 2. Why Businesses Need a CRM Section */}
-      <section className="lg:py-24 py-10 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 lg:text-left text-center">
             {/* Left Side - Image (Sticky on Desktop) */}
@@ -383,9 +424,9 @@ export default function ProductDetailPremiumCRM({
       </div>
 
       {/* 4. How Isarva CRM Works Section */}
-      <section className="py-10 lg:py-24 bg-white relative overflow-hidden">
+      <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
         <div className="w-full max-w-7xl mx-auto px-6">
-          <div className="text-center mb-8 md:mb-16">
+          <div className="text-center mb-10">
             <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-3 bg-white px-4 py-2 rounded-full border border-[#0EA5E9]/20 shadow-sm">
               PROCESS
             </span>
@@ -412,9 +453,9 @@ export default function ProductDetailPremiumCRM({
       </section>
 
       {/* 5. Why Choose Isarva CRM Section */}
-      <section className="py-10 lg:py-24 bg-slate-50 relative overflow-hidden">
+      <section className="py-12 lg:py-16 bg-slate-50 relative overflow-hidden">
         <div className="w-full max-w-7xl mx-auto px-6">
-          <div className="text-center mb-8 md:mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
               Why Choose <span className="text-[#0EA5E9]">Isarva CRM</span>
             </h2>
@@ -423,8 +464,8 @@ export default function ProductDetailPremiumCRM({
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {whyChooseData.map((item, i) => (
-              <div key={i} className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 text-center lg:text-left">
-                <div className="text-4xl mb-6 flex justify-center lg:justify-start">{item.icon}</div>
+              <div key={i} className="flex flex-col items-center bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 text-center">
+                <div className="text-4xl mb-6">{item.icon}</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{item.desc}</p>
               </div>
@@ -434,36 +475,24 @@ export default function ProductDetailPremiumCRM({
       </section>
 
       {/* 6. Mobile App CTA Section */}
-      <section className="py-10 lg:py-20 bg-white relative overflow-hidden">
+      <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
         <div className="w-full lg:container mx-auto px-6 max-w-7xl">
           <div className="relative">
-            {/* Offset white border background */}
-            <div className="absolute inset-0 translate-x-3 translate-y-3 lg:translate-x-4 lg:translate-y-4 rounded-[2.5rem] border-[1.5px] border-gray-300 bg-white z-0 hidden md:block"></div>
+            {/* Offset border background */}
+            <div className="absolute inset-0 z-0 hidden translate-x-3 translate-y-3 rounded-[2.5rem] border-[1.5px] border-violet-200/70 bg-gradient-to-br from-orange-50 via-sky-50 to-violet-100 md:block lg:translate-x-4 lg:translate-y-4" />
 
-            {/* Main Yellow Box */}
-            <div className="bg-[#FACC15] rounded-[2.5rem] p-8 lg:p-12 xl:p-16 flex flex-col lg:flex-row items-center gap-10 lg:gap-16 relative z-10 border border-gray-100/50 shadow-sm">
+            {/* Main gradient box */}
+            <div className="relative z-10 overflow-hidden rounded-[2.5rem] border border-sky-200/80 bg-gradient-to-br from-sky-100 via-[#eef6ff] to-violet-100 p-8 shadow-xl shadow-sky-200/40 lg:p-12 xl:p-16">
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-orange-100/60 via-transparent to-violet-200/40" />
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_15%,rgba(255,255,255,0.9),transparent_45%)]" />
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_90%_85%,rgba(251,207,232,0.35),transparent_50%)]" />
+              <div className="pointer-events-none absolute -top-20 -right-16 h-64 w-64 rounded-full bg-sky-200/50 blur-3xl" />
+              <div className="pointer-events-none absolute -bottom-16 -left-12 h-56 w-56 rounded-full bg-violet-200/40 blur-3xl" />
+
+              <div className="relative flex flex-col items-center gap-10 lg:flex-row lg:gap-16">
 
               {/* Left Side: Images */}
-              <div className="w-full lg:w-1/2 flex justify-center lg:justify-center relative">
-                {/* Decorative Elements */}
-                {/* <div className="absolute top-0 right-10 opacity-60 hidden md:block">
-                  <svg width="80" height="40" viewBox="0 0 80 40" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4" className="text-gray-900">
-                    <path d="M5,35 Q20,5 40,20 T75,10" fill="none" />
-                  </svg>
-                </div> */}
-                {/* <div className="absolute top-10 right-0 opacity-60 hidden md:block">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gray-900">
-                    <rect x="6" y="6" width="12" height="12" rx="2" transform="rotate(15 12 12)" />
-                    <circle cx="12" cy="16" r="1" fill="currentColor" />
-                    <path d="M9 10h6" strokeLinecap="round" />
-                  </svg>
-                </div> */}
-                {/* <div className="absolute top-5 right-20 opacity-60 hidden md:block">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gray-900">
-                    <path d="M12 2v20m10-10H2" strokeLinecap="round" transform="rotate(45 12 12)" />
-                  </svg>
-                </div> */}
-
+              <div className="relative flex w-full justify-center lg:w-1/2 lg:justify-center">
                 <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -474,21 +503,24 @@ export default function ProductDetailPremiumCRM({
                   <img
                     src="/products/crm/mockups/CRM-mobile-mockup.png"
                     alt="Isarva CRM Mobile App"
-                    className="w-full h-auto object-contain mix-blend-multiply scale-105"
+                    className="h-auto w-full scale-105 object-contain drop-shadow-2xl"
                   />
                 </motion.div>
               </div>
 
               {/* Right Side: Content */}
-              <div className="w-full lg:w-1/2 flex flex-col gap-6">
+              <div className="flex w-full flex-col gap-6 lg:w-1/2">
                 <motion.h2
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className="text-3xl lg:text-4xl xl:text-5xl font-black text-gray-900 leading-[1.15]"
+                  className="text-3xl font-black leading-[1.15] text-sky-900 lg:text-4xl xl:text-5xl"
                 >
-                  Say hello with Isarva CRM Mobile App
+                  Say hello with{" "}
+                  <span className="bg-gradient-to-r from-sky-600 to-violet-600 bg-clip-text text-transparent">
+                    Isarva CRM Mobile App
+                  </span>
                 </motion.h2>
 
                 <motion.ul
@@ -496,7 +528,7 @@ export default function ProductDetailPremiumCRM({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="space-y-4 text-gray-900 font-semibold lg:text-base xl:text-lg"
+                  className="space-y-4 text-base font-medium leading-relaxed text-slate-700 lg:text-xl xl:text-xl"
                 >
                   {[
                     "Get organized and take control every day",
@@ -506,7 +538,7 @@ export default function ProductDetailPremiumCRM({
                     "Communicate seamlessly with your team and clients"
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <svg className="w-5 h-5 flex-shrink-0 text-gray-900 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="mt-1 h-5 w-5 flex-shrink-0 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
                       </svg>
                       <span className="leading-snug">{item}</span>
@@ -519,41 +551,23 @@ export default function ProductDetailPremiumCRM({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.4 }}
-                  className="flex flex-col sm:flex-row gap-4 mt-4"
+                  className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-stretch"
                 >
-                  {/* Google Play Button */}
-                  <button type="button" className="bg-[#2A2A2A] hover:bg-black text-white px-6 py-3 rounded-xl flex items-center justify-center gap-3 transition-colors shadow-lg shadow-black/10">
-                    <svg className="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M17.523 15.341l-2.433-2.435 2.443-2.445 3.327 1.884a1 1 0 010 1.737l-3.337 1.88-3.136-1.78zM3.469 3.018a1.5 1.5 0 00-.469 1.092v15.78a1.5 1.5 0 00.469 1.092l10.87-10.87L3.469 3.018zM14.896 11.664l-1.077-1.078L4.624 2.221a1.5 1.5 0 011.696-.06l8.576 4.847-1.127 1.135L14.896 11.664zM14.896 14.153l-1.127-1.135 8.576-4.847a1.5 1.5 0 011.696.06L4.624 21.84a1.5 1.5 0 001.696.06l8.576-4.847z" />
-                    </svg>
-                    <div className="flex flex-col items-start">
-                      <span className="text-[10px] uppercase tracking-wider opacity-80 leading-none">Get it on</span>
-                      <span className="text-[17px] font-bold leading-tight">Playstore</span>
-                    </div>
-                  </button>
-
-                  {/* App Store Button */}
-                  <button type="button" className="bg-[#2A2A2A] hover:bg-black text-white px-6 py-3 rounded-xl flex items-center justify-center gap-3 transition-colors shadow-lg shadow-black/10">
-                    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.19 2.31-.88 3.5-.8 1.5.05 2.76.65 3.52 1.63-3.13 1.78-2.61 6.07.41 7.23-.73 1.73-1.57 3.23-2.51 4.11zm-3.54-15c-.24 1.63-1.42 3.12-3.11 3.29-.31-1.65 1.11-3.23 2.92-3.48.06.06.13.13.19.19z" />
-                    </svg>
-                    <div className="flex flex-col items-start">
-                      <span className="text-[10px] uppercase tracking-wider opacity-80 leading-none">Download from</span>
-                      <span className="text-[17px] font-bold leading-tight">Appstore</span>
-                    </div>
-                  </button>
+                  <GooglePlayStoreBadge />
+                  <AppStoreBadge />
                 </motion.div>
               </div>
 
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* 6. FAQ Section */}
-      <section className="py-10 lg:py-24 bg-white relative overflow-hidden">
+      <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
         <div className="w-full max-w-7xl mx-auto px-6 max-w-7xl">
-          <div className="text-center mb-8 md:mb-16">
+          <div className="text-center mb-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -578,7 +592,7 @@ export default function ProductDetailPremiumCRM({
       </section>
 
       {/* 4. CTA Section */}
-      <section className="py-10 lg:py-16 bg-white relative overflow-hidden">
+      <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
         {/* Background Decoration */}
         <div className="absolute inset-0 bg-gradient-to-br from-sky-50 via-transparent to-blue-50"></div>
 
@@ -636,13 +650,13 @@ export default function ProductDetailPremiumCRM({
       </section>
 
       {/* Explore More Products Section */}
-      <section className="py-10 lg:py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      <section className="py-12 lg:py-16 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230EA5E9' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
 
         <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -678,42 +692,46 @@ export default function ProductDetailPremiumCRM({
                     href={`/product/${prod.slug}`}
                     className="block h-full"
                   >
-                    <div className="relative rounded-3xl p-8 h-full bg-white border-2 border-gray-100 shadow-lg flex flex-col">
-                      <div className="relative text-center md:text-left flex-grow">
+                    <div className="relative rounded-3xl p-8 h-full bg-white border-2 border-gray-100 shadow-lg flex flex-col items-center text-center">
+                      {/* Category Badge */}
+                      <div className="absolute -top-11 -right-2 bg-white text-[#0EA5E9] text-xs font-bold px-3 py-1 rounded-full border-2 border-[#0EA5E9]/30 shadow-md">
+                        {prod.category}
+                      </div>
+
+                      <div className="relative flex flex-col items-center w-full">
                         {/* Icon */}
-                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7] flex items-center justify-center mb-6 shadow-lg mx-auto md:mx-0">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#0EA5E9] to-[#0284C7] flex items-center justify-center mb-6 shadow-lg mx-auto">
                           <span className="text-3xl">{prod.icon}</span>
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                        <h3 className="text-2xl font-bold text-gray-900 mb-1 min-h-[3rem] line-clamp-2 leading-tight">
                           {prod.title}
                         </h3>
 
                         {/* Tagline */}
-                        {prod.tagline && (
-                          <p className="text-[#0EA5E9] font-semibold mb-3">
-                            {prod.tagline}
-                          </p>
-                        )}
-
-                        {/* Description */}
-                        <p className="text-gray-600 leading-relaxed mb-6 text-sm">
-                          {prod.shortDescription}
-                        </p>
-
-                        {/* Category Badge */}
-                        <div className="absolute -top-11 -right-2 bg-white text-[#0EA5E9] text-xs font-bold px-3 py-1 rounded-full border-2 border-[#0EA5E9]/30 shadow-md">
-                          {prod.category}
+                        <div className="mb-2 flex min-h-[3.25rem] w-full items-start justify-center">
+                          {prod.tagline ? (
+                            <p className="text-[#0EA5E9] font-semibold line-clamp-2 leading-snug">
+                              {prod.tagline}
+                            </p>
+                          ) : null}
                         </div>
                       </div>
 
-                      {/* CTA Link at bottom */}
-                      <div className="flex items-center justify-center md:justify-start gap-2 text-[#0EA5E9] font-semibold mt-auto pt-4 border-t border-gray-50">
-                        Explore Product
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
+                      <div className="mt-auto flex w-full flex-col">
+                        {/* Description */}
+                        <p className="text-gray-600 leading-relaxed mb-2 text-sm min-h-[4.75rem] line-clamp-4">
+                          {prod.shortDescription}
+                        </p>
+
+                        {/* CTA Link at bottom */}
+                        <div className="flex items-center justify-start gap-2 text-[#0EA5E9] font-semibold pt-2 border-t border-gray-50 w-full">
+                          Explore Product
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </div>
                       </div>
                     </div>
                   </Link>
@@ -980,7 +998,7 @@ function CRMFeatureSection() {
   const activeFeature = crmFeatures.find((f) => f.id === activeId) || crmFeatures[0];
 
   return (
-    <section className="py-10 lg:py-20 overflow-hidden bg-[#F7F7F7]">
+    <section className="py-12 lg:py-16 overflow-hidden bg-[#F7F7F7]">
       <div className="w-full max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-10">
@@ -1331,7 +1349,41 @@ const mobileRightFeatures = [
 function CRMTabSection({ setSelectedImage }) {
   const [activeTab, setActiveTab] = useState(crmTabData[0].id);
   const [activeId, setActiveId] = useState(null);
+  const sidebarRef = useRef(null);
+  const contentCardRef = useRef(null);
   const currentTab = crmTabData.find(t => t.id === activeTab);
+
+  useLayoutEffect(() => {
+    const syncHeights = () => {
+      if (!sidebarRef.current || !contentCardRef.current) return;
+
+      if (window.innerWidth < 1024) {
+        contentCardRef.current.style.minHeight = "";
+        contentCardRef.current.style.maxHeight = "";
+        return;
+      }
+
+      const sidebarHeight = sidebarRef.current.offsetHeight;
+      contentCardRef.current.style.minHeight = `${sidebarHeight}px`;
+      contentCardRef.current.style.maxHeight = `${sidebarHeight}px`;
+    };
+
+    syncHeights();
+    window.addEventListener("resize", syncHeights);
+
+    const observer =
+      sidebarRef.current && typeof ResizeObserver !== "undefined"
+        ? new ResizeObserver(syncHeights)
+        : null;
+    if (sidebarRef.current && observer) {
+      observer.observe(sidebarRef.current);
+    }
+
+    return () => {
+      window.removeEventListener("resize", syncHeights);
+      observer?.disconnect();
+    };
+  }, [activeTab]);
 
   const scrollToTab = (tabId) => {
     setActiveTab(tabId);
@@ -1346,9 +1398,9 @@ function CRMTabSection({ setSelectedImage }) {
   };
 
   return (
-    <section className="py-10 lg:py-24 bg-slate-50 overflow-hidden">
+    <section className="py-12 lg:py-16 bg-slate-50 overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-6">
-        <div className="text-center mb-14 ">
+        <div className="text-center mb-10 ">
           <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
             Powerful <span className="text-[#0EA5E9]">Isarva CRM</span> Features
           </h2>
@@ -1378,9 +1430,9 @@ function CRMTabSection({ setSelectedImage }) {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 lg:items-start">
           {/* Desktop Sidebar (Left Side) */}
-          <div className="hidden lg:block lg:col-span-4 w-full">
+          <div ref={sidebarRef} className="hidden lg:block lg:col-span-4 w-full">
             <div className="flex flex-col gap-6 w-full">
               {crmTabData.map((tab) => (
                 <button
@@ -1405,7 +1457,10 @@ function CRMTabSection({ setSelectedImage }) {
             {/* Dynamic Gradient Glow Shadow */}
             <div className={`absolute -inset-4 bg-gradient-to-br ${currentTab.color} opacity-20 blur-2xl rounded-[40px] transition-all duration-700`}></div>
 
-            <div className="bg-white rounded-[24px] lg:rounded-[32px] p-6 lg:p-10 lg:pt-8 shadow-xl border border-slate-100 relative overflow-hidden flex flex-col w-full mt-0">
+            <div
+              ref={contentCardRef}
+              className="bg-white rounded-[24px] lg:rounded-[32px] p-6 lg:p-10 lg:pt-8 shadow-xl border border-slate-100 relative overflow-hidden flex flex-col w-full mt-0 lg:h-full"
+            >
               {/* Edge Shades / Decorative Blobs */}
               <div className={`absolute -top-20 -left-20 w-64 h-64 bg-gradient-to-br ${currentTab.color} opacity-[0.07] rounded-full blur-[80px]`}></div>
               <div className={`absolute -bottom-20 -right-20 w-64 h-64 bg-gradient-to-br ${currentTab.color} opacity-[0.07] rounded-full blur-[80px]`}></div>
@@ -1417,14 +1472,14 @@ function CRMTabSection({ setSelectedImage }) {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.4 }}
-                  className=" flex flex-col gap-3 items-center w-full relative z-10"
+                  className="flex flex-col gap-3 items-center w-full relative z-10 lg:flex-1 lg:min-h-0"
                 >
                   {/* Content */}
-                  <div className="order-2 md:order-1 flex flex-col items-center md:items-start text-center md:text-left">
+                  <div className="order-2 md:order-1 flex flex-col items-center md:items-start text-center md:text-left shrink-0">
                     <h3 className="text-2xl lg:text-3xl font-black text-gray-900 mt-2 md:mt-0 mb-4 w-full">{currentTab.title}</h3>
-                    <p className="text-sm lg:text-base text-gray-600 mb-6 lg:mb-8 leading-relaxed w-full">{currentTab.description}</p>
+                    <p className="text-sm lg:text-base text-gray-600 mb-6 lg:mb-6 leading-relaxed w-full">{currentTab.description}</p>
 
-                    <div className="space-y-4 lg:space-y-6 mb-0 lg:mb-10 w-full flex flex-col items-center md:items-start">
+                    <div className="space-y-4 lg:space-y-5 mb-0 lg:mb-6 w-full flex flex-col items-center md:items-start">
                       {currentTab.points.map((pt, i) => (
                         <div key={i} className="flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-4 text-center sm:text-left">
                           <div className={`w-5 h-5 lg:w-6 lg:h-6 rounded-full bg-gradient-to-br ${currentTab.color} flex items-center justify-center flex-shrink-0 mt-1`}>
@@ -1442,18 +1497,18 @@ function CRMTabSection({ setSelectedImage }) {
                   </div>
 
                   {/* Image with Popup trigger */}
-                  <div className="relative order-1 md:order-2 flex justify-center w-full">
+                  <div className="relative order-1 md:order-2 flex justify-center w-full lg:flex-1 lg:min-h-0">
                     <div className={`absolute inset-0 bg-gradient-to-br ${currentTab.color} opacity-10 blur-3xl rounded-full`}></div>
                     <motion.div
                       initial={{ scale: 0.95, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ delay: 0.2 }}
-                      className="relative z-10 inline-block w-full "
+                      className="relative z-10 inline-block w-full h-full flex items-center justify-center"
                     >
                       <img
                         src={currentTab.image}
                         alt={currentTab.title}
-                        className="w-full h-auto max-h-[350px] lg:max-h-[500px] object-contain drop-shadow-2xl rounded-2xl"
+                        className="w-full h-auto max-h-[350px] lg:max-h-full object-contain drop-shadow-2xl rounded-2xl"
                       />
                       {currentTab.id === "mobile" && (
                         <>

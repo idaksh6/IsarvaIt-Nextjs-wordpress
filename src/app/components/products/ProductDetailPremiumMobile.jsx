@@ -67,7 +67,7 @@ export default function ProductDetailPremiumMobile({
               </span>
               <span style={{ color: VIOLET }}>.</span>
             </h1>
-            <p className="text-base text-[#444444] mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base lg:text-xl text-[#444444] mb-8 max-w-3xl mx-auto leading-relaxed font-medium">
               This software basically designed for mobile repair agencies to manage their customer mobile repair work (job sheets) easily and effectively. Here software admin or technician will create job sheet for users mobile repair works. Job sheet consists of customer information, customer mobile defect description and job sheet status.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -130,7 +130,7 @@ export default function ProductDetailPremiumMobile({
       </section>
 
       {/* 2. Core Mobile Service Section */}
-      <section className="lg:py-32 py-14 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 lg:text-left text-center">
             {/* Left Side - Image (Sticky on Desktop) */}
@@ -196,7 +196,7 @@ export default function ProductDetailPremiumMobile({
       </div>
 
       {/* 4. CTA Section */}
-      <section className="py-16 bg-white relative overflow-hidden">
+      <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
         {/* Background Decoration */}
         <div className="absolute inset-0 bg-gradient-to-br from-violet-50 via-transparent to-purple-50"></div>
 
@@ -262,13 +262,13 @@ export default function ProductDetailPremiumMobile({
       </section>
 
       {/* Explore More Products Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      <section className="py-12 lg:py-16 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238B5CF6' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
         
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -479,10 +479,10 @@ function MobileFeatureSection() {
   const activeFeature = mobileFeatures.find((f) => f.id === activeId) || mobileFeatures[0];
 
   return (
-    <section className="py-20 overflow-hidden bg-[#F7F7F7]">
+    <section className="py-12 lg:py-16 overflow-hidden bg-[#F7F7F7]">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-10">
           <span className="block text-[10px] font-black text-[#8B5CF6] tracking-[0.28em] uppercase mb-2.5">
             SOFTWARE FEATURES
           </span>

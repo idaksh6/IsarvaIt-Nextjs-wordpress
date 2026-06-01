@@ -56,7 +56,7 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
   };
 
   return (
-    <section className="relative min-h-screen md:min-h-[90vh] flex items-center overflow-hidden pt-32 pb-10 lg:pt-32 md:pb-24 bg-gradient-to-br from-[#f0fdf4] via-[#ecfdf5] to-white">
+    <section className="relative min-h-screen md:min-h-[90vh] flex items-center overflow-hidden pt-32 lg:pt-40 pb-12 lg:pb-16 bg-gradient-to-br from-[#f0fdf4] via-[#ecfdf5] to-white">
       {/* Background Subtle mesh and Grid */}
       <div className="absolute inset-0 z-0 opacity-40 bg-mesh-green pointer-events-none" />
       <div className="absolute inset-0 z-0 bg-dots opacity-[0.1] pointer-events-none" />
@@ -94,7 +94,7 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="mt-4 text-xl lg:text-2xl text-[#53606b] leading-relaxed font-medium mx-auto lg:mx-0 mb-10"
+              className="mt-4 text-base lg:text-xl text-[#53606b] leading-relaxed font-medium mx-auto lg:mx-0 mb-10"
             >
               Empower your business with Isarva Infotech's Channel Partner Program. Deliver world-class enterprise solutions without the overhead of an in-house team.
             </motion.p>

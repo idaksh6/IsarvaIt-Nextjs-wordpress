@@ -59,13 +59,13 @@ const footerVariants: Variants = {
 
 const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
   return (
-    <section className="py-10 lg:py-16 relative overflow-hidden bg-[#FDF8F2]">
+    <section className="py-12 lg:py-16 relative overflow-hidden bg-[#FDF8F2]">
       {/* Background Subtle mesh and Grid for consistency */}
       <div className="absolute inset-0 z-0 opacity-20 bg-mesh-green pointer-events-none" />
       <div className="absolute inset-0 z-0 bg-dots opacity-[0.05] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-10 md:mb-12">
+        <div className="text-center mb-10">
           <motion.h2
             variants={headingVariants}
             initial="initial"
@@ -98,7 +98,7 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
               {/* Header Bar */}
               <div className="bg-gradient-to-br from-amber-400 via-yellow-300 to-orange-600 py-10 md:py-12 text-center relative flex flex-col items-center justify-center gap-3 overflow-hidden">
                 <div className="absolute inset-0 opacity-25 pointer-events-none mix-blend-overlay">
-                  <Image src="/partners/gold-tier.png" alt="" fill className="object-cover scale-150 -rotate-12" />
+                  <Image src="/partners/gold-tier.png" alt="" fill sizes="400px" className="object-cover scale-150 -rotate-12" />
                 </div>
                 <Crown className="w-12 h-12 text-white relative z-10 drop-shadow-[0_0_20px_rgba(255,255,255,0.5)]" />
                 <h3 className="text-5xl md:text-6xl font-black text-white uppercase tracking-[0.2em] relative z-10 drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)]">Gold</h3>
@@ -111,7 +111,7 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
                   WebkitMaskImage: 'radial-gradient(circle at center, black 20%, transparent 75%)'
                 }}
               >
-                <Image src="/partners/gold-tier.png" alt="Gold Tier" fill className="object-contain" />
+                <Image src="/partners/gold-tier.png" alt="Gold Tier" fill sizes="320px" className="object-contain" />
               </div>
 
               <div className="p-5 sm:p-6 lg:p-8 relative z-10 flex flex-col flex-1 h-full">
@@ -164,7 +164,7 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
             {/* Header Bar */}
             <div className="bg-gradient-to-br from-slate-400 via-slate-200 to-slate-500 py-10 md:py-12 text-center flex flex-col items-center justify-center gap-3 relative overflow-hidden">
               <div className="absolute inset-0 opacity-25 pointer-events-none mix-blend-overlay">
-                <Image src="/partners/silver-tier.png" alt="" fill className="object-cover scale-150 rotate-12" />
+                <Image src="/partners/silver-tier.png" alt="" fill sizes="400px" className="object-cover scale-150 rotate-12" />
               </div>
               <Shield className="w-12 h-12 text-white relative z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]" />
               <h3 className="font-display text-5xl md:text-6xl font-black text-white uppercase tracking-[0.2em] relative z-10 drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)]">Silver</h3>
@@ -177,7 +177,7 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
                 WebkitMaskImage: 'radial-gradient(circle at center, black 20%, transparent 75%)'
               }}
             >
-              <Image src="/partners/silver-tier.png" alt="Silver Tier" fill className="object-contain" />
+              <Image src="/partners/silver-tier.png" alt="Silver Tier" fill sizes="288px" className="object-contain" />
             </div>
 
             <div className="p-5 sm:p-6 lg:p-8 relative z-10 flex flex-col flex-1 h-full">
@@ -229,7 +229,7 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
             {/* Header Bar */}
             <div className="bg-gradient-to-br from-orange-800 via-orange-600 to-orange-900 py-10 md:py-12 text-center flex flex-col items-center justify-center gap-3 relative overflow-hidden">
               <div className="absolute inset-0 opacity-40 pointer-events-none">
-                <Image src="/partners/bronze-tier.png" alt="" fill className="object-cover scale-125" />
+                <Image src="/partners/bronze-tier.png" alt="" fill sizes="400px" className="object-cover scale-125" />
               </div>
               <Key className="w-12 h-12 text-orange-100 relative z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]" />
               <h3 className="font-display text-5xl md:text-6xl font-black text-white uppercase tracking-[0.2em] relative z-10 drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)]">Bronze</h3>

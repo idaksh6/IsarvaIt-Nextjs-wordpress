@@ -67,7 +67,7 @@ export default function ProductDetailPremiumDealer({
               </span>
               <span style={{ color: FUCHSIA }}>.</span>
             </h1>
-            <p className="text-base text-[#444444] mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base lg:text-xl text-[#444444] mb-8 max-w-3xl mx-auto leading-relaxed font-medium">
               Dealer Management and Dealer Article/Circular Software is a specialized platform designed to streamline the onboarding and management of dealers, as well as the distribution of articles and circulars. This software ensures efficient communication, secure access, and organized management of dealer-related activities and content.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -130,7 +130,7 @@ export default function ProductDetailPremiumDealer({
       </section>
 
       {/* 2. Core Dealer Management Section */}
-      <section className="lg:py-32 py-14 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 lg:text-left text-center">
             {/* Left Side - Image (Sticky on Desktop) */}
@@ -196,7 +196,7 @@ export default function ProductDetailPremiumDealer({
       </div>
 
       {/* 4. CTA Section */}
-      <section className="py-16 bg-white relative overflow-hidden">
+      <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
         {/* Background Decoration */}
         <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-50 via-transparent to-pink-50"></div>
 
@@ -262,13 +262,13 @@ export default function ProductDetailPremiumDealer({
       </section>
 
       {/* Explore More Products Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      <section className="py-12 lg:py-16 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D946EF' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -287,7 +287,7 @@ export default function ProductDetailPremiumDealer({
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
             {allProducts
               .filter(p => p.slug !== product.slug && !p.slug.includes("staging") && !p.slug.includes("-old") && p.slug !== "bill-soft")
               .slice(0, 3)
@@ -298,47 +298,52 @@ export default function ProductDetailPremiumDealer({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="h-full"
                 >
                   <Link
                     href={`/product/${prod.slug}`}
                     className="block h-full"
                   >
-                    <div className="relative rounded-3xl p-8 h-full bg-white border-2 border-gray-100 shadow-lg flex flex-col">
-                      <div className="relative text-center md:text-left flex-grow">
+                    <div className="relative rounded-3xl p-8 h-full bg-white border-2 border-gray-100 shadow-lg flex flex-col items-center text-center">
+                      {/* Category Badge */}
+                      <div className="mb-4 bg-[#D946EF]/10 text-[#D946EF] text-xs font-bold px-3 py-1 rounded-full border-2 border-[#D946EF]/30 shadow-md whitespace-nowrap">
+                        {prod.category}
+                      </div>
+
+                      <div className="relative flex flex-col items-center w-full">
                         {/* Icon */}
-                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#D946EF] to-[#C026D3] flex items-center justify-center mb-6 shadow-lg mx-auto md:mx-0">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#D946EF] to-[#C026D3] flex items-center justify-center mb-6 shadow-lg mx-auto">
                           <span className="text-3xl">{prod.icon}</span>
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                        <h3 className="text-2xl font-bold text-gray-900 mb-1 min-h-[3rem] line-clamp-2 leading-tight">
                           {prod.title}
                         </h3>
 
                         {/* Tagline */}
-                        {prod.tagline && (
-                          <p className="text-[#D946EF] font-semibold mb-3">
-                            {prod.tagline}
-                          </p>
-                        )}
-
-                        {/* Description */}
-                        <p className="text-gray-600 leading-relaxed mb-6 text-sm">
-                          {prod.shortDescription}
-                        </p>
-
-                        {/* Category Badge */}
-                        <div className="absolute -top-11 -right-2 bg-[#D946EF]/10 text-[#D946EF] text-xs font-bold px-3 py-1 rounded-full border-2 border-[#D946EF]/30 shadow-md">
-                          {prod.category}
+                        <div className="mb-2 flex min-h-[3.25rem] w-full items-start justify-center">
+                          {prod.tagline ? (
+                            <p className="text-[#D946EF] font-semibold line-clamp-2 leading-snug">
+                              {prod.tagline}
+                            </p>
+                          ) : null}
                         </div>
                       </div>
 
-                      {/* CTA Link at bottom */}
-                      <div className="flex items-center justify-center md:justify-start gap-2 text-[#D946EF] font-semibold mt-auto pt-4 border-t border-gray-50">
-                        Explore Product
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
+                      <div className="mt-auto flex w-full flex-col">
+                        {/* Description */}
+                        <p className="text-gray-600 leading-relaxed mb-2 text-sm min-h-[4.75rem] line-clamp-4">
+                          {prod.shortDescription}
+                        </p>
+
+                        {/* CTA Link at bottom */}
+                        <div className="flex items-center justify-center gap-2 text-[#D946EF] font-semibold pt-2 border-t border-gray-50 w-full">
+                          Explore Product
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </div>
                       </div>
                     </div>
                   </Link>
@@ -546,7 +551,7 @@ function DealerFeatureSection() {
   const activeFeature = currentFeatures.find((f) => f.id === activeId) || currentFeatures[0];
 
   return (
-    <section className="py-20 overflow-hidden bg-[#F7F7F7]">
+    <section className="py-12 lg:py-16 overflow-hidden bg-[#F7F7F7]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-10">

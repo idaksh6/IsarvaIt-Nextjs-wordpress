@@ -544,7 +544,7 @@ export default function ProductDetailPremiumBillSoft({
                     </h1>
                   </div>
 
-                  <div className="text-lg lg:text-xl text-gray-600 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0 font-medium border-0 lg:border-l-2 border-sky-200 pl-0 lg:pl-8 space-y-4">
+                  <div className="text-base lg:text-xl text-gray-600 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0 font-medium border-0 lg:border-l-2 border-sky-200 pl-0 lg:pl-8 space-y-4">
                     <p>Isarva BillSoft is an <span className="text-blue-600 font-bold">all-in-one business management solution</span> designed to handle billing, inventory, branches, and financial operations seamlessly.</p>
                     <p>It’s built not just for stock tracking—but for <span className="text-[#6f3ce3] font-bold">real business workflows</span> including sales, purchases, approvals, and multi-branch operations.</p>
                   </div>
@@ -943,7 +943,7 @@ export default function ProductDetailPremiumBillSoft({
                   )}
 
                   {/* Final CTA Section */}
-                  <section className="py-10 lg:py-16 bg-white relative overflow-hidden border border-gray-100 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.06)]">
+                  <section className="py-12 lg:py-16 bg-white relative overflow-hidden border border-gray-100 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.06)]">
 
 
                     <div className="relative z-10 px-8 lg:px-16 text-center max-w-4xl mx-auto">
@@ -974,9 +974,9 @@ export default function ProductDetailPremiumBillSoft({
         </div>
 
         {/* Full-width Repeated Sections */}
-        <div className="w-full max-w-7xl mx-auto px-6 py-16">
+        <div className="w-full max-w-7xl mx-auto px-6 py-12 lg:py-16">
           {/* Theme Customization Section */}
-          <section className="py-10 lg:py-16 bg-white border border-gray-100 rounded-[3rem]  overflow-hidden">
+          <section className="py-12 lg:py-16 bg-white border border-gray-100 rounded-[3rem]  overflow-hidden">
             <div className="px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center text-center lg:text-left">
               <div>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-fuchsia-50 text-fuchsia-600 font-bold text-xs mb-6 uppercase tracking-widest">
@@ -1003,9 +1003,9 @@ export default function ProductDetailPremiumBillSoft({
         <BillsoftFeatureSection />
 
         {/* FAQ Section */}
-        <section className="py-10 lg:py-16  wp-aurora-gradient">
+        <section className="py-12 lg:py-16  wp-aurora-gradient">
           <div className="w-full max-w-7xl px-6 rounded-[3rem] mx-auto" >
-            <h2 className="text-gray-900 mb-12 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Frequently Asked Questions</h2>
+            <h2 className="text-gray-900 mb-6 text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Frequently Asked Questions</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
               {[
                 { q: "What is Isarva BillSoft Application?", a: "It is a complete billing, inventory, and business management system designed for multi-branch operations." },
@@ -1049,9 +1049,9 @@ export default function ProductDetailPremiumBillSoft({
         </section>
 
         {/* Related Products Section */}
-        <section className="py-10 lg:py-16 bg-white">
+        <section className="py-12 lg:py-16 bg-white">
           <div className="w-full max-w-7xl mx-auto px-6">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -1370,7 +1370,7 @@ const uniqueFeaturesData = [
 
 function BillsoftUniqueFeatures() {
   return (
-    <section className="py-10 lg:py-16 relative overflow-hidden bg-white">
+    <section className="py-12 lg:py-16 relative overflow-hidden bg-white">
       {/* Vibrant Gradient Backgrounds */}
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-sky-50 via-white to-blue-50/50"></div>
 
@@ -1380,7 +1380,7 @@ function BillsoftUniqueFeatures() {
       <div className="absolute bottom-[-10%] left-[20%] w-[45vw] h-[45vw] rounded-full bg-emerald-300/30 mix-blend-multiply filter blur-[100px]"></div>
 
       <div className="max-w-7xl mx-auto px-6 sm:px-6 relative z-10 w-full">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <span className="block text-[14px] font-black text-sky-600 tracking-[0.28em] uppercase mb-2.5">
             Exclusive Capabilities
           </span>
@@ -1435,7 +1435,7 @@ function BillsoftFeatureSection() {
   const activeFeature = billsoftFeatures.find((f) => f.id === activeId);
 
   return (
-    <section className="py-10 lg:py-16 overflow-hidden bg-gray-50/50">
+    <section className="py-12 lg:py-16 overflow-hidden bg-gray-50/50">
       <div className="w-full max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-6 ">

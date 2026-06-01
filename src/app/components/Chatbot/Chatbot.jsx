@@ -78,7 +78,7 @@ const Chatbot = () => {
             }),
           });
         } catch (error) {
-          console.error('Failed to save conversation:', error);
+          // Silently ignore save failures
         }
       }
     };

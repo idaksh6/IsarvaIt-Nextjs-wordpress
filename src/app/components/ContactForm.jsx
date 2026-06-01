@@ -48,8 +48,6 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
         itemName
       };
 
-      console.log('Submitting form data:', submissionData);
-
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -59,8 +57,6 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
       });
 
       const data = await response.json();
-      console.log('Response data:', data);
-
       if (data.success) {
         // Determine page type for thank you page
         let type = 'contact';
@@ -87,7 +83,6 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
 
         router.push(`/thank-you?${queryParams.toString()}`);
       } else {
-        console.error('Form submission failed:', data);
         setSubmitStatus("error");
 
         // Parse error message for user-friendly display
@@ -142,7 +137,6 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
         }, 7000);
       }
     } catch (error) {
-      console.error('Form submission error:', error);
       setSubmitStatus("error");
       setErrorMessage("Network error. Please check your connection and try again.");
       setTimeout(() => {

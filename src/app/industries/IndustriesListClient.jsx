@@ -24,6 +24,32 @@ export default function IndustriesListClient({ industriesData }) {
     );
   }, [searchQuery, industriesData]);
 
+  const getLastRowCenterClasses = (index, total) => {
+    const isLastCard = index === total - 1;
+    if (!isLastCard || total <= 1) return { link: "", card: "" };
+
+    const remainderLg = total % 3;
+    const remainderMd = total % 2;
+
+    const linkClasses = [];
+    const cardClasses = [];
+
+    if (remainderMd === 1) {
+      linkClasses.push("md:col-span-2 md:flex md:justify-center");
+      cardClasses.push("md:max-w-[calc(50%-1rem)]");
+    }
+
+    if (remainderLg === 1) {
+      linkClasses.push("lg:col-span-1 lg:col-start-2 lg:block lg:justify-self-auto");
+      cardClasses.push("lg:max-w-none");
+    }
+
+    return {
+      link: linkClasses.join(" "),
+      card: cardClasses.join(" "),
+    };
+  };
+
   // Scroll to industries grid
   const scrollToIndustries = () => {
     if (industriesGridRef.current) {
@@ -81,7 +107,7 @@ export default function IndustriesListClient({ industriesData }) {
             </h1>
 
             {/* Description */}
-            <p className="text-xl lg:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8">
+            <p className="text-base lg:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium mb-8">
               Delivering specialized technology solutions tailored to the unique challenges and opportunities of your industry.
             </p>
 
@@ -179,50 +205,56 @@ export default function IndustriesListClient({ industriesData }) {
             </div>
           ) : (
             /* Industries Grid */
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredIndustries.map((industry, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+              {filteredIndustries.map((industry, index) => {
+                const lastRowCenter = getLastRowCenterClasses(index, filteredIndustries.length);
+
+                return (
                 <Link
                   key={industry.slug}
                   href={`/industry/${industry.slug}`}
                   prefetch={true}
-                  className="group"
+                  className={`group block h-full w-full ${lastRowCenter.link}`}
                 >
-                  <div className="relative rounded-3xl p-8 h-full transition-all duration-300 hover:scale-[1.02] bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg hover:shadow-2xl">
+                  <div className={`relative rounded-3xl p-8 h-full w-full transition-all duration-300 hover:scale-[1.02] bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg hover:shadow-2xl flex flex-col items-center text-center ${lastRowCenter.card}`}>
                     {/* Hover Gradient Effect */}
-                    <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${industry.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
+                    <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${industry.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none`}></div>
 
-                    <div className="relative text-center md:text-left">
+                    <div className="relative w-full flex flex-col items-center text-center flex-1">
+                      {/* Solution Count Badge */}
+                      <div className="mb-4 min-h-[1.75rem] flex items-center justify-center">
+                        <span className="bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full border-2 border-emerald-200 shadow-md whitespace-nowrap">
+                          {industry.solutions?.length || 0}+ Solutions
+                        </span>
+                      </div>
+
                       {/* Icon */}
-                      <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${industry.color} opacity-90 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 mx-auto md:mx-0`}>
+                      <div className={`w-16 h-16 shrink-0 rounded-2xl bg-gradient-to-br ${industry.color} opacity-90 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                         <span className="text-3xl">{industry.icon}</span>
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-emerald-700 transition-colors duration-300">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4 w-full group-hover:text-emerald-700 transition-colors duration-300">
                         {industry.title}
                       </h3>
 
                       {/* Description */}
-                      <p className="text-gray-600 leading-relaxed mb-6">
+                      <p className="text-gray-600 leading-relaxed mb-6 w-full">
                         {industry.shortDescription}
                       </p>
 
                       {/* CTA Link */}
-                      <div className="flex items-center justify-center md:justify-start gap-2 text-emerald-600 font-semibold group-hover:gap-3 transition-all duration-200">
+                      <div className="mt-auto flex items-center justify-center gap-2 text-emerald-600 font-semibold group-hover:gap-3 transition-all duration-200 w-full">
                         Explore Solutions
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                       </div>
-
-                      {/* Solution Count Badge - At right edge overlapping border */}
-                      <div className="absolute -top-11 -right-2 bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full border-2 border-emerald-200 shadow-md">
-                        {industry.solutions?.length || 0}+ Solutions
-                      </div>
                     </div>
                   </div>
                 </Link>
-              ))}
+                );
+              })}
             </div>
           )}
         </div>

@@ -9,7 +9,7 @@ export default function FeaturedSection({ posts }) {
   const sidePosts = posts.slice(1, 4);
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-12">
+    <section className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
         {/* Main Featured Post */}
         <div className="lg:col-span-7">

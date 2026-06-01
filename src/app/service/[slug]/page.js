@@ -114,7 +114,7 @@ export default async function ServiceDetailPage({ params }) {
               <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-gray-900 mb-6 tracking-tight leading-[1]">
                 {service.title}
               </h1>
-              <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-10">
+              <p className="text-base lg:text-xl text-gray-700 leading-relaxed font-medium mb-10">
                 {service.description}
               </p>
               <div className="flex flex-wrap justify-center lg:justify-start gap-4">
