@@ -106,7 +106,7 @@ export default function Footer() {
                 { label: "Petro Care", href: "/product/petro-care" },
                 { label: "HRMS Software", href: "/product/hrms-software" },
                 { label: "Document Management System", href: "/product/document-management-system" },
-                { label: "CRM Software", href: "/product/crm-software" },
+                { label: "CRM Software", href: "/product/crm-application" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
