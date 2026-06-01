@@ -57,7 +57,6 @@ export async function testWordPressConnection() {
 export async function fetchPageBySlug(slug, options = {}) {
   // Return null if WordPress is not configured
   if (!isWordPressAvailable()) {
-    console.warn('WordPress is not configured. Using fallback data.');
     return null;
   }
 
@@ -72,20 +71,16 @@ export async function fetchPageBySlug(slug, options = {}) {
     );
 
     if (response.status === 401) {
-      console.error(`WordPress API Unauthorized for "${slug}". Please check WordPress REST API permissions.`);
-      console.info('Solutions: 1) Enable REST API in WordPress 2) Install "Application Passwords" plugin 3) Check .htaccess restrictions');
       return null;
     }
 
     if (!response.ok) {
-      console.warn(`Failed to fetch page "${slug}": ${response.status} ${response.statusText}`);
       return null;
     }
 
     const pages = await response.json();
     return pages.length > 0 ? pages[0] : null;
   } catch (error) {
-    console.warn(`WordPress API unavailable for slug "${slug}": ${error.message}`);
     return null;
   }
 }
@@ -99,7 +94,6 @@ export async function fetchPageBySlug(slug, options = {}) {
 export async function fetchPageById(id, options = {}) {
   // Return null if WordPress is not configured
   if (!isWordPressAvailable()) {
-    console.warn('WordPress is not configured. Using fallback data.');
     return null;
   }
 
@@ -114,13 +108,11 @@ export async function fetchPageById(id, options = {}) {
     );
 
     if (!response.ok) {
-      console.warn(`Failed to fetch page with ID ${id}: ${response.statusText}`);
       return null;
     }
 
     return await response.json();
   } catch (error) {
-    console.warn(`WordPress API unavailable for page ID ${id}. Using fallback data.`);
     return null;
   }
 }
@@ -132,7 +124,6 @@ export async function fetchPageById(id, options = {}) {
  */
 export async function fetchPages(options = {}) {
   if (!isWordPressAvailable()) {
-    console.warn('WordPress is not configured. Using fallback data.');
     return [];
   }
 
@@ -153,19 +144,15 @@ export async function fetchPages(options = {}) {
     );
 
     if (response.status === 401) {
-      console.error(`WordPress API Unauthorized for pages. Please check WordPress REST API permissions.`);
-      console.info('Solutions: 1) Enable REST API in WordPress 2) Install "Application Passwords" plugin 3) Check .htaccess restrictions');
       return [];
     }
 
     if (!response.ok) {
-      console.warn(`Failed to fetch pages: ${response.status} ${response.statusText}`);
       return [];
     }
 
     return await response.json();
   } catch (error) {
-    console.warn(`WordPress API unavailable for pages: ${error.message}`);
     return [];
   }
 }
@@ -197,7 +184,6 @@ export async function fetchMediaById(mediaId, options = {}) {
     
     return await response.json();
   } catch (error) {
-    console.warn(`WordPress API unavailable for media ID ${mediaId}.`);
     return null;
   }
 }
@@ -230,7 +216,6 @@ export async function fetchMediaByIds(mediaIds, options = {}) {
 
     return await response.json();
   } catch (error) {
-    console.warn(`WordPress API unavailable for bulk media fetch: ${error.message}`);
     return [];
   }
 }
@@ -252,7 +237,6 @@ export async function getMediaUrl(mediaId) {
  */
 export async function fetchPosts(options = {}) {
   if (!isWordPressAvailable()) {
-    console.warn('WordPress is not configured. Using fallback data.');
     return [];
   }
 
@@ -276,13 +260,11 @@ export async function fetchPosts(options = {}) {
     );
 
     if (!response.ok) {
-      console.warn(`Failed to fetch posts: ${response.statusText}`);
       return [];
     }
 
     return await response.json();
   } catch (error) {
-    console.warn('WordPress API unavailable. Using fallback data.');
     return [];
   }
 }
@@ -295,7 +277,6 @@ export async function fetchPosts(options = {}) {
  */
 export async function fetchCustomPostType(postType, options = {}) {
   if (!isWordPressAvailable()) {
-    console.warn('WordPress is not configured. Using fallback data.');
     return [];
   }
 
@@ -316,13 +297,11 @@ export async function fetchCustomPostType(postType, options = {}) {
     );
 
     if (!response.ok) {
-      console.warn(`Failed to fetch ${postType}: ${response.statusText}`);
       return [];
     }
 
     return await response.json();
   } catch (error) {
-    console.warn(`WordPress API unavailable for ${postType}. Using fallback data.`);
     return [];
   }
 }
@@ -334,7 +313,6 @@ export async function fetchCustomPostType(postType, options = {}) {
  */
 export async function getFrontPage() {
   if (!isWordPressAvailable()) {
-    console.warn('WordPress is not configured. Using fallback data.');
     return null;
   }
 
@@ -375,13 +353,11 @@ export async function fetchPostsByIds(postIds, postType = 'posts', options = {})
     );
 
     if (!response.ok) {
-      console.warn(`Failed to fetch ${postType} by IDs: ${response.statusText}`);
       return [];
     }
 
     return await response.json();
   } catch (error) {
-    console.warn(`WordPress API unavailable for ${postType} IDs. Using fallback data.`);
     return [];
   }
 }

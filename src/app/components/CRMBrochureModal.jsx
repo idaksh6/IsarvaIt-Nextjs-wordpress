@@ -34,8 +34,6 @@ export default function CRMBrochureModal({
         const data = await response.json();
 
         if (data.categories) {
-          console.log('Available categories:', data.categories);
-
           // Find CRM Application category - be more specific
           const crmCategory = data.categories.find(
             cat => cat.category_name.toLowerCase() === 'crm application' ||
@@ -45,16 +43,13 @@ export default function CRMBrochureModal({
           );
 
           if (crmCategory) {
-            console.log('Found CRM category:', crmCategory);
             setCategoryId(crmCategory.id);
           } else {
             // Fallback to ID 2 if not found
-            console.log('CRM category not found, using fallback ID 2');
             setCategoryId(2);
           }
         }
       } catch (error) {
-        console.error('Error fetching category:', error);
         // Fallback to ID 2 on error
         setCategoryId(2);
       }
@@ -193,7 +188,6 @@ export default function CRMBrochureModal({
         setErrorMessage(friendlyError);
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
       setSubmitStatus('error');
       setErrorMessage('An error occurred. Please check your connection and try again.');
     } finally {

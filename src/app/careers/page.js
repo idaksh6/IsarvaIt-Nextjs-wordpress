@@ -124,7 +124,7 @@ export default function CareerPage() {
     <div className="min-h-screen bg-[#FDF8F2] font-sans text-[#1a1f24]">
 
       {/* ── HERO SECTION ── */}
-      <section className="relative pt-44 lg:pb-32 pb-14 lg:pb-42 overflow-hidden bg-gradient-to-b from-[#F0F7F4] to-[#FDF8F2]">
+      <section className="relative pt-32 lg:pt-40 pb-12 lg:pb-16 overflow-hidden bg-gradient-to-b from-[#F0F7F4] to-[#FDF8F2]">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#10b981] opacity-[0.03] rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute -bottom-24 -left-24 w-[600px] h-[600px] bg-[#84cc16] opacity-[0.05] rounded-full blur-[100px] pointer-events-none"></div>
 
@@ -155,7 +155,7 @@ export default function CareerPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-xl lg:text-2xl text-[#53606b] max-w-2xl leading-relaxed mb-12 font-medium"
+                className="text-base lg:text-xl text-[#53606b] max-w-2xl leading-relaxed mb-12 font-medium"
               >
                 At Isarva Infotech, we don’t just keep up with technology — we drive its evolution. Our passion lies in using cutting-edge engineering to solve real-world challenges with meaningful impact.
               </motion.p>
@@ -254,10 +254,10 @@ export default function CareerPage() {
       </section>
 
       {/* ── WHY CHOOSE US ── */}
-      <section className="lg:py-32 py-10 relative bg-white overflow-hidden">
+      <section className="py-12 lg:py-16 relative bg-white overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-2 rounded-full bg-gradient-to-r from-transparent via-[#10b981]/20 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center lg:mb-24 mb-10">
+          <div className="text-center mb-10">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -282,8 +282,8 @@ export default function CareerPage() {
               >
                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/40 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
-                <div className="relative z-10 lg:text-left text-center">
-                  <div className="mb-8 p-5 bg-white rounded-[2rem] w-fit lg:mx-0 mx-auto shadow-lg shadow-emerald-500/5 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                <div className="relative z-10 text-center">
+                  <div className="mb-8 p-5 bg-white rounded-[2rem] w-fit mx-auto shadow-lg shadow-emerald-500/5 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                     {benefit.icon}
                   </div>
                   <h3 className="text-2xl font-display font-bold mb-6 text-[#1a1f24] leading-tight group-hover:text-[#10b981] transition-colors">{benefit.title}</h3>
@@ -296,7 +296,7 @@ export default function CareerPage() {
       </section>
 
       {/* ── OPEN POSITIONS ── */}
-      <section id="openings" className="lg:py-24 py-10 bg-[#FDF8F2] relative">
+      <section id="openings" className="py-12 lg:py-16 bg-[#FDF8F2] relative">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 px-4">
             <div className="lg:text-left text-center">

@@ -57,7 +57,7 @@ const stepVariants: Variants = {
 
 const PartnerOnboarding = () => {
   return (
-    <section className="py-10 lg:py-16 bg-[#FDF8F2] relative overflow-hidden">
+    <section className="py-12 lg:py-16 bg-[#FDF8F2] relative overflow-hidden">
 
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">

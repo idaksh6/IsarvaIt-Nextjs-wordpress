@@ -103,12 +103,9 @@ export async function getServicesSectionData(homePageData) {
   );
   
   if (!servicesSection) {
-    console.warn('Services layout not found. Available layouts:', layouts.map(l => l.acf_fc_layout));
     return null;
   }
 
-  console.log('Found services layout:', servicesSection.acf_fc_layout);
-  
   // Parse button link
   const buttonLink = parseAcfLink(servicesSection.button_link);
   

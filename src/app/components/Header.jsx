@@ -103,7 +103,9 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" prefetch={true} className="flex items-center">
-          <Image src="/isarva New Logo.png" width={200} height={78} className="w-auto h-[78px] object-contain drop-shadow-sm" alt="Isarva Logo" priority />
+          <div className="relative h-[78px] w-[200px]">
+            <Image src="/isarva New Logo.png" alt="Isarva Logo" fill sizes="200px" className="object-contain drop-shadow-sm" priority />
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
@@ -149,7 +151,7 @@ export default function Header() {
                         onClick={() => setIsAboutOpen(false)}
                       >
                         <div className="absolute inset-0 opacity-10 group-hover/featured:scale-110 transition-transform duration-700">
-                          <Image src="/agency_office_studio_premium_1773850105446.png" fill className="object-cover" alt="Isarva team collaboration workspace" loading="lazy" />
+                          <Image src="/agency_office_studio_premium_1773850105446.png" fill sizes="280px" className="object-cover" alt="Isarva team collaboration workspace" loading="lazy" />
                         </div>
                         <div className="relative z-10 flex flex-col h-full">
                           <h4 className="text-xl font-display font-bold text-gray-900 mb-4 leading-tight">About Isarva</h4>

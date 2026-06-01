@@ -164,7 +164,7 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
   const activeModel = models.find(m => m.id === activeTab) || models[0];
 
   return (
-    <section id="models" className="py-10 lg:py-16 bg-white overflow-hidden">
+    <section id="models" className="py-12 lg:py-16 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
                   <div className="text-center mb-10 ">
           <motion.h2

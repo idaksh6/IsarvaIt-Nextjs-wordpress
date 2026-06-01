@@ -164,10 +164,10 @@ export default function TestimonialPage() {
   const videoTestimonial = testimonials.find(t => t.youtubeId) || testimonials[0];
 
   return (
-    <div className="min-h-screen bg-[#FDF8F2]  text-[#1a1f24] pt-24">
+    <div className="min-h-screen bg-[#FDF8F2]  text-[#1a1f24]">
 
       {/* ── 1. HERO SECTION ── */}
-      <section className="relative py-12 lg:py-38 overflow-hidden ">
+      <section className="relative pt-32 lg:pt-40 pb-12 lg:pb-16 overflow-hidden ">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#10b981] opacity-[0.03] rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute -bottom-24 -left-24 w-[600px] h-[600px] bg-[#84cc16] opacity-[0.05] rounded-full blur-[100px] pointer-events-none"></div>
 
@@ -196,7 +196,7 @@ export default function TestimonialPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl lg:text-2xl text-[#53606b] max-w-3xl mx-auto leading-relaxed mb-12"
+            className="text-base lg:text-xl text-[#53606b] max-w-3xl mx-auto leading-relaxed font-medium mb-12"
           >
             Join 500+ global enterprises and startups that trust Isarva Infotech to architect their digital future.
           </motion.p>
@@ -223,9 +223,9 @@ export default function TestimonialPage() {
       </section>
 
       {/* ── 2. FEATURED VIDEO TESTIMONIALS (Restored Correctly) ── */}
-      <section className="lg:py-24 py-10 bg-white border-y border-[#10b981]/10 overflow-hidden">
+      <section className="py-12 lg:py-16 bg-white border-y border-[#10b981]/10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center lg:mb-20 mb-10">
+          <div className="text-center mb-10">
             <motion.span
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -323,7 +323,7 @@ export default function TestimonialPage() {
               {/* Optional: Simple client info below direct video */}
               <div className="mt-8 flex items-center gap-4 px-6">
                 <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#10b981] shadow-lg relative">
-                  <Image src={videoTestimonial.image} fill alt={videoTestimonial.name} className="object-contain" loading="lazy" />
+                  <Image src={videoTestimonial.image} fill sizes="56px" alt={videoTestimonial.name} className="object-contain" loading="lazy" />
                 </div>
                 <div>
                   <h3 className="text-[#1a1f24] text-xl font-display font-bold leading-tight">{videoTestimonial.name}</h3>
@@ -337,7 +337,7 @@ export default function TestimonialPage() {
 
 
       {/* ── 3. TESTIMONIAL SHOWCASE ── */}
-      <section className="py-32 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
 
           {/* Mobile Slider (visible only on mobile) */}
@@ -385,7 +385,8 @@ export default function TestimonialPage() {
                       <Image 
                         src={testimonials[currentSlide].image} 
                         alt={testimonials[currentSlide].name} 
-                        fill 
+                        fill
+                        sizes="128px"
                         className={
                           testimonials[currentSlide].name === "Gunashree" || 
                           testimonials[currentSlide].name === "Prajwal Shetty" 
@@ -452,14 +453,19 @@ export default function TestimonialPage() {
 
           {/* Desktop Grid (visible on tablet and above) */}
           <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-24 gap-x-10">
-            {testimonials.map((t, idx) => (
+            {testimonials.map((t, idx) => {
+              const isLast = idx === testimonials.length - 1;
+              const lastAloneInRowLg = isLast && testimonials.length % 3 === 1;
+              const lastAloneInRowMd = isLast && testimonials.length % 2 === 1;
+
+              return (
               <motion.div
                 key={t.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="relative bg-[#FDF8F2] pt-20 pb-12 px-10 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.03)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.08)] transition-all duration-500 flex flex-col h-full group border border-emerald-500/5 hover:-translate-y-2"
+                className={`relative bg-[#FDF8F2] pt-20 pb-12 px-10 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.03)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.08)] transition-all duration-500 flex flex-col h-full group border border-emerald-500/5 hover:-translate-y-2${lastAloneInRowMd ? " md:col-span-2 md:max-w-[calc(50%-1.25rem)] md:justify-self-center" : ""}${lastAloneInRowLg ? " lg:col-start-2 lg:col-span-1 lg:max-w-none lg:justify-self-auto" : ""}`}
               >
                 {/* 1. Client Photo Centered and Overlapping */}
                 <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-32 h-32 rounded-full border-[8px] border-white shadow-2xl overflow-hidden bg-white z-20 group-hover:scale-105 transition-transform duration-500">
@@ -467,7 +473,8 @@ export default function TestimonialPage() {
                     <Image 
                       src={t.image} 
                       alt={t.name} 
-                      fill 
+                      fill
+                      sizes="128px"
                       className={
                         t.name === "Gunashree" || 
                         t.name === "Prajwal Shetty" 
@@ -509,7 +516,8 @@ export default function TestimonialPage() {
                   </span>
                 </div>
               </motion.div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

@@ -73,7 +73,7 @@ export default function BethLivingCaseStudyClient() {
 
             <motion.p
               variants={fadeInUp}
-              className="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed"
+              className="text-base lg:text-xl text-gray-600 mb-10 leading-relaxed font-medium"
             >
               A combination of UI/UX refresh, improved hosting, and optimized lead capture by Isarva helped Beth Living redefine its digital presence.
             </motion.p>

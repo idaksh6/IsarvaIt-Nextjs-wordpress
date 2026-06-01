@@ -43,7 +43,7 @@ const cardVariants: Variants = {
 
 const IdealPartners = () => {
   return (
-    <section className="py-10 lg:py-16 bg-[#FDF8F2] relative overflow-hidden">
+    <section className="py-12 lg:py-16 bg-[#FDF8F2] relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] bg-orange-100/30 rounded-full blur-[100px]" />

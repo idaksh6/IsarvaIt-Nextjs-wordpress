@@ -35,7 +35,7 @@ const headingVariants: Variants = {
 
 const PartnerCTA = ({ onApply }: { onApply: () => void }) => {
   return (
-    <section className="pt-0 md:pt-0 lg:pt-16 pb-16 bg-white">
+    <section className="py-12 lg:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
           variants={containerVariants}
@@ -58,7 +58,7 @@ const PartnerCTA = ({ onApply }: { onApply: () => void }) => {
               WebkitMaskImage: 'radial-gradient(ellipse at center, black 20%, transparent 85%)'
             }}
           >
-            <Image src="/partners/hero-banner.png" alt="" fill className="object-contain" />
+            <Image src="/partners/hero-banner.png" alt="" fill sizes="600px" className="object-contain" />
           </motion.div>
 
           <motion.div
@@ -70,7 +70,7 @@ const PartnerCTA = ({ onApply }: { onApply: () => void }) => {
               WebkitMaskImage: 'radial-gradient(ellipse at center, black 20%, transparent 85%)'
             }}
           >
-            <Image src="/partners/hero-banner.png" alt="" fill className="object-contain" />
+            <Image src="/partners/hero-banner.png" alt="" fill sizes="600px" className="object-contain" />
           </motion.div>
 
           <div className="relative z-10 w-full flex flex-col items-center">

@@ -49,7 +49,7 @@ export default async function BlogPage({ searchParams }) {
         <BlogHero />
         <BlogCategoryNav />
         
-        <div className="pt-8 min-h-[400px]">
+        <div className="pt-8 pb-12 lg:pb-16 min-h-[400px]">
             {posts.length > 0 ? (
               <>
                 {isFiltered ? (

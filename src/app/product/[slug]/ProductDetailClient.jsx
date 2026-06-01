@@ -220,7 +220,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
       <div className="bg-white overflow-hidden">
         {/* Hero Section */}
         <section 
-          className={`relative pt-32 lg:pt-40 pb-20 overflow-hidden bg-gradient-to-b ${product.bgGradient}`}
+          className={`relative pt-32 lg:pt-40 pb-12 lg:pb-16 overflow-hidden bg-gradient-to-b ${product.bgGradient}`}
           style={{ contain: "layout style paint" }}
         >
           {/* Background Decorations */}
@@ -265,7 +265,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
                 <p className="text-xl lg:text-2xl text-violet-600 font-semibold mb-6">
                   {product.tagline}
                 </p>
-                <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed mb-8">
+                <p className="text-base lg:text-xl text-gray-700 leading-relaxed font-medium mb-8">
                   {product.description}
                 </p>
                 <div className="flex flex-wrap gap-4">
@@ -314,11 +314,11 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
         </section>
 
         {/* Features Section */}
-        <section id="features" className="py-20 lg:py-32 bg-white relative overflow-hidden">
+        <section id="features" className="py-12 lg:py-16 bg-white relative overflow-hidden">
           <div className="absolute inset-0 hero-noise-overlay opacity-[0.02]"></div>
           
           <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Key Features
               </h2>
@@ -350,11 +350,11 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
         </section>
 
         {/* Technologies Section */}
-        <section className={`py-20 lg:py-32 bg-gradient-to-b ${product.bgGradient} relative overflow-hidden`}>
+        <section className={`py-12 lg:py-16 bg-gradient-to-b ${product.bgGradient} relative overflow-hidden`}>
           <div className="absolute inset-0 hero-noise-overlay opacity-[0.05]"></div>
           
           <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Technology Stack
               </h2>
@@ -377,11 +377,11 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
         </section>
 
         {/* Benefits Section */}
-        <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
+        <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
           <div className="absolute inset-0 hero-noise-overlay opacity-[0.02]"></div>
           
           <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Business Benefits
               </h2>
@@ -414,11 +414,11 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
         </section>
 
         {/* Related Products Section */}
-        <section className={`py-20 lg:py-32 bg-gradient-to-b ${product.bgGradient} relative overflow-hidden`}>
+        <section className={`py-12 lg:py-16 bg-gradient-to-b ${product.bgGradient} relative overflow-hidden`}>
           <div className="absolute inset-0 hero-noise-overlay opacity-[0.05]"></div>
           
           <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Related Products
               </h2>

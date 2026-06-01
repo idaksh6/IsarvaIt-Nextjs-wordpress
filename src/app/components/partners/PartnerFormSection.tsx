@@ -159,7 +159,7 @@ export default function PartnerFormSection({
   };
 
   return (
-    <section id={id} className="py-10 lg:py-16 relative overflow-hidden bg-white">
+    <section id={id} className="py-12 lg:py-16 relative overflow-hidden bg-white">
       {/* Background Accents */}
       <div className="absolute inset-0 pointer-events-none opacity-40">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3" />

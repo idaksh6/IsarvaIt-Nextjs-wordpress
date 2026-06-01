@@ -296,7 +296,7 @@ export default function ProductDetailPremiumHRMS({
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: 0.3 }}
-                          className="text-base text-gray-500 font-medium leading-relaxed max-w-none text-center lg:text-left"
+                          className="text-base lg:text-xl text-gray-500 font-medium leading-relaxed max-w-none text-center lg:text-left"
                         >
                           {activeContent.description}
                         </motion.p>
@@ -330,6 +330,7 @@ export default function ProductDetailPremiumHRMS({
                             src={activeContent.image}
                             alt={activeContent.title}
                             fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 800px"
                             priority
                             unoptimized
                             className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -394,6 +395,7 @@ export default function ProductDetailPremiumHRMS({
                               src={activeContent.image}
                               alt={activeContent.title}
                               fill
+                              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 900px"
                               unoptimized
                               className="object-cover group-hover:scale-105 transition-all duration-700"
                             />
@@ -444,7 +446,7 @@ export default function ProductDetailPremiumHRMS({
                       { title: "Frustrated Workers", icon: "😠", desc: "Hard-to-use software ruins productivity.", color: "amber" },
                       { title: "Risky Security", icon: "🔓", desc: "Old ways leave you open to legal threats.", color: "slate" }
                     ].map((item, idx) => (
-                      <div key={idx} className="group p-8 rounded-[32px] border border-gray-100 hover:shadow-xl transition-all duration-500 bg-white flex flex-col items-center md:items-start text-center md:text-left">
+                      <div key={idx} className="group flex flex-col items-center p-8 rounded-[32px] border border-gray-100 hover:shadow-xl transition-all duration-500 bg-white text-center">
                         <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 bg-${item.color}-50 text-${item.color}-600 font-bold text-2xl`}>
                           {item.icon}
                         </div>
@@ -543,6 +545,7 @@ export default function ProductDetailPremiumHRMS({
                   src={selectedImage}
                   alt="Enlarged view"
                   fill
+                  sizes="(max-width: 768px) 100vw, 900px"
                   priority
                   unoptimized
                   className="object-contain"
@@ -739,10 +742,10 @@ function HrmsFeatureSection() {
   const activeFeature = hrmsFeatures.find((f) => f.id === activeId);
 
   return (
-    <section className="py-10 lg:py-20 overflow-hidden bg-[#F7F7F7]">
+    <section className="py-12 lg:py-16 overflow-hidden bg-[#F7F7F7]">
       <div className="w-full max-w-7xl mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-10">
           <span className="block text-[14px] font-black text-[#22C55E] tracking-[0.28em] uppercase mb-2.5">
             KEY FEATURES
           </span>

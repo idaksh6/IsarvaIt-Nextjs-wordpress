@@ -26,7 +26,7 @@ export default function AboutPage() {
     <div className="bg-[#FDF8F2] overflow-hidden font-sans text-[#1a1f24]">
 
       {/* 1. HERO SECTION */}
-      <section className="relative pt-36 lg:pt-48 pb-10 lg:pb-20 overflow-hidden bg-gradient-to-b from-[#F0F7F4] to-[#FDF8F2]">
+      <section className="relative pt-36 lg:pt-48 pb-12 lg:pb-16 overflow-hidden bg-gradient-to-b from-[#F0F7F4] to-[#FDF8F2]">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#10b981] opacity-[0.03] rounded-full blur-[120px] pointer-events-none"></div>
         <div className="absolute -bottom-24 -left-24 w-[600px] h-[600px] bg-[#84cc16] opacity-[0.05] rounded-full blur-[100px] pointer-events-none"></div>
         <div className="hero-noise-overlay"></div>
@@ -37,7 +37,7 @@ export default function AboutPage() {
             <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-display font-bold text-[#1a1f24] max-w-5xl tracking-tight leading-[1] mb-8">
               Precision in <span className="italic text-[#10b981] font-bold">Technology.</span> <br /> Purpose in <span className="italic text-[#10b981] font-bold">Impact.</span>
             </h1>
-            <p className="mt-4 text-xl lg:text-2xl text-[#53606b] max-w-3xl mx-auto leading-relaxed font-medium">
+            <p className="mt-4 text-base lg:text-xl text-[#53606b] max-w-3xl mx-auto leading-relaxed font-medium">
               At Isarva Infotech, we are more than an IT consulting firm — we are a strategic technology partner and a catalyst for progress in an ever-evolving digital world.
             </p>
           </div>
@@ -85,7 +85,7 @@ export default function AboutPage() {
 
             {/* Full Width Image Content */}
             <div className="relative w-full h-[220px] sm:h-[300px] md:h-[450px] rounded-[2rem] md:rounded-[3rem] overflow-hidden mb-12 md:mb-16 shadow-2xl ring-4 ring-white/50">
-              <Image src="/enterprise-transformation-bg.png" alt="Digital Excellence" fill className="object-cover" />
+              <Image src="/enterprise-transformation-bg.png" alt="Digital Excellence" fill sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#16423C]/90 via-transparent to-transparent flex items-end p-6 md:p-12">
                 <div className="flex flex-col">
                   <h3 className="text-white text-[clamp(1.2rem,3vw,2.5rem)] font-display font-bold leading-[1]">Crafting the Future of Enterprise Solutions.</h3>
@@ -140,7 +140,7 @@ export default function AboutPage() {
       </section>
 
       {/* 4. MISSION & VISION SECTION */}
-      <section className="lg:py-16 py-10 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch">
             <div className="bg-[#1a1f24] text-white p-10 md:p-16 rounded-[3rem] md:rounded-[4rem] relative overflow-hidden section-animate">
@@ -173,7 +173,7 @@ export default function AboutPage() {
       </section>
 
       {/* 5. IMPACT & CULTURE SECTION */}
-      <section className="lg:py-16 py-10 bg-[#FDF8F2] overflow-hidden">
+      <section className="py-12 lg:py-16 bg-[#FDF8F2] overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-center">
             <div className="w-full lg:w-1/2 section-animate lg:text-left text-center">
@@ -238,7 +238,7 @@ export default function AboutPage() {
               <div className="relative w-full rounded-[4rem] overflow-hidden shadow-2xl ring-1 ring-[#10b981]/10">
                 <div className="pb-[100%] lg:pb-[95%]"></div>
                 <div className="absolute inset-0">
-                  <Image src="/globe-final-hd.png" alt="Digital Impact" fill className="object-cover" />
+                  <Image src="/globe-final-hd.png" alt="Digital Impact" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-r from-[#10b981]/10 to-transparent pointer-events-none"></div>
                 </div>
               </div>
@@ -251,7 +251,7 @@ export default function AboutPage() {
       </section>
 
       {/* 5.5 JOIN OUR TEAM SECTION */}
-      <section className="lg:py-16 py-10  pt-0 lg:pt-0 bg-[#FDF8F2] relative overflow-hidden">
+      <section className="py-12 lg:py-16 bg-[#FDF8F2] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="bg-white rounded-[4rem] p-10 lg:p-20 shadow-2xl border border-[#10b981]/5 flex flex-col lg:flex-row items-center justify-between gap-12">
             <div className="lg:w-3/5 text-center lg:text-left">
@@ -286,7 +286,7 @@ export default function AboutPage() {
             </div>
             <div className="lg:w-2/5 relative lg:block hidden">
               <div className="relative w-full h-[300px] md:h-[400px] rounded-[3rem] overflow-hidden shadow-2xl ring-4 ring-white/50">
-                <Image src="/about_tech_light_v2.png" alt="Our Tech Culture" fill className="object-cover" />
+                <Image src="/about_tech_light_v2.png" alt="Our Tech Culture" fill sizes="(max-width: 1024px) 100vw, 40vw" className="object-cover" />
               </div>
               <div className="absolute -top-6 -right-6 w-24 h-24 bg-[#10b981] lg:flex hidden rounded-2xl  items-center justify-center text-white shadow-2xl transform rotate-12">
                 <Briefcase className="w-10 h-10" />
@@ -297,9 +297,9 @@ export default function AboutPage() {
       </section>
 
       {/* 6. CTA SECTION */}
-      <section className="py-10 lg:py-16 relative bg-[#1a1f24] text-white overflow-hidden">
+      <section className="py-12 lg:py-16 relative bg-[#1a1f24] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/agency_design_process_abstract_1773850147849.png" alt="Abstract" fill className="object-cover opacity-[0.08] mix-blend-screen" />
+          <Image src="/agency_design_process_abstract_1773850147849.png" alt="Abstract" fill sizes="100vw" className="object-cover opacity-[0.08] mix-blend-screen" />
         </div>
 
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10 section-animate">

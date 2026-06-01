@@ -87,7 +87,7 @@ export default function ServicesListClient({ servicesData }) {
             </h1>
 
             {/* Description */}
-            <p className="text-xl lg:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8">
+            <p className="text-base lg:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium mb-8">
               From web development to AI consulting, we offer end-to-end services that drive your digital transformation journey.
             </p>
 
@@ -193,37 +193,39 @@ export default function ServicesListClient({ servicesData }) {
                   prefetch={true}
                   className="group"
                 >
-                  <div className="relative rounded-3xl p-8 h-full transition-all duration-300 hover:scale-[1.02] bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg hover:shadow-2xl">
+                  <div className="relative rounded-3xl p-8 h-full transition-all duration-300 hover:scale-[1.02] bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg hover:shadow-2xl flex flex-col items-center text-center">
                     {/* Hover Gradient Effect */}
-                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-emerald-400/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-emerald-400/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
-                    <div className="relative text-center md:text-left">
+                    <div className="relative w-full flex flex-col items-center text-center">
+                      {/* Feature Count Badge */}
+                      <div className="mb-4 min-h-[1.75rem] flex items-center justify-center">
+                        <span className="bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full border-2 border-emerald-200 shadow-md whitespace-nowrap">
+                          {service.features.length}+ Features
+                        </span>
+                      </div>
+
                       {/* Icon */}
-                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-green-500 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 mx-auto md:mx-0">
+                      <div className="w-16 h-16 shrink-0 rounded-2xl bg-gradient-to-br from-emerald-400 to-green-500 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
                         <span className="text-3xl">{service.icon}</span>
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-emerald-700 transition-colors duration-300">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4 w-full group-hover:text-emerald-700 transition-colors duration-300">
                         {service.title}
                       </h3>
 
                       {/* Description */}
-                      <p className="text-gray-700 leading-relaxed mb-6">
+                      <p className="text-gray-700 leading-relaxed mb-6 w-full">
                         {service.shortDescription}
                       </p>
 
                       {/* CTA Link */}
-                      <div className="flex items-center justify-center md:justify-start gap-2 text-emerald-600 font-semibold group-hover:gap-3 transition-all duration-200">
+                      <div className="mt-auto flex items-center justify-center gap-2 text-emerald-600 font-semibold group-hover:gap-3 transition-all duration-200 w-full">
                         Learn More
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
-                      </div>
-
-                      {/* Feature Count Badge - At right edge overlapping border */}
-                      <div className="absolute -top-11 -right-2 bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full border-2 border-emerald-200 shadow-md">
-                        {service.features.length}+ Features
                       </div>
                     </div>
                   </div>

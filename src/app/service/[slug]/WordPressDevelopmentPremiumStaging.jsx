@@ -223,7 +223,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                   </h1>
                 </div>
 
-                <div className="text-lg lg:text-xl text-gray-600 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0 font-medium border-l-2 border-blue-200 pl-8 space-y-4">
+                <div className="text-base lg:text-xl text-gray-600 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0 font-medium border-l-2 border-blue-200 pl-8 space-y-4">
                   <p>At Isarva, we don’t ‘do’ WordPress development, we <span className="text-blue-600 font-bold">live and breathe it</span>. We combine our <span className="text-indigo-600 font-bold">technical, creative and marketing expertise</span> with our dedicated support to bring you simply <span className="text-blue-600 font-bold">outstanding WordPress development services</span>.</p>
                 </div>
 

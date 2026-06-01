@@ -71,11 +71,6 @@ export default function ContactFormModal({
           setCategories(data.categories);
 
           // Log for debugging
-          console.log('Fetched categories:', data.categories);
-          console.log('PreSelectedItem:', preSelectedItem);
-          console.log('PreSelectedType:', preSelectedType);
-          console.log('Category names from API:', data.categories.map(c => c.category_name));
-
           // Pre-select item if it matches
           if (preSelectedItem) {
             // Normalize strings for better matching
@@ -103,14 +98,9 @@ export default function ContactFormModal({
             const normalizedPreSelected = normalizeStr(preSelectedItem);
             const keyWordsPreSelected = extractKeyWords(preSelectedItem);
 
-            console.log('Normalized preSelected:', normalizedPreSelected);
-            console.log('Key words preSelected:', keyWordsPreSelected);
-
             const matchedCategory = data.categories.find(cat => {
               const normalizedCatName = normalizeStr(cat.category_name);
               const keyWordsCatName = extractKeyWords(cat.category_name);
-
-              console.log(`Testing "${cat.category_name}": normalized="${normalizedCatName}", keywords="${keyWordsCatName}"`);
 
               // Check multiple matching strategies in order of specificity
               const isMatch = (
@@ -139,13 +129,10 @@ export default function ContactFormModal({
               );
 
               if (isMatch) {
-                console.log(`✓ MATCHED: "${cat.category_name}"`);
               }
 
               return isMatch;
             });
-
-            console.log('Matched category:', matchedCategory);
 
             if (matchedCategory) {
               setFormData(prev => ({
@@ -153,15 +140,11 @@ export default function ContactFormModal({
                 selectedItem: matchedCategory.category_name,
                 selectedCategoryId: matchedCategory.id
               }));
-              console.log('Auto-selected:', matchedCategory.category_name);
             } else {
-              console.warn(`No matching category found for "${preSelectedItem}"`);
-              console.log('Available categories:', data.categories.map(c => c.category_name));
             }
           }
         }
       } catch (error) {
-        console.error('Error fetching categories:', error);
         setCategories([]);
       } finally {
         setIsLoadingCategories(false);
@@ -325,7 +308,6 @@ export default function ContactFormModal({
         setErrorMessage(friendlyError);
       }
     } catch (error) {
-      console.error('Form submission error:', error);
       setSubmitStatus("error");
       setIsSubmitting(false);
       setErrorMessage("Network error. Please check your connection and try again.");

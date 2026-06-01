@@ -154,7 +154,6 @@ export default function DealerManagementBrochureModal({
         setErrorMessage(friendlyError);
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
       setSubmitStatus('error');
       setErrorMessage('An error occurred. Please check your connection and try again.');
     } finally {

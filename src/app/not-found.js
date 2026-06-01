@@ -27,7 +27,7 @@ export default function NotFound() {
             <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
               Oops! Page Not Found
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-medium">
               The page you're looking for seems to have wandered off into the digital wilderness. 
               But don't worry, we'll help you find your way back home.
             </p>

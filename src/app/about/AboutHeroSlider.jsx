@@ -2,6 +2,11 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+const MOBILE_CARD_SIZES = "250px";
+const DESKTOP_SMALL_CARD_SIZES = "320px";
+const DESKTOP_MEDIUM_CARD_SIZES = "380px";
+const DESKTOP_CENTER_CARD_SIZES = "450px";
+
 export default function AboutHeroSlider() {
   return (
     <div className="relative section-animate" style={{ animationDelay: '0.2s' }}>
@@ -16,7 +21,7 @@ export default function AboutHeroSlider() {
           transition={{ duration: 0.4 }}
           className="relative w-[250px] h-[420px] flex-shrink-0 snap-center rounded-[2.5rem] overflow-hidden ring-1 ring-[#10b981]/10 bg-[#1a1f24]"
         >
-          <Image src="/premium-sky.png" alt="Connectivity" fill className="object-cover" />
+          <Image src="/premium-sky.png" alt="Connectivity" fill sizes={MOBILE_CARD_SIZES} className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-6 text-left">
             <h4 className="text-white font-bold text-2xl mb-1 leading-tight">Connectivity</h4>
             <div className="w-10 h-1 bg-cyan-400 mb-2 shrink-0" />
@@ -32,7 +37,7 @@ export default function AboutHeroSlider() {
           transition={{ duration: 0.4 }}
           className="relative w-[250px] h-[420px] flex-shrink-0 snap-center rounded-[2.5rem] overflow-hidden ring-1 ring-[#10b981]/10 bg-[#1a1f24]"
         >
-          <Image src="/water-v2.png" alt="Seamless Flow" fill className="object-cover" />
+          <Image src="/water-v2.png" alt="Seamless Flow" fill sizes={MOBILE_CARD_SIZES} className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-6 text-left">
             <h4 className="text-white font-bold text-2xl mb-1 leading-tight">Seamless Flow</h4>
             <div className="w-12 h-1 bg-blue-400 mb-2 shrink-0" />
@@ -48,7 +53,7 @@ export default function AboutHeroSlider() {
           transition={{ duration: 0.4 }}
           className="relative w-[250px] h-[420px] flex-shrink-0 snap-center rounded-[2.5rem] overflow-hidden ring-2 ring-white bg-[#1a1f24]"
         >
-          <Image src="/partners/expertise/kailash_final.png" alt="Strong Foundations" fill className="object-cover object-bottom scale-150" />
+          <Image src="/partners/expertise/kailash_final.png" alt="Strong Foundations" fill sizes={MOBILE_CARD_SIZES} className="object-cover object-bottom scale-150" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent flex flex-col justify-end p-6 text-left">
             <h3 className="text-white font-bold text-2xl leading-tight mb-2">Strong Foundations</h3>
             <div className="w-16 h-1 bg-green-500 mb-4 shrink-0" />
@@ -64,7 +69,7 @@ export default function AboutHeroSlider() {
           transition={{ duration: 0.4 }}
           className="relative w-[250px] h-[420px] flex-shrink-0 snap-center rounded-[2.5rem] overflow-hidden ring-1 ring-[#10b981]/10 bg-[#1a1f24]"
         >
-          <Image src="/partners/expertise/galaxy.png" alt="Scalability" fill className="object-cover" />
+          <Image src="/partners/expertise/galaxy.png" alt="Scalability" fill sizes={MOBILE_CARD_SIZES} className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-6 text-left">
             <h4 className="text-white font-bold text-2xl mb-1 leading-tight">Scalability</h4>
             <div className="w-12 h-1 bg-purple-500 mb-2 shrink-0" />
@@ -80,7 +85,7 @@ export default function AboutHeroSlider() {
           transition={{ duration: 0.4 }}
           className="relative w-[250px] h-[420px] flex-shrink-0 snap-center rounded-[2.5rem] overflow-hidden ring-1 ring-[#10b981]/10 bg-[#1a1f24]"
         >
-          <Image src="/vol-final.png" alt="Performance" fill className="object-cover object-[80%_20%]" />
+          <Image src="/vol-final.png" alt="Performance" fill sizes={MOBILE_CARD_SIZES} className="object-cover object-[80%_20%]" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-6 text-left">
             <h4 className="text-white font-bold text-2xl mb-1 leading-tight">Performance</h4>
             <div className="w-10 h-1 bg-orange-500 mb-2 shrink-0" />
@@ -93,7 +98,7 @@ export default function AboutHeroSlider() {
       <div className="hidden lg:flex justify-center items-center gap-1 xl:space-x-1 overflow-visible ">
         {/* Card 1 - Desktop */}
         <div className="relative lg:w-[14vw] lg:h-[20vw] xl:w-[320px] xl:h-[420px] rounded-[2.5rem] overflow-hidden shadow-xl transform hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5 group">
-          <Image src="/premium-sky.png" alt="Connectivity" fill className="object-cover" />
+          <Image src="/premium-sky.png" alt="Connectivity" fill sizes={DESKTOP_SMALL_CARD_SIZES} className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-4 xl:p-6 text-left transition-opacity duration-500">
             <h4 className="text-white font-bold text-[clamp(1rem,1.5vw,1.8rem)] mb-1 leading-tight">Connectivity</h4>
             <div className="w-8 h-0.5 bg-cyan-400 mb-2 shrink-0" />
@@ -103,7 +108,7 @@ export default function AboutHeroSlider() {
 
         {/* Card 2 - Desktop */}
         <div className="relative lg:w-[17vw] lg:h-[24vw] xl:w-[380px] xl:h-[500px] rounded-[2.5rem] overflow-hidden shadow-2xl z-10 transform hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5 group">
-          <Image src="/water-v2.png" alt="Seamless Flow" fill className="object-cover" />
+          <Image src="/water-v2.png" alt="Seamless Flow" fill sizes={DESKTOP_MEDIUM_CARD_SIZES} className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-5 xl:p-8 text-left transition-opacity duration-500">
             <h4 className="text-white font-bold text-[clamp(1.2rem,2vw,2.2rem)] mb-1 leading-tight">Seamless Flow</h4>
             <div className="w-10 h-0.5 bg-blue-500 mb-2 shrink-0" />
@@ -113,7 +118,7 @@ export default function AboutHeroSlider() {
 
         {/* Card 3 - Desktop (Main Center) */}
         <div className="relative lg:w-[20vw] lg:h-[30vw] xl:w-[450px] xl:h-[580px] rounded-[3.5rem] overflow-hidden shadow-2xl z-20 transform hover:-translate-y-2 transition-transform duration-500 ring-4 ring-white group">
-          <Image src="/partners/expertise/kailash_final.png" alt="Strong Foundations" fill className="object-cover object-bottom scale-150" />
+          <Image src="/partners/expertise/kailash_final.png" alt="Strong Foundations" fill sizes={DESKTOP_CENTER_CARD_SIZES} className="object-cover object-bottom scale-150" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent flex flex-col justify-end p-6 lg:p-8 xl:p-12 text-left">
             <h3 className="text-white font-bold text-[clamp(1.3rem,2.5vw,2.5rem)] leading-tight mb-2">Strong <br /> Foundations</h3>
             <div className="w-16 h-1 bg-green-500 mb-2 xl:mb-4 shrink-0" />
@@ -123,7 +128,7 @@ export default function AboutHeroSlider() {
 
         {/* Card 4 - Desktop */}
         <div className="relative lg:w-[17vw] lg:h-[24vw] xl:w-[380px] xl:h-[500px] rounded-[2.5rem] overflow-hidden shadow-2xl z-10 transform hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5 group">
-          <Image src="/partners/expertise/galaxy.png" alt="Scalability" fill className="object-cover" />
+          <Image src="/partners/expertise/galaxy.png" alt="Scalability" fill sizes={DESKTOP_MEDIUM_CARD_SIZES} className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-5 xl:p-8 text-left transition-opacity duration-500">
             <h4 className="text-white font-bold text-[clamp(1.2rem,2vw,2.2rem)] mb-1 leading-tight">Scalability</h4>
             <div className="w-10 h-0.5 bg-purple-500 mb-2 shrink-0" />
@@ -133,7 +138,7 @@ export default function AboutHeroSlider() {
 
         {/* Card 5 - Desktop */}
         <div className="relative lg:w-[14vw] lg:h-[20vw] xl:w-[320px] xl:h-[420px] rounded-[2.5rem] overflow-hidden shadow-xl transform hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5 group">
-          <Image src="/vol-final.png" alt="Performance" fill className="object-cover object-[80%_20%]" />
+          <Image src="/vol-final.png" alt="Performance" fill sizes={DESKTOP_SMALL_CARD_SIZES} className="object-cover object-[80%_20%]" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-4 xl:p-6 text-left transition-opacity duration-500">
             <h4 className="text-white font-bold text-[clamp(1rem,1.5vw,1.8rem)] mb-1 leading-tight">Performance</h4>
             <div className="w-8 h-0.5 bg-orange-500 mb-2 shrink-0" />

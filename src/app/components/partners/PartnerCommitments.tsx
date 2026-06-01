@@ -31,7 +31,7 @@ const cardVariants: Variants = {
 
 const PartnerCommitments = () => {
   return (
-    <section className="py-10 lg:py-16 bg-white relative overflow-hidden">
+    <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-10">
           <motion.h2
@@ -55,7 +55,7 @@ const PartnerCommitments = () => {
               initial="initial"
               whileInView="whileInView"
               viewport={viewportConfig}
-              className="p-8 md:p-10 rounded-[24px] md:rounded-[32px] border border-emerald-200/60 hover:border-emerald-400 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group bg-gradient-to-br from-white to-emerald-100/70 relative overflow-hidden flex flex-col items-center text-center lg:items-start lg:text-left"
+              className="p-8 md:p-10 rounded-[24px] md:rounded-[32px] border border-emerald-200/60 hover:border-emerald-400 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group bg-gradient-to-br from-white to-emerald-100/70 relative overflow-hidden flex flex-col items-center text-center"
             >
               <div className="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                 {item.icon}

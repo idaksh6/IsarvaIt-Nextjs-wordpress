@@ -17,8 +17,10 @@ export default function Footer() {
         {/* Top Section: Brand & Description */}
         <div className="flex flex-col lg:flex-row justify-between lg:items-start items-center gap-6 lg:gap-12 mb-10 pb-10 lg:mb-12 lg:pb-12 border-b border-white/5">
           <div className="lg:max-w-2xl max-w-full">
-            <Link href="/" prefetch={true} className="flex items-center">
-              <Image src="/isarva New Logo.png" width={200} height={78} className="w-auto lg:mx-0 mx-auto h-[78px] object-contain drop-shadow-sm" alt="Isarva Logo" loading="lazy" />
+            <Link href="/" prefetch={true} className="flex items-center lg:mx-0 mx-auto">
+              <div className="relative h-[78px] w-[200px]">
+                <Image src="/isarva New Logo.png" alt="Isarva Logo" fill sizes="200px" className="object-contain drop-shadow-sm" loading="lazy" />
+              </div>
             </Link>
             <p className="text-white/60 text-lg md:text-xl leading-relaxed font-medium max-w-xl mt-3">
               We design and deliver precision-engineered technology solutions

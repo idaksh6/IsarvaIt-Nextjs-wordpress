@@ -175,7 +175,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
                   <span className="news-text-gradient">Custom News Portals</span>
                 </h1>
 
-                <p className="text-lg lg:text-xl text-slate-600 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0 font-medium">
+                <p className="text-base lg:text-xl text-slate-600 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0 font-medium">
                   {service.description ||
                     "Professional news portal development services for digital publishers, journalists, and media houses. We create fast, scalable, and SEO-optimized news platforms with real-time updates, ad-management, and engaging layouts that drive readership."}
                 </p>

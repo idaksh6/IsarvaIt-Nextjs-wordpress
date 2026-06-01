@@ -29,6 +29,34 @@ export default function ProductsListClient({ productsData }) {
     );
   }, [searchQuery, productsData]);
 
+  const getLastRowCenterClasses = (index, total) => {
+    const isLastCard = index === total - 1;
+    if (!isLastCard || total <= 1) return { link: "", card: "" };
+
+    const remainderLg = total % 3;
+    const remainderMd = total % 2;
+
+    const linkClasses = [];
+    const cardClasses = [];
+
+    // Center a single orphan card on 2-column layouts
+    if (remainderMd === 1) {
+      linkClasses.push("md:col-span-2 md:flex md:justify-center");
+      cardClasses.push("md:max-w-[calc(50%-1rem)]");
+    }
+
+    // Center a single orphan card on 3-column layouts
+    if (remainderLg === 1) {
+      linkClasses.push("lg:col-span-1 lg:col-start-2 lg:block lg:justify-self-auto");
+      cardClasses.push("lg:max-w-none");
+    }
+
+    return {
+      link: linkClasses.join(" "),
+      card: cardClasses.join(" "),
+    };
+  };
+
   // Scroll to products grid
   const scrollToProducts = () => {
     if (productsGridRef.current) {
@@ -55,7 +83,7 @@ export default function ProductsListClient({ productsData }) {
     <div className="bg-white overflow-hidden">
       {/* Hero Section with Search */}
       <section
-        className="relative pt-32 lg:pt-36 pb-16 lg:pb-20 overflow-hidden bg-gradient-to-br from-emerald-50 via-teal-50 to-white"
+        className="relative pt-32 lg:pt-40 pb-12 lg:pb-16 overflow-hidden bg-gradient-to-br from-emerald-50 via-teal-50 to-white"
         style={{ contain: "layout style paint" }}
       >
         {/* Enhanced Background Decorations */}
@@ -86,7 +114,7 @@ export default function ProductsListClient({ productsData }) {
             </h1>
 
             {/* Description */}
-            <p className="text-xl lg:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-8">
+            <p className="text-base lg:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium mb-8">
               Discover our comprehensive suite of business software solutions designed to streamline operations and drive growth.
             </p>
 
@@ -158,7 +186,7 @@ export default function ProductsListClient({ productsData }) {
       </section>
 
       {/* Products Grid Section */}
-      <section ref={productsGridRef} className="py-16 lg:py-24 bg-white scroll-mt-8">
+      <section ref={productsGridRef} className="py-12 lg:py-16 bg-white scroll-mt-8">
         <div className="max-w-7xl mx-auto px-6">
           {filteredProducts.length === 0 ? (
             /* No Results State */
@@ -182,13 +210,16 @@ export default function ProductsListClient({ productsData }) {
             </div>
           ) : (
             /* Products Grid */
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredProducts.map((product, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+              {filteredProducts.map((product, index) => {
+                const lastRowCenter = getLastRowCenterClasses(index, filteredProducts.length);
+
+                return (
                 <Link
                   key={product.slug}
                   href={`/product/${product.slug}`}
                   prefetch={true}
-                  className="product-click-trigger group"
+                  className={`product-click-trigger group block h-full w-full ${lastRowCenter.link}`}
                   data-product-name={product.title}
                   onClick={() => {
                     if (window.dataLayer) {
@@ -199,60 +230,65 @@ export default function ProductsListClient({ productsData }) {
                     }
                   }}
                 >
-                  <div className="relative rounded-3xl p-8 h-full transition-all duration-300 hover:scale-[1.02] bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg hover:shadow-2xl">
+                  <div className={`relative rounded-3xl p-8 h-full w-full transition-all duration-300 hover:scale-[1.02] bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg hover:shadow-2xl flex flex-col items-center text-center ${lastRowCenter.card}`}>
                     {/* Hover Gradient Effect */}
-                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-emerald-400/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-emerald-400/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
-                    <div className="relative text-center md:text-left">
-                      {/* Icon */}
-                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-green-500 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 mx-auto md:mx-0">
-                        <span className="text-3xl">{product.icon}</span>
-                      </div>
+                    {/* Category Badge */}
+                    <div className="relative mb-4 min-h-[1.75rem] flex items-center justify-center">
+                      <span className="bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full border-2 border-emerald-200 shadow-md whitespace-nowrap">
+                        {product.category}
+                      </span>
+                    </div>
 
-                      {/* Title */}
-                      <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-emerald-700 transition-colors duration-300">
-                        {product.title}
-                      </h3>
+                    {/* Icon */}
+                    <div className="relative w-16 h-16 shrink-0 rounded-2xl bg-gradient-to-br from-emerald-400 to-green-500 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-3xl">{product.icon}</span>
+                    </div>
 
-                      {/* Tagline */}
-                      {product.tagline && (
-                        <p className="text-emerald-600 font-semibold mb-3">
+                    {/* Title */}
+                    <h3 className="relative text-2xl font-bold text-gray-900 mb-1 w-full min-h-[4rem] line-clamp-2 leading-tight group-hover:text-emerald-700 transition-colors duration-300">
+                      {product.title}
+                    </h3>
+
+                    {/* Tagline */}
+                    <div className="relative mb-1 flex min-h-[3.25rem] w-full items-start justify-center">
+                      {product.tagline ? (
+                        <p className="text-emerald-600 font-semibold line-clamp-2 leading-snug">
                           {product.tagline}
                         </p>
+                      ) : (
+                        <span className="sr-only">No tagline</span>
                       )}
+                    </div>
 
-                      {/* Description */}
-                      <p className="text-gray-700 leading-relaxed mb-6">
-                        {product.shortDescription}
-                      </p>
+                    {/* Description */}
+                    <p className="relative text-gray-700 text-sm leading-relaxed min-h-[4.75rem] line-clamp-4 w-full">
+                      {product.shortDescription}
+                    </p>
 
-                      {/* CTA Link */}
-                      <div className="flex items-center justify-center md:justify-start gap-2 text-emerald-600 font-semibold group-hover:gap-3 transition-all duration-200">
+                    {/* CTA pinned to bottom */}
+                    <div className="mt-auto flex items-center justify-center gap-2 text-emerald-600 font-semibold group-hover:gap-3 transition-all duration-200 pt-2 border-t border-gray-50 w-full">
                         Explore Product
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                       </div>
-
-                      {/* Category Badge - At right edge overlapping border */}
-                      <div className="absolute -top-11 -right-2 bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full border-2 border-emerald-200 shadow-md">
-                        {product.category}
-                      </div>
-                    </div>
                   </div>
                 </Link>
-              ))}
+                );
+              })}
             </div>
           )}
         </div>
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      <section className="py-12 lg:py-16 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
         <div className="absolute inset-0 bg-mesh-green opacity-20"></div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
               Why Choose Our Products?
             </h2>
@@ -307,7 +343,7 @@ export default function ProductsListClient({ productsData }) {
 
       {/* CTA Section */}
       <section
-        className="py-20 lg:py-32 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden"
+        className="py-12 lg:py-16 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden"
         style={{ contain: "layout style paint" }}
       >
         <div className="absolute inset-0 bg-mesh-green opacity-30"></div>

@@ -44,19 +44,19 @@ export default function AboutPage() {
           <div className="relative section-animate" style={{ animationDelay: '0.2s' }}>
             <div className="flex justify-center items-center gap-2 md:gap-5 overflow-hidden py-6 md:py-10">
               <div className="relative w-20 h-32 sm:w-32 sm:h-48 md:w-48 md:h-72 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-xl transform -translate-y-4 md:-translate-y-8 hover:-translate-y-10 transition-transform duration-500 ring-1 ring-[#10b981]/5">
-                <Image src="/agency_office_studio_premium_1773850105446.png" alt="Modern office" fill className="object-cover" />
+                <Image src="/agency_office_studio_premium_1773850105446.png" alt="Modern office" fill sizes="(max-width: 1024px) 50vw, 400px" className="object-cover" />
               </div>
               <div className="relative w-28 h-40 sm:w-40 sm:h-60 md:w-60 md:h-80 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl z-10 transform -translate-y-1 md:-translate-y-2 hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5">
-                <Image src="/team_collab_hero_1773850334652.png" alt="Team" fill className="object-cover" />
+                <Image src="/team_collab_hero_1773850334652.png" alt="Team" fill sizes="(max-width: 1024px) 50vw, 400px" className="object-cover" />
               </div>
               <div className="relative w-32 h-48 sm:w-48 sm:h-72 md:w-80 md:h-[30rem] rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden shadow-[0_35px_60px_-15px_rgba(16,185,129,0.3)] z-20 transform translate-y-4 md:translate-y-6 hover:translate-y-4 transition-transform duration-500 ring-2 md:ring-4 ring-white">
-                <Image src="/dev_coding_hero_1773850315265.png" alt="Coding" fill className="object-cover" />
+                <Image src="/dev_coding_hero_1773850315265.png" alt="Coding" fill sizes="(max-width: 1024px) 50vw, 400px" className="object-cover" />
               </div>
               <div className="relative w-28 h-40 sm:w-40 sm:h-60 md:w-60 md:h-80 rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl z-10 transform -translate-y-1 md:-translate-y-2 hover:-translate-y-4 transition-transform duration-500 ring-1 ring-[#10b981]/5">
-                <Image src="/ui_design_screen_hero_1773850368381.png" alt="Design" fill className="object-cover" />
+                <Image src="/ui_design_screen_hero_1773850368381.png" alt="Design" fill sizes="(max-width: 1024px) 50vw, 400px" className="object-cover" />
               </div>
               <div className="relative w-20 h-32 sm:w-32 sm:h-48 md:w-48 md:h-72 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-xl transform -translate-y-4 md:-translate-y-8 hover:-translate-y-10 transition-transform duration-500 ring-1 ring-[#10b981]/5 hidden sm:block">
-                <Image src="/agency_hero_laptop_1773849789513.png" alt="Laptop" fill className="object-cover" />
+                <Image src="/agency_hero_laptop_1773849789513.png" alt="Laptop" fill sizes="(max-width: 1024px) 50vw, 400px" className="object-cover" />
               </div>
             </div>
           </div>
@@ -102,7 +102,7 @@ export default function AboutPage() {
 
             {/* Full Width Image Content */}
             <div className="relative w-full h-[300px] md:h-[450px] rounded-[3rem] overflow-hidden mb-16 shadow-2xl ring-4 ring-white/50">
-              <Image src="/dev_coding_hero_1773850315265.png" alt="Digital Excellence" fill className="object-cover" />
+              <Image src="/dev_coding_hero_1773850315265.png" alt="Digital Excellence" fill sizes="(max-width: 1024px) 50vw, 400px" className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#16423C]/90 via-transparent to-transparent flex items-end p-6">
                 <div className="flex flex-col">
                   <span className="text-white/60 text-xs font-bold uppercase tracking-[0.3em] mb-2">Isarva Innovation Hub</span>
@@ -254,7 +254,7 @@ export default function AboutPage() {
             </div>
             <div className="w-full lg:w-1/2 relative section-animate" style={{ animationDelay: '0.2s' }}>
               <div className="relative rounded-[4rem] overflow-hidden aspect-[4/3] shadow-2xl ring-1 ring-[#10b981]/10 min-h-[400px]">
-                <Image src="/team_collab_hero_1773850334652.png" alt="Impact" fill className="object-cover" />
+                <Image src="/team_collab_hero_1773850334652.png" alt="Impact" fill sizes="(max-width: 1024px) 50vw, 400px" className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#10b981]/10 to-transparent"></div>
               </div>
               <div className="absolute -bottom-10 -right-6 bg-white p-10 rounded-[3rem] shadow-2xl border border-[#10b981]/5 hidden md:block max-w-[320px]">
@@ -301,7 +301,7 @@ export default function AboutPage() {
             </div>
             <div className="lg:w-2/5 relative lg:block hidden">
               <div className="relative w-full h-[300px] md:h-[400px] rounded-[3rem] overflow-hidden shadow-2xl ring-4 ring-white/50">
-                <Image src="/team_collab_hero_1773850334652.png" alt="Our Culture" fill className="object-cover" />
+                <Image src="/team_collab_hero_1773850334652.png" alt="Our Culture" fill sizes="(max-width: 1024px) 50vw, 400px" className="object-cover" />
               </div>
               <div className="absolute -top-6 -right-6 w-24 h-24 bg-[#10b981] lg:flex hidden rounded-2xl  items-center justify-center text-white shadow-2xl transform rotate-12">
                 <Briefcase className="w-10 h-10" />
@@ -314,7 +314,7 @@ export default function AboutPage() {
       {/* 6. CTA SECTION */}
       <section className="py-24 relative bg-[#1a1f24] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/agency_design_process_abstract_1773850147849.png" alt="Abstract" fill className="object-cover opacity-[0.08] mix-blend-screen" />
+          <Image src="/agency_design_process_abstract_1773850147849.png" alt="Abstract" fill sizes="100vw" className="object-cover opacity-[0.08] mix-blend-screen" />
         </div>
 
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10 section-animate">

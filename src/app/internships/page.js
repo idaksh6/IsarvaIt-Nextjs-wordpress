@@ -246,7 +246,7 @@ export default function InternshipsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl lg:text-2xl text-[#53606b] max-w-4xl mx-auto leading-relaxed mb-12 font-medium"
+              className="text-base lg:text-xl text-[#53606b] max-w-4xl mx-auto leading-relaxed mb-12 font-medium"
             >
               Isarva Infotech offers internships that transcend traditional learning. Interns are immersed in dynamic projects, tackling complex challenges and gaining hands-on experience with cutting-edge technologies. This program provides a platform for aspiring professionals to apply theoretical knowledge to real-world scenarios, fostering a deep understanding of the industry and accelerating career readiness.
             </motion.p>
@@ -293,9 +293,9 @@ export default function InternshipsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-[#FDF8F2] p-10 rounded-[3rem] lg:text-left text-center border border-[#10b981]/5 hover:border-[#10b981]/20 transition-all group hover:shadow-2xl"
+                className="bg-[#FDF8F2] p-10 rounded-[3rem] text-center flex flex-col items-center border border-[#10b981]/5 hover:border-[#10b981]/20 transition-all group hover:shadow-2xl"
               >
-                <div className="mb-6 p-4 bg-white lg:mx-0 mx-auto rounded-2xl w-fit shadow-lg transform group-hover:scale-110 transition-transform duration-500">
+                <div className="mb-6 p-4 bg-white mx-auto rounded-2xl w-fit shadow-lg transform group-hover:scale-110 transition-transform duration-500">
                   {item.icon}
                 </div>
                 <h3 className="text-2xl font-display font-bold mb-4 text-[#1a1f24]">{item.title}</h3>
@@ -332,9 +332,9 @@ export default function InternshipsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-white p-8 rounded-3xl border lg:text-left text-center border-[#10b981]/5 hover:border-[#10b981]/20 transition-all group hover:shadow-xl"
+                className="bg-white p-8 rounded-3xl border text-center flex flex-col items-center border-[#10b981]/5 hover:border-[#10b981]/20 transition-all group hover:shadow-xl"
               >
-                <div className="mb-4 p-3 bg-emerald-50 rounded-xl w-fit lg:mx-0 mx-auto text-[#10b981] transform group-hover:scale-110 transition-transform duration-500">
+                <div className="mb-4 p-3 bg-emerald-50 rounded-xl w-fit mx-auto text-[#10b981] transform group-hover:scale-110 transition-transform duration-500">
                   {item.icon}
                 </div>
                 <h3 className="text-xl font-display font-bold mb-3 text-[#1a1f24]">{item.title}</h3>
@@ -371,9 +371,9 @@ export default function InternshipsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-[#FDF8F2] p-12 rounded-[3.5rem] border lg:text-left text-center border-[#10b981]/5 hover:border-[#10b981]/20 transition-all group hover:shadow-2xl"
+                className="bg-[#FDF8F2] p-12 rounded-[3.5rem] border text-center flex flex-col items-center border-[#10b981]/5 hover:border-[#10b981]/20 transition-all group hover:shadow-2xl"
               >
-                <div className="mb-6 transform group-hover:scale-110 transition-transform duration-500 w-fit lg:mx-0 mx-auto">
+                <div className="mb-6 transform group-hover:scale-110 transition-transform duration-500 w-fit mx-auto">
                   {reason.icon}
                 </div>
                 <h3 className="text-2xl font-display font-bold mb-4 text-[#1a1f24]">{reason.title}</h3>

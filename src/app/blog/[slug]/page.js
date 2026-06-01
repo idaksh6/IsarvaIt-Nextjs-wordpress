@@ -78,7 +78,7 @@ export default async function BlogPostPage({ params }) {
             </h1>
 
             {/* Excerpt */}
-            <p className="text-xl lg:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
+            <p className="text-base lg:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed font-medium">
               {post.excerpt}
             </p>
           </div>
