@@ -103,7 +103,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" prefetch={true} className="flex items-center">
-          <div className="relative h-[64px] w-[165px]">
+          <div className="relative h-[64px] w-[165px]"> {/* Added sizes for Next.js Image optimization */}
             <Image src="/isarva New Logo.png" alt="Isarva Logo" fill sizes="165px" className="object-contain drop-shadow-sm" priority />
           </div>
         </Link>
