@@ -50,7 +50,7 @@ const WebsiteMaintenanceServices = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Header Section */}
-        <div className="mb-10 text-center lg:text-left">
+        <div className="mb-10 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 text-emerald-700 font-bold text-xs tracking-wider capitalize mb-6 border border-emerald-100">
             <ShieldCheck className="w-4 h-4 text-emerald-600" />
             Reliable Care for Your Website
@@ -60,7 +60,7 @@ const WebsiteMaintenanceServices = () => {
             Complete Website Maintenance Services
           </h2>
           
-          <p className="text-lg text-gray-500 max-w-3xl leading-relaxed mx-auto lg:mx-0">
+          <p className="text-lg text-gray-500 max-w-3xl leading-relaxed mx-auto">
             From <Link href="/wordpress-maintenance" className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors">WordPress</Link>, <Link href="/woocommerce-maintenance-services" className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors">WooCommerce</Link>, and <Link href="/service/statamic-development" className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors">Statamic</Link> to Laravel and mobile apps, we keep your digital products secure, updated, and running smoothly every day.
           </p>
         </div>

@@ -115,24 +115,22 @@ const WebsiteMaintenanceCaseStudies = () => {
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
 
         {/* Header Row */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-8 text-center lg:text-left">
-          <div className="lg:w-2/3">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-emerald-700 font-bold text-xs tracking-wider capitalize mb-6 shadow-sm">
-              <Bookmark className="w-4 h-4 text-emerald-500" />
-              Trusted Maintenance Partners
-            </div>
-
-            <h2 className="text-gray-900 mb-4 text-4xl lg:text-5xl font-black leading-tight tracking-tight">
-              Websites We Support Continuously
-            </h2>
-
-            <p className="text-lg text-gray-600 max-w-2xl leading-relaxed mx-auto lg:mx-0">
-              Explore a selection of websites we actively maintain, including the platforms they use and the regular updates, monitoring, and support we provide to keep them performing at their best.
-            </p>
+        <div className="mb-10 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-emerald-700 font-bold text-xs tracking-wider capitalize mb-6 shadow-sm">
+            <Bookmark className="w-4 h-4 text-emerald-500" />
+            Trusted Maintenance Partners
           </div>
 
+          <h2 className="text-gray-900 mb-4 text-4xl lg:text-5xl font-black leading-tight tracking-tight">
+            Websites We Support Continuously
+          </h2>
+
+          <p className="text-lg text-gray-600 max-w-2xl leading-relaxed mx-auto">
+            Explore a selection of websites we actively maintain, including the platforms they use and the regular updates, monitoring, and support we provide to keep them performing at their best.
+          </p>
+
           {/* Navigation Buttons */}
-          <div className="flex gap-4 justify-center lg:justify-start">
+          <div className="flex gap-4 justify-center mt-8">
             <button
               onClick={scrollLeft}
               disabled={isAtStart}
