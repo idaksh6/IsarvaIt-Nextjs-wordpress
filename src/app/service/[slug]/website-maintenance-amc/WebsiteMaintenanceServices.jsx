@@ -8,7 +8,7 @@ import Link from "next/link";
 const services = [
   {
     title: "Website Maintenance",
-    description: "Regular updates, backups, and protection, fully managed for your site.",
+    description: "Keep PHP-built custom websites secure with regular updates, backups, bug fixes, and proactive monitoring for long-term performance.",
     icon: "/images/services/website-maintenance.svg",
     link: "/website-maintenance"
   },
@@ -23,17 +23,35 @@ const services = [
     description: "Protect sales with proactive cart, checkout, and performance maintenance for high-performing WooCommerce stores.",
     icon: "/images/services/woocommerce-maintenance.svg",
     link: "/woocommerce-maintenance-services"
+  },
+  {
+    title: "Laravel Maintenance",
+    description: "Keep Laravel applications secure with framework updates, dependency patches, server monitoring, and proactive bug fixes.",
+    icon: "/images/services/laravel-maintenance.svg",
+    link: "#"
+  },
+  {
+    title: "Statamic Maintenance",
+    description: "Maintain your Statamic CMS with addon updates, content sync, security hardening, and performance tuning.",
+    icon: "/images/services/statamic-maintenance.svg",
+    link: "/service/statamic-development"
+  },
+  {
+    title: "Mobile App Maintenance",
+    description: "Keep your mobile apps stable with OS compatibility updates, crash monitoring, security patches, and ongoing performance optimization.",
+    icon: "/images/services/mobile-app-maintenance.svg",
+    link: "#"
   }
 ];
 
 const WebsiteMaintenanceServices = () => {
   return (
-    <section className="py-10 lg:py-16 bg-white relative">
+    <section className="py-12 lg:py-16 bg-white relative">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Header Section */}
-        <div className="mb-16 lg:mb-24 text-center lg:text-left">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 text-emerald-700 font-bold text-xs tracking-wider uppercase mb-6 border border-emerald-100">
+        <div className="mb-10 text-center lg:text-left">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 text-emerald-700 font-bold text-xs tracking-wider capitalize mb-6 border border-emerald-100">
             <ShieldCheck className="w-4 h-4 text-emerald-600" />
             Reliable Care for Your Website
           </div>
@@ -43,7 +61,7 @@ const WebsiteMaintenanceServices = () => {
           </h2>
           
           <p className="text-lg text-gray-500 max-w-3xl leading-relaxed mx-auto lg:mx-0">
-            From <Link href="/wordpress-maintenance" className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors">WordPress</Link> and <Link href="/woocommerce-maintenance-services" className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors">WooCommerce</Link> to custom-built websites, we keep your site secure, updated, and running smoothly every day.
+            From <Link href="/wordpress-maintenance" className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors">WordPress</Link>, <Link href="/woocommerce-maintenance-services" className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors">WooCommerce</Link>, and <Link href="/service/statamic-development" className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors">Statamic</Link> to Laravel and mobile apps, we keep your digital products secure, updated, and running smoothly every day.
           </p>
         </div>
 

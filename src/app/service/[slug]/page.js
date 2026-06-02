@@ -45,6 +45,11 @@ export default async function ServiceDetailPage({ params }) {
     notFound();
   }
 
+  const isAmc = slug === "website-maintenance-amc";
+  const headingCaseClass = isAmc ? "capitalize" : "uppercase";
+  const sectionPy = isAmc ? "py-12 lg:py-16" : "py-10 lg:py-16";
+  const sectionHeaderMb = isAmc ? "mb-10" : "mb-16";
+
   // ── Premium page for Website Services ──────────────────────
   if (slug === "website-services") {
     return <WebsiteServicesPremium service={service} servicesData={servicesData} />;
@@ -75,7 +80,7 @@ export default async function ServiceDetailPage({ params }) {
     <div className="bg-white">
       {/* Hero Section */}
       <section
-        className="relative pt-32 lg:pt-40 pb-24 overflow-hidden bg-gradient-to-br from-emerald-50 via-teal-50 to-white"
+        className={`relative pt-32 lg:pt-40 ${isAmc ? "pb-12 lg:pb-16" : "pb-24"} overflow-hidden bg-gradient-to-br from-emerald-50 via-teal-50 to-white`}
       >
         {/* Background Decorations */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none" style={{ transform: "translateZ(0)" }}>
@@ -105,7 +110,7 @@ export default async function ServiceDetailPage({ params }) {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className={`grid grid-cols-1 lg:grid-cols-2 ${isAmc ? "gap-12" : "gap-16"} items-center`}>
             <div className="text-center lg:text-left">
               <div className="flex w-fit mx-auto lg:mx-0 items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-emerald-100 to-teal-100 text-emerald-800 font-semibold text-sm mb-6 border border-emerald-200 shadow-md">
                 <span className="text-2xl">{service.icon}</span>
@@ -114,7 +119,7 @@ export default async function ServiceDetailPage({ params }) {
               <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-gray-900 mb-6 tracking-tight leading-[1]">
                 {service.title}
               </h1>
-              <p className="text-base lg:text-xl text-gray-700 leading-relaxed font-medium mb-10">
+              <p className={`text-base lg:text-xl text-gray-700 leading-relaxed font-medium ${isAmc ? "mb-8" : "mb-10"}`}>
                 {service.description}
               </p>
               <div className="flex flex-wrap justify-center lg:justify-start gap-4">
@@ -151,11 +156,11 @@ export default async function ServiceDetailPage({ params }) {
 
       {/* Sub-Services Section - Only shown if service has subServices */}
       {service.subServices && service.subServices.length > 0 && (
-        <section id="sub-services" className="py-10 lg:py-16 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        <section id="sub-services" className={`${sectionPy} bg-gradient-to-b from-white to-gray-50 relative overflow-hidden`}>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(16,185,129,0.05),transparent_50%)]"></div>
 
           <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="text-center mb-16">
+            <div className={`text-center ${sectionHeaderMb}`}>
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-100 text-emerald-700 font-semibold text-sm mb-6">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
@@ -245,7 +250,7 @@ export default async function ServiceDetailPage({ params }) {
       )}
 
       {/* Features Section - Clean Professional Design */}
-      <section id="features" className="py-10 lg:py-16 bg-white relative overflow-hidden">
+      <section id="features" className={`${sectionPy} bg-white relative overflow-hidden`}>
         {/* Background Elements */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 right-1/4 w-96 h-96 bg-emerald-100 rounded-full blur-3xl"></div>
@@ -254,14 +259,14 @@ export default async function ServiceDetailPage({ params }) {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           {/* Header */}
-          <div className="max-w-3xl mb-16 mx-auto lg:mx-0 text-center lg:text-left">
+          <div className={`max-w-3xl ${sectionHeaderMb} mx-auto lg:mx-0 text-center lg:text-left`}>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-50 border border-emerald-200 mb-6">
               <svg className="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
               <span className="text-emerald-700 font-semibold text-sm">Key Features</span>
             </div>
-            <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            <h2 className={`text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter ${headingCaseClass}`}>
               {service.slug === "odoo-apps-support-and-maintenance"
                 ? "Comprehensive Support Services"
                 : service.slug === "ai-ml-consulting"
@@ -376,6 +381,7 @@ export default async function ServiceDetailPage({ params }) {
                   feature={feature}
                   index={index}
                   isEven={index % 2 === 0}
+                  centered={service.slug === "website-maintenance-amc"}
                 />
               ))}
             </div>
@@ -384,18 +390,18 @@ export default async function ServiceDetailPage({ params }) {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-10 lg:py-16 bg-gray-50 relative overflow-hidden">
+      <section className={`${sectionPy} bg-gray-50 relative overflow-hidden`}>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(16,185,129,0.05),transparent_50%)]"></div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
+          <div className={`text-center ${sectionHeaderMb}`}>
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-emerald-100 to-teal-100 text-emerald-700 font-semibold text-sm mb-6 border border-emerald-200">
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
               </svg>
               Business Impact
             </div>
-            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            <h2 className={`text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter ${headingCaseClass}`}>
               {service.slug === "odoo-apps-support-and-maintenance"
                 ? "Why Choose Isarva for Odoo Support?"
                 : service.slug === "ai-ml-consulting"
@@ -573,7 +579,7 @@ export default async function ServiceDetailPage({ params }) {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {service.benefits.map((benefit, index) => (
-                <BenefitItem key={index} benefit={benefit} index={index} />
+                <BenefitItem key={index} benefit={benefit} index={index} centered={service.slug === "website-maintenance-amc"} />
               ))}
             </div>
           )}
@@ -592,21 +598,21 @@ export default async function ServiceDetailPage({ params }) {
       )}
 
       {/* Related Services Section */}
-      <section className="py-10 lg:py-16 bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
+      <section className={`${sectionPy} bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden`}>
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-200/20 blur-[120px] rounded-full"></div>
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-teal-200/20 blur-[120px] rounded-full"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
+          <div className={`text-center ${sectionHeaderMb}`}>
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-emerald-200 text-emerald-700 font-semibold text-sm mb-6 shadow-sm">
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z" />
               </svg>
               You Might Also Like
             </div>
-            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            <h2 className={`text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter ${headingCaseClass}`}>
               Explore Related Services
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -623,25 +629,25 @@ export default async function ServiceDetailPage({ params }) {
                 className="relative"
               >
                 <div className="h-full rounded-3xl p-8 bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg transition-all duration-300">
-                  <div className="relative">
+                  <div className="relative flex flex-col items-center text-center">
                     {/* Icon */}
-                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center mx-auto md:mx-0 mb-6 shadow-lg transition-all duration-300 relative overflow-hidden">
+                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center mx-auto mb-6 shadow-lg transition-all duration-300 relative overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-tr from-white/0 to-white/30"></div>
                       <span className="text-4xl relative z-10">{relatedService.icon}</span>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center md:text-left">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
                       {relatedService.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-gray-700 leading-relaxed mb-6 text-center md:text-left">
+                    <p className="text-gray-700 leading-relaxed mb-6">
                       {relatedService.shortDescription}
                     </p>
 
                     {/* CTA */}
-                    <div className="flex items-center justify-center md:justify-start gap-2 text-emerald-600 font-bold">
+                    <div className="flex items-center justify-center gap-2 text-emerald-600 font-bold">
                       <span>Explore Service</span>
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
@@ -670,7 +676,7 @@ export default async function ServiceDetailPage({ params }) {
 
       {/* CTA Section */}
       <section
-        className="py-10 lg:py-16 bg-gradient-to-br from-emerald-600 via-teal-600 to-green-600 relative overflow-hidden"
+        className={`${sectionPy} bg-gradient-to-br from-emerald-600 via-teal-600 to-green-600 relative overflow-hidden`}
       >
         {/* Decorative elements */}
         <div className="absolute inset-0 opacity-20">
@@ -700,7 +706,7 @@ export default async function ServiceDetailPage({ params }) {
             Let's Get Started
           </div>
 
-          <h2 className="text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+          <h2 className={`text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter ${headingCaseClass}`}>
             {service.slug === "odoo-apps-support-and-maintenance"
               ? "Ready to Optimize Your Odoo Experience?"
               : "Ready to Transform Your Business?"

@@ -111,13 +111,13 @@ const WebsiteMaintenanceCaseStudies = () => {
   };
 
   return (
-    <section className="py-10 lg:py-16 bg-[#F4F7FB] relative overflow-hidden">
+    <section className="py-12 lg:py-16 bg-[#F4F7FB] relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 relative z-10">
 
         {/* Header Row */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-8 text-center lg:text-left">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-8 text-center lg:text-left">
           <div className="lg:w-2/3">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-emerald-700 font-bold text-xs tracking-wider uppercase mb-6 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-emerald-700 font-bold text-xs tracking-wider capitalize mb-6 shadow-sm">
               <Bookmark className="w-4 h-4 text-emerald-500" />
               Trusted Maintenance Partners
             </div>
@@ -200,7 +200,7 @@ const WebsiteMaintenanceCaseStudies = () => {
                     href={study.link}
                     target="_blank"
                     rel="nofollow noopener noreferrer"
-                    className="group flex items-center gap-2 text-[13px] font-bold text-gray-900 uppercase tracking-wide hover:text-emerald-600 transition-colors"
+                    className="group flex items-center gap-2 text-[13px] font-bold text-gray-900 capitalize tracking-wide hover:text-emerald-600 transition-colors"
                   >
                     {study.url}
                     <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />

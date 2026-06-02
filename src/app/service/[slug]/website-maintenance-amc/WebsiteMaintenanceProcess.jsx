@@ -118,7 +118,7 @@ const WebsiteMaintenanceProcess = () => {
 
   return (
     <section
-      className="py-10 lg:py-16 bg-gray-50 relative"
+      className="py-12 lg:py-16 bg-gray-50 relative"
       ref={containerRef}
     >
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -127,7 +127,7 @@ const WebsiteMaintenanceProcess = () => {
           {/* Left Column — Sticky */}
           <div className="lg:w-2/5 text-center lg:text-left">
             <div className="lg:sticky lg:top-32">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 text-emerald-700 font-bold text-xs tracking-wider uppercase mb-8 border border-emerald-100">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 text-emerald-700 font-bold text-xs tracking-wider capitalize mb-8 border border-emerald-100">
                 <Settings className="w-4 h-4" />
                 How We Deliver
               </div>
@@ -183,7 +183,7 @@ const WebsiteMaintenanceProcess = () => {
 
                     <div className="flex flex-wrap items-center gap-4 mb-4 pr-8 md:pr-0">
                       <h3 className="text-2xl font-bold text-gray-900">{step.title}</h3>
-                      <span className="px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 text-[10px] font-extrabold tracking-widest uppercase border border-emerald-100">
+                      <span className="px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 text-[10px] font-extrabold tracking-widest capitalize border border-emerald-100">
                         {step.badge}
                       </span>
                     </div>

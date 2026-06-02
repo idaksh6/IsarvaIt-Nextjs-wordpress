@@ -49,7 +49,7 @@ const FeatureIcons = {
 
 const iconKeys = Object.keys(FeatureIcons);
 
-export default function FeatureItem({ feature, index, isEven }) {
+export default function FeatureItem({ feature, index, isEven, centered = false }) {
   const [isVisible, setIsVisible] = useState(false);
   const itemRef = useRef(null);
 
@@ -91,9 +91,17 @@ export default function FeatureItem({ feature, index, isEven }) {
       }}
     >
       {/* Card */}
-      <div className="h-full bg-white rounded-2xl border-2 border-gray-100 hover:border-emerald-300 p-8 transition-all duration-300 text-center md:text-left">
+      <div className={`h-full bg-white rounded-2xl border-2 border-gray-100 hover:border-emerald-300 p-8 transition-all duration-300 relative overflow-hidden flex flex-col ${centered ? "items-center text-center" : "text-center md:text-left"}`}>
+        {!centered && (
+          <div className="absolute top-6 right-6 w-8 h-8 rounded-lg bg-gray-50 border border-gray-200 flex items-center justify-center transition-all duration-300">
+            <span className="text-xs font-bold text-gray-400">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+          </div>
+        )}
+
         {/* Icon Container */}
-        <div className="w-16 h-16 mx-auto md:mx-0 rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-100 flex items-center justify-center mb-6 transition-all duration-300">
+        <div className={`w-16 h-16 shrink-0 rounded-xl bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-100 flex items-center justify-center mb-6 transition-all duration-300 ${centered ? "mx-auto" : "mx-auto md:mx-0"}`}>
           {typeof feature === 'object' && feature.icon ? (
             <img src={feature.icon} alt={feature.title || "Feature Icon"} className="w-8 h-8 object-contain" />
           ) : (
@@ -102,26 +110,19 @@ export default function FeatureItem({ feature, index, isEven }) {
         </div>
 
         {/* Feature Title */}
-        <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">
+        <h3 className={`text-xl font-bold text-gray-900 mb-3 leading-tight ${centered ? "w-full" : ""}`}>
           {typeof feature === 'string' ? feature : feature.title}
         </h3>
 
+        {/* Decorative Line */}
+        <div className={`w-12 h-1 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full mb-4 ${centered ? "mx-auto" : "mx-auto md:mx-0"}`}></div>
+
         {/* Feature Description */}
         {typeof feature === 'object' && feature.description && (
-          <p className="text-gray-600 leading-relaxed text-sm">
+          <p className="text-gray-600 leading-relaxed text-sm w-full">
             {feature.description}
           </p>
         )}
-
-        {/* Decorative Line */}
-        <div className="w-12 h-1 mx-auto md:mx-0 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full mb-4 mt-4"></div>
-
-        {/* Number Badge */}
-        <div className="absolute top-6 right-6 w-8 h-8 rounded-lg bg-gray-50 border border-gray-200 flex items-center justify-center transition-all duration-300">
-          <span className="text-xs font-bold text-gray-400">
-            {String(index + 1).padStart(2, '0')}
-          </span>
-        </div>
       </div>
     </div>
   );

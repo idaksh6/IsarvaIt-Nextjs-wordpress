@@ -46,17 +46,17 @@ const BenefitIcons = {
 
 const iconKeys = Object.keys(BenefitIcons);
 
-export default function BenefitItem({ benefit, index }) {
+export default function BenefitItem({ benefit, index, centered = false }) {
   // Select icon based on index
   const iconKey = iconKeys[index % iconKeys.length];
   const icon = BenefitIcons[iconKey];
 
   return (
     <div className="relative">
-      <div className="h-full rounded-3xl p-8 bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg transition-all duration-300">
-        <div className="relative text-center md:text-left">
+      <div className={`h-full rounded-3xl p-8 bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg transition-all duration-300 flex flex-col ${centered ? "items-center text-center" : ""}`}>
+        <div className={`relative w-full flex flex-col ${centered ? "items-center text-center" : "text-center md:text-left"}`}>
           {/* Icon */}
-          <div className="w-16 h-16 mx-auto md:mx-0 rounded-2xl bg-gradient-to-br from-emerald-400 via-teal-500 to-green-500 flex items-center justify-center mb-6 shadow-lg transition-all duration-300 relative overflow-hidden">
+          <div className={`w-16 h-16 shrink-0 rounded-2xl bg-gradient-to-br from-emerald-400 via-teal-500 to-green-500 flex items-center justify-center mb-6 shadow-lg transition-all duration-300 relative overflow-hidden ${centered ? "mx-auto" : "mx-auto md:mx-0"}`}>
             <div className="absolute inset-0 bg-gradient-to-tr from-white/0 to-white/30"></div>
             <div className="relative z-10">
               {typeof benefit === 'object' && benefit.icon ? (
@@ -68,13 +68,13 @@ export default function BenefitItem({ benefit, index }) {
           </div>
 
           {/* Benefit title */}
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 w-full">
             {typeof benefit === 'string' ? benefit : benefit.title}
           </h3>
 
           {/* Benefit description */}
           {typeof benefit === 'object' && benefit.description && (
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-600 leading-relaxed w-full">
               {benefit.description}
             </p>
           )}

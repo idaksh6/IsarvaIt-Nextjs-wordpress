@@ -47,14 +47,14 @@ const cardVariants = {
 
 const WebsiteMaintenanceHeadaches = () => {
   return (
-    <section className="py-10 lg:py-16 bg-white relative overflow-hidden">
+    <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(16,185,129,0.05),transparent_50%)]"></div>
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-emerald-200 text-emerald-700 font-semibold text-sm mb-6 shadow-sm">
             <Frown className="w-4 h-4 text-emerald-600" />
-            <span className="uppercase tracking-wider">Website headaches</span>
+            <span className="capitalize tracking-wider">Website headaches</span>
           </div>
           <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter">
             Site frustrations? <span className="text-emerald-600">You’re not alone!</span>
