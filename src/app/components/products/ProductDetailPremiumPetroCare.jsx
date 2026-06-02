@@ -34,7 +34,7 @@ export default function ProductDetailPremiumPetroCare({
   return (
     <div className="bg-white font-sans selection:bg-amber-100 selection:text-amber-900">
       {/* 1. Centered Hero Section */}
-      <section className="relative pt-40 lg:pb-32 pb-10 overflow-hidden bg-gradient-to-b from-[#fffbeb] via-[#fef9f5] to-white">
+      <section className="relative pt-32 lg:pt-40 pb-12 lg:pb-16 overflow-hidden bg-gradient-to-b from-[#fffbeb] via-[#fef9f5] to-white">
         {/* Noise Texture Overlay */}
         <div
           className="absolute inset-0 opacity-[0.15] pointer-events-none"

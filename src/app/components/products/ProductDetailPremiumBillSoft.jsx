@@ -515,7 +515,7 @@ export default function ProductDetailPremiumBillSoft({
 
         <div className="relative z-40 pt-0">
           {/* Intro Section Above Tabs */}
-          <section className="relative pt-36 lg:pt-40 pb-10 lg:pb-16 overflow-hidden" style={{ backgroundColor: 'rgb(253, 248, 242)' }}>
+          <section className="relative pt-32 lg:pt-40 pb-12 lg:pb-16 overflow-hidden" style={{ backgroundColor: 'rgb(253, 248, 242)' }}>
             <div className="absolute inset-0 aurora-mesh pointer-events-none" />
             <div className="absolute inset-0 hero-grid opacity-[0.2] pointer-events-none" />
 
@@ -694,7 +694,7 @@ export default function ProductDetailPremiumBillSoft({
             </div>
           </div>
 
-          <div ref={contentTopRef} className="wp-aurora-gradient w-full  px-6 pt-4 lg:pt-16 pb-10 lg:pb-16">
+          <div ref={contentTopRef} className="wp-aurora-gradient w-full px-6 pt-4 lg:pt-8 pb-12 lg:pb-16">
             <div className="lg:container mx-auto">
               <div className="flex flex-col lg:flex-row gap-0 lg:gap-12">
                 {/* Desktop Sidebar */}
@@ -920,7 +920,7 @@ export default function ProductDetailPremiumBillSoft({
 
                   {/* What BillSoft Covers Section */}
                   {activeTab === "dashboard" && (
-                    <section className="pb-8 lg:pb-16">
+                    <section className="py-12 lg:py-16">
                       <div className="container mx-auto ">
                         <div className="relative rounded-[2.5rem] overflow-hidden border border-gray-100 shadow-2xl bg-white p-2 ">
                           <div className="hidden lg:block relative w-full overflow-hidden rounded-[2rem]">

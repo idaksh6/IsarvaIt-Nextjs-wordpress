@@ -46,9 +46,28 @@ export default async function ServiceDetailPage({ params }) {
   }
 
   const isAmc = slug === "website-maintenance-amc";
-  const headingCaseClass = isAmc ? "capitalize" : "uppercase";
-  const sectionPy = isAmc ? "py-12 lg:py-16" : "py-10 lg:py-16";
-  const sectionHeaderMb = isAmc ? "mb-10" : "mb-16";
+  const centeredFeaturesLayout = [
+    "website-maintenance-amc",
+    "cloud",
+    "ai-ml-consulting",
+    "staffing",
+    "digital-marketing",
+    "statamic-development",
+    "consulting-services",
+    "erp-services",
+    "offshore-development",
+    "training",
+    "gps-tracking",
+    "wordpress-training",
+    "odoo-apps-support-and-maintenance",
+  ].includes(slug);
+  const headingCaseClass = "capitalize";
+  const sectionPy = "py-12 lg:py-16";
+  const sectionHeaderMb = "mb-10";
+  const lgFeatureRemainder = service.features.length % 3;
+  const hasLgOrphanFeatureRow = lgFeatureRemainder === 1 || lgFeatureRemainder === 2;
+  const featuresMainRowCount = hasLgOrphanFeatureRow ? service.features.length - lgFeatureRemainder : service.features.length;
+  const featuresOrphanRow = hasLgOrphanFeatureRow ? service.features.slice(featuresMainRowCount) : [];
 
   // ── Premium page for Website Services ──────────────────────
   if (slug === "website-services") {
@@ -80,7 +99,7 @@ export default async function ServiceDetailPage({ params }) {
     <div className="bg-white">
       {/* Hero Section */}
       <section
-        className={`relative pt-32 lg:pt-40 ${isAmc ? "pb-12 lg:pb-16" : "pb-24"} overflow-hidden bg-gradient-to-br from-emerald-50 via-teal-50 to-white`}
+        className="relative pt-32 lg:pt-40 pb-12 lg:pb-16 overflow-hidden bg-gradient-to-br from-emerald-50 via-teal-50 to-white"
       >
         {/* Background Decorations */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none" style={{ transform: "translateZ(0)" }}>
@@ -110,7 +129,7 @@ export default async function ServiceDetailPage({ params }) {
             </div>
           </div>
 
-          <div className={`grid grid-cols-1 lg:grid-cols-2 ${isAmc ? "gap-12" : "gap-16"} items-center`}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
               <div className="flex w-fit mx-auto lg:mx-0 items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-emerald-100 to-teal-100 text-emerald-800 font-semibold text-sm mb-6 border border-emerald-200 shadow-md">
                 <span className="text-2xl">{service.icon}</span>
@@ -119,7 +138,7 @@ export default async function ServiceDetailPage({ params }) {
               <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-gray-900 mb-6 tracking-tight leading-[1]">
                 {service.title}
               </h1>
-              <p className={`text-base lg:text-xl text-gray-700 leading-relaxed font-medium ${isAmc ? "mb-8" : "mb-10"}`}>
+              <p className="text-base lg:text-xl text-gray-700 leading-relaxed font-medium mb-8">
                 {service.description}
               </p>
               <div className="flex flex-wrap justify-center lg:justify-start gap-4">
@@ -184,7 +203,7 @@ export default async function ServiceDetailPage({ params }) {
                 </svg>
                 Our Specialized Services
               </div>
-              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className={`text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter ${headingCaseClass}`}>
                 What We Offer Under {service.title}
               </h2>
               <p className="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -218,8 +237,8 @@ export default async function ServiceDetailPage({ params }) {
                       {/* Decorative corner */}
                       <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-400/10 to-transparent rounded-bl-[100px] transform group-hover:scale-150 transition-transform duration-500"></div>
 
-                      <div className="relative z-10">
-                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                      <div className={`relative z-10 ${centeredFeaturesLayout ? "flex flex-col items-center text-center" : ""}`}>
+                        <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 ${centeredFeaturesLayout ? "mx-auto" : ""}`}>
                           <span className="text-3xl">{subService.icon}</span>
                         </div>
 
@@ -231,8 +250,8 @@ export default async function ServiceDetailPage({ params }) {
                           {subService.description}
                         </p>
 
-                        <div className="space-y-3">
-                          <div className="text-sm font-semibold text-emerald-700 uppercase tracking-wide mb-3">
+                        <div className="space-y-3 w-full text-left self-stretch">
+                          <div className="text-sm font-semibold text-emerald-700 tracking-wide mb-3 text-center">
                             Key Features
                           </div>
                           {subService.features.map((feature, fIndex) => (
@@ -250,7 +269,7 @@ export default async function ServiceDetailPage({ params }) {
                         </div>
 
                         {/* Hover indicator */}
-                        <div className="mt-6 pt-6 border-t border-gray-100 flex items-center gap-2 text-emerald-600 font-semibold opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        <div className={`mt-6 pt-6 border-t border-gray-100 flex items-center gap-2 text-emerald-600 font-semibold opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 ${centeredFeaturesLayout ? "justify-center" : ""}`}>
                           <span>View Service Details</span>
                           <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -276,14 +295,14 @@ export default async function ServiceDetailPage({ params }) {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           {/* Header */}
-          <div className={`max-w-3xl ${sectionHeaderMb} ${isAmc ? "mx-auto text-center" : "mx-auto lg:mx-0 text-center lg:text-left"}`}>
+          <div className={`max-w-3xl ${sectionHeaderMb} ${centeredFeaturesLayout ? "mx-auto text-center" : "mx-auto lg:mx-0 text-center lg:text-left"}`}>
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-emerald-100 to-teal-100 text-emerald-700 font-semibold text-sm mb-6 border border-emerald-200">
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
               Key Features
             </div>
-            <h2 className={`text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter ${headingCaseClass}`}>
+            <h2 className={`text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter ${headingCaseClass}`}>
               {service.slug === "odoo-apps-support-and-maintenance"
                 ? "Comprehensive Support Services"
                 : service.slug === "ai-ml-consulting"
@@ -357,19 +376,20 @@ export default async function ServiceDetailPage({ params }) {
           {service.slug === "ai-ml-consulting" ? (
             <>
               {/* First 4 features */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
                 {service.features.slice(0, 4).map((feature, index) => (
                   <FeatureItem
                     key={index}
                     feature={feature}
                     index={index}
                     isEven={index % 2 === 0}
+                    centered
                   />
                 ))}
               </div>
 
               {/* AI & ML Consulting Services Section */}
-              <div className="mb-16 text-center">
+              <div className="mb-10 text-center">
                 <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                   AI & ML Consulting Services
                 </h3>
@@ -386,22 +406,49 @@ export default async function ServiceDetailPage({ params }) {
                     feature={feature}
                     index={index + 4}
                     isEven={(index + 4) % 2 === 0}
+                    centered
                   />
                 ))}
               </div>
             </>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {service.features.map((feature, index) => (
-                <FeatureItem
-                  key={index}
-                  feature={feature}
-                  index={index}
-                  isEven={index % 2 === 0}
-                  centered={service.slug === "website-maintenance-amc"}
-                />
-              ))}
-            </div>
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {service.features.slice(0, featuresMainRowCount).map((feature, index) => (
+                  <FeatureItem
+                    key={index}
+                    feature={feature}
+                    index={index}
+                    isEven={index % 2 === 0}
+                    centered={centeredFeaturesLayout}
+                  />
+                ))}
+              </div>
+              {featuresOrphanRow.length > 0 && (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 mt-6">
+                  {featuresOrphanRow.map((feature, index) => {
+                    const featureIndex = featuresMainRowCount + index;
+                    const orphanColClass =
+                      featuresOrphanRow.length === 2
+                        ? index === 0
+                          ? "lg:col-span-2 lg:col-start-2"
+                          : "lg:col-span-2"
+                        : "lg:col-span-2 lg:col-start-3";
+
+                    return (
+                      <div key={featureIndex} className={orphanColClass}>
+                        <FeatureItem
+                          feature={feature}
+                          index={featureIndex}
+                          isEven={featureIndex % 2 === 0}
+                          centered={centeredFeaturesLayout}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </>
           )}
         </div>
       </section>
