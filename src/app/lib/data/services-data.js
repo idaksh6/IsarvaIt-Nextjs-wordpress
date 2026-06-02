@@ -873,7 +873,7 @@ export const servicesData = [
     slug: "website-maintenance-amc",
     title: "Website Maintenance – AMC",
     icon: "🔧",
-    heroImage: "/Services/website-maintenence/AMC-image.jpg",
+    heroImage: "/Services/website-maintenence/amc_services_hero.png",
     shortDescription: "Comprehensive annual maintenance contracts for your website",
     description: "Keep your website secure, fast, and updated with Isarva Infotech AMC services. We handle maintenance, security, updates, and support so you can focus on business growth.",
     features: [
