@@ -15,7 +15,7 @@ export default function Footer() {
         {/* Top Section: Brand & Description */}
         <div className="flex flex-col lg:flex-row justify-between lg:items-start items-center gap-8 lg:gap-12 mb-10 pb-10 lg:mb-12 lg:pb-12 border-b-0 lg:border-b border-gray-300/70">
           <div className="lg:max-w-2xl max-w-full">
-            <Link href="/" prefetch={true} className="flex items-center lg:mx-0 mx-auto">
+            <Link href="/" prefetch={true} className="flex items-center lg:mx-0 mx-auto lg:justify-start justify-center">
               <div className="relative h-[78px] w-[200px]">
                 <Image
                   src="/isarva New Logo.png"
