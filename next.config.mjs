@@ -38,6 +38,31 @@ const nextConfig = {
   // Performance optimizations
   poweredByHeader: false,
   compress: true,
+
+  async redirects() {
+    return [
+      {
+        source: "/wordpress-maintenance",
+        destination: "/service/wordpress-development",
+        permanent: true,
+      },
+      {
+        source: "/ecommerce-maintenance",
+        destination: "/product/woocommerce-development",
+        permanent: true,
+      },
+      {
+        source: "/woocommerce-maintenance-services",
+        destination: "/product/woocommerce-development",
+        permanent: true,
+      },
+      {
+        source: "/website-maintenance",
+        destination: "/service/website-maintenance-amc",
+        permanent: true,
+      },
+    ];
+  },
   
   // Turbopack configuration at the root (Next.js 15+)
   turbopack: {

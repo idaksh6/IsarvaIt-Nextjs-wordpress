@@ -364,7 +364,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
 
       <div className="bg-white overflow-hidden">
         {/* ─── HERO ──────────────────────────────────────────────── */}
-        <section className="hero-bg hero-mesh relative pt-32 lg:pt-40 pb-24 overflow-hidden">
+        <section className="hero-bg hero-mesh relative pt-32 lg:pt-40 pb-12 lg:pb-16 overflow-hidden">
           <div className="absolute inset-0 z-0 pointer-events-none">
             <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-emerald-100 rounded-full blur-[100px] opacity-60" />
             <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-teal-100 rounded-full blur-[80px] opacity-60 translate-x-1/4" />
@@ -485,7 +485,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                   <br />
                   Presence
                 </h1>
-                <p className="text-base lg:text-xl text-gray-600 leading-relaxed font-medium mb-10 max-w-xl">
+                <p className="text-base lg:text-xl text-gray-600 leading-relaxed font-medium mb-8 max-w-xl">
                   From brand-new websites to full redesigns and ongoing
                   maintenance — we craft digital experiences that engage
                   visitors, build trust, and drive real business results.
@@ -583,7 +583,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
         </section>
 
         {/* ─── WEBSITE REDESIGN SHOWCASE ──────────────────────────── */}
-        <section className="py-10 lg:py-32 bg-white relative overflow-hidden">
+        <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange-200 to-transparent" />
           <div className="absolute -top-20 right-0 w-[400px] h-[400px] bg-orange-50 rounded-full blur-[100px] opacity-80" />
           <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-rose-50 rounded-full blur-[80px] opacity-60" />
@@ -711,11 +711,11 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
         {/* ─── SUB-SERVICES TABS ──────────────────────────────────── */}
         <section
           id="sub-services"
-          className="py-10 lg:py-32 bg-gray-50 relative overflow-hidden"
+          className="py-12 lg:py-16 bg-gray-50 relative overflow-hidden"
         >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(16,185,129,0.05),transparent_60%)]" />
           <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-700 font-semibold text-sm mb-6">
                 <svg
                   className="w-4 h-4"
@@ -835,12 +835,12 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
         {/* ─── CAPABILITIES ──────────────────────────────────────── */}
         <section
           id="features"
-          className="py-10 lg:py-32 bg-white relative overflow-hidden"
+          className="py-12 lg:py-16 bg-white relative overflow-hidden"
         >
           <div className="absolute top-0 right-1/4 w-80 h-80 bg-emerald-50 rounded-full blur-3xl opacity-60" />
           <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-teal-50 rounded-full blur-3xl opacity-60" />
           <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="text-center mb-20">
+            <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-semibold text-sm mb-6">
                 <svg
                   className="w-4 h-4"
@@ -868,10 +868,10 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
               {capabilities.map((c, i) => (
                 <div
                   key={i}
-                  className={`cap-card rounded-2xl lg:text-left text-center p-6 bg-gradient-to-br ${c.from} to-white ${c.border} cursor-default`}
+                  className={`cap-card rounded-2xl text-center p-6 bg-gradient-to-br ${c.from} to-white ${c.border} cursor-default flex flex-col items-center`}
                 >
                   <div
-                    className={`flex items-center justify-center w-12 h-12  lg:mx-0 mx-auto rounded-xl ${c.iconBg} text-2xl mb-5`}
+                    className={`flex items-center justify-center w-12 h-12 mx-auto rounded-xl ${c.iconBg} text-2xl mb-5`}
                   >
                     {c.icon}
                   </div>
@@ -888,10 +888,10 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
         </section>
 
         {/* ─── OUR PROCESS + TEAM IMAGE ──────────────────────────── */}
-        <section className="py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+        <section className="py-12 lg:py-16 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.06),transparent_60%)]" />
           <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="text-center mb-20">
+            <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-emerald-100 to-teal-100 text-emerald-700 font-semibold text-sm mb-6 border border-emerald-200">
                 <svg
                   className="w-4 h-4"
@@ -916,7 +916,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
             </div>
 
             {/* Process steps */}
-            <div className="relative mb-20">
+            <div className="relative mb-10">
               <div className="hidden lg:block absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-emerald-200 to-transparent z-0" />
               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 relative z-10">
                 {process.map((p, i) => (
@@ -1003,7 +1003,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
         </section>
 
         {/* ─── WHY CHOOSE US ─────────────────────────────────────── */}
-        <section className="py-10 lg:py-32 bg-white relative overflow-hidden">
+        <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-emerald-100 to-transparent" />
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -1130,10 +1130,10 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
         </section>
 
         {/* ─── RELATED SERVICES ──────────────────────────────────── */}
-        <section className="py-24 bg-gray-50 relative overflow-hidden">
+        <section className="py-12 lg:py-16 bg-gray-50 relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(16,185,129,0.04),transparent_60%)]" />
           <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-emerald-200 text-emerald-700 font-semibold text-sm mb-6 shadow-sm">
                 You Might Also Like
               </div>

@@ -634,7 +634,7 @@ const safetyData = [
 
 function ProjectLifecycleSection() {
   return (
-    <section className="lg:pt-32 pt-0 pb-0 lg:pb-0 bg-white relative overflow-hidden">
+    <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
       {/* Premium Aurora Background Gradients */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-purple-100/40 to-transparent rounded-full blur-[120px] translate-x-1/2 -translate-y-1/2 -z-10 animate-pulse"></div>
       <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-sky-100/30 to-transparent rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 -z-10"></div>
@@ -647,7 +647,7 @@ function ProjectLifecycleSection() {
       }}></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-10 md:mb-20">
+        <div className="text-center mb-10">
           <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-purple-100/50 px-4 py-2 rounded-full ring-1 ring-purple-200">
             Project & Task Lifecycle
           </span>
@@ -668,7 +668,7 @@ function ProjectLifecycleSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: (index % 4) * 0.1 }}
-              className={`relative flex items-center mb-8 md:mb-16 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+              className={`relative flex items-center mb-10 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
             >
               <div className="hidden md:block w-1/2"></div>
 
@@ -1038,7 +1038,7 @@ function AnalyticsSection({ onImageClick }) {
 
         <div className="max-w-6xl mx-auto">
           {/* Dashboard Tabs with Modern Pill Style */}
-          <div className="flex flex-wrap justify-center gap-4 mb-8 md:mb-16">
+          <div className="flex flex-wrap justify-center gap-4 mb-10">
             {analyticsData.map((item, index) => (
               <button
                 key={item.title}
@@ -1151,7 +1151,7 @@ function AutomationSection() {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-10 md:mb-20">
+        <div className="text-center mb-10">
           <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-white px-5 py-2 rounded-full shadow-sm ring-1 ring-purple-100">
             Automation: Your "Invisible Assistant"
           </span>
@@ -1260,7 +1260,7 @@ export default function ProductDetailPremiumSupportStaging({
   return (
     <div className="bg-white font-sans selection:bg-purple-100 selection:text-purple-900 overflow-x-clip">
       {/* 1. Centered Hero Section */}
-      <section className="relative pt-40 lg:pb-32 pb-10 overflow-hidden bg-gradient-to-b from-[#faf5ff] via-[#fdf9ff] to-white">
+      <section className="relative pt-32 lg:pt-40 pb-12 lg:pb-16 overflow-hidden bg-gradient-to-b from-[#faf5ff] via-[#fdf9ff] to-white">
         {/* Noise Texture Overlay */}
         <div
           className="absolute inset-0 opacity-[0.15] pointer-events-none"
@@ -1289,7 +1289,7 @@ export default function ProductDetailPremiumSupportStaging({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-[#000000] leading-[1] mb-8">
+            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-[#000000] leading-[1] mb-6">
               The Simple Way to Manage Work.<br />
               <span className="text-[#9333EA]">Your Projects, Tasks, and Support Tickets—Unified</span>
               <span style={{ color: SUPPORT_PURPLE }}>.</span>
@@ -1333,7 +1333,7 @@ export default function ProductDetailPremiumSupportStaging({
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="hero-dashboard-wrapper"
+          className="hero-dashboard-wrapper !py-6 lg:!min-h-[620px]"
         >
           <div className="dashboard-animation left">
             <div
@@ -1798,7 +1798,7 @@ export default function ProductDetailPremiumSupportStaging({
                         </p>
 
                         {/* CTA Link at bottom */}
-                        <div className="flex items-center justify-start gap-2 text-[#9333EA] font-semibold pt-2 border-t border-gray-50 w-full">
+                        <div className="flex items-center justify-center gap-2 text-[#9333EA] font-semibold pt-2 border-t border-gray-50 w-full">
                           Explore Product
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

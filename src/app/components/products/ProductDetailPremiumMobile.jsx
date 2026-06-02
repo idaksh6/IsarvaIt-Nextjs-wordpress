@@ -34,7 +34,7 @@ export default function ProductDetailPremiumMobile({
   return (
     <div className="bg-white font-sans selection:bg-violet-100 selection:text-violet-900">
       {/* 1. Centered Hero Section */}
-      <section className="relative pt-40 lg:pb-32 pb-10 overflow-hidden bg-gradient-to-b from-[#f5f3ff] via-[#faf5ff] to-white">
+      <section className="relative pt-32 lg:pt-40 pb-12 lg:pb-16 overflow-hidden bg-gradient-to-b from-[#f5f3ff] via-[#faf5ff] to-white">
         {/* Noise Texture Overlay */}
         <div
           className="absolute inset-0 opacity-[0.15] pointer-events-none"

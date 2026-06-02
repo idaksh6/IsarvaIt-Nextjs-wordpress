@@ -35,7 +35,7 @@ export default function ProductDetailPremiumCRMOld({
   return (
     <div className="bg-white font-sans selection:bg-sky-100 selection:text-sky-900">
       {/* 1. Centered Hero Section */}
-      <section className="relative pt-40 lg:pb-32 pb-10 overflow-hidden bg-gradient-to-b from-[#f0f9ff] via-[#e0f2fe] to-white">
+      <section className="relative pt-32 lg:pt-40 pb-12 lg:pb-16 overflow-hidden bg-gradient-to-b from-[#f0f9ff] via-[#e0f2fe] to-white">
         {/* Noise Texture Overlay */}
         <div
           className="absolute inset-0 opacity-[0.15] pointer-events-none"

@@ -141,7 +141,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
       <div className="bg-white min-h-screen font-sans antialiased text-slate-800">
 
         {/* ─── 1. HERO SECTION ───────────────────────────────────────────── */}
-        <section className="news-light-gradient relative pt-32 lg:pt-44 pb-32 lg:pb-36 overflow-hidden">
+        <section className="news-light-gradient relative pt-32 lg:pt-40 pb-12 lg:pb-16 overflow-hidden">
           {/* Vibrant glowing meshes */}
           <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-violet-200/40 rounded-full blur-[100px] mix-blend-multiply pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-[650px] h-[650px] bg-pink-200/30 rounded-full blur-[120px] mix-blend-multiply pointer-events-none" />
@@ -175,7 +175,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
                   <span className="news-text-gradient">Custom News Portals</span>
                 </h1>
 
-                <p className="text-base lg:text-xl text-slate-600 leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0 font-medium">
+                <p className="text-base lg:text-xl text-slate-600 leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0 font-medium">
                   {service.description ||
                     "Professional news portal development services for digital publishers, journalists, and media houses. We create fast, scalable, and SEO-optimized news platforms with real-time updates, ad-management, and engaging layouts that drive readership."}
                 </p>
@@ -250,7 +250,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
         </section>
 
         {/* ─── 2. INTRODUCTION SECTION ───────────────────────────────────── */}
-        <section className="py-10 lg:py-16 pt-4 lg:pt-4 bg-white relative overflow-hidden">
+        <section className="py-12 lg:py-16 pt-4 lg:pt-4 bg-white relative overflow-hidden">
           {/* Noise Texture */}
           <div className="absolute inset-0 opacity-[0.15] pointer-events-none mix-blend-overlay z-0" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")", backgroundRepeat: "repeat" }}></div>
           {/* Glowing Orbs */}
@@ -333,7 +333,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
         </section>
 
         {/* ─── 3. KEY FEATURES SECTION (Apple-style List + Sticky Showcase) ──────────────────────── */}
-        <section id="features" className="py-10 lg:py-16 bg-slate-50 relative overflow-hidden">
+        <section id="features" className="py-12 lg:py-16 bg-slate-50 relative overflow-hidden">
           {/* Noise Texture */}
           <div className="absolute inset-0 opacity-[0.15] pointer-events-none mix-blend-overlay z-0" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")", backgroundRepeat: "repeat" }}></div>
           {/* Glowing Orbs */}
@@ -342,7 +342,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
 
           <div className="max-w-7xl mx-auto px-6 relative z-10">
 
-            <div className="text-center max-w-3xl mx-auto mb-4 lg:mb-10">
+            <div className="text-center max-w-3xl mx-auto mb-10">
               <span className="text-violet-600 font-bold uppercase tracking-widest text-sm mb-3 block">
                 Engineered for Scale
               </span>
@@ -424,7 +424,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
         </section>
 
         {/* ─── 4. OUR SERVICES (GRID SECTION - 3D Accent Grid Cards Layout) ─────── */}
-        <section className="py-10 lg:py-16 bg-white relative overflow-hidden">
+        <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
           {/* Noise Texture */}
           <div className="absolute inset-0 opacity-[0.15] pointer-events-none mix-blend-overlay z-0" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")", backgroundRepeat: "repeat" }}></div>
           {/* Glowing Orbs */}
@@ -433,7 +433,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
 
           <div className="max-w-7xl mx-auto px-6 relative z-10">
 
-            <div className="text-center max-w-3xl mx-auto mb-4 lg:mb-10">
+            <div className="text-center max-w-3xl mx-auto mb-10">
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-violet-50 border border-violet-100 text-violet-800 font-semibold text-sm mb-6">
                 🚀 Service Catalogue
               </div>
@@ -473,7 +473,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
         </section>
 
         {/* ─── 5. FAQ SECTION ────────────────────────────────────────────── */}
-        <section className="py-10 lg:py-16 bg-slate-50 relative overflow-hidden">
+        <section className="py-12 lg:py-16 bg-slate-50 relative overflow-hidden">
           {/* Noise Texture */}
           <div className="absolute inset-0 opacity-[0.15] pointer-events-none mix-blend-overlay z-0" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")", backgroundRepeat: "repeat" }}></div>
           {/* Glowing Orbs */}
@@ -482,7 +482,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
 
           <div className="max-w-7xl mx-auto px-6 relative z-10">
 
-            <div className="text-center mb-6 lg:mb-10">
+            <div className="text-center mb-10">
               <span className="text-violet-600 font-bold uppercase tracking-widest text-sm mb-3 block">
                 Got Questions?
               </span>
@@ -535,7 +535,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
         </section>
 
         {/* ─── 6. FINAL CALL TO ACTION ───────────────────────────────────── */}
-        <section className="py-10 lg:py-16 bg-gradient-to-br from-violet-600 via-indigo-600 to-pink-500 relative overflow-hidden">
+        <section className="py-12 lg:py-16 bg-gradient-to-br from-violet-600 via-indigo-600 to-pink-500 relative overflow-hidden">
           {/* Decorative glows */}
           <div className="absolute inset-0 opacity-20 pointer-events-none">
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.25),transparent_50%)]" />
@@ -568,7 +568,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
               Ready to launch your digital newsroom?
             </h2>
 
-            <p className="text-lg lg:text-xl text-violet-50 mb-4 lg:mb-10 max-w-3xl mx-auto leading-relaxed font-medium">
+            <p className="text-lg lg:text-xl text-violet-50 mb-10 max-w-3xl mx-auto leading-relaxed font-medium">
               Join the future of digital journalism. Start your media journey today with our expert development team.
             </p>
 

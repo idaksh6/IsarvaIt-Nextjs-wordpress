@@ -168,7 +168,7 @@ export default function ProductDetailPremiumHRMS({
         <div className="absolute inset-0 bg-grid-slate-200/[0.05] [mask-image:linear-gradient(to_bottom,white,transparent,white)]" />
       </div>
 
-      <div className="relative z-40 pt-24 lg:pt-48 pb-10 lg:pb-20">
+      <div className="relative z-40 pt-32 lg:pt-40 pb-12 lg:pb-16">
         {/* Mobile View (Horizontal Scroll) - Full-width white background bar with constrained content */}
         <div className="lg:hidden sticky top-[102px] z-[60] bg-white border-b border-gray-100 shadow-sm w-full overflow-hidden">
           <div
@@ -364,7 +364,7 @@ export default function ProductDetailPremiumHRMS({
                   </section>
 
                   {/* 5. Feature Spotlight Section Integrated into Tab Content */}
-                  <section className="pb-16">
+                  <section className="py-12 lg:py-16">
                     <div className="relative rounded-[3rem] bg-white p-8 lg:p-12 border border-gray-100 shadow-[0_15px_40px_rgba(0,0,0,0.03)] overflow-hidden">
                       <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
                         <div className={`w-12 h-1 ${TAB_THEMES[activeTab].bg} rounded-full mb-6 mx-auto lg:mx-0`}></div>
@@ -416,7 +416,7 @@ export default function ProductDetailPremiumHRMS({
               {/* These sections are outside AnimatePresence so they don't flash on tab change, but scroll alongside */}
 
               {/* 4. The "Broken HR" Modern Section */}
-              <section className="relative p-8 lg:p-12  bg-white overflow-hidden border-y border-gray-100 rounded-[3rem] mb-16">
+              <section className="relative p-8 lg:p-12 bg-white overflow-hidden border-y border-gray-100 rounded-[3rem] mb-10">
                 <div className="absolute inset-0 z-0">
                   <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-rose-500/5 rounded-full blur-[100px]" />
                   <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px]" />
@@ -484,7 +484,7 @@ export default function ProductDetailPremiumHRMS({
               </section>
 
               {/* 7. Final CTA Section */}
-              <section className="pb-0 lg:py-16 lg:pb-0 pt-16">
+              <section className="py-12 lg:py-16">
                 <div className="relative rounded-[3rem] bg-gradient-to-br from-white to-gray-50 py-16 px-8 lg:px-16 overflow-hidden text-center shadow-[0_40px_80px_rgba(0,0,0,0.05)] border border-gray-100">
                   <div className={`absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-br ${TAB_THEMES[activeTab].gradient} opacity-5 blur-[100px]`}></div>
 

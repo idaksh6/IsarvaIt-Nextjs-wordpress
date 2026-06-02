@@ -152,7 +152,7 @@ export default function ProductDetailPremiumCRM({
   return (
     <div className="bg-white font-sans selection:bg-sky-100 selection:text-sky-900">
       {/* 1. Centered Hero Section */}
-      <section className="relative pt-40 lg:pb-24 pb-10 overflow-hidden bg-gradient-to-b from-[#f0f9ff] via-[#e0f2fe] to-white">
+      <section className="relative pt-32 lg:pt-40 pb-12 lg:pb-16 overflow-hidden bg-gradient-to-b from-[#f0f9ff] via-[#e0f2fe] to-white">
         {/* Noise Texture Overlay */}
         <div
           className="absolute inset-0 opacity-[0.15] pointer-events-none"
@@ -694,7 +694,7 @@ export default function ProductDetailPremiumCRM({
                   >
                     <div className="relative rounded-3xl p-8 h-full bg-white border-2 border-gray-100 shadow-lg flex flex-col items-center text-center">
                       {/* Category Badge */}
-                      <div className="absolute -top-11 -right-2 bg-white text-[#0EA5E9] text-xs font-bold px-3 py-1 rounded-full border-2 border-[#0EA5E9]/30 shadow-md">
+                      <div className="inline-flex items-center justify-center bg-white text-[#0EA5E9] text-xs font-bold px-3 py-1 rounded-full border-2 border-[#0EA5E9]/30 shadow-md mb-4">
                         {prod.category}
                       </div>
 
@@ -726,7 +726,7 @@ export default function ProductDetailPremiumCRM({
                         </p>
 
                         {/* CTA Link at bottom */}
-                        <div className="flex items-center justify-start gap-2 text-[#0EA5E9] font-semibold pt-2 border-t border-gray-50 w-full">
+                        <div className="flex items-center justify-center gap-2 text-[#0EA5E9] font-semibold pt-2 border-t border-gray-50 w-full">
                           Explore Product
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

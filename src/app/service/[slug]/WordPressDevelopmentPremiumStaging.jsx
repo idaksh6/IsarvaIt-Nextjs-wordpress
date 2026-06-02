@@ -179,7 +179,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
       <div className="bg-white min-h-screen font-sans overflow-hidden">
 
         {/* ─── HERO SECTION ────────────────────── */}
-        <section className="wp-aurora-gradient relative pt-24 lg:pt-48 pb-16 lg:pb-32 overflow-hidden">
+        <section className="wp-aurora-gradient relative pt-32 lg:pt-40 pb-12 lg:pb-16 overflow-hidden">
           <div className="absolute inset-0 aurora-mesh pointer-events-none" />
           <div className="absolute inset-0 hero-grid opacity-[0.2] pointer-events-none" />
 
@@ -223,7 +223,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                   </h1>
                 </div>
 
-                <div className="text-base lg:text-xl text-gray-600 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0 font-medium border-l-2 border-blue-200 pl-8 space-y-4">
+                <div className="text-base lg:text-xl text-gray-600 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0 font-medium border-l-2 border-blue-200 pl-8 space-y-4">
                   <p>At Isarva, we don’t ‘do’ WordPress development, we <span className="text-blue-600 font-bold">live and breathe it</span>. We combine our <span className="text-indigo-600 font-bold">technical, creative and marketing expertise</span> with our dedicated support to bring you simply <span className="text-blue-600 font-bold">outstanding WordPress development services</span>.</p>
                 </div>
 
@@ -308,7 +308,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
         </section>
 
         {/* ─── TECHNOLOGY MARQUEE ────────────────────── */}
-        <section className="py-10 bg-white/50 border-y border-slate-100 overflow-hidden relative">
+        <section className="py-12 lg:py-16 bg-white/50 border-y border-slate-100 overflow-hidden relative">
           <div className="marquee-track flex items-center gap-12 sm:gap-24 opacity-40 hover:opacity-80 transition-opacity duration-500">
             {[
               "WordPress", "PHP", "MySQL", "WooCommerce", "ACF Pro", "Elementor",
@@ -332,10 +332,10 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
         </section>
 
         {/* ─── SERVICES GRID SECTION (8 ICONS) ────────────────────── */}
-        <section id="what-we-offer" className="py-16 lg:py-32 bg-white relative overflow-hidden">
+        <section id="what-we-offer" className="py-12 lg:py-16 bg-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(37,99,235,0.02),transparent_70%)]" />
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
-            <div className="text-center mb-10 lg:mb-20">
+            <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-100">
                 What We Offer
               </div>
@@ -357,8 +357,8 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 { title: "Support & Maintenance", icon: "🔧", desc: "Ensure your site runs smoothly with our comprehensive support." },
                 { title: "Multisite Development", icon: "🏢", desc: "Manage multiple websites efficiently with centralized setups." }
               ].map((s, i) => (
-                <div key={i} className="group p-8 rounded-[32px] bg-slate-50 border border-slate-100 hover:bg-white hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500 transform hover:-translate-y-1 flex flex-col items-center text-center lg:items-start lg:text-left">
-                  <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-2xl mb-6 shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 mx-auto lg:mx-0">
+                <div key={i} className="group p-8 rounded-[32px] bg-slate-50 border border-slate-100 hover:bg-white hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500 transform hover:-translate-y-1 flex flex-col items-center text-center">
+                  <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-2xl mb-6 shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 mx-auto">
                     {s.icon}
                   </div>
                   <h3 className="text-lg font-black text-gray-900 mb-3 leading-tight">{s.title}</h3>
@@ -373,10 +373,10 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
 
 
         {/* ─── FIGMA TO WORDPRESS SECTION ──────────────────────────── */}
-        <section className="py-16 lg:py-32 bg-slate-50 relative overflow-hidden">
+        <section className="py-12 lg:py-16 bg-slate-50 relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_50%,rgba(37,99,235,0.05),transparent_60%)]" />
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-16 lg:mb-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-10">
               <div>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-100">
                   Figma to WordPress
@@ -481,15 +481,15 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                   statLabel: "Screen sizes"
                 }
               ].map((card, i) => (
-                <div key={i} className="bento-card rounded-[24px] sm:rounded-[32px] p-8 sm:p-10 group flex flex-col justify-between items-center text-center lg:items-start lg:text-left">
+                <div key={i} className="bento-card rounded-[24px] sm:rounded-[32px] p-8 sm:p-10 group flex flex-col justify-between items-center text-center">
                   <div>
-                    <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 text-2xl group-hover:bg-blue-600 group-hover:scale-110 transition-all duration-300 mx-auto lg:mx-0">
+                    <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 text-2xl group-hover:bg-blue-600 group-hover:scale-110 transition-all duration-300 mx-auto">
                       {card.icon}
                     </div>
                     <h4 className="text-lg sm:text-xl font-black text-gray-900 mb-3">{card.title}</h4>
                     <p className="text-sm text-gray-500 font-medium leading-relaxed">{card.desc}</p>
                   </div>
-                  <div className="mt-6 pt-5 border-t border-gray-100 flex items-baseline gap-2">
+                  <div className="mt-6 pt-5 border-t border-gray-100 flex items-baseline justify-center gap-2 w-full">
                     <span className="text-2xl font-black text-blue-600">{card.stat}</span>
                     <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">{card.statLabel}</span>
                   </div>
@@ -500,10 +500,10 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
         </section>
 
         {/* ─── WORDPRESS ECOSYSTEM DIAGRAM ────────────────────────── */}
-        <section className="py-16 lg:py-32 bg-white relative overflow-hidden text-center">
+        <section className="py-12 lg:py-16 bg-white relative overflow-hidden text-center">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(37,99,235,0.04),transparent_70%)]" />
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
-            <div className="text-center mb-10 lg:mb-14">
+            <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-100">
                 Architecture
               </div>
@@ -639,9 +639,9 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
         </section>
 
         {/* ─── BENTO CAPABILITIES SECTION ──────────────────────────── (Engineered for Success) */}
-        <section className="py-16 lg:py-32 bg-slate-50 relative overflow-hidden border-y border-slate-100">
+        <section className="py-12 lg:py-16 bg-slate-50 relative overflow-hidden border-y border-slate-100">
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
-            <div className="text-center max-w-3xl mx-auto mb-10 lg:mb-24">
+            <div className="text-center max-w-3xl mx-auto mb-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 font-bold text-[10px] uppercase tracking-wider mb-6 border border-blue-100">
                 Core Capabilities
               </div>
@@ -657,63 +657,63 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
 
               <div className="grid grid-cols-1 lg:grid-cols-12 relative z-10 bg-white" style={{ gap: 0, border: '1px solid rgba(226,232,240,0.8)', borderRadius: '32px', overflow: 'hidden', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.05)' }}>
                 {/* Box 1: Migration (Emerald) */}
-                <div className="lg:col-span-4 lg:row-span-2 bento-card group p-6 sm:p-8 lg:p-10 lg:min-h-[420px] h-auto flex flex-col justify-between bg-gradient-to-br from-emerald-50/40 to-white items-center text-center lg:items-start lg:text-left border-b lg:border-b lg:border-r border-gray-100" style={{ borderRadius: 0, borderTop: 'none', borderLeft: 'none' }}>
-                  <div className="relative z-10 flex flex-col items-center lg:items-start">
-                    <div className="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6 sm:mb-8 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500 text-2xl shadow-sm mx-auto lg:mx-0">🚀</div>
+                <div className="lg:col-span-4 lg:row-span-2 bento-card group p-6 sm:p-8 lg:p-10 lg:min-h-[420px] h-auto flex flex-col justify-between bg-gradient-to-br from-emerald-50/40 to-white items-center text-center border-b lg:border-b lg:border-r border-gray-100" style={{ borderRadius: 0, borderTop: 'none', borderLeft: 'none' }}>
+                  <div className="relative z-10 flex flex-col items-center">
+                    <div className="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6 sm:mb-8 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500 text-2xl shadow-sm mx-auto">🚀</div>
                     <h4 className="text-xl sm:text-2xl lg:text-3xl font-black text-gray-900 mb-4 leading-tight">Migration to WordPress</h4>
                     <p className="text-sm sm:text-base text-gray-500 font-medium leading-relaxed">We manage complete website migrations while preserving your content, structure, and functionality without disruption.</p>
                   </div>
                 </div>
 
                 {/* Box 2: Theme Development (Blue) */}
-                <div className="lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-blue-50/40 to-white items-center text-center lg:items-start lg:text-left border-b lg:border-b lg:border-r border-gray-100" style={{ borderRadius: 0, borderTop: 'none', borderLeft: 'none' }}>
-                  <div className="relative z-10 flex flex-col items-center lg:items-start">
-                    <div className="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-5 text-xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm mx-auto lg:mx-0">🎨</div>
+                <div className="lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-blue-50/40 to-white items-center text-center border-b lg:border-b lg:border-r border-gray-100" style={{ borderRadius: 0, borderTop: 'none', borderLeft: 'none' }}>
+                  <div className="relative z-10 flex flex-col items-center">
+                    <div className="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-5 text-xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm mx-auto">🎨</div>
                     <h4 className="text-lg sm:text-xl font-black text-gray-900 mb-2">Theme Development</h4>
                     <p className="text-xs sm:text-sm text-gray-500 font-medium leading-relaxed">Custom-built themes designed to match your brand and scale effortlessly.</p>
                   </div>
                 </div>
 
                 {/* Box 3: Plugin Development (Violet) */}
-                <div className="lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-violet-50/40 to-white items-center text-center lg:items-start lg:text-left border-b lg:border-b border-gray-100" style={{ borderRadius: 0, borderTop: 'none', borderLeft: 'none', borderRight: 'none' }}>
-                  <div className="relative z-10 flex flex-col items-center lg:items-start">
-                    <div className="w-11 h-11 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center mb-5 text-xl group-hover:bg-violet-600 group-hover:text-white transition-all duration-500 shadow-sm mx-auto lg:mx-0">⚙️</div>
+                <div className="lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-violet-50/40 to-white items-center text-center border-b lg:border-b border-gray-100" style={{ borderRadius: 0, borderTop: 'none', borderLeft: 'none', borderRight: 'none' }}>
+                  <div className="relative z-10 flex flex-col items-center">
+                    <div className="w-11 h-11 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center mb-5 text-xl group-hover:bg-violet-600 group-hover:text-white transition-all duration-500 shadow-sm mx-auto">⚙️</div>
                     <h4 className="text-lg sm:text-xl font-black text-gray-900 mb-2">Plugin Development</h4>
                     <p className="text-xs sm:text-sm text-gray-500 font-medium leading-relaxed">Extend functionality with custom plugins built specifically for your business needs.</p>
                   </div>
                 </div>
 
                 {/* Box 4: Ecommerce Solution (Orange) */}
-                <div className="lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-orange-50/40 to-white items-center text-center lg:items-start lg:text-left border-b lg:border-b lg:border-r border-gray-100" style={{ borderRadius: 0, borderTop: 'none', borderLeft: 'none' }}>
-                  <div className="flex flex-col items-center lg:items-start">
-                    <div className="w-11 h-11 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center mb-5 text-xl shrink-0 group-hover:bg-orange-600 group-hover:text-white transition-all duration-500 shadow-sm mx-auto lg:mx-0">🛒</div>
+                <div className="lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-orange-50/40 to-white items-center text-center border-b lg:border-b lg:border-r border-gray-100" style={{ borderRadius: 0, borderTop: 'none', borderLeft: 'none' }}>
+                  <div className="flex flex-col items-center">
+                    <div className="w-11 h-11 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center mb-5 text-xl shrink-0 group-hover:bg-orange-600 group-hover:text-white transition-all duration-500 shadow-sm mx-auto">🛒</div>
                     <h4 className="text-lg sm:text-xl font-black text-gray-900 mb-2">Ecommerce Solution</h4>
                     <p className="text-xs sm:text-sm text-gray-500 font-medium leading-relaxed">Boost your sales with robust, user-friendly WordPress eCommerce solutions.</p>
                   </div>
                 </div>
 
                 {/* Box 5: Speed & Performance (Amber) */}
-                <div className="lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-amber-50/40 to-white items-center text-center lg:items-start lg:text-left border-b lg:border-b border-gray-100" style={{ borderRadius: 0, borderTop: 'none', borderLeft: 'none', borderRight: 'none' }}>
-                  <div className="relative z-10 flex flex-col items-center lg:items-start">
-                    <div className="w-11 h-11 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-5 text-xl group-hover:bg-amber-600 group-hover:text-white transition-all duration-500 shadow-sm mx-auto lg:mx-0">⚡</div>
+                <div className="lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-amber-50/40 to-white items-center text-center border-b lg:border-b border-gray-100" style={{ borderRadius: 0, borderTop: 'none', borderLeft: 'none', borderRight: 'none' }}>
+                  <div className="relative z-10 flex flex-col items-center">
+                    <div className="w-11 h-11 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-5 text-xl group-hover:bg-amber-600 group-hover:text-white transition-all duration-500 shadow-sm mx-auto">⚡</div>
                     <h4 className="text-lg sm:text-xl font-black text-gray-900 mb-2">Speed & Performance</h4>
                     <p className="text-xs sm:text-sm text-gray-500 font-medium leading-relaxed">Optimised for core web vitals and industry-leading load times.</p>
                   </div>
                 </div>
 
                 {/* Box 6: Multisite Development (Cyan) */}
-                <div className="lg:col-span-8 bento-card group p-6 sm:p-10 flex flex-col lg:flex-row items-center lg:items-center gap-6 bg-gradient-to-r from-cyan-50/40 to-white text-center lg:text-left border-b lg:border-b-0 lg:border-r border-gray-100" style={{ borderRadius: 0, borderTop: 'none', borderLeft: 'none' }}>
-                  <div className="w-16 h-16 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center text-3xl shrink-0 group-hover:bg-cyan-600 group-hover:text-white transition-all duration-500 shadow-sm mx-auto lg:mx-0">🏢</div>
-                  <div>
+                <div className="lg:col-span-8 bento-card group p-6 sm:p-10 flex flex-col justify-between bg-gradient-to-r from-cyan-50/40 to-white items-center text-center border-b lg:border-b-0 lg:border-r border-gray-100" style={{ borderRadius: 0, borderTop: 'none', borderLeft: 'none' }}>
+                  <div className="relative z-10 flex flex-col items-center">
+                    <div className="w-16 h-16 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center text-3xl mb-5 group-hover:bg-cyan-600 group-hover:text-white transition-all duration-500 shadow-sm mx-auto">🏢</div>
                     <h4 className="text-xl sm:text-2xl font-black text-gray-900 mb-2">Multisite Development</h4>
                     <p className="text-sm sm:text-base text-gray-500 font-medium leading-relaxed">Manage multiple websites efficiently using a centralised multisite setup for enterprise governance.</p>
                   </div>
                 </div>
 
                 {/* Box 7: Security & Support (Indigo) */}
-                <div className="lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-indigo-50/40 to-white items-center text-center lg:items-start lg:text-left border-b-0" style={{ borderRadius: 0, border: 'none' }}>
-                  <div className="relative z-10 flex flex-col items-center lg:items-start">
-                    <div className="w-11 h-11 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-5 text-xl group-hover:bg-indigo-600 group-hover:text-white transition-all duration-500 shadow-sm mx-auto lg:mx-0">🔒</div>
+                <div className="lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-indigo-50/40 to-white items-center text-center border-b-0" style={{ borderRadius: 0, border: 'none' }}>
+                  <div className="relative z-10 flex flex-col items-center">
+                    <div className="w-11 h-11 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-5 text-xl group-hover:bg-indigo-600 group-hover:text-white transition-all duration-500 shadow-sm mx-auto">🔒</div>
                     <h4 className="text-lg sm:text-xl font-black text-gray-900 mb-2">Technical SEO & Hardening</h4>
                     <p className="text-xs sm:text-sm text-gray-500 font-medium leading-relaxed">Enterprise-grade security audits and advanced SEO architecture built-in.</p>
                   </div>
@@ -724,9 +724,9 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
         </section>
 
         {/* ─── ENTERPRISE SOLUTIONS SECTION ──────────────────────────── */}
-        <section className="py-16 lg:py-32 bg-white relative overflow-hidden">
+        <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
-            <div className="text-center mb-10 lg:mb-16">
+            <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-100">
                 Enterprise Solutions
               </div>
@@ -782,7 +782,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
         <ProcessSlider servicesData={servicesData} setIsModalOpen={setIsModalOpen} />
 
         {/* ─── WHAT WE'RE GOOD AT ────────────────────────── */}
-        <section className="py-16 lg:py-32 bg-slate-50 relative overflow-hidden">
+        <section className="py-12 lg:py-16 bg-slate-50 relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
             <div className="flex flex-col lg:flex-row items-start gap-16 lg:gap-24">
               <div className="w-full lg:w-1/2">
@@ -827,10 +827,10 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
 
 
         {/* ─── AI-ENHANCED WORDPRESS ────────────────────────── */}
-        <section className="py-16 lg:py-32 bg-white relative overflow-hidden border-y border-slate-100">
+        <section className="py-12 lg:py-16 bg-white relative overflow-hidden border-y border-slate-100">
           <div className="absolute inset-0 bg-gradient-to-tr from-sky-50/30 via-white to-transparent" />
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
-            <div className="text-center mb-10 lg:mb-20">
+            <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-sky-50 text-sky-600 font-bold text-xs uppercase tracking-wider mb-6 border border-sky-100">
                 AI-Enhanced
               </div>
@@ -846,8 +846,8 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                   { icon: "💬", title: "AI Chatbots", desc: "Intelligent support systems that qualify leads and book calls 24/7." },
                   { icon: "🎨", title: "Creative AI", desc: "Automated image and asset generation within your workflow." }
                 ].map((card, i) => (
-                  <div key={i} className="group relative bg-white border border-slate-100 hover:border-sky-300 rounded-[24px] p-8 transition-all duration-500 hover:shadow-xl shadow-sm flex flex-col items-center text-center lg:items-start lg:text-left">
-                    <div className="text-3xl mb-5 mx-auto lg:mx-0">{card.icon}</div>
+                  <div key={i} className="group relative bg-white border border-slate-100 hover:border-sky-300 rounded-[24px] p-8 transition-all duration-500 hover:shadow-xl shadow-sm flex flex-col items-center text-center">
+                    <div className="text-3xl mb-5 mx-auto">{card.icon}</div>
                     <h4 className="text-lg font-black text-gray-900 mb-2">{card.title}</h4>
                     <p className="text-sm text-gray-500 font-medium leading-relaxed">{card.desc}</p>
                   </div>
@@ -877,7 +877,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
         </section>
 
         {/* ─── CTA SECTION ────────────────────────── */}
-        <section className="py-12 bg-white pb-16 lg:pb-32">
+        <section className="py-12 lg:py-16 bg-white">
           <div className="max-w-7xl mx-auto px-6 sm:px-12">
             <div className="relative rounded-[56px] overflow-hidden shadow-3xl h-[500px] lg:h-[600px]">
               <img src="/wp_process_team_new.png" alt="Team" className="w-full h-full object-cover" />
@@ -927,9 +927,9 @@ function ProcessSlider({ servicesData, setIsModalOpen }) {
   const step = processSteps[active];
 
   return (
-    <section className="py-16 lg:py-32 bg-white relative overflow-hidden border-y border-slate-100">
+    <section className="py-12 lg:py-16 bg-white relative overflow-hidden border-y border-slate-100">
       <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
-        <div className="text-center mb-10 lg:mb-20">
+        <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-100">
             Process
           </div>

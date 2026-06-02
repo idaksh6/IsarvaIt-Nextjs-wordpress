@@ -91,7 +91,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
   return (
     <div className="bg-white min-h-screen font-sans text-slate-900">
       {/* ── HERO SECTION ── */}
-      <section className="relative pt-32 lg:pt-52 pb-20 lg:pb-40 overflow-hidden">
+      <section className="relative pt-32 lg:pt-40 pb-12 lg:pb-16 overflow-hidden">
         {/* Advanced Background Gradients */}
         <div className="absolute inset-0 -z-10 bg-white">
           <div className="absolute top-0 left-[-10%] w-[50%] h-[50%] bg-gradient-to-br from-teal-200/30 to-transparent rounded-full blur-[120px] animate-pulse"></div>
@@ -116,12 +116,12 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                 & Inventory System
               </span>
             </h1>
-            <p className="text-xl lg:text-3xl text-slate-500 font-medium max-w-4xl mx-auto mb-12 leading-relaxed opacity-90">
+            <p className="text-xl lg:text-3xl text-slate-500 font-medium max-w-4xl mx-auto mb-8 leading-relaxed opacity-90">
               Track. Manage. Control. Grow. <br className="hidden md:block" /> 
               <span className="text-slate-400">Everything you need to manage your warehouse, stock, events, rentals, and payments — all in one place.</span>
             </p>
 
-            <div className="flex flex-wrap justify-center gap-6 mb-24">
+            <div className="flex flex-wrap justify-center gap-6 mb-8">
               <button 
                 onClick={() => setIsModalOpen(true)}
                 className="btn-premium-orange group !px-10 !py-5 !text-xl"
@@ -409,7 +409,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
       {/* ── CORE MODULES SECTION ── */}
       <section id="features" className="py-12 lg:py-16 bg-[#FCFDFF] relative">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20">
+          <div className="text-center mb-10">
             <h2 className="text-slate-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Powerful Features for Modern Warehouses</h2>
             <p className="text-lg text-slate-500 max-w-2xl mx-auto">Designed to work for you. Every feature is built with simplicity and automation in mind.</p>
           </div>

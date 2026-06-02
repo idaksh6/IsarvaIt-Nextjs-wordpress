@@ -54,7 +54,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
 
       <div className="bg-white min-h-screen font-sans">
         {/* ─── HERO SECTION (LIGHT & IMAGE-RICH) ──────────────────────────── */}
-        <section className="wp-light-gradient relative pt-32 lg:pt-48 pb-16 lg:pb-32 overflow-hidden">
+        <section className="wp-light-gradient relative pt-32 lg:pt-40 pb-12 lg:pb-16 overflow-hidden">
           {/* Decorative Background Shapes */}
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-sky-200/50 rounded-full blur-[100px] mix-blend-multiply" />
           <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-200/40 rounded-full blur-[120px] mix-blend-multiply" />
@@ -184,10 +184,10 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
         {/* ─── IMAGE-CENTRIC ZIG-ZAG SHOWCASE ──────────────────────────── */}
         <section
           id="portfolio"
-          className="py-16 lg:py-32 bg-white relative overflow-hidden"
+          className="py-12 lg:py-16 bg-white relative overflow-hidden"
         >
           <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center max-w-3xl mx-auto mb-20">
+            <div className="text-center max-w-3xl mx-auto mb-10">
               <span className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-3 block">
                 Bespoke Solutions
               </span>
@@ -350,12 +350,12 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
         </section>
 
         {/* ─── VISUAL ECOSYSTEM GRID ───────────────────────────────────────────── */}
-        <section className="py-16 lg:py-32 bg-sky-50 relative border-y border-sky-100">
+        <section className="py-12 lg:py-16 bg-sky-50 relative border-y border-sky-100">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
               The WordPress Ecosystem
             </h2>
-            <p className="text-lg text-gray-600 mb-16 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
               We seamlessly integrate your site with industry-leading tools, CRM
               systems, and marketing platforms to create a unified business
               engine.
@@ -387,9 +387,9 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
         </section>
 
         {/* ─── COMPREHENSIVE SERVICES LIST ───────────────────────────────────────────── */}
-        <section className="py-16 lg:py-32 bg-white">
+        <section className="py-12 lg:py-16 bg-white">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
                 Complete Range of WP Services
               </h2>
@@ -430,7 +430,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
         </section>
 
         {/* ─── TEAM / PROCESS BANNER WITH IMAGE ──────────────────────────── */}
-        <section className="py-16 lg:py-32 bg-white">
+        <section className="py-12 lg:py-16 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px]">
               <img

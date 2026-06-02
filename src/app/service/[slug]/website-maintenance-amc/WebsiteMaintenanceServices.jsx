@@ -10,19 +10,19 @@ const services = [
     title: "Website Maintenance",
     description: "Keep PHP-built custom websites secure with regular updates, backups, bug fixes, and proactive monitoring for long-term performance.",
     icon: "/images/services/website-maintenance.svg",
-    link: "/website-maintenance"
+    link: "/service/website-services"
   },
   {
     title: "WordPress Maintenance",
     description: "Keep your site updated with core, plugin, and theme maintenance plus security monitoring.",
     icon: "/images/services/wordpress-maintenance.svg",
-    link: "/wordpress-maintenance"
+    link: "/service/wordpress-development"
   },
   {
     title: "WooCommerce Maintenance",
     description: "Protect sales with proactive cart, checkout, and performance maintenance for high-performing WooCommerce stores.",
     icon: "/images/services/woocommerce-maintenance.svg",
-    link: "/woocommerce-maintenance-services"
+    link: "/product/woocommerce-development"
   },
   {
     title: "Laravel Maintenance",
@@ -61,7 +61,7 @@ const WebsiteMaintenanceServices = () => {
           </h2>
           
           <p className="text-lg text-gray-500 max-w-3xl leading-relaxed mx-auto">
-            From <Link href="/wordpress-maintenance" className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors">WordPress</Link>, <Link href="/woocommerce-maintenance-services" className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors">WooCommerce</Link>, and <Link href="/service/statamic-development" className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors">Statamic</Link> to Laravel and mobile apps, we keep your digital products secure, updated, and running smoothly every day.
+            From <Link href="/service/wordpress-development" prefetch={false} className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors">WordPress</Link>, <Link href="/product/woocommerce-development" prefetch={false} className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors">WooCommerce</Link>, and <Link href="/service/statamic-development" prefetch={false} className="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors">Statamic</Link> to Laravel and mobile apps, we keep your digital products secure, updated, and running smoothly every day.
           </p>
         </div>
 
@@ -87,7 +87,7 @@ const WebsiteMaintenanceServices = () => {
                 </div>
                 
                 {service.link !== "#" ? (
-                  <Link href={service.link} className="text-xl font-bold text-gray-900 mb-4 hover:text-emerald-600 transition-colors">
+                  <Link href={service.link} prefetch={false} className="text-xl font-bold text-gray-900 mb-4 hover:text-emerald-600 transition-colors">
                     {service.title}
                   </Link>
                 ) : (
