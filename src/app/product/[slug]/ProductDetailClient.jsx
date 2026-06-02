@@ -238,13 +238,13 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
             {/* Breadcrumb */}
             <div className="mb-8">
               <div className="flex items-center gap-2 text-sm text-gray-600">
-                <Link href="/" prefetch={true} className="hover:text-violet-600 transition-colors">
+                <Link href="/" prefetch={false} className="hover:text-violet-600 transition-colors">
                   Home
                 </Link>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-                <Link href="/products" prefetch={true} className="hover:text-violet-600 transition-colors">
+                <Link href="/products" prefetch={false} className="hover:text-violet-600 transition-colors">
                   Products
                 </Link>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -432,7 +432,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
                 <Link
                   key={relatedProduct.slug}
                   href={`/product/${relatedProduct.slug}`}
-                  prefetch={true}
+                  prefetch={false}
                   className="group"
                 >
                   <div className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 h-full">
@@ -467,7 +467,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
             <div className="text-center mt-12">
               <Link
                 href="/products"
-                prefetch={true}
+                prefetch={false}
                 className="press-illusion-btn-orange bg-orange-600 text-white w-fit font-bold px-8 py-4 text-base items-center space-x-2 flex cursor-pointer mx-auto"
               >
                 <span>View All Products</span>

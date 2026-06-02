@@ -45,7 +45,7 @@ export default function ProductsClient({ productsData, categories }) {
           <Link
             key={product.slug}
             href={`/product/${product.slug}`}
-            prefetch={true}
+            prefetch={false}
             className="group"
           >
             <div 

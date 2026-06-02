@@ -1168,7 +1168,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                 <Link
                   key={r.slug}
                   href={`/service/${r.slug}`}
-                  prefetch
+                  prefetch={false}
                   className=""
                 >
                   <div className="h-full p-8 bg-white rounded-2xl border-2 border-gray-100 hover:border-emerald-300 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">

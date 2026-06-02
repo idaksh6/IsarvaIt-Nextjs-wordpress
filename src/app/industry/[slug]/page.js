@@ -235,13 +235,13 @@ export default async function IndustryDetailPage({ params }) {
           {/* Breadcrumb */}
           <div className="mb-8">
             <div className="flex items-center gap-2 text-sm text-gray-600">
-              <Link href="/" prefetch={true} className="hover:text-emerald-600 transition-colors">
+              <Link href="/" prefetch={false} className="hover:text-emerald-600 transition-colors">
                 Home
               </Link>
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-              <Link href="/industries" prefetch={true} className="hover:text-emerald-600 transition-colors">
+              <Link href="/industries" prefetch={false} className="hover:text-emerald-600 transition-colors">
                 Industries
               </Link>
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -482,7 +482,7 @@ export default async function IndustryDetailPage({ params }) {
               <Link
                 key={relatedIndustry.slug}
                 href={`/industry/${relatedIndustry.slug}`}
-                prefetch={true}
+                prefetch={false}
                 className="group"
               >
                 <div className="relative h-full rounded-3xl p-8 bg-white border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
@@ -516,7 +516,7 @@ export default async function IndustryDetailPage({ params }) {
           <div className="text-center mt-8">
             <Link
               href="/industries"
-              prefetch={true}
+              prefetch={false}
               className="press-illusion-btn-orange bg-orange-600 text-white w-fit font-bold px-8 py-4 text-base items-center space-x-2 flex cursor-pointer mx-auto"
             >
               <span>View All Industries</span>
@@ -606,7 +606,7 @@ export default async function IndustryDetailPage({ params }) {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link
               href="/contact"
-              prefetch={true}
+              prefetch={false}
               className="press-illusion-btn-orange bg-orange-600 text-white group relative inline-flex items-center justify-center px-10 py-5 text-lg font-bold rounded-xl overflow-hidden shadow-xl"
             >
               <span className="relative z-10 flex items-center gap-3">
@@ -620,7 +620,7 @@ export default async function IndustryDetailPage({ params }) {
 
             <Link
               href="/industries"
-              prefetch={true}
+              prefetch={false}
               className="inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-gray-900 bg-white border-2 border-gray-300 rounded-xl hover:border-gray-400 hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Browse All Industries

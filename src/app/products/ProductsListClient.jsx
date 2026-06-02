@@ -218,7 +218,7 @@ export default function ProductsListClient({ productsData }) {
                 <Link
                   key={product.slug}
                   href={`/product/${product.slug}`}
-                  prefetch={true}
+                  prefetch={false}
                   className={`product-click-trigger group block h-full w-full ${lastRowCenter.link}`}
                   data-product-name={product.title}
                   onClick={() => {
@@ -364,7 +364,7 @@ export default function ProductsListClient({ productsData }) {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              prefetch={true}
+              prefetch={false}
               className="press-illusion-btn-orange bg-orange-600 text-white font-bold px-8 py-4 text-lg items-center space-x-2 inline-flex justify-center"
             >
               <span>Request Custom Solution</span>
@@ -384,7 +384,7 @@ export default function ProductsListClient({ productsData }) {
             </Link>
             <Link
               href="/services"
-              prefetch={true}
+              prefetch={false}
               className="press-illusion-btn bg-green-400 text-white inline-flex items-center justify-center px-8 py-4 text-lg font-bold  backdrop-blur-md border-2 border-gray-200 rounded-lg "
             >View Our Services
             </Link>

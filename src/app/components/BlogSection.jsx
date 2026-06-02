@@ -21,7 +21,7 @@ export default function BlogSection({ posts }) {
           </div>
           <Link
             href="/blog"
-            prefetch={true}
+            prefetch={false}
             className="press-illusion-btn-orange bg-orange-600 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 !hidden xl:!flex mt-4 md:mt-0"
           >
             <span>View More Blog</span>
@@ -79,7 +79,7 @@ export default function BlogSection({ posts }) {
         <div className="flex justify-center lg:hidden mt-10">
           <Link
             href="/blog"
-            prefetch={true}
+            prefetch={false}
             className="press-illusion-btn-orange bg-orange-600 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex"
           >
             <span>View More Blog</span>

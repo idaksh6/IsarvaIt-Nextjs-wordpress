@@ -213,7 +213,7 @@ export default function IndustriesListClient({ industriesData }) {
                 <Link
                   key={industry.slug}
                   href={`/industry/${industry.slug}`}
-                  prefetch={true}
+                  prefetch={false}
                   className={`group block h-full w-full ${lastRowCenter.link}`}
                 >
                   <div className={`relative rounded-3xl p-8 h-full w-full transition-all duration-300 hover:scale-[1.02] bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg hover:shadow-2xl flex flex-col items-center text-center ${lastRowCenter.card}`}>
@@ -341,7 +341,7 @@ export default function IndustriesListClient({ industriesData }) {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              prefetch={true}
+              prefetch={false}
               className="press-illusion-btn-orange bg-orange-600 text-white font-bold px-8 py-4 text-lg items-center space-x-2 inline-flex justify-center"
             >
               <span>Schedule a Consultation</span>
@@ -361,7 +361,7 @@ export default function IndustriesListClient({ industriesData }) {
             </Link>
             <Link
               href="/services"
-              prefetch={true}
+              prefetch={false}
               className="press-illusion-btn inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-gray-700 bg-white/80 backdrop-blur-md border-2 border-gray-200 rounded-lg hover:border-emerald-600 hover:text-emerald-700 transition-all duration-200 shadow-lg hover:shadow-xl"
             >Explore Our Services
             </Link>
