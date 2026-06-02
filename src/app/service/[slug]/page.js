@@ -136,8 +136,8 @@ export default async function ServiceDetailPage({ params }) {
             <div>
               <div className="relative h-full">
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/20 to-teal-400/20 blur-[80px] rounded-full"></div>
-                <div className="relative rounded-3xl bg-white/70 backdrop-blur-xl border border-white/80 shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                  <div className="relative w-full h-[500px] lg:h-[600px]">
+                <div className={`relative rounded-3xl overflow-hidden ${isAmc ? "border border-emerald-100 shadow-[0_24px_80px_rgba(16,185,129,0.15)]" : "bg-white/70 backdrop-blur-xl border border-white/80 shadow-2xl transform hover:scale-105 transition-transform duration-300"}`}>
+                  <div className={`relative w-full ${isAmc ? "h-[480px] lg:h-[520px]" : "h-[500px] lg:h-[600px]"}`}>
                     {/* Service Image */}
                     <img
                       src={service.heroImage || "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=1200&fit=crop&q=80"}
@@ -145,7 +145,24 @@ export default async function ServiceDetailPage({ params }) {
                       className="w-full h-full object-cover"
                     />
                     {/* Overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/20 via-transparent to-transparent"></div>
+                    <div className={`absolute inset-0 ${isAmc ? "bg-gradient-to-t from-emerald-900/10 via-transparent to-transparent" : "bg-gradient-to-t from-emerald-900/20 via-transparent to-transparent"}`}></div>
+                    {isAmc && (
+                      <div className="absolute bottom-6 left-6 rounded-2xl px-5 py-3 bg-white/95 backdrop-blur-md border border-emerald-200/80 shadow-[0_8px_32px_rgba(16,185,129,0.12)]">
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center text-white text-sm font-bold">
+                            ✓
+                          </div>
+                          <div>
+                            <div className="text-gray-900 text-sm font-bold">
+                              Annual Maintenance Contract
+                            </div>
+                            <div className="text-emerald-600 text-xs font-semibold">
+                              Proactive website care & support
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
