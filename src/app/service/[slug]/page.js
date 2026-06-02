@@ -11,7 +11,6 @@ import WebsiteMaintenanceFAQ from "./website-maintenance-amc/WebsiteMaintenanceF
 import WebsiteMaintenanceHeadaches from "./website-maintenance-amc/WebsiteMaintenanceHeadaches";
 import WebsiteMaintenanceProcess from "./website-maintenance-amc/WebsiteMaintenanceProcess";
 import WebsiteMaintenanceServices from "./website-maintenance-amc/WebsiteMaintenanceServices";
-import WebsiteMaintenanceCaseStudies from "./website-maintenance-amc/WebsiteMaintenanceCaseStudies";
 import { generateServiceMetadata } from "../../lib/utils/seo";
 import NewsAndMagazinePortal from "./NewsAndMagazinePortal";
 
@@ -113,13 +112,13 @@ export default async function ServiceDetailPage({ params }) {
           {/* Breadcrumb */}
           <div className="mb-8">
             <div className="flex items-center gap-2 text-sm text-gray-600">
-              <Link href="/" prefetch={true} className="hover:text-emerald-600 transition-colors">
+              <Link href="/" prefetch={false} className="hover:text-emerald-600 transition-colors">
                 Home
               </Link>
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-              <Link href="/services" prefetch={true} className="hover:text-emerald-600 transition-colors">
+              <Link href="/services" prefetch={false} className="hover:text-emerald-600 transition-colors">
                 Services
               </Link>
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -228,7 +227,7 @@ export default async function ServiceDetailPage({ params }) {
                   <Link
                     key={index}
                     href={subServiceSlug ? `/service/${subServiceSlug}` : "#"}
-                    prefetch={true}
+                    prefetch={false}
                     className="group relative block"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/10 to-teal-400/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
@@ -657,7 +656,6 @@ export default async function ServiceDetailPage({ params }) {
           <WebsiteMaintenanceHeadaches />
           <WebsiteMaintenanceProcess />
           <WebsiteMaintenanceServices />
-          <WebsiteMaintenanceCaseStudies />
         </>
       )}
 
@@ -689,7 +687,7 @@ export default async function ServiceDetailPage({ params }) {
               <Link
                 key={relatedService.slug}
                 href={`/service/${relatedService.slug}`}
-                prefetch={true}
+                prefetch={false}
                 className="relative"
               >
                 <div className="h-full rounded-3xl p-8 bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg transition-all duration-300">
@@ -726,7 +724,7 @@ export default async function ServiceDetailPage({ params }) {
           <div className="text-center mt-12">
             <Link
               href="/services"
-              prefetch={true}
+              prefetch={false}
               className="press-illusion-btn-orange bg-orange-600 text-white w-fit font-bold px-8 py-4 text-base items-center space-x-2 flex cursor-pointer mx-auto"
             >
               <span>View All Services</span>
@@ -787,7 +785,7 @@ export default async function ServiceDetailPage({ params }) {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mt-6 md:mt-10">
             <Link
               href="/contact"
-              prefetch={true}
+              prefetch={false}
               className="btn-premium-orange group !px-10 !py-5"
             >
               <div className="shimmer absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
@@ -801,7 +799,7 @@ export default async function ServiceDetailPage({ params }) {
 
             <Link
               href="/services"
-              prefetch={true}
+              prefetch={false}
               className="group relative inline-flex items-center justify-center gap-3 px-10 py-5 font-black tracking-wider text-base text-gray-700 transition-all duration-300 rounded-full bg-white border-2 border-gray-100 hover:border-emerald-200 hover:text-emerald-700 shadow-sm hover:shadow-xl"
             >
               <span className="relative z-10 flex items-center gap-3">

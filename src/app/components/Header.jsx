@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import Link from "./AppLink";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -102,7 +102,7 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" prefetch={true} className="flex items-center">
+        <Link href="/" className="flex items-center">
           <div className="relative h-[64px] w-[165px]"> {/* Added sizes for Next.js Image optimization */}
             <Image src="/isarva New Logo.png" alt="Isarva Logo" fill sizes="165px" className="object-contain drop-shadow-sm" priority />
           </div>
@@ -120,7 +120,6 @@ export default function Header() {
               >
                 <Link
                   href={link.href}
-                  prefetch={true}
                   className="group text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1"
                 >
                   {link.label}
@@ -173,7 +172,6 @@ export default function Header() {
                             <Link
                               key={child.label}
                               href={child.href}
-                              prefetch={true}
                               onClick={() => setIsAboutOpen(false)}
                               className="group flex items-center justify-between p-4 rounded-2xl bg-gray-50 hover:bg-emerald-50 transition-all duration-300 border border-transparent hover:border-emerald-200"
                             >
@@ -200,7 +198,6 @@ export default function Header() {
               <Link
                 key={link.label}
                 href={link.href}
-                prefetch={true}
                 className="text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600"
               >
                 {link.label}
@@ -216,7 +213,6 @@ export default function Header() {
           >
             <Link
               href="/products"
-              prefetch={true}
               className="group text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1"
             >
               Products
@@ -254,7 +250,6 @@ export default function Header() {
                       <Link
                         key={product.href}
                         href={product.href}
-                        prefetch={true}
                         onClick={() => {
                           setIsProductsOpen(false);
                           if (window.dataLayer) {
@@ -282,7 +277,6 @@ export default function Header() {
                   <div className="mt-6 pt-6 border-t border-gray-200">
                     <Link
                       href="/products"
-                      prefetch={true}
                       onClick={() => setIsProductsOpen(false)}
                       className="inline-flex items-center gap-2 text-orange-600 font-semibold hover:gap-3 transition-all duration-200"
                     >
@@ -315,7 +309,6 @@ export default function Header() {
           >
             <Link
               href="/services"
-              prefetch={true}
               className="group text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1"
             >
               Services
@@ -353,7 +346,6 @@ export default function Header() {
                       <Link
                         key={service.href}
                         href={service.href}
-                        prefetch={true}
                         onClick={() => setIsServicesOpen(false)}
                         className="group flex items-center gap-3 p-4 rounded-xl hover:bg-emerald-50 transition-all duration-200"
                       >
@@ -372,7 +364,6 @@ export default function Header() {
                   <div className="mt-6 pt-6 border-t border-gray-200">
                     <Link
                       href="/services"
-                      prefetch={true}
                       onClick={() => setIsServicesOpen(false)}
                       className="inline-flex items-center gap-2 text-orange-600 font-semibold hover:gap-3 transition-all duration-200"
                     >
@@ -405,7 +396,6 @@ export default function Header() {
           >
             <Link
               href="/industries"
-              prefetch={true}
               className="group text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1"
             >
               Industries
@@ -443,7 +433,6 @@ export default function Header() {
                       <Link
                         key={industry.href}
                         href={industry.href}
-                        prefetch={true}
                         onClick={() => setIsIndustriesOpen(false)}
                         className="group flex items-center gap-3 p-4 rounded-xl hover:bg-blue-50 transition-all duration-200"
                       >
@@ -462,7 +451,6 @@ export default function Header() {
                   <div className="mt-6 pt-6 border-t border-gray-200">
                     <Link
                       href="/industries"
-                      prefetch={true}
                       onClick={() => setIsIndustriesOpen(false)}
                       className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all duration-200"
                     >
@@ -512,7 +500,6 @@ export default function Header() {
         {/* CTA Button - Hidden on Mobile */}
         <Link
           href="/contact"
-          prefetch={true}
           className="press-illusion-btn-orange text-white w-fit font-bold px-8 py-3 text-base items-center space-x-2 !hidden nav:!flex transition-all duration-300"
         >
           <span>Contact Us</span>
@@ -654,7 +641,6 @@ export default function Header() {
                                   <Link
                                     key={child.label}
                                     href={child.href}
-                                    prefetch={true}
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className="flex items-center gap-3 p-3 rounded-xl hover:bg-white hover:shadow-sm transition-all duration-200"
                                   >
@@ -671,7 +657,6 @@ export default function Header() {
                     ) : (
                       <Link
                         href={link.href}
-                        prefetch={true}
                         onClick={() => setIsMobileMenuOpen(false)}
                         className="group flex items-center gap-3 p-4 rounded-2xl bg-white hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 border border-transparent hover:border-green-200 active:bg-green-100 transition-all duration-300"
                       >
@@ -757,7 +742,6 @@ export default function Header() {
                         <div className="bg-gradient-to-b from-gray-50 to-white p-3 space-y-1 max-h-[300px] overflow-y-auto">
                           <Link
                             href="/products"
-                            prefetch={true}
                             onClick={() => setIsMobileMenuOpen(false)}
                             className="flex items-center gap-2 p-3 rounded-xl text-emerald-600 hover:bg-white bg-emerald-50 border border-emerald-200 transition-all duration-200 font-bold text-sm mb-2"
                           >
@@ -775,7 +759,6 @@ export default function Header() {
                             >
                               <Link
                                 href={product.href}
-                                prefetch={true}
                                 onClick={() => {
                                   setIsMobileMenuOpen(false);
                                   if (window.dataLayer) {
@@ -853,7 +836,6 @@ export default function Header() {
                         <div className="bg-gradient-to-b from-gray-50 to-white p-3 space-y-1 max-h-[300px] overflow-y-auto">
                           <Link
                             href="/services"
-                            prefetch={true}
                             onClick={() => setIsMobileMenuOpen(false)}
                             className="flex items-center gap-2 p-3 rounded-xl text-orange-600 hover:bg-white bg-orange-50 border border-orange-200 transition-all duration-200 font-bold text-sm mb-2"
                           >
@@ -871,7 +853,6 @@ export default function Header() {
                             >
                               <Link
                                 href={service.href}
-                                prefetch={true}
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className="flex items-center gap-3 p-3 rounded-xl text-gray-700 hover:bg-white hover:shadow-sm transition-all duration-200"
                               >
@@ -940,7 +921,6 @@ export default function Header() {
                         <div className="bg-gradient-to-b from-gray-50 to-white p-3 space-y-1">
                           <Link
                             href="/industries"
-                            prefetch={true}
                             onClick={() => setIsMobileMenuOpen(false)}
                             className="flex items-center gap-2 p-3 rounded-xl text-emerald-600 hover:bg-white bg-emerald-50 border border-emerald-200 transition-all duration-200 font-bold text-sm mb-2"
                           >
@@ -958,7 +938,6 @@ export default function Header() {
                             >
                               <Link
                                 href={industry.href}
-                                prefetch={true}
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className="flex items-center gap-3 p-3 rounded-xl text-gray-700 hover:bg-white hover:shadow-sm transition-all duration-200"
                               >
@@ -1023,7 +1002,6 @@ export default function Header() {
                 >
                   <Link
                     href="/contact"
-                    prefetch={true}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="press-illusion-btn-orange bg-orange-600 justify-center text-white w-fit text-center mx-auto font-bold px-6 py-2 text-base items-center space-x-2 flex nav:hidden"
                   >

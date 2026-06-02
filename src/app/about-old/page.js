@@ -212,7 +212,7 @@ export default function AboutPage() {
               <div className="flex flex-wrap gap-4 lg:justify-start justify-center">
                 <Link
                   href="/contact"
-                  prefetch={true}
+                  prefetch={false}
                   className="press-illusion-btn-orange bg-orange-500 text-white w-fit font-bold px-6 py-2 text-base flex items-center space-x-2"
                 >
                   <span>Contact Us</span>
@@ -232,7 +232,7 @@ export default function AboutPage() {
                 </Link>
                 <Link
                   href="/products"
-                  prefetch={true}
+                  prefetch={false}
                   className="press-illusion-btn-orange bg-orange-500 text-white w-fit font-bold px-6 py-2 text-base flex items-center space-x-2"
                 >
                   <span>Our Solutions</span>
@@ -280,7 +280,7 @@ export default function AboutPage() {
               </p>
               <Link
                 href="/careers"
-                prefetch={true}
+                prefetch={false}
                 className="press-illusion-btn-orange bg-orange-500 text-white w-fit lg:mx-0 mx-auto font-bold px-6 py-2 text-base flex items-center space-x-2"
               >
                 <span>View Careers</span>
@@ -327,7 +327,7 @@ export default function AboutPage() {
           <div className="flex justify-center items-center">
             <Link
               href="/contact"
-              prefetch={true}
+              prefetch={false}
               className="press-illusion-btn-orange bg-orange-500 text-white w-fit font-bold px-8 py-3 text-lg flex items-center space-x-3"
             >
               <span>Get In Touch</span>

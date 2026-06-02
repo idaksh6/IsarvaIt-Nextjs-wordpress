@@ -190,7 +190,7 @@ export default function ServicesListClient({ servicesData }) {
                 <Link
                   key={service.slug}
                   href={`/service/${service.slug}`}
-                  prefetch={true}
+                  prefetch={false}
                   className="group"
                 >
                   <div className="relative rounded-3xl p-8 h-full transition-all duration-300 hover:scale-[1.02] bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg hover:shadow-2xl flex flex-col items-center text-center">
@@ -317,7 +317,7 @@ export default function ServicesListClient({ servicesData }) {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              prefetch={true}
+              prefetch={false}
               className="press-illusion-btn-orange bg-orange-600 text-white font-bold px-8 py-4 text-lg items-center space-x-2 inline-flex justify-center"
             >
               <span>Get Started Now</span>
@@ -337,7 +337,7 @@ export default function ServicesListClient({ servicesData }) {
             </Link>
             <Link
               href="/about"
-              prefetch={true}
+              prefetch={false}
               className="press-illusion-btn bg-green-400 inline-flex text-black items-center justify-center px-8 py-4 text-lg font-bold  border-2 border-gray-200 rounded-lg  transition-all duration-200 "
             >Learn About Us
             </Link>
