@@ -259,12 +259,12 @@ export default async function ServiceDetailPage({ params }) {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           {/* Header */}
-          <div className={`max-w-3xl ${sectionHeaderMb} mx-auto lg:mx-0 text-center lg:text-left`}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-50 border border-emerald-200 mb-6">
-              <svg className="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+          <div className={`max-w-3xl ${sectionHeaderMb} ${isAmc ? "mx-auto text-center" : "mx-auto lg:mx-0 text-center lg:text-left"}`}>
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-emerald-100 to-teal-100 text-emerald-700 font-semibold text-sm mb-6 border border-emerald-200">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
               </svg>
-              <span className="text-emerald-700 font-semibold text-sm">Key Features</span>
+              Key Features
             </div>
             <h2 className={`text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter ${headingCaseClass}`}>
               {service.slug === "odoo-apps-support-and-maintenance"
