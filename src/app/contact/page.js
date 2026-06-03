@@ -129,7 +129,7 @@ export default function Contact() {
                     {info.icon}
                   </div>
 
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  <h3 className="mb-2">
                     {info.title}
                   </h3>
 
@@ -160,7 +160,7 @@ export default function Contact() {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+            <h2 className="mb-6 capitalize">
               Our Offices
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -232,7 +232,7 @@ export default function Contact() {
                   {/* Location Name Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
                     <div className="text-center">
-                      <h3 className="text-xl md:text-2xl font-bold text-gray-900 drop-shadow-sm">
+                      <h3 className="md:text-2xl drop-shadow-sm">
                         {office.city}
                       </h3>
                     </div>

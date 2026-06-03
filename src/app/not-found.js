@@ -85,7 +85,7 @@ export default function NotFound() {
 
           {/* Quick Links */}
           <div className="bg-white rounded-3xl shadow-xl p-8 md:p-10 border border-gray-100">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+            <h3 className="mb-6">
               Popular Pages
             </h3>
             

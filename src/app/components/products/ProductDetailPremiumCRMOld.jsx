@@ -150,7 +150,7 @@ export default function ProductDetailPremiumCRMOld({
 
             {/* Right Side - Content */}
             <div>
-              <h2 className="text-[#000000] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+              <h2 className="text-[#000000] mb-6 capitalize">
                 Why Businesses Need a{" "}
                 <span className="text-[#0EA5E9]">CRM</span>
               </h2>
@@ -165,7 +165,7 @@ export default function ProductDetailPremiumCRMOld({
                     <span className="text-2xl">📊</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    <h3 className="mb-2">
                       Centralized Customer Data
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
@@ -179,7 +179,7 @@ export default function ProductDetailPremiumCRMOld({
                     <span className="text-2xl">🚀</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    <h3 className="mb-2">
                       Improved Sales Performance
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
@@ -193,7 +193,7 @@ export default function ProductDetailPremiumCRMOld({
                     <span className="text-2xl">🤝</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    <h3 className="mb-2">
                       Enhanced Customer Relationships
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
@@ -207,7 +207,7 @@ export default function ProductDetailPremiumCRMOld({
                     <span className="text-2xl">📈</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    <h3 className="mb-2">
                       Data-Driven Insights
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
@@ -221,7 +221,7 @@ export default function ProductDetailPremiumCRMOld({
                     <span className="text-2xl">⚡</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    <h3 className="mb-2">
                       Streamlined Operations
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
@@ -295,7 +295,7 @@ export default function ProductDetailPremiumCRMOld({
                   GET STARTED TODAY
                 </span>
 
-                <h2 className="text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+                <h2 className="text-white mb-6 capitalize">
                   Ready to transform your <br className="hidden md:block" />
                   customer relationships?
                 </h2>
@@ -345,7 +345,7 @@ export default function ProductDetailPremiumCRMOld({
               <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-3 bg-[#0EA5E9]/10 px-4 py-2 rounded-full">
                 MORE PRODUCTS
               </span>
-              <h2 className="text-[#0a0a0a] mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+              <h2 className="text-[#0a0a0a] mb-4 capitalize">
                 Explore Our More Products
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -378,7 +378,7 @@ export default function ProductDetailPremiumCRMOld({
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                        <h3 className="mb-3">
                           {prod.title}
                         </h3>
 
@@ -531,7 +531,7 @@ function CRMFeatureSection() {
           <span className="block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-2.5">
             SOFTWARE FEATURES
           </span>
-          <h2 className="text-[#0a0a0a] mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+          <h2 className="text-[#0a0a0a] mb-3.5 capitalize">
             Key Features Of <span className="text-[#0EA5E9]">CRM</span> Application
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">

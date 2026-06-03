@@ -216,7 +216,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 </div>
 
                 <div className="relative">
-                  <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-black text-gray-900 mb-6 leading-[1] tracking-tight">
+                  <h1 className="mb-6">
                     <span className="shimmer-title inline-block py-2">WordPress</span> <br />
                     Built for <br />
                     <span className="text-[clamp(1.5rem,4vw,3.5rem)] bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent font-bold">Performance & Growth</span>
@@ -339,7 +339,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-100">
                 What We Offer
               </div>
-              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="mb-6 uppercase">
                 Explore Our WordPress <span className="text-blue-600">Development Services</span>
               </h2>
               <p className="text-base sm:text-lg text-gray-500 font-medium max-w-2xl mx-auto">
@@ -361,7 +361,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                   <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-2xl mb-6 shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 mx-auto">
                     {s.icon}
                   </div>
-                  <h3 className="text-lg font-black text-gray-900 mb-3 leading-tight">{s.title}</h3>
+                  <h3 className="mb-3">{s.title}</h3>
                   <p className="text-sm text-gray-500 font-medium leading-relaxed">{s.desc}</p>
                 </div>
               ))}
@@ -381,7 +381,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-100">
                   Figma to WordPress
                 </div>
-                <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                <h2 className="mb-6 uppercase">
                   Your Design, <br className="hidden sm:block" />
                   <span className="text-blue-600">Brought to Life.</span>
                 </h2>
@@ -486,7 +486,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                     <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 text-2xl group-hover:bg-blue-600 group-hover:scale-110 transition-all duration-300 mx-auto">
                       {card.icon}
                     </div>
-                    <h4 className="text-lg sm:text-xl font-black text-gray-900 mb-3">{card.title}</h4>
+                    <h4 className="sm:text-xl mb-3">{card.title}</h4>
                     <p className="text-sm text-gray-500 font-medium leading-relaxed">{card.desc}</p>
                   </div>
                   <div className="mt-6 pt-5 border-t border-gray-100 flex items-baseline justify-center gap-2 w-full">
@@ -507,7 +507,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-100">
                 Architecture
               </div>
-              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="mb-6 uppercase">
                 Your WordPress <span className="text-blue-600">Ecosystem</span>
               </h2>
               <p className="text-base sm:text-lg text-gray-500 font-medium max-w-2xl mx-auto">
@@ -645,7 +645,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 font-bold text-[10px] uppercase tracking-wider mb-6 border border-blue-100">
                 Core Capabilities
               </div>
-              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="mb-6 uppercase">
                 Engineered for <span className="text-blue-600">Success</span>
               </h2>
               <p className="text-base sm:text-xl text-gray-500 font-medium">Enterprise WordPress expertise tailored to your digital growth.</p>
@@ -669,7 +669,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 <div className="lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-blue-50/40 to-white items-center text-center border-b lg:border-b lg:border-r border-gray-100" style={{ borderRadius: 0, borderTop: 'none', borderLeft: 'none' }}>
                   <div className="relative z-10 flex flex-col items-center">
                     <div className="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-5 text-xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm mx-auto">🎨</div>
-                    <h4 className="text-lg sm:text-xl font-black text-gray-900 mb-2">Theme Development</h4>
+                    <h4 className="sm:text-xl mb-2">Theme Development</h4>
                     <p className="text-xs sm:text-sm text-gray-500 font-medium leading-relaxed">Custom-built themes designed to match your brand and scale effortlessly.</p>
                   </div>
                 </div>
@@ -678,7 +678,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 <div className="lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-violet-50/40 to-white items-center text-center border-b lg:border-b border-gray-100" style={{ borderRadius: 0, borderTop: 'none', borderLeft: 'none', borderRight: 'none' }}>
                   <div className="relative z-10 flex flex-col items-center">
                     <div className="w-11 h-11 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center mb-5 text-xl group-hover:bg-violet-600 group-hover:text-white transition-all duration-500 shadow-sm mx-auto">⚙️</div>
-                    <h4 className="text-lg sm:text-xl font-black text-gray-900 mb-2">Plugin Development</h4>
+                    <h4 className="sm:text-xl mb-2">Plugin Development</h4>
                     <p className="text-xs sm:text-sm text-gray-500 font-medium leading-relaxed">Extend functionality with custom plugins built specifically for your business needs.</p>
                   </div>
                 </div>
@@ -687,7 +687,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 <div className="lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-orange-50/40 to-white items-center text-center border-b lg:border-b lg:border-r border-gray-100" style={{ borderRadius: 0, borderTop: 'none', borderLeft: 'none' }}>
                   <div className="flex flex-col items-center">
                     <div className="w-11 h-11 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center mb-5 text-xl shrink-0 group-hover:bg-orange-600 group-hover:text-white transition-all duration-500 shadow-sm mx-auto">🛒</div>
-                    <h4 className="text-lg sm:text-xl font-black text-gray-900 mb-2">Ecommerce Solution</h4>
+                    <h4 className="sm:text-xl mb-2">Ecommerce Solution</h4>
                     <p className="text-xs sm:text-sm text-gray-500 font-medium leading-relaxed">Boost your sales with robust, user-friendly WordPress eCommerce solutions.</p>
                   </div>
                 </div>
@@ -696,7 +696,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 <div className="lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-amber-50/40 to-white items-center text-center border-b lg:border-b border-gray-100" style={{ borderRadius: 0, borderTop: 'none', borderLeft: 'none', borderRight: 'none' }}>
                   <div className="relative z-10 flex flex-col items-center">
                     <div className="w-11 h-11 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-5 text-xl group-hover:bg-amber-600 group-hover:text-white transition-all duration-500 shadow-sm mx-auto">⚡</div>
-                    <h4 className="text-lg sm:text-xl font-black text-gray-900 mb-2">Speed & Performance</h4>
+                    <h4 className="sm:text-xl mb-2">Speed & Performance</h4>
                     <p className="text-xs sm:text-sm text-gray-500 font-medium leading-relaxed">Optimised for core web vitals and industry-leading load times.</p>
                   </div>
                 </div>
@@ -714,7 +714,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 <div className="lg:col-span-4 bento-card group p-6 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-indigo-50/40 to-white items-center text-center border-b-0" style={{ borderRadius: 0, border: 'none' }}>
                   <div className="relative z-10 flex flex-col items-center">
                     <div className="w-11 h-11 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-5 text-xl group-hover:bg-indigo-600 group-hover:text-white transition-all duration-500 shadow-sm mx-auto">🔒</div>
-                    <h4 className="text-lg sm:text-xl font-black text-gray-900 mb-2">Technical SEO & Hardening</h4>
+                    <h4 className="sm:text-xl mb-2">Technical SEO & Hardening</h4>
                     <p className="text-xs sm:text-sm text-gray-500 font-medium leading-relaxed">Enterprise-grade security audits and advanced SEO architecture built-in.</p>
                   </div>
                 </div>
@@ -730,7 +730,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-100">
                 Enterprise Solutions
               </div>
-              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="mb-6 uppercase">
                 WordPress for <span className="text-blue-600">Growth</span>
               </h2>
             </div>
@@ -786,7 +786,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
             <div className="flex flex-col lg:flex-row items-start gap-16 lg:gap-24">
               <div className="w-full lg:w-1/2">
-                <h2 className="text-gray-900 mb-6 text-center lg:text-left text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                <h2 className="mb-6 text-center lg:text-left uppercase">
                   Things We're <br className="hidden lg:block" />
                   <span className="text-blue-600">Really Good At</span>
                 </h2>
@@ -815,7 +815,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 ].map((card, i) => (
                   <div key={i} className="bento-card rounded-[20px] p-5 group flex flex-col items-center text-center">
                     <div className="text-2xl mb-3 group-hover:scale-110 transition-transform duration-300 mx-auto">{card.icon}</div>
-                    <h4 className="text-sm font-black text-gray-900 mb-1.5 leading-tight">{card.title}</h4>
+                    <h4 className="mb-1.5">{card.title}</h4>
                     <p className="text-xs text-gray-500 font-medium leading-relaxed">{card.desc}</p>
                   </div>
                 ))}
@@ -834,7 +834,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-sky-50 text-sky-600 font-bold text-xs uppercase tracking-wider mb-6 border border-sky-100">
                 AI-Enhanced
               </div>
-              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="mb-6 uppercase">
                 Supercharged <span className="text-sky-500">with AI</span>
               </h2>
             </div>
@@ -848,7 +848,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 ].map((card, i) => (
                   <div key={i} className="group relative bg-white border border-slate-100 hover:border-sky-300 rounded-[24px] p-8 transition-all duration-500 hover:shadow-xl shadow-sm flex flex-col items-center text-center">
                     <div className="text-3xl mb-5 mx-auto">{card.icon}</div>
-                    <h4 className="text-lg font-black text-gray-900 mb-2">{card.title}</h4>
+                    <h4 className="mb-2">{card.title}</h4>
                     <p className="text-sm text-gray-500 font-medium leading-relaxed">{card.desc}</p>
                   </div>
                 ))}
@@ -883,7 +883,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               <img src="/wp_process_team_new.png" alt="Team" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-950/95 via-blue-900/70 to-transparent transition-all duration-700 flex items-center">
                 <div className="px-10 lg:px-24 max-w-2xl text-left">
-                  <h2 className="text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Your Trusted Development Partner</h2>
+                  <h2 className="text-white mb-6 uppercase">Your Trusted Development Partner</h2>
                   <p className="text-xl text-white/90 mb-10 font-bold leading-relaxed">
                     Collaborate with a team that speaks your language and understands your business goals.
                   </p>
@@ -933,7 +933,7 @@ function ProcessSlider({ servicesData, setIsModalOpen }) {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-100">
             Process
           </div>
-          <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+          <h2 className="mb-6 uppercase">
             Our CMS <span className="text-blue-600">Migration Process</span>
           </h2>
           <p className="text-base sm:text-lg text-gray-500 font-medium max-w-2xl mx-auto">
@@ -991,7 +991,7 @@ function ProcessSlider({ servicesData, setIsModalOpen }) {
 
           <div className="flex flex-col gap-4">
             <div className="p-6 bg-slate-50/50 rounded-[32px] border border-slate-200">
-              <h4 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-6 px-2">Project Lifecycle</h4>
+              <h4 className="text-xs text-slate-400 uppercase tracking-widest mb-6 px-2">Project Lifecycle</h4>
               <div className="space-y-3">
                 {processSteps.map((s, i) => (
                   <button

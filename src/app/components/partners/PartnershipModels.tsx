@@ -172,7 +172,7 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
             initial="initial"
             whileInView="whileInView"
             viewport={viewportConfig}
-            className="text-[#111827] mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize"
+            className="text-[#111827] mb-4 capitalize"
           >
             Partnership <span className="text-emerald-600">Models</span>
           </motion.h2>
@@ -225,7 +225,7 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
                           {idx + 1}
                         </div>
                         <div>
-                          <h4 className="text-[#111827] font-bold text-sm md:text-base leading-tight">{item.title}</h4>
+                          <h3 className="text-[#111827] text-sm md:text-base leading-tight">{item.title}</h3>
                           <p className="text-gray-500 text-sm mt-1.5 leading-relaxed">{item.desc}</p>
                         </div>
                       </div>
@@ -250,7 +250,7 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
               <div className="lg:col-span-8 flex flex-col gap-6 md:gap-8">
                 {/* Header & Path */}
                 <div className="bg-emerald-50/30 p-8 md:p-10 rounded-[32px] md:rounded-[40px] border border-emerald-100/50">
-                  <h3 className="text-2xl sm:text-3xl font-black text-[#111827] mb-4 leading-tight">{activeModel.subtitle}</h3>
+                  <h3 className="text-[#111827] mb-4">{activeModel.subtitle}</h3>
 
                   <div className="mt-8 md:mt-10">
                     <p className="text-xs font-black text-emerald-600 uppercase tracking-widest mb-8 flex items-center gap-4">
@@ -269,9 +269,9 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
                             {item.step}
                           </div>
                           <div>
-                            <h4 className="text-gray-900 font-bold font-display text-base md:text-lg mb-1 group-hover:text-emerald-400 transition-colors duration-500">
+                            <h3 className="mb-1 uppercase group-hover:text-emerald-400 transition-colors duration-500">
                               {item.label}
-                            </h4>
+                            </h3>
                             <p className="text-gray-500 font-body text-sm md:text-xs lg:text-base leading-relaxed">
                               {item.desc}
                             </p>
@@ -294,9 +294,9 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
                       <div className="absolute -top-10 -right-10 w-40 h-40 bg-emerald-500/5 rounded-full blur-3xl group-hover/earn:bg-emerald-500/10 transition-all duration-700" />
 
                       <p className="text-emerald-600 text-[10px] font-black tracking-widest uppercase mb-6">Revenue Advantage</p>
-                      <h4 className="text-xl sm:text-2xl md:text-3xl font-black leading-tight mb-8">
+                      <h3 className="text-emerald-900 mb-8">
                         {activeModel.earn}
-                      </h4>
+                      </h3>
                       <div className="h-px bg-emerald-100 w-full mb-6" />
                       <p className="text-emerald-600/60 text-xs font-bold uppercase tracking-widest">Payout Per Project Instance</p>
                     </div>

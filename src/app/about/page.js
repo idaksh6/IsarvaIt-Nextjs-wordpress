@@ -34,7 +34,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <div className="inline-flex flex-col items-center mb-5 md:mb-10 section-animate">
             <span className="text-[#10b981] font-black tracking-[0.2em] uppercase text-[clamp(0.7rem,1.5vw,0.85rem)] mb-4">Isarva Infotech</span>
-            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-display font-bold text-[#1a1f24] max-w-5xl tracking-tight leading-[1] mb-8">
+            <h1 className="font-display text-[#1a1f24] max-w-5xl mb-8">
               Precision in <span className="italic text-[#10b981] font-bold">Technology.</span> <br /> Purpose in <span className="italic text-[#10b981] font-bold">Impact.</span>
             </h1>
             <p className="mt-4 text-base lg:text-xl text-[#53606b] max-w-3xl mx-auto leading-relaxed font-medium">
@@ -79,7 +79,7 @@ export default function AboutPage() {
 
           {/* Right Column: Cream Content Area with Full-Width Image */}
           <div className="flex-1 bg-[#FDF8F2] p-6 md:p-16 lg:p-20 section-animate" style={{ animationDelay: '0.2s' }}>
-            <h2 className="lg:text-left text-center font-display text-[#16423C] mb-6 lg:mb-12 max-w-4xl text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+            <h2 className="lg:text-left text-center font-display text-[#16423C] mb-6 lg:mb-12 max-w-4xl capitalize">
               Standing at the forefront of digital transformation.
             </h2>
 
@@ -88,7 +88,7 @@ export default function AboutPage() {
               <Image src="/enterprise-transformation-bg.png" alt="Digital Excellence" fill sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#16423C]/90 via-transparent to-transparent flex items-end p-6 md:p-12">
                 <div className="flex flex-col">
-                  <h3 className="text-white text-[clamp(1.2rem,3vw,2.5rem)] font-display font-bold leading-[1]">Crafting the Future of Enterprise Solutions.</h3>
+                  <h3 className="text-white font-display leading-[1]">Crafting the Future of Enterprise Solutions.</h3>
                 </div>
               </div>
             </div>
@@ -100,7 +100,7 @@ export default function AboutPage() {
                   <Users className="w-6 h-6 text-[#10b981]" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-display font-bold text-[#16423C] mb-2">User-Centric</h4>
+                  <h3 className="font-display text-[#16423C] mb-2">User-Centric</h3>
                   <p className="text-[#53606b] leading-relaxed">We build with people in mind, ensuring intuitive and impactful experiences that drive engagement and value.</p>
                 </div>
               </div>
@@ -110,7 +110,7 @@ export default function AboutPage() {
                   <Lightbulb className="w-6 h-6 text-[#10b981]" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-display font-bold text-[#16423C] mb-2">Purpose-Driven Innovation</h4>
+                  <h3 className="font-display text-[#16423C] mb-2">Purpose-Driven Innovation</h3>
                   <p className="text-[#53606b] leading-relaxed">Innovating with intention and real-world value, we solve complex challenges with smart, adaptive technologies.</p>
                 </div>
               </div>
@@ -120,7 +120,7 @@ export default function AboutPage() {
                   <TrendingUp className="w-6 h-6 text-[#10b981]" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-display font-bold text-[#16423C] mb-2">Growth & Strategy</h4>
+                  <h3 className="font-display text-[#16423C] mb-2">Growth & Strategy</h3>
                   <p className="text-[#53606b] leading-relaxed">Scalable solutions tailored to grow your business faster and smarter, aligning every digital brick with your vision.</p>
                 </div>
               </div>
@@ -130,7 +130,7 @@ export default function AboutPage() {
                   <Sparkles className="w-6 h-6 text-[#10b981]" />
                 </div>
                 <div>
-                  <h4 className="text-xl font-display font-bold text-[#16423C] mb-2">Digital Clarity</h4>
+                  <h3 className="font-display text-[#16423C] mb-2">Digital Clarity</h3>
                   <p className="text-[#53606b] leading-relaxed">Stripping away complexity to deliver clean and efficient solutions that provide ultimate clarity and performance.</p>
                 </div>
               </div>
@@ -149,7 +149,7 @@ export default function AboutPage() {
               </div>
               <div className="relative z-10">
                 <span className="text-[#10b981] font-black tracking-[0.2em] uppercase text-[14px] mb-2 lg:mb-6 block">Future Outlook</span>
-                <h2 className="font-display mb-6 md:mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Our Vision</h2>
+                <h2 className="font-display text-white mb-6 md:mb-8 capitalize">Our Vision</h2>
                 <p className="text-xl text-[#FDF8F2]/80 leading-relaxed font-light">
                   To empower global enterprises through transformative technology — driving progress, enriching experiences, and enabling smarter, sustainable growth.
                 </p>
@@ -162,7 +162,7 @@ export default function AboutPage() {
               </div>
               <div className="relative z-10">
                 <span className="text-[#1a1f24] font-black tracking-[0.2em] uppercase text-[14px] mb-2 lg:mb-6 block">Day-to-day Execution</span>
-                <h2 className="font-display mb-6 md:mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Our Mission</h2>
+                <h2 className="font-display text-white mb-6 md:mb-8 capitalize">Our Mission</h2>
                 <p className="text-xl text-white/90 leading-relaxed font-light">
                   We deliver scalable, innovative tech solutions that help enterprises and startups achieve growth, efficiency, and impact—driven by expertise and a commitment to client success.
                 </p>
@@ -177,7 +177,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-center">
             <div className="w-full lg:w-1/2 section-animate lg:text-left text-center">
-              <h2 className="font-display text-[#1a1f24] mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+              <h2 className="font-display text-[#1a1f24] mb-8 capitalize">
                 Technology should create opportunity — <span className="italic  text-[#10b981]">not just efficiency.</span>
               </h2>
               <div className="space-y-6 text-gray-600 text-lg leading-relaxed mb-10">
@@ -256,7 +256,7 @@ export default function AboutPage() {
           <div className="bg-white rounded-[4rem] p-10 lg:p-20 shadow-2xl border border-[#10b981]/5 flex flex-col lg:flex-row items-center justify-between gap-12">
             <div className="lg:w-3/5 text-center lg:text-left">
               <span className="text-[#10b981] font-black tracking-[0.2em] uppercase text-[clamp(0.65rem,1.3vw,0.85rem)] mb-4 inline-block">Join our mission</span>
-              <h2 className="font-display text-[#1a1f24] mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+              <h2 className="font-display text-[#1a1f24] mb-8 capitalize">
                 Shape the future at<br />
                 <span className="text-[#10b981]"> Isarva Infotech.</span>
               </h2>
@@ -303,7 +303,7 @@ export default function AboutPage() {
         </div>
 
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10 section-animate">
-          <h2 className="font-display mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+          <h2 className="font-display text-white mb-8 capitalize">
             Ready to shape the digital future?
           </h2>
           <p className="text-[clamp(1rem,2vw,1.3rem)] text-[#FDF8F2]/70 mb-12 max-w-2xl mx-auto leading-relaxed">

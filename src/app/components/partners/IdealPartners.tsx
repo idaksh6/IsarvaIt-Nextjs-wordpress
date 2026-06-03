@@ -58,7 +58,7 @@ const IdealPartners = () => {
           viewport={viewportConfig}
           className="mb-10"
         >
-          <h2 className="mb-6 text-[#111827] text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+          <h2 className="mb-6 text-[#111827] capitalize">
             Who We're <span className="text-[#ea580c]">Looking For</span>
           </h2>
           <div className="w-24 h-1.5 bg-[#ea580c] mx-auto rounded-full" />
@@ -85,7 +85,7 @@ const IdealPartners = () => {
                 {item.icon}
               </div>
 
-              <h3 className="text-2xl  font-black text-[#111827]  leading-tight mb-6 relative z-10">
+              <h3 className="text-[#111827] mb-6 relative z-10">
                 {item.title}
               </h3>
               <p className="text-gray-500 text-lg leading-relaxed relative z-10 max-w-xs">

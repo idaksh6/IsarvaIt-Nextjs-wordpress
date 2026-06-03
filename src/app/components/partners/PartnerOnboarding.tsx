@@ -66,7 +66,7 @@ const PartnerOnboarding = () => {
           initial="initial"
           whileInView="whileInView"
           viewport={viewportConfig}
-          className="mb-10 text-[#111827] text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize"
+          className="mb-10 text-[#111827] capitalize"
         >
           Your Journey to <span className="text-emerald-600">Growth</span>
         </motion.h2>
@@ -86,7 +86,7 @@ const PartnerOnboarding = () => {
               <div className={`text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-br ${step.gradient} opacity-10 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 mb-6 md:mb-8 pointer-events-none`}>
                 {step.number}
               </div>
-              <h3 className={`text-xl md:text-2xl font-black text-[#111827] uppercase leading-tight mb-4 group-hover:${step.color} transition-colors duration-500`}>
+              <h3 className={`text-[#111827] uppercase mb-4 group-hover:${step.color} transition-colors duration-500`}>
                 {step.title}
               </h3>
               <p className="text-gray-500 text-base md:text-lg leading-relaxed relative z-10">

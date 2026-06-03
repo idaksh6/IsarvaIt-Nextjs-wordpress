@@ -207,7 +207,7 @@ const WebsiteMaintenanceCaseStudies = () => {
 
                 {/* Content Section */}
                 <div className="p-8 flex-grow">
-                  <h4 className="text-lg font-bold text-gray-900 mb-6">Work Summary:</h4>
+                  <h4 className="mb-6">Work Summary:</h4>
                   <ul className="space-y-4">
                     {study.work.map((item, i) => (
                       <li key={i} className="flex items-start gap-3 text-[15px] text-gray-600">

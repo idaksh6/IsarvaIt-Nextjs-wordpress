@@ -68,7 +68,7 @@ export default function StickyContactInfoV2({ socialLinks, showMap = true }) {
             </p>
           </div>
           <div className="rounded-3xl lg:text-left text-center p-8 bg-gradient-to-br from-emerald-50 to-green-50 border border-emerald-100">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Follow Us</h3>
+            <h3 className="mb-4">Follow Us</h3>
             <p className="text-gray-600 mb-6">
               Stay connected with us on social media for updates, insights, and
               more.

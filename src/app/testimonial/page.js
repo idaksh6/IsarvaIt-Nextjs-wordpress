@@ -186,7 +186,7 @@ export default function TestimonialPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-[clamp(2.25rem,5vw,3.75rem)] font-display font-bold text-[#1a1f24] max-w-5xl mx-auto tracking-tight leading-[1] mb-8"
+            className="font-display text-[#1a1f24] max-w-5xl mx-auto mb-8"
           >
             Real Stories, <br />
             <span className="italic text-[#10b981] font-bold">Proven Results.</span>
@@ -233,7 +233,7 @@ export default function TestimonialPage() {
             >
               Visual Proof
             </motion.span>
-            <h2 className="font-display text-[#1a1f24] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Success Stories on Camera</h2>
+            <h2 className="font-display text-[#1a1f24] mb-6 capitalize">Success Stories on Camera</h2>
             <div className="w-24 h-1.5 bg-[#10b981] mx-auto rounded-full"></div>
           </div>
 
@@ -253,10 +253,10 @@ export default function TestimonialPage() {
                     <span className="text-emerald-700 font-bold text-[9px] uppercase tracking-widest">Global Impact</span>
                   </div>
 
-                  <h4 className="text-3xl md:text-4xl lg:text-left text-center font-display font-bold text-[#1a1f24] mb-10 leading-tight">
+                  <h3 className="font-display text-[#1a1f24] mb-10 lg:text-left text-center leading-tight">
                     Digital Future, <br />
                     <span className="text-[#10b981]">Architected.</span>
-                  </h4>
+                  </h3>
 
                   <div className="space-y-10 mb-10">
                     <div className="flex gap-5 group">
@@ -264,7 +264,7 @@ export default function TestimonialPage() {
                         <Zap className="w-6 h-6 text-white fill-white" />
                       </div>
                       <div>
-                        <h5 className="text-lg font-bold text-[#1a1f24] mb-1 font-display">Fast-Lane Scaling</h5>
+                        <h3 className="font-display text-[#1a1f24] mb-1">Fast-Lane Scaling</h3>
                         <p className="text-[#53606b] text-sm leading-relaxed font-medium">Equipping you with technology that eliminates bottlenecks and accelerates global market entry.</p>
                       </div>
                     </div>
@@ -274,7 +274,7 @@ export default function TestimonialPage() {
                         <CheckCircle2 className="w-6 h-6 text-white stroke-[3px]" />
                       </div>
                       <div>
-                        <h5 className="text-lg font-bold text-[#1a1f24] mb-1 font-display">Immutable Trust</h5>
+                        <h3 className="font-display text-[#1a1f24] mb-1">Immutable Trust</h3>
                         <p className="text-[#53606b] text-sm leading-relaxed font-medium">Architecture built on transparency, security, and consistent delivery across the development lifecycle.</p>
                       </div>
                     </div>
@@ -326,7 +326,7 @@ export default function TestimonialPage() {
                   <Image src={videoTestimonial.image} fill sizes="56px" alt={videoTestimonial.name} className="object-contain" loading="lazy" />
                 </div>
                 <div>
-                  <h3 className="text-[#1a1f24] text-xl font-display font-bold leading-tight">{videoTestimonial.name}</h3>
+                  <h3 className="font-display text-[#1a1f24] leading-tight">{videoTestimonial.name}</h3>
                   <p className="text-[#10b981] font-black tracking-widest text-[10px] uppercase">{videoTestimonial.role} @ {videoTestimonial.company}</p>
                 </div>
               </div>
@@ -403,7 +403,7 @@ export default function TestimonialPage() {
 
                   {/* Content */}
                   <div className="flex flex-col items-center mb-8">
-                    <h5 className="font-display font-bold text-2xl text-[#1a1f24] mb-1">{testimonials[currentSlide].name}</h5>
+                    <h4 className="font-display text-[#1a1f24] mb-1">{testimonials[currentSlide].name}</h4>
                     <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#10b981] mb-4 text-center ">
                       {testimonials[currentSlide].role} @ {testimonials[currentSlide].company}
                     </p>
@@ -489,7 +489,7 @@ export default function TestimonialPage() {
 
                 {/* 2. Rating & Tag Header */}
                 <div className="flex flex-col items-center mb-8">
-                  <h5 className="font-display font-bold text-2xl text-[#1a1f24] mb-1">{t.name}</h5>
+                  <h4 className="font-display text-[#1a1f24] mb-1">{t.name}</h4>
                   <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#10b981] mb-4 text-center ">{t.role} @ {t.company}</p>
 
                   <div className="flex gap-1.5 px-4 py-2 bg-white rounded-full border border-black/5 shadow-sm">

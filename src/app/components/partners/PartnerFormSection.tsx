@@ -182,7 +182,7 @@ export default function PartnerFormSection({
 
                   Connect with us
                 </div>
-                <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+                <h2 className="mb-6 capitalize">
                   Ready to Start Your <span className="text-emerald-600">Journey?</span>
                 </h2>
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">

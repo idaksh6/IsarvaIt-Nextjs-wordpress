@@ -27,7 +27,7 @@ const Node = ({ title, items, icon, color = "purple", className = "" }) => {
         <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-lg ${iconColors[color]}`}>
           {icon}
         </div>
-        <h4 className="font-bold text-gray-900 text-sm">{title}</h4>
+        <h4 className="">{title}</h4>
       </div>
       <ul className="space-y-1.5">
         {items.map((item, i) => (
@@ -169,7 +169,7 @@ export default function ISSWorkflowVisualizer() {
               <span className="text-2xl">📋</span>
             </div>
             <div>
-              <h4 className="font-bold text-emerald-600 uppercase tracking-widest text-xs mb-1">Daily Report</h4>
+              <h4 className="text-emerald-600 uppercase tracking-widest text-xs mb-1">Daily Report</h4>
               <p className="text-xs text-gray-500 font-medium">Log daily work & update task progress</p>
             </div>
           </div>
@@ -181,7 +181,7 @@ export default function ISSWorkflowVisualizer() {
               <span className="text-2xl">📈</span>
             </div>
             <div>
-              <h4 className="font-bold text-orange-600 uppercase tracking-widest text-xs mb-1">Analytical Reports</h4>
+              <h4 className="text-orange-600 uppercase tracking-widest text-xs mb-1">Analytical Reports</h4>
               <p className="text-xs text-gray-500 font-medium">Project-wise work done & analytics</p>
             </div>
           </div>

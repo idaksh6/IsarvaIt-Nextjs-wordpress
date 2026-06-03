@@ -84,7 +84,7 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
               initial="initial"
               animate="animate"
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="font-display text-[clamp(2.25rem,5vw,3.75rem)] font-black text-[#111827] leading-[1] mb-4 md:mb-6 tracking-tight "
+              className="font-display text-[#111827] mb-4 md:mb-6"
             >
               <span className="bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-600 bg-clip-text text-transparent">Scale Beyond</span> <br />
               <span className="text-emerald-600">Gravity</span>

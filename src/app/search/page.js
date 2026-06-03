@@ -199,7 +199,7 @@ function SearchResults() {
       <div className="max-w-7xl mx-auto px-6 py-44">
         {/* Search Header */}
         <div className="mb-12">
-          <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-black text-gray-900 mb-6 tracking-tight leading-[1]">
+          <h1 className="mb-6">
             Search Results
           </h1>
 
@@ -259,7 +259,7 @@ function SearchResults() {
         {!query && !isLoading && (
           <div className="text-center py-20">
             <div className="text-6xl mb-4">🔍</div>
-            <h2 className="text-2xl text-gray-900 mb-2 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+            <h2 className="mb-2 capitalize">
               Start Your Search
             </h2>
             <p className="text-gray-600">
@@ -272,7 +272,7 @@ function SearchResults() {
         {query && !isLoading && totalResults === 0 && (
           <div className="text-center py-20">
             <div className="text-6xl mb-4">😔</div>
-            <h2 className="text-2xl text-gray-900 mb-2 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+            <h2 className="mb-2 capitalize">
               No Results Found
             </h2>
             <p className="text-gray-600 mb-8">
@@ -294,7 +294,7 @@ function SearchResults() {
             {/* Pages */}
             {results.pages.length > 0 && (
               <section>
-                <h2 className="text-2xl text-gray-900 mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+                <h2 className="mb-6 flex items-center gap-3 capitalize">
                   <span className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center">
                     <svg
                       className="w-5 h-5 text-teal-600"
@@ -319,7 +319,7 @@ function SearchResults() {
                       href={page.slug}
                       className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-teal-300"
                     >
-                      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors">
+                      <h3 className="mb-2 group-hover:text-teal-600 transition-colors">
                         {page.name}
                       </h3>
                       <p className="text-gray-600 text-sm line-clamp-3 mb-4">
@@ -350,7 +350,7 @@ function SearchResults() {
             {/* Products */}
             {results.products.length > 0 && (
               <section>
-                <h2 className="text-2xl text-gray-900 mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+                <h2 className="mb-6 flex items-center gap-3 capitalize">
                   <span className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
                     <svg
                       className="w-5 h-5 text-emerald-600"
@@ -375,7 +375,7 @@ function SearchResults() {
                       href={`/product/${product.slug}`}
                       className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-emerald-300"
                     >
-                      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors">
+                      <h3 className="mb-2 group-hover:text-emerald-600 transition-colors">
                         {product.name}
                       </h3>
                       <p className="text-gray-600 text-sm line-clamp-3 mb-4">
@@ -406,7 +406,7 @@ function SearchResults() {
             {/* Services */}
             {results.services.length > 0 && (
               <section>
-                <h2 className="text-2xl text-gray-900 mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+                <h2 className="mb-6 flex items-center gap-3 capitalize">
                   <span className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
                     <svg
                       className="w-5 h-5 text-blue-600"
@@ -431,7 +431,7 @@ function SearchResults() {
                       href={`/service/${service.slug}`}
                       className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-300"
                     >
-                      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                      <h3 className="mb-2 group-hover:text-blue-600 transition-colors">
                         {service.name}
                       </h3>
                       <p className="text-gray-600 text-sm line-clamp-3 mb-4">
@@ -462,7 +462,7 @@ function SearchResults() {
             {/* Industries */}
             {results.industries.length > 0 && (
               <section>
-                <h2 className="text-2xl text-gray-900 mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+                <h2 className="mb-6 flex items-center gap-3 capitalize">
                   <span className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
                     <svg
                       className="w-5 h-5 text-purple-600"
@@ -487,7 +487,7 @@ function SearchResults() {
                       href={`/industry/${industry.slug}`}
                       className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-purple-300"
                     >
-                      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
+                      <h3 className="mb-2 group-hover:text-purple-600 transition-colors">
                         {industry.name}
                       </h3>
                       <p className="text-gray-600 text-sm line-clamp-3 mb-4">
@@ -518,7 +518,7 @@ function SearchResults() {
             {/* Careers */}
             {results.careers.length > 0 && (
               <section>
-                <h2 className="text-2xl text-gray-900 mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+                <h2 className="mb-6 flex items-center gap-3 capitalize">
                   <span className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
                     <svg
                       className="w-5 h-5 text-orange-600"
@@ -543,7 +543,7 @@ function SearchResults() {
                       href={`/career/${job.slug}`}
                       className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-orange-300"
                     >
-                      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
+                      <h3 className="mb-2 group-hover:text-orange-600 transition-colors">
                         {job.title}
                       </h3>
                       <div className="flex flex-wrap gap-2 mb-4">
@@ -580,7 +580,7 @@ function SearchResults() {
             )}
             {results.blogs.length > 0 && (
               <section>
-                <h2 className="text-2xl text-gray-900 mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+                <h2 className="mb-6 flex items-center gap-3 capitalize">
                   <span className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
                     <svg
                       className="w-5 h-5 text-orange-600"
@@ -618,7 +618,7 @@ function SearchResults() {
                         </div>
                       </div>
                       <div className="p-6">
-                        <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-orange-600 transition-colors">
+                        <h3 className="mb-2 line-clamp-2 group-hover:text-orange-600 transition-colors">
                           {blog.title}
                         </h3>
                         <p className="text-gray-600 text-sm line-clamp-2 mb-4">

@@ -110,7 +110,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
               <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></span>
               The Future of Godown Tech
             </span>
-            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-black tracking-tighter text-slate-900 mb-8 leading-[1]">
+            <h1 className="text-slate-900 mb-8">
               <span className="inline-block hover:scale-[1.02] transition-transform duration-300">Smart Godown</span> <br />
               <span className="text-transparent bg-clip-text py-1 bg-gradient-to-r from-teal-600 via-cyan-500 to-emerald-500 drop-shadow-sm py-1">
                 & Inventory System
@@ -265,7 +265,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                   <li key={idx} className="flex gap-4 items-start">
                     <div className="w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 flex-shrink-0 mt-1">✓</div>
                     <div>
-                      <h4 className="font-bold text-slate-900 text-sm mb-1">{item.title}</h4>
+                      <h4 className="text-slate-900 mb-1">{item.title}</h4>
                       <p className="text-slate-400 text-xs font-medium">{item.desc}</p>
                     </div>
                   </li>
@@ -338,7 +338,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                <div className="bg-white p-10 rounded-[3rem] shadow-2xl border border-slate-100 relative group">
                   <div className="flex justify-between items-start mb-8">
                     <div>
-                      <h4 className="text-2xl font-black text-slate-900 mb-1">Product Master</h4>
+                      <h4 className="text-slate-900 mb-1">Product Master</h4>
                       <p className="text-slate-400 text-sm font-medium">Automatic Code Generation</p>
                     </div>
                     <div className="w-12 h-12 bg-teal-600 rounded-2xl flex items-center justify-center text-white text-2xl">✨</div>
@@ -380,21 +380,21 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
               
               <div className="space-y-8">
                  <div>
-                    <h4 className="font-black text-xl mb-3 flex items-center gap-3">
+                    <h4 className="mb-3 flex items-center gap-3">
                        <span className="w-8 h-8 rounded-lg bg-teal-100 text-teal-600 flex items-center justify-center text-sm">📏</span>
                        Units Configuration
                     </h4>
                     <p className="text-slate-500 font-medium pl-11">Add custom measurement units like KG, Litre, PCS, or even custom event crates. Complete flexibility for any business type.</p>
                  </div>
                  <div>
-                    <h4 className="font-black text-xl mb-3 flex items-center gap-3">
+                    <h4 className="mb-3 flex items-center gap-3">
                        <span className="w-8 h-8 rounded-lg bg-cyan-100 text-cyan-600 flex items-center justify-center text-sm">📁</span>
                        Category Hierarchy
                     </h4>
                     <p className="text-slate-500 font-medium pl-11">Simple one-level hierarchy keeps things clear. One parent can have multiple children sub-categories, keeping your products organized precisely.</p>
                  </div>
                  <div>
-                    <h4 className="font-black text-xl mb-3 flex items-center gap-3">
+                    <h4 className="mb-3 flex items-center gap-3">
                        <span className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center text-sm">👤</span>
                        User Management
                     </h4>
@@ -423,7 +423,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
               >
                 <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${module.color} opacity-0 group-hover:opacity-5 transition-opacity rounded-bl-[5rem]`}></div>
                 <div className="text-5xl mb-8 transform group-hover:scale-110 transition-transform inline-block">{module.icon}</div>
-                <h3 className="text-2xl font-black text-slate-900 mb-4">{module.title}</h3>
+                <h3 className="text-slate-900 mb-4">{module.title}</h3>
                 <p className="text-slate-500 leading-relaxed mb-8 text-sm font-medium">{module.desc}</p>
                 <ul className="space-y-3">
                   {module.features.map((feature, fIdx) => (
@@ -463,7 +463,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                       {item.icon}
                     </div>
                     <div>
-                      <h4 className="font-black text-xl mb-1">{item.status}</h4>
+                      <h4 className="mb-1">{item.status}</h4>
                       <p className="text-slate-400 text-sm font-medium">{item.desc}</p>
                     </div>
                   </motion.div>
@@ -511,7 +511,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
             <div className="order-2 lg:order-1 relative">
               <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl border-8 border-slate-50">
                  <div className="bg-teal-600 p-8 text-white">
-                    <h3 className="text-2xl font-black mb-2">Quality Check Assistant</h3>
+                    <h3 className="mb-2">Quality Check Assistant</h3>
                     <p className="text-teal-100 text-sm font-medium">Smart formula calculation for every return</p>
                  </div>
                  <div className="p-8 space-y-6 bg-white">
@@ -550,21 +550,21 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                 <div className="flex gap-6">
                   <div className="w-12 h-12 rounded-2xl bg-teal-50 flex items-center justify-center text-2xl flex-shrink-0 text-teal-600">🛡️</div>
                   <div>
-                    <h4 className="font-black text-xl mb-2">Quality Tracking</h4>
+                    <h4 className="mb-2">Quality Tracking</h4>
                     <p className="text-slate-500 font-medium leading-relaxed">Break down returned quantities into Good Condition, Damaged, or Missing. Never lose track of your assets' health.</p>
                   </div>
                 </div>
                 <div className="flex gap-6">
                   <div className="w-12 h-12 rounded-2xl bg-cyan-50 flex items-center justify-center text-2xl flex-shrink-0 text-cyan-600">📋</div>
                   <div>
-                    <h4 className="font-black text-xl mb-2">Auto-Captured Info</h4>
+                    <h4 className="mb-2">Auto-Captured Info</h4>
                     <p className="text-slate-500 font-medium leading-relaxed">System automatically pulls customer details, vehicle numbers, and original dispatch info the moment you start a return profile.</p>
                   </div>
                 </div>
                 <div className="flex gap-6">
                   <div className="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center text-2xl flex-shrink-0 text-emerald-600">💰</div>
                   <div>
-                    <h4 className="font-black text-xl mb-2">Penalty Integration</h4>
+                    <h4 className="mb-2">Penalty Integration</h4>
                     <p className="text-slate-500 font-medium leading-relaxed">Instantly apply penalties for damaged or missing items, automatically updating the client's pending balance.</p>
                   </div>
                 </div>
@@ -593,7 +593,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                   {report.icon}
                 </div>
                 <div>
-                  <h4 className="text-xl font-black text-slate-900 mb-2">{report.name}</h4>
+                  <h4 className="text-slate-900 mb-2">{report.name}</h4>
                   <p className="text-slate-500 text-sm font-medium leading-relaxed">{report.description}</p>
                 </div>
               </motion.div>
@@ -603,7 +603,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
           <div className="bg-teal-600 rounded-[3rem] p-12 text-white flex flex-col md:flex-row items-center justify-between gap-10 shadow-2xl shadow-teal-200 relative overflow-hidden">
              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
              <div className="relative z-10">
-                <h3 className="text-3xl font-black mb-4">Ready to Export Your Data?</h3>
+                <h3 className="mb-4">Ready to Export Your Data?</h3>
                 <p className="text-teal-100 max-w-md font-medium">Download professional PDF or flexible Excel reports with a single click. Compatible with all accounting tools.</p>
              </div>
              <div className="flex gap-4 relative z-10">
@@ -644,7 +644,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                 <div key={idx} className="flex gap-5 items-start">
                    <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-2xl flex-shrink-0">{item.icon}</div>
                    <div>
-                     <h4 className="font-black text-lg mb-1">{item.title}</h4>
+                     <h4 className="mb-1">{item.title}</h4>
                      <p className="text-slate-400 text-[13px] leading-relaxed italic">{item.desc}</p>
                    </div>
                 </div>
@@ -685,7 +685,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
             {relatedProducts.slice(0, 3).map((targetProduct) => (
               <Link key={targetProduct.slug} href={`/product/${targetProduct.slug}`} className="group p-8 rounded-[2.5rem] bg-slate-50 hover:bg-white border border-transparent hover:border-slate-100 hover:shadow-xl transition-all duration-300">
                 <div className="text-4xl mb-6">{targetProduct.icon}</div>
-                <h3 className="text-xl font-black mb-3">{targetProduct.title}</h3>
+                <h3 className="mb-3">{targetProduct.title}</h3>
                 <p className="text-slate-500 text-xs font-medium line-clamp-2">{targetProduct.shortDescription}</p>
               </Link>
             ))}

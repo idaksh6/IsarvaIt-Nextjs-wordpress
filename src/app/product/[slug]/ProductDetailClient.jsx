@@ -259,7 +259,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
                 <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/60 backdrop-blur-md text-gray-800 font-semibold text-sm mb-6 border border-white/60 shadow-lg">
                   <span>{product.category}</span>
                 </div>
-                <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-bold text-gray-900 mb-6 tracking-tight leading-[1]">
+                <h1 className="mb-6">
                   {product.title}
                 </h1>
                 <p className="text-xl lg:text-2xl text-violet-600 font-semibold mb-6">
@@ -319,7 +319,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
           
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center mb-10">
-              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="mb-6 uppercase">
                 Key Features
               </h2>
               <p className="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -341,7 +341,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">{feature}</h3>
+                    <h3 className="mb-1">{feature}</h3>
                   </div>
                 </div>
               ))}
@@ -355,7 +355,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
           
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center mb-10">
-              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="mb-6 uppercase">
                 Technology Stack
               </h2>
               <p className="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -382,7 +382,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
           
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center mb-10">
-              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="mb-6 uppercase">
                 Business Benefits
               </h2>
               <p className="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -403,7 +403,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-violet-700 transition-colors">
+                    <h3 className="mb-3 group-hover:text-violet-700 transition-colors">
                       {benefit}
                     </h3>
                   </div>
@@ -419,7 +419,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
           
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center mb-10">
-              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="mb-6 uppercase">
                 Related Products
               </h2>
               <p className="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -444,7 +444,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
                         <span className="text-4xl">{relatedProduct.icon}</span>
                       </div>
 
-                      <h3 className="text-2xl font-bold text-white mb-4">
+                      <h3 className="text-white mb-4">
                         {relatedProduct.title}
                       </h3>
 

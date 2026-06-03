@@ -403,7 +403,7 @@ export default function JobDetailPage({ params }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-display text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            <h2 className="font-display text-white mb-6 uppercase">
               Excited about this opportunity?
             </h2>
             <p className="text-xl text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">

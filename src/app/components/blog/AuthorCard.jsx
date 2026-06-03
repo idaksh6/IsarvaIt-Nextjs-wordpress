@@ -11,7 +11,7 @@ export default function AuthorCard({ author }) {
         className="w-24 h-24 rounded-full border-4 border-white shadow-xl"
       />
       <div className="flex-1 text-center md:text-left">
-        <h3 className="text-2xl font-black text-gray-900 mb-2 uppercase tracking-tight">
+        <h3 className="mb-2 uppercase">
           About {author.name}
         </h3>
         <p className="text-emerald-600 font-bold text-sm uppercase tracking-widest mb-4">

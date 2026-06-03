@@ -308,7 +308,7 @@ export default function ProductDetailPremiumCRM({
 
             {/* Right Side - Content */}
             <div>
-              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+              <h2 className="mb-6 capitalize">
                 Why Businesses Need{" "}
                 <span className="text-[#0EA5E9]">Isarva CRM</span>
               </h2>
@@ -323,7 +323,7 @@ export default function ProductDetailPremiumCRM({
                     <span className="text-2xl">📊</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    <h3 className="mb-2">
                       Centralized Customer Data
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
@@ -337,7 +337,7 @@ export default function ProductDetailPremiumCRM({
                     <span className="text-2xl">🚀</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    <h3 className="mb-2">
                       Improved Sales Performance
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
@@ -351,7 +351,7 @@ export default function ProductDetailPremiumCRM({
                     <span className="text-2xl">🤝</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    <h3 className="mb-2">
                       Enhanced Customer Relationships
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
@@ -365,7 +365,7 @@ export default function ProductDetailPremiumCRM({
                     <span className="text-2xl">📈</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    <h3 className="mb-2">
                       Data-Driven Insights
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
@@ -379,7 +379,7 @@ export default function ProductDetailPremiumCRM({
                     <span className="text-2xl">⚡</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    <h3 className="mb-2">
                       Streamlined Operations
                     </h3>
                     <p className="text-gray-600 leading-relaxed">
@@ -430,7 +430,7 @@ export default function ProductDetailPremiumCRM({
             <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-3 bg-white px-4 py-2 rounded-full border border-[#0EA5E9]/20 shadow-sm">
               PROCESS
             </span>
-            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+            <h2 className="mb-6 capitalize">
               How <span className="text-[#0EA5E9]">Isarva CRM</span> Works
             </h2>
           </div>
@@ -444,7 +444,7 @@ export default function ProductDetailPremiumCRM({
                 <div className="w-20 h-20 rounded-2xl bg-sky-50 flex items-center justify-center text-3xl mx-auto mb-6 relative z-10 border border-sky-100 shadow-sm">
                   {step.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
+                <h3 className="mb-3">{step.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}
@@ -456,7 +456,7 @@ export default function ProductDetailPremiumCRM({
       <section className="py-12 lg:py-16 bg-slate-50 relative overflow-hidden">
         <div className="w-full max-w-7xl mx-auto px-6">
           <div className="text-center mb-10">
-            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+            <h2 className="mb-6 capitalize">
               Why Choose <span className="text-[#0EA5E9]">Isarva CRM</span>
             </h2>
             <div className="w-24 h-1 bg-sky-400 mx-auto rounded-full"></div>
@@ -466,7 +466,7 @@ export default function ProductDetailPremiumCRM({
             {whyChooseData.map((item, i) => (
               <div key={i} className="flex flex-col items-center bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 text-center">
                 <div className="text-4xl mb-6">{item.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                <h3 className="mb-3">{item.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -624,7 +624,7 @@ export default function ProductDetailPremiumCRM({
                   GET STARTED TODAY
                 </span>
 
-                <h2 className="text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+                <h2 className="text-white mb-6 capitalize">
                   Ready to test our new <br className="hidden md:block" />
                   CRM features?
                 </h2>
@@ -705,7 +705,7 @@ export default function ProductDetailPremiumCRM({
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-2xl font-bold text-gray-900 mb-1 min-h-[3rem] line-clamp-2 leading-tight">
+                        <h3 className="mb-1 min-h-[3rem] line-clamp-2">
                           {prod.title}
                         </h3>
 
@@ -1401,7 +1401,7 @@ function CRMTabSection({ setSelectedImage }) {
     <section className="py-12 lg:py-16 bg-slate-50 overflow-hidden">
       <div className="w-full max-w-7xl mx-auto px-6">
         <div className="text-center mb-10 ">
-          <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+          <h2 className="mb-6 capitalize">
             Powerful <span className="text-[#0EA5E9]">Isarva CRM</span> Features
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto text-base lg:text-lg leading-relaxed">
@@ -1443,7 +1443,7 @@ function CRMTabSection({ setSelectedImage }) {
                     : "bg-white/40 border-transparent hover:bg-white/60"
                     }`}
                 >
-                  <h3 className={`text-lg lg:text-xl font-bold ${activeTab === tab.id ? "text-white" : "text-gray-900"}`}>
+                  <h3 className={`lg:text-xl ${activeTab === tab.id ? "text-white" : "text-gray-900"}`}>
                     {tab.title}
                   </h3>
                   <p className={`text-sm mt-1 line-clamp-1 ${activeTab === tab.id ? "text-white/80" : "text-gray-500"}`}>{tab.subtitle}</p>
@@ -1476,7 +1476,7 @@ function CRMTabSection({ setSelectedImage }) {
                 >
                   {/* Content */}
                   <div className="order-2 md:order-1 flex flex-col items-center md:items-start text-center md:text-left shrink-0">
-                    <h3 className="text-2xl lg:text-3xl font-black text-gray-900 mt-2 md:mt-0 mb-4 w-full">{currentTab.title}</h3>
+                    <h3 className="lg:text-3xl mt-2 md:mt-0 mb-4 w-full">{currentTab.title}</h3>
                     <p className="text-sm lg:text-base text-gray-600 mb-6 lg:mb-6 leading-relaxed w-full">{currentTab.description}</p>
 
                     <div className="space-y-4 lg:space-y-5 mb-0 lg:mb-6 w-full flex flex-col items-center md:items-start">

@@ -111,7 +111,7 @@ const WhiteLabelAbout = () => {
                 <div className={`w-14 h-14 rounded-2xl ${benefit.bg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-sm border border-white`}>
                   <benefit.icon className={`w-7 h-7 ${benefit.color}`} />
                 </div>
-                <h3 className="text-2xl font-black text-gray-900 mb-4 font-display group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-slate-900 group-hover:to-slate-600 transition-colors">
+                <h3 className="mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-slate-900 group-hover:to-slate-600 transition-colors">
                   {benefit.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">

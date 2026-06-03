@@ -134,7 +134,7 @@ export default async function ServiceDetailPage({ params }) {
                 <span className="text-2xl">{service.icon}</span>
                 <span>Premium Service</span>
               </div>
-              <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-gray-900 mb-6 tracking-tight leading-[1]">
+              <h1 className="mb-6">
                 {service.title}
               </h1>
               <p className="text-base lg:text-xl text-gray-700 leading-relaxed font-medium mb-8">
@@ -202,7 +202,7 @@ export default async function ServiceDetailPage({ params }) {
                 </svg>
                 Our Specialized Services
               </div>
-              <h2 className={`text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter ${headingCaseClass}`}>
+              <h2 className={`mb-6 ${headingCaseClass}`}>
                 What We Offer Under {service.title}
               </h2>
               <p className="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -241,7 +241,7 @@ export default async function ServiceDetailPage({ params }) {
                           <span className="text-3xl">{subService.icon}</span>
                         </div>
 
-                        <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-emerald-700 transition-colors">
+                        <h3 className="mb-4 group-hover:text-emerald-700 transition-colors">
                           {subService.title}
                         </h3>
 
@@ -301,7 +301,7 @@ export default async function ServiceDetailPage({ params }) {
               </svg>
               Key Features
             </div>
-            <h2 className={`text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter ${headingCaseClass}`}>
+            <h2 className={`mb-6 ${headingCaseClass}`}>
               {service.slug === "odoo-apps-support-and-maintenance"
                 ? "Comprehensive Support Services"
                 : service.slug === "ai-ml-consulting"
@@ -389,7 +389,7 @@ export default async function ServiceDetailPage({ params }) {
 
               {/* AI & ML Consulting Services Section */}
               <div className="mb-10 text-center">
-                <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                <h3 className="mb-4">
                   AI & ML Consulting Services
                 </h3>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -464,7 +464,7 @@ export default async function ServiceDetailPage({ params }) {
               </svg>
               Business Impact
             </div>
-            <h2 className={`text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter ${headingCaseClass}`}>
+            <h2 className={`mb-6 ${headingCaseClass}`}>
               {service.slug === "odoo-apps-support-and-maintenance"
                 ? "Why Choose Isarva for Odoo Support?"
                 : service.slug === "ai-ml-consulting"
@@ -508,7 +508,7 @@ export default async function ServiceDetailPage({ params }) {
                       {String(index + 1).padStart(2, '0')}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  <h3 className="mb-4">
                     {typeof benefit === 'string' ? benefit : benefit.title}
                   </h3>
                   {typeof benefit === 'object' && benefit.description && (
@@ -528,7 +528,7 @@ export default async function ServiceDetailPage({ params }) {
                       {String(index + 1).padStart(2, '0')}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  <h3 className="mb-4">
                     {typeof benefit === 'string' ? benefit : benefit.title}
                   </h3>
                   {typeof benefit === 'object' && benefit.description && (
@@ -548,7 +548,7 @@ export default async function ServiceDetailPage({ params }) {
                       {String(index + 1).padStart(2, '0')}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  <h3 className="mb-4">
                     {typeof benefit === 'string' ? benefit : benefit.title}
                   </h3>
                   {typeof benefit === 'object' && benefit.description && (
@@ -568,7 +568,7 @@ export default async function ServiceDetailPage({ params }) {
                       {String(index + 1).padStart(2, '0')}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  <h3 className="mb-4">
                     {typeof benefit === 'string' ? benefit : benefit.title}
                   </h3>
                   {typeof benefit === 'object' && benefit.description && (
@@ -588,7 +588,7 @@ export default async function ServiceDetailPage({ params }) {
                       {String(index + 1).padStart(2, '0')}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  <h3 className="mb-4">
                     {typeof benefit === 'string' ? benefit : benefit.title}
                   </h3>
                   {typeof benefit === 'object' && benefit.description && (
@@ -608,7 +608,7 @@ export default async function ServiceDetailPage({ params }) {
                       {String(index + 1).padStart(2, '0')}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  <h3 className="mb-4">
                     {typeof benefit === 'string' ? benefit : benefit.title}
                   </h3>
                   {typeof benefit === 'object' && benefit.description && (
@@ -628,7 +628,7 @@ export default async function ServiceDetailPage({ params }) {
                       {String(index + 1).padStart(2, '0')}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  <h3 className="mb-4">
                     {typeof benefit === 'string' ? benefit : benefit.title}
                   </h3>
                   {typeof benefit === 'object' && benefit.description && (
@@ -674,7 +674,7 @@ export default async function ServiceDetailPage({ params }) {
               </svg>
               You Might Also Like
             </div>
-            <h2 className={`text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter ${headingCaseClass}`}>
+            <h2 className={`mb-6 ${headingCaseClass}`}>
               Explore Related Services
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -699,7 +699,7 @@ export default async function ServiceDetailPage({ params }) {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    <h3 className="mb-4">
                       {relatedService.title}
                     </h3>
 
@@ -768,7 +768,7 @@ export default async function ServiceDetailPage({ params }) {
             Let's Get Started
           </div>
 
-          <h2 className={`text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter ${headingCaseClass}`}>
+          <h2 className={`text-white mb-6 ${headingCaseClass}`}>
             {service.slug === "odoo-apps-support-and-maintenance"
               ? "Ready to Optimize Your Odoo Experience?"
               : "Ready to Transform Your Business?"

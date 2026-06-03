@@ -99,7 +99,7 @@ export default function IndustriesListClient({ industriesData }) {
             </div>
 
             {/* Heading */}
-            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-gray-900 mb-4 tracking-tight leading-[1]">
+            <h1 className="mb-4">
               Industry-Focused
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-green-600 mt-2">
                 Solutions
@@ -191,7 +191,7 @@ export default function IndustriesListClient({ industriesData }) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">No industries found</h3>
+              <h3 className="mb-3">No industries found</h3>
               <p className="text-gray-600 mb-6">Try adjusting your search terms or browse all our industries.</p>
               <button
                 onClick={() => setSearchQuery("")}
@@ -234,7 +234,7 @@ export default function IndustriesListClient({ industriesData }) {
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4 w-full group-hover:text-emerald-700 transition-colors duration-300">
+                      <h3 className="mb-4 w-full group-hover:text-emerald-700 transition-colors duration-300">
                         {industry.title}
                       </h3>
 
@@ -266,7 +266,7 @@ export default function IndustriesListClient({ industriesData }) {
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+            <h2 className="mb-6 capitalize">
               Why Choose Our Industry Solutions?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -281,7 +281,7 @@ export default function IndustriesListClient({ industriesData }) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">Industry Expertise</h3>
+              <h3 className="mb-3">Industry Expertise</h3>
               <p className="text-gray-700 leading-relaxed">Deep understanding of sector-specific challenges and regulations</p>
             </div>
 
@@ -291,7 +291,7 @@ export default function IndustriesListClient({ industriesData }) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Proven Solutions</h3>
+              <h3 className="mb-3">Proven Solutions</h3>
               <p className="text-gray-600">Battle-tested solutions deployed across multiple organizations</p>
             </div>
 
@@ -301,7 +301,7 @@ export default function IndustriesListClient({ industriesData }) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Customization</h3>
+              <h3 className="mb-3">Customization</h3>
               <p className="text-gray-600">Tailored solutions that fit your unique business requirements</p>
             </div>
 
@@ -311,7 +311,7 @@ export default function IndustriesListClient({ industriesData }) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Dedicated Support</h3>
+              <h3 className="mb-3">Dedicated Support</h3>
               <p className="text-gray-600">24/7 support with industry-specialized technical teams</p>
             </div>
           </div>
@@ -332,7 +332,7 @@ export default function IndustriesListClient({ industriesData }) {
             <span className="w-2 h-2 bg-emerald-600 rounded-full animate-pulse"></span>
             Ready to Get Started?
           </div>
-          <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+          <h2 className="mb-6 capitalize">
             Let's Transform Your Industry Together
           </h2>
           <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">

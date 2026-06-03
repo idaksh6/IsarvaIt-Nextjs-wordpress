@@ -106,7 +106,7 @@ export default function AboutPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#16423C]/90 via-transparent to-transparent flex items-end p-6">
                 <div className="flex flex-col">
                   <span className="text-white/60 text-xs font-bold uppercase tracking-[0.3em] mb-2">Isarva Innovation Hub</span>
-                  <h3 className="text-white text-3xl font-display font-bold">Crafting the Future of Enterprise Solutions.</h3>
+                  <h3 className="text-white">Crafting the Future of Enterprise Solutions.</h3>
                 </div>
               </div>
             </div>

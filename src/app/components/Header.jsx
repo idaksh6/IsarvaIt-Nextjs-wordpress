@@ -153,7 +153,7 @@ export default function Header() {
                           <Image src="/agency_office_studio_premium_1773850105446.png" fill sizes="280px" className="object-cover" alt="Isarva team collaboration workspace" loading="lazy" />
                         </div>
                         <div className="relative z-10 flex flex-col h-full">
-                          <h4 className="text-xl font-display font-bold text-gray-900 mb-4 leading-tight">About Isarva</h4>
+                          <h4 className="mb-4">About Isarva</h4>
                           <p className="text-gray-600 text-base mb-6 font-medium leading-relaxed">At Isarva Infotech, we are more than an IT consulting firm - we are a strategic technology partner. Company plays a pivotal role in enabling organizations to achieve their digital transformation goals.</p>
                           <div className="mt-auto text-emerald-600 font-bold text-lg flex items-center gap-2 group/link">
                             Read More <span className="group-hover/link:translate-x-1 transition-transform">→</span>
@@ -164,7 +164,7 @@ export default function Header() {
                       {/* Right: Nav Links */}
                       <div className="flex-1">
                         <div className="mb-6">
-                          <h3 className="text-xl font-bold text-gray-900 mb-1">Resources</h3>
+                          <h3 className="mb-1">Resources</h3>
                           <p className="text-gray-500 text-sm">Discover our mission and impact</p>
                         </div>
                         <div className="space-y-2">
@@ -237,7 +237,7 @@ export default function Header() {
               <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[800px]">
                 <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-100 p-8">
                   <div className="mb-6">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    <h3 className="mb-2">
                       Our Products
                     </h3>
                     <p className="text-gray-600">
@@ -266,7 +266,7 @@ export default function Header() {
                           {product.icon}
                         </span>
                         <div>
-                          <h4 className="font-semibold text-gray-900 group-hover:text-violet-600 transition-colors text-sm">
+                          <h4 className="group-hover:text-violet-600 transition-colors">
                             {product.label}
                           </h4>
                         </div>
@@ -333,7 +333,7 @@ export default function Header() {
               <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[800px]">
                 <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-100 p-8">
                   <div className="mb-6">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    <h3 className="mb-2">
                       Our Services
                     </h3>
                     <p className="text-gray-600">
@@ -353,7 +353,7 @@ export default function Header() {
                           {service.icon}
                         </span>
                         <div>
-                          <h4 className="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors text-sm">
+                          <h4 className="group-hover:text-emerald-600 transition-colors">
                             {service.label}
                           </h4>
                         </div>
@@ -420,7 +420,7 @@ export default function Header() {
               <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[600px]">
                 <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-100 p-8">
                   <div className="mb-6">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    <h3 className="mb-2">
                       Industries We Serve
                     </h3>
                     <p className="text-gray-600">
@@ -440,7 +440,7 @@ export default function Header() {
                           {industry.icon}
                         </span>
                         <div>
-                          <h4 className=" font-semibold text-gray-900 group-hover:text-blue-600 transition-colors text-sm ">
+                          <h4 className="group-hover:text-blue-600 transition-colors">
                             {industry.label}
                           </h4>
                         </div>
@@ -553,7 +553,7 @@ export default function Header() {
 
                 <div className="relative flex items-center justify-between mb-4">
                   <div>
-                    <h2 className="text-white text-xl mb-1 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Menu</h2>
+                    <h2 className="text-white mb-1 capitalize">Menu</h2>
                     <p className="text-white/80 text-sm">Explore our solutions</p>
                   </div>
 

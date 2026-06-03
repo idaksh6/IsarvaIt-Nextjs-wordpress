@@ -56,7 +56,7 @@ const WebsiteMaintenanceHeadaches = () => {
             <Frown className="w-4 h-4 text-emerald-600" />
             <span className="capitalize tracking-wider">Website headaches</span>
           </div>
-          <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter">
+          <h2 className="mb-6">
             Site frustrations? <span className="text-emerald-600">You’re not alone!</span>
           </h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -82,7 +82,7 @@ const WebsiteMaintenanceHeadaches = () => {
                 <div className="w-16 h-16 rounded-2xl bg-emerald-50 flex items-center justify-center mb-6 group-hover:bg-emerald-100 group-hover:scale-110 transition-all duration-300">
                   <Icon className="w-8 h-8 text-emerald-600" />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-emerald-700 transition-colors">
+                <h3 className="mb-3 group-hover:text-emerald-700 transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed">

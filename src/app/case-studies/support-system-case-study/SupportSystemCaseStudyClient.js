@@ -261,7 +261,7 @@ export default function SupportSystemCaseStudyClient() {
         <section className="py-10 lg:py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <div className="text-center mb-10 lg:mb-16 max-w-4xl mx-auto">
-              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Solution Overview — Isarva Support</h2>
+              <h2 className="mb-6 capitalize">Solution Overview — Isarva Support</h2>
               <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-3 text-center">
                 To address these challenges, Isarva implemented the Support System — a unified platform combining project management, Ticket handling, and operational tracking.
               </p>
@@ -270,7 +270,7 @@ export default function SupportSystemCaseStudyClient() {
               </p>
             </div>
 
-            <h3 className="text-xl md:text-2xl font-bold text-center mb-8 md:mb-10 text-emerald-700">Core Modules Deployed</h3>
+            <h3 className="md:text-2xl text-center mb-8 md:mb-10 text-emerald-700">Core Modules Deployed</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {[
                 { title: "Project Management", desc: "Structured task tracking from start to completion with full history", icon: <LayoutDashboard /> },
@@ -287,14 +287,14 @@ export default function SupportSystemCaseStudyClient() {
                   <div className="w-10 h-10 md:w-12 md:h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-4 md:mb-6">
                     {mod.icon}
                   </div>
-                  <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">{mod.title}</h3>
+                  <h3 className="md:text-xl mb-2 md:mb-3">{mod.title}</h3>
                   <p className="text-sm md:text-base text-gray-600 leading-relaxed">{mod.desc}</p>
                 </div>
               ))}
             </div>
 
             <div className="mt-10 md:mt-12 bg-gradient-to-br from-emerald-600 to-green-700 rounded-3xl p-6 md:p-10 text-white shadow-xl text-center md:text-left">
-              <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">Project History and Worked Hour Track</h3>
+              <h3 className="md:text-2xl mb-3 md:mb-4">Project History and Worked Hour Track</h3>
               <p className="text-emerald-50 text-sm md:text-base leading-relaxed ">
                 The system includes a dedicated History section that records all changes made to project details, including who made the change and when it was made. This ensures complete transparency and accountability, allowing teams to track who worked on what, monitor contributions, and compare estimated versus actual time spent on each project.
               </p>
@@ -320,7 +320,7 @@ export default function SupportSystemCaseStudyClient() {
                 <div key={idx} className="flex gap-4 items-start p-5 md:p-6 bg-white rounded-2xl shadow-sm border border-emerald-50 hover:shadow-md transition-all h-full">
                   <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold flex-shrink-0 text-sm md:text-base mt-0.5 md:mt-0">{idx + 1}</div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-1 text-sm md:text-base">{step.title}</h4>
+                    <h4 className="mb-1 md:text-base">{step.title}</h4>
                     <p className="text-gray-600 text-xs md:text-sm leading-relaxed">{step.text}</p>
                   </div>
                 </div>
@@ -333,7 +333,7 @@ export default function SupportSystemCaseStudyClient() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4 text-emerald-700">Strengthening Security with Role-Based Access</h3>
+                <h3 className="md:text-2xl mb-3 md:mb-4 text-emerald-700">Strengthening Security with Role-Based Access</h3>
                 <p className="text-sm md:text-base text-gray-700 mb-4">One of the biggest wins was User-Level Security. Previously, every employee could see everything. We fixed this by setting up specific "Page Rights":</p>
                 <ul className="list-disc pl-5 md:pl-6 space-y-2 text-gray-700 text-sm md:text-base">
                   <li><strong>Need-to-Know Access:</strong> Designers only see their assigned design tasks; developers only see their assigned technical tickets and projects</li>
@@ -343,7 +343,7 @@ export default function SupportSystemCaseStudyClient() {
               </div>
 
               <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4 text-emerald-700">Streamlining Project and Ticket LifeCycle</h3>
+                <h3 className="md:text-2xl mb-3 md:mb-4 text-emerald-700">Streamlining Project and Ticket LifeCycle</h3>
                 <p className="text-sm md:text-base text-gray-700 mb-4">We simplified how your team moves work from a "rough idea" or "client issue" to a successful finish:</p>
                 <ul className="list-disc pl-5 md:pl-6 space-y-2 text-gray-700 text-sm md:text-base">
                   <li><strong>The Progress Tracker:</strong> A simple drag-and-drop system to move tasks and tickets from "In Progress" to "Completed" instantly.</li>
@@ -354,7 +354,7 @@ export default function SupportSystemCaseStudyClient() {
               </div>
 
               <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4 text-emerald-700">Solving the "Company" Headache & Renewals</h3>
+                <h3 className="md:text-2xl mb-3 md:mb-4 text-emerald-700">Solving the "Company" Headache & Renewals</h3>
                 <p className="text-sm md:text-base text-gray-700 mb-4">Post-launch Company became structured and efficient:</p>
                 <ul className="list-disc pl-5 md:pl-6 space-y-2 text-gray-700 text-sm md:text-base">
                   <li><strong>Smart Ticket Tagging:</strong> Each issue is linked to its project with full history visibility</li>
@@ -364,7 +364,7 @@ export default function SupportSystemCaseStudyClient() {
               </div>
 
               <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-lg transition-shadow">
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4 text-emerald-700">Powerful Analytics: Real Data</h3>
+                <h3 className="md:text-2xl mb-3 md:mb-4 text-emerald-700">Powerful Analytics: Real Data</h3>
                 <p className="text-sm md:text-base text-gray-700 mb-4">The Company moved from guesswork to data-driven decisions:</p>
                 <ul className="list-disc pl-5 md:pl-6 space-y-2 text-gray-700 text-sm md:text-base">
                   <li><strong>Billable vs Non-Billable Tracking:</strong> Clear visibility of productive hours</li>
@@ -375,7 +375,7 @@ export default function SupportSystemCaseStudyClient() {
               </div>
 
               <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-lg transition-shadow md:col-span-2">
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4 text-emerald-700">Leadership through Automation</h3>
+                <h3 className="md:text-2xl mb-3 md:mb-4 text-emerald-700">Leadership through Automation</h3>
                 <p className="text-sm md:text-base text-gray-700 mb-4">Automation helped maintain discipline without manual follow-ups:</p>
                 <ul className="list-disc pl-5 md:pl-6 space-y-2 text-gray-700 text-sm md:text-base">
                   <li><strong>The Accountability Bot:</strong> Alerts management if daily reports are not submitted</li>
@@ -394,7 +394,7 @@ export default function SupportSystemCaseStudyClient() {
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-12 md:mb-16">
               <div className="bg-[#FDF8F2] p-6 md:p-10 rounded-3xl border border-emerald-100 relative overflow-hidden h-full text-center md:text-left">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-100/50 rounded-full blur-[80px]" />
-                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 md:mb-8 relative z-10">Impact Snapshot</h3>
+                <h3 className="md:text-2xl mb-6 md:mb-8 relative z-10">Impact Snapshot</h3>
 
                 <div className="space-y-4 md:space-y-6 relative z-10">
                   <div className="bg-white p-5 md:p-6 rounded-2xl shadow-sm">
@@ -423,7 +423,7 @@ export default function SupportSystemCaseStudyClient() {
                       <CheckCircle2 className="text-emerald-500" size={20} />
                     </div>
                     <div>
-                      <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-2">{res.title}</h4>
+                      <h4 className="md:text-xl mb-2">{res.title}</h4>
                       <p className="text-sm md:text-base text-gray-600 leading-relaxed">{res.desc}</p>
                     </div>
                   </div>
@@ -441,7 +441,7 @@ export default function SupportSystemCaseStudyClient() {
                 { title: "Anywhere, Anytime Access", desc: "Being a web-based system, the Support System allows teams and management to access project data, Company tickets, and reports from any location. This ensures continuity of operations without dependency on local files or specific systems." }
               ].map((res, i) => (
                 <div key={i} className="bg-[#FDF8F2] p-6 md:p-8 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow flex flex-col items-center text-center md:items-start md:text-left">
-                  <h4 className="text-lg md:text-xl font-bold text-emerald-700 mb-2 md:mb-3">{res.title}</h4>
+                  <h4 className="md:text-xl text-emerald-700 mb-2 md:mb-3">{res.title}</h4>
                   <p className="text-sm md:text-base text-gray-600 leading-relaxed">{res.desc}</p>
                 </div>
               ))}
@@ -464,7 +464,7 @@ export default function SupportSystemCaseStudyClient() {
                   M
                 </div>
                 <div>
-                  <h5 className="font-bold text-gray-900 text-sm md:text-base">Management Team</h5>
+                  <h5 className="md:text-base">Management Team</h5>
                   <p className="text-xs md:text-sm text-gray-500">Website Designing Company</p>
                 </div>
               </div>
@@ -485,7 +485,7 @@ export default function SupportSystemCaseStudyClient() {
               </p>
             </div>
 
-            <h3 className="text-xl md:text-2xl font-bold text-center mb-6 md:mb-8">Key Capabilities Include:</h3>
+            <h3 className="md:text-2xl text-center mb-6 md:mb-8">Key Capabilities Include:</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 md:gap-x-8 gap-y-4 mb-10 md:mb-16 bg-[#FDF8F2] md:bg-transparent p-6 rounded-2xl md:p-0 md:rounded-none">
               {[
                 "Centralized project and task management in a single unified system",

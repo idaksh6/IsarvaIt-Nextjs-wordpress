@@ -86,15 +86,19 @@ const WebsiteMaintenanceServices = () => {
                   />
                 </div>
                 
-                {service.link !== "#" ? (
-                  <Link href={service.link} prefetch={false} className="text-xl font-bold text-gray-900 mb-4 hover:text-emerald-600 transition-colors">
-                    {service.title}
-                  </Link>
-                ) : (
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">
-                    {service.title}
-                  </h3>
-                )}
+                <h3 className="mb-4">
+                  {service.link !== "#" ? (
+                    <Link
+                      href={service.link}
+                      prefetch={false}
+                      className="text-gray-900 hover:text-emerald-600 transition-colors"
+                    >
+                      {service.title}
+                    </Link>
+                  ) : (
+                    service.title
+                  )}
+                </h3>
                 
                 <p className="text-gray-500 leading-relaxed text-[15px]">
                   {service.description}
