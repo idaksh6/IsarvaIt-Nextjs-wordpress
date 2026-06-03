@@ -4,8 +4,7 @@ import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Link from 'next/link';
-
+import Link from "./AppLink";
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }

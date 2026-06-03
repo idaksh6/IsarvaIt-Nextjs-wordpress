@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
+import Link from "../AppLink";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function PostGrid({ posts, title = "Latest Articles" }) {

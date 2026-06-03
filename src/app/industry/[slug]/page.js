@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "../../components/AppLink";
 import { notFound } from "next/navigation";
 import { getIndustryBySlug, getAllIndustrySlugs, industriesData } from "../../lib/data/industries-data";
 import IndustryDetailClient from "./IndustryDetailClient";

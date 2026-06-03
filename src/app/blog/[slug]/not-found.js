@@ -1,5 +1,4 @@
-import Link from "next/link";
-
+import Link from "../../components/AppLink";
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">

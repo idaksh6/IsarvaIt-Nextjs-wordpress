@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "../../components/AppLink";
 import { notFound } from "next/navigation";
 import AISummary from "../../components/blog/AISummary";
 import { getPostBySlug, getRelatedPosts, getBlogPosts } from "../../lib/services/blog-service";

@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "./AppLink";
 import Image from "next/image";
 
 export default function AboutSection() {

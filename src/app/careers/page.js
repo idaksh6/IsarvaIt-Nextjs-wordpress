@@ -23,7 +23,7 @@ import {
   DollarSign,
   Settings
 } from "lucide-react";
-import Link from "next/link";
+import Link from "../components/AppLink";
 import Image from "next/image";
 import ContactSection from "../components/ContactSection";
 import { getJobsListData } from "../lib/data/jobsData";

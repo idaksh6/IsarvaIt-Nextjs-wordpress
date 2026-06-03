@@ -3,8 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck } from "lucide-react";
-import Link from "next/link";
-
+import Link from "../../../components/AppLink";
 const services = [
   {
     title: "Website Maintenance",

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Link from "../../components/AppLink";
 import ContactFormModal from "../../components/ContactFormModal";
 import ProductDetailPremium from "../../components/products/ProductDetailPremium";
 import ProductDetailPremiumWooCommerce from "../../components/products/ProductDetailPremiumWooCommerce";

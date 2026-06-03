@@ -16,7 +16,7 @@ import {
   Zap,
   Heart
 } from "lucide-react";
-import Link from "next/link";
+import Link from "../../components/AppLink";
 import { getJobBySlug } from "../../lib/data/jobsData";
 import { notFound } from "next/navigation";
 import CareerApplicationForm from "../../components/CareerApplicationForm";

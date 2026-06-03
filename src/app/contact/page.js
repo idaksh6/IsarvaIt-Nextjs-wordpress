@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "../components/AppLink";
 import ContactForm from "../components/ContactForm";
 import StickyContactInfoV2 from "../components/StickyContactInfoV2";
 import { generateMetadata as generateSEOMetadata } from "../lib/utils/seo";

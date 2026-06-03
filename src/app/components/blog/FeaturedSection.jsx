@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-
+import Link from "../AppLink";
 export default function FeaturedSection({ posts }) {
   if (!posts || posts.length < 4) return null;
 

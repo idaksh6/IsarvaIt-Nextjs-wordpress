@@ -5,7 +5,7 @@ import {
   motion,
   AnimatePresence,
 } from "framer-motion";
-import Link from "next/link";
+import Link from "../AppLink";
 import ContactFormModal from "../ContactFormModal";
 
 const SUPPORT_PURPLE = "#9333EA";

@@ -1,7 +1,7 @@
 "use client";
 
 import { memo } from "react";
-import Link from "next/link";
+import Link from "./AppLink";
 import Script from "next/script";
 import { ChevronRight } from "lucide-react";
 

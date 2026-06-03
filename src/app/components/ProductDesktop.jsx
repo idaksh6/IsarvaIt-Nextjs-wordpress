@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "./AppLink";
 import { useState, useEffect, useRef, memo } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -970,6 +970,8 @@ const ProductDesktopCard = ({ product }) => {
         <img
           src={product.image}
           alt={product.name}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover opacity-80"
         />
 
@@ -1038,6 +1040,8 @@ const ProductDetailModal = ({ product, onClose }) => {
           <img
             src={product.image}
             alt={product.name}
+            loading="lazy"
+            decoding="async"
             className="w-full h-64 object-cover rounded-lg"
           />
         </div>
@@ -1088,6 +1092,8 @@ const MobileProductCard = ({ product, isLast }) => {
           <img
             src={product.image}
             alt={product.name}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover"
           />
 
@@ -1200,6 +1206,8 @@ const MobileProductModal = ({ product, onClose }) => {
               <img
                 src={product.image}
                 alt={product.name}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
 
@@ -1275,6 +1283,8 @@ function ProductCard({ product }) {
         <img
           src={product.image}
           alt={product.name}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover opacity-90"
         />
 

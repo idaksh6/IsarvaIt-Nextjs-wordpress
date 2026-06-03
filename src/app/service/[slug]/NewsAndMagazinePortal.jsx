@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Link from "../../components/AppLink";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, CheckCircle2, Cpu, ArrowRight, Zap, RefreshCw, BarChart2, Video, Globe, Award, Settings, Layers, Share2, Mail, Search, Users, ShieldAlert } from "lucide-react";
 import ContactFormModal from "../../components/ContactFormModal";
