@@ -82,7 +82,7 @@ export default function ProductsClient({ productsData, categories }) {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-3 leading-tight">
+                <h3 className="lg:text-3xl text-white mb-3">
                   {product.title}
                 </h3>
 

@@ -149,7 +149,7 @@ export default function ProductDetailPremiumDispatcher({
 
             {/* Right Side - Content */}
             <div>
-              <h2 className="text-[#000000] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+              <h2 className="text-[#000000] mb-6 capitalize">
                 Streamline Florist Deliveries with{" "}
                 <span className="text-[#EF4444]">Smart Dispatch Management</span>
               </h2>
@@ -228,7 +228,7 @@ export default function ProductDetailPremiumDispatcher({
                   GET STARTED TODAY
                 </span>
 
-                <h2 className="text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+                <h2 className="text-white mb-6 capitalize">
                   Ready to optimize your <br className="hidden md:block" />
                   delivery operations?
                 </h2>
@@ -280,7 +280,7 @@ export default function ProductDetailPremiumDispatcher({
               <span className="inline-block text-[10px] font-black text-[#EF4444] tracking-[0.28em] uppercase mb-3 bg-[#EF4444]/10 px-4 py-2 rounded-full">
                 MORE PRODUCTS
               </span>
-              <h2 className="text-[#0a0a0a] mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+              <h2 className="text-[#0a0a0a] mb-4 capitalize">
                 Explore Our More Products
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -319,7 +319,7 @@ export default function ProductDetailPremiumDispatcher({
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-2xl font-bold text-gray-900 mb-1 min-h-[3rem] line-clamp-2 leading-tight">
+                        <h3 className="mb-1 min-h-[3rem] line-clamp-2">
                           {prod.title}
                         </h3>
 
@@ -512,7 +512,7 @@ function DispatcherFeatureSection() {
           <span className="block text-[10px] font-black text-[#EF4444] tracking-[0.28em] uppercase mb-2.5">
             SOFTWARE FEATURES
           </span>
-          <h2 className="text-[#0a0a0a] mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+          <h2 className="text-[#0a0a0a] mb-3.5 capitalize">
             Key Features Of <span className="text-[#EF4444]">Dispatcher Panel</span> Software
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">

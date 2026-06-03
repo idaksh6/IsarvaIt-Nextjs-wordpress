@@ -79,7 +79,7 @@ export default function PostGrid({ posts, title = "Latest Articles" }) {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-emerald-600 transition-colors leading-tight line-clamp-2 uppercase">
+                  <h3 className="mb-4 group-hover:text-emerald-600 transition-colors line-clamp-2 uppercase">
                     {post.title}
                   </h3>
                   <p className="text-gray-500 line-clamp-2 mb-6 text-[15px] leading-relaxed">

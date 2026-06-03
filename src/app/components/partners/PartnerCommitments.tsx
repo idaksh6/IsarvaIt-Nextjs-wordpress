@@ -39,7 +39,7 @@ const PartnerCommitments = () => {
             initial="initial"
             whileInView="whileInView"
             viewport={viewportConfig}
-            className="text-[#111827] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize"
+            className="text-[#111827] mb-6 capitalize"
           >
             Partner <span className="text-emerald-600">Commitments</span>
           </motion.h2>
@@ -60,7 +60,7 @@ const PartnerCommitments = () => {
               <div className="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                 {item.icon}
               </div>
-              <h3 className="text-2xl font-bold text-[#111827] leading-tight">{item.text}</h3>
+              <h3 className="text-[#111827]">{item.text}</h3>
             </motion.div>
           ))}
         </div>

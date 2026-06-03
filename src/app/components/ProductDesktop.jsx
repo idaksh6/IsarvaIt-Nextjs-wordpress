@@ -608,7 +608,7 @@ function ProductDesktop() {
                       <div className="flex h-[calc(100%-6.5rem)]">
                         {/* Sidebar - Categories */}
                         <div className="w-64 xl:w-80 bg-gray-50 border-r border-gray-200 p-4 xl:p-6">
-                          <h3 className="text-gray-900 font-semibold text-lg mb-6 flex items-center gap-2">
+                          <h3 className="mb-6 flex items-center gap-2">
                             <svg
                               className="w-5 h-5 text-blue-400"
                               fill="none"
@@ -701,7 +701,7 @@ function ProductDesktop() {
                                   d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                                 />
                               </svg>
-                              <h3 className="text-gray-600 text-xl font-semibold mb-2">
+                              <h3 className="text-gray-600 mb-2">
                                 No products found
                               </h3>
                               <p className="text-gray-500">
@@ -878,7 +878,7 @@ function ProductDesktop() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-gray-600 text-lg font-semibold mb-2">
+                  <h3 className="text-gray-600 mb-2">
                     No products found
                   </h3>
                   <p className="text-gray-500 text-sm">
@@ -988,7 +988,7 @@ const ProductDesktopCard = ({ product }) => {
 
       {/* Content */}
       <div>
-        <h3 className="text-gray-900 font-semibold text-sm mb-2 group-hover:text-blue-600 transition-colors line-clamp-1">
+        <h3 className="mb-2 group-hover:text-blue-600 transition-colors line-clamp-1">
           {product.name}
         </h3>
         <p className="text-gray-600 text-xs leading-relaxed line-clamp-3">
@@ -1104,7 +1104,7 @@ const MobileProductCard = ({ product, isLast }) => {
         {/* Product Info */}
         <div className="flex-1 min-w-0">
           <div className="flex items-start justify-between mb-1">
-            <h3 className="font-semibold text-gray-900 text-base line-clamp-1 pr-2">
+            <h3 className="line-clamp-1 pr-2">
               {product.name}
             </h3>
             <svg
@@ -1209,7 +1209,7 @@ const MobileProductModal = ({ product, onClose }) => {
 
             {/* Product Description */}
             <div className="mb-8">
-              <h3 className="font-semibold text-gray-900 text-lg mb-4 flex items-center gap-2">
+              <h3 className="mb-4 flex items-center gap-2">
                 <svg
                   className="w-5 h-5 text-blue-600"
                   fill="none"
@@ -1313,7 +1313,7 @@ function ProductCard({ product }) {
 
       {/* Card body */}
       <div className="p-6 flex flex-col flex-1 relative z-10 -mt-2">
-        <h3 className="text-gray-900 font-bold text-lg mb-2.5 leading-snug">
+        <h3 className="mb-2.5">
           {product.name}
         </h3>
         <p className="text-gray-500 text-[13px] leading-relaxed flex-1 font-medium">

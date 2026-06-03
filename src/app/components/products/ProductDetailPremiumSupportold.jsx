@@ -142,7 +142,7 @@ export default function ProductDetailPremiumSupport({
 
             {/* Right Side - Content */}
             <div>
-              <h2 className="text-[#000000] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+              <h2 className="text-[#000000] mb-6 capitalize">
                 The Unified Pulse of Your{" "}
                 <span className="text-[#9333EA]">Projects and Tickets</span>
               </h2>
@@ -244,7 +244,7 @@ export default function ProductDetailPremiumSupport({
               <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-3 bg-[#9333EA]/10 px-4 py-2 rounded-full">
                 SUPPORT
               </span>
-              <h2 className="text-[#0a0a0a] mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+              <h2 className="text-[#0a0a0a] mb-4 capitalize">
                 Everything you need to know
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -294,7 +294,7 @@ export default function ProductDetailPremiumSupport({
                   GET STARTED TODAY
                 </span>
 
-                <h2 className="text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+                <h2 className="text-white mb-6 capitalize">
                   Ready to streamline your <br className="hidden md:block" />
                   internal operations?
                 </h2>
@@ -344,7 +344,7 @@ export default function ProductDetailPremiumSupport({
               <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-3 bg-[#9333EA]/10 px-4 py-2 rounded-full">
                 MORE PRODUCTS
               </span>
-              <h2 className="text-[#0a0a0a] mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+              <h2 className="text-[#0a0a0a] mb-4 capitalize">
                 Explore Our More Products
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -377,7 +377,7 @@ export default function ProductDetailPremiumSupport({
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                        <h3 className="mb-3">
                           {prod.title}
                         </h3>
 
@@ -732,7 +732,7 @@ function SupportFeatureSection() {
           <span className="block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-2.5">
             KEY FEATURES
           </span>
-          <h2 className="text-[#0a0a0a] mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+          <h2 className="text-[#0a0a0a] mb-3.5 capitalize">
             Key Features Of <span className="text-[#9333EA]">Internal Support</span> System
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">

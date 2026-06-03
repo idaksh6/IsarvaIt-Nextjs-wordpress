@@ -105,7 +105,7 @@ export default function CaseStudiesClient() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 tracking-tight leading-tight mb-6"
+            className="text-gray-900 mb-6"
           >
             Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">Case Studies</span>
           </motion.h1>
@@ -207,7 +207,7 @@ export default function CaseStudiesClient() {
                   </div>
 
                   <div className="relative z-10 mt-auto">
-                    <h3 className="text-white/90 text-sm font-medium mb-1">Product Used:</h3>
+                    <h3 className="text-white/90 font-medium mb-1">Product Used:</h3>
                     <p className="text-white font-bold text-lg">{study.product}</p>
                   </div>
                 </div>
@@ -215,7 +215,7 @@ export default function CaseStudiesClient() {
                 {/* Card Content */}
                 <div className="p-6 flex flex-col flex-1">
                   <div className="min-h-[5.5rem] mb-4">
-                    <h3 className="text-2xl font-bold text-gray-900 line-clamp-3 leading-tight group-hover:text-emerald-600 transition-colors">
+                    <h3 className="line-clamp-3 group-hover:text-emerald-600 transition-colors">
                       {study.title}
                     </h3>
                   </div>
@@ -255,7 +255,7 @@ export default function CaseStudiesClient() {
               <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6 text-gray-400">
                 <Search size={32} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">No results found</h3>
+              <h3 className="mb-2">No results found</h3>
               <p className="text-gray-500">Try adjusting your filters or search query.</p>
               <button
                 onClick={() => { setSearchQuery(""); setActiveIndustry("All"); setActiveProduct("All"); }}

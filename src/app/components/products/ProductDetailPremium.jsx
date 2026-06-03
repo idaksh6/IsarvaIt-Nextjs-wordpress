@@ -179,7 +179,7 @@ export default function ProductDetailPremium({
 
             {/* Right Side - Content */}
             <div>
-              <h2 className="text-[#000000] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+              <h2 className="text-[#000000] mb-6 capitalize">
                 Take control of every{" "}
                 <span className="text-[#22C55E]">employee workflow</span>
               </h2>
@@ -302,7 +302,7 @@ export default function ProductDetailPremium({
               <span className="inline-block text-[10px] font-black text-[#22C55E] tracking-[0.28em] uppercase mb-3 bg-[#22C55E]/10 px-4 py-2 rounded-full">
                 SUPPORT
               </span>
-              <h2 className="text-[#0a0a0a] mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+              <h2 className="text-[#0a0a0a] mb-4 capitalize">
                 Everything you need to know
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -352,7 +352,7 @@ export default function ProductDetailPremium({
                   GET STARTED TODAY
                 </span>
 
-                <h2 className="text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+                <h2 className="text-white mb-6 capitalize">
                   Ready to transform your <br className="hidden md:block" />
                   HR operations?
                 </h2>
@@ -402,7 +402,7 @@ export default function ProductDetailPremium({
               <span className="inline-block text-[10px] font-black text-[#22C55E] tracking-[0.28em] uppercase mb-3 bg-[#22C55E]/10 px-4 py-2 rounded-full">
                 MORE PRODUCTS
               </span>
-              <h2 className="text-[#0a0a0a] mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+              <h2 className="text-[#0a0a0a] mb-4 capitalize">
                 Explore Our More Products
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -436,7 +436,7 @@ export default function ProductDetailPremium({
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                        <h3 className="mb-3">
                           {prod.title}
                         </h3>
 
@@ -823,7 +823,7 @@ function HrmsFeatureSection() {
           <span className="block text-[10px] font-black text-[#22C55E] tracking-[0.28em] uppercase mb-2.5">
             KEY FEATURES
           </span>
-          <h2 className="text-[#0a0a0a] mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+          <h2 className="text-[#0a0a0a] mb-3.5 capitalize">
             Key Features Of <span className="text-[#22C55E]">HRMS</span> Software
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">
@@ -1139,7 +1139,7 @@ function FeatureShowcase() {
                     animate={{ opacity: 1, y: 0 }}
                     className="absolute -bottom-28 left-1/2 -translate-x-1/2 text-center w-full"
                   >
-                    <h4 className="text-4xl font-black text-gray-900 tracking-tight">
+                    <h4 className="text-4xl">
                       {slide.title}
                     </h4>
                   </motion.div>

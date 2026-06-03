@@ -343,7 +343,7 @@ function SupportFeatureSection({ onImageClick }) {
           <span className="block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-2.5">
             KEY FEATURES
           </span>
-          <h2 className="text-[#0a0a0a] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+          <h2 className="text-[#0a0a0a] mb-6 capitalize">
             Key Features Of <span className="text-[#9333EA]">Internal Support</span> System
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">
@@ -651,7 +651,7 @@ function ProjectLifecycleSection() {
           <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-purple-100/50 px-4 py-2 rounded-full ring-1 ring-purple-200">
             Project & Task Lifecycle
           </span>
-          <h2 className="text-[#0a0a0a] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+          <h2 className="text-[#0a0a0a] mb-6 capitalize">
             From Start to Finish—<br className="md:hidden" />
             <span className="bg-gradient-to-r from-[#9333EA] to-[#7c3aed] bg-clip-text text-transparent py-1">Everything in One Place</span>
           </h2>
@@ -720,7 +720,7 @@ function TicketLifecycleSection() {
           <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-white px-4 py-2 rounded-full shadow-sm ring-1 ring-purple-100">
             Ticket Lifecycle
           </span>
-          <h2 className="text-[#0a0a0a] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+          <h2 className="text-[#0a0a0a] mb-6 capitalize">
             Turn "Help!" into <span className="text-[#9333EA]">"Handled."</span>
           </h2>
         </div>
@@ -826,7 +826,7 @@ function ReportsSection({ onImageClick }) {
             <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-purple-50 px-4 py-2 rounded-full ring-1 ring-purple-100">
               The Power of Reports
             </span>
-            <h2 className="text-[#0a0a0a] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+            <h2 className="text-[#0a0a0a] mb-6 capitalize">
               Total Transparency, <br className="hidden md:block" />
               <span className={`bg-gradient-to-r ${d.gradient} bg-clip-text text-transparent py-1 transition-all duration-500`}>
                 Zero Manual Effort.
@@ -899,7 +899,7 @@ function ReportsSection({ onImageClick }) {
                     {item.icon}
                   </div>
                   <div className="flex-1 text-left">
-                    <h3 className={`text-lg font-black transition-colors ${active === i ? "text-gray-900" : "text-gray-400"}`}>
+                    <h3 className={`transition-colors ${active === i ? "text-gray-900" : "text-gray-400"}`}>
                       {item.title}
                     </h3>
                     <p className={`text-sm mt-1 font-medium transition-colors ${active === i ? "text-gray-500" : "text-gray-400"}`}>
@@ -1021,7 +1021,7 @@ function AnalyticsSection({ onImageClick }) {
           <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-purple-50 px-4 py-2 rounded-full shadow-sm ring-1 ring-purple-100">
             High-Level Analytics
           </span>
-          <h2 className="text-[#0a0a0a] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+          <h2 className="text-[#0a0a0a] mb-6 capitalize">
             See Your Business in <br className="hidden md:block" />
             <span className="bg-gradient-to-r from-[#9333EA] to-[#7c3aed] bg-clip-text text-transparent py-1">High Definition.</span>
           </h2>
@@ -1155,7 +1155,7 @@ function AutomationSection() {
           <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-white px-5 py-2 rounded-full shadow-sm ring-1 ring-purple-100">
             Automation: Your "Invisible Assistant"
           </span>
-          <h2 className="text-[#0a0a0a] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+          <h2 className="text-[#0a0a0a] mb-6 capitalize">
             We Do the <span className="bg-gradient-to-r from-[#9333EA] to-[#7c3aed] bg-clip-text text-transparent py-1">Grunt Work</span><br className="md:hidden" />
             So You Don't Have To.
           </h2>
@@ -1182,7 +1182,7 @@ function AutomationSection() {
                   <span className="filter drop-shadow-sm group-hover:scale-110 transition-transform">{item.icon}</span>
                 </div>
               </div>
-              <h3 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">{item.title}</h3>
+              <h3 className="mb-4">{item.title}</h3>
               <p className="text-gray-500 leading-relaxed font-medium px-4">{item.desc}</p>
             </motion.div>
           ))}
@@ -1204,7 +1204,7 @@ function SafetyManagementSection() {
             <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-white px-5 py-2 rounded-full shadow-md ring-1 ring-purple-50">
               Safety & Management
             </span>
-            <h2 className="text-[#0a0a0a] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+            <h2 className="text-[#0a0a0a] mb-6 capitalize">
               Secure Your Assets,<br />
               <span className="bg-gradient-to-r from-[#9333EA] to-[#7c3aed] bg-clip-text text-transparent py-1">Organize Your Clients.</span>
             </h2>
@@ -1381,7 +1381,7 @@ export default function ProductDetailPremiumSupportStaging({
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-[#0a0a0a] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+              <h2 className="text-[#0a0a0a] mb-6 capitalize">
                 Project Management Software Suitable for These <span className="text-[#9333EA]">Industries</span>
               </h2>
               <p className="text-[#6b7280] max-w-2xl mx-auto text-base leading-relaxed">
@@ -1407,7 +1407,7 @@ export default function ProductDetailPremiumSupportStaging({
                   <div className="w-14 h-14 bg-purple-50 text-2xl rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#9333EA] group-hover:text-white transition-all duration-300 shadow-sm">
                     <span className="">{industry.icon}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#9333EA] transition-colors">
+                  <h3 className="mb-3 group-hover:text-[#9333EA] transition-colors">
                     {industry.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed text-sm">
@@ -1494,7 +1494,7 @@ export default function ProductDetailPremiumSupportStaging({
 
             {/* Right Side - Content */}
             <div>
-              <h2 className="text-[#000000] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+              <h2 className="text-[#000000] mb-6 capitalize">
                 The Unified Pulse of Your{" "}
                 <span className="text-[#9333EA]">Projects and Tickets</span>
               </h2>
@@ -1604,7 +1604,7 @@ export default function ProductDetailPremiumSupportStaging({
               <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-3 bg-[#9333EA]/10 px-4 py-2 rounded-full">
                 SUPPORT
               </span>
-              <h2 className="text-[#0a0a0a] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+              <h2 className="text-[#0a0a0a] mb-6 capitalize">
                 Everything you need to know
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -1654,7 +1654,7 @@ export default function ProductDetailPremiumSupportStaging({
                   GET STARTED TODAY
                 </span>
 
-                <h2 className="text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+                <h2 className="text-white mb-6 capitalize">
                   Ready to streamline your <br className="hidden md:block" />
                   internal operations?
                 </h2>
@@ -1734,7 +1734,7 @@ export default function ProductDetailPremiumSupportStaging({
               <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-3 bg-[#9333EA]/10 px-4 py-2 rounded-full">
                 MORE PRODUCTS
               </span>
-              <h2 className="text-[#0a0a0a] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+              <h2 className="text-[#0a0a0a] mb-6 capitalize">
                 Explore Our More Products
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -1777,7 +1777,7 @@ export default function ProductDetailPremiumSupportStaging({
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-2xl font-bold text-gray-900 mb-1 min-h-[3rem] line-clamp-2 leading-tight">
+                        <h3 className="mb-1 min-h-[3rem] line-clamp-2">
                           {prod.title}
                         </h3>
 

@@ -156,7 +156,7 @@ export default function ProductDetailPremiumWooCommerce({
 
             {/* Right Side - Content */}
             <div>
-              <h2 className="text-[#000000] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+              <h2 className="text-[#000000] mb-6 capitalize">
                 Power Your Online Business with{" "}
                 <span className="text-[#A855F7]">WooCommerce</span>
               </h2>
@@ -195,7 +195,7 @@ export default function ProductDetailPremiumWooCommerce({
               <span className="inline-block text-[10px] font-black text-[#A855F7] tracking-[0.28em] uppercase mb-3 bg-[#A855F7]/10 px-4 py-2 rounded-full">
                 OUR SERVICES
               </span>
-              <h2 className="text-[#0a0a0a] mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+              <h2 className="text-[#0a0a0a] mb-4 capitalize">
                 What we offer with <span className="text-[#A855F7]">WooCommerce</span>
               </h2>
             </motion.div>
@@ -216,7 +216,7 @@ export default function ProductDetailPremiumWooCommerce({
                     <span className="text-2xl">{service.icon}</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#A855F7] transition-colors">
+                    <h3 className="mb-3 group-hover:text-[#A855F7] transition-colors">
                       {service.title}
                     </h3>
                     <p className="text-gray-600 leading-relaxed text-sm">
@@ -266,7 +266,7 @@ export default function ProductDetailPremiumWooCommerce({
                   GET STARTED TODAY
                 </span>
 
-                <h2 className="text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+                <h2 className="text-white mb-6 capitalize">
                   Ready to launch your <br className="hidden md:block" />
                   online store?
                 </h2>
@@ -317,7 +317,7 @@ export default function ProductDetailPremiumWooCommerce({
               <span className="inline-block text-[10px] font-black text-[#A855F7] tracking-[0.28em] uppercase mb-3 bg-[#A855F7]/10 px-4 py-2 rounded-full">
                 MORE PRODUCTS
               </span>
-              <h2 className="text-[#0a0a0a] mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+              <h2 className="text-[#0a0a0a] mb-4 capitalize">
                 Explore Our More Products
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -356,7 +356,7 @@ export default function ProductDetailPremiumWooCommerce({
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-2xl font-bold text-gray-900 mb-1 min-h-[3rem] line-clamp-2 leading-tight">
+                        <h3 className="mb-1 min-h-[3rem] line-clamp-2">
                           {prod.title}
                         </h3>
 
@@ -628,7 +628,7 @@ function WooCommerceFeatureSection() {
           <span className="block text-[10px] font-black text-[#A855F7] tracking-[0.28em] uppercase mb-2.5">
             KEY FEATURES
           </span>
-          <h2 className="text-[#0a0a0a] mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+          <h2 className="text-[#0a0a0a] mb-3.5 capitalize">
             Key Features Of Our <span className="text-[#A855F7]">WooCommerce</span> Development
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">
@@ -881,7 +881,7 @@ function WooCommerceFAQSection() {
             <span className="inline-block text-[10px] font-black text-[#A855F7] tracking-[0.28em] uppercase mb-3 bg-[#A855F7]/10 px-4 py-2 rounded-full">
               FAQ
             </span>
-            <h2 className="text-[#0a0a0a] mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+            <h2 className="text-[#0a0a0a] mb-4 capitalize">
               Frequently Asked Questions
             </h2>
             <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -975,7 +975,7 @@ function WooCommerceFAQSection() {
               const event = new CustomEvent('openContactModal');
               window.dispatchEvent(event);
             }}
-            className="press-illusion-btn-orange bg-orange-600 text-white font-bold px-8 py-4 text-base items-center space-x-2 inline-flex cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            className="press-illusion-btn-orange bg-orange-600 text-white w-fit mx-auto font-bold px-8 py-4 text-base items-center space-x-2 flex cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
           >
             <span>Request Quote</span>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

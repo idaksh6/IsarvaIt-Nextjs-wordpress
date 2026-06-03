@@ -110,7 +110,7 @@ export default function FeatureItem({ feature, index, isEven, centered = false }
         </div>
 
         {/* Feature Title */}
-        <h3 className={`text-xl font-bold text-gray-900 mb-3 leading-tight ${centered ? "w-full" : ""}`}>
+        <h3 className={`mb-3 ${centered ? "w-full" : ""}`}>
           {typeof feature === 'string' ? feature : feature.title}
         </h3>
 

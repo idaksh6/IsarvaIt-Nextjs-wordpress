@@ -100,7 +100,7 @@ const WhyPartner = () => {
             initial="initial"
             whileInView="whileInView"
             viewport={viewportConfig}
-            className="text-[#111827] mb-4 md:mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize"
+            className="text-[#111827] mb-4 md:mb-6 capitalize"
           >
             Why Choose <span className="text-emerald-600">Isarva Infotech</span>
           </motion.h2>
@@ -160,7 +160,7 @@ const ValueCard = ({ icon, title, desc, index, color }: { icon: any, title: stri
         <div className={`mb-5 md:mb-8 p-3 md:p-4 rounded-2xl bg-gray-50/50 group-hover:scale-110 group-hover:${colorVariants[themeColor].split(' ')[2]} transition-all duration-300 inline-block`}>
           {icon}
         </div>
-        <h3 className="text-xl sm:text-2xl font-bold mb-3 md:mb-4 text-[#111827]">
+        <h3 className="mb-3 md:mb-4 text-[#111827]">
           {title}
         </h3>
         <p className="text-gray-500 text-lg leading-relaxed">

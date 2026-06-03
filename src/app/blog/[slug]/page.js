@@ -73,7 +73,7 @@ export default async function BlogPostPage({ params }) {
             </div>
 
             {/* Title */}
-            <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-black mb-6 leading-[1] tracking-tight text-gray-900">
+            <h1 className="mb-6">
               {post.title}
             </h1>
 
@@ -116,7 +116,7 @@ export default async function BlogPostPage({ params }) {
         <section className="bg-gray-50 py-20">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-12">
-              <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="mb-4 uppercase">
                 Related Articles
               </h2>
               <p className="text-gray-600 text-lg">
@@ -144,7 +144,7 @@ export default async function BlogPostPage({ params }) {
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-emerald-600 transition-colors">
+                    <h3 className="mb-3 line-clamp-2 group-hover:text-emerald-600 transition-colors">
                       {relatedPost.title}
                     </h3>
                     <p className="text-gray-600 text-sm line-clamp-3 mb-4">

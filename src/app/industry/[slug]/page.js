@@ -257,7 +257,7 @@ export default async function IndustryDetailPage({ params }) {
                 <span className="text-2xl">{industry.icon}</span>
                 <span>Industry Expertise</span>
               </div>
-              <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-bold text-gray-900 mb-6 tracking-tight leading-[1]">
+              <h1 className="mb-6">
                 {industry.title}
               </h1>
               <p className="text-base lg:text-xl text-gray-500 font-medium leading-relaxed mb-8">
@@ -294,7 +294,7 @@ export default async function IndustryDetailPage({ params }) {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-10">
-            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+            <h2 className="mb-6 capitalize">
               {industry.slug === 'banking-financial-services'
                 ? 'Explore Our BFS Services'
                 : industry.slug === 'education'
@@ -351,7 +351,7 @@ export default async function IndustryDetailPage({ params }) {
                         {getServiceIcon(title)}
                       </svg>
                     </div>
-                    <h3 className={`text-xl font-bold text-gray-900 mb-3 group-hover:text-${industry.accentColor}-700 transition-colors`}>
+                    <h3 className={`mb-3 group-hover:text-${industry.accentColor}-700 transition-colors`}>
                       {title}
                     </h3>
                     {description && (
@@ -374,7 +374,7 @@ export default async function IndustryDetailPage({ params }) {
 
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center mb-10">
-              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+              <h2 className="mb-6 capitalize">
                 Our Banking Services
               </h2>
               <p className="text-base lg:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
@@ -394,7 +394,7 @@ export default async function IndustryDetailPage({ params }) {
                         {getServiceIcon(segment.title)}
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-700 transition-colors duration-300">
+                    <h3 className="mb-4 group-hover:text-blue-700 transition-colors duration-300">
                       {segment.title}
                     </h3>
                     <p className="text-gray-700 leading-relaxed text-[15px]">
@@ -433,7 +433,7 @@ export default async function IndustryDetailPage({ params }) {
               </svg>
               Business Impact
             </div>
-            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+            <h2 className="mb-6 capitalize">
               Benefits You'll Enjoy
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
@@ -449,7 +449,7 @@ export default async function IndustryDetailPage({ params }) {
                     {String(index + 1).padStart(2, '0')}
                   </span>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900">
+                <h3 className="">
                   {typeof benefit === 'string' ? benefit : benefit.title}
                 </h3>
                 {typeof benefit === 'object' && benefit.description && (
@@ -469,7 +469,7 @@ export default async function IndustryDetailPage({ params }) {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-10">
-            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+            <h2 className="mb-6 capitalize">
               Other Industries We Serve
             </h2>
             <p className="text-base lg:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
@@ -493,7 +493,7 @@ export default async function IndustryDetailPage({ params }) {
                       <span className="text-4xl">{relatedIndustry.icon}</span>
                     </div>
 
-                    <h3 className={`text-2xl font-bold text-gray-900 mb-4 group-hover:text-${relatedIndustry.accentColor}-700 transition-colors`}>
+                    <h3 className={`mb-4 group-hover:text-${relatedIndustry.accentColor}-700 transition-colors`}>
                       {relatedIndustry.title}
                     </h3>
 
@@ -595,7 +595,7 @@ export default async function IndustryDetailPage({ params }) {
             Let's Get Started
           </div>
 
-          <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+          <h2 className="mb-6 capitalize">
             Ready to Transform Your {industry.title} Business?
           </h2>
 

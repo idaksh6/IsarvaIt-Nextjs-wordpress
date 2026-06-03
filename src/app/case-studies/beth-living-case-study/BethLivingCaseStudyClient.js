@@ -153,7 +153,7 @@ export default function BethLivingCaseStudyClient() {
                 <div key={idx} className="flex gap-3 p-5 bg-amber-50/50 rounded-2xl border border-amber-100/50 hover:bg-amber-50 transition-colors">
                   <div className="mt-1 text-amber-600"><CheckCircle2 size={20} /></div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-1">{req.title}</h4>
+                    <h4 className="mb-1">{req.title}</h4>
                     <p className="text-sm text-gray-600 leading-relaxed">{req.desc}</p>
                   </div>
                 </div>
@@ -228,7 +228,7 @@ export default function BethLivingCaseStudyClient() {
                   <div className="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-6 mx-auto md:mx-0">
                     {sol.icon}
                   </div>
-                  <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3">{sol.title}</h3>
+                  <h3 className="md:text-xl mb-3">{sol.title}</h3>
                   <p className="text-sm md:text-base text-gray-600 leading-relaxed">{sol.desc}</p>
                 </div>
               ))}
@@ -260,14 +260,14 @@ export default function BethLivingCaseStudyClient() {
               <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 flex items-start gap-4 h-full">
                 <BarChart3 className="text-amber-500 w-8 h-8 flex-shrink-0" />
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Performance Milestone</h3>
+                  <h3 className="mb-2">Performance Milestone</h3>
                   <p className="text-sm md:text-base text-gray-600 leading-relaxed">Achieved a cleaner codebase and improved performance scores across all devices, ensuring the website remains competitive in the modern home décor market.</p>
                 </div>
               </div>
               <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 flex items-start gap-4 h-full">
                 <Users className="text-amber-500 w-8 h-8 flex-shrink-0" />
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Lead Ecosystem</h3>
+                  <h3 className="mb-2">Lead Ecosystem</h3>
                   <p className="text-sm md:text-base text-gray-600 leading-relaxed">Integrated lead capture with a lightweight CRM setup to bridge the gap between digital interaction and physical dealership visits.</p>
                 </div>
               </div>
@@ -290,7 +290,7 @@ export default function BethLivingCaseStudyClient() {
                   B
                 </div>
                 <div>
-                  <h5 className="font-bold text-gray-900 text-base md:text-lg">Management Team</h5>
+                  <h5 className="md:text-lg">Management Team</h5>
                   <p className="text-xs md:text-sm text-gray-500 uppercase tracking-widest font-bold">Beth Living</p>
                 </div>
               </div>
@@ -301,7 +301,7 @@ export default function BethLivingCaseStudyClient() {
         {/* CTA SECTION */}
         <section className="py-10 lg:py-16 bg-[#FDF8F2] border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 md:px-6 text-center">
-            <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Need a Redesign Partner?</h2>
+            <h2 className="mb-6 capitalize">Need a Redesign Partner?</h2>
             <p className="text-lg text-gray-600 mb-10 leading-relaxed">
               Are you not able to achieve your business goals with your existing website? A modern UI/UX refresh and performance optimization by Isarva can help you serve your customers better.
             </p>

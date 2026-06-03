@@ -113,7 +113,7 @@ function ServicesSection({ data }) {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold text-gray-900 group-hover:text-emerald-700 transition-colors duration-300">
+                  <h3 className="group-hover:text-emerald-700 transition-colors duration-300">
                     {decodeHTMLEntities(service.title)}
                   </h3>
                 </div>

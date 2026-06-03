@@ -170,7 +170,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
                   Next-Gen Digital Publishing
                 </div>
 
-                <h1 className="text-[clamp(2.25rem,4.5vw,3.75rem)] font-black text-slate-900 mb-4 lg:mb-6 leading-[1.05] tracking-tight">
+                <h1 className="text-slate-900 mb-4 lg:mb-6 leading-[1.05]">
                   Build a High-Impact Digital Media Presence with{" "}
                   <span className="news-text-gradient">Custom News Portals</span>
                 </h1>
@@ -265,7 +265,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
                   <span className="text-pink-700 font-bold text-xs uppercase tracking-wide">Dynamic Publishing Experience</span>
                 </div>
 
-                <h2 className="text-slate-900 text-3xl lg:text-5xl font-black mb-8 leading-[1.15] tracking-tight uppercase">
+                <h2 className="text-slate-900 mb-8 uppercase">
                   Empower Your Media Business with a Modern News Portal
                 </h2>
 
@@ -276,7 +276,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
                       <Globe className="w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-bold text-slate-900 mb-1.5">Dynamic Digital Experience</h4>
+                      <h4 className="text-slate-900 mb-1.5">Dynamic Digital Experience</h4>
                       <p className="text-sm text-slate-600 leading-relaxed font-medium">Built for speed and accessibility, handling high traffic surges seamlessly for both local outlets and global media houses.</p>
                     </div>
                   </div>
@@ -287,7 +287,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
                       <Layers className="w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-bold text-slate-900 mb-1.5">Custom Editorial Solutions</h4>
+                      <h4 className="text-slate-900 mb-1.5">Custom Editorial Solutions</h4>
                       <p className="text-sm text-slate-600 leading-relaxed font-medium">Beyond simple blogging. Includes integrated breaking news, multimedia galleries, advanced categories, and subscription models.</p>
                     </div>
                   </div>
@@ -298,7 +298,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
                       <BarChart2 className="w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-bold text-slate-900 mb-1.5">Optimized Core Vitals</h4>
+                      <h4 className="text-slate-900 mb-1.5">Optimized Core Vitals</h4>
                       <p className="text-sm text-slate-600 leading-relaxed font-medium">Focused on speed, mobile-first design, discoverability, robust security, and maximizing monetization and engagement.</p>
                     </div>
                   </div>
@@ -311,7 +311,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-100 to-indigo-100 text-violet-700 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                     <Cpu className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">Modern Tech Architecture</h3>
+                  <h3 className="text-slate-900 mb-3">Modern Tech Architecture</h3>
                   <p className="text-slate-600 leading-relaxed text-sm">
                     Structured using cutting-edge static rendering & headless CMS architectures for lightning-fast loads and global caching.
                   </p>
@@ -321,7 +321,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
                   <div className="w-12 h-12 rounded-xl bg-pink-600/10 text-pink-700 flex items-center justify-center mb-6">
                     <Zap className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">Monetization Engineered</h3>
+                  <h3 className="text-slate-900 mb-3">Monetization Engineered</h3>
                   <p className="text-slate-600 leading-relaxed text-sm">
                     Built-in ad slots, paywalls, and sponsored layout systems that maximize CPM rates without hurting user experience.
                   </p>
@@ -346,7 +346,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
               <span className="text-violet-600 font-bold uppercase tracking-widest text-sm mb-3 block">
                 Engineered for Scale
               </span>
-              <h2 className="text-slate-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.15] tracking-tight uppercase">
+              <h2 className="text-slate-900 mb-6 uppercase">
                 Key Features Of Our News Portal Development
               </h2>
               <p className="text-lg lg:text-xl text-slate-600 leading-relaxed font-medium">
@@ -404,7 +404,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
 
                     <div className="flex-1">
                       <div className="flex flex-wrap items-center gap-2 mb-2">
-                        <h4 className={`${isWide ? 'text-2xl' : 'text-lg'} font-bold text-slate-900 group-hover:text-indigo-600 transition-colors`}>
+                        <h4 className={`${isWide ? 'text-2xl' : 'text-lg'} text-slate-900 group-hover:text-indigo-600 transition-colors`}>
                           {feat.title}
                         </h4>
                         {feat.title.includes("Alerts") && (
@@ -437,7 +437,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-violet-50 border border-violet-100 text-violet-800 font-semibold text-sm mb-6">
                 🚀 Service Catalogue
               </div>
-              <h2 className="text-slate-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.15] tracking-tight uppercase">
+              <h2 className="text-slate-900 mb-6 uppercase">
                 What we offer with News Portal Development
               </h2>
               <p className="text-lg lg:text-xl text-slate-600 font-medium">
@@ -461,7 +461,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
                     <div className={`w-12 h-12 rounded-xl ${style.iconBg} flex items-center justify-center mb-6 shadow-sm mt-2 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}>
                       {getServiceIcon(srv.title)}
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-3">{srv.title}</h3>
+                    <h3 className="text-slate-900 mb-3">{srv.title}</h3>
                     <p className="text-slate-600 text-sm leading-relaxed font-medium">
                       {srv.description}
                     </p>
@@ -486,7 +486,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
               <span className="text-violet-600 font-bold uppercase tracking-widest text-sm mb-3 block">
                 Got Questions?
               </span>
-              <h2 className="text-slate-900 text-3xl lg:text-5xl font-black leading-[1.15] tracking-tight uppercase">
+              <h2 className="text-slate-900 uppercase">
                 Frequently Asked Questions
               </h2>
               <div className="w-20 h-1.5 bg-gradient-to-r from-violet-500 to-pink-500 mx-auto rounded-full mt-4" />
@@ -564,7 +564,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
               Start your media journey
             </div>
 
-            <h2 className="text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.2] tracking-tight uppercase">
+            <h2 className="text-white mb-6 uppercase">
               Ready to launch your digital newsroom?
             </h2>
 

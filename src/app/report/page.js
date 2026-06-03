@@ -76,7 +76,7 @@ export default function ReportPage() {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center pt-44">
         <div className="bg-white rounded-2xl p-8 w-full max-w-md border border-gray-200 shadow-lg">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Admin Report</h1>
+          <h1 className="mb-2">Admin Report</h1>
           <p className="text-gray-600 mb-6">Enter password to access conversation analytics</p>
           
           <form onSubmit={handleLogin}>
@@ -116,7 +116,7 @@ export default function ReportPage() {
       <div className="max-w-7xl mx-auto mb-6">
         <div className="flex justify-between items-center flex-wrap gap-4">
           <div>
-            <h1 className="text-4xl font-bold text-gray-900 mb-2">Conversation Analytics</h1>
+            <h1 className="text-4xl mb-2">Conversation Analytics</h1>
             <p className="text-gray-600">AI Chatbot Report Dashboard</p>
           </div>
           <div className="flex gap-3">
@@ -233,7 +233,7 @@ function OverviewTab({ analytics, conversations }) {
 
       {/* Top Products - Enhanced with Bar Chart */}
       <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">🎯 Most Investigated Products</h3>
+        <h3 className="mb-2">🎯 Most Investigated Products</h3>
         <p className="text-sm text-gray-600 mb-6">Number of conversations where users asked about each product</p>
         {Object.entries(analytics.topProducts).length > 0 ? (
           <div className="space-y-4">
@@ -259,7 +259,7 @@ function OverviewTab({ analytics, conversations }) {
 
       {/* Top Services - Enhanced with Bar Chart */}
       <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">🛠️ Most Asked Services</h3>
+        <h3 className="mb-2">🛠️ Most Asked Services</h3>
         <p className="text-sm text-gray-600 mb-6">Number of conversations where users inquired about each service</p>
         {Object.entries(analytics.topServices).length > 0 ? (
           <div className="space-y-4">
@@ -323,7 +323,7 @@ function ConversationsTab({ conversations, selectedConversation, setSelectedConv
       {/* Conversation List */}
       <div className="lg:col-span-1 bg-white rounded-xl p-6 border border-gray-200 shadow-md max-h-[800px] overflow-y-auto">
         <div className="mb-4">
-          <h3 className="text-xl font-bold text-gray-900 mb-2">All Conversations</h3>
+          <h3 className="mb-2">All Conversations</h3>
           <p className="text-sm text-gray-600">{conversations.length} total conversations</p>
         </div>
         {conversations.length === 0 ? (
@@ -362,7 +362,7 @@ function ConversationsTab({ conversations, selectedConversation, setSelectedConv
         {selectedConversation ? (
           <>
             <div className="mb-6 pb-4 border-b border-gray-200">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Conversation Details</h3>
+              <h3 className="mb-2">Conversation Details</h3>
               <div className="flex gap-4 text-sm text-gray-600">
                 <span>ID: {selectedConversation.id.toString().slice(0, 8)}...</span>
                 <span>Created: {new Date(selectedConversation.created_at || selectedConversation.updated_at).toLocaleString()}</span>
@@ -416,7 +416,7 @@ function AnalyticsTab({ analytics }) {
     <div className="space-y-6">
       {/* Conversations Timeline */}
       <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
-        <h3 className="text-2xl font-bold text-gray-900 mb-6">📅 Conversations Timeline</h3>
+        <h3 className="mb-6">📅 Conversations Timeline</h3>
         <div className="space-y-3">
           {Object.entries(analytics.conversationsByDate)
             .sort((a, b) => new Date(b[0]) - new Date(a[0]))
@@ -440,7 +440,7 @@ function AnalyticsTab({ analytics }) {
 
       {/* Industries Grid with Visual Cards */}
       <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
-        <h3 className="text-2xl font-bold text-gray-900 mb-6">🏭 Industries Interested</h3>
+        <h3 className="mb-6">🏭 Industries Interested</h3>
         {Object.entries(analytics.topIndustries).length > 0 ? (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {Object.entries(analytics.topIndustries).map(([industry, count]) => (
@@ -464,7 +464,7 @@ function AnalyticsTab({ analytics }) {
       {/* Product vs Service Split */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
-          <h3 className="text-xl font-bold text-gray-900 mb-4">Product vs Service Inquiries</h3>
+          <h3 className="mb-4">Product vs Service Inquiries</h3>
           <p className="text-xs text-gray-600 mb-4">Based on user questions in conversations</p>
           <div className="space-y-4">
             <div>
@@ -500,7 +500,7 @@ function AnalyticsTab({ analytics }) {
 
         {/* Engagement Stats */}
         <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
-          <h3 className="text-xl font-bold text-gray-900 mb-4">Engagement Stats</h3>
+          <h3 className="mb-4">Engagement Stats</h3>
           <div className="space-y-4">
             <div className="flex justify-between items-center">
               <span className="text-gray-700">Total Topics Discussed</span>
@@ -530,7 +530,7 @@ function AnalyticsTab({ analytics }) {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Products Chart */}
         <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
-          <h3 className="text-xl font-bold text-gray-900 mb-4">📦 Products Breakdown</h3>
+          <h3 className="mb-4">📦 Products Breakdown</h3>
           {Object.entries(analytics.topProducts).length > 0 ? (
             <div className="space-y-3">
               {Object.entries(analytics.topProducts)
@@ -563,7 +563,7 @@ function AnalyticsTab({ analytics }) {
 
         {/* Services Chart */}
         <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
-          <h3 className="text-xl font-bold text-gray-900 mb-4">🛠️ Services Breakdown</h3>
+          <h3 className="mb-4">🛠️ Services Breakdown</h3>
           {Object.entries(analytics.topServices).length > 0 ? (
             <div className="space-y-3">
               {Object.entries(analytics.topServices)
@@ -596,7 +596,7 @@ function AnalyticsTab({ analytics }) {
 
         {/* Industries Chart */}
         <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
-          <h3 className="text-xl font-bold text-gray-900 mb-4">🏭 Industries Breakdown</h3>
+          <h3 className="mb-4">🏭 Industries Breakdown</h3>
           {Object.entries(analytics.topIndustries).length > 0 ? (
             <div className="space-y-3">
               {Object.entries(analytics.topIndustries)
@@ -630,7 +630,7 @@ function AnalyticsTab({ analytics }) {
 
       {/* Recent Activity */}
       <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-md">
-        <h3 className="text-2xl font-bold text-gray-900 mb-6">⚡ Recent Activity</h3>
+        <h3 className="mb-6">⚡ Recent Activity</h3>
         <div className="space-y-3">
           {analytics.recentActivity.length > 0 ? analytics.recentActivity.map((activity, idx) => (
             <div key={idx} className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition border border-gray-200">

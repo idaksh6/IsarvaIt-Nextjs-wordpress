@@ -139,7 +139,7 @@ const WhiteLabelServices = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
 
                 <div className="absolute bottom-6 left-10 right-10">
-                  <h3 className="text-2xl font-black text-white font-display uppercase tracking-tight leading-tight">
+                  <h3 className="text-white uppercase">
                     {service.title}
                   </h3>
                 </div>

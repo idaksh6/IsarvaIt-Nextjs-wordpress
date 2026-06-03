@@ -56,7 +56,7 @@ export default function FeaturedSection({ posts }) {
                 <span className="text-emerald-600 text-xs font-black uppercase tracking-widest mb-2 block">
                   {post.categoryName}
                 </span>
-                <h3 className="text-xl font-bold text-gray-900 group-hover:text-emerald-600 transition-colors leading-snug line-clamp-2">
+                <h3 className="group-hover:text-emerald-600 transition-colors line-clamp-2">
                   {post.title}
                 </h3>
                 <p className="text-sm text-gray-500 mt-2 font-medium">

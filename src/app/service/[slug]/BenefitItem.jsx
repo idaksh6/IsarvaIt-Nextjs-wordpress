@@ -68,13 +68,13 @@ export default function BenefitItem({ benefit, index, centered = false }) {
           </div>
 
           {/* Benefit title */}
-          <h3 className={`font-bold text-gray-900 mb-4 w-full ${centered ? "text-[20px]" : "text-2xl"}`}>
+          <h3 className="mb-4 w-full">
             {typeof benefit === 'string' ? benefit : benefit.title}
           </h3>
 
           {/* Benefit description */}
           {typeof benefit === 'object' && benefit.description && (
-            <p className={`text-gray-600 leading-relaxed w-full ${centered ? "text-[14px]" : ""}`}>
+            <p className={`text-gray-600 leading-relaxed w-full ${centered ? "text-sm" : ""}`}>
               {benefit.description}
             </p>
           )}

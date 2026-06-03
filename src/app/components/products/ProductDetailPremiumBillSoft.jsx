@@ -531,7 +531,7 @@ export default function ProductDetailPremiumBillSoft({
                   </div>
 
                   <div className="relative">
-                    <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-black text-gray-900 mb-6 leading-[1] tracking-tight">
+                    <h1 className="mb-6">
                       <span className="shimmer-title inline-block py-2">
                         Isarva BillSoft
                       </span>{" "}
@@ -758,7 +758,7 @@ export default function ProductDetailPremiumBillSoft({
                                 {TABS.find(t => t.id === activeTab)?.label} MODULE
                               </motion.div>
 
-                              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+                              <h2 className="mb-6 capitalize">
                                 {activeContent.title}
                               </h2>
 
@@ -982,7 +982,7 @@ export default function ProductDetailPremiumBillSoft({
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-fuchsia-50 text-fuchsia-600 font-bold text-xs mb-6 uppercase tracking-widest">
                   Personalized Experience
                 </div>
-                <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+                <h2 className="mb-6 capitalize">
                   Stunning <span className="text-fuchsia-600">Theme</span> Customization
                 </h2>
                 <p className="text-lg text-gray-500 font-medium mb-0 max-w-xl mx-auto lg:mx-0">
@@ -1094,7 +1094,7 @@ export default function ProductDetailPremiumBillSoft({
                           </div>
 
                           {/* Title */}
-                          <h3 className="text-2xl font-black text-gray-900 mb-3 uppercase tracking-tight">
+                          <h3 className="mb-3 uppercase">
                             {prod.title}
                           </h3>
 
@@ -1173,7 +1173,7 @@ export default function ProductDetailPremiumBillSoft({
                 </div>
 
                 <div className="mt-6 text-white text-center">
-                  <h3 className="text-2xl font-black uppercase tracking-widest">{activeContent.title}</h3>
+                  <h3 className="uppercase tracking-widest">{activeContent.title}</h3>
                   <p className="text-white/60 font-medium mt-1 uppercase text-sm tracking-widest">{activeContent.subtitle}</p>
                 </div>
               </motion.div>
@@ -1401,7 +1401,7 @@ function BillsoftUniqueFeatures() {
                 {feat.icon}
               </div>
 
-              <h3 className="text-xl font-bold text-gray-900 mb-3 leading-tight">{feat.title}</h3>
+              <h3 className="mb-3">{feat.title}</h3>
               <p className="text-gray-500 text-sm mb-6 leading-relaxed font-medium">
                 {feat.description}
               </p>

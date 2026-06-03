@@ -368,7 +368,7 @@ export default function ProductDetailPremiumHRMS({
                     <div className="relative rounded-[3rem] bg-white p-8 lg:p-12 border border-gray-100 shadow-[0_15px_40px_rgba(0,0,0,0.03)] overflow-hidden">
                       <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
                         <div className={`w-12 h-1 ${TAB_THEMES[activeTab].bg} rounded-full mb-6 mx-auto lg:mx-0`}></div>
-                        <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Deep Dive: {activeContent.title}</h2>
+                        <h2 className="mb-4 uppercase">Deep Dive: {activeContent.title}</h2>
                         <p className="text-base lg:text-lg text-gray-500 mb-4 lg:mb-10 font-medium leading-relaxed ">{activeContent.description}</p>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-12 w-full">
@@ -427,7 +427,7 @@ export default function ProductDetailPremiumHRMS({
                       The Problem
                     </div>
 
-                    <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                    <h2 className="mb-6 uppercase">
                       Traditional HR{" "}
                       <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500 py-2">
                         Is Broken.
@@ -450,7 +450,7 @@ export default function ProductDetailPremiumHRMS({
                         <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 bg-${item.color}-50 text-${item.color}-600 font-bold text-2xl`}>
                           {item.icon}
                         </div>
-                        <h3 className="text-xl font-black text-gray-900 mb-2 uppercase tracking-tighter">{item.title}</h3>
+                        <h3 className="mb-2 uppercase">{item.title}</h3>
                         <p className="text-[14px] text-gray-500 font-bold uppercase tracking-tight">{item.desc}</p>
                       </div>
                     ))}
@@ -462,13 +462,13 @@ export default function ProductDetailPremiumHRMS({
               <section className="bg-white relative overflow-hidden border border-gray-100 rounded-[3rem] ">
                 <div className="p-8 lg:p-12">
                   <div className="mb-4 md:mb-10 text-center lg:text-left flex flex-col items-center lg:items-start">
-                    <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Complete HR Suite – <span className={TAB_THEMES[activeTab].text}>All-in-One HRMS Features</span></h2>
+                    <h2 className="mb-6 uppercase">Complete HR Suite – <span className={TAB_THEMES[activeTab].text}>All-in-One HRMS Features</span></h2>
                     <p className="text-base lg:text-lg text-gray-500 mb:4 lg:1mb-10 font-medium leading-relaxed ">Streamline and manage your entire HR operations with a powerful, integrated HRMS platform designed for modern businesses.</p>
                   </div>
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {SECTION_6_FEATURES.map((card, idx) => (
                       <div key={idx} className="p-8 rounded-[40px] bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-xl transition-all duration-500">
-                        <h3 className="text-xl font-black text-gray-900 mb-6 uppercase tracking-tighter">{card.title}</h3>
+                        <h3 className="mb-6 uppercase">{card.title}</h3>
                         <div className="space-y-3">
                           {card.items.slice(0, 3).map((item, j) => (
                             <div key={j} className="flex items-center gap-3">
@@ -489,7 +489,7 @@ export default function ProductDetailPremiumHRMS({
                   <div className={`absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-br ${TAB_THEMES[activeTab].gradient} opacity-5 blur-[100px]`}></div>
 
                   <div className="relative z-10 flex flex-col items-center">
-                    <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">Build the <br /> future today.</h2>
+                    <h2 className="mb-6 uppercase">Build the <br /> future today.</h2>
                     <p className="text-gray-500 mb-10 max-w-xl font-bold uppercase tracking-widest text-[14px]">Join 10,000+ teams transforming their workplace.</p>
                     <button
                       onClick={() => setIsModalOpen(true)}
@@ -553,7 +553,7 @@ export default function ProductDetailPremiumHRMS({
               </div>
 
               <div className="mt-6 text-white text-center">
-                <h3 className="text-2xl font-black uppercase tracking-widest">{activeContent.title}</h3>
+                <h3 className="uppercase tracking-widest">{activeContent.title}</h3>
                 <p className="text-white/60 font-bold mt-1 uppercase text-sm tracking-widest">{activeContent.subtitle}</p>
               </div>
             </motion.div>

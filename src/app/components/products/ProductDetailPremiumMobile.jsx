@@ -149,7 +149,7 @@ export default function ProductDetailPremiumMobile({
 
             {/* Right Side - Content */}
             <div>
-              <h2 className="text-[#000000] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+              <h2 className="text-[#000000] mb-6 capitalize">
                 Streamline Your{" "}
                 <span className="text-[#8B5CF6]">Mobile Repair Operations</span>
               </h2>
@@ -228,7 +228,7 @@ export default function ProductDetailPremiumMobile({
                   GET STARTED TODAY
                 </span>
 
-                <h2 className="text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+                <h2 className="text-white mb-6 capitalize">
                   Ready to transform your <br className="hidden md:block" />
                   repair service operations?
                 </h2>
@@ -278,7 +278,7 @@ export default function ProductDetailPremiumMobile({
               <span className="inline-block text-[10px] font-black text-[#8B5CF6] tracking-[0.28em] uppercase mb-3 bg-[#8B5CF6]/10 px-4 py-2 rounded-full">
                 MORE PRODUCTS
               </span>
-              <h2 className="text-[#0a0a0a] mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+              <h2 className="text-[#0a0a0a] mb-4 capitalize">
                 Explore Our More Products
               </h2>
               <p className="text-[#6b7280] max-w-[600px] mx-auto text-base leading-relaxed">
@@ -311,7 +311,7 @@ export default function ProductDetailPremiumMobile({
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                        <h3 className="mb-3">
                           {prod.title}
                         </h3>
 
@@ -486,7 +486,7 @@ function MobileFeatureSection() {
           <span className="block text-[10px] font-black text-[#8B5CF6] tracking-[0.28em] uppercase mb-2.5">
             SOFTWARE FEATURES
           </span>
-          <h2 className="text-[#0a0a0a] mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+          <h2 className="text-[#0a0a0a] mb-3.5 capitalize">
             Key Features Of <span className="text-[#8B5CF6]">Mobile Service Center</span> Software
           </h2>
           <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">

@@ -182,7 +182,7 @@ const WebsiteMaintenanceProcess = () => {
                     </div>
 
                     <div className="flex flex-wrap items-center gap-4 mb-4 pr-8 md:pr-0">
-                      <h3 className="text-2xl font-bold text-gray-900">{step.title}</h3>
+                      <h3 className="">{step.title}</h3>
                       <span className="px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 text-[10px] font-extrabold tracking-widest capitalize border border-emerald-100">
                         {step.badge}
                       </span>

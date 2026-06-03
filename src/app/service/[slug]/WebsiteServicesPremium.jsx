@@ -480,7 +480,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                   </span>
                   Premium Website Services
                 </div>
-                <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-black text-gray-900 mb-6 leading-[1] tracking-tight">
+                <h1 className="mb-6">
                   Build Your <span className="shimmer-title">Digital</span>
                   <br />
                   Presence
@@ -645,7 +645,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                 <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-orange-50 border border-orange-200 text-orange-700 font-semibold text-sm mb-6">
                   🆕 New Service
                 </div>
-                <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                <h2 className="mb-6 uppercase">
                   Got an Old Website?
                   <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-rose-500">
@@ -726,7 +726,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                 </svg>
                 All Services
               </div>
-              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="mb-6 uppercase">
                 What We Offer
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -773,7 +773,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                 </div>
               </div>
               <div className="order-1 lg:order-2 text-center lg:text-left">
-                <h3 className="text-3xl lg:text-4xl font-black text-gray-900 mb-4">
+                <h3 className="mb-4">
                   {subServices[activeTab].title}
                 </h3>
                 <p className="text-gray-600 text-lg leading-relaxed mb-8">
@@ -855,7 +855,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                 </svg>
                 Core Capabilities
               </div>
-              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="mb-6 uppercase">
                 Everything Your Website
                 <br className="hidden lg:block" /> Needs to Win
               </h2>
@@ -875,7 +875,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                   >
                     {c.icon}
                   </div>
-                  <h3 className="text-base font-bold text-gray-900 mb-2">
+                  <h3 className="mb-2">
                     {c.title}
                   </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -906,7 +906,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                 </svg>
                 How We Work
               </div>
-              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="mb-6 uppercase">
                 Our Proven Process
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -924,7 +924,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                     <div className="process-step-dot inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 text-white font-black text-xl mb-6 shadow-lg shadow-emerald-100 mx-auto ring-4 ring-white">
                       {p.step}
                     </div>
-                    <h3 className="text-base font-bold text-gray-900 mb-3 group-hover:text-emerald-600 transition-colors">
+                    <h3 className="mb-3 group-hover:text-emerald-600 transition-colors">
                       {p.title}
                     </h3>
                     <p className="text-sm text-gray-600 leading-relaxed">
@@ -948,7 +948,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                   <p className="text-emerald-400 text-sm font-bold uppercase tracking-widest mb-3">
                     Our Expert Team
                   </p>
-                  <h3 className="text-3xl lg:text-4xl font-black text-white mb-4 leading-tight">
+                  <h3 className="text-white mb-4">
                     Passionate Builders.
                     <br />
                     Dedicated to Your Success.
@@ -1012,7 +1012,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                 <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-semibold text-sm mb-8">
                   🏆 Why Isarva Infotech
                 </div>
-                <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                <h2 className="mb-6 uppercase">
                   We Don't Just Build Websites.{" "}
                   <span className="text-emerald-600">
                     We Build Growth Engines.
@@ -1072,7 +1072,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                     <div className="text-3xl mb-4 w-fit lg:mx-0 mx-auto">
                       {w.icon}
                     </div>
-                    <h3 className="text-base font-bold text-gray-900 mb-2">
+                    <h3 className="mb-2">
                       {w.title}
                     </h3>
                     <p className="text-sm text-gray-600 leading-relaxed">
@@ -1095,7 +1095,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                   <p className="text-emerald-300 text-sm font-bold uppercase tracking-widest mb-3">
                     Results That Matter
                   </p>
-                  <h3 className="text-2xl lg:text-3xl font-black text-white mb-3">
+                  <h3 className="lg:text-3xl text-white mb-3">
                     Real Growth. Real Numbers.
                   </h3>
                   <p className="text-white/80 text-base max-w-md">
@@ -1137,7 +1137,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-emerald-200 text-emerald-700 font-semibold text-sm mb-6 shadow-sm">
                 You Might Also Like
               </div>
-              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="mb-6 uppercase">
                 Explore Related Services
               </h2>
               <p className="text-xl text-gray-600">
@@ -1175,7 +1175,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                     <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-2xl mx-auto md:mx-0 mb-6 shadow-md shadow-emerald-100 transition-transform duration-300">
                       {r.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 transition-colors text-center md:text-left">
+                    <h3 className="mb-3 transition-colors text-center md:text-left">
                       {r.title}
                     </h3>
                     <p className="text-gray-600 mb-6 text-center md:text-left">{r.desc}</p>

@@ -44,7 +44,7 @@ export default function TestimonialGrid({ testimonials }) {
                 />
 
                 <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end translate-y-0 text-white pointer-events-none">
-                  <h3 className="text-xl md:text-2xl font-bold mb-1 tracking-tight leading-none">
+                  <h3 className="mb-1">
                     {t.name}
                   </h3>
                   <p className="text-sm md:text-base font-medium text-white/80 leading-snug drop-shadow-md">
@@ -126,9 +126,9 @@ export default function TestimonialGrid({ testimonials }) {
                   />
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-slate-900">
+                  <h3 className="text-slate-900">
                     {activeTestimonial.name}
-                  </h4>
+                  </h3>
                   <p className="text-emerald-600 font-medium">
                     {activeTestimonial.role}, {activeTestimonial.company}
                   </p>

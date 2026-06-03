@@ -76,7 +76,7 @@ function HeroSection({ data }) {
         {heroData.heading && (
           <h1
             id="hero-heading"
-            className="text-[clamp(2.25rem,5vw,3.75rem)] hero_heading font-bold leading-[1] text-gray-900 mb-10 tracking-tighter max-w-6xl mx-auto"
+            className="hero_heading mb-10 max-w-6xl mx-auto"
             dangerouslySetInnerHTML={{ __html: displayHeading }}
           />
         )}
@@ -101,7 +101,7 @@ function HeroSection({ data }) {
                 style={{ width: "48px", height: "48px" }}
               ></lord-icon>
             </div>
-            <h3 className="text-gray-900 font-bold text-xl mb-4 text-center w-full">
+            <h3 className="mb-4 text-center w-full">
               {heroData.floatingCards && heroData.floatingCards[0]
                 ? heroData.floatingCards[0].heading
                 : "Website Services"}
@@ -159,7 +159,7 @@ function HeroSection({ data }) {
                 style={{ width: "48px", height: "48px" }}
               ></lord-icon>
             </div>
-            <h3 className="text-gray-900 font-bold text-xl mb-4 text-center w-full">
+            <h3 className="mb-4 text-center w-full">
               {heroData.floatingCards && heroData.floatingCards[1]
                 ? heroData.floatingCards[1].heading
                 : "AI & ML Consulting"}

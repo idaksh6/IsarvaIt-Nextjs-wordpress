@@ -110,7 +110,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
                   Premium WordPress Agency
                 </div>
 
-                <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-black text-gray-900 mb-6 leading-[1] tracking-tight">
+                <h1 className="mb-6">
                   Creating{" "}
                   <span className="wp-blue-text-gradient">Beautiful</span> &
                   Powerful WP Sites
@@ -191,7 +191,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
               <span className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-3 block">
                 Bespoke Solutions
               </span>
-              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="mb-6 uppercase">
                 Built For Ambition
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed">
@@ -220,7 +220,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
                 <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 text-2xl mb-6 shadow-sm mx-auto lg:mx-0">
                   🎨
                 </div>
-                <h3 className="text-3xl lg:text-4xl font-black text-gray-900 mb-6">
+                <h3 className="mb-6">
                   Custom Theme Design & Development
                 </h3>
                 <p className="text-lg text-gray-600 leading-relaxed mb-8">
@@ -266,7 +266,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
                 <div className="w-14 h-14 rounded-2xl bg-rose-50 flex items-center justify-center text-rose-500 text-2xl mb-6 shadow-sm mx-auto lg:mx-0">
                   🛒
                 </div>
-                <h3 className="text-3xl lg:text-4xl font-black text-gray-900 mb-6">
+                <h3 className="mb-6">
                   Powerful WooCommerce Stores
                 </h3>
                 <p className="text-lg text-gray-600 leading-relaxed mb-8">
@@ -317,7 +317,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
                 <div className="w-14 h-14 rounded-2xl bg-amber-50 flex items-center justify-center text-amber-500 text-2xl mb-6 shadow-sm mx-auto lg:mx-0">
                   ⚡
                 </div>
-                <h3 className="text-3xl lg:text-4xl font-black text-gray-900 mb-6">
+                <h3 className="mb-6">
                   Expert Speed Optimization
                 </h3>
                 <p className="text-lg text-gray-600 leading-relaxed mb-8">
@@ -352,7 +352,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
         {/* ─── VISUAL ECOSYSTEM GRID ───────────────────────────────────────────── */}
         <section className="py-12 lg:py-16 bg-sky-50 relative border-y border-sky-100">
           <div className="max-w-7xl mx-auto px-6 text-center">
-            <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+            <h2 className="mb-4 uppercase">
               The WordPress Ecosystem
             </h2>
             <p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
@@ -390,7 +390,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
         <section className="py-12 lg:py-16 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-10">
-              <h2 className="text-gray-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+              <h2 className="mb-6 uppercase">
                 Complete Range of WP Services
               </h2>
               <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full" />
@@ -417,7 +417,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
                       />
                     </svg>
                   </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-3">
+                  <h4 className="mb-3">
                     {feature.title}
                   </h4>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -443,7 +443,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
                   <span className="text-sky-300 font-bold uppercase tracking-widest text-sm mb-4 block">
                     Dedicated Experts
                   </span>
-                  <h2 className="text-white mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                  <h2 className="text-white mb-6 uppercase">
                     Your Trusted WordPress Partners
                   </h2>
                   <p className="text-lg text-blue-100 mb-10 leading-relaxed">

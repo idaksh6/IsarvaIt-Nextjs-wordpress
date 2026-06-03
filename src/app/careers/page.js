@@ -145,7 +145,7 @@ export default function CareerPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className="text-[clamp(2.25rem,5vw,3.75rem)] font-display font-bold text-[#1a1f24] tracking-tight leading-[1] mb-8"
+                className="font-display text-[#1a1f24] mb-8"
               >
                 Shape the Future at <br />
                 <span className="italic text-[#10b981] font-bold">Isarva Infotech</span>
@@ -266,7 +266,7 @@ export default function CareerPage() {
             >
               Our Foundation
             </motion.div>
-            <h2 className="font-display text-[#1a1f24] mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Why Choose Isarva Infotech?</h2>
+            <h2 className="font-display text-[#1a1f24] mb-6 capitalize">Why Choose Isarva Infotech?</h2>
             <div className="w-24 h-1.5 bg-[#10b981] mx-auto rounded-full"></div>
           </div>
 
@@ -286,7 +286,7 @@ export default function CareerPage() {
                   <div className="mb-8 p-5 bg-white rounded-[2rem] w-fit mx-auto shadow-lg shadow-emerald-500/5 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                     {benefit.icon}
                   </div>
-                  <h3 className="text-2xl font-display font-bold mb-6 text-[#1a1f24] leading-tight group-hover:text-[#10b981] transition-colors">{benefit.title}</h3>
+                  <h3 className="font-display mb-6 text-[#1a1f24] group-hover:text-[#10b981] transition-colors">{benefit.title}</h3>
                   <p className="text-[#53606b] leading-relaxed font-medium text-lg">{benefit.description}</p>
                 </div>
               </motion.div>
@@ -301,7 +301,7 @@ export default function CareerPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 px-4">
             <div className="lg:text-left text-center">
               <span className="text-[#10b981] font-black tracking-[0.3em] uppercase text-xs mb-4 inline-block">Career Opportunities</span>
-              <h2 className="font-display text-[#1a1f24] text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Find Your Calling</h2>
+              <h2 className="font-display text-[#1a1f24] capitalize">Find Your Calling</h2>
             </div>
 
             {/* Minimalist Search Bar */}
@@ -392,7 +392,7 @@ export default function CareerPage() {
                     className="bg-white p-5 md:p-7 rounded-[2rem] shadow-sm hover:shadow-xl transition-all border border-emerald-500/5 hover:border-[#10b981]/20 group flex flex-col md:flex-row justify-between items-start md:items-center gap-6"
                   >
                     <div className="flex-1">
-                      <h3 className="text-lg md:text-xl font-display font-bold text-[#1a1f24] leading-tight group-hover:text-[#10b981] transition-colors mb-4">{job.title}</h3>
+                      <h3 className="font-display text-[#1a1f24] group-hover:text-[#10b981] transition-colors mb-4">{job.title}</h3>
                       <div className="flex flex-wrap gap-2.5">
                         <div className="flex items-center gap-1.5 text-[#53606b] text-[10px] font-bold bg-[#FDF8F2] px-3 py-1 rounded-full uppercase tracking-wider">
                           <MapPin className="w-3.5 h-3.5 text-[#10b981]" />
@@ -469,10 +469,10 @@ export default function CareerPage() {
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-500 opacity-[0.05] rounded-full blur-[120px] pointer-events-none"></div>
 
             <div className="relative z-10">
-              <h4 className="text-[clamp(2.25rem,5vw,3.75rem)] font-display font-bold text-white mb-8">
+              <h2 className="text-white mb-8 capitalize">
                 Don't see your <br />
                 <span className="text-[#10b981] italic">perfect role?</span>
-              </h4>
+              </h2>
               <p className="text-xl text-white/70 mb-16 max-w-3xl mx-auto leading-relaxed font-medium">
                 We're always looking for remarkable people who think differently. Send us your profile and let's see where you fit in our evolution.
               </p>

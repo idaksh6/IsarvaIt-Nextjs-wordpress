@@ -27,7 +27,7 @@ export default function BlogHero() {
           <h1 className="text-7xl md:text-9xl font-black text-gray-900 mb-6 tracking-tighter capitalize opacity-5 absolute -top-10 select-none pointer-events-none">
             INSIGHTS
           </h1>
-          <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-bold text-gray-900 mb-6 tracking-tight leading-[1]">
+          <h1 className="mb-6">
             Isarva Blog
           </h1>
           <p className="text-base lg:text-xl text-gray-600 max-w-2xl mx-auto font-medium leading-relaxed">
