@@ -1,3 +1,9 @@
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const srcDir = path.join(__dirname, "src");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Enable compiler optimizations
@@ -67,6 +73,7 @@ const nextConfig = {
   // Turbopack configuration at the root (Next.js 15+)
   turbopack: {
     resolveAlias: {
+      "@": srcDir,
       '@langchain/core/documents': '@langchain/core/dist/documents/index.js',
       '@langchain/core/runnables': '@langchain/core/dist/runnables/index.js',
       '@langchain/core/prompts': '@langchain/core/dist/prompts/index.js',
@@ -86,6 +93,7 @@ const nextConfig = {
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
+      "@": srcDir,
       '@langchain/core/documents': '@langchain/core/dist/documents/index.js',
       '@langchain/core/runnables': '@langchain/core/dist/runnables/index.js',
       '@langchain/core/prompts': '@langchain/core/dist/prompts/index.js',

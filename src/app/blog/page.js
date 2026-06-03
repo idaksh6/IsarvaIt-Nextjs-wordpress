@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "../components/AppLink";
 import BlogCategoryNav from "../components/blog/BlogCategoryNav";
 import FeaturedSection from "../components/blog/FeaturedSection";
 import PostGrid from "../components/blog/PostGrid";

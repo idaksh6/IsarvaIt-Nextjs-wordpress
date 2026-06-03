@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "../components/AppLink";
 import ContactSection from "../components/ContactSection";
 import { Star, Quote, PlayCircle, CheckCircle2, Award, Zap, X, Briefcase } from "lucide-react";
 

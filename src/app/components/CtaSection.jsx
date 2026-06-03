@@ -3,8 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import ContactFormModal from "./ContactFormModal";
-import Link from "next/link";
-
+import Link from "./AppLink";
 export default function CtaSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 

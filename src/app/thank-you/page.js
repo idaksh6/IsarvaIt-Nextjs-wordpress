@@ -13,7 +13,7 @@ import {
   Sparkles,
   MessageCircle
 } from "lucide-react";
-import Link from "next/link";
+import Link from "../components/AppLink";
 import { useSearchParams } from "next/navigation";
 
 function ThankYouContent() {

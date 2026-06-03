@@ -3,8 +3,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { ArrowRight, Settings } from "lucide-react";
 import { motion, useScroll } from "framer-motion";
-import Link from "next/link";
-
+import Link from "../../../components/AppLink";
 const steps = [
   {
     title: "Discovery",

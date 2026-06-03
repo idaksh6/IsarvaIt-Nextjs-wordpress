@@ -5,7 +5,7 @@ import {
   motion,
   AnimatePresence,
 } from "framer-motion";
-import Link from "next/link";
+import Link from "../AppLink";
 import ContactFormModal from "../../components/ContactFormModal";
 import DealerManagementBrochureModal from "../../components/DealerManagementBrochureModal";
 

@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-
+import Link from "../components/AppLink";
 export default function ProductsClient({ productsData, categories }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
 

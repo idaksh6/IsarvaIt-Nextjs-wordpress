@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "./AppLink";
 import { motion } from "framer-motion";
 
 export default function BlogSection({ posts }) {

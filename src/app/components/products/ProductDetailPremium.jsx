@@ -7,7 +7,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import Link from "next/link";
+import Link from "../AppLink";
 import ContactFormModal from "../../components/ContactFormModal";
 import HRMSBrochureModal from "../../components/HRMSBrochureModal";
 

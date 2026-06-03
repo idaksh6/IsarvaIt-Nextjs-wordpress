@@ -5,7 +5,7 @@ import { useRef, memo, useState, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Link from "next/link";
+import Link from "./AppLink";
 import { motion, useMotionValue } from "framer-motion";
 
 if (typeof window !== "undefined") {

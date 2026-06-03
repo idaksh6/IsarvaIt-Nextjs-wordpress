@@ -3,8 +3,7 @@
 import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Filter, ArrowRight, Briefcase, Tag, Sparkles } from "lucide-react";
-import Link from "next/link";
-
+import Link from "../components/AppLink";
 // Mock data for Case Studies
 const CASE_STUDIES = [
   {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, Suspense } from "react";
-import Link from "next/link";
+import Link from "../components/AppLink";
 import { useSearchParams } from "next/navigation";
 
 // Import data sources

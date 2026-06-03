@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
+import Link from "../AppLink";
 import Image from "next/image";
 import ContactFormModal from "../../components/ContactFormModal";
 
@@ -331,7 +331,7 @@ export default function ProductDetailPremiumHRMS({
                             alt={activeContent.title}
                             fill
                             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 800px"
-                            priority
+                            loading="lazy"
                             unoptimized
                             className="object-cover group-hover:scale-105 transition-transform duration-700"
                           />
@@ -546,7 +546,7 @@ export default function ProductDetailPremiumHRMS({
                   alt="Enlarged view"
                   fill
                   sizes="(max-width: 768px) 100vw, 900px"
-                  priority
+                  loading="lazy"
                   unoptimized
                   className="object-contain"
                 />

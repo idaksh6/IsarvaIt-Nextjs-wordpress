@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
-
+import Link from "./AppLink";
 export default function ContactForm({ pageType = "Contact Page", itemName = "" }) {
   const router = useRouter();
   const [formData, setFormData] = useState({
