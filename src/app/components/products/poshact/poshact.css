@@ -16,10 +16,11 @@
   position: relative;
   isolation: isolate;
 }
-.poshact-page .poshact-section-bg:not(.section-modules) {
+.poshact-page .poshact-section-bg:not(.section-modules):not(.section-cta) {
   overflow: hidden;
 }
-.poshact-page .section-modules.poshact-section-bg {
+.poshact-page .section-modules.poshact-section-bg,
+.poshact-page .section-cta.poshact-section-bg {
   overflow: visible;
 }
 
@@ -33,6 +34,27 @@
 /* Hero: plain white on tablet/mobile — no blue tint */
 .poshact-page .section-hero {
   background: #ffffff;
+  overflow-x: clip;
+}
+@media (max-width: 1023px) {
+  .poshact-page .section-hero .hero-copy,
+  .poshact-page .section-hero .hero-visual {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .poshact-page .section-hero .hero-copy h1,
+  .poshact-page .section-hero .hero-copy p {
+    text-align: center;
+  }
+}
+@media (max-width: 479px) {
+  .poshact-page .section-hero .hero-layout {
+    gap: 0.875rem;
+  }
+  .poshact-page .section-hero .hero-slideshow {
+    min-height: 180px;
+  }
 }
 .poshact-page .section-hero::before,
 .poshact-page .section-hero::after {
@@ -67,30 +89,50 @@
   }
 }
 
+/* Module Explorer purple surface */
 .poshact-page .section-modules {
-  background: linear-gradient(145deg, #2f2b6a 0%, #3d3885 42%, #334155 100%);
+  background-color: #2f2b6a;
   border-top: 1px solid rgba(129, 140, 248, 0.28);
   border-bottom: 1px solid rgba(129, 140, 248, 0.28);
 }
-.poshact-page .section-modules::before {
+.poshact-page .section-modules::before,
+.poshact-page .section-modules::after {
+  display: none;
   content: "";
   position: absolute;
-  top: -25%;
-  right: -8%;
-  width: 55%;
-  height: 85%;
-  background: radial-gradient(circle, rgba(129, 140, 248, 0.22) 0%, transparent 68%);
   pointer-events: none;
 }
-.poshact-page .section-modules::after {
-  content: "";
-  position: absolute;
-  bottom: -20%;
-  left: -5%;
-  width: 50%;
-  height: 65%;
-  background: radial-gradient(circle, rgba(167, 139, 250, 0.14) 0%, transparent 70%);
-  pointer-events: none;
+@media (min-width: 1024px) {
+  .poshact-page .section-modules {
+    background: linear-gradient(145deg, #2f2b6a 0%, #3d3885 42%, #334155 100%);
+  }
+  .poshact-page .section-modules::before {
+    display: block;
+    top: -25%;
+    right: -8%;
+    width: 55%;
+    height: 85%;
+    background: radial-gradient(circle, rgba(129, 140, 248, 0.22) 0%, transparent 68%);
+  }
+  .poshact-page .section-modules::after {
+    display: block;
+    bottom: -20%;
+    left: -5%;
+    width: 50%;
+    height: 65%;
+    background: radial-gradient(circle, rgba(167, 139, 250, 0.14) 0%, transparent 70%);
+  }
+}
+
+/* CTA: flat purple — no layered glows (prevents horizontal seam on short section) */
+.poshact-page .section-cta {
+  background: #2f2b6a;
+  border-top: 1px solid rgba(129, 140, 248, 0.28);
+  border-bottom: 1px solid rgba(129, 140, 248, 0.28);
+}
+.poshact-page .section-cta::before,
+.poshact-page .section-cta::after {
+  display: none !important;
 }
 .poshact-page .section-modules .module-panel {
   background: rgba(255, 255, 255, 0.07);
@@ -272,9 +314,6 @@
   border-top: 1px solid #e2e8f0;
   border-bottom: 1px solid #e2e8f0;
 }
-.poshact-page .section-cta {
-  background: #0f172a;
-}
 .poshact-page .cta-stat {
   display: flex;
   flex-direction: column;
@@ -283,8 +322,10 @@
   padding: 1rem 1.25rem;
   min-width: 7rem;
   border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 .poshact-page .cta-stat strong {
   font-size: 1.5rem;
@@ -297,7 +338,38 @@
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #94a3b8;
+  color: rgba(199, 210, 254, 0.75);
+}
+.poshact-page .section-cta .cta-btn-highlight {
+  box-shadow:
+    0 6px #ea580c,
+    0 10px 24px rgba(234, 88, 12, 0.35),
+    0 0 0 4px rgba(249, 115, 22, 0.18);
+}
+.poshact-page .section-cta .cta-btn-highlight:hover {
+  box-shadow:
+    0 3px #ea580c,
+    0 8px 20px rgba(234, 88, 12, 0.3),
+    0 0 0 4px rgba(249, 115, 22, 0.22);
+}
+.poshact-page .section-cta .cta-btn-secondary {
+  color: #1e293b;
+  background: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 6px #cbd5e1,
+    0 8px 20px rgba(0, 0, 0, 0.2),
+    0 0 0 3px rgba(255, 255, 255, 0.15);
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.poshact-page .section-cta .cta-btn-secondary:hover {
+  background: #f8fafc;
+  border-color: #ffffff;
+  box-shadow:
+    0 4px #cbd5e1,
+    0 10px 24px rgba(0, 0, 0, 0.22),
+    0 0 0 4px rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
 }
 
 .poshact-page .glass-card {

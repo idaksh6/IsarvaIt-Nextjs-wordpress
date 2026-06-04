@@ -32,8 +32,8 @@ export default function sitemap() {
     .map((product) => ({
       url: `${baseUrl}/product/${product.slug}`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
+      changeFrequency: product.pageTemplate === "poshact" ? "weekly" : "monthly",
+      priority: product.pageTemplate === "poshact" ? 0.95 : 0.9,
     }));
 
   // Dynamic service pages

@@ -90,18 +90,29 @@ export function generateMetadata({
 export function generateProductMetadata(product) {
   const isNoIndex = product.slug?.includes("-staging") || product.slug?.includes("-old") || product.slug === "bill-soft";
   const prefix = product.slug?.includes("-staging") ? "[STAGING] " : product.slug?.includes("-old") ? "[OLD] " : "";
+  const seoTitle = product.seoTitle || product.title;
+  const seoDescription =
+    product.metaDescription || product.shortDescription || product.description;
+  const ogImage = product.ogImage
+    ? product.ogImage.startsWith("http")
+      ? product.ogImage
+      : `${SITE_URL}${product.ogImage}`
+    : `${SITE_URL}/isarva New Logo.png`;
 
   return generateMetadata({
-    title: `${prefix}${product.title}`,
-    description: product.shortDescription || product.description,
+    title: `${prefix}${seoTitle}`,
+    description: seoDescription,
     keywords: [
       product.title,
+      product.tagline,
       product.category,
-      ...product.keywords || [],
-      ...product.features?.slice(0, 5) || [],
+      ...(product.keywords || []),
+      ...(product.features?.slice(0, 6) || []),
       "software solution",
       "business software",
+      "Isarva Infotech",
     ],
+    image: ogImage,
     url: `/product/${product.slug}`,
     type: "website",
     noIndex: isNoIndex,
@@ -185,19 +196,56 @@ export function generateOrganizationSchema() {
   };
 }
 
+export function generateBreadcrumbSchema(product) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: SITE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Products",
+        item: `${SITE_URL}/products`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: product.title,
+        item: `${SITE_URL}/product/${product.slug}`,
+      },
+    ],
+  };
+}
+
 export function generateProductSchema(product) {
+  const productUrl = `${SITE_URL}/product/${product.slug}`;
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: product.title,
-    description: product.shortDescription,
+    name: product.seoTitle || product.title,
+    alternateName: product.title,
+    description: product.metaDescription || product.shortDescription || product.description,
+    url: productUrl,
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
+    featureList: product.features,
+    keywords: (product.keywords || []).join(", "),
+    provider: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
     offers: {
       "@type": "Offer",
-      priceCurrency: "USD",
-      price: "0",
-      priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1)),
+      priceCurrency: "INR",
+      availability: "https://schema.org/InStock",
+      url: `${SITE_URL}/contact`,
     },
   };
 }

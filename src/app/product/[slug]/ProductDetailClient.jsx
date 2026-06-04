@@ -217,7 +217,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
     );
   }
 
-  if (product.slug === "poshact") {
+  if (product.pageTemplate === "poshact") {
     return <ProductDetailPremiumPoshact product={product} allProducts={allProducts} />;
   }
 

@@ -67,6 +67,11 @@ const nextConfig = {
         destination: "/service/website-maintenance-amc",
         permanent: true,
       },
+      {
+        source: "/product/poshact",
+        destination: "/product/posh-compliance-software",
+        permanent: true,
+      },
     ];
   },
   
