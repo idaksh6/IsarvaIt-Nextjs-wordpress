@@ -259,6 +259,16 @@ export default function ProductDetailPremiumAssociation({ product, relatedProduc
 
   return (
     <div className="bg-white font-sans selection:bg-fuchsia-100 selection:text-fuchsia-900">
+      <style>{`
+        @keyframes pulse-border {
+          0% { border-color: rgba(217, 70, 239, 0.4); box-shadow: 0 0 0 0 rgba(217, 70, 239, 0.1); }
+          50% { border-color: rgba(217, 70, 239, 1); box-shadow: 0 0 0 8px rgba(217, 70, 239, 0.05); }
+          100% { border-color: rgba(217, 70, 239, 0.4); box-shadow: 0 0 0 0 rgba(217, 70, 239, 0); }
+        }
+        .animate-pulse-border {
+          animation: pulse-border 2s infinite ease-in-out;
+        }
+      `}</style>
 
       {/* Dynamic Success Notification */}
       <AnimatePresence>
@@ -311,7 +321,7 @@ export default function ProductDetailPremiumAssociation({ product, relatedProduc
             </p>
 
             {/* Target Audience Banner */}
-            <div className="max-w-3xl mx-auto mb-8 p-4 md:py-3.5 md:px-6 rounded-[20px] md:rounded-full bg-fuchsia-50/40 border border-dashed border-fuchsia-300/80 flex items-center gap-3 text-left backdrop-blur-sm shadow-[0_4px_20px_rgba(217,70,239,0.02)]">
+            <div className="max-w-4xl mx-auto mb-8 p-4 md:py-6 md:px-6 rounded-[20px] md:rounded-full bg-fuchsia-50/40 border border-dashed border-fuchsia-300/80 flex items-center justify-center gap-3 text-left backdrop-blur-sm shadow-[0_4px_20px_rgba(217,70,239,0.02)] animate-pulse-border">
               <svg className="w-5 h-5 text-fuchsia-500 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -668,7 +678,7 @@ export default function ProductDetailPremiumAssociation({ product, relatedProduc
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <button
                     onClick={() => setIsModalOpen(true)}
-                    className="press-illusion-btn-orange bg-orange-600 text-white px-8 py-4 rounded-full font-bold text-base flex items-center gap-3 transition-all hover:scale-105"
+                    className="bg-white hover:bg-orange-600 text-orange-600 hover:text-white px-8 py-4 rounded-lg font-bold text-base flex items-center gap-3 transition-all duration-300 hover:scale-105 active:scale-95 shadow-[0_10px_30px_rgba(234,88,12,0.2)] hover:shadow-[0_20px_40px_rgba(234,88,12,0.45)] border-2 border-transparent hover:border-white"
                   >
                     <svg
                       className="w-5 h-5"
@@ -808,7 +818,7 @@ export default function ProductDetailPremiumAssociation({ product, relatedProduc
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         preSelectedType="Product"
-        preSelectedItem="Association Membership Management"
+        preSelectedItem="Lawyer Legal Association Software"
         allItems={allProducts}
       />
 

@@ -590,15 +590,29 @@ export const productsData = [
     bgGradient: "from-blue-50 via-cyan-50 to-white",
   },
   {
-    slug: "association-membership-management",
-    title: "Association Membership Management",
+    slug: "lawyer-legal-association-software",
+    title: "Lawyer Legal Association Software",
     category: "Operations",
     icon: "👥",
     tagline: "Optimize Member Networks with Secure Digital Ecosystems",
     shortDescription:
-      "Comprehensive Association Membership Management System with automated renewals, admin controls, direct printing, and digital library features.",
+      "Comprehensive Lawyer, Legal Association & Bar Council Membership Management Software featuring automated renewals, advocate card printing, directory profiles, and digital library modules.",
     description:
-      "Streamline member onboarding, automate renewals, manage directory profiles, track resources, and monitor organization health with our end-to-end admin ecosystem.",
+      "Streamline member onboarding, automate renewals, manage advocate directory profiles, print lawyer ID badges, track library resources, and monitor bar association health with our end-to-end legal association management system.",
+    keywords: [
+      "bar association software",
+      "lawyer membership management",
+      "advocate directory software",
+      "court bar association system",
+      "legal association database",
+      "lawyer card printing software",
+      "legal member portal",
+      "bar council management software",
+      "advocates association software",
+      "law firm association system",
+      "legal non profit software",
+      "professional association database"
+    ],
     features: [
       "Member Creation & Approval",
       "Webcam & Photo Upload",

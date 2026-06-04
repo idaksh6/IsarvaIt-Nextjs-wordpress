@@ -217,7 +217,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   }
 
   // Use Premium View for Association Membership Management
-  if (product.slug === 'association-membership-management') {
+  if (product.slug === 'lawyer-legal-association-software') {
     return (
       <ProductDetailPremiumAssociation 
         product={product} 
