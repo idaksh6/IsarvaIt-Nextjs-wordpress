@@ -97,6 +97,7 @@ export function generateProductMetadata(product) {
     keywords: [
       product.title,
       product.category,
+      ...product.keywords || [],
       ...product.features?.slice(0, 5) || [],
       "software solution",
       "business software",

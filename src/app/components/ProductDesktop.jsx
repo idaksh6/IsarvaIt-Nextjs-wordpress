@@ -183,8 +183,8 @@ const products = [
   },
   {
     id: 21,
-    name: "Association Membership Management",
-    slug: "association-membership-management",
+    name: "Lawyer Legal Association Software",
+    slug: "lawyer-legal-association-software",
     category: "Operations",
     short:
       "Comprehensive Association Membership Management System with automated renewals, admin controls, direct printing, and digital library features.",
