@@ -1,7 +1,11 @@
 import { notFound } from "next/navigation";
 import { getProductBySlug, getAllProductSlugs, productsData } from "../../lib/data/products-data";
 import ProductDetailClient from "./ProductDetailClient";
-import { generateProductMetadata, generateProductSchema } from "../../lib/utils/seo";
+import {
+  generateProductMetadata,
+  generateProductSchema,
+  generateBreadcrumbSchema,
+} from "../../lib/utils/seo";
 
 export async function generateStaticParams() {
   return getAllProductSlugs().map((slug) => ({
@@ -43,6 +47,7 @@ export default async function ProductDetailPage({ params }) {
     .slice(0, 3);
 
   const productSchema = generateProductSchema(product);
+  const breadcrumbSchema = generateBreadcrumbSchema(product);
 
   return (
     <>
@@ -50,6 +55,10 @@ export default async function ProductDetailPage({ params }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <ProductDetailClient 
         product={product} 

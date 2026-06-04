@@ -270,7 +270,7 @@ export default function ProductDetailPremiumPoshact({ product, allProducts = [] 
               </div>
             ))}
           </div>
-          <p className="text-xs font-bold uppercase tracking-widest text-indigo-400 mb-4">Get started</p>
+          <p className="text-xs font-bold uppercase tracking-widest text-indigo-300 mb-4">Get started</p>
           <h2 className="text-white mb-5 capitalize">
             Build a safer workplace
             <br />
@@ -278,21 +278,29 @@ export default function ProductDetailPremiumPoshact({ product, allProducts = [] 
               starting today.
             </span>
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-8">
+          <p className="text-indigo-100/80 text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-8">
             Use POSH Compliance with your HRMS or as a standalone product — from IC setup to annual reporting.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8">
-            <button type="button" onClick={openContact} className="press-illusion-btn-orange px-8 py-4 text-base font-bold w-full sm:w-auto">
+            <button
+              type="button"
+              onClick={openContact}
+              className="cta-btn-highlight press-illusion-btn-orange inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold w-full sm:w-auto"
+            >
               Request Free Demo <span aria-hidden="true">→</span>
             </button>
-            <Link href="/contact" prefetch={false} className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold rounded-lg bg-white text-slate-900 shadow-md hover:bg-slate-50 transition w-full sm:w-auto">
+            <Link
+              href="/contact"
+              prefetch={false}
+              className="cta-btn-secondary inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold rounded-lg w-full sm:w-auto"
+            >
               Contact Sales <span aria-hidden="true">→</span>
             </Link>
           </div>
-          <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm text-slate-400">
+          <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm text-indigo-100/75">
             {["Live module walkthrough", "HRMS + standalone", "7-step go-live guide"].map((t) => (
               <span key={t} className="inline-flex items-center gap-2">
-                <Check className="w-3.5 h-3.5 text-indigo-400" />
+                <Check className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
                 {t}
               </span>
             ))}

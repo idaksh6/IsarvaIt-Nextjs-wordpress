@@ -59,10 +59,10 @@ export default function PoshactHero({ onJumpToModule, onRequestDemo }) {
 
   return (
     <section className="poshact-section-bg section-hero relative overflow-hidden pt-32 lg:pt-40 pb-12 lg:pb-16">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 relative">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-          <div className="relative z-10 flex flex-col items-center text-center lg:items-start lg:text-left">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/85 backdrop-blur border border-indigo-200/70 text-indigo-900 text-sm font-semibold px-4 py-2 shadow-sm mb-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
+        <div className="hero-layout grid lg:grid-cols-2 gap-4 min-[480px]:gap-10 lg:gap-14 items-center w-full">
+          <div className="hero-copy relative z-10 flex w-full min-w-0 flex-col items-center text-center lg:items-start lg:text-left">
+            <div className="flex w-full max-w-full flex-wrap items-center justify-center gap-2 rounded-full bg-white/85 backdrop-blur border border-indigo-200/70 text-indigo-900 text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2 shadow-sm mb-4 min-[480px]:mb-6 text-center">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500" />
@@ -70,7 +70,7 @@ export default function PoshactHero({ onJumpToModule, onRequestDemo }) {
               POSH Act 2013 · 16 modules in one app
             </div>
 
-            <h1 className="text-[#1a1f24] mb-6">
+            <h1 className="w-full max-w-full text-[#1a1f24] mb-4 min-[480px]:mb-6 text-center text-[clamp(1.75rem,8vw,2.25rem)] leading-tight lg:text-left lg:text-[clamp(2.25rem,5vw,3.75rem)]">
               Workplace safety
               <br />
               <span className="bg-gradient-to-r from-indigo-600 via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
@@ -78,26 +78,26 @@ export default function PoshactHero({ onJumpToModule, onRequestDemo }) {
               </span>
             </h1>
 
-            <p className="text-base lg:text-xl text-slate-600 leading-relaxed max-w-xl mb-8 mx-auto lg:mx-0">
+            <p className="w-full max-w-xl text-base lg:text-xl text-slate-600 leading-relaxed mb-5 min-[480px]:mb-8 mx-auto lg:mx-0">
               IC setup, confidential intake, 9-step inquiry, employer duties, and annual reporting — explore each module in detail below.
             </p>
 
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-8">
-              <a href="#modules" className="press-illusion-btn-orange inline-flex items-center gap-2 px-6 py-3 text-sm font-bold">
-                <Layers className="w-4 h-4" />
+            <div className="flex w-full flex-col min-[480px]:flex-row min-[480px]:flex-nowrap items-stretch min-[480px]:items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-5 min-[480px]:mb-8 mx-auto lg:mx-0">
+              <a href="#modules" className="press-illusion-btn-orange inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 text-sm font-bold w-full min-[480px]:w-auto shrink-0">
+                <Layers className="w-4 h-4 shrink-0" />
                 Explore all modules
               </a>
               <button
                 type="button"
                 onClick={onRequestDemo}
-                className="press-illusion-btn-orange inline-flex items-center gap-2 px-6 py-3 text-sm font-bold"
+                className="press-illusion-btn-orange inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 text-sm font-bold w-full min-[480px]:w-auto shrink-0"
               >
                 Request demo
                 <span aria-hidden="true">→</span>
               </button>
             </div>
 
-            <div className="flex flex-wrap justify-center lg:justify-start gap-x-5 gap-y-2 text-sm text-slate-600 mb-8">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-x-5 gap-y-2 text-sm text-slate-600 mb-5 min-[480px]:mb-8">
               <span className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-indigo-500 shrink-0" />
                 Sections 4–22 covered
@@ -127,7 +127,7 @@ export default function PoshactHero({ onJumpToModule, onRequestDemo }) {
             </div>
           </div>
 
-          <div className="relative min-h-[380px] sm:min-h-[440px] lg:min-h-[500px]">
+          <div className="hero-visual relative flex w-full min-w-0 flex-col items-center min-h-0 min-[480px]:min-h-[340px] sm:min-h-[440px] lg:min-h-[500px]">
             <div className="hero-orbit-wrap hidden sm:block" aria-hidden="true">
               <div className="hero-orbit-spin">
                 <svg className="w-full h-full" viewBox="0 0 420 420" fill="none">
@@ -159,7 +159,7 @@ export default function PoshactHero({ onJumpToModule, onRequestDemo }) {
               ))}
             </div>
 
-            <div className="relative z-10 mx-auto w-full max-w-md lg:max-w-none sm:w-[88%] lg:w-[82%] pt-4 sm:pt-8">
+            <div className="relative z-10 w-full max-w-[min(100%,20rem)] sm:max-w-md mx-auto lg:max-w-none sm:w-[88%] lg:w-[82%] pt-0 min-[480px]:pt-4 sm:pt-8">
               <div className="rounded-2xl p-[2px] bg-gradient-to-br from-indigo-500 via-violet-500 to-fuchsia-400 hero-viewport">
                 <div className="rounded-[14px] overflow-hidden bg-white">
                   <div className="flex items-center gap-2 px-4 py-2.5 bg-slate-50 border-b border-slate-200/80">
@@ -185,13 +185,13 @@ export default function PoshactHero({ onJumpToModule, onRequestDemo }) {
                 </div>
               </div>
 
-              <div className="mt-4 rounded-2xl border border-white/60 bg-white/85 backdrop-blur-md px-4 py-3.5 shadow-lg shadow-indigo-500/10">
-                <div className="flex items-center justify-between gap-4 mb-2.5">
-                  <div className="min-w-0">
+              <div className="mt-4 w-full rounded-2xl border border-white/60 bg-white/85 backdrop-blur-md px-4 py-3.5 shadow-lg shadow-indigo-500/10">
+                <div className="flex flex-col items-center gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 mb-2.5 text-center sm:text-left">
+                  <div className="min-w-0 w-full sm:w-auto">
                     <p className="font-bold text-slate-900 truncate">{slide.label}</p>
                     <p className="text-xs text-slate-500 truncate">{slide.sub}</p>
                   </div>
-                  <div className="flex shrink-0 gap-1.5">
+                  <div className="flex shrink-0 justify-center gap-1.5">
                     {POSHACT_HERO_SLIDES.map((_, i) => (
                       <button
                         key={i}
@@ -241,18 +241,21 @@ export default function PoshactHero({ onJumpToModule, onRequestDemo }) {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mt-12 lg:mt-16 relative z-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mt-8 min-[480px]:mt-12 lg:mt-16 relative z-10">
           {[
             { n: "16", t: "Product modules", d: "Full POSH process covered" },
             { n: "9", t: "Step IC wizard", d: "Sections 9–12 covered" },
             { n: "14", t: "Employer duties", d: "Section 19 checklist" },
             { n: "QR", t: "Public intake", d: "24/7 anonymous filing", icon: true },
           ].map((stat) => (
-            <div key={stat.t} className="glass-card rounded-2xl p-4 sm:p-5 flex items-center gap-3 sm:gap-4">
+            <div
+              key={stat.t}
+              className="hero-stat-card glass-card rounded-2xl p-4 sm:p-5 flex flex-col items-center text-center gap-2 min-[480px]:flex-row min-[480px]:items-center min-[480px]:text-left min-[480px]:gap-3 sm:gap-4"
+            >
               <span className="flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl bg-indigo-100 text-indigo-600 font-extrabold text-base sm:text-lg">
                 {stat.icon ? "QR" : stat.n}
               </span>
-              <div>
+              <div className="min-w-0">
                 <p className="font-semibold text-slate-900 text-sm">{stat.t}</p>
                 <p className="text-xs text-slate-500">{stat.d}</p>
               </div>
