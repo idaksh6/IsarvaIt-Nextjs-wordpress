@@ -293,7 +293,7 @@ export default function SupportSystemCaseStudyClient() {
             </div>
 
             <div className="mt-10 md:mt-12 bg-gradient-to-br from-emerald-600 to-green-700 rounded-3xl p-6 md:p-10 text-white shadow-xl text-center md:text-left">
-              <h3 className="md:text-2xl mb-3 md:mb-4">Project History and Worked Hour Track</h3>
+              <h3 className="text-white md:text-2xl mb-3 md:mb-4">Project History and Worked Hour Track</h3>
               <p className="text-emerald-50 text-sm md:text-base leading-relaxed ">
                 The system includes a dedicated History section that records all changes made to project details, including who made the change and when it was made. This ensures complete transparency and accountability, allowing teams to track who worked on what, monitor contributions, and compare estimated versus actual time spent on each project.
               </p>

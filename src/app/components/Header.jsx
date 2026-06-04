@@ -266,7 +266,7 @@ export default function Header() {
                           {product.icon}
                         </span>
                         <div>
-                          <h4 className="group-hover:text-violet-600 transition-colors">
+                          <h4 className="group-hover:text-violet-600 transition-colors text-sm">
                             {product.label}
                           </h4>
                         </div>
@@ -353,7 +353,7 @@ export default function Header() {
                           {service.icon}
                         </span>
                         <div>
-                          <h4 className="group-hover:text-emerald-600 transition-colors">
+                          <h4 className="group-hover:text-emerald-600 transition-colors text-sm">
                             {service.label}
                           </h4>
                         </div>
@@ -440,7 +440,7 @@ export default function Header() {
                           {industry.icon}
                         </span>
                         <div>
-                          <h4 className="group-hover:text-blue-600 transition-colors">
+                          <h4 className="group-hover:text-blue-600 transition-colors text-sm">
                             {industry.label}
                           </h4>
                         </div>
