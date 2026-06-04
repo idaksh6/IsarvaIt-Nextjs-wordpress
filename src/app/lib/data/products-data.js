@@ -589,6 +589,41 @@ export const productsData = [
     color: "from-blue-500 to-cyan-500",
     bgGradient: "from-blue-50 via-cyan-50 to-white",
   },
+  {
+    slug: "association-membership-management",
+    title: "Association Membership Management",
+    category: "Operations",
+    icon: "👥",
+    tagline: "Optimize Member Networks with Secure Digital Ecosystems",
+    shortDescription:
+      "Comprehensive Association Membership Management System with automated renewals, admin controls, direct printing, and digital library features.",
+    description:
+      "Streamline member onboarding, automate renewals, manage directory profiles, track resources, and monitor organization health with our end-to-end admin ecosystem.",
+    features: [
+      "Member Creation & Approval",
+      "Webcam & Photo Upload",
+      "Direct Print ID Card Format",
+      "Comprehensive Admin Dashboard",
+      "Dynamic Rights Management",
+      "Subscription Plans Setup",
+      "Digital Library Tracker",
+      "Certificate & Donation Master",
+      "Manual Admin Overrides",
+      "Member Profile Management",
+      "Direct Fast Renewal Option",
+      "Android & iOS Member App",
+    ],
+    technologies: ["React", "Next.js", "PostgreSQL", "Node.js", "Cloud Infrastructure"],
+    benefits: [
+      "Streamlined Onboarding & Approvals",
+      "Automated Fee Collection & Receipts",
+      "Seamless Resource & Library Tracking",
+      "Real-time Expiry & Suspended Alerts",
+      "Granular Admin Overrides & Rights",
+    ],
+    color: "from-pink-500 to-fuchsia-600",
+    bgGradient: "from-pink-50 via-fuchsia-50 to-white",
+  },
 ];
 
 // Helper functions to filter out internal/staging/old content from the UI

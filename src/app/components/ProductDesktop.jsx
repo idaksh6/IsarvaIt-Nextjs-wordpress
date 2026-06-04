@@ -181,6 +181,18 @@ const products = [
     image:
       "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop",
   },
+  {
+    id: 21,
+    name: "Association Membership Management",
+    slug: "association-membership-management",
+    category: "Operations",
+    short:
+      "Comprehensive Association Membership Management System with automated renewals, admin controls, direct printing, and digital library features.",
+    gradient: "#d946ef",
+    image:
+      "/products/membership-management/membership_dashboard.png",
+    badge: "New",
+  },
 ];
 
 const categories = [

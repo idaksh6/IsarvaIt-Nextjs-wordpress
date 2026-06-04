@@ -19,6 +19,7 @@ import ProductDetailPremiumCRMOld from "../../components/products/ProductDetailP
 import ProductDetailPremiumBillSoft from "../../components/products/ProductDetailPremiumBillSoft";
 import ProductDetailPremiumSupport from "../../components/products/ProductDetailPremiumSupport";
 import ProductDetailPremiumGodownStaging from "../../components/products/ProductDetailPremiumGodownStaging";
+import ProductDetailPremiumAssociation from "../../components/products/ProductDetailPremiumAssociation";
 
 import ProductDetailPremiumHRMS from "../../components/products/ProductDetailPremiumHRMS";
 
@@ -208,6 +209,17 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   if (product.slug === 'godown-management-staging') {
     return (
       <ProductDetailPremiumGodownStaging 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for Association Membership Management
+  if (product.slug === 'association-membership-management') {
+    return (
+      <ProductDetailPremiumAssociation 
         product={product} 
         relatedProducts={relatedProducts} 
         allProducts={allProducts}
