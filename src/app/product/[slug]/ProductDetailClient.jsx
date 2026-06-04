@@ -22,6 +22,7 @@ import ProductDetailPremiumGodownStaging from "../../components/products/Product
 import ProductDetailPremiumAssociation from "../../components/products/ProductDetailPremiumAssociation";
 
 import ProductDetailPremiumHRMS from "../../components/products/ProductDetailPremiumHRMS";
+import ProductDetailPremiumPoshact from "../../components/products/ProductDetailPremiumPoshact";
 
 export default function ProductDetailClient({ product, relatedProducts, allProducts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -214,6 +215,10 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
         allProducts={allProducts}
       />
     );
+  }
+
+  if (product.slug === "poshact") {
+    return <ProductDetailPremiumPoshact product={product} allProducts={allProducts} />;
   }
 
   // Use Premium View for Association Membership Management

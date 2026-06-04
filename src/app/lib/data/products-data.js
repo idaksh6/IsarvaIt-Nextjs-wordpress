@@ -638,6 +638,46 @@ export const productsData = [
     color: "from-pink-500 to-fuchsia-600",
     bgGradient: "from-pink-50 via-fuchsia-50 to-white",
   },
+  {
+    slug: "poshact",
+    title: "POSHact",
+    category: "Human Resources",
+    icon: "🛡️",
+    tagline: "POSH Compliance Software",
+    shortDescription:
+      "End-to-end POSH Act 2013 compliance — IC setup, confidential intake, 9-step inquiry wizard, employer duties, and annual reporting in one platform.",
+    description:
+      "POSHact helps organisations run a complete Prevention of Sexual Harassment program with 16 integrated modules — from Internal Committee setup and employee portal to IC Operate wizard, Section 19 compliance, audit logs, and QR public intake. Works standalone or integrated with HRMS.",
+    keywords: [
+      "POSH compliance software",
+      "POSH Act 2013 software",
+      "workplace harassment compliance",
+      "internal committee software",
+      "POSH annual report",
+      "employee POSH portal",
+      "HRMS POSH module",
+    ],
+    features: [
+      "16 integrated POSH modules",
+      "9-step IC Operate inquiry wizard",
+      "Section 19 employer duty checklist",
+      "Annual report (Section 22)",
+      "QR public complaint intake",
+      "Employee self-service portal",
+      "HRMS or standalone deployment",
+      "Full audit log & role-based access",
+    ],
+    technologies: ["React", "Next.js", "PostgreSQL", "Node.js", "Cloud Infrastructure"],
+    benefits: [
+      "Automated legal deadline tracking",
+      "Confidential case handling (Section 16)",
+      "Faster IC inquiry workflows",
+      "Inspection-ready compliance records",
+      "Single platform vs spreadsheets",
+    ],
+    color: "from-indigo-500 to-violet-600",
+    bgGradient: "from-indigo-50 via-violet-50 to-white",
+  },
 ];
 
 // Helper functions to filter out internal/staging/old content from the UI
