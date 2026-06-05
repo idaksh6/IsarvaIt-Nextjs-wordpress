@@ -756,19 +756,21 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                 <div
                   className={`absolute -inset-4 bg-gradient-to-br ${subServices[activeTab].lightColor} blur-[60px] rounded-full opacity-60`}
                 />
-                <div className="relative rounded-3xl overflow-hidden border border-gray-200 shadow-2xl">
-                  <img
-                    src={subServices[activeTab].image}
-                    alt={subServices[activeTab].title}
-                    className="w-full object-cover transition-all duration-500"
-                  />
-                  <div className="absolute top-6 left-6">
+                <div className="relative rounded-3xl border border-gray-200 shadow-2xl overflow-visible">
+                  <div className="absolute top-[-15px] left-5 z-20 hidden min-[480px]:block">
                     <span
                       className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r ${subServices[activeTab].color} text-white text-sm font-bold shadow-lg`}
                     >
                       <span>{subServices[activeTab].icon}</span>{" "}
                       {subServices[activeTab].tagline}
                     </span>
+                  </div>
+                  <div className="rounded-3xl overflow-hidden">
+                    <img
+                      src={subServices[activeTab].image}
+                      alt={subServices[activeTab].title}
+                      className="w-full object-cover transition-all duration-500"
+                    />
                   </div>
                 </div>
               </div>
@@ -1171,15 +1173,15 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                   prefetch={false}
                   className=""
                 >
-                  <div className="h-full p-8 bg-white rounded-2xl border-2 border-gray-100 hover:border-emerald-300 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-2xl mx-auto md:mx-0 mb-6 shadow-md shadow-emerald-100 transition-transform duration-300">
+                  <div className="h-full p-8 bg-white rounded-2xl border-2 border-gray-100 hover:border-emerald-300 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col items-center text-center">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-2xl mb-6 shadow-md shadow-emerald-100 transition-transform duration-300">
                       {r.icon}
                     </div>
-                    <h3 className="mb-3 transition-colors text-center md:text-left">
+                    <h3 className="mb-3 transition-colors">
                       {r.title}
                     </h3>
-                    <p className="text-gray-600 mb-6 text-center md:text-left">{r.desc}</p>
-                    <div className="flex items-center justify-center md:justify-start gap-2 text-emerald-600 font-bold opacity-100 transform translate-y-0 transition-all duration-300">
+                    <p className="text-gray-600 mb-6">{r.desc}</p>
+                    <div className="flex items-center justify-center gap-2 text-emerald-600 font-bold opacity-100 transform translate-y-0 transition-all duration-300 mt-auto">
                       <span>Explore</span>
                       <svg
                         className="w-4 h-4"
