@@ -281,18 +281,18 @@ export default function ProductDetailPremiumPoshact({ product, allProducts = [] 
           <p className="text-indigo-100/80 text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-8">
             Use POSH Compliance with your HRMS or as a standalone product — from IC setup to annual reporting.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8">
+          <div className="inline-flex flex-col items-stretch mx-auto min-[480px]:flex-row min-[480px]:items-center gap-4 mb-8">
             <button
               type="button"
               onClick={openContact}
-              className="cta-btn-highlight press-illusion-btn-orange inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold w-full sm:w-auto"
+              className="cta-btn-highlight press-illusion-btn-orange inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-bold w-full min-[480px]:w-auto shrink-0"
             >
               Request Free Demo <span aria-hidden="true">→</span>
             </button>
             <Link
               href="/contact"
               prefetch={false}
-              className="cta-btn-secondary inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-bold rounded-lg w-full sm:w-auto"
+              className="cta-btn-secondary inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-bold rounded-lg w-full min-[480px]:w-auto shrink-0"
             >
               Contact Sales <span aria-hidden="true">→</span>
             </Link>

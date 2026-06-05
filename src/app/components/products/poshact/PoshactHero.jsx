@@ -62,8 +62,8 @@ export default function PoshactHero({ onJumpToModule, onRequestDemo }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
         <div className="hero-layout grid lg:grid-cols-2 gap-4 min-[480px]:gap-10 lg:gap-14 items-center w-full">
           <div className="hero-copy relative z-10 flex w-full min-w-0 flex-col items-center text-center lg:items-start lg:text-left">
-            <div className="flex w-full max-w-full flex-wrap items-center justify-center gap-2 rounded-full bg-white/85 backdrop-blur border border-indigo-200/70 text-indigo-900 text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2 shadow-sm mb-4 min-[480px]:mb-6 text-center">
-              <span className="relative flex h-2 w-2">
+            <div className="inline-flex max-w-[calc(100vw-2rem)] items-center gap-1.5 sm:gap-2 rounded-full bg-white/85 backdrop-blur border border-indigo-200/70 text-indigo-900 text-[11px] min-[375px]:text-xs sm:text-sm font-semibold whitespace-nowrap px-2.5 sm:px-4 py-1.5 sm:py-2 shadow-sm mb-4 min-[480px]:mb-6">
+              <span className="relative flex h-2 w-2 shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500" />
               </span>
@@ -82,15 +82,18 @@ export default function PoshactHero({ onJumpToModule, onRequestDemo }) {
               IC setup, confidential intake, 9-step inquiry, employer duties, and annual reporting — explore each module in detail below.
             </p>
 
-            <div className="flex w-full flex-col min-[480px]:flex-row min-[480px]:flex-nowrap items-stretch min-[480px]:items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-5 min-[480px]:mb-8 mx-auto lg:mx-0">
-              <a href="#modules" className="press-illusion-btn-orange inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 text-sm font-bold w-full min-[480px]:w-auto shrink-0">
+            <div className="inline-flex flex-col items-stretch mx-auto lg:mx-0 min-[480px]:flex-row min-[480px]:items-center gap-4 mb-5 min-[480px]:mb-8">
+              <a
+                href="#modules"
+                className="press-illusion-btn-orange inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-bold w-full min-[480px]:w-auto shrink-0"
+              >
                 <Layers className="w-4 h-4 shrink-0" />
                 Explore all modules
               </a>
               <button
                 type="button"
                 onClick={onRequestDemo}
-                className="press-illusion-btn-orange inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 text-sm font-bold w-full min-[480px]:w-auto shrink-0"
+                className="press-illusion-btn-orange inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-bold w-full min-[480px]:w-auto shrink-0"
               >
                 Request demo
                 <span aria-hidden="true">→</span>
