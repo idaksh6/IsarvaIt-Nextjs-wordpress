@@ -29,34 +29,6 @@ export default function ProductsListClient({ productsData }) {
     );
   }, [searchQuery, productsData]);
 
-  const getLastRowCenterClasses = (index, total) => {
-    const isLastCard = index === total - 1;
-    if (!isLastCard || total <= 1) return { link: "", card: "" };
-
-    const remainderLg = total % 3;
-    const remainderMd = total % 2;
-
-    const linkClasses = [];
-    const cardClasses = [];
-
-    // Center a single orphan card on 2-column layouts
-    if (remainderMd === 1) {
-      linkClasses.push("md:col-span-2 md:flex md:justify-center");
-      cardClasses.push("md:max-w-[calc(50%-1rem)]");
-    }
-
-    // Center a single orphan card on 3-column layouts
-    if (remainderLg === 1) {
-      linkClasses.push("lg:col-span-1 lg:col-start-2 lg:block lg:justify-self-auto");
-      cardClasses.push("lg:max-w-none");
-    }
-
-    return {
-      link: linkClasses.join(" "),
-      card: cardClasses.join(" "),
-    };
-  };
-
   // Scroll to products grid
   const scrollToProducts = () => {
     if (productsGridRef.current) {
@@ -211,15 +183,12 @@ export default function ProductsListClient({ productsData }) {
           ) : (
             /* Products Grid */
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
-              {filteredProducts.map((product, index) => {
-                const lastRowCenter = getLastRowCenterClasses(index, filteredProducts.length);
-
-                return (
+              {filteredProducts.map((product) => (
                 <Link
                   key={product.slug}
                   href={`/product/${product.slug}`}
                   prefetch={false}
-                  className={`product-click-trigger group block h-full w-full ${lastRowCenter.link}`}
+                  className="product-click-trigger group block h-full w-full"
                   data-product-name={product.title}
                   onClick={() => {
                     if (window.dataLayer) {
@@ -230,7 +199,7 @@ export default function ProductsListClient({ productsData }) {
                     }
                   }}
                 >
-                  <div className={`relative rounded-3xl p-8 h-full w-full transition-all duration-300 hover:scale-[1.02] bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg hover:shadow-2xl flex flex-col items-center text-center ${lastRowCenter.card}`}>
+                  <div className="relative rounded-3xl p-8 h-full w-full transition-all duration-300 hover:scale-[1.02] bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg hover:shadow-2xl flex flex-col items-center text-center">
                     {/* Hover Gradient Effect */}
                     <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-emerald-400/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
@@ -276,8 +245,7 @@ export default function ProductsListClient({ productsData }) {
                       </div>
                   </div>
                 </Link>
-                );
-              })}
+              ))}
             </div>
           )}
         </div>

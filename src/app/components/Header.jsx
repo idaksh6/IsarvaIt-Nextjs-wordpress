@@ -60,6 +60,8 @@ const productsData = [
   { label: "Document Management System", href: "/product/document-management-system", icon: "📄" },
   { label: "Retail Billing Software", href: "/product/retail-billing-software", icon: "🚚" },
   { label: "Dealer Management and Dealer Article Software", href: "/product/dealer-management-and-dealer-article-software", icon: "🤝" },
+  { label: "Lawyer Legal Association Software", href: "/product/lawyer-legal-association-software", icon: "⚖️" },
+  { label: "POSH Compliance Software", href: "/product/posh-compliance-software", icon: "🛡️" },
 ];
 
 export default function Header() {
