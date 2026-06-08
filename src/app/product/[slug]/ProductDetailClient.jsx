@@ -23,6 +23,7 @@ import ProductDetailPremiumAssociation from "../../components/products/ProductDe
 
 import ProductDetailPremiumHRMS from "../../components/products/ProductDetailPremiumHRMS";
 import ProductDetailPremiumPoshact from "../../components/products/ProductDetailPremiumPoshact";
+import ProductDetailPremiumLaravel from "../../components/products/ProductDetailPremiumLaravel";
 
 export default function ProductDetailClient({ product, relatedProducts, allProducts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -219,6 +220,10 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
 
   if (product.pageTemplate === "poshact") {
     return <ProductDetailPremiumPoshact product={product} allProducts={allProducts} />;
+  }
+
+  if (product.pageTemplate === "laravel") {
+    return <ProductDetailPremiumLaravel product={product} allProducts={allProducts} />;
   }
 
   // Use Premium View for Association Membership Management
