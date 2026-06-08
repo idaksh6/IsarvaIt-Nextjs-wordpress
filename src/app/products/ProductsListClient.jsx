@@ -188,7 +188,7 @@ export default function ProductsListClient({ productsData }) {
                   key={product.slug}
                   href={`/product/${product.slug}`}
                   prefetch={false}
-                  className="product-click-trigger group block h-full w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.333rem)]"
+                  className="product-click-trigger group flex self-stretch w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.333rem)]"
                   data-product-name={product.title}
                   onClick={() => {
                     if (window.dataLayer) {
@@ -199,50 +199,54 @@ export default function ProductsListClient({ productsData }) {
                     }
                   }}
                 >
-                  <div className="relative rounded-3xl p-8 h-full w-full transition-all duration-300 hover:scale-[1.02] bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg hover:shadow-2xl flex flex-col items-center text-center">
+                  <div className="relative rounded-3xl p-8 w-full flex flex-col flex-1 transition-all duration-300 hover:scale-[1.02] bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg hover:shadow-2xl items-center text-center">
                     {/* Hover Gradient Effect */}
                     <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-emerald-400/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
-                    {/* Category Badge */}
-                    <div className="relative mb-4 min-h-[1.75rem] flex items-center justify-center">
-                      <span className="bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full border-2 border-emerald-200 shadow-md whitespace-nowrap">
-                        {product.category}
-                      </span>
-                    </div>
+                    <div className="relative z-[1] w-full flex flex-col flex-1 min-h-0">
+                      {/* Category Badge */}
+                      <div className="mb-4 h-7 flex items-center justify-center shrink-0">
+                        <span className="bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full border-2 border-emerald-200 shadow-md whitespace-nowrap">
+                          {product.category}
+                        </span>
+                      </div>
 
-                    {/* Icon */}
-                    <div className="relative w-16 h-16 shrink-0 rounded-2xl bg-gradient-to-br from-emerald-400 to-green-500 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-3xl">{product.icon}</span>
-                    </div>
+                      {/* Icon */}
+                      <div className="w-16 h-16 shrink-0 rounded-2xl bg-gradient-to-br from-emerald-400 to-green-500 flex items-center justify-center mb-6 mx-auto shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        <span className="text-3xl">{product.icon}</span>
+                      </div>
 
-                    {/* Title */}
-                    <h3 className="relative mb-1 w-full min-h-[4rem] line-clamp-2 group-hover:text-emerald-700 transition-colors duration-300">
-                      {product.title}
-                    </h3>
+                      {/* Title */}
+                      <div className="mb-2 w-full h-16 flex items-center justify-center shrink-0">
+                        <h3 className="line-clamp-2 group-hover:text-emerald-700 transition-colors duration-300">
+                          {product.title}
+                        </h3>
+                      </div>
 
-                    {/* Tagline */}
-                    <div className="relative mb-1 flex min-h-[3.25rem] w-full items-start justify-center">
-                      {product.tagline ? (
-                        <p className="text-emerald-600 font-semibold line-clamp-2 leading-snug">
-                          {product.tagline}
-                        </p>
-                      ) : (
-                        <span className="sr-only">No tagline</span>
-                      )}
-                    </div>
+                      {/* Tagline */}
+                      <div className="mb-2 flex h-[3.25rem] w-full items-center justify-center shrink-0">
+                        {product.tagline ? (
+                          <p className="text-emerald-600 font-semibold line-clamp-2 leading-snug">
+                            {product.tagline}
+                          </p>
+                        ) : (
+                          <span className="sr-only">No tagline</span>
+                        )}
+                      </div>
 
-                    {/* Description */}
-                    <p className="relative text-gray-700 text-sm leading-relaxed min-h-[4.75rem] line-clamp-4 w-full">
-                      {product.shortDescription}
-                    </p>
+                      {/* Description */}
+                      <p className="flex-1 text-gray-700 text-sm leading-relaxed min-h-[4.75rem] line-clamp-4 w-full mb-6">
+                        {product.shortDescription}
+                      </p>
 
-                    {/* CTA pinned to bottom */}
-                    <div className="mt-auto flex items-center justify-center gap-2 text-emerald-600 font-semibold group-hover:gap-3 transition-all duration-200 pt-2 border-t border-gray-50 w-full">
+                      {/* CTA pinned to bottom */}
+                      <div className="mt-auto shrink-0 flex items-center justify-center gap-2 text-emerald-600 font-semibold group-hover:gap-3 transition-all duration-200 pt-4 border-t border-gray-50 w-full">
                         Explore Product
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                       </div>
+                    </div>
                   </div>
                 </Link>
               ))}

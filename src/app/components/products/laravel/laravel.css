@@ -737,6 +737,52 @@
   align-items: center;
 }
 
+@media (max-width: 767px) {
+  .laravel-page .lv-slide {
+    justify-items: stretch;
+  }
+
+  .laravel-page .lv-slide > div:first-child {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .laravel-page .lv-slide > div:last-child {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .laravel-page .lv-slide-desc {
+    text-align: center;
+    width: 100%;
+  }
+
+  .laravel-page .lv-slide-bullets {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .laravel-page .lv-slide-bullets li {
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .laravel-page .lv-slide-bullets li span {
+    text-align: left;
+  }
+}
+
 @media (min-width: 768px) {
   .laravel-page .lv-slide {
     grid-template-columns: 0.8fr 1.2fr;

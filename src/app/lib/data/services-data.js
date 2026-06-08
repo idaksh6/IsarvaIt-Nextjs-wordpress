@@ -451,6 +451,92 @@ export const servicesData = [
     ]
   },
   {
+    slug: "custom-laravel-application-development",
+    title: "Custom Laravel Application Development",
+    seoTitle: "Custom Laravel Application Development Company | Laravel Web Development Services India",
+    metaDescription:
+      "Hire expert Laravel developers in India for custom web apps, APIs, SaaS & enterprise software. Laravel 13, Vue/React, Octane, AWS DevOps & legacy migration. Free consultation — Isarva Infotech.",
+    icon: "⚙️",
+    heroImage: "/products/laravel/laravel_dashboard.png",
+    ogImage: "/products/laravel/laravel_dashboard.png",
+    shortDescription: "Premium Laravel development company for scalable custom web applications, APIs, and enterprise software",
+    description:
+      "Isarva is a trusted Laravel development company in India delivering secure, high-performance custom Laravel applications — from discovery and architecture to Laravel 13 migration, API development, and production launch.",
+    keywords: [
+      "laravel development company",
+      "custom laravel development",
+      "laravel application development",
+      "laravel web development services",
+      "laravel development company India",
+      "hire laravel developers",
+      "laravel software development",
+      "laravel 13 development",
+      "laravel api development",
+      "laravel custom web application",
+      "laravel enterprise development",
+      "laravel saas development",
+      "laravel backend development",
+      "laravel migration services",
+      "laravel performance optimization",
+      "laravel octane development",
+      "laravel vue react development",
+      "laravel devops aws",
+      "php laravel developers India",
+      "laravel development Bangalore",
+      "laravel development Mangalore",
+      "offshore laravel development",
+      "laravel maintenance and support",
+      "laravel figma to code",
+      "laravel headless api development",
+      "laravel rest api development",
+      "laravel graphql api",
+      "laravel ecommerce development",
+      "laravel crm development",
+      "laravel erp development",
+    ],
+    features: [
+      {
+        title: "Custom Web Applications",
+        description: "End-to-end bespoke web apps built using MVC monolith architecture or modern headless SPAs (Inertia/Vue/React)."
+      },
+      {
+        title: "Legacy Migration & Upgrades",
+        description: "Smooth migration from old legacy architectures, PHP versions, or frameworks to Laravel 13 with zero data loss."
+      },
+      {
+        title: "RESTful & GraphQL APIs",
+        description: "Secure, well-documented, and highly optimized API layers for mobile apps, frontend clients, and third-party systems."
+      },
+      {
+        title: "Performance Optimization",
+        description: "Speed tuning using Laravel Octane, Redis caching, query optimization, and asynchronous queue management."
+      },
+      {
+        title: "DevOps, AWS & CI/CD",
+        description: "Production environment architecture with Laravel Forge, Vapor, Docker containers, and automated deployment workflows."
+      },
+      {
+        title: "Security & Hardening",
+        description: "Enterprise audits, penetration shielding, CSRF/XSS protection, database isolation, and encrypted data pipelines."
+      }
+    ],
+    technologies: ["Laravel 13", "PHP 8.3", "MySQL", "PostgreSQL", "Redis", "Vue.js", "React", "Docker", "AWS"],
+    benefits: [
+      {
+        title: "Scalable Architecture",
+        description: "Build for growth with modular Laravel architecture designed to support high traffic and evolving feature sets."
+      },
+      {
+        title: "Enterprise Security",
+        description: "Protect your users and data with hardened authentication, secure coding patterns, and proactive vulnerability controls."
+      },
+      {
+        title: "Faster Delivery",
+        description: "Agile sprint-based development and reusable Laravel components help you launch faster without compromising quality."
+      }
+    ]
+  },
+  {
     slug: "wordpress-development",
     title: "WordPress Development",
     icon: "📝",

@@ -122,16 +122,31 @@ export function generateProductMetadata(product) {
 export function generateServiceMetadata(service) {
   const isStaging = service.slug?.includes("-staging");
   const isNoIndex = isStaging || !!service.noIndex || service.slug === "news-and-magazine-portal";
+  const seoTitle = service.seoTitle || service.title;
+  const seoDescription = service.metaDescription || service.shortDescription || service.description;
+  const ogImage = service.ogImage
+    ? service.ogImage.startsWith("http")
+      ? service.ogImage
+      : `${SITE_URL}${service.ogImage}`
+    : service.heroImage
+      ? service.heroImage.startsWith("http")
+        ? service.heroImage
+        : `${SITE_URL}${service.heroImage}`
+      : `${SITE_URL}/isarva New Logo.png`;
 
   return generateMetadata({
-    title: isStaging ? `[STAGING] ${service.title}` : service.title,
-    description: service.shortDescription || service.description,
+    title: isStaging ? `[STAGING] ${seoTitle}` : seoTitle,
+    description: seoDescription,
     keywords: [
       service.title,
-      ...service.features?.map(f => (typeof f === "string" ? f : f.title || "")).slice(0, 5) || [],
+      ...(service.keywords || []),
+      ...(service.technologies || []),
+      ...service.features?.map(f => (typeof f === "string" ? f : f.title || "")).slice(0, 6) || [],
       "professional services",
       "IT services",
+      "Isarva Infotech",
     ],
+    image: ogImage,
     url: `/service/${service.slug}`,
     noIndex: isNoIndex,
   });
@@ -220,6 +235,65 @@ export function generateBreadcrumbSchema(product) {
         item: `${SITE_URL}/product/${product.slug}`,
       },
     ],
+  };
+}
+
+export function generateServiceBreadcrumbSchema(service) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: SITE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: `${SITE_URL}/services`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: service.title,
+        item: `${SITE_URL}/service/${service.slug}`,
+      },
+    ],
+  };
+}
+
+export function generateServiceSchema(service) {
+  const serviceUrl = `${SITE_URL}/service/${service.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${serviceUrl}#service`,
+    name: service.seoTitle || service.title,
+    alternateName: service.title,
+    description: service.metaDescription || service.shortDescription || service.description,
+    url: serviceUrl,
+    serviceType: service.title,
+    keywords: (service.keywords || []).join(", "),
+    provider: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    areaServed: [
+      { "@type": "Country", name: "India" },
+      { "@type": "Country", name: "United States" },
+      { "@type": "Country", name: "United Kingdom" },
+      { "@type": "Country", name: "United Arab Emirates" },
+    ],
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "INR",
+      availability: "https://schema.org/InStock",
+      url: `${SITE_URL}/contact`,
+    },
   };
 }
 
