@@ -8,6 +8,20 @@ import ContactFormModal from "../../components/ContactFormModal";
 
 const PRIMARY_COLOR = "#0EA5E9"; // Sky Blue
 
+const GLOBAL_BTN_ARROW = (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 9" className="h-2 w-4" aria-hidden="true">
+    <path
+      fill="currentColor"
+      fillRule="evenodd"
+      d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
+
+const GLOBAL_BTN_ORANGE = "press-illusion-btn-orange text-white w-fit font-bold px-8 py-3 text-base flex cursor-pointer";
+const GLOBAL_BTN_GREEN = "press-illusion-btn-green text-white w-fit font-bold px-8 py-3 text-base flex cursor-pointer";
+
 function ThemeSlider({ onImageClick }) {
   const themes = [
     { name: "Empire Emerald", img: "Vibrant-color-3.jpg", color: "from-emerald-500/20 to-teal-500/20" },
@@ -552,28 +566,11 @@ export default function ProductDetailPremiumBillSoft({
                   <div className="flex flex-wrap gap-6 justify-center lg:justify-start items-center">
                     <button
                       onClick={() => setIsModalOpen(true)}
-                      className="btn-premium-orange group !px-6 !py-3 sm:!px-8 sm:!py-4 !text-sm sm:!text-base mt-2"
+                      className={`${GLOBAL_BTN_ORANGE} mt-2`}
                     >
-                      <div className="shimmer"></div>
-                      <span className="relative z-10 flex items-center gap-2">
-                        Request Free Demo
-                        <svg
-                          className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M17 8l4 4m0 0l-4 4m4-4H3"
-                          />
-                        </svg>
-                      </span>
+                      <span>Request Free Demo</span>
+                      {GLOBAL_BTN_ARROW}
                     </button>
-
-
                   </div>
 
                   <div className="mt-16 hidden lg:grid grid-cols-3 gap-4 sm:gap-8 justify-center lg:justify-start">
@@ -770,15 +767,18 @@ export default function ProductDetailPremiumBillSoft({
                             <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
                               <button
                                 onClick={() => setIsModalOpen(true)}
-                                className="press-illusion-btn-orange text-white w-fit font-bold px-8 py-3 text-base flex items-center space-x-2 transition-all duration-300 mx-auto lg:mx-0"
+                                className={`${GLOBAL_BTN_ORANGE} mx-auto lg:mx-0`}
                               >
-                                Request Free Demo
+                                <span>Request Free Demo</span>
+                                {GLOBAL_BTN_ARROW}
                               </button>
                               <Link
                                 href="/contact"
-                                className="press-illusion-btn-green text-white w-fit font-bold px-8 py-3 text-base flex items-center space-x-2 transition-all duration-300 mx-auto lg:mx-0"
+                                prefetch={false}
+                                className={`${GLOBAL_BTN_GREEN} mx-auto lg:mx-0`}
                               >
-                                Contact Sales
+                                <span>Contact Sales</span>
+                                {GLOBAL_BTN_ARROW}
                               </Link>
                             </div>
                           </div>
@@ -858,8 +858,12 @@ export default function ProductDetailPremiumBillSoft({
                               </p>
 
                               <div className="flex flex-col sm:flex-row justify-center xl:justify-start gap-4 mt-4">
-                                <button onClick={() => setIsModalOpen(true)} className="press-illusion-btn-orange text-white w-fit font-bold px-8 py-3 text-base flex items-center space-x-2 transition-all duration-300 mx-auto xl:mx-0">
-                                  Request Free Demo
+                                <button
+                                  onClick={() => setIsModalOpen(true)}
+                                  className={`${GLOBAL_BTN_ORANGE} mx-auto xl:mx-0`}
+                                >
+                                  <span>Request Free Demo</span>
+                                  {GLOBAL_BTN_ARROW}
                                 </button>
                               </div>
                             </div>
@@ -959,9 +963,10 @@ export default function ProductDetailPremiumBillSoft({
                       <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                         <button
                           onClick={() => setIsModalOpen(true)}
-                          className="press-illusion-btn-orange text-white w-fit font-bold px-8 py-3 text-base flex items-center space-x-2 transition-all duration-300 mx-auto"
+                          className={`${GLOBAL_BTN_ORANGE} mx-auto`}
                         >
-                          Request Free Demo
+                          <span>Request Free Demo</span>
+                          {GLOBAL_BTN_ARROW}
                         </button>
                       </div>
                     </div>
@@ -1086,10 +1091,15 @@ export default function ProductDetailPremiumBillSoft({
                       href={`/product/${prod.slug}`}
                       className="block h-full"
                     >
-                      <div className="relative rounded-3xl p-8 h-full bg-white border-2 border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col group">
-                        <div className="relative text-center md:text-left flex-grow">
+                      <div className="relative rounded-3xl p-8 h-full bg-white border-2 border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center group overflow-visible">
+                        {/* Category Badge */}
+                        <div className="inline-flex items-center justify-center bg-white text-sky-600 text-xs font-bold px-3 py-1 rounded-full border-2 border-sky-200 shadow-md mb-4">
+                          {prod.category}
+                        </div>
+
+                        <div className="relative flex-grow w-full flex flex-col items-center">
                           {/* Icon */}
-                          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center mb-6 shadow-lg mx-auto md:mx-0 group-hover:scale-110 transition-transform">
+                          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
                             <span className="text-3xl">{prod.icon}</span>
                           </div>
 
@@ -1109,15 +1119,10 @@ export default function ProductDetailPremiumBillSoft({
                           <p className="text-gray-500 leading-relaxed mb-6 text-sm font-medium">
                             {prod.shortDescription}
                           </p>
-
-                          {/* Category Badge */}
-                          <div className="absolute -top-11 left-1/2 -translate-x-1/2 lg:left-auto lg:-right-2 lg:translate-x-0 bg-white text-sky-600 text-[10px] font-black px-3 py-1 rounded-full border border-sky-100 shadow-md uppercase tracking-wider whitespace-nowrap">
-                            {prod.category}
-                          </div>
                         </div>
 
                         {/* CTA Link at bottom */}
-                        <div className="flex items-center justify-center md:justify-start gap-2 text-sky-600 font-black text-xs uppercase tracking-widest mt-auto pt-4 border-t border-gray-50 group-hover:gap-3 transition-all">
+                        <div className="flex items-center justify-center gap-2 text-sky-600 font-black text-xs uppercase tracking-widest mt-auto pt-4 border-t border-gray-50 group-hover:gap-3 transition-all w-full">
                           Explore Product
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
@@ -1128,6 +1133,24 @@ export default function ProductDetailPremiumBillSoft({
                   </motion.div>
                 ))}
             </div>
+
+            {/* View All Products CTA */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-center mt-12"
+            >
+              <Link
+                href="/products"
+                prefetch={false}
+                className={`${GLOBAL_BTN_ORANGE} mx-auto`}
+              >
+                <span>View All Products</span>
+                {GLOBAL_BTN_ARROW}
+              </Link>
+            </motion.div>
           </div>
         </section>
 
@@ -1394,7 +1417,7 @@ function BillsoftUniqueFeatures() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           {uniqueFeaturesData.map((feat, i) => (
-            <div key={i} className="group relative bg-white/80 backdrop-blur-xl rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 border border-white hover:border-blue-100 hover:-translate-y-2 overflow-hidden flex flex-col items-center text-center md:items-start md:text-left">
+            <div key={i} className="group relative bg-white/80 backdrop-blur-xl rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 border border-white hover:border-blue-100 hover:-translate-y-2 overflow-hidden flex flex-col items-center text-center">
               <div className={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${feat.color} opacity-80 group-hover:opacity-100 transition-opacity`}></div>
 
               <div className={`w-14 h-14 rounded-2xl mb-6 flex items-center justify-center text-3xl shadow-xl shadow-blue-900/10 bg-gradient-to-br ${feat.color} text-white transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500`}>
