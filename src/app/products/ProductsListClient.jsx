@@ -181,14 +181,14 @@ export default function ProductsListClient({ productsData }) {
               </button>
             </div>
           ) : (
-            /* Products Grid */
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+            /* Products Grid — flex + justify-center centers incomplete last rows */
+            <div className="flex flex-wrap justify-center gap-8 items-stretch">
               {filteredProducts.map((product) => (
                 <Link
                   key={product.slug}
                   href={`/product/${product.slug}`}
                   prefetch={false}
-                  className="product-click-trigger group block h-full w-full"
+                  className="product-click-trigger group block h-full w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.333rem)]"
                   data-product-name={product.title}
                   onClick={() => {
                     if (window.dataLayer) {
