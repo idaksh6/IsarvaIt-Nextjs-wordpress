@@ -1770,6 +1770,11 @@ export default function ProductDetailPremiumSupportStaging({
                     className="block h-full"
                   >
                     <div className="relative rounded-3xl p-8 h-full bg-white border-2 border-gray-100 shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col items-center text-center">
+                      {/* Category Badge */}
+                      <div className="inline-flex items-center justify-center bg-white text-[#9333EA] text-xs font-bold px-3 py-1 rounded-full border-2 border-[#9333EA]/30 shadow-md mb-4">
+                        {prod.category}
+                      </div>
+
                       <div className="relative flex flex-col items-center w-full">
                         {/* Icon */}
                         <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#9333EA] to-[#7c3aed] flex items-center justify-center mb-6 shadow-lg mx-auto">
