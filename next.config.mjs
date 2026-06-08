@@ -72,6 +72,11 @@ const nextConfig = {
         destination: "/product/posh-compliance-software",
         permanent: true,
       },
+      {
+        source: "/product/laravel-application",
+        destination: "/service/custom-laravel-application-development",
+        permanent: true,
+      },
     ];
   },
   

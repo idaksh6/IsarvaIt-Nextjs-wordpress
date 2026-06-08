@@ -51,7 +51,7 @@ const GLOBAL_BTN_ARROW = (
 const GLOBAL_BTN_ORANGE = "press-illusion-btn-orange text-white w-fit font-bold px-8 py-3 text-base flex cursor-pointer";
 
 const TICKER_ITEMS = [
-  "LARAVEL 11",
+  "LARAVEL 13",
   "PHP 8.3",
   "ELOQUENT ORM",
   "LIVEWIRE",
@@ -67,7 +67,7 @@ const TICKER_ITEMS = [
 
 const SERVICES = [
   { icon: Box, title: "Custom Web Applications", desc: "End-to-end bespoke web apps built using MVC monolith architecture or modern headless SPAs (Inertia/Vue/React)." },
-  { icon: Rocket, title: "Legacy Migration & Upgrades", desc: "Smooth migration from old legacy architectures, PHP versions, or frameworks to Laravel 11 with zero data loss." },
+  { icon: Rocket, title: "Legacy Migration & Upgrades", desc: "Smooth migration from old legacy architectures, PHP versions, or frameworks to Laravel 13 with zero data loss." },
   { icon: Network, title: "RESTful & GraphQL APIs", desc: "Secure, well-documented, and highly optimized API layers designed for mobile apps, frontend clients, or third-party syndication." },
   { icon: ShoppingCart, title: "Custom Ecommerce Systems", desc: "High-converting transactional platforms with custom shopping funnels, payment gateways, and CRM synchronization." },
   { icon: Bolt, title: "Performance Optimization", desc: "Speed tuning utilizing Laravel Octane, Redis caching, query optimization, and asynchronous queue management." },
@@ -224,9 +224,14 @@ function ProcessSlider() {
   );
 }
 
-export default function ProductDetailPremiumLaravel({ product, allProducts = [] }) {
+export default function ProductDetailPremiumLaravel({
+  product,
+  allProducts = [],
+  entityType = "product",
+}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openContact = useCallback(() => setIsModalOpen(true), []);
+  const isServiceMode = entityType === "service";
 
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -244,12 +249,12 @@ export default function ProductDetailPremiumLaravel({ product, allProducts = [] 
                 Premium Engineering
               </div>
               <h1 className="mb-6">
-                Laravel
+                Custom Laravel
                 <br />
-                Built for <span className="lv-grad-text">Performance & Scale</span>
+                Application <span className="lv-grad-text">Development</span>
               </h1>
               <p className="lv-hero-desc mx-auto lg:mx-0">
-                At Isarva, we don&apos;t just &apos;do&apos; Laravel development—we live and breathe it. We combine our technical, creative, and engineering expertise with dedicated support to bring you outstanding, secure, and robust custom web applications.
+                Isarva is a Laravel development company in India specializing in custom Laravel 13 web applications, RESTful &amp; GraphQL APIs, SaaS platforms, legacy migration, Laravel Octane performance tuning, and AWS DevOps — from discovery to production launch.
               </p>
               <div className="lv-hero-ctas">
                 <button type="button" onClick={openContact} className={GLOBAL_BTN_ORANGE}>
@@ -279,7 +284,7 @@ export default function ProductDetailPremiumLaravel({ product, allProducts = [] 
             <div className="lv-hero-visual px-2 sm:px-0">
               <img
                 src="/products/laravel/laravel_dashboard.png"
-                alt="Laravel Development Dashboard Isarva"
+                alt="Custom Laravel application development dashboard by Isarva Infotech India"
                 className="lv-main-graphic"
               />
               <div className="lv-visual-badge lv-badge-speed">
@@ -570,21 +575,30 @@ export default function ProductDetailPremiumLaravel({ product, allProducts = [] 
         </div>
       </section>
 
-      {/* Related products */}
+      {/* Related list */}
       <section className="py-12 lg:py-16 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-10">
             <span className="inline-block text-[10px] font-black text-[#ff2d20] tracking-[0.28em] uppercase mb-3 bg-red-50 px-4 py-2 rounded-full border border-red-100">
-              MORE PRODUCTS
+              {isServiceMode ? "MORE SERVICES" : "MORE PRODUCTS"}
             </span>
-            <h2 className="mb-4 capitalize">Explore Our More Products</h2>
+            <h2 className="mb-4 capitalize">
+              {isServiceMode ? "Explore Our More Services" : "Explore Our More Products"}
+            </h2>
             <p className="text-gray-500 max-w-[600px] mx-auto text-base leading-relaxed">
-              Discover our comprehensive suite of software solutions designed to transform your business operations.
+              Discover our comprehensive suite of solutions designed to transform your business operations.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
             {allProducts
-              .filter((p) => p.slug !== product.slug && !p.slug.includes("staging") && !p.slug.includes("-old") && p.slug !== "bill-soft")
+              .filter((p) => {
+                if (p.slug === product.slug) return false;
+                if (p.noIndex) return false;
+                if (p.slug?.includes("staging")) return false;
+                if (!isServiceMode && p.slug?.includes("-old")) return false;
+                if (!isServiceMode && p.slug === "bill-soft") return false;
+                return true;
+              })
               .slice(0, 3)
               .map((prod, index) => (
                 <motion.div
@@ -595,7 +609,7 @@ export default function ProductDetailPremiumLaravel({ product, allProducts = [] 
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="h-full"
                 >
-                  <Link href={`/product/${prod.slug}`} prefetch={false} className="block h-full">
+                  <Link href={`/${isServiceMode ? "service" : "product"}/${prod.slug}`} prefetch={false} className="block h-full">
                     <div className="relative rounded-3xl p-8 h-full bg-white border-2 border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center group">
                       <div className="inline-flex items-center justify-center bg-white text-[#ff2d20] text-xs font-bold px-3 py-1 rounded-full border-2 border-red-200 shadow-md mb-4">
                         {prod.category}
@@ -611,7 +625,7 @@ export default function ProductDetailPremiumLaravel({ product, allProducts = [] 
                         <p className="text-gray-500 leading-relaxed mb-6 text-sm font-medium">{prod.shortDescription}</p>
                       </div>
                       <div className="flex items-center justify-center gap-2 text-[#ff2d20] font-black text-xs uppercase tracking-widest mt-auto pt-4 border-t border-gray-50 group-hover:gap-3 transition-all w-full">
-                        Explore Product
+                        {isServiceMode ? "Explore Service" : "Explore Product"}
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                         </svg>
@@ -622,8 +636,8 @@ export default function ProductDetailPremiumLaravel({ product, allProducts = [] 
               ))}
           </div>
           <div className="text-center mt-12">
-            <Link href="/products" prefetch={false} className={`${GLOBAL_BTN_ORANGE} mx-auto`}>
-              <span>View All Products</span>
+            <Link href={isServiceMode ? "/services" : "/products"} prefetch={false} className={`${GLOBAL_BTN_ORANGE} mx-auto`}>
+              <span>{isServiceMode ? "View All Services" : "View All Products"}</span>
               {GLOBAL_BTN_ARROW}
             </Link>
           </div>
@@ -633,7 +647,7 @@ export default function ProductDetailPremiumLaravel({ product, allProducts = [] 
       <ContactFormModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        preSelectedType="Product"
+        preSelectedType={isServiceMode ? "Service" : "Product"}
         preSelectedItem={product.title}
         allItems={allProducts}
       />

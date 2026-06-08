@@ -697,56 +697,6 @@ export const productsData = [
     color: "from-indigo-500 to-violet-600",
     bgGradient: "from-indigo-50 via-violet-50 to-white",
   },
-  {
-    slug: "laravel-application",
-    pageTemplate: "laravel",
-    title: "Laravel Application",
-    seoTitle: "Laravel Development Services | Custom Web Applications by Isarva",
-    metaDescription:
-      "Premium custom Laravel web applications — legacy migrations, REST & GraphQL APIs, performance tuning, DevOps, security hardening, and AI integrations by Isarva.",
-    category: "Web Development",
-    icon: "⚙️",
-    tagline: "Built for Performance & Scale",
-    shortDescription:
-      "Expert Laravel development for custom web apps, API layers, legacy migrations, and enterprise-grade deployments with dedicated support.",
-    description:
-      "At Isarva, we combine technical, creative, and engineering expertise to deliver outstanding, secure, and robust Laravel custom web applications — from discovery and architecture to launch and ongoing support.",
-    ogImage: "/products/laravel/laravel_dashboard.png",
-    keywords: [
-      "Laravel development services",
-      "custom Laravel application",
-      "Laravel web development India",
-      "Laravel API development",
-      "Laravel migration services",
-      "Laravel enterprise application",
-      "Laravel performance optimization",
-      "Laravel DevOps CI/CD",
-      "Laravel ecommerce development",
-      "Laravel maintenance support",
-      "Laravel AI integration",
-      "PHP Laravel developers",
-    ],
-    features: [
-      "Custom Web Applications",
-      "Legacy Migration & Upgrades",
-      "RESTful & GraphQL APIs",
-      "Performance Optimization",
-      "DevOps, AWS & CI/CD",
-      "Security & Hardening",
-      "AI-Enhanced Integrations",
-      "Support & Maintenance",
-    ],
-    technologies: ["Laravel 11", "PHP 8.3", "MySQL", "PostgreSQL", "Redis", "Vue.js", "React", "Docker", "AWS"],
-    benefits: [
-      "Scalable MVC & headless architectures",
-      "Sub-100ms API response tuning",
-      "Zero-downtime deployment pipelines",
-      "Enterprise security from day one",
-      "Dedicated Laravel engineering team",
-    ],
-    color: "from-red-500 to-orange-500",
-    bgGradient: "from-red-50 via-orange-50 to-white",
-  },
 ];
 
 // Helper functions to filter out internal/staging/old content from the UI

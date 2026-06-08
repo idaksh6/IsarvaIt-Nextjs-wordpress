@@ -7,11 +7,16 @@ import BenefitItem from "./BenefitItem";
 import WebsiteServicesPremium from "./WebsiteServicesPremium";
 import WordPressDevelopmentPremium from "./WordPressDevelopmentPremium";
 import WordPressDevelopmentPremiumStaging from "./WordPressDevelopmentPremiumStaging";
+import ProductDetailPremiumLaravel from "../../components/products/ProductDetailPremiumLaravel";
 import WebsiteMaintenanceFAQ from "./website-maintenance-amc/WebsiteMaintenanceFAQ";
 import WebsiteMaintenanceHeadaches from "./website-maintenance-amc/WebsiteMaintenanceHeadaches";
 import WebsiteMaintenanceProcess from "./website-maintenance-amc/WebsiteMaintenanceProcess";
 import WebsiteMaintenanceServices from "./website-maintenance-amc/WebsiteMaintenanceServices";
-import { generateServiceMetadata } from "../../lib/utils/seo";
+import {
+  generateServiceMetadata,
+  generateServiceSchema,
+  generateServiceBreadcrumbSchema,
+} from "../../lib/utils/seo";
 import NewsAndMagazinePortal from "./NewsAndMagazinePortal";
 
 export async function generateStaticParams() {
@@ -86,6 +91,30 @@ export default async function ServiceDetailPage({ params }) {
   // ── Premium page for News and Magazine Portal ──────────────
   if (slug === "news-and-magazine-portal") {
     return <NewsAndMagazinePortal service={service} servicesData={servicesData} />;
+  }
+
+  // ── Premium page for Custom Laravel Application Development ──────────────
+  if (slug === "custom-laravel-application-development") {
+    const serviceSchema = generateServiceSchema(service);
+    const breadcrumbSchema = generateServiceBreadcrumbSchema(service);
+
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+        <ProductDetailPremiumLaravel
+          product={service}
+          allProducts={servicesData}
+          entityType="service"
+        />
+      </>
+    );
   }
 
   // Get related services (3 random services excluding current)

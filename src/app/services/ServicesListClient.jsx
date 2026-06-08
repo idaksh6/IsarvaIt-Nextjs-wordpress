@@ -184,14 +184,14 @@ export default function ServicesListClient({ servicesData }) {
               </button>
             </div>
           ) : (
-            /* Services Grid */
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredServices.map((service, index) => (
+            /* Services Grid — flex + justify-center centers incomplete last rows */
+            <div className="flex flex-wrap justify-center gap-8 items-stretch">
+              {filteredServices.map((service) => (
                 <Link
                   key={service.slug}
                   href={`/service/${service.slug}`}
                   prefetch={false}
-                  className="group"
+                  className="group block h-full w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.333rem)]"
                 >
                   <div className="relative rounded-3xl p-8 h-full transition-all duration-300 hover:scale-[1.02] bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg hover:shadow-2xl flex flex-col items-center text-center">
                     {/* Hover Gradient Effect */}

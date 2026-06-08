@@ -1089,44 +1089,52 @@ export default function ProductDetailPremiumBillSoft({
                   >
                     <Link
                       href={`/product/${prod.slug}`}
-                      className="block h-full"
+                      className="flex h-full self-stretch"
                     >
-                      <div className="relative rounded-3xl p-8 h-full bg-white border-2 border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col items-center text-center group overflow-visible">
+                      <div className="relative rounded-3xl p-8 w-full flex flex-col flex-1 bg-white border-2 border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300 items-center text-center group overflow-visible">
                         {/* Category Badge */}
-                        <div className="inline-flex items-center justify-center bg-white text-sky-600 text-xs font-bold px-3 py-1 rounded-full border-2 border-sky-200 shadow-md mb-4">
-                          {prod.category}
+                        <div className="h-7 flex items-center justify-center shrink-0 mb-4">
+                          <span className="inline-flex items-center justify-center bg-white text-sky-600 text-xs font-bold px-3 py-1 rounded-full border-2 border-sky-200 shadow-md">
+                            {prod.category}
+                          </span>
                         </div>
 
-                        <div className="relative flex-grow w-full flex flex-col items-center">
+                        <div className="relative w-full flex flex-col flex-1 min-h-0 items-center">
                           {/* Icon */}
-                          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                          <div className="w-16 h-16 shrink-0 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
                             <span className="text-3xl">{prod.icon}</span>
                           </div>
 
                           {/* Title */}
-                          <h3 className="mb-3 uppercase">
-                            {prod.title}
-                          </h3>
+                          <div className="mb-2 w-full h-16 flex items-center justify-center shrink-0">
+                            <h3 className="uppercase line-clamp-2">
+                              {prod.title}
+                            </h3>
+                          </div>
 
                           {/* Tagline */}
-                          {prod.tagline && (
-                            <p className="text-sky-600 font-bold text-sm mb-3 uppercase tracking-wide">
-                              {prod.tagline}
-                            </p>
-                          )}
+                          <div className="mb-2 flex h-[3.25rem] w-full items-center justify-center shrink-0">
+                            {prod.tagline ? (
+                              <p className="text-sky-600 font-bold text-sm uppercase tracking-wide line-clamp-2 leading-snug">
+                                {prod.tagline}
+                              </p>
+                            ) : (
+                              <span className="sr-only">No tagline</span>
+                            )}
+                          </div>
 
                           {/* Description */}
-                          <p className="text-gray-500 leading-relaxed mb-6 text-sm font-medium">
+                          <p className="flex-1 text-gray-500 leading-relaxed mb-6 text-sm font-medium min-h-[4.75rem] line-clamp-4 w-full">
                             {prod.shortDescription}
                           </p>
-                        </div>
 
-                        {/* CTA Link at bottom */}
-                        <div className="flex items-center justify-center gap-2 text-sky-600 font-black text-xs uppercase tracking-widest mt-auto pt-4 border-t border-gray-50 group-hover:gap-3 transition-all w-full">
-                          Explore Product
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                          </svg>
+                          {/* CTA Link at bottom */}
+                          <div className="mt-auto shrink-0 flex items-center justify-center gap-2 text-sky-600 font-black text-xs uppercase tracking-widest pt-4 border-t border-gray-50 group-hover:gap-3 transition-all w-full">
+                            Explore Product
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </Link>
@@ -1415,32 +1423,37 @@ function BillsoftUniqueFeatures() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-start">
           {uniqueFeaturesData.map((feat, i) => (
-            <div key={i} className="group relative bg-white/80 backdrop-blur-xl rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 border border-white hover:border-blue-100 hover:-translate-y-2 overflow-hidden flex flex-col items-center text-center">
+            <div key={i} className="group relative bg-white/80 backdrop-blur-xl rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all duration-500 border border-white hover:border-blue-100 hover:-translate-y-2 overflow-hidden flex flex-col items-center text-center h-full">
               <div className={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${feat.color} opacity-80 group-hover:opacity-100 transition-opacity`}></div>
 
-              <div className={`w-14 h-14 rounded-2xl mb-6 flex items-center justify-center text-3xl shadow-xl shadow-blue-900/10 bg-gradient-to-br ${feat.color} text-white transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500`}>
+              <div className={`w-14 h-14 shrink-0 rounded-2xl mb-5 flex items-center justify-center text-3xl shadow-xl shadow-blue-900/10 bg-gradient-to-br ${feat.color} text-white transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500`}>
                 {feat.icon}
               </div>
 
-              <h3 className="mb-3">{feat.title}</h3>
-              <p className="text-gray-500 text-sm mb-6 leading-relaxed font-medium">
-                {feat.description}
-              </p>
+              <div className="w-full flex flex-col">
+                <div className="mb-2 w-full h-14 flex items-center justify-center shrink-0 px-1">
+                  <h3 className="line-clamp-2">{feat.title}</h3>
+                </div>
 
-              <ul className="space-y-3 w-full">
-                {feat.points.map((point, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-sm text-gray-600 font-medium text-left">
-                    <div className={`w-5 h-5 rounded-full bg-gradient-to-br ${feat.color} flex items-center justify-center flex-shrink-0 mt-0.5 text-white shadow-sm`}>
-                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
+                <p className="text-gray-500 text-sm mb-4 leading-snug font-medium h-[3.75rem] line-clamp-3 w-full shrink-0">
+                  {feat.description}
+                </p>
+
+                <ul className="space-y-2.5 w-full">
+                  {feat.points.map((point, idx) => (
+                    <li key={idx} className="flex items-start gap-3 text-sm text-gray-600 font-medium text-left">
+                      <div className={`w-5 h-5 rounded-full bg-gradient-to-br ${feat.color} flex items-center justify-center flex-shrink-0 mt-0.5 text-white shadow-sm`}>
+                        <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>
