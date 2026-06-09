@@ -5,7 +5,8 @@
 
 // Remove trailing slash if present to avoid double slashes
 const cleanUrl = (url) => url.endsWith('/') ? url.slice(0, -1) : url;
-const WORDPRESS_API_URL = cleanUrl(process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://blog.isarvait.com');
+const WORDPRESS_API_URL = cleanUrl(process.env.NEXT_PUBLIC_WORDPRESS_URL || 'http://reactwordpress.local');
+const WORDPRESS_BLOG_API_URL = cleanUrl(process.env.NEXT_PUBLIC_WORDPRESS_BLOG_URL || 'https://blog.isarvait.com');
 
 // Check if WordPress is available
 // Simply verify that a URL has been configured via the environment variable
@@ -236,10 +237,6 @@ export async function getMediaUrl(mediaId) {
  * @returns {Promise<Array>} Array of posts
  */
 export async function fetchPosts(options = {}) {
-  if (!isWordPressAvailable()) {
-    return [];
-  }
-
   try {
     const {
       perPage = 10,
@@ -262,7 +259,7 @@ export async function fetchPosts(options = {}) {
     const fieldsQuery = fieldsParam ? `&_fields=${fieldsParam}` : '';
     
     const response = await fetch(
-      `${WORDPRESS_API_URL}/wp-json/wp/v2/posts?per_page=${perPage}&orderby=${orderby}&order=${order}${categoryQuery}${fieldsQuery}${embedQuery}`,
+      `${WORDPRESS_BLOG_API_URL}/wp-json/wp/v2/posts?per_page=${perPage}&orderby=${orderby}&order=${order}${categoryQuery}${fieldsQuery}${embedQuery}`,
       {
         next: { revalidate },
       }
