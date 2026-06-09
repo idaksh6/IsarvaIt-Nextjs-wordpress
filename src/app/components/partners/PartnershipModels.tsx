@@ -217,7 +217,7 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
               <div className="lg:col-span-4 lg:sticky lg:top-32 space-y-10 md:space-y-12">
                 {/* Deliverables & Support First */}
                 <div className="space-y-5">
-                  <p className="text-xs font-black text-emerald-600 uppercase tracking-widest border-l-4 border-emerald-600 pl-4">Deliverables & Support</p>
+                  <p className="text-xs font-black text-emerald-600 capitalize tracking-widest border-l-4 border-emerald-600 pl-4">Deliverables & Support</p>
                   <div className="grid grid-cols-1 gap-4">
                     {activeModel.deliverables.map((item, idx) => (
                       <div key={idx} className="flex gap-4 p-5 rounded-2xl bg-white border border-gray-100 shadow-sm transition-all hover:shadow-md hover:border-emerald-100 group/card">
@@ -235,10 +235,10 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
 
                 {/* Ideal For Second */}
                 <div className="space-y-5">
-                  <p className="text-xs font-black text-emerald-600 uppercase tracking-widest border-l-4 border-emerald-600 pl-4">Ideal For</p>
+                  <p className="text-xs font-black text-emerald-600 capitalize tracking-widest border-l-4 border-emerald-600 pl-4">Ideal For</p>
                   <div className="flex flex-wrap gap-2.5">
                     {activeModel.idealFor.map((tag, idx) => (
-                      <span key={idx} className="px-4 py-2 rounded-xl bg-white border border-gray-100 text-gray-600 text-[11px] font-bold shadow-sm uppercase tracking-wider transition-all hover:border-emerald-200 hover:text-emerald-700">
+                      <span key={idx} className="px-4 py-2 rounded-xl bg-white border border-gray-100 text-gray-600 text-[11px] font-bold shadow-sm capitalize tracking-wider transition-all hover:border-emerald-200 hover:text-emerald-700">
                         {tag}
                       </span>
                     ))}
@@ -253,7 +253,7 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
                   <h3 className="text-[#111827] mb-4">{activeModel.subtitle}</h3>
 
                   <div className="mt-8 md:mt-10">
-                    <p className="text-xs font-black text-emerald-600 uppercase tracking-widest mb-8 flex items-center gap-4">
+                    <p className="text-xs font-black text-emerald-600 capitalize tracking-widest mb-8 flex items-center gap-4">
                       <span className="w-8 h-1 bg-emerald-600" /> The Partnership Path
                     </p>
 
@@ -269,7 +269,7 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
                             {item.step}
                           </div>
                           <div>
-                            <h3 className="mb-1 uppercase group-hover:text-emerald-400 transition-colors duration-500">
+                            <h3 className="mb-1 capitalize group-hover:text-emerald-400 transition-colors duration-500">
                               {item.label}
                             </h3>
                             <p className="text-gray-500 font-body text-sm md:text-xs lg:text-base leading-relaxed">
@@ -293,26 +293,26 @@ const PartnershipModels = ({ onApply }: { onApply?: () => void }) => {
                     <div className="bg-gradient-to-br from-emerald-50 to-white p-6 sm:p-8 md:p-10 rounded-[32px] text-emerald-900 border border-emerald-100 h-full relative overflow-hidden group/earn text-center md:text-left">
                       <div className="absolute -top-10 -right-10 w-40 h-40 bg-emerald-500/5 rounded-full blur-3xl group-hover/earn:bg-emerald-500/10 transition-all duration-700" />
 
-                      <p className="text-emerald-600 text-[10px] font-black tracking-widest uppercase mb-6">Revenue Advantage</p>
+                      <p className="text-emerald-600 text-[10px] font-black tracking-widest capitalize mb-6">Revenue Advantage</p>
                       <h3 className="text-emerald-900 mb-8">
                         {activeModel.earn}
                       </h3>
                       <div className="h-px bg-emerald-100 w-full mb-6" />
-                      <p className="text-emerald-600/60 text-xs font-bold uppercase tracking-widest">Payout Per Project Instance</p>
+                      <p className="text-emerald-600/60 text-xs font-bold capitalize tracking-widest">Payout Per Project Instance</p>
                     </div>
                   </div>
 
                   <div className="sm:col-span-12 lg:col-span-5">
                     <div className="bg-white border border-emerald-100 p-8 md:p-10 rounded-[32px] h-full flex flex-col justify-center gap-6 md:gap-8">
                       <div>
-                        <p className="text-xs font-black text-emerald-600 uppercase tracking-widest mb-6">Partner Extras</p>
+                        <p className="text-xs font-black text-emerald-600 capitalize tracking-widest mb-6">Partner Extras</p>
                         <p className="text-gray-600 font-medium text-sm leading-relaxed italic border-l-4 border-emerald-200 pl-4">
                           {activeModel.extras}
                         </p>
                       </div>
                       <button
                         onClick={onApply}
-                        className="press-illusion-btn-orange w-full py-5 rounded-2xl text-[13px] md:text-sm font-black uppercase tracking-widest whitespace-nowrap transition-all"
+                        className="press-illusion-btn-orange w-full py-5 rounded-2xl text-[13px] md:text-sm font-black capitalize tracking-widest whitespace-nowrap transition-all"
                       >
                         Partner Now
                       </button>

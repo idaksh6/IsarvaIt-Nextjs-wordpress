@@ -205,7 +205,7 @@ function ThankYouContent() {
                   <Mail className="w-5 h-5 text-emerald-600" />
                 </div>
                 <div>
-                  <div className="text-xs text-[#53606b] font-bold uppercase tracking-wider mb-1">Email Us</div>
+                  <div className="text-xs text-[#53606b] font-bold capitalize tracking-wider mb-1">Email Us</div>
                   <a
                     href="mailto:marketing@isarvait.com"
                     className="text-emerald-600 font-bold hover:text-emerald-700 transition-colors"
@@ -220,7 +220,7 @@ function ThankYouContent() {
                   <Phone className="w-5 h-5 text-emerald-600" />
                 </div>
                 <div>
-                  <div className="text-xs text-[#53606b] font-bold uppercase tracking-wider mb-1">Call Us</div>
+                  <div className="text-xs text-[#53606b] font-bold capitalize tracking-wider mb-1">Call Us</div>
                   <a
                     href="tel:+919902863697"
                     className="text-emerald-600 font-bold hover:text-emerald-700 transition-colors"

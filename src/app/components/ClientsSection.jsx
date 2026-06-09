@@ -15,7 +15,7 @@ export default function ClientsSection({ data }) {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[150px] rounded-full pointer-events-none" />
 
       <div className="max-w-9xl mx-auto px-6 text-center relative z-10">
-        <p className="text-black text-sm font-bold uppercase tracking-[0.2em] mb-16">
+        <p className="text-black text-sm font-bold capitalize tracking-[0.2em] mb-16">
           Our Work Revolves Around
         </p>
         <div className="flex flex-wrap justify-center items-center gap-8 ">

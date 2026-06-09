@@ -106,7 +106,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <span className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-gradient-to-r from-teal-50 to-emerald-50 text-teal-700 text-[10px] font-black tracking-[0.3em] uppercase mb-8 border border-teal-100/50 shadow-sm">
+            <span className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-gradient-to-r from-teal-50 to-emerald-50 text-teal-700 text-[10px] font-black tracking-[0.3em] capitalize mb-8 border border-teal-100/50 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></span>
               The Future of Godown Tech
             </span>
@@ -185,7 +185,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                           { label: "Out of Stock", val: "04", sub: "Urgent", color: "from-rose-500 to-red-600" }
                         ].map((stat, idx) => (
                           <div key={idx} className="bg-white p-6 rounded-[2rem] shadow-[0_10px_30px_rgba(0,0,0,0.02)] border border-slate-100 flex flex-col justify-between h-32 hover:shadow-lg transition-all group relative overflow-hidden">
-                            <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">{stat.label}</span>
+                            <span className="text-[9px] font-black text-slate-400 capitalize tracking-widest">{stat.label}</span>
                             <div className="flex flex-col">
                               <span className={`text-3xl font-black ${idx === 3 ? "text-rose-500" : "text-slate-900"}`}>{stat.val}</span>
                               <span className="text-[8px] font-bold text-slate-400 mt-1">{stat.sub}</span>
@@ -198,10 +198,10 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                          <div className="flex justify-between items-center mb-8">
                             <div className="flex flex-col">
                               <span className="font-black text-slate-800 text-lg">Inventory Flow Matrix</span>
-                              <span className="text-xs font-bold text-slate-400 uppercase tracking-tight">Units Analytics (2024)</span>
+                              <span className="text-xs font-bold text-slate-400 capitalize tracking-tight">Units Analytics (2024)</span>
                             </div>
                             <div className="flex gap-3">
-                              <div className="px-4 py-2 bg-slate-50 rounded-xl border border-slate-100 text-[10px] font-black uppercase text-slate-400">Monthly</div>
+                              <div className="px-4 py-2 bg-slate-50 rounded-xl border border-slate-100 text-[10px] font-black capitalize text-slate-400">Monthly</div>
                               <div className="h-10 w-10 bg-teal-50 text-teal-600 rounded-xl flex items-center justify-center">⚙️</div>
                             </div>
                          </div>
@@ -231,14 +231,14 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
             {/* Advanced Decorative Icons */}
             <div className="absolute -top-12 -left-12 bg-gradient-to-br from-white to-teal-50 shadow-2xl rounded-[2rem] p-6 border border-teal-100/50 animate-bounce cursor-default backdrop-blur-sm">
               <span className="text-4xl filter drop-shadow-md">⚡</span>
-              <div className="text-[10px] font-black text-teal-600 mt-2 uppercase tracking-tighter">Ultra-Fast Sync</div>
+              <div className="text-[10px] font-black text-teal-600 mt-2 capitalize tracking-tighter">Ultra-Fast Sync</div>
             </div>
             <div className="absolute -bottom-16 -right-8 bg-gradient-to-tr from-slate-900 to-slate-800 shadow-2xl rounded-[2.5rem] p-7 border-4 border-white hover:scale-110 transition-transform cursor-pointer group">
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 bg-gradient-to-br from-teal-400 to-emerald-400 rounded-2xl flex items-center justify-center text-3xl shadow-inner group-hover:rotate-12 transition-transform">📱</div>
                 <div className="text-left">
                   <div className="text-sm font-black text-white leading-none">Smart Mobile Hub</div>
-                  <div className="text-[10px] text-teal-400 mt-1.5 font-black uppercase tracking-widest group-hover:text-emerald-400 transition-colors">Enterprise Ready</div>
+                  <div className="text-[10px] text-teal-400 mt-1.5 font-black capitalize tracking-widest group-hover:text-emerald-400 transition-colors">Enterprise Ready</div>
                 </div>
               </div>
             </div>
@@ -251,7 +251,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
-              <span className="text-teal-600 font-black tracking-widest text-xs uppercase mb-6 inline-block">MOBILE OPTIMIZED</span>
+              <span className="text-teal-600 font-black tracking-widest text-xs capitalize mb-6 inline-block">MOBILE OPTIMIZED</span>
               <h2 className="text-slate-900 mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Your Warehouse in <br /><span className="text-teal-600">Your Pocket.</span></h2>
               <p className="text-slate-500 text-lg mb-8 leading-relaxed font-medium">Access your entire godown operation from anywhere. Our mobile-first design ensures you stay in control even when you're on the move.</p>
               
@@ -283,16 +283,16 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                            <span className="text-sm font-black">Dashboard</span>
                            <div className="w-6 h-6 bg-white/20 rounded-lg"></div>
                         </div>
-                        <div className="text-[10px] opacity-80 uppercase font-black">Total Products</div>
+                        <div className="text-[10px] opacity-80 capitalize font-black">Total Products</div>
                         <div className="text-3xl font-black">2,485</div>
                      </div>
                      <div className="flex-1 p-4 space-y-4 bg-slate-50">
                         <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
-                           <div className="text-[9px] font-black text-slate-400 uppercase mb-2">Pending Payments</div>
+                           <div className="text-[9px] font-black text-slate-400 capitalize mb-2">Pending Payments</div>
                            <div className="text-lg font-black text-rose-500">₹ 42,500</div>
                         </div>
                         <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
-                           <div className="text-[9px] font-black text-slate-400 uppercase mb-2">Upcoming Dues (10 Days)</div>
+                           <div className="text-[9px] font-black text-slate-400 capitalize mb-2">Upcoming Dues (10 Days)</div>
                            <div className="space-y-2 mt-2">
                               <div className="h-6 bg-amber-50 rounded-lg border border-amber-100 flex items-center px-3 justify-between">
                                  <span className="text-[8px] font-bold">Event A102</span>
@@ -308,11 +308,11 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                         <div className="grid grid-cols-2 gap-3 pt-2">
                            <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center gap-2">
                               <div className="w-8 h-8 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center text-sm">📦</div>
-                              <span className="text-[9px] font-black uppercase">Stock</span>
+                              <span className="text-[9px] font-black capitalize">Stock</span>
                            </div>
                            <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center gap-2">
                               <div className="w-8 h-8 rounded-full bg-cyan-100 text-cyan-600 flex items-center justify-center text-sm">🗓️</div>
-                              <span className="text-[9px] font-black uppercase">Events</span>
+                              <span className="text-[9px] font-black capitalize">Events</span>
                            </div>
                         </div>
                      </div>
@@ -355,7 +355,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                     </div>
                     <div className="space-y-4 flex-1">
                        <div className="bg-slate-50 p-4 rounded-xl">
-                          <div className="text-[10px] font-black text-slate-400 uppercase">Barcode ID</div>
+                          <div className="text-[10px] font-black text-slate-400 capitalize">Barcode ID</div>
                           <div className="text-lg font-mono font-bold tracking-widest mt-1">PROD-99827-X</div>
                        </div>
                        <div className="flex gap-2">
@@ -375,7 +375,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
             </div>
             
             <div>
-              <span className="text-teal-600 font-black tracking-widest text-xs uppercase mb-6 inline-block">MASTER SETUP</span>
+              <span className="text-teal-600 font-black tracking-widest text-xs capitalize mb-6 inline-block">MASTER SETUP</span>
               <h2 className="text-slate-900 mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Foundation for <br /><span className="text-teal-600">Enterprise Scale.</span></h2>
               
               <div className="space-y-8">
@@ -445,7 +445,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-20">
             <div className="lg:w-1/2">
-              <span className="text-teal-400 font-black tracking-widest text-xs uppercase mb-6 inline-block">AUTOMATION THAT WORKS</span>
+              <span className="text-teal-400 font-black tracking-widest text-xs capitalize mb-6 inline-block">AUTOMATION THAT WORKS</span>
               <h2 className="mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Smart Status Updates— <br /><span className="text-teal-400">Zero Manual Work.</span></h2>
               <p className="text-slate-400 text-lg mb-10 leading-relaxed font-medium">Our system automatically detects inventory returns and updates statuses in real-time. Whether it's partially back or fully returned, the system knows what to do.</p>
               
@@ -495,7 +495,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                      }}
                    >
                      <span className="text-2xl">{statusFlow[i].icon}</span>
-                     <span className="text-[10px] font-black uppercase text-center">{statusFlow[i].status}</span>
+                     <span className="text-[10px] font-black capitalize text-center">{statusFlow[i].status}</span>
                    </motion.div>
                  ))}
                </div>
@@ -517,16 +517,16 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                  <div className="p-8 space-y-6 bg-white">
                     <div className="grid grid-cols-2 gap-4">
                        <div className="p-5 rounded-2xl bg-emerald-50 border border-emerald-100">
-                          <div className="text-[10px] font-black text-emerald-600 uppercase mb-2">Good Condition</div>
+                          <div className="text-[10px] font-black text-emerald-600 capitalize mb-2">Good Condition</div>
                           <div className="text-3xl font-black text-emerald-700">12</div>
                        </div>
                        <div className="p-5 rounded-2xl bg-amber-50 border border-amber-100">
-                          <div className="text-[10px] font-black text-amber-600 uppercase mb-2">Damaged</div>
+                          <div className="text-[10px] font-black text-amber-600 capitalize mb-2">Damaged</div>
                           <div className="text-3xl font-black text-amber-700">02</div>
                        </div>
                     </div>
                     <div className="p-5 rounded-2xl bg-rose-50 border border-rose-100">
-                       <div className="text-[10px] font-black text-rose-600 uppercase mb-2">Missing Items</div>
+                       <div className="text-[10px] font-black text-rose-600 capitalize mb-2">Missing Items</div>
                        <div className="text-3xl font-black text-rose-700">01</div>
                     </div>
                     <div className="pt-6 border-t border-slate-100 flex justify-between items-center">
@@ -544,7 +544,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
             </div>
 
             <div className="order-1 lg:order-2">
-              <span className="text-teal-600 font-black tracking-widest text-xs uppercase mb-6 inline-block">ACCOUNTABILITY & CONDITION</span>
+              <span className="text-teal-600 font-black tracking-widest text-xs capitalize mb-6 inline-block">ACCOUNTABILITY & CONDITION</span>
               <h2 className="text-slate-900 mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Meticulous Return <br /><span className="text-teal-600">Management.</span></h2>
               <div className="space-y-10">
                 <div className="flex gap-6">

@@ -53,7 +53,7 @@ export default function SupportSystemCaseStudyClient() {
           >
             <motion.span
               variants={fadeInUp}
-              className="inline-block py-1.5 px-4 mb-6 rounded-full bg-emerald-100 text-emerald-800 text-sm font-semibold tracking-wide uppercase border border-emerald-200"
+              className="inline-block py-1.5 px-4 mb-6 rounded-full bg-emerald-100 text-emerald-800 text-sm font-semibold tracking-wide capitalize border border-emerald-200"
             >
               Case Study
             </motion.span>
@@ -85,7 +85,7 @@ export default function SupportSystemCaseStudyClient() {
             </motion.div>
 
             {/* Tags from Prompt */}
-            <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-3 text-xs font-bold text-emerald-700 uppercase tracking-wider mb-8">
+            <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-3 text-xs font-bold text-emerald-700 capitalize tracking-wider mb-8">
               <span className="bg-emerald-50 px-3 py-1 rounded-md">Project Management</span>
 
               <span className="bg-emerald-50 px-3 py-1 rounded-md">Ticket Management</span>
@@ -139,37 +139,37 @@ export default function SupportSystemCaseStudyClient() {
             <div className="p-6 md:p-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-12 gap-y-6 md:gap-y-8">
                 <div>
-                  <p className="text-xs md:text-sm text-emerald-600 font-bold mb-1 uppercase tracking-wider">Industry</p>
+                  <p className="text-xs md:text-sm text-emerald-600 font-bold mb-1 capitalize tracking-wider">Industry</p>
                   <p className="font-medium text-gray-900 text-base md:text-lg">Website Designing Company</p>
                 </div>
                 <div>
-                  <p className="text-xs md:text-sm text-emerald-600 font-bold mb-1 uppercase tracking-wider">Workforce Type</p>
+                  <p className="text-xs md:text-sm text-emerald-600 font-bold mb-1 capitalize tracking-wider">Workforce Type</p>
                   <p className="font-medium text-gray-900 text-base md:text-lg">Website Development, Maintenance Company</p>
                 </div>
                 <div>
-                  <p className="text-xs md:text-sm text-emerald-600 font-bold mb-1 uppercase tracking-wider">Employee Count</p>
+                  <p className="text-xs md:text-sm text-emerald-600 font-bold mb-1 capitalize tracking-wider">Employee Count</p>
                   <p className="font-medium text-gray-900 text-base md:text-lg">Mid-Sized, dynamic workforce with month-on-month fluctuation</p>
                 </div>
                 <div>
-                  <p className="text-xs md:text-sm text-emerald-600 font-bold mb-1 uppercase tracking-wider">Previous System</p>
+                  <p className="text-xs md:text-sm text-emerald-600 font-bold mb-1 capitalize tracking-wider">Previous System</p>
                   <p className="font-medium text-gray-900 text-base md:text-lg">Microsoft Excel sheets, emails, and manual tracking</p>
                 </div>
                 <div>
-                  <p className="text-xs md:text-sm text-emerald-600 font-bold mb-1 uppercase tracking-wider">Project Volume</p>
+                  <p className="text-xs md:text-sm text-emerald-600 font-bold mb-1 capitalize tracking-wider">Project Volume</p>
                   <p className="font-medium text-gray-900 text-base md:text-lg">Multiple ongoing projects with continuous client Company requests</p>
                 </div>
                 <div>
-                  <p className="text-xs md:text-sm text-emerald-600 font-bold mb-1 uppercase tracking-wider">Team Structure</p>
+                  <p className="text-xs md:text-sm text-emerald-600 font-bold mb-1 capitalize tracking-wider">Team Structure</p>
                   <p className="font-medium text-gray-900 text-base md:text-lg">Designers, Developers, Company Executives, Management</p>
                 </div>
                 <div className="md:col-span-2 bg-emerald-50/50 p-6 rounded-2xl border border-emerald-100/50 mt-4 md:mt-0">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                     <div>
-                      <p className="text-xs md:text-sm text-emerald-600 font-bold mb-1 uppercase tracking-wider">Solution Deployed</p>
+                      <p className="text-xs md:text-sm text-emerald-600 font-bold mb-1 capitalize tracking-wider">Solution Deployed</p>
                       <p className="font-medium text-gray-900 text-base md:text-lg">Isarva Support System — centralized web-based platform accessible from everywhere</p>
                     </div>
                     <div>
-                      <p className="text-xs md:text-sm text-emerald-600 font-bold mb-1 uppercase tracking-wider">Go-Live Duration</p>
+                      <p className="text-xs md:text-sm text-emerald-600 font-bold mb-1 capitalize tracking-wider">Go-Live Duration</p>
                       <p className="font-medium text-gray-900 text-base md:text-lg">Over 8 months in active production use</p>
                     </div>
                   </div>
@@ -212,10 +212,10 @@ export default function SupportSystemCaseStudyClient() {
             <div className="bg-white rounded-2xl md:rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
               {/* Header Row */}
               <div className="hidden md:grid grid-cols-2 bg-gray-50 border-b border-gray-100 p-6">
-                <div className="font-bold text-gray-900 uppercase tracking-wider text-[20px] flex items-center gap-2">
+                <div className="font-bold text-gray-900 capitalize tracking-wider text-[20px] flex items-center gap-2">
                   <AlertTriangle size={18} className="text-red-500" /> Business Challenge
                 </div>
-                <div className="font-bold text-emerald-700 uppercase tracking-wider text-[20px] flex items-center gap-2 md:pl-12">
+                <div className="font-bold text-emerald-700 capitalize tracking-wider text-[20px] flex items-center gap-2 md:pl-12">
                   <CheckCircle size={18} className="text-emerald-500" /> Isarva Support Solution
                 </div>
               </div>
@@ -237,14 +237,14 @@ export default function SupportSystemCaseStudyClient() {
                     </div>
 
                     <div className="md:pr-12 mb-4 md:mb-0 flex flex-col justify-center">
-                      <div className="md:hidden flex items-center gap-2 text-red-500 font-bold text-[10px] uppercase tracking-wider mb-2">
+                      <div className="md:hidden flex items-center gap-2 text-red-500 font-bold text-[10px] capitalize tracking-wider mb-2">
                         <AlertTriangle size={14} /> Challenge
                       </div>
                       <p className="text-gray-700 font-medium text-base md:text-lg">{item.c}</p>
                     </div>
 
                     <div className="md:pl-12 flex flex-col justify-center">
-                      <div className="md:hidden flex items-center gap-2 text-emerald-600 font-bold text-[10px] uppercase tracking-wider mb-2 mt-2 pt-4 border-t border-gray-100">
+                      <div className="md:hidden flex items-center gap-2 text-emerald-600 font-bold text-[10px] capitalize tracking-wider mb-2 mt-2 pt-4 border-t border-gray-100">
                         <CheckCircle size={14} /> Isarva Solution
                       </div>
                       <p className="text-gray-900 font-bold text-base md:text-lg text-emerald-700">{item.s}</p>

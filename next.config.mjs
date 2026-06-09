@@ -77,6 +77,11 @@ const nextConfig = {
         destination: "/service/custom-laravel-application-development",
         permanent: true,
       },
+      {
+        source: "/hrms-pricing",
+        destination: "/product/hrms-software/hrms-pricing",
+        permanent: true,
+      },
     ];
   },
   

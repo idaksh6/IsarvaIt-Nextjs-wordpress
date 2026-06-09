@@ -96,7 +96,7 @@ const WhiteLabelServices = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-black uppercase tracking-widest mb-6"
+            className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-xs font-black capitalize tracking-widest mb-6"
           >
             Our Service Suite
           </motion.div>
@@ -139,7 +139,7 @@ const WhiteLabelServices = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
 
                 <div className="absolute bottom-6 left-10 right-10">
-                  <h3 className="text-white uppercase">
+                  <h3 className="text-white capitalize">
                     {service.title}
                   </h3>
                 </div>
@@ -153,7 +153,7 @@ const WhiteLabelServices = () => {
                 <div className="mt-auto">
                   <div className="flex items-center gap-2 mb-6">
                     <div className="h-[1px] flex-grow bg-slate-100" />
-                    <span className="text-[10px] font-black text-blue-600 uppercase tracking-widest flex-shrink-0">
+                    <span className="text-[10px] font-black text-blue-600 capitalize tracking-widest flex-shrink-0">
                       Deliverables
                     </span>
                     <div className="h-[1px] flex-grow bg-slate-100" />

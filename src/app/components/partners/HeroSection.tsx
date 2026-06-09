@@ -113,7 +113,7 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
               </button>
               <button
                 onClick={onApply}
-                className="group relative w-full sm:w-auto min-w-[200px] h-14 rounded-2xl border-2 border-emerald-600/20 text-emerald-600 font-black font-display uppercase tracking-wider text-xs flex items-center justify-center gap-3 bg-white/50 backdrop-blur-sm transition-all duration-300 hover:border-emerald-600 hover:bg-emerald-600 hover:text-white active:scale-95"
+                className="group relative w-full sm:w-auto min-w-[200px] h-14 rounded-2xl border-2 border-emerald-600/20 text-emerald-600 font-black font-display capitalize tracking-wider text-xs flex items-center justify-center gap-3 bg-white/50 backdrop-blur-sm transition-all duration-300 hover:border-emerald-600 hover:bg-emerald-600 hover:text-white active:scale-95"
               >
                 <MessageSquare className="w-5 h-5 group-hover:animate-bounce" />
                 Talk to Us
@@ -129,7 +129,7 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
                   variants={pillVariants}
                   initial="initial"
                   animate="animate"
-                  className={`bg-white/80 backdrop-blur-sm px-5 py-2.5 rounded-full shadow-sm text-xs md:text-sm font-bold border border-slate-100 flex items-center justify-center font-display tracking-widest uppercase text-slate-600`}
+                  className={`bg-white/80 backdrop-blur-sm px-5 py-2.5 rounded-full shadow-sm text-xs md:text-sm font-bold border border-slate-100 flex items-center justify-center font-display tracking-widest capitalize text-slate-600`}
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-2" />
                   {pill.text}
@@ -164,7 +164,7 @@ const HeroSection = ({ onApply }: { onApply: () => void }) => {
               </div>
               <div className="flex flex-col items-center leading-none">
                 <p className="text-3xl font-black bg-clip-text text-transparent bg-gradient-to-br from-amber-400 to-orange-600">30%</p>
-                <p className="text-[8px] font-black text-slate-500 uppercase tracking-widest">Commission</p>
+                <p className="text-[8px] font-black text-slate-500 capitalize tracking-widest">Commission</p>
               </div>
             </motion.div>
 

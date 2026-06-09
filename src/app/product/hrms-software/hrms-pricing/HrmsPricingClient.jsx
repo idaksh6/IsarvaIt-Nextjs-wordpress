@@ -1,8 +1,8 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import Link from "../components/AppLink";
-import ContactFormModal from "../components/ContactFormModal";
+import Link from "../../../components/AppLink";
+import ContactFormModal from "../../../components/ContactFormModal";
 import { PRICING_PLANS } from "./hrms-pricing-data";
 import "./hrms-pricing.css";
 
@@ -126,13 +126,18 @@ export default function HrmsPricingClient() {
   return (
     <div className="hrms-pricing-page">
       <header className="main-header pt-32 lg:pt-40 pb-8 lg:pb-10">
-        <div className="max-w-7xl mx-auto px-6">
-          <h1>Simple and Transparent Pricing</h1>
+        <div className="max-w-3xl mx-auto px-6">
+          <span className="pricing-eyebrow">HRMS Software Pricing</span>
+          <h1>
+            Choose the Right Plan for{" "}
+            <span className="heading-accent">Your Team</span>
+          </h1>
           <p className="subtitle">
-            Got a question about our pricing?{" "}
+            Flexible plans for payroll, attendance, and HR — start with a 14-day free trial, no credit card required.{" "}
             <Link href="/contact" prefetch={false} id="contact">
               Contact us
-            </Link>
+            </Link>{" "}
+            for custom pricing.
           </p>
         </div>
       </header>

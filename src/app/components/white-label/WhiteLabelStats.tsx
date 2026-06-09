@@ -32,7 +32,7 @@ const WhiteLabelStats = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-1.5 rounded-full bg-blue-500 text-white text-xs font-black uppercase tracking-widest mb-6"
+            className="inline-block px-4 py-1.5 rounded-full bg-blue-500 text-white text-xs font-black capitalize tracking-widest mb-6"
           >
             By The Numbers
           </motion.div>

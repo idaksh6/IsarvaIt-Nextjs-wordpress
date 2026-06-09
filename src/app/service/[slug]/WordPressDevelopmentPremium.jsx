@@ -168,7 +168,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
                     🚀
                   </div>
                   <div>
-                    <p className="text-[10px] lg:text-xs text-gray-500 font-bold uppercase tracking-wider">
+                    <p className="text-[10px] lg:text-xs text-gray-500 font-bold capitalize tracking-wider">
                       Performance
                     </p>
                     <p className="text-base lg:text-lg font-black text-gray-900">
@@ -188,10 +188,10 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
         >
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center max-w-3xl mx-auto mb-10">
-              <span className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-3 block">
+              <span className="text-blue-600 font-bold capitalize tracking-widest text-sm mb-3 block">
                 Bespoke Solutions
               </span>
-              <h2 className="mb-6 uppercase">
+              <h2 className="mb-6 capitalize">
                 Built For Ambition
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed">
@@ -211,7 +211,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-900/60 to-transparent" />
                 <div className="absolute bottom-8 left-8 text-white">
-                  <div className="bg-sky-500/90 backdrop-blur-sm px-3 py-1 rounded text-xs font-bold uppercase tracking-wider mb-2 inline-block">
+                  <div className="bg-sky-500/90 backdrop-blur-sm px-3 py-1 rounded text-xs font-bold capitalize tracking-wider mb-2 inline-block">
                     Pixel Perfect
                   </div>
                 </div>
@@ -331,7 +331,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
                     <span className="text-3xl font-black text-green-500 mb-1">
                       A+
                     </span>
-                    <span className="text-xs text-gray-500 uppercase font-bold text-center">
+                    <span className="text-xs text-gray-500 capitalize font-bold text-center">
                       PageSpeed Core
                     </span>
                   </div>
@@ -339,7 +339,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
                     <span className="text-3xl font-black text-sky-500 mb-1">
                       {"<"}1s
                     </span>
-                    <span className="text-xs text-gray-500 uppercase font-bold text-center">
+                    <span className="text-xs text-gray-500 capitalize font-bold text-center">
                       Load Time
                     </span>
                   </div>
@@ -352,7 +352,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
         {/* ─── VISUAL ECOSYSTEM GRID ───────────────────────────────────────────── */}
         <section className="py-12 lg:py-16 bg-sky-50 relative border-y border-sky-100">
           <div className="max-w-7xl mx-auto px-6 text-center">
-            <h2 className="mb-4 uppercase">
+            <h2 className="mb-4 capitalize">
               The WordPress Ecosystem
             </h2>
             <p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
@@ -390,7 +390,7 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
         <section className="py-12 lg:py-16 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-10">
-              <h2 className="mb-6 uppercase">
+              <h2 className="mb-6 capitalize">
                 Complete Range of WP Services
               </h2>
               <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full" />
@@ -440,10 +440,10 @@ export default function WordPressDevelopmentPremium({ service, servicesData }) {
               />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-900/70 to-blue-900/30 flex items-center text-center lg:text-left">
                 <div className="px-10 lg:px-20 max-w-2xl w-full mx-auto lg:mx-0">
-                  <span className="text-sky-300 font-bold uppercase tracking-widest text-sm mb-4 block">
+                  <span className="text-sky-300 font-bold capitalize tracking-widest text-sm mb-4 block">
                     Dedicated Experts
                   </span>
-                  <h2 className="text-white mb-6 uppercase">
+                  <h2 className="text-white mb-6 capitalize">
                     Your Trusted WordPress Partners
                   </h2>
                   <p className="text-lg text-blue-100 mb-10 leading-relaxed">

@@ -179,7 +179,7 @@ export default function TestimonialPage() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 backdrop-blur-sm border border-[#10b981]/10 mb-8"
           >
             <Award className="w-4 h-4 text-[#10b981]" />
-            <span className="text-[#10b981] font-bold tracking-wider uppercase text-xs">A Decade of Excellence</span>
+            <span className="text-[#10b981] font-bold tracking-wider capitalize text-xs">A Decade of Excellence</span>
           </motion.div>
 
           <motion.h1
@@ -215,7 +215,7 @@ export default function TestimonialPage() {
             ].map((stat, idx) => (
               <div key={idx} className="text-center">
                 <div className="text-3xl md:text-4xl font-display font-bold text-[#1a1f24]">{stat.value}</div>
-                <div className="text-sm text-[#53606b] font-medium uppercase tracking-widest mt-1">{stat.label}</div>
+                <div className="text-sm text-[#53606b] font-medium capitalize tracking-widest mt-1">{stat.label}</div>
               </div>
             ))}
           </motion.div>
@@ -229,7 +229,7 @@ export default function TestimonialPage() {
             <motion.span
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="inline-block text-[#10b981] font-black tracking-[0.3em] uppercase text-xs mb-4"
+              className="inline-block text-[#10b981] font-black tracking-[0.3em] capitalize text-xs mb-4"
             >
               Visual Proof
             </motion.span>
@@ -250,7 +250,7 @@ export default function TestimonialPage() {
                 <div className="relative z-10">
                   <div className="flex lg:mx-0 mx-auto items-center gap-2 w-fit  mb-6 bg-white px-4 py-1.5 rounded-full border border-emerald-100 shadow-sm">
                     <Zap className="w-3.5 h-3.5 text-[#10b981]" />
-                    <span className="text-emerald-700 font-bold text-[9px] uppercase tracking-widest">Global Impact</span>
+                    <span className="text-emerald-700 font-bold text-[9px] capitalize tracking-widest">Global Impact</span>
                   </div>
 
                   <h3 className="font-display text-[#1a1f24] mb-10 lg:text-left text-center leading-tight">
@@ -327,7 +327,7 @@ export default function TestimonialPage() {
                 </div>
                 <div>
                   <h3 className="font-display text-[#1a1f24] leading-tight">{videoTestimonial.name}</h3>
-                  <p className="text-[#10b981] font-black tracking-widest text-[10px] uppercase">{videoTestimonial.role} @ {videoTestimonial.company}</p>
+                  <p className="text-[#10b981] font-black tracking-widest text-[10px] capitalize">{videoTestimonial.role} @ {videoTestimonial.company}</p>
                 </div>
               </div>
             </motion.div>
@@ -404,7 +404,7 @@ export default function TestimonialPage() {
                   {/* Content */}
                   <div className="flex flex-col items-center mb-8">
                     <h4 className="font-display text-[#1a1f24] mb-1">{testimonials[currentSlide].name}</h4>
-                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#10b981] mb-4 text-center ">
+                    <p className="text-[10px] font-black capitalize tracking-[0.2em] text-[#10b981] mb-4 text-center ">
                       {testimonials[currentSlide].role} @ {testimonials[currentSlide].company}
                     </p>
 
@@ -427,7 +427,7 @@ export default function TestimonialPage() {
                   </p>
 
                   <div className="text-center">
-                    <span className="inline-block text-[10px] font-black tracking-[0.2em] uppercase text-[#10b981] bg-[#10b981]/10 px-5 py-2 rounded-full border border-[#10b981]/20">
+                    <span className="inline-block text-[10px] font-black tracking-[0.2em] capitalize text-[#10b981] bg-[#10b981]/10 px-5 py-2 rounded-full border border-[#10b981]/20">
                       {testimonials[currentSlide].tag}
                     </span>
                   </div>
@@ -490,7 +490,7 @@ export default function TestimonialPage() {
                 {/* 2. Rating & Tag Header */}
                 <div className="flex flex-col items-center mb-8">
                   <h4 className="font-display text-[#1a1f24] mb-1">{t.name}</h4>
-                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#10b981] mb-4 text-center ">{t.role} @ {t.company}</p>
+                  <p className="text-[10px] font-black capitalize tracking-[0.2em] text-[#10b981] mb-4 text-center ">{t.role} @ {t.company}</p>
 
                   <div className="flex gap-1.5 px-4 py-2 bg-white rounded-full border border-black/5 shadow-sm">
                     {[...Array(t.rating)].map((_, i) => (
@@ -511,7 +511,7 @@ export default function TestimonialPage() {
                 </p>
 
                 <div className="text-center">
-                  <span className="inline-block text-[10px] font-black tracking-[0.2em] uppercase text-[#10b981] bg-[#10b981]/10 px-5 py-2 rounded-full border border-[#10b981]/20">
+                  <span className="inline-block text-[10px] font-black tracking-[0.2em] capitalize text-[#10b981] bg-[#10b981]/10 px-5 py-2 rounded-full border border-[#10b981]/20">
                     {t.tag}
                   </span>
                 </div>

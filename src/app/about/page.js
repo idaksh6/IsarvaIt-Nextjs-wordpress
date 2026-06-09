@@ -33,7 +33,7 @@ export default function AboutPage() {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <div className="inline-flex flex-col items-center mb-5 md:mb-10 section-animate">
-            <span className="text-[#10b981] font-black tracking-[0.2em] uppercase text-[clamp(0.7rem,1.5vw,0.85rem)] mb-4">Isarva Infotech</span>
+            <span className="text-[#10b981] font-black tracking-[0.2em] capitalize text-[clamp(0.7rem,1.5vw,0.85rem)] mb-4">Isarva Infotech</span>
             <h1 className="font-display text-[#1a1f24] max-w-5xl mb-8">
               Precision in <span className="italic text-[#10b981] font-bold">Technology.</span> <br /> Purpose in <span className="italic text-[#10b981] font-bold">Impact.</span>
             </h1>
@@ -57,7 +57,7 @@ export default function AboutPage() {
                 <TrendingUp className="w-6 h-6 text-[#10b981]" />
               </div>
               <span className="text-5xl md:text-6xl font-display font-bold mb-2">15+</span>
-              <p className="text-[#FDF8F2]/60 text-sm md:text-base tracking-widest uppercase font-bold text-center lg:text-left">Years of <br className="hidden md:block" /> Expertise</p>
+              <p className="text-[#FDF8F2]/60 text-sm md:text-base tracking-widest capitalize font-bold text-center lg:text-left">Years of <br className="hidden md:block" /> Expertise</p>
             </div>
 
             <div className="flex flex-col items-center lg:items-start">
@@ -65,7 +65,7 @@ export default function AboutPage() {
                 <Cpu className="w-6 h-6 text-[#10b981]" />
               </div>
               <span className="text-5xl md:text-6xl font-display font-bold mb-2">1,000+</span>
-              <p className="text-[#FDF8F2]/60 text-sm md:text-base tracking-widest uppercase font-bold text-center lg:text-left">Projects <br className="hidden md:block" /> Delivered</p>
+              <p className="text-[#FDF8F2]/60 text-sm md:text-base tracking-widest capitalize font-bold text-center lg:text-left">Projects <br className="hidden md:block" /> Delivered</p>
             </div>
 
             <div className="flex flex-col items-center lg:items-start">
@@ -73,7 +73,7 @@ export default function AboutPage() {
                 <Users className="w-6 h-6 text-[#10b981]" />
               </div>
               <span className="text-5xl md:text-6xl font-display font-bold mb-2">500+</span>
-              <p className="text-[#FDF8F2]/60 text-sm md:text-base tracking-widest uppercase font-bold text-center lg:text-left">Global <br className="hidden md:block" /> Enterprises</p>
+              <p className="text-[#FDF8F2]/60 text-sm md:text-base tracking-widest capitalize font-bold text-center lg:text-left">Global <br className="hidden md:block" /> Enterprises</p>
             </div>
           </div>
 
@@ -148,7 +148,7 @@ export default function AboutPage() {
                 <TrendingUp className="w-48 h-48 md:w-64 md:h-64" />
               </div>
               <div className="relative z-10">
-                <span className="text-[#10b981] font-black tracking-[0.2em] uppercase text-[14px] mb-2 lg:mb-6 block">Future Outlook</span>
+                <span className="text-[#10b981] font-black tracking-[0.2em] capitalize text-[14px] mb-2 lg:mb-6 block">Future Outlook</span>
                 <h2 className="font-display text-white mb-6 md:mb-8 capitalize">Our Vision</h2>
                 <p className="text-xl text-[#FDF8F2]/80 leading-relaxed font-light">
                   To empower global enterprises through transformative technology — driving progress, enriching experiences, and enabling smarter, sustainable growth.
@@ -161,7 +161,7 @@ export default function AboutPage() {
                 <Cpu className="w-48 h-48 md:w-64 md:h-64" />
               </div>
               <div className="relative z-10">
-                <span className="text-[#1a1f24] font-black tracking-[0.2em] uppercase text-[14px] mb-2 lg:mb-6 block">Day-to-day Execution</span>
+                <span className="text-[#1a1f24] font-black tracking-[0.2em] capitalize text-[14px] mb-2 lg:mb-6 block">Day-to-day Execution</span>
                 <h2 className="font-display text-white mb-6 md:mb-8 capitalize">Our Mission</h2>
                 <p className="text-xl text-white/90 leading-relaxed font-light">
                   We deliver scalable, innovative tech solutions that help enterprises and startups achieve growth, efficiency, and impact—driven by expertise and a commitment to client success.
@@ -255,7 +255,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="bg-white rounded-[4rem] p-10 lg:p-20 shadow-2xl border border-[#10b981]/5 flex flex-col lg:flex-row items-center justify-between gap-12">
             <div className="lg:w-3/5 text-center lg:text-left">
-              <span className="text-[#10b981] font-black tracking-[0.2em] uppercase text-[clamp(0.65rem,1.3vw,0.85rem)] mb-4 inline-block">Join our mission</span>
+              <span className="text-[#10b981] font-black tracking-[0.2em] capitalize text-[clamp(0.65rem,1.3vw,0.85rem)] mb-4 inline-block">Join our mission</span>
               <h2 className="font-display text-[#1a1f24] mb-8 capitalize">
                 Shape the future at<br />
                 <span className="text-[#10b981]"> Isarva Infotech.</span>

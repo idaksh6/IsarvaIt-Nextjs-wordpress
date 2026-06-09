@@ -96,7 +96,7 @@ export default function CaseStudiesClient() {
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center justify-center p-2 bg-white rounded-full shadow-sm border border-gray-100 mb-6"
           >
-            <span className="bg-emerald-100 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest flex items-center gap-2">
+            <span className="bg-emerald-100 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full capitalize tracking-widest flex items-center gap-2">
               <Sparkles size={14} /> Our Work
             </span>
           </motion.div>
@@ -194,7 +194,7 @@ export default function CaseStudiesClient() {
                   <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
                   <div className="flex justify-between items-start relative z-10">
-                    <span className="bg-white/95 backdrop-blur-sm text-gray-900 text-[10px] font-black px-3 py-1.5 rounded-full shadow-sm uppercase tracking-wider">
+                    <span className="bg-white/95 backdrop-blur-sm text-gray-900 text-[10px] font-black px-3 py-1.5 rounded-full shadow-sm capitalize tracking-wider">
                       {study.industry}
                     </span>
                     <Link

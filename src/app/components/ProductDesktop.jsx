@@ -499,7 +499,7 @@ function ProductDesktop() {
                 fontWeight: 700,
                 letterSpacing: "0.22em",
                 color: "#3b8d4d",
-                textTransform: "uppercase",
+                textTransform: "capitalize",
               }}
             >
               Our Products
@@ -990,11 +990,11 @@ const ProductDesktopCard = ({ product }) => {
         {/* Badges */}
         <div className="absolute top-2 left-2 flex gap-2">
           {isHighlighted && (
-            <span className="text-[8px] font-bold uppercase tracking-wider px-2 py-1 rounded bg-yellow-500 text-black">
+            <span className="text-[8px] font-bold capitalize tracking-wider px-2 py-1 rounded bg-yellow-500 text-black">
               {product.badge}
             </span>
           )}
-          <span className="text-[8px] font-medium uppercase tracking-wide px-2 py-1 rounded bg-blue-600 text-white">
+          <span className="text-[8px] font-medium capitalize tracking-wide px-2 py-1 rounded bg-blue-600 text-white">
             {product.category}
           </span>
         </div>
@@ -1112,7 +1112,7 @@ const MobileProductCard = ({ product, isLast }) => {
           {/* Badge */}
           {isHighlighted && (
             <div className="absolute -top-1 -right-1 lg:block hidden">
-              <span className="text-[8px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full bg-yellow-400 text-black shadow-sm">
+              <span className="text-[8px] font-bold capitalize tracking-wider px-1.5 py-0.5 rounded-full bg-yellow-400 text-black shadow-sm">
                 {product.badge}
               </span>
             </div>
@@ -1181,11 +1181,11 @@ const MobileProductModal = ({ product, onClose }) => {
                 </h2>
                 <div className="flex items-center gap-2 flex-wrap">
                   {product.badge && (
-                    <span className="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-yellow-400 text-black">
+                    <span className="text-xs font-bold capitalize tracking-wider px-2.5 py-1 rounded-full bg-yellow-400 text-black">
                       {product.badge}
                     </span>
                   )}
-                  <span className="text-xs font-semibold uppercase tracking-wide px-2.5 py-1 rounded-full bg-blue-600 text-white">
+                  <span className="text-xs font-semibold capitalize tracking-wide px-2.5 py-1 rounded-full bg-blue-600 text-white">
                     {product.category}
                   </span>
                 </div>
@@ -1307,7 +1307,7 @@ function ProductCard({ product }) {
         <div className="absolute top-4 left-4 z-10 flex gap-2">
           {isHighlighted && (
             <span
-              className="text-[10px] font-extrabold uppercase tracking-widest px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm"
+              className="text-[10px] font-extrabold capitalize tracking-widest px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm"
               style={{
                 background: "linear-gradient(135deg, #111, #333)",
                 color: "white",
@@ -1327,7 +1327,7 @@ function ProductCard({ product }) {
               {product.badge}
             </span>
           )}
-          <span className="text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full bg-white/90 text-gray-800 backdrop-blur-md border border-gray-200/50">
+          <span className="text-[10px] font-bold capitalize tracking-wider px-3 py-1.5 rounded-full bg-white/90 text-gray-800 backdrop-blur-md border border-gray-200/50">
             {product.category}
           </span>
         </div>
@@ -1350,7 +1350,7 @@ function ProductCard({ product }) {
             data-product-name={product.name}
           >
             <div className="shimmer"></div>
-            <span className="relative z-10 flex items-center gap-1.5 uppercase tracking-wider">
+            <span className="relative z-10 flex items-center gap-1.5 capitalize tracking-wider">
               PRICING & DEMO
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -23,7 +23,7 @@ const WhiteLabelTechStack = () => {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-1.5 rounded-full bg-blue-500 text-white text-xs font-black uppercase tracking-widest mb-6"
+            className="inline-block px-4 py-1.5 rounded-full bg-blue-500 text-white text-xs font-black capitalize tracking-widest mb-6"
           >
             Powering Your Projects with
           </motion.div>
@@ -58,7 +58,7 @@ const WhiteLabelTechStack = () => {
                   }}
                 />
               </div>
-              <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest group-hover:text-blue-600 transition-colors">
+              <span className="text-[10px] font-black text-slate-400 capitalize tracking-widest group-hover:text-blue-600 transition-colors">
                 {tech.name}
               </span>
             </motion.div>

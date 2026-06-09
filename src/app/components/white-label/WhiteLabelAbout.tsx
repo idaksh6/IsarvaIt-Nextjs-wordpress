@@ -70,7 +70,7 @@ const WhiteLabelAbout = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block px-5 py-2 rounded-full bg-gradient-to-r from-blue-50 to-purple-50 border border-purple-100 text-blue-700 text-xs font-black uppercase tracking-widest mb-6 shadow-sm"
+            className="inline-block px-5 py-2 rounded-full bg-gradient-to-r from-blue-50 to-purple-50 border border-purple-100 text-blue-700 text-xs font-black capitalize tracking-widest mb-6 shadow-sm"
           >
             The Partnership Advantage
           </motion.div>

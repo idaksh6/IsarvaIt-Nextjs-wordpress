@@ -229,7 +229,7 @@ export default function InternshipsPage() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 backdrop-blur-sm border border-[#10b981]/10 mb-8 shadow-sm"
             >
               <GraduationCap className="w-4 h-4 text-[#10b981]" />
-              <span className="text-[#10b981] font-bold tracking-wider uppercase text-xs">Launch Your Career</span>
+              <span className="text-[#10b981] font-bold tracking-wider capitalize text-xs">Launch Your Career</span>
             </motion.div>
             
             <motion.h1 
@@ -277,7 +277,7 @@ export default function InternshipsPage() {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-block text-[#10b981] font-black tracking-[0.3em] uppercase text-xs mb-4"
+              className="inline-block text-[#10b981] font-black tracking-[0.3em] capitalize text-xs mb-4"
             >
               Your Experience
             </motion.div>
@@ -314,7 +314,7 @@ export default function InternshipsPage() {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-block text-[#10b981] font-black tracking-[0.3em] uppercase text-xs mb-4"
+              className="inline-block text-[#10b981] font-black tracking-[0.3em] capitalize text-xs mb-4"
             >
               Ideal Candidate
             </motion.div>
@@ -353,7 +353,7 @@ export default function InternshipsPage() {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-block text-[#10b981] font-black tracking-[0.3em] uppercase text-xs mb-4"
+              className="inline-block text-[#10b981] font-black tracking-[0.3em] capitalize text-xs mb-4"
             >
               Your Journey Starts Here
             </motion.div>
@@ -400,7 +400,7 @@ export default function InternshipsPage() {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-block text-[#10b981] font-black tracking-[0.3em] uppercase text-xs mb-4"
+              className="inline-block text-[#10b981] font-black tracking-[0.3em] capitalize text-xs mb-4"
             >
               Ready to Start?
             </motion.div>

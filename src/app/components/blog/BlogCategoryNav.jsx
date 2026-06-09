@@ -136,7 +136,7 @@ export default function BlogCategoryNav() {
             <li>
               <button 
                 onClick={() => handleCategoryClick("all")}
-                className={`font-bold text-sm tracking-wider uppercase transition-colors px-4 py-2 rounded-full ${
+                className={`font-bold text-sm tracking-wider capitalize transition-colors px-4 py-2 rounded-full ${
                   activeCategory === "all" ? "text-emerald-600 bg-emerald-50" : "text-gray-500 hover:text-emerald-600"
                 }`}
               >
@@ -147,7 +147,7 @@ export default function BlogCategoryNav() {
               <li key={cat.id}>
                 <button 
                   onClick={() => handleCategoryClick(cat.slug)}
-                  className={`font-bold text-sm tracking-wider uppercase transition-colors px-4 py-2 rounded-full ${
+                  className={`font-bold text-sm tracking-wider capitalize transition-colors px-4 py-2 rounded-full ${
                     activeCategory === cat.slug ? "text-emerald-600 bg-emerald-50" : "text-gray-500 hover:text-emerald-600"
                   }`}
                 >

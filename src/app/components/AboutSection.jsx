@@ -122,7 +122,7 @@ export default function AboutSection() {
             <span className="text-2xl font-extrabold leading-none tracking-tight">
               12+
             </span>
-            <span className="text-[10px] font-semibold uppercase tracking-widest opacity-90 mt-0.5 whitespace-nowrap">
+            <span className="text-[10px] font-semibold capitalize tracking-widest opacity-90 mt-0.5 whitespace-nowrap">
               Years of Excellence
             </span>
           </div>
@@ -133,7 +133,7 @@ export default function AboutSection() {
           {/* Eyebrow label */}
           <div className="flex items-center gap-3 mb-4 lg:justify-start justify-center">
             <div className="w-7 h-0.5 bg-emerald-500 rounded-full" />
-            <p className="text-xs font-bold uppercase tracking-[0.1em] text-emerald-500">
+            <p className="text-xs font-bold capitalize tracking-[0.1em] text-emerald-500">
               Who We Are
             </p>
           </div>
@@ -161,7 +161,7 @@ export default function AboutSection() {
               <span className="text-2xl font-extrabold text-slate-900 tracking-tight">
                 150+
               </span>
-              <span className="text-[10px] font-semibold uppercase tracking-widest text-slate-400 text-center">
+              <span className="text-[10px] font-semibold capitalize tracking-widest text-slate-400 text-center">
                 Projects Delivered
               </span>
             </div>
@@ -170,7 +170,7 @@ export default function AboutSection() {
               <span className="text-2xl font-extrabold text-slate-900 tracking-tight">
                 100+
               </span>
-              <span className="text-[10px] font-semibold uppercase tracking-widest text-slate-400 text-center">
+              <span className="text-[10px] font-semibold capitalize tracking-widest text-slate-400 text-center">
                 Happy Clients
               </span>
             </div>
@@ -179,7 +179,7 @@ export default function AboutSection() {
               <span className="text-2xl font-extrabold text-slate-900 tracking-tight">
                 100%
               </span>
-              <span className="text-[10px] font-semibold uppercase tracking-widest text-slate-400 text-center">
+              <span className="text-[10px] font-semibold capitalize tracking-widest text-slate-400 text-center">
                 Satisfaction Rate
               </span>
             </div>
@@ -220,7 +220,7 @@ export default function AboutSection() {
                 </svg>
               </span>
               <span className="flex flex-col gap-0.5">
-                <span className="text-[10px] font-semibold uppercase tracking-widest text-slate-400">
+                <span className="text-[10px] font-semibold capitalize tracking-widest text-slate-400">
                   Call our team today
                 </span>
                 <span className="text-sm font-bold text-slate-900">

@@ -26,7 +26,7 @@ export default function CtaSection() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="w-full flex flex-col items-center"
               >
-                <span className="inline-block text-[13px] font-bold text-[#1a5b33] tracking-[0.1em] uppercase mb-6 bg-[#cfeade] px-6 py-2.5 rounded-full">
+                <span className="inline-block text-[13px] font-bold text-[#1a5b33] tracking-[0.1em] capitalize mb-6 bg-[#cfeade] px-6 py-2.5 rounded-full">
                   GET IN TOUCH
                 </span>
 

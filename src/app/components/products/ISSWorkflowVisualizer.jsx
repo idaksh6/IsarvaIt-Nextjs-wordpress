@@ -69,7 +69,7 @@ export default function ISSWorkflowVisualizer() {
           <div className="flex flex-col items-center">
             <div className="bg-slate-800 text-white px-6 py-2 rounded-xl flex items-center gap-2 mb-8 shadow-lg">
               <span className="text-lg">⚙️</span>
-              <span className="font-black tracking-widest text-xs uppercase">MASTER</span>
+              <span className="font-black tracking-widest text-xs capitalize">MASTER</span>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -101,7 +101,7 @@ export default function ISSWorkflowVisualizer() {
           {/* Project Management Branch */}
           <div className="space-y-6">
              <div className="bg-[#9333EA] text-white px-6 py-3 rounded-xl inline-block mb-4 shadow-lg self-start">
-                <span className="font-black tracking-widest text-xs uppercase">PROJECT MANAGEMENT</span>
+                <span className="font-black tracking-widest text-xs capitalize">PROJECT MANAGEMENT</span>
              </div>
              <div className="grid grid-cols-1 gap-6">
                 <Node 
@@ -135,7 +135,7 @@ export default function ISSWorkflowVisualizer() {
           {/* Tickets Branch */}
           <div className="space-y-6">
              <div className="bg-indigo-500 text-white px-6 py-3 rounded-xl inline-block mb-4 shadow-lg self-end lg:ml-auto">
-                <span className="font-black tracking-widest text-xs uppercase">TICKETS</span>
+                <span className="font-black tracking-widest text-xs capitalize">TICKETS</span>
              </div>
              <div className="grid grid-cols-1 gap-6">
                 <Node 
@@ -169,7 +169,7 @@ export default function ISSWorkflowVisualizer() {
               <span className="text-2xl">📋</span>
             </div>
             <div>
-              <h4 className="text-emerald-600 uppercase tracking-widest text-xs mb-1">Daily Report</h4>
+              <h4 className="text-emerald-600 capitalize tracking-widest text-xs mb-1">Daily Report</h4>
               <p className="text-xs text-gray-500 font-medium">Log daily work & update task progress</p>
             </div>
           </div>
@@ -181,7 +181,7 @@ export default function ISSWorkflowVisualizer() {
               <span className="text-2xl">📈</span>
             </div>
             <div>
-              <h4 className="text-orange-600 uppercase tracking-widest text-xs mb-1">Analytical Reports</h4>
+              <h4 className="text-orange-600 capitalize tracking-widest text-xs mb-1">Analytical Reports</h4>
               <p className="text-xs text-gray-500 font-medium">Project-wise work done & analytics</p>
             </div>
           </div>

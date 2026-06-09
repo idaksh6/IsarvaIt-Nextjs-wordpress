@@ -340,7 +340,7 @@ function SupportFeatureSection({ onImageClick }) {
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-10">
-          <span className="block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-2.5">
+          <span className="block text-[10px] font-black text-[#9333EA] tracking-[0.28em] capitalize mb-2.5">
             KEY FEATURES
           </span>
           <h2 className="text-[#0a0a0a] mb-6 capitalize">
@@ -648,7 +648,7 @@ function ProjectLifecycleSection() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-10">
-          <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-purple-100/50 px-4 py-2 rounded-full ring-1 ring-purple-200">
+          <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] capitalize mb-4 bg-purple-100/50 px-4 py-2 rounded-full ring-1 ring-purple-200">
             Project & Task Lifecycle
           </span>
           <h2 className="text-[#0a0a0a] mb-6 capitalize">
@@ -717,7 +717,7 @@ function TicketLifecycleSection() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-10">
-          <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-white px-4 py-2 rounded-full shadow-sm ring-1 ring-purple-100">
+          <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] capitalize mb-4 bg-white px-4 py-2 rounded-full shadow-sm ring-1 ring-purple-100">
             Ticket Lifecycle
           </span>
           <h2 className="text-[#0a0a0a] mb-6 capitalize">
@@ -823,7 +823,7 @@ function ReportsSection({ onImageClick }) {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-purple-50 px-4 py-2 rounded-full ring-1 ring-purple-100">
+            <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] capitalize mb-4 bg-purple-50 px-4 py-2 rounded-full ring-1 ring-purple-100">
               The Power of Reports
             </span>
             <h2 className="text-[#0a0a0a] mb-6 capitalize">
@@ -863,7 +863,7 @@ function ReportsSection({ onImageClick }) {
                   <span className={`text-3xl mb-3 transition-transform duration-300 ${active === i ? "scale-110" : ""}`}>
                     {item.icon}
                   </span>
-                  <span className={`text-[11px] font-black uppercase tracking-tight text-center leading-[1] px-2 ${active === i ? "text-gray-900" : "text-gray-400"}`}>
+                  <span className={`text-[11px] font-black capitalize tracking-tight text-center leading-[1] px-2 ${active === i ? "text-gray-900" : "text-gray-400"}`}>
                     {item.title}
                   </span>
                 </button>
@@ -978,7 +978,7 @@ function ReportsSection({ onImageClick }) {
                           <svg className="w-3.5 h-3.5 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
                           </svg>
-                          <span className="text-[10px] font-bold text-purple-700 uppercase tracking-tight">Expand</span>
+                          <span className="text-[10px] font-bold text-purple-700 capitalize tracking-tight">Expand</span>
                         </div>
 
                         {/* Fullscreen Indicator Overlay (Desktop Hover) */}
@@ -1018,7 +1018,7 @@ function AnalyticsSection({ onImageClick }) {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center mb-10">
-          <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-purple-50 px-4 py-2 rounded-full shadow-sm ring-1 ring-purple-100">
+          <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] capitalize mb-4 bg-purple-50 px-4 py-2 rounded-full shadow-sm ring-1 ring-purple-100">
             High-Level Analytics
           </span>
           <h2 className="text-[#0a0a0a] mb-6 capitalize">
@@ -1030,7 +1030,7 @@ function AnalyticsSection({ onImageClick }) {
           </p>
           <div className="inline-flex items-center gap-4 px-8 py-4 rounded-3xl bg-white/50 border-2 border-purple-100 shadow-sm backdrop-blur-sm">
             <span className="flex-shrink-0 w-3 h-3 rounded-full bg-[#9333EA] animate-ping"></span>
-            <p className="text-[#9333EA] text-sm font-semibold tracking-tight uppercase">
+            <p className="text-[#9333EA] text-sm font-semibold tracking-tight capitalize">
               Just a glimpse of our extensive analytics reporting library. From team productivity to project health, we track it all.
             </p>
           </div>
@@ -1152,7 +1152,7 @@ function AutomationSection() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-10">
-          <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-white px-5 py-2 rounded-full shadow-sm ring-1 ring-purple-100">
+          <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] capitalize mb-4 bg-white px-5 py-2 rounded-full shadow-sm ring-1 ring-purple-100">
             Automation: Your "Invisible Assistant"
           </span>
           <h2 className="text-[#0a0a0a] mb-6 capitalize">
@@ -1201,7 +1201,7 @@ function SafetyManagementSection() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
           <div className="max-w-xl mx-auto text-center lg:text-left">
-            <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-4 bg-white px-5 py-2 rounded-full shadow-md ring-1 ring-purple-50">
+            <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] capitalize mb-4 bg-white px-5 py-2 rounded-full shadow-md ring-1 ring-purple-50">
               Safety & Management
             </span>
             <h2 className="text-[#0a0a0a] mb-6 capitalize">
@@ -1601,7 +1601,7 @@ export default function ProductDetailPremiumSupportStaging({
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-3 bg-[#9333EA]/10 px-4 py-2 rounded-full">
+              <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] capitalize mb-3 bg-[#9333EA]/10 px-4 py-2 rounded-full">
                 SUPPORT
               </span>
               <h2 className="text-[#0a0a0a] mb-6 capitalize">
@@ -1650,7 +1650,7 @@ export default function ProductDetailPremiumSupportStaging({
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <span className="inline-block text-xs font-black text-white/90 tracking-[0.25em] uppercase mb-4 bg-white/20 px-5 py-2 rounded-full backdrop-blur-sm">
+                <span className="inline-block text-xs font-black text-white/90 tracking-[0.25em] capitalize mb-4 bg-white/20 px-5 py-2 rounded-full backdrop-blur-sm">
                   GET STARTED TODAY
                 </span>
 
@@ -1731,7 +1731,7 @@ export default function ProductDetailPremiumSupportStaging({
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-3 bg-[#9333EA]/10 px-4 py-2 rounded-full">
+              <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] capitalize mb-3 bg-[#9333EA]/10 px-4 py-2 rounded-full">
                 MORE PRODUCTS
               </span>
               <h2 className="text-[#0a0a0a] mb-6 capitalize">

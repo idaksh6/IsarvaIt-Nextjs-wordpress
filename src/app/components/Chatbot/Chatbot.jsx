@@ -322,7 +322,7 @@ const Chatbot = () => {
                     Isarva AI{" "}
                     <Sparkles size={12} className="text-emerald-400" />
                   </h3>
-                  <p className="text-[11px] text-emerald-500/80 font-medium uppercase tracking-wider">
+                  <p className="text-[11px] text-emerald-500/80 font-medium capitalize tracking-wider">
                     Always Online
                   </p>
                 </div>

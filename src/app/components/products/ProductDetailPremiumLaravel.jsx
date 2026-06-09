@@ -579,7 +579,7 @@ export default function ProductDetailPremiumLaravel({
       <section className="py-12 lg:py-16 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-10">
-            <span className="inline-block text-[10px] font-black text-[#ff2d20] tracking-[0.28em] uppercase mb-3 bg-red-50 px-4 py-2 rounded-full border border-red-100">
+            <span className="inline-block text-[10px] font-black text-[#ff2d20] tracking-[0.28em] capitalize mb-3 bg-red-50 px-4 py-2 rounded-full border border-red-100">
               {isServiceMode ? "MORE SERVICES" : "MORE PRODUCTS"}
             </span>
             <h2 className="mb-4 capitalize">
@@ -618,13 +618,13 @@ export default function ProductDetailPremiumLaravel({
                         <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#ff2d20] to-[#ff6b35] flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
                           <span className="text-3xl">{prod.icon}</span>
                         </div>
-                        <h3 className="mb-3 uppercase">{prod.title}</h3>
+                        <h3 className="mb-3 capitalize">{prod.title}</h3>
                         {prod.tagline && (
-                          <p className="text-[#ff2d20] font-bold text-sm mb-3 uppercase tracking-wide">{prod.tagline}</p>
+                          <p className="text-[#ff2d20] font-bold text-sm mb-3 capitalize tracking-wide">{prod.tagline}</p>
                         )}
                         <p className="text-gray-500 leading-relaxed mb-6 text-sm font-medium">{prod.shortDescription}</p>
                       </div>
-                      <div className="flex items-center justify-center gap-2 text-[#ff2d20] font-black text-xs uppercase tracking-widest mt-auto pt-4 border-t border-gray-50 group-hover:gap-3 transition-all w-full">
+                      <div className="flex items-center justify-center gap-2 text-[#ff2d20] font-black text-xs capitalize tracking-widest mt-auto pt-4 border-t border-gray-50 group-hover:gap-3 transition-all w-full">
                         {isServiceMode ? "Explore Service" : "Explore Product"}
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />

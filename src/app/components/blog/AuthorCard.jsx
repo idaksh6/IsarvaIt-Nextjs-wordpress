@@ -11,10 +11,10 @@ export default function AuthorCard({ author }) {
         className="w-24 h-24 rounded-full border-4 border-white shadow-xl"
       />
       <div className="flex-1 text-center md:text-left">
-        <h3 className="mb-2 uppercase">
+        <h3 className="mb-2 capitalize">
           About {author.name}
         </h3>
-        <p className="text-emerald-600 font-bold text-sm uppercase tracking-widest mb-4">
+        <p className="text-emerald-600 font-bold text-sm capitalize tracking-widest mb-4">
           {author.role}
         </p>
         <p className="text-gray-600 leading-relaxed max-w-2xl">
