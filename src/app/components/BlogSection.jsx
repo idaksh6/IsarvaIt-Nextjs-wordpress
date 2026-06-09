@@ -19,9 +19,10 @@ export default function BlogSection({ posts }) {
               success stories from the Isarva team.
             </p>
           </div>
-          <Link
-            href="/blog"
-            prefetch={false}
+          <a
+            href="https://blog.isarvait.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="press-illusion-btn-orange bg-orange-600 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 !hidden xl:!flex mt-4 md:mt-0"
           >
             <span>View More Blog</span>
@@ -38,48 +39,57 @@ export default function BlogSection({ posts }) {
                 clipRule="evenodd"
               ></path>
             </svg>
-          </Link>
+          </a>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {posts.map((post, index) => (
-            <motion.article
-              key={post.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group cursor-pointer"
-            >
-              <Link href={`/blog/${post.slug}`}>
-                <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-6 bg-gray-100">
-                  <img
-                    src={post.featuredImage}
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-bold text-gray-900 capitalize tracking-widest">
-                      {post.categoryName}
-                    </span>
+          {posts.map((post, index) => {
+            const isExternal = !!post.link;
+            const href = post.link || `/blog/${post.slug}`;
+            return (
+              <motion.article
+                key={post.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group cursor-pointer"
+              >
+                <a
+                  href={href}
+                  target={isExternal ? "_blank" : "_self"}
+                  rel={isExternal ? "noopener noreferrer" : undefined}
+                >
+                  <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-6 bg-gray-100">
+                    <img
+                      src={post.featuredImage}
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-bold text-gray-900 capitalize tracking-widest">
+                        {post.categoryName}
+                      </span>
+                    </div>
                   </div>
-                </div>
-                <h3 className="lg:text-left text-center mb-3 group-hover:text-green-500 transition-colors line-clamp-2">
-                  {post.title}
-                </h3>
-                <div className="flex items-center lg:justify-start justify-center gap-3 lg:text-left text-center text-sm text-gray-500">
-                  <span>{post.date}</span>
-                  <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                  <span>{post.readTime}</span>
-                </div>
-              </Link>
-            </motion.article>
-          ))}
+                  <h3 className="lg:text-left text-center mb-3 group-hover:text-green-500 transition-colors line-clamp-2">
+                    {post.title}
+                  </h3>
+                  <div className="flex items-center lg:justify-start justify-center gap-3 lg:text-left text-center text-sm text-gray-500">
+                    <span>{post.date}</span>
+                    <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                    <span>{post.readTime}</span>
+                  </div>
+                </a>
+              </motion.article>
+            );
+          })}
         </div>
         <div className="flex justify-center lg:hidden mt-10">
-          <Link
-            href="/blog"
-            prefetch={false}
+          <a
+            href="https://blog.isarvait.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="press-illusion-btn-orange bg-orange-600 text-white w-fit font-bold px-6 py-2 text-base items-center space-x-2 flex"
           >
             <span>View More Blog</span>
@@ -96,7 +106,7 @@ export default function BlogSection({ posts }) {
                 clipRule="evenodd"
               ></path>
             </svg>
-          </Link>
+          </a>
         </div>
       </div>
     </section>

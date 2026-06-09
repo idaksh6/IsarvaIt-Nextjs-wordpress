@@ -247,13 +247,22 @@ export async function fetchPosts(options = {}) {
       order = 'desc',
       categories = '',
       revalidate = 60,
+      embed = false,
       fields = 'id,title,slug,excerpt,date,featured_media',
     } = options;
     
     const categoryQuery = categories ? `&categories=${categories}` : '';
+    const embedQuery = embed ? '&_embed=1' : '';
+    
+    // WordPress REST API requires _links in _fields to successfully embed resources
+    let fieldsParam = fields;
+    if (embed && fields && !fields.includes('_links')) {
+      fieldsParam = `${fields},_links`;
+    }
+    const fieldsQuery = fieldsParam ? `&_fields=${fieldsParam}` : '';
     
     const response = await fetch(
-      `${WORDPRESS_API_URL}/wp-json/wp/v2/posts?per_page=${perPage}&orderby=${orderby}&order=${order}${categoryQuery}&_fields=${fields}`,
+      `${WORDPRESS_API_URL}/wp-json/wp/v2/posts?per_page=${perPage}&orderby=${orderby}&order=${order}${categoryQuery}${fieldsQuery}${embedQuery}`,
       {
         next: { revalidate },
       }
