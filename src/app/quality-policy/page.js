@@ -235,7 +235,7 @@ function PolicyCard({ icon, title, description, stepNumber, className = "" }) {
   const Icon = icon;
 
   return (
-    <article className={`${CARD_BASE} flex flex-col items-center text-center w-full ${className}`}>
+    <article className={`${CARD_BASE} h-full flex flex-col items-center text-center w-full ${className}`}>
       <div
         className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#10b981]/0 via-[#10b981]/60 to-[#10b981]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         aria-hidden="true"
@@ -398,13 +398,13 @@ export default function QualityPolicyPage() {
                 const Icon = step.icon;
                 const hasLeftLine = index > 0;
                 const hasRightLine = index < 5;
-                
+
                 const leftLineDashed = index === 1 || index === 3 || index === 5;
                 const rightLineDashed = index === 0 || index === 2 || index === 4;
 
                 return (
                   <li key={step.title} className="relative flex flex-col items-center">
-                    
+
                     {/* 1. Illustration Card (Top) */}
                     <div className="w-[140px] h-[140px] rounded-[1.8rem] bg-white border border-[#10b981]/8 shadow-[0_6px_24px_rgba(22,66,60,0.04)] hover:shadow-[0_16px_36px_rgba(22,66,60,0.08)] hover:-translate-y-1 transition-all duration-300 flex items-center justify-center p-3 relative group overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-br from-[#FDF8F2] to-transparent opacity-60 group-hover:scale-110 transition-transform duration-500" />
@@ -424,20 +424,18 @@ export default function QualityPolicyPage() {
 
                     {/* 3. Timeline Circle & Horizontal Connectors */}
                     <div className="relative w-full flex items-center justify-center h-10 my-1">
-                      
+
                       {/* Horizontal connecting lines */}
                       {hasLeftLine && (
-                        <div 
-                          className={`absolute left-0 right-1/2 top-1/2 -translate-y-1/2 border-t-2 ${
-                            leftLineDashed ? 'border-dashed border-[#10b981]/30' : 'border-solid border-[#10b981]/40'
-                          }`} 
+                        <div
+                          className={`absolute left-0 right-1/2 top-1/2 -translate-y-1/2 border-t-2 ${leftLineDashed ? 'border-dashed border-[#10b981]/30' : 'border-solid border-[#10b981]/40'
+                            }`}
                         />
                       )}
                       {hasRightLine && (
-                        <div 
-                          className={`absolute left-1/2 right-0 top-1/2 -translate-y-1/2 border-t-2 ${
-                            rightLineDashed ? 'border-dashed border-[#10b981]/30' : 'border-solid border-[#10b981]/40'
-                          }`} 
+                        <div
+                          className={`absolute left-1/2 right-0 top-1/2 -translate-y-1/2 border-t-2 ${rightLineDashed ? 'border-dashed border-[#10b981]/30' : 'border-solid border-[#10b981]/40'
+                            }`}
                         />
                       )}
 
@@ -458,10 +456,10 @@ export default function QualityPolicyPage() {
 
                     {/* 4. Text Content (Bottom) */}
                     <div className="text-center px-1 mt-3">
-                      <h4 className="font-display text-[#16423C] text-sm lg:text-base font-bold mb-2 leading-snug">
+                      <h3 className="font-display text-[#16423C] text-base lg:text-lg font-bold mb-3 leading-snug">
                         {step.title}
-                      </h4>
-                      <p className="text-[#53606b] text-xs lg:text-[13px] leading-relaxed max-w-[170px] mx-auto">
+                      </h3>
+                      <p className="text-[#53606b] text-sm leading-relaxed max-w-[170px] mx-auto">
                         {step.description}
                       </p>
                     </div>
@@ -475,20 +473,19 @@ export default function QualityPolicyPage() {
           {/* Mobile & Tablet Layout (Vertical Timeline) */}
           <div className="block lg:hidden max-w-xl mx-auto px-4">
             <ol className="relative flex flex-col gap-y-10 list-none">
-              
+
               {methodologySteps.map((step, index) => {
                 const Icon = step.icon;
                 return (
                   <li key={step.title} className="relative flex items-start gap-4 sm:gap-6">
-                    
+
                     {/* Vertical line segment connecting to the next step's circle (ends at index 4) */}
                     {index < 5 && (
-                      <div 
-                        className={`absolute left-[18px] top-9 bottom-[-58px] w-0.5 border-l-2 -translate-x-1/2 z-0 ${
-                          index === 0 || index === 2 || index === 4 
-                            ? 'border-dashed border-[#10b981]/30' 
-                            : 'border-solid border-[#10b981]/40'
-                        }`}
+                      <div
+                        className={`absolute left-[18px] top-9 bottom-[-58px] w-0.5 border-l-2 -translate-x-1/2 z-0 ${index === 0 || index === 2 || index === 4
+                          ? 'border-dashed border-[#10b981]/30'
+                          : 'border-solid border-[#10b981]/40'
+                          }`}
                       >
                         {/* Downward pointing arrowhead mid-segment */}
                         <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-10 flex items-center justify-center pointer-events-none text-[#10b981] bg-white rounded-full p-0.5 border border-[#10b981]/10 shadow-sm w-4 h-4">
@@ -506,7 +503,7 @@ export default function QualityPolicyPage() {
 
                     {/* Content Block */}
                     <div className="flex-1 flex flex-col sm:flex-row sm:items-center gap-4 bg-white border border-[#10b981]/8 shadow-[0_4px_20px_rgba(22,66,60,0.03)] rounded-2xl p-4 transition-all duration-300 text-center sm:text-left">
-                      
+
                       {/* Illustration Card */}
                       <div className="w-[80px] h-[80px] rounded-2xl bg-white border border-[#10b981]/8 shadow-[0_4px_16px_rgba(22,66,60,0.03)] flex items-center justify-center p-2 relative shrink-0 overflow-hidden mx-auto sm:mx-0">
                         <div className="absolute inset-0 bg-gradient-to-br from-[#FDF8F2] to-transparent opacity-60" />
@@ -561,13 +558,12 @@ export default function QualityPolicyPage() {
             centered
           />
 
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5 lg:gap-6 list-none">
+          <ul className="grid grid-cols-1 lg:grid-cols-6 gap-5 lg:gap-6 list-none">
             {advantageItems.map((item, index) => (
               <li
                 key={item.title}
-                className={`lg:col-span-2 ${
-                  index === 3 ? "lg:col-start-2" : index === 4 ? "lg:col-start-4" : ""
-                }`}
+                className={`lg:col-span-2 ${index === 3 ? "lg:col-start-2" : index === 4 ? "lg:col-start-4" : ""
+                  }`}
               >
                 <PolicyCard
                   icon={item.icon}
