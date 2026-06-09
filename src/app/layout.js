@@ -83,7 +83,7 @@ export default function RootLayout({ children }) {
         {/* End Meta Pixel Code */}
       </head>
       <GoogleTagManager gtmId="GTM-MVJF5BNV" />
-      <body className={`${inter.variable} ${outfit.variable} ${spaceGrotesk.variable} antialiased text-white`}>
+      <body suppressHydrationWarning className={`${inter.variable} ${outfit.variable} ${spaceGrotesk.variable} antialiased text-white`}>
         <Header />
         <main>{children}</main>
         <ClientProviders />
