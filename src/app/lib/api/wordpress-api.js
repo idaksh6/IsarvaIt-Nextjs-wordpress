@@ -5,7 +5,7 @@
 
 // Remove trailing slash if present to avoid double slashes
 const cleanUrl = (url) => url.endsWith('/') ? url.slice(0, -1) : url;
-const WORDPRESS_API_URL = cleanUrl(process.env.NEXT_PUBLIC_WORDPRESS_URL || 'http://reactwordpress.local');
+const WORDPRESS_API_URL = cleanUrl(process.env.NEXT_PUBLIC_WORDPRESS_URL || 'https://blog.isarvait.com');
 
 // Check if WordPress is available
 // Simply verify that a URL has been configured via the environment variable
