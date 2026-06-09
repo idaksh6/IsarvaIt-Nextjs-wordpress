@@ -47,105 +47,111 @@ export default function ContactFormModal({
 
   // Fetch categories from API based on page type
   useEffect(() => {
+    const normalizeStr = (str) =>
+      str
+        .toLowerCase()
+        .trim()
+        .replace(/–/g, " ")
+        .replace(/—/g, " ")
+        .replace(/-/g, " ")
+        .replace(/\s+/g, " ")
+        .replace(/&/g, "and")
+        .replace(/\band\b/g, "&");
+
+    const extractKeyWords = (str) => {
+      const commonWords = ["and", "&", "the", "a", "an", "software", "application", "system"];
+      return normalizeStr(str)
+        .split(" ")
+        .filter((word) => !commonWords.includes(word) && word.length > 0)
+        .join(" ");
+    };
+
+    const findMatchedCategory = (categories, item) => {
+      const normalizedPreSelected = normalizeStr(item);
+      const keyWordsPreSelected = extractKeyWords(item);
+      const compactPreSelected = normalizedPreSelected.replace(/\s/g, "");
+
+      if (compactPreSelected.includes("billsoft")) {
+        const billSoftMatch = categories.find((cat) => {
+          const compactCat = normalizeStr(cat.category_name).replace(/\s/g, "");
+          return compactCat.includes("billsoft");
+        });
+        if (billSoftMatch) return billSoftMatch;
+      }
+
+      return categories.find((cat) => {
+        const normalizedCatName = normalizeStr(cat.category_name);
+        const keyWordsCatName = extractKeyWords(cat.category_name);
+
+        return (
+          normalizedCatName === normalizedPreSelected ||
+          keyWordsCatName === keyWordsPreSelected ||
+          (normalizedPreSelected.includes(normalizedCatName) &&
+            normalizedCatName.split(" ").length > 1) ||
+          (normalizedCatName.includes(normalizedPreSelected) &&
+            normalizedPreSelected.split(" ").length > 1) ||
+          (keyWordsCatName.split(" ").length >= 2 &&
+            keyWordsPreSelected.split(" ").length >= 2 &&
+            keyWordsCatName.split(" ").slice(0, 2).join(" ") ===
+              keyWordsPreSelected.split(" ").slice(0, 2).join(" "))
+        );
+      });
+    };
+
+    const applyPreselection = (categories, item) => {
+      let categoryList = [...categories];
+      let matchedCategory = findMatchedCategory(categoryList, item);
+
+      if (!matchedCategory) {
+        categoryList = [
+          { id: `page-${item}`, category_name: item },
+          ...categoryList,
+        ];
+        matchedCategory = categoryList[0];
+      }
+
+      setCategories(categoryList);
+      setFormData((prev) => ({
+        ...prev,
+        selectedItem: matchedCategory.category_name,
+        selectedCategoryId: matchedCategory.id,
+      }));
+    };
+
     const fetchCategories = async () => {
       if (!isOpen) return;
 
       setIsLoadingCategories(true);
       try {
-        // Determine API endpoint based on page type
-        let endpoint = 'general';
-        const pageTypeLower = (preSelectedType || '').toLowerCase();
+        let endpoint = "general";
+        const pageTypeLower = (preSelectedType || "").toLowerCase();
 
-        if (pageTypeLower.includes('product')) {
-          endpoint = 'products';
-        } else if (pageTypeLower.includes('service')) {
-          endpoint = 'services';
-        } else if (pageTypeLower.includes('industry')) {
-          endpoint = 'industries';
+        if (pageTypeLower.includes("product")) {
+          endpoint = "products";
+        } else if (pageTypeLower.includes("service")) {
+          endpoint = "services";
+        } else if (pageTypeLower.includes("industry")) {
+          endpoint = "industries";
         }
 
         const response = await fetch(`https://crm.isarva.in/api/product-categories/${endpoint}`);
         const data = await response.json();
 
         if (data.categories) {
-          setCategories(data.categories);
-
-          // Log for debugging
-          // Pre-select item if it matches
           if (preSelectedItem) {
-            // Normalize strings for better matching
-            const normalizeStr = (str) => {
-              return str
-                .toLowerCase()
-                .trim()
-                .replace(/–/g, ' ')    // EN DASH to space
-                .replace(/—/g, ' ')    // EM DASH to space
-                .replace(/-/g, ' ')    // Regular hyphen to space
-                .replace(/\s+/g, ' ')  // Multiple spaces to single space
-                .replace(/&/g, 'and')  // & to "and"
-                .replace(/\band\b/g, '&');  // "and" back to &, then both become same
-            };
-
-            // Extract key words (remove common filler words)
-            const extractKeyWords = (str) => {
-              const commonWords = ['and', '&', 'the', 'a', 'an', 'software', 'application', 'system'];
-              return normalizeStr(str)
-                .split(' ')
-                .filter(word => !commonWords.includes(word) && word.length > 0)
-                .join(' ');
-            };
-
-            const normalizedPreSelected = normalizeStr(preSelectedItem);
-            const keyWordsPreSelected = extractKeyWords(preSelectedItem);
-
-            const matchedCategory = data.categories.find(cat => {
-              const normalizedCatName = normalizeStr(cat.category_name);
-              const keyWordsCatName = extractKeyWords(cat.category_name);
-
-              // Check multiple matching strategies in order of specificity
-              const isMatch = (
-                // 1. Exact match (normalized) - highest priority
-                normalizedCatName === normalizedPreSelected ||
-
-                // 2. Exact keyword match (all words match)
-                keyWordsCatName === keyWordsPreSelected ||
-
-                // 3. Category name exactly contains preselected (full phrase match)
-                normalizedCatName === normalizedPreSelected ||
-
-                // 4. Preselected contains category (must be exact substring with word boundaries)
-                (normalizedPreSelected.includes(normalizedCatName) &&
-                  normalizedCatName.split(' ').length > 1) ||
-
-                // 5. Category contains preselected (must be exact substring with word boundaries)
-                (normalizedCatName.includes(normalizedPreSelected) &&
-                  normalizedPreSelected.split(' ').length > 1) ||
-
-                // 6. First significant words match (at least 2 words)
-                (keyWordsCatName.split(' ').length >= 2 &&
-                  keyWordsPreSelected.split(' ').length >= 2 &&
-                  keyWordsCatName.split(' ').slice(0, 2).join(' ') ===
-                  keyWordsPreSelected.split(' ').slice(0, 2).join(' '))
-              );
-
-              if (isMatch) {
-              }
-
-              return isMatch;
-            });
-
-            if (matchedCategory) {
-              setFormData(prev => ({
-                ...prev,
-                selectedItem: matchedCategory.category_name,
-                selectedCategoryId: matchedCategory.id
-              }));
-            } else {
-            }
+            applyPreselection(data.categories, preSelectedItem);
+          } else {
+            setCategories(data.categories);
           }
+        } else if (preSelectedItem) {
+          applyPreselection([], preSelectedItem);
         }
       } catch (error) {
-        setCategories([]);
+        if (preSelectedItem) {
+          applyPreselection([], preSelectedItem);
+        } else {
+          setCategories([]);
+        }
       } finally {
         setIsLoadingCategories(false);
       }

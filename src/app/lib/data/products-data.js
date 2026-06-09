@@ -558,7 +558,7 @@ export const productsData = [
   },
   {
     slug: "bill-soft",
-    title: "Isarva BillSoft",
+    title: "Bill-Soft Application",
     category: "Billing & Inventory",
     icon: "🧾",
     tagline: "All-in-One Business Management Solution",

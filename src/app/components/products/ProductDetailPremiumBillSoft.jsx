@@ -1166,7 +1166,7 @@ export default function ProductDetailPremiumBillSoft({
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           preSelectedType="Product"
-          preSelectedItem="Isarva BillSoft"
+          preSelectedItem="BillSoft Application"
           allItems={allProducts}
         />
 
