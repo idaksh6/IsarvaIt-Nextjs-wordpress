@@ -225,7 +225,7 @@ export default function PoshactHero({ onJumpToModule, onRequestDemo }) {
                 <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600">
                   <Clock className="w-3.5 h-3.5" />
                 </span>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-600">Deadline alert</span>
+                <span className="text-[10px] font-bold capitalize tracking-wider text-indigo-600">Deadline alert</span>
               </div>
               <p className="text-sm font-bold text-slate-900 leading-snug">90-day inquiry tracking</p>
             </div>
@@ -236,7 +236,7 @@ export default function PoshactHero({ onJumpToModule, onRequestDemo }) {
                   <Shield className="w-3.5 h-3.5" />
                 </span>
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Section 16</p>
+                  <p className="text-[10px] font-bold capitalize tracking-wider text-slate-400">Section 16</p>
                   <p className="text-sm font-bold text-slate-900">Confidential</p>
                 </div>
               </div>

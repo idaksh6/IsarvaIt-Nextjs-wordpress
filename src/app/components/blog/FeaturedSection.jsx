@@ -21,7 +21,7 @@ export default function FeaturedSection({ posts }) {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-8 left-8 right-8">
-                <span className="px-4 py-1.5 bg-emerald-500 text-white rounded-full text-xs font-bold uppercase tracking-widest mb-4 flex w-fit lg:mx-0 mx-auto lg:justify-start justify-center items-center gap-2">
+                <span className="px-4 py-1.5 bg-emerald-500 text-white rounded-full text-xs font-bold capitalize tracking-widest mb-4 flex w-fit lg:mx-0 mx-auto lg:justify-start justify-center items-center gap-2">
                   {mainPost.categoryName}
                 </span>
                 <h2 className="text-xl text-white max-w-2xl lg:text-left text-center text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
@@ -52,7 +52,7 @@ export default function FeaturedSection({ posts }) {
                 />
               </div>
               <div className="col-span-8">
-                <span className="text-emerald-600 text-xs font-black uppercase tracking-widest mb-2 block">
+                <span className="text-emerald-600 text-xs font-black capitalize tracking-widest mb-2 block">
                   {post.categoryName}
                 </span>
                 <h3 className="group-hover:text-emerald-600 transition-colors line-clamp-2">

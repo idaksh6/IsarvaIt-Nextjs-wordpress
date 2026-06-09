@@ -456,7 +456,7 @@ export default function ProductDetailPremiumAssociation({ product, relatedProduc
         <div className="max-w-7xl mx-auto px-6">
           {/* Section Header */}
           <div className="text-center mb-10">
-            <span className="block text-[10px] font-black text-[#D946EF] tracking-[0.28em] uppercase mb-2.5">
+            <span className="block text-[10px] font-black text-[#D946EF] tracking-[0.28em] capitalize mb-2.5">
               SOFTWARE MODULES
             </span>
             <h2 className="text-[#0a0a0a] mb-3.5 capitalize">
@@ -546,13 +546,13 @@ export default function ProductDetailPremiumAssociation({ product, relatedProduc
                     <div className="flex gap-2 mt-6 border-t border-slate-100 pt-4 justify-center w-full">
                       <button
                         // onClick={() => handleSimulateExport(rep.name, "PDF")}
-                        className="px-3 py-1.5 rounded-lg bg-red-50 hover:bg-red-100 text-red-600 border border-red-100 text-[10px] font-bold uppercase tracking-wider transition-colors flex items-center gap-1 cursor-default"
+                        className="px-3 py-1.5 rounded-lg bg-red-50 hover:bg-red-100 text-red-600 border border-red-100 text-[10px] font-bold capitalize tracking-wider transition-colors flex items-center gap-1 cursor-default"
                       >
                         PDF Export
                       </button>
                       <button
                         // onClick={() => handleSimulateExport(rep.name, "Excel")}
-                        className="px-3 py-1.5 rounded-lg bg-green-50 hover:bg-green-100 text-green-600 border border-green-100 text-[10px] font-bold uppercase tracking-wider transition-colors flex items-center gap-1 cursor-default"
+                        className="px-3 py-1.5 rounded-lg bg-green-50 hover:bg-green-100 text-green-600 border border-green-100 text-[10px] font-bold capitalize tracking-wider transition-colors flex items-center gap-1 cursor-default"
                       >
                         Excel Export
                       </button>
@@ -587,16 +587,16 @@ export default function ProductDetailPremiumAssociation({ product, relatedProduc
               <div className="bg-slate-100 p-6 rounded-2xl inline-block border border-slate-200 mb-6 text-left w-full max-w-sm mx-auto">
                 <div className="bg-white text-slate-800 p-6 rounded-xl border-2 border-slate-900 shadow-md">
                   <div className="border-b-2 border-slate-900 pb-3 mb-4 text-center">
-                    <span className="text-[8px] font-black tracking-widest text-slate-500 uppercase">OFFICIAL ID BADGE</span>
-                    <h4 className="text-sm font-black uppercase tracking-wider mt-0.5">{idOrg}</h4>
+                    <span className="text-[8px] font-black tracking-widest text-slate-500 capitalize">OFFICIAL ID BADGE</span>
+                    <h4 className="text-sm font-black capitalize tracking-wider mt-0.5">{idOrg}</h4>
                   </div>
                   <div className="flex gap-4 items-center">
                     <div className="w-16 h-16 bg-slate-100 border-2 border-slate-900 rounded-lg flex items-center justify-center font-bold text-slate-400">
                       {idPhoto ? <img src={idPhoto} className="w-full h-full object-cover rounded-lg" /> : "PHOTO"}
                     </div>
                     <div>
-                      <h5 className="font-black text-sm uppercase">{idName}</h5>
-                      <span className="inline-block bg-slate-900 text-white text-[9px] font-black uppercase px-2.5 py-0.5 rounded mt-1 tracking-wide">
+                      <h5 className="font-black text-sm capitalize">{idName}</h5>
+                      <span className="inline-block bg-slate-900 text-white text-[9px] font-black capitalize px-2.5 py-0.5 rounded mt-1 tracking-wide">
                         {idType}
                       </span>
                     </div>
@@ -614,13 +614,13 @@ export default function ProductDetailPremiumAssociation({ product, relatedProduc
                     setShowPrintModal(false);
                     triggerNotification("Document sent to system printer spooler.");
                   }}
-                  className="flex-1 py-4 bg-slate-900 hover:bg-slate-800 text-white font-black text-xs uppercase tracking-wider rounded-xl shadow-lg transition-colors"
+                  className="flex-1 py-4 bg-slate-900 hover:bg-slate-800 text-white font-black text-xs capitalize tracking-wider rounded-xl shadow-lg transition-colors"
                 >
                   Send to Printer
                 </button>
                 <button
                   onClick={() => setShowPrintModal(false)}
-                  className="flex-1 py-4 bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-500 font-black text-xs uppercase tracking-wider rounded-xl transition-colors"
+                  className="flex-1 py-4 bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-500 font-black text-xs capitalize tracking-wider rounded-xl transition-colors"
                 >
                   Cancel
                 </button>
@@ -663,7 +663,7 @@ export default function ProductDetailPremiumAssociation({ product, relatedProduc
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <span className="inline-block text-xs font-black text-white/90 tracking-[0.25em] uppercase mb-4 bg-white/20 px-5 py-2 rounded-full backdrop-blur-sm">
+                <span className="inline-block text-xs font-black text-white/90 tracking-[0.25em] capitalize mb-4 bg-white/20 px-5 py-2 rounded-full backdrop-blur-sm">
                   GET STARTED TODAY
                 </span>
 
@@ -714,7 +714,7 @@ export default function ProductDetailPremiumAssociation({ product, relatedProduc
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block text-[10px] font-black text-[#D946EF] tracking-[0.28em] uppercase mb-3 bg-[#D946EF]/10 px-4 py-2 rounded-full">
+              <span className="inline-block text-[10px] font-black text-[#D946EF] tracking-[0.28em] capitalize mb-3 bg-[#D946EF]/10 px-4 py-2 rounded-full">
                 MORE PRODUCTS
               </span>
               <h2 className="text-[#0a0a0a] mb-4 capitalize">

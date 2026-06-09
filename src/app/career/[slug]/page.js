@@ -96,7 +96,7 @@ export default function JobDetailPage({ params }) {
             {/* Job Type Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 border border-[#10b981]/20 mb-6">
               <Briefcase className="w-4 h-4 text-[#10b981]" />
-              <span className="text-[#10b981] font-bold tracking-wider uppercase text-xs">
+              <span className="text-[#10b981] font-bold tracking-wider capitalize text-xs">
                 {job.jobType}
                 {job.duration && ` • ${job.duration}`}
                 {job.workModel && ` • ${job.workModel}`}
@@ -140,7 +140,7 @@ export default function JobDetailPage({ params }) {
                   viewport={{ once: true }}
                   className="bg-white p-8 md:p-10 rounded-3xl border border-emerald-500/10 shadow-sm"
                 >
-                  <h2 className="font-display text-[#1a1f24] mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                  <h2 className="font-display text-[#1a1f24] mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
                     <div className="w-2 h-8 bg-[#10b981] rounded-full"></div>
                     About the Role
                   </h2>
@@ -158,7 +158,7 @@ export default function JobDetailPage({ params }) {
                   viewport={{ once: true }}
                   className="bg-white p-8 md:p-10 rounded-3xl border border-emerald-500/10 shadow-sm"
                 >
-                  <h2 className="font-display text-[#1a1f24] mb-8 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                  <h2 className="font-display text-[#1a1f24] mb-8 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
                     <div className="w-2 h-8 bg-[#10b981] rounded-full"></div>
                     Key Responsibilities
                   </h2>
@@ -193,7 +193,7 @@ export default function JobDetailPage({ params }) {
                   viewport={{ once: true }}
                   className="bg-white p-8 md:p-10 rounded-3xl border border-emerald-500/10 shadow-sm"
                 >
-                  <h2 className="font-display text-[#1a1f24] mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                  <h2 className="font-display text-[#1a1f24] mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
                     <div className="w-2 h-8 bg-[#10b981] rounded-full"></div>
                     Qualifications
                   </h2>
@@ -229,7 +229,7 @@ export default function JobDetailPage({ params }) {
                   viewport={{ once: true }}
                   className="bg-white p-8 md:p-10 rounded-3xl border border-emerald-500/10 shadow-sm"
                 >
-                  <h2 className="font-display text-[#1a1f24] mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                  <h2 className="font-display text-[#1a1f24] mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
                     <div className="w-2 h-8 bg-[#10b981] rounded-full"></div>
                     Required Skills
                   </h2>
@@ -253,7 +253,7 @@ export default function JobDetailPage({ params }) {
                   viewport={{ once: true }}
                   className="bg-white p-8 md:p-10 rounded-3xl border border-emerald-500/10 shadow-sm"
                 >
-                  <h2 className="font-display text-[#1a1f24] mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                  <h2 className="font-display text-[#1a1f24] mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
                     <div className="w-2 h-8 bg-[#10b981] rounded-full"></div>
                     Preferred Skills
                   </h2>
@@ -277,7 +277,7 @@ export default function JobDetailPage({ params }) {
                   viewport={{ once: true }}
                   className="bg-gradient-to-br from-emerald-50 to-white p-8 md:p-10 rounded-3xl border border-emerald-500/20 shadow-sm"
                 >
-                  <h2 className="font-display text-[#1a1f24] mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                  <h2 className="font-display text-[#1a1f24] mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
                     <div className="w-2 h-8 bg-[#10b981] rounded-full"></div>
                     Perks and Benefits
                   </h2>
@@ -301,7 +301,7 @@ export default function JobDetailPage({ params }) {
                   viewport={{ once: true }}
                   className="bg-white p-8 md:p-10 rounded-3xl border border-emerald-500/10 shadow-sm"
                 >
-                  <h2 className="font-display text-[#1a1f24] mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter uppercase">
+                  <h2 className="font-display text-[#1a1f24] mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
                     <div className="w-2 h-8 bg-[#10b981] rounded-full"></div>
                     Interview Process
                   </h2>
@@ -403,7 +403,7 @@ export default function JobDetailPage({ params }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-display text-white mb-6 uppercase">
+            <h2 className="font-display text-white mb-6 capitalize">
               Excited about this opportunity?
             </h2>
             <p className="text-xl text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">

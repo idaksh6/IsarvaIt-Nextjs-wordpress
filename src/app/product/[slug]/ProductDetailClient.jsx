@@ -336,7 +336,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
           
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center mb-10">
-              <h2 className="mb-6 uppercase">
+              <h2 className="mb-6 capitalize">
                 Key Features
               </h2>
               <p className="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -372,7 +372,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
           
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center mb-10">
-              <h2 className="mb-6 uppercase">
+              <h2 className="mb-6 capitalize">
                 Technology Stack
               </h2>
               <p className="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -399,7 +399,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
           
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center mb-10">
-              <h2 className="mb-6 uppercase">
+              <h2 className="mb-6 capitalize">
                 Business Benefits
               </h2>
               <p className="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -436,7 +436,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
           
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="text-center mb-10">
-              <h2 className="mb-6 uppercase">
+              <h2 className="mb-6 capitalize">
                 Related Products
               </h2>
               <p className="text-xl text-gray-700 max-w-3xl mx-auto">

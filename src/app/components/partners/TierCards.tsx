@@ -88,7 +88,7 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
             className="relative group flex flex-col h-full"
           >
             {/* Most Recommended Badge */}
-            <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-30 bg-gradient-to-r from-orange-600 to-amber-500 px-6 sm:px-10 py-3 rounded-full text-[9px] sm:text-[11px] font-black text-white tracking-[0.2em] sm:tracking-[0.3em] shadow-[0_20px_40px_rgba(234,88,12,0.5)] uppercase border-2 border-white/40 font-display flex items-center gap-2 sm:gap-3 whitespace-nowrap">
+            <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-30 bg-gradient-to-r from-orange-600 to-amber-500 px-6 sm:px-10 py-3 rounded-full text-[9px] sm:text-[11px] font-black text-white tracking-[0.2em] sm:tracking-[0.3em] shadow-[0_20px_40px_rgba(234,88,12,0.5)] capitalize border-2 border-white/40 font-display flex items-center gap-2 sm:gap-3 whitespace-nowrap">
               <Sparkles className="w-4 h-4 text-white animate-pulse" />
               Most Recommended
               <Sparkles className="w-4 h-4 text-white animate-pulse" />
@@ -101,7 +101,7 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
                   <Image src="/partners/gold-tier.png" alt="" fill sizes="400px" className="object-cover scale-150 -rotate-12" />
                 </div>
                 <Crown className="w-12 h-12 text-white relative z-10 drop-shadow-[0_0_20px_rgba(255,255,255,0.5)]" />
-                <h3 className="text-5xl md:text-6xl font-black text-white uppercase tracking-[0.2em] relative z-10 drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)]">Gold</h3>
+                <h3 className="text-5xl md:text-6xl font-black text-white capitalize tracking-[0.2em] relative z-10 drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)]">Gold</h3>
               </div>
 
               <div
@@ -115,13 +115,13 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
               </div>
 
               <div className="p-5 sm:p-6 lg:p-8 relative z-10 flex flex-col flex-1 h-full">
-                <p className="text-[#EAB308] font-bold mb-8 uppercase tracking-widest text-xs text-center lg:text-left">For high-volume strategic partners</p>
+                <p className="text-[#EAB308] font-bold mb-8 capitalize tracking-widest text-xs text-center lg:text-left">For high-volume strategic partners</p>
 
                 <div className="flex flex-col items-center lg:items-start mb-10">
-                  <span className="text-[10px] font-black text-amber-500 uppercase tracking-[0.3em] mb-2 text-center lg:text-left">Max Earning Rate</span>
+                  <span className="text-[10px] font-black text-amber-500 capitalize tracking-[0.3em] mb-2 text-center lg:text-left">Max Earning Rate</span>
                   <div className="flex flex-col items-center lg:items-start">
                     <span className="font-display text-7xl sm:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-orange-600 leading-none tracking-tight text-center lg:text-left">30%</span>
-                    <span className="text-lg sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-orange-600 leading-none uppercase tracking-wider mt-2 text-center lg:text-left">Commission</span>
+                    <span className="text-lg sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-orange-600 leading-none capitalize tracking-wider mt-2 text-center lg:text-left">Commission</span>
                   </div>
                 </div>
 
@@ -145,7 +145,7 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
 
                 <button
                   onClick={() => onApply("Gold Tier Inquiry")}
-                  className="press-illusion-btn-gold w-full py-4 md:py-5 text-base md:text-lg font-bold uppercase tracking-widest mt-auto z-20"
+                  className="press-illusion-btn-gold w-full py-4 md:py-5 text-base md:text-lg font-bold capitalize tracking-widest mt-auto z-20"
                 >
                   Join Now
                 </button>
@@ -167,7 +167,7 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
                 <Image src="/partners/silver-tier.png" alt="" fill sizes="400px" className="object-cover scale-150 rotate-12" />
               </div>
               <Shield className="w-12 h-12 text-white relative z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]" />
-              <h3 className="font-display text-5xl md:text-6xl font-black text-white uppercase tracking-[0.2em] relative z-10 drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)]">Silver</h3>
+              <h3 className="font-display text-5xl md:text-6xl font-black text-white capitalize tracking-[0.2em] relative z-10 drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)]">Silver</h3>
             </div>
 
             <div
@@ -181,13 +181,13 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
             </div>
 
             <div className="p-5 sm:p-6 lg:p-8 relative z-10 flex flex-col flex-1 h-full">
-              <p className="text-slate-500 font-black mb-8 font-body uppercase tracking-widest text-xs text-center lg:text-left">Foundation for growing agencies</p>
+              <p className="text-slate-500 font-black mb-8 font-body capitalize tracking-widest text-xs text-center lg:text-left">Foundation for growing agencies</p>
 
               <div className="flex flex-col items-center lg:items-start mb-10">
-                <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-2 text-center lg:text-left">Earning Rate</span>
+                <span className="text-[10px] font-black text-slate-400 capitalize tracking-[0.3em] mb-2 text-center lg:text-left">Earning Rate</span>
                 <div className="flex flex-col items-center lg:items-start">
                   <span className="font-display text-6xl sm:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-400 via-slate-500 to-slate-600 leading-none tracking-tight text-center lg:text-left">20%</span>
-                  <span className="text-base sm:text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-400 via-slate-500 to-slate-600 leading-none uppercase tracking-wider mt-2 text-center lg:text-left">Commission</span>
+                  <span className="text-base sm:text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-400 via-slate-500 to-slate-600 leading-none capitalize tracking-wider mt-2 text-center lg:text-left">Commission</span>
                 </div>
               </div>
 
@@ -211,7 +211,7 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
 
               <button
                 onClick={() => onApply("Silver Tier Inquiry")}
-                className="press-illusion-btn-silver w-full py-4 md:py-5 text-base md:text-lg font-bold uppercase tracking-widest mt-auto z-20"
+                className="press-illusion-btn-silver w-full py-4 md:py-5 text-base md:text-lg font-bold capitalize tracking-widest mt-auto z-20"
               >
                 Join Now
               </button>
@@ -232,17 +232,17 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
                 <Image src="/partners/bronze-tier.png" alt="" fill sizes="400px" className="object-cover scale-125" />
               </div>
               <Key className="w-12 h-12 text-orange-100 relative z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]" />
-              <h3 className="font-display text-5xl md:text-6xl font-black text-white uppercase tracking-[0.2em] relative z-10 drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)]">Bronze</h3>
+              <h3 className="font-display text-5xl md:text-6xl font-black text-white capitalize tracking-[0.2em] relative z-10 drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)]">Bronze</h3>
             </div>
 
             <div className="p-5 sm:p-6 lg:p-8 relative z-10 flex flex-col flex-1 h-full">
-              <p className="text-orange-900 font-black mb-8 uppercase tracking-widest text-xs text-center lg:text-left">Commission-Based Entry</p>
+              <p className="text-orange-900 font-black mb-8 capitalize tracking-widest text-xs text-center lg:text-left">Commission-Based Entry</p>
 
               <div className="flex flex-col items-center lg:items-start mb-10">
-                <span className="text-[10px] font-black text-orange-600 uppercase tracking-[0.3em] mb-2 text-center lg:text-left">Earning Rate</span>
+                <span className="text-[10px] font-black text-orange-600 capitalize tracking-[0.3em] mb-2 text-center lg:text-left">Earning Rate</span>
                 <div className="flex flex-col items-center lg:items-start">
                   <span className="font-display text-5xl sm:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-orange-700 to-orange-800 leading-none tracking-tight text-center lg:text-left">10%</span>
-                  <span className="text-xs sm:text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-orange-700 to-orange-800 leading-none uppercase tracking-wider mt-2 text-center lg:text-left">Commission</span>
+                  <span className="text-xs sm:text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-orange-700 to-orange-800 leading-none capitalize tracking-wider mt-2 text-center lg:text-left">Commission</span>
                 </div>
               </div>
 
@@ -263,7 +263,7 @@ const TierCards = ({ onApply }: { onApply: (tier: string) => void }) => {
 
               <button
                 onClick={() => onApply("Bronze Tier Inquiry")}
-                className="press-illusion-btn-orange w-full py-4 md:py-5 text-base md:text-lg font-bold uppercase tracking-widest mt-auto z-20"
+                className="press-illusion-btn-orange w-full py-4 md:py-5 text-base md:text-lg font-bold capitalize tracking-widest mt-auto z-20"
               >
                 Join Now
               </button>

@@ -104,7 +104,7 @@ function GooglePlayStoreBadge() {
         </svg>
       </span>
       <div className="flex flex-col items-start leading-tight">
-        <span className="text-[10px] font-bold uppercase tracking-wider text-orange-600">Get it on</span>
+        <span className="text-[10px] font-bold capitalize tracking-wider text-orange-600">Get it on</span>
         <span className="text-[17px] font-extrabold text-sky-900">Google Play</span>
       </div>
     </div>
@@ -123,7 +123,7 @@ function AppStoreBadge() {
         </svg>
       </span>
       <div className="flex flex-col items-start leading-tight">
-        <span className="text-[10px] font-bold uppercase tracking-wider text-orange-600">Download on the</span>
+        <span className="text-[10px] font-bold capitalize tracking-wider text-orange-600">Download on the</span>
         <span className="text-[17px] font-extrabold text-sky-900">App Store</span>
       </div>
     </div>
@@ -258,7 +258,7 @@ export default function ProductDetailPremiumCRM({
               className="w-8 h-8"
             />
             <div className="flex flex-col items-start leading-none">
-              <span className="text-[10px] font-bold text-gray-600 uppercase">GET IT ON</span>
+              <span className="text-[10px] font-bold text-gray-600 capitalize">GET IT ON</span>
               <span className="text-xl font-bold text-black">Google Play</span>
             </div>
           </div>
@@ -271,7 +271,7 @@ export default function ProductDetailPremiumCRM({
               className="w-7 h-7 object-contain"
             />
             <div className="flex flex-col items-start leading-none">
-              <span className="text-[10px] font-bold text-gray-600 uppercase">Download on the</span>
+              <span className="text-[10px] font-bold text-gray-600 capitalize">Download on the</span>
               <span className="text-xl font-bold text-black">App Store</span>
             </div>
           </div>
@@ -427,7 +427,7 @@ export default function ProductDetailPremiumCRM({
       <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
         <div className="w-full max-w-7xl mx-auto px-6">
           <div className="text-center mb-10">
-            <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-3 bg-white px-4 py-2 rounded-full border border-[#0EA5E9]/20 shadow-sm">
+            <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] capitalize mb-3 bg-white px-4 py-2 rounded-full border border-[#0EA5E9]/20 shadow-sm">
               PROCESS
             </span>
             <h2 className="mb-6 capitalize">
@@ -574,7 +574,7 @@ export default function ProductDetailPremiumCRM({
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-3 bg-white px-4 py-2 rounded-full border border-[#0EA5E9]/20 shadow-sm">
+              <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] capitalize mb-3 bg-white px-4 py-2 rounded-full border border-[#0EA5E9]/20 shadow-sm">
                 FAQ
               </span>
               <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
@@ -620,7 +620,7 @@ export default function ProductDetailPremiumCRM({
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <span className="inline-block text-xs font-black text-white/90 tracking-[0.25em] uppercase mb-4 bg-white/20 px-5 py-2 rounded-full backdrop-blur-sm">
+                <span className="inline-block text-xs font-black text-white/90 tracking-[0.25em] capitalize mb-4 bg-white/20 px-5 py-2 rounded-full backdrop-blur-sm">
                   GET STARTED TODAY
                 </span>
 
@@ -663,7 +663,7 @@ export default function ProductDetailPremiumCRM({
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-3 bg-white px-4 py-2 rounded-full border border-[#0EA5E9]/20 shadow-sm">
+              <span className="inline-block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] capitalize mb-3 bg-white px-4 py-2 rounded-full border border-[#0EA5E9]/20 shadow-sm">
                 MORE PRODUCTS
               </span>
               <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
@@ -1002,7 +1002,7 @@ function CRMFeatureSection() {
       <div className="w-full max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-10">
-          <span className="block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] uppercase mb-2.5">
+          <span className="block text-[10px] font-black text-[#0EA5E9] tracking-[0.28em] capitalize mb-2.5">
             SOFTWARE FEATURES
           </span>
           <h2 className="text-gray-900 mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
@@ -1418,7 +1418,7 @@ function CRMTabSection({ setSelectedImage }) {
                   key={tab.id}
                   id={`crm-tab-${tab.id}`}
                   onClick={() => scrollToTab(tab.id)}
-                  className={`flex-shrink-0 px-6 py-3 rounded-full font-bold text-xs uppercase tracking-widest transition-all duration-300 mr-4 ${activeTab === tab.id
+                  className={`flex-shrink-0 px-6 py-3 rounded-full font-bold text-xs capitalize tracking-widest transition-all duration-300 mr-4 ${activeTab === tab.id
                     ? `bg-gradient-to-r ${tab.color} text-white shadow-lg`
                     : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
                     }`}

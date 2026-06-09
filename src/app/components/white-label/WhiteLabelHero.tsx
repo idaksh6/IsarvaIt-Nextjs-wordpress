@@ -115,7 +115,7 @@ const WhiteLabelHero = ({ onContact }: { onContact: () => void }) => {
                 <Sparkles className="w-5 h-5 md:w-6 md:h-6" />
               </div>
               <div>
-                <p className="text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-0.5 md:mb-0">Quality</p>
+                <p className="text-[8px] md:text-[10px] font-black text-slate-400 capitalize tracking-widest leading-none mb-0.5 md:mb-0">Quality</p>
                 <p className="text-xs md:text-lg font-black text-slate-900 whitespace-nowrap">98% Bug-Free Delivery</p>
               </div>
             </motion.div>
@@ -129,7 +129,7 @@ const WhiteLabelHero = ({ onContact }: { onContact: () => void }) => {
                 <Users className="w-5 h-5 md:w-6 md:h-6" />
               </div>
               <div>
-                <p className="text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-0.5 md:mb-0">Scalability</p>
+                <p className="text-[8px] md:text-[10px] font-black text-slate-400 capitalize tracking-widest leading-none mb-0.5 md:mb-0">Scalability</p>
                 <p className="text-xs md:text-lg font-black text-slate-900 whitespace-nowrap">2x Team Bandwidth</p>
               </div>
             </motion.div>

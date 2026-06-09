@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -541,7 +541,7 @@ export default function ProductDetailPremiumBillSoft({
                 <div className="text-center lg:text-left">
                   <div className="relative inline-flex items-center justify-center lg:gap-3 gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-sky-50/50 to-blue-50/50 border border-sky-100/50 mb-8 backdrop-blur-sm">
                     <div className="w-2 h-2 rounded-full bg-sky-500 animate-pulse shrink-0" />
-                    <span className="bg-gradient-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent font-black text-xs uppercase tracking-[0.2em] text-center leading-tight">Business Management Solution</span>
+                    <span className="bg-gradient-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent font-black text-xs capitalize tracking-[0.2em] text-center leading-tight">Business Management Solution</span>
                   </div>
 
                   <div className="relative">
@@ -577,17 +577,17 @@ export default function ProductDetailPremiumBillSoft({
                     <div className="group p-4 sm:p-5 rounded-[24px] bg-white border border-sky-50 shadow-sm hover:shadow-xl hover:shadow-sky-500/5 hover:-translate-y-1 transition-all duration-300 relative truncate">
                       <div className="absolute top-0 right-0 w-12 h-12 bg-sky-50/50 rounded-bl-3xl -z-10 transition-transform group-hover:scale-110" />
                       <span className="block text-2xl sm:text-3xl font-black bg-gradient-to-br from-sky-600 to-blue-600 bg-clip-text text-transparent mb-1">100%</span>
-                      <span className="block text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">GST Ready</span>
+                      <span className="block text-[10px] font-extrabold text-slate-400 capitalize tracking-widest">GST Ready</span>
                     </div>
                     <div className="group p-4 sm:p-5 rounded-[24px] bg-white border border-sky-50 shadow-sm hover:shadow-xl hover:shadow-sky-500/5 hover:-translate-y-1 transition-all duration-300 relative truncate">
                       <div className="absolute top-0 right-0 w-12 h-12 bg-sky-50/50 rounded-bl-3xl -z-10 transition-transform group-hover:scale-110" />
                       <span className="block text-2xl sm:text-3xl font-black bg-gradient-to-br from-sky-600 to-blue-600 bg-clip-text text-transparent mb-1">&lt; 1s</span>
-                      <span className="block text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">Billing Speed</span>
+                      <span className="block text-[10px] font-extrabold text-slate-400 capitalize tracking-widest">Billing Speed</span>
                     </div>
                     <div className="group p-4 sm:p-5 rounded-[24px] bg-white border border-sky-50 shadow-sm hover:shadow-xl hover:shadow-sky-500/5 hover:-translate-y-1 transition-all duration-300 relative truncate">
                       <div className="absolute top-0 right-0 w-12 h-12 bg-sky-50/50 rounded-bl-3xl -z-10 transition-transform group-hover:scale-110" />
                       <span className="block text-2xl sm:text-3xl font-black bg-gradient-to-br from-sky-600 to-blue-600 bg-clip-text text-transparent mb-1">Multi</span>
-                      <span className="block text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">Branch Sync</span>
+                      <span className="block text-[10px] font-extrabold text-slate-400 capitalize tracking-widest">Branch Sync</span>
                     </div>
                   </div>
                 </div>
@@ -599,7 +599,7 @@ export default function ProductDetailPremiumBillSoft({
                       <button
                         key={idx}
                         onClick={() => setBannerIdx(idx)}
-                        className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-[11px] font-black uppercase tracking-[0.15em] transition-all duration-300 border
+                        className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-[11px] font-black capitalize tracking-[0.15em] transition-all duration-300 border
         ${bannerIdx === idx
                             ? "bg-sky-600 text-white border-sky-600 shadow-lg shadow-sky-500/30"
                             : "bg-white text-sky-500 border-sky-200 hover:border-sky-400 hover:text-sky-600"
@@ -645,7 +645,7 @@ export default function ProductDetailPremiumBillSoft({
                       <div className="absolute top-1/2 -right-8 glass-panel px-6 py-4 rounded-3xl z-30 shadow-2xl hidden xl:flex items-center gap-4 animate-bounce" style={{ animationDuration: '3s' }}>
                         <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-sky-400 to-blue-600 flex items-center justify-center text-white text-xl font-bold italic shadow-lg">₹</div>
                         <div>
-                          <div className="text-gray-900 text-xs font-black uppercase tracking-widest">GST Ready</div>
+                          <div className="text-gray-900 text-xs font-black capitalize tracking-widest">GST Ready</div>
                           <div className="text-sky-600 font-bold">Billing System</div>
                         </div>
                       </div>
@@ -670,7 +670,7 @@ export default function ProductDetailPremiumBillSoft({
                         setActiveTab(tab.id);
                         e.currentTarget.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
                       }}
-                      className={`px-5 py-2.5 rounded-full font-bold text-[12px] uppercase tracking-wider 
+                      className={`px-5 py-2.5 rounded-full font-bold text-[12px] capitalize tracking-wider 
                       transition-all duration-300 relative border border-transparent
                       ${isActive
                           ? "text-white border-transparent"
@@ -706,7 +706,7 @@ export default function ProductDetailPremiumBillSoft({
                             <button
                               key={tab.id}
                               onClick={() => setActiveTab(tab.id)}
-                              className={`group relative flex items-center gap-4 px-6 py-4 rounded-[1.8rem] font-bold text-xs uppercase tracking-widest transition-all duration-500 overflow-hidden ${isActive
+                              className={`group relative flex items-center gap-4 px-6 py-4 rounded-[1.8rem] font-bold text-xs capitalize tracking-widest transition-all duration-500 overflow-hidden ${isActive
                                 ? "text-white shadow-lg"
                                 : "text-gray-500 hover:text-gray-900 hover:bg-gray-50/50"
                                 }`}
@@ -746,7 +746,7 @@ export default function ProductDetailPremiumBillSoft({
                           <div className="flex flex-col gap-6 mb-6 lg:mb-12 text-center lg:text-left">
                             <div className="max-w-none">
                               <motion.div
-                                className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border text-[12px] font-black uppercase tracking-[0.2em] mb-6 ${TAB_THEMES[activeTab].lightBg} ${TAB_THEMES[activeTab].text} border-white/50 shadow-sm`}
+                                className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border text-[12px] font-black capitalize tracking-[0.2em] mb-6 ${TAB_THEMES[activeTab].lightBg} ${TAB_THEMES[activeTab].text} border-white/50 shadow-sm`}
                               >
                                 <span className="relative flex h-2 w-2">
                                   <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${TAB_THEMES[activeTab].bg}`}></span>
@@ -828,7 +828,7 @@ export default function ProductDetailPremiumBillSoft({
                                 <div className={`w-8 h-8 rounded-full ${TAB_THEMES[activeTab].lightBg} flex items-center justify-center ${TAB_THEMES[activeTab].text} flex-shrink-0 shadow-inner`}>
                                   <span className="text-[10px] font-black">✓</span>
                                 </div>
-                                <span className="text-[14px] font-black text-gray-700 uppercase tracking-tight">{f}</span>
+                                <span className="text-[14px] font-black text-gray-700 capitalize tracking-tight">{f}</span>
                               </div>
                             ))}
                           </div>
@@ -840,7 +840,7 @@ export default function ProductDetailPremiumBillSoft({
                           <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 lg:gap-12 items-center mb-10 lg:mb-12">
                             <div className="xl:col-span-5 flex flex-col gap-6 text-center xl:text-left">
                               <motion.div
-                                className={`inline-flex self-center xl:self-start items-center gap-2 px-4 py-2 rounded-full border text-[12px] font-black uppercase tracking-[0.2em] ${TAB_THEMES[activeTab].lightBg} ${TAB_THEMES[activeTab].text} border-white/50 shadow-sm`}
+                                className={`inline-flex self-center xl:self-start items-center gap-2 px-4 py-2 rounded-full border text-[12px] font-black capitalize tracking-[0.2em] ${TAB_THEMES[activeTab].lightBg} ${TAB_THEMES[activeTab].text} border-white/50 shadow-sm`}
                               >
                                 <span className="relative flex h-2 w-2">
                                   <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${TAB_THEMES[activeTab].bg}`}></span>
@@ -909,7 +909,7 @@ export default function ProductDetailPremiumBillSoft({
                                 <div className={`w-8 h-8 rounded-full ${TAB_THEMES[activeTab].lightBg} flex items-center justify-center ${TAB_THEMES[activeTab].text} flex-shrink-0`}>
                                   <span className="text-[10px] font-black">✓</span>
                                 </div>
-                                <span className="text-[13px] font-black text-gray-700 uppercase tracking-tight text-left leading-snug">{f}</span>
+                                <span className="text-[13px] font-black text-gray-700 capitalize tracking-tight text-left leading-snug">{f}</span>
                               </div>
                             ))}
                           </div>
@@ -951,7 +951,7 @@ export default function ProductDetailPremiumBillSoft({
 
 
                     <div className="relative z-10 px-8 lg:px-16 text-center max-w-4xl mx-auto">
-                      <span className="inline-block px-4 py-2 rounded-full bg-sky-50 text-sky-600 font-black text-xs uppercase tracking-widest mb-6">
+                      <span className="inline-block px-4 py-2 rounded-full bg-sky-50 text-sky-600 font-black text-xs capitalize tracking-widest mb-6">
                         Ready to Scale?
                       </span>
                       <h2 className="text-gray-900 mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
@@ -984,7 +984,7 @@ export default function ProductDetailPremiumBillSoft({
           <section className="py-12 lg:py-16 bg-white border border-gray-100 rounded-[3rem]  overflow-hidden">
             <div className="px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center text-center lg:text-left">
               <div>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-fuchsia-50 text-fuchsia-600 font-bold text-xs mb-6 uppercase tracking-widest">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-fuchsia-50 text-fuchsia-600 font-bold text-xs mb-6 capitalize tracking-widest">
                   Personalized Experience
                 </div>
                 <h2 className="mb-6 capitalize">
@@ -1062,7 +1062,7 @@ export default function ProductDetailPremiumBillSoft({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <span className="inline-block text-[10px] font-black text-sky-600 tracking-[0.28em] uppercase mb-3 bg-sky-50 px-4 py-2 rounded-full border border-sky-100">
+                <span className="inline-block text-[10px] font-black text-sky-600 tracking-[0.28em] capitalize mb-3 bg-sky-50 px-4 py-2 rounded-full border border-sky-100">
                   MORE PRODUCTS
                 </span>
                 <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
@@ -1107,7 +1107,7 @@ export default function ProductDetailPremiumBillSoft({
 
                           {/* Title */}
                           <div className="mb-2 w-full h-16 flex items-center justify-center shrink-0">
-                            <h3 className="uppercase line-clamp-2">
+                            <h3 className="capitalize line-clamp-2">
                               {prod.title}
                             </h3>
                           </div>
@@ -1115,7 +1115,7 @@ export default function ProductDetailPremiumBillSoft({
                           {/* Tagline */}
                           <div className="mb-2 flex h-[3.25rem] w-full items-center justify-center shrink-0">
                             {prod.tagline ? (
-                              <p className="text-sky-600 font-bold text-sm uppercase tracking-wide line-clamp-2 leading-snug">
+                              <p className="text-sky-600 font-bold text-sm capitalize tracking-wide line-clamp-2 leading-snug">
                                 {prod.tagline}
                               </p>
                             ) : (
@@ -1129,7 +1129,7 @@ export default function ProductDetailPremiumBillSoft({
                           </p>
 
                           {/* CTA Link at bottom */}
-                          <div className="mt-auto shrink-0 flex items-center justify-center gap-2 text-sky-600 font-black text-xs uppercase tracking-widest pt-4 border-t border-gray-50 group-hover:gap-3 transition-all w-full">
+                          <div className="mt-auto shrink-0 flex items-center justify-center gap-2 text-sky-600 font-black text-xs capitalize tracking-widest pt-4 border-t border-gray-50 group-hover:gap-3 transition-all w-full">
                             Explore Product
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
@@ -1166,7 +1166,7 @@ export default function ProductDetailPremiumBillSoft({
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           preSelectedType="Product"
-          preSelectedItem="Isarva BillSoft"
+          preSelectedItem="BillSoft Application"
           allItems={allProducts}
         />
 
@@ -1204,8 +1204,8 @@ export default function ProductDetailPremiumBillSoft({
                 </div>
 
                 <div className="mt-6 text-white text-center">
-                  <h3 className="uppercase tracking-widest">{activeContent.title}</h3>
-                  <p className="text-white/60 font-medium mt-1 uppercase text-sm tracking-widest">{activeContent.subtitle}</p>
+                  <h3 className="capitalize tracking-widest">{activeContent.title}</h3>
+                  <p className="text-white/60 font-medium mt-1 capitalize text-sm tracking-widest">{activeContent.subtitle}</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -1412,7 +1412,7 @@ function BillsoftUniqueFeatures() {
 
       <div className="max-w-7xl mx-auto px-6 sm:px-6 relative z-10 w-full">
         <div className="text-center mb-10">
-          <span className="block text-[14px] font-black text-sky-600 tracking-[0.28em] uppercase mb-2.5">
+          <span className="block text-[14px] font-black text-sky-600 tracking-[0.28em] capitalize mb-2.5">
             Exclusive Capabilities
           </span>
           <h2 className="text-gray-900 mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
@@ -1475,7 +1475,7 @@ function BillsoftFeatureSection() {
       <div className="w-full max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-6 ">
-          <span className="block text-[14px] font-black text-sky-600 tracking-[0.28em] uppercase mb-2.5">
+          <span className="block text-[14px] font-black text-sky-600 tracking-[0.28em] capitalize mb-2.5">
             KEY FEATURES
           </span>
           <h2 className="text-gray-900 mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">

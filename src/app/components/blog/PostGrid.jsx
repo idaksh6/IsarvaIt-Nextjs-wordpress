@@ -73,13 +73,13 @@ export default function PostGrid({ posts, title = "Latest Articles" }) {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1.5 bg-white/90 backdrop-blur-md rounded-full text-[10px] font-black text-emerald-700 uppercase tracking-[0.15em] shadow-sm">
+                    <span className="px-3 py-1.5 bg-white/90 backdrop-blur-md rounded-full text-[10px] font-black text-emerald-700 capitalize tracking-[0.15em] shadow-sm">
                       {post.categoryName}
                     </span>
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="mb-4 group-hover:text-emerald-600 transition-colors line-clamp-2 uppercase">
+                  <h3 className="mb-4 group-hover:text-emerald-600 transition-colors line-clamp-2 capitalize">
                     {post.title}
                   </h3>
                   <p className="text-gray-500 line-clamp-2 mb-6 text-[15px] leading-relaxed">
@@ -102,13 +102,13 @@ export default function PostGrid({ posts, title = "Latest Articles" }) {
         {isLoading && (
           <div className="flex flex-col items-center gap-4">
             <div className="w-10 h-10 border-4 border-emerald-100 border-t-emerald-600 rounded-full animate-spin"></div>
-            <span className="text-sm font-bold text-emerald-600 uppercase tracking-widest animate-pulse">
+            <span className="text-sm font-bold text-emerald-600 capitalize tracking-widest animate-pulse">
               Discovering more...
             </span>
           </div>
         )}
         {!hasMore && !isLoading  && (
-          <div className="text-gray-300 font-black uppercase tracking-[0.3em] text-xs py-10 border-t border-gray-50 w-full text-center">
+          <div className="text-gray-300 font-black capitalize tracking-[0.3em] text-xs py-10 border-t border-gray-50 w-full text-center">
             You&apos;ve reached the end of our insights
           </div>
         )}

@@ -547,10 +547,10 @@ function SearchResults() {
                         {job.title}
                       </h3>
                       <div className="flex flex-wrap gap-2 mb-4">
-                        <span className="text-[10px] font-bold px-2 py-0.5 bg-gray-100 text-gray-600 rounded-full uppercase">
+                        <span className="text-[10px] font-bold px-2 py-0.5 bg-gray-100 text-gray-600 rounded-full capitalize">
                           {job.location}
                         </span>
-                        <span className="text-[10px] font-bold px-2 py-0.5 bg-orange-50 text-orange-600 rounded-full uppercase">
+                        <span className="text-[10px] font-bold px-2 py-0.5 bg-orange-50 text-orange-600 rounded-full capitalize">
                           {job.jobType}
                         </span>
                       </div>
@@ -612,7 +612,7 @@ function SearchResults() {
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                         />
                         <div className="absolute top-4 left-4">
-                          <span className="px-3 py-1 bg-orange-600 text-white text-xs font-bold uppercase rounded-full">
+                          <span className="px-3 py-1 bg-orange-600 text-white text-xs font-bold capitalize rounded-full">
                             {blog.categoryName}
                           </span>
                         </div>

@@ -178,7 +178,7 @@ export default function PartnerFormSection({
                 whileInView="whileInView"
                 viewport={viewportConfig}
               >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold uppercase tracking-wider mb-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold capitalize tracking-wider mb-6">
 
                   Connect with us
                 </div>

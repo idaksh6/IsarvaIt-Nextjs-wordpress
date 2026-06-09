@@ -419,7 +419,7 @@ body {
   }
 
   h6 {
-    @apply text-sm font-semibold leading-snug text-gray-900 uppercase tracking-wide;
+    @apply text-sm font-semibold leading-snug text-gray-900 capitalize tracking-wide;
   }
 }
 
