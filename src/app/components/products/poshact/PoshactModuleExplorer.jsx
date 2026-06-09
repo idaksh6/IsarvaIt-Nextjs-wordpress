@@ -119,7 +119,7 @@ export default function PoshactModuleExplorer({ jumpModuleId }) {
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-6 relative">
         <div className="text-center max-w-2xl mx-auto mb-8 lg:mb-10">
-          <p className="text-xs font-bold uppercase tracking-widest text-indigo-300 mb-3">Module Explorer</p>
+          <p className="text-xs font-bold capitalize tracking-widest text-indigo-300 mb-3">Module Explorer</p>
           <h2 className="text-white mb-3 capitalize">Every feature, one click away</h2>
           <p className="text-indigo-100/75 text-sm sm:text-base">
             Filter by role area, pick a module, and preview the screen. Tap the screenshot to enlarge.
@@ -143,7 +143,7 @@ export default function PoshactModuleExplorer({ jumpModuleId }) {
           <div className="module-compact-panel">
             <div className="mb-3">
               <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
-                <p className="text-xs font-bold uppercase tracking-wider text-indigo-300">{catInfo.title}</p>
+                <p className="text-xs font-bold capitalize tracking-wider text-indigo-300">{catInfo.title}</p>
                 <span className="text-xs font-semibold text-indigo-300">
                   {filtered.length} module{filtered.length !== 1 ? "s" : ""}
                 </span>
@@ -170,7 +170,7 @@ export default function PoshactModuleExplorer({ jumpModuleId }) {
           <div id="module-sidebar-col" className="lg:col-span-5 xl:col-span-4">
             <div className="rounded-2xl border module-panel p-3 sm:p-4">
               <div className="flex items-center justify-between mb-3 px-1">
-                <span className="text-xs font-semibold uppercase tracking-wider text-indigo-200/70">Select module</span>
+                <span className="text-xs font-semibold capitalize tracking-wider text-indigo-200/70">Select module</span>
                 <span className="text-xs text-indigo-300 font-medium">
                   {filtered.length} module{filtered.length !== 1 ? "s" : ""}
                 </span>
@@ -246,8 +246,8 @@ export default function PoshactModuleExplorer({ jumpModuleId }) {
 
                   <div className={`p-6 sm:p-8 border-t border-slate-100 stage-content ${switching ? "is-switching" : ""}`}>
                     <div className="flex flex-wrap items-center gap-2 mb-3">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-indigo-600">{active.section}</span>
-                      <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-500 px-2 py-0.5 rounded-full border border-slate-200 bg-slate-50">
+                      <span className="text-[10px] font-bold capitalize tracking-widest text-indigo-600">{active.section}</span>
+                      <span className="text-[10px] font-semibold capitalize tracking-wider text-slate-500 px-2 py-0.5 rounded-full border border-slate-200 bg-slate-50">
                         {active.categoryLabel}
                       </span>
                     </div>

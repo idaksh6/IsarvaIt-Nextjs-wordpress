@@ -4,6 +4,7 @@
   --primary-color: #0066ff;
   --secondary-color: #0056b3;
   --accent-green: #2ecc71;
+  --accent-orange: #f97316;
   --text-dark: #1e293b;
   --text-gray: #64748b;
   --bg-light: #f8fafc;
@@ -25,17 +26,37 @@
   background: #fff;
 }
 
-.hrms-pricing-page .main-header h1 {
-  font-size: 2.5rem;
-  color: var(--primary-color);
-  margin-bottom: 0.5rem;
+.hrms-pricing-page .pricing-eyebrow {
+  display: block;
+  font-size: 0.8rem;
   font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: capitalize;
+  color: var(--accent-orange);
+  margin-bottom: 0.75rem;
+}
+
+.hrms-pricing-page .main-header h1 {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  font-weight: 800;
+  line-height: 1.2;
   font-family: var(--font-outfit), var(--font-inter), sans-serif;
+}
+
+.hrms-pricing-page .main-header h1 .heading-accent {
+  color: var(--primary-color);
 }
 
 .hrms-pricing-page .subtitle {
   color: var(--text-gray);
   margin-bottom: 0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hrms-pricing-page .subtitle a {
@@ -77,31 +98,31 @@
 }
 
 .hrms-pricing-page .pricing-card.recommended {
-  border: 1px solid var(--accent-green);
-  padding-top: 2rem;
+  border: 1px solid var(--accent-orange);
   overflow: hidden;
 }
 
 .hrms-pricing-page .pricing-card.recommended:hover {
-  border-color: var(--accent-green);
+  border-color: var(--accent-orange);
 }
 
 .hrms-pricing-page .pricing-card.recommended .recommended-badge {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: var(--accent-green);
+  top: 18px;
+  left: -32px;
+  width: 130px;
+  background: var(--accent-orange);
   color: white;
   text-align: center;
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 0.35rem 0;
-  border-radius: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  z-index: 1;
-  box-shadow: none;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.4rem 0;
+  text-transform: capitalize;
+  letter-spacing: 0.4px;
+  z-index: 2;
+  transform: rotate(-45deg);
+  box-shadow: 0 2px 6px rgba(249, 115, 22, 0.35);
+  pointer-events: none;
 }
 
 .hrms-pricing-page .card-header-content {

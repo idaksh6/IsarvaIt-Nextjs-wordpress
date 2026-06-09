@@ -138,7 +138,7 @@ export default function CareerPage() {
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 backdrop-blur-sm border border-[#10b981]/10 mb-8 shadow-sm"
               >
                 <Briefcase className="w-4 h-4 text-[#10b981]" />
-                <span className="text-[#10b981] font-bold tracking-wider uppercase text-xs">Join our Mission</span>
+                <span className="text-[#10b981] font-bold tracking-wider capitalize text-xs">Join our Mission</span>
               </motion.div>
 
               <motion.h1
@@ -225,7 +225,7 @@ export default function CareerPage() {
                     </div>
                     <div>
                       <div className="text-4xl font-display font-bold text-[#1a1f24]">500+</div>
-                      <div className="text-emerald-700 font-bold tracking-widest text-[10px] uppercase">Impactful Projects</div>
+                      <div className="text-emerald-700 font-bold tracking-widest text-[10px] capitalize">Impactful Projects</div>
                     </div>
                   </div>
                   <div className="flex border-b border-[#10b981]/10 pb-12 items-center gap-6 lg:justify-start justify-center">
@@ -234,7 +234,7 @@ export default function CareerPage() {
                     </div>
                     <div>
                       <div className="text-4xl font-display font-bold text-[#1a1f24]">200+</div>
-                      <div className="text-emerald-700 font-bold tracking-widest text-[10px] uppercase">Engineers & Designers</div>
+                      <div className="text-emerald-700 font-bold tracking-widest text-[10px] capitalize">Engineers & Designers</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-6 lg:justify-start justify-center">
@@ -243,7 +243,7 @@ export default function CareerPage() {
                     </div>
                     <div>
                       <div className="text-4xl font-display font-bold text-[#1a1f24]">15+</div>
-                      <div className="text-emerald-700 font-bold tracking-widest text-[10px] uppercase">Global Countries</div>
+                      <div className="text-emerald-700 font-bold tracking-widest text-[10px] capitalize">Global Countries</div>
                     </div>
                   </div>
                 </div>
@@ -262,7 +262,7 @@ export default function CareerPage() {
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-block text-[#10b981] font-black tracking-[0.3em] uppercase text-xs mb-4"
+              className="inline-block text-[#10b981] font-black tracking-[0.3em] capitalize text-xs mb-4"
             >
               Our Foundation
             </motion.div>
@@ -300,7 +300,7 @@ export default function CareerPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 px-4">
             <div className="lg:text-left text-center">
-              <span className="text-[#10b981] font-black tracking-[0.3em] uppercase text-xs mb-4 inline-block">Career Opportunities</span>
+              <span className="text-[#10b981] font-black tracking-[0.3em] capitalize text-xs mb-4 inline-block">Career Opportunities</span>
               <h2 className="font-display text-[#1a1f24] capitalize">Find Your Calling</h2>
             </div>
 
@@ -394,19 +394,19 @@ export default function CareerPage() {
                     <div className="flex-1">
                       <h3 className="font-display text-[#1a1f24] group-hover:text-[#10b981] transition-colors mb-4">{job.title}</h3>
                       <div className="flex flex-wrap gap-2.5">
-                        <div className="flex items-center gap-1.5 text-[#53606b] text-[10px] font-bold bg-[#FDF8F2] px-3 py-1 rounded-full uppercase tracking-wider">
+                        <div className="flex items-center gap-1.5 text-[#53606b] text-[10px] font-bold bg-[#FDF8F2] px-3 py-1 rounded-full capitalize tracking-wider">
                           <MapPin className="w-3.5 h-3.5 text-[#10b981]" />
                           {job.location}
                         </div>
-                        <div className="flex items-center gap-1.5 text-[#53606b] text-[10px] font-bold bg-[#FDF8F2] px-3 py-1 rounded-full uppercase tracking-wider">
+                        <div className="flex items-center gap-1.5 text-[#53606b] text-[10px] font-bold bg-[#FDF8F2] px-3 py-1 rounded-full capitalize tracking-wider">
                           <Clock className="w-3.5 h-3.5 text-emerald-600" />
                           {job.experience}
                         </div>
-                        <div className="flex items-center gap-1.5 text-[#10b981] text-[10px] font-black bg-emerald-50 px-3 py-1 rounded-full uppercase tracking-widest border border-emerald-100">
+                        <div className="flex items-center gap-1.5 text-[#10b981] text-[10px] font-black bg-emerald-50 px-3 py-1 rounded-full capitalize tracking-widest border border-emerald-100">
                           {job.jobType}
                         </div>
                         {job.category && (
-                          <div className="flex items-center gap-1.5 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider bg-gradient-to-r from-purple-50 to-blue-50 text-purple-700 border border-purple-100">
+                          <div className="flex items-center gap-1.5 text-[10px] font-bold px-3 py-1 rounded-full capitalize tracking-wider bg-gradient-to-r from-purple-50 to-blue-50 text-purple-700 border border-purple-100">
                             {jobCategories.find(c => c.id === job.category)?.emoji}
                             <span>{job.category}</span>
                           </div>

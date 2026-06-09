@@ -97,7 +97,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-10 lg:mb-16">
           {/* Services */}
           <div>
-            <h4 className="text-black font-extrabold mb-6 text-[13px] uppercase tracking-[0.2em] flex items-center gap-3 lg:justify-start justify-center">
+            <h4 className="text-black font-extrabold mb-6 text-[13px] capitalize tracking-[0.2em] flex items-center gap-3 lg:justify-start justify-center">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
               Services
             </h4>
@@ -124,7 +124,7 @@ export default function Footer() {
 
           {/* Products */}
           <div>
-            <h4 className="text-black font-extrabold mb-6 text-[13px] uppercase tracking-[0.2em] flex items-center gap-3 lg:justify-start justify-center">
+            <h4 className="text-black font-extrabold mb-6 text-[13px] capitalize tracking-[0.2em] flex items-center gap-3 lg:justify-start justify-center">
               <span className="w-1.5 h-1.5 rounded-full bg-lime-600"></span>
               Products
             </h4>
@@ -151,7 +151,7 @@ export default function Footer() {
 
           {/* Industries */}
           <div>
-            <h4 className="text-black font-extrabold mb-6 text-[13px] uppercase tracking-[0.2em] flex items-center gap-3 lg:justify-start justify-center">
+            <h4 className="text-black font-extrabold mb-6 text-[13px] capitalize tracking-[0.2em] flex items-center gap-3 lg:justify-start justify-center">
               <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
               Industries
             </h4>
@@ -178,7 +178,7 @@ export default function Footer() {
 
           {/* Useful Links */}
           <div>
-            <h4 className="text-black font-extrabold mb-6 text-[13px] uppercase tracking-[0.2em] flex items-center gap-3 lg:justify-start justify-center">
+            <h4 className="text-black font-extrabold mb-6 text-[13px] capitalize tracking-[0.2em] flex items-center gap-3 lg:justify-start justify-center">
               <span className="w-1.5 h-1.5 rounded-full bg-teal-600"></span>
               Useful Links
             </h4>
@@ -206,7 +206,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="relative p-5 sm:p-6 lg:p-7 rounded-2xl lg:rounded-[1.75rem] border border-emerald-900/40 bg-emerald-800 shadow-md flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-6 overflow-hidden z-20">
-          <div className="relative z-10 flex flex-wrap items-center justify-center lg:justify-start gap-4 lg:gap-6 text-[12px] sm:text-[13px] font-bold tracking-widest text-white uppercase">
+          <div className="relative z-10 flex flex-wrap items-center justify-center lg:justify-start gap-4 lg:gap-6 text-[12px] sm:text-[13px] font-bold tracking-widest text-white capitalize">
             <Link href="/careers" className="hover:text-emerald-100 transition-colors">
               Careers
             </Link>

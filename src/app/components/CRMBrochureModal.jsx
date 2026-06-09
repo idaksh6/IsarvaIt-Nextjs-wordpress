@@ -235,7 +235,7 @@ export default function CRMBrochureModal({
             {/* Row 1: Name & Email */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
               <div>
-                <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 uppercase tracking-tight">Full Name *</label>
+                <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 capitalize tracking-tight">Full Name *</label>
                 <input
                   type="text"
                   name="name"
@@ -247,7 +247,7 @@ export default function CRMBrochureModal({
                 />
               </div>
               <div>
-                <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 uppercase tracking-tight">Email Address *</label>
+                <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 capitalize tracking-tight">Email Address *</label>
                 <input
                   type="email"
                   name="email"
@@ -263,7 +263,7 @@ export default function CRMBrochureModal({
             {/* Row 2: Phone & Company */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
               <div>
-                <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 uppercase tracking-tight">Phone Number *</label>
+                <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 capitalize tracking-tight">Phone Number *</label>
                 <input
                   type="tel"
                   name="phone"
@@ -275,7 +275,7 @@ export default function CRMBrochureModal({
                 />
               </div>
               <div>
-                <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 uppercase tracking-tight">Company Name *</label>
+                <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 capitalize tracking-tight">Company Name *</label>
                 <input
                   type="text"
                   name="company"
@@ -290,7 +290,7 @@ export default function CRMBrochureModal({
 
             {/* Message */}
             <div>
-              <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 uppercase tracking-tight">Comments (Optional)</label>
+              <label className="hidden md:block text-[12px] font-bold text-gray-700 mb-1 capitalize tracking-tight">Comments (Optional)</label>
               <textarea
                 name="message"
                 value={formData.message}

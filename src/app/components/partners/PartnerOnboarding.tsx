@@ -86,7 +86,7 @@ const PartnerOnboarding = () => {
               <div className={`text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-br ${step.gradient} opacity-10 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 mb-6 md:mb-8 pointer-events-none`}>
                 {step.number}
               </div>
-              <h3 className={`text-[#111827] uppercase mb-4 group-hover:${step.color} transition-colors duration-500`}>
+              <h3 className={`text-[#111827] capitalize mb-4 group-hover:${step.color} transition-colors duration-500`}>
                 {step.title}
               </h3>
               <p className="text-gray-500 text-base md:text-lg leading-relaxed relative z-10">

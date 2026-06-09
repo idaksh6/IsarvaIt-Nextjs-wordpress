@@ -188,7 +188,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
             <div className="glass-panel rounded-2xl px-5 py-4 flex items-center gap-4">
               <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center text-xl">⚡</div>
               <div>
-                <div className="text-gray-900 text-xs font-bold uppercase tracking-wider">Page Speed</div>
+                <div className="text-gray-900 text-xs font-bold capitalize tracking-wider">Page Speed</div>
                 <div className="text-blue-600 font-black text-lg">98/100</div>
               </div>
             </div>
@@ -212,7 +212,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               <div className="text-center lg:text-left">
                 <div className="relative inline-flex items-center gap-3 px-4 py-2 rounded-xl bg-gradient-to-r from-blue-50/50 to-indigo-50/50 border border-blue-100/50 mb-8 backdrop-blur-sm">
                   <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-                  <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent font-black text-xs uppercase tracking-[0.2em]">Premium Engineering</span>
+                  <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent font-black text-xs capitalize tracking-[0.2em]">Premium Engineering</span>
                 </div>
 
                 <div className="relative">
@@ -263,17 +263,17 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                   <div className="group p-4 sm:p-5 rounded-[24px] bg-white border border-blue-50 shadow-sm hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1 transition-all duration-300 relative truncate">
                     <div className="absolute top-0 right-0 w-12 h-12 bg-blue-50/50 rounded-bl-3xl -z-10 transition-transform group-hover:scale-110" />
                     <span className="block text-2xl sm:text-3xl font-black bg-gradient-to-br from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-1">100%</span>
-                    <span className="block text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">Quality</span>
+                    <span className="block text-[10px] font-extrabold text-slate-400 capitalize tracking-widest">Quality</span>
                   </div>
                   <div className="group p-4 sm:p-5 rounded-[24px] bg-white border border-blue-50 shadow-sm hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1 transition-all duration-300 relative truncate">
                     <div className="absolute top-0 right-0 w-12 h-12 bg-indigo-50/50 rounded-bl-3xl -z-10 transition-transform group-hover:scale-110" />
                     <span className="block text-2xl sm:text-3xl font-black bg-gradient-to-br from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-1">A+</span>
-                    <span className="block text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">Speed</span>
+                    <span className="block text-[10px] font-extrabold text-slate-400 capitalize tracking-widest">Speed</span>
                   </div>
                   <div className="group p-4 sm:p-5 rounded-[24px] bg-white border border-blue-50 shadow-sm hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1 transition-all duration-300 relative truncate">
                     <div className="absolute top-0 right-0 w-12 h-12 bg-sky-50/50 rounded-bl-3xl -z-10 transition-transform group-hover:scale-110" />
                     <span className="block text-2xl sm:text-3xl font-black bg-gradient-to-br from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-1">24/7</span>
-                    <span className="block text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">Support</span>
+                    <span className="block text-[10px] font-extrabold text-slate-400 capitalize tracking-widest">Support</span>
                   </div>
                 </div>
               </div>
@@ -297,7 +297,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                   <div className="absolute top-1/2 -right-8 glass-panel px-6 py-4 rounded-3xl z-30 shadow-2xl hidden xl:flex items-center gap-4 animate-bounce" style={{ animationDuration: '3s' }}>
                     <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-blue-500 to-indigo-600 flex items-center justify-center text-white text-xl font-bold italic shadow-lg">W</div>
                     <div>
-                      <div className="text-gray-900 text-xs font-black uppercase tracking-widest">Next-Gen</div>
+                      <div className="text-gray-900 text-xs font-black capitalize tracking-widest">Next-Gen</div>
                       <div className="text-blue-600 font-bold">Architecture</div>
                     </div>
                   </div>
@@ -315,7 +315,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               "Next.js", "REST API", "GraphQL", "Tailwind CSS", "JavaScript"
             ].map((tech, i) => (
               <div key={i} className="flex items-center gap-3 whitespace-nowrap">
-                <span className="text-xl font-black text-blue-900/40 tracking-tighter uppercase italic">{tech}</span>
+                <span className="text-xl font-black text-blue-900/40 tracking-tighter capitalize italic">{tech}</span>
                 <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
               </div>
             ))}
@@ -324,7 +324,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               "Next.js", "REST API", "GraphQL", "Tailwind CSS", "JavaScript"
             ].map((tech, i) => (
               <div key={i + 100} className="flex items-center gap-3 whitespace-nowrap">
-                <span className="text-xl font-black text-blue-900/40 tracking-tighter uppercase italic">{tech}</span>
+                <span className="text-xl font-black text-blue-900/40 tracking-tighter capitalize italic">{tech}</span>
                 <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
               </div>
             ))}
@@ -336,10 +336,10 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(37,99,235,0.02),transparent_70%)]" />
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
             <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-100">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs capitalize tracking-wider mb-6 border border-blue-100">
                 What We Offer
               </div>
-              <h2 className="mb-6 uppercase">
+              <h2 className="mb-6 capitalize">
                 Explore Our WordPress <span className="text-blue-600">Development Services</span>
               </h2>
               <p className="text-base sm:text-lg text-gray-500 font-medium max-w-2xl mx-auto">
@@ -378,10 +378,10 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-10">
               <div>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-100">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs capitalize tracking-wider mb-6 border border-blue-100">
                   Figma to WordPress
                 </div>
-                <h2 className="mb-6 uppercase">
+                <h2 className="mb-6 capitalize">
                   Your Design, <br className="hidden sm:block" />
                   <span className="text-blue-600">Brought to Life.</span>
                 </h2>
@@ -442,7 +442,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                   <svg className="w-8 h-8 text-blue-500 rotate-90 sm:rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                  <div className="text-[10px] font-black text-blue-400 uppercase tracking-widest">We convert</div>
+                  <div className="text-[10px] font-black text-blue-400 capitalize tracking-widest">We convert</div>
                 </div>
 
                 <div className="flex-1 bg-blue-600 rounded-[24px] p-6 text-center group hover:bg-blue-700 transition-all duration-300 hover:shadow-xl shadow-lg shadow-blue-200">
@@ -491,7 +491,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                   </div>
                   <div className="mt-6 pt-5 border-t border-gray-100 flex items-baseline justify-center gap-2 w-full">
                     <span className="text-2xl font-black text-blue-600">{card.stat}</span>
-                    <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">{card.statLabel}</span>
+                    <span className="text-xs font-bold text-gray-400 capitalize tracking-wider">{card.statLabel}</span>
                   </div>
                 </div>
               ))}
@@ -504,10 +504,10 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(37,99,235,0.04),transparent_70%)]" />
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
             <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-100">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs capitalize tracking-wider mb-6 border border-blue-100">
                 Architecture
               </div>
-              <h2 className="mb-6 uppercase">
+              <h2 className="mb-6 capitalize">
                 Your WordPress <span className="text-blue-600">Ecosystem</span>
               </h2>
               <p className="text-base sm:text-lg text-gray-500 font-medium max-w-2xl mx-auto">
@@ -545,7 +545,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                 <div className="bg-blue-600 text-white rounded-[24px] px-10 py-6 text-center shadow-2xl shadow-blue-200 w-72 relative mx-auto">
                   <div className="text-3xl mb-2">⚡</div>
                   <div className="text-lg font-black">WordPress Core</div>
-                  <div className="text-xs text-blue-200 font-medium mt-1 uppercase tracking-tighter">Enterprise Standard</div>
+                  <div className="text-xs text-blue-200 font-medium mt-1 capitalize tracking-tighter">Enterprise Standard</div>
                   <div className="absolute -inset-1 rounded-[28px] border-2 border-blue-300/30 animate-pulse" />
                 </div>
               </div>
@@ -578,7 +578,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
             {/* Mobile Vertical Stack */}
             <div className="lg:hidden flex flex-col items-center gap-6 pt-4">
               <div className="w-full space-y-3">
-                <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] text-center mb-4">Inputs & Sources</p>
+                <p className="text-[10px] font-black text-gray-400 capitalize tracking-[0.2em] text-center mb-4">Inputs & Sources</p>
                 <div className="grid grid-cols-2 gap-3">
                   {[
                     { label: "Figma Design", icon: "🎨", color: "bg-purple-50 border-purple-200 text-purple-700" },
@@ -588,7 +588,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                   ].map((node, i) => (
                     <div key={i} className={`border rounded-2xl p-4 text-center ${node.color}`}>
                       <div className="text-xl mb-1">{node.icon}</div>
-                      <div className="text-[10px] font-black uppercase leading-tight">{node.label}</div>
+                      <div className="text-[10px] font-black capitalize leading-tight">{node.label}</div>
                     </div>
                   ))}
                 </div>
@@ -600,14 +600,14 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               <div className="bg-blue-600 text-white rounded-[32px] px-8 py-8 text-center shadow-xl shadow-blue-100 w-full max-w-[280px] relative mx-auto">
                 <div className="text-3xl mb-3">⚡</div>
                 <div className="text-xl font-black mb-1 leading-tight tracking-tight">WordPress Core</div>
-                <div className="text-[10px] text-blue-200 font-bold uppercase tracking-widest">Enterprise Processing</div>
+                <div className="text-[10px] text-blue-200 font-bold capitalize tracking-widest">Enterprise Processing</div>
               </div>
               <div className="flex flex-col items-center py-2 opacity-30">
                 <div className="w-0.5 h-10 bg-gradient-to-b from-blue-400 to-indigo-200" />
                 <svg className="w-6 h-6 text-indigo-400 -mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
               </div>
               <div className="w-full space-y-3">
-                <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] text-center mb-4">Outputs & Integrations</p>
+                <p className="text-[10px] font-black text-gray-400 capitalize tracking-[0.2em] text-center mb-4">Outputs & Integrations</p>
                 <div className="grid grid-cols-2 gap-3">
                   {[
                     { label: "Custom Theme", icon: "🎨", color: "bg-indigo-50 border-indigo-200 text-indigo-700" },
@@ -617,7 +617,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                   ].map((node, i) => (
                     <div key={i} className={`border rounded-2xl p-4 text-center ${node.color}`}>
                       <div className="text-xl mb-1">{node.icon}</div>
-                      <div className="text-[10px] font-black uppercase leading-tight">{node.label}</div>
+                      <div className="text-[10px] font-black capitalize leading-tight">{node.label}</div>
                     </div>
                   ))}
                 </div>
@@ -625,13 +625,13 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 mt-12 pt-8 border-t border-gray-100">
-              <div className="flex items-center gap-2 text-[10px] font-black text-gray-400 uppercase tracking-widest">
+              <div className="flex items-center gap-2 text-[10px] font-black text-gray-400 capitalize tracking-widest">
                 <div className="w-4 h-0.5 bg-purple-200" /> Inputs
               </div>
-              <div className="flex items-center gap-2 text-[10px] font-black text-gray-400 uppercase tracking-widest">
+              <div className="flex items-center gap-2 text-[10px] font-black text-gray-400 capitalize tracking-widest">
                 <div className="w-4 h-0.5 bg-blue-400" /> Logic
               </div>
-              <div className="flex items-center gap-2 text-[10px] font-black text-gray-400 uppercase tracking-widest">
+              <div className="flex items-center gap-2 text-[10px] font-black text-gray-400 capitalize tracking-widest">
                 <div className="w-4 h-0.5 bg-indigo-200" /> Results
               </div>
             </div>
@@ -642,10 +642,10 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
         <section className="py-12 lg:py-16 bg-slate-50 relative overflow-hidden border-y border-slate-100">
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 font-bold text-[10px] uppercase tracking-wider mb-6 border border-blue-100">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 font-bold text-[10px] capitalize tracking-wider mb-6 border border-blue-100">
                 Core Capabilities
               </div>
-              <h2 className="mb-6 uppercase">
+              <h2 className="mb-6 capitalize">
                 Engineered for <span className="text-blue-600">Success</span>
               </h2>
               <p className="text-base sm:text-xl text-gray-500 font-medium">Enterprise WordPress expertise tailored to your digital growth.</p>
@@ -727,10 +727,10 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
         <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
             <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-100">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs capitalize tracking-wider mb-6 border border-blue-100">
                 Enterprise Solutions
               </div>
-              <h2 className="mb-6 uppercase">
+              <h2 className="mb-6 capitalize">
                 WordPress for <span className="text-blue-600">Growth</span>
               </h2>
             </div>
@@ -770,7 +770,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
                   <div className="absolute inset-0 bg-white/10 group-hover:bg-transparent transition-colors duration-500" />
                   <div className="absolute bottom-8 left-8 right-8 text-gray-900">
                     <p className="text-2xl font-black mb-2 leading-tight">Scale Without Limits</p>
-                    <p className="text-xs font-bold uppercase tracking-widest text-blue-600 font-black">Enterprise Infrastructure</p>
+                    <p className="text-xs font-bold capitalize tracking-widest text-blue-600 font-black">Enterprise Infrastructure</p>
                   </div>
                 </div>
               </div>
@@ -786,7 +786,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
             <div className="flex flex-col lg:flex-row items-start gap-16 lg:gap-24">
               <div className="w-full lg:w-1/2">
-                <h2 className="mb-6 text-center lg:text-left uppercase">
+                <h2 className="mb-6 text-center lg:text-left capitalize">
                   Things We're <br className="hidden lg:block" />
                   <span className="text-blue-600">Really Good At</span>
                 </h2>
@@ -831,10 +831,10 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
           <div className="absolute inset-0 bg-gradient-to-tr from-sky-50/30 via-white to-transparent" />
           <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
             <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-sky-50 text-sky-600 font-bold text-xs uppercase tracking-wider mb-6 border border-sky-100">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-sky-50 text-sky-600 font-bold text-xs capitalize tracking-wider mb-6 border border-sky-100">
                 AI-Enhanced
               </div>
-              <h2 className="mb-6 uppercase">
+              <h2 className="mb-6 capitalize">
                 Supercharged <span className="text-sky-500">with AI</span>
               </h2>
             </div>
@@ -883,7 +883,7 @@ export default function WordPressDevelopmentPremiumStaging({ service, servicesDa
               <img src="/wp_process_team_new.png" alt="Team" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-950/95 via-blue-900/70 to-transparent transition-all duration-700 flex items-center">
                 <div className="px-10 lg:px-24 max-w-2xl text-left">
-                  <h2 className="text-white mb-6 uppercase">Your Trusted Development Partner</h2>
+                  <h2 className="text-white mb-6 capitalize">Your Trusted Development Partner</h2>
                   <p className="text-xl text-white/90 mb-10 font-bold leading-relaxed">
                     Collaborate with a team that speaks your language and understands your business goals.
                   </p>
@@ -930,10 +930,10 @@ function ProcessSlider({ servicesData, setIsModalOpen }) {
     <section className="py-12 lg:py-16 bg-white relative overflow-hidden border-y border-slate-100">
       <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
         <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs uppercase tracking-wider mb-6 border border-blue-100">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-50 text-blue-700 font-bold text-xs capitalize tracking-wider mb-6 border border-blue-100">
             Process
           </div>
-          <h2 className="mb-6 uppercase">
+          <h2 className="mb-6 capitalize">
             Our CMS <span className="text-blue-600">Migration Process</span>
           </h2>
           <p className="text-base sm:text-lg text-gray-500 font-medium max-w-2xl mx-auto">
@@ -991,7 +991,7 @@ function ProcessSlider({ servicesData, setIsModalOpen }) {
 
           <div className="flex flex-col gap-4">
             <div className="p-6 bg-slate-50/50 rounded-[32px] border border-slate-200">
-              <h4 className="text-xs text-slate-400 uppercase tracking-widest mb-6 px-2">Project Lifecycle</h4>
+              <h4 className="text-xs text-slate-400 capitalize tracking-widest mb-6 px-2">Project Lifecycle</h4>
               <div className="space-y-3">
                 {processSteps.map((s, i) => (
                   <button
@@ -1006,7 +1006,7 @@ function ProcessSlider({ servicesData, setIsModalOpen }) {
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-center sm:justify-between mb-1">
-                        <span className={`text-[10px] font-black uppercase tracking-widest ${active === i ? "text-blue-500" : "text-slate-400"}`}>Phase {s.num}</span>
+                        <span className={`text-[10px] font-black capitalize tracking-widest ${active === i ? "text-blue-500" : "text-slate-400"}`}>Phase {s.num}</span>
                         {active === i && <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse hidden sm:block" />}
                       </div>
                       <div className={`text-base sm:text-lg font-black ${active === i ? "text-gray-900" : "text-slate-500 group-hover:text-slate-700"}`}>

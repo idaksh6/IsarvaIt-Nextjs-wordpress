@@ -227,7 +227,7 @@ function TestimonialsSection({ data }) {
               fontWeight: 700,
               letterSpacing: "0.22em",
               color: "#3b8d4d",
-              textTransform: "uppercase",
+              textTransform: "capitalize",
             }}
           >
             Client Testimonials

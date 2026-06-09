@@ -66,7 +66,7 @@ export default async function BlogPostPage({ params }) {
             <div className="mb-6">
               <Link
                 href={`/blog?category=${post.categorySlug}`}
-                className="inline-block px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold uppercase tracking-widest rounded-full transition-colors"
+                className="inline-block px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold capitalize tracking-widest rounded-full transition-colors"
               >
                 {post.categoryName}
               </Link>
@@ -116,7 +116,7 @@ export default async function BlogPostPage({ params }) {
         <section className="bg-gray-50 py-20">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-12">
-              <h2 className="mb-4 uppercase">
+              <h2 className="mb-4 capitalize">
                 Related Articles
               </h2>
               <p className="text-gray-600 text-lg">
@@ -138,7 +138,7 @@ export default async function BlogPostPage({ params }) {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-emerald-600 text-white text-xs font-bold uppercase tracking-wider rounded-full">
+                      <span className="px-3 py-1 bg-emerald-600 text-white text-xs font-bold capitalize tracking-wider rounded-full">
                         {relatedPost.categoryName}
                       </span>
                     </div>

@@ -241,7 +241,7 @@ export default function ProductDetailPremiumSupport({
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-3 bg-[#9333EA]/10 px-4 py-2 rounded-full">
+              <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] capitalize mb-3 bg-[#9333EA]/10 px-4 py-2 rounded-full">
                 SUPPORT
               </span>
               <h2 className="text-[#0a0a0a] mb-4 capitalize">
@@ -290,7 +290,7 @@ export default function ProductDetailPremiumSupport({
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <span className="inline-block text-xs font-black text-white/90 tracking-[0.25em] uppercase mb-4 bg-white/20 px-5 py-2 rounded-full backdrop-blur-sm">
+                <span className="inline-block text-xs font-black text-white/90 tracking-[0.25em] capitalize mb-4 bg-white/20 px-5 py-2 rounded-full backdrop-blur-sm">
                   GET STARTED TODAY
                 </span>
 
@@ -341,7 +341,7 @@ export default function ProductDetailPremiumSupport({
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-3 bg-[#9333EA]/10 px-4 py-2 rounded-full">
+              <span className="inline-block text-[10px] font-black text-[#9333EA] tracking-[0.28em] capitalize mb-3 bg-[#9333EA]/10 px-4 py-2 rounded-full">
                 MORE PRODUCTS
               </span>
               <h2 className="text-[#0a0a0a] mb-4 capitalize">
@@ -729,7 +729,7 @@ function SupportFeatureSection() {
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-10">
-          <span className="block text-[10px] font-black text-[#9333EA] tracking-[0.28em] uppercase mb-2.5">
+          <span className="block text-[10px] font-black text-[#9333EA] tracking-[0.28em] capitalize mb-2.5">
             KEY FEATURES
           </span>
           <h2 className="text-[#0a0a0a] mb-3.5 capitalize">

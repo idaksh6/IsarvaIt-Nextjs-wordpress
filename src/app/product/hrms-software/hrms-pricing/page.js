@@ -1,8 +1,8 @@
-import { generateMetadata as generateSEOMetadata } from "../lib/utils/seo";
+import { generateMetadata as generateSEOMetadata } from "../../../lib/utils/seo";
 import HrmsPricingClient from "./HrmsPricingClient";
 
 export const metadata = generateSEOMetadata({
-  title: "HRMS Software Pricing — Simple & Transparent Plans | Isarva Infotech",
+  title: "HRMS Software Pricing — Plans for Every Team Size | Isarva Infotech",
   description:
     "Compare HRMS software pricing plans: Free Trial, Professional, Enterprise & Custom. Payroll, attendance, leave management & biometric integration. Start your 14-day free trial today.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata = generateSEOMetadata({
     "payroll HRMS plans",
     "Isarva HRMS",
   ],
-  url: "/hrms-pricing",
+  url: "/product/hrms-software/hrms-pricing",
 });
 
 export const dynamic = "force-static";

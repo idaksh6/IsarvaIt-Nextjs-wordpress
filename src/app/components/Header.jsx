@@ -184,7 +184,7 @@ export default function Header() {
                                     {child.label === "Testimonials" ? "💬" : child.label === "Case Studies" ? "📊" : child.label === "Partners" ? "🤝" : child.label === "Careers" ? "💼" : child.label === "Blog" ? "✍️" : "ℹ️"}
                                   </span>
                                 </div>
-                                <span className="font-bold text-gray-800 group-hover:text-emerald-600 transition-colors uppercase tracking-tight text-sm">
+                                <span className="font-bold text-gray-800 group-hover:text-emerald-600 transition-colors capitalize tracking-tight text-sm">
                                   {child.label}
                                 </span>
                               </div>

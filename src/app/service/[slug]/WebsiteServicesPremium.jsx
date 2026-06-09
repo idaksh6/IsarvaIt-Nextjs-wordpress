@@ -596,7 +596,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
 
                 {/* Badge moved above the image container */}
                 <div className="relative z-20 mb-6 flex justify-center lg:justify-start">
-                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-orange-500 to-rose-500 text-white text-[10px] md:text-xs font-black shadow-[0_8px_20px_rgba(244,63,94,0.3)] uppercase tracking-wider whitespace-nowrap">
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-orange-500 to-rose-500 text-white text-[10px] md:text-xs font-black shadow-[0_8px_20px_rgba(244,63,94,0.3)] capitalize tracking-wider whitespace-nowrap">
                     ✨ Before → After Transformation
                   </span>
                 </div>
@@ -633,7 +633,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                     <div className="text-gray-900 text-xs font-extrabold text-center tracking-tight whitespace-nowrap">
                       Avg. 3× More Conversions
                     </div>
-                    <div className="text-orange-600 text-[10px] font-bold text-center mt-0.5 uppercase tracking-wider">
+                    <div className="text-orange-600 text-[10px] font-bold text-center mt-0.5 capitalize tracking-wider">
                       After redesign
                     </div>
                   </div>
@@ -645,7 +645,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                 <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-orange-50 border border-orange-200 text-orange-700 font-semibold text-sm mb-6">
                   🆕 New Service
                 </div>
-                <h2 className="mb-6 uppercase">
+                <h2 className="mb-6 capitalize">
                   Got an Old Website?
                   <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-rose-500">
@@ -726,7 +726,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                 </svg>
                 All Services
               </div>
-              <h2 className="mb-6 uppercase">
+              <h2 className="mb-6 capitalize">
                 What We Offer
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -857,7 +857,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                 </svg>
                 Core Capabilities
               </div>
-              <h2 className="mb-6 uppercase">
+              <h2 className="mb-6 capitalize">
                 Everything Your Website
                 <br className="hidden lg:block" /> Needs to Win
               </h2>
@@ -908,7 +908,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                 </svg>
                 How We Work
               </div>
-              <h2 className="mb-6 uppercase">
+              <h2 className="mb-6 capitalize">
                 Our Proven Process
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -947,7 +947,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
               {/* Overlay with info */}
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/60 flex items-center lg:text-left text-center">
                 <div className="px-10 lg:px-16 max-w-xl team-info-container">
-                  <p className="text-emerald-400 text-sm font-bold uppercase tracking-widest mb-3">
+                  <p className="text-emerald-400 text-sm font-bold capitalize tracking-widest mb-3">
                     Our Expert Team
                   </p>
                   <h3 className="text-white mb-4">
@@ -1014,7 +1014,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                 <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 font-semibold text-sm mb-8">
                   🏆 Why Isarva Infotech
                 </div>
-                <h2 className="mb-6 uppercase">
+                <h2 className="mb-6 capitalize">
                   We Don't Just Build Websites.{" "}
                   <span className="text-emerald-600">
                     We Build Growth Engines.
@@ -1026,7 +1026,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
                   your website journey.
                 </p>
                 <div className="mb-10">
-                  <p className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">
+                  <p className="text-sm font-bold text-gray-500 capitalize tracking-widest mb-4">
                     Technologies We Use
                   </p>
                   <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
@@ -1094,7 +1094,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
               />
               <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/70 via-emerald-800/50 to-emerald-800/50 flex items-center">
                 <div className="px-10 lg:px-16">
-                  <p className="text-emerald-300 text-sm font-bold uppercase tracking-widest mb-3">
+                  <p className="text-emerald-300 text-sm font-bold capitalize tracking-widest mb-3">
                     Results That Matter
                   </p>
                   <h3 className="lg:text-3xl text-white mb-3">
@@ -1139,7 +1139,7 @@ export default function WebsiteServicesPremium({ service, servicesData }) {
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-emerald-200 text-emerald-700 font-semibold text-sm mb-6 shadow-sm">
                 You Might Also Like
               </div>
-              <h2 className="mb-6 uppercase">
+              <h2 className="mb-6 capitalize">
                 Explore Related Services
               </h2>
               <p className="text-xl text-gray-600">

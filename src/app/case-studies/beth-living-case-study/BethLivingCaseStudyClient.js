@@ -58,7 +58,7 @@ export default function BethLivingCaseStudyClient() {
           >
             <motion.span
               variants={fadeInUp}
-              className="inline-block py-1.5 px-4 mb-6 rounded-full bg-amber-100 text-amber-800 text-sm font-semibold tracking-wide uppercase border border-amber-200"
+              className="inline-block py-1.5 px-4 mb-6 rounded-full bg-amber-100 text-amber-800 text-sm font-semibold tracking-wide capitalize border border-amber-200"
             >
               Case Study
             </motion.span>
@@ -90,7 +90,7 @@ export default function BethLivingCaseStudyClient() {
             </motion.div>
 
             {/* Tags */}
-            <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-3 text-xs font-bold text-amber-700 uppercase tracking-wider mb-8">
+            <motion.div variants={fadeInUp} className="flex flex-wrap justify-center gap-3 text-xs font-bold text-amber-700 capitalize tracking-wider mb-8">
               <span className="bg-amber-50 px-3 py-1 rounded-md">UI/UX Refresh</span>
               <span className="bg-amber-50 px-3 py-1 rounded-md">Lead Generation</span>
               <span className="bg-amber-50 px-3 py-1 rounded-md">Performance Audit</span>
@@ -172,10 +172,10 @@ export default function BethLivingCaseStudyClient() {
             <div className="bg-white rounded-2xl md:rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
               {/* Header Row */}
               <div className="hidden md:grid grid-cols-2 bg-gray-50 border-b border-gray-100 p-6">
-                <div className="font-bold text-gray-900 uppercase tracking-wider text-[20px] flex items-center gap-2">
+                <div className="font-bold text-gray-900 capitalize tracking-wider text-[20px] flex items-center gap-2">
                   <AlertTriangle size={18} className="text-amber-600" /> Requirement
                 </div>
-                <div className="font-bold text-amber-700 uppercase tracking-wider text-[20px] flex items-center gap-2 md:pl-12">
+                <div className="font-bold text-amber-700 capitalize tracking-wider text-[20px] flex items-center gap-2 md:pl-12">
                   <CheckCircle size={18} className="text-amber-500" /> Isarva Solution
                 </div>
               </div>
@@ -194,13 +194,13 @@ export default function BethLivingCaseStudyClient() {
                       <ArrowRight size={20} />
                     </div>
                     <div className="md:pr-12 mb-4 md:mb-0 flex flex-col justify-center">
-                      <div className="md:hidden flex items-center gap-2 text-amber-600 font-bold text-[10px] uppercase tracking-wider mb-2">
+                      <div className="md:hidden flex items-center gap-2 text-amber-600 font-bold text-[10px] capitalize tracking-wider mb-2">
                         Requirement
                       </div>
                       <p className="text-gray-700 font-medium text-base md:text-lg">{item.r}</p>
                     </div>
                     <div className="md:pl-12 flex flex-col justify-center">
-                      <div className="md:hidden flex items-center gap-2 text-amber-700 font-bold text-[10px] uppercase tracking-wider mb-2 mt-2 pt-4 border-t border-gray-100">
+                      <div className="md:hidden flex items-center gap-2 text-amber-700 font-bold text-[10px] capitalize tracking-wider mb-2 mt-2 pt-4 border-t border-gray-100">
                         Isarva Solution
                       </div>
                       <p className="text-gray-900 font-bold text-base md:text-lg text-amber-700">{item.s}</p>
@@ -250,7 +250,7 @@ export default function BethLivingCaseStudyClient() {
                 <div key={i} className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-amber-50 flex flex-col items-center text-center">
                   <div className="text-3xl md:text-4xl font-bold text-amber-600 mb-1">{stat.value}</div>
                   <div className="text-base font-bold text-gray-900 mb-1">{stat.label}</div>
-                  <div className="text-xs text-gray-500 uppercase tracking-wider">{stat.sub}</div>
+                  <div className="text-xs text-gray-500 capitalize tracking-wider">{stat.sub}</div>
                 </div>
               ))}
             </div>
@@ -290,7 +290,7 @@ export default function BethLivingCaseStudyClient() {
                 </div>
                 <div>
                   <h5 className="md:text-lg">Management Team</h5>
-                  <p className="text-xs md:text-sm text-gray-500 uppercase tracking-widest font-bold">Beth Living</p>
+                  <p className="text-xs md:text-sm text-gray-500 capitalize tracking-widest font-bold">Beth Living</p>
                 </div>
               </div>
             </div>

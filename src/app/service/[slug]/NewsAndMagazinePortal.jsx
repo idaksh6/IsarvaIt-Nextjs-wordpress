@@ -221,7 +221,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
                     ⚡
                   </div>
                   <div>
-                    <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">AMP Speed</p>
+                    <p className="text-[10px] text-slate-500 font-bold capitalize tracking-wider">AMP Speed</p>
                     <p className="text-sm font-black text-slate-900">99+ Core Vitals</p>
                   </div>
                 </div>
@@ -232,7 +232,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
                     📈
                   </div>
                   <div>
-                    <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Monetization</p>
+                    <p className="text-[10px] text-slate-500 font-bold capitalize tracking-wider">Monetization</p>
                     <p className="text-sm font-black text-slate-900">+45% Ad Yield</p>
                   </div>
                 </div>
@@ -262,10 +262,10 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
               {/* Left Side: Copy */}
               <div className="lg:col-span-7 text-center lg:text-left">
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-pink-50 border border-pink-100 mb-6 mx-auto lg:mx-0">
-                  <span className="text-pink-700 font-bold text-xs uppercase tracking-wide">Dynamic Publishing Experience</span>
+                  <span className="text-pink-700 font-bold text-xs capitalize tracking-wide">Dynamic Publishing Experience</span>
                 </div>
 
-                <h2 className="text-slate-900 mb-8 uppercase">
+                <h2 className="text-slate-900 mb-8 capitalize">
                   Empower Your Media Business with a Modern News Portal
                 </h2>
 
@@ -343,10 +343,10 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
           <div className="max-w-7xl mx-auto px-6 relative z-10">
 
             <div className="text-center max-w-3xl mx-auto mb-10">
-              <span className="text-violet-600 font-bold uppercase tracking-widest text-sm mb-3 block">
+              <span className="text-violet-600 font-bold capitalize tracking-widest text-sm mb-3 block">
                 Engineered for Scale
               </span>
-              <h2 className="text-slate-900 mb-6 uppercase">
+              <h2 className="text-slate-900 mb-6 capitalize">
                 Key Features Of Our News Portal Development
               </h2>
               <p className="text-lg lg:text-xl text-slate-600 leading-relaxed font-medium">
@@ -437,7 +437,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-violet-50 border border-violet-100 text-violet-800 font-semibold text-sm mb-6">
                 🚀 Service Catalogue
               </div>
-              <h2 className="text-slate-900 mb-6 uppercase">
+              <h2 className="text-slate-900 mb-6 capitalize">
                 What we offer with News Portal Development
               </h2>
               <p className="text-lg lg:text-xl text-slate-600 font-medium">
@@ -483,10 +483,10 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
           <div className="max-w-7xl mx-auto px-6 relative z-10">
 
             <div className="text-center mb-10">
-              <span className="text-violet-600 font-bold uppercase tracking-widest text-sm mb-3 block">
+              <span className="text-violet-600 font-bold capitalize tracking-widest text-sm mb-3 block">
                 Got Questions?
               </span>
-              <h2 className="text-slate-900 uppercase">
+              <h2 className="text-slate-900 capitalize">
                 Frequently Asked Questions
               </h2>
               <div className="w-20 h-1.5 bg-gradient-to-r from-violet-500 to-pink-500 mx-auto rounded-full mt-4" />
@@ -556,7 +556,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
           </div>
 
           <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/20 backdrop-blur-md text-white font-bold text-xs uppercase tracking-wider mb-8 border border-white/30 shadow-lg">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/20 backdrop-blur-md text-white font-bold text-xs capitalize tracking-wider mb-8 border border-white/30 shadow-lg">
               <span className="flex h-2 w-2 relative">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
@@ -564,7 +564,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
               Start your media journey
             </div>
 
-            <h2 className="text-white mb-6 uppercase">
+            <h2 className="text-white mb-6 capitalize">
               Ready to launch your digital newsroom?
             </h2>
 

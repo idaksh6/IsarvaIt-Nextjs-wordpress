@@ -6,7 +6,7 @@ export default function NotFound() {
       <div className="max-w-4xl mx-auto px-6 pt-44 lg:pb-20 pb-10 text-center">
         <div className="mb-8">
           <div className="text-9xl font-black text-gray-200 mb-4">404</div>
-          <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 uppercase tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 capitalize tracking-tight">
             Article Not Found
           </h1>
           <p className="text-xl text-gray-600 mb-8">
@@ -37,7 +37,7 @@ export default function NotFound() {
         </div>
 
         <div className="mt-16 bg-gray-50 rounded-2xl p-8 border border-gray-100">
-          <h2 className="text-2xl mb-4 uppercase">Popular Articles</h2>
+          <h2 className="text-2xl mb-4 capitalize">Popular Articles</h2>
           <p className="text-gray-600 mb-4">
             Check out some of our most popular content while you're here:
           </p>
