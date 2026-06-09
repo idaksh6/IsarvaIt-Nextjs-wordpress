@@ -26,47 +26,9 @@
   background: #fff;
 }
 
-.hrms-pricing-page .pricing-eyebrow {
-  display: block;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: capitalize;
+.hrms-pricing-page .main-header .pricing-eyebrow {
   color: var(--accent-orange);
   margin-bottom: 0.75rem;
-}
-
-.hrms-pricing-page .main-header h1 {
-  font-size: clamp(2rem, 5vw, 2.75rem);
-  color: var(--text-dark);
-  margin-bottom: 1rem;
-  font-weight: 800;
-  line-height: 1.2;
-  font-family: var(--font-outfit), var(--font-inter), sans-serif;
-}
-
-.hrms-pricing-page .main-header h1 .heading-accent {
-  color: var(--primary-color);
-}
-
-.hrms-pricing-page .subtitle {
-  color: var(--text-gray);
-  margin-bottom: 0;
-  font-size: 1.05rem;
-  line-height: 1.65;
-  max-width: 36rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hrms-pricing-page .subtitle a {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.hrms-pricing-page .subtitle a:hover {
-  text-decoration: underline;
 }
 
 .hrms-pricing-page .pricing-container {
@@ -134,16 +96,11 @@
 }
 
 .hrms-pricing-page .plan-name {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--text-dark);
   margin-bottom: 0.5rem;
   text-align: center;
 }
 
 .hrms-pricing-page .plan-desc {
-  font-size: 0.9rem;
-  color: var(--text-gray);
   margin-bottom: 1.25rem;
   text-align: center;
   min-height: 72px;
@@ -181,30 +138,18 @@
 
 .hrms-pricing-page .price-period {
   display: block;
-  font-size: 0.8rem;
-  color: var(--text-gray);
   margin-top: 0.25rem;
 }
 
 .hrms-pricing-page .employee-limit {
   text-align: center;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text-dark);
   margin-bottom: 0.5rem;
 }
 
 .hrms-pricing-page .additional-cost {
   text-align: center;
-  font-size: 0.85rem;
-  color: var(--text-gray);
   margin-bottom: 1rem;
   min-height: 1.5em;
-}
-
-.hrms-pricing-page .add-price {
-  font-weight: 700;
-  color: var(--text-dark);
 }
 
 .hrms-pricing-page .cta-btn {
@@ -232,8 +177,6 @@
 
 .hrms-pricing-page .feature-list {
   list-style: none;
-  font-size: 0.85rem;
-  color: var(--text-dark);
   flex-grow: 1;
   text-align: left;
   padding: 0;
@@ -283,17 +226,7 @@
 }
 
 .hrms-pricing-page .nested li {
-  color: var(--text-gray);
   margin-bottom: 0.4rem;
-}
-
-.hrms-pricing-page .feature-list > li > .feature-head {
-  font-weight: 600;
-}
-
-.hrms-pricing-page .summary-feat {
-  font-weight: 600;
-  color: var(--text-dark);
 }
 
 @media (max-width: 1200px) {
@@ -306,10 +239,6 @@
   .hrms-pricing-page .pricing-container {
     grid-template-columns: 1fr;
     max-width: 500px;
-  }
-
-  .hrms-pricing-page .main-header h1 {
-    font-size: 2rem;
   }
 
   .hrms-pricing-page .card-header-content {

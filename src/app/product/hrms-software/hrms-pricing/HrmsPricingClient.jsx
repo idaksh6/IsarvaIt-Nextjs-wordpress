@@ -12,7 +12,7 @@ function FeatureNode({ node }) {
 
   if (!hasChildren) {
     return (
-      <li>
+      <li className="text-sm text-gray-500 font-medium">
         <span className="arrow">▶</span>
         {node.label}
       </li>
@@ -22,7 +22,7 @@ function FeatureNode({ node }) {
   return (
     <li className={`expandable${active ? " active" : ""}`}>
       <div
-        className="feature-head"
+        className="feature-head text-sm font-semibold text-gray-900"
         role="button"
         tabIndex={0}
         onClick={() => setActive((prev) => !prev)}
@@ -58,8 +58,8 @@ function PricingCard({ plan, onCtaClick }) {
       {plan.recommended && <div className="recommended-badge">Recommended</div>}
 
       <div className="card-header-content">
-        <h2 className="plan-name">{plan.name}</h2>
-        <p className="plan-desc">{plan.description}</p>
+        <h3 className="plan-name">{plan.name}</h3>
+        <p className="plan-desc text-base text-gray-500 font-medium leading-relaxed">{plan.description}</p>
 
         <div className={`price-block${isOnDemand ? " on-demand" : ""}`}>
           {isOnDemand ? (
@@ -68,20 +68,22 @@ function PricingCard({ plan, onCtaClick }) {
             <>
               <span className="currency-symbol">₹</span>
               <span className="price-value">{plan.price}</span>
-              <span className="price-period">{plan.period}</span>
+              <span className="price-period text-sm text-gray-500 font-medium">{plan.period}</span>
             </>
           )}
         </div>
 
-        {plan.employeeLimit && <p className="employee-limit">{plan.employeeLimit}</p>}
+        {plan.employeeLimit && (
+          <p className="employee-limit text-sm text-gray-700 font-semibold">{plan.employeeLimit}</p>
+        )}
 
         {plan.additionalCost ? (
-          <p className="additional-cost">
+          <p className="additional-cost text-sm text-gray-500 font-medium">
             <span className="currency-symbol-small">₹</span>
-            <span className="add-price">{plan.additionalCost.amount}</span> per additional employee
+            <span className="font-semibold text-gray-700">{plan.additionalCost.amount}</span> per additional employee
           </p>
         ) : plan.price !== null && !isOnDemand ? (
-          <p className="additional-cost">Not applicable</p>
+          <p className="additional-cost text-sm text-gray-500 font-medium">Not applicable</p>
         ) : null}
       </div>
 
@@ -95,9 +97,9 @@ function PricingCard({ plan, onCtaClick }) {
         </button>
       )}
 
-      <ul className="feature-list">
+      <ul className="feature-list text-sm text-gray-700 font-medium leading-relaxed">
         {plan.summaryFeatures.map((item) => (
-          <li key={item} className="summary-feat">
+          <li key={item} className="summary-feat text-sm font-semibold text-gray-900">
             {item}
           </li>
         ))}
@@ -107,7 +109,7 @@ function PricingCard({ plan, onCtaClick }) {
         ))}
 
         {plan.plainFeatures.map((item) => (
-          <li key={item}>{item}</li>
+          <li key={item} className="text-sm text-gray-500 font-medium">{item}</li>
         ))}
       </ul>
     </div>
@@ -127,14 +129,14 @@ export default function HrmsPricingClient() {
     <div className="hrms-pricing-page">
       <header className="main-header pt-32 lg:pt-40 pb-8 lg:pb-10">
         <div className="max-w-3xl mx-auto px-6">
-          <span className="pricing-eyebrow">HRMS Software Pricing</span>
-          <h1>
+          <h6 className="pricing-eyebrow">HRMS Software Pricing</h6>
+          <h1 className="mb-4">
             Choose the Right Plan for{" "}
-            <span className="heading-accent">Your Team</span>
+            <span className="text-[#0066ff]">Your Team</span>
           </h1>
-          <p className="subtitle">
+          <p className="text-base lg:text-xl text-gray-500 font-medium leading-relaxed max-w-xl mx-auto">
             Flexible plans for payroll, attendance, and HR — start with a 14-day free trial, no credit card required.{" "}
-            <Link href="/contact" prefetch={false} id="contact">
+            <Link href="/contact" prefetch={false} id="contact" className="text-[#0066ff] font-medium hover:underline">
               Contact us
             </Link>{" "}
             for custom pricing.
