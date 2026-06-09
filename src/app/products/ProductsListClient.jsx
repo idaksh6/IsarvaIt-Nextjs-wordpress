@@ -12,21 +12,25 @@ export default function ProductsListClient({ productsData }) {
     // First, exclude any items that are meant for staging only
     let baseProducts = productsData.filter(product => 
       !product.slug?.includes("staging") && 
-      !product.slug?.includes("-old") &&
-      product.slug !== "bill-soft"
+      !product.slug?.includes("-old")
     );
 
-    if (!searchQuery.trim()) {
-      return baseProducts;
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase();
+      baseProducts = baseProducts.filter(product =>
+        product.title?.toLowerCase().includes(query) ||
+        product.tagline?.toLowerCase().includes(query) ||
+        product.shortDescription?.toLowerCase().includes(query) ||
+        product.category?.toLowerCase().includes(query)
+      );
     }
 
-    const query = searchQuery.toLowerCase();
-    return baseProducts.filter(product =>
-      product.title?.toLowerCase().includes(query) ||
-      product.tagline?.toLowerCase().includes(query) ||
-      product.shortDescription?.toLowerCase().includes(query) ||
-      product.category?.toLowerCase().includes(query)
-    );
+    const billSoft = baseProducts.find((product) => product.slug === "bill-soft");
+    if (!billSoft) return baseProducts;
+
+    const others = baseProducts.filter((product) => product.slug !== "bill-soft");
+    const insertAt = Math.min(3, others.length);
+    return [...others.slice(0, insertAt), billSoft, ...others.slice(insertAt)];
   }, [searchQuery, productsData]);
 
   // Scroll to products grid
