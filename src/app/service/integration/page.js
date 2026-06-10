@@ -25,7 +25,7 @@ import { generateMetadata as generateSEOMetadata } from "../../lib/utils/seo";
 
 /* ── Design tokens (same as quality-policy) ───────────────── */
 const SECTION_LABEL =
-  "inline-block text-[#10b981] font-black tracking-[0.2em] uppercase text-[clamp(0.65rem,1.3vw,0.85rem)] mb-4";
+  "inline-block text-[#10b981] font-black tracking-[0.2em] capitalize text-[clamp(0.65rem,1.3vw,0.85rem)] mb-4";
 
 const CARD_BASE =
   "group relative bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-8 border border-[#10b981]/8 shadow-[0_8px_30px_rgba(22,66,60,0.06)] hover:shadow-[0_16px_40px_rgba(22,66,60,0.1)] hover:border-[#10b981]/20 transition-all duration-300 overflow-hidden h-full";
@@ -194,19 +194,19 @@ function ServiceCard({ service }) {
       <div className="flex flex-col items-center text-center">
         <ServiceIcon icon={Icon} className="mb-5 mx-auto" />
 
-        <h2 className="font-display text-[#1a1f24] text-xl lg:text-2xl font-bold mb-3 leading-snug">
+        <h3 className="font-display text-[#1a1f24]  mb-3">
           {service.title}
-        </h2>
+        </h3>
 
         {/* Description with left border accent */}
-        <p className="text-[#53606b] text-sm lg:text-[0.95rem] leading-relaxed mb-5 border-l-[3px] border-[#10b981]/25 pl-4 text-left">
+        <p className="text-gray-500 text-sm font-medium  leading-relaxed mb-5 border-l-[3px] border-[#10b981]/25 pl-4 text-left">
           {service.description}
         </p>
 
         {/* Subtitle */}
         <div className="flex items-center justify-center gap-2 w-full mb-3">
           <SubtitleIcon className="w-4 h-4 text-[#10b981] shrink-0" strokeWidth={ICON_STROKE} aria-hidden="true" />
-          <span className="text-[#16423C] font-bold text-[0.78rem] tracking-[0.12em] uppercase">
+          <span className="text-[#16423C] font-bold text-[0.78rem] tracking-[0.12em] capitalize">
             {service.subtitle}
           </span>
         </div>
@@ -247,10 +247,10 @@ export default function IntegrationPage() {
           <span className={SECTION_LABEL}>Integration Services</span>
           <h1 className="font-display text-[#1a1f24] mb-5 lg:mb-6">
             Integrate.{" "}
-            <span className="italic text-[#10b981] font-bold">Automate.</span>{" "}
+            <span className="text-[#10b981] font-bold">Automate.</span>{" "}
             Elevate.
           </h1>
-          <p className="text-[#53606b] text-base lg:text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+          <p className="text-gray-600 font-medium text-base lg:text-lg leading-relaxed max-w-2xl mx-auto mb-8">
             Powerful, future-ready integrations — payments, email, communication,
             and website ecosystems tailored for scale.
           </p>
@@ -289,7 +289,7 @@ export default function IntegrationPage() {
             >
               Our Integration Services
             </h2>
-            <p className="text-[#53606b] text-base lg:text-lg leading-relaxed mt-4">
+            <p className="text-gray-500 fonr-medium text-base lg:text-lg leading-relaxed mt-4">
               End-to-end integration solutions that connect your business with the
               tools and platforms it needs to grow.
             </p>
@@ -321,7 +321,7 @@ export default function IntegrationPage() {
             />
 
             <div className="relative z-10">
-              <span className="inline-block text-[13px] font-bold text-[#1a5b33] tracking-[0.1em] uppercase mb-6 bg-[#cfeade] px-6 py-2.5 rounded-full">
+              <span className="inline-block text-[13px] font-bold text-[#1a5b33] tracking-[0.1em] capitalize mb-6 bg-[#cfeade] px-6 py-2.5 rounded-full">
                 Ready to Integrate?
               </span>
               <h2 className="font-display text-[#134326] mb-6 capitalize max-w-2xl mx-auto">

@@ -21,7 +21,7 @@ import {
 import { generateMetadata as generateSEOMetadata } from "../lib/utils/seo";
 
 const SECTION_LABEL =
-  "inline-block text-[#10b981] font-black tracking-[0.2em] uppercase text-[clamp(0.65rem,1.3vw,0.85rem)] mb-4";
+  "inline-block text-[#10b981] font-black tracking-[0.2em] capitalize text-[clamp(0.65rem,1.3vw,0.85rem)] mb-4";
 
 const CARD_BASE =
   "group relative bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-8 border border-[#10b981]/8 shadow-[0_8px_30px_rgba(22,66,60,0.06)] hover:shadow-[0_16px_40px_rgba(22,66,60,0.1)] hover:border-[#10b981]/20 transition-all duration-300 overflow-hidden";
@@ -209,7 +209,7 @@ function SectionHeader({ label, title, description, centered = false, id }) {
         {title}
       </h2>
       {description ? (
-        <p className="text-[#53606b] text-base lg:text-lg leading-relaxed mt-4">
+        <p className="text-gray-500 text-base sm:text-lg font-medium leading-relaxed mt-4">
           {description}
         </p>
       ) : null}
@@ -242,17 +242,17 @@ function PolicyCard({ icon, title, description, stepNumber, className = "" }) {
       />
 
       {stepNumber ? (
-        <span className="text-[10px] font-black tracking-[0.2em] text-[#10b981]/70 uppercase mb-3">
+        <span className="text-[10px] font-black tracking-[0.2em] text-[#10b981]/70 capitalize mb-3">
           {stepNumber}
         </span>
       ) : null}
 
       <PolicyIcon icon={Icon} className="mb-5" />
 
-      <h3 className="font-display text-[#1a1f24] text-base lg:text-lg font-bold mb-3 leading-snug">
+      <h3 className="font-display text-[#1a1f24]  mb-3 ">
         {title}
       </h3>
-      <p className="text-[#53606b] text-sm leading-relaxed">{description}</p>
+      <p className="text-gray-500 text-sm leading-relaxed">{description}</p>
     </article>
   );
 }
@@ -302,14 +302,14 @@ export default function QualityPolicyPage() {
               </h1>
 
               <div className="space-y-5 lg:space-y-6 max-w-xl mx-auto lg:mx-0">
-                <p className="text-[#53606b] text-base lg:text-lg leading-relaxed font-medium">
+                <p className="text-gray-600 text-base lg:text-lg leading-relaxed font-medium">
                   At Isarva Infotech, quality is achieved through clear planning,
                   structured execution, strong technical standards, and continuous
                   improvement. We focus on delivering secure, scalable, and
                   reliable digital solutions that align with business goals and
                   perform efficiently in real-world operations.
                 </p>
-                <p className="text-[#53606b] text-base lg:text-lg leading-relaxed">
+                <p className="text-gray-600 text-base lg:text-lg leading-relaxed font-medium">
                   Every stage of the project lifecycle — including requirement
                   analysis, development, deployment, and support — is carefully
                   managed to ensure performance, usability, stability, and
@@ -456,10 +456,10 @@ export default function QualityPolicyPage() {
 
                     {/* 4. Text Content (Bottom) */}
                     <div className="text-center px-1 mt-3">
-                      <h3 className="font-display text-[#16423C] text-base lg:text-lg font-bold mb-3 leading-snug">
+                      <h3 className="font-display text-[#16423C]  mb-3 ">
                         {step.title}
                       </h3>
-                      <p className="text-[#53606b] text-sm leading-relaxed max-w-[170px] mx-auto">
+                      <p className="text-gray-500 text-sm leading-relaxed max-w-[170px] mx-auto">
                         {step.description}
                       </p>
                     </div>
@@ -472,7 +472,7 @@ export default function QualityPolicyPage() {
 
           {/* Mobile & Tablet Layout (Vertical Timeline) */}
           <div className="block lg:hidden max-w-xl mx-auto px-4">
-            <ol className="relative flex flex-col gap-y-10 list-none">
+            <ol className="relative flex flex-col gap-y-6 list-none">
 
               {methodologySteps.map((step, index) => {
                 const Icon = step.icon;
@@ -520,10 +520,10 @@ export default function QualityPolicyPage() {
 
                       {/* Text Block */}
                       <div className="flex-1">
-                        <h4 className="font-display text-[#16423C] text-base font-bold mb-1 leading-snug">
+                        <h3 className="font-display text-[#16423C] mb-3 ">
                           {step.title}
-                        </h4>
-                        <p className="text-[#53606b] text-xs sm:text-sm leading-relaxed">
+                        </h3>
+                        <p className="text-gray-500 text-sm leading-relaxed">
                           {step.description}
                         </p>
                       </div>
@@ -590,7 +590,7 @@ export default function QualityPolicyPage() {
             />
 
             <div className="relative z-10">
-              <span className="inline-block text-[13px] font-bold text-[#1a5b33] tracking-[0.1em] uppercase mb-6 bg-[#cfeade] px-6 py-2.5 rounded-full">
+              <span className="inline-block text-[13px] font-bold text-[#1a5b33] tracking-[0.1em] capitalize mb-6 bg-[#cfeade] px-6 py-2.5 rounded-full">
                 Partner With Us
               </span>
               <h2 className="font-display text-[#134326] mb-6 capitalize max-w-2xl mx-auto">
