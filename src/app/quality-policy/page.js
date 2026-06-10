@@ -293,15 +293,15 @@ export default function QualityPolicyPage() {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-            <div>
+            <div className="text-center lg:text-left">
               <span className={SECTION_LABEL}>Quality Standards</span>
-              <h1 className="font-display text-[#1a1f24] mb-6 lg:mb-8 text-left">
+              <h1 className="font-display text-[#1a1f24] mb-6 lg:mb-8 text-center lg:text-left">
                 Our{" "}
-                <span className="italic text-[#10b981] font-bold">Quality</span>{" "}
+                <span className=" text-[#10b981] font-bold">Quality</span>{" "}
                 Policy
               </h1>
 
-              <div className="space-y-5 lg:space-y-6 max-w-xl">
+              <div className="space-y-5 lg:space-y-6 max-w-xl mx-auto lg:mx-0">
                 <p className="text-[#53606b] text-base lg:text-lg leading-relaxed font-medium">
                   At Isarva Infotech, quality is achieved through clear planning,
                   structured execution, strong technical standards, and continuous
@@ -318,7 +318,7 @@ export default function QualityPolicyPage() {
                 </p>
               </div>
 
-              <ul className="mt-8 flex flex-wrap gap-3" aria-label="Quality highlights">
+              <ul className="mt-8 flex flex-wrap gap-3 justify-center lg:justify-start" aria-label="Quality highlights">
                 {heroHighlights.map((item) => (
                   <li
                     key={item}
@@ -360,7 +360,7 @@ export default function QualityPolicyPage() {
             centered
           />
 
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 list-none">
+          <ul className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6 list-none">
             {commitmentItems.map((item, index) => (
               <li
                 key={item.title}
@@ -379,7 +379,7 @@ export default function QualityPolicyPage() {
 
       {/* Delivery Methodology */}
       <section
-        className="py-12 lg:py-16 bg-[#FDF8F2]"
+        className="py-12 lg:py-16 bg-[#f6fff9]"
         aria-labelledby="delivery-methodology-heading"
       >
         <div className="max-w-7xl mx-auto px-6">
@@ -550,7 +550,7 @@ export default function QualityPolicyPage() {
             title={
               <>
                 The{" "}
-                <span className="italic text-[#10b981] font-bold">Isarva</span>{" "}
+                <span className=" text-[#10b981] font-bold">Isarva</span>{" "}
                 Advantage
               </>
             }
