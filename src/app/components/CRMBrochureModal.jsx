@@ -117,7 +117,7 @@ export default function CRMBrochureModal({
 
         // Trigger PDF download
         const link = document.createElement('a');
-        link.href = '/products/crm/CRM-Brochure-Ver2-1.pdf';
+        link.href = '/products/crm/CRM-Brochure.pdf';
         link.download = 'CRM-Brochure.pdf';
         document.body.appendChild(link);
         link.click();
