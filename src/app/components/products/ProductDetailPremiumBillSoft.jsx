@@ -1445,7 +1445,7 @@ function BillsoftUniqueFeatures() {
           <h2 className="text-gray-900 mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
             Unique Features Of <span className="text-sky-600">BillSoft</span> Software
           </h2>
-          <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Explore our powerful business features and intelligent capabilities that are rarely available in conventional billing software platforms.
           </p>
         </div>
@@ -1508,7 +1508,7 @@ function BillsoftFeatureSection() {
           <h2 className="text-gray-900 mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
             Key Features Of <span className="text-sky-600">BillSoft</span> Software
           </h2>
-          <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Comprehensive business management from sales to multi-branch operations.
           </p>
         </div>
@@ -1591,7 +1591,7 @@ function BillsoftFeatureSection() {
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                className="text-center text-[#6b7280] max-w-[600px] mx-auto text-sm leading-relaxed"
+                className="font-sans font-medium text-center text-gray-500 max-w-[600px] mx-auto text-sm leading-relaxed"
               >
                 {activeFeature.desc}
               </motion.p>
@@ -1633,7 +1633,7 @@ function BillsoftFeatureSection() {
                             className="w-full h-auto object-contain"
                           />
                         </div>
-                        <p className="text-[#6b7280] text-sm leading-relaxed">
+                         <p className="font-sans font-medium text-gray-500 text-sm leading-relaxed">
                           {feature.desc}
                         </p>
                       </div>
