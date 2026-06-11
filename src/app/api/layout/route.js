@@ -72,7 +72,7 @@ function gridItem(href, icon, label, hoverColor = "violet") {
   return `<a href="${SITE_URL}${href}" class="group flex items-start gap-3 p-4 rounded-xl hover:bg-${hoverColor}-50 transition-all duration-200">
     <span class="text-2xl mt-0.5 group-hover:scale-110 transition-transform duration-200 flex-shrink-0">${icon}</span>
     <div class="flex-1 min-w-0">
-      <h4 class="font-semibold text-gray-900 group-hover:text-${hoverColor}-600 transition-colors text-sm break-words">${label}</h4>
+      <h4 class="font-sans font-semibold text-gray-900 group-hover:text-${hoverColor}-600 transition-colors text-sm break-words">${label}</h4>
     </div>
   </a>`;
 }
