@@ -115,7 +115,7 @@ function buildHeader() {
       <a class="text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600" href="${SITE_URL}/">Home</a>
 
       <!-- About Us -->
-      <div class="relative nav-dropdown" data-menu-type="about">
+      <div class="relative nav-dropdown" data-menu-type="about-static">
         <a class="group text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1" href="${SITE_URL}/about">About Us ${chevronDown()}</a>
         <div class="mega-menu mega-menu-left pt-4">
           <div class="w-[650px]">
@@ -142,7 +142,7 @@ function buildHeader() {
       </div>
 
       <!-- Products -->
-      <div class="relative nav-dropdown" data-menu-type="products">
+      <div class="relative nav-dropdown" data-menu-type="products-static">
         <a class="group text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1" href="${SITE_URL}/products">Products ${chevronDown()}</a>
         <div class="mega-menu mega-menu-center pt-4">
           <div class="w-[800px]">
@@ -161,7 +161,7 @@ function buildHeader() {
       </div>
 
       <!-- Services -->
-      <div class="relative nav-dropdown" data-menu-type="services">
+      <div class="relative nav-dropdown" data-menu-type="services-static">
         <a class="group text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1" href="${SITE_URL}/services">Services ${chevronDown()}</a>
         <div class="mega-menu mega-menu-center pt-4">
           <div class="w-[800px]">
@@ -180,7 +180,7 @@ function buildHeader() {
       </div>
 
       <!-- Industries -->
-      <div class="relative nav-dropdown" data-menu-type="industries">
+      <div class="relative nav-dropdown" data-menu-type="industries-static">
         <a class="group text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1" href="${SITE_URL}/industries">Industries ${chevronDown()}</a>
         <div class="mega-menu mega-menu-center pt-4">
           <div class="w-[800px]">
