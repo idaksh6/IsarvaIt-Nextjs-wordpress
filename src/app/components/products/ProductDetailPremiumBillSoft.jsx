@@ -382,7 +382,7 @@ const TAB_THEMES = {
   "quotation": { bg: "bg-violet-600", gradient: "from-[#7C3AED] to-[#6D28D9]", shadow: "shadow-violet-500/20", text: "text-violet-600", lightBg: "bg-violet-100", hoverBorder: "hover:border-violet-200", accent: "violet" },
   "payments": { bg: "bg-amber-500", gradient: "from-[#F59E0B] to-[#D97706]", shadow: "shadow-amber-500/20", text: "text-amber-600", lightBg: "bg-amber-100", hoverBorder: "hover:border-amber-200", accent: "amber" },
   "proforma": { bg: "bg-blue-600", gradient: "from-[#2563EB] to-[#1E40AF]", shadow: "shadow-blue-500/20", text: "text-blue-600", lightBg: "bg-blue-100", hoverBorder: "hover:border-blue-200", accent: "blue" },
-  "expenses": { bg: "bg-slate-600", gradient: "from-[#475569] to-[#1E293B]", shadow: "shadow-slate-500/20", text: "text-slate-600", lightBg: "bg-slate-100", hoverBorder: "hover:border-slate-200", accent: "slate" },
+  "expenses": { bg: "bg-lime-600", gradient: "from-[#84CC16] to-[#65A30D]", shadow: "shadow-lime-500/20", text: "text-lime-600", lightBg: "bg-lime-100", hoverBorder: "hover:border-lime-200", accent: "lime" },
   "parties": { bg: "bg-indigo-600", gradient: "from-[#4F46E5] to-[#3730A3]", shadow: "shadow-indigo-500/20", text: "text-indigo-600", lightBg: "bg-indigo-100", hoverBorder: "hover:border-indigo-200", accent: "indigo" },
   "products": { bg: "bg-teal-600", gradient: "from-[#0D9488] to-[#0F766E]", shadow: "shadow-teal-500/20", text: "text-teal-600", lightBg: "bg-teal-100", hoverBorder: "hover:border-teal-200", accent: "teal" },
   "warehouse": { bg: "bg-orange-600", gradient: "from-[#EA580C] to-[#C2410C]", shadow: "shadow-orange-500/20", text: "text-orange-600", lightBg: "bg-orange-100", hoverBorder: "hover:border-orange-200", accent: "orange" },
@@ -698,7 +698,14 @@ export default function ProductDetailPremiumBillSoft({
                 <aside className="lg:w-80 flex-shrink-0">
                   <div className="lg:sticky lg:top-32 space-y-4">
                     <div className="hidden lg:flex flex-col bg-white/60 backdrop-blur-3xl border border-white/50 p-3 shadow-[0_20px_50px_rgba(14,165,233,0.15)] rounded-[2.5rem]">
-                      <div className="flex flex-col space-y-1">
+                      <div
+                        className="flex flex-col space-y-1 overflow-y-auto pr-1"
+                        style={{
+                          maxHeight: 'calc(100vh - 11rem)',
+                          scrollbarWidth: 'thin',
+                          scrollbarColor: 'rgba(0,0,0,0.12) transparent',
+                        }}
+                      >
                         {TABS.map((tab) => {
                           const isActive = activeTab === tab.id;
                           const theme = TAB_THEMES[tab.id];
@@ -706,7 +713,7 @@ export default function ProductDetailPremiumBillSoft({
                             <button
                               key={tab.id}
                               onClick={() => setActiveTab(tab.id)}
-                              className={`group relative flex items-center gap-4 px-6 py-4 rounded-[1.8rem] font-bold text-xs capitalize tracking-widest transition-all duration-500 overflow-hidden ${isActive
+                              className={`group relative flex items-center gap-4 px-6 py-3 rounded-[2rem] font-bold text-sm capitalize tracking-widest transition-all duration-500 overflow-hidden ${isActive
                                 ? "text-white shadow-lg"
                                 : "text-gray-500 hover:text-gray-900 hover:bg-gray-50/50"
                                 }`}
@@ -722,6 +729,13 @@ export default function ProductDetailPremiumBillSoft({
                                 <span className="text-base">{tab.icon}</span>
                               </div>
                               <span className="relative z-10 flex-1 text-left">{tab.label}</span>
+                              {isActive && (
+                                <motion.div
+                                  initial={{ scale: 0 }}
+                                  animate={{ scale: 1 }}
+                                  className="relative z-10 w-2 h-2 bg-white rounded-full"
+                                />
+                              )}
                             </button>
                           );
                         })}
