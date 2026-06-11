@@ -104,7 +104,7 @@ const WhiteLabelAbout = () => {
               transition={{ delay: index * 0.1, duration: 0.6 }}
               className="relative"
             >
-              <div className="h-full p-8 rounded-[32px] bg-white/80 backdrop-blur-xl border border-slate-100 shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-500 relative overflow-hidden group hover:-translate-y-2 flex flex-col items-center md:items-start text-center md:text-left">
+              <div className="h-full p-8 rounded-[32px] bg-white/80 backdrop-blur-xl border border-slate-100 shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-500 relative overflow-hidden group hover:-translate-y-2 flex flex-col items-center text-center">
                 {/* Vibrant Hover Gradient Background */}
                 <div className={`absolute top-0 right-0 w-32 h-32 rounded-bl-full opacity-0 group-hover:opacity-10 transition-opacity duration-500 bg-gradient-to-bl ${benefit.color === 'text-blue-600' ? 'from-blue-500' : benefit.color === 'text-emerald-600' ? 'from-emerald-500' : benefit.color === 'text-amber-600' ? 'from-amber-500' : benefit.color === 'text-purple-600' ? 'from-purple-500' : benefit.color === 'text-cyan-600' ? 'from-cyan-500' : 'from-rose-500'}`} />
 
