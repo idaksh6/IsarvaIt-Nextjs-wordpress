@@ -58,7 +58,7 @@ const WhiteLabelStats = () => {
                 transition={{ delay: i * 0.1, duration: 0.5 }}
                 className="w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.67rem)] lg:w-[calc(20%-0.8rem)] xl:w-[calc(20%-1.6rem)] bg-white p-4 md:p-6 lg:p-4 xl:p-8 rounded-[32px] md:rounded-[40px] border border-slate-100 text-center flex flex-col items-center justify-center min-h-[140px] md:min-h-[160px] lg:min-h-[180px] xl:min-h-[200px] shadow-xl shadow-blue-500/20 group hover:bg-white hover:shadow-2xl hover:shadow-blue-900/5 hover:-translate-y-2 transition-all duration-500"
               >
-                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-6xl font-black text-blue-600 mb-2 lg:mb-4 font-display group-hover:scale-110 transition-transform duration-500">
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl font-black text-blue-600 mb-2 lg:mb-4 font-display group-hover:scale-110 transition-transform duration-500">
                   {stat.value}
                 </div>
                 <div className="text-[10px] sm:text-[14px] md:text-xs font-black text-slate-400  tracking-wider sm:tracking-[0.2em] leading-tight">
