@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "../AppLink";
 import Image from "next/image";
 import ContactFormModal from "../../components/ContactFormModal";
+import HRMSBrochureModal from "../../components/HRMSBrochureModal";
 
 const PRIMARY_BLUE = "#0066FF";
 const TEXT_DARK = "#1A1A1A";
@@ -235,6 +236,7 @@ export default function ProductDetailPremiumHRMS({
 }) {
   const [activeTab, setActiveTab] = useState("setup");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const contentTopRef = useRef(null);
@@ -343,7 +345,7 @@ export default function ProductDetailPremiumHRMS({
                     {GLOBAL_BTN_ARROW}
                   </button>
                   <button
-                    onClick={() => setIsModalOpen(true)}
+                    onClick={() => setIsBrochureModalOpen(true)}
                     className={`${GLOBAL_BTN_GREEN}`}
                   >
                     <span>Download Brochure</span>
@@ -701,6 +703,11 @@ export default function ProductDetailPremiumHRMS({
         preSelectedType="Product"
         preSelectedItem="HRMS Software"
         allItems={allProducts}
+      />
+
+      <HRMSBrochureModal
+        isOpen={isBrochureModalOpen}
+        onClose={() => setIsBrochureModalOpen(false)}
       />
 
       {/* Image Lightbox Modal */}
