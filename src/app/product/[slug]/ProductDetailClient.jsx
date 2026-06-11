@@ -31,17 +31,6 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   // Use Staging View for HRMS Software (Now Live)
   if (product.slug === 'hrms-software') {
     return (
-      <ProductDetailPremiumHRMS 
-        product={product} 
-        relatedProducts={relatedProducts} 
-        allProducts={allProducts}
-      />
-    );
-  }
-
-  // Use V2 View for HRMS Software V2
-  if (product.slug === 'hrms-software-v2') {
-    return (
       <ProductDetailPremiumHRMSV2 
         product={product} 
         relatedProducts={relatedProducts} 
