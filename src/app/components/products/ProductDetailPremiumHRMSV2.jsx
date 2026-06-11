@@ -211,7 +211,7 @@ const TAB_THEMES = {
   "biometric": { bg: "bg-cyan-600", gradient: "from-[#0891B2] to-[#0E7490]", shadow: "shadow-cyan-500/20", text: "text-cyan-600", lightBg: "bg-cyan-50", hoverBorder: "hover:border-cyan-200", accent: "cyan" },
   "holidays": { bg: "bg-pink-600", gradient: "from-[#DB2777] to-[#BE185D]", shadow: "shadow-pink-500/20", text: "text-pink-600", lightBg: "bg-pink-50", hoverBorder: "hover:border-pink-200", accent: "pink" },
   "leavepolicy": { bg: "bg-indigo-600", gradient: "from-[#4F46E5] to-[#4338CA]", shadow: "shadow-indigo-500/20", text: "text-indigo-600", lightBg: "bg-indigo-50", hoverBorder: "hover:border-indigo-200", accent: "indigo" },
-  "other": { bg: "bg-slate-700", gradient: "from-[#334155] to-[#1E293B]", shadow: "shadow-slate-500/20", text: "text-slate-700", lightBg: "bg-slate-100", hoverBorder: "hover:border-slate-200", accent: "slate" }
+  "other": { bg: "bg-fuchsia-600", gradient: "from-[#D946EF] to-[#A21CAF]", shadow: "shadow-fuchsia-500/20", text: "text-fuchsia-600", lightBg: "bg-fuchsia-50", hoverBorder: "hover:border-fuchsia-200", accent: "fuchsia" }
 };
 
 export default function ProductDetailPremiumHRMSV2({
