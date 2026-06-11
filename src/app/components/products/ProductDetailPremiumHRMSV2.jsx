@@ -1,0 +1,998 @@
+"use client";
+
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Link from "../AppLink";
+import Image from "next/image";
+import ContactFormModal from "../../components/ContactFormModal";
+
+const PRIMARY_BLUE = "#0066FF";
+const TEXT_DARK = "#1A1A1A";
+const TEXT_GRAY = "#4D4D4D";
+
+const TABS = [
+  { id: "setup", label: "Company Setup" },
+  { id: "employee", label: "Employee Mgmt" },
+  { id: "payroll", label: "Payroll" },
+  { id: "reporting", label: "Reporting" },
+  { id: "analytics", label: "Analytics" },
+  { id: "ess", label: "ESS Portal" },
+  { id: "shifts", label: "Shifts & Rosters" },
+  { id: "attendance", label: "Attendance" },
+  { id: "biometric", label: "Biometric" },
+  { id: "holidays", label: "Public Holidays" },
+  { id: "leavepolicy", label: "Leave Policy" },
+  { id: "other", label: "Other Features" },
+];
+
+const TAB_CONTENT = {
+  "setup": {
+    title: "Smart Company Setup",
+    subtitle: "Customize your organization structure with ease",
+    description: "Easily customize your departments, roles, and office locations to fit your business perfectly—no coding required.",
+    image: "/products/hrms/Personnel-details.jpg",
+    features: [
+      "Salary & Statutory Setup",
+      "Department Management",
+      "Designation Control",
+      "Roles & Permissions",
+      "Employee Status",
+      "Document Types"
+    ]
+  },
+  "employee": {
+    title: "Centralized Employee Management",
+    subtitle: "360-degree view of your workforce",
+    description: "Create a comprehensive employee database with 360-degree profiles, organizational mapping, and role-based access controls for seamless workforce management.",
+    image: "/products/hrms/Personnel-details.jpg",
+    features: [
+      "Role-based access & permissions",
+      "Document vault management",
+      "360° Employee Profiles",
+      "Auto-Generated HR Letters",
+      "Week-off & Leave Mapping",
+      "Employee Self-Service"
+    ]
+  },
+  "payroll": {
+    title: "Automated Payroll Processing",
+    subtitle: "Process payroll with confidence and accuracy",
+    description: "Process payroll with confidence using our automated engine, designed to handle multiple locations seamlessly. It also generates bank-ready formats for salary processing and provides portal upload-ready formats for EPF and ESIC.",
+    image: "/products/hrms/Payroll-management.jpg",
+    features: [
+      "Multi-Location Processing",
+      "Override Salary Components",
+      "Employee Advances/Loans",
+      "Comparison Dashboards",
+      "Bank Ready Formats",
+      "EPF & ESIC Portal Ready"
+    ]
+  },
+  "reporting": {
+    title: "Robust Reporting",
+    subtitle: "Analyze and grow your organization",
+    description: "We offer different types of reports that helps organization to analyse their workforce performance and statutory compliance.",
+    image: "/products/hrms/Reporting-&-analytics.jpg",
+    features: [
+      "Payroll Reports",
+      "Payroll Analytics",
+      "Leave Insights",
+      "LOP Reports",
+      "Attendance Analysis",
+      "Comparison Reports"
+    ]
+  },
+  "analytics": {
+    title: "HR Analytics & Insights",
+    subtitle: "Data-driven decisions for your people",
+    description: "HR Analytics & Insights delivers real-time dashboards and actionable workforce data to help you make smarter HR decisions.",
+    image: "/products/hrms/Reporting-&-analytics.jpg",
+    features: [
+      "Real-Time Dashboards",
+      "Attendance Insights",
+      "Payroll & Cost Analysis",
+      "Department Analytics",
+      "Quick Note HR Calendar",
+      "Headcount Tracking"
+    ]
+  },
+  "ess": {
+    title: "Employee Self-Service Leave Application",
+    subtitle: "Empower your workforce with self-service tools",
+    description: "Empower employees to easily apply for leaves through a self-service portal with accurate calculations and real-time leave availability.",
+    image: "/products/Emplyee self Service.png",
+    features: [
+      "Single/Multi-Day Leave",
+      "Half-Day Customization",
+      "Auto Holiday Exclusion",
+      "Real-Time Leave Balance",
+      "Streamlined Approval Process",
+      "Automated Email Notifications"
+    ]
+  },
+  "shifts": {
+    title: "Shifts & Duty Rosters",
+    subtitle: "Flexible shift scheduling and bulk assignment",
+    description: "Efficiently manage employee shifts and duty rosters with flexible scheduling and bulk assignment capabilities.",
+    image: "/products/hrms/Shift-scheduling.jpg",
+    features: [
+      "Duty Roster Management",
+      "Bulk Shift Assignment",
+      "Multi-Employee Date Ranges",
+      "Easy Workforce Planning",
+      "Scheduling Efficiency",
+      "Accurate Shift Allocation"
+    ]
+  },
+  "attendance": {
+    title: "Attendance Processing",
+    subtitle: "Accurate tracking with payroll integration",
+    description: "Easily manage and finalize employee attendance with accurate tracking and seamless integration with payroll systems.",
+    image: "/products/Time and Attendence.png",
+    features: [
+      "Admin Attendance Management",
+      "Manual Attendance Updates",
+      "Save & Lock Monthly Finalization",
+      "Seamless Payroll API Integration",
+      "Data Accuracy Enforcement",
+      "Post-Finalization Change Prevention"
+    ]
+  },
+  "biometric": {
+    title: "Biometric Connections",
+    subtitle: "Real-time biometric attendance integration",
+    description: "Seamlessly manage employee attendance with biometric integration via the Timestation API, supporting both automated syncing and manual uploads for accurate and flexible processing.",
+    image: "/products/Time and Attendence.png",
+    features: [
+      "Timestation API Integration",
+      "Manual Biometric Data Upload",
+      "Admin Attendance Override",
+      "Auto Leave & OT Calculation",
+      "Late Entry Detection",
+      "Centralized Attendance Management"
+    ]
+  },
+  "holidays": {
+    title: "Public Holiday Master Management",
+    subtitle: "Flexible department-wise holiday configuration",
+    description: "Easily configure and manage public holidays with flexible options, including department-wise customization to suit organizational needs.",
+    image: "/products/hrms/Leave-management.jpg",
+    features: [
+      "Admin Holiday Control",
+      "Department-wise Configuration",
+      "Restrict Holiday Eligibility",
+      "Flexible Policy Setup",
+      "Organization-specific Rules",
+      "Holiday Calendar Management"
+    ]
+  },
+  "leavepolicy": {
+    title: "Leave Policy Management",
+    subtitle: "Multi-level leave policies for every department",
+    description: "Easily create and manage multiple leave policies by assigning leave types, days, and departments, ensuring employees can only apply for leaves applicable to them.",
+    image: "/products/hrms/Leave-management.jpg",
+    features: [
+      "Multiple Policy Creation",
+      "Leave Type & Days Assignment",
+      "Department-wise Mapping",
+      "Restricted Leave Application",
+      "Streamlined Leave Management",
+      "Multi-Level Leave Approval"
+    ]
+  },
+  "other": {
+    title: "Other Features",
+    subtitle: "Powerful extras built into Isarva HRMS",
+    description: "Isarva HRMS is not limited — it has many more useful features designed to handle every aspect of your HR operations.",
+    image: "/products/hrms/Reporting-&-analytics.jpg",
+    features: [
+      "Activity Logger & Security",
+      "Auto Realtime Attendance-Payroll Sync",
+      "Notification Center",
+      "OT & Incentive Calculations",
+      "Hold & Release Salary",
+      "Increments & Promotions History",
+      "Full & Final Settlement",
+      "Employee Birthday Reminders",
+      "Multi-Level Leave Approval Workflow"
+    ]
+  }
+};
+
+const TAB_THEMES = {
+  "setup": { bg: "bg-blue-600", gradient: "from-[#2563EB] to-[#1E40AF]", shadow: "shadow-blue-500/20", text: "text-blue-600", lightBg: "bg-blue-50", hoverBorder: "hover:border-blue-200", accent: "blue" },
+  "employee": { bg: "bg-emerald-600", gradient: "from-[#10B981] to-[#059669]", shadow: "shadow-emerald-500/20", text: "text-emerald-600", lightBg: "bg-emerald-50", hoverBorder: "hover:border-emerald-200", accent: "emerald" },
+  "payroll": { bg: "bg-violet-600", gradient: "from-[#7C3AED] to-[#6D28D9]", shadow: "shadow-violet-500/20", text: "text-violet-600", lightBg: "bg-violet-50", hoverBorder: "hover:border-violet-200", accent: "violet" },
+  "reporting": { bg: "bg-rose-600", gradient: "from-[#E11D48] to-[#BE123C]", shadow: "shadow-rose-500/20", text: "text-rose-600", lightBg: "bg-rose-50", hoverBorder: "hover:border-rose-200", accent: "rose" },
+  "analytics": { bg: "bg-sky-600", gradient: "from-[#0EA5E9] to-[#0284C7]", shadow: "shadow-sky-500/20", text: "text-sky-600", lightBg: "bg-sky-50", hoverBorder: "hover:border-sky-200", accent: "sky" },
+  "ess": { bg: "bg-amber-500", gradient: "from-[#F59E0B] to-[#D97706]", shadow: "shadow-amber-500/20", text: "text-amber-600", lightBg: "bg-amber-50", hoverBorder: "hover:border-amber-200", accent: "amber" },
+  "shifts": { bg: "bg-teal-600", gradient: "from-[#0D9488] to-[#0F766E]", shadow: "shadow-teal-500/20", text: "text-teal-600", lightBg: "bg-teal-50", hoverBorder: "hover:border-teal-200", accent: "teal" },
+  "attendance": { bg: "bg-orange-500", gradient: "from-[#F97316] to-[#EA580C]", shadow: "shadow-orange-500/20", text: "text-orange-600", lightBg: "bg-orange-50", hoverBorder: "hover:border-orange-200", accent: "orange" },
+  "biometric": { bg: "bg-cyan-600", gradient: "from-[#0891B2] to-[#0E7490]", shadow: "shadow-cyan-500/20", text: "text-cyan-600", lightBg: "bg-cyan-50", hoverBorder: "hover:border-cyan-200", accent: "cyan" },
+  "holidays": { bg: "bg-pink-600", gradient: "from-[#DB2777] to-[#BE185D]", shadow: "shadow-pink-500/20", text: "text-pink-600", lightBg: "bg-pink-50", hoverBorder: "hover:border-pink-200", accent: "pink" },
+  "leavepolicy": { bg: "bg-indigo-600", gradient: "from-[#4F46E5] to-[#4338CA]", shadow: "shadow-indigo-500/20", text: "text-indigo-600", lightBg: "bg-indigo-50", hoverBorder: "hover:border-indigo-200", accent: "indigo" },
+  "other": { bg: "bg-slate-700", gradient: "from-[#334155] to-[#1E293B]", shadow: "shadow-slate-500/20", text: "text-slate-700", lightBg: "bg-slate-100", hoverBorder: "hover:border-slate-200", accent: "slate" }
+};
+
+export default function ProductDetailPremiumHRMSV2({
+  product,
+  relatedProducts,
+  allProducts,
+}) {
+  const [activeTab, setActiveTab] = useState("setup");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const contentTopRef = useRef(null);
+
+  // Scroll to top of content area when tab changes
+  useEffect(() => {
+    if (contentTopRef.current) {
+      const offset = 160; // Space for sticky header (102px) + tabs (~58px)
+      const elementPosition = contentTopRef.current.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }, [activeTab]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const activeContent = TAB_CONTENT[activeTab] || TAB_CONTENT["setup"];
+
+  return (
+    <div className={`relative font-sans selection:bg-blue-100 selection:text-blue-900 transition-colors duration-1000 bg-white`}>
+      {/* --- Dynamic Shifting Background (Soft & Light) --- */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        {/* Very subtle ambient gradient */}
+        <div className={`absolute inset-0 opacity-10 transition-colors duration-500 bg-gradient-to-br ${TAB_THEMES[activeTab].gradient} blur-[120px] scale-125`} />
+
+        {/* Simplified Static Blobs for Performance */}
+        <div className={`absolute top-[-5%] left-[-5%] w-[40%] h-[40%] rounded-full opacity-[0.08] blur-[100px] ${TAB_THEMES[activeTab].bg}`} />
+        <div className="absolute top-[20%] right-[-5%] w-[35%] h-[35%] rounded-full opacity-[0.06] bg-violet-500 blur-[100px]" />
+        <div className="absolute bottom-[10%] left-[10%] w-[30%] h-[30%] rounded-full opacity-[0.05] bg-blue-400 blur-[90px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full opacity-10 bg-indigo-500 blur-[120px]" />
+
+        {/* Global patterns */}
+        <div className="absolute inset-0 bg-dots opacity-[0.1]" />
+        <div className="absolute inset-0 bg-grid-slate-200/[0.05] [mask-image:linear-gradient(to_bottom,white,transparent,white)]" />
+      </div>
+
+      <div className="relative z-40 pt-32 lg:pt-40 pb-12 lg:pb-16">
+        {/* Mobile View (Horizontal Scroll) - Full-width white background bar with constrained content */}
+        <div className="lg:hidden sticky top-[102px] z-[60] bg-white border-b border-gray-100 shadow-sm w-full overflow-hidden">
+          <div
+            className="max-w-7xl mx-auto px-6 py-2 overflow-x-auto no-scrollbar w-full"
+            style={{ scrollPaddingLeft: '1.5rem', scrollPaddingRight: '1.5rem' }}
+          >
+            <div className="flex items-center space-x-1 whitespace-nowrap">
+              {TABS.map((tab) => {
+                const isActive = activeTab === tab.id;
+                const theme = TAB_THEMES[tab.id];
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={(e) => {
+                      setActiveTab(tab.id);
+                      e.currentTarget.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+                    }}
+                    className={`px-5 py-2.5 rounded-full font-bold text-[12px] capitalize tracking-wider transition-all duration-300 relative ${isActive ? "text-white" : "text-gray-400"}`}
+                  >
+                    {isActive && (
+                      <motion.div
+                        layoutId="activeTabMobile"
+                        className={`absolute inset-0 bg-gradient-to-r ${theme.gradient} z-0 rounded-full`}
+                      />
+                    )}
+                    <span className="relative z-10">{tab.label}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        <div ref={contentTopRef} className="w-full lg:container mx-auto px-6 pt-10 lg:pt-0">
+
+          <div className="flex flex-col lg:flex-row gap-0 lg:gap-12">
+
+            {/* Sidebar Sidebar */}
+            <aside className="lg:w-72 flex-shrink-0">
+              <div className={`lg:sticky lg:top-32 transition-all duration-500 space-y-4`}>
+                {/* Mobile version remains as a horizontal scroll or grid, but for desktop we want vertical */}
+                <div className="hidden lg:flex flex-col bg-white/60 backdrop-blur-3xl border border-white/50 p-3 shadow-[0_20px_50px_rgba(0,0,0,0.06)] rounded-[2.5rem]">
+                  <div className="flex flex-col space-y-2">
+                    {TABS.map((tab) => {
+                      const isActive = activeTab === tab.id;
+                      const theme = TAB_THEMES[tab.id];
+                      return (
+                        <button
+                          key={tab.id}
+                          onClick={() => setActiveTab(tab.id)}
+                          className={`group relative flex items-center gap-4 px-6 py-5 rounded-[2rem] font-bold text-sm capitalize tracking-widest transition-all duration-500 overflow-hidden ${isActive
+                            ? "text-white shadow-lg"
+                            : "text-gray-500 hover:text-gray-900 hover:bg-gray-50/50"
+                            }`}
+                        >
+                          {isActive && (
+                            <motion.div
+                              layoutId="activeTabDesktop"
+                              className={`absolute inset-0 bg-gradient-to-r ${theme.gradient} z-0`}
+                              transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                            />
+                          )}
+
+                          <div className={`relative z-10 w-8 h-8 rounded-xl flex items-center justify-center transition-all duration-500 ${isActive ? "bg-white/20" : theme.lightBg + " " + theme.text}`}>
+                            <span className="text-lg">
+                              {tab.id === 'setup' ? '🏢' : tab.id === 'employee' ? '👥' : tab.id === 'payroll' ? '💰' : tab.id === 'reporting' ? '📊' : tab.id === 'analytics' ? '📈' : tab.id === 'ess' ? '🔐' : tab.id === 'shifts' ? '📅' : tab.id === 'attendance' ? '⏰' : tab.id === 'biometric' ? '🖐️' : tab.id === 'holidays' ? '🎉' : tab.id === 'leavepolicy' ? '📋' : '✨'}
+                            </span>
+                          </div>
+
+                          <span className="relative z-10 flex-1 text-left">{tab.label}</span>
+
+                          {isActive && (
+                            <motion.div
+                              initial={{ scale: 0 }}
+                              animate={{ scale: 1 }}
+                              className="relative z-10 w-2 h-2 bg-white rounded-full"
+                            />
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+
+              </div>
+            </aside>
+
+            {/* Main Content Area */}
+            <main className="flex-1 min-w-0 flex flex-col gap-10 lg:gap-16">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeTab}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="flex flex-col gap-10 lg:gap-16"
+                >
+                  {/* 3. Module Dashboard Header + Visual + Feature Grid */}
+                  <section className="pt-4">
+                    <div className="flex flex-col justify-between gap-6 mb-8 text-center lg:text-left items-center lg:items-start">
+                      <div className="max-w-none flex flex-col items-center lg:items-start">
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className={`inline-flex items-center gap-2 px-4 py-2 rounded-full border text-[14px] font-black capitalize tracking-[0.2em] mb-6 ${TAB_THEMES[activeTab].lightBg} ${TAB_THEMES[activeTab].text} border-white/50 shadow-sm`}
+                        >
+                          <span className="relative flex h-2 w-2">
+                            <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${TAB_THEMES[activeTab].bg}`}></span>
+                            <span className={`relative inline-flex rounded-full h-2 w-2 ${TAB_THEMES[activeTab].bg}`}></span>
+                          </span>
+                          {TABS.find(t => t.id === activeTab)?.label} Module
+                        </motion.div>
+
+                        <motion.h1
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.2 }}
+                          className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold font-black text-gray-900 leading-[1.25] mb-4 tracking-tighter text-center lg:text-left"
+                        >
+                          {activeContent.title}
+                        </motion.h1>
+
+                        <motion.p
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.3 }}
+                          className="text-base lg:text-xl text-gray-500 font-medium leading-relaxed max-w-none text-center lg:text-left"
+                        >
+                          {activeContent.description}
+                        </motion.p>
+                      </div>
+
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4 }}
+                        className="w-full flex justify-center lg:justify-start"
+                      >
+                        <button
+                          onClick={() => setIsModalOpen(true)}
+                          className="press-illusion-btn-orange w-full sm:w-auto sm:min-w-[240px] px-8 py-4 capitalize flex items-center justify-center gap-3"
+                        >
+                          Get Started Free
+                        </button>
+                      </motion.div>
+                    </div>
+
+                    {/* 4. Primary Product Visual */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8 }}
+                      className="relative mb-12"
+                    >
+                      <div className="relative z-10 p-2 bg-white rounded-[2rem] border border-gray-100 shadow-xl cursor-pointer group overflow-hidden" onClick={() => setSelectedImage(activeContent.image)}>
+                        <div className="rounded-[1.5rem] overflow-hidden relative" style={{ aspectRatio: '1.8 / 1' }}>
+                          <Image
+                            src={activeContent.image}
+                            alt={activeContent.title}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 800px"
+                            loading="lazy"
+                            unoptimized
+                            className="object-cover group-hover:scale-105 transition-transform duration-700"
+                          />
+                        </div>
+                        <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/5 backdrop-blur-[2px]">
+                          <div className={`bg-white/90 backdrop-blur-sm ${TAB_THEMES[activeTab].text} p-3 rounded-full shadow-2xl`}>
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+
+                    {/* 5. Feature Highlights Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {activeContent.features.map((f, i) => (
+                        <motion.div
+                          key={i}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.1 * i }}
+                          className={`flex items-center gap-4 p-5 rounded-[24px] bg-white border border-gray-100 ${TAB_THEMES[activeTab].hoverBorder} transition-all group shadow-sm hover:shadow-lg`}
+                        >
+                          <div className={`w-8 h-8 rounded-full ${TAB_THEMES[activeTab].lightBg} flex items-center justify-center ${TAB_THEMES[activeTab].text} transition-colors flex-shrink-0 shadow-inner aspect-square`}>
+                            <span className="text-xs font-black">✓</span>
+                          </div>
+                          <span className="text-[14px] font-extrabold text-gray-700 leading-tight capitalize tracking-tight">{f}</span>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </section>
+
+                  {/* 5. Feature Spotlight Section Integrated into Tab Content */}
+                  <section>
+                    <div className="relative rounded-[3rem] bg-white p-8 lg:p-12 border border-gray-100 shadow-[0_15px_40px_rgba(0,0,0,0.03)] overflow-hidden">
+                      <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
+                        <div className={`w-12 h-1 ${TAB_THEMES[activeTab].bg} rounded-full mb-6 mx-auto lg:mx-0`}></div>
+                        <h2 className="mb-4 capitalize">Deep Dive: {activeContent.title}</h2>
+                        <p className="text-base lg:text-lg text-gray-500 mb-4 lg:mb-10 font-medium leading-relaxed ">{activeContent.description}</p>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-12 w-full">
+                          {activeContent.features.map((f, i) => (
+                            <div
+                              key={i}
+                              className={`flex items-center gap-4 p-4 px-4  rounded-[20px] bg-white border ${TAB_THEMES[activeTab].hoverBorder} shadow-md`}
+                            >
+                              <div className="w-7 h-7 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 flex-shrink-0 aspect-square shadow-inner">
+                                <span className="text-[10px] font-black">✓</span>
+                              </div>
+
+                              <span className="text-[14px] font-extrabold text-gray-700 capitalize tracking-tight leading-tight">
+                                {f}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+
+                        <div className="relative w-full cursor-pointer group" onClick={() => setSelectedImage(activeContent.image)}>
+                          <div className={`absolute -inset-10 ${TAB_THEMES[activeTab].bg}/5 blur-[80px] rounded-full`}></div>
+                          <div className="relative z-10 rounded-2xl shadow-xl border border-white overflow-hidden w-full" style={{ aspectRatio: '2.4 / 1' }}>
+                            <Image
+                              src={activeContent.image}
+                              alt={activeContent.title}
+                              fill
+                              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 900px"
+                              unoptimized
+                              className="object-cover group-hover:scale-105 transition-all duration-700"
+                            />
+                          </div>
+                          <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div className={`bg-white/90 backdrop-blur-sm ${TAB_THEMES[activeTab].text} p-4 rounded-full shadow-xl`}>
+                              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Static Content (Section 4, 6, 7) */}
+              {/* These sections are outside AnimatePresence so they don't flash on tab change, but scroll alongside */}
+
+              {/* 4. The "Broken HR" Modern Section */}
+              <section className="relative p-8 lg:p-12 bg-white overflow-hidden border-y border-gray-100 rounded-[3rem]">
+                <div className="absolute inset-0 z-0">
+                  <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-rose-500/5 rounded-full blur-[100px]" />
+                  <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px]" />
+                </div>
+                <div className="relative z-10 ">
+                  <div className="flex flex-col items-center lg:items-start mb-4 md:mb-10 text-center lg:text-left">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 text-red-600 font-bold text-[14px] mb-6 w-fit capitalize tracking-widest">
+                      The Problem
+                    </div>
+
+                    <h2 className="mb-6 capitalize">
+                      Traditional HR{" "}
+                      <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500 py-2">
+                        Is Broken.
+                      </span>
+                    </h2>
+
+                    <p className="text-base lg:text-lg text-gray-500 font-medium leading-relaxed">
+                      Organizations are stuck with outdated systems that waste time, frustrate employees, and hold back growth. It's time for a change.
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {[
+                      { title: "Endless Paperwork", icon: "📄", desc: "HR spends more time on forms than people.", color: "rose" },
+                      { title: "Disconnected Apps", icon: "🔌", desc: "Messy data spread across too many places.", color: "violet" },
+                      { title: "Frustrated Employees", icon: "😠", desc: "Hard-to-use software ruins productivity.", color: "amber" },
+                      { title: "Risky Security", icon: "🔓", desc: "Old ways leave you open to legal threats.", color: "slate" }
+                    ].map((item, idx) => (
+                      <div key={idx} className="group flex flex-col items-center p-8 rounded-[32px] border border-gray-100 hover:shadow-xl transition-all duration-500 bg-white text-center">
+                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 bg-${item.color}-50 text-${item.color}-600 font-bold text-2xl`}>
+                          {item.icon}
+                        </div>
+                        <h3 className="mb-2 capitalize">{item.title}</h3>
+                        <p className="text-[14px] text-gray-500 font-bold capitalize tracking-tight">{item.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+
+
+
+              {/* 7. Final CTA Section */}
+              <section>
+                <div className="relative rounded-[3rem] bg-gradient-to-br from-white to-gray-50 py-12 lg:py-16 px-8 lg:px-16 overflow-hidden text-center shadow-[0_40px_80px_rgba(0,0,0,0.05)] border border-gray-100">
+                  <div className={`absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-br ${TAB_THEMES[activeTab].gradient} opacity-5 blur-[100px]`}></div>
+
+                  <div className="relative z-10 flex flex-col items-center">
+                    <h2 className="mb-6 capitalize">Build the <br /> future today.</h2>
+                    <p className="text-gray-500 mb-10 max-w-xl font-bold capitalize tracking-widest text-[14px]">Join 10,000+ teams transforming their workplace.</p>
+                    <button
+                      onClick={() => setIsModalOpen(true)}
+                      className="press-illusion-btn-orange w-full sm:w-auto sm:min-w-[280px] px-12 py-6 capitalize flex items-center justify-center gap-3"
+                    >
+                      Request Free Access
+                    </button>
+                  </div>
+                </div>
+              </section>
+            </main>
+          </div>
+        </div>
+      </div>
+
+      <HrmsFeatureSection />
+
+      <ContactFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        preSelectedType="Product"
+        preSelectedItem="HRMS Software"
+        allItems={allProducts}
+      />
+
+      {/* Image Lightbox Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md cursor-zoom-out"
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative w-full max-w-5xl h-auto flex flex-col items-center cursor-default"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute -top-16 right-0 md:-right-12 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all duration-300 hover:rotate-90 z-[1001]"
+              >
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" /></svg>
+              </button>
+
+              <div className="relative w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-white/20" style={{ aspectRatio: '1.4 / 1' }}>
+                <Image
+                  src={selectedImage}
+                  alt="Enlarged view"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 900px"
+                  loading="lazy"
+                  unoptimized
+                  className="object-contain"
+                />
+              </div>
+
+              <div className="mt-6 text-white text-center">
+                <h3 className="capitalize tracking-widest">{activeContent.title}</h3>
+                <p className="text-white/60 font-bold mt-1 capitalize text-sm tracking-widest">{activeContent.subtitle}</p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+
+
+
+/* ─────────────────────────────────────────────────────────────
+   HRMS FEATURE DATA (PORTED FROM LIVE)
+───────────────────────────────────────────────────────────── */
+const hrmsFeatures = [
+  {
+    id: "personnel",
+    label: "Personnel Management",
+    icon: "👤",
+    color: "#4F46E5",
+    desc: "Centralise every employee record in one place. Manage profiles, org charts, documents, and HR workflows with precision and ease.",
+    placeholder: "PM",
+    image: "/products/hrms/Personnel-details.jpg",
+  },
+  {
+    id: "attendance",
+    label: "Time & Attendance",
+    icon: "⏰",
+    color: "#0EA5E9",
+    desc: "Track work hours accurately with biometric, mobile, and web-based check-in. Gain real-time visibility into team availability.",
+    placeholder: "TA",
+    image: "/products/Time and Attendence.png",
+  },
+  {
+    id: "shift",
+    label: "Shift Scheduling",
+    icon: "📅",
+    color: "#10B981",
+    desc: "Plan, publish, and manage employee shifts with a drag-and-drop visual scheduler. Eliminate conflicts and last-minute gaps.",
+    placeholder: "SS",
+    image: "/products/hrms/Shift-scheduling.jpg",
+  },
+  {
+    id: "leave",
+    label: "Leave Management",
+    icon: "🌴",
+    color: "#F59E0B",
+    desc: "Automate leave requests, multi-level approvals, and policy enforcement. Employees get instant visibility into their leave balance.",
+    placeholder: "LM",
+    image: "/products/hrms/Leave-management.jpg",
+  },
+  {
+    id: "security",
+    label: "Security & Access Control",
+    icon: "🔒",
+    color: "#EF4444",
+    desc: "Define granular role-based permissions, enforce multi-factor authentication, and maintain complete audit trails for compliance.",
+    placeholder: "SC",
+    image: "/products/Security.png",
+  },
+  {
+    id: "analytics",
+    label: "Reporting & Analytics",
+    icon: "📊",
+    color: "#8B5CF6",
+    desc: "Unlock data-driven HR insights with pre-built dashboards and custom reports covering headcount, payroll, attrition, and more.",
+    placeholder: "RA",
+    image: "/products/hrms/Reporting-&-analytics.jpg",
+  },
+  {
+    id: "ess",
+    label: "Employee Self-Service Portal",
+    icon: "💼",
+    color: "#06B6D4",
+    desc: "Empower employees to manage their own information, submit requests, access payslips, and track approvals — all in a clean portal.",
+    placeholder: "ES",
+    image: "/products/Emplyee self Service.png",
+  },
+  {
+    id: "payroll",
+    label: "Payroll Management System",
+    icon: "💰",
+    color: "#22C55E",
+    desc: "Ensure accurate, compliant, and on-time salary processing. Handle deductions, taxes, and statutory filings with zero manual effort.",
+    placeholder: "PY",
+    image: "/products/hrms/Payroll-management.jpg",
+  },
+];
+
+/* ─────────────────────────────────────────────────────────────
+   PLACEHOLDER IMAGE COMPONENT
+───────────────────────────────────────────────────────────── */
+function FeaturePlaceholder({ feature }) {
+  return (
+    <div
+      className="w-full h-full flex flex-col items-center justify-center rounded-2xl overflow-hidden"
+      style={{
+        background: `linear-gradient(135deg, ${feature.color}10 0%, ${feature.color}20 100%)`,
+      }}
+    >
+      <img
+        src={feature.image}
+        alt={feature.label}
+        className="w-full h-full object-contain"
+        style={{
+          maxWidth: "100%",
+          maxHeight: "100%",
+        }}
+      />
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────
+   HRMS FEATURE ORBIT SECTION — Production-Grade (EXACT LIVE VERSION)
+──────────────────────────────────────────────────────────── */
+function HrmsFeatureSection() {
+  const [activeId, setActiveId] = useState("personnel");
+  const [mobileOpenId, setMobileOpenId] = useState("personnel");
+
+  const leftFeatures = hrmsFeatures.slice(0, Math.ceil(hrmsFeatures.length / 2));
+  const rightFeatures = hrmsFeatures.slice(Math.ceil(hrmsFeatures.length / 2));
+  const activeFeature = hrmsFeatures.find((f) => f.id === activeId);
+
+  return (
+    <section className="py-12 lg:py-16 overflow-hidden bg-[#F7F7F7]">
+      <div className="w-full max-w-7xl mx-auto px-6">
+        {/* Section Header */}
+        <div className="text-center mb-10">
+          <span className="block text-[14px] font-black text-[#22C55E] tracking-[0.28em] capitalize mb-2.5">
+            KEY FEATURES
+          </span>
+          <h2 className="text-gray-900 mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+            Key Features Of <span className="text-[#22C55E]">HRMS</span> Software
+          </h2>
+          <p className="text-[#6b7280] max-w-[520px] mx-auto text-[15px] leading-relaxed">
+            HRMS & Payroll software automates and streamlines every HR function
+            — from personnel management to payroll — delivering a highly
+            time-efficient experience.
+          </p>
+        </div>
+
+        {/* ── DESKTOP ORBIT (xl and above) ── */}
+        <div className="hidden xl:block">
+          <div className="relative h-[605px] mx-auto xl:w-[80%] lg:w-full">
+            {/* Green arc ellipse */}
+            <div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[90%] rounded-full border-[1.5px] pointer-events-none z-0"
+              style={{ borderColor: 'rgba(34, 197, 94, 0.42)' }}
+            />
+
+            {/* Left column */}
+            <div className="absolute -left-24 top-1/2 -translate-y-1/2 flex flex-col items-end gap-10 z-10 w-[220px]">
+              {leftFeatures.map((feature) => (
+                <button
+                  key={feature.id}
+                  onClick={() => setActiveId(feature.id)}
+                  className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[14px] font-semibold whitespace-nowrap ${activeId === feature.id
+                    ? "bg-green-50 border-green-600 text-gray-800 shadow-[0_4px_16px_rgba(34,197,94,0.15)]"
+                    : "border-green-300 text-gray-800 hover:border-green-500 hover:shadow-md"
+                    }`}
+                >
+                  <span className="text-sm leading-none">{feature.icon}</span>
+                  {feature.label}
+                  {activeId === feature.id && (
+                    <span className="absolute -right-[7px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[7px] border-t-transparent border-b-[7px] border-b-transparent border-l-[7px] border-l-green-900" />
+                  )}
+                </button>
+              ))}
+            </div>
+
+            {/* Center card */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 2xl:w-[72%] lg:w-[70%]">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeId}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                  className="w-full h-full rounded-xl overflow-hidden shadow-[0_24px_64px_rgba(0,0,0,0.15)]"
+                >
+                  <img
+                    src={activeFeature.image}
+                    alt={activeFeature.label}
+                    className="w-full h-full object-contain bg-white"
+                  />
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Right column */}
+            <div className="absolute -right-24 top-1/2 -translate-y-1/2 flex flex-col items-start gap-10 z-10 w-[220px]">
+              {rightFeatures.map((feature) => (
+                <button
+                  key={feature.id}
+                  onClick={() => setActiveId(feature.id)}
+                  className={`relative bg-white border-[1.5px] rounded-full transition-all duration-200 ease-in-out cursor-pointer flex items-center gap-2 py-2 px-4 pr-4.5 text-[14px] font-semibold whitespace-nowrap ${activeId === feature.id
+                    ? "bg-green-50 border-green-600 text-gray-800 shadow-[0_4px_16px_rgba(34,197,94,0.15)]"
+                    : "border-green-300 text-gray-800 hover:border-green-500 hover:shadow-md"
+                    }`}
+                >
+                  {feature.label}
+                  <span className="text-sm leading-none">{feature.icon}</span>
+                  {activeId === feature.id && (
+                    <span className="absolute -left-[7px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[7px] border-t-transparent border-b-[7px] border-b-transparent border-r-[7px] border-r-green-900" />
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Description */}
+          <div className="mt-3 pb-2">
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={activeId + "-d"}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.22 }}
+                className="text-center text-[#6b7280] max-w-[500px] mx-auto text-sm leading-relaxed"
+              >
+                {activeFeature.desc}
+              </motion.p>
+            </AnimatePresence>
+          </div>
+        </div>
+
+        {/* ── TABLET LAYOUT (lg to xl) ── */}
+        <div className="hidden lg:block xl:hidden">
+          {/* Navigation buttons on top */}
+          <div className="mb-8">
+            <div className="flex flex-wrap gap-3 justify-center">
+              {hrmsFeatures.map((feature) => (
+                <button
+                  key={feature.id}
+                  onClick={() => setActiveId(feature.id)}
+                  className={`flex items-center gap-2 py-2.5 px-5 rounded-lg font-semibold text-sm transition-all duration-200 ${activeId === feature.id
+                    ? "bg-[#22C55E] text-white shadow-lg scale-105"
+                    : "bg-white border border-gray-200 text-gray-700 hover:border-[#22C55E] hover:shadow-md"
+                    }`}
+                >
+                  <span className="text-base">{feature.icon}</span>
+                  <span>{feature.label}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Center image display */}
+          <div className="max-w-4xl mx-auto">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeId}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                className="rounded-xl overflow-hidden shadow-2xl bg-white"
+              >
+                <img
+                  src={activeFeature.image}
+                  alt={activeFeature.label}
+                  className="w-full h-auto object-contain"
+                />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Description */}
+          <div className="mt-6">
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={activeId + "-desc"}
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                transition={{ duration: 0.22 }}
+                className="text-center text-[#6b7280] max-w-[600px] mx-auto text-sm leading-relaxed"
+              >
+                {activeFeature.desc}
+              </motion.p>
+            </AnimatePresence>
+          </div>
+        </div>
+
+        {/* ── MOBILE ACCORDION ── */}
+        <div className="lg:hidden border-t border-gray-200">
+          {hrmsFeatures.map((feature) => {
+            const isOpen = mobileOpenId === feature.id;
+            return (
+              <div key={feature.id} className="border-b border-gray-200">
+                <button
+                  onClick={() => setMobileOpenId(isOpen ? null : feature.id)}
+                  className="group w-full flex items-center justify-between p-4 bg-transparent border-none cursor-pointer"
+                >
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="w-8 h-8 rounded-full flex items-center justify-center text-sm transition-colors duration-200 shrink-0"
+                      style={{
+                        background: isOpen ? feature.color : "#e5e7eb",
+                      }}
+                    >
+                      {feature.icon}
+                    </div>
+                    <span
+                      className={`font-bold text-sm transition-colors ${isOpen ? "text-gray-900" : "text-gray-500"
+                        }`}
+                    >
+                      {feature.label}
+                    </span>
+                  </div>
+                  <div
+                    className={`w-7 h-7 rounded-full border-2 flex items-center justify-center transition-all duration-200 shrink-0 ${isOpen
+                      ? "bg-gray-900 border-gray-900"
+                      : "bg-transparent border-gray-300 group-hover:border-gray-400"
+                      }`}
+                  >
+                    <span
+                      className={`text-lg font-light leading-none block transition-transform duration-200 ${isOpen ? "text-white rotate-45" : "text-gray-400 group-hover:rotate-45"
+                        }`}
+                    >
+                      +
+                    </span>
+                  </div>
+                </button>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="p-1 pb-5">
+                        <div className="rounded-xl overflow-hidden bg-white border border-gray-200 shadow-md mb-3">
+                          <img
+                            src={feature.image}
+                            alt={feature.label}
+                            className="w-full h-auto object-contain bg-white"
+                          />
+                        </div>
+                        <p className="text-[#6b7280] text-[14px] leading-relaxed m-0">
+                          {feature.desc}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+
+

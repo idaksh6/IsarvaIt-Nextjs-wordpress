@@ -22,6 +22,7 @@ import ProductDetailPremiumGodownStaging from "../../components/products/Product
 import ProductDetailPremiumAssociation from "../../components/products/ProductDetailPremiumAssociation";
 
 import ProductDetailPremiumHRMS from "../../components/products/ProductDetailPremiumHRMS";
+import ProductDetailPremiumHRMSV2 from "../../components/products/ProductDetailPremiumHRMSV2";
 import ProductDetailPremiumPoshact from "../../components/products/ProductDetailPremiumPoshact";
 
 export default function ProductDetailClient({ product, relatedProducts, allProducts }) {
@@ -31,6 +32,17 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   if (product.slug === 'hrms-software') {
     return (
       <ProductDetailPremiumHRMS 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use V2 View for HRMS Software V2
+  if (product.slug === 'hrms-software-v2') {
+    return (
+      <ProductDetailPremiumHRMSV2 
         product={product} 
         relatedProducts={relatedProducts} 
         allProducts={allProducts}
