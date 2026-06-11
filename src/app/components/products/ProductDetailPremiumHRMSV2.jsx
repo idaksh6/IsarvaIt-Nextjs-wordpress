@@ -30,7 +30,7 @@ const TAB_CONTENT = {
     title: "Smart Company Setup",
     subtitle: "Customize your organization structure with ease",
     description: "Easily customize your departments, roles, and office locations to fit your business perfectly—no coding required.",
-    image: "/products/hrms/Personnel-details.jpg",
+    image: "/products/hrms/Company-setup.png",
     features: [
       "Salary & Statutory Setup",
       "Department Management",
@@ -128,7 +128,7 @@ const TAB_CONTENT = {
     title: "Attendance Processing",
     subtitle: "Accurate tracking with payroll integration",
     description: "Easily manage and finalize employee attendance with accurate tracking and seamless integration with payroll systems.",
-    image: "/products/Time and Attendence.png",
+    image: "/products/hrms/Attendance.png",
     features: [
       "Admin Attendance Management",
       "Manual Attendance Updates",
@@ -142,7 +142,7 @@ const TAB_CONTENT = {
     title: "Biometric Connections",
     subtitle: "Real-time biometric attendance integration",
     description: "Seamlessly manage employee attendance with biometric integration via the Timestation API, supporting both automated syncing and manual uploads for accurate and flexible processing.",
-    image: "/products/Time and Attendence.png",
+    image: "/products/hrms/Biometric.png",
     features: [
       "Timestation API Integration",
       "Manual Biometric Data Upload",
@@ -170,7 +170,7 @@ const TAB_CONTENT = {
     title: "Leave Policy Management",
     subtitle: "Multi-level leave policies for every department",
     description: "Easily create and manage multiple leave policies by assigning leave types, days, and departments, ensuring employees can only apply for leaves applicable to them.",
-    image: "/products/hrms/Leave-management.jpg",
+    image: "/products/hrms/Leave-Policy.png",
     features: [
       "Multiple Policy Creation",
       "Leave Type & Days Assignment",
@@ -184,7 +184,7 @@ const TAB_CONTENT = {
     title: "Other Features",
     subtitle: "Powerful extras built into Isarva HRMS",
     description: "Isarva HRMS is not limited — it has many more useful features designed to handle every aspect of your HR operations.",
-    image: "/products/hrms/Reporting-&-analytics.jpg",
+    image: "/products/hrms/Other-features.png",
     features: [
       "Activity Logger & Security",
       "Auto Realtime Attendance-Payroll Sync",
@@ -310,7 +310,14 @@ export default function ProductDetailPremiumHRMSV2({
               <div className={`lg:sticky lg:top-32 transition-all duration-500 space-y-4`}>
                 {/* Mobile version remains as a horizontal scroll or grid, but for desktop we want vertical */}
                 <div className="hidden lg:flex flex-col bg-white/60 backdrop-blur-3xl border border-white/50 p-3 shadow-[0_20px_50px_rgba(0,0,0,0.06)] rounded-[2.5rem]">
-                  <div className="flex flex-col space-y-2">
+                  <div
+                    className="flex flex-col space-y-1 overflow-y-auto pr-1"
+                    style={{
+                      maxHeight: 'calc(100vh - 11rem)',
+                      scrollbarWidth: 'thin',
+                      scrollbarColor: 'rgba(0,0,0,0.12) transparent',
+                    }}
+                  >
                     {TABS.map((tab) => {
                       const isActive = activeTab === tab.id;
                       const theme = TAB_THEMES[tab.id];
@@ -318,7 +325,7 @@ export default function ProductDetailPremiumHRMSV2({
                         <button
                           key={tab.id}
                           onClick={() => setActiveTab(tab.id)}
-                          className={`group relative flex items-center gap-4 px-6 py-5 rounded-[2rem] font-bold text-sm capitalize tracking-widest transition-all duration-500 overflow-hidden ${isActive
+                          className={`group relative flex items-center gap-4 px-6 py-3 rounded-[2rem] font-bold text-sm capitalize tracking-widest transition-all duration-500 overflow-hidden ${isActive
                             ? "text-white shadow-lg"
                             : "text-gray-500 hover:text-gray-900 hover:bg-gray-50/50"
                             }`}
@@ -425,15 +432,12 @@ export default function ProductDetailPremiumHRMSV2({
                       className="relative mb-12"
                     >
                       <div className="relative z-10 p-2 bg-white rounded-[2rem] border border-gray-100 shadow-xl cursor-pointer group overflow-hidden" onClick={() => setSelectedImage(activeContent.image)}>
-                        <div className="rounded-[1.5rem] overflow-hidden relative" style={{ aspectRatio: '1.8 / 1' }}>
-                          <Image
+                        <div className="rounded-[1.5rem] overflow-hidden relative">
+                          <img
                             src={activeContent.image}
                             alt={activeContent.title}
-                            fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 800px"
                             loading="lazy"
-                            unoptimized
-                            className="object-cover group-hover:scale-105 transition-transform duration-700"
+                            className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-700 bg-white"
                           />
                         </div>
                         <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/5 backdrop-blur-[2px]">
@@ -490,14 +494,11 @@ export default function ProductDetailPremiumHRMSV2({
 
                         <div className="relative w-full cursor-pointer group" onClick={() => setSelectedImage(activeContent.image)}>
                           <div className={`absolute -inset-10 ${TAB_THEMES[activeTab].bg}/5 blur-[80px] rounded-full`}></div>
-                          <div className="relative z-10 rounded-2xl shadow-xl border border-white overflow-hidden w-full" style={{ aspectRatio: '2.4 / 1' }}>
-                            <Image
+                          <div className="relative z-10 rounded-2xl shadow-xl border border-white overflow-hidden w-full">
+                            <img
                               src={activeContent.image}
                               alt={activeContent.title}
-                              fill
-                              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 900px"
-                              unoptimized
-                              className="object-cover group-hover:scale-105 transition-all duration-700"
+                              className="w-full h-auto object-contain group-hover:scale-105 transition-all duration-700 bg-white"
                             />
                           </div>
                           <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -617,15 +618,11 @@ export default function ProductDetailPremiumHRMSV2({
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" /></svg>
               </button>
 
-              <div className="relative w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-white/20" style={{ aspectRatio: '1.4 / 1' }}>
-                <Image
+              <div className="relative w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+                <img
                   src={selectedImage}
                   alt="Enlarged view"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 900px"
-                  loading="lazy"
-                  unoptimized
-                  className="object-contain"
+                  className="w-full h-auto object-contain"
                 />
               </div>
 
