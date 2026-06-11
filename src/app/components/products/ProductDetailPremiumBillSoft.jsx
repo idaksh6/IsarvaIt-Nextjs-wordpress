@@ -519,6 +519,19 @@ export default function ProductDetailPremiumBillSoft({
           background-clip: text;
           animation: shine 3s linear infinite;
         }
+        .sidebar-scrollbar::-webkit-scrollbar {
+          width: 5px;
+        }
+        .sidebar-scrollbar::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .sidebar-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(156, 163, 175, 0.25);
+          border-radius: 9999px;
+        }
+        .sidebar-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: rgba(156, 163, 175, 0.45);
+        }
       `}</style>
       <div className={`relative font-sans selection:bg-sky-100 selection:text-sky-900 bg-[#FDF8F2]`}>
         {/* Background Decor */}
@@ -695,11 +708,11 @@ export default function ProductDetailPremiumBillSoft({
             <div className="lg:container mx-auto">
               <div className="flex flex-col lg:flex-row gap-0 lg:gap-12">
                 {/* Desktop Sidebar */}
-                <aside className="lg:w-80 flex-shrink-0">
+                <aside className="lg:w-[22rem] flex-shrink-0">
                   <div className="lg:sticky lg:top-32 space-y-4">
                     <div className="hidden lg:flex flex-col bg-white/60 backdrop-blur-3xl border border-white/50 p-3 shadow-[0_20px_50px_rgba(14,165,233,0.15)] rounded-[2.5rem]">
                       <div
-                        className="flex flex-col space-y-1 overflow-y-auto pr-1"
+                        className="flex flex-col space-y-1 overflow-y-auto pr-1 sidebar-scrollbar"
                         style={{
                           maxHeight: 'calc(100vh - 11rem)',
                           scrollbarWidth: 'thin',
@@ -773,7 +786,7 @@ export default function ProductDetailPremiumBillSoft({
                                 {activeContent.title}
                               </h2>
 
-                              <p className="text-base text-gray-500 font-medium leading-relaxed">
+                              <p className="text-gray-600 text-base lg:text-lg">
                                 {activeContent.description}
                               </p>
                             </div>
@@ -842,7 +855,7 @@ export default function ProductDetailPremiumBillSoft({
                                 <div className={`w-8 h-8 rounded-full ${TAB_THEMES[activeTab].lightBg} flex items-center justify-center ${TAB_THEMES[activeTab].text} flex-shrink-0 shadow-inner`}>
                                   <span className="text-[10px] font-black">✓</span>
                                 </div>
-                                <span className="text-[14px] font-black text-gray-700 capitalize tracking-tight">{f}</span>
+                                <span className="text-[14px] font-extrabold text-gray-700 capitalize tracking-tight">{f}</span>
                               </div>
                             ))}
                           </div>
@@ -867,7 +880,7 @@ export default function ProductDetailPremiumBillSoft({
                                 {activeContent.title}
                               </h2>
 
-                              <p className="text-base text-gray-500 font-medium leading-relaxed">
+                              <p className="text-gray-600 text-base lg:text-lg">
                                 {activeContent.description}
                               </p>
 
@@ -923,7 +936,7 @@ export default function ProductDetailPremiumBillSoft({
                                 <div className={`w-8 h-8 rounded-full ${TAB_THEMES[activeTab].lightBg} flex items-center justify-center ${TAB_THEMES[activeTab].text} flex-shrink-0`}>
                                   <span className="text-[10px] font-black">✓</span>
                                 </div>
-                                <span className="text-[13px] font-black text-gray-700 capitalize tracking-tight text-left leading-snug">{f}</span>
+                                <span className="text-[13px] font-extrabold text-gray-700 capitalize tracking-tight text-left leading-snug">{f}</span>
                               </div>
                             ))}
                           </div>

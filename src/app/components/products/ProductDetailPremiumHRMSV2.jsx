@@ -10,6 +10,20 @@ const PRIMARY_BLUE = "#0066FF";
 const TEXT_DARK = "#1A1A1A";
 const TEXT_GRAY = "#4D4D4D";
 
+const GLOBAL_BTN_ARROW = (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 9" className="h-2 w-4" aria-hidden="true">
+    <path
+      fill="currentColor"
+      fillRule="evenodd"
+      d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
+
+const GLOBAL_BTN_ORANGE = "press-illusion-btn-orange text-white w-fit font-bold px-8 py-3 text-base flex cursor-pointer";
+const GLOBAL_BTN_GREEN = "press-illusion-btn-green text-white w-fit font-bold px-8 py-3 text-base flex cursor-pointer";
+
 const TABS = [
   { id: "setup", label: "Company Setup" },
   { id: "employee", label: "Employee Mgmt" },
@@ -250,7 +264,23 @@ export default function ProductDetailPremiumHRMSV2({
   const activeContent = TAB_CONTENT[activeTab] || TAB_CONTENT["setup"];
 
   return (
-    <div className={`relative font-sans selection:bg-blue-100 selection:text-blue-900 transition-colors duration-1000 bg-white`}>
+    <>
+      <style dangerouslySetInnerHTML={{ __html: `
+        .sidebar-scrollbar::-webkit-scrollbar {
+          width: 5px;
+        }
+        .sidebar-scrollbar::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .sidebar-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(156, 163, 175, 0.25);
+          border-radius: 9999px;
+        }
+        .sidebar-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: rgba(156, 163, 175, 0.45);
+        }
+      `}} />
+      <div className={`relative font-sans selection:bg-blue-100 selection:text-blue-900 transition-colors duration-1000 bg-white`}>
       {/* --- Dynamic Shifting Background (Soft & Light) --- */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         {/* Very subtle ambient gradient */}
@@ -267,7 +297,82 @@ export default function ProductDetailPremiumHRMSV2({
         <div className="absolute inset-0 bg-grid-slate-200/[0.05] [mask-image:linear-gradient(to_bottom,white,transparent,white)]" />
       </div>
 
-      <div className="relative z-40 pt-32 lg:pt-40 pb-12 lg:pb-16">
+      <div className="relative z-40 pt-0">
+        {/* Intro Section Above Tabs */}
+        <section className="relative pt-32 lg:pt-40 pb-12 lg:pb-16 overflow-hidden bg-gradient-to-br from-[#F8FAFC] via-[#EFF6FF]/60 to-white border-b border-slate-100/80">
+          <div className="absolute inset-0 aurora-mesh pointer-events-none" />
+          <div className="absolute inset-0 hero-grid opacity-[0.25] pointer-events-none" />
+
+          <div className="max-w-7xl mx-auto px-6 sm:px-6 relative z-10 w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div className="text-center lg:text-left">
+                <div className="relative inline-flex items-center justify-center lg:gap-3 gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-blue-50/50 to-indigo-50/50 border border-blue-100/50 mb-8 backdrop-blur-sm">
+                  <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse shrink-0" />
+                  <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent font-black text-xs capitalize tracking-[0.2em] text-center leading-tight">
+                    POWER BONDS WITH PEOPLE
+                  </span>
+                </div>
+
+                <div className="relative">
+                  <h1 className="mb-6">
+                    <span className="shimmer-title inline-block py-2">
+                      All-in-One HR, Payroll
+                    </span>{" "}
+                    <br />
+                    <span className="text-[clamp(1.5rem,4vw,3.5rem)] bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent font-bold">
+                      & Attendance Platform
+                    </span>
+                  </h1>
+                </div>
+
+                <p className="text-base lg:text-xl text-gray-600 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0 font-medium">
+                  An all-in-one platform combining Payroll, Attendance, Leave, Document Generation, and advanced settings — designed to simplify workforce management, ensure compliance, and improve efficiency with automated, real-time insights.
+                </p>
+
+                <div className="flex flex-wrap gap-4 justify-center lg:justify-start items-center">
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className={`${GLOBAL_BTN_ORANGE}`}
+                  >
+                    <span>Request a Demo</span>
+                    {GLOBAL_BTN_ARROW}
+                  </button>
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className={`${GLOBAL_BTN_GREEN}`}
+                  >
+                    <span>Download Brochure</span>
+                    {GLOBAL_BTN_ARROW}
+                  </button>
+                </div>
+
+                <div className="mt-8 flex flex-wrap gap-6 justify-center lg:justify-start items-center text-xs font-black text-slate-400 capitalize tracking-widest">
+                  <div className="flex items-center gap-2">
+                    <span className="text-green-500 text-base">✓</span> No Commitment
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-green-500 text-base">✓</span> No Credit Card Required
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative image-3d-wrapper">
+                <div className="relative h-[250px] sm:h-[400px] lg:h-[480px] w-full px-4 sm:px-0">
+                  <div className="absolute top-0 right-0 w-full h-[100%] p-3 z-10 flex items-center justify-center transition-all duration-500 hover:scale-[1.02] overflow-hidden bg-transparent">
+                    <img
+                      src="/products/hrms/hrms-banner-main.png"
+                      alt="All-in-One HRMS Dashboard"
+                      className="w-full h-full object-contain relative z-10"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div className="relative z-40 pb-12 lg:pb-16">
         {/* Mobile View (Horizontal Scroll) - Full-width white background bar with constrained content */}
         <div className="lg:hidden sticky top-[102px] z-[60] bg-white border-b border-gray-100 shadow-sm w-full overflow-hidden">
           <div
@@ -301,17 +406,17 @@ export default function ProductDetailPremiumHRMSV2({
           </div>
         </div>
 
-        <div ref={contentTopRef} className="w-full lg:container mx-auto px-6 pt-10 lg:pt-0">
+        <div ref={contentTopRef} className="w-full lg:container mx-auto px-6 py-12 lg:py-16">
 
           <div className="flex flex-col lg:flex-row gap-0 lg:gap-12">
 
             {/* Sidebar Sidebar */}
-            <aside className="lg:w-72 flex-shrink-0">
+            <aside className="lg:w-[22rem] flex-shrink-0">
               <div className={`lg:sticky lg:top-32 transition-all duration-500 space-y-4`}>
                 {/* Mobile version remains as a horizontal scroll or grid, but for desktop we want vertical */}
                 <div className="hidden lg:flex flex-col bg-white/60 backdrop-blur-3xl border border-white/50 p-3 shadow-[0_20px_50px_rgba(0,0,0,0.06)] rounded-[2.5rem]">
                   <div
-                    className="flex flex-col space-y-1 overflow-y-auto pr-1"
+                    className="flex flex-col space-y-1 overflow-y-auto pr-1 sidebar-scrollbar"
                     style={{
                       maxHeight: 'calc(100vh - 11rem)',
                       scrollbarWidth: 'thin',
@@ -563,12 +668,12 @@ export default function ProductDetailPremiumHRMSV2({
 
               {/* 7. Final CTA Section */}
               <section>
-                <div className="relative rounded-[3rem] bg-gradient-to-br from-white to-gray-50 py-12 lg:py-16 px-8 lg:px-16 overflow-hidden text-center shadow-[0_40px_80px_rgba(0,0,0,0.05)] border border-gray-100">
+                <div className="relative rounded-[3rem] bg-gradient-to-br from-white to-gray-50 p-12 lg:p-24 overflow-hidden text-center shadow-[0_40px_80px_rgba(0,0,0,0.05)] border border-gray-100">
                   <div className={`absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-br ${TAB_THEMES[activeTab].gradient} opacity-5 blur-[100px]`}></div>
 
                   <div className="relative z-10 flex flex-col items-center">
                     <h2 className="mb-6 capitalize">Build the <br /> future today.</h2>
-                    <p className="text-gray-500 mb-10 max-w-xl font-bold capitalize tracking-widest text-[14px]">Join 10,000+ teams transforming their workplace.</p>
+                    <p className="text-lg lg:text-xl text-gray-500 font-medium leading-relaxed mb-10 max-w-2xl mx-auto">Join 10,000+ teams transforming their workplace.</p>
                     <button
                       onClick={() => setIsModalOpen(true)}
                       className="press-illusion-btn-orange w-full sm:w-auto sm:min-w-[280px] px-12 py-6 capitalize flex items-center justify-center gap-3"
@@ -634,7 +739,8 @@ export default function ProductDetailPremiumHRMSV2({
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+      </div>
+    </>
   );
 }
 

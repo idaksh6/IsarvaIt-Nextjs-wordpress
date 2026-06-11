@@ -10,6 +10,20 @@ const PRIMARY_BLUE = "#0066FF";
 const TEXT_DARK = "#1A1A1A";
 const TEXT_GRAY = "#4D4D4D";
 
+const GLOBAL_BTN_ARROW = (
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 9" className="h-2 w-4" aria-hidden="true">
+    <path
+      fill="currentColor"
+      fillRule="evenodd"
+      d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
+
+const GLOBAL_BTN_ORANGE = "press-illusion-btn-orange text-white w-fit font-bold px-8 py-3 text-base flex cursor-pointer";
+const GLOBAL_BTN_GREEN = "press-illusion-btn-green text-white w-fit font-bold px-8 py-3 text-base flex cursor-pointer";
+
 const TABS = [
   { id: "setup", label: "Company Setup" },
   { id: "employee", label: "Employee Mgmt" },
@@ -17,6 +31,12 @@ const TABS = [
   { id: "reporting", label: "Reporting" },
   { id: "analytics", label: "Analytics" },
   { id: "ess", label: "ESS Portal" },
+  { id: "shifts", label: "Shifts & Rosters" },
+  { id: "attendance", label: "Attendance" },
+  { id: "biometric", label: "Biometric" },
+  { id: "holidays", label: "Public Holidays" },
+  { id: "leavepolicy", label: "Leave Policy" },
+  { id: "other", label: "Other Features" },
 ];
 
 const TAB_CONTENT = {
@@ -24,7 +44,7 @@ const TAB_CONTENT = {
     title: "Smart Company Setup",
     subtitle: "Customize your organization structure with ease",
     description: "Easily customize your departments, roles, and office locations to fit your business perfectly—no coding required.",
-    image: "/products/hrms/Personnel-details.jpg",
+    image: "/products/hrms/Company-setup.png",
     features: [
       "Salary & Statutory Setup",
       "Department Management",
@@ -91,7 +111,7 @@ const TAB_CONTENT = {
     ]
   },
   "ess": {
-    title: "Employee Self-Service Portal",
+    title: "Employee Self-Service Leave Application",
     subtitle: "Empower your workforce with self-service tools",
     description: "Empower employees to easily apply for leaves through a self-service portal with accurate calculations and real-time leave availability.",
     image: "/products/Emplyee self Service.png",
@@ -100,8 +120,95 @@ const TAB_CONTENT = {
       "Half-Day Customization",
       "Auto Holiday Exclusion",
       "Real-Time Leave Balance",
-      "Approval Workflows",
-      "Email Notifications"
+      "Streamlined Approval Process",
+      "Automated Email Notifications"
+    ]
+  },
+  "shifts": {
+    title: "Shifts & Duty Rosters",
+    subtitle: "Flexible shift scheduling and bulk assignment",
+    description: "Efficiently manage employee shifts and duty rosters with flexible scheduling and bulk assignment capabilities.",
+    image: "/products/hrms/Shift-scheduling.jpg",
+    features: [
+      "Duty Roster Management",
+      "Bulk Shift Assignment",
+      "Multi-Employee Date Ranges",
+      "Easy Workforce Planning",
+      "Scheduling Efficiency",
+      "Accurate Shift Allocation"
+    ]
+  },
+  "attendance": {
+    title: "Attendance Processing",
+    subtitle: "Accurate tracking with payroll integration",
+    description: "Easily manage and finalize employee attendance with accurate tracking and seamless integration with payroll systems.",
+    image: "/products/hrms/Attendance.png",
+    features: [
+      "Admin Attendance Management",
+      "Manual Attendance Updates",
+      "Save & Lock Monthly Finalization",
+      "Seamless Payroll API Integration",
+      "Data Accuracy Enforcement",
+      "Post-Finalization Change Prevention"
+    ]
+  },
+  "biometric": {
+    title: "Biometric Connections",
+    subtitle: "Real-time biometric attendance integration",
+    description: "Seamlessly manage employee attendance with biometric integration via the Timestation API, supporting both automated syncing and manual uploads for accurate and flexible processing.",
+    image: "/products/hrms/Biometric.png",
+    features: [
+      "Timestation API Integration",
+      "Manual Biometric Data Upload",
+      "Admin Attendance Override",
+      "Auto Leave & OT Calculation",
+      "Late Entry Detection",
+      "Centralized Attendance Management"
+    ]
+  },
+  "holidays": {
+    title: "Public Holiday Master Management",
+    subtitle: "Flexible department-wise holiday configuration",
+    description: "Easily configure and manage public holidays with flexible options, including department-wise customization to suit organizational needs.",
+    image: "/products/hrms/Leave-management.jpg",
+    features: [
+      "Admin Holiday Control",
+      "Department-wise Configuration",
+      "Restrict Holiday Eligibility",
+      "Flexible Policy Setup",
+      "Organization-specific Rules",
+      "Holiday Calendar Management"
+    ]
+  },
+  "leavepolicy": {
+    title: "Leave Policy Management",
+    subtitle: "Multi-level leave policies for every department",
+    description: "Easily create and manage multiple leave policies by assigning leave types, days, and departments, ensuring employees can only apply for leaves applicable to them.",
+    image: "/products/hrms/Leave-Policy.png",
+    features: [
+      "Multiple Policy Creation",
+      "Leave Type & Days Assignment",
+      "Department-wise Mapping",
+      "Restricted Leave Application",
+      "Streamlined Leave Management",
+      "Multi-Level Leave Approval"
+    ]
+  },
+  "other": {
+    title: "Other Features",
+    subtitle: "Powerful extras built into Isarva HRMS",
+    description: "Isarva HRMS is not limited — it has many more useful features designed to handle every aspect of your HR operations.",
+    image: "/products/hrms/Other-features.png",
+    features: [
+      "Activity Logger & Security",
+      "Auto Realtime Attendance-Payroll Sync",
+      "Notification Center",
+      "OT & Incentive Calculations",
+      "Hold & Release Salary",
+      "Increments & Promotions History",
+      "Full & Final Settlement",
+      "Employee Birthday Reminders",
+      "Multi-Level Leave Approval Workflow"
     ]
   }
 };
@@ -112,7 +219,13 @@ const TAB_THEMES = {
   "payroll": { bg: "bg-violet-600", gradient: "from-[#7C3AED] to-[#6D28D9]", shadow: "shadow-violet-500/20", text: "text-violet-600", lightBg: "bg-violet-50", hoverBorder: "hover:border-violet-200", accent: "violet" },
   "reporting": { bg: "bg-rose-600", gradient: "from-[#E11D48] to-[#BE123C]", shadow: "shadow-rose-500/20", text: "text-rose-600", lightBg: "bg-rose-50", hoverBorder: "hover:border-rose-200", accent: "rose" },
   "analytics": { bg: "bg-sky-600", gradient: "from-[#0EA5E9] to-[#0284C7]", shadow: "shadow-sky-500/20", text: "text-sky-600", lightBg: "bg-sky-50", hoverBorder: "hover:border-sky-200", accent: "sky" },
-  "ess": { bg: "bg-amber-500", gradient: "from-[#F59E0B] to-[#D97706]", shadow: "shadow-amber-500/20", text: "text-amber-600", lightBg: "bg-amber-50", hoverBorder: "hover:border-amber-200", accent: "amber" }
+  "ess": { bg: "bg-amber-500", gradient: "from-[#F59E0B] to-[#D97706]", shadow: "shadow-amber-500/20", text: "text-amber-600", lightBg: "bg-amber-50", hoverBorder: "hover:border-amber-200", accent: "amber" },
+  "shifts": { bg: "bg-teal-600", gradient: "from-[#0D9488] to-[#0F766E]", shadow: "shadow-teal-500/20", text: "text-teal-600", lightBg: "bg-teal-50", hoverBorder: "hover:border-teal-200", accent: "teal" },
+  "attendance": { bg: "bg-orange-500", gradient: "from-[#F97316] to-[#EA580C]", shadow: "shadow-orange-500/20", text: "text-orange-600", lightBg: "bg-orange-50", hoverBorder: "hover:border-orange-200", accent: "orange" },
+  "biometric": { bg: "bg-cyan-600", gradient: "from-[#0891B2] to-[#0E7490]", shadow: "shadow-cyan-500/20", text: "text-cyan-600", lightBg: "bg-cyan-50", hoverBorder: "hover:border-cyan-200", accent: "cyan" },
+  "holidays": { bg: "bg-pink-600", gradient: "from-[#DB2777] to-[#BE185D]", shadow: "shadow-pink-500/20", text: "text-pink-600", lightBg: "bg-pink-50", hoverBorder: "hover:border-pink-200", accent: "pink" },
+  "leavepolicy": { bg: "bg-indigo-600", gradient: "from-[#4F46E5] to-[#4338CA]", shadow: "shadow-indigo-500/20", text: "text-indigo-600", lightBg: "bg-indigo-50", hoverBorder: "hover:border-indigo-200", accent: "indigo" },
+  "other": { bg: "bg-fuchsia-600", gradient: "from-[#D946EF] to-[#A21CAF]", shadow: "shadow-fuchsia-500/20", text: "text-fuchsia-600", lightBg: "bg-fuchsia-50", hoverBorder: "hover:border-fuchsia-200", accent: "fuchsia" }
 };
 
 export default function ProductDetailPremiumHRMS({
@@ -151,7 +264,23 @@ export default function ProductDetailPremiumHRMS({
   const activeContent = TAB_CONTENT[activeTab] || TAB_CONTENT["setup"];
 
   return (
-    <div className={`relative font-sans selection:bg-blue-100 selection:text-blue-900 transition-colors duration-1000 bg-white`}>
+    <>
+      <style dangerouslySetInnerHTML={{ __html: `
+        .sidebar-scrollbar::-webkit-scrollbar {
+          width: 5px;
+        }
+        .sidebar-scrollbar::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .sidebar-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(156, 163, 175, 0.25);
+          border-radius: 9999px;
+        }
+        .sidebar-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: rgba(156, 163, 175, 0.45);
+        }
+      `}} />
+      <div className={`relative font-sans selection:bg-blue-100 selection:text-blue-900 transition-colors duration-1000 bg-white`}>
       {/* --- Dynamic Shifting Background (Soft & Light) --- */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         {/* Very subtle ambient gradient */}
@@ -168,7 +297,82 @@ export default function ProductDetailPremiumHRMS({
         <div className="absolute inset-0 bg-grid-slate-200/[0.05] [mask-image:linear-gradient(to_bottom,white,transparent,white)]" />
       </div>
 
-      <div className="relative z-40 pt-32 lg:pt-40">
+      <div className="relative z-40 pt-0">
+        {/* Intro Section Above Tabs */}
+        <section className="relative pt-32 lg:pt-40 pb-12 lg:pb-16 overflow-hidden bg-gradient-to-br from-[#F8FAFC] via-[#EFF6FF]/60 to-white border-b border-slate-100/80">
+          <div className="absolute inset-0 aurora-mesh pointer-events-none" />
+          <div className="absolute inset-0 hero-grid opacity-[0.25] pointer-events-none" />
+
+          <div className="max-w-7xl mx-auto px-6 sm:px-6 relative z-10 w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div className="text-center lg:text-left">
+                <div className="relative inline-flex items-center justify-center lg:gap-3 gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-blue-50/50 to-indigo-50/50 border border-blue-100/50 mb-8 backdrop-blur-sm">
+                  <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse shrink-0" />
+                  <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent font-black text-xs capitalize tracking-[0.2em] text-center leading-tight">
+                    POWER BONDS WITH PEOPLE
+                  </span>
+                </div>
+
+                <div className="relative">
+                  <h1 className="mb-6">
+                    <span className="shimmer-title inline-block py-2">
+                      All-in-One HR, Payroll
+                    </span>{" "}
+                    <br />
+                    <span className="text-[clamp(1.5rem,4vw,3.5rem)] bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 bg-clip-text text-transparent font-bold">
+                      & Attendance Platform
+                    </span>
+                  </h1>
+                </div>
+
+                <p className="text-base lg:text-xl text-gray-600 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0 font-medium">
+                  An all-in-one platform combining Payroll, Attendance, Leave, Document Generation, and advanced settings — designed to simplify workforce management, ensure compliance, and improve efficiency with automated, real-time insights.
+                </p>
+
+                <div className="flex flex-wrap gap-4 justify-center lg:justify-start items-center">
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className={`${GLOBAL_BTN_ORANGE}`}
+                  >
+                    <span>Request a Demo</span>
+                    {GLOBAL_BTN_ARROW}
+                  </button>
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className={`${GLOBAL_BTN_GREEN}`}
+                  >
+                    <span>Download Brochure</span>
+                    {GLOBAL_BTN_ARROW}
+                  </button>
+                </div>
+
+                <div className="mt-8 flex flex-wrap gap-6 justify-center lg:justify-start items-center text-xs font-black text-slate-400 capitalize tracking-widest">
+                  <div className="flex items-center gap-2">
+                    <span className="text-green-500 text-base">✓</span> No Commitment
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-green-500 text-base">✓</span> No Credit Card Required
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative image-3d-wrapper">
+                <div className="relative h-[250px] sm:h-[400px] lg:h-[480px] w-full px-4 sm:px-0">
+                  <div className="absolute top-0 right-0 w-full h-[100%] p-3 z-10 flex items-center justify-center transition-all duration-500 hover:scale-[1.02] overflow-hidden bg-transparent">
+                    <img
+                      src="/products/hrms/hrms-banner-main.png"
+                      alt="All-in-One HRMS Dashboard"
+                      className="w-full h-full object-contain relative z-10"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div className="relative z-40 pb-12 lg:pb-16">
         {/* Mobile View (Horizontal Scroll) - Full-width white background bar with constrained content */}
         <div className="lg:hidden sticky top-[102px] z-[60] bg-white border-b border-gray-100 shadow-sm w-full overflow-hidden">
           <div
@@ -202,16 +406,23 @@ export default function ProductDetailPremiumHRMS({
           </div>
         </div>
 
-        <div ref={contentTopRef} className="w-full lg:container mx-auto px-6 pt-10 lg:pt-0">
+        <div ref={contentTopRef} className="w-full lg:container mx-auto px-6 py-12 lg:py-16">
 
           <div className="flex flex-col lg:flex-row gap-0 lg:gap-12">
 
             {/* Sidebar Sidebar */}
-            <aside className="lg:w-72 flex-shrink-0">
+            <aside className="lg:w-[22rem] flex-shrink-0">
               <div className={`lg:sticky lg:top-32 transition-all duration-500 space-y-4`}>
                 {/* Mobile version remains as a horizontal scroll or grid, but for desktop we want vertical */}
                 <div className="hidden lg:flex flex-col bg-white/60 backdrop-blur-3xl border border-white/50 p-3 shadow-[0_20px_50px_rgba(0,0,0,0.06)] rounded-[2.5rem]">
-                  <div className="flex flex-col space-y-2">
+                  <div
+                    className="flex flex-col space-y-1 overflow-y-auto pr-1 sidebar-scrollbar"
+                    style={{
+                      maxHeight: 'calc(100vh - 11rem)',
+                      scrollbarWidth: 'thin',
+                      scrollbarColor: 'rgba(0,0,0,0.12) transparent',
+                    }}
+                  >
                     {TABS.map((tab) => {
                       const isActive = activeTab === tab.id;
                       const theme = TAB_THEMES[tab.id];
@@ -219,7 +430,7 @@ export default function ProductDetailPremiumHRMS({
                         <button
                           key={tab.id}
                           onClick={() => setActiveTab(tab.id)}
-                          className={`group relative flex items-center gap-4 px-6 py-5 rounded-[2rem] font-bold text-sm capitalize tracking-widest transition-all duration-500 overflow-hidden ${isActive
+                          className={`group relative flex items-center gap-4 px-6 py-3 rounded-[2rem] font-bold text-sm capitalize tracking-widest transition-all duration-500 overflow-hidden ${isActive
                             ? "text-white shadow-lg"
                             : "text-gray-500 hover:text-gray-900 hover:bg-gray-50/50"
                             }`}
@@ -234,7 +445,7 @@ export default function ProductDetailPremiumHRMS({
 
                           <div className={`relative z-10 w-8 h-8 rounded-xl flex items-center justify-center transition-all duration-500 ${isActive ? "bg-white/20" : theme.lightBg + " " + theme.text}`}>
                             <span className="text-lg">
-                              {tab.id === 'setup' ? '🏢' : tab.id === 'employee' ? '👥' : tab.id === 'payroll' ? '💰' : tab.id === 'reporting' ? '📊' : tab.id === 'analytics' ? '📈' : '🔐'}
+                              {tab.id === 'setup' ? '🏢' : tab.id === 'employee' ? '👥' : tab.id === 'payroll' ? '💰' : tab.id === 'reporting' ? '📊' : tab.id === 'analytics' ? '📈' : tab.id === 'ess' ? '🔐' : tab.id === 'shifts' ? '📅' : tab.id === 'attendance' ? '⏰' : tab.id === 'biometric' ? '🖐️' : tab.id === 'holidays' ? '🎉' : tab.id === 'leavepolicy' ? '📋' : '✨'}
                             </span>
                           </div>
 
@@ -281,7 +492,7 @@ export default function ProductDetailPremiumHRMS({
                             <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${TAB_THEMES[activeTab].bg}`}></span>
                             <span className={`relative inline-flex rounded-full h-2 w-2 ${TAB_THEMES[activeTab].bg}`}></span>
                           </span>
-                          {TABS.find(t => t.id === activeTab)?.label} MODULE
+                          {TABS.find(t => t.id === activeTab)?.label} Module
                         </motion.div>
 
                         <motion.h1
@@ -311,7 +522,7 @@ export default function ProductDetailPremiumHRMS({
                       >
                         <button
                           onClick={() => setIsModalOpen(true)}
-                          className="press-illusion-btn-orange w-full sm:w-auto sm:min-w-[240px] px-8 py-4 font-black capitalize tracking-[0.2em] text-[14px] flex items-center justify-center gap-3"
+                          className="press-illusion-btn-orange w-full sm:w-auto sm:min-w-[240px] px-8 py-4 capitalize flex items-center justify-center gap-3"
                         >
                           Get Started Free
                         </button>
@@ -326,15 +537,12 @@ export default function ProductDetailPremiumHRMS({
                       className="relative mb-12"
                     >
                       <div className="relative z-10 p-2 bg-white rounded-[2rem] border border-gray-100 shadow-xl cursor-pointer group overflow-hidden" onClick={() => setSelectedImage(activeContent.image)}>
-                        <div className="rounded-[1.5rem] overflow-hidden relative" style={{ aspectRatio: '1.8 / 1' }}>
-                          <Image
+                        <div className="rounded-[1.5rem] overflow-hidden relative">
+                          <img
                             src={activeContent.image}
                             alt={activeContent.title}
-                            fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 800px"
                             loading="lazy"
-                            unoptimized
-                            className="object-cover group-hover:scale-105 transition-transform duration-700"
+                            className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-700 bg-white"
                           />
                         </div>
                         <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/5 backdrop-blur-[2px]">
@@ -391,14 +599,11 @@ export default function ProductDetailPremiumHRMS({
 
                         <div className="relative w-full cursor-pointer group" onClick={() => setSelectedImage(activeContent.image)}>
                           <div className={`absolute -inset-10 ${TAB_THEMES[activeTab].bg}/5 blur-[80px] rounded-full`}></div>
-                          <div className="relative z-10 rounded-2xl shadow-xl border border-white overflow-hidden w-full" style={{ aspectRatio: '2.4 / 1' }}>
-                            <Image
+                          <div className="relative z-10 rounded-2xl shadow-xl border border-white overflow-hidden w-full">
+                            <img
                               src={activeContent.image}
                               alt={activeContent.title}
-                              fill
-                              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 900px"
-                              unoptimized
-                              className="object-cover group-hover:scale-105 transition-all duration-700"
+                              className="w-full h-auto object-contain group-hover:scale-105 transition-all duration-700 bg-white"
                             />
                           </div>
                           <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -444,7 +649,7 @@ export default function ProductDetailPremiumHRMS({
                     {[
                       { title: "Endless Paperwork", icon: "📄", desc: "HR spends more time on forms than people.", color: "rose" },
                       { title: "Disconnected Apps", icon: "🔌", desc: "Messy data spread across too many places.", color: "violet" },
-                      { title: "Frustrated Workers", icon: "😠", desc: "Hard-to-use software ruins productivity.", color: "amber" },
+                      { title: "Frustrated Employees", icon: "😠", desc: "Hard-to-use software ruins productivity.", color: "amber" },
                       { title: "Risky Security", icon: "🔓", desc: "Old ways leave you open to legal threats.", color: "slate" }
                     ].map((item, idx) => (
                       <div key={idx} className="group flex flex-col items-center p-8 rounded-[32px] border border-gray-100 hover:shadow-xl transition-all duration-500 bg-white text-center">
@@ -459,42 +664,19 @@ export default function ProductDetailPremiumHRMS({
                 </div>
               </section>
 
-              {/* 6. Complete HR Suite Section */}
-              <section className="bg-white relative overflow-hidden border border-gray-100 rounded-[3rem]">
-                <div className="p-8 lg:p-12">
-                  <div className="mb-4 md:mb-10 text-center lg:text-left flex flex-col items-center lg:items-start">
-                    <h2 className="mb-6 capitalize">Complete HR Suite – <span className={TAB_THEMES[activeTab].text}>All-in-One HRMS Features</span></h2>
-                    <p className="text-base lg:text-lg text-gray-500 mb-4 lg:mb-10 font-medium leading-relaxed">Streamline and manage your entire HR operations with a powerful, integrated HRMS platform designed for modern businesses.</p>
-                  </div>
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {SECTION_6_FEATURES.map((card, idx) => (
-                      <div key={idx} className="p-8 rounded-[40px] bg-gray-50/50 border border-gray-100 hover:bg-white hover:shadow-xl transition-all duration-500">
-                        <h3 className="mb-6 capitalize">{card.title}</h3>
-                        <div className="space-y-3">
-                          {card.items.slice(0, 3).map((item, j) => (
-                            <div key={j} className="flex items-center gap-3">
-                              <div className="w-5 h-5 rounded-full bg-white shadow-sm flex items-center justify-center text-[10px] font-black text-blue-600">✓</div>
-                              <span className="text-[14px] font-black text-gray-500 capitalize tracking-tight">{item}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </section>
+
 
               {/* 7. Final CTA Section */}
               <section>
-                <div className="relative rounded-[3rem] bg-gradient-to-br from-white to-gray-50 py-12 lg:py-16 px-8 lg:px-16 overflow-hidden text-center shadow-[0_40px_80px_rgba(0,0,0,0.05)] border border-gray-100">
+                <div className="relative rounded-[3rem] bg-gradient-to-br from-white to-gray-50 p-12 lg:p-24 overflow-hidden text-center shadow-[0_40px_80px_rgba(0,0,0,0.05)] border border-gray-100">
                   <div className={`absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-br ${TAB_THEMES[activeTab].gradient} opacity-5 blur-[100px]`}></div>
 
                   <div className="relative z-10 flex flex-col items-center">
                     <h2 className="mb-6 capitalize">Build the <br /> future today.</h2>
-                    <p className="text-gray-500 mb-10 max-w-xl font-bold capitalize tracking-widest text-[14px]">Join 10,000+ teams transforming their workplace.</p>
+                    <p className="text-lg lg:text-xl text-gray-500 font-medium leading-relaxed mb-10 max-w-2xl mx-auto">Join 10,000+ teams transforming their workplace.</p>
                     <button
                       onClick={() => setIsModalOpen(true)}
-                      className="press-illusion-btn-orange w-full sm:w-auto sm:min-w-[280px] px-12 py-6 font-black capitalize tracking-[0.2em] text-sm flex items-center justify-center gap-3"
+                      className="press-illusion-btn-orange w-full sm:w-auto sm:min-w-[280px] px-12 py-6 capitalize flex items-center justify-center gap-3"
                     >
                       Request Free Access
                     </button>
@@ -541,15 +723,11 @@ export default function ProductDetailPremiumHRMS({
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" /></svg>
               </button>
 
-              <div className="relative w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-white/20" style={{ aspectRatio: '1.4 / 1' }}>
-                <Image
+              <div className="relative w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+                <img
                   src={selectedImage}
                   alt="Enlarged view"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 900px"
-                  loading="lazy"
-                  unoptimized
-                  className="object-contain"
+                  className="w-full h-auto object-contain"
                 />
               </div>
 
@@ -561,73 +739,13 @@ export default function ProductDetailPremiumHRMS({
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+      </div>
+    </>
   );
 }
 
 
-const SECTION_6_FEATURES = [
-  {
-    title: "Shifts & Duty Rosters",
-    desc: "Efficiently manage employee shifts and duty rosters with flexible scheduling and bulk assignment capabilities.",
-    items: [
-      "Duty roster management",
-      "Bulk assignment of shifts",
-      "Date range allocation",
-      "Scheduling efficiency"
-    ]
-  },
-  {
-    title: "Attendance Processing",
-    desc: "Easily manage and finalize employee attendance with accurate tracking and seamless integration with payroll systems.",
-    items: [
-      "Admin attendance management",
-      "Manual status updates",
-      "Save & Lock feature",
-      "Seamless API integration"
-    ]
-  },
-  {
-    title: "Biometric Connections",
-    desc: "Seamlessly manage employee attendance with biometric integration via the Timestation API, supporting automated syncing.",
-    items: [
-      "Timestation API Integration",
-      "Manual data upload option",
-      "Late entry/OT calculation",
-      "Centralized management"
-    ]
-  },
-  {
-    title: "Public Holiday Master Management",
-    desc: "Easily configure and manage public holidays with flexible options, including department-wise customization to suit organizational needs.",
-    items: [
-      "Admin holiday control",
-      "Dept-wise configuration",
-      "Restrict eligibility",
-      "Flexible policy setup"
-    ]
-  },
-  {
-    title: "Leave Policy Management",
-    desc: "Easily create and manage multiple leave policies by assigning leave types, days, and departments, ensuring employees can only apply for leaves applicable to them.",
-    items: [
-      "Multiple policy creation",
-      "Leave type assignment",
-      "Dept-wise mapping",
-      "Multi-level approvals"
-    ]
-  },
-  {
-    title: "Other Features",
-    desc: "Isarva HRMS is not limited it has many more useful features",
-    items: [
-      "Activity security logger",
-      "OT & Incentive calcs",
-      "Hold/Release salary",
-      "Full & Final settlement"
-    ]
-  }
-];
+
 
 /* ─────────────────────────────────────────────────────────────
    HRMS FEATURE DATA (PORTED FROM LIVE)
