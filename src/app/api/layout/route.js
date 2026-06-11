@@ -150,7 +150,7 @@ function buildHeader() {
       <div class="relative nav-dropdown" data-menu-type="products-static">
         <a class="group text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1" href="${SITE_URL}/products">Products ${chevronDown()}</a>
         <div class="mega-menu mega-menu-center pt-4">
-          <div class="w-[800px]">
+          <div class="w-[920px]">
             <div class="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-100 p-8">
               <div class="mb-6">
                 <h3 class="text-2xl font-bold text-gray-900 mb-2">Our Products</h3>
@@ -169,7 +169,7 @@ function buildHeader() {
       <div class="relative nav-dropdown" data-menu-type="services-static">
         <a class="group text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1" href="${SITE_URL}/services">Services ${chevronDown()}</a>
         <div class="mega-menu mega-menu-center pt-4">
-          <div class="w-[800px]">
+          <div class="w-[920px]">
             <div class="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-100 p-8">
               <div class="mb-6">
                 <h3 class="text-2xl font-bold text-gray-900 mb-2">Our Services</h3>

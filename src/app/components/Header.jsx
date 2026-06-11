@@ -237,7 +237,7 @@ export default function Header() {
 
             {/* Products Mega Menu Dropdown */}
             {isProductsOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[800px]">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[920px]">
                 <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-100 p-8">
                   <div className="mb-6">
                     <h3 className="mb-2">
@@ -333,7 +333,7 @@ export default function Header() {
 
             {/* Mega Menu Dropdown */}
             {isServicesOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[800px]">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[920px]">
                 <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-100 p-8">
                   <div className="mb-6">
                     <h3 className="mb-2">
