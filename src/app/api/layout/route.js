@@ -50,9 +50,11 @@ const industriesData = [
 ];
 
 const aboutLinks = [
-  { label: "Testimonials", href: "/testimonial", icon: "💬" },
-  { label: "Case Studies", href: "/case-studies", icon: "📊" },
+  { label: "About Us", href: "/about", icon: "ℹ️" },
   { label: "Partners", href: "/partners", icon: "🤝" },
+  { label: "Case Studies", href: "/case-studies", icon: "📊" },
+  { label: "Testimonials", href: "/testimonial", icon: "💬" },
+  { label: "Blog", href: "/blog", icon: "✍️" },
   { label: "Careers", href: "/careers", icon: "💼" },
 ];
 
@@ -84,7 +86,7 @@ function buildHeader() {
   const industriesGrid = industriesData.map(i => gridItem(i.href, i.icon, i.label, "blue")).join("\n");
   // About links
   const aboutLinksHtml = aboutLinks.map(a => `
-    <a href="${SITE_URL}${a.href}" class="group flex items-center justify-between p-4 rounded-2xl bg-gray-50 hover:bg-emerald-50 transition-all duration-300 border border-transparent hover:border-emerald-200">
+    <a href="${a.href.startsWith('http') ? a.href : SITE_URL + a.href}" class="group flex items-center justify-between p-4 rounded-2xl bg-gray-50 hover:bg-emerald-50 transition-all duration-300 border border-transparent hover:border-emerald-200">
       <div class="flex items-center gap-3 flex-1 min-w-0">
         <div class="w-10 h-10 rounded-xl bg-white group-hover:bg-[#10b981] flex items-center justify-center transition-colors shadow-sm flex-shrink-0">
           <span class="text-lg group-hover:scale-110 transition-transform">${a.icon}</span>
@@ -121,9 +123,12 @@ function buildHeader() {
           <div class="w-[650px]">
             <div class="bg-white/95 backdrop-blur-xl rounded-[2.5rem] shadow-2xl border border-gray-100 p-8 flex gap-8">
               <a href="${SITE_URL}/about" class="group/featured w-[280px] bg-gradient-to-br from-emerald-50 to-lime-50 rounded-3xl p-6 relative overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col">
+                <div class="absolute inset-0 opacity-10 group-hover/featured:scale-110 transition-transform duration-700">
+                  <img src="${SITE_URL}/agency_office_studio_premium_1773850105446.png" class="w-full h-full object-cover" alt="Isarva team collaboration workspace" loading="lazy" />
+                </div>
                 <div class="relative z-10 flex flex-col h-full">
                   <h4 class="text-xl font-bold text-gray-900 mb-4">About Isarva</h4>
-                  <p class="text-gray-600 text-sm mb-6 font-medium leading-relaxed">At Isarva Infotech, we are more than an IT consulting firm — we are a strategic technology partner enabling organizations to achieve their digital transformation goals.</p>
+                  <p class="text-gray-600 text-sm mb-6 font-medium leading-relaxed">At Isarva Infotech, we are more than an IT consulting firm - we are a strategic technology partner. Company plays a pivotal role in enabling organizations to achieve their digital transformation goals.</p>
                   <div class="mt-auto text-emerald-600 font-bold text-base flex items-center gap-2">Read More <span>→</span></div>
                 </div>
               </a>
