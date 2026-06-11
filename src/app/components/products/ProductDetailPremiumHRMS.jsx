@@ -258,23 +258,6 @@ export default function ProductDetailPremiumHRMS({
     }
   }, [activeTab]);
 
-  // Auto scroll on page load
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (contentTopRef.current) {
-        const offset = 160; // Space for sticky header (102px) + tabs (~58px)
-        const elementPosition = contentTopRef.current.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-    }, 800);
-    return () => clearTimeout(timer);
-  }, []);
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
