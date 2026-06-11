@@ -58,7 +58,7 @@ const WhiteLabelWhoWeWorkWith = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className={`group p-8 rounded-[40px] ${partner.bg} border border-white/50 hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col items-center text-center md:items-start md:text-left gap-6`}
+              className={`group p-8 rounded-[40px] ${partner.bg} border border-white/50 hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500 flex flex-col items-center text-center gap-6`}
             >
               <div className={`w-16 h-16 rounded-2xl bg-white ${partner.color} flex items-center justify-center group-hover:scale-110 transition-all duration-500 shadow-sm`}>
                 <partner.icon className="w-8 h-8" />

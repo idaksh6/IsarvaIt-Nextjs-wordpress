@@ -238,9 +238,14 @@ export default function ProductDetailPremiumHRMS({
   const [isScrolled, setIsScrolled] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const contentTopRef = useRef(null);
+  const isFirstRender = useRef(true);
 
   // Scroll to top of content area when tab changes
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
     if (contentTopRef.current) {
       const offset = 160; // Space for sticky header (102px) + tabs (~58px)
       const elementPosition = contentTopRef.current.getBoundingClientRect().top;
@@ -252,6 +257,23 @@ export default function ProductDetailPremiumHRMS({
       });
     }
   }, [activeTab]);
+
+  // Auto scroll on page load
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (contentTopRef.current) {
+        const offset = 160; // Space for sticky header (102px) + tabs (~58px)
+        const elementPosition = contentTopRef.current.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 800);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
