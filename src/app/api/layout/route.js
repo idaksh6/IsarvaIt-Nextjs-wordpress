@@ -128,7 +128,7 @@ function buildHeader() {
                 </div>
                 <div class="relative z-10 flex flex-col h-full">
                   <h4 class="text-xl font-bold text-gray-900 mb-4">About Isarva</h4>
-                  <p class="text-gray-600 text-sm mb-6 font-medium leading-relaxed">At Isarva Infotech, we are more than an IT consulting firm - we are a strategic technology partner. Company plays a pivotal role in enabling organizations to achieve their digital transformation goals.</p>
+                  <p class="text-gray-600 text-sm mb-6 font-medium leading-relaxed whitespace-normal">At Isarva Infotech, we are more than an IT consulting firm - we are a strategic technology partner. Company plays a pivotal role in enabling organizations to achieve their digital transformation goals.</p>
                   <div class="mt-auto text-emerald-600 font-bold text-base flex items-center gap-2">Read More <span>→</span></div>
                 </div>
               </a>
@@ -246,8 +246,8 @@ export async function GET() {
       if (match) {
         // Make relative URLs absolute
         footerHtml = match[0]
-          .replace(/(href|src)="\/((?!\/)[^"]*?)"/g, `$1="${SITE_URL}/$2"`)
-          .replace(/srcset="([^"]+)"/g, (_, s) =>
+          .replace(/(href|src)="\/((?!\/)[^"]*?)"/gi, `$1="${SITE_URL}/$2"`)
+          .replace(/srcset="([^"]+)"/gi, (_, s) =>
             'srcset="' + s.split(",").map(p => {
               const t = p.trim();
               return t.startsWith("/") ? `${SITE_URL}${t}` : t;
