@@ -51,6 +51,7 @@ const industriesData = [
 
 const aboutLinks = [
   { label: "About Us", href: "/about", icon: "ℹ️" },
+  { label: "Quality Policy", href: "/quality-policy", icon: "📜" },
   { label: "Partners", href: "/partners", icon: "🤝" },
   { label: "Case Studies", href: "/case-studies", icon: "📊" },
   { label: "Testimonials", href: "/testimonial", icon: "💬" },

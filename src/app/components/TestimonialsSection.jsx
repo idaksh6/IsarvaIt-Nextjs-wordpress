@@ -14,6 +14,16 @@ if (typeof window !== "undefined") {
 
 const defaultTestimonials = [
   {
+    id: 11,
+    name: "Mr. Jayakar Shettigar",
+    role: "Founder & CEO",
+    company: "Gurucharan Industries",
+    initials: "JS",
+    gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+    rating: 5,
+    text: "The transformation of our digital presence is remarkable. Our new website now matches the precision of the machinery we build. We’ve seen a direct increase in high-quality international inquiries and a much more professional response from global clients.",
+  },
+  {
     id: 9,
     name: "Prajwal Shetty",
     role: "Secretory",

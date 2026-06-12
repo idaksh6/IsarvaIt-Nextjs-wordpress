@@ -47,7 +47,7 @@ export const metadata = generateSEOMetadata({
     "enterprise quality standards",
   ],
   url: "/quality-policy",
-  noIndex: true,
+  noIndex: false,
 });
 
 const heroHighlights = [

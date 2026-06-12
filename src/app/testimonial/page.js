@@ -9,6 +9,17 @@ import { Star, Quote, PlayCircle, CheckCircle2, Award, Zap, X, Briefcase } from 
 
 const testimonials = [
   {
+    id: 11,
+    name: "Mr. Jayakar Shettigar",
+    role: "Founder & CEO",
+    company: "Gurucharan Industries",
+    image: "/Testimonials/Mr-Jayakar-Shettigar.png",
+    text: "The transformation of our digital presence is remarkable. Our new website now matches the precision of the machinery we build. We’ve seen a direct increase in high-quality international inquiries and a much more professional response from global clients. Isarva Infotech has given us a powerful tool for our global growth.",
+    highlight: "Digital presence matches the precision of our machinery.",
+    rating: 5,
+    tag: "Global Growth"
+  },
+  {
     id: 10,
     name: "Prajwal Shetty",
     role: "Secretory",
@@ -452,12 +463,8 @@ export default function TestimonialPage() {
           </div>
 
           {/* Desktop Grid (visible on tablet and above) */}
-          <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-24 gap-x-10">
+          <div className="hidden md:flex flex-wrap justify-center gap-y-24 gap-x-10">
             {testimonials.map((t, idx) => {
-              const isLast = idx === testimonials.length - 1;
-              const lastAloneInRowLg = isLast && testimonials.length % 3 === 1;
-              const lastAloneInRowMd = isLast && testimonials.length % 2 === 1;
-
               return (
               <motion.div
                 key={t.id}
@@ -465,7 +472,7 @@ export default function TestimonialPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className={`relative bg-[#FDF8F2] pt-20 pb-12 px-10 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.03)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.08)] transition-all duration-500 flex flex-col h-full group border border-emerald-500/5 hover:-translate-y-2${lastAloneInRowMd ? " md:col-span-2 md:max-w-[calc(50%-1.25rem)] md:justify-self-center" : ""}${lastAloneInRowLg ? " lg:col-start-2 lg:col-span-1 lg:max-w-none lg:justify-self-auto" : ""}`}
+                className="relative bg-[#FDF8F2] pt-20 pb-12 px-10 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.03)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.08)] transition-all duration-500 flex flex-col group border border-emerald-500/5 hover:-translate-y-2 w-full md:w-[calc(50%-20px)] lg:w-[calc(33.333%-27px)]"
               >
                 {/* 1. Client Photo Centered and Overlapping */}
                 <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-32 h-32 rounded-full border-[8px] border-white shadow-2xl overflow-hidden bg-white z-20 group-hover:scale-105 transition-transform duration-500">
