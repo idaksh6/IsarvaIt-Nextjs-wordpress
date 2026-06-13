@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import WhatsAppWidget from "./WhatsAppWidget";
 
 // Lazy load chatbot components - they're heavy and not needed immediately
 const Chatbot = dynamic(() => import("./Chatbot/Chatbot"), {
@@ -18,6 +19,7 @@ export default function ClientProviders() {
     <>
       {/* <Chatbot /> */}
       {/* <IsarvaAIChatbot /> */}
+      <WhatsAppWidget />
     </>
   );
 }

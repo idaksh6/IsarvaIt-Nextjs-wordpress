@@ -39,17 +39,6 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
     );
   }
 
-  // Use V2 View for HRMS Software V2
-  if (product.slug === 'hrms-software-v2') {
-    return (
-      <ProductDetailPremiumHRMS 
-        product={product} 
-        relatedProducts={relatedProducts} 
-        allProducts={allProducts}
-      />
-    );
-  }
-
   // Use Premium View for HRMS Software (Old)
   if (product.slug === 'hrms-software-old') {
     return (

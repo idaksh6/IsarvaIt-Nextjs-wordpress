@@ -2,9 +2,9 @@ import IsarvaErpClient from './IsarvaErpClient';
 
 // SEO Metadata — noindex/nofollow scoped to this page only
 export const metadata = {
-  title: 'iSARVA ERP | Isarva Infotech',
+  title: 'ISARVA ERP | Isarva Infotech',
   description:
-    'iSARVA ERP unifies CRM, HRMS, Inventory, Finance, Accounting, and Project Management into one intelligent platform.',
+    'ISARVA ERP unifies CRM, HRMS, Inventory, Finance, Accounting, and Project Management into one intelligent platform.',
   authors: [{ name: 'Isarva Infotech' }],
   creator: 'Isarva Infotech',
   publisher: 'Isarva Infotech',
@@ -13,9 +13,9 @@ export const metadata = {
     follow: false,
   },
   openGraph: {
-    title: 'iSARVA ERP | Isarva Infotech',
+    title: 'ISARVA ERP | Isarva Infotech',
     description:
-      'iSARVA ERP unifies CRM, HRMS, Inventory, Finance, Accounting, and Project Management into one intelligent platform.',
+      'ISARVA ERP unifies CRM, HRMS, Inventory, Finance, Accounting, and Project Management into one intelligent platform.',
     url: 'https://www.isarvait.com/product/isarva-erp',
     siteName: 'Isarva Infotech',
     locale: 'en_US',

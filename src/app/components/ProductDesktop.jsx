@@ -48,7 +48,7 @@ const products = [
   },
   {
     id: 3,
-    name: "Support Application",
+    name: "Support Software",
     slug: "support-application",
     category: "Customer Support",
     short:
@@ -60,7 +60,7 @@ const products = [
   },
   {
     id: 7,
-    name: "CRM Application",
+    name: "CRM Software",
     slug: "crm-application",
     category: "Sales & Marketing",
     short:

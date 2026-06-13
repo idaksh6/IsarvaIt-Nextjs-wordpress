@@ -42,44 +42,6 @@ export const productsData = [
     bgGradient: "from-blue-50 via-indigo-50 to-white",
   },
   {
-    slug: "hrms-software-v2",
-    title: "HRMS Software V2",
-    category: "Human Resources",
-    icon: "👥",
-    tagline: "HR Management Workspace",
-    shortDescription:
-      "A complete, modern HRMS solution for streamlining employee management and tracking performance.",
-    description:
-      "Transform your HR department with our powerful HRMS software. Effortlessly manage employee data, automate payroll processing, track attendance, and drive performance all from a unified workspace.",
-    features: [
-      "Employee Information Management",
-      "Payroll Processing & Tax Compliance",
-      "Attendance & Leave Tracking",
-      "Performance Management",
-      "Recruitment & Onboarding",
-      "Employee Self-Service Portal",
-      "Reports & Analytics Dashboard",
-      "Mobile App for Employees",
-    ],
-    technologies: [
-      "React",
-      "Node.js",
-      "PostgreSQL",
-      "Redis",
-      "Cloud Infrastructure",
-    ],
-    benefits: [
-      "Risk-Free Testing",
-      "UI/UX Experimentation",
-      "Feature Validation",
-      "Team Feedback Loop",
-      "Deployment Readiness",
-    ],
-    color: "from-blue-500 to-indigo-600",
-    bgGradient: "from-blue-50 via-indigo-50 to-white",
-  },
-
-  {
     slug: "hrms-software-old",
     title: "HRMS Software (Old)",
     category: "Human Resources",
@@ -118,14 +80,14 @@ export const productsData = [
   },
   {
     slug: "support-application",
-    title: "Support Application",
+    title: "Support Software",
     category: "Customer Support",
     icon: "🎧",
     tagline: "Complete Project, Task & Support Management",
     shortDescription:
       "A powerful workspace to manage end-to-end project lifecycles, team tasks, and customer support tickets in one unified system.",
     description:
-      "Deliver exceptional customer support with our comprehensive support application. Manage tickets, track issues, automate responses, and provide seamless multi-channel support to keep your customers satisfied.",
+      "Deliver exceptional customer support with our comprehensive support software. Manage tickets, track issues, automate responses, and provide seamless multi-channel support to keep your customers satisfied.",
     features: [
       "Multi-Channel Ticket Management",
       "Automated Ticket Assignment & Routing",
@@ -156,14 +118,14 @@ export const productsData = [
 
   {
     slug: "crm-application-old",
-    title: "CRM Application (Old)",
+    title: "CRM Software (Old)",
     category: "Customer Relationship Management",
     icon: "👔",
     tagline: "Complete Customer Relationship Management",
     shortDescription:
       "Powerful CRM solution for managing leads, contacts, sales pipeline, and customer interactions.",
     description:
-      "Transform your customer relationships with our comprehensive CRM application. Manage your entire sales pipeline, track customer interactions, automate follow-ups, and gain valuable insights to close more deals and retain customers.",
+      "Transform your customer relationships with our comprehensive CRM software. Manage your entire sales pipeline, track customer interactions, automate follow-ups, and gain valuable insights to close more deals and retain customers.",
     features: [
       "Lead & Contact Management",
       "Sales Pipeline Tracking",
@@ -193,14 +155,14 @@ export const productsData = [
   },
   {
     slug: "crm-application",
-    title: "CRM Application",
+    title: "CRM Software",
     category: "Customer Relationship Management",
     icon: "👔",
     tagline: "Complete Customer Relationship Management",
     shortDescription:
       "Powerful CRM solution for managing leads, contacts, sales pipeline, and customer interactions.",
     description:
-      "Transform your customer relationships with our comprehensive CRM application. Manage your entire sales pipeline, track customer interactions, automate follow-ups, and gain valuable insights to close more deals and retain customers.",
+      "Transform your customer relationships with our comprehensive CRM software. Manage your entire sales pipeline, track customer interactions, automate follow-ups, and gain valuable insights to close more deals and retain customers.",
     features: [
       "Lead & Contact Management",
       "Sales Pipeline Tracking",
@@ -596,7 +558,7 @@ export const productsData = [
   },
   {
     slug: "bill-soft",
-    title: "Bill-Soft Application",
+    title: "Bill-Soft Software",
     category: "Billing & Inventory",
     icon: "🧾",
     tagline: "All-in-One Business Management Solution",
