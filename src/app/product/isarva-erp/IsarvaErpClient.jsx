@@ -519,7 +519,7 @@ export default function IsarvaErpClient() {
                       </div>
                       <div className="p-[1.1rem] bg-white rounded-b-[18px] relative overflow-hidden">
                         <img
-                          src="/products/Isarva-erp/hero.png"
+                          src="/products/isarva-erp/hero.png"
                           alt="Isarva ERP dashboard with CRM, HRMS, inventory, finance, and projects"
                           className="w-full h-auto rounded-[10px] shadow-[0_12px_32px_rgba(15,23,42,0.1)] block"
                           width="580"
