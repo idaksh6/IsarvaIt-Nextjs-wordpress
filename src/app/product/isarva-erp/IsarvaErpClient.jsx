@@ -1602,10 +1602,10 @@ export default function IsarvaErpClient() {
             </div>
 
             <div className="border border-slate-900/[0.08] rounded-[24px] shadow-[0_18px_44px_rgba(15,23,42,0.07)] overflow-hidden bg-white">
-              <div className="overflow-x-auto">
-                <div className="min-w-[800px] flex flex-col" role="table" aria-label="Comparison Table">
+              <div className="overflow-x-auto sm:overflow-x-visible">
+                <div className="min-w-[800px] sm:min-w-0 flex flex-col" role="table" aria-label="Comparison Table">
                   {/* Table Head */}
-                  <div className="grid grid-cols-[minmax(0,1.35fr)_repeat(3,minmax(0,1fr))] align-stretch border-b border-slate-900/[0.07] bg-gradient-to-r from-[#f8fafc] to-[#ecfdf5]" role="row">
+                  <div className="hidden sm:grid grid-cols-[minmax(0,1.35fr)_repeat(3,minmax(0,1fr))] align-stretch border-b border-slate-900/[0.07] bg-gradient-to-r from-[#f8fafc] to-[#ecfdf5]" role="row">
                     <div className="flex flex-col items-start justify-center text-left gap-1.5 p-5 pl-6 border-r border-slate-900/[0.06]" role="columnheader">
                       <span className="font-display text-[0.82rem] font-extrabold tracking-[0.06em] uppercase text-[#64748b]">What matters</span>
                     </div>
@@ -1670,9 +1670,9 @@ export default function IsarvaErpClient() {
                       Isarva: { text: "✓ One platform", status: "yes" }
                     }
                   ].map((row, idx) => (
-                    <div key={idx} className="grid grid-cols-[minmax(0,1.35fr)_repeat(3,minmax(0,1fr))] border-b border-slate-900/[0.06] last:border-0 hover:bg-emerald-500/[0.03] transition-colors duration-300" role="row">
+                    <div key={idx} className="grid grid-cols-1 gap-0 pb-2 mb-3 border border-slate-900/10 rounded-2xl overflow-hidden bg-white sm:grid-cols-[minmax(0,1.35fr)_repeat(3,minmax(0,1fr))] sm:pb-0 sm:mb-0 sm:border-0 sm:border-b sm:border-slate-900/[0.06] sm:last:border-0 sm:rounded-none sm:bg-transparent hover:bg-emerald-500/[0.03] transition-colors duration-300" role="row">
                       {/* Feature Description */}
-                      <div className="flex items-start justify-start text-left gap-3 p-5 pl-6 border-r border-slate-900/[0.06]" role="rowheader">
+                      <div className="flex items-start justify-start text-left gap-3 p-5 pl-6 border-b border-slate-900/5 bg-gradient-to-br from-slate-50 to-emerald-50/50 sm:border-b-0 sm:border-r sm:border-slate-900/[0.06] sm:bg-none" role="rowheader">
                         <span className="w-11 h-11 flex items-center justify-center text-[1.25rem] leading-none rounded-[12px] bg-gradient-to-br from-[#f0fdf4] to-[#ecfdf5] border border-emerald-500/18 shrink-0 hover:scale-108 transition-transform duration-350" aria-hidden="true">{row.icon}</span>
                         <div className="flex flex-col items-start gap-1 flex-1 min-w-0">
                           <h4>{row.title}</h4>
@@ -1681,7 +1681,8 @@ export default function IsarvaErpClient() {
                       </div>
 
                       {/* Sheets Cell */}
-                      <div className="flex items-center justify-center p-5 border-r border-slate-900/[0.06] text-center" role="cell">
+                      <div className="flex flex-col sm:flex-row items-center justify-center gap-1.5 p-3.5 border-b border-slate-900/5 sm:border-b-0 sm:border-r sm:border-slate-900/[0.06] sm:p-5 text-center" role="cell">
+                        <span className="text-[0.68rem] font-extrabold tracking-[0.05em] uppercase text-slate-400 sm:hidden">Spreadsheets</span>
                         <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[0.78rem] font-bold leading-normal ${row.sheets.status === "weak" ? "text-slate-500 bg-slate-400/12 border border-slate-400/20" : "text-amber-700 bg-amber-500/10 border border-amber-500/20"
                           }`}>
                           {row.sheets.text}
@@ -1689,7 +1690,8 @@ export default function IsarvaErpClient() {
                       </div>
 
                       {/* Apps Cell */}
-                      <div className="flex items-center justify-center p-5 border-r border-slate-900/[0.06] text-center" role="cell">
+                      <div className="flex flex-col sm:flex-row items-center justify-center gap-1.5 p-3.5 border-b border-slate-900/5 sm:border-b-0 sm:border-r sm:border-slate-900/[0.06] sm:p-5 text-center" role="cell">
+                        <span className="text-[0.68rem] font-extrabold tracking-[0.05em] uppercase text-slate-400 sm:hidden">Many apps</span>
                         <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[0.78rem] font-bold leading-normal ${row.apps.status === "weak" ? "text-slate-500 bg-slate-400/12 border border-slate-400/20" : "text-amber-700 bg-amber-500/10 border border-amber-500/20"
                           }`}>
                           {row.apps.text}
@@ -1697,7 +1699,8 @@ export default function IsarvaErpClient() {
                       </div>
 
                       {/* Isarva ERP Cell */}
-                      <div className="flex items-center justify-center p-5 bg-[#0fb84e]/[0.05] border-r-0 text-center" role="cell">
+                      <div className="flex flex-col sm:flex-row items-center justify-center gap-1.5 p-3.5 bg-emerald-500/[0.07] sm:bg-[#0fb84e]/[0.05] sm:p-5 text-center" role="cell">
+                        <span className="text-[0.68rem] font-extrabold tracking-[0.05em] uppercase text-emerald-600 sm:hidden">iSARVA ERP</span>
                         <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[0.78rem] font-bold text-emerald-800 bg-emerald-500/12 border border-emerald-500/22 hover:scale-[1.04] transition-transform duration-250">
                           {row.Isarva.text}
                         </span>
@@ -1712,7 +1715,7 @@ export default function IsarvaErpClient() {
 
         {/* Section 4e: Pricing */}
         <section className="py-12 lg:py-16 relative overflow-hidden border-t border-b border-slate-900/5" id="pricing" style={{
-          background: 'radial-gradient(ellipse 65% 45% at 50% 0%, rgba(16, 185, 129, 0.05), transparent 60%), linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)'
+          background: 'radial-gradient(ellipse 60% 45% at 50% 0%, rgba(15, 184, 78, 0.08), transparent 60%), linear-gradient(180deg, #ecfdf5 0%, #f8fafc 50%, #ffffff 100%)'
         }}>
           <div className="max-w-[1280px] mx-auto px-5 md:px-10 w-full">
             <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
@@ -1723,69 +1726,84 @@ export default function IsarvaErpClient() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1.35rem] items-stretch max-w-6xl mx-auto mb-8">
               {/* Starter Plan */}
-              <article className="bg-white border border-slate-900/[0.06] rounded-3xl p-8 flex flex-col justify-between gap-8 shadow-[0_4px_20px_rgba(15,23,42,0.02)] hover:border-slate-900/10 hover:shadow-[0_12px_30px_rgba(15,23,42,0.04)] hover:-translate-y-1 transition-all duration-300 relative">
-                <div className="flex flex-col gap-6">
-                  <div className="flex flex-col gap-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-2xl leading-none" aria-hidden="true">🌱</span>
-                      <span className="text-[10px] font-extrabold tracking-widest uppercase text-slate-400 bg-slate-100 px-2.5 py-1 rounded-full">Starter</span>
-                    </div>
-                    <h3 className="text-slate-900 mb-3 text-lg sm:text-xl font-extrabold">Just Getting Started</h3>
-                    <p className="text-slate-500 text-sm leading-relaxed">Best for one location taking its first step away from spreadsheets.</p>
-                  </div>
-                  <ul className="flex flex-col gap-3.5 border-t border-slate-900/5 pt-6 text-sm text-slate-600">
-                    <li className="flex items-start gap-2.5"><span className="text-emerald-500 font-bold" aria-hidden="true">✓</span> Up to 25 team members</li>
-                    <li className="flex items-start gap-2.5"><span className="text-emerald-500 font-bold" aria-hidden="true">✓</span> Any 2 modules you choose</li>
-                    <li className="flex items-start gap-2.5"><span className="text-emerald-500 font-bold" aria-hidden="true">✓</span> Email support</li>
-                    <li className="flex items-start gap-2.5"><span className="text-emerald-500 font-bold" aria-hidden="true">✓</span> Guided data import</li>
-                  </ul>
+              <article
+                className="group relative flex flex-col items-center text-center gap-5 p-8 bg-white border border-slate-900/[0.08] rounded-[20px] shadow-[0_10px_32px_rgba(15,23,42,0.06)] hover:border-[#0891b2]/25 hover:shadow-[0_20px_44px_rgba(15,23,42,0.1)] hover:-translate-y-2 transition-all duration-350"
+                style={{
+                  '--plan-accent-soft': 'rgba(8, 145, 178, 0.1)',
+                  '--plan-accent-border': 'rgba(8, 145, 178, 0.25)',
+                  '--plan-accent': '#0891b2'
+                }}
+              >
+                <div className="flex flex-col items-center gap-[0.45rem] w-full">
+                  <div className="w-[3.25rem] h-[3.25rem] flex items-center justify-center text-[1.55rem] leading-none rounded-[14px] bg-[#0891b2]/10 border border-[#0891b2]/25 mb-[0.25rem] group-hover:scale-108 transition-transform duration-350">🌱</div>
+                  <span className="text-[0.72rem] font-extrabold uppercase tracking-[0.1em] text-[#0891b2]">Starter</span>
+                  <h3>Just Getting Started</h3>
+                  <p className="text-[#64748b] text-[0.88rem] leading-[1.6] max-w-[15rem]">Best for one location taking its first step away from spreadsheets.</p>
                 </div>
-                <a href="#contact" className="w-full text-center px-6 py-3.5 rounded-xl border border-slate-900/15 hover:border-emerald-500 hover:bg-emerald-50/20 text-slate-700 hover:text-emerald-700 font-bold text-sm transition-all duration-300">Request Quote</a>
+                <ul className="flex flex-col gap-[0.55rem] w-full items-center flex-1">
+                  {["Up to 25 team members", "Any 2 modules you choose", "Email support", "Guided data import"].map((feat, i) => (
+                    <li key={i} className="inline-flex items-center justify-center gap-[0.45rem] text-[0.86rem] text-[#475569] leading-[1.45] text-center py-1.5 px-3.5 rounded-full bg-[#f8fafc] border border-slate-900/5 w-full max-w-[16.5rem] group-hover:bg-white group-hover:border-[#0891b2]/25 transition-all duration-250">
+                      <span className="w-[1.1rem] h-[1.1rem] inline-flex items-center justify-center rounded-full bg-[#0891b2]/10 text-[#0891b2] text-[0.62rem] font-black shrink-0">✓</span>
+                      {feat}
+                    </li>
+                  ))}
+                </ul>
+                <a href="#contact" className="w-full max-w-[16.5rem] text-center py-[0.85rem] px-6 rounded-xl border border-slate-900/15 hover:border-[#0891b2] hover:bg-[#0891b2]/3 text-slate-700 hover:text-[#0891b2] font-bold text-sm transition-all duration-300 mt-[0.25rem]">Request Quote</a>
               </article>
 
               {/* Growth Plan (Featured) */}
-              <article className="bg-white border-2 border-emerald-500 rounded-3xl p-8 flex flex-col justify-between gap-8 shadow-[0_12px_40px_rgba(15,184,78,0.08)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
-                <span className="absolute top-3 right-3 bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">Most picked</span>
-                <div className="flex flex-col gap-6">
-                  <div className="flex flex-col gap-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-2xl leading-none" aria-hidden="true">🚀</span>
-                      <span className="text-[10px] font-extrabold tracking-widest uppercase text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">Growth</span>
-                    </div>
-                    <h3 className="text-slate-900 mb-3 text-lg sm:text-xl font-extrabold">Ready to Scale</h3>
-                    <p className="text-slate-500 text-sm leading-relaxed">For growing teams that want every module, branch, and integration connected.</p>
-                  </div>
-                  <ul className="flex flex-col gap-3.5 border-t border-emerald-500/10 pt-6 text-sm text-slate-600">
-                    <li className="flex items-start gap-2.5"><span className="text-emerald-500 font-bold" aria-hidden="true">✓</span> Up to 100 team members</li>
-                    <li className="flex items-start gap-2.5"><span className="text-emerald-500 font-bold" aria-hidden="true">✓</span> All 6 modules included</li>
-                    <li className="flex items-start gap-2.5"><span className="text-emerald-500 font-bold" aria-hidden="true">✓</span> Connect banks, shops &amp; apps</li>
-                    <li className="flex items-start gap-2.5"><span className="text-emerald-500 font-bold" aria-hidden="true">✓</span> Priority setup support</li>
-                  </ul>
+              <article
+                className="group relative flex flex-col items-center text-center gap-5 p-8 bg-gradient-to-b from-white to-[#f0fdf4] border border-[#10b981]/25 rounded-[20px] shadow-[0_16px_40px_rgba(15,184,78,0.14)] hover:shadow-[0_24px_52px_rgba(15,184,78,0.18)] hover:-translate-y-2 transition-all duration-350 overflow-visible"
+                style={{
+                  '--plan-accent-soft': 'rgba(5, 150, 105, 0.12)',
+                  '--plan-accent-border': 'rgba(5, 150, 105, 0.3)',
+                  '--plan-accent': '#059669'
+                }}
+              >
+                <span className="absolute top-[-0.65rem] left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#0fb84e] to-[#059669] text-white text-[0.65rem] font-extrabold tracking-[0.07em] uppercase px-3.5 py-1.5 rounded-full shadow-[0_4px_14px_rgba(15,184,78,0.35)] shrink-0 z-10">Most picked</span>
+                <div className="flex flex-col items-center gap-[0.45rem] w-full">
+                  <div className="w-[3.25rem] h-[3.25rem] flex items-center justify-center text-[1.55rem] leading-none rounded-[14px] bg-[#059669]/12 border border-[#059669]/30 mb-[0.25rem] group-hover:scale-108 transition-transform duration-350">🚀</div>
+                  <span className="text-[0.72rem] font-extrabold uppercase tracking-[0.1em] text-[#059669]">Growth</span>
+                  <h3>Ready to Scale</h3>
+                  <p className="text-[#64748b] text-[0.88rem] leading-[1.6] max-w-[15rem]">For growing teams that want every module, branch, and integration connected.</p>
                 </div>
-                <a href="#contact" className="w-full text-center px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-bold text-sm shadow-md hover:shadow-lg hover:brightness-105 active:scale-[0.98] transition-all duration-300">Book Demo</a>
+                <ul className="flex flex-col gap-[0.55rem] w-full items-center flex-1">
+                  {["Up to 100 team members", "All 6 modules included", "Connect banks, shops & apps", "Priority setup support"].map((feat, i) => (
+                    <li key={i} className="inline-flex items-center justify-center gap-[0.45rem] text-[0.86rem] text-[#475569] leading-[1.45] text-center py-1.5 px-3.5 rounded-full bg-[#f8fafc] border border-slate-900/5 w-full max-w-[16.5rem] group-hover:bg-white group-hover:border-[#059669]/30 transition-all duration-250">
+                      <span className="w-[1.1rem] h-[1.1rem] inline-flex items-center justify-center rounded-full bg-[#059669]/12 text-[#059669] text-[0.62rem] font-black shrink-0">✓</span>
+                      {feat}
+                    </li>
+                  ))}
+                </ul>
+                <a href="#contact" className="w-full max-w-[16.5rem] text-center py-[0.85rem] px-6 rounded-xl bg-gradient-to-r from-[#0fb84e] to-[#088c3a] text-white font-bold text-sm shadow-[0_10px_20px_rgba(15,184,78,0.2)] hover:shadow-[0_15px_30px_rgba(15,184,78,0.35)] transition-all duration-300 mt-[0.25rem]">Book Demo</a>
               </article>
 
               {/* Enterprise Plan */}
-              <article className="bg-white border border-slate-900/[0.06] rounded-3xl p-8 flex flex-col justify-between gap-8 shadow-[0_4px_20px_rgba(15,23,42,0.02)] hover:border-slate-900/10 hover:shadow-[0_12px_30px_rgba(15,23,42,0.04)] hover:-translate-y-1 transition-all duration-300 relative">
-                <div className="flex flex-col gap-6">
-                  <div className="flex flex-col gap-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-2xl leading-none" aria-hidden="true">🏢</span>
-                      <span className="text-[10px] font-extrabold tracking-widest uppercase text-slate-400 bg-slate-100 px-2.5 py-1 rounded-full">Enterprise</span>
-                    </div>
-                    <h3 className="text-slate-900 mb-3 text-lg sm:text-xl font-extrabold">Large &amp; Complex Teams</h3>
-                    <p className="text-slate-500 text-sm leading-relaxed">For multi-branch businesses that need custom support and flexible hosting.</p>
-                  </div>
-                  <ul className="flex flex-col gap-3.5 border-t border-slate-900/5 pt-6 text-sm text-slate-600">
-                    <li className="flex items-start gap-2.5"><span className="text-emerald-500 font-bold" aria-hidden="true">✓</span> Unlimited users (custom)</li>
-                    <li className="flex items-start gap-2.5"><span className="text-emerald-500 font-bold" aria-hidden="true">✓</span> Multiple companies &amp; currencies</li>
-                    <li className="flex items-start gap-2.5"><span className="text-emerald-500 font-bold" aria-hidden="true">✓</span> Dedicated support team</li>
-                    <li className="flex items-start gap-2.5"><span className="text-emerald-500 font-bold" aria-hidden="true">✓</span> Cloud, on-prem, or hybrid</li>
-                  </ul>
+              <article
+                className="group relative flex flex-col items-center text-center gap-5 p-8 bg-white border border-slate-900/[0.08] rounded-[20px] shadow-[0_10px_32px_rgba(15,23,42,0.06)] hover:border-[#7c3aed]/25 hover:shadow-[0_20px_44px_rgba(15,23,42,0.1)] hover:-translate-y-2 transition-all duration-350"
+                style={{
+                  '--plan-accent-soft': 'rgba(124, 58, 237, 0.1)',
+                  '--plan-accent-border': 'rgba(124, 58, 237, 0.25)',
+                  '--plan-accent': '#7c3aed'
+                }}
+              >
+                <div className="flex flex-col items-center gap-[0.45rem] w-full">
+                  <div className="w-[3.25rem] h-[3.25rem] flex items-center justify-center text-[1.55rem] leading-none rounded-[14px] bg-[#7c3aed]/10 border border-[#7c3aed]/25 mb-[0.25rem] group-hover:scale-108 transition-transform duration-350">🏢</div>
+                  <span className="text-[0.72rem] font-extrabold uppercase tracking-[0.1em] text-[#7c3aed]">Enterprise</span>
+                  <h3>Large &amp; Complex Teams</h3>
+                  <p className="text-[#64748b] text-[0.88rem] leading-[1.6] max-w-[15rem]">For multi-branch businesses that need custom support and flexible hosting.</p>
                 </div>
-                <a href="#contact" className="w-full text-center px-6 py-3.5 rounded-xl border border-slate-900/15 hover:border-emerald-500 hover:bg-emerald-50/20 text-slate-700 hover:text-emerald-700 font-bold text-sm transition-all duration-300">Talk to Sales</a>
+                <ul className="flex flex-col gap-[0.55rem] w-full items-center flex-1">
+                  {["Unlimited users (custom)", "Multiple companies & currencies", "Dedicated support team", "Cloud, on-prem, or hybrid"].map((feat, i) => (
+                    <li key={i} className="inline-flex items-center justify-center gap-[0.45rem] text-[0.86rem] text-[#475569] leading-[1.45] text-center py-1.5 px-3.5 rounded-full bg-[#f8fafc] border border-slate-900/5 w-full max-w-[16.5rem] group-hover:bg-white group-hover:border-[#7c3aed]/25 transition-all duration-250">
+                      <span className="w-[1.1rem] h-[1.1rem] inline-flex items-center justify-center rounded-full bg-[#7c3aed]/10 text-[#7c3aed] text-[0.62rem] font-black shrink-0">✓</span>
+                      {feat}
+                    </li>
+                  ))}
+                </ul>
+                <a href="#contact" className="w-full max-w-[16.5rem] text-center py-[0.85rem] px-6 rounded-xl border border-slate-900/15 hover:border-[#7c3aed] hover:bg-[#7c3aed]/3 text-slate-700 hover:text-[#7c3aed] font-bold text-sm transition-all duration-300 mt-[0.25rem]">Talk to Sales</a>
               </article>
             </div>
 
@@ -1793,20 +1811,21 @@ export default function IsarvaErpClient() {
           </div>
         </section>
 
+
         {/* Section 4f: FAQ */}
         <section className="py-12 lg:py-16 relative overflow-hidden border-t border-b border-slate-900/5" id="faq" style={{
-          background: 'linear-gradient(180deg, #ffffff 0%, #ecfeff 100%)'
+          background: 'radial-gradient(ellipse 55% 40% at 50% 0%, rgba(6, 182, 212, 0.06), transparent 60%), linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)'
         }}>
           <div className="max-w-[1280px] mx-auto px-5 md:px-10 w-full">
             <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
               <span className="text-xs font-extrabold capitalize tracking-widest text-[#0891b2] mb-3 block">FAQ</span>
               <h2 className="text-gray-900 mb-4 capitalize">Common Questions, Straight Answers</h2>
               <p className="text-slate-600 text-base sm:text-lg">
-                Thinking about switching to Isarva ERP? Here are the things teams ask us most—explained in plain language.
+                Thinking about switching to iSARVA ERP? Here are the things teams ask us most—explained in plain language.
               </p>
             </div>
 
-            <div className="max-w-3xl mx-auto flex flex-col gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 max-w-6xl mx-auto">
               {[
                 { icon: "⏱️", question: "How long until we can go live?", answer: "Most teams go live in <strong>4 to 12 weeks</strong>. The timeline depends on how many modules you need, how many branches you run, and how much existing data we need to move over." },
                 { icon: "🧩", question: "Can we start with just a few modules?", answer: "Yes. Many teams begin with HR, inventory, or accounts—and add sales, finance, and projects later when everyone is comfortable with the system." },
@@ -1815,15 +1834,21 @@ export default function IsarvaErpClient() {
                 { icon: "🔐", question: "How is our data kept secure?", answer: "Role-based access, a full history of every change, and encrypted connections work together to protect payroll and financial records across all modules." },
                 { icon: "🎓", question: "What training and support do we get?", answer: "Hands-on onboarding for each role, admin guides, and ongoing support during and after launch—with premium service levels available on enterprise plans." }
               ].map((faq, idx) => (
-                <details key={idx} className="group bg-white border border-slate-900/[0.06] rounded-2xl [&_summary::-webkit-details-marker]:hidden">
-                  <summary className="flex items-center justify-between gap-4 p-5 font-bold text-slate-900 hover:text-[#0891b2] cursor-pointer transition-colors duration-200">
+                <details key={idx} className="group bg-gradient-to-b from-[#f8fafc] to-white border border-slate-900/[0.07] rounded-2xl [&_summary::-webkit-details-marker]:hidden hover:border-[#0891b2]/22 hover:shadow-[0_6px_20px_rgba(8,145,178,0.08)] open:bg-gradient-to-b open:from-[#f0fdfa] open:to-white open:border-[#0891b2]/28 open:shadow-[0_8px_24px_rgba(8,145,178,0.1)] transition-all duration-300">
+                  <summary className="flex items-center justify-between gap-3.5 p-[1.1rem_1.25rem] font-bold text-slate-900 cursor-pointer list-none relative">
                     <div className="flex items-center gap-3.5">
-                      <span className="text-xl leading-none" aria-hidden="true">{faq.icon}</span>
-                      <span className="text-sm sm:text-base">{faq.question}</span>
+                      <span className="w-10 h-10 flex items-center justify-center text-xl leading-none rounded-xl bg-[#0891b2]/10 border border-[#0891b2]/18 shrink-0 group-open:scale-108 group-open:bg-[#0891b2]/15 transition-all duration-300" aria-hidden="true">{faq.icon}</span>
+                      <span className="text-[0.98rem] text-[#0f172a] font-extrabold leading-[1.4] text-left">{faq.question}</span>
                     </div>
-                    <span className="shrink-0 w-5 h-5 rounded-full border border-slate-300 flex items-center justify-center text-xs group-open:rotate-180 transition-transform duration-200">▼</span>
+                    <span className="w-[1.75rem] h-[1.75rem] rounded-full bg-[#0891b2]/10 border border-[#0891b2]/20 flex items-center justify-center text-xs relative shrink-0 group-open:rotate-180 group-open:bg-[#0891b2]/18 transition-all duration-350">
+                      {/* Plus/minus chevron vector rendering */}
+                      <span className="absolute w-[0.55rem] h-[2px] bg-[#0891b2] rounded" />
+                      <span className="absolute w-[0.55rem] h-[2px] bg-[#0891b2] rounded rotate-90 group-open:rotate-0 group-open:opacity-0 transition-all duration-350" />
+                    </span>
                   </summary>
-                  <div className="p-5 border-t border-slate-900/5 text-sm text-slate-500 leading-relaxed bg-slate-50/50 rounded-b-2xl" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                  <div className="faq-answer border-t border-slate-900/5 transition-all duration-300">
+                    <p className="p-[0.5rem_1.25rem_1.2rem_4.6rem] text-sm text-[#64748b] leading-[1.65] text-left" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                  </div>
                 </details>
               ))}
             </div>
@@ -1831,51 +1856,54 @@ export default function IsarvaErpClient() {
         </section>
 
         {/* Section 5: Modern Footer CTA */}
-        <section className="py-16 lg:py-24 relative overflow-hidden bg-slate-900 text-white" id="contact">
-          {/* Subtle grid pattern overlay */}
-          <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#334155_1px,transparent_1px),linear-gradient(to_bottom,#334155_1px,transparent_1px)] bg-[size:4rem_4rem]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/50 to-transparent" />
-          <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-emerald-500/10 blur-[100px] pointer-events-none" />
-          <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-cyan-500/10 blur-[100px] pointer-events-none" />
+        <section className="py-24 relative overflow-hidden text-white" id="contact" style={{
+          background: 'linear-gradient(135deg, #0d6b5e 0%, #0d9488 38%, #059669 68%, #00a86b 100%)'
+        }}>
+          {/* Grid pattern overlay */}
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px)',
+            backgroundSize: '48px 48px'
+          }} aria-hidden="true" />
 
           <div className="max-w-[1280px] mx-auto px-5 md:px-10 relative z-10 w-full">
-            <div className="max-w-4xl mx-auto flex flex-col items-center text-center gap-8">
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-extrabold uppercase tracking-widest text-emerald-400">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <div className="max-w-[720px] mx-auto flex flex-col items-center text-center">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/12 border border-white/20 text-xs font-semibold text-white/95 mb-6 backdrop-blur-[6px]">
+                <span className="w-1.5 h-1.5 rounded-full bg-white relative flex shrink-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-white"></span>
+                </span>
                 Let's get started
               </span>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight max-w-2xl text-white mb-2">Ready to transform your business?</h2>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-white mb-4">Ready to transform your business?</h2>
 
-              <p className="text-slate-400 text-base sm:text-lg max-w-2xl leading-relaxed">
-                Talk to our team and see how Isarva ERP brings sales, HR, stock, and accounts into one connected system—built for how you work.
+              <p className="text-white/88 text-base sm:text-lg max-w-[34rem] leading-relaxed mb-10">
+                Talk to our team and see how iSARVA ERP brings sales, HR, stock, and accounts into one connected system—built for how you work.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 items-center w-full justify-center mt-2">
-                <a href="https://wa.me/919902863697" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-extrabold text-base shadow-lg hover:shadow-emerald-500/20 active:scale-[0.98] transition-all duration-300 w-full sm:w-auto text-center justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 items-center w-full justify-center mb-10">
+                <a href="https://wa.me/919902863697" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-extrabold text-base w-full sm:w-auto text-center justify-center relative overflow-hidden hero-btn-primary-custom hover:-translate-y-[3px] hover:scale-[1.02] active:-translate-y-[1px] active:scale-[0.99] transition-all duration-300">
                   <span>Get started today</span>
                   <svg className="w-4 h-4 shrink-0 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
                 </a>
-                <a href="#module-hub" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white/10 hover:bg-white/15 border border-white/10 text-white font-bold text-base transition-all duration-300 w-full sm:w-auto text-center justify-center">
-                  Explore all modules
+                <a href="#module-hub" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-[#0f5c52] font-bold text-base shadow-[0_6px_20px_rgba(15,23,42,0.15)] hover:shadow-[0_10px_28px_rgba(15,23,42,0.2)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 w-full sm:w-auto text-center justify-center">
+                  <span>Explore all modules</span>
                 </a>
               </div>
 
-              <div className="grid grid-cols-3 gap-6 sm:gap-12 mt-12 w-full max-w-3xl border-t border-white/10 pt-10">
-                <div className="flex flex-col gap-1 items-center">
-                  <strong className="text-3xl sm:text-4xl font-extrabold text-white">6+</strong>
-                  <span className="text-xs sm:text-sm text-slate-500 font-semibold tracking-wide uppercase">Connected modules</span>
-                </div>
-                <div className="flex flex-col gap-1 items-center">
-                  <strong className="text-3xl sm:text-4xl font-extrabold text-white">4–12</strong>
-                  <span className="text-xs sm:text-sm text-slate-500 font-semibold tracking-wide uppercase">Weeks to go live</span>
-                </div>
-                <div className="flex flex-col gap-1 items-center">
-                  <strong className="text-3xl sm:text-4xl font-extrabold text-white">24/7</strong>
-                  <span className="text-xs sm:text-sm text-slate-500 font-semibold tracking-wide uppercase">Expert support</span>
-                </div>
+              <div className="grid grid-cols-3 gap-6 sm:gap-12 mt-4 w-full max-w-[640px] border-t border-white/18 pt-8">
+                {[
+                  { strong: "6+", span: "Connected modules" },
+                  { strong: "4–12", span: "Weeks to go live" },
+                  { strong: "24/7", span: "Expert support" }
+                ].map((stat, idx) => (
+                  <div key={idx} className="flex flex-col gap-1 items-center">
+                    <strong className="text-3xl sm:text-4xl font-extrabold text-white leading-none mb-1">{stat.strong}</strong>
+                    <span className="text-[0.72rem] text-white/75 font-semibold tracking-wider uppercase leading-[1.35]">{stat.span}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
