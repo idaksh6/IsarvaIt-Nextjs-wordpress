@@ -1,11 +1,35 @@
+
 "use client";
 
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 
-export default function ExpenseTrackerBrochureModal({ 
-  isOpen, 
+// Trigger WhatsApp template via wacrm after brochure form submit
+async function sendLeadToWacrm(form) {
+  const res = await fetch('https://273d-103-141-112-193.ngrok-free.app/api/leads/website', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer 5adaa37f562284972e7d78ad97d24f079c02df4ecff9e5c5f12b0759f75b2162',
+      'ngrok-skip-browser-warning': 'true',
+    },
+    body: JSON.stringify({
+      phone: form.phone,
+      name: form.name,
+      email: form.email,
+      company: form.company,
+      comments: form.comments,
+      template_params: [form.name],
+    }),
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data?.error || 'WhatsApp send failed');
+  return data;
+}
+
+export default function ExpenseTrackerBrochureModal({
+  isOpen,
   onClose
 }) {
   const router = useRouter();
@@ -79,8 +103,21 @@ export default function ExpenseTrackerBrochureModal({
       const data = await response.json();
 
       if (data.success) {
+        // Send WhatsApp hello_world via wacrm (non-blocking — form still succeeds if this fails)
+        try {
+          await sendLeadToWacrm({
+            phone: formData.phone,
+            name: formData.name,
+            email: formData.email,
+            company: formData.company,
+            comments: formData.message,
+          });
+        } catch (wacrmErr) {
+          console.error('wacrm WhatsApp send failed:', wacrmErr);
+        }
+
         setSubmitStatus('success');
-        
+
         // Trigger PDF download
         const link = document.createElement('a');
         link.href = '/products/expense%20tracker/Expense-Tracker.pdf';
@@ -133,12 +170,12 @@ export default function ExpenseTrackerBrochureModal({
                 }
               }
             } else if (data.error.toLowerCase().includes('mobile') || data.error.toLowerCase().includes('phone')) {
-              friendlyError = (data.error.toLowerCase().includes('registered') || data.error.toLowerCase().includes('taken')) 
-                ? 'This phone number is already registered.' 
+              friendlyError = (data.error.toLowerCase().includes('registered') || data.error.toLowerCase().includes('taken'))
+                ? 'This phone number is already registered.'
                 : 'Please enter a valid phone number.';
             } else if (data.error.toLowerCase().includes('email')) {
-              friendlyError = (data.error.toLowerCase().includes('registered') || data.error.toLowerCase().includes('taken')) 
-                ? 'This email address is already registered.' 
+              friendlyError = (data.error.toLowerCase().includes('registered') || data.error.toLowerCase().includes('taken'))
+                ? 'This email address is already registered.'
                 : 'Please enter a valid email address.';
             } else {
               friendlyError = data.error;
@@ -147,10 +184,10 @@ export default function ExpenseTrackerBrochureModal({
             friendlyError = data.error;
           }
         }
-        
+
         // Remove "CRM API error (409):" prefix if it somehow leaked through
         friendlyError = friendlyError.replace(/CRM API error \(\d+\):\s*/g, '');
-        
+
         setErrorMessage(friendlyError);
       }
     } catch (error) {
@@ -174,7 +211,7 @@ export default function ExpenseTrackerBrochureModal({
   const modalContent = (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
       {/* Backdrop */}
-      <div 
+      <div
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
         onClick={handleClose}
       ></div>
@@ -312,3 +349,4 @@ export default function ExpenseTrackerBrochureModal({
   // Use createPortal to render modal at document.body level
   return typeof window !== 'undefined' ? createPortal(modalContent, document.body) : null;
 }
+
