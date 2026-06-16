@@ -9,7 +9,7 @@ const integrationData = {
     theme: "text-[#7c3aed] bg-[#7c3aed]/10 border-[#7c3aed]/20",
     borderClass: "border-[#7c3aed] hover:shadow-[0_8px_24px_rgba(124,58,237,0.2)] focus-visible:outline-[#7c3aed]",
     textTheme: "text-[#7c3aed]",
-    desc: "Part of the Isarva ERP suite. Manage leads, pipelines, and customer relationships on one platform.",
+    desc: "Part of the ERP Software suite. Manage leads, pipelines, and customer relationships on one platform.",
     features: [
       "Sales pipeline and opportunity tracking",
       "Customer accounts and contact history",
@@ -22,7 +22,7 @@ const integrationData = {
     theme: "text-[#059669] bg-[#059669]/10 border-[#059669]/20",
     borderClass: "border-[#059669] hover:shadow-[0_8px_24px_rgba(5,150,105,0.2)] focus-visible:outline-[#059669]",
     textTheme: "text-[#059669]",
-    desc: "Part of the Isarva ERP suite. Handle staffing, attendance, and payroll in one place.",
+    desc: "Part of the ERP Software suite. Handle staffing, attendance, and payroll in one place.",
     features: [
       "Employee records and org structure",
       "Attendance, leave, and timesheets",
@@ -35,7 +35,7 @@ const integrationData = {
     theme: "text-[#2563eb] bg-[#2563eb]/10 border-[#2563eb]/20",
     borderClass: "border-[#2563eb] hover:shadow-[0_8px_24px_rgba(37,99,235,0.2)] focus-visible:outline-[#2563eb]",
     textTheme: "text-[#2563eb]",
-    desc: "Part of the Isarva ERP suite. Plan sprints, track tasks, and deliver projects on schedule.",
+    desc: "Part of the ERP Software suite. Plan sprints, track tasks, and deliver projects on schedule.",
     features: [
       "Sprint boards and kanban workflows",
       "Task assignments and milestone tracking",
@@ -48,7 +48,7 @@ const integrationData = {
     theme: "text-[#ea580c] bg-[#ea580c]/10 border-[#ea580c]/20",
     borderClass: "border-[#ea580c] hover:shadow-[0_8px_24px_rgba(234,88,12,0.2)] focus-visible:outline-[#ea580c]",
     textTheme: "text-[#ea580c]",
-    desc: "Part of the Isarva ERP suite. Control stock levels, warehousing, and procurement.",
+    desc: "Part of the ERP Software suite. Control stock levels, warehousing, and procurement.",
     features: [
       "Real-time stock and warehouse balances",
       "Purchase orders and supplier management",
@@ -61,7 +61,7 @@ const integrationData = {
     theme: "text-[#0891b2] bg-[#0891b2]/10 border-[#0891b2]/20",
     borderClass: "border-[#0891b2] hover:shadow-[0_8px_24px_rgba(8,145,178,0.2)] focus-visible:outline-[#0891b2]",
     textTheme: "text-[#0891b2]",
-    desc: "Part of the Isarva ERP suite. Monitor cash flow, budgets, and financial performance.",
+    desc: "Part of the ERP Software suite. Monitor cash flow, budgets, and financial performance.",
     features: [
       "Cash flow and treasury dashboards",
       "Budget planning and variance analysis",
@@ -74,7 +74,7 @@ const integrationData = {
     theme: "text-[#ca8a04] bg-[#ca8a04]/10 border-[#ca8a04]/20",
     borderClass: "border-[#ca8a04] hover:shadow-[0_8px_24px_rgba(202,138,4,0.2)] focus-visible:outline-[#ca8a04]",
     textTheme: "text-[#ca8a04]",
-    desc: "Part of the Isarva ERP suite. Maintain compliant double-entry books and financial audits.",
+    desc: "Part of the ERP Software suite. Maintain compliant double-entry books and financial audits.",
     features: [
       "General ledger and journal entries",
       "Accounts receivable and payable",
@@ -220,7 +220,7 @@ const integrationCards = [
   { icon: "🔗", title: "API & Webhooks", desc: "Build custom links with secure APIs and instant events." }
 ];
 
-export default function IsarvaErpClient() {
+export default function ErpSoftwareClient() {
   const [activeModule, setActiveModule] = useState(null);
   const [inView, setInView] = useState(false);
   const [closeStat, setCloseStat] = useState(0);
@@ -346,6 +346,14 @@ export default function IsarvaErpClient() {
 
   const roiHoursSaved = Math.round((roiEmployees * 2.2) + (roiOrders * 0.18));
   const roiMoneySaved = Math.round(roiHoursSaved * roiLabor * 12);
+  const orbitModules = [
+    { id: 'finance', label: 'Finance', icon: '📈', slot: 0 },
+    { id: 'accounting', label: 'Accounting', icon: '⚖️', slot: 1 },
+    { id: 'inventory', label: 'Inventory', icon: '📦', slot: 2 },
+    { id: 'crm', label: 'CRM', icon: '🤝', slot: 3 },
+    { id: 'pm', label: 'Projects', icon: '📋', slot: 4 },
+    { id: 'hrms', label: 'HRMS', icon: '👥', slot: 5 }
+  ];
 
   return (
     <>
@@ -367,7 +375,7 @@ export default function IsarvaErpClient() {
             <span className="absolute rounded-full blur-[80px] hero-orb-float w-[260px] h-[260px] top-[40%] -left-[5%] bg-[#8b5cf6]/12 [animation-delay:-9s]"></span>
           </div>
 
-          <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.12fr)_minmax(0,0.98fr)] gap-14 lg:gap-10 items-center overflow-visible">
               <div className="flex flex-col gap-0 min-w-0 max-w-full items-center text-center lg:items-start lg:text-left">
                 <p className={`inline-flex items-center flex-nowrap gap-2 px-4 py-[0.38rem] mb-4 sm:mb-6 bg-white/85 border border-[#10b981]/25 shadow-[0_1px_3px_rgba(0,0,0,0.05)] backdrop-blur-[8px] rounded-full whitespace-nowrap transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] delay-[50ms] ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[15px]'}`}>
@@ -519,8 +527,8 @@ export default function IsarvaErpClient() {
                       </div>
                       <div className="p-[1.1rem] bg-white rounded-b-[18px] relative overflow-hidden">
                         <img
-                          src="/products/isarva-erp/hero.png"
-                          alt="Isarva ERP dashboard with CRM, HRMS, inventory, finance, and projects"
+                          src="/products/erp-software/hero.png"
+                          alt="ERP Software dashboard with CRM, HRMS, inventory, finance, and projects"
                           className="w-full h-auto rounded-[10px] shadow-[0_12px_32px_rgba(15,23,42,0.1)] block"
                           width="580"
                           height="360"
@@ -556,7 +564,7 @@ export default function IsarvaErpClient() {
             <div className="text-center mb-10">
               <span className="text-xs capitalize font-extrabold tracking-[2px] text-[#088c3a] mb-3 inline-block">Unified Platform</span>
               <h2 className="mb-6 capitalize">
-                Isarva ERP Module Suite
+                ERP Software Module Suite
               </h2>
               <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
                 Six integrated business modules on one Isarva platform—arranged around a single ERP core. Select any module to explore.
@@ -568,70 +576,95 @@ export default function IsarvaErpClient() {
 
                 {/* Module ecosystem (orbit layout) */}
                 <div
-                  className="ecosystem-canvas relative min-h-[480px] sm:min-h-[500px] flex items-center justify-center p-4 sm:p-10 bg-radial-gradient bg-[#c5ddd3] rounded-[18px] border border-[#08783a]/30 shadow-[inset_0_1px_0_rgba(255,255,255,0.28),inset_0_0_48px_rgba(15,23,42,0.05),0_0_0_1px_rgba(15,184,78,0.1),0_14px_40px_rgba(8,100,50,0.2)] group/canvas"
+                  className="ecosystem-canvas relative min-h-[138px] md:min-h-[500px] flex items-center justify-center md:p-10 md:px-3 bg-radial-gradient bg-[#c5ddd3] rounded-[18px] border border-[#08783a]/30 shadow-[inset_0_1px_0_rgba(255,255,255,0.28),inset_0_0_48px_rgba(15,23,42,0.05),0_0_0_1px_rgba(15,184,78,0.1),0_14px_40px_rgba(8,100,50,0.2)] group/canvas"
                   role="group"
-                  aria-label="Isarva ERP module suite"
+                  aria-label="ERP Software module suite"
                   style={{
                     backgroundImage: 'radial-gradient(circle at 50% 40%, rgba(15, 184, 78, 0.2) 0%, transparent 44%), linear-gradient(155deg, #c5ddd3 0%, #b3d2c3 45%, #a3c7b5 100%)'
                   }}
                   onMouseLeave={() => setActiveModule(null)}
                 >
-                  {/* Dashed outer rings */}
-                  <div className="ecosystem-ring absolute aspect-square left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border border-dashed border-[#08783a]/70 rounded-full pointer-events-none" aria-hidden="true">
-                    <div className="absolute inset-0 ecosystem-ring-track group-hover/canvas:[animation-play-state:paused]">
-                      <span className="absolute left-1/2 top-[-5px] w-[10px] h-[10px] -ml-[5px] rounded-full bg-[#0fb84e] shadow-[0_0_12px_rgba(15,184,78,0.5)]"></span>
-                      <span className="absolute left-1/2 bottom-[-5px] w-[10px] h-[10px] -ml-[5px] rounded-full bg-[#06b6d4] shadow-[0_0_12px_rgba(6,182,212,0.45)]"></span>
-                      <span className="absolute left-[-5px] top-1/2 -mt-[5px] w-[10px] h-[10px] rounded-full bg-[#8b5cf6] shadow-[0_0_12px_rgba(139,92,246,0.4)]"></span>
-                    </div>
-                  </div>
-
-                  {/* Core wrap */}
-                  <div className="ecosystem-core-wrap absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                    <span className="absolute inset-[-20px] rounded-full ecosystem-core-glow pointer-events-none" aria-hidden="true"></span>
-                    <div className="ecosystem-core relative w-[110px] h-[110px] p-2 sm:w-[168px] sm:h-[168px] sm:p-5 rounded-full bg-gradient-to-br from-[#16a34a] via-[#059669] to-[#047857] text-white flex flex-col items-center justify-center text-center ecosystem-core-active">
-                      <span className="text-[8px] sm:text-[10px] font-bold capitalize tracking-wider opacity-90 mb-1">Unified Platform</span>
-                      <strong className="font-display text-base sm:text-2xl font-black tracking-wide leading-none">Isarva</strong>
-                      <span className="text-[8px] sm:text-[10px] font-semibold capitalize tracking-wider opacity-90 mt-1">ERP Core</span>
-                      <span className="text-[7px] sm:text-[9px] opacity-85 mt-1 sm:mt-2 leading-tight max-w-[90px] sm:max-w-[120px]">6 modules · 1 system</span>
-                    </div>
-                  </div>
-
-                  {/* Module cards orbit */}
-                  <div className="absolute inset-0 flex items-center justify-center w-full">
-                    <div className="w-[300px] sm:w-[440px] h-[300px] sm:h-[440px] aspect-square relative module-orbit module-orbit-track group-hover/canvas:[animation-play-state:paused]">
-                      {[
-                        { id: 'finance', label: 'Finance', icon: '📈', slot: 0 },
-                        { id: 'accounting', label: 'Accounting', icon: '⚖️', slot: 1 },
-                        { id: 'inventory', label: 'Inventory', icon: '📦', slot: 2 },
-                        { id: 'crm', label: 'CRM', icon: '🤝', slot: 3 },
-                        { id: 'pm', label: 'Projects', icon: '📋', slot: 4 },
-                        { id: 'hrms', label: 'HRMS', icon: '👥', slot: 5 }
-                      ].map((mod) => {
+                  {/* Mobile: swipe module cards */}
+                  <div className="md:hidden w-full">
+                    <div className="flex overflow-x-auto snap-x snap-mandatory gap-2 p-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+                      {orbitModules.map((mod) => {
                         const isActive = activeModule === mod.id;
                         const data = integrationData[mod.id];
                         return (
-                          <div
+                          <button
                             key={mod.id}
-                            className="module-card module-card-item absolute left-1/2 top-1/2 z-[1] select-none"
-                            style={{ '--slot': String(mod.slot) }}
+                            type="button"
+                            className={`w-[154px] min-h-[104px] shrink-0 snap-start border rounded-2xl bg-white/95 shadow-[0_4px_12px_rgba(15,23,42,0.08)] px-3 py-3.5 text-center transition-all duration-200 ${data.borderClass} ${isActive ? 'is-active' : ''}`}
+                            onClick={(e) => {
+                              setActiveModule(mod.id);
+                              e.currentTarget.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                            }}
+                            aria-label={`${mod.label} module`}
                           >
-                            <button
-                              type="button"
-                              className={`module-card-inner-btn border border-slate-200 rounded-2xl bg-white shadow-[0_4px_16px_rgba(15,23,42,0.06)] cursor-pointer transition-[opacity,border-color,box-shadow,background-color] duration-350 select-none text-center w-[88px] sm:w-[112px] p-0 relative group/card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${data.borderClass} ${isActive ? 'is-active z-[3]' : 'opacity-100'} ${activeModule && !isActive ? 'opacity-55' : ''}`}
-                              onClick={() => setActiveModule(mod.id)}
-                              onMouseEnter={() => setActiveModule(mod.id)}
-                              aria-label={`${mod.label} module`}
-                            >
-                              <span className="flex flex-col items-center justify-center gap-1 sm:gap-1.5 py-2 sm:py-3.5 px-1 sm:px-2 module-card-float-anim group-hover/card:[animation-play-state:paused]">
-                                <span className="text-xl sm:text-2xl leading-none module-icon-pop-anim group-hover/card:[animation-play-state:paused]">{mod.icon}</span>
-                                <span className={`font-display text-[9px] sm:text-xs font-extrabold tracking-wider capitalize transition-colors duration-200 ${isActive ? data.textTheme : 'text-slate-500'}`}>
-                                  {mod.label}
-                                </span>
+                            <span className="flex flex-col items-center justify-center gap-2">
+                              <span className="text-xl leading-none">{mod.icon}</span>
+                              <span className={`font-display text-xs font-extrabold tracking-wide capitalize ${isActive ? data.textTheme : 'text-slate-600'}`}>
+                                {mod.label}
                               </span>
-                            </button>
-                          </div>
+                            </span>
+                          </button>
                         );
                       })}
+                    </div>
+                  </div>
+
+                  {/* Desktop/tablet: orbit layout */}
+                  <div className="hidden md:block">
+                    {/* Dashed outer rings */}
+                    <div className="ecosystem-ring absolute aspect-square left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border border-dashed border-[#08783a]/70 rounded-full pointer-events-none" aria-hidden="true">
+                      <div className="absolute inset-0 ecosystem-ring-track group-hover/canvas:[animation-play-state:paused]">
+                        <span className="absolute left-1/2 top-[-5px] w-[10px] h-[10px] -ml-[5px] rounded-full bg-[#0fb84e] shadow-[0_0_12px_rgba(15,184,78,0.5)]"></span>
+                        <span className="absolute left-1/2 bottom-[-5px] w-[10px] h-[10px] -ml-[5px] rounded-full bg-[#06b6d4] shadow-[0_0_12px_rgba(6,182,212,0.45)]"></span>
+                        <span className="absolute left-[-5px] top-1/2 -mt-[5px] w-[10px] h-[10px] rounded-full bg-[#8b5cf6] shadow-[0_0_12px_rgba(139,92,246,0.4)]"></span>
+                      </div>
+                    </div>
+
+                    {/* Core wrap */}
+                    <div className="ecosystem-core-wrap absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                      <span className="absolute inset-[-20px] rounded-full ecosystem-core-glow pointer-events-none" aria-hidden="true"></span>
+                      <div className="ecosystem-core relative w-[110px] h-[110px] p-2 sm:w-[168px] sm:h-[168px] sm:p-5 rounded-full bg-gradient-to-br from-[#16a34a] via-[#059669] to-[#047857] text-white flex flex-col items-center justify-center text-center ecosystem-core-active">
+                        <span className="text-[8px] sm:text-[10px] font-bold capitalize tracking-wider opacity-90 mb-1">Unified Platform</span>
+                        <strong className="font-display text-base sm:text-2xl font-black tracking-wide leading-none">Isarva</strong>
+                        <span className="text-[8px] sm:text-[10px] font-semibold capitalize tracking-wider opacity-90 mt-1">ERP Core</span>
+                        <span className="text-[7px] sm:text-[9px] opacity-85 mt-1 sm:mt-2 leading-tight max-w-[90px] sm:max-w-[120px]">6 modules · 1 system</span>
+                      </div>
+                    </div>
+
+                    {/* Module cards orbit */}
+                    <div className="absolute inset-0 flex items-center justify-center w-full">
+                      <div className="w-[300px] sm:w-[440px] h-[300px] sm:h-[440px] aspect-square relative module-orbit module-orbit-track group-hover/canvas:[animation-play-state:paused]">
+                        {orbitModules.map((mod) => {
+                          const isActive = activeModule === mod.id;
+                          const data = integrationData[mod.id];
+                          return (
+                            <div
+                              key={mod.id}
+                              className="module-card module-card-item absolute left-1/2 top-1/2 z-[1] select-none"
+                              style={{ '--slot': String(mod.slot) }}
+                            >
+                              <button
+                                type="button"
+                                className={`module-card-inner-btn group-hover/canvas:[animation-play-state:paused] border border-slate-200 rounded-2xl bg-white shadow-[0_4px_16px_rgba(15,23,42,0.06)] cursor-pointer transition-[opacity,border-color,box-shadow,background-color] duration-350 select-none text-center w-[88px] sm:w-[112px] p-0 relative group/card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${data.borderClass} ${isActive ? 'is-active z-[3]' : 'opacity-100'} ${activeModule && !isActive ? 'opacity-55' : ''}`}
+                                onClick={() => setActiveModule(mod.id)}
+                                onMouseEnter={() => setActiveModule(mod.id)}
+                                aria-label={`${mod.label} module`}
+                              >
+                                <span className="flex flex-col items-center justify-center gap-1 sm:gap-1.5 py-2 sm:py-3.5 px-1 sm:px-2 module-card-float-anim group-hover/card:[animation-play-state:paused]">
+                                  <span className="text-xl sm:text-2xl leading-none module-icon-pop-anim group-hover/card:[animation-play-state:paused]">{mod.icon}</span>
+                                  <span className={`font-display text-[9px] sm:text-xs font-extrabold tracking-wider capitalize transition-colors duration-200 ${isActive ? data.textTheme : 'text-slate-500'}`}>
+                                    {mod.label}
+                                  </span>
+                                </span>
+                              </button>
+                            </div>
+                          );
+                        })}
+                      </div>
                     </div>
                   </div>
 
@@ -673,7 +706,7 @@ export default function IsarvaErpClient() {
                         <div className="text-4xl mb-4 animate-[pulse-gear_3s_infinite] select-none">⚡</div>
                         <h4 className="font-display text-base font-bold text-slate-800 mb-2">Pick a Module</h4>
                         <p className="text-xs leading-normal text-slate-500 max-w-[200px]">
-                          Hover or click a module card to see what it includes in the Isarva ERP suite.
+                          Hover or click a module card to see what it includes in the ERP Software suite.
                         </p>
                       </div>
                     )}
@@ -699,7 +732,7 @@ export default function IsarvaErpClient() {
                 Built for Your Industry
               </h2>
               <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-                Whether you make products, run stores, deliver services, or move goods—Isarva ERP fits how your team works every day.
+                Whether you make products, run stores, deliver services, or move goods—ERP Software fits how your team works every day.
               </p>
             </div>
 
@@ -762,7 +795,7 @@ export default function IsarvaErpClient() {
               <p className="text-xs font-bold capitalize tracking-widest text-emerald-600 mb-3">Connectivity</p>
               <h2 className="mb-6 capitalize">Integrations &amp; Open Connectivity</h2>
               <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-                Connect the tools you already use—banks, shops, email, and reports—so data flows into Isarva ERP without double entry.
+                Connect the tools you already use—banks, shops, email, and reports—so data flows into ERP Software without double entry.
               </p>
             </div>
 
@@ -778,7 +811,7 @@ export default function IsarvaErpClient() {
 
                 <h3 className="text-slate-900 font-bold text-lg md:text-xl mb-3">Works with your stack</h3>
                 <p className="text-sm text-slate-500 leading-relaxed mb-6">
-                  Plug Isarva ERP into your existing software. Data stays secure, updates in real time, and your team keeps using familiar tools.
+                  Plug ERP Software into your existing software. Data stays secure, updates in real time, and your team keeps using familiar tools.
                 </p>
 
                 <ul className="list-none m-0 p-0 flex flex-col gap-3.5">
@@ -847,7 +880,6 @@ export default function IsarvaErpClient() {
               const hrmsGross = hrmsSalary;
               const hrmsWithheld = Math.round(hrmsSalary * (hrmsTax / 100));
               const hrmsNet = hrmsGross - hrmsWithheld;
-              const crmProjected = Math.round(crmPipeline * (crmRate / 100));
               const pmDone = [pmTask1, pmTask2].filter(Boolean).length;
               const pmPct = Math.round((pmDone / 2) * 100);
               const pmHours = pmDone * 8;
@@ -858,8 +890,7 @@ export default function IsarvaErpClient() {
                 <>
                   {/* Tab Grid */}
                   <div
-                    className="flex sm:grid sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 mb-10 p-3 sm:p-5 overflow-x-auto sm:overflow-visible no-scrollbar bg-white/80 backdrop-blur-sm rounded-[20px] shadow-[0_8px_28px_rgba(180,83,9,0.08)]"
-                    style={{ scrollPaddingLeft: '0.75rem', scrollPaddingRight: '0.75rem' }}
+                    className="flex overflow-x-auto snap-x snap-mandatory sm:grid sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 mb-8 sm:mb-10 p-3 sm:p-5 bg-white/80 backdrop-blur-sm rounded-[20px] shadow-[0_8px_28px_rgba(180,83,9,0.08)] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
                   >
                     {tabs.map(t => {
                       const isActive = hubTab === t.id;
@@ -870,7 +901,7 @@ export default function IsarvaErpClient() {
                             setHubTab(t.id);
                             e.currentTarget.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
                           }}
-                          className={`flex-shrink-0 min-w-[180px] sm:min-w-0 flex flex-col items-center text-center gap-3 px-3 py-5 rounded-2xl border transition-all duration-200 cursor-pointer
+                          className={`w-[210px] shrink-0 snap-start sm:w-full sm:min-w-0 flex flex-col items-center text-center gap-3 px-3 py-4 sm:py-5 rounded-2xl border transition-all duration-200 cursor-pointer
                             ${isActive
                               ? `bg-white ${t.activeBorder} ${t.activeShadow}`
                               : 'bg-white border-slate-900/[0.08] shadow-[0_2px_8px_rgba(15,23,42,0.04)] hover:bg-amber-50 hover:border-amber-300/40 hover:-translate-y-0.5 hover:shadow-[0_6px_18px_rgba(180,83,9,0.10)]'
@@ -891,8 +922,8 @@ export default function IsarvaErpClient() {
                   {/* Dashboard Window */}
                   <div className="bg-white rounded-[20px] shadow-[0_16px_40px_rgba(180,83,9,0.10)] overflow-hidden">
                     {/* Window bar */}
-                    <div className="flex items-center justify-between px-6 md:px-8 py-4 border-b border-slate-900/5 bg-slate-900/[0.015]">
-                      <span className="font-bold text-gray-900" style={{ fontSize: '1rem' }}>
+                    <div className="flex flex-col sm:flex-row sm:flex-wrap items-center sm:justify-between gap-2 px-4 sm:px-5 md:px-8 py-3 md:py-4 border-b border-slate-900/5 bg-slate-900/[0.015] text-center sm:text-left">
+                      <span className="font-bold text-gray-900 text-sm sm:text-base" style={{ fontSize: '1rem' }}>
                         {activeTab.icon} {activeTab.label} Dynamic Panel
                       </span>
                       <span className="flex items-center gap-2 text-[0.775rem] font-semibold text-emerald-500">
@@ -902,61 +933,37 @@ export default function IsarvaErpClient() {
                     </div>
 
                     {/* Pane body */}
-                    <div className="p-6 md:p-10">
+                    <div className="p-4 sm:p-6 md:p-10">
 
                       {/* ── HRMS ── */}
                       {hubTab === 'hrms' && (
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
-                          <div className="bg-white rounded-xl border border-slate-900/[0.08] p-6 shadow-sm">
-                            <h3 className="mb-1">👥 Interactive Payroll Calculator</h3>
-                            <p className="text-sm text-gray-500 mb-6 leading-relaxed">Simulate salary adjustments. Tax withholdings and accounting vouchers post automatically in real-time.</p>
-                            <div className="space-y-5 mb-6">
-                              <div>
-                                <div className="flex justify-between items-center text-[0.85rem] text-gray-500 mb-2">
-                                  <label className="font-medium">Monthly Base Salary</label>
-                                  <strong className="text-gray-900">{fmt(hrmsSalary)}</strong>
-                                </div>
-                                <input type="range" min="3000" max="25000" step="500" value={hrmsSalary}
-                                  onChange={e => setHrmsSalary(Number(e.target.value))}
-                                  className="w-full h-1.5 rounded-full appearance-none cursor-pointer accent-emerald-500"
-                                  style={{ background: `linear-gradient(to right, #10b981 ${((hrmsSalary - 3000) / (25000 - 3000)) * 100}%, rgba(15,23,42,0.08) 0%)` }} />
-                              </div>
-                              <div>
-                                <div className="flex justify-between items-center text-[0.85rem] text-gray-500 mb-2">
-                                  <label className="font-medium">Tax Deduction Rate</label>
-                                  <strong className="text-gray-900">{hrmsTax}%</strong>
-                                </div>
-                                <input type="range" min="5" max="45" step="1" value={hrmsTax}
-                                  onChange={e => setHrmsTax(Number(e.target.value))}
-                                  className="w-full h-1.5 rounded-full appearance-none cursor-pointer accent-emerald-500"
-                                  style={{ background: `linear-gradient(to right, #10b981 ${((hrmsTax - 5) / (45 - 5)) * 100}%, rgba(15,23,42,0.08) 0%)` }} />
-                              </div>
-                            </div>
-                            <div className="bg-slate-900/[0.02] rounded-xl p-5 border border-dashed border-slate-900/10">
-                              <div className="flex justify-between text-base text-gray-600 mb-3"><span>Simulated Gross Pay:</span><strong className="text-gray-900">{fmt(hrmsGross)}</strong></div>
-                              <div className="flex justify-between text-base text-red-500 mb-3"><span>Income Taxes Withheld:</span><strong>-{fmt(hrmsWithheld)}</strong></div>
-                              <hr className="border-dashed border-slate-900/10 mb-3" />
-                              <div className="flex justify-between"><span className="text-base text-gray-600">Calculated Net Pay:</span><strong className="text-emerald-600 text-[1.05rem] font-bold">{fmt(hrmsNet)}</strong></div>
-                            </div>
+                          <div className="bg-white rounded-xl border border-slate-900/[0.08] flex justify-center">
+                            <img
+                              src="/products/hrms/hrms-banner-main.png"
+                              alt="HRMS dashboard preview"
+                              className="w-full h-auto block rounded-xl"
+                              loading="lazy"
+                            />
                           </div>
-                          <div className="bg-white rounded-xl border border-slate-900/[0.08] p-6 shadow-sm">
-                            <div className="flex items-center justify-between mb-5">
-                              <h3 className="mb-1">🏢 Active Staff Registry</h3>
+                          <div className="bg-white rounded-xl border border-slate-900/[0.08] p-4 sm:p-6 shadow-sm ">
+                            <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-2 mb-5 text-center sm:text-left">
+                              <h3 className="mb-0">🏢 Active Staff Registry</h3>
                               <span className="text-xs bg-slate-100 text-gray-500 px-3 py-1 rounded-full">3 Employees Loaded</span>
                             </div>
-                            <ul className="flex flex-col gap-3 mb-5">
+                            <ul className="flex flex-col items-center sm:items-stretch gap-2.5 mb-5">
                               {[
                                 { initials: 'AM', name: 'Alexander Mercer', role: 'Senior PM • Product Team', bg: 'bg-orange-100 text-orange-600 border border-orange-200', status: 'Paid', statusCls: 'bg-emerald-100 text-emerald-700 border border-emerald-200' },
                                 { initials: 'SK', name: 'Sarah Koenig', role: 'VP of Sales • CRM Director', bg: 'bg-blue-100 text-blue-600 border border-blue-200', status: 'Paid', statusCls: 'bg-emerald-100 text-emerald-700 border border-emerald-200' },
                                 { initials: 'EL', name: 'Evan Lindqvist', role: 'Inventory Specialist', bg: 'bg-purple-100 text-purple-600 border border-purple-200', status: 'Processing', statusCls: 'bg-yellow-100 text-yellow-700 border border-yellow-200' },
                               ].map(emp => (
-                                <li key={emp.initials} className="flex items-center gap-4 px-4 py-3 rounded-xl border border-slate-900/[0.03] bg-slate-50/50">
+                                <li key={emp.initials} className="w-full flex flex-col sm:flex-row items-center gap-3 sm:gap-4 px-4 py-3 rounded-xl border border-slate-900/[0.03] bg-slate-50/50 text-center sm:text-left">
                                   <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm shrink-0 ${emp.bg}`}>{emp.initials}</div>
-                                  <div className="flex-1 min-w-0">
-                                    <strong className="block text-[0.9rem] text-gray-900">{emp.name}</strong>
-                                    <span className="text-[0.725rem] text-gray-500">{emp.role}</span>
+                                  <div className="flex-1 flex flex-col items-center sm:items-start min-w-0 text-center sm:text-left">
+                                    <strong className="block text-[0.9rem] text-gray-900 leading-tight text-center sm:text-left">{emp.name}</strong>
+                                    <span className="text-[0.725rem] text-gray-500 leading-tight text-center sm:text-left">{emp.role}</span>
                                   </div>
-                                  <span className={`text-xs font-bold px-2.5 py-1 rounded ${emp.statusCls}`}>{emp.status}</span>
+                                  <span className={`inline-flex items-center justify-center text-xs font-bold px-2.5 py-1 rounded mt-0.5 sm:mt-0 ${emp.statusCls}`}>{emp.status}</span>
                                 </li>
                               ))}
                             </ul>
@@ -971,37 +978,15 @@ export default function IsarvaErpClient() {
                       {/* ── CRM ── */}
                       {hubTab === 'crm' && (
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
-                          <div className="bg-white rounded-xl border border-slate-900/[0.08] p-6 shadow-sm">
-                            <h3 className="mb-1">🤝 Draggable Sales Pipeline Metrics</h3>
-                            <p className="text-sm text-gray-500 mb-6 leading-relaxed">Adjust expected value and close rates to trigger forecast models inside accounting ledger.</p>
-                            <div className="space-y-5 mb-6">
-                              <div>
-                                <div className="flex justify-between items-center text-sm text-gray-500 mb-2">
-                                  <label className="font-medium">Pipeline Contract Value</label>
-                                  <strong className="text-gray-900">{fmt(crmPipeline)}</strong>
-                                </div>
-                                <input type="range" min="10000" max="500000" step="5000" value={crmPipeline}
-                                  onChange={e => setCrmPipeline(Number(e.target.value))}
-                                  className="w-full h-1.5 rounded-full appearance-none cursor-pointer accent-violet-500"
-                                  style={{ background: `linear-gradient(to right, #8b5cf6 ${((crmPipeline - 10000) / (500000 - 10000)) * 100}%, rgba(15,23,42,0.08) 0%)` }} />
-                              </div>
-                              <div>
-                                <div className="flex justify-between items-center text-sm text-gray-500 mb-2">
-                                  <label className="font-medium">Closing Win-Probability</label>
-                                  <strong className="text-gray-900">{crmRate}%</strong>
-                                </div>
-                                <input type="range" min="5" max="100" step="5" value={crmRate}
-                                  onChange={e => setCrmRate(Number(e.target.value))}
-                                  className="w-full h-1.5 rounded-full appearance-none cursor-pointer accent-violet-500"
-                                  style={{ background: `linear-gradient(to right, #8b5cf6 ${((crmRate - 5) / (100 - 5)) * 100}%, rgba(15,23,42,0.08) 0%)` }} />
-                              </div>
-                            </div>
-                            <div className="bg-slate-900/[0.02] rounded-xl p-5 border border-slate-900/5 flex flex-col gap-3">
-                              <div className="flex justify-between items-center px-4 py-3 bg-slate-50 rounded-lg text-sm text-gray-600"><span>Qualified Pipeline:</span><strong className="text-gray-900">{fmt(crmPipeline)}</strong></div>
-                              <div className="flex justify-between items-center px-4 py-3 bg-violet-50 border border-violet-200 rounded-lg text-sm text-violet-700"><span>Projected Forecast Value:</span><strong>{fmt(crmProjected)}</strong></div>
-                            </div>
+                          <div className="bg-white rounded-xl border border-slate-900/[0.08] flex justify-center">
+                            <img
+                              src="/products/crm/CRM-dashboard-v3.png"
+                              alt="CRM dashboard preview"
+                              className="w-full h-auto block   rounded-xl"
+                              loading="lazy"
+                            />
                           </div>
-                          <div className="bg-white rounded-xl border border-slate-900/[0.08] p-6 shadow-sm">
+                          <div className="bg-white rounded-xl border border-slate-900/[0.08] p-4 sm:p-6 shadow-sm">
                             <h3 className="mb-1">📈 Real-time Lead Funnel Dashboard</h3>
                             <p className="text-sm text-gray-500 mb-6 leading-relaxed">Sales pipeline status triggers automated CRM sequences.</p>
                             <div className="flex flex-col gap-3 items-center mb-8 py-4 w-full">
@@ -1024,7 +1009,7 @@ export default function IsarvaErpClient() {
                               ].map((bar, idx) => (
                                 <div
                                   key={idx}
-                                  className={`h-[38px] ${bar.cls} rounded-md flex items-center justify-center text-[0.8rem] font-semibold text-violet-700 transition-all duration-300`}
+                                  className={`h-[38px] ${bar.cls} rounded-md flex items-center justify-center text-[0.72rem] sm:text-[0.8rem] px-2 font-semibold text-violet-700 text-center transition-all duration-300`}
                                   style={{ width: bar.w }}
                                 >
                                   <span>{bar.label}</span>
@@ -1042,31 +1027,15 @@ export default function IsarvaErpClient() {
                       {/* ── INVENTORY ── */}
                       {hubTab === 'inventory' && (
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
-                          <div className="bg-white rounded-xl border border-slate-900/[0.08] p-6 shadow-sm">
-                            <h3 className="mb-1">📦 Warehousing Stock Controllers</h3>
-                            <p className="text-sm text-gray-500 mb-6 leading-relaxed">Simulate stock balances and low stock levels. Click Re-Order to see accounts payable vouchers generate.</p>
-                            <div className="flex flex-col gap-6">
-                              {[
-                                { name: '🔋 Lithium-Ion Core Battery Pack', qty: 5, pct: 10, critical: true, cost: '₹120.00', reorder: 150 },
-                                { name: '📺 4K OLED Glass Display Panel', qty: 82, pct: 82, critical: false, cost: '₹280.00', reorder: 50 },
-                              ].map(item => (
-                                <div key={item.name} className="rounded-xl border border-slate-200 p-5">
-                                  <div className="flex justify-between items-center text-sm mb-3">
-                                    <strong className="text-gray-900">{item.name}</strong>
-                                    <span className={`text-xs font-bold px-2.5 py-1 rounded ${item.critical ? 'bg-red-100 text-red-600 border border-red-200 animate-pulse' : 'bg-emerald-100 text-emerald-700 border border-emerald-200'}`}>{item.qty} Units Left</span>
-                                  </div>
-                                  <div className="h-1.5 bg-slate-200 rounded-full mb-3 overflow-hidden">
-                                    <div className={`h-full rounded-full ${item.critical ? 'bg-red-500' : 'bg-emerald-500'}`} style={{ width: `${item.pct}%` }} />
-                                  </div>
-                                  <div className="flex items-center justify-between text-xs text-gray-500">
-                                    <span>Unit Cost: {item.cost}</span>
-                                    <button className="text-xs font-bold px-4 py-1.5 rounded-lg bg-slate-900 text-white hover:bg-slate-700 transition-colors">Re-Order {item.reorder} Units</button>
-                                  </div>
-                                </div>
-                              ))}
-                            </div>
+                          <div className="bg-white rounded-xl border border-slate-900/[0.08] flex justify-center">
+                            <img
+                              src="/products/billsoft/Product-management.jpg"
+                              alt="Inventory dashboard preview"
+                              className="w-full h-auto block  rounded-xl"
+                              loading="lazy"
+                            />
                           </div>
-                          <div className="bg-white rounded-xl border border-slate-900/[0.08] p-6 shadow-sm">
+                          <div className="bg-white rounded-xl border border-slate-900/[0.08] p-4 sm:p-6 shadow-sm">
                             <h3 className="mb-1">⚙️ Automated Stock Ledger &amp; Purchase Order</h3>
                             <p className="text-sm text-gray-500 mb-5 leading-relaxed">Inventory updates are directly synchronized with Accounts Payable ledger records.</p>
                             <div className="bg-slate-900/[0.04] rounded-lg p-5 border border-slate-900/5 h-32 font-mono text-xs flex flex-col gap-2 overflow-y-auto mb-5 text-emerald-700">
@@ -1084,27 +1053,15 @@ export default function IsarvaErpClient() {
                       {/* ── FINANCE ── */}
                       {hubTab === 'finance' && (
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
-                          <div className="bg-white rounded-xl border border-slate-900/[0.08] p-6 shadow-sm">
-                            <h3 className="mb-1">📈 Financial Performance Dashboard</h3>
-                            <p className="text-sm text-gray-500 mb-5 leading-relaxed">Interactive SVG Financial graph showing consolidated Revenue vs Operating Cost curves.</p>
-                            <div className="bg-slate-900/[0.015] rounded-xl p-6 border border-slate-900/[0.04]">
-                              <svg viewBox="0 0 400 200" className="w-full h-auto overflow-visible">
-                                <line x1="10" y1="20" x2="390" y2="20" stroke="rgba(15,23,42,0.05)" />
-                                <line x1="10" y1="70" x2="390" y2="70" stroke="rgba(15,23,42,0.05)" />
-                                <line x1="10" y1="120" x2="390" y2="120" stroke="rgba(15,23,42,0.05)" />
-                                <line x1="10" y1="170" x2="390" y2="170" stroke="rgba(15,23,42,0.1)" />
-                                <path d="M 10 140 Q 100 130 200 120 T 390 100" fill="none" stroke="#F97316" strokeWidth="2.5" />
-                                <path d="M 10 130 Q 100 80 200 70 T 390 40" fill="none" stroke="#06B6D4" strokeWidth="3" />
-                                <circle cx="200" cy="70" r="5" fill="#06B6D4" />
-                                <circle cx="390" cy="40" r="5" fill="#06B6D4" />
-                              </svg>
-                              <div className="flex justify-center gap-6 mt-4">
-                                <span className="flex items-center gap-2 text-xs text-gray-500"><span className="w-2 h-2 rounded-full bg-cyan-400 inline-block" /> Gross Revenue</span>
-                                <span className="flex items-center gap-2 text-xs text-gray-500"><span className="w-2 h-2 rounded-full bg-orange-400 inline-block" /> Operations Cost</span>
-                              </div>
-                            </div>
+                          <div className="bg-white rounded-xl border border-slate-900/[0.08] flex justify-center">
+                            <img
+                              src="/products/billsoft/Financial-Years.jpg"
+                              alt="Finance dashboard preview"
+                              className="w-full h-auto block  rounded-xl"
+                              loading="lazy"
+                            />
                           </div>
-                          <div className="bg-white rounded-xl border border-slate-900/[0.08] p-6 shadow-sm">
+                          <div className="bg-white rounded-xl border border-slate-900/[0.08] p-4 sm:p-6 shadow-sm">
                             <h3 className="mb-1">📊 Treasury &amp; Budget Allocations</h3>
                             <p className="text-sm text-gray-500 mb-5 leading-relaxed">Review cashflows derived from accounting ledgers automatically.</p>
                             <div className="grid grid-cols-1  sm:grid-cols-2 gap-5 mb-5">
@@ -1131,40 +1088,18 @@ export default function IsarvaErpClient() {
                       {/* ── ACCOUNTING ── */}
                       {hubTab === 'accounting' && (
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
-                          <div className="bg-white rounded-xl border border-slate-900/[0.08] p-6 shadow-sm">
-                            <h3 className="mb-1">⚖️ Double-Entry Ledger Accruals</h3>
-                            <p className="text-sm text-gray-500 mb-5 leading-relaxed">Review matching journal postings generated by CRM sales, HRMS salaries, and Inventory reorders.</p>
-                            <div className="max-h-[250px] overflow-y-auto rounded-xl border border-slate-200">
-                              <table className="w-full border-collapse text-sm">
-                                <thead>
-                                  <tr className="bg-slate-50">
-                                    <th className="px-4 py-3 text-left font-semibold text-gray-600">Account Name</th>
-                                    <th className="px-4 py-3 text-left font-semibold text-gray-600">Debit</th>
-                                    <th className="px-4 py-3 text-left font-semibold text-gray-600">Credit</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  {[
-                                    { name: 'Bank (Cash Assets)', dr: '₹54,000.00', cr: '—', muted: false },
-                                    { name: 'CRM Sales Revenue', dr: '—', cr: '₹54,000.00', muted: false },
-                                    { name: 'Payroll Expense', dr: '₹7,500.00', cr: '—', muted: true },
-                                    { name: 'Taxes Payable (Accrued)', dr: '—', cr: '₹1,650.00', muted: true },
-                                    { name: 'Cash Clearance (Net Pay)', dr: '—', cr: '₹5,850.00', muted: true },
-                                  ].map(row => (
-                                    <tr key={row.name} className={`border-t border-slate-100 hover:bg-slate-50 ${row.muted ? 'text-gray-500' : 'text-gray-900'}`}>
-                                      <td className="px-4 py-3">{row.name}</td>
-                                      <td className="px-4 py-3">{row.dr}</td>
-                                      <td className="px-4 py-3">{row.cr}</td>
-                                    </tr>
-                                  ))}
-                                </tbody>
-                              </table>
-                            </div>
+                          <div className="bg-white rounded-xl border border-slate-900/[0.08] flex justify-center">
+                            <img
+                              src="/products/billsoft/Legder-statement.jpg"
+                              alt="Accounting dashboard preview"
+                              className="w-full h-auto block rounded-xl"
+                              loading="lazy"
+                            />
                           </div>
                           <div className="bg-white rounded-xl border border-slate-900/[0.08] p-6 shadow-sm">
                             <h3 className="mb-1">🏛️ Live Financial Balance Auditor</h3>
                             <p className="text-sm text-gray-500 mb-5 leading-relaxed">Automated validation rules ensure ledger debits and credits match instantly.</p>
-                            <div className="flex items-center gap-8 mb-5 bg-slate-900/[0.015] p-6 rounded-xl border border-slate-900/[0.04]">
+                            <div className="flex flex-col sm:flex-row items-center gap-5 sm:gap-8 mb-5 bg-slate-900/[0.015] p-4 sm:p-6 rounded-xl border border-slate-900/[0.04] text-center sm:text-left">
                               <div className="relative w-24 h-24 shrink-0">
                                 <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90">
                                   <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(15,23,42,0.08)" strokeWidth="10" />
@@ -1175,11 +1110,11 @@ export default function IsarvaErpClient() {
                                   <span className="text-emerald-600 text-[10px]">Balanced</span>
                                 </div>
                               </div>
-                              <div className="space-y-2 text-sm flex-1">
-                                <div className="flex justify-between"><span className="text-gray-500">Total Active Debits:</span><strong className="text-gray-900">₹61,500.00</strong></div>
-                                <div className="flex justify-between"><span className="text-gray-500">Total Active Credits:</span><strong className="text-gray-900">₹61,500.00</strong></div>
+                              <div className="space-y-2 text-sm flex-1 w-full">
+                                <div className="flex flex-col md:flex-row justify-between"><span className="text-gray-500">Total Active Debits:</span><strong className="text-gray-900">₹61,500.00</strong></div>
+                                <div className="flex flex-col md:flex-row justify-between"><span className="text-gray-500">Total Active Credits:</span><strong className="text-gray-900">₹61,500.00</strong></div>
                                 <hr className="border-slate-200 my-2" />
-                                <div className="flex justify-between"><span className="text-gray-500">Ledger Audit Status:</span><strong className="text-emerald-600">MATCHED &amp; AUDITED</strong></div>
+                                <div className="flex flex-col md:flex-row justify-between"><span className="text-gray-500">Ledger Audit Status:</span><strong className="text-emerald-600">MATCHED &amp; AUDITED</strong></div>
                               </div>
                             </div>
                             <div className="bg-slate-900/[0.04] rounded-lg p-4 border border-slate-900/5">
@@ -1193,35 +1128,15 @@ export default function IsarvaErpClient() {
                       {/* ── PROJECT MANAGEMENT ── */}
                       {hubTab === 'pm' && (
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
-                          <div className="bg-white rounded-xl border border-slate-900/[0.08] p-6 shadow-sm">
-                            <h3 className="mb-1">📋 Agile Task Sprint Kanban</h3>
-                            <p className="text-sm text-gray-500 mb-6 leading-relaxed">Check tasks to update sprint progress. Completed tasks trigger timesheet tracking into HRMS and billing pipelines.</p>
-                            <div className="grid grid-cols-2 gap-4">
-                              <div>
-                                <h5 className="text-gray-700 text-sm font-bold mb-3">📝 Sprint Backlog</h5>
-                                <div className="rounded-xl border border-slate-200 p-4">
-                                  <span className="text-xs font-bold bg-red-100 text-red-600 border border-red-200 px-2 py-0.5 rounded mb-3 inline-block">High</span>
-                                  <h6 className="text-gray-900 text-[0.85rem] font-semibold mb-3">Integrate inventory barcode scanning webhook</h6>
-                                  <label className="flex items-center gap-2 cursor-pointer">
-                                    <input type="checkbox" checked={pmTask1} onChange={e => setPmTask1(e.target.checked)} className="accent-blue-500 w-4 h-4 cursor-pointer" />
-                                    <span className="text-gray-500 text-xs">Mark Completed</span>
-                                  </label>
-                                </div>
-                              </div>
-                              <div>
-                                <h5 className="text-gray-700 text-sm font-bold mb-3">🚀 In Progress</h5>
-                                <div className="rounded-xl border border-slate-200 p-4">
-                                  <span className="text-xs font-bold bg-yellow-100 text-yellow-700 border border-yellow-200 px-2 py-0.5 rounded mb-3 inline-block">Medium</span>
-                                  <h6 className="text-gray-900 text-[0.85rem] font-semibold mb-3">Deploy payroll taxes calculations engine</h6>
-                                  <label className="flex items-center gap-2 cursor-pointer">
-                                    <input type="checkbox" checked={pmTask2} onChange={e => setPmTask2(e.target.checked)} className="accent-blue-500 w-4 h-4 cursor-pointer" />
-                                    <span className="text-gray-500 text-xs">Mark Completed</span>
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
+                          <div className="bg-white rounded-xl border border-slate-900/[0.08] flex justify-center">
+                            <img
+                              src="/products/support/project_task_management.jpg"
+                              alt="Project management dashboard preview"
+                              className="w-full h-auto block rounded-xl"
+                              loading="lazy"
+                            />
                           </div>
-                          <div className="bg-white rounded-xl border border-slate-900/[0.08] p-6 shadow-sm">
+                          <div className="bg-white rounded-xl border border-slate-900/[0.08] p-4 sm:p-6 shadow-sm">
                             <h3 className="mb-1">📊 Project Sprint Progress &amp; Billable Hooks</h3>
                             <p className="text-sm text-gray-500 mb-6 leading-relaxed">Track tasks to compile consultant hours and report them to accounts receivable pipelines.</p>
                             <div className="mb-6">
@@ -1233,7 +1148,7 @@ export default function IsarvaErpClient() {
                                 <div className="h-full bg-blue-500 rounded-full transition-all duration-500" style={{ width: `${pmPct}%` }} />
                               </div>
                             </div>
-                            <div className="grid grid-cols-2 gap-5 mb-5">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
                               <div className="bg-slate-50 border border-slate-200 rounded-xl p-5">
                                 <span className="text-xs font-semibold text-gray-500 block mb-1">Total Sprint Hours:</span>
                                 <strong className="text-gray-900 text-xl font-extrabold">{pmHours} hrs</strong>
@@ -1261,7 +1176,7 @@ export default function IsarvaErpClient() {
           </div>
         </section>
 
-        {/* Implementation Section: How Isarva ERP Goes Live */}
+        {/* Implementation Section: How ERP Software Goes Live */}
         <section
           className="py-12 lg:py-16 relative overflow-hidden border-t border-slate-900/5"
           id="how-it-works"
@@ -1272,7 +1187,7 @@ export default function IsarvaErpClient() {
           <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
             <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
               <span className="text-xs font-extrabold capitalize tracking-widest text-[#059669] mb-3 block">Implementation</span>
-              <h2 className="mb-6 capitalize">How Isarva ERP Goes Live</h2>
+              <h2 className="mb-6 capitalize">How ERP Software Goes Live</h2>
               <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
                 Five clear steps from first meeting to daily use—most teams go live in <strong className="text-emerald-600 font-extrabold">4 to 12 weeks</strong>, depending on modules and data size.
               </p>
@@ -1477,7 +1392,7 @@ export default function IsarvaErpClient() {
               <span className="text-xs font-extrabold capitalize tracking-widest text-[#059669] mb-3 block">Trust</span>
               <h2 className="mb-6 capitalize">Your Business Data Stays Safe</h2>
               <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-                Payroll, sales, and accounts hold sensitive information. Isarva ERP builds security into every module—so your team can work confidently without extra IT overhead.
+                Payroll, sales, and accounts hold sensitive information. ERP Software builds security into every module—so your team can work confidently without extra IT overhead.
               </p>
             </div>
 
@@ -1551,7 +1466,7 @@ export default function IsarvaErpClient() {
               <span className="text-xs font-extrabold capitalize tracking-widest text-[#0891b2] mb-3 block">Social Proof</span>
               <h2 className="mb-6 capitalize">Trusted by Growing Operations Teams</h2>
               <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-                Leaders consolidate spreadsheets and disconnected tools into one Isarva ERP command center.
+                Leaders consolidate spreadsheets and disconnected tools into one ERP Software command center.
               </p>
             </div>
 
@@ -1603,7 +1518,7 @@ export default function IsarvaErpClient() {
               <span className="text-xs font-extrabold capitalize tracking-widest text-[#059669] mb-3 block">Why Isarva</span>
               <h2 className="mb-6 capitalize">One System vs. Many Disconnected Tools</h2>
               <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-                Still running sales in one app, payroll in another, and stock in spreadsheets? Here is how a single Isarva ERP platform stacks up—side by side.
+                Still running sales in one app, payroll in another, and stock in spreadsheets? Here is how a single ERP Software platform stacks up—side by side.
               </p>
             </div>
 
@@ -1628,7 +1543,7 @@ export default function IsarvaErpClient() {
                     <div className="flex flex-col items-center justify-center text-center gap-1.5 p-5 bg-gradient-to-b from-[#ecfdf5] to-[#d1fae5] relative border-r-0" role="columnheader">
                       <span className="absolute top-[0.65rem] right-[0.65rem] bg-emerald-500/15 border border-emerald-500/28 text-[#059669] text-[0.58rem] font-extrabold tracking-[0.06em] uppercase px-2 py-0.5 rounded-full shadow-sm">Best fit</span>
                       <span className="text-xl leading-none" aria-hidden="true">✨</span>
-                      <h3>Isarva ERP</h3>
+                      <h3>ERP Software</h3>
                       <span className="text-sm text-[#94a3b8] leading-tight">One connected platform</span>
                     </div>
                   </div>
@@ -1704,9 +1619,9 @@ export default function IsarvaErpClient() {
                         </span>
                       </div>
 
-                      {/* Isarva ERP Cell */}
+                      {/* ERP Software Cell */}
                       <div className="flex flex-col lg:flex-row items-center justify-center gap-1.5 p-3.5 bg-emerald-500/[0.07] lg:bg-[#0fb84e]/[0.05] lg:p-5 text-center" role="cell">
-                        <span className="text-[0.68rem] font-extrabold tracking-[0.05em] uppercase text-emerald-600 lg:hidden">iSARVA ERP</span>
+                        <span className="text-[0.68rem] font-extrabold tracking-[0.05em] uppercase text-emerald-600 lg:hidden">ERP Software</span>
                         <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[0.78rem] font-bold text-emerald-800 bg-emerald-500/12 border border-emerald-500/22 hover:scale-[1.04] transition-transform duration-250">
                           {row.Isarva.text}
                         </span>
@@ -1827,7 +1742,7 @@ export default function IsarvaErpClient() {
               <span className="text-xs font-extrabold capitalize tracking-widest text-[#0891b2] mb-3 block">FAQ</span>
               <h2 className="mb-6 capitalize">Common Questions, Straight Answers</h2>
               <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-                Thinking about switching to iSARVA ERP? Here are the things teams ask us most—explained in plain language.
+                Thinking about switching to ERP Software? Here are the things teams ask us most—explained in plain language.
               </p>
             </div>
 
@@ -1884,7 +1799,7 @@ export default function IsarvaErpClient() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-white mb-4">Ready to transform your business?</h2>
 
               <p className="text-white/88 text-lg max-w-[34rem] leading-relaxed mb-10">
-                Talk to our team and see how iSARVA ERP brings sales, HR, stock, and accounts into one connected system—built for how you work.
+                Talk to our team and see how ERP Software brings sales, HR, stock, and accounts into one connected system—built for how you work.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 items-center w-full justify-center mb-10">

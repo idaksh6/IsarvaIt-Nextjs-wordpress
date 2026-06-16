@@ -1789,6 +1789,11 @@ img {
     animation: isarva-module-card-counter 72s linear infinite !important;
     transform-origin: center center;
 }
+
+/* Stop inner white card counter-rotation when hovering the ecosystem canvas */
+.ecosystem-canvas:hover .module-card-inner-btn {
+  animation-play-state: paused !important;
+}
 .module-card-float-anim {
     animation: module-card-float 3.2s ease-in-out infinite;
     animation-delay: calc(var(--slot) * -0.45s);
@@ -1849,4 +1854,4 @@ img {
     background: #fff;
     border-color: rgba(15, 184, 78, 0.3);
     box-shadow: 0 4px 16px rgba(15, 184, 78, 0.08);
-}
+}
