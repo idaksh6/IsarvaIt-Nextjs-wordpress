@@ -942,7 +942,7 @@ export default function ErpSoftwareClient() {
                             <img
                               src="/products/hrms/hrms-banner-main.png"
                               alt="HRMS dashboard preview"
-                              className="w-full h-auto block rounded-xl"
+                              className="w-full h-auto max-h-[420px] object-contain block rounded-xl"
                               loading="lazy"
                             />
                           </div>
@@ -982,7 +982,7 @@ export default function ErpSoftwareClient() {
                             <img
                               src="/products/crm/CRM-dashboard-v3.png"
                               alt="CRM dashboard preview"
-                              className="w-full h-auto block   rounded-xl"
+                              className="w-full h-auto max-h-[420px] object-contain block rounded-xl"
                               loading="lazy"
                             />
                           </div>
@@ -1031,7 +1031,7 @@ export default function ErpSoftwareClient() {
                             <img
                               src="/products/billsoft/Product-management.jpg"
                               alt="Inventory dashboard preview"
-                              className="w-full h-auto block  rounded-xl"
+                              className="w-full h-auto max-h-[420px] object-contain block rounded-xl"
                               loading="lazy"
                             />
                           </div>
@@ -1057,7 +1057,7 @@ export default function ErpSoftwareClient() {
                             <img
                               src="/products/billsoft/Financial-Years.jpg"
                               alt="Finance dashboard preview"
-                              className="w-full h-auto block  rounded-xl"
+                              className="w-full h-auto max-h-[420px] object-contain block rounded-xl"
                               loading="lazy"
                             />
                           </div>
@@ -1092,7 +1092,7 @@ export default function ErpSoftwareClient() {
                             <img
                               src="/products/billsoft/Legder-statement.jpg"
                               alt="Accounting dashboard preview"
-                              className="w-full h-auto block rounded-xl"
+                              className="w-full h-auto max-h-[420px] object-contain block rounded-xl"
                               loading="lazy"
                             />
                           </div>
@@ -1132,7 +1132,7 @@ export default function ErpSoftwareClient() {
                             <img
                               src="/products/support/project_task_management.jpg"
                               alt="Project management dashboard preview"
-                              className="w-full h-auto block rounded-xl"
+                              className="w-full h-auto max-h-[420px] object-contain block rounded-xl"
                               loading="lazy"
                             />
                           </div>
