@@ -191,7 +191,7 @@ export default function GeneralApplicationModal({ isOpen, onClose }) {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm"
+                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm text-gray-900"
                   placeholder="Full Name *"
                 />
               </div>
@@ -203,7 +203,7 @@ export default function GeneralApplicationModal({ isOpen, onClose }) {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm"
+                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm text-gray-900"
                   placeholder="Email Address *"
                 />
               </div>
@@ -219,7 +219,7 @@ export default function GeneralApplicationModal({ isOpen, onClose }) {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm"
+                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm text-gray-900"
                   placeholder="Phone Number *"
                 />
               </div>
@@ -235,7 +235,7 @@ export default function GeneralApplicationModal({ isOpen, onClose }) {
                   />
                   <label
                     htmlFor="resume"
-                    className="w-full px-4 py-2.5 border-2 border-dashed border-gray-200 rounded-xl hover:border-emerald-500 transition-all cursor-pointer flex items-center gap-2 bg-gray-50/50 text-sm"
+                    className="w-full px-4 py-2.5 border-2 border-dashed border-gray-200 rounded-xl hover:border-emerald-500 transition-all cursor-pointer flex items-center gap-2 bg-gray-50/50 text-sm text-gray-900"
                   >
                     <Upload className="w-4 h-4 text-gray-500" />
                     <span className="truncate text-gray-600">

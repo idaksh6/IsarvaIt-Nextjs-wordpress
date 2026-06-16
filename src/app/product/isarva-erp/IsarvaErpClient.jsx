@@ -857,14 +857,20 @@ export default function IsarvaErpClient() {
               return (
                 <>
                   {/* Tab Grid */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-10 p-5 bg-white/80 backdrop-blur-sm rounded-[20px] shadow-[0_8px_28px_rgba(180,83,9,0.08)]">
+                  <div
+                    className="flex sm:grid sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 mb-10 p-3 sm:p-5 overflow-x-auto sm:overflow-visible no-scrollbar bg-white/80 backdrop-blur-sm rounded-[20px] shadow-[0_8px_28px_rgba(180,83,9,0.08)]"
+                    style={{ scrollPaddingLeft: '0.75rem', scrollPaddingRight: '0.75rem' }}
+                  >
                     {tabs.map(t => {
                       const isActive = hubTab === t.id;
                       return (
                         <button
                           key={t.id}
-                          onClick={() => setHubTab(t.id)}
-                          className={`flex flex-col items-center text-center gap-3 px-3 py-5 rounded-2xl border transition-all duration-200 cursor-pointer
+                          onClick={(e) => {
+                            setHubTab(t.id);
+                            e.currentTarget.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+                          }}
+                          className={`flex-shrink-0 min-w-[180px] sm:min-w-0 flex flex-col items-center text-center gap-3 px-3 py-5 rounded-2xl border transition-all duration-200 cursor-pointer
                             ${isActive
                               ? `bg-white ${t.activeBorder} ${t.activeShadow}`
                               : 'bg-white border-slate-900/[0.08] shadow-[0_2px_8px_rgba(15,23,42,0.04)] hover:bg-amber-50 hover:border-amber-300/40 hover:-translate-y-0.5 hover:shadow-[0_6px_18px_rgba(180,83,9,0.10)]'

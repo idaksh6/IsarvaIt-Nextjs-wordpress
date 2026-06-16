@@ -360,7 +360,7 @@ export default function ContactFormModal({
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-3 md:px-4 py-2.5 rounded-xl border-2 border-gray-100 text-gray-900 focus:border-orange-400 focus:outline-none transition-all bg-gray-50/50 text-sm"
+                  className="w-full px-3 md:px-4 py-2.5 rounded-xl border-2 border-gray-100 text-gray-900 focus:border-orange-400 focus:outline-none transition-all bg-gray-50/50 text-sm text-gray-900"
                   placeholder="Full Name *"
                 />
               </div>
@@ -372,7 +372,7 @@ export default function ContactFormModal({
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-3 md:px-4 py-2.5 rounded-xl border-2 border-gray-100 text-gray-900 focus:border-orange-400 focus:outline-none transition-all bg-gray-50/50 text-sm"
+                  className="w-full px-3 md:px-4 py-2.5 rounded-xl border-2 border-gray-100 text-gray-900 focus:border-orange-400 focus:outline-none transition-all bg-gray-50/50 text-sm text-gray-900"
                   placeholder="Email Address *"
                 />
               </div>
@@ -388,7 +388,7 @@ export default function ContactFormModal({
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-3 md:px-4 py-2.5 rounded-xl border-2 border-gray-100 text-gray-900 focus:border-orange-400 focus:outline-none transition-all bg-gray-50/50 text-sm"
+                  className="w-full px-3 md:px-4 py-2.5 rounded-xl border-2 border-gray-100 text-gray-900 focus:border-orange-400 focus:outline-none transition-all bg-gray-50/50 text-sm text-gray-900"
                   placeholder="Phone Number *"
                 />
               </div>
@@ -400,7 +400,7 @@ export default function ContactFormModal({
                   value={formData.company}
                   onChange={handleChange}
                   required
-                  className="w-full px-3 md:px-4 py-2.5 rounded-xl border-2 border-gray-100 text-gray-900 focus:border-orange-400 focus:outline-none transition-all bg-gray-50/50 text-sm"
+                  className="w-full px-3 md:px-4 py-2.5 rounded-xl border-2 border-gray-100 text-gray-900 focus:border-orange-400 focus:outline-none transition-all bg-gray-50/50 text-sm text-gray-900"
                   placeholder="Company Name *"
                 />
               </div>
@@ -418,7 +418,7 @@ export default function ContactFormModal({
                   onChange={handleChange}
                   required
                   disabled={isLoadingCategories}
-                  className="w-full px-3 md:px-4 py-2.5 rounded-xl border-2 border-gray-100 text-gray-900 focus:border-orange-400 focus:outline-none transition-all bg-gray-50/50 text-sm disabled:cursor-not-allowed appearance-none pr-10"
+                  className="w-full px-3 md:px-4 py-2.5 rounded-xl border-2 border-gray-100 text-gray-900 focus:border-orange-400 focus:outline-none transition-all bg-gray-50/50 text-sm text-gray-900 disabled:cursor-not-allowed appearance-none pr-10"
                 >
                   <option value="">
                     {isLoadingCategories ? "Loading..." : `Select ${preSelectedType || "Product"}`}
@@ -448,7 +448,7 @@ export default function ContactFormModal({
                 value={formData.message}
                 onChange={handleChange}
                 rows="2"
-                className="w-full px-3 md:px-4 py-2 rounded-xl border-2 border-gray-100 text-gray-900 focus:border-orange-400 focus:outline-none transition-all bg-gray-50/50 text-sm resize-none"
+                className="w-full px-3 md:px-4 py-2 rounded-xl border-2 border-gray-100 text-gray-900 focus:border-orange-400 focus:outline-none transition-all bg-gray-50/50 text-sm text-gray-900 resize-none"
                 placeholder="Message (Optional)..."
               ></textarea>
             </div>

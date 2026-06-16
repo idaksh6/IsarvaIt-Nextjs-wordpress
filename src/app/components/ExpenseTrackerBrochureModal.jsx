@@ -246,7 +246,7 @@ export default function ExpenseTrackerBrochureModal({
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm"
+                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm text-gray-900"
                   placeholder="Full Name *"
                 />
               </div>
@@ -259,7 +259,7 @@ export default function ExpenseTrackerBrochureModal({
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm"
+                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm text-gray-900"
                   placeholder="Email Address *"
                 />
               </div>
@@ -276,7 +276,7 @@ export default function ExpenseTrackerBrochureModal({
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm"
+                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm text-gray-900"
                   placeholder="Phone Number *"
                 />
               </div>
@@ -289,7 +289,7 @@ export default function ExpenseTrackerBrochureModal({
                   value={formData.company}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm"
+                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm text-gray-900"
                   placeholder="Company Name *"
                 />
               </div>
@@ -304,7 +304,7 @@ export default function ExpenseTrackerBrochureModal({
                 value={formData.message}
                 onChange={handleChange}
                 rows={2}
-                className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm resize-none"
+                className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm text-gray-900 resize-none"
                 placeholder="Any specific requirements?"
               ></textarea>
             </div>
