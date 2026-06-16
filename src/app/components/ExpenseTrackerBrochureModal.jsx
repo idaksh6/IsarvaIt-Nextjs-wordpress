@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -6,7 +5,7 @@ import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 
 // Trigger WhatsApp template via wacrm after brochure form submit
-async function sendLeadToWacrm(form) {
+async function sendLeadToWacrm(form, options) {
   const res = await fetch('https://273d-103-141-112-193.ngrok-free.app/api/leads/website', {
     method: 'POST',
     headers: {
@@ -20,7 +19,9 @@ async function sendLeadToWacrm(form) {
       email: form.email,
       company: form.company,
       comments: form.comments,
-      template_params: [form.name],
+      product: options.productSlug,
+      product_label: options.productLabel,
+      brochure_path: options.brochurePath,
     }),
   });
   const data = await res.json();
@@ -28,8 +29,8 @@ async function sendLeadToWacrm(form) {
   return data;
 }
 
-export default function ExpenseTrackerBrochureModal({
-  isOpen,
+export default function ExpenseTrackerBrochureModal({ 
+  isOpen, 
   onClose
 }) {
   const router = useRouter();
@@ -103,24 +104,33 @@ export default function ExpenseTrackerBrochureModal({
       const data = await response.json();
 
       if (data.success) {
-        // Send WhatsApp hello_world via wacrm (non-blocking — form still succeeds if this fails)
+        const brochurePath = '/products/expense%20tracker/Expense-Tracker.pdf';
+
+        // Send WhatsApp brochure via wacrm (non-blocking — form still succeeds if this fails)
         try {
-          await sendLeadToWacrm({
-            phone: formData.phone,
-            name: formData.name,
-            email: formData.email,
-            company: formData.company,
-            comments: formData.message,
-          });
+          await sendLeadToWacrm(
+            {
+              phone: formData.phone,
+              name: formData.name,
+              email: formData.email,
+              company: formData.company,
+              comments: formData.message,
+            },
+            {
+              productSlug: 'expense_tracker',
+              productLabel: 'Expense Tracker',
+              brochurePath,
+            }
+          );
         } catch (wacrmErr) {
           console.error('wacrm WhatsApp send failed:', wacrmErr);
         }
 
         setSubmitStatus('success');
-
+        
         // Trigger PDF download
         const link = document.createElement('a');
-        link.href = '/products/expense%20tracker/Expense-Tracker.pdf';
+        link.href = brochurePath;
         link.download = 'Expense-Tracker-Brochure.pdf';
         document.body.appendChild(link);
         link.click();
@@ -170,12 +180,12 @@ export default function ExpenseTrackerBrochureModal({
                 }
               }
             } else if (data.error.toLowerCase().includes('mobile') || data.error.toLowerCase().includes('phone')) {
-              friendlyError = (data.error.toLowerCase().includes('registered') || data.error.toLowerCase().includes('taken'))
-                ? 'This phone number is already registered.'
+              friendlyError = (data.error.toLowerCase().includes('registered') || data.error.toLowerCase().includes('taken')) 
+                ? 'This phone number is already registered.' 
                 : 'Please enter a valid phone number.';
             } else if (data.error.toLowerCase().includes('email')) {
-              friendlyError = (data.error.toLowerCase().includes('registered') || data.error.toLowerCase().includes('taken'))
-                ? 'This email address is already registered.'
+              friendlyError = (data.error.toLowerCase().includes('registered') || data.error.toLowerCase().includes('taken')) 
+                ? 'This email address is already registered.' 
                 : 'Please enter a valid email address.';
             } else {
               friendlyError = data.error;
@@ -184,10 +194,10 @@ export default function ExpenseTrackerBrochureModal({
             friendlyError = data.error;
           }
         }
-
+        
         // Remove "CRM API error (409):" prefix if it somehow leaked through
         friendlyError = friendlyError.replace(/CRM API error \(\d+\):\s*/g, '');
-
+        
         setErrorMessage(friendlyError);
       }
     } catch (error) {
@@ -211,7 +221,7 @@ export default function ExpenseTrackerBrochureModal({
   const modalContent = (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
       {/* Backdrop */}
-      <div
+      <div 
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
         onClick={handleClose}
       ></div>
@@ -246,7 +256,7 @@ export default function ExpenseTrackerBrochureModal({
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm text-gray-900"
+                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm"
                   placeholder="Full Name *"
                 />
               </div>
@@ -259,7 +269,7 @@ export default function ExpenseTrackerBrochureModal({
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm text-gray-900"
+                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm"
                   placeholder="Email Address *"
                 />
               </div>
@@ -276,7 +286,7 @@ export default function ExpenseTrackerBrochureModal({
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm text-gray-900"
+                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm"
                   placeholder="Phone Number *"
                 />
               </div>
@@ -289,7 +299,7 @@ export default function ExpenseTrackerBrochureModal({
                   value={formData.company}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm text-gray-900"
+                  className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm"
                   placeholder="Company Name *"
                 />
               </div>
@@ -304,7 +314,7 @@ export default function ExpenseTrackerBrochureModal({
                 value={formData.message}
                 onChange={handleChange}
                 rows={2}
-                className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm text-gray-900 resize-none"
+                className="w-full px-4 py-2.5 border-2 border-gray-100 rounded-xl focus:border-emerald-500 outline-none transition-all bg-gray-50/50 text-sm resize-none"
                 placeholder="Any specific requirements?"
               ></textarea>
             </div>
