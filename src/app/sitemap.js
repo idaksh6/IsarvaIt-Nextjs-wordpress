@@ -30,7 +30,7 @@ export default function sitemap() {
 
   // Dynamic product pages
   const products = productsData
-    .filter((product) => !product.slug?.includes("-staging") && !product.slug?.includes("-old") && product.slug !== "bill-soft" && !product.noIndex)
+    .filter((product) => !product.slug?.includes("-staging") && !product.slug?.includes("-old") && !product.noIndex)
     .map((product) => ({
       url: `${baseUrl}/product/${product.slug}`,
       lastModified: new Date(),

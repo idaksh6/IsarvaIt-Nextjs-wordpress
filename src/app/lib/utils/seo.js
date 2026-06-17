@@ -88,7 +88,7 @@ export function generateMetadata({
 }
 
 export function generateProductMetadata(product) {
-  const isNoIndex = product.slug?.includes("-staging") || product.slug?.includes("-old") || product.slug === "bill-soft";
+  const isNoIndex = product.slug?.includes("-staging") || product.slug?.includes("-old");
   const prefix = product.slug?.includes("-staging") ? "[STAGING] " : product.slug?.includes("-old") ? "[OLD] " : "";
   const seoTitle = product.seoTitle || product.title;
   const seoDescription =
