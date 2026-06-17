@@ -271,7 +271,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
 
                 <div className="space-y-4 mt-8">
                   {/* Point 1 */}
-                  <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 p-5 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-xl shadow-violet-500/15 hover:shadow-2xl hover:shadow-violet-500/30 hover:-translate-y-1 transition-all duration-300 group">
+                  <div className="flex flex-col items-center text-center gap-4 p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-xl shadow-violet-500/15 hover:shadow-2xl hover:shadow-violet-500/30 hover:-translate-y-1 transition-all duration-300 group">
                     <div className="w-12 h-12 rounded-xl bg-violet-50 text-violet-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-violet-100 transition-all duration-300">
                       <Globe className="w-6 h-6" />
                     </div>
@@ -282,7 +282,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
                   </div>
                   
                   {/* Point 2 */}
-                  <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 p-5 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-xl shadow-pink-500/15 hover:shadow-2xl hover:shadow-pink-500/30 hover:-translate-y-1 transition-all duration-300 group">
+                  <div className="flex flex-col items-center text-center gap-4 p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-xl shadow-pink-500/15 hover:shadow-2xl hover:shadow-pink-500/30 hover:-translate-y-1 transition-all duration-300 group">
                     <div className="w-12 h-12 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-pink-100 transition-all duration-300">
                       <Layers className="w-6 h-6" />
                     </div>
@@ -293,7 +293,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
                   </div>
 
                   {/* Point 3 */}
-                  <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 p-5 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-xl shadow-cyan-500/15 hover:shadow-2xl hover:shadow-cyan-500/30 hover:-translate-y-1 transition-all duration-300 group">
+                  <div className="flex flex-col items-center text-center gap-4 p-6 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-100 shadow-xl shadow-cyan-500/15 hover:shadow-2xl hover:shadow-cyan-500/30 hover:-translate-y-1 transition-all duration-300 group">
                     <div className="w-12 h-12 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-cyan-100 transition-all duration-300">
                       <BarChart2 className="w-6 h-6" />
                     </div>
@@ -307,7 +307,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
 
               {/* Right Side: Features Highlight Panels (Avoiding Dark Colors) */}
               <div className="lg:col-span-5 space-y-6">
-                <div className="bg-white/60 backdrop-blur-xl p-8 rounded-3xl border border-white/80 shadow-xl shadow-violet-500/10 hover:shadow-2xl hover:shadow-violet-500/25 hover:-translate-y-2 transition-all duration-500 flex flex-col items-center lg:items-start text-center lg:text-left group">
+                <div className="bg-white/60 backdrop-blur-xl p-8 rounded-3xl border border-white/80 shadow-xl shadow-violet-500/10 hover:shadow-2xl hover:shadow-violet-500/25 hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center group">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-100 to-indigo-100 text-violet-700 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
                     <Cpu className="w-6 h-6" />
                   </div>
@@ -317,7 +317,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
                   </p>
                 </div>
 
-                <div className="bg-white/60 backdrop-blur-xl p-8 rounded-3xl border border-white/80 shadow-xl shadow-pink-500/10 hover:shadow-2xl hover:shadow-pink-500/25 hover:-translate-y-2 transition-all duration-500 flex flex-col items-center lg:items-start text-center lg:text-left group">
+                <div className="bg-white/60 backdrop-blur-xl p-8 rounded-3xl border border-white/80 shadow-xl shadow-pink-500/10 hover:shadow-2xl hover:shadow-pink-500/25 hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center group">
                   <div className="w-12 h-12 rounded-xl bg-pink-600/10 text-pink-700 flex items-center justify-center mb-6">
                     <Zap className="w-6 h-6" />
                   </div>
@@ -396,14 +396,14 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
                 return (
                   <div
                     key={index}
-                    className={`group flex flex-col items-start ${isWide ? 'p-8' : 'p-6'} gap-4 rounded-3xl bg-white/60 backdrop-blur-xl border border-white/80 shadow-xl hover:shadow-2xl ${shadowClass} hover:-translate-y-1 transition-all duration-300 ${spanClass}`}
+                    className={`group flex flex-col items-center text-center ${isWide ? 'p-8' : 'p-6'} gap-4 rounded-3xl bg-white/60 backdrop-blur-xl border border-white/80 shadow-xl hover:shadow-2xl ${shadowClass} hover:-translate-y-1 transition-all duration-300 ${spanClass}`}
                   >
                     <div className={`w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center font-black text-lg border ${colorClass} group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300`}>
                       {String(index + 1).padStart(2, '0')}
                     </div>
 
-                    <div className="flex-1">
-                      <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <div className="flex-1 w-full flex flex-col items-center">
+                      <div className="flex flex-wrap justify-center items-center gap-2 mb-2">
                         <h4 className={`${isWide ? 'text-2xl' : 'text-lg'} text-slate-900 group-hover:text-indigo-600 transition-colors`}>
                           {feat.title}
                         </h4>
@@ -453,7 +453,7 @@ export default function NewsAndMagazinePortal({ service, servicesData }) {
                 return (
                   <div
                     key={index}
-                    className={`relative overflow-hidden group p-8 rounded-3xl border backdrop-blur-md transition-all duration-300 hover:-translate-y-2 flex flex-col items-center text-center md:items-start md:text-left h-full ${style.bg} ${style.border} ${style.shadow}`}
+                    className={`relative overflow-hidden group p-8 rounded-3xl border backdrop-blur-md transition-all duration-300 hover:-translate-y-2 flex flex-col items-center text-center h-full ${style.bg} ${style.border} ${style.shadow}`}
                   >
                     {/* Unique Top Accent Gradient Line */}
                     <div className="absolute top-0 left-0 w-full h-[5px] bg-gradient-to-r from-violet-500 via-pink-500 to-amber-400" />
