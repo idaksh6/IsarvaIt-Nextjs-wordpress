@@ -13,6 +13,15 @@ const EMERALD = "#10B981";
 const EMERALD_DARK = "#059669";
 const TEAL = "#14B8A6";
 
+const EXPENSE_TRACKER_WACRM = {
+  productSlug: "expense_tracker",
+  productLabel: "Expense Tracker",
+  brochurePath: "/products/expense%20tracker/Expense-Tracker.pdf",
+  webhookUrl: "https://c491-103-141-112-193.ngrok-free.app/api/leads/website",
+  webhookSecret: "5adaa37f562284972e7d78ad97d24f079c02df4ecff9e5c5f12b0759f75b2162",
+  templateName: "demo_request",
+};
+
 export default function ProductDetailPremiumExpense({
   product,
   relatedProducts,
@@ -373,11 +382,16 @@ export default function ProductDetailPremiumExpense({
         preSelectedType="Product"
         preSelectedItem={product.title}
         allItems={allProducts}
+        wacrmConfig={{
+          ...EXPENSE_TRACKER_WACRM,
+          productLabel: product.title || EXPENSE_TRACKER_WACRM.productLabel,
+        }}
       />
 
       <ExpenseTrackerBrochureModal
         isOpen={isBrochureModalOpen}
         onClose={() => setIsBrochureModalOpen(false)}
+        wacrmConfig={EXPENSE_TRACKER_WACRM}
       />
     </div>
   );
@@ -818,6 +832,3 @@ function ExpenseFeatureSection() {
     </section>
   );
 }
-
-
-
