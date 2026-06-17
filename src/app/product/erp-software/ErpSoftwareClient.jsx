@@ -1199,9 +1199,6 @@ export default function ErpSoftwareClient() {
                 <div className="h-full bg-gradient-to-r from-emerald-500 via-cyan-500 to-emerald-500 w-full" />
               </div>
 
-              {/* Vertical progress line for mobile */}
-              <div className="lg:hidden absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-0.5 bg-emerald-100" aria-hidden="true" />
-
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-4 relative z-10">
                 {[
                   { num: "01", icon: "🔍", title: "Understand your business", desc: "We learn how your team works—departments, branches, and the software you use today." },
@@ -1209,11 +1206,15 @@ export default function ErpSoftwareClient() {
                   { num: "03", icon: "📥", title: "Move your data", desc: "We import your records from spreadsheets or old systems—safely, in stages, with checks along the way." },
                   { num: "04", icon: "🎓", title: "Train your team", desc: "Practical sessions for finance, HR, sales, warehouse staff, and managers—using real examples." },
                   { num: "05", icon: "🚀", title: "Launch with support", desc: "We go live in phases, stay close during launch week, and help you improve after day one." }
-                ].map((step, idx) => (
+                ].map((step, idx, arr) => (
                   <article
                     key={idx}
-                    className="flex flex-col items-center text-center gap-5 lg:gap-4 p-5 sm:p-6 bg-white border border-slate-900/5 rounded-2xl shadow-[0_4px_20px_rgba(15,23,42,0.03)] hover:-translate-y-1.5 hover:border-emerald-500/25 hover:shadow-[0_12px_30px_rgba(15,184,78,0.15)] transition-all duration-300 group"
+                    className="relative flex flex-col items-center text-center gap-5 lg:gap-4 p-5 sm:p-6 bg-white border border-slate-900/5 rounded-2xl shadow-[0_4px_20px_rgba(15,23,42,0.03)] hover:-translate-y-1.5 hover:border-emerald-500/25 hover:shadow-[0_12px_30px_rgba(15,184,78,0.15)] transition-all duration-300 group"
                   >
+                    {/* Vertical connector line for mobile */}
+                    {idx < arr.length - 1 && (
+                      <div className="lg:hidden absolute left-1/2 -translate-x-1/2 top-full h-8 w-0.5 bg-emerald-100" aria-hidden="true" />
+                    )}
                     <div className="relative shrink-0 w-14 h-14 lg:w-16 lg:h-16 flex items-center justify-center rounded-full bg-gradient-to-br from-emerald-50 to-emerald-100/50 border-2 border-emerald-500/35 shadow-[0_4px_12px_rgba(15,184,78,0.15)] group-hover:scale-105 transition-transform duration-300">
                       <span className="font-display text-sm font-extrabold text-[#059669]">{step.num}</span>
                       <span className="absolute -bottom-1 -right-1 w-6 h-6 flex items-center justify-center bg-white border border-slate-900/10 rounded-full text-xs shadow-sm">{step.icon}</span>
@@ -1768,7 +1769,7 @@ export default function ErpSoftwareClient() {
                     </span>
                   </summary>
                   <div className="faq-answer border-t border-slate-900/5 transition-all duration-300">
-                    <p className="p-[0.5rem_1.25rem_1.2rem_4.6rem] text-sm text-[#64748b] leading-[1.65] text-left" dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                    <p className="p-[0.5rem_1.25rem_1.2rem_1.25rem] text-sm text-[#64748b] leading-[1.65] text-left" dangerouslySetInnerHTML={{ __html: faq.answer }} />
                   </div>
                 </details>
               ))}
