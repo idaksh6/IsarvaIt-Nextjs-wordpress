@@ -750,14 +750,14 @@ export default function ErpSoftwareClient() {
                       style={{ background: `linear-gradient(90deg, ${theme.accentColor}, transparent 85%)` }}
                     />
 
-                    <div className="flex items-center gap-[0.85rem]">
+                    <div className="flex flex-col md:flex-row items-center md:items-center gap-3 md:gap-[0.85rem] text-center md:text-left">
                       <span className={`shrink-0 w-12 h-12 flex items-center justify-center text-xl rounded-xl border ${theme.bgSoft} ${theme.accent}`} aria-hidden="true">
                         {ind.icon}
                       </span>
-                      <h3 className="text-slate-900 font-bold ">{ind.name}</h3>
+                      <h3 className="text-slate-900 font-bold">{ind.name}</h3>
                     </div>
 
-                    <p className="text-sm text-slate-600 leading-relaxed">{ind.lead}</p>
+                    <p className="text-sm text-slate-600 leading-relaxed text-center md:text-left">{ind.lead}</p>
 
                     <ul className="list-none m-0 p-0 flex flex-col gap-[0.45rem] flex-1">
                       {ind.benefits.map((benefit, bIdx) => (
@@ -1522,7 +1522,7 @@ export default function ErpSoftwareClient() {
               </p>
             </div>
 
-            <div className="border border-slate-900/[0.08] rounded-[24px] shadow-[0_18px_44px_rgba(15,23,42,0.07)] overflow-hidden bg-white">
+            <div className="border-0 lg:border border-slate-900/[0.08] rounded-none lg:rounded-[24px] shadow-none lg:shadow-[0_18px_44px_rgba(15,23,42,0.07)] overflow-visible lg:overflow-hidden bg-transparent lg:bg-white">
               <div className="overflow-x-auto lg:overflow-x-visible">
                 <div className="w-full lg:min-w-[800px] flex flex-col" role="table" aria-label="Comparison Table">
                   {/* Table Head */}
@@ -1746,7 +1746,7 @@ export default function ErpSoftwareClient() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
               {[
                 { icon: "⏱️", question: "How long until we can go live?", answer: "Most teams go live in <strong>4 to 12 weeks</strong>. The timeline depends on how many modules you need, how many branches you run, and how much existing data we need to move over." },
                 { icon: "🧩", question: "Can we start with just a few modules?", answer: "Yes. Many teams begin with HR, inventory, or accounts—and add sales, finance, and projects later when everyone is comfortable with the system." },
@@ -1755,7 +1755,7 @@ export default function ErpSoftwareClient() {
                 { icon: "🔐", question: "How is our data kept secure?", answer: "Role-based access, a full history of every change, and encrypted connections work together to protect payroll and financial records across all modules." },
                 { icon: "🎓", question: "What training and support do we get?", answer: "Hands-on onboarding for each role, admin guides, and ongoing support during and after launch—with premium service levels available on enterprise plans." }
               ].map((faq, idx) => (
-                <details key={idx} className="group bg-gradient-to-b from-[#f8fafc] to-white border border-slate-900/[0.07] rounded-2xl [&_summary::-webkit-details-marker]:hidden hover:border-[#0891b2]/22 hover:shadow-[0_6px_20px_rgba(8,145,178,0.08)] open:bg-gradient-to-b open:from-[#f0fdfa] open:to-white open:border-[#0891b2]/28 open:shadow-[0_8px_24px_rgba(8,145,178,0.1)] transition-all duration-300">
+                <details key={idx} name="erp-faq" className="group bg-gradient-to-b from-[#f8fafc] to-white border border-slate-900/[0.07] rounded-2xl [&_summary::-webkit-details-marker]:hidden hover:border-[#0891b2]/22 hover:shadow-[0_6px_20px_rgba(8,145,178,0.08)] open:bg-gradient-to-b open:from-[#f0fdfa] open:to-white open:border-[#0891b2]/28 open:shadow-[0_8px_24px_rgba(8,145,178,0.1)] transition-all duration-300">
                   <summary className="flex items-center justify-between gap-3.5 p-[1.1rem_1.25rem] font-bold text-slate-900 cursor-pointer list-none relative">
                     <div className="flex items-center gap-3.5">
                       <span className="w-10 h-10 flex items-center justify-center text-xl leading-none rounded-xl bg-[#0891b2]/10 border border-[#0891b2]/18 shrink-0 group-open:scale-108 group-open:bg-[#0891b2]/15 transition-all duration-300" aria-hidden="true">{faq.icon}</span>

@@ -30,9 +30,6 @@ const ICON_SIZE = "w-6 h-6";
 const ICON_STROKE = 2;
 
 const HERO_IMAGE = "/images/quality-policy/hero-banner.png";
-const METHODOLOGY_BANNER = "/images/quality-policy/methodology-banner.png";
-const METHODOLOGY_BANNER_WIDTH = 1536;
-const METHODOLOGY_BANNER_HEIGHT = 1024;
 
 /* ── SEO: noindex + nofollow ─────────────────────────────── */
 export const metadata = generateSEOMetadata({

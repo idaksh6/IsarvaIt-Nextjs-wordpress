@@ -20,6 +20,7 @@ export default function sitemap() {
     '/testimonial',
     '/thank-you',
     '/quality-policy',
+    '/referral-program',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
