@@ -327,6 +327,8 @@ function TestimonialsSection({ data }) {
                   "box-shadow 0.35s ease, transform 0.35s ease, border-color 0.35s ease",
                 position: "relative",
                 overflow: "hidden",
+                display: "flex",
+                flexDirection: "column",
               }}
               onMouseEnter={(e) => {
                 const el = e.currentTarget;
@@ -404,74 +406,77 @@ function TestimonialsSection({ data }) {
                 "{t.text}"
               </p>
 
-              {/* Divider */}
-              <div
-                style={{
-                  height: 1,
-                  marginBottom: 24,
-                  background:
-                    "linear-gradient(90deg, rgba(99,102,241,0.2) 0%, rgba(99,102,241,0.03) 80%, transparent 100%)",
-                }}
-              />
-
-              {/* Author */}
-              <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              {/* Footer container pushed to the bottom */}
+              <div style={{ marginTop: "auto" }}>
+                {/* Divider */}
                 <div
                   style={{
-                    width: 48,
-                    height: 48,
-                    borderRadius: 16,
-                    flexShrink: 0,
-                    background: t.gradient,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: 14,
-                    fontWeight: 800,
-                    color: "#fff",
-                    boxShadow: `0 6px 20px rgba(0,0,0,0.12)`,
+                    height: 1,
+                    marginBottom: 24,
+                    background:
+                      "linear-gradient(90deg, rgba(99,102,241,0.2) 0%, rgba(99,102,241,0.03) 80%, transparent 100%)",
                   }}
-                >
-                  {t.initials}
-                </div>
-                <div>
-                  <p
+                />
+
+                {/* Author */}
+                <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                  <div
                     style={{
-                      color: "#111827",
-                      fontWeight: 700,
+                      width: 48,
+                      height: 48,
+                      borderRadius: 16,
+                      flexShrink: 0,
+                      background: t.gradient,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                       fontSize: 14,
-                      marginBottom: 2,
+                      fontWeight: 800,
+                      color: "#fff",
+                      boxShadow: `0 6px 20px rgba(0,0,0,0.12)`,
                     }}
                   >
-                    {t.name}
-                  </p>
-                  <p
-                    style={{ color: "#9ca3af", fontSize: 12, fontWeight: 500 }}
-                  >
-                    {t.role} &middot; {t.company}
-                  </p>
-                </div>
-                {/* Verified badge */}
-                <div style={{ marginLeft: "auto" }}>
-                  <svg
-                    style={{ width: 22, height: 22 }}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <circle
-                      cx="12"
-                      cy="12"
-                      r="12"
-                      fill="rgba(99,102,241,0.1)"
-                    />
-                    <path
-                      d="M9 12l2 2 4-4"
-                      stroke="#6366f1"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                    {t.initials}
+                  </div>
+                  <div>
+                    <p
+                      style={{
+                        color: "#111827",
+                        fontWeight: 700,
+                        fontSize: 14,
+                        marginBottom: 2,
+                      }}
+                    >
+                      {t.name}
+                    </p>
+                    <p
+                      style={{ color: "#9ca3af", fontSize: 12, fontWeight: 500 }}
+                    >
+                      {t.role} &middot; {t.company}
+                    </p>
+                  </div>
+                  {/* Verified badge */}
+                  <div style={{ marginLeft: "auto" }}>
+                    <svg
+                      style={{ width: 22, height: 22 }}
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <circle
+                        cx="12"
+                        cy="12"
+                        r="12"
+                        fill="rgba(99,102,241,0.1)"
+                      />
+                      <path
+                        d="M9 12l2 2 4-4"
+                        stroke="#6366f1"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </article>
