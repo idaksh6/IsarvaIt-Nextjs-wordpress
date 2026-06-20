@@ -1,0 +1,109 @@
+<USER_REQUEST>
+so lets modify another another page 
+
+exsiiting page /product/godown-management-staging
+
+you can clear current page and build from scracth or modfiy existing one please create image if required
+
+
+ISARVA GODOWN MANAGEMENT PRODUCT WEBSITE CONTENT
+
+Smart Godown & Inventory Management System
+Track. Manage. Control. Grow.
+Everything you need to manage your warehouse, stock, events, rentals, and payments — all in one place.
+Image: Dashboard.jpg, Manage-events.jpg, Stock-summary-report.jpg
+New section for image
+In desktop:godown_desktop-infographics_image
+In mobile: godown_mobile-infographics_image
+
+
+Dashboard - Your Business at a Glance
+Get instant insights into your warehouse operations with our powerful dashboard:
+Total Categories - See all your product categories in one view
+Overall Stock Count - Know your complete inventory instantly
+Total Products - Track every item in your warehouse
+Out of Stock Alerts - Never miss a restock opportunity
+Top Performers Analytics
+Discover what's working best for your business:
+View your Top 5 Selling Products at a glance
+Filter by Year, Month, Event, or Rental period
+Make data-driven decisions with real-time insights
+Monthly Sales Tracking
+Keep your finger on the pulse of your business
+See units dispatched for the current month
+Review performance for the last 5 months
+Filter by year, event type, or rental activity
+Smart Due Date Management
+Never miss a deadline again
+Upcoming Dues - See which products are due within 10 days (for both events and rentals)
+ Overdue Tracking - Instantly identify and follow up on overdue items
+Payment Monitoring
+Track pending payments for both events and rentals - all in one place
+
+User & Customer Management
+Simple Setup, Powerful Control
+User Management
+Add team members and assign page-specific access rights to maintain security and organization.
+Customer Module
+Easily add customers or vendors by simply selecting their type - it's that simple!
+
+Master Setup
+Build Your Foundation
+Units Configu
+<truncated 5530 bytes>
+
+How does it help your industry?
+It helps you manage events, rentals, returns, and payments in one place without confusion.
+
+Can I track product returns properly?
+Yes, you can track returned items as good, damaged, or missing with full accuracy.
+
+How are payments managed?
+The system tracks advance, expenses, penalties, and pending amounts automatically.
+
+Do I need to update status manually in Events and Rents?
+No, the system automatically updates status based on dispatch and return data, it includes sent, returned , partially returned.
+
+Can I track both events and rentals in one system?
+Yes, everything is managed in one place.
+ Whether it’s a one-day event or long-term rental, the system handles both with the same powerful flow.
+Can I get reports for decision making?
+Yes, detailed reports are available anytime.
+ From stock summary to damage reports — everything can be exported to Excel or PDF.
+
+Image Lists:
+
+Dashboard Image
+User Management image
+Master/Product unit
+Inventory/Category Manage
+Inventory/Product Management
+Inventory/product edit section barcode/qr code images
+Product movements/ events manage page
+Product movements/ create event page with products added
+Product movements/ event return create page with products in it(click on return symbol)
+Event return payment clear image(at bottom in return section)
+Rent Manage page
+Rent return Manage Page
+Invoice image for event 
+Invoice image for rent
+Every report manage page image
+
+
+
+
+
+
+
+
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-20T11:20:49+05:30.
+
+The user's current state is as follows:
+Active Document: e:\IsarvaIt-Nextjs-wordpress\src\app\training-programs\TrainingProgramsPremium.jsx (LANGUAGE_JAVASCRIPT)
+Cursor is on line: 760
+Other open documents:
+- e:\IsarvaIt-Nextjs-wordpress\src\app\training-programs\TrainingProgramsPremium.jsx (LANGUAGE_JAVASCRIPT)
+- e:\IsarvaIt-Nextjs-wordpress\src\app\components\products\ProductDetailPremiumExpense.jsx (LANGUAGE_JAVASCRIPT)
+</ADDITIONAL_METADATA>

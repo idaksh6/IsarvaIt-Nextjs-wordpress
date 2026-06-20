@@ -5,706 +5,1343 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "../AppLink";
 import ContactFormModal from "../../components/ContactFormModal";
 
-const PRIMARY_TEAL = "#0D9488";
-const PRIMARY_CYAN = "#0891B2";
-const ACCENT_EMERALD = "#10B981";
-
-/* ─────────────────────────────────────────────────────────────
-   GODOWN SYSTEM MODULES DATA
-   ───────────────────────────────────────────────────────────── */
-const godownModules = [
+const heroImages = [
   {
-    id: "dashboard",
     title: "Insight Dashboard",
-    icon: "📊",
-    color: "from-teal-500 to-cyan-600",
-    desc: "Your business at a glance. Track categories, stock counts, and critical 'Out of Stock' alerts in real-time.",
-    features: ["Total Categories View", "Live Stock Count", "Low Stock Alerts", "Top Performers Analytics"]
+    path: "/products/godown/Dashboard.jpg",
+    desc: "Get real-time statistics, top seller analytics, and stock alerts."
   },
   {
-    id: "inventory",
-    title: "Smart Inventory",
-    icon: "📦",
-    color: "from-cyan-500 to-blue-600",
-    desc: "Intelligent parent-child category system with automated barcode and QR code generation for every product.",
-    features: ["Parent-Child Hierarchy", "Auto-Generated QR/Barcodes", "Stock Adjustment Tools", "Multi-Image Support"]
+    title: "Manage Events",
+    path: "/products/godown/Manage-events.jpg",
+    desc: "Seamlessly manage event bookings, product dispatches, and rental timelines."
   },
   {
-    id: "movement",
-    title: "Movement Tracking",
-    icon: "🔄",
-    color: "from-emerald-500 to-teal-600",
-    desc: "The heart of your warehouse. Track exactly what goes out for events or rentals and what comes back.",
-    features: ["Dispatch Tracking", "Due Date Management", "Return Condition Check", "Missing Item Logs"]
-  },
-  {
-    id: "events",
-    title: "Event & Rental",
-    icon: "🗓️",
-    color: "from-blue-500 to-indigo-600",
-    desc: "Perfect for one-time occasions or long-term rentals. Includes built-in safety features to block out-of-stock items.",
-    features: ["Product Selection Safeties", "Expected Return Tracking", "Vehicle & Driver Logging", "Flexible Rental Schemes"]
-  },
-  {
-    id: "finances",
-    title: "Financial Control",
-    icon: "💰",
-    color: "from-teal-600 to-emerald-700",
-    desc: "Crystal clear money management. Track advances, pending payments, and penalty charges automatically.",
-    features: ["Auto-Calculated Balances", "Payment History", "Advance Monitoring", "Expense Tracking"]
-  },
-  {
-    id: "reports",
-    title: "Insight Reports",
-    icon: "📈",
-    color: "from-cyan-600 to-teal-700",
-    desc: "Data-driven decisions made easy. Export stock summaries, movement logs, and activity logs to PDF or Excel.",
-    features: ["Stock Summary History", "Current Stock Audit", "User Activity Logs", "PDF & Excel Export"]
+    title: "Stock Auditing",
+    path: "/products/godown/Stock-Summary-Report.jpg",
+    desc: "Access full history of stock adjustments and detailed timeline metrics."
   }
 ];
 
-const statusFlow = [
-  { status: "Sent", desc: "Products dispatched to customer", color: "bg-blue-500", icon: "🚚" },
-  { status: "Partially Returned", desc: "Partial inventory received (e.g. 15/20)", color: "bg-amber-500", icon: "📦" },
-  { status: "Returned", desc: "All items received back successfully", color: "bg-emerald-500", icon: "✅" }
+const reportList = [
+  {
+    id: "stock-summary",
+    name: "Stock Summary Report",
+    desc: "Complete history of an item's stock timeline: opening stock, adjustments, additions, and deletions.",
+    image: "/products/godown/Stock-Summary-Report.jpg",
+    icon: "📋"
+  },
+  {
+    id: "current-stock",
+    name: "Current Stock Report",
+    desc: "A real-time list of what is physically in your godown or warehouse right now, helpful for quick stock audits.",
+    image: "/products/godown/Stock-Report.jpg",
+    icon: "🏠"
+  },
+  {
+    id: "movement",
+    name: "Movement Report",
+    desc: "A detailed log tracking which products went to which events or rentals and how much has returned.",
+    image: "/products/godown/Even-rent-movement-report.jpg",
+    icon: "🚛"
+  },
+  {
+    id: "activity-log",
+    name: "Activity Log Report",
+    desc: "Tracks every edit, manual override, and adjustment made by users to maintain absolute security.",
+    image: "/products/godown/Event-log-report.jpg",
+    icon: "🛡️"
+  },
+  {
+    id: "damage-missing",
+    name: "Damage & Missing Report",
+    desc: "Specialized tracking of damaged and lost items, helping you identify high-cost clients or venues.",
+    image: "/products/godown/Damage-missing-report-rent.jpg",
+    icon: "❌"
+  }
 ];
 
-const reportTypes = [
-  { name: "Stock Summary", description: "Complete history of an item: Opening stock, adjustments, and deletions.", icon: "📋" },
-  { name: "Current Stock", description: "A real-time list of what is physically in your godown right now.", icon: "🏠" },
-  { name: "Movement Report", description: "A detailed log of what went to which event and how much has returned.", icon: "🚛" },
-  { name: "Activity Log", description: "Tracks every edit and manual override made by users for total security.", icon: "🛡️" },
-  { name: "Damage & Missing", description: "Specialized list of losses helping you identify high-cost clients or events.", icon: "❌" }
+const faqItems = [
+  {
+    q: "How does it help your industry?",
+    a: "It helps you manage events, rentals, returns, and payments in one place without confusion, keeping your operations streamlined and unified."
+  },
+  {
+    q: "Can I track product returns properly?",
+    a: "Yes, you can track returned items as good, damaged, or missing with full accuracy, ensuring accountability for your stock assets."
+  },
+  {
+    q: "How are payments managed?",
+    a: "The system tracks advance payments, event/rental expenses, penalty charges, and pending balances automatically in real-time."
+  },
+  {
+    q: "Do I need to update status manually in Events and Rents?",
+    a: "No, the system automatically updates the status based on dispatch and return data. It includes states like Sent, Partially Returned, and Returned."
+  },
+  {
+    q: "Can I track both events and rentals in one system?",
+    a: "Yes, everything is managed in one place. Whether it's a short event or a long-term rental, the system handles both with the same powerful flow."
+  },
+  {
+    q: "Can I get reports for decision making?",
+    a: "Yes, detailed reports are available anytime. From stock summaries to damage reports, everything can be exported to Excel or PDF with a single click."
+  },
+  {
+    q: "Does the system support barcode and QR code scanning?",
+    a: "Yes! The system automatically generates unique QR codes and barcodes for your products. You can scan them to quickly view details or adjust stock on the fly."
+  },
+  {
+    q: "Can I manage multiple user roles and permissions?",
+    a: "Yes, administrators can add team members and assign specific page access permissions, ensuring secure access control across different user levels."
+  }
 ];
 
 export default function ProductDetailPremiumGodownStaging({ product, relatedProducts, allProducts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState("dashboard");
-  const [scrolled, setScrolled] = useState(false);
+  const [heroIdx, setHeroIdx] = useState(0);
+  const [activeReportIdx, setActiveReportIdx] = useState(0);
+  const [faqOpenIdx, setFaqOpenIdx] = useState(null);
 
+  // Auto-rotate hero images
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const timer = setInterval(() => {
+      setHeroIdx((prev) => (prev + 1) % heroImages.length);
+    }, 6000);
+    return () => clearInterval(timer);
   }, []);
 
+  const toggleFaq = (idx) => {
+    setFaqOpenIdx(faqOpenIdx === idx ? null : idx);
+  };
+
   return (
-    <div className="bg-white min-h-screen font-sans text-slate-900">
-      {/* ── HERO SECTION ── */}
-      <section className="relative pt-32 lg:pt-40 pb-12 lg:pb-16 overflow-hidden">
-        {/* Advanced Background Gradients */}
-        <div className="absolute inset-0 -z-10 bg-white">
-          <div className="absolute top-0 left-[-10%] w-[50%] h-[50%] bg-gradient-to-br from-teal-200/30 to-transparent rounded-full blur-[120px] animate-pulse"></div>
-          <div className="absolute bottom-[20%] right-[-10%] w-[60%] h-[60%] bg-gradient-to-tl from-cyan-200/40 to-emerald-100/30 rounded-full blur-[140px]"></div>
-          <div className="absolute top-[30%] left-[20%] w-[30%] h-[30%] bg-gradient-to-tr from-emerald-100/20 to-transparent rounded-full blur-[100px]"></div>
-          <div className="absolute inset-0 opacity-[0.4]" style={{ backgroundImage: "radial-gradient(#0D9488 0.5px, transparent 0.5px)", backgroundSize: "32px 32px" }}></div>
-        </div>
+    <>
+      <style>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-12px) rotate(1deg); }
+        }
+        @keyframes float2 {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-8px) rotate(-1deg); }
+        }
+        @keyframes shimmer {
+          0% { background-position: -200% center; }
+          100% { background-position: 200% center; }
+        }
+        @keyframes gradientShift {
+          0%, 100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+        .animate-float1 { animation: float 6s ease-in-out infinite; }
+        .animate-float2 { animation: float2 8s ease-in-out infinite; }
+        .shimmer-text {
+          background: linear-gradient(90deg, #4f46e5, #8b5cf6, #06b6d4, #10b981, #4f46e5);
+          background-size: 200% auto;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          animation: shimmer 4s linear infinite;
+        }
+        .hero-bg {
+          background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 30%, #ecfeff 60%, #ffffff 100%);
+        }
+        .hero-mesh-overlay {
+          background-image:
+            radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.06) 0%, transparent 40%),
+            radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.06) 0%, transparent 45%);
+        }
+        .grid-bg-overlay {
+          background-image: radial-gradient(rgba(79, 70, 229, 0.05) 1.5px, transparent 1.5px);
+          background-size: 28px 28px;
+        }
+        .premium-card {
+          background: #ffffff;
+          border: 1px solid rgba(79, 70, 229, 0.08);
+          box-shadow: 0 10px 40px rgba(79, 70, 229, 0.03);
+          transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s, border-color 0.3s;
+        }
+        .premium-card:hover {
+          transform: translateY(-6px);
+          border-color: rgba(79, 70, 229, 0.2);
+          box-shadow: 0 20px 50px rgba(79, 70, 229, 0.08);
+        }
+        .hover-border-indigo:hover {
+          border-color: rgba(79, 70, 229, 0.35);
+          box-shadow: 0 20px 50px rgba(79, 70, 229, 0.12);
+        }
+        .hover-border-cyan:hover {
+          border-color: rgba(6, 182, 212, 0.35);
+          box-shadow: 0 20px 50px rgba(6, 182, 212, 0.12);
+        }
+        .hover-border-emerald:hover {
+          border-color: rgba(16, 185, 129, 0.35);
+          box-shadow: 0 20px 50px rgba(16, 185, 129, 0.12);
+        }
+        .hover-border-rose:hover {
+          border-color: rgba(244, 63, 94, 0.35);
+          box-shadow: 0 20px 50px rgba(244, 63, 94, 0.12);
+        }
+        .hover-border-purple:hover {
+          border-color: rgba(168, 85, 247, 0.35);
+          box-shadow: 0 20px 50px rgba(168, 85, 247, 0.12);
+        }
+        .status-flow-card {
+          transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s, border-color 0.3s;
+        }
+        .status-flow-card:hover {
+          transform: translateY(-4px);
+        }
+        .status-flow-card-blue:hover {
+          border-color: rgba(59, 130, 246, 0.3);
+          box-shadow: 0 12px 30px rgba(59, 130, 246, 0.08);
+        }
+        .status-flow-card-amber:hover {
+          border-color: rgba(245, 158, 11, 0.3);
+          box-shadow: 0 12px 30px rgba(245, 158, 11, 0.08);
+        }
+        .status-flow-card-emerald:hover {
+          border-color: rgba(16, 185, 129, 0.3);
+          box-shadow: 0 12px 30px rgba(16, 185, 129, 0.08);
+        }
+        .premium-btn-gradient {
+          background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 14px 0 rgba(79, 70, 229, 0.3);
+        }
+        .premium-btn-gradient:hover {
+          background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+          box-shadow: 0 6px 20px 0 rgba(79, 70, 229, 0.4);
+          transform: translateY(-1px);
+        }
+        .premium-btn-gradient:active {
+          transform: translateY(1px);
+        }
+        .cta-gradient-banner {
+          background: linear-gradient(135deg, #312e81 0%, #1e1b4b 50%, #111827 100%);
+        }
+        .icon-container-centered {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 3.5rem;
+          height: 3.5rem;
+          flex-shrink: 0;
+          border-radius: 1rem;
+        }
+      `}</style>
 
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <span className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-gradient-to-r from-teal-50 to-emerald-50 text-teal-700 text-[10px] font-black tracking-[0.3em] capitalize mb-8 border border-teal-100/50 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse"></span>
-              The Future of Godown Tech
-            </span>
-            <h1 className="text-slate-900 mb-8">
-              <span className="inline-block hover:scale-[1.02] transition-transform duration-300">Smart Godown</span> <br />
-              <span className="text-transparent bg-clip-text py-1 bg-gradient-to-r from-teal-600 via-cyan-500 to-emerald-500 drop-shadow-sm py-1">
-                & Inventory System
-              </span>
-            </h1>
-            <p className="text-xl lg:text-3xl text-slate-500 font-medium max-w-4xl mx-auto mb-8 leading-relaxed opacity-90">
-              Track. Manage. Control. Grow. <br className="hidden md:block" /> 
-              <span className="text-slate-400">Everything you need to manage your warehouse, stock, events, rentals, and payments — all in one place.</span>
-            </p>
+      <div className="bg-slate-50/50 min-h-screen text-slate-700 overflow-hidden">
+        
+        {/* ── 1. HERO SECTION ── */}
+        <section className="hero-bg relative pt-32 lg:pt-40 pb-12 lg:pb-16 overflow-hidden hero-mesh-overlay">
+          {/* Background shapes & decorations */}
+          <div className="absolute inset-0 pointer-events-none select-none z-0">
+            <div className="absolute top-0 left-[-15%] w-[600px] h-[600px] bg-indigo-100/50 rounded-full blur-[120px]" />
+            <div className="absolute top-[40%] right-[-15%] w-[500px] h-[500px] bg-cyan-100/40 rounded-full blur-[100px]" />
+            <div className="absolute inset-0 grid-bg-overlay opacity-[0.8]" />
+          </div>
 
-            <div className="flex flex-wrap justify-center gap-6 mb-8">
-              <button 
-                onClick={() => setIsModalOpen(true)}
-                className="btn-premium-orange group !px-10 !py-5 !text-xl"
-              >
-                <div className="shimmer"></div>
-                <span className="relative z-10 flex items-center gap-2">
-                  Launch Live Demo
-                  <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
-                </span>
-              </button>
-              <Link 
-                href="#features"
-                className="px-10 py-5 bg-white/50 backdrop-blur-md text-teal-700 font-black text-xl rounded-2xl border-2 border-teal-100/50 shadow-sm hover:border-teal-300 transition-all hover:bg-white"
-              >
-                System Architecture
+
+
+          <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+            {/* Breadcrumb */}
+            <div className="flex flex-wrap items-center gap-2 text-sm text-slate-500 mb-10">
+              <Link href="/" className="hover:text-indigo-600 transition-colors">
+                Home
               </Link>
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+              </svg>
+              <Link href="/products" className="hover:text-indigo-600 transition-colors">
+                Products
+              </Link>
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+              </svg>
+              <span className="text-indigo-600 font-semibold">Smart Godown Staging</span>
             </div>
-          </motion.div>
 
-          {/* Interactive UI Mockup with Gradient Border */}
-          <motion.div 
-            initial={{ opacity: 0, y: 60, rotateX: 10 }}
-            animate={{ opacity: 1, y: 0, rotateX: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="relative max-w-6xl mx-auto perspective-1000"
-          >
-            <div className="p-1.5 rounded-[3rem] bg-gradient-to-br from-teal-400 via-cyan-300 to-emerald-400 shadow-[0_40px_100px_rgba(13,148,136,0.15)]">
-              <div className="rounded-[2.8rem] bg-slate-900/5 p-4 backdrop-blur-xl border border-white/40">
-                <div className="rounded-[2.2rem] bg-white shadow-2xl overflow-hidden border border-slate-100 aspect-[16/9] flex flex-col">
-                  {/* Mock Browser Header */}
-                  <div className="bg-gradient-to-b from-slate-50 to-white px-8 py-5 border-b border-slate-100 flex items-center justify-between">
-                    <div className="flex gap-2.5">
-                      <div className="w-3.5 h-3.5 rounded-full bg-rose-400 shadow-sm shadow-rose-200"></div>
-                      <div className="w-3.5 h-3.5 rounded-full bg-amber-400 shadow-sm shadow-amber-200"></div>
-                      <div className="w-3.5 h-3.5 rounded-full bg-emerald-400 shadow-sm shadow-emerald-200"></div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              {/* Left Column content */}
+              <div className="text-center lg:text-left">
+                <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-bold text-sm mb-8 shadow-sm">
+                  <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 animate-pulse"></span>
+                  Smart ERP Suite
+                </span>
+                
+                <h1 className="mb-6">
+                  Smart Godown <br />
+                  <span className="shimmer-text">
+                    & Inventory System
+                  </span>
+                </h1>
+
+                <p className="text-indigo-700 font-extrabold text-base lg:text-lg uppercase tracking-widest mb-6">
+                  Track. Manage. Control. Grow.
+                </p>
+
+                <p className="text-base lg:text-xl text-slate-600 leading-relaxed font-medium mb-8 max-w-xl mx-auto lg:mx-0">
+                  Everything you need to manage your warehouse, stock, events, rentals, and payments — all in one unified, automated platform.
+                </p>
+
+                <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="press-illusion-btn-orange bg-orange-500 text-white w-fit font-bold px-8 py-4 text-base items-center space-x-2 flex cursor-pointer"
+                  >
+                    Request Free Demo
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </button>
+                  <a
+                    href="#infographics"
+                    className="inline-flex items-center gap-3 px-8 py-4 text-base font-bold text-slate-700 bg-white border-2 border-slate-200/80 rounded-xl hover:border-indigo-500/40 hover:text-indigo-650 hover:bg-indigo-50/40 transition-all duration-300 shadow-sm"
+                  >
+                    View System Workflow
+                  </a>
+                </div>
+              </div>
+
+              {/* Right Column Showcase */}
+              <div>
+                <div className="relative">
+                  <div className="absolute -inset-4 bg-gradient-to-br from-indigo-200/30 to-cyan-200/30 blur-[60px] rounded-full" />
+                  <div className="relative bg-white p-4 rounded-3xl border border-slate-100 shadow-[0_24px_80px_rgba(79,70,229,0.08)]">
+                    {/* Main image display */}
+                    <div className="relative w-full rounded-2xl overflow-hidden bg-slate-50 border border-slate-200/60" style={{ aspectRatio: "16/10" }}>
+                      <AnimatePresence mode="wait">
+                        <motion.img
+                          key={heroIdx}
+                          src={heroImages[heroIdx].path}
+                          alt={heroImages[heroIdx].title}
+                          initial={{ opacity: 0, scale: 0.98 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 1.02 }}
+                          transition={{ duration: 0.4 }}
+                          className="absolute inset-0 w-full h-full object-cover"
+                        />
+                      </AnimatePresence>
                     </div>
-                    <div className="flex-1 max-w-lg mx-8 px-6 py-2 bg-slate-100/50 rounded-xl border border-slate-200/50 text-[10px] font-bold text-slate-400 text-left tracking-wide">
-                      HTTPS://SYSTEM.ISARVA.IT/GODOWN/DASHBAORD_ANALYTICS
-                    </div>
-                    <div className="flex items-center gap-3">
-                       <div className="w-8 h-8 rounded-lg bg-teal-50 flex items-center justify-center text-teal-600 font-black text-[10px]">v2.4</div>
-                       <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-teal-500 to-cyan-500 border-2 border-white shadow-md flex items-center justify-center text-white font-black text-xs">JD</div>
-                    </div>
-                  </div>
-                  
-                  {/* Mock Dashboard Content */}
-                  <div className="flex-1 p-10 grid grid-cols-12 gap-8 bg-[#FAFBFE]">
-                    {/* Left Sidebar */}
-                    <div className="col-span-3 space-y-4">
-                      {[1,2,3,4,5,6].map(i => (
-                        <div key={i} className={`h-12 rounded-2xl ${i === 1 ? "bg-gradient-to-r from-teal-600 to-cyan-600 shadow-xl shadow-teal-100" : "bg-slate-200/40"} w-full`}></div>
+
+                    {/* Carousel Nav Tabs */}
+                    <div className="grid grid-cols-3 gap-2 mt-4">
+                      {heroImages.map((img, i) => (
+                        <button
+                          key={i}
+                          onClick={() => setHeroIdx(i)}
+                          className={`py-3.5 px-2 text-xs font-bold rounded-xl border-2 transition-all duration-300 ${
+                            heroIdx === i
+                              ? "bg-indigo-600 border-indigo-600 text-white shadow-md shadow-indigo-600/10"
+                              : "bg-slate-50/50 border-transparent text-slate-500 hover:bg-slate-100 hover:text-slate-800"
+                          }`}
+                        >
+                          {img.title}
+                        </button>
                       ))}
                     </div>
-                    {/* Main Content */}
-                    <div className="col-span-9 space-y-8 text-left">
-                      <div className="grid grid-cols-4 gap-6">
-                        {[
-                          { label: "Categories", val: "24", sub: "+2 this month", color: "from-teal-500 to-teal-600" },
-                          { label: "Stock Count", val: "1.2k", sub: "Operational", color: "from-cyan-500 to-cyan-600" },
-                          { label: "Total Products", val: "485", sub: "Active", color: "from-blue-500 to-indigo-600" },
-                          { label: "Out of Stock", val: "04", sub: "Urgent", color: "from-rose-500 to-red-600" }
-                        ].map((stat, idx) => (
-                          <div key={idx} className="bg-white p-6 rounded-[2rem] shadow-[0_10px_30px_rgba(0,0,0,0.02)] border border-slate-100 flex flex-col justify-between h-32 hover:shadow-lg transition-all group relative overflow-hidden">
-                            <span className="text-[9px] font-black text-slate-400 capitalize tracking-widest">{stat.label}</span>
-                            <div className="flex flex-col">
-                              <span className={`text-3xl font-black ${idx === 3 ? "text-rose-500" : "text-slate-900"}`}>{stat.val}</span>
-                              <span className="text-[8px] font-bold text-slate-400 mt-1">{stat.sub}</span>
-                            </div>
-                            <div className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r ${stat.color} w-0 group-hover:w-full transition-all duration-500 rounded-b-full`}></div>
-                          </div>
-                        ))}
-                      </div>
-                      <div className="bg-white p-8 rounded-[3rem] shadow-[0_10px_40px_rgba(0,0,0,0.02)] border border-slate-100 h-72 relative overflow-hidden flex flex-col">
-                         <div className="flex justify-between items-center mb-8">
-                            <div className="flex flex-col">
-                              <span className="font-black text-slate-800 text-lg">Inventory Flow Matrix</span>
-                              <span className="text-xs font-bold text-slate-400 capitalize tracking-tight">Units Analytics (2024)</span>
-                            </div>
-                            <div className="flex gap-3">
-                              <div className="px-4 py-2 bg-slate-50 rounded-xl border border-slate-100 text-[10px] font-black capitalize text-slate-400">Monthly</div>
-                              <div className="h-10 w-10 bg-teal-50 text-teal-600 rounded-xl flex items-center justify-center">⚙️</div>
-                            </div>
-                         </div>
-                         <div className="flex-1 flex items-end gap-5 px-6 overflow-hidden">
-                            {[30, 60, 40, 85, 55, 75, 45, 95, 60, 80].map((h, i) => (
-                              <motion.div 
-                                key={i}
-                                initial={{ height: 0 }}
-                                animate={{ height: `${h}%` }}
-                                transition={{ duration: 1.2, delay: 0.6 + (i * 0.08), ease: "backOut" }}
-                                className={`flex-1 rounded-t-xl shadow-lg relative group/bar`}
-                                style={{ background: `linear-gradient(to top, #0D9488, ${i % 2 === 0 ? "#0891B2" : "#10B981"})` }}
-                              >
-                                <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[8px] px-2 py-1 rounded opacity-0 group-hover/bar:opacity-100 transition-opacity font-bold">
-                                  {h}%
-                                </div>
-                              </motion.div>
-                            ))}
-                         </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
+
             </div>
-            
-            {/* Advanced Decorative Icons */}
-            <div className="absolute -top-12 -left-12 bg-gradient-to-br from-white to-teal-50 shadow-2xl rounded-[2rem] p-6 border border-teal-100/50 animate-bounce cursor-default backdrop-blur-sm">
-              <span className="text-4xl filter drop-shadow-md">⚡</span>
-              <div className="text-[10px] font-black text-teal-600 mt-2 capitalize tracking-tighter">Ultra-Fast Sync</div>
+          </div>
+        </section>
+
+        {/* ── 2. INFOGRAPHICS SECTION ── */}
+        <section id="infographics" className="py-12 lg:py-16 bg-gradient-to-b from-white via-cyan-50/20 to-white relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-indigo-100 to-transparent" />
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-semibold text-sm mb-6">
+                ✨ System Architecture
+              </div>
+              <h2 className="mb-6 capitalize">
+                Visualizing the Complete Pipeline
+              </h2>
+              <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+                Our system coordinates inventory levels, product movements, events dispatch, rental terms, returns audits, and customer invoice calculations in a single flow.
+              </p>
             </div>
-            <div className="absolute -bottom-16 -right-8 bg-gradient-to-tr from-slate-900 to-slate-800 shadow-2xl rounded-[2.5rem] p-7 border-4 border-white hover:scale-110 transition-transform cursor-pointer group">
-              <div className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-gradient-to-br from-teal-400 to-emerald-400 rounded-2xl flex items-center justify-center text-3xl shadow-inner group-hover:rotate-12 transition-transform">📱</div>
-                <div className="text-left">
-                  <div className="text-sm font-black text-white leading-none">Smart Mobile Hub</div>
-                  <div className="text-[10px] text-teal-400 mt-1.5 font-black capitalize tracking-widest group-hover:text-emerald-400 transition-colors">Enterprise Ready</div>
+
+            <div className="max-w-5xl mx-auto p-2 bg-slate-50 rounded-3xl border border-slate-200/80 shadow-2xl overflow-hidden">
+              {/* Desktop Infographic (Using smaller image sizes to avoid staging load issues) */}
+              <img
+                src="/products/godown/godown_infographic_desktop.png"
+                alt="Godown Management System Desktop Infographics"
+                className="hidden md:block w-full h-auto rounded-[1.4rem]"
+              />
+              {/* Mobile Infographic */}
+              <img
+                src="/products/godown/godown_infographic_mobile.png"
+                alt="Godown Management System Mobile Infographics"
+                className="block md:hidden w-full h-auto rounded-[1.4rem]"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* ── 3. DASHBOARD INSIGHTS SECTION ── */}
+        <section className="py-12 lg:py-16 bg-gradient-to-b from-slate-50/80 via-indigo-50/10 to-slate-50/80 relative overflow-hidden">
+          <div className="absolute top-0 right-1/4 w-80 h-80 bg-indigo-50 rounded-full blur-3xl opacity-60 pointer-events-none" />
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              
+              {/* Left Column: Image */}
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-br from-indigo-100/50 to-cyan-100/50 blur-[50px] rounded-3xl" />
+                <div className="relative rounded-3xl overflow-hidden border border-slate-100 shadow-2xl bg-white p-2">
+                  <img
+                    src="/products/godown/Dashboard.jpg"
+                    alt="Warehouse Analytics Dashboard Screen"
+                    className="w-full h-auto rounded-2xl"
+                  />
                 </div>
               </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
-      {/* ── MOBILE VIEW SECTION ── */}
-      <section className="py-12 lg:py-16 bg-white relative">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="lg:w-1/2">
-              <span className="text-teal-600 font-black tracking-widest text-xs capitalize mb-6 inline-block">MOBILE OPTIMIZED</span>
-              <h2 className="text-slate-900 mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Your Warehouse in <br /><span className="text-teal-600">Your Pocket.</span></h2>
-              <p className="text-slate-500 text-lg mb-8 leading-relaxed font-medium">Access your entire godown operation from anywhere. Our mobile-first design ensures you stay in control even when you're on the move.</p>
-              
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {[
-                  { title: "Total Categories", desc: "See all your product categories in one view." },
-                  { title: "Overall Stock Count", desc: "Know your complete inventory instantly." },
-                  { title: "Out of Stock Alerts", desc: "Never miss a restock opportunity." },
-                  { title: "Smart Due Date", desc: "Upcoming dues & overdue tracking." }
-                ].map((item, idx) => (
-                  <li key={idx} className="flex gap-4 items-start">
-                    <div className="w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 flex-shrink-0 mt-1">✓</div>
-                    <div>
-                      <h4 className="text-slate-900 mb-1">{item.title}</h4>
-                      <p className="text-slate-400 text-xs font-medium">{item.desc}</p>
+              {/* Right Column: Content */}
+              <div className="text-center lg:text-left">
+                <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-semibold text-sm mb-6">
+                  📊 Dashboard Analytics
+                </div>
+                <h2 className="mb-6 capitalize">
+                  Your Business Operations at a Glance
+                </h2>
+                <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                  Get real-time tracking metrics and operations oversight. Keep monitor tabs on stock statuses, category splits, and outgoing shipments instantly.
+                </p>
+
+                {/* Grid layout for categories, stock, products, alerts */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-10">
+                  <div className="premium-card hover-border-indigo p-6 rounded-3xl text-center">
+                    <div className="icon-container-centered bg-indigo-50 text-indigo-600 mb-4 mx-auto">
+                      📁
                     </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            <div className="lg:w-1/2 flex justify-center scale-90 md:scale-100">
-               {/* Mobile Phone Mockup */}
-               <div className="w-[300px] h-[600px] bg-slate-900 rounded-[3rem] p-3 shadow-2xl relative border-[6px] border-slate-800">
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-800 rounded-b-2xl z-20"></div>
-                  <div className="w-full h-full bg-white rounded-[2.2rem] overflow-hidden relative flex flex-col">
-                     <div className="bg-teal-600 p-6 pt-8 text-white">
-                        <div className="flex justify-between items-center mb-4">
-                           <span className="text-sm font-black">Dashboard</span>
-                           <div className="w-6 h-6 bg-white/20 rounded-lg"></div>
-                        </div>
-                        <div className="text-[10px] opacity-80 capitalize font-black">Total Products</div>
-                        <div className="text-3xl font-black">2,485</div>
-                     </div>
-                     <div className="flex-1 p-4 space-y-4 bg-slate-50">
-                        <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
-                           <div className="text-[9px] font-black text-slate-400 capitalize mb-2">Pending Payments</div>
-                           <div className="text-lg font-black text-rose-500">₹ 42,500</div>
-                        </div>
-                        <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
-                           <div className="text-[9px] font-black text-slate-400 capitalize mb-2">Upcoming Dues (10 Days)</div>
-                           <div className="space-y-2 mt-2">
-                              <div className="h-6 bg-amber-50 rounded-lg border border-amber-100 flex items-center px-3 justify-between">
-                                 <span className="text-[8px] font-bold">Event A102</span>
-                                 <span className="text-[8px] font-black text-amber-700">2 Days Left</span>
-                              </div>
-                              <div className="h-6 bg-slate-100 rounded-lg flex items-center px-3">
-                                 <div className="w-full h-1 bg-slate-200 rounded-full overflow-hidden">
-                                    <div className="w-2/3 h-full bg-teal-500"></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div className="grid grid-cols-2 gap-3 pt-2">
-                           <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center gap-2">
-                              <div className="w-8 h-8 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center text-sm">📦</div>
-                              <span className="text-[9px] font-black capitalize">Stock</span>
-                           </div>
-                           <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center gap-2">
-                              <div className="w-8 h-8 rounded-full bg-cyan-100 text-cyan-600 flex items-center justify-center text-sm">🗓️</div>
-                              <span className="text-[9px] font-black capitalize">Events</span>
-                           </div>
-                        </div>
-                     </div>
-                     {/* Bottom Nav */}
-                     <div className="h-16 bg-white border-t border-slate-100 flex items-center justify-around px-4">
-                        {[1,2,3,4].map(i => (
-                           <div key={i} className={`w-8 h-1 rounded-full ${i===1 ? "bg-teal-600" : "bg-slate-200"}`}></div>
-                        ))}
-                     </div>
+                    <h3 className="mb-2">Total Categories</h3>
+                    <p className="text-sm text-slate-500 leading-relaxed">
+                      See your complete sub-category and category tree organized in one simple, quick view.
+                    </p>
                   </div>
-               </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* ── MASTER SETUP & QR SECTION ── */}
-      <section className="py-12 lg:py-16 bg-slate-50 relative">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="relative">
-               {/* QR Card Illustration */}
-               <div className="bg-white p-10 rounded-[3rem] shadow-2xl border border-slate-100 relative group">
-                  <div className="flex justify-between items-start mb-8">
-                    <div>
-                      <h4 className="text-slate-900 mb-1">Product Master</h4>
-                      <p className="text-slate-400 text-sm font-medium">Automatic Code Generation</p>
+                  <div className="premium-card hover-border-cyan p-6 rounded-3xl text-center">
+                    <div className="icon-container-centered bg-cyan-50 text-cyan-600 mb-4 mx-auto">
+                      📦
                     </div>
-                    <div className="w-12 h-12 bg-teal-600 rounded-2xl flex items-center justify-center text-white text-2xl">✨</div>
+                    <h3 className="mb-2">Overall Stock Count</h3>
+                    <p className="text-sm text-slate-500 leading-relaxed">
+                      Know your physical stock counts, adjustments, and exact quantity volumes in real-time.
+                    </p>
                   </div>
-                  
-                  <div className="flex items-center gap-10">
-                    <div className="w-32 h-32 bg-slate-50 rounded-2xl border-4 p-2 border-slate-900 group-hover:scale-105 transition-transform">
-                       {/* Mock QR Code Pattern */}
-                       <div className="w-full h-full grid grid-cols-5 grid-rows-5 gap-1">
-                          {[...Array(25)].map((_, i) => (
-                             <div key={i} className={`${Math.random() > 0.5 ? "bg-slate-900" : "bg-transparent"} rounded-sm`}></div>
-                          ))}
-                       </div>
+
+                  <div className="premium-card hover-border-emerald p-6 rounded-3xl text-center">
+                    <div className="icon-container-centered bg-emerald-50 text-emerald-600 mb-4 mx-auto">
+                      🏷️
                     </div>
-                    <div className="space-y-4 flex-1">
-                       <div className="bg-slate-50 p-4 rounded-xl">
-                          <div className="text-[10px] font-black text-slate-400 capitalize">Barcode ID</div>
-                          <div className="text-lg font-mono font-bold tracking-widest mt-1">PROD-99827-X</div>
-                       </div>
-                       <div className="flex gap-2">
-                          <div className="px-3 py-1 bg-emerald-50 text-emerald-600 rounded-lg text-[10px] font-black">IN STOCK</div>
-                          <div className="px-3 py-1 bg-teal-50 text-teal-600 rounded-lg text-[10px] font-black">ELECTRONICS</div>
-                       </div>
+                    <h3 className="mb-2">Total Products</h3>
+                    <p className="text-sm text-slate-500 leading-relaxed">
+                      Easily configure and manage all your catalog stock listings, specs, and details in one place.
+                    </p>
+                  </div>
+
+                  <div className="premium-card hover-border-rose p-6 rounded-3xl text-center">
+                    <div className="icon-container-centered bg-rose-50 text-rose-600 mb-4 mx-auto">
+                      🚨
                     </div>
+                    <h3 className="mb-2">Out of Stock Alerts</h3>
+                    <p className="text-sm text-slate-500 leading-relaxed">
+                      Instant warning lists for depleted stocks, helping you prevent order bottlenecks.
+                    </p>
                   </div>
-                  
-                  <div className="mt-8 pt-8 border-t border-slate-100 flex items-center justify-between">
-                     <span className="text-sm font-bold text-slate-400 italic">"Scan to adjust stock instantly"</span>
-                     <div className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-white">📸</div>
-                  </div>
-               </div>
-               {/* Background circle */}
-               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-teal-200 rounded-full blur-[100px] opacity-20 -z-10"></div>
-            </div>
-            
-            <div>
-              <span className="text-teal-600 font-black tracking-widest text-xs capitalize mb-6 inline-block">MASTER SETUP</span>
-              <h2 className="text-slate-900 mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Foundation for <br /><span className="text-teal-600">Enterprise Scale.</span></h2>
-              
-              <div className="space-y-8">
-                 <div>
-                    <h4 className="mb-3 flex items-center gap-3">
-                       <span className="w-8 h-8 rounded-lg bg-teal-100 text-teal-600 flex items-center justify-center text-sm">📏</span>
-                       Units Configuration
-                    </h4>
-                    <p className="text-slate-500 font-medium pl-11">Add custom measurement units like KG, Litre, PCS, or even custom event crates. Complete flexibility for any business type.</p>
-                 </div>
-                 <div>
-                    <h4 className="mb-3 flex items-center gap-3">
-                       <span className="w-8 h-8 rounded-lg bg-cyan-100 text-cyan-600 flex items-center justify-center text-sm">📁</span>
-                       Category Hierarchy
-                    </h4>
-                    <p className="text-slate-500 font-medium pl-11">Simple one-level hierarchy keeps things clear. One parent can have multiple children sub-categories, keeping your products organized precisely.</p>
-                 </div>
-                 <div>
-                    <h4 className="mb-3 flex items-center gap-3">
-                       <span className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center text-sm">👤</span>
-                       User Management
-                    </h4>
-                    <p className="text-slate-500 font-medium pl-11">Powerful control for admins. Assign page-specific access rights to team members to maintain strict organizational security.</p>
-                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+                </div>
 
-      {/* ── CORE MODULES SECTION ── */}
-      <section id="features" className="py-12 lg:py-16 bg-[#FCFDFF] relative">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-10">
-            <h2 className="text-slate-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Powerful Features for Modern Warehouses</h2>
-            <p className="text-lg text-slate-500 max-w-2xl mx-auto">Designed to work for you. Every feature is built with simplicity and automation in mind.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {godownModules.map((module, idx) => (
-              <motion.div
-                key={module.id}
-                whileHover={{ y: -8 }}
-                className="group p-10 bg-white rounded-[3rem] border border-slate-100 shadow-[0_8px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_50px_rgba(13,148,136,0.1)] transition-all duration-300 overflow-hidden relative"
-              >
-                <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${module.color} opacity-0 group-hover:opacity-5 transition-opacity rounded-bl-[5rem]`}></div>
-                <div className="text-5xl mb-8 transform group-hover:scale-110 transition-transform inline-block">{module.icon}</div>
-                <h3 className="text-slate-900 mb-4">{module.title}</h3>
-                <p className="text-slate-500 leading-relaxed mb-8 text-sm font-medium">{module.desc}</p>
-                <ul className="space-y-3">
-                  {module.features.map((feature, fIdx) => (
-                    <li key={fIdx} className="flex items-center gap-3 text-xs font-bold text-slate-700">
-                      <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${module.color}`}></div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── SMART STATUS UPDATES VISUALIZER ── */}
-      <section className="py-12 lg:py-16 bg-slate-900 text-white overflow-hidden relative">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" style={{ backgroundImage: "radial-gradient(white 1px, transparent 1px)", backgroundSize: "30px 30px" }}></div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-20">
-            <div className="lg:w-1/2">
-              <span className="text-teal-400 font-black tracking-widest text-xs capitalize mb-6 inline-block">AUTOMATION THAT WORKS</span>
-              <h2 className="mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Smart Status Updates— <br /><span className="text-teal-400">Zero Manual Work.</span></h2>
-              <p className="text-slate-400 text-lg mb-10 leading-relaxed font-medium">Our system automatically detects inventory returns and updates statuses in real-time. Whether it's partially back or fully returned, the system knows what to do.</p>
-              
-              <div className="space-y-6">
-                {statusFlow.map((item, idx) => (
-                  <motion.div 
-                    key={idx}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.2 }}
-                    className="flex items-center gap-6 p-6 rounded-[2rem] bg-white/5 border border-white/10 hover:bg-white/10 transition-colors group"
-                  >
-                    <div className={`w-14 h-14 rounded-2xl ${item.color} flex items-center justify-center text-2xl shadow-lg ring-4 ring-white/5 group-hover:scale-110 transition-transform`}>
-                      {item.icon}
+                {/* Checklist bullets */}
+                <div className="space-y-4 pt-6 border-t border-slate-200">
+                  <div className="flex items-start gap-4 text-left">
+                    <div className="w-6 h-6 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 text-sm font-bold mt-0.5">
+                      ✓
                     </div>
                     <div>
-                      <h4 className="mb-1">{item.status}</h4>
-                      <p className="text-slate-400 text-sm font-medium">{item.desc}</p>
+                      <h4>Top Performers Analytics</h4>
+                      <p className="text-slate-500 text-sm mt-0.5">Filter top 5 selling items by Year, Month, Event, or Rental durations to identify high-margin assets.</p>
                     </div>
-                  </motion.div>
-                ))}
+                  </div>
+                  <div className="flex items-start gap-4 text-left">
+                    <div className="w-6 h-6 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 text-sm font-bold mt-0.5">
+                      ✓
+                    </div>
+                    <div>
+                      <h4>Monthly Sales & Due Date Monitor</h4>
+                      <p className="text-slate-500 text-sm mt-0.5">Track units dispatched for the last 5 months, monitor return deadlines (within 10 days), and review client payments.</p>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* ── 4. USER & CUSTOMER MANAGEMENT SECTION ── */}
+        <section className="py-12 lg:py-16 bg-gradient-to-b from-white via-purple-50/10 to-white relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              
+              {/* Left Column Content */}
+              <div className="text-center lg:text-left">
+                <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-semibold text-sm mb-6">
+                  👥 Access & Clients
+                </div>
+                <h2 className="mb-6 capitalize">
+                  Simple Setup, Powerful Access Controls
+                </h2>
+                <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                  Manage your system permissions and client logs in one place. Add team members and clients quickly with direct workflow assignments.
+                </p>
+
+                <div className="space-y-6">
+                  <div className="flex gap-4 items-start text-left">
+                    <div className="icon-container-centered bg-indigo-50 text-indigo-600 mt-1 mx-auto">
+                      👥
+                    </div>
+                    <div>
+                      <h3 className="mb-1">User Management</h3>
+                      <p className="text-sm text-slate-555 leading-relaxed">
+                        Assign page-specific permissions and feature restrictions to staff. Control who can edit inventory, approve returns, or view billing sheets.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4 items-start text-left">
+                    <div className="icon-container-centered bg-cyan-50 text-cyan-600 mt-1 mx-auto">
+                      🤝
+                    </div>
+                    <div>
+                      <h3 className="mb-1">Customer & Vendor Module</h3>
+                      <p className="text-sm text-slate-555 leading-relaxed">
+                        Track details for customers and vendors alike. Easily toggle custom transaction parameters, past log histories, and active rental lists.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column Image */}
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-br from-cyan-100/50 to-indigo-100/50 blur-[50px] rounded-3xl" />
+                <div className="relative rounded-3xl overflow-hidden border border-slate-100 shadow-2xl bg-white p-2">
+                  <img
+                    src="/products/godown/User-Management.jpg"
+                    alt="User Roles and Client Management Screen"
+                    className="w-full h-auto rounded-2xl"
+                  />
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* ── 5. MASTER SETUP SECTION ── */}
+        <section className="py-12 lg:py-16 bg-gradient-to-b from-slate-50/60 via-indigo-50/15 to-slate-50/60 relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              
+              {/* Left Column Image */}
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-br from-indigo-100/50 to-purple-100/50 blur-[50px] rounded-3xl" />
+                <div className="relative rounded-3xl overflow-hidden border border-slate-100 shadow-2xl bg-white p-2">
+                  <img
+                    src="/products/godown/Manage-products-units.jpg"
+                    alt="Product and Unit Setup Screen"
+                    className="w-full h-auto rounded-2xl"
+                  />
+                </div>
+              </div>
+
+              {/* Right Column Content */}
+              <div className="text-center lg:text-left">
+                <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-semibold text-sm mb-6">
+                  🏗️ System Foundation
+                </div>
+                <h2 className="mb-6 capitalize">
+                  Build a Scalable Warehouse Foundation
+                </h2>
+                <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                  Define the core variables of your business. Create custom units and product rules to align the software with your precise physical operational routines.
+                </p>
+
+                <div className="space-y-6">
+                  <div className="flex gap-4 items-start text-left">
+                    <div className="icon-container-centered bg-indigo-50 text-indigo-600 mt-1 mx-auto">
+                      📏
+                    </div>
+                    <div>
+                      <h3 className="mb-1">Custom Units Configuration</h3>
+                      <p className="text-sm text-slate-555 leading-relaxed">
+                        Configure standard weights and sizes like Kilograms, Litres, and Pieces, or define custom crates, event packs, and volume bounds.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4 items-start text-left">
+                    <div className="icon-container-centered bg-emerald-50 text-emerald-600 mt-1 mx-auto">
+                      🏗️
+                    </div>
+                    <div>
+                      <h3 className="mb-1">Core Setup Integrity</h3>
+                      <p className="text-sm text-slate-555 leading-relaxed">
+                        Establishes unit associations, package tracking criteria, and standard categories before importing your product master lists.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* ── 6. INTELLIGENT INVENTORY & QR CODES ── */}
+        <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
             
-            <div className="lg:w-1/2 relative">
-               {/* Visual Flow Animation */}
-               <div className="relative aspect-square max-w-[500px] mx-auto">
-                 <div className="absolute inset-0 rounded-full border border-teal-500/20 animate-[spin_20s_linear_infinite]"></div>
-                 <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-48 h-48 bg-teal-500/10 rounded-full flex items-center justify-center blur-2xl"></div>
-                    <div className="relative w-40 h-40 bg-teal-600 rounded-[3rem] shadow-2xl flex items-center justify-center text-6xl text-white font-black z-10 border-4 border-teal-400">
-                       <span className="animate-pulse">📦</span>
-                    </div>
-                 </div>
-                 
-                 {/* Floating Points */}
-                 {[0, 120, 240].map((deg, i) => (
-                   <motion.div 
-                     key={i}
-                     initial={{ opacity: 0 }}
-                     whileInView={{ opacity: 1 }}
-                     className="absolute w-24 h-24 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 flex flex-col items-center justify-center p-3 gap-2"
-                     style={{ 
-                       top: `calc(50% + ${Math.sin(deg * Math.PI / 180) * 180}px - 48px)`,
-                       left: `calc(50% + ${Math.cos(deg * Math.PI / 180) * 180}px - 48px)`
-                     }}
-                   >
-                     <span className="text-2xl">{statusFlow[i].icon}</span>
-                     <span className="text-[10px] font-black capitalize text-center">{statusFlow[i].status}</span>
-                   </motion.div>
-                 ))}
-               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── RETURN PROCESS & QUALITY CHECK ── */}
-      <section className="py-12 lg:py-16 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="order-2 lg:order-1 relative">
-              <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl border-8 border-slate-50">
-                 <div className="bg-teal-600 p-8 text-white">
-                    <h3 className="mb-2">Quality Check Assistant</h3>
-                    <p className="text-teal-100 text-sm font-medium">Smart formula calculation for every return</p>
-                 </div>
-                 <div className="p-8 space-y-6 bg-white">
-                    <div className="grid grid-cols-2 gap-4">
-                       <div className="p-5 rounded-2xl bg-emerald-50 border border-emerald-100">
-                          <div className="text-[10px] font-black text-emerald-600 capitalize mb-2">Good Condition</div>
-                          <div className="text-3xl font-black text-emerald-700">12</div>
-                       </div>
-                       <div className="p-5 rounded-2xl bg-amber-50 border border-amber-100">
-                          <div className="text-[10px] font-black text-amber-600 capitalize mb-2">Damaged</div>
-                          <div className="text-3xl font-black text-amber-700">02</div>
-                       </div>
-                    </div>
-                    <div className="p-5 rounded-2xl bg-rose-50 border border-rose-100">
-                       <div className="text-[10px] font-black text-rose-600 capitalize mb-2">Missing Items</div>
-                       <div className="text-3xl font-black text-rose-700">01</div>
-                    </div>
-                    <div className="pt-6 border-t border-slate-100 flex justify-between items-center">
-                       <span className="text-lg font-black text-slate-400">Total Returned</span>
-                       <span className="text-4xl font-black text-slate-900">15 / 15</span>
-                    </div>
-                    <div className="bg-slate-900 p-4 rounded-xl text-center">
-                       <span className="text-xs font-bold text-teal-400">Formula: Returned = Good + Damaged + Missing</span>
-                    </div>
-                 </div>
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-semibold text-sm mb-6">
+                📦 Inventory Setup
               </div>
-              {/* Decorative blobs */}
-              <div className="absolute -top-10 -left-10 w-40 h-40 bg-teal-200 rounded-full blur-[80px] opacity-40"></div>
-              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-cyan-200 rounded-full blur-[80px] opacity-40"></div>
+              <h2 className="mb-6 capitalize">
+                Automated Product Control & Barcoding
+              </h2>
+              <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+                Organize items through clean hierarchies and manage stock levels easily with system-generated barcode tracking.
+              </p>
             </div>
 
-            <div className="order-1 lg:order-2">
-              <span className="text-teal-600 font-black tracking-widest text-xs capitalize mb-6 inline-block">ACCOUNTABILITY & CONDITION</span>
-              <h2 className="text-slate-900 mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Meticulous Return <br /><span className="text-teal-600">Management.</span></h2>
-              <div className="space-y-10">
-                <div className="flex gap-6">
-                  <div className="w-12 h-12 rounded-2xl bg-teal-50 flex items-center justify-center text-2xl flex-shrink-0 text-teal-600">🛡️</div>
-                  <div>
-                    <h4 className="mb-2">Quality Tracking</h4>
-                    <p className="text-slate-500 font-medium leading-relaxed">Break down returned quantities into Good Condition, Damaged, or Missing. Never lose track of your assets' health.</p>
-                  </div>
-                </div>
-                <div className="flex gap-6">
-                  <div className="w-12 h-12 rounded-2xl bg-cyan-50 flex items-center justify-center text-2xl flex-shrink-0 text-cyan-600">📋</div>
-                  <div>
-                    <h4 className="mb-2">Auto-Captured Info</h4>
-                    <p className="text-slate-500 font-medium leading-relaxed">System automatically pulls customer details, vehicle numbers, and original dispatch info the moment you start a return profile.</p>
-                  </div>
-                </div>
-                <div className="flex gap-6">
-                  <div className="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center text-2xl flex-shrink-0 text-emerald-600">💰</div>
-                  <div>
-                    <h4 className="mb-2">Penalty Integration</h4>
-                    <p className="text-slate-500 font-medium leading-relaxed">Instantly apply penalties for damaged or missing items, automatically updating the client's pending balance.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── INSIGHT REPORTS SECTION ── */}
-      <section id="reports" className="py-12 lg:py-16 bg-slate-50 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-10">
-            <h2 className="text-slate-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Powerful Insight Reports</h2>
-            <p className="text-lg text-slate-500 max-w-2xl mx-auto">Make data-driven decisions with real-time reporting. Export everything in seconds.</p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            {reportTypes.map((report, idx) => (
-              <motion.div 
-                key={idx}
-                whileHover={{ x: 10 }}
-                className="bg-white p-8 rounded-[2.5rem] border border-slate-200 shadow-sm flex items-start gap-8 group"
-              >
-                <div className="w-16 h-16 rounded-2xl bg-slate-50 flex items-center justify-center text-3xl group-hover:bg-teal-50 transition-colors">
-                  {report.icon}
-                </div>
+            {/* Three column card grid with centered icons and centered text */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              
+              <div className="premium-card hover-border-indigo p-6 rounded-3xl flex flex-col justify-between text-center">
                 <div>
-                  <h4 className="text-slate-900 mb-2">{report.name}</h4>
-                  <p className="text-slate-500 text-sm font-medium leading-relaxed">{report.description}</p>
+                  <div className="rounded-2xl overflow-hidden border border-slate-200 mb-6 bg-white p-1">
+                    <img
+                      src="/products/godown/Manage-categories.jpg"
+                      alt="Category Hierarchy Setup"
+                      className="w-full rounded-xl object-cover"
+                      style={{ aspectRatio: "4/3" }}
+                    />
+                  </div>
+                  <div className="icon-container-centered bg-indigo-50 text-indigo-600 mb-4 mx-auto">
+                    📁
+                  </div>
+                  <h3 className="mb-2">Category Tree</h3>
+                  <p className="text-sm text-slate-500 leading-relaxed">
+                    Implement a simple parent-child hierarchy. Map complex inventory items under general divisions for easy sorting.
+                  </p>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+                <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-bold text-indigo-600 text-center">
+                  Hierarchical Categorization
+                </div>
+              </div>
 
-          <div className="bg-teal-600 rounded-[3rem] p-12 text-white flex flex-col md:flex-row items-center justify-between gap-10 shadow-2xl shadow-teal-200 relative overflow-hidden">
-             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-             <div className="relative z-10">
-                <h3 className="mb-4">Ready to Export Your Data?</h3>
-                <p className="text-teal-100 max-w-md font-medium">Download professional PDF or flexible Excel reports with a single click. Compatible with all accounting tools.</p>
-             </div>
-             <div className="flex gap-4 relative z-10">
-                <button className="px-8 py-4 bg-white text-teal-700 font-black rounded-2xl hover:bg-teal-50 transition-colors shadow-lg flex items-center gap-3">
-                  <span>📄</span> PDF Export
-                </button>
-                <button 
-                  onClick={() => setIsModalOpen(true)}
-                  className="press-illusion-btn-orange text-white font-black !px-8 !py-4 transition-all duration-300 active:scale-95"
-                >
-                  <span className="relative z-10 flex items-center gap-3">
-                    <span>📊</span> Excel Export
-                  </span>
-                </button>
-             </div>
-          </div>
-        </div>
-      </section>
+              <div className="premium-card hover-border-cyan p-6 rounded-3xl flex flex-col justify-between text-center">
+                <div>
+                  <div className="rounded-2xl overflow-hidden border border-slate-200 mb-6 bg-white p-1">
+                    <img
+                      src="/products/godown/Product-Management.jpg"
+                      alt="Product Management View"
+                      className="w-full rounded-xl object-cover"
+                      style={{ aspectRatio: "4/3" }}
+                    />
+                  </div>
+                  <div className="icon-container-centered bg-cyan-50 text-cyan-600 mb-4 mx-auto">
+                    🏷️
+                  </div>
+                  <h3 className="mb-2">Product Master List</h3>
+                  <p className="text-sm text-slate-500 leading-relaxed">
+                    Central registry for all stock parameters: standard cost values, purchase notes, descriptions, thresholds, and photo links.
+                  </p>
+                </div>
+                <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-bold text-indigo-600 text-center">
+                  Detailed Specifications
+                </div>
+              </div>
 
-      {/* ── WHY STAND OUT SECTION ── */}
-      <section className="py-12 lg:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="bg-slate-50 rounded-[4rem] p-12 lg:p-20 relative overflow-hidden">
-            <div className="text-center mb-10 relative z-10">
-               <h2 className="text-slate-900 mb-6 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Why Our Godown System Stands Out</h2>
-               <p className="text-slate-500 max-w-xl mx-auto font-medium">The "Smart Features" that do the heavy lifting for you.</p>
+              <div className="premium-card hover-border-emerald p-6 rounded-3xl flex flex-col justify-between text-center">
+                <div>
+                  <div className="rounded-2xl overflow-hidden border border-slate-200 mb-6 bg-white p-1">
+                    <img
+                      src="/products/godown/Qr-code_barcode.jpg"
+                      alt="Auto Barcode & QR Code Generator Screen"
+                      className="w-full rounded-xl object-cover"
+                      style={{ aspectRatio: "4/3" }}
+                    />
+                  </div>
+                  <div className="icon-container-centered bg-emerald-50 text-emerald-600 mb-4 mx-auto">
+                    ✨
+                  </div>
+                  <h3 className="mb-2">Smart QR & Barcodes</h3>
+                  <p className="text-sm text-slate-555 leading-relaxed">
+                    The system automatically generates unique QR codes and barcodes for every product, enabling quick scans for dispatches and adjustments.
+                  </p>
+                </div>
+                <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-bold text-indigo-600 text-center">
+                  Automatic Code Generation
+                </div>
+              </div>
+
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
-              {[
-                { title: "All-in-One Solution", desc: "Events, rentals, and inventory in one place.", icon: "🎯" },
-                { title: "Smart Automation", desc: "Status updates happen automatically based on return data.", icon: "🤖" },
-                { title: "Financial Control", desc: "Track every rupee, from advance to final penalty.", icon: "💳" },
-                { title: "Quality Tracking", desc: "Know the condition of every returned item instantly.", icon: "✨" },
-                { title: "Powerful Reports", desc: "PDF & Excel export on all reports for easy sharing.", icon: "📋" },
-                { title: "Easy to Use", desc: "Simple language and clear processes for your staff.", icon: "👌" }
-              ].map((item, idx) => (
-                <div key={idx} className="flex gap-5 items-start">
-                   <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-2xl flex-shrink-0">{item.icon}</div>
-                   <div>
-                     <h4 className="mb-1">{item.title}</h4>
-                     <p className="text-slate-400 text-[13px] leading-relaxed italic">{item.desc}</p>
-                   </div>
+
+          </div>
+        </section>
+
+        {/* ── 7. PRODUCT MOVEMENT BANNER ── */}
+        <section className="py-12 lg:py-16 bg-gradient-to-r from-indigo-600 via-violet-600 to-purple-600 text-white relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/3 translate-x-1/3" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-cyan-400/10 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3" />
+          
+          <div className="max-w-4xl mx-auto px-6 text-center relative z-10 space-y-6">
+            <span className="px-4 py-1.5 rounded-full bg-white/10 text-indigo-200 text-xs font-black uppercase tracking-wider inline-block">
+              Movement Engine
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-white">
+              Seamless Dispatches & Returns System
+            </h2>
+            <p className="text-indigo-100 text-base lg:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
+              The core engine tracks dispatches and returns. It supports both short-term <strong>Event Bookings</strong> and long-term <strong>Product Rentals</strong> within the same dashboard flow.
+            </p>
+          </div>
+        </section>
+
+        {/* ── 8. EVENT MANAGEMENT SECTION ── */}
+        <section className="py-12 lg:py-16 bg-gradient-to-b from-slate-50/60 via-cyan-50/15 to-slate-50/60 relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              
+              {/* Left Column Image with overlapping display */}
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-br from-indigo-100/50 to-cyan-100/50 blur-[50px] rounded-3xl" />
+                <div className="relative bg-white p-3 rounded-[2rem] border border-slate-200/80 shadow-2xl">
+                  <div className="relative w-full rounded-2xl overflow-hidden bg-slate-100 border border-slate-150" style={{ aspectRatio: "16/10" }}>
+                    <img
+                      src="/products/godown/Manage-events.jpg"
+                      alt="Event Dispatch and Management Screen"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  </div>
+                  {/* Secondary Image Overlay */}
+                  <div className="absolute -bottom-6 -right-6 w-1/2 max-w-[240px] rounded-2xl border-4 border-white shadow-2xl overflow-hidden bg-white p-1 z-20">
+                    <img
+                      src="/products/godown/Add-Event.jpg"
+                      alt="Adding New Event with Product Selections"
+                      className="w-full h-auto rounded-xl"
+                    />
+                  </div>
                 </div>
+              </div>
+
+              {/* Right Column Content */}
+              <div className="text-center lg:text-left mt-8 lg:mt-0">
+                <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-semibold text-sm mb-6">
+                  🚛 Dispatch Tracking
+                </div>
+                <h2 className="mb-6 capitalize">
+                  Event Dispatch & Stock Availability Controls
+                </h2>
+                <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                  Assign and track dispatches for event dates. Prevent scheduling double-bookings and stock shortages before dispatches occur.
+                </p>
+
+                {/* Bullets lists */}
+                <div className="space-y-4 pt-6 border-t border-slate-200">
+                  <div className="flex gap-4 items-start text-left">
+                    <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
+                      🔒
+                    </div>
+                    <div>
+                      <h4>Product Selection Safeties</h4>
+                      <p className="text-slate-500 text-sm mt-0.5">The system cross-references active stocks and blocks dispatches of items that aren't physically in the warehouse.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4 items-start text-left">
+                    <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
+                      📅
+                    </div>
+                    <div>
+                      <h4>Expected Return Schedules</h4>
+                      <p className="text-slate-500 text-sm mt-0.5">Define target return times for event gear. Track which dispatches are due back to plan subsequent bookings.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4 items-start text-left">
+                    <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
+                      💰
+                    </div>
+                    <div>
+                      <h4>Booking Financial Logs</h4>
+                      <p className="text-slate-500 text-sm mt-0.5">Log booking advances, expenses, and pending balances directly on the event dispatch form.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* ── 9. EVENT RETURN & QUALITY CONTROL SECTION ── */}
+        <section className="py-12 lg:py-16 bg-gradient-to-br from-emerald-50/10 via-white to-white relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              
+              {/* Left Column: Content */}
+              <div className="text-center lg:text-left lg:order-2">
+                <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-semibold text-sm mb-6">
+                  🛡️ Returns Accountability
+                </div>
+                <h2 className="mb-6 capitalize">
+                  Meticulous Return & Quality Control Audits
+                </h2>
+                <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                  Account for returned items accurately. Track damages, update client balances, and log return conditions details easily.
+                </p>
+
+                <div className="space-y-4 pt-6 border-t border-slate-200">
+                  <div className="flex gap-4 items-start text-left">
+                    <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
+                      🛡️
+                    </div>
+                    <div>
+                      <h4>Three-State Return Audits</h4>
+                      <p className="text-slate-500 text-sm mt-0.5">Log returned inventory in three distinct categories: Good Condition, Damaged, or Missing items.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4 items-start text-left">
+                    <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
+                      🧮
+                    </div>
+                    <div>
+                      <h4>Audit Balancing Formula</h4>
+                      <p className="text-slate-500 text-sm mt-0.5">System automatically calculates returned totals using the formula: <span className="font-extrabold bg-slate-100 text-indigo-700 px-2 py-0.5 rounded text-[10px]">Returned = Good + Damaged + Missing</span>.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4 items-start text-left">
+                    <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
+                      💸
+                    </div>
+                    <div>
+                      <h4>Automated Penalty Billing</h4>
+                      <p className="text-slate-500 text-sm mt-0.5">Damaged and missing items automatically trigger configured penalty fees, updating the client's balance sheet instantly.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Image with overlays (including Event Invoice format) */}
+              <div className="relative lg:order-1">
+                <div className="absolute -inset-4 bg-gradient-to-br from-indigo-100/50 to-emerald-100/40 blur-[50px] rounded-3xl" />
+                <div className="relative bg-white p-3 rounded-[2rem] border border-slate-200/80 shadow-2xl">
+                  <div className="relative w-full rounded-2xl overflow-hidden bg-slate-100 border border-slate-150" style={{ aspectRatio: "16/10" }}>
+                    <img
+                      src="/products/godown/Event-Return.jpg"
+                      alt="Event Return Management Form"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  </div>
+                  {/* Secondary Image Overlay 1 */}
+                  <div className="absolute -bottom-6 -left-6 w-1/3 max-w-[180px] rounded-2xl border-4 border-white shadow-2xl overflow-hidden bg-white p-1 z-20">
+                    <img
+                      src="/products/godown/Event-Return-Payment.jpg"
+                      alt="Settle Event Balances Screen"
+                      className="w-full h-auto rounded-xl"
+                    />
+                  </div>
+                  {/* Secondary Image Overlay 2 */}
+                  <div className="absolute -top-6 -right-6 w-1/3 max-w-[180px] rounded-2xl border-4 border-white shadow-2xl overflow-hidden bg-white p-1 z-20">
+                    <img
+                      src="/products/godown/Event-Invoice.jpg"
+                      alt="Event Billing Invoice format"
+                      className="w-full h-auto rounded-xl"
+                    />
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* ── 10. SMART STATUS FLOW VISUALIZER ── */}
+        <section className="py-12 lg:py-16 bg-gradient-to-br from-indigo-50/40 via-slate-50/30 to-cyan-50/30 border-y border-slate-100 relative overflow-hidden">
+          <div className="absolute inset-0 opacity-[0.4] pointer-events-none z-0" style={{ backgroundImage: "radial-gradient(rgba(79, 70, 229, 0.05) 1.5px, transparent 1.5px)", backgroundSize: "28px 28px" }} />
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="text-center mb-12">
+              <span className="text-indigo-650 font-bold tracking-widest text-xs uppercase block mb-3">Status Automation</span>
+              <h2 className="text-slate-900 mb-6 capitalize">
+                Smart Status Flow: Zero Manual Updates
+              </h2>
+              <p className="text-slate-600 mt-4 text-base max-w-xl mx-auto">
+                The system monitors dispatches and return counts to transition order states automatically.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto relative">
+              {/* Connector line for desktop */}
+              <div className="hidden md:block absolute top-[2.5rem] left-[15%] right-[15%] h-0.5 bg-gradient-to-r from-blue-200 via-amber-200 to-emerald-200 z-0" />
+              
+              <div className="bg-white border border-slate-200/80 rounded-2xl p-6 text-center space-y-4 status-flow-card status-flow-card-blue z-10 shadow-sm">
+                <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-xl mx-auto">
+                  🚚
+                </div>
+                <h3 className="mb-1">1. Sent</h3>
+                <p className="text-slate-500 text-sm leading-relaxed">All items are logged and dispatched for the event or rental period.</p>
+                <div className="text-[10px] bg-blue-50 text-blue-700 py-1 px-2.5 rounded-full inline-block font-bold">Dispatched State</div>
+              </div>
+
+              <div className="bg-white border border-slate-200/80 rounded-2xl p-6 text-center space-y-4 status-flow-card status-flow-card-amber z-10 shadow-sm">
+                <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold text-xl mx-auto">
+                  📦
+                </div>
+                <h3 className="mb-1">2. Partially Returned</h3>
+                <p className="text-slate-555 text-sm leading-relaxed">A portion of the dispatch returns. Remaining items are flagged as due.</p>
+                <div className="text-[10px] bg-amber-50 text-amber-700 py-1 px-2.5 rounded-full inline-block font-bold">Pending Items</div>
+              </div>
+
+              <div className="bg-white border border-slate-200/80 rounded-2xl p-6 text-center space-y-4 status-flow-card status-flow-card-emerald z-10 shadow-sm">
+                <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-xl mx-auto">
+                  ✅
+                </div>
+                <h3 className="mb-1">3. Returned</h3>
+                <p className="text-slate-555 text-sm leading-relaxed">All items return. Damage/missing fees are calculated to close the balance.</p>
+                <div className="text-[10px] bg-emerald-50 text-emerald-700 py-1 px-2.5 rounded-full inline-block font-bold">Order Settled</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* ── 11. RENT MANAGEMENT SECTION ── */}
+        <section className="py-12 lg:py-16 bg-gradient-to-b from-white via-indigo-50/10 to-white relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              
+              {/* Left Column: Multi image collage */}
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-br from-indigo-100/50 to-cyan-100/50 blur-[50px] rounded-3xl" />
+                <div className="relative bg-slate-50 p-4 rounded-[2rem] border border-slate-100 shadow-2xl">
+                  <div className="relative w-full rounded-2xl overflow-hidden bg-slate-200 border border-slate-200" style={{ aspectRatio: "16/10" }}>
+                    <img
+                      src="/products/godown/Manage-Rents.jpg"
+                      alt="Long-Term Rent Management Overview Screen"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  </div>
+                  {/* Secondary Overlapping Images */}
+                  <div className="absolute -bottom-6 -right-6 w-1/3 max-w-[160px] rounded-2xl border-4 border-white shadow-2xl overflow-hidden bg-white p-1 z-20">
+                    <img
+                      src="/products/godown/Rent-Return.jpg"
+                      alt="Rental Return Screen"
+                      className="w-full h-auto rounded-xl"
+                    />
+                  </div>
+                  <div className="absolute -top-6 -left-6 w-1/3 max-w-[160px] rounded-2xl border-4 border-white shadow-2xl overflow-hidden bg-white p-1 z-20">
+                    <img
+                      src="/products/godown/Rent-Invoice.jpg"
+                      alt="Auto-Generated Rental Invoice"
+                      className="w-full h-auto rounded-xl"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Content */}
+              <div className="text-center lg:text-left mt-8 lg:mt-0">
+                <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-semibold text-sm mb-6">
+                  📝 Rental Contracts
+                </div>
+                <h2 className="mb-6 capitalize">
+                  Flexible Long-Term Rental Management
+                </h2>
+                <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                  Manage ongoing product rentals with flexible billing rules. Track return schedules, generate invoices, and handle deposits easily.
+                </p>
+
+                <div className="space-y-4 pt-6 border-t border-slate-200">
+                  <div className="flex gap-4 items-start text-left">
+                    <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
+                      📄
+                    </div>
+                    <div>
+                      <h4>Rental Invoices</h4>
+                      <p className="text-slate-500 text-sm mt-0.5">Generate rental receipts containing details for security deposits, period lengths, and tax rates.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4 items-start text-left">
+                    <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
+                      ⏰
+                    </div>
+                    <div>
+                      <h4>Expected Return Schedules</h4>
+                      <p className="text-slate-500 text-sm mt-0.5">Monitor open rental terms and send return reminders before dates lapse.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4 items-start text-left">
+                    <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
+                      ⚖️
+                    </div>
+                    <div>
+                      <h4>Condition Checks on Return</h4>
+                      <p className="text-slate-555 text-sm mt-0.5">Assess returns condition and easily deduct repair fees from security deposits.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* ── 12. INSIGHT REPORTS SECTION ── */}
+        <section id="reports" className="py-12 lg:py-16 bg-gradient-to-b from-slate-50/80 via-indigo-50/20 to-slate-50/80 border-t border-slate-100 relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-semibold text-sm mb-6">
+                📋 Management Reports
+              </div>
+              <h2 className="mb-6 capitalize">
+                Actionable Intelligence & Reports
+              </h2>
+              <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+                Generate detailed operation reports instantly. Export data to PDF and Excel to sync with accounting software.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              {/* Reports Tabs navigation */}
+              <div className="lg:col-span-4 space-y-3">
+                {reportList.map((rep, idx) => (
+                  <button
+                    key={rep.id}
+                    onClick={() => setActiveReportIdx(idx)}
+                    className={`w-full text-left p-4 rounded-2xl border transition-all duration-350 flex items-start gap-4 ${
+                      activeReportIdx === idx
+                        ? "bg-gradient-to-r from-indigo-600 to-violet-600 border-transparent text-white shadow-lg shadow-indigo-600/20"
+                        : "bg-white border-slate-200/60 text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                    }`}
+                  >
+                    <span className="text-2xl flex-shrink-0 mt-0.5">{rep.icon}</span>
+                    <div>
+                      <h4 className="leading-tight">{rep.name}</h4>
+                      <p className={`text-xs mt-1 leading-snug line-clamp-2 ${activeReportIdx === idx ? "text-indigo-50/80" : "text-slate-400"}`}>
+                        {rep.desc}
+                      </p>
+                    </div>
+                  </button>
+                ))}
+              </div>
+
+              {/* Selected report screenshot and actions */}
+              <div className="lg:col-span-8 bg-white p-4 rounded-3xl border border-slate-200/60 shadow-xl space-y-6">
+                <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-slate-100">
+                  <div>
+                    <h3>
+                      {reportList[activeReportIdx].name}
+                    </h3>
+                    <p className="text-slate-500 text-xs sm:text-sm mt-1">
+                      {reportList[activeReportIdx].desc}
+                    </p>
+                  </div>
+                  <div className="flex gap-2">
+                    <span className="px-3 py-1 bg-emerald-50 text-emerald-700 text-[10px] font-black rounded-lg uppercase">PDF Supported</span>
+                    <span className="px-3 py-1 bg-indigo-50 text-indigo-700 text-[10px] font-black rounded-lg uppercase">Excel Ready</span>
+                  </div>
+                </div>
+
+                <div className="relative w-full rounded-2xl overflow-hidden bg-slate-100 border border-slate-200" style={{ aspectRatio: "16/10" }}>
+                  <AnimatePresence mode="wait">
+                    <motion.img
+                      key={activeReportIdx}
+                      src={reportList[activeReportIdx].image}
+                      alt={reportList[activeReportIdx].name}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  </AnimatePresence>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* ── 13. WHY STAND OUT SECTION ── */}
+        <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="bg-slate-50 rounded-[2.5rem] border border-slate-200/50 p-8 sm:p-12 lg:p-16">
+              
+              <div className="text-center max-w-2xl mx-auto mb-16">
+                <span className="text-indigo-600 font-bold tracking-wider text-sm uppercase block mb-3">Key Differentiators</span>
+                <h2 className="mb-6 capitalize">
+                  Why Our Godown System Stands Out
+                </h2>
+                <p className="text-slate-550 mt-4 text-sm sm:text-base leading-relaxed">
+                  Engineered with intelligent integrations to minimize manual bookkeeping errors.
+                </p>
+              </div>
+
+              {/* Grid of 6 white cards with perfectly centered icons */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div className="bg-white p-6 rounded-2xl border border-slate-150 shadow-sm space-y-3 flex flex-col items-center text-center premium-card hover-border-indigo">
+                  <div className="icon-container-centered bg-indigo-50 text-indigo-600 mb-2 mx-auto">
+                    🎯
+                  </div>
+                  <h4>All-in-One Solution</h4>
+                  <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
+                    Manage your warehouse inventories, client contacts, events checklists, rental agreements, and invoice records in one portal.
+                  </p>
+                </div>
+
+                <div className="bg-white p-6 rounded-2xl border border-slate-155 shadow-sm space-y-3 flex flex-col items-center text-center premium-card hover-border-cyan">
+                  <div className="icon-container-centered bg-cyan-50 text-cyan-600 mb-2 mx-auto">
+                    🤖
+                  </div>
+                  <h4>Smart Automation</h4>
+                  <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
+                    Automatically transitions order statuses from Sent to Returned, eliminating manual logs audit delays.
+                  </p>
+                </div>
+
+                <div className="bg-white p-6 rounded-2xl border border-slate-150 shadow-sm space-y-3 flex flex-col items-center text-center premium-card hover-border-emerald">
+                  <div className="icon-container-centered bg-emerald-50 text-emerald-600 mb-2 mx-auto">
+                    💳
+                  </div>
+                  <h4>Financial Control</h4>
+                  <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
+                    Monitor advances, calculate damage penalties, and compute final outstanding balances automatically.
+                  </p>
+                </div>
+
+                <div className="bg-white p-6 rounded-2xl border border-slate-150 shadow-sm space-y-3 flex flex-col items-center text-center premium-card hover-border-indigo">
+                  <div className="icon-container-centered bg-indigo-50 text-indigo-600 mb-2 mx-auto">
+                    ✨
+                  </div>
+                  <h4>Quality Tracking</h4>
+                  <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
+                    Know the exact physical condition of returned items immediately, keeping your assets accountable.
+                  </p>
+                </div>
+
+                <div className="bg-white p-6 rounded-2xl border border-slate-150 shadow-sm space-y-3 flex flex-col items-center text-center premium-card hover-border-cyan">
+                  <div className="icon-container-centered bg-cyan-50 text-cyan-600 mb-2 mx-auto">
+                    📊
+                  </div>
+                  <h4>Powerful Reports</h4>
+                  <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
+                    Generate print-ready PDFs or export spreadsheets to Excel. Easy data transfer to external bookkeeping software.
+                  </p>
+                </div>
+
+                <div className="bg-white p-6 rounded-2xl border border-slate-150 shadow-sm space-y-3 flex flex-col items-center text-center premium-card hover-border-emerald">
+                  <div className="icon-container-centered bg-emerald-50 text-emerald-600 mb-2 mx-auto">
+                    👌
+                  </div>
+                  <h4>Easy to Use</h4>
+                  <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
+                    Clean interface built with intuitive terms. Simplifies training times for your warehouse staff.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 14. FAQ ACCORDION SECTION (Changed to 2 columns on desktop) ── */}
+        <section className="py-12 lg:py-16 bg-gradient-to-b from-slate-50 via-indigo-50/15 to-slate-50 border-t border-slate-100 relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            
+            <div className="text-center mb-12">
+              <span className="text-indigo-600 font-bold tracking-wider text-sm uppercase block mb-3">Answers & FAQ</span>
+              <h2 className="mb-6 capitalize">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-slate-550 mt-4 text-base">
+                Got questions? We've compiled details covering common inventory tracking routines.
+              </p>
+            </div>
+
+            {/* Two independent columns for FAQ grid to stack accordions cleanly without vertical gaps */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+              {/* Left Column */}
+              <div className="space-y-6">
+                {faqItems
+                  .filter((_, idx) => idx % 2 === 0)
+                  .map((item, idx) => {
+                    const actualIdx = idx * 2;
+                    const isOpen = faqOpenIdx === actualIdx;
+                    return (
+                      <div
+                        key={actualIdx}
+                        className="bg-white rounded-2xl border border-slate-200/80 overflow-hidden transition-all duration-200 shadow-sm animate-card-fade"
+                      >
+                        <button
+                          onClick={() => toggleFaq(actualIdx)}
+                          className="w-full flex items-center justify-between p-6 text-left hover:bg-slate-50/50"
+                        >
+                          <span className="font-extrabold text-slate-800 text-sm sm:text-base pr-4">
+                            {item.q}
+                          </span>
+                          <span className={`text-indigo-655 text-xl font-bold transition-transform duration-200 transform ${isOpen ? "rotate-45" : "rotate-0"}`}>
+                            ＋
+                          </span>
+                        </button>
+
+                        <AnimatePresence initial={false}>
+                          {isOpen && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.25, ease: "easeInOut" }}
+                            >
+                              <div className="p-6 pt-0 text-slate-500 text-xs sm:text-sm border-t border-slate-100 leading-relaxed bg-indigo-50/10">
+                                {item.a}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    );
+                  })}
+              </div>
+
+              {/* Right Column */}
+              <div className="space-y-6">
+                {faqItems
+                  .filter((_, idx) => idx % 2 !== 0)
+                  .map((item, idx) => {
+                    const actualIdx = idx * 2 + 1;
+                    const isOpen = faqOpenIdx === actualIdx;
+                    return (
+                      <div
+                        key={actualIdx}
+                        className="bg-white rounded-2xl border border-slate-200/80 overflow-hidden transition-all duration-200 shadow-sm"
+                      >
+                        <button
+                          onClick={() => toggleFaq(actualIdx)}
+                          className="w-full flex items-center justify-between p-6 text-left hover:bg-slate-50/50"
+                        >
+                          <span className="font-extrabold text-slate-800 text-sm sm:text-base pr-4">
+                            {item.q}
+                          </span>
+                          <span className={`text-indigo-655 text-xl font-bold transition-transform duration-200 transform ${isOpen ? "rotate-45" : "rotate-0"}`}>
+                            ＋
+                          </span>
+                        </button>
+
+                        <AnimatePresence initial={false}>
+                          {isOpen && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.25, ease: "easeInOut" }}
+                            >
+                              <div className="p-6 pt-0 text-slate-500 text-xs sm:text-sm border-t border-slate-100 leading-relaxed bg-indigo-50/10">
+                                {item.a}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    );
+                  })}
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* ── 15. CTA FOOTER & RELATED SOLUTIONS ── */}
+        <section className="py-12 lg:py-16 bg-gradient-to-b from-indigo-50/50 to-indigo-100/30 border-t border-slate-100 relative overflow-hidden">
+          
+          {/* Main CTA banner */}
+          <div className="max-w-4xl mx-auto px-6 text-center space-y-8 mb-20 relative z-10">
+            <h2 className="mb-6 capitalize">
+              Revolutionize Your <br />Warehouse Operations Today
+            </h2>
+            <p className="text-slate-655 text-base lg:text-lg max-w-xl mx-auto leading-relaxed">
+              Join businesses that have scaled operational tracking times by over 40% with our automated status flow portal.
+            </p>
+            <div className="pt-2">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="px-10 py-5 premium-btn-gradient text-white font-extrabold text-lg rounded-2xl active:scale-95 cursor-pointer"
+              >
+                Get Started for Free
+              </button>
+            </div>
+          </div>
+
+          <div className="absolute top-1/2 left-0 w-64 h-64 bg-indigo-200/20 rounded-full blur-[100px] opacity-60 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+          <div className="absolute bottom-1/2 right-0 w-64 h-64 bg-cyan-200/20 rounded-full blur-[100px] opacity-60 translate-x-1/2 translate-y-1/2 pointer-events-none" />
+
+          {/* Related ERP solutions */}
+          <div className="max-w-7xl mx-auto px-6 pt-12 border-t border-slate-200 relative z-10">
+            <div className="text-center mb-10">
+              <span className="text-indigo-600 font-bold tracking-wider text-xs uppercase block mb-2">Explore Options</span>
+              <h3>Related ERP Solutions</h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {relatedProducts.slice(0, 3).map((tp) => (
+                <Link
+                  key={tp.slug}
+                  href={`/product/${tp.slug}`}
+                  className="group bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/60 shadow-sm hover:shadow-xl hover:border-indigo-200 transition-all duration-300 flex flex-col items-center text-center justify-between hover-border-indigo"
+                >
+                  <div className="flex flex-col items-center">
+                    <div className="icon-container-centered bg-indigo-50 text-indigo-600 mb-6 mx-auto group-hover:scale-110 transition-transform duration-200">
+                      <span className="text-2xl">{tp.icon || "📦"}</span>
+                    </div>
+                    <h4 className="mb-2 group-hover:text-indigo-600 transition-colors">
+                      {tp.title}
+                    </h4>
+                    <p className="text-slate-500 text-xs sm:text-sm leading-relaxed line-clamp-2">
+                      {tp.shortDescription}
+                    </p>
+                  </div>
+                  <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-center gap-2 text-indigo-600 font-extrabold text-xs w-full">
+                    <span>Learn More</span>
+                    <span className="transform group-hover:translate-x-1 transition-transform">➔</span>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* ── CTA FOOTER ── */}
-      <section className="py-12 lg:py-16 bg-teal-50 relative overflow-hidden">
-         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-            <h2 className="text-slate-900 mb-8 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Revolutionize Your <br />Warehouse Management Today</h2>
-            <p className="text-slate-500 text-lg mb-12 font-medium">Join businesses that have scaled their operations by 40% with our automated tracking system.</p>
-            <div className="flex flex-wrap justify-center gap-4">
-               <button 
-                  onClick={() => setIsModalOpen(true)}
-                  className="press-illusion-btn-orange text-white !px-10 !py-5 font-black !text-xl hover:scale-105 transition-all duration-300"
-               >
-                  <span className="relative z-10 flex items-center gap-2">
-                    Get Started for Free
-                  </span>
-               </button>
-            </div>
-         </div>
-         {/* Decorative backgrounds */}
-         <div className="absolute top-1/2 left-0 w-64 h-64 bg-teal-200 rounded-full blur-[100px] opacity-30 -translate-x-1/2"></div>
-         <div className="absolute bottom-1/2 right-0 w-64 h-64 bg-cyan-200 rounded-full blur-[100px] opacity-30 translate-x-1/2"></div>
-      </section>
+        </section>
 
-      {/* ── RELATED PRODUCTS ── */}
-      <section className="py-12 lg:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-10">
-            <h2 className="text-slate-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">Related Solutions</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {relatedProducts.slice(0, 3).map((targetProduct) => (
-              <Link key={targetProduct.slug} href={`/product/${targetProduct.slug}`} className="group p-8 rounded-[2.5rem] bg-slate-50 hover:bg-white border border-transparent hover:border-slate-100 hover:shadow-xl transition-all duration-300">
-                <div className="text-4xl mb-6">{targetProduct.icon}</div>
-                <h3 className="mb-3">{targetProduct.title}</h3>
-                <p className="text-slate-500 text-xs font-medium line-clamp-2">{targetProduct.shortDescription}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+        {/* ── CONTACT FORM MODAL ── */}
+        <ContactFormModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          preSelectedType="Product"
+          preSelectedItem={product.title}
+          allItems={allProducts}
+        />
 
-      {/* ── CONTACT FORM MODAL ── */}
-      <ContactFormModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        preSelectedType="Product"
-        preSelectedItem={product.title}
-        allItems={allProducts}
-      />
-    </div>
+      </div>
+    </>
   );
 }
-
-
-
-
