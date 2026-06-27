@@ -5,19 +5,31 @@ import Link from "./AppLink";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
+const aboutColumns = {
+  col1: [
+    { label: "About Us", href: "/about", icon: "ℹ️" },
+    { label: "Quality Policy", href: "/quality-policy", icon: "📜" },
+    { label: "Case Studies", href: "/case-studies", icon: "📊" },
+    { label: "Testimonials", href: "/testimonial", icon: "💬" },
+    { label: "Blog", href: "/blog", icon: "✍️" },
+  ],
+  col2: [
+    { label: "Partners", href: "/partners", icon: "🤝" },
+    { label: "White Label", href: "/white-label-agency-partnerships", icon: "🏷️" },
+    { label: "Reference", href: "/referral-program", icon: "🔗" },
+    { label: "Training", href: "/training-programs", icon: "🎓" },
+    { label: "Career", href: "/careers", icon: "💼" },
+  ]
+};
+
 const navLinks = [
   { label: "Home", href: "/" },
   {
     label: "About Us",
     href: "/about",
     children: [
-      { label: "About Us", href: "/about" },
-      { label: "Quality Policy", href: "/quality-policy" },
-      { label: "Partners", href: "/partners" },
-      { label: "Case Studies", href: "/case-studies" },
-      { label: "Testimonials", href: "/testimonial" },
-      { label: "Blog", href: "/blog" },
-      { label: "Careers", href: "/careers" },
+      ...aboutColumns.col1,
+      ...aboutColumns.col2
     ]
   },
 ];
@@ -145,7 +157,7 @@ export default function Header() {
 
                 {/* About Us Mega Menu */}
                 {link.label === "About Us" && isAboutOpen && (
-                  <div className="absolute top-full left-[-200px] pt-4 w-[650px]">
+                  <div className="absolute top-full left-[-330px] pt-4 w-[860px]">
                     <div className="bg-white/95 backdrop-blur-xl rounded-[2.5rem] shadow-2xl border border-gray-100 p-8 flex gap-8">
                       {/* Left: Featured Content with Image */}
                       <Link
@@ -157,7 +169,7 @@ export default function Header() {
                           <Image src="/agency_office_studio_premium_1773850105446.png" fill sizes="280px" className="object-cover" alt="Isarva team collaboration workspace" loading="lazy" />
                         </div>
                         <div className="relative z-10 flex flex-col h-full">
-                          <h4 className="mb-4">About Isarva</h4>
+                          <h3 className="mb-4">About Isarva</h3>
                           <p className="text-gray-600 text-base mb-6 font-medium leading-relaxed">At Isarva Infotech, we are more than an IT consulting firm - we are a strategic technology partner. Company plays a pivotal role in enabling organizations to achieve their digital transformation goals.</p>
                           <div className="mt-auto text-emerald-600 font-bold text-lg flex items-center gap-2 group/link">
                             Read More <span className="group-hover/link:translate-x-1 transition-transform">→</span>
@@ -165,31 +177,58 @@ export default function Header() {
                         </div>
                       </Link>
 
-                      {/* Right: Nav Links */}
-                      <div className="flex-1">
-                        <div className="mb-6">
-                          <h3 className="mb-1">Resources</h3>
-                          <p className="text-gray-500 text-sm">Discover our mission and impact</p>
-                        </div>
-                        <div className="space-y-2">
-                          {link.children.filter(child => child.label !== "About Isarva").map((child) => (
+                      {/* Right: Nav Links split into 2 columns */}
+                      <div className="flex-1 flex gap-6">
+                        {/* Column 1: Company */}
+                        <div className="flex-1 space-y-2">
+                          <div className="mb-4">
+                            <h3 className="mb-1">Company</h3>
+                          </div>
+                          {aboutColumns.col1.map((child) => (
                             <Link
                               key={child.label}
                               href={child.href}
                               onClick={() => setIsAboutOpen(false)}
-                              className="group flex items-center justify-between p-4 rounded-2xl bg-gray-50 hover:bg-emerald-50 transition-all duration-300 border border-transparent hover:border-emerald-200"
+                              className="group flex items-center justify-between p-3.5 rounded-2xl bg-gray-50 hover:bg-emerald-50 transition-all duration-300 border border-transparent hover:border-emerald-200"
                             >
                               <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-xl bg-white group-hover:bg-[#10b981] flex items-center justify-center transition-colors shadow-sm">
-                                  <span className="text-lg group-hover:scale-110 transition-transform">
-                                    {child.label === "Testimonials" ? "💬" : child.label === "Case Studies" ? "📊" : child.label === "Partners" ? "🤝" : child.label === "Careers" ? "💼" : child.label === "Blog" ? "✍️" : child.label === "Quality Policy" ? "📜" : "ℹ️"}
+                                <div className="w-9 h-9 rounded-xl bg-white group-hover:bg-[#10b981] flex items-center justify-center transition-colors shadow-sm">
+                                  <span className="text-base group-hover:scale-110 transition-transform">
+                                    {child.icon}
                                   </span>
                                 </div>
-                                <span className="font-bold text-gray-800 group-hover:text-emerald-600 transition-colors capitalize tracking-tight text-sm">
+                                <span className="font-bold text-gray-800 group-hover:text-emerald-600 transition-colors capitalize tracking-tight text-xs md:text-sm">
                                   {child.label}
                                 </span>
                               </div>
-                              <svg className="w-5 h-5 text-gray-300 group-hover:text-emerald-500 transform transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                              <svg className="w-4 h-4 text-gray-300 group-hover:text-emerald-500 transform transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                            </Link>
+                          ))}
+                        </div>
+
+                        {/* Column 2: Grow With Us */}
+                        <div className="flex-1 space-y-2">
+                          <div className="mb-4">
+                            <h3 className="mb-1">Grow With Us</h3>
+                          </div>
+                          {aboutColumns.col2.map((child) => (
+                            <Link
+                              key={child.label}
+                              href={child.href}
+                              onClick={() => setIsAboutOpen(false)}
+                              className="group flex items-center justify-between p-3.5 rounded-2xl bg-gray-50 hover:bg-emerald-50 transition-all duration-300 border border-transparent hover:border-emerald-200"
+                            >
+                              <div className="flex items-center gap-3">
+                                <div className="w-9 h-9 rounded-xl bg-white group-hover:bg-[#10b981] flex items-center justify-center transition-colors shadow-sm">
+                                  <span className="text-base group-hover:scale-110 transition-transform">
+                                    {child.icon}
+                                  </span>
+                                </div>
+                                <span className="font-bold text-gray-800 group-hover:text-emerald-600 transition-colors capitalize tracking-tight text-xs md:text-sm">
+                                  {child.label}
+                                </span>
+                              </div>
+                              <svg className="w-4 h-4 text-gray-300 group-hover:text-emerald-500 transform transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                             </Link>
                           ))}
                         </div>
