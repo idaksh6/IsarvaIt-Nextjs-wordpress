@@ -1855,3 +1855,9 @@ img {
     border-color: rgba(15, 184, 78, 0.3);
     box-shadow: 0 4px 16px rgba(15, 184, 78, 0.08);
 }
+
+/* Ensure the reCAPTCHA badge is always on top of scrolling content */
+.grecaptcha-badge {
+    z-index: 99999 !important;
+}
+

@@ -62,6 +62,12 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-F3Y6QWCT7N');
           `}
         </Script>
+        {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && (
+          <Script
+            src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+            strategy="afterInteractive"
+          />
+        )}
         {/* Meta Pixel Code */}
         <Script>
           {`!function(f,b,e,v,n,t,s)

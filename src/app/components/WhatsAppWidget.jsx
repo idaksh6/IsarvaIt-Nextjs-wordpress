@@ -8,7 +8,7 @@ export default function WhatsAppWidget() {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 z-[9999] pointer-events-auto">
+    <div className="fixed bottom-24 right-6 z-[9999] pointer-events-auto">
       <div className="relative group">
         {/* Tooltip: Chat with us */}
         <div className="absolute right-16 top-1/2 -translate-y-1/2 bg-white text-slate-800 text-xs font-semibold px-3 py-1.5 rounded-lg shadow-md border border-slate-100 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none mr-2">

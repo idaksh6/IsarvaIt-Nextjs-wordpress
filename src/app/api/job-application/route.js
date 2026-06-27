@@ -3,6 +3,29 @@ import { NextResponse } from 'next/server';
 export async function POST(request) {
   try {
     const formData = await request.formData();
+
+    // Verify reCAPTCHA token if secret key is configured
+    const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+    if (secretKey) {
+      const recaptchaToken = formData.get('recaptchaToken');
+      if (!recaptchaToken) {
+        console.warn('reCAPTCHA token is missing in the job application request.');
+        return NextResponse.json({ success: false, error: 'reCAPTCHA token missing.' }, { status: 400 });
+      }
+
+      try {
+        const verifyRes = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaToken}`, {
+          method: 'POST'
+        });
+        const verifyData = await verifyRes.json();
+        if (!verifyData.success || verifyData.score < 0.5) {
+          console.warn('reCAPTCHA verification failed or score too low:', verifyData);
+          return NextResponse.json({ success: false, error: 'Spam validation failed. Please try again.' }, { status: 400 });
+        }
+      } catch (err) {
+        console.error('reCAPTCHA siteverify call failed:', err);
+      }
+    }
     
     const name = formData.get('name');
     const email = formData.get('email');
