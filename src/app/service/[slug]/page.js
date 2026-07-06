@@ -18,6 +18,7 @@ import {
   generateServiceBreadcrumbSchema,
 } from "../../lib/utils/seo";
 import NewsAndMagazinePortal from "./NewsAndMagazinePortal";
+import WhatsAppCRMIntegration from "./WhatsAppCRMIntegration";
 
 export async function generateStaticParams() {
   return getAllServiceSlugs().map((slug) => ({
@@ -35,6 +36,18 @@ export async function generateMetadata({ params }) {
   if (!service) {
     return {
       title: 'Service Not Found',
+    };
+  }
+
+  // noindex for the WhatsApp CRM integration page
+  if (slug === "whatsapp-crm-integration") {
+    return {
+      title: "WhatsApp CRM Integration | Isarva Infotech",
+      description: "Self-hosted WhatsApp CRM with shared inbox, visual automations, broadcasts, and real-time analytics designed for modern teams.",
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
 
@@ -91,6 +104,11 @@ export default async function ServiceDetailPage({ params }) {
   // ── Premium page for News and Magazine Portal ──────────────
   if (slug === "news-and-magazine-portal") {
     return <NewsAndMagazinePortal service={service} servicesData={servicesData} />;
+  }
+
+  // ── WhatsApp CRM Integration page ──────────────────────────
+  if (slug === "whatsapp-crm-integration") {
+    return <WhatsAppCRMIntegration />;
   }
 
   // ── Premium page for Custom Laravel Application Development ──────────────
