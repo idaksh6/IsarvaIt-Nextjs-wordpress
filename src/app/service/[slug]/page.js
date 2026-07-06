@@ -19,6 +19,7 @@ import {
 } from "../../lib/utils/seo";
 import NewsAndMagazinePortal from "./NewsAndMagazinePortal";
 import WhatsAppCRMIntegration from "./WhatsAppCRMIntegration";
+import MobileAppDevelopment from "./MobileAppDevelopment";
 
 export async function generateStaticParams() {
   return getAllServiceSlugs().map((slug) => ({
@@ -44,6 +45,18 @@ export async function generateMetadata({ params }) {
     return {
       title: "WhatsApp CRM Integration | Isarva Infotech",
       description: "Self-hosted WhatsApp CRM with shared inbox, visual automations, broadcasts, and real-time analytics designed for modern teams.",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
+
+  // noindex for the Mobile App Development page
+  if (slug === "mobile-app-development") {
+    return {
+      title: "Mobile App Development | React Native & Expo | Isarva Infotech",
+      description: "Build powerful iOS & Android apps with Isarva Infotech. Expert React Native & Expo development for HRMS, CRM, and custom business applications.",
       robots: {
         index: false,
         follow: false,
@@ -106,9 +119,14 @@ export default async function ServiceDetailPage({ params }) {
     return <NewsAndMagazinePortal service={service} servicesData={servicesData} />;
   }
 
-  // ── WhatsApp CRM Integration page ──────────────────────────
+  // ── WhatsApp CRM Integration page ──────────────────────
   if (slug === "whatsapp-crm-integration") {
     return <WhatsAppCRMIntegration />;
+  }
+
+  // ── Mobile App Development page ──────────────────────
+  if (slug === "mobile-app-development") {
+    return <MobileAppDevelopment />;
   }
 
   // ── Premium page for Custom Laravel Application Development ──────────────

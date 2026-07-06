@@ -1237,6 +1237,30 @@ export const servicesData = [
       "Data-driven Decision Making"
     ],
     subServices: []
+  },
+  {
+    slug: "mobile-app-development",
+    title: "Mobile App Development",
+    icon: "📱",
+    heroImage: "/mobile-app-development/hrms-dashboard.jpeg",
+    shortDescription: "Build powerful iOS & Android apps with React Native & Expo",
+    description: "We craft high-performance mobile applications using React Native and Expo — delivering native-quality experiences on both platforms from a single codebase. From HRMS to CRM, we turn your business vision into stunning mobile products.",
+    features: [
+      "Cross-Platform Apps",
+      "Enterprise Solutions",
+      "UI/UX Design",
+      "API Integration",
+      "App Store Deployment",
+      "Maintenance & Support"
+    ],
+    technologies: ["React Native", "Expo", "TypeScript", "Firebase", "PostgreSQL"],
+    benefits: [
+      "Faster Time-to-Market",
+      "Cost-Effective Development",
+      "Native Performance",
+      "Single Codebase",
+      "Expert Support"
+    ]
   }
 ];
 
