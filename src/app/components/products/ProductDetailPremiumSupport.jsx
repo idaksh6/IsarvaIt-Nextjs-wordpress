@@ -1507,35 +1507,30 @@ function AmcModuleOverviewSection() {
   const badgeColor = (n) => (n % 2 === 1 ? "bg-[#349f48]" : "bg-blue-600");
 
   return (
-    <section className="py-14 sm:py-16 lg:py-24 bg-gradient-to-b from-[#f3f9f4] via-white to-[#f3f9f4] relative overflow-hidden border-t border-b border-slate-900/5">
+    <section className="py-12 lg:py-16 bg-gradient-to-b from-[#f3f9f4] via-white to-[#f3f9f4] relative overflow-hidden border-t border-b border-slate-900/5">
       {/* Decorative blur backgrounds */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#349f48]/10 rounded-full blur-[120px] pointer-events-none -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-50/40 rounded-full blur-[120px] pointer-events-none translate-x-1/2 translate-y-1/2" />
 
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 relative z-10 w-full">
-        {/* ── TOP HEADER ROW: logo + dashed title + badge ───────────── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 mb-10 lg:mb-6 items-center">
-          <div className="lg:col-span-4 flex justify-center lg:justify-start">
-            <BrandMark />
-          </div>
-          <div className="lg:col-span-8 flex flex-col items-center lg:items-start gap-4 text-center lg:text-left">
-            <div className="flex items-center gap-3 sm:gap-4 w-full justify-center lg:justify-start">
-              <span className="hidden sm:flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-[#349f48]" />
-                <span className="h-px w-8 sm:w-12 bg-[#349f48]" />
-              </span>
-              <h2 className="text-3xl lg:text-5xl font-black text-slate-900 uppercase tracking-tight whitespace-normal">
-                AMC Module <span className="text-slate-400 font-light">–</span> Complete Overview
-              </h2>
-              <span className="hidden sm:flex items-center gap-1.5">
-                <span className="h-px w-8 sm:w-12 bg-[#349f48]" />
-                <span className="w-2 h-2 rounded-full bg-[#349f48]" />
-              </span>
-            </div>
-            <span className="inline-block bg-[#349f48] text-white text-xs sm:text-sm font-bold px-5 sm:px-6 py-2 rounded-full tracking-wide shadow-sm">
-              From Creation to Closure – Everything in One Place
+        {/* ── TOP HEADER ROW: dashed title + badge ───────────── */}
+        <div className="flex flex-col items-center gap-4 text-center mb-10 lg:mb-12">
+          <div className="flex items-center gap-3 sm:gap-4 w-full justify-center">
+            <span className="hidden sm:flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-[#349f48]" />
+              <span className="h-px w-8 sm:w-12 bg-[#349f48]" />
+            </span>
+            <h2 className="font-black text-slate-900 uppercase tracking-tight sm:whitespace-nowrap">
+              AMC Module <span className="text-slate-400 font-light">–</span> Complete Overview
+            </h2>
+            <span className="hidden sm:flex items-center gap-1.5">
+              <span className="h-px w-8 sm:w-12 bg-[#349f48]" />
+              <span className="w-2 h-2 rounded-full bg-[#349f48]" />
             </span>
           </div>
+          <span className="inline-block bg-[#349f48] text-white text-xs sm:text-sm font-bold px-5 sm:px-6 py-2 rounded-full tracking-wide shadow-sm">
+            The AMC Module is fully integrated right into our core Support Application, giving you end-to-end maintenance and  control
+          </span>
         </div>
 
         {/* ── MAIN GRID: sidebar + content ──────────────────────────── */}
