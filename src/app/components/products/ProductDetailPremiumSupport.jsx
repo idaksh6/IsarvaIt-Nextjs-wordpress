@@ -152,7 +152,7 @@ const faqData = [
   },
   {
     question: "What makes Isarva Support Software as the best project management software for our team?",
-    answer: "Unlike isolated platforms, ISS is the best all-in-one project management software because it seamlessly blends daily task tracking, client ticket resolution, and automated operational reporting into a single source of truth, removing the need for multiple expensive subscriptions.",
+    answer: "Unlike isolated platforms, ISS is the best all-in-one support software because it seamlessly blends daily task tracking, client ticket resolution, and automated operational reporting into a single source of truth, removing the need for multiple expensive subscriptions.",
     icon: "🏆",
     color: "#9333EA"
   },
@@ -2154,7 +2154,7 @@ export default function ProductDetailPremiumSupportStaging({
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-[#000000] leading-[1] mb-6">
-              The Best all-in-one project management software<br />
+              The Best all-in-one Support Software<br />
               <span className="text-[#9333EA]">designed to unify your projects, tasks, and support tickets in one seamless platform</span>
               <span style={{ color: SUPPORT_PURPLE }}>.</span>
             </h1>
