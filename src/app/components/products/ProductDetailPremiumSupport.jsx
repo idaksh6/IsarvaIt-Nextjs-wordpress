@@ -151,7 +151,7 @@ const faqData = [
     color: "#9333EA"
   },
   {
-    question: "What makes Isarva Support Software as the best project management software for our team?",
+    question: "What makes Isarva Support Software as the best project management software?",
     answer: "Unlike isolated platforms, ISS is the best all-in-one support software because it seamlessly blends daily task tracking, client ticket resolution, and automated operational reporting into a single source of truth, removing the need for multiple expensive subscriptions.",
     icon: "🏆",
     color: "#9333EA"
@@ -1194,7 +1194,7 @@ function AutomationSection() {
             Automation: Your "Invisible Assistant"
           </span>
           <h2 className="text-[#0a0a0a] mb-6 capitalize">
-            We Do the <span className="bg-gradient-to-r from-[#9333EA] to-[#7c3aed] bg-clip-text text-transparent py-1">Grunt Work</span><br className="md:hidden" />
+            We Do the <span className="bg-gradient-to-r from-[#9333EA] to-[#7c3aed] bg-clip-text text-transparent py-1">Grunt Work </span><br className="md:hidden" />
             So You Don't Have To.
           </h2>
         </div>
