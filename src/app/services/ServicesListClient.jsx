@@ -12,7 +12,7 @@ export default function ServicesListClient({ servicesData }) {
     // Stage 1: Filter out staging services from the public list
     const publicServices = servicesData.filter(service => {
       const slug = service.slug?.toLowerCase() || "";
-      return !slug.includes("staging") && slug !== "whatsapp-crm-software" && slug !== "mobile-app-development";
+      return !slug.includes("staging") && slug !== "whatsapp-crm-software";
     });
 
     if (!searchQuery.trim()) {

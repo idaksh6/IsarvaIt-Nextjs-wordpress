@@ -14,7 +14,7 @@ const productsData = [
   { label: "Marine Service Software", href: "/product/marine-service-software", icon: "🏬" },
   { label: "Dispatcher Panel", href: "/product/dispatcher-panel", icon: "⛽" },
   { label: "WooCommerce Development", href: "/product/woocommerce-development", icon: "🛒" },
-  { label: "Document Management System", href: "/product/document-management-system", icon: "📄" },
+  { label: "Mobile App Development", href: "/product/mobile-app-development", icon: "📱" },
   { label: "Retail Billing Software", href: "/product/retail-billing-software", icon: "🚚" },
   { label: "Dealer Management and Dealer Article Software", href: "/product/dealer-management-and-dealer-article-software", icon: "🤝" },
   { label: "Lawyer Legal Association Software", href: "/product/lawyer-legal-association-software", icon: "⚖️" },

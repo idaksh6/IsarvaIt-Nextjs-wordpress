@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getProductBySlug, getAllProductSlugs, productsData } from "../../lib/data/products-data";
 import ProductDetailClient from "./ProductDetailClient";
+import MobileAppDevelopment from "./MobileAppDevelopment";
 import {
   generateProductMetadata,
   generateProductSchema,
@@ -35,6 +36,10 @@ export default async function ProductDetailPage({ params }) {
 
   if (!product) {
     notFound();
+  }
+
+  if (slug === "mobile-app-development") {
+    return <MobileAppDevelopment />;
   }
 
   // Get related products (3 random products excluding current, prioritizing same category)

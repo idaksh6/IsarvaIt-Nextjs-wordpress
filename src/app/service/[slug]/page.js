@@ -19,7 +19,6 @@ import {
 } from "../../lib/utils/seo";
 import NewsAndMagazinePortal from "./NewsAndMagazinePortal";
 import WhatsAppCRMSoftware from "./WhatsAppCRMSoftware";
-import MobileAppDevelopment from "./MobileAppDevelopment";
 
 export async function generateStaticParams() {
   return getAllServiceSlugs().map((slug) => ({
@@ -52,17 +51,7 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  // noindex for the Mobile App Development page
-  if (slug === "mobile-app-development") {
-    return {
-      title: "Mobile App Development | React Native & Expo | Isarva Infotech",
-      description: "Build powerful iOS & Android apps with Isarva Infotech. Expert React Native & Expo development for HRMS, CRM, and custom business applications.",
-      robots: {
-        index: false,
-        follow: false,
-      },
-    };
-  }
+
 
   return generateServiceMetadata(service);
 }
@@ -124,10 +113,7 @@ export default async function ServiceDetailPage({ params }) {
     return <WhatsAppCRMSoftware />;
   }
 
-  // ── Mobile App Development page ──────────────────────
-  if (slug === "mobile-app-development") {
-    return <MobileAppDevelopment />;
-  }
+
 
   // ── Premium page for Custom Laravel Application Development ──────────────
   if (slug === "custom-laravel-application-development") {
@@ -155,7 +141,7 @@ export default async function ServiceDetailPage({ params }) {
 
   // Get related services (3 random services excluding current and hidden services)
   const relatedServices = servicesData
-    .filter(s => s.slug !== service.slug && s.slug !== "whatsapp-crm-software" && s.slug !== "mobile-app-development")
+    .filter(s => s.slug !== service.slug && s.slug !== "whatsapp-crm-software")
     .sort(() => 0.5 - Math.random())
     .slice(0, 3);
 

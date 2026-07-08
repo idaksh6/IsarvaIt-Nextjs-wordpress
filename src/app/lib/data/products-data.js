@@ -697,6 +697,33 @@ export const productsData = [
     color: "from-indigo-500 to-violet-600",
     bgGradient: "from-indigo-50 via-violet-50 to-white",
   },
+  {
+    slug: "mobile-app-development",
+    title: "Mobile App Development",
+    category: "Mobile Application Development",
+    icon: "📱",
+    tagline: "React Native & Expo Apps",
+    shortDescription: "Build powerful iOS & Android apps with React Native & Expo",
+    description: "We craft high-performance mobile applications using React Native and Expo — delivering native-quality experiences on both platforms from a single codebase. From HRMS to CRM, we turn your business vision into stunning mobile products.",
+    features: [
+      "Cross-Platform Apps",
+      "Enterprise Solutions",
+      "UI/UX Design",
+      "API Integration",
+      "App Store Deployment",
+      "Maintenance & Support"
+    ],
+    technologies: ["React Native", "Expo", "TypeScript", "Firebase", "PostgreSQL"],
+    benefits: [
+      "Faster Time-to-Market",
+      "Cost-Effective Development",
+      "Native Performance",
+      "Single Codebase",
+      "Expert Support"
+    ],
+    color: "from-indigo-500 to-emerald-600",
+    bgGradient: "from-indigo-50 via-emerald-50 to-white",
+  },
 ];
 
 // Helper functions to filter out internal/staging/old content from the UI
