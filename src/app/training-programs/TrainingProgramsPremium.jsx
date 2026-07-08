@@ -494,7 +494,7 @@ export default function TrainingProgramsPremium() {
                 <div className="absolute -inset-4 bg-gradient-to-br from-indigo-200/40 to-violet-200/40 blur-[60px] rounded-full" />
                 <div className="relative rounded-3xl overflow-hidden border border-indigo-100 shadow-[0_24px_80px_rgba(99,102,241,0.15)]">
                   <img
-                    src="/training_programs_hero_indian.png"
+                    src="/Services/Training/Banner-img.jpg"
                     alt="Training Programs at iSARVA Infotech"
                     className="w-full h-[480px] lg:h-[520px] object-cover"
                   />
@@ -538,7 +538,7 @@ export default function TrainingProgramsPremium() {
                 <div className="absolute -inset-4 bg-gradient-to-br from-indigo-100/60 to-violet-100/60 blur-[50px] rounded-3xl" />
                 <div className="relative rounded-3xl overflow-hidden border border-indigo-100 shadow-2xl">
                   <img
-                    src="/training_courses_grid.png"
+                    src="/Services/Training/training_courses_grid.png"
                     alt="Training Courses at iSARVA"
                     className="w-full object-cover rounded-3xl"
                   />
@@ -680,7 +680,7 @@ export default function TrainingProgramsPremium() {
             {/* Banner image + content */}
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
               <img
-                src="/training_mentors_team_indian.png"
+                src="/Services/Training/training_mentors_team_indian.png"
                 alt="iSARVA Training Mentors and Experts"
                 className="w-full h-[480px] object-cover"
               />
@@ -731,7 +731,7 @@ export default function TrainingProgramsPremium() {
               {/* Image */}
               <div className="relative rounded-3xl overflow-hidden border border-indigo-100 shadow-xl">
                 <img
-                  src="/training_benefits_banner_indian.png"
+                  src="/Services/Training/training_benefits_banner_indian.png"
                   alt="Training Benefits at iSARVA"
                   className="w-full h-72 lg:h-80 object-cover"
                 />
