@@ -46,7 +46,7 @@ const servicesData = [
   { label: "Consulting Services", href: "/service/consulting-services", icon: "💼" },
   { label: "ERP Services", href: "/service/erp-services", icon: "🏢" },
   { label: "Offshore Development", href: "/service/offshore-development", icon: "🌍" },
-  { label: "Training", href: "/service/training", icon: "📚" },
+  { label: "Laravel Development", href: "/service/custom-laravel-application-development", icon: "⚙️" },
   { label: "GPS Tracking", href: "/service/gps-tracking", icon: "📍" },
   { label: "WordPress Training", href: "/service/wordpress-training", icon: "🎓" },
   { label: "Odoo Apps Support", href: "/service/odoo-apps-support-and-maintenance", icon: "📦" },
