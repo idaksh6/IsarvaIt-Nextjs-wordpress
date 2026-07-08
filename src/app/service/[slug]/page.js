@@ -153,9 +153,9 @@ export default async function ServiceDetailPage({ params }) {
     );
   }
 
-  // Get related services (3 random services excluding current)
+  // Get related services (3 random services excluding current and hidden services)
   const relatedServices = servicesData
-    .filter(s => s.slug !== service.slug)
+    .filter(s => s.slug !== service.slug && s.slug !== "whatsapp-crm-integration" && s.slug !== "mobile-app-development")
     .sort(() => 0.5 - Math.random())
     .slice(0, 3);
 
