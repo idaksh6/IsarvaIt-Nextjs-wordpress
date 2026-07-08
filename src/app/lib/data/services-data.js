@@ -1212,8 +1212,8 @@ export const servicesData = [
     ]
   },
   {
-    slug: "whatsapp-crm-integration",
-    title: "WhatsApp CRM Integration",
+    slug: "whatsapp-crm-software",
+    title: "WhatsApp CRM Software",
     icon: "💬",
     heroImage: "/whatsapp-crm/hero.png",
     shortDescription: "Self-hosted WhatsApp CRM with shared inbox, visual automations, broadcasts, and real-time analytics.",

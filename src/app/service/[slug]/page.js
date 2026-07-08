@@ -18,7 +18,7 @@ import {
   generateServiceBreadcrumbSchema,
 } from "../../lib/utils/seo";
 import NewsAndMagazinePortal from "./NewsAndMagazinePortal";
-import WhatsAppCRMIntegration from "./WhatsAppCRMIntegration";
+import WhatsAppCRMSoftware from "./WhatsAppCRMSoftware";
 import MobileAppDevelopment from "./MobileAppDevelopment";
 
 export async function generateStaticParams() {
@@ -40,10 +40,10 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  // noindex for the WhatsApp CRM integration page
-  if (slug === "whatsapp-crm-integration") {
+  // noindex for the WhatsApp CRM software page
+  if (slug === "whatsapp-crm-software") {
     return {
-      title: "WhatsApp CRM Integration | Isarva Infotech",
+      title: "WhatsApp CRM Software | Isarva Infotech",
       description: "Self-hosted WhatsApp CRM with shared inbox, visual automations, broadcasts, and real-time analytics designed for modern teams.",
       robots: {
         index: false,
@@ -119,9 +119,9 @@ export default async function ServiceDetailPage({ params }) {
     return <NewsAndMagazinePortal service={service} servicesData={servicesData} />;
   }
 
-  // ── WhatsApp CRM Integration page ──────────────────────
-  if (slug === "whatsapp-crm-integration") {
-    return <WhatsAppCRMIntegration />;
+  // ── WhatsApp CRM Software page ──────────────────────
+  if (slug === "whatsapp-crm-software") {
+    return <WhatsAppCRMSoftware />;
   }
 
   // ── Mobile App Development page ──────────────────────
@@ -155,7 +155,7 @@ export default async function ServiceDetailPage({ params }) {
 
   // Get related services (3 random services excluding current and hidden services)
   const relatedServices = servicesData
-    .filter(s => s.slug !== service.slug && s.slug !== "whatsapp-crm-integration" && s.slug !== "mobile-app-development")
+    .filter(s => s.slug !== service.slug && s.slug !== "whatsapp-crm-software" && s.slug !== "mobile-app-development")
     .sort(() => 0.5 - Math.random())
     .slice(0, 3);
 

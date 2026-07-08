@@ -128,7 +128,7 @@ function SearchResults() {
 
     // Search Services
     const serviceResults = services.filter((item) => {
-      if (item.slug === "whatsapp-crm-integration" || item.slug === "mobile-app-development") {
+      if (item.slug === "whatsapp-crm-software" || item.slug === "mobile-app-development") {
         return false;
       }
       return (

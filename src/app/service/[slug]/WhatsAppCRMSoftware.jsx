@@ -155,7 +155,7 @@ function useScrollReveal() {
 /* ─────────────────────────────────────────────────────────────
    Main Page Component
 ───────────────────────────────────────────────────────────────*/
-export default function WhatsAppCRMIntegration() {
+export default function WhatsAppCRMSoftware() {
   useScrollReveal();
 
   /* Icon colour-gradient lookup → Tailwind bg (via inline style for gradients) */
