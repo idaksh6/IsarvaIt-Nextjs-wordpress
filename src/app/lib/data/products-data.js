@@ -222,7 +222,7 @@ export const productsData = [
     bgGradient: "from-purple-50 via-pink-50 to-white",
   },
   {
-    slug: "woocommerce-development-staging",
+    slug: "woocommerce-development-old",
     title: "WooCommerce Development",
     category: "E-Commerce",
     icon: "🛒",
@@ -252,6 +252,7 @@ export const productsData = [
     color: "from-purple-500 to-pink-600",
     bgGradient: "from-purple-50 via-pink-50 to-white",
   },
+
   {
     slug: "petro-care",
     title: "Petro Care",

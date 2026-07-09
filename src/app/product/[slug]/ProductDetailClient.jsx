@@ -20,7 +20,7 @@ import ProductDetailPremiumBillSoft from "../../components/products/ProductDetai
 import ProductDetailPremiumSupport from "../../components/products/ProductDetailPremiumSupport";
 import ProductDetailPremiumGodownStaging from "../../components/products/ProductDetailPremiumGodownStaging";
 import ProductDetailPremiumAssociation from "../../components/products/ProductDetailPremiumAssociation";
-import ProductDetailPremiumWooCommerceStaging from "../../components/products/ProductDetailPremiumWooCommerceStaging";
+import ProductDetailPremiumWooCommerceOld from "../../components/products/ProductDetailPremiumWooCommerceOld";
 
 import ProductDetailPremiumHRMS from "../../components/products/ProductDetailPremiumHRMS";
 import ProductDetailPremiumHRMSV2 from "../../components/products/ProductDetailPremiumHRMSV2";
@@ -51,7 +51,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
     );
   }
 
-  // Use Premium View for WooCommerce Development
+  // Use Redesigned View for WooCommerce Development (Live)
   if (product.slug === 'woocommerce-development') {
     return (
       <ProductDetailPremiumWooCommerce 
@@ -62,12 +62,14 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
     );
   }
 
-  // Use Staging/Redesign View for WooCommerce Development
-  if (product.slug === 'woocommerce-development-staging') {
+
+
+  // Use Fallback Old View for WooCommerce Development
+  if (product.slug === 'woocommerce-development-old') {
     return (
-      <ProductDetailPremiumWooCommerceStaging
-        product={product}
-        relatedProducts={relatedProducts}
+      <ProductDetailPremiumWooCommerceOld 
+        product={product} 
+        relatedProducts={relatedProducts} 
         allProducts={allProducts}
       />
     );

@@ -96,11 +96,61 @@ const faqItems = [
   }
 ];
 
+const eventImages = ["/products/godown/Manage-events.jpg", "/products/godown/Add-Event.jpg"];
+const returnImages = ["/products/godown/Event-Return.jpg", "/products/godown/Event-Return-Payment.jpg", "/products/godown/Event-Invoice.jpg"];
+const rentalImages = ["/products/godown/Manage-Rents.jpg", "/products/godown/Rent-Return.jpg", "/products/godown/Rent-Invoice.jpg"];
+
+function FeatureImageSlider({ images, interval = 4000, onImageClick }) {
+  const [currentIdx, setCurrentIdx] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIdx((prev) => (prev + 1) % images.length);
+    }, interval);
+    return () => clearInterval(timer);
+  }, [images.length, interval]);
+
+  return (
+    <div className="relative w-full rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 cursor-zoom-in" style={{ aspectRatio: "16/10" }} onClick={() => onImageClick && onImageClick(images, currentIdx)}>
+      <AnimatePresence mode="wait">
+        <motion.img
+          key={currentIdx}
+          src={images[currentIdx]}
+          alt={`Feature slide ${currentIdx + 1}`}
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -20 }}
+          transition={{ duration: 0.4 }}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      </AnimatePresence>
+
+      {/* Slide Indicators */}
+      {images.length > 1 && (
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-30">
+          {images.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={(e) => {
+                e.stopPropagation();
+                setCurrentIdx(idx);
+              }}
+              className={`w-2.5 h-2.5 rounded-full transition-all ${currentIdx === idx ? "bg-indigo-600 w-5" : "bg-white/60 hover:bg-white"
+                }`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function ProductDetailPremiumGodownStaging({ product, relatedProducts, allProducts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [heroIdx, setHeroIdx] = useState(0);
   const [activeReportIdx, setActiveReportIdx] = useState(0);
   const [faqOpenIdx, setFaqOpenIdx] = useState(null);
+  const [lightboxData, setLightboxData] = useState(null);
 
   // Auto-rotate hero images
   useEffect(() => {
@@ -232,7 +282,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
       `}</style>
 
       <div className="bg-slate-50/50 min-h-screen text-slate-700 overflow-hidden">
-        
+
         {/* ── 1. HERO SECTION ── */}
         <section className="hero-bg relative pt-32 lg:pt-40 pb-12 lg:pb-16 overflow-hidden hero-mesh-overlay">
           {/* Background shapes & decorations */}
@@ -262,14 +312,14 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
               <span className="text-indigo-600 font-semibold">Smart Godown Staging</span>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
               {/* Left Column content */}
               <div className="text-center lg:text-left">
                 <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-bold text-sm mb-8 shadow-sm">
                   <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 animate-pulse"></span>
-                  Smart ERP Suite
+                  Smart Warehouse Management
                 </span>
-                
+
                 <h1 className="mb-6">
                   Smart Godown <br />
                   <span className="shimmer-text">
@@ -310,7 +360,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                   <div className="absolute -inset-4 bg-gradient-to-br from-indigo-200/30 to-cyan-200/30 blur-[60px] rounded-full" />
                   <div className="relative bg-white p-4 rounded-3xl border border-slate-100 shadow-[0_24px_80px_rgba(79,70,229,0.08)]">
                     {/* Main image display */}
-                    <div className="relative w-full rounded-2xl overflow-hidden bg-slate-50 border border-slate-200/60" style={{ aspectRatio: "16/10" }}>
+                    <div className="relative w-full rounded-2xl overflow-hidden bg-slate-50 border border-slate-200/60 cursor-zoom-in" style={{ aspectRatio: "16/10" }} onClick={() => setLightboxData({ images: heroImages.map(img => img.path), currentIndex: heroIdx })}>
                       <AnimatePresence mode="wait">
                         <motion.img
                           key={heroIdx}
@@ -331,11 +381,10 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                         <button
                           key={i}
                           onClick={() => setHeroIdx(i)}
-                          className={`py-3.5 px-2 text-xs font-bold rounded-xl border-2 transition-all duration-300 ${
-                            heroIdx === i
-                              ? "bg-indigo-600 border-indigo-600 text-white shadow-md shadow-indigo-600/10"
-                              : "bg-slate-50/50 border-transparent text-slate-500 hover:bg-slate-100 hover:text-slate-800"
-                          }`}
+                          className={`py-3.5 px-2 text-xs font-bold rounded-xl border-2 transition-all duration-300 ${heroIdx === i
+                            ? "bg-indigo-600 border-indigo-600 text-white shadow-md shadow-indigo-600/10"
+                            : "bg-slate-50/50 border-transparent text-slate-500 hover:bg-slate-100 hover:text-slate-800"
+                            }`}
                         >
                           {img.title}
                         </button>
@@ -383,14 +432,29 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
         </section>
 
         {/* ── 3. DASHBOARD INSIGHTS SECTION ── */}
-        <section className="py-12 lg:py-16 bg-gradient-to-b from-slate-50/80 via-indigo-50/10 to-slate-50/80 relative overflow-hidden">
+        <section className="py-16 bg-gradient-to-b from-slate-50/80 via-indigo-50/10 to-slate-50/80 relative overflow-hidden">
           <div className="absolute top-0 right-1/4 w-80 h-80 bg-indigo-50 rounded-full blur-3xl opacity-60 pointer-events-none" />
           <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              
-              {/* Left Column: Image */}
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-br from-indigo-100/50 to-cyan-100/50 blur-[50px] rounded-3xl" />
+
+            {/* Header Content (Centered) */}
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-semibold text-sm mb-6">
+                📊 Dashboard Analytics
+              </div>
+              <h2 className="mb-6 capitalize max-w-2xl mx-auto">
+                Your Business Operations at a Glance
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
+                Get real-time tracking metrics and operations oversight. Keep monitor tabs on stock statuses, category splits, and outgoing shipments instantly.
+              </p>
+            </div>
+
+            {/* 2-Column Split: Image on Left, Vertical Stacked Cards on Right */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+              {/* Left Side: Mockup Image */}
+              <div className="relative lg:col-span-8 w-full cursor-zoom-in" onClick={() => setLightboxData({ images: ["/products/godown/Dashboard.jpg"], currentIndex: 0 })}>
+                <div className="absolute -inset-4 bg-gradient-to-br from-indigo-100/40 to-cyan-100/40 blur-[50px] rounded-3xl" />
                 <div className="relative rounded-3xl overflow-hidden border border-slate-100 shadow-2xl bg-white p-2">
                   <img
                     src="/products/godown/Dashboard.jpg"
@@ -400,93 +464,36 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                 </div>
               </div>
 
-              {/* Right Column: Content */}
-              <div className="text-center lg:text-left">
-                <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-semibold text-sm mb-6">
-                  📊 Dashboard Analytics
-                </div>
-                <h2 className="mb-6 capitalize">
-                  Your Business Operations at a Glance
-                </h2>
-                <p className="text-lg text-slate-600 leading-relaxed mb-8">
-                  Get real-time tracking metrics and operations oversight. Keep monitor tabs on stock statuses, category splits, and outgoing shipments instantly.
-                </p>
-
-                {/* Grid layout for categories, stock, products, alerts */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-10">
-                  <div className="premium-card hover-border-indigo p-6 rounded-3xl text-center">
-                    <div className="icon-container-centered bg-indigo-50 text-indigo-600 mb-4 mx-auto">
-                      📁
-                    </div>
-                    <h3 className="mb-2">Total Categories</h3>
-                    <p className="text-sm text-slate-500 leading-relaxed">
-                      See your complete sub-category and category tree organized in one simple, quick view.
-                    </p>
-                  </div>
-
-                  <div className="premium-card hover-border-cyan p-6 rounded-3xl text-center">
-                    <div className="icon-container-centered bg-cyan-50 text-cyan-600 mb-4 mx-auto">
-                      📦
-                    </div>
-                    <h3 className="mb-2">Overall Stock Count</h3>
-                    <p className="text-sm text-slate-500 leading-relaxed">
-                      Know your physical stock counts, adjustments, and exact quantity volumes in real-time.
-                    </p>
-                  </div>
-
-                  <div className="premium-card hover-border-emerald p-6 rounded-3xl text-center">
-                    <div className="icon-container-centered bg-emerald-50 text-emerald-600 mb-4 mx-auto">
-                      🏷️
-                    </div>
-                    <h3 className="mb-2">Total Products</h3>
-                    <p className="text-sm text-slate-500 leading-relaxed">
-                      Easily configure and manage all your catalog stock listings, specs, and details in one place.
-                    </p>
-                  </div>
-
-                  <div className="premium-card hover-border-rose p-6 rounded-3xl text-center">
-                    <div className="icon-container-centered bg-rose-50 text-rose-600 mb-4 mx-auto">
-                      🚨
-                    </div>
-                    <h3 className="mb-2">Out of Stock Alerts</h3>
-                    <p className="text-sm text-slate-500 leading-relaxed">
-                      Instant warning lists for depleted stocks, helping you prevent order bottlenecks.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Checklist bullets */}
-                <div className="space-y-4 pt-6 border-t border-slate-200">
-                  <div className="flex items-start gap-4 text-left">
-                    <div className="w-6 h-6 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 text-sm font-bold mt-0.5">
-                      ✓
+              {/* Right Side: 4 Boxes Stacked Vertically */}
+              <div className="lg:col-span-4 flex flex-col gap-4">
+                {[
+                  { icon: "📁", title: "Total Categories", desc: "See your complete sub-category and category tree organized in one simple, quick view.", bg: "bg-indigo-50", text: "text-indigo-600" },
+                  { icon: "📦", title: "Overall Stock Count", desc: "Know your physical stock counts, adjustments, and exact quantity volumes in real-time.", bg: "bg-cyan-50", text: "text-cyan-600" },
+                  { icon: "🏷️", title: "Total Products", desc: "Easily configure and manage all your catalog stock listings, specs, and details in one place.", bg: "bg-emerald-50", text: "text-emerald-600" },
+                  { icon: "🚨", title: "Out of Stock Alerts", desc: "Instant warning lists for depleted stocks, helping you prevent order bottlenecks.", bg: "bg-rose-50", text: "text-rose-600" }
+                ].map((item, idx) => (
+                  <div key={idx} className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex items-start gap-4 hover:border-indigo-200 transition-all duration-300">
+                    <div className={`w-10 h-10 rounded-xl flex-shrink-0 flex items-center justify-center text-lg ${item.bg} ${item.text}`}>
+                      {item.icon}
                     </div>
                     <div>
-                      <h4>Top Performers Analytics</h4>
-                      <p className="text-slate-500 text-sm mt-0.5">Filter top 5 selling items by Year, Month, Event, or Rental durations to identify high-margin assets.</p>
+                      <h3 className="mb-1">{item.title}</h3>
+                      <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-4 text-left">
-                    <div className="w-6 h-6 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 text-sm font-bold mt-0.5">
-                      ✓
-                    </div>
-                    <div>
-                      <h4>Monthly Sales & Due Date Monitor</h4>
-                      <p className="text-slate-500 text-sm mt-0.5">Track units dispatched for the last 5 months, monitor return deadlines (within 10 days), and review client payments.</p>
-                    </div>
-                  </div>
-                </div>
-
+                ))}
               </div>
+
             </div>
+
           </div>
         </section>
 
         {/* ── 4. USER & CUSTOMER MANAGEMENT SECTION ── */}
-        <section className="py-12 lg:py-16 bg-gradient-to-b from-white via-purple-50/10 to-white relative overflow-hidden">
+        <section className="pt-4 pb-12 lg:py-16 bg-gradient-to-b from-white via-purple-50/10 to-white relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              
+
               {/* Left Column Content */}
               <div className="text-center lg:text-left">
                 <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-semibold text-sm mb-6">
@@ -527,7 +534,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
               </div>
 
               {/* Right Column Image */}
-              <div className="relative">
+              <div className="relative cursor-zoom-in" onClick={() => setLightboxData({ images: ["/products/godown/User-Management.jpg"], currentIndex: 0 })}>
                 <div className="absolute -inset-4 bg-gradient-to-br from-cyan-100/50 to-indigo-100/50 blur-[50px] rounded-3xl" />
                 <div className="relative rounded-3xl overflow-hidden border border-slate-100 shadow-2xl bg-white p-2">
                   <img
@@ -545,10 +552,10 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
         {/* ── 5. MASTER SETUP SECTION ── */}
         <section className="py-12 lg:py-16 bg-gradient-to-b from-slate-50/60 via-indigo-50/15 to-slate-50/60 relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+
               {/* Left Column Image */}
-              <div className="relative">
+              <div className="relative order-2 lg:order-1 cursor-zoom-in" onClick={() => setLightboxData({ images: ["/products/godown/Manage-products-units.jpg"], currentIndex: 0 })}>
                 <div className="absolute -inset-4 bg-gradient-to-br from-indigo-100/50 to-purple-100/50 blur-[50px] rounded-3xl" />
                 <div className="relative rounded-3xl overflow-hidden border border-slate-100 shadow-2xl bg-white p-2">
                   <img
@@ -560,7 +567,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
               </div>
 
               {/* Right Column Content */}
-              <div className="text-center lg:text-left">
+              <div className="text-center lg:text-left order-1 lg:order-2">
                 <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-semibold text-sm mb-6">
                   🏗️ System Foundation
                 </div>
@@ -605,7 +612,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
         {/* ── 6. INTELLIGENT INVENTORY & QR CODES ── */}
         <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 relative z-10">
-            
+
             <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-semibold text-sm mb-6">
                 📦 Inventory Setup
@@ -620,7 +627,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
 
             {/* Three column card grid with centered icons and centered text */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              
+
               <div className="premium-card hover-border-indigo p-6 rounded-3xl flex flex-col justify-between text-center">
                 <div>
                   <div className="rounded-2xl overflow-hidden border border-slate-200 mb-6 bg-white p-1">
@@ -699,7 +706,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
         <section className="py-12 lg:py-16 bg-gradient-to-r from-indigo-600 via-violet-600 to-purple-600 text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/3 translate-x-1/3" />
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-cyan-400/10 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3" />
-          
+
           <div className="max-w-4xl mx-auto px-6 text-center relative z-10 space-y-6">
             <span className="px-4 py-1.5 rounded-full bg-white/10 text-indigo-200 text-xs font-black uppercase tracking-wider inline-block">
               Movement Engine
@@ -717,26 +724,12 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
         <section className="py-12 lg:py-16 bg-gradient-to-b from-slate-50/60 via-cyan-50/15 to-slate-50/60 relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              
-              {/* Left Column Image with overlapping display */}
+
+              {/* Left Column Image with auto-sliding display */}
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-br from-indigo-100/50 to-cyan-100/50 blur-[50px] rounded-3xl" />
                 <div className="relative bg-white p-3 rounded-[2rem] border border-slate-200/80 shadow-2xl">
-                  <div className="relative w-full rounded-2xl overflow-hidden bg-slate-100 border border-slate-150" style={{ aspectRatio: "16/10" }}>
-                    <img
-                      src="/products/godown/Manage-events.jpg"
-                      alt="Event Dispatch and Management Screen"
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                  </div>
-                  {/* Secondary Image Overlay */}
-                  <div className="absolute -bottom-6 -right-6 w-1/2 max-w-[240px] rounded-2xl border-4 border-white shadow-2xl overflow-hidden bg-white p-1 z-20">
-                    <img
-                      src="/products/godown/Add-Event.jpg"
-                      alt="Adding New Event with Product Selections"
-                      className="w-full h-auto rounded-xl"
-                    />
-                  </div>
+                  <FeatureImageSlider images={eventImages} onImageClick={(imgs, idx) => setLightboxData({ images: imgs, currentIndex: idx })} />
                 </div>
               </div>
 
@@ -794,9 +787,9 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
         <section className="py-12 lg:py-16 bg-gradient-to-br from-emerald-50/10 via-white to-white relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              
+
               {/* Left Column: Content */}
-              <div className="text-center lg:text-left lg:order-2">
+              <div className="text-center lg:text-left">
                 <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-semibold text-sm mb-6">
                   🛡️ Returns Accountability
                 </div>
@@ -840,33 +833,11 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                 </div>
               </div>
 
-              {/* Right Column: Image with overlays (including Event Invoice format) */}
-              <div className="relative lg:order-1">
+              {/* Right Column: Image with auto-sliding display */}
+              <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-br from-indigo-100/50 to-emerald-100/40 blur-[50px] rounded-3xl" />
                 <div className="relative bg-white p-3 rounded-[2rem] border border-slate-200/80 shadow-2xl">
-                  <div className="relative w-full rounded-2xl overflow-hidden bg-slate-100 border border-slate-150" style={{ aspectRatio: "16/10" }}>
-                    <img
-                      src="/products/godown/Event-Return.jpg"
-                      alt="Event Return Management Form"
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                  </div>
-                  {/* Secondary Image Overlay 1 */}
-                  <div className="absolute -bottom-6 -left-6 w-1/3 max-w-[180px] rounded-2xl border-4 border-white shadow-2xl overflow-hidden bg-white p-1 z-20">
-                    <img
-                      src="/products/godown/Event-Return-Payment.jpg"
-                      alt="Settle Event Balances Screen"
-                      className="w-full h-auto rounded-xl"
-                    />
-                  </div>
-                  {/* Secondary Image Overlay 2 */}
-                  <div className="absolute -top-6 -right-6 w-1/3 max-w-[180px] rounded-2xl border-4 border-white shadow-2xl overflow-hidden bg-white p-1 z-20">
-                    <img
-                      src="/products/godown/Event-Invoice.jpg"
-                      alt="Event Billing Invoice format"
-                      className="w-full h-auto rounded-xl"
-                    />
-                  </div>
+                  <FeatureImageSlider images={returnImages} onImageClick={(imgs, idx) => setLightboxData({ images: imgs, currentIndex: idx })} />
                 </div>
               </div>
 
@@ -891,7 +862,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto relative">
               {/* Connector line for desktop */}
               <div className="hidden md:block absolute top-[2.5rem] left-[15%] right-[15%] h-0.5 bg-gradient-to-r from-blue-200 via-amber-200 to-emerald-200 z-0" />
-              
+
               <div className="bg-white border border-slate-200/80 rounded-2xl p-6 text-center space-y-4 status-flow-card status-flow-card-blue z-10 shadow-sm">
                 <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-xl mx-auto">
                   🚚
@@ -927,33 +898,12 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
         <section className="py-12 lg:py-16 bg-gradient-to-b from-white via-indigo-50/10 to-white relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              
-              {/* Left Column: Multi image collage */}
+
+              {/* Left Column: Image with auto-sliding display */}
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-br from-indigo-100/50 to-cyan-100/50 blur-[50px] rounded-3xl" />
-                <div className="relative bg-slate-50 p-4 rounded-[2rem] border border-slate-100 shadow-2xl">
-                  <div className="relative w-full rounded-2xl overflow-hidden bg-slate-200 border border-slate-200" style={{ aspectRatio: "16/10" }}>
-                    <img
-                      src="/products/godown/Manage-Rents.jpg"
-                      alt="Long-Term Rent Management Overview Screen"
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                  </div>
-                  {/* Secondary Overlapping Images */}
-                  <div className="absolute -bottom-6 -right-6 w-1/3 max-w-[160px] rounded-2xl border-4 border-white shadow-2xl overflow-hidden bg-white p-1 z-20">
-                    <img
-                      src="/products/godown/Rent-Return.jpg"
-                      alt="Rental Return Screen"
-                      className="w-full h-auto rounded-xl"
-                    />
-                  </div>
-                  <div className="absolute -top-6 -left-6 w-1/3 max-w-[160px] rounded-2xl border-4 border-white shadow-2xl overflow-hidden bg-white p-1 z-20">
-                    <img
-                      src="/products/godown/Rent-Invoice.jpg"
-                      alt="Auto-Generated Rental Invoice"
-                      className="w-full h-auto rounded-xl"
-                    />
-                  </div>
+                <div className="relative bg-white p-3 rounded-[2rem] border border-slate-200/80 shadow-2xl">
+                  <FeatureImageSlider images={rentalImages} onImageClick={(imgs, idx) => setLightboxData({ images: imgs, currentIndex: idx })} />
                 </div>
               </div>
 
@@ -1009,7 +959,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
         {/* ── 12. INSIGHT REPORTS SECTION ── */}
         <section id="reports" className="py-12 lg:py-16 bg-gradient-to-b from-slate-50/80 via-indigo-50/20 to-slate-50/80 border-t border-slate-100 relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 relative z-10">
-            
+
             <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-semibold text-sm mb-6">
                 📋 Management Reports
@@ -1029,15 +979,14 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                   <button
                     key={rep.id}
                     onClick={() => setActiveReportIdx(idx)}
-                    className={`w-full text-left p-4 rounded-2xl border transition-all duration-350 flex items-start gap-4 ${
-                      activeReportIdx === idx
-                        ? "bg-gradient-to-r from-indigo-600 to-violet-600 border-transparent text-white shadow-lg shadow-indigo-600/20"
-                        : "bg-white border-slate-200/60 text-slate-600 hover:bg-slate-100 hover:text-slate-900"
-                    }`}
+                    className={`w-full text-left p-4 rounded-2xl border transition-all duration-350 flex items-start gap-4 ${activeReportIdx === idx
+                      ? "bg-gradient-to-r from-indigo-600 to-violet-600 border-transparent text-white shadow-lg shadow-indigo-600/20"
+                      : "bg-white border-slate-200/60 text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                      }`}
                   >
                     <span className="text-2xl flex-shrink-0 mt-0.5">{rep.icon}</span>
                     <div>
-                      <h4 className="leading-tight">{rep.name}</h4>
+                      <h4 className={`leading-tight ${activeReportIdx === idx ? "text-white" : "text-slate-800"}`}>{rep.name}</h4>
                       <p className={`text-xs mt-1 leading-snug line-clamp-2 ${activeReportIdx === idx ? "text-indigo-50/80" : "text-slate-400"}`}>
                         {rep.desc}
                       </p>
@@ -1063,7 +1012,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                   </div>
                 </div>
 
-                <div className="relative w-full rounded-2xl overflow-hidden bg-slate-100 border border-slate-200" style={{ aspectRatio: "16/10" }}>
+                <div className="relative w-full rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 cursor-zoom-in" style={{ aspectRatio: "16/10" }} onClick={() => setLightboxData({ images: [reportList[activeReportIdx].image], currentIndex: 0 })}>
                   <AnimatePresence mode="wait">
                     <motion.img
                       key={activeReportIdx}
@@ -1087,7 +1036,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
         <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="bg-slate-50 rounded-[2.5rem] border border-slate-200/50 p-8 sm:p-12 lg:p-16">
-              
+
               <div className="text-center max-w-2xl mx-auto mb-16">
                 <span className="text-indigo-600 font-bold tracking-wider text-sm uppercase block mb-3">Key Differentiators</span>
                 <h2 className="mb-6 capitalize">
@@ -1100,12 +1049,12 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
 
               {/* Grid of 6 white cards with perfectly centered icons */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
+
                 <div className="bg-white p-6 rounded-2xl border border-slate-150 shadow-sm space-y-3 flex flex-col items-center text-center premium-card hover-border-indigo">
                   <div className="icon-container-centered bg-indigo-50 text-indigo-600 mb-2 mx-auto">
                     🎯
                   </div>
-                  <h4>All-in-One Solution</h4>
+                  <h3>All-in-One Solution</h3>
                   <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
                     Manage your warehouse inventories, client contacts, events checklists, rental agreements, and invoice records in one portal.
                   </p>
@@ -1115,7 +1064,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                   <div className="icon-container-centered bg-cyan-50 text-cyan-600 mb-2 mx-auto">
                     🤖
                   </div>
-                  <h4>Smart Automation</h4>
+                  <h3>Smart Automation</h3>
                   <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
                     Automatically transitions order statuses from Sent to Returned, eliminating manual logs audit delays.
                   </p>
@@ -1125,7 +1074,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                   <div className="icon-container-centered bg-emerald-50 text-emerald-600 mb-2 mx-auto">
                     💳
                   </div>
-                  <h4>Financial Control</h4>
+                  <h3>Financial Control</h3>
                   <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
                     Monitor advances, calculate damage penalties, and compute final outstanding balances automatically.
                   </p>
@@ -1135,7 +1084,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                   <div className="icon-container-centered bg-indigo-50 text-indigo-600 mb-2 mx-auto">
                     ✨
                   </div>
-                  <h4>Quality Tracking</h4>
+                  <h3>Quality Tracking</h3>
                   <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
                     Know the exact physical condition of returned items immediately, keeping your assets accountable.
                   </p>
@@ -1145,7 +1094,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                   <div className="icon-container-centered bg-cyan-50 text-cyan-600 mb-2 mx-auto">
                     📊
                   </div>
-                  <h4>Powerful Reports</h4>
+                  <h3>Powerful Reports</h3>
                   <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
                     Generate print-ready PDFs or export spreadsheets to Excel. Easy data transfer to external bookkeeping software.
                   </p>
@@ -1155,7 +1104,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                   <div className="icon-container-centered bg-emerald-50 text-emerald-600 mb-2 mx-auto">
                     👌
                   </div>
-                  <h4>Easy to Use</h4>
+                  <h3>Easy to Use</h3>
                   <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
                     Clean interface built with intuitive terms. Simplifies training times for your warehouse staff.
                   </p>
@@ -1169,7 +1118,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
         {/* ── 14. FAQ ACCORDION SECTION (Changed to 2 columns on desktop) ── */}
         <section className="py-12 lg:py-16 bg-gradient-to-b from-slate-50 via-indigo-50/15 to-slate-50 border-t border-slate-100 relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 relative z-10">
-            
+
             <div className="text-center mb-12">
               <span className="text-indigo-600 font-bold tracking-wider text-sm uppercase block mb-3">Answers & FAQ</span>
               <h2 className="mb-6 capitalize">
@@ -1274,7 +1223,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
 
         {/* ── 15. CTA FOOTER & RELATED SOLUTIONS ── */}
         <section className="py-12 lg:py-16 bg-gradient-to-b from-indigo-50/50 to-indigo-100/30 border-t border-slate-100 relative overflow-hidden">
-          
+
           {/* Main CTA banner */}
           <div className="max-w-4xl mx-auto px-6 text-center space-y-8 mb-20 relative z-10">
             <h2 className="mb-6 capitalize">
@@ -1340,6 +1289,84 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
           preSelectedItem={product.title}
           allItems={allProducts}
         />
+
+        {/* ── LIGHTBOX SCREENSHOT POPUP ── */}
+        <AnimatePresence>
+          {lightboxData && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setLightboxData(null)}
+              className="fixed inset-0 bg-slate-900/90 backdrop-blur-sm z-[999] flex items-center justify-center p-4 cursor-zoom-out"
+            >
+              <div
+                className="relative max-w-5xl w-full max-h-[90vh] flex items-center justify-center"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Left Arrow Button */}
+                {lightboxData.images.length > 1 && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setLightboxData(prev => ({
+                        ...prev,
+                        currentIndex: (prev.currentIndex - 1 + prev.images.length) % prev.images.length
+                      }));
+                    }}
+                    className="absolute -left-4 md:-left-16 w-12 h-12 rounded-full bg-slate-950/80 hover:bg-slate-950 text-white flex items-center justify-center font-bold text-xl shadow-lg transition-colors cursor-pointer z-50 border border-slate-700"
+                  >
+                    ‹
+                  </button>
+                )}
+
+                {/* Main Content Area */}
+                <motion.div
+                  key={lightboxData.currentIndex}
+                  initial={{ scale: 0.96, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.96, opacity: 0 }}
+                  className="bg-white p-2 rounded-3xl shadow-2xl overflow-hidden cursor-default w-full relative"
+                >
+                  <img
+                    src={lightboxData.images[lightboxData.currentIndex]}
+                    alt="Enlarged Godown System Screenshot"
+                    className="w-full h-auto max-h-[82vh] object-contain rounded-2xl"
+                  />
+                  <button
+                    onClick={() => setLightboxData(null)}
+                    className="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-900/80 hover:bg-slate-900 text-white flex items-center justify-center font-bold text-sm shadow-md transition-colors"
+                  >
+                    ✕
+                  </button>
+
+                  {/* Indicator count */}
+                  {lightboxData.images.length > 1 && (
+                    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-slate-950/70 text-white text-xs font-semibold">
+                      {lightboxData.currentIndex + 1} / {lightboxData.images.length}
+                    </div>
+                  )}
+                </motion.div>
+
+                {/* Right Arrow Button */}
+                {lightboxData.images.length > 1 && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setLightboxData(prev => ({
+                        ...prev,
+                        currentIndex: (prev.currentIndex + 1) % prev.images.length
+                      }));
+                    }}
+                    className="absolute -right-4 md:-right-16 w-12 h-12 rounded-full bg-slate-950/80 hover:bg-slate-950 text-white flex items-center justify-center font-bold text-xl shadow-lg transition-colors cursor-pointer z-50 border border-slate-700"
+                  >
+                    ›
+                  </button>
+                )}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
       </div>
     </>
