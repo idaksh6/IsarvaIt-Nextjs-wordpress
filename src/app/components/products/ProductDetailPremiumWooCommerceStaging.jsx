@@ -18,7 +18,7 @@ const CLR = {
   muted: "#94A3B8",
   white: "#FFFFFF",
   surface: "#F8F7FF",
-  surfaceAlt: "#F1F5F9",
+  surfaceAlt: "#F8FAFC",
 };
 
 /* ── Feature Data ──────────────────────────────────────────── */
@@ -34,15 +34,97 @@ const features = [
 
 /* ── Services Data ─────────────────────────────────────────── */
 const services = [
-  { id: "store-setup", title: "WooCommerce Store Setup", icon: "🛒", description: "Launch your online store with a fully configured WooCommerce setup tailored to your business needs, including theme customization and essential settings." },
-  { id: "order-management", title: "Order Management", icon: "📋", description: "Efficient order processing system to manage customer orders, track statuses, and streamline your sales workflow." },
-  { id: "product-upload", title: "Product Upload & Categorization", icon: "📦", description: "Get your product catalog organized with bulk uploads, custom attributes, and logical category structuring for a smooth shopping experience." },
-  { id: "payment-gateway", title: "Payment Gateway Integration", icon: "💳", description: "Seamless integration with trusted payment gateways like PayPal, Stripe, and local providers to ensure secure transactions." },
-  { id: "shipping-api", title: "Shipping API Integration", icon: "🚚", description: "Automated shipping rate calculations and real-time tracking with leading carriers via integrated shipping APIs." },
-  { id: "plugin-install", title: "Plugin Installation & Configuration", icon: "🔌", description: "Extend your store's capabilities with the right plugins, carefully selected, installed, and configured to match your goals." },
-  { id: "seo-optimization", title: "SEO Optimization for WooCommerce", icon: "🔍", description: "Boost your product visibility with on-page SEO, keyword targeting, and schema markup specifically optimized for WooCommerce." },
-  { id: "mobile-design", title: "Mobile-Responsive Design", icon: "📱", description: "Ensure a smooth and engaging shopping experience on all devices with a responsive design that adapts to screens of all sizes." },
-  { id: "maintenance", title: "Ongoing Maintenance & Support", icon: "🛠️", description: "Stay worry-free with regular updates, security checks, and expert support to keep your WooCommerce store running smoothly." },
+  { 
+    id: "store-setup", 
+    title: "WooCommerce Store Setup", 
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+      </svg>
+    ), 
+    description: "Launch your online store with a fully configured WooCommerce setup tailored to your business needs, including theme customization and essential settings." 
+  },
+  { 
+    id: "order-management", 
+    title: "Order Management", 
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+      </svg>
+    ), 
+    description: "Efficient order processing system to manage customer orders, track statuses, and streamline your sales workflow." 
+  },
+  { 
+    id: "product-upload", 
+    title: "Product Upload & Categorization", 
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+      </svg>
+    ), 
+    description: "Get your product catalog organized with bulk uploads, custom attributes, and logical category structuring for a smooth shopping experience." 
+  },
+  { 
+    id: "payment-gateway", 
+    title: "Payment Gateway Integration", 
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+      </svg>
+    ), 
+    description: "Seamless integration with trusted payment gateways like PayPal, Stripe, and local providers to ensure secure transactions." 
+  },
+  { 
+    id: "shipping-api", 
+    title: "Shipping API Integration", 
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zm12 0a2 2 0 11-4 0 2 2 0 014 0zm0-7v5H5V10h11l5-5V10z" />
+      </svg>
+    ), 
+    description: "Automated shipping rate calculations and real-time tracking with leading carriers via integrated shipping APIs." 
+  },
+  { 
+    id: "plugin-install", 
+    title: "Plugin Installation & Configuration", 
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    ), 
+    description: "Extend your store's capabilities with the right plugins, carefully selected, installed, and configured to match your goals." 
+  },
+  { 
+    id: "seo-optimization", 
+    title: "SEO Optimization for WooCommerce", 
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+    ), 
+    description: "Boost your product visibility with on-page SEO, keyword targeting, and schema markup specifically optimized for WooCommerce." 
+  },
+  { 
+    id: "mobile-design", 
+    title: "Mobile-Responsive Design", 
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+      </svg>
+    ), 
+    description: "Ensure a smooth and engaging shopping experience on all devices with a responsive design that adapts to screens of all sizes." 
+  },
+  { 
+    id: "maintenance", 
+    title: "Ongoing Maintenance & Support", 
+    icon: (
+      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    ), 
+    description: "Stay worry-free with regular updates, security checks, and expert support to keep your WooCommerce store running smoothly." 
+  },
 ];
 
 /* ── FAQ Data ──────────────────────────────────────────────── */
@@ -499,15 +581,23 @@ export default function ProductDetailPremiumWooCommerceStaging({ product, relate
         {/* ══ CTA ═══════════════════════════════════════════════ */}
         <section className="py-12 lg:py-16 relative overflow-hidden" style={{ background: CLR.surfaceAlt }}>
           <div className="max-w-7xl mx-auto px-6">
-            <motion.div initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.65 }} className="relative rounded-[32px] overflow-hidden text-center px-8 md:px-16 py-14 md:py-20" style={{ background: `linear-gradient(135deg,${CLR.purple} 0%,#9333EA 50%,${CLR.purpleDeep} 100%)` }}>
-              <div className="absolute top-0 right-0 w-80 h-80 rounded-full blur-3xl pointer-events-none" style={{ background: "rgba(255,255,255,0.12)" }} />
-              <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full blur-3xl pointer-events-none" style={{ background: "rgba(109,40,217,0.3)" }} />
+            <motion.div 
+              initial={{ opacity: 0, y: 28 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true }} 
+              transition={{ duration: 0.65 }} 
+              className="relative rounded-[32px] overflow-hidden text-center px-8 md:px-16 py-14 md:py-20 border border-slate-100 bg-white"
+              style={{ boxShadow: "0 30px 90px rgba(168, 85, 247, 0.16), 0 12px 30px rgba(168, 85, 247, 0.08)" }}
+            >
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(243,232,255,0.4)_0%,transparent_70%)] pointer-events-none" />
+              <div className="absolute top-0 right-0 w-80 h-80 rounded-full blur-3xl pointer-events-none" style={{ background: "rgba(168,85,247,0.08)" }} />
+              <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full blur-3xl pointer-events-none" style={{ background: "rgba(236,72,153,0.05)" }} />
               <div className="relative z-10">
-                <span className="inline-block text-xs font-extrabold tracking-[0.25em]  mb-5 px-5 py-2 rounded-full" style={{ background: "rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.95)" }}>Get started today</span>
-                <h2 className="text-white mb-5">
-                  Ready to launch your<br className="hidden md:block" /> online store?
+                <span className="inline-block text-xs font-extrabold tracking-[0.25em] mb-5 px-5 py-2 rounded-full" style={{ background: "rgba(168,85,247,0.08)", color: "#7C3AED" }}>Get started today</span>
+                <h2 className="text-slate-800 mb-5 font-black">
+                  Ready to launch your<br className="hidden md:block" /> <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">online store?</span>
                 </h2>
-                <p className="text-white/85 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+                <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
                   Join thousands of successful online businesses powered by WooCommerce. Start your e-commerce journey today with our expert development team.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md sm:max-w-none">
@@ -523,7 +613,7 @@ export default function ProductDetailPremiumWooCommerceStaging({ product, relate
                       </svg>
                     </span>
                   </button>
-                  <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 h-[56px] rounded-full font-bold text-base border-2 border-white text-white no-underline hover:bg-white hover:text-purple-700 transition-all hover:-translate-y-0.5 w-full sm:w-auto">
+                  <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-4 h-[56px] rounded-full font-bold text-base bg-white border-2 border-slate-100 text-slate-700 hover:border-purple-200 hover:text-purple-600 shadow-sm hover:shadow-md transition-all duration-350 hover:-translate-y-0.5 w-full sm:w-auto no-underline">
                     Contact Us
                   </Link>
                 </div>
