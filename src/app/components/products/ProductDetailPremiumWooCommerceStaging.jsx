@@ -361,7 +361,7 @@ export default function ProductDetailPremiumWooCommerceStaging({ product, relate
 
                 <h1 className="mb-6 text-center lg:text-left" style={{ color: CLR.slate }}>
                   Build Your Dream{" "}
-                  <span style={{ color: CLR.purple }}>E-Commerce</span>{" "}
+                  <span className="whitespace-nowrap" style={{ color: CLR.purple }}>E-Commerce</span>{" "}
                   Store with WooCommerce
                 </h1>
 
