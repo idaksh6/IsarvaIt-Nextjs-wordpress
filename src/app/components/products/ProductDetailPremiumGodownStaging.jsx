@@ -1615,7 +1615,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                               exit={{ height: 0, opacity: 0 }}
                               transition={{ duration: 0.25, ease: "easeInOut" }}
                             >
-                              <div className="p-6 pt-0 text-slate-500 text-xs sm:text-sm border-t border-slate-100 leading-relaxed bg-indigo-50/10">
+                              <div className="p-6 pt-6 text-slate-500 text-xs sm:text-sm border-t border-slate-100 leading-relaxed bg-indigo-50/10">
                                 {item.a}
                               </div>
                             </motion.div>
@@ -1658,7 +1658,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                               exit={{ height: 0, opacity: 0 }}
                               transition={{ duration: 0.25, ease: "easeInOut" }}
                             >
-                              <div className="p-6 pt-0 text-slate-500 text-xs sm:text-sm border-t border-slate-100 leading-relaxed bg-indigo-50/10">
+                              <div className="p-6 pt-6 text-slate-500 text-xs sm:text-sm border-t border-slate-100 leading-relaxed bg-indigo-50/10">
                                 {item.a}
                               </div>
                             </motion.div>
