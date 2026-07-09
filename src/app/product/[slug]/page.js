@@ -27,6 +27,18 @@ export async function generateMetadata({ params }) {
     };
   }
 
+  // noindex/nofollow for staging pages
+  if (slug === "woocommerce-development-staging") {
+    return {
+      title: "WooCommerce Development (Staging) | Isarva Infotech",
+      description: "Staging preview of the redesigned WooCommerce Development page.",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
+
   return generateProductMetadata(product);
 }
 

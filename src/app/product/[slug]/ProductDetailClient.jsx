@@ -20,6 +20,7 @@ import ProductDetailPremiumBillSoft from "../../components/products/ProductDetai
 import ProductDetailPremiumSupport from "../../components/products/ProductDetailPremiumSupport";
 import ProductDetailPremiumGodownStaging from "../../components/products/ProductDetailPremiumGodownStaging";
 import ProductDetailPremiumAssociation from "../../components/products/ProductDetailPremiumAssociation";
+import ProductDetailPremiumWooCommerceStaging from "../../components/products/ProductDetailPremiumWooCommerceStaging";
 
 import ProductDetailPremiumHRMS from "../../components/products/ProductDetailPremiumHRMS";
 import ProductDetailPremiumHRMSV2 from "../../components/products/ProductDetailPremiumHRMSV2";
@@ -56,6 +57,17 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
       <ProductDetailPremiumWooCommerce 
         product={product} 
         relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Staging/Redesign View for WooCommerce Development
+  if (product.slug === 'woocommerce-development-staging') {
+    return (
+      <ProductDetailPremiumWooCommerceStaging
+        product={product}
+        relatedProducts={relatedProducts}
         allProducts={allProducts}
       />
     );

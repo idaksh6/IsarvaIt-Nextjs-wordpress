@@ -222,6 +222,37 @@ export const productsData = [
     bgGradient: "from-purple-50 via-pink-50 to-white",
   },
   {
+    slug: "woocommerce-development-staging",
+    title: "WooCommerce Development",
+    category: "E-Commerce",
+    icon: "🛒",
+    tagline: "Custom E-Commerce Solutions",
+    shortDescription:
+      "Professional WooCommerce development services for scalable online stores with custom features.",
+    description:
+      "Build powerful online stores with our custom WooCommerce development services. We create feature-rich e-commerce platforms with seamless payment integration, inventory management, and mobile optimization.",
+    features: [
+      "Custom Theme Development",
+      "Plugin Development & Customization",
+      "Payment Gateway Integration",
+      "Multi-Vendor Marketplace",
+      "Product Management System",
+      "SEO Optimization",
+      "Mobile-Responsive Design",
+      "Performance Optimization",
+    ],
+    technologies: ["WordPress", "WooCommerce", "PHP", "JavaScript", "MySQL"],
+    benefits: [
+      "Scalable E-Commerce Platform",
+      "Enhanced User Experience",
+      "Increased Conversion Rates",
+      "Easy Content Management",
+      "Cost-Effective Solution",
+    ],
+    color: "from-purple-500 to-pink-600",
+    bgGradient: "from-purple-50 via-pink-50 to-white",
+  },
+  {
     slug: "petro-care",
     title: "Petro Care",
     category: "Petroleum & Gas",
