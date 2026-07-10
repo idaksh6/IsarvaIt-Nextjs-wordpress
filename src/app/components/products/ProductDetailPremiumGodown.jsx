@@ -98,7 +98,7 @@ const faqItems = [
 
 const eventImages = ["/products/godown/Manage-events.jpg", "/products/godown/Add-Event.jpg"];
 const returnImages = ["/products/godown/Event-Return.jpg", "/products/godown/Event-Return-Payment.jpg", "/products/godown/Event-Invoice.jpg"];
-const rentalImages = ["/products/godown/Manage-Rents.jpg", "/products/godown/Rent-Return.jpg", "/products/godown/Rent-Invoice.jpg"];
+const rentalImages = ["/products/godown/Manage-Rents.jpg", "/products/godown/Rent-Return.jpg"];
 
 function FeatureImageSlider({ images, interval = 4000, onImageClick }) {
   const [currentIdx, setCurrentIdx] = useState(0);
@@ -145,15 +145,13 @@ function FeatureImageSlider({ images, interval = 4000, onImageClick }) {
   );
 }
 
-export default function ProductDetailPremiumGodownStaging({ product, relatedProducts, allProducts }) {
+export default function ProductDetailPremiumGodown({ product, relatedProducts, allProducts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [heroIdx, setHeroIdx] = useState(0);
   const [activeReportIdx, setActiveReportIdx] = useState(0);
   const [faqOpenIdx, setFaqOpenIdx] = useState(null);
   const [lightboxData, setLightboxData] = useState(null);
   const [activeFeatureIdx, setActiveFeatureIdx] = useState(0);
-  const [activeEventTabIdx, setActiveEventTabIdx] = useState(0);
-  const [activeReturnTabIdx, setActiveReturnTabIdx] = useState(0);
 
   // Auto-rotate hero images
   useEffect(() => {
@@ -162,6 +160,8 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
     }, 6000);
     return () => clearInterval(timer);
   }, []);
+
+
 
   const toggleFaq = (idx) => {
     setFaqOpenIdx(faqOpenIdx === idx ? null : idx);
@@ -402,11 +402,10 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                             });
                           }
                         }}
-                        className={`flex items-center gap-1.5 px-4 py-1.5 text-xs font-bold rounded-lg transition-all duration-200 cursor-pointer whitespace-nowrap flex-shrink-0 ${
-                          heroIdx === tab.idx
+                        className={`flex items-center gap-1.5 px-4 py-1.5 text-xs font-bold rounded-lg transition-all duration-200 cursor-pointer whitespace-nowrap flex-shrink-0 ${heroIdx === tab.idx
                             ? "bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-sm"
                             : "text-slate-500 hover:text-slate-700 hover:bg-slate-100"
-                        }`}
+                          }`}
                       >
                         <span>{tab.icon}</span>
                         <span>{tab.title}</span>
@@ -776,51 +775,51 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
 
             {/* Tabbed Feature Showcase */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch mt-12">
-              
+
               {/* Left Column: Interactive Feature Selector */}
               <div className="lg:col-span-5 flex flex-col gap-4 justify-center">
                 {[
-                  { 
+                  {
                     id: 0,
-                    icon: "📁", 
-                    title: "Category Tree", 
+                    icon: "📁",
+                    title: "Category Tree",
                     desc: "Implement a simple parent-child hierarchy. Map complex inventory items under general divisions for easy sorting.",
                     tag: "Hierarchical Categorization",
                     color: "indigo"
                   },
-                  { 
+                  {
                     id: 1,
-                    icon: "🏷️", 
-                    title: "Product Master List", 
+                    icon: "🏷️",
+                    title: "Product Master List",
                     desc: "Central registry for all stock parameters: standard cost values, purchase notes, descriptions, thresholds, and photo links.",
                     tag: "Detailed Specifications",
                     color: "cyan"
                   },
-                  { 
+                  {
                     id: 2,
-                    icon: "✨", 
-                    title: "Smart QR & Barcodes", 
+                    icon: "✨",
+                    title: "Smart QR & Barcodes",
                     desc: "The system automatically generates unique QR codes and barcodes for every product, enabling quick scans for dispatches and adjustments.",
                     tag: "Automatic Code Generation",
                     color: "emerald"
                   }
                 ].map((item) => {
                   const isActive = activeFeatureIdx === item.id;
-                  
+
                   // Setup custom colors based on item
                   const borderClass = isActive
                     ? item.color === "indigo" ? "border-indigo-500 shadow-[0_10px_30px_rgba(99,102,241,0.08)] bg-indigo-50/20"
                       : item.color === "cyan" ? "border-cyan-500 shadow-[0_10px_30px_rgba(6,182,212,0.08)] bg-cyan-50/20"
-                      : "border-emerald-500 shadow-[0_10px_30px_rgba(16,185,129,0.08)] bg-emerald-50/20"
+                        : "border-emerald-500 shadow-[0_10px_30px_rgba(16,185,129,0.08)] bg-emerald-50/20"
                     : "border-slate-200/60 bg-white hover:border-slate-350 hover:bg-slate-50/30";
-                  
+
                   const iconBg = isActive
                     ? item.color === "indigo" ? "bg-indigo-600 text-white"
                       : item.color === "cyan" ? "bg-cyan-600 text-white"
-                      : "bg-emerald-600 text-white"
+                        : "bg-emerald-600 text-white"
                     : item.color === "indigo" ? "bg-indigo-50 text-indigo-600"
                       : item.color === "cyan" ? "bg-cyan-50 text-cyan-600"
-                      : "bg-emerald-50 text-emerald-600";
+                        : "bg-emerald-50 text-emerald-600";
 
                   return (
                     <button
@@ -830,23 +829,21 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                     >
                       {/* Active Left Indicator Line */}
                       {isActive && (
-                        <div className={`absolute top-0 bottom-0 left-0 w-1 ${
-                          item.color === "indigo" ? "bg-indigo-600" : item.color === "cyan" ? "bg-cyan-600" : "bg-emerald-600"
-                        }`} />
+                        <div className={`absolute top-0 bottom-0 left-0 w-1 ${item.color === "indigo" ? "bg-indigo-600" : item.color === "cyan" ? "bg-cyan-600" : "bg-emerald-600"
+                          }`} />
                       )}
-                      
+
                       <div className={`w-12 h-12 rounded-2xl flex-shrink-0 flex items-center justify-center text-xl transition-all duration-300 mx-auto sm:mx-0 ${iconBg}`}>
                         {item.icon}
                       </div>
-                      
+
                       <div className="space-y-1 min-w-0 w-full">
                         <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2">
                           <h3 className="text-base font-extrabold text-slate-800 mb-0 text-center sm:text-left">{item.title}</h3>
-                          <span className={`text-[9px] font-black tracking-wider px-2 py-0.5 rounded-full mx-auto sm:mx-0 ${
-                            isActive 
+                          <span className={`text-[9px] font-black tracking-wider px-2 py-0.5 rounded-full mx-auto sm:mx-0 ${isActive
                               ? item.color === "indigo" ? "bg-indigo-100 text-indigo-700" : item.color === "cyan" ? "bg-cyan-100 text-cyan-700" : "bg-emerald-100 text-emerald-700"
                               : "bg-slate-100 text-slate-500"
-                          }`}>{item.tag}</span>
+                            }`}>{item.tag}</span>
                         </div>
                         <p className="text-xs sm:text-sm text-slate-500 leading-relaxed text-center sm:text-left">{item.desc}</p>
                       </div>
@@ -854,13 +851,13 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                   );
                 })}
               </div>
-              
+
               {/* Right Column: Premium Mockup Showcase Window */}
               <div className="lg:col-span-7 flex flex-col justify-center">
                 <div className="relative w-full">
                   {/* Glowing backdrop shadow */}
                   <div className="absolute -inset-4 bg-gradient-to-br from-indigo-100/40 via-cyan-100/30 to-emerald-100/30 blur-[40px] rounded-3xl" />
-                  
+
                   {/* Device frame container */}
                   <div className="relative bg-white rounded-3xl border border-slate-200/80 shadow-2xl p-2.5 overflow-hidden">
                     {/* Mock Browser Header Bar */}
@@ -875,14 +872,14 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                       </div>
                       <div className="w-6" /> {/* Spacer */}
                     </div>
-                    
+
                     {/* Active Screenshot Display Frame */}
-                    <div 
-                      className="relative w-full rounded-b-2xl overflow-hidden bg-slate-50 cursor-zoom-in group/img" 
+                    <div
+                      className="relative w-full rounded-b-2xl overflow-hidden bg-slate-50 cursor-zoom-in group/img"
                       style={{ aspectRatio: "16/11" }}
-                      onClick={() => setLightboxData({ 
-                        images: ["/products/godown/Manage-categories.jpg", "/products/godown/Product-Management.jpg", "/products/godown/Qr-code_barcode.jpg"], 
-                        currentIndex: activeFeatureIdx 
+                      onClick={() => setLightboxData({
+                        images: ["/products/godown/Manage-categories.jpg", "/products/godown/Product-Management.jpg", "/products/godown/Qr-code_barcode.jpg"],
+                        currentIndex: activeFeatureIdx
                       })}
                     >
                       <AnimatePresence mode="wait">
@@ -890,8 +887,8 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                           key={activeFeatureIdx}
                           src={
                             activeFeatureIdx === 0 ? "/products/godown/Manage-categories.jpg"
-                            : activeFeatureIdx === 1 ? "/products/godown/Product-Management.jpg"
-                            : "/products/godown/Qr-code_barcode.jpg"
+                              : activeFeatureIdx === 1 ? "/products/godown/Product-Management.jpg"
+                                : "/products/godown/Qr-code_barcode.jpg"
                           }
                           alt="Product Barcoding Setup Mockup"
                           initial={{ opacity: 0, scale: 0.98 }}
@@ -901,7 +898,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                           className="absolute inset-0 w-full h-full object-cover"
                         />
                       </AnimatePresence>
-                      
+
                       {/* Responsive Hover Zoom Glass Badge */}
                       <div className="absolute top-4 right-4 bg-slate-900/70 backdrop-blur-md text-white p-2.5 rounded-full shadow-md transition-opacity duration-300 pointer-events-none z-20 flex items-center justify-center opacity-85 md:opacity-0 group-hover/img:opacity-100">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
@@ -912,7 +909,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                   </div>
                 </div>
               </div>
-              
+
             </div>
 
           </div>
@@ -946,50 +943,12 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                 <div className="relative w-full">
                   <div className="absolute -inset-4 bg-gradient-to-br from-indigo-100/50 to-cyan-100/50 blur-[50px] rounded-3xl" />
                   
-                  {/* Browser Mockup Window */}
-                  <div className="relative bg-white rounded-3xl border border-slate-200/80 shadow-2xl p-2.5 overflow-hidden">
-                    {/* Window Title Bar */}
-                    <div className="flex items-center justify-between px-4 py-3 bg-slate-50 border-b border-slate-150 rounded-t-2xl">
-                      <div className="flex gap-1.5">
-                        <span className="w-2.5 h-2.5 rounded-full bg-red-400" />
-                        <span className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
-                        <span className="w-2.5 h-2.5 rounded-full bg-green-400" />
-                      </div>
-                      <div className="bg-white border border-slate-200/60 rounded-md text-[10px] text-slate-400 px-12 py-1 select-none font-semibold truncate max-w-xs text-center">
-                        {activeEventTabIdx === 1 ? "godown.app/events/schedules" : "godown.app/events/create"}
-                      </div>
-                      <div className="w-6" />
-                    </div>
-
-                    {/* Interactive Screenshot Display Frame */}
-                    <div 
-                      className="relative w-full rounded-b-2xl overflow-hidden bg-slate-50 cursor-zoom-in group/img" 
-                      style={{ aspectRatio: "16/10" }}
-                      onClick={() => setLightboxData({ 
-                        images: ["/products/godown/Manage-events.jpg", "/products/godown/Add-Event.jpg"], 
-                        currentIndex: activeEventTabIdx === 1 ? 0 : 1 
-                      })}
-                    >
-                      <AnimatePresence mode="wait">
-                        <motion.img
-                          key={activeEventTabIdx}
-                          src={activeEventTabIdx === 1 ? "/products/godown/Manage-events.jpg" : "/products/godown/Add-Event.jpg"}
-                          alt="Event Dispatch controls"
-                          initial={{ opacity: 0, scale: 0.98 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          exit={{ opacity: 0, scale: 1.02 }}
-                          transition={{ duration: 0.35, ease: "easeOut" }}
-                          className="absolute inset-0 w-full h-full object-cover"
-                        />
-                      </AnimatePresence>
-
-                      {/* Responsive Hover Zoom Glass Badge */}
-                      <div className="absolute top-4 right-4 bg-slate-900/70 backdrop-blur-md text-white p-2.5 rounded-full shadow-md transition-opacity duration-300 pointer-events-none z-20 flex items-center justify-center opacity-85 md:opacity-0 group-hover/img:opacity-100">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
-                        </svg>
-                      </div>
-                    </div>
+                  {/* Image Slider */}
+                  <div className="relative bg-white p-3 rounded-[2rem] border border-slate-200/80 shadow-2xl">
+                    <FeatureImageSlider 
+                      images={eventImages} 
+                      onImageClick={(imgs, idx) => setLightboxData({ images: imgs, currentIndex: idx })} 
+                    />
                   </div>
                 </div>
               </div>
@@ -1028,27 +987,19 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                       desc: "Log booking advances, expenses, and pending balances directly on the event dispatch form."
                     }
                   ].map((item) => {
-                    const isSelected = activeEventTabIdx === item.id;
                     return (
-                      <button
+                      <div
                         key={item.id}
-                        onClick={() => setActiveEventTabIdx(item.id)}
-                        className={`w-full p-4 sm:p-5 rounded-2xl border transition-all duration-300 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3 sm:gap-4 cursor-pointer ${
-                          isSelected 
-                            ? "bg-white border-indigo-200 shadow-md shadow-indigo-600/5" 
-                            : "border-transparent hover:bg-white/40"
-                        }`}
+                        className="w-full p-4 sm:p-5 rounded-2xl border border-slate-100 bg-white shadow-sm flex flex-col sm:flex-row items-center text-center sm:text-left gap-3 sm:gap-4"
                       >
-                        <div className={`w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 text-xl font-bold transition-colors mx-auto sm:mx-0 ${
-                          isSelected ? "bg-indigo-600 text-white" : "bg-indigo-50 text-indigo-600"
-                        }`}>
+                        <div className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 text-xl font-bold bg-indigo-50 text-indigo-600 mx-auto sm:mx-0">
                           {item.icon}
                         </div>
                         <div>
                           <h3 className="mb-1 text-center sm:text-left">{item.title}</h3>
-                          <p className="text-slate-505 text-xs sm:text-sm mt-0.5 leading-relaxed text-center sm:text-left">{item.desc}</p>
+                          <p className="text-slate-500 text-xs sm:text-sm mt-0.5 leading-relaxed text-center sm:text-left">{item.desc}</p>
                         </div>
-                      </button>
+                      </div>
                     );
                   })}
                 </div>
@@ -1097,27 +1048,19 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                       desc: "Damaged and missing items automatically trigger configured penalty fees, updating the client's balance sheet instantly."
                     }
                   ].map((item) => {
-                    const isSelected = activeReturnTabIdx === item.id;
                     return (
-                      <button
+                      <div
                         key={item.id}
-                        onClick={() => setActiveReturnTabIdx(item.id)}
-                        className={`w-full p-4 sm:p-5 rounded-2xl border transition-all duration-300 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3 sm:gap-4 cursor-pointer ${
-                          isSelected 
-                            ? "bg-white border-indigo-200 shadow-md shadow-indigo-600/5" 
-                            : "border-transparent hover:bg-white/40"
-                        }`}
+                        className="w-full p-4 sm:p-5 rounded-2xl border border-slate-200/60 bg-slate-50/85 shadow-sm flex flex-col sm:flex-row items-center text-center sm:text-left gap-3 sm:gap-4"
                       >
-                        <div className={`w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 text-xl font-bold transition-colors mx-auto sm:mx-0 ${
-                          isSelected ? "bg-indigo-600 text-white" : "bg-indigo-50 text-indigo-600"
-                        }`}>
+                        <div className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 text-xl font-bold bg-indigo-50 text-indigo-600 mx-auto sm:mx-0">
                           {item.icon}
                         </div>
                         <div>
                           <h3 className="mb-1 text-center sm:text-left">{item.title}</h3>
-                          <p className="text-slate-505 text-xs sm:text-sm mt-0.5 leading-relaxed text-center sm:text-left">{item.desc}</p>
+                          <p className="text-slate-500 text-xs sm:text-sm mt-0.5 leading-relaxed text-center sm:text-left">{item.desc}</p>
                         </div>
-                      </button>
+                      </div>
                     );
                   })}
                 </div>
@@ -1127,55 +1070,13 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
               <div className="lg:col-span-7">
                 <div className="relative w-full">
                   <div className="absolute -inset-4 bg-gradient-to-br from-indigo-100/50 to-emerald-100/40 blur-[50px] rounded-3xl" />
-                  
-                  {/* Browser Mockup Window */}
-                  <div className="relative bg-white rounded-3xl border border-slate-200/80 shadow-2xl p-2.5 overflow-hidden">
-                    {/* Window Title Bar */}
-                    <div className="flex items-center justify-between px-4 py-3 bg-slate-50 border-b border-slate-150 rounded-t-2xl">
-                      <div className="flex gap-1.5">
-                        <span className="w-2.5 h-2.5 rounded-full bg-red-400" />
-                        <span className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
-                        <span className="w-2.5 h-2.5 rounded-full bg-green-400" />
-                      </div>
-                      <div className="bg-white border border-slate-200/60 rounded-md text-[10px] text-slate-400 px-12 py-1 select-none font-semibold truncate max-w-xs text-center">
-                        {activeReturnTabIdx === 0 ? "godown.app/events/return-check" : activeReturnTabIdx === 1 ? "godown.app/events/reconciliation" : "godown.app/invoices/generate"}
-                      </div>
-                      <div className="w-6" />
-                    </div>
 
-                    {/* Interactive Screenshot Display Frame */}
-                    <div 
-                      className="relative w-full rounded-b-2xl overflow-hidden bg-slate-50 cursor-zoom-in group/img" 
-                      style={{ aspectRatio: "16/10" }}
-                      onClick={() => setLightboxData({ 
-                        images: ["/products/godown/Event-Return.jpg", "/products/godown/Event-Return-Payment.jpg", "/products/godown/Event-Invoice.jpg"], 
-                        currentIndex: activeReturnTabIdx 
-                      })}
-                    >
-                      <AnimatePresence mode="wait">
-                        <motion.img
-                          key={activeReturnTabIdx}
-                          src={
-                            activeReturnTabIdx === 0 ? "/products/godown/Event-Return.jpg"
-                            : activeReturnTabIdx === 1 ? "/products/godown/Event-Return-Payment.jpg"
-                            : "/products/godown/Event-Invoice.jpg"
-                          }
-                          alt="Quality Audits controls"
-                          initial={{ opacity: 0, scale: 0.98 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          exit={{ opacity: 0, scale: 1.02 }}
-                          transition={{ duration: 0.35, ease: "easeOut" }}
-                          className="absolute inset-0 w-full h-full object-cover"
-                        />
-                      </AnimatePresence>
-
-                      {/* Responsive Hover Zoom Glass Badge */}
-                      <div className="absolute top-4 right-4 bg-slate-900/70 backdrop-blur-md text-white p-2.5 rounded-full shadow-md transition-opacity duration-300 pointer-events-none z-20 flex items-center justify-center opacity-85 md:opacity-0 group-hover/img:opacity-100">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
-                        </svg>
-                      </div>
-                    </div>
+                  {/* Image Slider */}
+                  <div className="relative bg-white p-3 rounded-[2rem] border border-slate-200/80 shadow-2xl">
+                    <FeatureImageSlider 
+                      images={returnImages} 
+                      onImageClick={(imgs, idx) => setLightboxData({ images: imgs, currentIndex: idx })} 
+                    />
                   </div>
                 </div>
               </div>
@@ -1378,11 +1279,10 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                           });
                         }
                       }}
-                      className={`flex-shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-bold transition-all duration-200 cursor-pointer ${
-                        activeReportIdx === idx
+                      className={`flex-shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-bold transition-all duration-200 cursor-pointer ${activeReportIdx === idx
                           ? "bg-gradient-to-r from-indigo-600 to-violet-600 border-transparent text-white shadow-md"
                           : "bg-white border-slate-200 text-slate-600"
-                      }`}
+                        }`}
                     >
                       <span>{rep.icon}</span>
                       <span className="whitespace-nowrap">{rep.name}</span>
@@ -1522,9 +1422,8 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                   </p>
                   <div className="flex gap-1.5 justify-center">
                     {["Good", "Damaged", "Missing"].map((c, i) => (
-                      <span key={i} className={`text-[9px] font-bold px-2 py-0.5 rounded ${
-                        c === "Good" ? "bg-emerald-50 text-emerald-700" : c === "Damaged" ? "bg-amber-50 text-amber-700" : "bg-rose-50 text-rose-700"
-                      }`}>{c}</span>
+                      <span key={i} className={`text-[9px] font-bold px-2 py-0.5 rounded ${c === "Good" ? "bg-emerald-50 text-emerald-700" : c === "Damaged" ? "bg-amber-50 text-amber-700" : "bg-rose-50 text-rose-700"
+                        }`}>{c}</span>
                     ))}
                   </div>
                 </div>

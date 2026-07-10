@@ -558,7 +558,7 @@ export const productsData = [
     bgGradient: "from-emerald-50 via-teal-50 to-white",
   },
   {
-    slug: "godown-management-staging",
+    slug: "godown-management-software",
     title: "Smart Godown & Inventory Management System",
     category: "Warehouse Management",
     icon: "📦",

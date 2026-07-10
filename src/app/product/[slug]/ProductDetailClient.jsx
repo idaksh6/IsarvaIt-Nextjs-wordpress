@@ -18,7 +18,7 @@ import ProductDetailPremiumCRM from "../../components/products/ProductDetailPrem
 import ProductDetailPremiumCRMOld from "../../components/products/ProductDetailPremiumCRMOld";
 import ProductDetailPremiumBillSoft from "../../components/products/ProductDetailPremiumBillSoft";
 import ProductDetailPremiumSupport from "../../components/products/ProductDetailPremiumSupport";
-import ProductDetailPremiumGodownStaging from "../../components/products/ProductDetailPremiumGodownStaging";
+import ProductDetailPremiumGodown from "../../components/products/ProductDetailPremiumGodown";
 import ProductDetailPremiumAssociation from "../../components/products/ProductDetailPremiumAssociation";
 import ProductDetailPremiumWooCommerceOld from "../../components/products/ProductDetailPremiumWooCommerceOld";
 
@@ -222,9 +222,9 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
 
 
   // Use Premium View for Godown Management Staging
-  if (product.slug === 'godown-management-staging') {
+  if (product.slug === 'godown-management-software') {
     return (
-      <ProductDetailPremiumGodownStaging 
+      <ProductDetailPremiumGodown 
         product={product} 
         relatedProducts={relatedProducts} 
         allProducts={allProducts}
