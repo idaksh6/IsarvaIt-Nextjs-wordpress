@@ -97,7 +97,7 @@ const faqItems = [
 ];
 
 const eventImages = ["/products/godown/Manage-events.jpg", "/products/godown/Add-Event.jpg"];
-const returnImages = ["/products/godown/Event-Return.jpg", "/products/godown/Event-Return-Payment.jpg", "/products/godown/Event-Invoice.jpg"];
+const returnImages = ["/products/godown/Event-Return.jpg", "/products/godown/Event-Return-Payment.jpg"];
 const rentalImages = ["/products/godown/Manage-Rents.jpg", "/products/godown/Rent-Return.jpg"];
 
 function FeatureImageSlider({ images, interval = 4000, onImageClick }) {
