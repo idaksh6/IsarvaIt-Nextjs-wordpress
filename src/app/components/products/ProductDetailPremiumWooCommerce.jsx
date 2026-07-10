@@ -23,107 +23,386 @@ const CLR = {
 
 /* ── Feature Data ──────────────────────────────────────────── */
 const features = [
-  { id: "custom-theme", label: "Custom Theme Development", icon: "🎨", desc: "Create unique, brand-aligned WooCommerce themes from scratch. Fully responsive designs that provide exceptional shopping experiences across all devices.", image: "/products/woocommerce/Custom-theme-development.jpg" },
-  { id: "product-management", label: "Product Management", icon: "📦", desc: "Effortlessly manage your product catalog with bulk uploads, variations, attributes, and categories. Organize your inventory for optimal customer experience.", image: "/products/woocommerce/Add-products.jpg" },
-  { id: "payment", label: "Payment Gateway Integration", icon: "💳", desc: "Seamless integration with multiple payment gateways including PayPal, Stripe, Square, and custom payment solutions for global transactions.", image: "/products/woocommerce/Payment-gateway-integration.jpg" },
-  { id: "coupon-management", label: "Coupon & Discount Management", icon: "🎟️", desc: "Create and manage promotional campaigns with flexible coupon codes, discount rules, and special offers to boost sales and customer loyalty.", image: "/products/woocommerce/Coupon-management.jpg" },
-  { id: "user-management", label: "User Management & Roles", icon: "👥", desc: "Manage customer accounts, user roles, and permissions. Create custom user experiences with role-based access control and customer groups.", image: "/products/woocommerce/User-Management.jpg" },
-  { id: "page-builder", label: "Custom Page Builder", icon: "📄", desc: "Design stunning product pages, landing pages, and promotional content with drag-and-drop page builders and custom templates.", image: "/products/woocommerce/Add-page.jpg" },
-  { id: "coupon-dashboard", label: "Coupon Analytics", icon: "📈", desc: "Track coupon performance, redemption rates, and campaign effectiveness. Analyze discount strategies to maximize ROI on promotional activities.", image: "/products/woocommerce/Coupon-dashboard.jpg" },
+  { id: "custom-theme", label: "Custom Theme Development", icon: "🎨", desc: "Create unique, brand-aligned WooCommerce themes from scratch. Fully responsive designs that provide exceptional shopping experiences across all devices.", image: "/products/woocommerce/feature-custom-theme.png", highlight: "Brand-Aligned Design" },
+  { id: "product-management", label: "Product Management", icon: "📦", desc: "Effortlessly manage your product catalog with bulk uploads, variations, attributes, and categories. Organize your inventory for optimal customer experience.", image: "/products/woocommerce/feature-product-management.png", highlight: "Smart Catalog Tools" },
+  { id: "payment", label: "Payment Gateway Integration", icon: "💳", desc: "Seamless integration with multiple payment gateways including PayPal, Stripe, Square, and custom payment solutions for global transactions.", image: "/products/woocommerce/feature-payment-gateway.png", highlight: "Secure Transactions" },
+  { id: "coupon-management", label: "Coupon & Discount Management", icon: "🎟️", desc: "Create and manage promotional campaigns with flexible coupon codes, discount rules, and special offers to boost sales and customer loyalty.", image: "/products/woocommerce/feature-coupon-management.png", highlight: "Boost Conversions" },
+  { id: "user-management", label: "User Management & Roles", icon: "👥", desc: "Manage customer accounts, user roles, and permissions. Create custom user experiences with role-based access control and customer groups.", image: "/products/woocommerce/feature-user-management.png", highlight: "Role-Based Access" },
+  { id: "page-builder", label: "Custom Page Builder", icon: "📄", desc: "Design stunning product pages, landing pages, and promotional content with drag-and-drop page builders and custom templates.", image: "/products/woocommerce/feature-page-builder.png", highlight: "Drag & Drop Design" },
+  { id: "coupon-dashboard", label: "Coupon Analytics", icon: "📈", desc: "Track coupon performance, redemption rates, and campaign effectiveness. Analyze discount strategies to maximize ROI on promotional activities.", image: "/products/woocommerce/Coupon-dashboard.jpg", highlight: "Data-Driven Insights" },
 ];
+
+/* ── Feature Tab Button ────────────────────────────────────── */
+function FeatureTab({ feature, isActive, onClick }) {
+  return (
+    <button
+      onClick={onClick}
+      className="relative flex items-center gap-2.5 px-5 py-3 rounded-2xl text-xs font-bold transition-all duration-300 border-2 group"
+      style={{
+        background: isActive ? CLR.purple : CLR.white,
+        borderColor: isActive ? CLR.purple : "#E2E8F0",
+        color: isActive ? CLR.white : CLR.slateLight,
+        boxShadow: isActive ? "0 8px 24px rgba(168,85,247,0.20)" : "0 2px 8px rgba(0,0,0,0.04)",
+        transform: isActive ? "translateY(-2px)" : "none",
+      }}
+    >
+      <span className="text-lg leading-none">{feature.icon}</span>
+      <span className="leading-tight">{feature.label}</span>
+    </button>
+  );
+}
+
+/* ── Features Section ──────────────────────────────────────── */
+function FeaturesSection() {
+  const [activeId, setActiveId] = useState("custom-theme");
+  const activeFeature = features.find((f) => f.id === activeId);
+  const activeIndex = features.findIndex((f) => f.id === activeId);
+  const isImageLeft = activeIndex % 2 === 0;
+
+  return (
+    <section className="py-12 lg:py-16 relative overflow-hidden" style={{ background: CLR.surface }}>
+      {/* Background decorations */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full blur-3xl" style={{ background: CLR.purpleLight, opacity: 0.6 }} />
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full blur-3xl" style={{ background: CLR.purpleMid, opacity: 0.4 }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl" style={{ background: CLR.purpleLight, opacity: 0.2 }} />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-12 wcs-fade-up">
+          <SectionLabel>Key features</SectionLabel>
+          <h2 className="mb-4" style={{ color: CLR.slate }}>
+            Key Features of Our <span style={{ color: CLR.purple }}>WooCommerce</span> Development
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Professional WooCommerce development services that transform your online store into a powerful sales engine.
+          </p>
+        </div>
+
+        {/* ── Tab Navigation (Desktop & Tablet) ── */}
+        <div className="hidden sm:flex flex-wrap gap-3 justify-center mb-12">
+          {features.map((f) => (
+            <FeatureTab key={f.id} feature={f} isActive={activeId === f.id} onClick={() => setActiveId(f.id)} />
+          ))}
+        </div>
+
+        {/* ── Feature Display Panel (Desktop & Tablet) ── */}
+        <div className="hidden sm:block">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeId}
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="rounded-3xl overflow-hidden border-2"
+              style={{
+                borderColor: CLR.purple + "22",
+                background: CLR.white,
+                boxShadow: "0 24px 80px rgba(168,85,247,0.12), 0 8px 32px rgba(0,0,0,0.06)",
+              }}
+            >
+              <div className={`grid grid-cols-1 lg:grid-cols-12 min-h-[520px]`}>
+                {/* Image Panel */}
+                <div
+                  className={`relative overflow-hidden lg:col-span-8 ${isImageLeft ? "lg:order-1" : "lg:order-2"}`}
+                  style={{
+                    background: `linear-gradient(135deg, ${CLR.purpleLight} 0%, ${CLR.purpleMid} 100%)`,
+                  }}
+                >
+                  {/* Decorative circles */}
+                  <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full" style={{ background: "rgba(168,85,247,0.12)" }} />
+                  <div className="absolute -bottom-8 -left-8 w-36 h-36 rounded-full" style={{ background: "rgba(109,40,217,0.08)" }} />
+
+                  <motion.img
+                    key={activeId + "-img"}
+                    initial={{ opacity: 0, scale: 1.04 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.98 }}
+                    transition={{ duration: 0.45 }}
+                    src={activeFeature.image}
+                    alt={activeFeature.label}
+                    className="relative z-10 w-full h-full object-contain p-2 lg:p-3 rounded-2xl"
+                    style={{ maxHeight: "520px" }}
+                  />
+
+                  {/* Feature badge overlay */}
+                  <div className="absolute top-5 left-5 z-20">
+                    <span
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold backdrop-blur-sm"
+                      style={{ background: "rgba(168,85,247,0.85)", color: CLR.white }}
+                    >
+                      <span>{activeFeature.icon}</span>
+                      <span>{activeFeature.highlight}</span>
+                    </span>
+                  </div>
+                </div>
+
+                {/* Content Panel */}
+                <div
+                  className={`flex flex-col justify-center p-8 lg:p-12 lg:col-span-4 ${isImageLeft ? "lg:order-2" : "lg:order-1"}`}
+                >
+                  {/* Feature number */}
+                  <div className="flex items-center gap-4 mb-6">
+                    <div
+                      className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 shadow-lg"
+                      style={{ background: `linear-gradient(135deg, ${CLR.purple}, ${CLR.purpleDeep})`, boxShadow: "0 8px 24px rgba(168,85,247,0.35)" }}
+                    >
+                      <span>{activeFeature.icon}</span>
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold tracking-widest uppercase mb-1" style={{ color: CLR.purple }}>
+                        Feature {String(activeIndex + 1).padStart(2, "0")}
+                      </div>
+                      <h3 className="text-xl lg:text-2xl font-extrabold leading-tight" style={{ color: CLR.slate }}>
+                        {activeFeature.label}
+                      </h3>
+                    </div>
+                  </div>
+
+                  <p className="text-base lg:text-lg leading-relaxed mb-8" style={{ color: CLR.body }}>
+                    {activeFeature.desc}
+                  </p>
+
+                  {/* Progress dots */}
+                  <div className="flex items-center gap-2">
+                    {features.map((f, i) => (
+                      <button
+                        key={f.id}
+                        onClick={() => setActiveId(f.id)}
+                        className="rounded-full transition-all duration-300"
+                        style={{
+                          width: activeId === f.id ? "28px" : "8px",
+                          height: "8px",
+                          background: activeId === f.id ? CLR.purple : CLR.purpleMid,
+                        }}
+                        aria-label={`Go to feature: ${f.label}`}
+                      />
+                    ))}
+                  </div>
+
+                  {/* Navigation arrows */}
+                  <div className="flex items-center gap-3 mt-6">
+                    <button
+                      onClick={() => {
+                        const prevIndex = (activeIndex - 1 + features.length) % features.length;
+                        setActiveId(features[prevIndex].id);
+                      }}
+                      className="w-10 h-10 rounded-full border-2 flex items-center justify-center transition-all duration-200 hover:-translate-x-0.5"
+                      style={{ borderColor: CLR.purple + "44", color: CLR.purple }}
+                      aria-label="Previous feature"
+                    >
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
+                    </button>
+                    <button
+                      onClick={() => {
+                        const nextIndex = (activeIndex + 1) % features.length;
+                        setActiveId(features[nextIndex].id);
+                      }}
+                      className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:translate-x-0.5 shadow-md"
+                      style={{ background: CLR.purple, color: CLR.white, boxShadow: "0 4px 16px rgba(168,85,247,0.35)" }}
+                      aria-label="Next feature"
+                    >
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+                    </button>
+                    <span className="text-sm font-semibold ml-1" style={{ color: CLR.muted }}>
+                      {activeIndex + 1} / {features.length}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* ── Mobile Accordion ── */}
+        <div className="sm:hidden space-y-3">
+          {features.map((f, index) => {
+            const isOpen = activeId === f.id;
+            return (
+              <motion.div
+                key={f.id}
+                initial={false}
+                className="rounded-2xl overflow-hidden border-2 transition-all duration-300"
+                style={{
+                  borderColor: isOpen ? CLR.purple : "#E2E8F0",
+                  boxShadow: isOpen ? "0 8px 32px rgba(168,85,247,0.15)" : "0 2px 8px rgba(0,0,0,0.04)",
+                }}
+              >
+                {/* Accordion Header */}
+                <button
+                  onClick={() => setActiveId(isOpen ? null : f.id)}
+                  className="w-full flex items-center gap-4 px-5 py-4 text-left transition-colors"
+                  style={{ background: isOpen ? CLR.purpleLight : CLR.white }}
+                >
+                  <div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0 transition-all"
+                    style={{
+                      background: isOpen ? `linear-gradient(135deg, ${CLR.purple}, ${CLR.purpleDeep})` : "#F1F5F9",
+                      boxShadow: isOpen ? "0 4px 16px rgba(168,85,247,0.30)" : "none",
+                    }}
+                  >
+                    <span>{f.icon}</span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="text-[10px] font-bold tracking-widest uppercase mb-0.5" style={{ color: isOpen ? CLR.purple : CLR.muted }}>
+                      Feature {String(index + 1).padStart(2, "0")}
+                    </div>
+                    <div className="font-bold text-sm leading-snug" style={{ color: isOpen ? CLR.purpleDeep : CLR.slate }}>
+                      {f.label}
+                    </div>
+                  </div>
+                  <div
+                    className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 transition-all"
+                    style={{
+                      background: isOpen ? CLR.purple : "#F1F5F9",
+                      transform: isOpen ? "rotate(180deg)" : "none",
+                    }}
+                  >
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke={isOpen ? CLR.white : "#64748B"} strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </button>
+
+                {/* Accordion Content */}
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="bg-white">
+                        {/* Feature image */}
+                        <div className="relative" style={{ background: `linear-gradient(135deg, ${CLR.purpleLight}, ${CLR.purpleMid})` }}>
+                          <div className="absolute top-3 left-3 z-10">
+                            <span
+                              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold"
+                              style={{ background: "rgba(168,85,247,0.85)", color: CLR.white }}
+                            >
+                              <span>{f.icon}</span>
+                              <span>{f.highlight}</span>
+                            </span>
+                          </div>
+                          <img
+                            src={f.image}
+                            alt={f.label}
+                            className="w-full h-52 object-contain p-4 rounded-xl"
+                          />
+                        </div>
+                        {/* Description */}
+                        <div className="px-5 py-4">
+                          <p className="text-sm leading-relaxed" style={{ color: CLR.body }}>{f.desc}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 /* ── Services Data ─────────────────────────────────────────── */
 const services = [
-  { 
-    id: "store-setup", 
-    title: "WooCommerce Store Setup", 
+  {
+    id: "store-setup",
+    title: "WooCommerce Store Setup",
     icon: (
       <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
       </svg>
-    ), 
-    description: "Launch your online store with a fully configured WooCommerce setup tailored to your business needs, including theme customization and essential settings." 
+    ),
+    description: "Launch your online store with a fully configured WooCommerce setup tailored to your business needs, including theme customization and essential settings."
   },
-  { 
-    id: "order-management", 
-    title: "Order Management", 
+  {
+    id: "order-management",
+    title: "Order Management",
     icon: (
       <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
       </svg>
-    ), 
-    description: "Efficient order processing system to manage customer orders, track statuses, and streamline your sales workflow." 
+    ),
+    description: "Efficient order processing system to manage customer orders, track statuses, and streamline your sales workflow."
   },
-  { 
-    id: "product-upload", 
-    title: "Product Upload & Categorization", 
+  {
+    id: "product-upload",
+    title: "Product Upload & Categorization",
     icon: (
       <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
       </svg>
-    ), 
-    description: "Get your product catalog organized with bulk uploads, custom attributes, and logical category structuring for a smooth shopping experience." 
+    ),
+    description: "Get your product catalog organized with bulk uploads, custom attributes, and logical category structuring for a smooth shopping experience."
   },
-  { 
-    id: "payment-gateway", 
-    title: "Payment Gateway Integration", 
+  {
+    id: "payment-gateway",
+    title: "Payment Gateway Integration",
     icon: (
       <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
       </svg>
-    ), 
-    description: "Seamless integration with trusted payment gateways like PayPal, Stripe, and local providers to ensure secure transactions." 
+    ),
+    description: "Seamless integration with trusted payment gateways like PayPal, Stripe, and local providers to ensure secure transactions."
   },
-  { 
-    id: "shipping-api", 
-    title: "Shipping API Integration", 
+  {
+    id: "shipping-api",
+    title: "Shipping API Integration",
     icon: (
       <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zm12 0a2 2 0 11-4 0 2 2 0 014 0zm0-7v5H5V10h11l5-5V10z" />
       </svg>
-    ), 
-    description: "Automated shipping rate calculations and real-time tracking with leading carriers via integrated shipping APIs." 
+    ),
+    description: "Automated shipping rate calculations and real-time tracking with leading carriers via integrated shipping APIs."
   },
-  { 
-    id: "plugin-install", 
-    title: "Plugin Installation & Configuration", 
+  {
+    id: "plugin-install",
+    title: "Plugin Installation & Configuration",
     icon: (
       <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
-    ), 
-    description: "Extend your store's capabilities with the right plugins, carefully selected, installed, and configured to match your goals." 
+    ),
+    description: "Extend your store's capabilities with the right plugins, carefully selected, installed, and configured to match your goals."
   },
-  { 
-    id: "seo-optimization", 
-    title: "SEO Optimization for WooCommerce", 
+  {
+    id: "seo-optimization",
+    title: "SEO Optimization for WooCommerce",
     icon: (
       <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
       </svg>
-    ), 
-    description: "Boost your product visibility with on-page SEO, keyword targeting, and schema markup specifically optimized for WooCommerce." 
+    ),
+    description: "Boost your product visibility with on-page SEO, keyword targeting, and schema markup specifically optimized for WooCommerce."
   },
-  { 
-    id: "mobile-design", 
-    title: "Mobile-Responsive Design", 
+  {
+    id: "mobile-design",
+    title: "Mobile-Responsive Design",
     icon: (
       <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
       </svg>
-    ), 
-    description: "Ensure a smooth and engaging shopping experience on all devices with a responsive design that adapts to screens of all sizes." 
+    ),
+    description: "Ensure a smooth and engaging shopping experience on all devices with a responsive design that adapts to screens of all sizes."
   },
-  { 
-    id: "maintenance", 
-    title: "Ongoing Maintenance & Support", 
+  {
+    id: "maintenance",
+    title: "Ongoing Maintenance & Support",
     icon: (
       <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
-    ), 
-    description: "Stay worry-free with regular updates, security checks, and expert support to keep your WooCommerce store running smoothly." 
+    ),
+    description: "Stay worry-free with regular updates, security checks, and expert support to keep your WooCommerce store running smoothly."
   },
 ];
 
@@ -171,126 +450,7 @@ function SectionLabel({ children }) {
   );
 }
 
-/* ── Features Section ──────────────────────────────────────── */
-function FeaturesSection() {
-  const [activeId, setActiveId] = useState("custom-theme");
-  const [mobileOpenId, setMobileOpenId] = useState("custom-theme");
-  const activeFeature = features.find((f) => f.id === activeId);
-  const leftFeatures = features.slice(0, Math.ceil(features.length / 2));
-  const rightFeatures = features.slice(Math.ceil(features.length / 2));
 
-  return (
-    <section className="py-12 lg:py-16" style={{ background: CLR.surface }}>
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-10 wcs-fade-up">
-          <SectionLabel>Key features</SectionLabel>
-          <h2 className="mb-4" style={{ color: CLR.slate }}>
-            Key Features of Our <span style={{ color: CLR.purple }}>WooCommerce</span> Development
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Professional WooCommerce development services that transform your online store into a powerful sales engine.
-          </p>
-        </div>
-
-        {/* Desktop orbit */}
-        <div className="hidden xl:block">
-          <div className="relative h-[600px] mx-auto xl:w-[80%]">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[90%] rounded-full border pointer-events-none" style={{ borderColor: "rgba(168,85,247,0.3)" }} />
-            <div className="absolute -left-28 top-1/2 -translate-y-1/2 flex flex-col items-end gap-9 z-10 w-[230px]">
-              {leftFeatures.map((f) => (
-                <button key={f.id} onClick={() => setActiveId(f.id)} className="relative flex items-center gap-2 py-2 px-4 rounded-full text-[13px] font-semibold whitespace-nowrap border transition-all duration-200" style={{ background: activeId === f.id ? CLR.purpleLight : CLR.white, borderColor: activeId === f.id ? CLR.purple : "#E2E8F0", color: activeId === f.id ? CLR.purpleDeep : CLR.slateLight, boxShadow: activeId === f.id ? "0 4px 16px rgba(168,85,247,0.18)" : undefined }}>
-                  <span className="text-sm">{f.icon}</span>
-                  {f.label}
-                  {activeId === f.id && <span className="absolute -right-[7px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[7px] border-b-[7px] border-l-[7px] border-t-transparent border-b-transparent" style={{ borderLeftColor: CLR.purple }} />}
-                </button>
-              ))}
-            </div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-[68%]">
-              <AnimatePresence mode="wait">
-                <motion.div key={activeId} initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }} transition={{ duration: 0.3 }} className="rounded-2xl overflow-hidden shadow-2xl">
-                  <img src={activeFeature.image} alt={activeFeature.label} className="w-full h-full object-contain bg-white" />
-                </motion.div>
-              </AnimatePresence>
-            </div>
-            <div className="absolute -right-28 top-1/2 -translate-y-1/2 flex flex-col items-start gap-9 z-10 w-[230px]">
-              {rightFeatures.map((f) => (
-                <button key={f.id} onClick={() => setActiveId(f.id)} className="relative flex items-center gap-2 py-2 px-4 rounded-full text-[13px] font-semibold whitespace-nowrap border transition-all duration-200" style={{ background: activeId === f.id ? CLR.purpleLight : CLR.white, borderColor: activeId === f.id ? CLR.purple : "#E2E8F0", color: activeId === f.id ? CLR.purpleDeep : CLR.slateLight, boxShadow: activeId === f.id ? "0 4px 16px rgba(168,85,247,0.18)" : undefined }}>
-                  {f.label}
-                  <span className="text-sm">{f.icon}</span>
-                  {activeId === f.id && <span className="absolute -left-[7px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[7px] border-b-[7px] border-r-[7px] border-t-transparent border-b-transparent" style={{ borderRightColor: CLR.purple }} />}
-                </button>
-              ))}
-            </div>
-          </div>
-          <div className="mt-4 text-center">
-            <AnimatePresence mode="wait">
-              <motion.p key={activeId + "-d"} initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -5 }} transition={{ duration: 0.22 }} className="text-sm leading-relaxed max-w-lg mx-auto" style={{ color: CLR.body }}>
-                {activeFeature.desc}
-              </motion.p>
-            </AnimatePresence>
-          </div>
-        </div>
-
-        {/* Tablet */}
-        <div className="hidden lg:block xl:hidden">
-          <div className="flex flex-wrap gap-3 justify-center mb-8">
-            {features.map((f) => (
-              <button key={f.id} onClick={() => setActiveId(f.id)} className="flex items-center gap-2 py-2 px-4 rounded-full text-sm font-semibold border transition-all duration-200" style={{ background: activeId === f.id ? CLR.purple : CLR.white, borderColor: activeId === f.id ? CLR.purple : "#E2E8F0", color: activeId === f.id ? CLR.white : CLR.slateLight }}>
-                <span>{f.icon}</span><span>{f.label}</span>
-              </button>
-            ))}
-          </div>
-          <div className="max-w-3xl mx-auto">
-            <AnimatePresence mode="wait">
-              <motion.div key={activeId} initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.97 }} transition={{ duration: 0.25 }} className="rounded-2xl overflow-hidden shadow-xl">
-                <img src={activeFeature.image} alt={activeFeature.label} className="w-full h-auto" />
-              </motion.div>
-            </AnimatePresence>
-            <AnimatePresence mode="wait">
-              <motion.p key={activeId + "-dt"} initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -5 }} transition={{ duration: 0.22 }} className="text-sm leading-relaxed text-center mt-6 max-w-xl mx-auto" style={{ color: CLR.body }}>
-                {activeFeature.desc}
-              </motion.p>
-            </AnimatePresence>
-          </div>
-        </div>
-
-        {/* Mobile accordion */}
-        <div className="lg:hidden">
-          <div className="rounded-2xl overflow-hidden border" style={{ borderColor: "#E2E8F0" }}>
-            {features.map((f) => {
-              const isOpen = mobileOpenId === f.id;
-              return (
-                <div key={f.id} className="border-b last:border-b-0" style={{ borderColor: "#E2E8F0" }}>
-                  <button onClick={() => setMobileOpenId(isOpen ? null : f.id)} className="w-full flex items-center justify-between p-4 text-left" style={{ background: isOpen ? CLR.purpleLight : CLR.white }}>
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl flex items-center justify-center text-lg" style={{ background: isOpen ? CLR.purple : "#F1F5F9" }}>
-                        <span>{f.icon}</span>
-                      </div>
-                      <span className="font-semibold text-sm" style={{ color: isOpen ? CLR.purpleDeep : CLR.slate }}>{f.label}</span>
-                    </div>
-                    <div className="w-6 h-6 rounded-md flex items-center justify-center transition-all" style={{ background: isOpen ? CLR.purple : "#F1F5F9", transform: isOpen ? "rotate(180deg)" : "none" }}>
-                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke={isOpen ? CLR.white : "#64748B"} strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
-                    </div>
-                  </button>
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.25 }} className="overflow-hidden">
-                        <div className="px-4 pb-4">
-                          <div className="rounded-xl overflow-hidden shadow-md mb-3 bg-white"><img src={f.image} alt={f.label} className="w-full h-auto" /></div>
-                          <p className="text-sm leading-relaxed" style={{ color: CLR.body }}>{f.desc}</p>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ── FAQ Item Component ────────────────────────────────────── */
 function FAQItem({ faq, globalIndex, openIndex, setOpenIndex }) {
@@ -581,11 +741,11 @@ export default function ProductDetailPremiumWooCommerce({ product, relatedProduc
         {/* ══ CTA ═══════════════════════════════════════════════ */}
         <section className="py-12 lg:py-16 relative overflow-hidden" style={{ background: CLR.surfaceAlt }}>
           <div className="max-w-7xl mx-auto px-6">
-            <motion.div 
-              initial={{ opacity: 0, y: 28 }} 
-              whileInView={{ opacity: 1, y: 0 }} 
-              viewport={{ once: true }} 
-              transition={{ duration: 0.65 }} 
+            <motion.div
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.65 }}
               className="relative rounded-[32px] overflow-hidden text-center px-8 md:px-16 py-14 md:py-20 border border-slate-100 bg-white"
               style={{ boxShadow: "0 30px 90px rgba(168, 85, 247, 0.16), 0 12px 30px rgba(168, 85, 247, 0.08)" }}
             >
