@@ -111,7 +111,7 @@ function FeatureImageSlider({ images, interval = 4000, onImageClick }) {
   }, [images.length, interval]);
 
   return (
-    <div className="relative w-full rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 cursor-zoom-in" style={{ aspectRatio: "16/10" }} onClick={() => onImageClick && onImageClick(images, currentIdx)}>
+    <div className="relative w-full rounded-2xl overflow-hidden bg-white border border-slate-200 cursor-zoom-in" onClick={() => onImageClick && onImageClick(images, currentIdx)}>
       <AnimatePresence mode="wait">
         <motion.img
           key={currentIdx}
@@ -121,7 +121,7 @@ function FeatureImageSlider({ images, interval = 4000, onImageClick }) {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -20 }}
           transition={{ duration: 0.4 }}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="w-full h-auto block rounded-2xl"
         />
       </AnimatePresence>
 
@@ -875,8 +875,7 @@ export default function ProductDetailPremiumGodown({ product, relatedProducts, a
 
                     {/* Active Screenshot Display Frame */}
                     <div
-                      className="relative w-full rounded-b-2xl overflow-hidden bg-slate-50 cursor-zoom-in group/img"
-                      style={{ aspectRatio: "16/11" }}
+                      className="relative w-full rounded-b-2xl overflow-hidden bg-white cursor-zoom-in group/img"
                       onClick={() => setLightboxData({
                         images: ["/products/godown/Manage-categories.jpg", "/products/godown/Product-Management.jpg", "/products/godown/Qr-code_barcode.jpg"],
                         currentIndex: activeFeatureIdx
@@ -895,7 +894,7 @@ export default function ProductDetailPremiumGodown({ product, relatedProducts, a
                           animate={{ opacity: 1, scale: 1 }}
                           exit={{ opacity: 0, scale: 1.02 }}
                           transition={{ duration: 0.35, ease: "easeOut" }}
-                          className="absolute inset-0 w-full h-full object-cover"
+                          className="w-full h-auto block"
                         />
                       </AnimatePresence>
 
@@ -1187,7 +1186,7 @@ export default function ProductDetailPremiumGodown({ product, relatedProducts, a
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
               {/* Left Column: Image with auto-sliding display */}
-              <div className="relative">
+              <div className="relative order-2 lg:order-1">
                 <div className="absolute -inset-4 bg-gradient-to-br from-indigo-100/50 to-cyan-100/50 blur-[50px] rounded-3xl" />
                 <div className="relative bg-white p-3 rounded-[2rem] border border-slate-200/80 shadow-2xl">
                   <FeatureImageSlider images={rentalImages} onImageClick={(imgs, idx) => setLightboxData({ images: imgs, currentIndex: idx })} />
@@ -1195,7 +1194,7 @@ export default function ProductDetailPremiumGodown({ product, relatedProducts, a
               </div>
 
               {/* Right Column: Content */}
-              <div className="text-center lg:text-left mt-8 lg:mt-0">
+              <div className="text-center lg:text-left mt-8 lg:mt-0 order-1 lg:order-2">
                 <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-semibold text-sm mb-6">
                   📝 Rental Contracts
                 </div>
@@ -1329,7 +1328,7 @@ export default function ProductDetailPremiumGodown({ product, relatedProducts, a
                   </div>
                 </div>
 
-                <div className="relative w-full rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 cursor-zoom-in" style={{ aspectRatio: "16/10" }} onClick={() => setLightboxData({ images: [reportList[activeReportIdx].image], currentIndex: 0 })}>
+                <div className="relative w-full rounded-2xl overflow-hidden bg-white border border-slate-200 cursor-zoom-in" onClick={() => setLightboxData({ images: [reportList[activeReportIdx].image], currentIndex: 0 })}>
                   <AnimatePresence mode="wait">
                     <motion.img
                       key={activeReportIdx}
@@ -1339,7 +1338,7 @@ export default function ProductDetailPremiumGodown({ product, relatedProducts, a
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.3 }}
-                      className="absolute inset-0 w-full h-full object-cover"
+                      className="w-full h-auto block"
                     />
                   </AnimatePresence>
                 </div>
