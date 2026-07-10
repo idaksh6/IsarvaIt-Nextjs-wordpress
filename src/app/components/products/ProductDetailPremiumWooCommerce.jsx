@@ -29,7 +29,7 @@ const features = [
   { id: "coupon-management", label: "Coupon & Discount Management", icon: "🎟️", desc: "Create and manage promotional campaigns with flexible coupon codes, discount rules, and special offers to boost sales and customer loyalty.", image: "/products/woocommerce/feature-coupon-management.png", highlight: "Boost Conversions" },
   { id: "user-management", label: "User Management & Roles", icon: "👥", desc: "Manage customer accounts, user roles, and permissions. Create custom user experiences with role-based access control and customer groups.", image: "/products/woocommerce/feature-user-management.png", highlight: "Role-Based Access" },
   { id: "page-builder", label: "Custom Page Builder", icon: "📄", desc: "Design stunning product pages, landing pages, and promotional content with drag-and-drop page builders and custom templates.", image: "/products/woocommerce/feature-page-builder.png", highlight: "Drag & Drop Design" },
-  { id: "coupon-dashboard", label: "Coupon Analytics", icon: "📈", desc: "Track coupon performance, redemption rates, and campaign effectiveness. Analyze discount strategies to maximize ROI on promotional activities.", image: "/products/woocommerce/Coupon-dashboard.jpg", highlight: "Data-Driven Insights" },
+  { id: "coupon-dashboard", label: "Coupon Analytics", icon: "📈", desc: "Track coupon performance, redemption rates, and campaign effectiveness. Analyze discount strategies to maximize ROI on promotional activities.", image: "/products/woocommerce/feature-coupon-analytics-clean.png", highlight: "Data-Driven Insights" },
 ];
 
 /* ── Feature Tab Button ────────────────────────────────────── */
