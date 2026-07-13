@@ -129,7 +129,7 @@ function buildHeader() {
       <!-- About Us -->
       <div class="relative nav-dropdown" data-menu-type="about-static">
         <a class="group text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1" href="${SITE_URL}/about">About Us ${chevronDown()}</a>
-        <div class="mega-menu mega-menu-left pt-4">
+        <div class="mega-menu mega-menu-left about-mega-menu pt-4">
           <div class="w-[860px]">
             <div class="bg-white/95 backdrop-blur-xl rounded-[2.5rem] shadow-2xl border border-gray-100 p-8 flex gap-8">
               <a href="${SITE_URL}/about" class="group/featured w-[280px] bg-gradient-to-br from-emerald-50 to-lime-50 rounded-3xl p-6 relative overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col">
