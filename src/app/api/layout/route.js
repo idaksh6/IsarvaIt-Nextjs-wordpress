@@ -137,7 +137,7 @@ function buildHeader() {
                   <img src="${SITE_URL}/agency_office_studio_premium_1773850105446.png" class="w-full h-full object-cover" alt="Isarva team collaboration workspace" loading="lazy" />
                 </div>
                 <div class="relative z-10 flex flex-col h-full">
-                  <h4 class="text-xl font-bold text-gray-900 mb-4">About Isarva</h4>
+                  <h3 class="text-xl font-bold text-gray-900 mb-4">About Isarva</h3>
                   <p class="text-gray-600 text-base mb-6 font-medium leading-relaxed">At Isarva Infotech, we are more than an IT consulting firm - we are a strategic technology partner. Company plays a pivotal role in enabling organizations to achieve their digital transformation goals.</p>
                   <div class="mt-auto text-emerald-600 font-bold text-base flex items-center gap-2">Read More <span>→</span></div>
                 </div>
