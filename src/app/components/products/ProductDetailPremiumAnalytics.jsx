@@ -196,7 +196,7 @@ export default function ProductDetailPremiumAnalytics({ product, relatedProducts
             {/* HERO RIGHT VISUAL */}
             <div className="relative w-full max-w-[600px] mx-auto reveal reveal-delay-2">
               {/* Aspect Spacer */}
-              <div className="w-full pb-[100%]"></div>
+              <div className="w-full pb-[80%] sm:pb-[85%] lg:pb-[95%]"></div>
 
               {/* Absolute Visual Container */}
               <div className="absolute inset-0 w-full h-full">
@@ -209,7 +209,7 @@ export default function ProductDetailPremiumAnalytics({ product, relatedProducts
                 </div>
 
                 {/* Floating Badge A */}
-                <div className="absolute top-[11%] right-[2%] z-20 bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-2xl px-5 py-2.5 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-lg transition-transform duration-500 hover:-translate-y-1 flex items-center gap-2.5">
+                <div className="hidden sm:flex absolute top-1 right-2 lg:top-[12%] lg:right-[2%] z-20 bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-2xl px-5 py-2.5 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-lg transition-transform duration-500 hover:-translate-y-1 items-center gap-2.5">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -220,14 +220,14 @@ export default function ProductDetailPremiumAnalytics({ product, relatedProducts
                 </div>
 
                 {/* Floating Badge B */}
-                <div className="absolute bottom-[10%] left-[2%] z-20 bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-2xl px-5 py-2.5 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-lg transition-transform duration-500 hover:-translate-y-1 flex items-center gap-2">
+                <div className="hidden sm:flex absolute bottom-1 left-2 lg:bottom-[10%] lg:left-[2%] z-20 bg-white/95 backdrop-blur-md border border-slate-200/80 rounded-2xl px-5 py-2.5 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-lg transition-transform duration-500 hover:-translate-y-1 items-center gap-2">
                   <span className="text-slate-800 text-xs font-bold whitespace-nowrap">
                     📈 <strong className="text-indigo-600 text-sm font-black mr-0.5">3.5K</strong> page views
                   </span>
                 </div>
 
                 {/* Main Slideshow Viewport */}
-                <div className="absolute top-[21%] left-[5%] w-[90%] h-[58%] rounded-2xl overflow-hidden bg-white shadow-[0_24px_50px_rgba(79,70,229,0.18),0_0_0_1px_rgba(79,70,229,0.05)] flex flex-col z-10">
+                <div className="absolute top-[10%] left-[3%] w-[94%] h-[80%] lg:top-[16%] lg:left-[5%] lg:w-[90%] lg:h-[68%] rounded-2xl overflow-hidden bg-white shadow-[0_24px_50px_rgba(79,70,229,0.18),0_0_0_1px_rgba(79,70,229,0.05)] flex flex-col z-10">
                   {/* Slider Images */}
                   <div className="relative flex-1 w-full overflow-hidden">
                     {HERO_SLIDES.map((slide, idx) => (

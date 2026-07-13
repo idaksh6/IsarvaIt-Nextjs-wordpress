@@ -134,6 +134,22 @@ function ModuleExplorer({ onDemo }) {
 
   useEffect(() => { resetTimer(); return () => clearInterval(timerRef.current); }, [tourPaused]);
 
+  // Localized horizontal scroll sync for mobile viewports
+  useEffect(() => {
+    const scroller = document.querySelector("#lms-tabs-scroller");
+    if (!scroller) return;
+    const activeTab = scroller.querySelector('[data-active="true"]');
+    if (activeTab) {
+      const containerRect = scroller.getBoundingClientRect();
+      const activeRect = activeTab.getBoundingClientRect();
+      const targetScrollLeft = scroller.scrollLeft + (activeRect.left - containerRect.left) - (containerRect.width / 2) + (activeRect.width / 2);
+      scroller.scrollTo({
+        left: targetScrollLeft,
+        behavior: "smooth"
+      });
+    }
+  }, [activeIdx]);
+
   // Color mapping to hex values with opacity for background glow
   const colorMap = {
     blue: "#2563eb",
@@ -168,11 +184,12 @@ function ModuleExplorer({ onDemo }) {
         <div className="lg:hidden">
 
           {/* Horizontal scrolling feature chips — top navigation */}
-          <div className="flex gap-2 overflow-x-auto pb-3 no-scrollbar mb-4">
+          <div id="lms-tabs-scroller" className="flex gap-2 overflow-x-auto pb-3 no-scrollbar mb-4">
             {LMS_MODULES.map((m, i) => (
               <button
                 key={m.id}
                 onClick={(e) => handleTabClick(i, e)}
+                data-active={i === activeIdx}
                 className={`flex-shrink-0 flex items-center gap-2 px-3 py-2 rounded-xl text-[12px] font-semibold transition-all duration-200 cursor-pointer border whitespace-nowrap ${
                   i === activeIdx ? "bg-blue-600 text-white border-blue-600 shadow" : "bg-white text-slate-600 border-slate-200"
                 }`}
