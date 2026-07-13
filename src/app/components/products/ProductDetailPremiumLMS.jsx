@@ -527,9 +527,8 @@ function RolesSection() {
 /* ─────────────────────────────────────────────────────────────
    GALLERY FILMSTRIP
 ───────────────────────────────────────────────────────────── */
-function GallerySection() {
+function GallerySection({ activeModalIdx, setActiveModalIdx }) {
   const doubled = [...LMS_GALLERY, ...LMS_GALLERY];
-  const [activeModalIdx, setActiveModalIdx] = useState(null);
 
   const handlePrev = (e) => {
     e.stopPropagation();
@@ -818,6 +817,7 @@ export default function ProductDetailPremiumLMS({ product, relatedProducts, allP
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [heroVisible, setHeroVisible] = useState(false);
   const [statsStarted, setStatsStarted] = useState(false);
+  const [activeModalIdx, setActiveModalIdx] = useState(null);
 
   const c3 = useCounter(3, statsStarted);
   const c8 = useCounter(8, statsStarted);
@@ -1051,7 +1051,13 @@ export default function ProductDetailPremiumLMS({ product, relatedProducts, allP
                       lms.isarvait.com/dashboard
                     </span>
                   </div>
-                  <img src={`${SS}Dashboard.png`} alt="ISARVA LMS Dashboard" className="w-full h-auto block" loading="eager" />
+                  <img
+                    src={`${SS}Dashboard.png`}
+                    alt="ISARVA LMS Dashboard"
+                    className="w-full h-auto block cursor-zoom-in"
+                    loading="eager"
+                    onClick={() => setActiveModalIdx(0)}
+                  />
                 </div>
               </div>
             </div>
@@ -1104,7 +1110,7 @@ export default function ProductDetailPremiumLMS({ product, relatedProducts, allP
       <RolesSection />
 
       {/* ── GALLERY ──────────────────────────────────────────── */}
-      <GallerySection />
+      <GallerySection activeModalIdx={activeModalIdx} setActiveModalIdx={setActiveModalIdx} />
 
       {/* ── THEMES ───────────────────────────────────────────── */}
       <ThemesSection />

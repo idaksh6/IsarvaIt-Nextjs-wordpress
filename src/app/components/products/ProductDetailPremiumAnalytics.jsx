@@ -99,7 +99,7 @@ export default function ProductDetailPremiumAnalytics({ product, relatedProducts
   const [openFaq, setOpenFaq] = useState(null);
 
   // Lightbox
-  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxImage, setLightboxImage] = useState(null);
 
   // Auto-scroll active tab into view on mobile horizontal overflow
   useEffect(() => {
@@ -233,9 +233,10 @@ export default function ProductDetailPremiumAnalytics({ product, relatedProducts
                     {HERO_SLIDES.map((slide, idx) => (
                       <img
                         key={idx}
-                        className={`absolute inset-0 w-full h-full object-cover object-top bg-white transition-opacity duration-1000 ${idx === activeSlide ? "opacity-100 z-10" : "opacity-0 z-0"}`}
+                        className={`absolute inset-0 w-full h-full object-cover object-top bg-white transition-opacity duration-1000 cursor-zoom-in ${idx === activeSlide ? "opacity-100 z-10" : "opacity-0 z-0"}`}
                         src={`${SS}${slide.src}`}
                         alt={slide.label}
+                        onClick={() => setLightboxImage(`${SS}${slide.src}`)}
                       />
                     ))}
                   </div>
@@ -348,7 +349,7 @@ export default function ProductDetailPremiumAnalytics({ product, relatedProducts
 
               {/* Main Image Viewport */}
               <div
-                onClick={() => setLightboxOpen(true)}
+                onClick={() => setLightboxImage(`${SS}${MODULES[activeMod].image}`)}
                 className="relative aspect-[16/10] bg-slate-50 rounded-2xl overflow-hidden border border-slate-200/60 shadow-inner group/preview cursor-zoom-in"
               >
                 <div className={`w-full h-full transition-opacity duration-200 ${isSwitching ? "opacity-0" : "opacity-100"}`}>
@@ -697,22 +698,23 @@ export default function ProductDetailPremiumAnalytics({ product, relatedProducts
       </section>
 
       {/* LIGHTBOX FOR ZOOM IMAGE */}
-      {lightboxOpen && (
+      {lightboxImage && (
         <div
           className="fixed inset-0 z-[9999] bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 cursor-zoom-out"
-          onClick={() => setLightboxOpen(false)}
+          onClick={() => setLightboxImage(null)}
         >
           <button
             type="button"
             className="absolute top-6 right-6 w-11 h-11 rounded-full border-0 bg-white/10 hover:bg-white/20 text-white text-2xl flex items-center justify-center cursor-pointer transition-colors"
-            onClick={() => setLightboxOpen(false)}
+            onClick={() => setLightboxImage(null)}
           >
             ×
           </button>
           <img
-            src={`${SS}${MODULES[activeMod].image}`}
-            alt={MODULES[activeMod].name}
+            src={lightboxImage}
+            alt="Preview"
             className="max-w-full max-h-[90vh] rounded-xl shadow-2xl object-contain"
+            onClick={(e) => e.stopPropagation()}
           />
         </div>
       )}
