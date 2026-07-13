@@ -25,6 +25,7 @@ import ProductDetailPremiumWooCommerceOld from "../../components/products/Produc
 import ProductDetailPremiumHRMS from "../../components/products/ProductDetailPremiumHRMS";
 import ProductDetailPremiumHRMSV2 from "../../components/products/ProductDetailPremiumHRMSV2";
 import ProductDetailPremiumPoshact from "../../components/products/ProductDetailPremiumPoshact";
+import ProductDetailPremiumLMS from "../../components/products/ProductDetailPremiumLMS";
 
 export default function ProductDetailClient({ product, relatedProducts, allProducts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -220,6 +221,17 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   }
 
 
+
+  // Use Premium View for LMS Software (Staging)
+  if (product.slug === 'lms-software-staging') {
+    return (
+      <ProductDetailPremiumLMS
+        product={product}
+        relatedProducts={relatedProducts}
+        allProducts={allProducts}
+      />
+    );
+  }
 
   // Use Premium View for Godown Management Staging
   if (product.slug === 'godown-management-software') {
