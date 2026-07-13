@@ -41,6 +41,17 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
     );
   }
 
+  // Use Premium View for LMS Software
+  if (product.slug === 'lms-software') {
+    return (
+      <ProductDetailPremiumLMS
+        product={product}
+        relatedProducts={relatedProducts}
+        allProducts={allProducts}
+      />
+    );
+  }
+
   // Use Premium View for HRMS Software (Old)
   if (product.slug === 'hrms-software-old') {
     return (
@@ -222,16 +233,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
 
 
 
-  // Use Premium View for LMS Software (Staging)
-  if (product.slug === 'lms-software-staging') {
-    return (
-      <ProductDetailPremiumLMS
-        product={product}
-        relatedProducts={relatedProducts}
-        allProducts={allProducts}
-      />
-    );
-  }
+
 
   // Use Premium View for Godown Management Staging
   if (product.slug === 'godown-management-software') {
