@@ -32,7 +32,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Use Staging View for HRMS Software (Now Live)
-  if (product.slug === 'hrms-software') {
+  if (product.slug === 'hrms-software' || product.slug === 'hrms-software-staging') {
     return (
       <ProductDetailPremiumHRMS 
         product={product} 
@@ -43,7 +43,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   }
 
   // Use Premium View for LMS Software
-  if (product.slug === 'lms-software') {
+  if (product.slug === 'lms-software' || product.slug === 'lms-software-staging') {
     return (
       <ProductDetailPremiumLMS
         product={product}
@@ -199,7 +199,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   }
 
   // Use Premium View for CRM Application (Now Live)
-  if (product.slug === 'crm-application') {
+  if (product.slug === 'crm-software') {
     return (
       <ProductDetailPremiumCRM 
         product={product} 
@@ -210,7 +210,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   }
 
   // Use Premium View for CRM Application (Old)
-  if (product.slug === 'crm-application-old') {
+  if (product.slug === 'crm-software-old') {
     return (
       <ProductDetailPremiumCRMOld 
         product={product} 
@@ -233,7 +233,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   }
 
   // Use Staging View for Support Application (now live)
-  if (product.slug === 'support-application') {
+  if (product.slug === 'support-software') {
     return (
       <ProductDetailPremiumSupport 
         product={product} 

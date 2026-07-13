@@ -79,7 +79,7 @@ export const productsData = [
     bgGradient: "from-blue-50 via-indigo-50 to-white",
   },
   {
-    slug: "support-application",
+    slug: "support-software",
     title: "Support Software",
     category: "Customer Support",
     icon: "🎧",
@@ -117,7 +117,7 @@ export const productsData = [
   },
 
   {
-    slug: "crm-application-old",
+    slug: "crm-software-old",
     title: "CRM Software (Old)",
     category: "Customer Relationship Management",
     icon: "👔",
@@ -154,7 +154,7 @@ export const productsData = [
     bgGradient: "from-sky-50 via-blue-50 to-white",
   },
   {
-    slug: "crm-application",
+    slug: "crm-software",
     title: "CRM Software",
     category: "Customer Relationship Management",
     icon: "👔",
@@ -788,7 +788,7 @@ export const productsData = [
     bgGradient: "from-indigo-50 via-emerald-50 to-white",
   },
   {
-    slug: "lms-software",
+    slug: "lms-software-staging",
     title: "LMS Software",
     category: "Education",
     icon: "🎓",
@@ -827,13 +827,25 @@ export const productsData = [
   },
 ];
 
-// Helper functions to filter out internal/staging/old content from the UI
 export const getProductBySlug = (slug) => {
+  if (slug?.endsWith("-staging")) {
+    const baseSlug = slug.replace("-staging", "");
+    const baseProduct = productsData.find((product) => product.slug === baseSlug);
+    if (baseProduct) {
+      return {
+        ...baseProduct,
+        slug: slug,
+        title: baseProduct.title + " (Staging)"
+      };
+    }
+  }
   return productsData.find((product) => product.slug === slug);
 };
 
 export const getAllProductSlugs = () => {
-  return productsData.map((product) => product.slug);
+  const slugs = productsData.map((product) => product.slug);
+  slugs.push("hrms-software-staging");
+  return slugs;
 };
 
 export const getProductsByCategory = (category) => {

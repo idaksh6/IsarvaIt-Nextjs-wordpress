@@ -130,12 +130,12 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               {[
-                { label: "Support Software", href: "/product/support-application" },
+                { label: "Support Software", href: "/product/support-software" },
                 { label: "e Commerce", href: "/product/woocommerce-development" },
                 { label: "Petro Care", href: "/product/petro-care" },
                 { label: "HRMS Software", href: "/product/hrms-software" },
                 { label: "BillSoft Software", href: "/product/bill-soft" },
-                { label: "CRM Software", href: "/product/crm-application" },
+                { label: "CRM Software", href: "/product/crm-software" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link

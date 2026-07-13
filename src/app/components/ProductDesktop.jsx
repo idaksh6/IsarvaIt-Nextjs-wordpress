@@ -49,7 +49,7 @@ const products = [
   {
     id: 3,
     name: "Support Software",
-    slug: "support-application",
+    slug: "support-software",
     category: "Customer Support",
     short:
       "Complete customer support and ticketing system for managing inquiries, issues, and support requests efficiently.",
@@ -61,7 +61,7 @@ const products = [
   {
     id: 7,
     name: "CRM Software",
-    slug: "crm-application",
+    slug: "crm-software",
     category: "Sales & Marketing",
     short:
       "Powerful CRM solution for managing leads, contacts, sales pipeline, and customer interactions seamlessly.",

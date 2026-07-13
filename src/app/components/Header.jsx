@@ -65,8 +65,8 @@ const industriesData = [
 
 const productsData = [
   { label: "HRMS Software", href: "/product/hrms-software", icon: "👥" },
-  { label: "CRM Software", href: "/product/crm-application", icon: "👔" },
-  { label: "Support Software", href: "/product/support-application", icon: "🎧" },
+  { label: "CRM Software", href: "/product/crm-software", icon: "👔" },
+  { label: "Support Software", href: "/product/support-software", icon: "🎧" },
   { label: "BillSoft Software", href: "/product/bill-soft", icon: "🧾" },
   { label: "Marine Service Software", href: "/product/marine-service-software", icon: "🏬" },
   { label: "Dispatcher Panel", href: "/product/dispatcher-panel", icon: "⛽" },
