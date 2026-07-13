@@ -576,9 +576,11 @@ body {
   box-shadow: 0 3px #059669, 0 8px 12px #0596694d, 0 12px 24px #05966926;
 }
 
+
+
 .press-illusion-btn-white {
   border: none;
-  box-shadow: 0 6px 0 #ea580c, 0 8px 12px rgba(0, 0, 0, 0.1), 0 12px 24px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 0 #cbd5e1, 0 8px 12px rgba(0, 0, 0, 0.1), 0 12px 24px rgba(0, 0, 0, 0.05);
   transition: all 0.1s ease;
   padding: 12px 24px;
   border: none;
@@ -592,7 +594,7 @@ body {
 
 .press-illusion-btn-white:hover {
   transform: translateY(3px);
-  box-shadow: 0 3px 0 #ffffff;
+  box-shadow: 0 3px 0 #cbd5e1;
 }
 
 .btn-outline {

@@ -26,6 +26,7 @@ import ProductDetailPremiumHRMS from "../../components/products/ProductDetailPre
 import ProductDetailPremiumHRMSV2 from "../../components/products/ProductDetailPremiumHRMSV2";
 import ProductDetailPremiumPoshact from "../../components/products/ProductDetailPremiumPoshact";
 import ProductDetailPremiumLMS from "../../components/products/ProductDetailPremiumLMS";
+import ProductDetailPremiumAnalytics from "../../components/products/ProductDetailPremiumAnalytics";
 
 export default function ProductDetailClient({ product, relatedProducts, allProducts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -45,6 +46,17 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   if (product.slug === 'lms-software') {
     return (
       <ProductDetailPremiumLMS
+        product={product}
+        relatedProducts={relatedProducts}
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for Website Analytics (Staging)
+  if (product.slug === 'website-analytics-staging') {
+    return (
+      <ProductDetailPremiumAnalytics
         product={product}
         relatedProducts={relatedProducts}
         allProducts={allProducts}

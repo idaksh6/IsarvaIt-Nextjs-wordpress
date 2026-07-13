@@ -558,6 +558,37 @@ export const productsData = [
     bgGradient: "from-emerald-50 via-teal-50 to-white",
   },
   {
+    slug: "website-analytics-staging",
+    title: "Website Analytics",
+    category: "Website Analytics",
+    icon: "📊",
+    tagline: "Website insights built for clarity",
+    shortDescription:
+      "Connect Google Analytics 4 and see live visitors, page views, traffic sources, countries, and trends in one clean corporate dashboard.",
+    description:
+      "Isarva Analytics connects to your GA4 property via secure OAuth and displays live visitors, performance metrics, trends, top pages, and audience breakdowns — all auto-syncing without page reloads. Built for agencies, e-commerce teams, and anyone who needs their website data in plain English.",
+    features: [
+      "Live Active Visitors (30s refresh)",
+      "Page Views & Session Trends",
+      "Top Pages Leaderboard",
+      "Traffic Source Breakdown",
+      "Country & Device Split",
+      "Flexible Date Filters",
+      "Secure Google OAuth",
+      "Period-over-period Comparison",
+    ],
+    technologies: ["Google Analytics 4 API", "Laravel", "PHP", "Vue.js", "Tailwind CSS"],
+    benefits: [
+      "Plain-English Metrics",
+      "Live Dashboard — No Manual Refresh",
+      "Branded Client-Facing View",
+      "Read-only & Secure",
+      "3-Step Setup",
+    ],
+    color: "from-indigo-500 to-blue-600",
+    bgGradient: "from-indigo-50 via-blue-50 to-white",
+  },
+  {
     slug: "godown-management-software",
     title: "Smart Godown & Inventory Management System",
     category: "Warehouse Management",
