@@ -27,6 +27,7 @@ import ProductDetailPremiumHRMSV2 from "../../components/products/ProductDetailP
 import ProductDetailPremiumPoshact from "../../components/products/ProductDetailPremiumPoshact";
 import ProductDetailPremiumLMS from "../../components/products/ProductDetailPremiumLMS";
 import ProductDetailPremiumAnalytics from "../../components/products/ProductDetailPremiumAnalytics";
+import ProductDetailPremiumAssetFlow from "../../components/products/ProductDetailPremiumAssetFlow";
 
 export default function ProductDetailClient({ product, relatedProducts, allProducts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -57,6 +58,17 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   if (product.slug === 'website-analytics-staging') {
     return (
       <ProductDetailPremiumAnalytics
+        product={product}
+        relatedProducts={relatedProducts}
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for AssetFlow (Asset Management Staging)
+  if (product.slug === 'asset-management-staging') {
+    return (
+      <ProductDetailPremiumAssetFlow
         product={product}
         relatedProducts={relatedProducts}
         allProducts={allProducts}

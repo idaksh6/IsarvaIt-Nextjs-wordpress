@@ -825,6 +825,39 @@ export const productsData = [
     color: "from-emerald-500 to-teal-600",
     bgGradient: "from-emerald-50 via-teal-50 to-white",
   },
+  {
+    slug: "asset-management-staging",
+    title: "AssetFlow",
+    category: "Asset Management",
+    icon: "🏷️",
+    tagline: "Unified Asset Management Platform",
+    shortDescription:
+      "Track, assign, maintain, and report on every asset — ITAM, SAM, EAM, Finance, and Procurement in one platform.",
+    description:
+      "AssetFlow by Isarva Infotech is a unified asset management platform that gives your organization complete visibility and control over every physical and digital asset. From the first register entry to disposal and audit — clear tools your teams already understand.",
+    features: [
+      "Asset Register & Barcode Labels",
+      "Check-out & Check-in Workflows",
+      "IT Asset Management (ITAM)",
+      "Software License Management (SAM)",
+      "Preventive Maintenance (EAM)",
+      "Depreciation & Disposal (Finance)",
+      "Physical Audit Sessions",
+      "Role-Based Access Control",
+      "Live Dashboards & CSV Reports",
+      "Vendor & Purchase Order Management",
+    ],
+    technologies: ["React", "Next.js", "PostgreSQL", "Node.js", "Cloud Infrastructure"],
+    benefits: [
+      "Complete Asset Visibility",
+      "Audit-Ready Operations",
+      "Reduced Asset Loss",
+      "Automated Depreciation",
+      "Multi-Module Flexibility",
+    ],
+    color: "from-emerald-500 to-green-600",
+    bgGradient: "from-emerald-50 via-green-50 to-white",
+  },
 ];
 
 export const getProductBySlug = (slug) => {
