@@ -7,6 +7,9 @@ export const productsData = [
   {
     slug: "hrms-software",
     title: "HRMS Software",
+    seoTitle: "Request a Demo of ISARVA HRMS – HR & Payroll Software",
+    metaDescription: "Attendance, leave & payroll in one dashboard. Employee records, compliance-ready reports, and self-service portal for your staff.",
+    ogImage: "https://www.isarvait.com/images/HRMS_DEMO.png",
     category: "Human Resources",
     icon: "👥",
     tagline: "HR Management Workspace",
@@ -882,9 +885,9 @@ export const getAllProductSlugs = () => {
 };
 
 export const getProductsByCategory = (category) => {
-  return productsData.filter((product) => 
-    product.category === category && 
-    !product.slug?.includes("staging") && 
+  return productsData.filter((product) =>
+    product.category === category &&
+    !product.slug?.includes("staging") &&
     !product.slug?.includes("-old")
   );
 };
