@@ -817,6 +817,86 @@ export const jobsData = [
       "Self-motivated and eager to learn in a dynamic HR environment"
     ],
     preferredSkills: []
+  },
+  {
+    slug: "ai-video-creator",
+    title: "AI Video Content Creator Intern",
+    location: "Mangaluru, Karnataka",
+    jobType: "Internship",
+    experience: "Fresher / Student",
+    duration: "2–3 Months",
+    workModel: "Full-time",
+    category: "Marketing",
+    description: "ISARVA INFO TECH PVT LTD is a fast-growing IT solutions company based in Mangaluru, specializing in website development, custom software solutions, mobile applications, HRMS, ERP, and digital transformation services. We help businesses leverage technology to improve efficiency, enhance customer experiences, and accelerate growth.\n\nAs part of our brand expansion, we are building a strong digital presence through educational, informative, and engaging video content across YouTube and other social media platforms. We are looking for creative individuals who are passionate about AI-powered content creation and digital storytelling.\n\nWe are seeking a highly creative AI Video Content Creator Intern who is passionate about using the latest AI technologies to create professional-quality videos. This role is ideal for candidates interested in content creation, video production, social media marketing, and artificial intelligence.\n\nYou will work closely with our marketing and leadership teams to create engaging videos that showcase technology trends, software solutions, business insights, tutorials, product demonstrations, and educational content for ISARVA's online platforms.",
+    responsibilities: [
+      {
+        category: "Content Creation & Video Production",
+        items: [
+          "Create engaging short-form and long-form videos for YouTube, Instagram, Facebook, LinkedIn, and other social media platforms",
+          "Use AI-powered tools to generate scripts, voiceovers, visuals, animations, subtitles, and complete video edits",
+          "Convert blogs, presentations, websites, and software features into compelling video content",
+          "Design YouTube thumbnails, social media creatives, and promotional graphics using AI-assisted design tools",
+          "Edit videos with professional transitions, captions, background music, and motion graphics"
+        ]
+      },
+      {
+        category: "Strategy & Optimization",
+        items: [
+          "Optimize videos for YouTube SEO, titles, descriptions, hashtags, and audience engagement",
+          "Research trending topics in AI, technology, websites, software, startups, and digital transformation",
+          "Maintain a content calendar and ensure timely publishing of content across all digital platforms",
+          "Collaborate with the marketing and development teams to plan and execute content strategies",
+          "Continuously explore new AI tools and recommend innovative ways to improve content quality and production efficiency"
+        ]
+      },
+      {
+        category: "Content Portfolio",
+        items: [
+          "Create product demos, feature explainers, client success stories, company updates, and educational videos",
+          "ISARVA will provide access to the necessary AI tools, platforms, and premium software required to complete assigned tasks and projects"
+        ]
+      }
+    ],
+    qualifications: {
+      education: "Students or recent graduates in any discipline",
+      experience: "No prior experience required – strong interest in content creation is sufficient"
+    },
+    requiredSkills: [
+      "Passion for video editing, AI tools, social media, and digital marketing",
+      "Basic understanding of YouTube, Instagram Reels, LinkedIn, or similar platforms",
+      "Creative mindset with good storytelling and visual communication skills",
+      "Willingness to learn new AI technologies and experiment with innovative content formats",
+      "Self-motivated, proactive, and eager to learn",
+      "Good written English"
+    ],
+    preferredSkills: [
+      "Creativity and attention to detail",
+      "Basic video editing knowledge",
+      "Interest in Artificial Intelligence and emerging technologies",
+      "Familiarity with social media trends",
+      "Strong organizational and time management skills",
+      "Basic knowledge of video editing software is an added advantage but not mandatory"
+    ],
+    perks: [
+      "Hands-on experience with industry-leading AI content creation tools",
+      "End-to-end video production workflow using Artificial Intelligence",
+      "Practical knowledge of YouTube growth strategies and content optimization",
+      "Real-world experience creating content for an IT company and technology brand",
+      "Exposure to digital branding, content marketing, and social media strategy",
+      "Opportunity to build an impressive professional portfolio with published work",
+      "Mentorship from experienced professionals",
+      "Internship Certificate",
+      "Letter of Recommendation (based on performance)",
+      "Potential opportunity for a full-time position based on performance"
+    ],
+    interviewProcess: [
+      "Resume Screening",
+      "Portfolio Review",
+      "Creative Assessment",
+      "HR Round"
+    ],
+    applyEmail: "hr@isarvait.com",
+    applyWebsite: "https://www.isarvait.com/careers"
   }
 ];
 

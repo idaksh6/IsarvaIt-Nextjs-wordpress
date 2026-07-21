@@ -144,9 +144,13 @@ export default function JobDetailPage({ params }) {
                     <div className="w-2 h-8 bg-[#10b981] rounded-full"></div>
                     About the Role
                   </h2>
-                  <p className="text-[#53606b] text-lg leading-relaxed font-medium">
-                    {job.description}
-                  </p>
+                  <div className="space-y-4">
+                    {job.description.split('\n\n').map((para, i) => (
+                      <p key={i} className="text-[#53606b] text-lg leading-relaxed font-medium">
+                        {para}
+                      </p>
+                    ))}
+                  </div>
                 </motion.div>
               )}
 
@@ -319,6 +323,38 @@ export default function JobDetailPage({ params }) {
                       </div>
                     ))}
                   </div>
+                </motion.div>
+              )}
+
+              {/* How to Apply */}
+              {job.applyEmail && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-emerald-50 to-white p-8 md:p-10 rounded-3xl border border-emerald-500/20 shadow-sm"
+                >
+                  <h2 className="font-display text-[#1a1f24] mb-6 flex items-center gap-3 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+                    <div className="w-2 h-8 bg-[#10b981] rounded-full"></div>
+                    How to Apply
+                  </h2>
+                  <p className="text-[#53606b] text-lg leading-relaxed font-medium mb-4">
+                    Please send your updated resume along with your portfolio (if available) or links to any videos or creative work you have created to:
+                  </p>
+                  <a
+                    href={`mailto:${job.applyEmail}`}
+                    className="inline-flex items-center gap-2 text-[#10b981] font-bold text-lg hover:underline"
+                  >
+                    📧 {job.applyEmail}
+                  </a>
+                  {job.applyWebsite && (
+                    <p className="mt-4 text-[#53606b] font-medium">
+                      📌 Visit:{' '}
+                      <a href={job.applyWebsite} target="_blank" rel="noopener noreferrer" className="text-[#10b981] hover:underline font-bold">
+                        {job.applyWebsite}
+                      </a>
+                    </p>
+                  )}
                 </motion.div>
               )}
 
