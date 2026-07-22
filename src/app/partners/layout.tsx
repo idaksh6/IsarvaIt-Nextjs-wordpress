@@ -5,7 +5,7 @@ export const metadata = generateSEOMetadata({
   description: "Join Isarva's Channel Partner Program — scale your business and deliver enterprise digital solutions without building an in-house team.",
   keywords: ["channel partner", "business partnership", "IT outsourcing partner", "Isarva Infotech", "digital solutions partner"],
   url: "/partners",
-  image: "https://www.isarvait.com/partner_ecosystem_infographic.png",
+  image: "https://www.isarvait.com/partners/sky-coin.png",
 });
 
 export default function PartnersLayout({ children }: { children: React.ReactNode }) {
