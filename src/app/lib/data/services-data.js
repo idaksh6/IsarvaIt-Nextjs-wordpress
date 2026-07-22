@@ -3,7 +3,7 @@ export const servicesData = [
     slug: "website-services",
     title: "Website Services",
     icon: "🌐",
-    heroImage: "/Services/Website-services/Expert-team.jpg",
+    heroImage: "/website_services_hero.png",
     shortDescription: "Custom website development tailored to your business needs",
     description: "Transform your online presence with our comprehensive website development services. We create stunning, high-performance websites that engage visitors and drive conversions.",
     features: [
