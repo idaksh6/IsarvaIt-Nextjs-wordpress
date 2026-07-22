@@ -44,6 +44,18 @@ export async function generateMetadata({ params }) {
     return {
       title: "WhatsApp CRM Software | Isarva Infotech",
       description: "Self-hosted WhatsApp CRM with shared inbox, visual automations, broadcasts, and real-time analytics designed for modern teams.",
+      openGraph: {
+        title: "WhatsApp CRM Software | Isarva Infotech",
+        description: "Self-hosted WhatsApp CRM with shared inbox, visual automations, broadcasts, and real-time analytics designed for modern teams.",
+        images: [
+          {
+            url: "https://www.isarvait.com/whatsapp-crm/hero.png",
+            width: 1200,
+            height: 630,
+            alt: "WhatsApp CRM Software",
+          },
+        ],
+      },
       robots: {
         index: false,
         follow: false,
