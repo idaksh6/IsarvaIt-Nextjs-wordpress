@@ -8,6 +8,7 @@ export const metadata = generateSEOMetadata({
   description: "Have a project in mind? Contact Isarva for expert technology solutions. We respond within 24 hours. Offices in Mangalore, Bangalore, Dubai, and UK. Call +91 9902863697 or email marketing@isarvait.com",
   keywords: ["contact", "get in touch", "IT support", "project inquiry", "consultation", "reach us"],
   url: "/contact",
+  image: "https://www.isarvait.com/isarva-og.png",
 });
 
 // Force static rendering

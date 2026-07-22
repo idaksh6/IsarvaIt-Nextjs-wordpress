@@ -47,6 +47,7 @@ export const productsData = [
   {
     slug: "hrms-software-old",
     title: "HRMS Software (Old)",
+    ogImage: "/products/hrms/hrms-banner-main.png",
     category: "Human Resources",
     icon: "👥",
     tagline: "Comprehensive HR Management Solution",
@@ -84,6 +85,7 @@ export const productsData = [
   {
     slug: "support-software",
     title: "Support Software",
+    ogImage: "/products/support/Support-dashboard-img-1.jpg",
     category: "Customer Support",
     icon: "🎧",
     tagline: "Complete Project, Task & Support Management",
@@ -122,6 +124,7 @@ export const productsData = [
   {
     slug: "crm-software-old",
     title: "CRM Software (Old)",
+    ogImage: "/products/crm/CRM-dashboard.jpg",
     category: "Customer Relationship Management",
     icon: "👔",
     tagline: "Complete Customer Relationship Management",
@@ -159,6 +162,7 @@ export const productsData = [
   {
     slug: "crm-software",
     title: "CRM Software",
+    ogImage: "/products/crm/CRM-dashboard-v2.png",
     category: "Customer Relationship Management",
     icon: "👔",
     tagline: "Complete Customer Relationship Management",
@@ -196,6 +200,7 @@ export const productsData = [
   {
     slug: "woocommerce-development",
     title: "WooCommerce Development",
+    ogImage: "/products/woocommerce/Woo-commerce-dashboard.jpg",
     category: "E-Commerce",
     icon: "🛒",
     tagline: "Custom E-Commerce Solutions",
@@ -227,6 +232,7 @@ export const productsData = [
   {
     slug: "woocommerce-development-old",
     title: "WooCommerce Development",
+    ogImage: "/products/woocommerce/Woo-commerce-dashboard.jpg",
     category: "E-Commerce",
     icon: "🛒",
     tagline: "Custom E-Commerce Solutions",
@@ -259,6 +265,7 @@ export const productsData = [
   {
     slug: "petro-care",
     title: "Petro Care",
+    ogImage: "/products/petro care/Petro-Dashboard.jpg",
     category: "Petroleum & Gas",
     icon: "⛽",
     tagline: "Fuel Station Management System",
@@ -290,6 +297,7 @@ export const productsData = [
   {
     slug: "retail-billing-software",
     title: "Retail Billing Software with Multi Branch and Multi Warehouse",
+    ogImage: "/products/retail billing multi branch/Multibranch-dashboard.jpg",
     category: "Enterprise Retail",
     icon: "🏬",
     tagline: "Enterprise Retail Management",
@@ -328,6 +336,7 @@ export const productsData = [
   {
     slug: "document-management-system",
     title: "Document Management System",
+    ogImage: "/products/document Management System/Document-Dashboard.jpg",
     category: "Enterprise Software",
     icon: "📄",
     tagline: "Digital Document Organization",
@@ -359,6 +368,7 @@ export const productsData = [
   {
     slug: "lodge-booking-software",
     title: "Lodge Booking Software",
+    ogImage: "/products/loadge Booking/Lodge-Dashboard.jpg",
     category: "Hospitality",
     icon: "🏨",
     tagline: "Hotel & Lodge Management",
@@ -390,6 +400,7 @@ export const productsData = [
   {
     slug: "mobile-service-center",
     title: "Mobile Service Center",
+    ogImage: "/products/mobile care/Mobile-Dashboard.jpg",
     category: "Repair & Services",
     icon: "📱",
     tagline: "Mobile Repair Shop Management",
@@ -421,6 +432,7 @@ export const productsData = [
   {
     slug: "marine-service-software",
     title: "Marine Service Software",
+    ogImage: "/products/marnine service center/Marine-Dashboard.jpg",
     category: "Marine Industry",
     icon: "⚓",
     tagline: "Maritime Operations Management",
@@ -458,6 +470,7 @@ export const productsData = [
   {
     slug: "dispatcher-panel",
     title: "Dispatcher Panel",
+    ogImage: "/products/dispatcher Panel/Dispatcher-dashboard.jpg",
     category: "Logistics Coordination",
     icon: "🎯",
     tagline: "Delivery Dispatch Management",
@@ -495,6 +508,7 @@ export const productsData = [
   {
     slug: "dealer-management-and-dealer-article-software",
     title: "Dealer Management and Dealer Article Software",
+    ogImage: "/products/dealer management software/Dealer-Dashboard.jpg",
     category: "Distribution Management",
     icon: "🤝",
     tagline: "Dealer Network Management",
@@ -526,6 +540,7 @@ export const productsData = [
   {
     slug: "expense-tracker",
     title: "Expense Tracker",
+    ogImage: "/products/expense tracker/Expense-dashboard.jpg",
     category: "Finance & Accounting",
     icon: "💰",
     tagline: "Smart Expense Management",
@@ -563,6 +578,7 @@ export const productsData = [
   {
     slug: "website-analytics-staging",
     title: "Website Analytics",
+    ogImage: "/products/isarva-analytics/Dashboard1.png",
     category: "Website Analytics",
     icon: "📊",
     tagline: "Website insights built for clarity",
@@ -594,6 +610,7 @@ export const productsData = [
   {
     slug: "godown-management-software",
     title: "Smart Godown & Inventory Management System",
+    ogImage: "/products/godown/Dashboard.jpg",
     category: "Warehouse Management",
     icon: "📦",
     tagline: "Track. Manage. Control. Grow.",
@@ -625,6 +642,7 @@ export const productsData = [
   {
     slug: "bill-soft",
     title: "Bill-Soft Software",
+    ogImage: "/products/billsoft/Dashboard.jpg",
     category: "Billing & Inventory",
     icon: "🧾",
     tagline: "All-in-One Business Management Solution",
@@ -658,6 +676,7 @@ export const productsData = [
   {
     slug: "lawyer-legal-association-software",
     title: "Lawyer Legal Association Software",
+    ogImage: "/products/association/membership_dashboard.png",
     category: "Operations",
     icon: "👥",
     tagline: "Optimize Member Networks with Secure Digital Ecosystems",
@@ -766,6 +785,7 @@ export const productsData = [
   {
     slug: "mobile-app-development",
     title: "Mobile App Development",
+    ogImage: "/products/hrms/hrms-banner-main.png",
     category: "Mobile Application Development",
     icon: "📱",
     tagline: "React Native & Expo Apps",
@@ -793,6 +813,7 @@ export const productsData = [
   {
     slug: "lms-software-staging",
     title: "LMS Software",
+    ogImage: "/products/lms-software/Dashboard.png",
     category: "Education",
     icon: "🎓",
     tagline: "One place to run your entire college online",
@@ -831,6 +852,7 @@ export const productsData = [
   {
     slug: "asset-management-staging",
     title: "AssetFlow",
+    ogImage: "/products/assetflow/hero-assetflow.jpg",
     category: "Asset Management",
     icon: "🏷️",
     tagline: "Unified Asset Management Platform",

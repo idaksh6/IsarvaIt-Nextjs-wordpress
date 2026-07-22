@@ -18,6 +18,7 @@ export const metadata = generateSEOMetadata({
   description: "Precision in Technology. Purpose in Impact. Learn about Isarva Infotech's legacy of innovation, our expert team, and commitment to delivering exceptional digital solutions since our founding.",
   keywords: ["about us", "company profile", "IT company", "software development company", "technology partner", "innovation"],
   url: "/about",
+  image: "https://www.isarvait.com/about_brand_hero_v3.png",
   noIndex: false,
 });
 

@@ -75,6 +75,7 @@ export const metadata = generateSEOMetadata({
     "Scalable Digital Products"
   ],
   url: "/",
+  image: "https://www.isarvait.com/enterprise-solutions-hero-v2.png",
 });
 
 // Revalidate this page every 60 seconds (ISR - Incremental Static Regeneration)

@@ -153,6 +153,16 @@ export function generateServiceMetadata(service) {
 }
 
 export function generateIndustryMetadata(industry) {
+  const ogImage = industry.ogImage
+    ? industry.ogImage.startsWith("http")
+      ? industry.ogImage
+      : `${SITE_URL}${industry.ogImage}`
+    : industry.heroImage
+      ? industry.heroImage.startsWith("http")
+        ? industry.heroImage
+        : `${SITE_URL}${industry.heroImage}`
+      : `${SITE_URL}/isarva-og.png`;
+
   return generateMetadata({
     title: industry.title,
     description: industry.shortDescription || industry.description,
@@ -163,6 +173,7 @@ export function generateIndustryMetadata(industry) {
       "business transformation",
     ],
     url: `/industry/${industry.slug}`,
+    image: ogImage,
   });
 }
 
