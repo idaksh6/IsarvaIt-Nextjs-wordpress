@@ -7,8 +7,8 @@ export const metadata = generateSEOMetadata({
   description: "ERP Software unifies CRM, HRMS, Inventory, Finance, Accounting, and Project Management into one intelligent platform.",
   keywords: ["ERP software", "enterprise resource planning", "business management system", "ERP solution"],
   url: "/product/erp-software",
-  image: "https://www.isarvait.com/isarva-og.png",
-  noIndex: true, // Keep it non-indexable as it was originally set
+  image: "https://www.isarvait.com/products/erp-software/hero.png",
+  noIndex: false, // Make it indexable on search engines
 });
 
 // Force fully static rendering — no server-side data needed

@@ -194,6 +194,7 @@ export function generateJobMetadata(job) {
     description: `Join our team as ${job.title}. ${job.description?.substring(0, 150)}`,
     keywords: [job.title, job.category, "careers", "job opening", "hiring"],
     url: `/career/${job.slug}`,
+    image: "https://www.isarvait.com/Services/Training/training_mentors_team_indian.png",
   });
 }
 

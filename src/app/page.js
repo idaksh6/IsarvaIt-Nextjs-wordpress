@@ -75,7 +75,7 @@ export const metadata = generateSEOMetadata({
     "Scalable Digital Products"
   ],
   url: "/",
-  image: "https://www.isarvait.com/isarva-og.png",
+  image: "https://www.isarvait.com/enterprise-transformation-bg.png",
 });
 
 // Revalidate this page every 60 seconds (ISR - Incremental Static Regeneration)
