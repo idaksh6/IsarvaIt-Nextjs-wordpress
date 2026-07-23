@@ -1,5 +1,5 @@
-import { generateJobMetadata } from "../../../lib/utils/seo";
-import { getJobBySlug } from "../../../lib/data/jobsData";
+import { generateJobMetadata } from "../../lib/utils/seo";
+import { getJobBySlug } from "../../lib/data/jobsData";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
