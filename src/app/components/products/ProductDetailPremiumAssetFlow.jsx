@@ -154,7 +154,7 @@ function AssetTagCard() {
 
         <div className="pl-6">
           <div className="flex items-center justify-between mb-4">
-            <span className="text-[10px] font-black tracking-[0.2em] text-emerald-600 uppercase">Asset Tag</span>
+            <span className="text-[10px] font-black tracking-[0.2em] text-emerald-600 capitalize">Asset Tag</span>
             <span className="flex items-center gap-1.5 text-[10px] font-bold text-slate-400">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" /> LIVE
             </span>
@@ -230,11 +230,11 @@ export default function ProductDetailPremiumAssetFlow({ product, relatedProducts
     <div className="bg-white font-sans selection:bg-emerald-100 selection:text-emerald-900 overflow-x-clip">
 
       {/* ── HERO ────────────────────────────────────── */}
-      <section className="relative pt-32 lg:pt-40 pb-6 lg:pb-16 overflow-hidden" style={{ background: "linear-gradient(135deg, #ffffff 0%, #f0f4ff 25%, #fdf4ff 55%, #ecfdf5 80%, #e0f2fe 100%)" }}>
-
+      <section className="relative pt-32 lg:pt-40 pb-12 lg:pb-16 overflow-hidden" style={{ background: "linear-gradient(135deg, #ffffff 0%, #f0f4ff 25%, #fdf4ff 55%, #ecfdf5 80%, #e0f2fe 100%)" }}>
+ 
         {/* Subtle dot grid */}
         <div className="absolute inset-0 pointer-events-none opacity-40" style={{ backgroundImage: "radial-gradient(#a5b4fc 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
-
+ 
         {/* Animated floating orbs — colourful on light bg */}
         <motion.div className="absolute -top-32 -left-32 w-[520px] h-[520px] rounded-full pointer-events-none blur-3xl"
           style={{ background: "radial-gradient(circle, rgba(99,102,241,0.28) 0%, transparent 70%)" }}
@@ -261,7 +261,7 @@ export default function ProductDetailPremiumAssetFlow({ product, relatedProducts
           animate={{ x: [0, -20, 0], y: [0, 20, 0], scale: [1, 1.25, 1] }}
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
-
+ 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex items-center gap-2 text-sm text-slate-400 mb-10 font-medium">
             <Link href="/" className="hover:text-indigo-500 transition-colors">Home</Link>
@@ -270,7 +270,7 @@ export default function ProductDetailPremiumAssetFlow({ product, relatedProducts
             <svg className="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
             <span className="text-indigo-500 font-semibold">AssetFlow</span>
           </div>
-
+ 
           <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-14 lg:gap-10 items-center">
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="flex flex-col items-center text-center lg:items-start lg:text-left">
               {/* Live badge */}
@@ -285,7 +285,7 @@ export default function ProductDetailPremiumAssetFlow({ product, relatedProducts
                 </span>
                 Unified Asset Management Platform
               </motion.div>
-
+ 
               <h1 className="mb-6 text-slate-900">
                 Manage Assets with
                 <br />
@@ -306,7 +306,7 @@ export default function ProductDetailPremiumAssetFlow({ product, relatedProducts
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
                 </motion.button>
               </div>
-
+ 
               {/* Module pills */}
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2">
                 {MODULES.map((m, i) => (
@@ -322,17 +322,22 @@ export default function ProductDetailPremiumAssetFlow({ product, relatedProducts
                 ))}
               </div>
             </motion.div>
-
-            <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.9, delay: 0.2 }}>
+ 
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }} 
+              animate={{ opacity: 1, x: 0 }} 
+              transition={{ duration: 0.9, delay: 0.2 }}
+              className="mt-8 mb-12 lg:mt-0 lg:mb-0"
+            >
               <AssetTagCard />
             </motion.div>
           </div>
-
+ 
         </div>
       </section>
-
+ 
       {/* ── METRICS ───────────────────────────────────── */}
-      <section className="pt-6 pb-12 lg:py-16 relative" style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #f0fdfa 100%)" }}>
+      <section className="pt-12 pb-12 lg:py-16 relative" style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #f0fdfa 100%)" }}>
         <div className="absolute inset-0 pointer-events-none opacity-30" style={{ backgroundImage: "radial-gradient(#6ee7b7 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-10">
@@ -345,7 +350,7 @@ export default function ProductDetailPremiumAssetFlow({ product, relatedProducts
 
           <div className="max-w-5xl mx-auto rounded-[20px] border border-emerald-200 bg-white overflow-hidden shadow-[0_20px_60px_rgba(16,185,129,0.14)]">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-2 px-6 py-3.5" style={{ background: "linear-gradient(135deg, #059669 0%, #0d9488 100%)" }}>
-              <span className="text-[10px] font-black tracking-[0.2em] text-emerald-300 uppercase text-center sm:text-left">Asset Register · Live Snapshot</span>
+              <span className="text-[10px] font-black tracking-[0.2em] text-emerald-300 capitalize text-center sm:text-left">Asset Register · Live Snapshot</span>
               <span className="flex items-center gap-1.5 text-[10px] font-bold text-emerald-200 justify-center">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" /> UPDATED NOW
               </span>
@@ -363,7 +368,7 @@ export default function ProductDetailPremiumAssetFlow({ product, relatedProducts
                 >
                   <div className="w-9 h-9 mx-auto rounded-full bg-emerald-50 flex items-center justify-center text-base mb-3 ring-1 ring-emerald-100">{m.icon}</div>
                   <strong className="block text-3xl lg:text-4xl font-black text-[#0a0a0a] tracking-tight tabular-nums mb-1">{counters[i].toLocaleString()}</strong>
-                  <span className="block text-xs font-bold uppercase tracking-wider text-emerald-600 mb-1">{m.label}</span>
+                  <span className="block text-xs font-bold capitalize tracking-wider text-emerald-600 mb-1">{m.label}</span>
                   <span className="block text-xs text-slate-400">{m.sub}</span>
                 </motion.div>
               ))}
@@ -455,7 +460,7 @@ export default function ProductDetailPremiumAssetFlow({ product, relatedProducts
                     </div>
                     <div className="flex flex-col items-center text-center">
                       <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-4" style={{ background: (activeModData?.color || "#10b981") + "18" }}>{activeModData?.icon}</div>
-                      <span className="inline-block text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: (activeModData?.color || "#10b981") + "18", color: activeModData?.color }}>{activeModData?.key}</span>
+                      <span className="inline-block text-xs font-black capitalize tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: (activeModData?.color || "#10b981") + "18", color: activeModData?.color }}>{activeModData?.key}</span>
                       <h3 className="text-xl font-black text-[#0a0a0a] mb-3">{activeModData?.label}</h3>
                       <p className="text-[#6b7280] text-sm leading-relaxed mb-4 max-w-md">{activeModData?.desc}</p>
                       <ul className="space-y-2 inline-block text-left">
@@ -498,7 +503,7 @@ export default function ProductDetailPremiumAssetFlow({ product, relatedProducts
             </div>
             {activeModData && (
               <div className="bg-white border-2 rounded-2xl p-6 shadow-sm flex flex-col items-center text-center" style={{ borderColor: activeModData.color + "33" }}>
-                <span className="inline-block text-xs font-black uppercase tracking-widest px-3 py-1 rounded-full mb-3" style={{ background: activeModData.color + "18", color: activeModData.color }}>{activeModData.key}</span>
+                <span className="inline-block text-xs font-black capitalize tracking-widest px-3 py-1 rounded-full mb-3" style={{ background: activeModData.color + "18", color: activeModData.color }}>{activeModData.key}</span>
                 <h3 className="font-black text-[#0a0a0a] text-xl mb-2">{activeModData.label}</h3>
                 <p className="text-[#6b7280] text-sm mb-4 max-w-md">{activeModData.desc}</p>
                 <ul className="space-y-2 inline-block text-left">{activeModData.bullets.map((b) => (<li key={b} className="flex items-start gap-2 text-sm text-[#6b7280]"><span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: activeModData.color }} />{b}</li>))}</ul>
@@ -530,7 +535,7 @@ export default function ProductDetailPremiumAssetFlow({ product, relatedProducts
                 className="bg-white rounded-2xl border border-emerald-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
               >
                 <div className="flex items-center justify-between px-5 py-3" style={{ background: "linear-gradient(135deg, #059669 0%, #0d9488 100%)" }}>
-                  <span className="text-[10px] font-black tracking-[0.2em] text-white/90 uppercase">Step {wf.num}</span>
+                  <span className="text-[10px] font-black tracking-[0.2em] text-white/90 capitalize">Step {wf.num}</span>
                   <span className="text-lg">{wf.icon}</span>
                 </div>
                 <div className="p-6 text-center sm:text-left">
@@ -556,11 +561,11 @@ export default function ProductDetailPremiumAssetFlow({ product, relatedProducts
           <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-6 items-start">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
               className="bg-white rounded-2xl border border-emerald-100 overflow-hidden shadow-sm">
-              <div className="flex items-center justify-between px-6 py-3 bg-[#0b1f3a]">
-                <span className="text-[10px] font-black tracking-[0.2em] text-emerald-300 uppercase">Export &amp; Audit Reports</span>
+              <div className="flex items-center justify-between px-6 py-3 bg-emerald-50 border-b border-emerald-100/60">
+                <span className="text-[10px] font-black tracking-[0.2em] text-emerald-700 capitalize">Export &amp; Audit Reports</span>
                 <div className="flex items-end gap-[1.5px] h-3.5">
                   {[...Array(12)].map((_, j) => (
-                    <span key={j} className="bg-emerald-400/70" style={{ width: j % 4 === 0 ? "2px" : "1px", height: `${40 + ((j * 53) % 60)}%` }} />
+                    <span key={j} className="bg-emerald-500/70" style={{ width: j % 4 === 0 ? "2px" : "1px", height: `${40 + ((j * 53) % 60)}%` }} />
                   ))}
                 </div>
               </div>
@@ -585,19 +590,19 @@ export default function ProductDetailPremiumAssetFlow({ product, relatedProducts
             </motion.div>
 
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}
-              className="rounded-2xl overflow-hidden shadow-sm border border-emerald-100">
-              <div className="flex items-center justify-between px-6 py-3 bg-[#0b1f3a]">
-                <span className="text-[10px] font-black tracking-[0.2em] text-emerald-300 uppercase">Module Summaries</span>
-                <span className="flex items-center gap-1.5 text-[10px] font-bold text-emerald-200">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" /> LIVE
+              className="rounded-2xl overflow-hidden shadow-sm border border-emerald-100 bg-white">
+              <div className="flex items-center justify-between px-6 py-3 bg-emerald-50 border-b border-emerald-100/60">
+                <span className="text-[10px] font-black tracking-[0.2em] text-emerald-700 capitalize">Module Summaries</span>
+                <span className="flex items-center gap-1.5 text-[10px] font-bold text-emerald-600">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" /> LIVE
                 </span>
               </div>
-              <div className="bg-[#0b1f3a] p-6">
+              <div className="bg-white p-6">
                 <ul className="space-y-3">
                   {MODULE_INSIGHTS.map((ins) => (
-                    <li key={ins.key} className="flex flex-col sm:grid sm:grid-cols-[5rem_1fr] gap-1 sm:gap-3 pb-3 border-b border-white/10 last:border-0 last:pb-0 text-center sm:text-left">
-                      <span className="font-black text-emerald-300 text-sm">{ins.key}</span>
-                      <span className="text-emerald-50/80 text-sm">{ins.desc}</span>
+                    <li key={ins.key} className="flex flex-col sm:grid sm:grid-cols-[5.5rem_1fr] gap-1 sm:gap-3 pb-3 border-b border-emerald-100/40 last:border-0 last:pb-0 text-center sm:text-left">
+                      <span className="font-black text-emerald-600 text-sm">{ins.key}</span>
+                      <span className="text-slate-600 text-sm">{ins.desc}</span>
                     </li>
                   ))}
                 </ul>
@@ -613,7 +618,8 @@ export default function ProductDetailPremiumAssetFlow({ product, relatedProducts
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-purple-100 border border-purple-200 text-purple-700 font-semibold text-sm mb-6">
-              ❓ FAQ
+              <svg className="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" /></svg>
+              FAQ
             </div>
             <h2 className="mb-6 capitalize text-center">Frequently asked questions</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">Everything you need to know about AssetFlow.</p>
@@ -627,7 +633,7 @@ export default function ProductDetailPremiumAssetFlow({ product, relatedProducts
         <div className="max-w-7xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
             className="max-w-6xl mx-auto rounded-3xl overflow-hidden relative text-center py-16 lg:py-24 px-6 border border-slate-200"
-            style={{ background: "linear-gradient(135deg, #ffffff 0%, #f5f3ff 50%, #e0f2fe 100%)", boxShadow: "0 30px 60px rgba(99, 102, 241, 0.08)" }}>
+            style={{ background: "linear-gradient(135deg, #ffffff 0%, #f5f3ff 50%, #e0f2fe 100%)", boxShadow: "0 25px 60px -15px rgba(99, 102, 241, 0.25), 0 15px 30px -10px rgba(99, 102, 241, 0.15)" }}>
             <motion.div
               className="absolute -top-20 -right-20 w-64 h-64 rounded-full pointer-events-none"
               style={{ background: "radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%)" }}
@@ -640,7 +646,7 @@ export default function ProductDetailPremiumAssetFlow({ product, relatedProducts
               animate={{ scale: [1, 1.3, 1] }}
               transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 3 }}
             />
-            <span className="inline-block text-[10px] font-black text-indigo-700 tracking-[0.28em] uppercase mb-6 bg-indigo-50 px-4 py-2 rounded-full ring-1 ring-indigo-200">GET STARTED TODAY</span>
+            <span className="inline-block text-[10px] font-black text-indigo-700 tracking-[0.28em] capitalize mb-6 bg-indigo-50 px-4 py-2 rounded-full ring-1 ring-indigo-200">Get started today</span>
             <h2 className="text-[clamp(2rem,4vw,3rem)] font-extrabold text-slate-900 mb-4">Ready to run assets on <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">AssetFlow?</span></h2>
             <p className="text-slate-500 max-w-md mx-auto mb-10 text-base leading-relaxed">Book a walkthrough with Isarva Infotech. We will map your register, roles, and modules to a clear go-live plan.</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -665,14 +671,28 @@ export default function ProductDetailPremiumAssetFlow({ product, relatedProducts
         <section className="py-12 lg:py-16 px-6 border-t border-slate-100 relative" style={{ background: "linear-gradient(135deg, #fff1f2 0%, #fdf4ff 50%, #f0fdf4 100%)" }}>
           <div className="absolute inset-0 pointer-events-none opacity-20" style={{ backgroundImage: "radial-gradient(#fda4af 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl font-black text-[#0a0a0a] mb-8 text-center">Explore other products</h2>
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-emerald-200 text-emerald-700 font-semibold text-sm mb-6 shadow-sm">
+                You Might Also Like
+              </div>
+              <h2 className="mb-6 capitalize text-center">
+                Explore other products
+              </h2>
+              <p className="text-xl text-slate-500 max-w-2xl mx-auto">
+                Discover more enterprise solutions crafted to scale your operations.
+              </p>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
               {relatedProducts.map((p, i) => (
                 <motion.div key={p.slug} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.1 }} className="h-full">
                   <Link href={`/product/${p.slug}`} className="group flex flex-col items-center text-center h-full border-2 border-emerald-100 rounded-2xl p-6 hover:border-emerald-400 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-white">
                     <span className="text-3xl mb-3 block">{p.icon}</span>
                     <h3 className="font-black text-[#0a0a0a] group-hover:text-[#10b981] transition-colors mb-1">{p.title}</h3>
-                    <p className="text-[#6b7280] text-sm leading-relaxed flex-grow">{p.shortDescription}</p>
+                    <p className="text-[#6b7280] text-sm leading-relaxed flex-grow mb-4">{p.shortDescription}</p>
+                    <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-100 group-hover:bg-emerald-500 group-hover:text-white group-hover:border-emerald-500 transition-all duration-300">
+                      Learn More
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+                    </span>
                   </Link>
                 </motion.div>
               ))}
