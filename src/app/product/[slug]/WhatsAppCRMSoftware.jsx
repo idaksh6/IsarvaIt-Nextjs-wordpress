@@ -738,7 +738,7 @@ export default function WhatsAppCRMSoftware() {
                     <h3 className="text-[clamp(1.15rem,2vw,1.5rem)] font-semibold mb-3 text-[#0f172a]">
                       {f.title}
                     </h3>
-                    <p className="text-lg text-[#475569] leading-[1.7] mb-0 text-center">
+                    <p className="text-base text-[#475569] leading-[1.7] mb-0 text-center">
                       {f.desc}
                     </p>
                   </article>
@@ -776,7 +776,7 @@ export default function WhatsAppCRMSoftware() {
 
               {/* Right: detailed list */}
               <div className="wcrm-fade-right text-center lg:text-left">
-                <div className="inline-block text-base font-semibold capitalize tracking-[0.05em] mb-4 text-[#d4af37]">
+                <div className="inline-block text-sm font-semibold capitalize tracking-[0.05em] mb-4 text-[#d4af37]">
                   Shared Team Inbox
                 </div>
                 <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.2] font-bold mb-4 text-[#0f172a]">
@@ -813,7 +813,7 @@ export default function WhatsAppCRMSoftware() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               {/* Left: content */}
               <div className="wcrm-fade-left text-center lg:text-left lg:order-first order-last">
-                <div className="inline-block text-base font-semibold capitalize tracking-[0.05em] mb-4 text-[#d4af37]">
+                <div className="inline-block text-sm font-semibold capitalize tracking-[0.05em] mb-4 text-[#d4af37]">
                   Built-in AI Agents
                 </div>
                 <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.2] font-bold mb-4 text-[#0f172a]">
@@ -896,7 +896,7 @@ export default function WhatsAppCRMSoftware() {
               </div>
 
               <div className="wcrm-fade-right text-center lg:text-left">
-                <div className="inline-block text-base font-semibold capitalize tracking-[0.05em] mb-4 text-[#d4af37]">
+                <div className="inline-block text-sm font-semibold capitalize tracking-[0.05em] mb-4 text-[#d4af37]">
                   Advanced Automation Flows
                 </div>
                 <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.2] font-bold mb-4 text-[#0f172a]">
@@ -942,7 +942,7 @@ export default function WhatsAppCRMSoftware() {
           <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
             {/* Section header */}
             <div className="wcrm-fade-up text-center max-w-[700px] mx-auto mb-10">
-              <div className="inline-block text-base font-semibold capitalize tracking-[0.05em] mb-4 text-[#d4af37]">
+              <div className="inline-block text-sm font-semibold capitalize tracking-[0.05em] mb-4 text-[#d4af37]">
                 New in wacrm
               </div>
               <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.2] font-bold mb-6 text-[#0f172a]">
