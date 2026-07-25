@@ -136,6 +136,7 @@ export default function Footer() {
                 { label: "HRMS Software", href: "/product/hrms-software" },
                 { label: "BillSoft Software", href: "/product/bill-soft" },
                 { label: "CRM Software", href: "/product/crm-software" },
+                { label: "WhatsApp CRM Software", href: "/product/whatsapp-crm-software" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link

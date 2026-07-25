@@ -71,6 +71,18 @@ const products = [
     badge: "Popular",
   },
   {
+    id: 22,
+    name: "WhatsApp CRM Software",
+    slug: "whatsapp-crm-software",
+    category: "Sales & Marketing",
+    short:
+      "Self-hosted WhatsApp CRM with shared inbox, visual automations, broadcasts, and real-time analytics designed for modern teams.",
+    gradient: "#10b981",
+    image:
+      "https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?q=80&w=800&auto=format&fit=crop",
+    badge: "New",
+  },
+  {
     id: 4,
     name: "Petro Care",
     slug: "petro-care",
