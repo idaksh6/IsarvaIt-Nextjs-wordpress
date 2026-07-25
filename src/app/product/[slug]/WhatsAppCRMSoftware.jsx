@@ -121,7 +121,7 @@ function IconCheckCircle() {
 }
 function IconShieldCheck() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><polyline points="9 12 11 14 15 10" />
     </svg>
   );
@@ -755,7 +755,7 @@ export default function WhatsAppCRMSoftware() {
           <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               {/* Left: visual frame */}
-              <div className="wcrm-fade-left relative max-w-[500px] sm:max-w-[550px] lg:max-w-none mx-auto w-full">
+              <div className="wcrm-fade-left relative max-w-[500px] sm:max-w-[550px] lg:max-w-none mx-auto w-full lg:order-first order-last">
                 <div className="relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] cursor-pointer"
                      onClick={() => setPreviewImage("/whatsapp-crm/inbox.png")}>
                   <Image
@@ -774,7 +774,7 @@ export default function WhatsAppCRMSoftware() {
               </div>
 
               {/* Right: detailed list */}
-              <div className="wcrm-fade-right text-center lg:text-left">
+              <div className="wcrm-fade-right text-center lg:text-left lg:order-last order-first">
                 <div className="inline-block text-sm font-semibold capitalize tracking-[0.05em] mb-4 text-[#d4af37]">
                   Shared Team Inbox
                 </div>
@@ -788,7 +788,7 @@ export default function WhatsAppCRMSoftware() {
 
                 <div className="flex flex-col gap-6 mt-10">
                   {inboxFeatures.map((item, i) => (
-                    <div key={i} className="flex flex-col lg:flex-row gap-5 items-center lg:items-start text-center lg:text-left">
+                    <div key={i} className="flex flex-col lg:flex-row gap-5 items-center text-center lg:text-left p-5 bg-white border border-slate-200/80 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:border-[#d4af37]/40 transition-all duration-300 w-full">
                       <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 rounded-xl bg-[rgba(212,175,55,0.1)] text-[#d4af37]">
                         {item.icon}
                       </div>
@@ -811,7 +811,7 @@ export default function WhatsAppCRMSoftware() {
           <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               {/* Left: content */}
-              <div className="wcrm-fade-left text-center lg:text-left lg:order-first order-last">
+              <div className="wcrm-fade-left text-center lg:text-left lg:order-first order-first">
                 <div className="inline-block text-sm font-semibold capitalize tracking-[0.05em] mb-4 text-[#d4af37]">
                   Built-in AI Agents
                 </div>
@@ -825,7 +825,7 @@ export default function WhatsAppCRMSoftware() {
 
                 <div className="flex flex-col gap-6 mt-10">
                   {aiFeatures.map((item, i) => (
-                    <div key={i} className="flex flex-col lg:flex-row gap-5 items-center lg:items-start text-center lg:text-left">
+                    <div key={i} className="flex flex-col lg:flex-row gap-5 items-center text-center lg:text-left p-5 bg-white border border-slate-200/80 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:border-[#d4af37]/40 transition-all duration-300 w-full">
                       <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 rounded-xl bg-[rgba(212,175,55,0.1)] text-[#d4af37]">
                         {item.icon}
                       </div>
@@ -839,7 +839,7 @@ export default function WhatsAppCRMSoftware() {
               </div>
 
               {/* Right: visual frame */}
-              <div className="wcrm-fade-right relative max-w-[500px] sm:max-w-[550px] lg:max-w-none mx-auto w-full lg:order-last order-first">
+              <div className="wcrm-fade-right relative max-w-[500px] sm:max-w-[550px] lg:max-w-none mx-auto w-full lg:order-last order-last">
                 <div className="relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] cursor-pointer"
                      onClick={() => setPreviewImage("/whatsapp-crm/ai.png")}>
                   <Image
@@ -871,7 +871,7 @@ export default function WhatsAppCRMSoftware() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
               {/* Left: flow image */}
-              <div className="wcrm-fade-left relative max-w-[500px] sm:max-w-[550px] lg:max-w-none mx-auto w-full">
+              <div className="wcrm-fade-left relative max-w-[500px] sm:max-w-[550px] lg:max-w-none mx-auto w-full lg:order-first order-last">
                 <div aria-hidden="true"
                   className="absolute pointer-events-none rounded-full opacity-50 blur-[80px] z-0
                                 w-[400px] h-[400px] bg-[rgba(167,139,250,0.2)] top-[20%] -left-[20%]" />
@@ -893,7 +893,7 @@ export default function WhatsAppCRMSoftware() {
                 </div>
               </div>
 
-              <div className="wcrm-fade-right text-center lg:text-left">
+              <div className="wcrm-fade-right text-center lg:text-left lg:order-last order-first">
                 <div className="inline-block text-sm font-semibold capitalize tracking-[0.05em] mb-4 text-[#d4af37]">
                   Advanced Automation Flows
                 </div>
@@ -908,7 +908,7 @@ export default function WhatsAppCRMSoftware() {
 
                 <div className="flex flex-col gap-6 mt-10">
                   {automationFeatures.map((item) => (
-                    <div key={item.title} className="flex flex-col lg:flex-row gap-5 items-center lg:items-start text-center lg:text-left">
+                    <div key={item.title} className="flex flex-col lg:flex-row gap-5 items-center text-center lg:text-left p-5 bg-white border border-slate-200/80 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:border-[#d4af37]/40 transition-all duration-300 w-full">
                       <div
                         aria-hidden="true"
                         className="flex items-center justify-center flex-shrink-0
@@ -991,7 +991,7 @@ export default function WhatsAppCRMSoftware() {
                     <h3 className="text-[clamp(1.15rem,2vw,1.5rem)] font-semibold mb-3 text-[#0f172a]">
                       {f.title}
                     </h3>
-                    <p className="text-lg text-[#475569] leading-[1.7] mb-0 text-center">
+                    <p className="text-base text-[#475569] leading-[1.7] mb-0 text-center">
                       {f.desc}
                     </p>
                   </article>
@@ -1084,7 +1084,7 @@ export default function WhatsAppCRMSoftware() {
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* Left: cta copy */}
-                <div className="cta-copy text-center lg:text-left">
+                <div className="cta-copy text-left">
                   <div className="cta-kicker">
                     <span className="cta-pulse"></span>
                     Live on WhatsApp Business API
@@ -1097,21 +1097,21 @@ export default function WhatsAppCRMSoftware() {
                   </p>
                   
                   <ul className="cta-checks mb-8">
-                    <li className="flex items-center gap-3 justify-center lg:justify-start">
+                    <li className="flex items-center gap-3 justify-start">
                       <IconCheck />
                       <span>Reply-first shared inbox</span>
                     </li>
-                    <li className="flex items-center gap-3 justify-center lg:justify-start">
+                    <li className="flex items-center gap-3 justify-start">
                       <IconCheck />
                       <span>AI suggest + auto-reply</span>
                     </li>
-                    <li className="flex items-center gap-3 justify-center lg:justify-start">
+                    <li className="flex items-center gap-3 justify-start">
                       <IconCheck />
                       <span>Delivery filters &amp; resume pending</span>
                     </li>
                   </ul>
 
-                  <div className="cta-actions justify-center lg:justify-start">
+                  <div className="cta-actions justify-start">
                     <Link
                       href="/contact"
                       className="btn-premium-orange group !text-lg !px-8 !py-4 max-[480px]:w-full max-[480px]:text-center"
