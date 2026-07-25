@@ -1210,33 +1210,6 @@ export const servicesData = [
         answer: "Absolutely. We offer seamless migration services from platforms like WordPress, Drupal, or custom databases while preserving all your content, images, and SEO URLs."
       }
     ]
-  },
-  {
-    slug: "whatsapp-crm-software",
-    title: "WhatsApp CRM Software",
-    icon: "💬",
-    heroImage: "/whatsapp-crm/hero.png",
-    shortDescription: "Self-hosted WhatsApp CRM with shared inbox, visual automations, broadcasts, and real-time analytics.",
-    description: "Turn WhatsApp into your ultimate sales engine. The only self-hosted CRM template you need — shared inbox, visual automations, broadcasts, and real-time analytics designed for modern teams.",
-    features: [
-      "Shared Inbox",
-      "Sales Pipelines",
-      "Smart Broadcasts",
-      "Interactive Templates",
-      "Contact Tags & Segments",
-      "Unified Dashboard",
-      "Visual Flow Builder",
-      "Real-time Analytics"
-    ],
-    technologies: ["WhatsApp Business API", "Node.js", "React", "Next.js", "MySQL"],
-    benefits: [
-      "Increase Sales Conversions",
-      "Automate Customer Support",
-      "Broadcast Campaigns at Scale",
-      "Real-time Team Collaboration",
-      "Data-driven Decision Making"
-    ],
-    subServices: []
   }
 ];
 

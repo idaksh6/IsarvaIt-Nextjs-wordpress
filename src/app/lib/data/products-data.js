@@ -883,6 +883,38 @@ export const productsData = [
     color: "from-emerald-500 to-green-600",
     bgGradient: "from-emerald-50 via-green-50 to-white",
   },
+  {
+    slug: "whatsapp-crm-software",
+    title: "WhatsApp CRM Software",
+    seoTitle: "WhatsApp CRM Software",
+    metaDescription: "Self-hosted WhatsApp CRM with shared inbox, visual automations, broadcasts, and real-time analytics designed for modern teams.",
+    ogImage: "/whatsapp-crm/hero.jpg",
+    category: "Communication",
+    icon: "💬",
+    tagline: "Self-hosted WhatsApp CRM Workspace",
+    shortDescription: "Self-hosted WhatsApp CRM with shared inbox, visual automations, broadcasts, and real-time analytics.",
+    description: "Turn WhatsApp into your ultimate sales engine. The only self-hosted CRM template you need — shared inbox, visual automations, broadcasts, and real-time analytics designed for modern teams.",
+    features: [
+      "Shared Inbox",
+      "Sales Pipelines",
+      "Smart Broadcasts",
+      "Interactive Templates",
+      "Contact Tags & Segments",
+      "Unified Dashboard",
+      "Visual Flow Builder",
+      "Real-time Analytics"
+    ],
+    technologies: ["WhatsApp Business API", "Node.js", "React", "Next.js", "MySQL"],
+    benefits: [
+      "Increase Sales Conversions",
+      "Automate Customer Support",
+      "Broadcast Campaigns at Scale",
+      "Real-time Team Collaboration",
+      "Data-driven Decision Making"
+    ],
+    color: "from-emerald-500 to-green-600",
+    bgGradient: "from-emerald-50 via-teal-50 to-white",
+  },
 ];
 
 export const getProductBySlug = (slug) => {

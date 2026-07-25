@@ -142,7 +142,6 @@ function SearchResults() {
       const isHidden = 
         item.slug?.includes("staging") || 
         item.slug?.includes("-old") || 
-        item.slug === "whatsapp-crm-software" ||
         item.slug === "news-and-magazine-portal";
       if (isHidden) return false;
 

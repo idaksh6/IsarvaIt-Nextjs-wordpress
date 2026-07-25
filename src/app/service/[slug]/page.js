@@ -18,7 +18,6 @@ import {
   generateServiceBreadcrumbSchema,
 } from "../../lib/utils/seo";
 import NewsAndMagazinePortal from "./NewsAndMagazinePortal";
-import WhatsAppCRMSoftware from "./WhatsAppCRMSoftware";
 
 export async function generateStaticParams() {
   return getAllServiceSlugs().map((slug) => ({
@@ -39,29 +38,7 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  // noindex for the WhatsApp CRM software page
-  if (slug === "whatsapp-crm-software") {
-    return {
-      title: "WhatsApp CRM Software | Isarva Infotech",
-      description: "Self-hosted WhatsApp CRM with shared inbox, visual automations, broadcasts, and real-time analytics designed for modern teams.",
-      openGraph: {
-        title: "WhatsApp CRM Software | Isarva Infotech",
-        description: "Self-hosted WhatsApp CRM with shared inbox, visual automations, broadcasts, and real-time analytics designed for modern teams.",
-        images: [
-          {
-            url: "https://www.isarvait.com/whatsapp-crm/hero.png",
-            width: 1200,
-            height: 630,
-            alt: "WhatsApp CRM Software",
-          },
-        ],
-      },
-      robots: {
-        index: false,
-        follow: false,
-      },
-    };
-  }
+
 
 
 
@@ -120,10 +97,7 @@ export default async function ServiceDetailPage({ params }) {
     return <NewsAndMagazinePortal service={service} servicesData={servicesData} />;
   }
 
-  // ── WhatsApp CRM Software page ──────────────────────
-  if (slug === "whatsapp-crm-software") {
-    return <WhatsAppCRMSoftware />;
-  }
+
 
 
 
@@ -153,7 +127,7 @@ export default async function ServiceDetailPage({ params }) {
 
   // Get related services (3 random services excluding current and hidden services)
   const relatedServices = servicesData
-    .filter(s => s.slug !== service.slug && s.slug !== "whatsapp-crm-software")
+    .filter(s => s.slug !== service.slug)
     .sort(() => 0.5 - Math.random())
     .slice(0, 3);
 

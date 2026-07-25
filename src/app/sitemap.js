@@ -40,7 +40,7 @@ export default function sitemap() {
 
   // Dynamic service pages
   const services = servicesData
-    .filter((service) => !service.slug?.includes("-staging") && !service.noIndex && service.slug !== "news-and-magazine-portal" && service.slug !== "whatsapp-crm-software")
+    .filter((service) => !service.slug?.includes("-staging") && !service.noIndex && service.slug !== "news-and-magazine-portal")
     .map((service) => ({
       url: `${baseUrl}/service/${service.slug}`,
       lastModified: new Date(),
