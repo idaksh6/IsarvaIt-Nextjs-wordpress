@@ -763,8 +763,7 @@ export default function WhatsAppCRMSoftware() {
                     alt="wacrm shared inbox with conversation list and message thread"
                     width={600}
                     height={450}
-                    className="wcrm-float-slow w-full block transition-transform duration-500 group-hover:scale-[1.03]"
-                    style={{ marginBottom: "-24px" }}
+                    className="w-full block transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
                     <div className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-300">
@@ -848,8 +847,7 @@ export default function WhatsAppCRMSoftware() {
                     alt="wacrm AI auto-reply settings and knowledge base"
                     width={600}
                     height={450}
-                    className="wcrm-float-slow w-full block transition-transform duration-500 group-hover:scale-[1.03]"
-                    style={{ marginBottom: "-24px" }}
+                    className="w-full block transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
                     <div className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-300">
