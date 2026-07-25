@@ -375,8 +375,9 @@ export default function WhatsAppCRMSoftware() {
 
         @media (max-width: 1024px) {
           .wcrm-fade-up, .wcrm-fade-left, .wcrm-fade-right {
+            opacity: 1 !important;
             transform: none !important;
-            transition: opacity .4s ease !important;
+            transition: none !important;
           }
         }
 
