@@ -372,6 +372,14 @@ export default function WhatsAppCRMSoftware() {
         .wcrm-fade-left  { opacity:0; transform:translate3d(-20px, 0, 0); transition:opacity .6s ease,transform .6s ease; will-change: transform, opacity; }
         .wcrm-fade-right { opacity:0; transform:translate3d(20px, 0, 0);  transition:opacity .6s ease,transform .6s ease; will-change: transform, opacity; }
         .wcrm-visible    { opacity:1!important; transform:translate3d(0,0,0)!important; }
+
+        @media (max-width: 1024px) {
+          .wcrm-fade-up, .wcrm-fade-left, .wcrm-fade-right {
+            transform: none !important;
+            transition: opacity .4s ease !important;
+          }
+        }
+
         .wcrm-delay-1 { transition-delay:.1s; }
         .wcrm-delay-2 { transition-delay:.2s; }
         .wcrm-delay-3 { transition-delay:.3s; }
@@ -712,7 +720,7 @@ export default function WhatsAppCRMSoftware() {
                       border border-black/[0.08]
                       ${theme.initialShadow}
                       transition-all duration-[400ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)]
-                      hover:-translate-y-2
+                      lg:hover:-translate-y-2
                       ${theme.borderHover}
                       ${theme.shadowHover}`}
                   >
@@ -1023,7 +1031,7 @@ export default function WhatsAppCRMSoftware() {
                       border border-black/[0.08]
                       ${theme.initialShadow}
                       transition-all duration-[400ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)]
-                      hover:-translate-y-2
+                      lg:hover:-translate-y-2
                       ${theme.borderHover}
                       ${theme.shadowHover}`}
                   >
