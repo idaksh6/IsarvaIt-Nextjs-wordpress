@@ -9,7 +9,6 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.isarvait.com";
 const productsData = [
   { label: "HRMS Software", href: "/product/hrms-software", icon: "👥" },
   { label: "CRM Software", href: "/product/crm-software", icon: "👔" },
-  { label: "WhatsApp CRM Software", href: "/product/whatsapp-crm-software", icon: "💬" },
   { label: "Support Software", href: "/product/support-software", icon: "🎧" },
   { label: "BillSoft Software", href: "/product/bill-soft", icon: "🧾" },
   { label: "Marine Service Software", href: "/product/marine-service-software", icon: "🏬" },
