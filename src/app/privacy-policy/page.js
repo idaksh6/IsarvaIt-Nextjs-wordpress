@@ -378,11 +378,11 @@ function TableOfContents() {
       <div className="mt-6 pt-6 border-t border-[#10b981]/10">
         <p className="text-xs font-semibold text-[#16423C] mb-3">Questions?</p>
         <a
-          href="mailto:privacy@isarvait.com"
+          href="mailto:marketing@isarvait.com"
           className="flex items-center gap-2 text-sm text-[#10b981] hover:underline"
         >
           <Mail className="w-3.5 h-3.5 shrink-0" strokeWidth={2} />
-          privacy@isarvait.com
+          marketing@isarvait.com
         </a>
       </div>
     </nav>
@@ -508,8 +508,8 @@ export default function PrivacyPolicyPage() {
                   <div className="w-9 h-9 rounded-xl bg-emerald-100 flex items-center justify-center shrink-0">
                     <Mail className="w-4 h-4 text-emerald-700" strokeWidth={2} />
                   </div>
-                  <a href="mailto:privacy@isarvait.com" className="hover:text-emerald-600 transition-colors">
-                    privacy@isarvait.com
+                  <a href="mailto:marketing@isarvait.com" className="hover:text-emerald-600 transition-colors">
+                    marketing@isarvait.com
                   </a>
                 </li>
                 <li className="flex items-center gap-3 text-sm text-gray-900 font-semibold">
