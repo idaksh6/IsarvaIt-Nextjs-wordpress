@@ -766,39 +766,45 @@ export default function WhatsAppCRMSoftware() {
         <section id="wcrm-inbox" className="relative overflow-hidden bg-[#f1f5f9] py-12 lg:py-16">
           <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              {/* Left: visual frame */}
-              <div className="hidden lg:block wcrm-fade-left relative max-w-[500px] sm:max-w-[550px] lg:max-w-none mx-auto w-full">
-                <div className="relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] cursor-pointer"
-                     onClick={() => setPreviewImage("/whatsapp-crm/inbox.png")}>
-                  <Image
-                    src="/whatsapp-crm/inbox.png"
-                    alt="wacrm shared inbox with conversation list and message thread"
-                    width={600}
-                    height={450}
-                    className="w-full block transition-transform duration-500 group-hover:scale-[1.03]"
-                  />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
-                    <div className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-300">
-                      <IconMaximize />
+              {/* Left Column: Text + Image */}
+              <div className="wcrm-fade-left text-center lg:text-left flex flex-col gap-8">
+                {/* Text headings */}
+                <div>
+                  <div className="inline-block text-sm font-semibold capitalize tracking-[0.05em] mb-4 text-[#d4af37]">
+                    Shared Team Inbox
+                  </div>
+                  <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.2] font-bold mb-4 text-[#0f172a]">
+                    See every WhatsApp reply in{" "}
+                    <span className="wcrm-grad-text">one place</span>
+                  </h2>
+                  <p className="text-lg text-[#475569] leading-[1.7]">
+                    Agents work from a three-panel inbox: conversation list, live message thread, and contact context — so nothing falls between chats.
+                  </p>
+                </div>
+
+                {/* Left: visual frame */}
+                <div className="hidden lg:block relative max-w-[500px] sm:max-w-[550px] lg:max-w-none mx-auto w-full">
+                  <div className="relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] cursor-pointer"
+                       onClick={() => setPreviewImage("/whatsapp-crm/inbox.png")}>
+                    <Image
+                      src="/whatsapp-crm/inbox.png"
+                      alt="wacrm shared inbox with conversation list and message thread"
+                      width={600}
+                      height={450}
+                      className="w-full block transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
+                      <div className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-300">
+                        <IconMaximize />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Right: detailed list */}
+              {/* Right Column: detailed list */}
               <div className="wcrm-fade-right text-center lg:text-left">
-                <div className="inline-block text-sm font-semibold capitalize tracking-[0.05em] mb-4 text-[#d4af37]">
-                  Shared Team Inbox
-                </div>
-                <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.2] font-bold mb-4 text-[#0f172a]">
-                  See every WhatsApp reply in{" "}
-                  <span className="wcrm-grad-text">one place</span>
-                </h2>
-                <p className="text-lg text-[#475569] leading-[1.7] mb-6">
-                  Agents work from a three-panel inbox: conversation list, live message thread, and contact context — so nothing falls between chats.
-                </p>
-
-                {/* Mobile-only Image (Heading -> Description -> Image -> Cards layout) */}
+                {/* Mobile-only Image (Image -> Cards layout) */}
                 <div className="block lg:hidden my-8 max-w-[500px] sm:max-w-[550px] mx-auto w-full">
                   <div className="relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] cursor-pointer"
                        onClick={() => setPreviewImage("/whatsapp-crm/inbox.png")}>
@@ -817,7 +823,7 @@ export default function WhatsAppCRMSoftware() {
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-6 mt-10">
+                <div className="flex flex-col gap-6">
                   {inboxFeatures.map((item, i) => (
                     <div key={i} className="flex flex-col lg:flex-row gap-5 items-center text-center lg:text-left p-5 bg-white border border-slate-200/80 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:border-[#d4af37]/40 transition-all duration-300 w-full">
                       <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 rounded-xl bg-[rgba(212,175,55,0.1)] text-[#d4af37]">
@@ -841,20 +847,9 @@ export default function WhatsAppCRMSoftware() {
         <section id="wcrm-ai" className="relative overflow-hidden bg-white py-12 lg:py-16">
           <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              {/* Left: content */}
+              {/* Left Column: detailed list */}
               <div className="wcrm-fade-left text-center lg:text-left">
-                <div className="inline-block text-sm font-semibold capitalize tracking-[0.05em] mb-4 text-[#d4af37]">
-                  Built-in AI Agents
-                </div>
-                <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.2] font-bold mb-4 text-[#0f172a]">
-                  Reply faster with{" "}
-                  <span className="wcrm-grad-text">knowledge-aware AI</span>
-                </h2>
-                <p className="text-lg text-[#475569] leading-[1.7] mb-6">
-                  wacrm uses your knowledge base with Gemini, Groq, or OpenAI — for inbox drafts and automatic first replies across channels.
-                </p>
-
-                {/* Mobile-only Image (Heading -> Description -> Image -> Cards layout) */}
+                {/* Mobile-only Image (Image -> Cards layout) */}
                 <div className="block lg:hidden my-8 max-w-[500px] sm:max-w-[550px] mx-auto w-full">
                   <div className="relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] cursor-pointer"
                        onClick={() => setPreviewImage("/whatsapp-crm/ai.png")}>
@@ -873,7 +868,7 @@ export default function WhatsAppCRMSoftware() {
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-6 mt-10">
+                <div className="flex flex-col gap-6">
                   {aiFeatures.map((item, i) => (
                     <div key={i} className="flex flex-col lg:flex-row gap-5 items-center text-center lg:text-left p-5 bg-white border border-slate-200/80 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:border-[#d4af37]/40 transition-all duration-300 w-full">
                       <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 rounded-xl bg-[rgba(212,175,55,0.1)] text-[#d4af37]">
@@ -888,20 +883,37 @@ export default function WhatsAppCRMSoftware() {
                 </div>
               </div>
 
-              {/* Right: visual frame */}
-              <div className="hidden lg:block wcrm-fade-right relative max-w-[500px] sm:max-w-[550px] lg:max-w-none mx-auto w-full">
-                <div className="relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] cursor-pointer"
-                     onClick={() => setPreviewImage("/whatsapp-crm/ai.png")}>
-                  <Image
-                    src="/whatsapp-crm/ai.png"
-                    alt="wacrm AI auto-reply settings and knowledge base"
-                    width={600}
-                    height={450}
-                    className="w-full block transition-transform duration-500 group-hover:scale-[1.03]"
-                  />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
-                    <div className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-300">
-                      <IconMaximize />
+              {/* Right Column: Text + Visual Frame */}
+              <div className="wcrm-fade-right text-center lg:text-left flex flex-col gap-8">
+                {/* Text headings */}
+                <div>
+                  <div className="inline-block text-sm font-semibold capitalize tracking-[0.05em] mb-4 text-[#d4af37]">
+                    Built-in AI Agents
+                  </div>
+                  <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.2] font-bold mb-4 text-[#0f172a]">
+                    Reply faster with{" "}
+                    <span className="wcrm-grad-text">knowledge-aware AI</span>
+                  </h2>
+                  <p className="text-lg text-[#475569] leading-[1.7]">
+                    wacrm uses your knowledge base with Gemini, Groq, or OpenAI — for inbox drafts and automatic first replies across channels.
+                  </p>
+                </div>
+
+                {/* Right: visual frame */}
+                <div className="hidden lg:block relative max-w-[500px] sm:max-w-[550px] lg:max-w-none mx-auto w-full">
+                  <div className="relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] cursor-pointer"
+                       onClick={() => setPreviewImage("/whatsapp-crm/ai.png")}>
+                    <Image
+                      src="/whatsapp-crm/ai.png"
+                      alt="wacrm AI auto-reply settings and knowledge base"
+                      width={600}
+                      height={450}
+                      className="w-full block transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
+                      <div className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-300">
+                        <IconMaximize />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -919,44 +931,50 @@ export default function WhatsAppCRMSoftware() {
         >
           <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              {/* Left Column: Text + Visual Frame */}
+              <div className="wcrm-fade-left text-center lg:text-left flex flex-col gap-8">
+                {/* Text headings */}
+                <div>
+                  <div className="inline-block text-sm font-semibold capitalize tracking-[0.05em] mb-4 text-[#d4af37]">
+                    Advanced Automation Flows
+                  </div>
+                  <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.2] font-bold mb-4 text-[#0f172a]">
+                    Put your support &amp; sales on{" "}
+                    <span className="wcrm-grad-text">autopilot</span>
+                  </h2>
+                  <p className="text-lg text-[#475569] leading-[1.7]">
+                    Design complex, multi-step customer journeys using our intuitive visual
+                    flow builder. From simple auto-replies to advanced lead qualification engines.
+                  </p>
+                </div>
 
-              {/* Left: flow image */}
-              <div className="hidden lg:block wcrm-fade-left relative max-w-[500px] sm:max-w-[550px] lg:max-w-none mx-auto w-full">
-                <div aria-hidden="true"
-                  className="absolute pointer-events-none rounded-full opacity-50 blur-[80px] z-0
-                                w-[400px] h-[400px] bg-[rgba(167,139,250,0.2)] top-[20%] -left-[20%]" />
-                <div className="relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] cursor-pointer"
-                     onClick={() => setPreviewImage("/whatsapp-crm/flow.png")}>
-                  <Image
-                    src="/whatsapp-crm/flow.png"
-                    alt="Visual automation flow builder with drag-and-drop nodes"
-                    width={600}
-                    height={450}
-                    className="wcrm-float-slow w-full block transition-transform duration-500 group-hover:scale-[1.03]"
-                    style={{ marginBottom: "-24px" }}
-                  />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
-                    <div className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-300">
-                      <IconMaximize />
+                {/* Left: flow image */}
+                <div className="hidden lg:block relative max-w-[500px] sm:max-w-[550px] lg:max-w-none mx-auto w-full">
+                  <div aria-hidden="true"
+                    className="absolute pointer-events-none rounded-full opacity-50 blur-[80px] z-0
+                                  w-[400px] h-[400px] bg-[rgba(167,139,250,0.2)] top-[20%] -left-[20%]" />
+                  <div className="relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] cursor-pointer"
+                       onClick={() => setPreviewImage("/whatsapp-crm/flow.png")}>
+                    <Image
+                      src="/whatsapp-crm/flow.png"
+                      alt="Visual automation flow builder with drag-and-drop nodes"
+                      width={600}
+                      height={450}
+                      className="wcrm-float-slow w-full block transition-transform duration-500 group-hover:scale-[1.03]"
+                      style={{ marginBottom: "-24px" }}
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
+                      <div className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-300">
+                        <IconMaximize />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
+              {/* Right Column: detailed list */}
               <div className="wcrm-fade-right text-center lg:text-left">
-                <div className="inline-block text-sm font-semibold capitalize tracking-[0.05em] mb-4 text-[#d4af37]">
-                  Advanced Automation Flows
-                </div>
-                <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.2] font-bold mb-4 text-[#0f172a]">
-                  Put your support &amp; sales on{" "}
-                  <span className="wcrm-grad-text">autopilot</span>
-                </h2>
-                <p className="text-lg text-[#475569] leading-[1.7] mb-6">
-                  Design complex, multi-step customer journeys using our intuitive visual
-                  flow builder. From simple auto-replies to advanced lead qualification engines.
-                </p>
-
-                {/* Mobile-only Image (Heading -> Description -> Image -> Cards layout) */}
+                {/* Mobile-only Image (Image -> Cards layout) */}
                 <div className="block lg:hidden my-8 max-w-[500px] sm:max-w-[550px] mx-auto w-full">
                   <div className="relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] cursor-pointer"
                        onClick={() => setPreviewImage("/whatsapp-crm/flow.png")}>
@@ -976,7 +994,7 @@ export default function WhatsAppCRMSoftware() {
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-6 mt-10">
+                <div className="flex flex-col gap-6">
                   {automationFeatures.map((item) => (
                     <div key={item.title} className="flex flex-col lg:flex-row gap-5 items-center text-center lg:text-left p-5 bg-white border border-slate-200/80 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:border-[#d4af37]/40 transition-all duration-300 w-full">
                       <div
