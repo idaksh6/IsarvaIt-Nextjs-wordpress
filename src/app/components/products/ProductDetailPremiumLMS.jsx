@@ -1150,7 +1150,12 @@ export default function ProductDetailPremiumLMS({ product, relatedProducts, allP
         </div>
       </section>
 
-      <ContactFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <ContactFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        preSelectedType="Product"
+        preSelectedItem="LMS Software"
+      />
     </div>
   );
 }

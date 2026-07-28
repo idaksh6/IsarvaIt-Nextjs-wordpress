@@ -720,7 +720,12 @@ export default function ProductDetailPremiumAnalytics({ product, relatedProducts
       )}
 
       {/* CONTACT FORM MODAL */}
-      <ContactFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <ContactFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        preSelectedType="Product"
+        preSelectedItem="Analytics"
+      />
     </div>
   );
 }
