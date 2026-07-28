@@ -11,7 +11,7 @@ const aboutColumns = {
     { label: "Quality Policy", href: "/quality-policy", icon: "📜" },
     { label: "Case Studies", href: "/case-studies", icon: "📊" },
     { label: "Testimonials", href: "/testimonial", icon: "💬" },
-    { label: "Blog", href: "/blog", icon: "✍️" },
+    { label: "Blog", href: "https://blog.isarvait.com/", icon: "✍️" },
   ],
   col2: [
     { label: "Partners", href: "/partners", icon: "🤝" },
@@ -188,6 +188,8 @@ export default function Header() {
                             <Link
                               key={child.label}
                               href={child.href}
+                              target={child.href.startsWith("http") ? "_blank" : undefined}
+                              rel={child.href.startsWith("http") ? "noopener noreferrer" : undefined}
                               onClick={() => setIsAboutOpen(false)}
                               className="group flex items-center justify-between p-3.5 rounded-2xl bg-gray-50 hover:bg-emerald-50 transition-all duration-300 border border-transparent hover:border-emerald-200"
                             >
@@ -215,6 +217,8 @@ export default function Header() {
                             <Link
                               key={child.label}
                               href={child.href}
+                              target={child.href.startsWith("http") ? "_blank" : undefined}
+                              rel={child.href.startsWith("http") ? "noopener noreferrer" : undefined}
                               onClick={() => setIsAboutOpen(false)}
                               className="group flex items-center justify-between p-3.5 rounded-2xl bg-gray-50 hover:bg-emerald-50 transition-all duration-300 border border-transparent hover:border-emerald-200"
                             >
@@ -684,6 +688,8 @@ export default function Header() {
                                   <Link
                                     key={child.label}
                                     href={child.href}
+                                    target={child.href.startsWith("http") ? "_blank" : undefined}
+                                    rel={child.href.startsWith("http") ? "noopener noreferrer" : undefined}
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className="flex items-center gap-3 p-3 rounded-xl hover:bg-white hover:shadow-sm transition-all duration-200"
                                   >

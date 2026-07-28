@@ -59,8 +59,9 @@ export default function BlogSection({ posts }) {
                   href={href}
                   target={isExternal ? "_blank" : "_self"}
                   rel={isExternal ? "noopener noreferrer" : undefined}
+                  className="flex flex-col h-full lg:text-left text-center"
                 >
-                  <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-6 bg-gray-100">
+                  <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden mb-6 bg-gray-100">
                     <img
                       src={post.featuredImage}
                       alt={post.title}
