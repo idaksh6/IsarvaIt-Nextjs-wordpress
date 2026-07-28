@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "../../components/AppLink";
+import ContactFormModal from "../../components/ContactFormModal";
 
 /* ─────────────────────────────────────────────────────────────
    Inline SVG icons (Lucide-compatible, no runtime dependency)
@@ -278,6 +279,7 @@ function useScrollReveal() {
 export default function WhatsAppCRMSoftware() {
   useScrollReveal();
   const [previewImage, setPreviewImage] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   /* Icon colour-gradient lookup → Tailwind bg (via inline style for gradients) */
   const iconGradients = {
@@ -630,13 +632,13 @@ export default function WhatsAppCRMSoftware() {
                 {/* CTA buttons */}
                 <div className="flex flex-wrap gap-4 mt-10 justify-center lg:justify-start
                                 max-[480px]:flex-col max-[480px]:items-center">
-                  <Link
-                    href="/contact"
-                    className="btn-premium-orange group !text-lg !px-8 !py-4 max-[480px]:w-full max-[480px]:text-center"
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="btn-premium-orange group !text-lg !px-8 !py-4 max-[480px]:w-full max-[480px]:text-center cursor-pointer"
                   >
                     Start Free Trial
                     <div className="shimmer"></div>
-                  </Link>
+                  </button>
                   <a
                     href="#wcrm-features"
                     className="group inline-flex items-center justify-center px-8 py-4 rounded-full
@@ -1200,13 +1202,13 @@ export default function WhatsAppCRMSoftware() {
                   </ul>
 
                   <div className="cta-actions justify-center lg:justify-start">
-                    <Link
-                      href="/contact"
-                      className="btn-premium-orange group !text-lg !px-8 !py-4 max-[480px]:w-full max-[480px]:text-center"
+                    <button
+                      onClick={() => setIsModalOpen(true)}
+                      className="btn-premium-orange group !text-lg !px-8 !py-4 max-[480px]:w-full max-[480px]:text-center cursor-pointer"
                     >
                       Start Free Trial
                       <div className="shimmer"></div>
-                    </Link>
+                    </button>
                     <Link
                       href="/contact"
                       className="group inline-flex items-center justify-center px-8 py-4 rounded-full
@@ -1274,6 +1276,13 @@ export default function WhatsAppCRMSoftware() {
         )}
 
       </div>
+
+      <ContactFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        preSelectedType="Product"
+        preSelectedItem="WhatsApp CRM Software"
+      />
     </>
   );
 }
