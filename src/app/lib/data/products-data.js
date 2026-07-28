@@ -576,7 +576,7 @@ export const productsData = [
     bgGradient: "from-emerald-50 via-teal-50 to-white",
   },
   {
-    slug: "website-analytics-staging",
+    slug: "website-analytics",
     title: "Website Analytics",
     ogImage: "/products/isarva-analytics/Dashboard1.png",
     category: "Website Analytics",
@@ -811,7 +811,7 @@ export const productsData = [
     bgGradient: "from-indigo-50 via-emerald-50 to-white",
   },
   {
-    slug: "lms-software-staging",
+    slug: "lms-software",
     title: "LMS Software",
     ogImage: "/products/lms-software/Dashboard.png",
     category: "Education",

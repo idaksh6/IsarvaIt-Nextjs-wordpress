@@ -44,7 +44,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   }
 
   // Use Premium View for LMS Software
-  if (product.slug === 'lms-software' || product.slug === 'lms-software-staging') {
+  if (product.slug === 'lms-software') {
     return (
       <ProductDetailPremiumLMS
         product={product}
@@ -54,8 +54,8 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
     );
   }
 
-  // Use Premium View for Website Analytics (Staging)
-  if (product.slug === 'website-analytics-staging') {
+  // Use Premium View for Website Analytics
+  if (product.slug === 'website-analytics') {
     return (
       <ProductDetailPremiumAnalytics
         product={product}
