@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from '../../components/AppLink';
+import ContactFormModal from '../../components/ContactFormModal';
 
 const GRAD_HERO = 'linear-gradient(135deg,#667eea 0%,#764ba2 50%,#6366f1 100%)';
 const GRAD_CARD = 'linear-gradient(145deg,rgba(99,102,241,.08),rgba(59,141,77,.06))';
@@ -92,6 +93,7 @@ function PhoneStack({ phones, large = false }) {
 
 export default function MobileAppDevelopment() {
   const [activeTab, setActiveTab] = useState('hrms');
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const observerRef = useRef(null);
 
   const observeAll = () => {
@@ -246,7 +248,7 @@ export default function MobileAppDevelopment() {
                   We craft high-performance mobile applications using React Native and Expo — delivering native-quality experiences on both platforms from a single codebase. From HRMS to CRM, we turn your business vision into stunning mobile products.
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-10">
-                  <button onClick={() => window.location.href = '/contact'}
+                  <button onClick={() => setIsModalOpen(true)}
                     className="press-illusion-btn-orange bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-xl text-base items-center space-x-2 flex cursor-pointer shadow-lg"
                   >
                     Start Your Project
@@ -520,7 +522,7 @@ export default function MobileAppDevelopment() {
                 Let&apos;s discuss your project and turn your ideas into a powerful mobile application that drives business growth.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4 max-w-lg mx-auto w-full">
-                <button onClick={() => window.location.href = '/contact-us'}
+                <button onClick={() => window.location.href = '/contact'}
                   className="press-illusion-btn-orange bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 text-base w-full sm:w-auto items-center justify-center flex cursor-pointer rounded-xl shadow-lg"
                 >
                   Get In Touch
@@ -540,6 +542,13 @@ export default function MobileAppDevelopment() {
         </section>
 
       </div>
+
+      <ContactFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        preSelectedType="Product"
+        preSelectedItem="Mobile App Development"
+      />
     </>
   );
 }
