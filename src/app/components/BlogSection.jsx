@@ -61,7 +61,10 @@ export default function BlogSection({ posts }) {
                   rel={isExternal ? "noopener noreferrer" : undefined}
                   className="flex flex-col h-full lg:text-left text-center"
                 >
-                  <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden mb-6 bg-gray-100">
+                  <div 
+                    className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden mb-6 bg-gray-100"
+                    style={{ aspectRatio: "16/10" }}
+                  >
                     <img
                       src={post.featuredImage}
                       alt={post.title}
