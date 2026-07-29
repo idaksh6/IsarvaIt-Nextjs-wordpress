@@ -35,7 +35,7 @@ export default function WhiteLabelPartnershipPage() {
       <WhiteLabelFAQ />
       
       {/* Inquiry Form Section */}
-      <PartnerFormSection id="white-label-inquiry-form" />
+      <PartnerFormSection id="white-label-inquiry-form" isWhiteLabelOnly={true} />
     </div>
   );
 }

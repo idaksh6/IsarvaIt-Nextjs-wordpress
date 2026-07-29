@@ -9,12 +9,14 @@ interface PartnerFormSectionProps {
   id?: string;
   preSelectedType?: string;
   preSelectedItem?: string;
+  isWhiteLabelOnly?: boolean;
 }
 
 export default function PartnerFormSection({
   id = "partner-inquiry-form",
   preSelectedType = "General",
-  preSelectedItem = "General Partner Inquiry"
+  preSelectedItem = "General Partner Inquiry",
+  isWhiteLabelOnly = false
 }: PartnerFormSectionProps) {
   const router = useRouter();
   const [formData, setFormData] = useState({
@@ -26,19 +28,21 @@ export default function PartnerFormSection({
     selectedCategoryId: "",
     message: "",
     otherBusinessType: "",
-    tier: preSelectedItem || "General Partner Inquiry"
+    tier: isWhiteLabelOnly ? "White Label Agency Partnership" : (preSelectedItem || "General Partner Inquiry")
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    if (preSelectedItem) {
+    if (isWhiteLabelOnly) {
+      setFormData(prev => ({ ...prev, tier: "White Label Agency Partnership" }));
+    } else if (preSelectedItem) {
       setFormData(prev => ({ ...prev, tier: preSelectedItem }));
     }
     // Prefetch thank you page for faster redirection
     router.prefetch('/thank-you');
-  }, [preSelectedItem, router]);
+  }, [preSelectedItem, isWhiteLabelOnly, router]);
 
   const businessTypes = [
     "Digital Marketing",
@@ -79,7 +83,7 @@ export default function PartnerFormSection({
         message: `[Selected Tier: ${formData.tier}]\n\n${formData.message}`,
         pageType: "Partner",
         itemName: formData.tier,
-        categoryId: 61
+        categoryId: isWhiteLabelOnly ? 61 : 63
       };
 
       const response = await fetch('/api/contact', {
@@ -295,15 +299,24 @@ export default function PartnerFormSection({
                         value={formData.tier}
                         onChange={handleChange}
                         required
-                        className="w-full h-14 pl-4 md:pl-5 pr-10 md:pr-12 truncate rounded-2xl border-2 border-gray-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium bg-white appearance-none cursor-pointer"
+                        disabled={isWhiteLabelOnly}
+                        className="w-full h-14 pl-4 md:pl-5 pr-10 md:pr-12 truncate rounded-2xl border-2 border-gray-100 focus:border-emerald-500 focus:bg-white outline-none transition-all text-gray-900 font-medium bg-white appearance-none cursor-pointer disabled:bg-gray-50 disabled:cursor-not-allowed"
                       >
-                        <option value="General Partner Inquiry">General Partner Inquiry</option>
-                        <option value="Gold Tier Inquiry">Gold Tier Inquiry</option>
-                        <option value="Silver Tier Inquiry">Silver Tier Inquiry</option>
-                        <option value="Bronze Tier Inquiry">Bronze Tier Inquiry</option>
-                        <option value="Partnership Model Inquiry">Partnership Model Inquiry</option>
+                        {isWhiteLabelOnly ? (
+                          <option value="White Label Agency Partnership">White Label Agency Partnership</option>
+                        ) : (
+                          <>
+                            <option value="General Partner Inquiry">General Partner Inquiry</option>
+                            <option value="Gold Tier Inquiry">Gold Tier Inquiry</option>
+                            <option value="Silver Tier Inquiry">Silver Tier Inquiry</option>
+                            <option value="Bronze Tier Inquiry">Bronze Tier Inquiry</option>
+                            <option value="Partnership Model Inquiry">Partnership Model Inquiry</option>
+                          </>
+                        )}
                       </select>
-                      <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500 w-5 h-5" />
+                      {!isWhiteLabelOnly && (
+                        <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500 w-5 h-5" />
+                      )}
                     </div>
                   </div>
                   <div className="space-y-2">
