@@ -64,7 +64,7 @@ export async function POST(request) {
       email: formData.email || '',
       mobile: mobileNumber,
       categories: formData.categoryId || 6,
-      lead_source: 19
+      lead_source: 11
     };
 
     console.log('Formatted CRM data:', JSON.stringify(crmData, null, 2));
