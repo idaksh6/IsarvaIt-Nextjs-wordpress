@@ -368,235 +368,7 @@ export default function WhatsAppCRMSoftware() {
   return (
     <>
       {/* ── Minimal scoped CSS — only what Tailwind cannot express ── */}
-      <style>{`
-        /* Scroll-reveal states */
-        .wcrm-fade-up    { opacity:0; transform:translate3d(0, 20px, 0);  transition:opacity .6s ease,transform .6s ease; will-change: transform, opacity; }
-        .wcrm-fade-left  { opacity:0; transform:translate3d(-20px, 0, 0); transition:opacity .6s ease,transform .6s ease; will-change: transform, opacity; }
-        .wcrm-fade-right { opacity:0; transform:translate3d(20px, 0, 0);  transition:opacity .6s ease,transform .6s ease; will-change: transform, opacity; }
-        .wcrm-visible    { opacity:1!important; transform:translate3d(0,0,0)!important; }
 
-        @media (max-width: 1024px) {
-          .wcrm-fade-up, .wcrm-fade-left, .wcrm-fade-right,
-          #wcrm-features article, #wcrm-delivery article {
-            opacity: 1 !important;
-            transform: none !important;
-            transition: none !important;
-          }
-        }
-
-        .wcrm-delay-1 { transition-delay:.1s; }
-        .wcrm-delay-2 { transition-delay:.2s; }
-        .wcrm-delay-3 { transition-delay:.3s; }
-        .wcrm-delay-4 { transition-delay:.4s; }
-
-        /* Keyframe animations */
-        @keyframes wcrmFloat {
-          0%, 100% { transform: translateY(0); }
-          50%      { transform: translateY(-20px); }
-        }
-        @keyframes wcrmFloatSlow {
-          0%   { transform: translateY(0);    }
-          100% { transform: translateY(-15px); }
-        }
-        .wcrm-hero-wrapper {
-          animation: wcrmFloat 6s ease-in-out infinite;
-        }
-        .wcrm-hero-img {
-          transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
-          transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
-        }
-        .wcrm-hero-img:hover {
-          transform: perspective(1000px) rotateY(0) rotateX(0);
-        }
-        .wcrm-float-slow { animation:wcrmFloatSlow 8s ease-in-out infinite alternate; }
-
-        /* Text gradient (webkit requires -webkit-text-fill-color which Tailwind omits) */
-        .wcrm-grad-text {
-          background:linear-gradient(135deg,#facc15,#d97706);
-          -webkit-background-clip:text;
-          -webkit-text-fill-color:transparent;
-          background-clip:text;
-        }
-
-        /* CTA Section premium layout styles */
-        .cta-kicker {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 0.4rem 0.85rem;
-            border-radius: 9999px;
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            background: rgba(16, 185, 129, 0.1);
-            color: #047857;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.02em;
-            margin-bottom: 1.25rem;
-        }
-        .cta-pulse {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #10b981;
-            box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
-            animation: cta-pulse 1.8s ease-out infinite;
-        }
-        @keyframes cta-pulse {
-            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.55); }
-            70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
-        }
-        .cta-checks {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            margin: 0 0 2rem;
-            padding: 0;
-        }
-        .cta-checks li {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: #0f172a;
-            font-size: 0.98rem;
-            font-weight: 500;
-        }
-        .cta-checks svg {
-            width: 18px;
-            height: 18px;
-            color: #10b981;
-            flex-shrink: 0;
-        }
-        .cta-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-        .cta-chat {
-            width: 100%;
-            max-width: 380px;
-            border-radius: 20px;
-            background: #ffffff;
-            border: 1px solid rgba(15, 23, 42, 0.1);
-            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1);
-            overflow: hidden;
-            animation: cta-float 5s ease-in-out infinite;
-        }
-        @keyframes cta-float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        .cta-chat-bar {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem 1.1rem;
-            border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-            background: #f8fafc;
-        }
-        .cta-chat-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: grid;
-            place-items: center;
-            font-weight: 700;
-            font-size: 0.85rem;
-            color: #0f172a;
-            background: linear-gradient(135deg, #facc15, #d97706);
-        }
-        .cta-chat-bar strong {
-            display: block;
-            color: #0f172a;
-            font-size: 0.95rem;
-        }
-        .cta-chat-bar span {
-            display: block;
-            color: #475569;
-            font-size: 0.75rem;
-        }
-        .cta-bubbles {
-            padding: 1.1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            min-height: 220px;
-            background: #f8fafc;
-        }
-        .cta-bubble {
-            max-width: 90%;
-            padding: 0.75rem 0.9rem;
-            border-radius: 14px;
-            font-size: 0.88rem;
-            line-height: 1.45;
-        }
-        .cta-bubble.in {
-            align-self: flex-start;
-            background: #e2e8f0;
-            color: #0f172a;
-            border-bottom-left-radius: 4px;
-        }
-        .cta-bubble.ai {
-            align-self: stretch;
-            background: rgba(250, 204, 21, 0.12);
-            border: 1px solid rgba(212, 175, 55, 0.45);
-            color: #713f12;
-        }
-        .cta-ai-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            margin-bottom: 0.4rem;
-            color: #b45309;
-            font-size: 0.72rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-        }
-        .cta-ai-label svg {
-            width: 12px;
-            height: 12px;
-        }
-        .cta-bubble.out {
-            align-self: flex-end;
-            background: #10b981;
-            color: #ffffff;
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 0.4rem 0.75rem;
-            border-radius: 9999px;
-            max-width: none;
-        }
-        .cta-compose {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0.75rem;
-            margin: 0 1rem 1rem;
-            padding: 0.7rem 0.85rem;
-            border-radius: 12px;
-            background: #ffffff;
-            border: 1px solid rgba(15, 23, 42, 0.1);
-            color: #94a3b8;
-            font-size: 0.85rem;
-        }
-        .cta-spark {
-            width: 34px;
-            height: 34px;
-            border: none;
-            border-radius: 10px;
-            display: grid;
-            place-items: center;
-            background: rgba(212, 175, 55, 0.18);
-            color: #b45309;
-            cursor: default;
-        }
-        .cta-spark svg {
-            width: 16px;
-            height: 16px;
-        }
-      `}</style>
 
       {/* ════════════════════════════════════════════════════════
           PAGE WRAPPER
@@ -1192,9 +964,9 @@ export default function WhatsAppCRMSoftware() {
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* Left: cta copy */}
-                <div className="cta-copy text-center lg:text-left flex flex-col items-center lg:items-start">
-                  <div className="cta-kicker">
-                    <span className="cta-pulse"></span>
+                <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
+                  <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-800 text-xs font-semibold tracking-wide mb-5">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
                     Live on WhatsApp Business API
                   </div>
                   <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1.2] font-bold mb-4 text-[#0f172a]">
@@ -1204,22 +976,22 @@ export default function WhatsAppCRMSoftware() {
                     Shared inbox, AI drafts from your knowledge base, Meta-safe broadcasts — one CRM your team can host and own.
                   </p>
                   
-                  <ul className="cta-checks mb-8 w-fit mx-auto lg:mx-0 text-left">
-                    <li className="flex items-center gap-3 justify-start">
+                  <ul className="list-none flex flex-col gap-3 mb-8 w-fit mx-auto lg:mx-0 text-left p-0">
+                    <li className="flex items-center gap-3 justify-start text-[#0f172a] text-[0.98rem] font-medium">
                       <IconCheck />
                       <span>Reply-first shared inbox</span>
                     </li>
-                    <li className="flex items-center gap-3 justify-start">
+                    <li className="flex items-center gap-3 justify-start text-[#0f172a] text-[0.98rem] font-medium">
                       <IconCheck />
                       <span>AI suggest + auto-reply</span>
                     </li>
-                    <li className="flex items-center gap-3 justify-start">
+                    <li className="flex items-center gap-3 justify-start text-[#0f172a] text-[0.98rem] font-medium">
                       <IconCheck />
                       <span>Delivery filters &amp; resume pending</span>
                     </li>
                   </ul>
 
-                  <div className="cta-actions justify-center lg:justify-start">
+                  <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                     <button
                       onClick={() => setIsModalOpen(true)}
                       className="btn-premium-orange group !text-lg !px-8 !py-4 max-[480px]:w-full max-[480px]:text-center cursor-pointer"
@@ -1241,26 +1013,26 @@ export default function WhatsAppCRMSoftware() {
                 </div>
 
                 {/* Right: cta chat preview mockup */}
-                <div className="cta-preview">
-                  <div className="cta-chat">
-                    <div className="cta-chat-bar">
-                      <div className="cta-chat-avatar">PS</div>
+                <div className="w-full max-w-[380px] mx-auto">
+                  <div className="w-full rounded-2xl bg-white border border-slate-900/10 shadow-[0_18px_40px_rgba(15,23,42,0.1)] overflow-hidden">
+                    <div className="flex items-center gap-3 px-6 py-5 border-b border-slate-900/10 bg-slate-50">
+                      <div className="w-10 h-10 rounded-full grid place-items-center font-bold text-[0.85rem] text-[#0f172a] bg-gradient-to-br from-yellow-400 to-amber-600">PS</div>
                       <div>
-                        <strong>Priya Sharma</strong>
-                        <span>Customer reply · just now</span>
+                        <strong className="block text-[#0f172a] text-[0.95rem]">Priya Sharma</strong>
+                        <span className="block text-[#475569] text-[0.75rem]">Customer reply · just now</span>
                       </div>
                     </div>
-                    <div className="cta-bubbles">
-                      <div className="cta-bubble in">Do you have HRMS pricing for 50 seats?</div>
-                      <div className="cta-bubble ai">
-                        <span className="cta-ai-label"><IconSparkles /> AI draft</span>
+                    <div className="p-6 flex flex-col gap-4 min-h-[220px] bg-slate-50">
+                      <div className="max-w-[90%] p-4 rounded-2xl text-[0.88rem] leading-snug self-start bg-slate-200 text-[#0f172a] rounded-bl-none">Do you have HRMS pricing for 50 seats?</div>
+                      <div className="max-w-[90%] p-5 rounded-2xl text-[0.88rem] leading-snug self-stretch bg-amber-500/10 border border-amber-500/40 text-amber-900">
+                        <span className="inline-flex items-center gap-1.5 mb-2.5 text-amber-700 text-[0.72rem] font-bold uppercase tracking-wider"><IconSparkles /> AI draft</span>
                         <p className="text-sm m-0">Yes — for 50 seats we offer Standard and Pro. Want a 14-day trial link or a demo slot this week?</p>
                       </div>
-                      <div className="cta-bubble out">Sent · Read</div>
+                      <div className="self-end bg-emerald-500 text-white text-[0.75rem] font-semibold px-4 py-2 rounded-full max-w-none">Sent · Read</div>
                     </div>
-                    <div className="cta-compose">
+                    <div className="flex items-center justify-between gap-3 mx-5 my-5 p-4 rounded-xl bg-white border border-slate-950/10 text-slate-400 text-[0.85rem]">
                       <span>Type a message…</span>
-                      <button type="button" className="cta-spark" tabIndex={-1}>
+                      <button type="button" className="w-[34px] h-[34px] border-none rounded-lg grid place-items-center bg-amber-500/20 text-amber-800 cursor-default" tabIndex={-1}>
                         <IconSparkles />
                       </button>
                     </div>
