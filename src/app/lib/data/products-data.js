@@ -726,7 +726,7 @@ export const productsData = [
   {
     slug: "posh-compliance-software",
     pageTemplate: "poshact",
-    title: "POSH Act",
+    title: "POSH Compliance Software",
     seoTitle:
       "POSH Compliance Software India | POSH Act 2013 Platform | Internal Committee & HRMS",
     metaDescription:
