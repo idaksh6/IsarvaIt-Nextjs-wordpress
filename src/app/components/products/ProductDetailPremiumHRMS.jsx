@@ -560,23 +560,6 @@ export default function ProductDetailPremiumHRMS({
                       </div>
                     </motion.div>
 
-                    {/* 5. Feature Highlights Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {activeContent.features.map((f, i) => (
-                        <motion.div
-                          key={i}
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: 0.1 * i }}
-                          className={`flex items-center gap-4 p-5 rounded-[24px] bg-white border border-gray-100 ${TAB_THEMES[activeTab].hoverBorder} transition-all group shadow-sm hover:shadow-lg`}
-                        >
-                          <div className={`w-8 h-8 rounded-full ${TAB_THEMES[activeTab].lightBg} flex items-center justify-center ${TAB_THEMES[activeTab].text} transition-colors flex-shrink-0 shadow-inner aspect-square`}>
-                            <span className="text-xs font-black">✓</span>
-                          </div>
-                          <span className="text-[14px] font-extrabold text-gray-700 leading-tight capitalize tracking-tight">{f}</span>
-                        </motion.div>
-                      ))}
-                    </div>
                   </section>
 
                   {/* 5. Feature Spotlight Section Integrated into Tab Content */}

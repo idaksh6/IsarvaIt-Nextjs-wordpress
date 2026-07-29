@@ -23,7 +23,6 @@ import ProductDetailPremiumAssociation from "../../components/products/ProductDe
 import ProductDetailPremiumWooCommerceOld from "../../components/products/ProductDetailPremiumWooCommerceOld";
 
 import ProductDetailPremiumHRMS from "../../components/products/ProductDetailPremiumHRMS";
-import ProductDetailPremiumHRMSV2 from "../../components/products/ProductDetailPremiumHRMSV2";
 import ProductDetailPremiumPoshact from "../../components/products/ProductDetailPremiumPoshact";
 import ProductDetailPremiumLMS from "../../components/products/ProductDetailPremiumLMS";
 import ProductDetailPremiumAnalytics from "../../components/products/ProductDetailPremiumAnalytics";
@@ -33,7 +32,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Use Staging View for HRMS Software (Now Live)
-  if (product.slug === 'hrms-software' || product.slug === 'hrms-software-staging') {
+  if (product.slug === 'hrms-software') {
     return (
       <ProductDetailPremiumHRMS 
         product={product} 

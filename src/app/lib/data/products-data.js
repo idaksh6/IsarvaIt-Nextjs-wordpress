@@ -934,7 +934,6 @@ export const getProductBySlug = (slug) => {
 
 export const getAllProductSlugs = () => {
   const slugs = productsData.map((product) => product.slug);
-  slugs.push("hrms-software-staging");
   return slugs;
 };
 
