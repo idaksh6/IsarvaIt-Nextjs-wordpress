@@ -621,38 +621,89 @@ export default function WhatsAppCRMSoftware() {
         {/* ══════════════════════════════════════════
             AI AGENTS SECTION
         ══════════════════════════════════════════ */}
-        <section id="wcrm-ai" className="relative overflow-hidden bg-white py-12 lg:py-16">
+        <section id="wcrm-ai" className="relative overflow-hidden bg-white py-8 lg:py-12">
           <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              {/* Left Column: detailed list */}
-              <div className="wcrm-fade-left text-center lg:text-left">
-                {/* Mobile-only Image (Image -> Cards layout) */}
-                <div className="block lg:hidden my-8 max-w-[500px] sm:max-w-[550px] mx-auto w-full">
-                  <div className="relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] cursor-pointer"
-                    onClick={() => setPreviewImage("/whatsapp-crm/ai.png")}>
-                    <Image
-                      src="/whatsapp-crm/ai.png"
-                      alt="wacrm AI auto-reply settings and knowledge base"
-                      width={600}
-                      height={450}
-                      className="w-full block transition-transform duration-500 group-hover:scale-[1.03]"
-                    />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
-                      <div className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-300">
-                        <IconMaximize />
-                      </div>
+
+
+            {/* Section heading (desktop: left-aligned, mobile: centered) */}
+            <div className="wcrm-fade-up text-center lg:text-left mb-6 max-w-7xl mx-auto w-full">
+              <div className="inline-block text-sm font-semibold capitalize tracking-[0.05em] mb-1.5 text-[#6366f1] w-full text-center lg:text-left">
+                Built-in AI Agents
+              </div>
+              <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.2] font-bold mb-2 text-[#0f172a] text-center lg:text-left">
+                Reply faster with{" "}
+                <span style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>knowledge-aware AI</span>
+              </h2>
+              <p className="text-base text-[#475569] leading-[1.7] max-w-2xl lg:max-w-none mx-auto lg:mx-0 text-center lg:text-left">
+                wacrm uses your knowledge base with Gemini, Groq, or OpenAI — for inbox drafts and automatic first replies across channels.
+              </p>
+            </div>
+
+            {/* Mobile-only Image (Shown below heading on mobile, hidden on desktop) */}
+            <div className="block lg:hidden my-6 max-w-[550px] mx-auto w-full">
+              <div className="relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_20px_40px_-8px_rgba(0,0,0,0.25)] cursor-pointer"
+                onClick={() => setPreviewImage("/whatsapp-crm/ai.png")}>
+                <Image
+                  src="/whatsapp-crm/ai.png"
+                  alt="wacrm AI auto-reply settings and knowledge base"
+                  width={600}
+                  height={450}
+                  className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
+                  <div className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-300">
+                    <IconMaximize />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Main layout: Balanced 2-column grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-4 items-stretch w-full max-w-7xl mx-auto">
+
+              {/* Left Column: 3 Stacked Cards */}
+              <div className="flex flex-col gap-4 h-full wcrm-fade-left">
+                {aiFeatures.slice(0, 3).map((item, i) => (
+                  <div key={i} className="flex flex-col items-center text-center justify-center gap-2 p-5 bg-white border-2 border-[#6366f1]/25 hover:border-[#6366f1]/65 rounded-xl shadow-[0_8px_30px_rgba(99,102,241,0.06)] hover:shadow-[0_12px_36px_rgba(99,102,241,0.14)] transition-all duration-300 flex-1">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[rgba(99,102,241,0.1)] text-[#6366f1] flex-shrink-0">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-[#0f172a] mb-0.5">{item.title}</h3>
+                      <p className="text-base text-[#475569] leading-[1.6] mb-0">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Right Column: Desktop-only Image + 2-Column Row of remaining 2 Cards */}
+              <div className="flex flex-col gap-6 wcrm-fade-right w-full">
+                {/* Desktop-only Image Wrapper */}
+                <div className="hidden lg:block relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_20px_40px_-8px_rgba(0,0,0,0.25)] cursor-pointer w-full"
+                  onClick={() => setPreviewImage("/whatsapp-crm/ai.png")}>
+                  <Image
+                    src="/whatsapp-crm/ai.png"
+                    alt="wacrm AI auto-reply settings and knowledge base"
+                    width={600}
+                    height={450}
+                    className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
+                    <div className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-300">
+                      <IconMaximize />
                     </div>
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-6">
-                  {aiFeatures.map((item, i) => (
-                    <div key={i} className="flex flex-col lg:flex-row gap-5 items-center text-center lg:text-left p-5 bg-white border border-slate-200/80 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:border-[#d4af37]/40 transition-all duration-300 w-full">
-                      <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 rounded-xl bg-[rgba(212,175,55,0.1)] text-[#d4af37]">
+                {/* 2 Cards side-by-side row */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch">
+                  {aiFeatures.slice(3, 5).map((item, i) => (
+                    <div key={i} className="flex flex-col items-center text-center justify-center gap-2 p-5 bg-white border-2 border-[#6366f1]/25 hover:border-[#6366f1]/65 rounded-xl shadow-[0_8px_30px_rgba(99,102,241,0.06)] hover:shadow-[0_12px_36px_rgba(99,102,241,0.14)] transition-all duration-300 flex-1">
+                      <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[rgba(99,102,241,0.1)] text-[#6366f1] flex-shrink-0">
                         {item.icon}
                       </div>
                       <div>
-                        <h4 className="text-[1.1rem] font-bold text-[#0f172a] mb-1">{item.title}</h4>
+                        <h3 className="font-bold text-[#0f172a] mb-0.5">{item.title}</h3>
                         <p className="text-base text-[#475569] leading-[1.6] mb-0">{item.desc}</p>
                       </div>
                     </div>
@@ -660,41 +711,6 @@ export default function WhatsAppCRMSoftware() {
                 </div>
               </div>
 
-              {/* Right Column: Text + Visual Frame */}
-              <div className="wcrm-fade-right text-center lg:text-left flex flex-col gap-8">
-                {/* Text headings */}
-                <div>
-                  <div className="inline-block text-sm font-semibold capitalize tracking-[0.05em] mb-4 text-[#d4af37]">
-                    Built-in AI Agents
-                  </div>
-                  <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.2] font-bold mb-4 text-[#0f172a]">
-                    Reply faster with{" "}
-                    <span className="wcrm-grad-text">knowledge-aware AI</span>
-                  </h2>
-                  <p className="text-lg text-[#475569] leading-[1.7]">
-                    wacrm uses your knowledge base with Gemini, Groq, or OpenAI — for inbox drafts and automatic first replies across channels.
-                  </p>
-                </div>
-
-                {/* Right: visual frame */}
-                <div className="hidden lg:block relative max-w-[500px] sm:max-w-[550px] lg:max-w-none mx-auto w-full">
-                  <div className="relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] cursor-pointer"
-                    onClick={() => setPreviewImage("/whatsapp-crm/ai.png")}>
-                    <Image
-                      src="/whatsapp-crm/ai.png"
-                      alt="wacrm AI auto-reply settings and knowledge base"
-                      width={600}
-                      height={450}
-                      className="w-full block transition-transform duration-500 group-hover:scale-[1.03]"
-                    />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
-                      <div className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-300">
-                        <IconMaximize />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -704,95 +720,71 @@ export default function WhatsAppCRMSoftware() {
         ══════════════════════════════════════════ */}
         <section
           id="wcrm-automations"
-          className="relative overflow-hidden bg-[#f1f5f9] py-12 lg:py-16"
+          className="relative overflow-hidden bg-[#f1f5f9] py-8 lg:py-12"
         >
           <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              {/* Left Column: Text + Visual Frame */}
-              <div className="wcrm-fade-left text-center lg:text-left flex flex-col gap-8">
-                {/* Text headings */}
-                <div>
-                  <div className="inline-block text-sm font-semibold capitalize tracking-[0.05em] mb-4 text-[#d4af37]">
-                    Advanced Automation Flows
-                  </div>
-                  <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.2] font-bold mb-4 text-[#0f172a]">
-                    Put your support &amp; sales on{" "}
-                    <span className="wcrm-grad-text">autopilot</span>
-                  </h2>
-                  <p className="text-lg text-[#475569] leading-[1.7]">
-                    Design complex, multi-step customer journeys using our intuitive visual
-                    flow builder. From simple auto-replies to advanced lead qualification engines.
-                  </p>
-                </div>
+            <div className="grid grid-cols-1 lg:grid-cols-[1.18fr_1fr] gap-8 items-center">
 
-                {/* Left: flow image */}
-                <div className="hidden lg:block relative max-w-[500px] sm:max-w-[550px] lg:max-w-none mx-auto w-full">
-                  <div aria-hidden="true"
-                    className="absolute pointer-events-none rounded-full opacity-50 blur-[80px] z-0
-                                  w-[400px] h-[400px] bg-[rgba(167,139,250,0.2)] top-[20%] -left-[20%]" />
-                  <div className="relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] cursor-pointer"
-                    onClick={() => setPreviewImage("/whatsapp-crm/flow.png")}>
-                    <Image
-                      src="/whatsapp-crm/flow.png"
-                      alt="Visual automation flow builder with drag-and-drop nodes"
-                      width={600}
-                      height={450}
-                      className="wcrm-float-slow w-full block transition-transform duration-500 group-hover:scale-[1.03]"
-                      style={{ marginBottom: "-24px" }}
-                    />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
-                      <div className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-300">
-                        <IconMaximize />
-                      </div>
-                    </div>
+              {/* Left: Image (Natural aspect-ratio container with border/shadow closely wrapping it) */}
+              <div className="wcrm-fade-left relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_20px_40px_-8px_rgba(0,0,0,0.25)] cursor-pointer w-full self-center"
+                onClick={() => setPreviewImage("/whatsapp-crm/flow.png")}>
+                <Image
+                  src="/whatsapp-crm/flow.png"
+                  alt="Visual automation flow builder with drag-and-drop nodes"
+                  width={680}
+                  height={500}
+                  className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
+                  <div className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-300">
+                    <IconMaximize />
                   </div>
                 </div>
               </div>
 
-              {/* Right Column: detailed list */}
-              <div className="wcrm-fade-right text-center lg:text-left">
-                {/* Mobile-only Image (Image -> Cards layout) */}
-                <div className="block lg:hidden my-8 max-w-[500px] sm:max-w-[550px] mx-auto w-full">
-                  <div className="relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] cursor-pointer"
-                    onClick={() => setPreviewImage("/whatsapp-crm/flow.png")}>
-                    <Image
-                      src="/whatsapp-crm/flow.png"
-                      alt="Visual automation flow builder with drag-and-drop nodes"
-                      width={600}
-                      height={450}
-                      className="wcrm-float-slow w-full block transition-transform duration-500 group-hover:scale-[1.03]"
-                      style={{ marginBottom: "-24px" }}
-                    />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
-                      <div className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-300">
-                        <IconMaximize />
-                      </div>
-                    </div>
+              {/* Right: Heading + 2-col cards grid */}
+              <div className="wcrm-fade-right flex flex-col gap-5">
+
+                {/* Heading */}
+                <div>
+                  <div className="inline-block text-sm font-semibold capitalize tracking-[0.05em] mb-1.5 text-emerald-600">
+                    Advanced Automation Flows
                   </div>
+                  <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.2] font-bold mb-2 text-[#0f172a]">
+                    Put your support &amp; sales on{" "}
+                    <span style={{ background: "linear-gradient(135deg, #10b981, #059669)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>autopilot</span>
+                  </h2>
+                  <p className="text-base text-[#475569] leading-[1.7] mb-0">
+                    Design complex, multi-step customer journeys using our intuitive visual flow builder — from simple auto-replies to advanced lead qualification engines.
+                  </p>
                 </div>
 
-                <div className="flex flex-col gap-6">
-                  {automationFeatures.map((item) => (
-                    <div key={item.title} className="flex flex-col lg:flex-row gap-5 items-center text-center lg:text-left p-5 bg-white border border-slate-200/80 rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:border-[#d4af37]/40 transition-all duration-300 w-full">
-                      <div
-                        aria-hidden="true"
-                        className="flex items-center justify-center flex-shrink-0
-                                   w-12 h-12 rounded-xl
-                                   bg-[rgba(212,175,55,0.1)] text-[#d4af37]"
-                      >
+                {/* Cards grid (1 per row on mobile, 2 per row on sm+) */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch flex-1">
+                  {automationFeatures.slice(0, 4).map((item, i) => (
+                    <div key={i} className="flex flex-col items-center text-center justify-center gap-2 p-4 bg-white border-2 border-emerald-500/20 hover:border-emerald-500/55 rounded-xl shadow-[0_8px_30px_rgba(16,185,129,0.06)] hover:shadow-[0_12px_36px_rgba(16,185,129,0.14)] transition-all duration-300">
+                      <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-emerald-50 text-emerald-600 flex-shrink-0">
                         {item.icon}
                       </div>
                       <div>
-                        <h4 className="text-[1.1rem] font-bold text-[#0f172a] mb-1">
-                          {item.title}
-                        </h4>
-                        <p className="text-base text-[#475569] leading-[1.6] mb-0">
-                          {item.desc}
-                        </p>
+                        <h3 className="font-bold text-[#0f172a] mb-0.5">{item.title}</h3>
+                        <p className="text-base text-[#475569] leading-[1.6] mb-0">{item.desc}</p>
                       </div>
                     </div>
                   ))}
                 </div>
+
+                {/* 5th card — center-aligned column on mobile, row text-left on sm+ */}
+                <div className="flex flex-col sm:flex-row items-center gap-4 p-4 bg-white border-2 border-emerald-500/20 hover:border-emerald-500/55 rounded-xl shadow-[0_8px_30px_rgba(16,185,129,0.06)] hover:shadow-[0_12px_36px_rgba(16,185,129,0.14)] transition-all duration-300">
+                  <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-emerald-50 text-emerald-600 flex-shrink-0">
+                    {automationFeatures[4].icon}
+                  </div>
+                  <div className="text-center sm:text-left">
+                    <h3 className="font-bold text-[#0f172a] mb-0.5">{automationFeatures[4].title}</h3>
+                    <p className="text-base text-[#475569] leading-[1.6] mb-0">{automationFeatures[4].desc}</p>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
