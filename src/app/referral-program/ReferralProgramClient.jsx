@@ -194,7 +194,7 @@ export default function ReferralProgramClient() {
           message: formData.message || "Request to join the Referral Program.",
           pageType: "Referral Program",
           itemName: "Referral Program",
-          categoryId: 43
+          categoryId: 60
         })
       });
 

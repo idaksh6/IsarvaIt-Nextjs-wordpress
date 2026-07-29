@@ -244,7 +244,7 @@ export default function TrainingProgramsPremium() {
       message: combinedMessage,
       pageType: "Training",
       itemName: formData.course || "",
-      categoryId: 45,
+      categoryId: 62,
     };
 
     try {

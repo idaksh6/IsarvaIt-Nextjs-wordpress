@@ -79,7 +79,7 @@ export default function PartnerFormSection({
         message: `[Selected Tier: ${formData.tier}]\n\n${formData.message}`,
         pageType: "Partner",
         itemName: formData.tier,
-        categoryId: 44
+        categoryId: 61
       };
 
       const response = await fetch('/api/contact', {
