@@ -476,7 +476,7 @@ export default function ReferralProgramClient() {
                       Any specific requirements? (optional)
                     </label>
                     <div className="relative flex items-start">
-                      <span className="absolute left-3.5 top-4 text-gray-400 pointer-events-none">
+                      <span className="absolute left-3.5 top-[1.1rem] text-gray-400 pointer-events-none">
                         <MessageSquare className="w-4 h-4" />
                       </span>
                       <textarea
