@@ -609,7 +609,7 @@ export const productsData = [
   },
   {
     slug: "godown-management-software",
-    title: "Smart Godown & Inventory Management System",
+    title: "Smart Godown and Inventory Management System",
     ogImage: "/products/godown/Dashboard.jpg",
     category: "Warehouse Management",
     icon: "📦",
