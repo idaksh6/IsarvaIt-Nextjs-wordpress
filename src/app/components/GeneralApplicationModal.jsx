@@ -72,6 +72,13 @@ export default function GeneralApplicationModal({ isOpen, onClose }) {
     setErrorMessage("");
 
     try {
+      if (!resume) {
+        setSubmitStatus("error");
+        setIsSubmitting(false);
+        setErrorMessage("Please attach your resume before submitting.");
+        return;
+      }
+
       // Create FormData for file upload
       const submitData = new FormData();
       submitData.append('name', formData.name);

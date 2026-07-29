@@ -70,6 +70,13 @@ export default function CareerApplicationForm({ jobTitle, jobSlug }) {
     setErrorMessage("");
 
     try {
+      if (!resume) {
+        setSubmitStatus("error");
+        setIsSubmitting(false);
+        setErrorMessage("Please attach your resume before submitting.");
+        return;
+      }
+
       // Create FormData for file upload
       const submitData = new FormData();
       submitData.append('name', formData.name);
@@ -204,7 +211,7 @@ export default function CareerApplicationForm({ jobTitle, jobSlug }) {
       {/* Resume Upload */}
       <div>
         <label htmlFor="resume" className="block text-sm font-semibold text-gray-900 mb-2">
-          Attach Resume (PDF or Word, Max 5MB)
+          Attach Resume * (PDF or Word, Max 5MB)
         </label>
         <div className="relative">
           <input

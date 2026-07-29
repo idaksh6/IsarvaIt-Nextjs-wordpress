@@ -233,7 +233,7 @@ export default function ProductDetailPremiumAnalytics({ product, relatedProducts
                     {HERO_SLIDES.map((slide, idx) => (
                       <img
                         key={idx}
-                        className={`absolute inset-0 w-full h-full object-cover object-top bg-white transition-opacity duration-1000 cursor-zoom-in ${idx === activeSlide ? "opacity-100 z-10" : "opacity-0 z-0"}`}
+                        className={`absolute inset-0 w-full h-full object-contain object-top bg-white transition-opacity duration-1000 cursor-zoom-in ${idx === activeSlide ? "opacity-100 z-10" : "opacity-0 z-0"}`}
                         src={`${SS}${slide.src}`}
                         alt={slide.label}
                         onClick={() => setLightboxImage(`${SS}${slide.src}`)}
@@ -356,7 +356,7 @@ export default function ProductDetailPremiumAnalytics({ product, relatedProducts
                   <img
                     src={`${SS}${MODULES[activeMod].image}`}
                     alt={MODULES[activeMod].name}
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-contain object-top"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover/preview:bg-black/5 transition-colors flex items-center justify-center">
                     <span className="opacity-0 group-hover/preview:opacity-100 bg-white/95 backdrop-blur shadow-md text-slate-800 font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-1.5 transition-all duration-300">
