@@ -102,6 +102,7 @@ export default function PartnerFormSection({
           router.push(`/thank-you?type=partner&item=${encodeURIComponent(formData.tier)}`);
         }, 1500);
       } else {
+        setSubmitStatus("error");
         setErrorMessage("");
 
         let friendlyError = "Something went wrong. Please try again.";

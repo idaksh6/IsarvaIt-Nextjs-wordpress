@@ -210,11 +210,37 @@ export default function ReferralProgramClient() {
         }, 1500);
       } else {
         setSubmitStatus("error");
-        setErrorMessage(
-          typeof data.error === "string"
-            ? data.error
-            : "Something went wrong. Please try again."
-        );
+        
+        let friendlyError = "Something went wrong. Please try again.";
+        if (typeof data.error === "string") {
+          try {
+            if (data.error.includes("{")) {
+              const jsonStr = data.error.substring(data.error.indexOf("{"));
+              const errorObj = JSON.parse(jsonStr);
+              if (errorObj.message) {
+                friendlyError = errorObj.message;
+                if (friendlyError.includes("already registered")) {
+                  friendlyError = "This Email or Mobile number is already registered for this request.";
+                }
+              }
+            } else if (data.error.toLowerCase().includes("mobile") || data.error.toLowerCase().includes("phone")) {
+              friendlyError = (data.error.toLowerCase().includes("registered") || data.error.toLowerCase().includes("taken")) 
+                ? "This phone number is already registered." 
+                : "Please enter a valid phone number.";
+            } else if (data.error.toLowerCase().includes("email")) {
+              friendlyError = (data.error.toLowerCase().includes("registered") || data.error.toLowerCase().includes("taken")) 
+                ? "This email address is already registered." 
+                : "Please enter a valid email address.";
+            } else {
+              friendlyError = data.error;
+            }
+          } catch (e) {
+            friendlyError = data.error;
+          }
+        }
+
+        friendlyError = friendlyError.replace(/CRM API error \(\d+\):\s*/g, "");
+        setErrorMessage(friendlyError);
       }
     } catch {
       setSubmitStatus("error");

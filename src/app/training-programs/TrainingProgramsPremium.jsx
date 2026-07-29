@@ -264,17 +264,36 @@ export default function TrainingProgramsPremium() {
         // Redirect to thank-you page
         router.push("/thank-you?type=training&item=" + encodeURIComponent(formData.course || "Training Programs"));
       } else {
-        // Parse CRM error into a user-friendly message
-        let friendly = "Something went wrong. Please try again.";
+        setFormStatus("error");
+        
+        let friendlyError = "Something went wrong. Please try again.";
         if (typeof data.error === "string") {
-          if (data.error.includes("already registered")) {
-            friendly = "This email or mobile number is already registered.";
-          } else {
-            friendly = data.error.replace(/CRM API error \(\d+\):\s*/g, "");
+          try {
+            if (data.error.includes("{")) {
+              const jsonStr = data.error.substring(data.error.indexOf("{"));
+              const errorObj = JSON.parse(jsonStr);
+              if (errorObj.message) {
+                friendlyError = errorObj.message;
+                if (friendlyError.includes("already registered")) {
+                  friendlyError = "This Email or Mobile number is already registered for this request.";
+                }
+              }
+            } else if (data.error.toLowerCase().includes("mobile") || data.error.toLowerCase().includes("phone")) {
+              friendlyError = (data.error.toLowerCase().includes("registered") || data.error.toLowerCase().includes("taken")) 
+                ? "This phone number is already registered." 
+                : "Please enter a valid phone number.";
+            } else if (data.error.toLowerCase().includes("email")) {
+              friendlyError = (data.error.toLowerCase().includes("registered") || data.error.toLowerCase().includes("taken")) 
+                ? "This email address is already registered." 
+                : "Please enter a valid email address.";
+            } else {
+              friendlyError = data.error;
+            }
+          } catch (e) {
+            friendlyError = data.error;
           }
         }
-        setFormStatus("error");
-        setErrorMessage(friendly);
+        setErrorMessage(friendlyError);
         setTimeout(() => { setFormStatus(null); setErrorMessage(""); }, 7000);
       }
     } catch {
