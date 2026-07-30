@@ -22,7 +22,7 @@ function getJpegSize(filePath) {
 }
 
 try {
-  const size = getJpegSize('public/whatsapp-crm/analytics.jpg');
+  const size = getJpegSize('public/products/whatsapp-crm/analytics.jpg');
   console.log('Size:', size);
 } catch (e) {
   console.error(e);

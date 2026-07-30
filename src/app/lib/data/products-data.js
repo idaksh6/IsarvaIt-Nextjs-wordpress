@@ -888,7 +888,7 @@ export const productsData = [
     title: "WhatsApp CRM Software",
     seoTitle: "WhatsApp CRM Software",
     metaDescription: "Self-hosted WhatsApp CRM with shared inbox, visual automations, broadcasts, and real-time analytics designed for modern teams.",
-    ogImage: "/whatsapp-crm/hero.jpg",
+    ogImage: "/products/whatsapp-crm/hero.jpg",
     category: "Communication",
     icon: "💬",
     tagline: "Self-hosted WhatsApp CRM Workspace",

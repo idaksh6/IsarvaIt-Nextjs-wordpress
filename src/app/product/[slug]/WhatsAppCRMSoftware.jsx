@@ -254,7 +254,27 @@ function IconFileSpreadsheet() {
    minimal <style> block below.
  ───────────────────────────────────────────────────────────────*/
 function useScrollReveal() {
-  // Disabled to check if animations are the issue
+  useEffect(() => {
+    const targets = document.querySelectorAll(
+      ".wcrm-fade-up, .wcrm-fade-left, .wcrm-fade-right"
+    );
+    if (!targets.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("wcrm-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    );
+
+    targets.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -509,29 +529,69 @@ export default function WhatsAppCRMSoftware() {
     <>
       {/* ── Minimal scoped CSS — only what Tailwind cannot express ── */}
       <style>{`
-        /* Scroll-reveal states */
-        .wcrm-fade-up    { opacity: 1 !important; transform: none !important; transition: none !important; }
-        .wcrm-fade-left  { opacity: 1 !important; transform: none !important; transition: none !important; }
-        .wcrm-fade-right { opacity: 1 !important; transform: none !important; transition: none !important; }
-        .wcrm-visible    { opacity: 1 !important; transform: none !important; transition: none !important; }
-        .wcrm-delay-1    { transition-delay: 0s !important; }
-        .wcrm-delay-2    { transition-delay: 0s !important; }
-        .wcrm-delay-3    { transition-delay: 0s !important; }
-        .wcrm-delay-4    { transition-delay: 0s !important; }
+        /* ── Keyframe definitions ───────────────────────────────────── */
+        @keyframes wcrm-float {
+          0%, 100% { transform: translateY(0px); }
+          50%       { transform: translateY(-10px); }
+        }
+        @keyframes wcrm-drift {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          33%       { transform: translateY(-6px) rotate(0.3deg); }
+          66%       { transform: translateY(4px) rotate(-0.3deg); }
+        }
+        @keyframes wcrm-pulse-ring {
+          0%   { transform: scale(1);   opacity: 0.5; }
+          100% { transform: scale(1.6); opacity: 0; }
+        }
+        @keyframes wcrm-shimmer {
+          0%   { background-position: -200% center; }
+          100% { background-position:  200% center; }
+        }
 
-        /* Keyframe animations */
+        /* ── Scroll-reveal base (hidden before visible) ─────────────── */
+        .wcrm-fade-up {
+          opacity: 0;
+          transform: translateY(32px);
+          transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1),
+                      transform 0.65s cubic-bezier(0.22,1,0.36,1);
+        }
+        .wcrm-fade-left {
+          opacity: 0;
+          transform: translateX(-36px);
+          transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1),
+                      transform 0.65s cubic-bezier(0.22,1,0.36,1);
+        }
+        .wcrm-fade-right {
+          opacity: 0;
+          transform: translateX(36px);
+          transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1),
+                      transform 0.65s cubic-bezier(0.22,1,0.36,1);
+        }
+
+        /* ── Revealed state ─────────────────────────────────────────── */
+        .wcrm-visible {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+
+        /* ── Staggered delays ───────────────────────────────────────── */
+        .wcrm-delay-1 { transition-delay: 0.08s; }
+        .wcrm-delay-2 { transition-delay: 0.18s; }
+        .wcrm-delay-3 { transition-delay: 0.28s; }
+        .wcrm-delay-4 { transition-delay: 0.38s; }
+
+        /* ── Hero image wrapper: subtle drift ───────────────────────── */
         .wcrm-hero-wrapper {
-          animation: none !important;
+          animation: wcrm-drift 8s ease-in-out infinite;
         }
         .wcrm-hero-img {
-          transform: none !important;
-          transition: none !important;
+          transition: transform 0.5s ease;
         }
         .wcrm-hero-img:hover {
-          transform: none !important;
+          transform: scale(1.02);
         }
         .wcrm-float-slow {
-          animation: none !important;
+          animation: wcrm-float 6s ease-in-out infinite;
         }
 
         /* Glass image style */
@@ -610,8 +670,8 @@ export default function WhatsAppCRMSoftware() {
                 </div>
 
                 {/* Hero features list */}
-                <div className="flex flex-wrap gap-8 mt-12 justify-center lg:justify-start">
-                  <div className="flex items-center gap-2 text-[0.9rem] font-medium text-[#475569]">
+                <div className="flex flex-wrap sm:flex-nowrap gap-3 mt-12 justify-center lg:justify-start">
+                  <div className="flex items-center gap-2.5 px-5 py-3 rounded-full border border-[rgba(212,175,55,0.25)] bg-white/90 text-[0.9rem] font-semibold text-[#0f172a] whitespace-nowrap shadow-[0_4px_16px_rgba(212,175,55,0.06)] transition-all duration-300 hover:shadow-[0_8px_24px_rgba(212,175,55,0.14)] hover:border-[rgba(212,175,55,0.55)] hover:-translate-y-0.5">
                     <span className="text-[#d4af37] flex-shrink-0">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                         <polyline points="22 12 16 12 14 15 10 15 8 12 2 12" />
@@ -620,7 +680,7 @@ export default function WhatsAppCRMSoftware() {
                     </span>
                     Shared team inbox
                   </div>
-                  <div className="flex items-center gap-2 text-[0.9rem] font-medium text-[#475569]">
+                  <div className="flex items-center gap-2.5 px-5 py-3 rounded-full border border-[rgba(212,175,55,0.25)] bg-white/90 text-[0.9rem] font-semibold text-[#0f172a] whitespace-nowrap shadow-[0_4px_16px_rgba(212,175,55,0.06)] transition-all duration-300 hover:shadow-[0_8px_24px_rgba(212,175,55,0.14)] hover:border-[rgba(212,175,55,0.55)] hover:-translate-y-0.5">
                     <span className="text-[#d4af37] flex-shrink-0">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                         <path d="m3 11 18-5v12L3 14v-3z" />
@@ -629,13 +689,13 @@ export default function WhatsAppCRMSoftware() {
                     </span>
                     Template broadcasts
                   </div>
-                  <div className="flex items-center gap-2 text-[0.9rem] font-medium text-[#475569]">
+                  <div className="flex items-center gap-2.5 px-5 py-3 rounded-full border border-[rgba(212,175,55,0.25)] bg-white/90 text-[0.9rem] font-semibold text-[#0f172a] whitespace-nowrap shadow-[0_4px_16px_rgba(212,175,55,0.06)] transition-all duration-300 hover:shadow-[0_8px_24px_rgba(212,175,55,0.14)] hover:border-[rgba(212,175,55,0.55)] hover:-translate-y-0.5">
                     <span className="text-[#d4af37] flex-shrink-0">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                         <path d="M6 5v11" /><path d="M12 5v5" /><path d="M18 5v8" /><rect width="4" height="18" x="2" y="3" rx="1" /><rect width="4" height="12" x="10" y="3" rx="1" /><rect width="4" height="14" x="18" y="3" rx="1" />
                       </svg>
                     </span>
-                    Pipelines & deals
+                    Pipelines &amp; deals
                   </div>
                 </div>
               </div>
@@ -651,7 +711,7 @@ export default function WhatsAppCRMSoftware() {
                                 w-[300px] h-[300px] bg-[rgba(59,130,246,0.25)] -bottom-[10%] -left-[10%]" />
                 <div className="wcrm-hero-img relative group overflow-hidden rounded-xl border border-[rgba(0,0,0,0.05)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)]">
                   <Image
-                    src="/whatsapp-crm/hero.jpg"
+                    src="/products/whatsapp-crm/hero.jpg"
                     alt="WhatsApp CRM Dashboard showing shared inbox, pipeline and analytics"
                     width={640}
                     height={480}
@@ -800,7 +860,7 @@ export default function WhatsAppCRMSoftware() {
                 </div>
 
                 <Image
-                  src="/whatsapp-crm/inbox.png"
+                  src="/products/whatsapp-crm/inbox.jpg"
                   alt="wacrm shared inbox with conversation list and message thread"
                   width={1200}
                   height={900}
@@ -841,7 +901,7 @@ export default function WhatsAppCRMSoftware() {
               {/* Left: Image (Natural aspect-ratio container with border/shadow closely wrapping it) */}
               <div className="wcrm-fade-left relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_20px_40px_-8px_rgba(0,0,0,0.25)] w-full self-center">
                 <Image
-                  src="/whatsapp-crm/flow.png"
+                  src="/products/whatsapp-crm/flow.jpg"
                   alt="Visual automation flow builder with drag-and-drop nodes"
                   width={680}
                   height={500}
@@ -895,7 +955,7 @@ export default function WhatsAppCRMSoftware() {
                 </div>
 
                 <Image
-                  src="/whatsapp-crm/ai.png"
+                  src="/products/whatsapp-crm/ai.jpg"
                   alt="AI auto-reply and knowledge base settings"
                   width={1200}
                   height={900}
@@ -996,7 +1056,7 @@ export default function WhatsAppCRMSoftware() {
                 <div className="block lg:hidden my-8 max-w-[500px] sm:max-w-[550px] mx-auto w-full">
                   <div className="relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] aspect-square">
                     <Image
-                      src="/whatsapp-crm/analytics.jpg"
+                      src="/products/whatsapp-crm/analytics.jpg"
                       alt="WhatsApp CRM analytics dashboard with charts and performance metrics"
                       width={600}
                       height={450}
@@ -1038,7 +1098,7 @@ export default function WhatsAppCRMSoftware() {
                                 w-[500px] h-[500px] bg-[rgba(245,158,11,0.2)] bottom-0 -right-[20%]" />
                 <div className="relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] aspect-square">
                   <Image
-                    src="/whatsapp-crm/analytics.jpg"
+                    src="/products/whatsapp-crm/analytics.jpg"
                     alt="WhatsApp CRM analytics dashboard with charts and performance metrics"
                     width={600}
                     height={450}
