@@ -254,23 +254,7 @@ function IconFileSpreadsheet() {
    minimal <style> block below.
  ───────────────────────────────────────────────────────────────*/
 function useScrollReveal() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("wcrm-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { root: null, rootMargin: "0px", threshold: 0.12 }
-    );
-    document
-      .querySelectorAll(".wcrm-fade-up, .wcrm-fade-left, .wcrm-fade-right")
-      .forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
+  // Disabled to check if animations are the issue
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -317,35 +301,37 @@ export default function WhatsAppCRMSoftware() {
   };
 
   const features = [
-    { icon: <IconUsers />, grad: "emerald", title: "Shared Inbox", desc: "Multiple agents, one number. Assign chats, leave internal notes, and never miss a customer reply." },
-    { icon: <IconKanban />, grad: "violet", title: "Sales Pipelines", desc: "Track deals across a visual Kanban board. Connect every deal directly to the WhatsApp conversation." },
-    { icon: <IconMegaphone />, grad: "amber", title: "Smart Broadcasts", desc: "Send Meta-approved templates at scale. Resume pending recipients, sync live delivery status, and stay within plan quota plus prepaid credits." },
-    { icon: <IconMessageSquare />, grad: "violet", title: "Interactive Templates", desc: "Drive engagement with pre-approved templates featuring call-to-action buttons, quick replies, and product catalogs." },
-    { icon: <IconTags />, grad: "amber", title: "Contact Tags & Segments", desc: "Organize by tags and opt-in status. Filter contacts by Meta delivery failures so you clean lists before the next campaign." },
-    { icon: <IconLayoutDashboard />, grad: "emerald", title: "Unified Dashboard", desc: "Your team's central hub. Get a real-time overview of agent performance, sales pipeline value, and campaign success." },
+    { icon: <IconUsers />, grad: "emerald", title: "Contact records", desc: "Name, phone, company, email, and tags. Import lists with CSV tooling built for broadcast audiences." },
+    { icon: <IconShieldCheck />, grad: "violet", title: "Opt-in & list health", desc: "Track marketing consent so campaigns go to people who said yes — and clean lists before the next send." },
+    { icon: <IconKanban />, grad: "amber", title: "Sales pipelines", desc: "Kanban stages for deals. Open a deal from the inbox contact sidebar without leaving the chat." }
   ];
 
   const automationFeatures = [
-    { icon: <IconNetwork />, title: "Visual Node Editor", desc: "Map out conversation trees with an easy drag-and-drop interface." },
-    { icon: <IconGitFork />, title: "Smart Branching", desc: "Direct users down different paths based on their replies or tags." },
-    { icon: <IconDatabase />, title: "Data Collection", desc: "Prompt users for information and save it directly to custom CRM fields." },
-    { icon: <IconZap />, title: "External Integrations", desc: "Trigger webhooks and fetch data from your APIs mid-conversation." },
-    { icon: <IconUserPlus />, title: "Human Handoff", desc: "Automatically route qualified leads or complex queries to human agents." },
+    { icon: <IconNetwork />, title: "Visual flows", desc: "Drag-and-drop steps: send messages, branch on replies, collect fields, call webhooks." },
+    { icon: <IconSparkles />, title: "AI suggest reply", desc: "One tap drafts an answer from recent chat turns and your knowledge articles." },
+    { icon: <IconBot />, title: "AI auto-reply", desc: "Optional first replies with delay and cooldown so the bot does not spam. Skip when an agent is assigned." },
+    { icon: <IconUserPlus />, title: "Human handoff", desc: "Route qualified leads or complex questions to a person in the inbox." }
   ];
 
-  const metrics = [
-    { icon: <IconBarChart />, value: "2.4k+", label: "Daily Conversations" },
-    { icon: <IconClock />, value: "< 5m", label: "Avg. Response Time" },
-    { icon: <IconTrendingUp />, value: "94%", label: "Broadcast Read Rate" },
-    { icon: <IconMousePointerClick />, value: "3.2x", label: "CTWA Ad ROI" },
+  const reportFeatures = [
+    { icon: <IconBarChart />, title: "Broadcast campaigns", desc: "Per-campaign delivered, read, replied, and billable counts — export CSV or PDF." },
+    { icon: <IconUsers />, title: "Template sends to contacts", desc: "Which contacts got which template, with status filters for sent, failed, and more." },
+    { icon: <IconWallet />, title: "Messaging spend & team stats", desc: "Category spend from Meta, plus agent performance, lead funnel, and call summaries." }
   ];
 
   const inboxFeatures = [
-    { icon: <IconList />, title: "Conversation list", desc: "Search, unread badges, and reply-first sorting so waiting customers rise to the top." },
-    { icon: <IconMessageSquare />, title: "Message thread", desc: "Inbound and outbound bubbles with sent, delivered, read, and failed statuses synced from Meta." },
-    { icon: <IconUser />, title: "Contact sidebar", desc: "Tags, notes, assignment, and deal context stay beside the chat while you reply." },
-    { icon: <IconUsers />, title: "Assign & collaborate", desc: "Multiple agents on one number — assign chats, leave internal notes, hand off cleanly." },
-    { icon: <IconCompose />, title: "Composer that matches Meta", desc: "Text, media, templates inside the 24h window — plus one-click AI suggest reply when you need a draft." },
+    { icon: <IconList />, title: "Conversation list", desc: "Search chats, spot unread, and prioritise people who just replied." },
+    { icon: <IconMessageSquare />, title: "Message thread", desc: "See sent, delivered, read, and failed statuses synced from Meta." },
+    { icon: <IconUser />, title: "Contact sidebar", desc: "Tags, notes, assignment, and deals stay beside the chat while you reply." },
+    { 
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+        </svg>
+      ), 
+      title: "Composer", 
+      desc: "Text, images, documents, and templates — following WhatsApp’s 24-hour window rules." 
+    }
   ];
 
   const aiFeatures = [
@@ -357,17 +343,61 @@ export default function WhatsAppCRMSoftware() {
   ];
 
   const deliveryFeatures = [
-    { icon: <IconFilter />, grad: "rose", title: "Meta Error Filters", desc: "Filter contacts by failed delivery and exact Meta codes — ecosystem health (#131049), undeliverable (#131026), experiment (#131031), and media upload (#131053)." },
-    { icon: <IconShieldCheck />, grad: "emerald", title: "Opt-in Safe Sends", desc: "Broadcast to opted-in contacts only by default. Pre-send checks surface missing consent, Meta messaging limits, and plan remaining before you hit send." },
-    { icon: <IconRotateCw />, grad: "violet", title: "Resume Pending", desc: "Large campaigns stay reliable. Resume or send only pending recipients, with status sync so Failed in inbox matches Failed in the broadcast report." },
-    { icon: <IconWallet />, grad: "amber", title: "Plan + Quota", desc: "See remaining sends as plan leftover plus prepaid credit packs. Usage cards make it clear what you can still send this period." },
-    { icon: <IconInbox />, grad: "emerald", title: "Reply-First Inbox", desc: "Conversations with a customer reply surface first, then by recency — so agents handle waiting customers before quiet threads." },
-    { icon: <IconFileSpreadsheet />, grad: "violet", title: "Smarter CSV Import", desc: "Import audiences with phone normalization and account-scoped upserts so duplicate numbers don’t create duplicate contacts mid-campaign." },
+    { icon: <IconMessageSquare />, grad: "violet", title: "Message templates", desc: "Create and sync templates in Settings. Use them in the inbox or in a campaign once Meta marks them approved." },
+    { icon: <IconMegaphone />, grad: "amber", title: "Broadcast campaigns", desc: "Pick a template, choose an audience (tags, CSV, filters), personalise variables, then send or schedule." },
+    { icon: <IconTrendingUp />, grad: "emerald", title: "Delivery follow-through", desc: "See delivered, read, replied, and failed counts. Resume pending recipients and filter contacts by delivery issues before the next run." }
   ];
 
   return (
     <>
       {/* ── Minimal scoped CSS — only what Tailwind cannot express ── */}
+      <style>{`
+        /* Scroll-reveal states */
+        .wcrm-fade-up    { opacity: 1 !important; transform: none !important; transition: none !important; }
+        .wcrm-fade-left  { opacity: 1 !important; transform: none !important; transition: none !important; }
+        .wcrm-fade-right { opacity: 1 !important; transform: none !important; transition: none !important; }
+        .wcrm-visible    { opacity: 1 !important; transform: none !important; transition: none !important; }
+        .wcrm-delay-1    { transition-delay: 0s !important; }
+        .wcrm-delay-2    { transition-delay: 0s !important; }
+        .wcrm-delay-3    { transition-delay: 0s !important; }
+        .wcrm-delay-4    { transition-delay: 0s !important; }
+
+        /* Keyframe animations */
+        .wcrm-hero-wrapper {
+          animation: none !important;
+        }
+        .wcrm-hero-img {
+          transform: none !important;
+          transition: none !important;
+        }
+        .wcrm-hero-img:hover {
+          transform: none !important;
+        }
+        .wcrm-float-slow {
+          animation: none !important;
+        }
+
+        /* Glass image style */
+        .glass-image {
+          background: rgba(255, 255, 255, 0.7);
+          backdrop-filter: blur(12px);
+          border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        /* Text gradient (webkit requires -webkit-text-fill-color which Tailwind omits) */
+        .wcrm-grad-text {
+          background: linear-gradient(135deg, #facc15, #d97706);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        .wcrm-grad-text-emerald {
+          background: linear-gradient(135deg, #34d399, #059669);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+      `}</style>
 
 
       {/* ════════════════════════════════════════════════════════
@@ -388,51 +418,67 @@ export default function WhatsAppCRMSoftware() {
                 <div className="inline-block px-4 py-2 mb-6 rounded-full text-sm font-semibold
                                 bg-[rgba(212,175,55,0.1)] text-[#d4af37]
                                 border border-[rgba(212,175,55,0.2)]">
-                  WhatsApp Business API Ready
+                  WhatsApp Business Cloud API
                 </div>
 
                 <h1 className="text-[clamp(2.5rem,5vw,4rem)] leading-[1.1] font-extrabold tracking-[-0.02em] mb-6 text-[#0f172a]">
-                  Turn WhatsApp into your ultimate{" "}
-                  <span className="wcrm-grad-text">Sales Engine</span>
+                  Your team’s <span className="wcrm-grad-text">WhatsApp CRM</span> — inbox, contacts, and campaigns in one place
                 </h1>
 
                 <p className="text-lg text-[#475569] leading-[1.7] mb-6">
-                  The only self-hosted CRM template you need. Shared inbox, AI suggest &amp; auto-reply, visual
-                  automations, smart broadcasts with Meta delivery filters, and real-time analytics.
+                  IsarvaCRM (built on wacrm) connects your WhatsApp Business number so agents can reply together, track deals, send approved templates, and see what was delivered — without juggling personal phones.
                 </p>
 
                 {/* CTA buttons */}
                 <div className="flex flex-wrap gap-4 mt-10 justify-center lg:justify-start
                                 max-[480px]:flex-col max-[480px]:items-center">
-                  <button
-                    onClick={() => setIsModalOpen(true)}
-                    className="btn-premium-orange group !text-lg !px-8 !py-4 max-[480px]:w-full max-[480px]:text-center cursor-pointer"
-                  >
-                    Start Free Trial
-                    <div className="shimmer"></div>
-                  </button>
                   <a
-                    href="#wcrm-features"
+                    href="#wcrm-how-it-works"
+                    className="btn-premium-orange group !text-lg !px-8 !py-4 max-[480px]:w-full max-[480px]:text-center cursor-pointer no-underline flex items-center justify-center"
+                  >
+                    See how it works
+                    <div className="shimmer"></div>
+                  </a>
+                  <a
+                    href="#wcrm-inbox"
                     className="group inline-flex items-center justify-center px-8 py-4 rounded-full
                                font-semibold text-lg text-emerald-700 no-underline whitespace-nowrap
                                bg-emerald-50/60 hover:bg-emerald-50/90 border border-emerald-300/80 hover:border-emerald-500/80 transition-all duration-300 ease-in-out
                                hover:shadow-[0_10px_20px_-5px_rgba(16,185,129,0.15)] hover:-translate-y-0.5
                                max-[480px]:w-full max-[480px]:text-center"
                   >
-                    Explore Features
+                    Explore the inbox
                     <IconChevronDown />
                   </a>
                 </div>
 
-                {/* Trust stats */}
+                {/* Hero features list */}
                 <div className="flex flex-wrap gap-8 mt-12 justify-center lg:justify-start">
                   <div className="flex items-center gap-2 text-[0.9rem] font-medium text-[#475569]">
-                    <span className="text-[#d4af37] flex-shrink-0"><IconCheckCircle /></span>
-                    Official Meta Partner
+                    <span className="text-[#d4af37] flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <polyline points="22 12 16 12 14 15 10 15 8 12 2 12" />
+                        <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" />
+                      </svg>
+                    </span>
+                    Shared team inbox
                   </div>
                   <div className="flex items-center gap-2 text-[0.9rem] font-medium text-[#475569]">
-                    <span className="text-[#d4af37] flex-shrink-0"><IconShieldCheck /></span>
-                    End-to-End Encrypted
+                    <span className="text-[#d4af37] flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="m3 11 18-5v12L3 14v-3z" />
+                        <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" />
+                      </svg>
+                    </span>
+                    Template broadcasts
+                  </div>
+                  <div className="flex items-center gap-2 text-[0.9rem] font-medium text-[#475569]">
+                    <span className="text-[#d4af37] flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="M6 5v11" /><path d="M12 5v5" /><path d="M18 5v8" /><rect width="4" height="18" x="2" y="3" rx="1" /><rect width="4" height="12" x="10" y="3" rx="1" /><rect width="4" height="14" x="18" y="3" rx="1" />
+                      </svg>
+                    </span>
+                    Pipelines & deals
                   </div>
                 </div>
               </div>
@@ -446,21 +492,15 @@ export default function WhatsAppCRMSoftware() {
                 <div aria-hidden="true"
                   className="absolute pointer-events-none rounded-full opacity-50 blur-[80px] z-0
                                 w-[300px] h-[300px] bg-[rgba(59,130,246,0.25)] -bottom-[10%] -left-[10%]" />
-                <div className="wcrm-hero-img relative group overflow-hidden rounded-xl border border-[rgba(0,0,0,0.05)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] cursor-pointer"
-                  onClick={() => setPreviewImage("/whatsapp-crm/hero.jpg")}>
+                <div className="wcrm-hero-img relative group overflow-hidden rounded-xl border border-[rgba(0,0,0,0.05)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)]">
                   <Image
                     src="/whatsapp-crm/hero.jpg"
                     alt="WhatsApp CRM Dashboard showing shared inbox, pipeline and analytics"
                     width={640}
                     height={480}
                     priority
-                    className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.03]"
+                    className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.01]"
                   />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
-                    <div className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-300">
-                      <IconMaximize />
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -468,17 +508,58 @@ export default function WhatsAppCRMSoftware() {
         </section>
 
         {/* ══════════════════════════════════════════
+            HOW IT WORKS SECTION
+        ══════════════════════════════════════════ */}
+        <section id="wcrm-how-it-works" className="relative bg-white py-12 lg:py-16">
+          <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+            {/* Section heading — centered */}
+            <div className="wcrm-fade-up text-center max-w-[700px] mx-auto mb-10">
+              <div className="inline-block text-sm font-semibold capitalize tracking-[0.05em] mb-3 text-[#d4af37]">
+                How it works
+              </div>
+              <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.2] font-bold mb-6 text-[#0f172a]">
+                From WhatsApp number to <span className="wcrm-grad-text-emerald">daily work in four steps</span>
+              </h2>
+              <p className="text-xl text-[#475569] leading-[1.7] mb-0">
+                You connect Meta once. After that, customers message your business number and your team works inside IsarvaCRM.
+              </p>
+            </div>
+
+            {/* Steps grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { num: "1", title: "Connect WhatsApp", desc: "In Settings, add your WhatsApp Business Account credentials and webhook so Meta can deliver messages to the CRM." },
+                { num: "2", title: "Customers message you", desc: "When someone writes to your business number, the chat appears in the shared Inbox for your team." },
+                { num: "3", title: "Reply as a team", desc: "Agents assign conversations, send text or media inside Meta's customer-care window, or use approved templates." },
+                { num: "4", title: "Grow with campaigns & CRM", desc: "Broadcast templates to opted-in contacts, move deals in pipelines, and review delivery in Reports." }
+              ].map((step, i) => (
+                <div key={step.num} className="flex flex-col items-center text-center p-6 bg-white border-2 border-emerald-500/20 shadow-[0_8px_30px_rgba(16,185,129,0.08)] rounded-2xl">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 font-bold text-sm mb-4 border border-emerald-100">
+                    {step.num}
+                  </div>
+                  <h3 className="mb-2">{step.title}</h3>
+                  <p className="text-base text-[#475569] leading-relaxed mb-0">{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════════
             FEATURES SECTION
         ══════════════════════════════════════════ */}
-        <section id="wcrm-features" className="relative bg-white py-12 lg:py-16">
+        <section id="wcrm-features" className="relative bg-[#f8fafc] py-12 lg:py-16">
           <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
             {/* Section header */}
             <div className="wcrm-fade-up text-center max-w-[700px] mx-auto mb-10">
+              <div className="inline-block text-sm font-semibold capitalize tracking-[0.05em] mb-3 text-[#d4af37]">
+                Contacts & pipelines
+              </div>
               <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.2] font-bold mb-6 text-[#0f172a]">
-                Everything you need to scale
+                Turn chats into <span className="wcrm-grad-text">contacts and deals</span>
               </h2>
               <p className="text-xl text-[#475569] leading-[1.7] mb-0">
-                Powerful tools built directly on top of the WhatsApp Business Cloud API.
+                Every WhatsApp number can become a CRM contact. Link deals so sales and support share the same history.
               </p>
             </div>
 
@@ -495,8 +576,7 @@ export default function WhatsAppCRMSoftware() {
                       p-6 sm:p-8 bg-white rounded-[20px]
                       border border-black/[0.08]
                       ${theme.initialShadow}
-                      transition-all duration-[400ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)]
-                      lg:hover:-translate-y-2
+                      transition-all duration-300
                       ${theme.borderHover}
                       ${theme.shadowHover}`}
                   >
@@ -519,7 +599,7 @@ export default function WhatsAppCRMSoftware() {
                     >
                       {f.icon}
                     </div>
-                    <h3 className="text-[clamp(1.15rem,2vw,1.5rem)] font-semibold mb-3 text-[#0f172a]">
+                    <h3 className="mb-2">
                       {f.title}
                     </h3>
                     <p className="text-base text-[#475569] leading-[1.7] mb-0 text-center">
@@ -535,211 +615,81 @@ export default function WhatsAppCRMSoftware() {
         {/* ══════════════════════════════════════════
             SHARED TEAM INBOX SECTION
         ══════════════════════════════════════════ */}
-        <section id="wcrm-inbox" className="relative overflow-hidden bg-[#f1f5f9] py-8 lg:py-12">
+        <section id="wcrm-inbox" className="relative overflow-hidden bg-white py-8 lg:py-12">
           <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
 
             {/* Section heading — centered */}
-            <div className="wcrm-fade-up text-center mb-6">
+            <div className="wcrm-fade-up text-center mb-10">
               <div className="inline-block text-sm font-semibold capitalize tracking-[0.05em] mb-1.5 text-[#d4af37]">
-                Shared Team Inbox
+                Shared Inbox
               </div>
               <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.2] font-bold mb-2 text-[#0f172a]">
-                See every WhatsApp reply in{" "}
-                <span className="wcrm-grad-text">one place</span>
+                Every WhatsApp reply in <span className="wcrm-grad-text">one workspace</span>
               </h2>
-              <p className="text-lg text-[#475569] leading-[1.7] max-w-2xl mx-auto mb-0">
-                Agents work from a three-panel inbox: conversation list, live message thread, and contact context — so nothing falls between chats.
+              <p className="text-xl text-[#475569] leading-[1.7] max-w-2xl mx-auto mb-0">
+                Three panels: who is waiting, the live thread, and contact context — so nothing gets lost between chats.
               </p>
             </div>
 
-            {/* Main layout: 3-column grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr_280px] gap-6 items-stretch w-full max-w-7xl mx-auto">
-
-              {/* Left 2 cards */}
-              <div className="order-2 lg:order-1 flex flex-col gap-4 h-full">
-                {inboxFeatures.slice(0, 2).map((item, i) => (
-                  <div key={i} className="flex flex-col items-center text-center justify-center gap-2 p-5 bg-white border-2 border-[#d4af37]/35 hover:border-[#d4af37]/75 rounded-xl shadow-[0_8px_30px_rgba(212,175,55,0.08)] hover:shadow-[0_12px_36px_rgba(212,175,55,0.16)] transition-all duration-300 flex-1">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[rgba(212,175,55,0.1)] text-[#d4af37] flex-shrink-0">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-[#0f172a] mb-0.5">{item.title}</h3>
-                      <p className="text-base text-[#475569] leading-[1.6] mb-0">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Center: image + 5th card */}
-              <div className="order-1 lg:order-2 flex flex-col gap-4 wcrm-fade-up">
-                <div className="relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_20px_40px_-8px_rgba(0,0,0,0.3)] cursor-pointer flex-shrink-0"
-                  onClick={() => setPreviewImage("/whatsapp-crm/inbox.png")}>
-                  <Image
-                    src="/whatsapp-crm/inbox.png"
-                    alt="wacrm shared inbox with conversation list and message thread"
-                    width={600}
-                    height={450}
-                    className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.03]"
-                  />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
-                    <div className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-300">
-                      <IconMaximize />
-                    </div>
-                  </div>
+            {/* Showcase Image with Browser Mockup Frame */}
+            <div className="max-w-7xl mx-auto w-full wcrm-fade-up mb-12">
+              <div className="relative group overflow-hidden rounded-2xl border border-slate-900/10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)] bg-[#0f172a] aspect-[1536/1072]">
+                
+                {/* Browser Header / Chrome */}
+                <div className="flex items-center gap-1.5 px-4 py-3 bg-[#f1f5f9] border-b border-slate-900/10">
+                  <span className="w-3 h-3 rounded-full bg-[#ff5f56]" />
+                  <span className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
+                  <span className="w-3 h-3 rounded-full bg-[#27c93f]" />
                 </div>
-                {/* 5th card — grows to fill remaining space below image */}
-                <div className="flex flex-col items-center text-center justify-center gap-2 p-5 bg-white border-2 border-[#d4af37]/35 hover:border-[#d4af37]/75 rounded-xl shadow-[0_8px_30px_rgba(212,175,55,0.08)] hover:shadow-[0_12px_36px_rgba(212,175,55,0.16)] transition-all duration-300 flex-1">
+
+                <Image
+                  src="/whatsapp-crm/inbox.png"
+                  alt="wacrm shared inbox with conversation list and message thread"
+                  width={1200}
+                  height={900}
+                  className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.01]"
+                />
+              </div>
+            </div>
+
+            {/* Bottom 4-column cards grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl mx-auto">
+              {inboxFeatures.map((item, i) => (
+                <div key={i} className="flex flex-col items-center text-center justify-center gap-2 p-5 bg-white border-2 border-[#d4af37]/35 hover:border-[#d4af37]/75 rounded-xl shadow-[0_8px_30px_rgba(212,175,55,0.08)] hover:shadow-[0_12px_36px_rgba(212,175,55,0.16)] transition-all duration-300">
                   <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[rgba(212,175,55,0.1)] text-[#d4af37] flex-shrink-0">
-                    {inboxFeatures[4].icon}
+                    {item.icon}
                   </div>
                   <div>
-                    <h3 className="font-bold text-[#0f172a] mb-0.5">{inboxFeatures[4].title}</h3>
-                    <p className="text-base text-[#475569] leading-[1.6] mb-0">{inboxFeatures[4].desc}</p>
+                    <h3 className="mb-2">{item.title}</h3>
+                    <p className="text-base text-[#475569] leading-[1.6] mb-0">{item.desc}</p>
                   </div>
                 </div>
-              </div>
-
-              {/* Right 2 cards */}
-              <div className="order-3 flex flex-col gap-4 h-full">
-                {inboxFeatures.slice(2, 4).map((item, i) => (
-                  <div key={i} className="flex flex-col items-center text-center justify-center gap-2 p-5 bg-white border-2 border-[#d4af37]/35 hover:border-[#d4af37]/75 rounded-xl shadow-[0_8px_30px_rgba(212,175,55,0.08)] hover:shadow-[0_12px_36px_rgba(212,175,55,0.16)] transition-all duration-300 flex-1">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[rgba(212,175,55,0.1)] text-[#d4af37] flex-shrink-0">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-[#0f172a] mb-0.5">{item.title}</h3>
-                      <p className="text-base text-[#475569] leading-[1.6] mb-0">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
+              ))}
             </div>
+
           </div>
         </section>
 
-        {/* ══════════════════════════════════════════
-            AI AGENTS SECTION
-        ══════════════════════════════════════════ */}
-        <section id="wcrm-ai" className="relative overflow-hidden bg-white py-8 lg:py-12">
-          <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
-
-
-            {/* Section heading (desktop: left-aligned, mobile: centered) */}
-            <div className="wcrm-fade-up text-center lg:text-left mb-6 max-w-7xl mx-auto w-full">
-              <div className="inline-block text-sm font-semibold capitalize tracking-[0.05em] mb-1.5 text-[#6366f1] w-full text-center lg:text-left">
-                Built-in AI Agents
-              </div>
-              <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.2] font-bold mb-2 text-[#0f172a] text-center lg:text-left">
-                Reply faster with{" "}
-                <span style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>knowledge-aware AI</span>
-              </h2>
-              <p className="text-base text-[#475569] leading-[1.7] max-w-2xl lg:max-w-none mx-auto lg:mx-0 text-center lg:text-left">
-                wacrm uses your knowledge base with Gemini, Groq, or OpenAI — for inbox drafts and automatic first replies across channels.
-              </p>
-            </div>
-
-            {/* Mobile-only Image (Shown below heading on mobile, hidden on desktop) */}
-            <div className="block lg:hidden my-6 max-w-[550px] mx-auto w-full">
-              <div className="relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_20px_40px_-8px_rgba(0,0,0,0.25)] cursor-pointer"
-                onClick={() => setPreviewImage("/whatsapp-crm/ai.png")}>
-                <Image
-                  src="/whatsapp-crm/ai.png"
-                  alt="wacrm AI auto-reply settings and knowledge base"
-                  width={600}
-                  height={450}
-                  className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.03]"
-                />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
-                  <div className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-300">
-                    <IconMaximize />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Main layout: Balanced 2-column grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-4 items-stretch w-full max-w-7xl mx-auto">
-
-              {/* Left Column: 3 Stacked Cards */}
-              <div className="flex flex-col gap-4 h-full wcrm-fade-left">
-                {aiFeatures.slice(0, 3).map((item, i) => (
-                  <div key={i} className="flex flex-col items-center text-center justify-center gap-2 p-5 bg-white border-2 border-[#6366f1]/25 hover:border-[#6366f1]/65 rounded-xl shadow-[0_8px_30px_rgba(99,102,241,0.06)] hover:shadow-[0_12px_36px_rgba(99,102,241,0.14)] transition-all duration-300 flex-1">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[rgba(99,102,241,0.1)] text-[#6366f1] flex-shrink-0">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-[#0f172a] mb-0.5">{item.title}</h3>
-                      <p className="text-base text-[#475569] leading-[1.6] mb-0">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Right Column: Desktop-only Image + 2-Column Row of remaining 2 Cards */}
-              <div className="flex flex-col gap-6 wcrm-fade-right w-full">
-                {/* Desktop-only Image Wrapper */}
-                <div className="hidden lg:block relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_20px_40px_-8px_rgba(0,0,0,0.25)] cursor-pointer w-full"
-                  onClick={() => setPreviewImage("/whatsapp-crm/ai.png")}>
-                  <Image
-                    src="/whatsapp-crm/ai.png"
-                    alt="wacrm AI auto-reply settings and knowledge base"
-                    width={600}
-                    height={450}
-                    className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.03]"
-                  />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
-                    <div className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-300">
-                      <IconMaximize />
-                    </div>
-                  </div>
-                </div>
-
-                {/* 2 Cards side-by-side row */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch">
-                  {aiFeatures.slice(3, 5).map((item, i) => (
-                    <div key={i} className="flex flex-col items-center text-center justify-center gap-2 p-5 bg-white border-2 border-[#6366f1]/25 hover:border-[#6366f1]/65 rounded-xl shadow-[0_8px_30px_rgba(99,102,241,0.06)] hover:shadow-[0_12px_36px_rgba(99,102,241,0.14)] transition-all duration-300 flex-1">
-                      <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[rgba(99,102,241,0.1)] text-[#6366f1] flex-shrink-0">
-                        {item.icon}
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-[#0f172a] mb-0.5">{item.title}</h3>
-                        <p className="text-base text-[#475569] leading-[1.6] mb-0">{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
 
         {/* ══════════════════════════════════════════
             AUTOMATIONS SECTION
         ══════════════════════════════════════════ */}
         <section
           id="wcrm-automations"
-          className="relative overflow-hidden bg-[#f1f5f9] py-8 lg:py-12"
+          className="relative overflow-hidden bg-[#f8fafc] py-8 lg:py-12"
         >
           <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-[1.18fr_1fr] gap-8 items-center">
 
               {/* Left: Image (Natural aspect-ratio container with border/shadow closely wrapping it) */}
-              <div className="wcrm-fade-left relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_20px_40px_-8px_rgba(0,0,0,0.25)] cursor-pointer w-full self-center"
-                onClick={() => setPreviewImage("/whatsapp-crm/flow.png")}>
+              <div className="wcrm-fade-left relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_20px_40px_-8px_rgba(0,0,0,0.25)] w-full self-center">
                 <Image
                   src="/whatsapp-crm/flow.png"
                   alt="Visual automation flow builder with drag-and-drop nodes"
                   width={680}
                   height={500}
-                  className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.03]"
+                  className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.01]"
                 />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
-                  <div className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-300">
-                    <IconMaximize />
-                  </div>
-                </div>
               </div>
 
               {/* Right: Heading + 2-col cards grid */}
@@ -748,45 +698,55 @@ export default function WhatsAppCRMSoftware() {
                 {/* Heading */}
                 <div>
                   <div className="inline-block text-sm font-semibold capitalize tracking-[0.05em] mb-1.5 text-emerald-600">
-                    Advanced Automation Flows
+                    Automations &amp; AI
                   </div>
                   <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.2] font-bold mb-2 text-[#0f172a]">
-                    Put your support &amp; sales on{" "}
-                    <span style={{ background: "linear-gradient(135deg, #10b981, #059669)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>autopilot</span>
+                    <span className="wcrm-grad-text-emerald">Automate the repeat work</span> — keep humans for the hard parts
                   </h2>
                   <p className="text-base text-[#475569] leading-[1.7] mb-0">
-                    Design complex, multi-step customer journeys using our intuitive visual flow builder — from simple auto-replies to advanced lead qualification engines.
+                    Build chat flows visually, or let AI draft replies from your knowledge base. Hand off to an agent when a person is needed.
                   </p>
                 </div>
 
                 {/* Cards grid (1 per row on mobile, 2 per row on sm+) */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch flex-1">
-                  {automationFeatures.slice(0, 4).map((item, i) => (
+                  {automationFeatures.map((item, i) => (
                     <div key={i} className="flex flex-col items-center text-center justify-center gap-2 p-4 bg-white border-2 border-emerald-500/20 hover:border-emerald-500/55 rounded-xl shadow-[0_8px_30px_rgba(16,185,129,0.06)] hover:shadow-[0_12px_36px_rgba(16,185,129,0.14)] transition-all duration-300">
                       <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-emerald-50 text-emerald-600 flex-shrink-0">
                         {item.icon}
                       </div>
                       <div>
-                        <h3 className="font-bold text-[#0f172a] mb-0.5">{item.title}</h3>
+                        <h3 className="mb-2">{item.title}</h3>
                         <p className="text-base text-[#475569] leading-[1.6] mb-0">{item.desc}</p>
                       </div>
                     </div>
                   ))}
                 </div>
 
-                {/* 5th card — center-aligned column on mobile, row text-left on sm+ */}
-                <div className="flex flex-col sm:flex-row items-center gap-4 p-4 bg-white border-2 border-emerald-500/20 hover:border-emerald-500/55 rounded-xl shadow-[0_8px_30px_rgba(16,185,129,0.06)] hover:shadow-[0_12px_36px_rgba(16,185,129,0.14)] transition-all duration-300">
-                  <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-emerald-50 text-emerald-600 flex-shrink-0">
-                    {automationFeatures[4].icon}
-                  </div>
-                  <div className="text-center sm:text-left">
-                    <h3 className="font-bold text-[#0f172a] mb-0.5">{automationFeatures[4].title}</h3>
-                    <p className="text-base text-[#475569] leading-[1.6] mb-0">{automationFeatures[4].desc}</p>
-                  </div>
-                </div>
-
-              </div>
             </div>
+          </div>
+
+          {/* Showcase Image below the 2-column grid */}
+          <div className="mt-12 max-w-7xl mx-auto w-full wcrm-fade-up">
+            <div className="relative group overflow-hidden rounded-2xl border border-slate-900/10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)] bg-[#0f172a] aspect-[1536/1072]">
+              
+              {/* Browser Header / Chrome */}
+              <div className="flex items-center gap-1.5 px-4 py-3 bg-[#f1f5f9] border-b border-slate-900/10">
+                <span className="w-3 h-3 rounded-full bg-[#ff5f56]" />
+                <span className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
+                <span className="w-3 h-3 rounded-full bg-[#27c93f]" />
+              </div>
+
+              <Image
+                src="/whatsapp-crm/ai.png"
+                alt="AI auto-reply and knowledge base settings"
+                width={1200}
+                height={900}
+                className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.01]"
+              />
+            </div>
+          </div>
+
           </div>
         </section>
 
@@ -798,13 +758,13 @@ export default function WhatsAppCRMSoftware() {
             {/* Section header */}
             <div className="wcrm-fade-up text-center max-w-[700px] mx-auto mb-10">
               <div className="inline-block text-sm font-semibold capitalize tracking-[0.05em] mb-4 text-[#d4af37]">
-                New in wacrm
+                Templates &amp; Broadcasts
               </div>
               <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.2] font-bold mb-6 text-[#0f172a]">
-                Delivery intelligence built for Meta
+                Reach many contacts with <span className="wcrm-grad-text">Meta-approved messages</span>
               </h2>
               <p className="text-xl text-[#475569] leading-[1.7] mb-0">
-                Know why messages fail, protect number quality with opt-in, and finish large campaigns without guessing.
+                Outside the 24-hour window you must use templates Meta has approved. Broadcasts send those templates at scale and track delivery.
               </p>
             </div>
 
@@ -821,8 +781,7 @@ export default function WhatsAppCRMSoftware() {
                       p-6 sm:p-8 bg-white rounded-[20px]
                       border border-black/[0.08]
                       ${theme.initialShadow}
-                      transition-all duration-[400ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)]
-                      lg:hover:-translate-y-2
+                      transition-all duration-300
                       ${theme.borderHover}
                       ${theme.shadowHover}`}
                   >
@@ -845,7 +804,7 @@ export default function WhatsAppCRMSoftware() {
                     >
                       {f.icon}
                     </div>
-                    <h3 className="text-[clamp(1.15rem,2vw,1.5rem)] font-semibold mb-3 text-[#0f172a]">
+                    <h3 className="mb-2">
                       {f.title}
                     </h3>
                     <p className="text-base text-[#475569] leading-[1.7] mb-0 text-center">
@@ -861,64 +820,55 @@ export default function WhatsAppCRMSoftware() {
         {/* ══════════════════════════════════════════
             ANALYTICS SECTION
         ══════════════════════════════════════════ */}
-        <section id="wcrm-analytics" className="relative bg-white py-12 lg:py-16">
+        <section id="wcrm-analytics" className="relative bg-[#f8fafc] py-12 lg:py-16">
           <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
               <div className="wcrm-fade-left text-center lg:text-left">
                 <div className="inline-block text-sm font-semibold capitalize tracking-[0.05em] mb-4 text-[#d4af37]">
-                  Real-time Insights
+                  Reports
                 </div>
                 <h2 className="text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.2] font-bold mb-4 text-[#0f172a]">
-                  Track every metric that matters
+                  See what was <span className="wcrm-grad-text">sent, read, and replied</span>
                 </h2>
-                <p className="text-lg text-[#475569] leading-[1.7] mb-6">
-                  Make data-driven decisions with a comprehensive real-time dashboard.
-                  Monitor agent performance, response times, and campaign conversions.
+                <p className="text-xl text-[#475569] leading-[1.7] mb-6">
+                  Reports use your real CRM and Meta delivery data for the date range you pick — not vanity demo numbers.
                 </p>
 
-                {/* Mobile-only Image (Heading -> Description -> Image -> Metrics layout) */}
+                {/* Mobile-only Image (Heading -> Description -> Image -> Reports list layout) */}
                 <div className="block lg:hidden my-8 max-w-[500px] sm:max-w-[550px] mx-auto w-full">
-                  <div className="relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] cursor-pointer"
-                    onClick={() => setPreviewImage("/whatsapp-crm/analytics.jpg")}>
+                  <div className="relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] aspect-square">
                     <Image
                       src="/whatsapp-crm/analytics.jpg"
                       alt="WhatsApp CRM analytics dashboard with charts and performance metrics"
                       width={600}
                       height={450}
-                      className="wcrm-float-slow w-full block transition-transform duration-500 group-hover:scale-[1.03]"
-                      style={{ marginBottom: "-24px" }}
+                      className="wcrm-float-slow w-full block transition-transform duration-500 group-hover:scale-[1.01]"
                     />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
-                      <div className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-300">
-                        <IconMaximize />
-                      </div>
-                    </div>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-6 mt-10 max-[480px]:grid-cols-1">
-                  {metrics.map((m, i) => (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
+                  {reportFeatures.map((m, i) => (
                     <div
-                      key={m.label}
-                      className={`wcrm-fade-up wcrm-delay-${i + 1}
-                        p-6 text-center rounded-2xl
-                        bg-white/80
-                        border border-[rgba(212,175,55,0.3)]
-                        backdrop-blur-[12px]
-                        shadow-[0_20px_40px_rgba(212,175,55,0.15)]`}
+                      key={i}
+                      className={`wcrm-fade-up wcrm-delay-${i + 1} flex flex-col items-center text-center p-5 rounded-2xl bg-white/80 border border-[rgba(212,175,55,0.25)] backdrop-blur-[12px] shadow-[0_15px_30px_rgba(212,175,55,0.06)] hover:shadow-[0_20px_40px_rgba(212,175,55,0.12)] hover:border-[rgba(212,175,55,0.45)] transition-all duration-300 ${
+                        i === 2 ? "md:col-span-2" : ""
+                      }`}
                     >
                       <div aria-hidden="true"
                         className="inline-flex items-center justify-center
-                                      w-12 h-12 rounded-full mb-4
-                                      bg-[rgba(212,175,55,0.15)] text-[#d4af37]">
+                                      w-12 h-12 rounded-xl mb-4
+                                      bg-[rgba(212,175,55,0.12)] text-[#d4af37] border border-[rgba(212,175,55,0.25)] shadow-sm">
                         {m.icon}
                       </div>
-                      <div className="text-[2rem] font-extrabold leading-[1.2] mb-1 text-[#0f172a]">
-                        {m.value}
-                      </div>
-                      <div className="text-[0.9rem] font-medium text-[#475569]">
-                        {m.label}
+                      <div>
+                        <h3 className="mb-2">
+                          {m.title}
+                        </h3>
+                        <p className="text-base text-[#475569] leading-relaxed mb-0">
+                          {m.desc}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -930,21 +880,14 @@ export default function WhatsAppCRMSoftware() {
                 <div aria-hidden="true"
                   className="absolute pointer-events-none rounded-full opacity-50 blur-[80px] z-0
                                 w-[500px] h-[500px] bg-[rgba(245,158,11,0.2)] bottom-0 -right-[20%]" />
-                <div className="relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] cursor-pointer"
-                  onClick={() => setPreviewImage("/whatsapp-crm/analytics.jpg")}>
+                <div className="relative group overflow-hidden rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] aspect-square">
                   <Image
                     src="/whatsapp-crm/analytics.jpg"
                     alt="WhatsApp CRM analytics dashboard with charts and performance metrics"
                     width={600}
                     height={450}
-                    className="wcrm-float-slow w-full block transition-transform duration-500 group-hover:scale-[1.03]"
-                    style={{ marginBottom: "-24px" }}
+                    className="wcrm-float-slow w-full block transition-transform duration-500 group-hover:scale-[1.01]"
                   />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white">
-                    <div className="p-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 scale-90 group-hover:scale-100 transition-transform duration-300">
-                      <IconMaximize />
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -954,56 +897,60 @@ export default function WhatsAppCRMSoftware() {
         {/* ══════════════════════════════════════════
             CTA SECTION
         ══════════════════════════════════════════ */}
-        <section className="bg-[#f1f5f9] py-12 lg:py-16">
+        <section className="bg-white py-12 lg:py-16">
           <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
             <div className="wcrm-fade-up relative overflow-hidden rounded-[32px] border border-[rgba(212,175,55,0.2)] shadow-[0_25px_50px_-12px_rgba(212,175,55,0.15)] p-8 md:p-12 lg:p-16"
               style={{ background: "radial-gradient(circle at 85% 75%, rgba(250, 204, 21, 0.22) 0%, rgba(255, 255, 255, 0) 60%), #ffffff" }}>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-12 items-center">
                 {/* Left: cta copy */}
-                <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
+                <div className="text-center lg:text-left flex flex-col items-center lg:items-start w-full">
                   <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-800 text-xs font-semibold tracking-wide mb-5">
                     <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
-                    Live on WhatsApp Business API
+                    Ready when your WABA is connected
                   </div>
                   <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1.2] font-bold mb-4 text-[#0f172a]">
-                    Run sales &amp; support where your customers already reply
+                    Get started in <span className="wcrm-grad-text-emerald">your own workspace</span>
                   </h2>
                   <p className="text-lg text-[#475569] leading-[1.7] mb-6">
-                    Shared inbox, AI drafts from your knowledge base, Meta-safe broadcasts — one CRM your team can host and own.
+                    No fake trial button — open the app and complete these steps so messaging works end to end.
                   </p>
 
-                  <ul className="list-none flex flex-col gap-3 mb-8 w-fit mx-auto lg:mx-0 text-left p-0">
-                    <li className="flex items-center gap-3 justify-start text-[#0f172a] text-[0.98rem] font-medium">
-                      <IconCheck />
-                      <span>Reply-first shared inbox</span>
-                    </li>
-                    <li className="flex items-center gap-3 justify-start text-[#0f172a] text-[0.98rem] font-medium">
-                      <IconCheck />
-                      <span>AI suggest + auto-reply</span>
-                    </li>
-                    <li className="flex items-center gap-3 justify-start text-[#0f172a] text-[0.98rem] font-medium">
-                      <IconCheck />
-                      <span>Delivery filters &amp; resume pending</span>
-                    </li>
-                  </ul>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 w-full">
+                    {[
+                      { num: "1", title: "Settings → WhatsApp", desc: "Save Phone Number ID, WABA ID, access token, and webhook verify token. Register the number so Meta can deliver events." },
+                      { num: "2", title: "Settings → Templates", desc: "Sync or create templates and wait for Meta approval before broadcasting." },
+                      { num: "3", title: "Inbox", desc: "Send a test message from a phone on your allowlist, then reply from IsarvaCRM and confirm it arrives on WhatsApp." },
+                      { num: "4", title: "Broadcasts & Reports", desc: "Run a small campaign, then check delivery and contact-level sends in Reports." }
+                    ].map((step) => (
+                      <div key={step.num} className="flex flex-col items-center text-center p-4 bg-white border-2 border-emerald-500/20 shadow-[0_8px_30px_rgba(16,185,129,0.08)] hover:border-emerald-500/50 hover:shadow-[0_12px_36px_rgba(16,185,129,0.16)] transition-all duration-300 rounded-xl">
+                        <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 font-bold text-sm mb-3 border border-emerald-100">
+                          {step.num}
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-[#0f172a] text-[0.95rem] mb-0.5">{step.title}</h4>
+                          <p className="text-sm text-[#475569] leading-relaxed mb-0">{step.desc}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
 
                   <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                     <button
                       onClick={() => setIsModalOpen(true)}
                       className="btn-premium-orange group !text-lg !px-8 !py-4 max-[480px]:w-full max-[480px]:text-center cursor-pointer"
                     >
-                      Start Free Trial
+                      Review the flow
                       <div className="shimmer"></div>
                     </button>
                     <Link
-                      href="/contact"
+                      href="#wcrm-inbox"
                       className="group inline-flex items-center justify-center px-8 py-4 rounded-full
                                  font-semibold text-lg text-emerald-600 no-underline whitespace-nowrap
                                  bg-transparent hover:bg-emerald-50/40 border border-emerald-400/80 hover:border-emerald-500 transition-all duration-300 ease-in-out
                                  max-[480px]:w-full max-[480px]:text-center"
                     >
-                      Book a Demo
+                      See the inbox
                       <IconChevronDown />
                     </Link>
                   </div>
@@ -1022,7 +969,7 @@ export default function WhatsAppCRMSoftware() {
                     <div className="p-6 flex flex-col gap-4 min-h-[220px] bg-slate-50">
                       <div className="max-w-[90%] p-4 rounded-2xl text-[0.88rem] leading-snug self-start bg-slate-200 text-[#0f172a] rounded-bl-none">Do you have HRMS pricing for 50 seats?</div>
                       <div className="max-w-[90%] p-5 rounded-2xl text-[0.88rem] leading-snug self-stretch bg-amber-500/10 border border-amber-500/40 text-amber-900">
-                        <span className="inline-flex items-center gap-1.5 mb-2.5 text-amber-700 text-[0.72rem] font-bold uppercase tracking-wider"><IconSparkles /> AI draft</span>
+                        <span className="inline-flex items-center gap-1.5 mb-2.5 text-amber-700 text-[0.72rem] font-bold capitalize tracking-wider"><IconSparkles /> AI draft</span>
                         <p className="text-sm m-0">Yes — for 50 seats we offer Standard and Pro. Want a 14-day trial link or a demo slot this week?</p>
                       </div>
                       <div className="self-end bg-emerald-500 text-white text-[0.75rem] font-semibold px-4 py-2 rounded-full max-w-none">Sent · Read</div>
@@ -1040,27 +987,7 @@ export default function WhatsAppCRMSoftware() {
           </div>
         </section>
 
-        {/* ── IMAGE LIGHTBOX POPUP ── */}
-        {previewImage && (
-          <div
-            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-md p-4 cursor-zoom-out"
-            onClick={() => setPreviewImage(null)}
-          >
-            <div className="relative max-w-7xl max-h-[90vh] overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
-              <img
-                src={previewImage}
-                alt="Preview"
-                className="max-w-full max-h-[85vh] object-contain block"
-              />
-              <button
-                onClick={() => setPreviewImage(null)}
-                className="absolute top-4 right-4 flex items-center justify-center w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 text-white border border-white/20 transition-all cursor-pointer"
-              >
-                ✕
-              </button>
-            </div>
-          </div>
-        )}
+
 
       </div>
 
