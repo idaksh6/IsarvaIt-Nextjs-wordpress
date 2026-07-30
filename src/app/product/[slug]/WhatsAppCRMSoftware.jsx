@@ -432,22 +432,22 @@ export default function WhatsAppCRMSoftware() {
                 {/* CTA buttons */}
                 <div className="flex flex-wrap gap-4 mt-10 justify-center lg:justify-start
                                 max-[480px]:flex-col max-[480px]:items-center">
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="btn-premium-orange group !text-lg !px-8 !py-4 max-[480px]:w-full max-[480px]:text-center cursor-pointer flex items-center justify-center border-none"
+                  >
+                    Request A Demo
+                    <div className="shimmer"></div>
+                  </button>
                   <a
                     href="#wcrm-how-it-works"
-                    className="btn-premium-orange group !text-lg !px-8 !py-4 max-[480px]:w-full max-[480px]:text-center cursor-pointer no-underline flex items-center justify-center"
-                  >
-                    See how it works
-                    <div className="shimmer"></div>
-                  </a>
-                  <a
-                    href="#wcrm-inbox"
                     className="group inline-flex items-center justify-center px-8 py-4 rounded-full
                                font-semibold text-lg text-emerald-700 no-underline whitespace-nowrap
                                bg-emerald-50/60 hover:bg-emerald-50/90 border border-emerald-300/80 hover:border-emerald-500/80 transition-all duration-300 ease-in-out
                                hover:shadow-[0_10px_20px_-5px_rgba(16,185,129,0.15)] hover:-translate-y-0.5
                                max-[480px]:w-full max-[480px]:text-center"
                   >
-                    Explore the inbox
+                    See how it works
                     <IconChevronDown />
                   </a>
                 </div>
