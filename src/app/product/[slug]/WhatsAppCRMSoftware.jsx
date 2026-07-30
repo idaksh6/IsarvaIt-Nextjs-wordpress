@@ -258,6 +258,163 @@ function useScrollReveal() {
 }
 
 /* ─────────────────────────────────────────────────────────────
+   Interactive FAQ Component
+ ───────────────────────────────────────────────────────────────*/
+const FAQ_ITEMS = [
+  {
+    q: "What is a shared team inbox for WhatsApp and how does it work?",
+    a: "A shared team inbox for WhatsApp allows multiple team members or support agents to log in simultaneously, manage customer conversations, and assign incoming chats from a single WhatsApp Business number. Instead of sharing one phone, your sales and support teams can collaborate, leave internal notes, and route leads seamlessly within one workspace.",
+    tag: "Team Inbox",
+    color: "emerald",
+  },
+  {
+    q: "Can I use IsarvaCRM as a WhatsApp marketing tool for broadcast campaigns?",
+    a: "Yes, IsarvaCRM serves as a complete WhatsApp marketing tool. Outside the 24-hour customer service window, you can create Meta-approved message templates and send targeted broadcast campaigns at scale. You can segment your audience using tags or CSV imports, track real-time delivery and read receipts, and monitor campaign performance directly from the dashboard.",
+    tag: "Marketing",
+    color: "gold",
+  },
+  {
+    q: "What WhatsApp automation features are included?",
+    a: "Our platform provides powerful WhatsApp automation capabilities to help you streamline repeat tasks. You can build custom visual chat flows using a drag-and-drop builder, enable AI-powered auto-replies for instant first responses, and configure seamless human handoff rules so qualified leads or complex questions automatically reach an agent in the inbox.",
+    tag: "Automation",
+    color: "emerald",
+  },
+  {
+    q: "How does IsarvaCRM handle WhatsApp Business Cloud API integration?",
+    a: "IsarvaCRM connects directly to Meta's Official WhatsApp Business Cloud API. Once you input your WhatsApp Phone Number ID, WABA ID, and webhook access tokens in the Settings menu, Meta routes all incoming and outgoing messages directly into your CRM workspace with full syncing for sent, delivered, and read statuses.",
+    tag: "API",
+    color: "gold",
+  },
+  {
+    q: "Can I link WhatsApp customer chats with sales pipelines and contact records?",
+    a: "Every WhatsApp number that messages your business can automatically become a structured CRM contact record. You can attach custom tags, track marketing consent, open deals, and move leads through Kanban sales pipeline stages right from the inbox sidebar while chatting with a prospect.",
+    tag: "CRM",
+    color: "emerald",
+  },
+];
+
+function WcrmFAQ({ onOpenModal }) {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggle = (i) => setOpenIndex((prev) => (prev === i ? null : i));
+
+  return (
+    <section id="wcrm-faq" className="relative bg-[#f8fafc] py-12 lg:py-16 overflow-hidden">
+      {/* Background decorations */}
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-emerald-100/60 to-teal-100/40 blur-[120px]" />
+        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-amber-100/50 to-yellow-100/30 blur-[100px]" />
+      </div>
+
+      <div className="max-w-4xl mx-auto px-6 relative z-10">
+        {/* Section header */}
+        <div className="wcrm-fade-up text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full text-sm font-semibold bg-[rgba(212,175,55,0.12)] text-[#b8922a] border border-[rgba(212,175,55,0.25)]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" /><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /><path d="M12 17h.01" />
+            </svg>
+            Frequently Asked Questions
+          </div>
+          <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1.2] font-bold text-[#0f172a] mb-4">
+            Everything you need to know about{" "}
+            <span className="wcrm-grad-text">IsarvaCRM</span>
+          </h2>
+          <p className="text-lg text-[#475569] leading-[1.7] max-w-2xl mx-auto">
+            Get answers to the most common questions about our{" "}
+            <span className="font-semibold text-emerald-600">shared team inbox for WhatsApp</span>,{" "}
+            <span className="font-semibold text-emerald-600">WhatsApp automation</span>, and CRM features.
+          </p>
+        </div>
+
+        {/* FAQ Accordion */}
+        <div className="flex flex-col gap-3">
+          {FAQ_ITEMS.map((item, i) => {
+            const isOpen = openIndex === i;
+            const isGold = item.color === "gold";
+            return (
+              <div
+                key={i}
+                className={`wcrm-fade-up rounded-2xl border-2 transition-all duration-300 overflow-hidden ${
+                  isGold
+                    ? isOpen
+                      ? "border-[rgba(212,175,55,0.70)] shadow-[0_8px_32px_rgba(212,175,55,0.22),0_2px_8px_rgba(212,175,55,0.12)] bg-white"
+                      : "border-[rgba(212,175,55,0.35)] shadow-[0_4px_16px_rgba(212,175,55,0.12)] bg-white/80 hover:border-[rgba(212,175,55,0.60)] hover:shadow-[0_8px_28px_rgba(212,175,55,0.18)] hover:bg-white"
+                    : isOpen
+                      ? "border-emerald-400/70 shadow-[0_8px_32px_rgba(16,185,129,0.18),0_2px_8px_rgba(16,185,129,0.10)] bg-white"
+                      : "border-emerald-300/40 shadow-[0_4px_16px_rgba(16,185,129,0.10)] bg-white/80 hover:border-emerald-400/60 hover:shadow-[0_8px_28px_rgba(16,185,129,0.16)] hover:bg-white"
+                }`}
+              >
+                {/* Question row */}
+                <button
+                  onClick={() => toggle(i)}
+                  aria-expanded={isOpen}
+                  className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left cursor-pointer border-none bg-transparent"
+                >
+                  <div className="flex items-center gap-3 min-w-0">
+                    {/* Tag pill */}
+                    <span
+                      className={`hidden sm:inline-flex flex-shrink-0 items-center px-2.5 py-1 rounded-full text-[0.68rem] font-bold tracking-wide uppercase ${
+                        isGold
+                          ? "bg-[rgba(212,175,55,0.12)] text-[#b8922a]"
+                          : "bg-emerald-50 text-emerald-700"
+                      }`}
+                    >
+                      {item.tag}
+                    </span>
+                    <span className="text-[#0f172a] font-semibold text-[0.95rem] sm:text-base leading-snug">
+                      {item.q}
+                    </span>
+                  </div>
+                  {/* Chevron icon */}
+                  <span
+                    className={`flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 ${
+                      isOpen
+                        ? isGold
+                          ? "bg-[rgba(212,175,55,0.15)] text-[#b8922a] rotate-180"
+                          : "bg-emerald-50 text-emerald-600 rotate-180"
+                        : "bg-slate-100 text-slate-500"
+                    }`}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
+                  </span>
+                </button>
+
+                {/* Answer panel */}
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div className={`px-6 pb-6 pt-0 border-t ${isGold ? "border-[rgba(212,175,55,0.2)]" : "border-emerald-100"}`}>
+                    <p className="text-[#475569] leading-[1.75] text-[0.95rem] mt-4 mb-0">
+                      {item.a}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* CTA below FAQ */}
+        <div className="wcrm-fade-up text-center mt-12">
+          <p className="text-[#475569] mb-5">Still have questions? Our team is happy to help.</p>
+          <button
+            onClick={onOpenModal}
+            className="btn-premium-orange group !text-base !px-7 !py-3.5 cursor-pointer border-none"
+          >
+            Request A Demo
+            <div className="shimmer" />
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────
    Main Page Component
  ───────────────────────────────────────────────────────────────*/
 export default function WhatsAppCRMSoftware() {
@@ -323,14 +480,14 @@ export default function WhatsAppCRMSoftware() {
     { icon: <IconList />, title: "Conversation list", desc: "Search chats, spot unread, and prioritise people who just replied." },
     { icon: <IconMessageSquare />, title: "Message thread", desc: "See sent, delivered, read, and failed statuses synced from Meta." },
     { icon: <IconUser />, title: "Contact sidebar", desc: "Tags, notes, assignment, and deals stay beside the chat while you reply." },
-    { 
+    {
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+          <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48" />
         </svg>
-      ), 
-      title: "Composer", 
-      desc: "Text, images, documents, and templates — following WhatsApp’s 24-hour window rules." 
+      ),
+      title: "Composer",
+      desc: "Text, images, documents, and templates — following WhatsApp’s 24-hour window rules."
     }
   ];
 
@@ -426,7 +583,7 @@ export default function WhatsAppCRMSoftware() {
                 </h1>
 
                 <p className="text-lg text-[#475569] leading-[1.7] mb-6">
-                  IsarvaCRM (built on wacrm) connects your WhatsApp Business number so agents can reply together, track deals, send approved templates, and see what was delivered — without juggling personal phones.
+                  IsarvaCRM is a <span className="font-semibold text-emerald-600">shared team inbox for WhatsApp</span> that connects your business number so agents can collaborate, set up <span className="font-semibold text-emerald-600">WhatsApp automation</span>, track deals, and send broadcast campaigns — without juggling personal phones.
                 </p>
 
                 {/* CTA buttons */}
@@ -634,7 +791,7 @@ export default function WhatsAppCRMSoftware() {
             {/* Showcase Image with Browser Mockup Frame */}
             <div className="max-w-7xl mx-auto w-full wcrm-fade-up mb-12">
               <div className="relative group overflow-hidden rounded-2xl border border-slate-900/10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)] bg-[#0f172a] aspect-[1536/1072]">
-                
+
                 {/* Browser Header / Chrome */}
                 <div className="flex items-center gap-1.5 px-4 py-3 bg-[#f1f5f9] border-b border-slate-900/10">
                   <span className="w-3 h-3 rounded-full bg-[#ff5f56]" />
@@ -704,7 +861,7 @@ export default function WhatsAppCRMSoftware() {
                     <span className="wcrm-grad-text-emerald">Automate the repeat work</span> — keep humans for the hard parts
                   </h2>
                   <p className="text-base text-[#475569] leading-[1.7] mb-0">
-                    Build chat flows visually, or let AI draft replies from your knowledge base. Hand off to an agent when a person is needed.
+                    Powerful <span className="font-semibold text-emerald-600">WhatsApp automation</span> to handle routine inquiries — keep your human agents focused on high-value sales.
                   </p>
                 </div>
 
@@ -723,29 +880,29 @@ export default function WhatsAppCRMSoftware() {
                   ))}
                 </div>
 
-            </div>
-          </div>
-
-          {/* Showcase Image below the 2-column grid */}
-          <div className="mt-12 max-w-7xl mx-auto w-full wcrm-fade-up">
-            <div className="relative group overflow-hidden rounded-2xl border border-slate-900/10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)] bg-[#0f172a] aspect-[1536/1072]">
-              
-              {/* Browser Header / Chrome */}
-              <div className="flex items-center gap-1.5 px-4 py-3 bg-[#f1f5f9] border-b border-slate-900/10">
-                <span className="w-3 h-3 rounded-full bg-[#ff5f56]" />
-                <span className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
-                <span className="w-3 h-3 rounded-full bg-[#27c93f]" />
               </div>
-
-              <Image
-                src="/whatsapp-crm/ai.png"
-                alt="AI auto-reply and knowledge base settings"
-                width={1200}
-                height={900}
-                className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.01]"
-              />
             </div>
-          </div>
+
+            {/* Showcase Image below the 2-column grid */}
+            <div className="mt-12 max-w-7xl mx-auto w-full wcrm-fade-up">
+              <div className="relative group overflow-hidden rounded-2xl border border-slate-900/10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)] bg-[#0f172a] aspect-[1536/1072]">
+
+                {/* Browser Header / Chrome */}
+                <div className="flex items-center gap-1.5 px-4 py-3 bg-[#f1f5f9] border-b border-slate-900/10">
+                  <span className="w-3 h-3 rounded-full bg-[#ff5f56]" />
+                  <span className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
+                  <span className="w-3 h-3 rounded-full bg-[#27c93f]" />
+                </div>
+
+                <Image
+                  src="/whatsapp-crm/ai.png"
+                  alt="AI auto-reply and knowledge base settings"
+                  width={1200}
+                  height={900}
+                  className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.01]"
+                />
+              </div>
+            </div>
 
           </div>
         </section>
@@ -764,7 +921,7 @@ export default function WhatsAppCRMSoftware() {
                 Reach many contacts with <span className="wcrm-grad-text">Meta-approved messages</span>
               </h2>
               <p className="text-xl text-[#475569] leading-[1.7] mb-0">
-                Outside the 24-hour window you must use templates Meta has approved. Broadcasts send those templates at scale and track delivery.
+                As a complete <span className="font-semibold text-[#d4af37]">WhatsApp marketing tool</span>, IsarvaCRM lets you broadcast Meta-approved template campaigns at scale and track delivery in real time.
               </p>
             </div>
 
@@ -852,9 +1009,8 @@ export default function WhatsAppCRMSoftware() {
                   {reportFeatures.map((m, i) => (
                     <div
                       key={i}
-                      className={`wcrm-fade-up wcrm-delay-${i + 1} flex flex-col items-center text-center p-5 rounded-2xl bg-white/80 border border-[rgba(212,175,55,0.25)] backdrop-blur-[12px] shadow-[0_15px_30px_rgba(212,175,55,0.06)] hover:shadow-[0_20px_40px_rgba(212,175,55,0.12)] hover:border-[rgba(212,175,55,0.45)] transition-all duration-300 ${
-                        i === 2 ? "md:col-span-2" : ""
-                      }`}
+                      className={`wcrm-fade-up wcrm-delay-${i + 1} flex flex-col items-center text-center p-5 rounded-2xl bg-white/80 border border-[rgba(212,175,55,0.25)] backdrop-blur-[12px] shadow-[0_15px_30px_rgba(212,175,55,0.06)] hover:shadow-[0_20px_40px_rgba(212,175,55,0.12)] hover:border-[rgba(212,175,55,0.45)] transition-all duration-300 ${i === 2 ? "md:col-span-2" : ""
+                        }`}
                     >
                       <div aria-hidden="true"
                         className="inline-flex items-center justify-center
@@ -988,6 +1144,10 @@ export default function WhatsAppCRMSoftware() {
         </section>
 
 
+        {/* ══════════════════════════════════════════
+            INTERACTIVE FAQ SECTION
+        ══════════════════════════════════════════ */}
+        <WcrmFAQ onOpenModal={() => setIsModalOpen(true)} />
 
       </div>
 
