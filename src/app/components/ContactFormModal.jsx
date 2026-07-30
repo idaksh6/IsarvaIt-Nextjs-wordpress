@@ -71,6 +71,13 @@ export default function ContactFormModal({
       const keyWordsPreSelected = extractKeyWords(item);
       const compactPreSelected = normalizedPreSelected.replace(/\s/g, "");
 
+      // 1. Try exact match first
+      const exactMatch = categories.find(
+        (cat) => normalizeStr(cat.category_name) === normalizedPreSelected
+      );
+      if (exactMatch) return exactMatch;
+
+      // 2. Try billsoft match
       if (compactPreSelected.includes("billsoft")) {
         const billSoftMatch = categories.find((cat) => {
           const compactCat = normalizeStr(cat.category_name).replace(/\s/g, "");
@@ -79,6 +86,7 @@ export default function ContactFormModal({
         if (billSoftMatch) return billSoftMatch;
       }
 
+      // 3. Fallback to substring / fuzzy match
       return categories.find((cat) => {
         const normalizedCatName = normalizeStr(cat.category_name);
         const keyWordsCatName = extractKeyWords(cat.category_name);
