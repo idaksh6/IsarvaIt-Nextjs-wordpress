@@ -6,7 +6,7 @@ export const metadata = generateSEOMetadata({
   description: "Discover how businesses across industries are transforming their operations and scaling efficiently with Isarva software solutions.",
   keywords: ["case studies", "client success", "business transformation", "software results", "Isarva projects"],
   url: "/case-studies",
-  image: "https://www.isarvait.com/enterprise-solutions-v3.png",
+  image: "https://www.isarvait.com/isarva-og.png",
 });
 
 export default function CaseStudiesPage() {

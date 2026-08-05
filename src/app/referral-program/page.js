@@ -15,7 +15,7 @@ export const metadata = generateSEOMetadata({
     "iSarva referral rewards",
   ],
   url: "/referral-program",
-  image: "https://www.isarvait.com/images/referral_og_image.png",
+  image: "https://www.isarvait.com/isarva-og.png",
 });
 
 export default function ReferralProgramPage() {

@@ -11,7 +11,7 @@ export const metadata = generateSEOMetadata({
   description: "Stay updated with the latest in tech, hosting insights, web development tips, and success stories from the Isarva team.",
   keywords: ["tech blog", "web development insights", "software updates", "IT articles", "Isarva blog"],
   url: "/blog",
-  image: "https://www.isarvait.com/enterprise-solutions-hero-v2.png",
+  image: "https://www.isarvait.com/isarva-og.png",
 });
 
 export const revalidate = 60;
