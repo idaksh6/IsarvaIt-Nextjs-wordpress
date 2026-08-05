@@ -44,7 +44,7 @@ export const metadata = generateSEOMetadata({
     "enterprise quality standards",
   ],
   url: "/quality-policy",
-  image: "https://www.isarvait.com/isarva-og.png",
+  image: "https://www.isarvait.com/isarva-og.jpg",
   noIndex: false,
 });
 

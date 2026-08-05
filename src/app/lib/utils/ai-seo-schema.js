@@ -49,8 +49,8 @@ export function generateEnhancedOrganizationSchema() {
     name: COMPANY_NAME,
     alternateName: ["Isarva", "Isarva IT Solutions", "Isarva Web Development"],
     url: COMPANY_URL,
-    logo: `${COMPANY_URL}/isarva-og.png`,
-    image: `${COMPANY_URL}/isarva-og.png`,
+    logo: `${COMPANY_URL}/isarva-og.jpg`,
+    image: `${COMPANY_URL}/isarva-og.jpg`,
     description: "Leading web design and software development company in Mangalore, Karnataka. We specialize in custom website design, mobile app development, ERP solutions, CRM systems, HRMS software, e-commerce development, and digital transformation services. Expert team with 10+ years of experience serving clients across India, UAE, UK, and USA.",
     
     // Keywords for AI tools to understand our expertise
@@ -246,7 +246,7 @@ export function generateLocalBusinessSchema() {
     "@type": "LocalBusiness",
     "@id": `${COMPANY_URL}#local-business`,
     name: COMPANY_NAME,
-    image: `${COMPANY_URL}/isarva-og.png`,
+    image: `${COMPANY_URL}/isarva-og.jpg`,
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",

@@ -11,7 +11,7 @@ export function generateMetadata({
   title,
   description = DEFAULT_DESCRIPTION,
   keywords = [],
-  image = `${SITE_URL}/isarva-og.png`,
+  image = `${SITE_URL}/isarva-og.jpg`,
   url = SITE_URL,
   type = "website",
   noIndex = false,
@@ -97,7 +97,7 @@ export function generateProductMetadata(product) {
     ? product.ogImage.startsWith("http")
       ? product.ogImage
       : `${SITE_URL}${product.ogImage}`
-    : `${SITE_URL}/isarva-og.png`;
+    : `${SITE_URL}/isarva-og.jpg`;
 
   return generateMetadata({
     title: `${prefix}${seoTitle}`,
@@ -132,7 +132,7 @@ export function generateServiceMetadata(service) {
       ? service.heroImage.startsWith("http")
         ? service.heroImage
         : `${SITE_URL}${service.heroImage}`
-      : `${SITE_URL}/isarva-og.png`;
+      : `${SITE_URL}/isarva-og.jpg`;
 
   return generateMetadata({
     title: isStaging ? `[STAGING] ${seoTitle}` : seoTitle,
@@ -161,7 +161,7 @@ export function generateIndustryMetadata(industry) {
       ? industry.heroImage.startsWith("http")
         ? industry.heroImage
         : `${SITE_URL}${industry.heroImage}`
-      : `${SITE_URL}/isarva-og.png`;
+      : `${SITE_URL}/isarva-og.jpg`;
 
   return generateMetadata({
     title: industry.title,
@@ -205,7 +205,7 @@ export function generateOrganizationSchema() {
     "@type": "Organization",
     name: SITE_NAME,
     url: SITE_URL,
-    logo: `${SITE_URL}/isarva-og.png`,
+    logo: `${SITE_URL}/isarva-og.jpg`,
     description: DEFAULT_DESCRIPTION,
     address: {
       "@type": "PostalAddress",
@@ -351,7 +351,7 @@ export function generateArticleSchema(post) {
       name: SITE_NAME,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/isarva-og.png`,
+        url: `${SITE_URL}/isarva-og.jpg`,
       },
     },
     datePublished: post.date,

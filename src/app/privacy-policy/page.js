@@ -41,7 +41,7 @@ export const metadata = generateSEOMetadata({
     "Isarva Infotech privacy",
   ],
   url: "/privacy-policy",
-  image: "https://www.isarvait.com/isarva-og.png",
+  image: "https://www.isarvait.com/isarva-og.jpg",
   noIndex: false,
 });
 
