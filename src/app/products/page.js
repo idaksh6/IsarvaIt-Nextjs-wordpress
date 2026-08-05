@@ -7,7 +7,7 @@ export const metadata = generateSEOMetadata({
   description: "Discover our comprehensive suite of business software solutions — HRMS, CRM, ERP, WooCommerce, and more — designed to streamline operations and drive growth.",
   keywords: ["business software", "HRMS", "CRM", "ERP", "software solutions", "enterprise software"],
   url: "/products",
-  image: "https://www.isarvait.com/dashboard.webp",
+  image: "https://www.isarvait.com/isarva-og.jpg",
 });
 
 export default function ProductsPage() {

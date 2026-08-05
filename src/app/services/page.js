@@ -7,7 +7,7 @@ export const metadata = generateSEOMetadata({
   description: "Explore our comprehensive range of IT services including website development, cloud services, AI/ML consulting, ERP, CRM, digital marketing and more.",
   keywords: ["IT services", "web development", "cloud services", "digital marketing", "ERP", "CRM", "consulting"],
   url: "/services",
-  image: "https://www.isarvait.com/website_services_hero.png",
+  image: "https://www.isarvait.com/isarva-og.jpg",
 });
 
 export default function ServicesPage() {

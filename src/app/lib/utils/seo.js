@@ -97,7 +97,15 @@ export function generateProductMetadata(product) {
     ? product.ogImage.startsWith("http")
       ? product.ogImage
       : `${SITE_URL}${product.ogImage}`
-    : `${SITE_URL}/isarva-og.jpg`;
+    : product.heroImage
+      ? product.heroImage.startsWith("http")
+        ? product.heroImage
+        : `${SITE_URL}${product.heroImage}`
+      : product.image
+        ? product.image.startsWith("http")
+          ? product.image
+          : `${SITE_URL}${product.image}`
+        : `${SITE_URL}/isarva-og.jpg`;
 
   return generateMetadata({
     title: `${prefix}${seoTitle}`,
