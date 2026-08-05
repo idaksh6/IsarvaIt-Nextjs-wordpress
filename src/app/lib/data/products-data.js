@@ -785,7 +785,7 @@ export const productsData = [
   {
     slug: "mobile-app-development",
     title: "Mobile App Development",
-    ogImage: "/products/hrms/hrms-banner-main.png",
+    ogImage: "/mobile-app-development/hrms-dashboard.jpeg",
     category: "Mobile Application Development",
     icon: "📱",
     tagline: "React Native & Expo Apps",

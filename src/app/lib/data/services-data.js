@@ -540,7 +540,7 @@ export const servicesData = [
     slug: "wordpress-development",
     title: "WordPress Development",
     icon: "📝",
-    heroImage: "/Services/Wordpress-development/Banner-img.jpg",
+    heroImage: "/wp_hero_aurora.png",
     shortDescription: "Expert WordPress development and customization",
     description: "Unlock the full potential of your online presence with Isarva Infotech's premier WordPress Development services. Our expert team specializes in creating stunning, responsive, and high-performing WordPress websites tailored to your unique business needs. From custom themes and plugins to seamless integrations and performance optimization, we ensure your site not only looks great but also delivers exceptional user experiences.",
     features: [
@@ -1047,7 +1047,7 @@ export const servicesData = [
     slug: "migrate-to-wordpress",
     title: "Migrate to WordPress",
     icon: "🚀",
-    heroImage: "/Services/Wordpress-development/Banner-img.jpg",
+    heroImage: "/wp_hero_aurora.png",
     shortDescription: "Seamless migration to WordPress platform",
     description: "Seamlessly transition your existing website to WordPress platform with zero downtime and improved functionality. We handle every aspect of the migration process to ensure a smooth transition.",
     features: [
@@ -1073,7 +1073,7 @@ export const servicesData = [
     slug: "wordpress-development-staging",
     title: "WordPress Development Staging",
     icon: "📝",
-    heroImage: "/Services/Wordpress-development/Banner-img.jpg",
+    heroImage: "/wp_hero_aurora.png",
     shortDescription: "Reviewing the new WordPress Ecosystem design",
     description: "This is a staging environment for the new premium WordPress service layout.",
     features: [
