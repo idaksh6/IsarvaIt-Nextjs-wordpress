@@ -6,7 +6,7 @@ export const metadata = generateSEOMetadata({
   description: "Hands-on industry-ready training programs in CRM, HRMS, Web & Backend Development, Frontend & UI/UX, Data & Cloud Engineering, and Digital Marketing & AI. Enroll today.",
   keywords: ["training programs", "internship", "coding bootcamp", "IT training", "Isarva Academy"],
   url: "/training-programs",
-  image: "https://www.isarvait.com/Services/Training/training_courses_grid.png",
+  image: "https://www.isarvait.com/isarva-og.png",
   noIndex: false, // Make it indexable on search engines
 });
 
