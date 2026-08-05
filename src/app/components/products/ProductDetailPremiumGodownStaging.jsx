@@ -240,7 +240,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
             <div className="absolute top-0 left-[-15%] w-[600px] h-[600px] bg-indigo-100/50 rounded-full blur-[120px]" />
             <div className="absolute top-[40%] right-[-15%] w-[500px] h-[500px] bg-cyan-100/40 rounded-full blur-[100px]" />
             <div className="absolute inset-0 grid-bg-overlay opacity-[0.8]" />
-          </div>
+        </div>
 
 
 
@@ -268,14 +268,14 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                 <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-bold text-sm mb-8 shadow-sm">
                   <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 animate-pulse"></span>
                   Smart ERP Suite
-                </span>
+            </span>
                 
                 <h1 className="mb-6">
                   Smart Godown <br />
                   <span className="shimmer-text">
-                    & Inventory System
-                  </span>
-                </h1>
+                & Inventory System
+              </span>
+            </h1>
 
                 <p className="text-indigo-700 font-extrabold text-base lg:text-lg uppercase tracking-widest mb-6">
                   Track. Manage. Control. Grow.
@@ -286,22 +286,22 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                 </p>
 
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                  <button
-                    onClick={() => setIsModalOpen(true)}
+              <button 
+                onClick={() => setIsModalOpen(true)}
                     className="press-illusion-btn-orange bg-orange-500 text-white w-fit font-bold px-8 py-4 text-base items-center space-x-2 flex cursor-pointer"
                   >
                     Request Free Demo
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
-                  </button>
+              </button>
                   <a
                     href="#infographics"
                     className="inline-flex items-center gap-3 px-8 py-4 text-base font-bold text-slate-700 bg-white border-2 border-slate-200/80 rounded-xl hover:border-indigo-500/40 hover:text-indigo-650 hover:bg-indigo-50/40 transition-all duration-300 shadow-sm"
                   >
                     View System Workflow
                   </a>
-                </div>
+            </div>
               </div>
 
               {/* Right Column Showcase */}
@@ -341,12 +341,12 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                         </button>
                       ))}
                     </div>
+                    </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
+                  
+                    </div>
+                            </div>
         </section>
 
         {/* ── 2. INFOGRAPHICS SECTION ── */}
@@ -356,14 +356,14 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
             <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-semibold text-sm mb-6">
                 ✨ System Architecture
-              </div>
+                          </div>
               <h2 className="mb-6 capitalize">
                 Visualizing the Complete Pipeline
               </h2>
               <p className="text-xl text-slate-600 max-w-2xl mx-auto">
                 Our system coordinates inventory levels, product movements, events dispatch, rental terms, returns audits, and customer invoice calculations in a single flow.
               </p>
-            </div>
+                      </div>
 
             <div className="max-w-5xl mx-auto p-2 bg-slate-50 rounded-3xl border border-slate-200/80 shadow-2xl overflow-hidden">
               {/* Desktop Infographic (Using smaller image sizes to avoid staging load issues) */}
@@ -378,8 +378,8 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                 alt="Godown Management System Mobile Infographics"
                 className="block md:hidden w-full h-auto rounded-[1.4rem]"
               />
-            </div>
-          </div>
+                            </div>
+                            </div>
         </section>
 
         {/* ── 3. DASHBOARD INSIGHTS SECTION ── */}
@@ -397,14 +397,14 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                     alt="Warehouse Analytics Dashboard Screen"
                     className="w-full h-auto rounded-2xl"
                   />
-                </div>
-              </div>
+                         </div>
+                                </div>
 
               {/* Right Column: Content */}
               <div className="text-center lg:text-left">
                 <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-semibold text-sm mb-6">
                   📊 Dashboard Analytics
-                </div>
+                         </div>
                 <h2 className="mb-6 capitalize">
                   Your Business Operations at a Glance
                 </h2>
@@ -417,50 +417,50 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                   <div className="premium-card hover-border-indigo p-6 rounded-3xl text-center">
                     <div className="icon-container-centered bg-indigo-50 text-indigo-600 mb-4 mx-auto">
                       📁
-                    </div>
+                      </div>
                     <h3 className="mb-2">Total Categories</h3>
                     <p className="text-sm text-slate-500 leading-relaxed">
                       See your complete sub-category and category tree organized in one simple, quick view.
                     </p>
-                  </div>
+                    </div>
 
                   <div className="premium-card hover-border-cyan p-6 rounded-3xl text-center">
                     <div className="icon-container-centered bg-cyan-50 text-cyan-600 mb-4 mx-auto">
                       📦
-                    </div>
+                  </div>
                     <h3 className="mb-2">Overall Stock Count</h3>
                     <p className="text-sm text-slate-500 leading-relaxed">
                       Know your physical stock counts, adjustments, and exact quantity volumes in real-time.
                     </p>
-                  </div>
+                </div>
 
                   <div className="premium-card hover-border-emerald p-6 rounded-3xl text-center">
                     <div className="icon-container-centered bg-emerald-50 text-emerald-600 mb-4 mx-auto">
                       🏷️
-                    </div>
+              </div>
                     <h3 className="mb-2">Total Products</h3>
                     <p className="text-sm text-slate-500 leading-relaxed">
                       Easily configure and manage all your catalog stock listings, specs, and details in one place.
                     </p>
-                  </div>
-
+            </div>
+            
                   <div className="premium-card hover-border-rose p-6 rounded-3xl text-center">
                     <div className="icon-container-centered bg-rose-50 text-rose-600 mb-4 mx-auto">
                       🚨
-                    </div>
+            </div>
                     <h3 className="mb-2">Out of Stock Alerts</h3>
                     <p className="text-sm text-slate-500 leading-relaxed">
                       Instant warning lists for depleted stocks, helping you prevent order bottlenecks.
                     </p>
-                  </div>
                 </div>
+              </div>
 
                 {/* Checklist bullets */}
                 <div className="space-y-4 pt-6 border-t border-slate-200">
                   <div className="flex items-start gap-4 text-left">
                     <div className="w-6 h-6 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 text-sm font-bold mt-0.5">
                       ✓
-                    </div>
+            </div>
                     <div>
                       <h4>Top Performers Analytics</h4>
                       <p className="text-slate-500 text-sm mt-0.5">Filter top 5 selling items by Year, Month, Event, or Rental durations to identify high-margin assets.</p>
@@ -479,8 +479,8 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
 
               </div>
             </div>
-          </div>
-        </section>
+        </div>
+      </section>
 
         {/* ── 4. USER & CUSTOMER MANAGEMENT SECTION ── */}
         <section className="py-12 lg:py-16 bg-gradient-to-b from-white via-purple-50/10 to-white relative overflow-hidden">
@@ -510,21 +510,21 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                         Assign page-specific permissions and feature restrictions to staff. Control who can edit inventory, approve returns, or view billing sheets.
                       </p>
                     </div>
-                  </div>
-
+            </div>
+            
                   <div className="flex gap-4 items-start text-left">
                     <div className="icon-container-centered bg-cyan-50 text-cyan-600 mt-1 mx-auto">
                       🤝
-                    </div>
+                        </div>
                     <div>
                       <h3 className="mb-1">Customer & Vendor Module</h3>
                       <p className="text-sm text-slate-555 leading-relaxed">
                         Track details for customers and vendors alike. Easily toggle custom transaction parameters, past log histories, and active rental lists.
                       </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                     </div>
+                        </div>
+                              </div>
+                                 </div>
 
               {/* Right Column Image */}
               <div className="relative">
@@ -535,11 +535,11 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                     alt="User Roles and Client Management Screen"
                     className="w-full h-auto rounded-2xl"
                   />
-                </div>
-              </div>
+                              </div>
+                           </div>
 
-            </div>
-          </div>
+                        </div>
+                           </div>
         </section>
 
         {/* ── 5. MASTER SETUP SECTION ── */}
@@ -556,14 +556,14 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                     alt="Product and Unit Setup Screen"
                     className="w-full h-auto rounded-2xl"
                   />
-                </div>
-              </div>
+                           </div>
+                        </div>
 
               {/* Right Column Content */}
               <div className="text-center lg:text-left">
                 <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-semibold text-sm mb-6">
                   🏗️ System Foundation
-                </div>
+                     </div>
                 <h2 className="mb-6 capitalize">
                   Build a Scalable Warehouse Foundation
                 </h2>
@@ -575,19 +575,19 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                   <div className="flex gap-4 items-start text-left">
                     <div className="icon-container-centered bg-indigo-50 text-indigo-600 mt-1 mx-auto">
                       📏
-                    </div>
+                     </div>
                     <div>
                       <h3 className="mb-1">Custom Units Configuration</h3>
                       <p className="text-sm text-slate-555 leading-relaxed">
                         Configure standard weights and sizes like Kilograms, Litres, and Pieces, or define custom crates, event packs, and volume bounds.
                       </p>
-                    </div>
                   </div>
+               </div>
 
                   <div className="flex gap-4 items-start text-left">
                     <div className="icon-container-centered bg-emerald-50 text-emerald-600 mt-1 mx-auto">
                       🏗️
-                    </div>
+            </div>
                     <div>
                       <h3 className="mb-1">Core Setup Integrity</h3>
                       <p className="text-sm text-slate-555 leading-relaxed">
@@ -598,9 +598,9 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                 </div>
               </div>
 
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* ── 6. INTELLIGENT INVENTORY & QR CODES ── */}
         <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
@@ -622,7 +622,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               
               <div className="premium-card hover-border-indigo p-6 rounded-3xl flex flex-col justify-between text-center">
-                <div>
+                    <div>
                   <div className="rounded-2xl overflow-hidden border border-slate-200 mb-6 bg-white p-1">
                     <img
                       src="/products/godown/Manage-categories.jpg"
@@ -630,7 +630,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                       className="w-full rounded-xl object-cover"
                       style={{ aspectRatio: "4/3" }}
                     />
-                  </div>
+                    </div>
                   <div className="icon-container-centered bg-indigo-50 text-indigo-600 mb-4 mx-auto">
                     📁
                   </div>
@@ -642,8 +642,8 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                 <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-bold text-indigo-600 text-center">
                   Hierarchical Categorization
                 </div>
-              </div>
-
+                  </div>
+                  
               <div className="premium-card hover-border-cyan p-6 rounded-3xl flex flex-col justify-between text-center">
                 <div>
                   <div className="rounded-2xl overflow-hidden border border-slate-200 mb-6 bg-white p-1">
@@ -653,18 +653,18 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                       className="w-full rounded-xl object-cover"
                       style={{ aspectRatio: "4/3" }}
                     />
-                  </div>
+                       </div>
                   <div className="icon-container-centered bg-cyan-50 text-cyan-600 mb-4 mx-auto">
                     🏷️
-                  </div>
+                    </div>
                   <h3 className="mb-2">Product Master List</h3>
                   <p className="text-sm text-slate-500 leading-relaxed">
                     Central registry for all stock parameters: standard cost values, purchase notes, descriptions, thresholds, and photo links.
                   </p>
-                </div>
+                       </div>
                 <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-bold text-indigo-600 text-center">
                   Detailed Specifications
-                </div>
+                       </div>
               </div>
 
               <div className="premium-card hover-border-emerald p-6 rounded-3xl flex flex-col justify-between text-center">
@@ -687,12 +687,12 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                 </div>
                 <div className="mt-6 pt-4 border-t border-slate-100 text-xs font-bold text-indigo-600 text-center">
                   Automatic Code Generation
-                </div>
-              </div>
+                    </div>
+                  </div>
+                  
+                  </div>
 
-            </div>
-
-          </div>
+               </div>
         </section>
 
         {/* ── 7. PRODUCT MOVEMENT BANNER ── */}
@@ -710,7 +710,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
             <p className="text-indigo-100 text-base lg:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
               The core engine tracks dispatches and returns. It supports both short-term <strong>Event Bookings</strong> and long-term <strong>Product Rentals</strong> within the same dashboard flow.
             </p>
-          </div>
+            </div>
         </section>
 
         {/* ── 8. EVENT MANAGEMENT SECTION ── */}
@@ -728,7 +728,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                       alt="Event Dispatch and Management Screen"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
-                  </div>
+                 </div>
                   {/* Secondary Image Overlay */}
                   <div className="absolute -bottom-6 -right-6 w-1/2 max-w-[240px] rounded-2xl border-4 border-white shadow-2xl overflow-hidden bg-white p-1 z-20">
                     <img
@@ -757,22 +757,22 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                   <div className="flex gap-4 items-start text-left">
                     <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
                       🔒
-                    </div>
-                    <div>
+                 </div>
+                 <div>
                       <h4>Product Selection Safeties</h4>
                       <p className="text-slate-500 text-sm mt-0.5">The system cross-references active stocks and blocks dispatches of items that aren't physically in the warehouse.</p>
-                    </div>
-                  </div>
+                 </div>
+              </div>
 
                   <div className="flex gap-4 items-start text-left">
                     <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
                       📅
-                    </div>
+            </div>
                     <div>
                       <h4>Expected Return Schedules</h4>
                       <p className="text-slate-500 text-sm mt-0.5">Define target return times for event gear. Track which dispatches are due back to plan subsequent bookings.</p>
-                    </div>
-                  </div>
+          </div>
+        </div>
 
                   <div className="flex gap-4 items-start text-left">
                     <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
@@ -784,15 +784,15 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                     </div>
                   </div>
                 </div>
-              </div>
-
-            </div>
           </div>
-        </section>
+
+          </div>
+        </div>
+      </section>
 
         {/* ── 9. EVENT RETURN & QUALITY CONTROL SECTION ── */}
         <section className="py-12 lg:py-16 bg-gradient-to-br from-emerald-50/10 via-white to-white relative overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               
               {/* Left Column: Content */}
@@ -825,9 +825,9 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                     <div>
                       <h4>Audit Balancing Formula</h4>
                       <p className="text-slate-500 text-sm mt-0.5">System automatically calculates returned totals using the formula: <span className="font-extrabold bg-slate-100 text-indigo-700 px-2 py-0.5 rounded text-[10px]">Returned = Good + Damaged + Missing</span>.</p>
-                    </div>
-                  </div>
-
+              </div>
+            </div>
+            
                   <div className="flex gap-4 items-start text-left">
                     <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
                       💸
@@ -837,9 +837,9 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                       <p className="text-slate-500 text-sm mt-0.5">Damaged and missing items automatically trigger configured penalty fees, updating the client's balance sheet instantly.</p>
                     </div>
                   </div>
-                </div>
-              </div>
-
+                    </div>
+                 </div>
+                 
               {/* Right Column: Image with overlays (including Event Invoice format) */}
               <div className="relative lg:order-1">
                 <div className="absolute -inset-4 bg-gradient-to-br from-indigo-100/50 to-emerald-100/40 blur-[50px] rounded-3xl" />
@@ -850,7 +850,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                       alt="Event Return Management Form"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
-                  </div>
+               </div>
                   {/* Secondary Image Overlay 1 */}
                   <div className="absolute -bottom-6 -left-6 w-1/3 max-w-[180px] rounded-2xl border-4 border-white shadow-2xl overflow-hidden bg-white p-1 z-20">
                     <img
@@ -858,7 +858,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                       alt="Settle Event Balances Screen"
                       className="w-full h-auto rounded-xl"
                     />
-                  </div>
+            </div>
                   {/* Secondary Image Overlay 2 */}
                   <div className="absolute -top-6 -right-6 w-1/3 max-w-[180px] rounded-2xl border-4 border-white shadow-2xl overflow-hidden bg-white p-1 z-20">
                     <img
@@ -870,9 +870,9 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                 </div>
               </div>
 
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* ── 10. SMART STATUS FLOW VISUALIZER ── */}
         <section className="py-12 lg:py-16 bg-gradient-to-br from-indigo-50/40 via-slate-50/30 to-cyan-50/30 border-y border-slate-100 relative overflow-hidden">
@@ -886,7 +886,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
               <p className="text-slate-600 mt-4 text-base max-w-xl mx-auto">
                 The system monitors dispatches and return counts to transition order states automatically.
               </p>
-            </div>
+                 </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto relative">
               {/* Connector line for desktop */}
@@ -895,32 +895,32 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
               <div className="bg-white border border-slate-200/80 rounded-2xl p-6 text-center space-y-4 status-flow-card status-flow-card-blue z-10 shadow-sm">
                 <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-xl mx-auto">
                   🚚
-                </div>
+                       </div>
                 <h3 className="mb-1">1. Sent</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">All items are logged and dispatched for the event or rental period.</p>
                 <div className="text-[10px] bg-blue-50 text-blue-700 py-1 px-2.5 rounded-full inline-block font-bold">Dispatched State</div>
-              </div>
+                       </div>
 
               <div className="bg-white border border-slate-200/80 rounded-2xl p-6 text-center space-y-4 status-flow-card status-flow-card-amber z-10 shadow-sm">
                 <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold text-xl mx-auto">
                   📦
-                </div>
+                    </div>
                 <h3 className="mb-1">2. Partially Returned</h3>
                 <p className="text-slate-555 text-sm leading-relaxed">A portion of the dispatch returns. Remaining items are flagged as due.</p>
                 <div className="text-[10px] bg-amber-50 text-amber-700 py-1 px-2.5 rounded-full inline-block font-bold">Pending Items</div>
-              </div>
+                    </div>
 
               <div className="bg-white border border-slate-200/80 rounded-2xl p-6 text-center space-y-4 status-flow-card status-flow-card-emerald z-10 shadow-sm">
                 <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-xl mx-auto">
                   ✅
-                </div>
+                    </div>
                 <h3 className="mb-1">3. Returned</h3>
                 <p className="text-slate-555 text-sm leading-relaxed">All items return. Damage/missing fees are calculated to close the balance.</p>
                 <div className="text-[10px] bg-emerald-50 text-emerald-700 py-1 px-2.5 rounded-full inline-block font-bold">Order Settled</div>
-              </div>
-            </div>
+                    </div>
+                 </div>
 
-          </div>
+              </div>
         </section>
 
         {/* ── 11. RENT MANAGEMENT SECTION ── */}
@@ -955,7 +955,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                     />
                   </div>
                 </div>
-              </div>
+            </div>
 
               {/* Right Column: Content */}
               <div className="text-center lg:text-left mt-8 lg:mt-0">
@@ -974,43 +974,43 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                     <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
                       📄
                     </div>
-                    <div>
+                  <div>
                       <h4>Rental Invoices</h4>
                       <p className="text-slate-500 text-sm mt-0.5">Generate rental receipts containing details for security deposits, period lengths, and tax rates.</p>
-                    </div>
                   </div>
+                </div>
 
                   <div className="flex gap-4 items-start text-left">
                     <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
                       ⏰
                     </div>
-                    <div>
+                  <div>
                       <h4>Expected Return Schedules</h4>
                       <p className="text-slate-500 text-sm mt-0.5">Monitor open rental terms and send return reminders before dates lapse.</p>
-                    </div>
                   </div>
+                </div>
 
                   <div className="flex gap-4 items-start text-left">
                     <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0 text-sm font-bold">
                       ⚖️
                     </div>
-                    <div>
+                  <div>
                       <h4>Condition Checks on Return</h4>
                       <p className="text-slate-555 text-sm mt-0.5">Assess returns condition and easily deduct repair fees from security deposits.</p>
-                    </div>
                   </div>
                 </div>
               </div>
-
             </div>
+
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* ── 12. INSIGHT REPORTS SECTION ── */}
         <section id="reports" className="py-12 lg:py-16 bg-gradient-to-b from-slate-50/80 via-indigo-50/20 to-slate-50/80 border-t border-slate-100 relative overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
             
-            <div className="text-center mb-10">
+          <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 font-semibold text-sm mb-6">
                 📋 Management Reports
               </div>
@@ -1020,7 +1020,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
               <p className="text-xl text-slate-600 max-w-2xl mx-auto">
                 Generate detailed operation reports instantly. Export data to PDF and Excel to sync with accounting software.
               </p>
-            </div>
+          </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               {/* Reports Tabs navigation */}
@@ -1036,15 +1036,15 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                     }`}
                   >
                     <span className="text-2xl flex-shrink-0 mt-0.5">{rep.icon}</span>
-                    <div>
+                <div>
                       <h4 className="leading-tight">{rep.name}</h4>
                       <p className={`text-xs mt-1 leading-snug line-clamp-2 ${activeReportIdx === idx ? "text-indigo-50/80" : "text-slate-400"}`}>
                         {rep.desc}
                       </p>
-                    </div>
+                </div>
                   </button>
-                ))}
-              </div>
+            ))}
+          </div>
 
               {/* Selected report screenshot and actions */}
               <div className="lg:col-span-8 bg-white p-4 rounded-3xl border border-slate-200/60 shadow-xl space-y-6">
@@ -1056,7 +1056,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                     <p className="text-slate-500 text-xs sm:text-sm mt-1">
                       {reportList[activeReportIdx].desc}
                     </p>
-                  </div>
+             </div>
                   <div className="flex gap-2">
                     <span className="px-3 py-1 bg-emerald-50 text-emerald-700 text-[10px] font-black rounded-lg uppercase">PDF Supported</span>
                     <span className="px-3 py-1 bg-indigo-50 text-indigo-700 text-[10px] font-black rounded-lg uppercase">Excel Ready</span>
@@ -1194,7 +1194,7 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                         key={actualIdx}
                         className="bg-white rounded-2xl border border-slate-200/80 overflow-hidden transition-all duration-200 shadow-sm animate-card-fade"
                       >
-                        <button
+                <button 
                           onClick={() => toggleFaq(actualIdx)}
                           className="w-full flex items-center justify-between p-6 text-left hover:bg-slate-50/50"
                         >
@@ -1203,8 +1203,8 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                           </span>
                           <span className={`text-indigo-655 text-xl font-bold transition-transform duration-200 transform ${isOpen ? "rotate-45" : "rotate-0"}`}>
                             ＋
-                          </span>
-                        </button>
+                  </span>
+                </button>
 
                         <AnimatePresence initial={false}>
                           {isOpen && (
@@ -1216,14 +1216,14 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                             >
                               <div className="p-6 pt-0 text-slate-500 text-xs sm:text-sm border-t border-slate-100 leading-relaxed bg-indigo-50/10">
                                 {item.a}
-                              </div>
+             </div>
                             </motion.div>
                           )}
                         </AnimatePresence>
-                      </div>
+          </div>
                     );
                   })}
-              </div>
+        </div>
 
               {/* Right Column */}
               <div className="space-y-6">
@@ -1259,18 +1259,18 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                             >
                               <div className="p-6 pt-0 text-slate-500 text-xs sm:text-sm border-t border-slate-100 leading-relaxed bg-indigo-50/10">
                                 {item.a}
-                              </div>
+                   </div>
                             </motion.div>
                           )}
                         </AnimatePresence>
-                      </div>
+                </div>
                     );
                   })}
-              </div>
             </div>
-
           </div>
-        </section>
+
+        </div>
+      </section>
 
         {/* ── 15. CTA FOOTER & RELATED SOLUTIONS ── */}
         <section className="py-12 lg:py-16 bg-gradient-to-b from-indigo-50/50 to-indigo-100/30 border-t border-slate-100 relative overflow-hidden">
@@ -1284,24 +1284,24 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
               Join businesses that have scaled operational tracking times by over 40% with our automated status flow portal.
             </p>
             <div className="pt-2">
-              <button
-                onClick={() => setIsModalOpen(true)}
+               <button 
+                  onClick={() => setIsModalOpen(true)}
                 className="px-10 py-5 premium-btn-gradient text-white font-extrabold text-lg rounded-2xl active:scale-95 cursor-pointer"
-              >
-                Get Started for Free
-              </button>
+               >
+                    Get Started for Free
+               </button>
             </div>
-          </div>
+         </div>
 
           <div className="absolute top-1/2 left-0 w-64 h-64 bg-indigo-200/20 rounded-full blur-[100px] opacity-60 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
           <div className="absolute bottom-1/2 right-0 w-64 h-64 bg-cyan-200/20 rounded-full blur-[100px] opacity-60 translate-x-1/2 translate-y-1/2 pointer-events-none" />
 
           {/* Related ERP solutions */}
           <div className="max-w-7xl mx-auto px-6 pt-12 border-t border-slate-200 relative z-10">
-            <div className="text-center mb-10">
+          <div className="text-center mb-10">
               <span className="text-indigo-600 font-bold tracking-wider text-xs uppercase block mb-2">Explore Options</span>
               <h3>Related ERP Solutions</h3>
-            </div>
+          </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {relatedProducts.slice(0, 3).map((tp) => (
@@ -1325,23 +1325,23 @@ export default function ProductDetailPremiumGodownStaging({ product, relatedProd
                     <span>Learn More</span>
                     <span className="transform group-hover:translate-x-1 transition-transform">➔</span>
                   </div>
-                </Link>
-              ))}
-            </div>
+              </Link>
+            ))}
           </div>
+        </div>
 
-        </section>
+      </section>
 
-        {/* ── CONTACT FORM MODAL ── */}
-        <ContactFormModal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          preSelectedType="Product"
-          preSelectedItem={product.title}
-          allItems={allProducts}
-        />
+      {/* ── CONTACT FORM MODAL ── */}
+      <ContactFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        preSelectedType="Product"
+        preSelectedItem={product.title}
+        allItems={allProducts}
+      />
 
-      </div>
+    </div>
     </>
   );
 }

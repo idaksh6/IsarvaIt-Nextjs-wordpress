@@ -22,7 +22,7 @@ export default function WhatsAppWidget() {
           rel="noopener noreferrer"
           role="button"
           tabIndex={0}
-          className="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-[0_4px_16px_rgba(37,211,102,0.4)] hover:shadow-[0_8px_24px_rgba(37,211,102,0.6)] hover:scale-110 active:scale-95 transition-all duration-300 relative group/btn"
+          className="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-[0_4px_16px_rgba(37,211,102,0.4)] hover:shadow-[0_8px_24px_rgba(37,211,102,0.6)] active:opacity-90 transition-shadow duration-200 relative group/btn"
           aria-label="Chat with us on WhatsApp"
         >
           {/* WhatsApp SVG Icon */}
