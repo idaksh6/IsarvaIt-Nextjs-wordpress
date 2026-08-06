@@ -92,6 +92,11 @@ const nextConfig = {
         destination: "/product/hrms-software/hrms-pricing",
         permanent: true,
       },
+      {
+        source: "/products/rdl-product",
+        destination: "/products/data-logger-iiot-4-0-1",
+        permanent: true,
+      },
     ];
   },
   

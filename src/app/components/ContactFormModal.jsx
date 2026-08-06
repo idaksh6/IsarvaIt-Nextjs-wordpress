@@ -9,7 +9,8 @@ export default function ContactFormModal({
   onClose,
   preSelectedType,
   preSelectedItem,
-  allItems = []
+  allItems = [],
+  successRedirectUrl = null,
 }) {
   const router = useRouter();
   const [formData, setFormData] = useState({
@@ -257,19 +258,25 @@ export default function ContactFormModal({
         // Close modal first
         onClose();
 
-        // Redirect to thank you page with context
-        const queryParams = new URLSearchParams({
-          type: type,
-          ...(formData.selectedItem && { item: formData.selectedItem }),
-          ...(!formData.selectedItem && preSelectedItem && { item: preSelectedItem })
-        });
-
         // Send custom event to GTM for 100% accurate success tracking
         if (window.dataLayer) {
           window.dataLayer.push({
             event: 'enquiry_success'
           });
         }
+
+        // Optional post-submit redirect (e.g. product detail URL after Know More)
+        if (successRedirectUrl) {
+          window.location.href = successRedirectUrl;
+          return;
+        }
+
+        // Redirect to thank you page with context
+        const queryParams = new URLSearchParams({
+          type: type,
+          ...(formData.selectedItem && { item: formData.selectedItem }),
+          ...(!formData.selectedItem && preSelectedItem && { item: preSelectedItem })
+        });
 
         router.push(`/thank-you?${queryParams.toString()}`);
       } else {

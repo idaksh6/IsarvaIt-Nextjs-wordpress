@@ -1,0 +1,70 @@
+/* RDL product page — hard scroll stability for Chrome on Windows */
+
+html.rdl-scroll-stable {
+  scroll-behavior: auto !important;
+}
+
+html.rdl-scroll-stable body {
+  overflow-x: hidden !important;
+}
+
+/* Solid locked header — no blur / transitions / GPU hints */
+html.rdl-scroll-stable header.fixed {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background: #ffffff !important;
+  will-change: auto !important;
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+html.rdl-scroll-stable header.fixed img {
+  filter: none !important; /* kill logo drop-shadow paint while scrolling */
+}
+
+.rdl-product-page {
+  overflow-x: hidden;
+  /* no isolation — creates extra compositing layer under fixed header */
+}
+
+.rdl-product-page section,
+.rdl-product-page .rdl-feature-media,
+.rdl-product-page .rdl-order-media {
+  contain: none !important;
+  transform: none !important;
+  will-change: auto !important;
+  filter: none !important;
+  perspective: none !important;
+  backface-visibility: visible !important;
+}
+
+.rdl-product-page img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.rdl-product-page .rdl-h-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  overscroll-behavior-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Kill perspective transforms from press-illusion buttons on this page */
+html.rdl-scroll-stable .rdl-product-page .press-illusion-btn-orange,
+html.rdl-scroll-stable .rdl-product-page .press-illusion-btn-green,
+html.rdl-scroll-stable .rdl-product-page .press-illusion-btn {
+  transform: none !important;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease !important;
+  will-change: auto !important;
+}
+
+@media (max-width: 1024px) {
+  .rdl-product-page * {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
