@@ -200,7 +200,7 @@ export const productsData = [
   {
     slug: "woocommerce-development",
     title: "WooCommerce Development",
-    ogImage: "/products/woocommerce/Woo-commerce-dashboard.jpg",
+    ogImage: "/products/woocommerce/woocommerce-hero-staging.png",
     category: "E-Commerce",
     icon: "🛒",
     tagline: "Custom E-Commerce Solutions",
@@ -232,7 +232,7 @@ export const productsData = [
   {
     slug: "woocommerce-development-old",
     title: "WooCommerce Development",
-    ogImage: "/products/woocommerce/Woo-commerce-dashboard.jpg",
+    ogImage: "/products/woocommerce/woocommerce-hero-staging.png",
     category: "E-Commerce",
     icon: "🛒",
     tagline: "Custom E-Commerce Solutions",
