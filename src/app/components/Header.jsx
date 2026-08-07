@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "./AppLink";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -79,7 +80,11 @@ const productsData = [
 ];
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isScrollStablePage =
+    typeof pathname === "string" && pathname.includes("/products/rdl-product");
+
+  const [scrolled, setScrolled] = useState(isScrollStablePage);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
@@ -91,10 +96,26 @@ export default function Header() {
   const [isMobileAboutOpen, setIsMobileAboutOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    // RDL product page: never toggle header classes on scroll (causes vibration).
+    if (isScrollStablePage) {
+      setScrolled(true);
+      return;
+    }
+
+    let ticking = false;
+    const handleScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 20);
+        ticking = false;
+      });
+    };
+
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isScrollStablePage]);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -110,11 +131,16 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
-        ? "bg-white/90 backdrop-blur-md py-3 shadow-sm border-b border-gray-100"
-        : "bg-transparent py-5"
-        }`}
-      style={{ willChange: scrolled ? "auto" : "transform" }}
+      className={`fixed top-0 left-0 w-full z-50 ${
+        isScrollStablePage
+          ? "bg-white py-3 shadow-sm border-b border-gray-100"
+          : `transition-all duration-300 ${
+              scrolled
+                ? "bg-white/90 backdrop-blur-md py-3 shadow-sm border-b border-gray-100"
+                : "bg-transparent py-5"
+            }`
+      }`}
+      style={isScrollStablePage ? undefined : { willChange: scrolled ? "auto" : "transform" }}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}

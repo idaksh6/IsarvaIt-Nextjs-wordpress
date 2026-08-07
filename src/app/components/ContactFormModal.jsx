@@ -11,6 +11,7 @@ export default function ContactFormModal({
   preSelectedItem,
   allItems = [],
   successRedirectUrl = null,
+  successDownloadUrl = null,
 }) {
   const router = useRouter();
   const [formData, setFormData] = useState({
@@ -263,6 +264,26 @@ export default function ContactFormModal({
           window.dataLayer.push({
             event: 'enquiry_success'
           });
+        }
+
+        // Optional gated file download (PDF/ZIP) then thank-you
+        if (successDownloadUrl) {
+          const link = document.createElement("a");
+          link.href = successDownloadUrl;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.download = "";
+          document.body.appendChild(link);
+          link.click();
+          link.remove();
+
+          const queryParams = new URLSearchParams({
+            type: "brochure",
+            ...(formData.selectedItem && { item: formData.selectedItem }),
+            ...(!formData.selectedItem && preSelectedItem && { item: preSelectedItem }),
+          });
+          router.push(`/thank-you?${queryParams.toString()}`);
+          return;
         }
 
         // Optional post-submit redirect (e.g. product detail URL after Know More)

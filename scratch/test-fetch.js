@@ -1,27 +1,23 @@
-const WORDPRESS_BLOG_API_URL = 'https://blog.isarvait.com';
+const cheerio = require('cheerio');
 
-async function testFetch() {
-  const url = `${WORDPRESS_BLOG_API_URL}/wp-json/wp/v2/posts?per_page=4`;
-  console.log('Fetching:', url);
-  try {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 15000); // 15s timeout
-    
-    const response = await fetch(url, { signal: controller.signal });
-    clearTimeout(timeoutId);
-    
-    console.log('Status:', response.status);
-    console.log('OK:', response.ok);
-    if (response.ok) {
-      const data = await response.json();
-      console.log('Successfully fetched posts:', data.length);
-      console.log('Post titles:', data.map(p => p.title?.rendered));
-    } else {
-      console.log('Error content:', await response.text());
-    }
-  } catch (error) {
-    console.error('Fetch error:', error);
-  }
+async function scrape() {
+  const res = await fetch('https://rdltech.in/data-logger-iiot-4-0-1');
+  const html = await res.text();
+  const $ = cheerio.load(html);
+  
+  const content = [];
+  $('h1, h2, h3, h4, p, li').each((i, el) => {
+    content.push($(el).text().trim());
+  });
+
+  const images = [];
+  $('img').each((i, el) => {
+    images.push($(el).attr('src'));
+  });
+
+  console.log("=== CONTENT ===");
+  console.log(content.filter(t => t.length > 0).join('\n'));
+  console.log("=== IMAGES ===");
+  console.log(images.filter(src => src).join('\n'));
 }
-
-testFetch();
+scrape().catch(console.error);
