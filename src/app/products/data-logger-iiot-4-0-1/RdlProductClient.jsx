@@ -23,7 +23,7 @@ function VariantCard({ variant, onKnowMore }) {
     : variant.preview;
 
   return (
-    <div className="flex flex-col bg-white rounded-2xl sm:rounded-[2rem] border border-slate-200 h-full min-w-0">
+    <div className="flex flex-col bg-white rounded-2xl sm:rounded-[2rem] border border-slate-200 h-full min-w-0 overflow-hidden">
       <div className="relative h-40 sm:h-48 bg-slate-50 border-b border-slate-100 flex items-center justify-center p-4 sm:p-6 rdl-feature-media">
         <img
           src={variant.image}
@@ -31,8 +31,9 @@ function VariantCard({ variant, onKnowMore }) {
           width={320}
           height={200}
           className="max-h-full max-w-full w-auto object-contain"
-          loading="lazy"
+          loading="eager"
           decoding="async"
+          fetchPriority="low"
         />
       </div>
 
@@ -75,34 +76,48 @@ export default function RdlProductClient() {
   const [playVideo, setPlayVideo] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [successRedirectUrl, setSuccessRedirectUrl] = useState(null);
+  const [successDownloadUrl, setSuccessDownloadUrl] = useState(null);
 
   const CRM_PRODUCT_ITEM = "Data Logger IIoT";
 
   const openDemoModal = () => {
     setSuccessRedirectUrl(null);
+    setSuccessDownloadUrl(null);
     setIsModalOpen(true);
   };
 
   const openKnowMoreModal = (variant) => {
+    setSuccessDownloadUrl(null);
     setSuccessRedirectUrl(variant.link);
     setIsModalOpen(true);
   };
 
   const openLinkedModal = (redirectUrl) => {
+    setSuccessDownloadUrl(null);
     setSuccessRedirectUrl(redirectUrl);
+    setIsModalOpen(true);
+  };
+
+  const openDownloadModal = (file) => {
+    setSuccessRedirectUrl(null);
+    setSuccessDownloadUrl(file.href);
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
     setSuccessRedirectUrl(null);
+    setSuccessDownloadUrl(null);
   };
 
   useEffect(() => {
     const root = document.documentElement;
+    const body = document.body;
     root.classList.add("rdl-scroll-stable");
     root.style.scrollBehavior = "auto";
-    // Avoid scroll restoration fighting programmatic position
+    root.style.overflowAnchor = "none";
+    body.style.overflowX = "clip";
+
     if ("scrollRestoration" in history) {
       history.scrollRestoration = "manual";
     }
@@ -111,6 +126,8 @@ export default function RdlProductClient() {
     return () => {
       root.classList.remove("rdl-scroll-stable");
       root.style.scrollBehavior = "";
+      root.style.overflowAnchor = "";
+      body.style.overflowX = "";
       if ("scrollRestoration" in history) {
         history.scrollRestoration = "auto";
       }
@@ -292,10 +309,10 @@ export default function RdlProductClient() {
         </div>
       </section>
 
-      {/* Applications — lightweight text grid (no images/effects) */}
+      {/* Applications */}
       <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-14">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
             <h6 className="text-orange-600 mb-3">Use Cases</h6>
             <h2 className="mb-3 sm:mb-4 capitalize leading-[1.25]">Applications</h2>
             <p className="text-sm sm:text-base lg:text-xl text-gray-500 font-medium leading-relaxed">
@@ -303,20 +320,63 @@ export default function RdlProductClient() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
-            {applications.map((app) => (
-              <div
-                key={app}
-                className="flex items-start gap-3 p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-slate-50 border border-slate-100"
-              >
-                <span className="mt-0.5 text-blue-600 text-xs font-black shrink-0" aria-hidden="true">
-                  ✓
-                </span>
-                <span className="text-sm font-semibold text-gray-700 leading-snug">
-                  {app}
-                </span>
-              </div>
-            ))}
+          <div className="w-full overflow-hidden rounded-2xl sm:rounded-[1.75rem] border border-slate-200 mb-5 sm:mb-6 leading-[0]">
+            <img
+              src="/products/rdl-product/data-logger-dashboard-apps.png"
+              alt="Data Logger dashboards — Smart Grid, Smart Agriculture, Smart Pump Management, and Smart Utility Energy Management"
+              width={1400}
+              height={545}
+              className="block w-full h-auto max-w-none scale-[1.035] origin-center"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+
+          <div className="rounded-2xl sm:rounded-[1.75rem] border border-slate-200 bg-slate-50 p-4 sm:p-5 lg:p-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
+              <p className="text-[10px] sm:text-xs font-black tracking-[0.18em] text-blue-600 uppercase">
+                Where it fits
+              </p>
+              <p className="text-[11px] sm:text-xs font-semibold tracking-wide text-slate-400 uppercase">
+                Live monitoring dashboards across industries
+              </p>
+            </div>
+            <ul className="flex flex-wrap gap-2 sm:gap-2.5">
+              {applications.slice(0, -2).map((app) => (
+                <li
+                  key={app}
+                  className="inline-flex items-center gap-2 rounded-full bg-white border border-slate-100 px-3 py-2 sm:px-3.5 sm:py-2.5 shadow-[0_1px_2px_rgba(15,23,42,0.04)]"
+                >
+                  <span
+                    className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600 text-[10px] font-black"
+                    aria-hidden="true"
+                  >
+                    ✓
+                  </span>
+                  <span className="text-[13px] sm:text-sm font-semibold text-gray-700 leading-snug">
+                    {app}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <ul className="mt-2 sm:mt-2.5 flex flex-wrap justify-center gap-2 sm:gap-2.5">
+              {applications.slice(-2).map((app) => (
+                <li
+                  key={app}
+                  className="inline-flex items-center gap-2 rounded-full bg-white border border-slate-100 px-3 py-2 sm:px-3.5 sm:py-2.5 shadow-[0_1px_2px_rgba(15,23,42,0.04)]"
+                >
+                  <span
+                    className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600 text-[10px] font-black"
+                    aria-hidden="true"
+                  >
+                    ✓
+                  </span>
+                  <span className="text-[13px] sm:text-sm font-semibold text-gray-700 leading-snug">
+                    {app}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
@@ -338,7 +398,7 @@ export default function RdlProductClient() {
             {applicationDiagrams.map((diagram, idx) => (
               <article
                 key={diagram.title}
-                className="bg-white rounded-2xl sm:rounded-[2rem] border border-slate-200"
+                className="bg-white rounded-2xl sm:rounded-[2rem] border border-slate-200 overflow-hidden"
               >
                 <div className="p-5 sm:p-6 lg:p-8 border-b border-slate-100 text-center sm:text-left">
                   <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-blue-50 text-blue-600 font-black text-sm mb-3 border border-blue-100">
@@ -381,7 +441,7 @@ export default function RdlProductClient() {
             {orderInfo.map((item) => (
               <div
                 key={item.title}
-                className="bg-white rounded-2xl sm:rounded-[2rem] border border-slate-200 flex flex-col min-w-0"
+                className="bg-white rounded-2xl sm:rounded-[2rem] border border-slate-200 flex flex-col min-w-0 overflow-hidden"
               >
                 <div className="rdl-order-media h-44 sm:h-52 bg-slate-50 border-b border-slate-100 flex items-center justify-center p-4 sm:p-5">
                   <img
@@ -486,11 +546,10 @@ export default function RdlProductClient() {
               <ul className="space-y-2.5 sm:space-y-3">
                 {downloads.map((file) => (
                   <li key={file.title}>
-                    <a
-                      href={file.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200 hover:border-blue-200 transition-colors min-w-0"
+                    <button
+                      type="button"
+                      onClick={() => openDownloadModal(file)}
+                      className="w-full text-left flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200 hover:border-blue-200 transition-colors min-w-0 cursor-pointer"
                     >
                       <span className="inline-flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg sm:rounded-xl bg-orange-50 text-orange-600 text-[10px] sm:text-xs font-black shrink-0">
                         {file.type}
@@ -504,7 +563,7 @@ export default function RdlProductClient() {
                       <span className="sm:hidden text-blue-600 shrink-0 text-lg leading-none" aria-hidden="true">
                         ↓
                       </span>
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -515,11 +574,10 @@ export default function RdlProductClient() {
               <ul className="space-y-2.5 sm:space-y-3 mb-6 sm:mb-8">
                 {sdks.map((file) => (
                   <li key={file.title}>
-                    <a
-                      href={file.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200 hover:border-blue-200 transition-colors min-w-0"
+                    <button
+                      type="button"
+                      onClick={() => openDownloadModal(file)}
+                      className="w-full text-left flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white border border-slate-200 hover:border-blue-200 transition-colors min-w-0 cursor-pointer"
                     >
                       <span className="inline-flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg sm:rounded-xl bg-blue-50 text-blue-600 text-[10px] sm:text-xs font-black shrink-0">
                         {file.type}
@@ -533,7 +591,7 @@ export default function RdlProductClient() {
                       <span className="sm:hidden text-blue-600 shrink-0 text-lg leading-none" aria-hidden="true">
                         ↓
                       </span>
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -596,6 +654,7 @@ export default function RdlProductClient() {
         preSelectedType="Product"
         preSelectedItem={CRM_PRODUCT_ITEM}
         successRedirectUrl={successRedirectUrl}
+        successDownloadUrl={successDownloadUrl}
       />
     </div>
   );

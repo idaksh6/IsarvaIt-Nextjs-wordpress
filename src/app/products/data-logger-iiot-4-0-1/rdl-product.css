@@ -2,13 +2,23 @@
 
 html.rdl-scroll-stable {
   scroll-behavior: auto !important;
+  overflow-anchor: none !important;
+  scrollbar-gutter: stable;
 }
 
+html.rdl-scroll-stable,
 html.rdl-scroll-stable body {
-  overflow-x: hidden !important;
+  overflow-x: clip !important;
 }
 
-/* Solid locked header — no blur / transitions / GPU hints */
+/* Kill global img content-visibility — it skips/repaints images mid-scroll and causes vibration */
+html.rdl-scroll-stable img,
+.rdl-product-page img {
+  content-visibility: visible !important;
+  contain: none !important;
+}
+
+/* Solid locked header — fixed height, no blur / padding morph / GPU thrash */
 html.rdl-scroll-stable header.fixed {
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
@@ -17,21 +27,27 @@ html.rdl-scroll-stable header.fixed {
   transition: none !important;
   transform: none !important;
   filter: none !important;
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+  border-bottom: 1px solid #f3f4f6 !important;
 }
 
 html.rdl-scroll-stable header.fixed img {
-  filter: none !important; /* kill logo drop-shadow paint while scrolling */
+  filter: none !important;
+  content-visibility: visible !important;
 }
 
 .rdl-product-page {
-  overflow-x: hidden;
-  /* no isolation — creates extra compositing layer under fixed header */
+  overflow-x: clip;
+  overflow-anchor: none;
 }
 
 .rdl-product-page section,
 .rdl-product-page .rdl-feature-media,
 .rdl-product-page .rdl-order-media {
   contain: none !important;
+  content-visibility: visible !important;
   transform: none !important;
   will-change: auto !important;
   filter: none !important;
@@ -43,6 +59,17 @@ html.rdl-scroll-stable header.fixed img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* Reserve card media height so lazy images don't reflow the page while scrolling */
+.rdl-product-page .rdl-feature-media {
+  min-height: 10rem;
+}
+
+@media (min-width: 640px) {
+  .rdl-product-page .rdl-feature-media {
+    min-height: 12rem;
+  }
 }
 
 .rdl-product-page .rdl-h-scroll {
