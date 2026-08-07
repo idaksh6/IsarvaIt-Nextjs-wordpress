@@ -12,7 +12,7 @@ const aboutColumns = {
     { label: "Quality Policy", href: "/quality-policy", icon: "📜" },
     { label: "Case Studies", href: "/case-studies", icon: "📊" },
     { label: "Testimonials", href: "/testimonial", icon: "💬" },
-    { label: "Blog", href: "/blog", icon: "✍️" },
+    { label: "Blog", href: "https://blog.isarvait.com/", icon: "✍️" },
   ],
   col2: [
     { label: "Partners", href: "/partners", icon: "🤝" },
@@ -47,7 +47,7 @@ const servicesData = [
   { label: "Consulting Services", href: "/service/consulting-services", icon: "💼" },
   { label: "ERP Services", href: "/service/erp-services", icon: "🏢" },
   { label: "Offshore Development", href: "/service/offshore-development", icon: "🌍" },
-  { label: "Training", href: "/service/training", icon: "📚" },
+  { label: "Laravel Development", href: "/service/custom-laravel-application-development", icon: "⚙️" },
   { label: "GPS Tracking", href: "/service/gps-tracking", icon: "📍" },
   { label: "WordPress Training", href: "/service/wordpress-training", icon: "🎓" },
   { label: "Odoo Apps Support", href: "/service/odoo-apps-support-and-maintenance", icon: "📦" },
@@ -66,13 +66,13 @@ const industriesData = [
 
 const productsData = [
   { label: "HRMS Software", href: "/product/hrms-software", icon: "👥" },
-  { label: "CRM Software", href: "/product/crm-application", icon: "👔" },
-  { label: "Support Software", href: "/product/support-application", icon: "🎧" },
+  { label: "CRM Software", href: "/product/crm-software", icon: "👔" },
+  { label: "Support Software", href: "/product/support-software", icon: "🎧" },
   { label: "BillSoft Software", href: "/product/bill-soft", icon: "🧾" },
   { label: "Marine Service Software", href: "/product/marine-service-software", icon: "🏬" },
   { label: "Dispatcher Panel", href: "/product/dispatcher-panel", icon: "⛽" },
   { label: "WooCommerce Development", href: "/product/woocommerce-development", icon: "🛒" },
-  { label: "Document Management System", href: "/product/document-management-system", icon: "📄" },
+  { label: "Mobile App Development", href: "/product/mobile-app-development", icon: "📱" },
   { label: "Retail Billing Software", href: "/product/retail-billing-software", icon: "🚚" },
   { label: "Dealer Management and Dealer Article Software", href: "/product/dealer-management-and-dealer-article-software", icon: "🤝" },
   { label: "Lawyer Legal Association Software", href: "/product/lawyer-legal-association-software", icon: "⚖️" },
@@ -214,6 +214,8 @@ export default function Header() {
                             <Link
                               key={child.label}
                               href={child.href}
+                              target={child.href.startsWith("http") ? "_blank" : undefined}
+                              rel={child.href.startsWith("http") ? "noopener noreferrer" : undefined}
                               onClick={() => setIsAboutOpen(false)}
                               className="group flex items-center justify-between p-3.5 rounded-2xl bg-gray-50 hover:bg-emerald-50 transition-all duration-300 border border-transparent hover:border-emerald-200"
                             >
@@ -241,6 +243,8 @@ export default function Header() {
                             <Link
                               key={child.label}
                               href={child.href}
+                              target={child.href.startsWith("http") ? "_blank" : undefined}
+                              rel={child.href.startsWith("http") ? "noopener noreferrer" : undefined}
                               onClick={() => setIsAboutOpen(false)}
                               className="group flex items-center justify-between p-3.5 rounded-2xl bg-gray-50 hover:bg-emerald-50 transition-all duration-300 border border-transparent hover:border-emerald-200"
                             >
@@ -710,6 +714,8 @@ export default function Header() {
                                   <Link
                                     key={child.label}
                                     href={child.href}
+                                    target={child.href.startsWith("http") ? "_blank" : undefined}
+                                    rel={child.href.startsWith("http") ? "noopener noreferrer" : undefined}
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className="flex items-center gap-3 p-3 rounded-xl hover:bg-white hover:shadow-sm transition-all duration-200"
                                   >

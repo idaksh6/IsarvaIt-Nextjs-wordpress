@@ -11,7 +11,7 @@ export function generateMetadata({
   title,
   description = DEFAULT_DESCRIPTION,
   keywords = [],
-  image = `${SITE_URL}/isarva-og.png`,
+  image = `${SITE_URL}/isarva-og.jpg`,
   url = SITE_URL,
   type = "website",
   noIndex = false,
@@ -97,7 +97,15 @@ export function generateProductMetadata(product) {
     ? product.ogImage.startsWith("http")
       ? product.ogImage
       : `${SITE_URL}${product.ogImage}`
-    : `${SITE_URL}/isarva-og.png`;
+    : product.heroImage
+      ? product.heroImage.startsWith("http")
+        ? product.heroImage
+        : `${SITE_URL}${product.heroImage}`
+      : product.image
+        ? product.image.startsWith("http")
+          ? product.image
+          : `${SITE_URL}${product.image}`
+        : `${SITE_URL}/isarva-og.jpg`;
 
   return generateMetadata({
     title: `${prefix}${seoTitle}`,
@@ -132,7 +140,7 @@ export function generateServiceMetadata(service) {
       ? service.heroImage.startsWith("http")
         ? service.heroImage
         : `${SITE_URL}${service.heroImage}`
-      : `${SITE_URL}/isarva-og.png`;
+      : `${SITE_URL}/isarva-og.jpg`;
 
   return generateMetadata({
     title: isStaging ? `[STAGING] ${seoTitle}` : seoTitle,
@@ -153,6 +161,16 @@ export function generateServiceMetadata(service) {
 }
 
 export function generateIndustryMetadata(industry) {
+  const ogImage = industry.ogImage
+    ? industry.ogImage.startsWith("http")
+      ? industry.ogImage
+      : `${SITE_URL}${industry.ogImage}`
+    : industry.heroImage
+      ? industry.heroImage.startsWith("http")
+        ? industry.heroImage
+        : `${SITE_URL}${industry.heroImage}`
+      : `${SITE_URL}/isarva-og.jpg`;
+
   return generateMetadata({
     title: industry.title,
     description: industry.shortDescription || industry.description,
@@ -163,6 +181,7 @@ export function generateIndustryMetadata(industry) {
       "business transformation",
     ],
     url: `/industry/${industry.slug}`,
+    image: ogImage,
   });
 }
 
@@ -183,6 +202,7 @@ export function generateJobMetadata(job) {
     description: `Join our team as ${job.title}. ${job.description?.substring(0, 150)}`,
     keywords: [job.title, job.category, "careers", "job opening", "hiring"],
     url: `/career/${job.slug}`,
+    image: "https://www.isarvait.com/Services/Training/training_mentors_team_indian.png",
   });
 }
 
@@ -193,7 +213,7 @@ export function generateOrganizationSchema() {
     "@type": "Organization",
     name: SITE_NAME,
     url: SITE_URL,
-    logo: `${SITE_URL}/isarva-og.png`,
+    logo: `${SITE_URL}/isarva-og.jpg`,
     description: DEFAULT_DESCRIPTION,
     address: {
       "@type": "PostalAddress",
@@ -339,7 +359,7 @@ export function generateArticleSchema(post) {
       name: SITE_NAME,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/isarva-og.png`,
+        url: `${SITE_URL}/isarva-og.jpg`,
       },
     },
     datePublished: post.date,

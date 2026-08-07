@@ -18,12 +18,15 @@ import ProductDetailPremiumCRM from "../../components/products/ProductDetailPrem
 import ProductDetailPremiumCRMOld from "../../components/products/ProductDetailPremiumCRMOld";
 import ProductDetailPremiumBillSoft from "../../components/products/ProductDetailPremiumBillSoft";
 import ProductDetailPremiumSupport from "../../components/products/ProductDetailPremiumSupport";
-import ProductDetailPremiumGodownStaging from "../../components/products/ProductDetailPremiumGodownStaging";
+import ProductDetailPremiumGodown from "../../components/products/ProductDetailPremiumGodown";
 import ProductDetailPremiumAssociation from "../../components/products/ProductDetailPremiumAssociation";
+import ProductDetailPremiumWooCommerceOld from "../../components/products/ProductDetailPremiumWooCommerceOld";
 
 import ProductDetailPremiumHRMS from "../../components/products/ProductDetailPremiumHRMS";
-import ProductDetailPremiumHRMSV2 from "../../components/products/ProductDetailPremiumHRMSV2";
 import ProductDetailPremiumPoshact from "../../components/products/ProductDetailPremiumPoshact";
+import ProductDetailPremiumLMS from "../../components/products/ProductDetailPremiumLMS";
+import ProductDetailPremiumAnalytics from "../../components/products/ProductDetailPremiumAnalytics";
+import ProductDetailPremiumAssetFlow from "../../components/products/ProductDetailPremiumAssetFlow";
 
 export default function ProductDetailClient({ product, relatedProducts, allProducts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -34,6 +37,39 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
       <ProductDetailPremiumHRMS 
         product={product} 
         relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for LMS Software
+  if (product.slug === 'lms-software') {
+    return (
+      <ProductDetailPremiumLMS
+        product={product}
+        relatedProducts={relatedProducts}
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for Website Analytics
+  if (product.slug === 'website-analytics') {
+    return (
+      <ProductDetailPremiumAnalytics
+        product={product}
+        relatedProducts={relatedProducts}
+        allProducts={allProducts}
+      />
+    );
+  }
+
+  // Use Premium View for AssetFlow (Asset Management Staging)
+  if (product.slug === 'asset-management-staging') {
+    return (
+      <ProductDetailPremiumAssetFlow
+        product={product}
+        relatedProducts={relatedProducts}
         allProducts={allProducts}
       />
     );
@@ -50,10 +86,23 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
     );
   }
 
-  // Use Premium View for WooCommerce Development
+  // Use Redesigned View for WooCommerce Development (Live)
   if (product.slug === 'woocommerce-development') {
     return (
       <ProductDetailPremiumWooCommerce 
+        product={product} 
+        relatedProducts={relatedProducts} 
+        allProducts={allProducts}
+      />
+    );
+  }
+
+
+
+  // Use Fallback Old View for WooCommerce Development
+  if (product.slug === 'woocommerce-development-old') {
+    return (
+      <ProductDetailPremiumWooCommerceOld 
         product={product} 
         relatedProducts={relatedProducts} 
         allProducts={allProducts}
@@ -161,7 +210,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   }
 
   // Use Premium View for CRM Application (Now Live)
-  if (product.slug === 'crm-application') {
+  if (product.slug === 'crm-software') {
     return (
       <ProductDetailPremiumCRM 
         product={product} 
@@ -172,7 +221,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   }
 
   // Use Premium View for CRM Application (Old)
-  if (product.slug === 'crm-application-old') {
+  if (product.slug === 'crm-software-old') {
     return (
       <ProductDetailPremiumCRMOld 
         product={product} 
@@ -195,7 +244,7 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
   }
 
   // Use Staging View for Support Application (now live)
-  if (product.slug === 'support-application') {
+  if (product.slug === 'support-software') {
     return (
       <ProductDetailPremiumSupport 
         product={product} 
@@ -207,10 +256,12 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
 
 
 
+
+
   // Use Premium View for Godown Management Staging
-  if (product.slug === 'godown-management-staging') {
+  if (product.slug === 'godown-management-software') {
     return (
-      <ProductDetailPremiumGodownStaging 
+      <ProductDetailPremiumGodown 
         product={product} 
         relatedProducts={relatedProducts} 
         allProducts={allProducts}

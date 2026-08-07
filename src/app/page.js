@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import CtaSection from "./components/CtaSection";
 import { getHomePageData, getAllHomePageSections } from "./lib/services/home-page-service";
 import { getBlogPosts } from "./lib/services/blog-service";
+import { fetchPosts } from "./lib/api/wordpress-api";
 import { generateMetadata as generateSEOMetadata, generateOrganizationSchema } from "./lib/utils/seo";
 import {
   generateEnhancedOrganizationSchema,
@@ -74,6 +75,7 @@ export const metadata = generateSEOMetadata({
     "Scalable Digital Products"
   ],
   url: "/",
+  image: "https://www.isarvait.com/isarva-og.jpg",
 });
 
 // Revalidate this page every 60 seconds (ISR - Incremental Static Regeneration)
@@ -84,10 +86,45 @@ export default async function HomePage() {
   // Fetch WordPress data (cached and revalidated based on settings above)
   const homePageData = await getHomePageData();
 
+  // Fetch blog posts — try WordPress first, fallback to static data
+  async function getWordPressBlogPosts() {
+    try {
+      const wpPosts = await fetchPosts({
+        perPage: 4,
+        fields: "id,title,slug,excerpt,date,featured_media,categories,link,_links",
+        embed: true,
+        revalidate: 300,
+      });
+
+      if (wpPosts && wpPosts.length > 0) {
+        return wpPosts.map((post) => ({
+          id: post.id,
+          title: post.title?.rendered || "",
+          slug: post.slug,
+          link: post.link || `https://blog.isarvait.com/${post.slug}/`,
+          excerpt: post.excerpt?.rendered?.replace(/<[^>]+>/g, "") || "",
+          date: new Date(post.date).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          }),
+          featuredImage: post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200",
+          categoryName: post._embedded?.["wp:term"]?.[0]?.[0]?.name || "Blog",
+          categorySlug: post._embedded?.["wp:term"]?.[0]?.[0]?.slug || "blog",
+          readTime: `${Math.ceil((post.content?.rendered?.replace(/<[^>]+>/g, "").split(" ").length || 300) / 200)} min read`,
+        }));
+      }
+    } catch (e) {
+      // Silently fall back to static posts
+    }
+    // Fallback to static posts
+    return getBlogPosts({ perPage: 4 });
+  }
+
   // Parallelize the rest of the fetching to eliminate waterfalls
   const [sections, blogPosts] = await Promise.all([
     getAllHomePageSections(homePageData),
-    getBlogPosts({ perPage: 4 })
+    getWordPressBlogPosts()
   ]);
 
   const heroData = sections.hero;

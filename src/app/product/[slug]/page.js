@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { getProductBySlug, getAllProductSlugs, productsData } from "../../lib/data/products-data";
 import ProductDetailClient from "./ProductDetailClient";
+import MobileAppDevelopment from "./MobileAppDevelopment";
+import WhatsAppCRMSoftware from "./WhatsAppCRMSoftware";
 import {
   generateProductMetadata,
   generateProductSchema,
@@ -26,6 +28,8 @@ export async function generateMetadata({ params }) {
     };
   }
 
+
+
   return generateProductMetadata(product);
 }
 
@@ -35,6 +39,14 @@ export default async function ProductDetailPage({ params }) {
 
   if (!product) {
     notFound();
+  }
+
+  if (slug === "mobile-app-development") {
+    return <MobileAppDevelopment />;
+  }
+
+  if (slug === "whatsapp-crm-software") {
+    return <WhatsAppCRMSoftware />;
   }
 
   // Get related products (3 random products excluding current, prioritizing same category)

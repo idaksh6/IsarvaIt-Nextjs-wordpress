@@ -17,6 +17,7 @@ export const metadata = generateSEOMetadata({
     "Isarva HRMS",
   ],
   url: "/product/hrms-software/hrms-pricing",
+  image: "https://www.isarvait.com/products/hrms/hrms-banner-main.png",
 });
 
 export const dynamic = "force-static";

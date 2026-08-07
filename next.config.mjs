@@ -54,6 +54,16 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/blog",
+        destination: "https://blog.isarvait.com/",
+        permanent: true,
+      },
+      {
+        source: "/blog/:path*",
+        destination: "https://blog.isarvait.com/:path*",
+        permanent: true,
+      },
+      {
         source: "/wordpress-maintenance",
         destination: "/service/wordpress-development",
         permanent: true,
@@ -86,6 +96,11 @@ const nextConfig = {
       {
         source: "/hrms-pricing",
         destination: "/product/hrms-software/hrms-pricing",
+        permanent: true,
+      },
+      {
+        source: "/products/rdl-product",
+        destination: "/products/data-logger-iiot-4-0-1",
         permanent: true,
       },
     ];

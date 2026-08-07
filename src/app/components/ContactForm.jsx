@@ -33,10 +33,10 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
     setSubmitStatus(null);
     setErrorMessage("");
     
-    if (!formData.company) {
+    if (!formData.phone) {
       setSubmitStatus("error");
       setIsSubmitting(false);
-      setErrorMessage("The company name field is required.");
+      setErrorMessage("The phone number field is required.");
       return;
     }
 
@@ -190,7 +190,7 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label htmlFor="phone" className="block text-sm font-semibold text-gray-900 mb-2">
-            Phone Number
+            Phone Number *
           </label>
           <input
             type="tel"
@@ -199,6 +199,8 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
             aria-label="Phone number"
             value={formData.phone}
             onChange={handleChange}
+            required
+            aria-required="true"
             className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-200 outline-none text-gray-900"
             placeholder="+1 (555) 123-4567"
           />
@@ -206,7 +208,7 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
 
         <div>
           <label htmlFor="company" className="block text-sm font-semibold text-gray-900 mb-2">
-            Company Name *
+            Company Name
           </label>
           <input
             type="text"
@@ -214,11 +216,9 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
             name="company"
             value={formData.company}
             onChange={handleChange}
-            required
-            aria-required="true"
             aria-label="Organization name"
             className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all duration-200 outline-none text-gray-900"
-            placeholder="Your Company"
+            placeholder="Your Company (Optional)"
           />
         </div>
       </div>

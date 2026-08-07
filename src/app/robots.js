@@ -3,7 +3,7 @@ export default function robots() {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api/', '/report/'],
+      disallow: ['/api/', '/report/', '/thank-you'],
     },
     sitemap: 'https://www.isarvait.com/sitemap.xml',
   };

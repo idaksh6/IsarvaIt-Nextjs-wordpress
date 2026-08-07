@@ -191,13 +191,13 @@ export default function ServicesListClient({ servicesData }) {
                   key={service.slug}
                   href={`/service/${service.slug}`}
                   prefetch={false}
-                  className="group block h-full w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.333rem)]"
+                  className="group flex flex-col self-stretch w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.333rem)]"
                 >
-                  <div className="relative rounded-3xl p-8 h-full transition-all duration-300 hover:scale-[1.02] bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg hover:shadow-2xl flex flex-col items-center text-center">
+                  <div className="relative rounded-3xl p-8 flex-1 transition-all duration-300 hover:scale-[1.02] bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg hover:shadow-2xl flex flex-col items-center text-center">
                     {/* Hover Gradient Effect */}
                     <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-emerald-400/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
-                    <div className="relative w-full flex flex-col items-center text-center">
+                    <div className="relative w-full flex-1 flex flex-col items-center text-center">
                       {/* Feature Count Badge */}
                       <div className="mb-4 min-h-[1.75rem] flex items-center justify-center">
                         <span className="bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full border-2 border-emerald-200 shadow-md whitespace-nowrap">

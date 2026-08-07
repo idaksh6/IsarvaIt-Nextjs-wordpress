@@ -109,6 +109,10 @@ function SearchResults() {
 
     // Search Static Pages
     const pageResults = staticPages.filter((page) => {
+      // Exclude admin reports and staging pages
+      if (page.slug === "/report" || page.slug === "/staging") {
+        return false;
+      }
       return (
         page.name?.toLowerCase().includes(term) ||
         page.description?.toLowerCase().includes(term) ||
@@ -118,6 +122,12 @@ function SearchResults() {
 
     // Search Products
     const productResults = products.filter((item) => {
+      // Exclude staging and old products
+      const isHidden = 
+        item.slug?.includes("staging") || 
+        item.slug?.includes("-old");
+      if (isHidden) return false;
+
       return (
         item.name?.toLowerCase().includes(term) ||
         item.description?.toLowerCase().includes(term) ||
@@ -128,6 +138,13 @@ function SearchResults() {
 
     // Search Services
     const serviceResults = services.filter((item) => {
+      // Exclude staging, old, and no-index services (like WhatsApp CRM, News & Magazine Portal)
+      const isHidden = 
+        item.slug?.includes("staging") || 
+        item.slug?.includes("-old") || 
+        item.slug === "news-and-magazine-portal";
+      if (isHidden) return false;
+
       return (
         item.name?.toLowerCase().includes(term) ||
         item.description?.toLowerCase().includes(term) ||

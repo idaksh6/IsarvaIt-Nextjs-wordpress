@@ -18,7 +18,6 @@ export default function sitemap() {
     '/services',
     '/industries',
     '/testimonial',
-    '/thank-you',
     '/quality-policy',
     '/referral-program',
   ].map((route) => ({

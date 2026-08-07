@@ -1,10 +1,11 @@
 import { generateMetadata as generateSEOMetadata } from "../lib/utils/seo";
 
 export const metadata = generateSEOMetadata({
-  title: "Client Testimonials - Success Stories and Reviews",
-  description: "Read what our clients say about Isarva Infotech. Discover how we've helped over 500+ global enterprises and startups architect their digital future with premium web and software solutions.",
-  keywords: ["testimonials", "client reviews", "success stories", "Isarva reviews", "case studies"],
+  title: "Client Testimonials - Real Stories & Proven Results",
+  description: "Read real stories and proven results from 500+ global enterprises and startups that trust Isarva Infotech to architect their digital future.",
+  keywords: ["testimonials", "client reviews", "success stories", "Isarva feedback", "customer reviews"],
   url: "/testimonial",
+  image: "https://www.isarvait.com/images/testimonial_og_image.png",
 });
 
 export default function TestimonialLayout({ children }) {

@@ -2,6 +2,7 @@ import Link from "../../components/AppLink";
 import { notFound } from "next/navigation";
 import { getIndustryBySlug, getAllIndustrySlugs, industriesData } from "../../lib/data/industries-data";
 import IndustryDetailClient from "./IndustryDetailClient";
+import { generateIndustryMetadata } from "../../lib/utils/seo";
 
 export async function generateStaticParams() {
   return getAllIndustrySlugs().map((slug) => ({
@@ -22,10 +23,7 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  return {
-    title: `${industry.title} Solutions - Isarva Industries`,
-    description: industry.description,
-  };
+  return generateIndustryMetadata(industry);
 }
 
 export default async function IndustryDetailPage({ params }) {

@@ -67,9 +67,5 @@ module.exports = {
       }
     },
   },
-  // Disable JIT features that aren't needed
-  corePlugins: {
-    aspectRatio: false,
-  },
   plugins: [],
 };

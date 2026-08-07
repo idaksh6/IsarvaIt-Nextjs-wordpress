@@ -8,13 +8,13 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.isarvait.com";
 
 const productsData = [
   { label: "HRMS Software", href: "/product/hrms-software", icon: "👥" },
-  { label: "CRM Software", href: "/product/crm-application", icon: "👔" },
-  { label: "Support Software", href: "/product/support-application", icon: "🎧" },
+  { label: "CRM Software", href: "/product/crm-software", icon: "👔" },
+  { label: "Support Software", href: "/product/support-software", icon: "🎧" },
   { label: "BillSoft Software", href: "/product/bill-soft", icon: "🧾" },
   { label: "Marine Service Software", href: "/product/marine-service-software", icon: "🏬" },
   { label: "Dispatcher Panel", href: "/product/dispatcher-panel", icon: "⛽" },
   { label: "WooCommerce Development", href: "/product/woocommerce-development", icon: "🛒" },
-  { label: "Document Management System", href: "/product/document-management-system", icon: "📄" },
+  { label: "Mobile App Development", href: "/product/mobile-app-development", icon: "📱" },
   { label: "Retail Billing Software", href: "/product/retail-billing-software", icon: "🚚" },
   { label: "Dealer Management and Dealer Article Software", href: "/product/dealer-management-and-dealer-article-software", icon: "🤝" },
   { label: "Lawyer Legal Association Software", href: "/product/lawyer-legal-association-software", icon: "⚖️" },
@@ -33,7 +33,7 @@ const servicesData = [
   { label: "Consulting Services", href: "/service/consulting-services", icon: "💼" },
   { label: "ERP Services", href: "/service/erp-services", icon: "🏢" },
   { label: "Offshore Development", href: "/service/offshore-development", icon: "🌍" },
-  { label: "Training", href: "/service/training", icon: "📚" },
+  { label: "Laravel Development", href: "/service/custom-laravel-application-development", icon: "⚙️" },
   { label: "GPS Tracking", href: "/service/gps-tracking", icon: "📍" },
   { label: "WordPress Training", href: "/service/wordpress-training", icon: "🎓" },
   { label: "Odoo Apps Support", href: "/service/odoo-apps-support-and-maintenance", icon: "📦" },
@@ -49,14 +49,20 @@ const industriesData = [
   { label: "BPO Services – ITES", href: "/industry/bpo-services-ites", icon: "💼" },
 ];
 
-const aboutLinks = [
+const aboutCol1 = [
   { label: "About Us", href: "/about", icon: "ℹ️" },
   { label: "Quality Policy", href: "/quality-policy", icon: "📜" },
-  { label: "Partners", href: "/partners", icon: "🤝" },
   { label: "Case Studies", href: "/case-studies", icon: "📊" },
   { label: "Testimonials", href: "/testimonial", icon: "💬" },
   { label: "Blog", href: "/blog", icon: "✍️" },
-  { label: "Careers", href: "/careers", icon: "💼" },
+];
+
+const aboutCol2 = [
+  { label: "Partners", href: "/partners", icon: "🤝" },
+  { label: "White Label", href: "/white-label-agency-partnerships", icon: "🏷️" },
+  { label: "Reference", href: "/referral-program", icon: "🔗" },
+  { label: "Training", href: "/training-programs", icon: "🎓" },
+  { label: "Career", href: "/careers", icon: "💼" },
 ];
 
 // ─── HTML Builders ────────────────────────────────────────────────────────────
@@ -70,7 +76,7 @@ function arrowRight(cls = "w-5 h-5 text-gray-300 group-hover:text-emerald-500 tr
 }
 
 function gridItem(href, icon, label, hoverColor = "violet") {
-  return `<a href="${SITE_URL}${href}" class="group flex items-start gap-3 p-4 rounded-xl hover:bg-${hoverColor}-50 transition-all duration-200">
+  return `<a href="${SITE_URL}${href}" class="group flex items-center gap-3 p-4 rounded-xl hover:bg-${hoverColor}-50 transition-all duration-200">
     <span class="text-2xl mt-0.5 group-hover:scale-110 transition-transform duration-200 flex-shrink-0">${icon}</span>
     <div class="flex-1 min-w-0">
       <h4 class="font-sans font-semibold text-gray-900 group-hover:text-${hoverColor}-600 transition-colors text-sm break-words">${label}</h4>
@@ -85,17 +91,20 @@ function buildHeader() {
   const servicesGrid = servicesData.map(s => gridItem(s.href, s.icon, s.label, "emerald")).join("\n");
   // Industries grid
   const industriesGrid = industriesData.map(i => gridItem(i.href, i.icon, i.label, "blue")).join("\n");
-  // About links
-  const aboutLinksHtml = aboutLinks.map(a => `
-    <a href="${a.href.startsWith('http') ? a.href : SITE_URL + a.href}" class="group flex items-center justify-between p-4 rounded-2xl bg-gray-50 hover:bg-emerald-50 transition-all duration-300 border border-transparent hover:border-emerald-200">
+  // About links helpers
+  const buildAboutLinkHtml = (a) => `
+    <a href="${a.href.startsWith('http') ? a.href : SITE_URL + a.href}" class="group flex items-center justify-between p-3.5 rounded-2xl bg-gray-50 hover:bg-emerald-50 transition-all duration-300 border border-transparent hover:border-emerald-200">
       <div class="flex items-center gap-3 flex-1 min-w-0">
-        <div class="w-10 h-10 rounded-xl bg-white group-hover:bg-[#10b981] flex items-center justify-center transition-colors shadow-sm flex-shrink-0">
-          <span class="text-lg group-hover:scale-110 transition-transform">${a.icon}</span>
+        <div class="w-9 h-9 rounded-xl bg-white group-hover:bg-[#10b981] flex items-center justify-center transition-colors shadow-sm flex-shrink-0">
+          <span class="text-base group-hover:scale-110 transition-transform">${a.icon}</span>
         </div>
-        <span class="font-bold text-gray-800 group-hover:text-emerald-600 transition-colors capitalize tracking-tight text-sm break-words">${a.label}</span>
+        <span class="font-bold text-gray-800 group-hover:text-emerald-600 transition-colors capitalize tracking-tight text-xs md:text-sm break-words">${a.label}</span>
       </div>
-      ${arrowRight()}
-    </a>`).join("\n");
+      ${arrowRight("w-4 h-4 text-gray-300 group-hover:text-emerald-500 group-hover:translate-x-1 transition-all flex-shrink-0 ml-2")}
+    </a>`;
+
+  const aboutCol1Html = aboutCol1.map(buildAboutLinkHtml).join("\n");
+  const aboutCol2Html = aboutCol2.map(buildAboutLinkHtml).join("\n");
 
   return `<header id="isarva-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent py-5" style="will-change:transform">
   <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -120,26 +129,33 @@ function buildHeader() {
       <!-- About Us -->
       <div class="relative nav-dropdown" data-menu-type="about-static">
         <a class="group text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1" href="${SITE_URL}/about">About Us ${chevronDown()}</a>
-        <div class="mega-menu mega-menu-left pt-4">
-          <div class="w-[650px]">
+        <div class="mega-menu mega-menu-left about-mega-menu pt-4">
+          <div class="w-[860px]">
             <div class="bg-white/95 backdrop-blur-xl rounded-[2.5rem] shadow-2xl border border-gray-100 p-8 flex gap-8">
               <a href="${SITE_URL}/about" class="group/featured w-[280px] bg-gradient-to-br from-emerald-50 to-lime-50 rounded-3xl p-6 relative overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col">
                 <div class="absolute inset-0 opacity-10 group-hover/featured:scale-110 transition-transform duration-700">
                   <img src="${SITE_URL}/agency_office_studio_premium_1773850105446.png" class="w-full h-full object-cover" alt="Isarva team collaboration workspace" loading="lazy" />
                 </div>
                 <div class="relative z-10 flex flex-col h-full">
-                  <h4 class="text-xl font-bold text-gray-900 mb-4">About Isarva</h4>
-                  <p class="text-gray-600 text-base mb-6 font-medium leading-relaxed">At Isarva Infotech, we are more than an IT consulting firm – we are a strategic technology partner enabling organizations to achieve their digital transformation goals.</p>
+                  <h3 class="text-xl font-bold text-gray-900 mb-4">About Isarva</h3>
+                  <p class="text-gray-600 text-base mb-6 font-medium leading-relaxed">At Isarva Infotech, we are more than an IT consulting firm - we are a strategic technology partner. Company plays a pivotal role in enabling organizations to achieve their digital transformation goals.</p>
                   <div class="mt-auto text-emerald-600 font-bold text-base flex items-center gap-2">Read More <span>→</span></div>
                 </div>
               </a>
-              <div class="flex-1">
-                <div class="mb-6">
-                  <h3 class="text-xl font-bold text-gray-900 mb-1">Resources</h3>
-                  <p class="text-gray-500 text-sm">Discover our mission and impact</p>
+              <div class="flex-1 flex gap-6">
+                <!-- Column 1: Company -->
+                <div class="flex-1 space-y-2">
+                  <div class="mb-4">
+                    <h3 class="text-xl font-bold text-gray-900 mb-1">Company</h3>
+                  </div>
+                  ${aboutCol1Html}
                 </div>
-                <div class="space-y-2">
-                  ${aboutLinksHtml}
+                <!-- Column 2: Grow With Us -->
+                <div class="flex-1 space-y-2">
+                  <div class="mb-4">
+                    <h3 class="text-xl font-bold text-gray-900 mb-1">Grow With Us</h3>
+                  </div>
+                  ${aboutCol2Html}
                 </div>
               </div>
             </div>

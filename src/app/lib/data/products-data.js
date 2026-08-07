@@ -7,6 +7,9 @@ export const productsData = [
   {
     slug: "hrms-software",
     title: "HRMS Software",
+    seoTitle: "Request a Demo of ISARVA HRMS – HR & Payroll Software",
+    metaDescription: "Attendance, leave & payroll in one dashboard. Employee records, compliance-ready reports, and self-service portal for your staff.",
+    ogImage: "https://www.isarvait.com/images/HRMS_OG.png",
     category: "Human Resources",
     icon: "👥",
     tagline: "HR Management Workspace",
@@ -44,6 +47,7 @@ export const productsData = [
   {
     slug: "hrms-software-old",
     title: "HRMS Software (Old)",
+    ogImage: "/products/hrms/hrms-banner-main.png",
     category: "Human Resources",
     icon: "👥",
     tagline: "Comprehensive HR Management Solution",
@@ -79,8 +83,9 @@ export const productsData = [
     bgGradient: "from-blue-50 via-indigo-50 to-white",
   },
   {
-    slug: "support-application",
+    slug: "support-software",
     title: "Support Software",
+    ogImage: "/products/support/Support-dashboard-img-1.jpg",
     category: "Customer Support",
     icon: "🎧",
     tagline: "Complete Project, Task & Support Management",
@@ -117,8 +122,9 @@ export const productsData = [
   },
 
   {
-    slug: "crm-application-old",
+    slug: "crm-software-old",
     title: "CRM Software (Old)",
+    ogImage: "/products/crm/CRM-dashboard.jpg",
     category: "Customer Relationship Management",
     icon: "👔",
     tagline: "Complete Customer Relationship Management",
@@ -154,8 +160,9 @@ export const productsData = [
     bgGradient: "from-sky-50 via-blue-50 to-white",
   },
   {
-    slug: "crm-application",
+    slug: "crm-software",
     title: "CRM Software",
+    ogImage: "/products/crm/CRM-dashboard-v2.png",
     category: "Customer Relationship Management",
     icon: "👔",
     tagline: "Complete Customer Relationship Management",
@@ -193,6 +200,7 @@ export const productsData = [
   {
     slug: "woocommerce-development",
     title: "WooCommerce Development",
+    ogImage: "/products/woocommerce/woocommerce-hero-staging.png",
     category: "E-Commerce",
     icon: "🛒",
     tagline: "Custom E-Commerce Solutions",
@@ -222,8 +230,42 @@ export const productsData = [
     bgGradient: "from-purple-50 via-pink-50 to-white",
   },
   {
+    slug: "woocommerce-development-old",
+    title: "WooCommerce Development",
+    ogImage: "/products/woocommerce/woocommerce-hero-staging.png",
+    category: "E-Commerce",
+    icon: "🛒",
+    tagline: "Custom E-Commerce Solutions",
+    shortDescription:
+      "Professional WooCommerce development services for scalable online stores with custom features.",
+    description:
+      "Build powerful online stores with our custom WooCommerce development services. We create feature-rich e-commerce platforms with seamless payment integration, inventory management, and mobile optimization.",
+    features: [
+      "Custom Theme Development",
+      "Plugin Development & Customization",
+      "Payment Gateway Integration",
+      "Multi-Vendor Marketplace",
+      "Product Management System",
+      "SEO Optimization",
+      "Mobile-Responsive Design",
+      "Performance Optimization",
+    ],
+    technologies: ["WordPress", "WooCommerce", "PHP", "JavaScript", "MySQL"],
+    benefits: [
+      "Scalable E-Commerce Platform",
+      "Enhanced User Experience",
+      "Increased Conversion Rates",
+      "Easy Content Management",
+      "Cost-Effective Solution",
+    ],
+    color: "from-purple-500 to-pink-600",
+    bgGradient: "from-purple-50 via-pink-50 to-white",
+  },
+
+  {
     slug: "petro-care",
     title: "Petro Care",
+    ogImage: "/products/petro care/Petro-Dashboard.jpg",
     category: "Petroleum & Gas",
     icon: "⛽",
     tagline: "Fuel Station Management System",
@@ -255,6 +297,7 @@ export const productsData = [
   {
     slug: "retail-billing-software",
     title: "Retail Billing Software with Multi Branch and Multi Warehouse",
+    ogImage: "/products/retail billing multi branch/Multibranch-dashboard.jpg",
     category: "Enterprise Retail",
     icon: "🏬",
     tagline: "Enterprise Retail Management",
@@ -293,6 +336,7 @@ export const productsData = [
   {
     slug: "document-management-system",
     title: "Document Management System",
+    ogImage: "/products/document Management System/Document-Dashboard.jpg",
     category: "Enterprise Software",
     icon: "📄",
     tagline: "Digital Document Organization",
@@ -324,6 +368,7 @@ export const productsData = [
   {
     slug: "lodge-booking-software",
     title: "Lodge Booking Software",
+    ogImage: "/products/loadge Booking/Lodge-Dashboard.jpg",
     category: "Hospitality",
     icon: "🏨",
     tagline: "Hotel & Lodge Management",
@@ -355,6 +400,7 @@ export const productsData = [
   {
     slug: "mobile-service-center",
     title: "Mobile Service Center",
+    ogImage: "/products/mobile care/Mobile-Dashboard.jpg",
     category: "Repair & Services",
     icon: "📱",
     tagline: "Mobile Repair Shop Management",
@@ -386,6 +432,7 @@ export const productsData = [
   {
     slug: "marine-service-software",
     title: "Marine Service Software",
+    ogImage: "/products/marnine service center/Marine-Dashboard.jpg",
     category: "Marine Industry",
     icon: "⚓",
     tagline: "Maritime Operations Management",
@@ -423,6 +470,7 @@ export const productsData = [
   {
     slug: "dispatcher-panel",
     title: "Dispatcher Panel",
+    ogImage: "/products/dispatcher Panel/Dispatcher-dashboard.jpg",
     category: "Logistics Coordination",
     icon: "🎯",
     tagline: "Delivery Dispatch Management",
@@ -460,6 +508,7 @@ export const productsData = [
   {
     slug: "dealer-management-and-dealer-article-software",
     title: "Dealer Management and Dealer Article Software",
+    ogImage: "/products/dealer management software/Dealer-Dashboard.jpg",
     category: "Distribution Management",
     icon: "🤝",
     tagline: "Dealer Network Management",
@@ -491,6 +540,7 @@ export const productsData = [
   {
     slug: "expense-tracker",
     title: "Expense Tracker",
+    ogImage: "/products/expense tracker/Expense-dashboard.jpg",
     category: "Finance & Accounting",
     icon: "💰",
     tagline: "Smart Expense Management",
@@ -526,8 +576,41 @@ export const productsData = [
     bgGradient: "from-emerald-50 via-teal-50 to-white",
   },
   {
-    slug: "godown-management-staging",
-    title: "Smart Godown & Inventory Management System",
+    slug: "website-analytics",
+    title: "Website Analytics",
+    ogImage: "/products/isarva-analytics/Dashboard1.png",
+    category: "Website Analytics",
+    icon: "📊",
+    tagline: "Website insights built for clarity",
+    shortDescription:
+      "Connect Google Analytics 4 and see live visitors, page views, traffic sources, countries, and trends in one clean corporate dashboard.",
+    description:
+      "Isarva Analytics connects to your GA4 property via secure OAuth and displays live visitors, performance metrics, trends, top pages, and audience breakdowns — all auto-syncing without page reloads. Built for agencies, e-commerce teams, and anyone who needs their website data in plain English.",
+    features: [
+      "Live Active Visitors (30s refresh)",
+      "Page Views & Session Trends",
+      "Top Pages Leaderboard",
+      "Traffic Source Breakdown",
+      "Country & Device Split",
+      "Flexible Date Filters",
+      "Secure Google OAuth",
+      "Period-over-period Comparison",
+    ],
+    technologies: ["Google Analytics 4 API", "Laravel", "PHP", "Vue.js", "Tailwind CSS"],
+    benefits: [
+      "Plain-English Metrics",
+      "Live Dashboard — No Manual Refresh",
+      "Branded Client-Facing View",
+      "Read-only & Secure",
+      "3-Step Setup",
+    ],
+    color: "from-indigo-500 to-blue-600",
+    bgGradient: "from-indigo-50 via-blue-50 to-white",
+  },
+  {
+    slug: "godown-management-software",
+    title: "Smart Godown and Inventory Management System",
+    ogImage: "/products/godown/Dashboard.jpg",
     category: "Warehouse Management",
     icon: "📦",
     tagline: "Track. Manage. Control. Grow.",
@@ -559,6 +642,7 @@ export const productsData = [
   {
     slug: "bill-soft",
     title: "Bill-Soft Software",
+    ogImage: "/products/billsoft/Dashboard.jpg",
     category: "Billing & Inventory",
     icon: "🧾",
     tagline: "All-in-One Business Management Solution",
@@ -592,6 +676,7 @@ export const productsData = [
   {
     slug: "lawyer-legal-association-software",
     title: "Lawyer Legal Association Software",
+    ogImage: "/products/association/membership_dashboard.png",
     category: "Operations",
     icon: "👥",
     tagline: "Optimize Member Networks with Secure Digital Ecosystems",
@@ -641,7 +726,7 @@ export const productsData = [
   {
     slug: "posh-compliance-software",
     pageTemplate: "poshact",
-    title: "POSHact",
+    title: "POSH Compliance Software",
     seoTitle:
       "POSH Compliance Software India | POSH Act 2013 Platform | Internal Committee & HRMS",
     metaDescription:
@@ -697,21 +782,165 @@ export const productsData = [
     color: "from-indigo-500 to-violet-600",
     bgGradient: "from-indigo-50 via-violet-50 to-white",
   },
+  {
+    slug: "mobile-app-development",
+    title: "Mobile App Development",
+    ogImage: "/mobile-app-development/hrms-dashboard.jpeg",
+    category: "Mobile Application Development",
+    icon: "📱",
+    tagline: "React Native & Expo Apps",
+    shortDescription: "Build powerful iOS & Android apps with React Native & Expo",
+    description: "We craft high-performance mobile applications using React Native and Expo — delivering native-quality experiences on both platforms from a single codebase. From HRMS to CRM, we turn your business vision into stunning mobile products.",
+    features: [
+      "Cross-Platform Apps",
+      "Enterprise Solutions",
+      "UI/UX Design",
+      "API Integration",
+      "App Store Deployment",
+      "Maintenance & Support"
+    ],
+    technologies: ["React Native", "Expo", "TypeScript", "Firebase", "PostgreSQL"],
+    benefits: [
+      "Faster Time-to-Market",
+      "Cost-Effective Development",
+      "Native Performance",
+      "Single Codebase",
+      "Expert Support"
+    ],
+    color: "from-indigo-500 to-emerald-600",
+    bgGradient: "from-indigo-50 via-emerald-50 to-white",
+  },
+  {
+    slug: "lms-software",
+    title: "LMS Software",
+    ogImage: "/products/lms-software/Dashboard.png",
+    category: "Education",
+    icon: "🎓",
+    tagline: "One place to run your entire college online",
+    shortDescription:
+      "A complete Learning Management System for schools and colleges — courses, assignments, grades, announcements, and Google Drive file uploads in one easy-to-use website.",
+    description:
+      "ISARVA LMS brings your entire college onto a single, modern platform. Students submit assignments via Google Drive links, teachers grade and announce results instantly, and admins manage everything from one dashboard. 16 built-in modules, 8 colour themes, and zero file-size headaches.",
+    features: [
+      "Course & Batch Management",
+      "Assignment Submission & Grading",
+      "Google Drive File Integration",
+      "Gradebook & CSV Export",
+      "Announcements & Notice Board",
+      "Student Q&A Forum",
+      "Attendance Tracking",
+      "8 Colour Themes",
+    ],
+    technologies: [
+      "Laravel 13",
+      "PHP 8.3+",
+      "MySQL",
+      "Tailwind CSS",
+      "Alpine.js",
+      "Vite",
+    ],
+    benefits: [
+      "No WhatsApp Chaos",
+      "Structured Course Delivery",
+      "Easy Google Drive Submissions",
+      "Real-time Grades & Feedback",
+      "Self-hosted & Secure",
+    ],
+    color: "from-emerald-500 to-teal-600",
+    bgGradient: "from-emerald-50 via-teal-50 to-white",
+  },
+  {
+    slug: "asset-management-staging",
+    title: "AssetFlow",
+    ogImage: "/products/assetflow/hero-assetflow.jpg",
+    category: "Asset Management",
+    icon: "🏷️",
+    tagline: "Unified Asset Management Platform",
+    shortDescription:
+      "Track, assign, maintain, and report on every asset — ITAM, SAM, EAM, Finance, and Procurement in one platform.",
+    description:
+      "AssetFlow by Isarva Infotech is a unified asset management platform that gives your organization complete visibility and control over every physical and digital asset. From the first register entry to disposal and audit — clear tools your teams already understand.",
+    features: [
+      "Asset Register & Barcode Labels",
+      "Check-out & Check-in Workflows",
+      "IT Asset Management (ITAM)",
+      "Software License Management (SAM)",
+      "Preventive Maintenance (EAM)",
+      "Depreciation & Disposal (Finance)",
+      "Physical Audit Sessions",
+      "Role-Based Access Control",
+      "Live Dashboards & CSV Reports",
+      "Vendor & Purchase Order Management",
+    ],
+    technologies: ["React", "Next.js", "PostgreSQL", "Node.js", "Cloud Infrastructure"],
+    benefits: [
+      "Complete Asset Visibility",
+      "Audit-Ready Operations",
+      "Reduced Asset Loss",
+      "Automated Depreciation",
+      "Multi-Module Flexibility",
+    ],
+    color: "from-emerald-500 to-green-600",
+    bgGradient: "from-emerald-50 via-green-50 to-white",
+  },
+  {
+    slug: "whatsapp-crm-software",
+    title: "WhatsApp CRM Software",
+    seoTitle: "WhatsApp CRM Software",
+    metaDescription: "Self-hosted WhatsApp CRM with shared inbox, visual automations, broadcasts, and real-time analytics designed for modern teams.",
+    ogImage: "/products/whatsapp-crm/hero.jpg",
+    category: "Communication",
+    icon: "💬",
+    tagline: "Self-hosted WhatsApp CRM Workspace",
+    shortDescription: "Self-hosted WhatsApp CRM with shared inbox, visual automations, broadcasts, and real-time analytics.",
+    description: "Turn WhatsApp into your ultimate sales engine. The only self-hosted CRM template you need — shared inbox, visual automations, broadcasts, and real-time analytics designed for modern teams.",
+    features: [
+      "Shared Inbox",
+      "Sales Pipelines",
+      "Smart Broadcasts",
+      "Interactive Templates",
+      "Contact Tags & Segments",
+      "Unified Dashboard",
+      "Visual Flow Builder",
+      "Real-time Analytics"
+    ],
+    technologies: ["WhatsApp Business API", "Node.js", "React", "Next.js", "MySQL"],
+    benefits: [
+      "Increase Sales Conversions",
+      "Automate Customer Support",
+      "Broadcast Campaigns at Scale",
+      "Real-time Team Collaboration",
+      "Data-driven Decision Making"
+    ],
+    color: "from-emerald-500 to-green-600",
+    bgGradient: "from-emerald-50 via-teal-50 to-white",
+  },
 ];
 
-// Helper functions to filter out internal/staging/old content from the UI
 export const getProductBySlug = (slug) => {
+  if (slug?.endsWith("-staging")) {
+    const baseSlug = slug.replace("-staging", "");
+    const baseProduct = productsData.find((product) => product.slug === baseSlug);
+    if (baseProduct) {
+      return {
+        ...baseProduct,
+        slug: slug,
+        title: baseProduct.title + " (Staging)"
+      };
+    }
+  }
   return productsData.find((product) => product.slug === slug);
 };
 
 export const getAllProductSlugs = () => {
-  return productsData.map((product) => product.slug);
+  const slugs = productsData.map((product) => product.slug);
+  return slugs;
 };
 
 export const getProductsByCategory = (category) => {
-  return productsData.filter((product) => 
-    product.category === category && 
-    !product.slug?.includes("staging") && 
+  return productsData.filter((product) =>
+    product.category === category &&
+    !product.slug?.includes("staging") &&
     !product.slug?.includes("-old")
   );
 };

@@ -4,11 +4,15 @@ import FeaturedSection from "../components/blog/FeaturedSection";
 import PostGrid from "../components/blog/PostGrid";
 import BlogHero from "../components/blog/BlogHero";
 import { getBlogPosts } from "../lib/services/blog-service";
+import { generateMetadata as generateSEOMetadata } from "../lib/utils/seo";
 
-export const metadata = {
-  title: "Blog | Isarva Infotech - Hosting Insights & Tech Updates",
-  description: "Stay updated with the latest in tech, hosting insights, and success stories from the Isarva team.",
-};
+export const metadata = generateSEOMetadata({
+  title: "Blog - Tech Insights & Updates",
+  description: "Stay updated with the latest in tech, hosting insights, web development tips, and success stories from the Isarva team.",
+  keywords: ["tech blog", "web development insights", "software updates", "IT articles", "Isarva blog"],
+  url: "/blog",
+  image: "https://www.isarvait.com/isarva-og.jpg",
+});
 
 export const revalidate = 60;
 

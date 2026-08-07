@@ -9,7 +9,9 @@ export default function ContactFormModal({
   onClose,
   preSelectedType,
   preSelectedItem,
-  allItems = []
+  allItems = [],
+  successRedirectUrl = null,
+  successDownloadUrl = null,
 }) {
   const router = useRouter();
   const [formData, setFormData] = useState({
@@ -71,6 +73,13 @@ export default function ContactFormModal({
       const keyWordsPreSelected = extractKeyWords(item);
       const compactPreSelected = normalizedPreSelected.replace(/\s/g, "");
 
+      // 1. Try exact match first
+      const exactMatch = categories.find(
+        (cat) => normalizeStr(cat.category_name) === normalizedPreSelected
+      );
+      if (exactMatch) return exactMatch;
+
+      // 2. Try billsoft match
       if (compactPreSelected.includes("billsoft")) {
         const billSoftMatch = categories.find((cat) => {
           const compactCat = normalizeStr(cat.category_name).replace(/\s/g, "");
@@ -79,6 +88,7 @@ export default function ContactFormModal({
         if (billSoftMatch) return billSoftMatch;
       }
 
+      // 3. Fallback to substring / fuzzy match
       return categories.find((cat) => {
         const normalizedCatName = normalizeStr(cat.category_name);
         const keyWordsCatName = extractKeyWords(cat.category_name);
@@ -102,20 +112,22 @@ export default function ContactFormModal({
       let categoryList = [...categories];
       let matchedCategory = findMatchedCategory(categoryList, item);
 
-      if (!matchedCategory) {
-        categoryList = [
-          { id: `page-${item}`, category_name: item },
-          ...categoryList,
-        ];
-        matchedCategory = categoryList[0];
-      }
-
       setCategories(categoryList);
-      setFormData((prev) => ({
-        ...prev,
-        selectedItem: matchedCategory.category_name,
-        selectedCategoryId: matchedCategory.id,
-      }));
+
+      if (matchedCategory) {
+        setFormData((prev) => ({
+          ...prev,
+          selectedItem: matchedCategory.category_name,
+          selectedCategoryId: matchedCategory.id,
+        }));
+      } else {
+        console.warn(`[ContactFormModal] Product/Service "${item}" not found in CRM categories. Dropdown remains unselected.`);
+        setFormData((prev) => ({
+          ...prev,
+          selectedItem: "",
+          selectedCategoryId: "",
+        }));
+      }
     };
 
     const fetchCategories = async () => {
@@ -247,19 +259,45 @@ export default function ContactFormModal({
         // Close modal first
         onClose();
 
-        // Redirect to thank you page with context
-        const queryParams = new URLSearchParams({
-          type: type,
-          ...(formData.selectedItem && { item: formData.selectedItem }),
-          ...(!formData.selectedItem && preSelectedItem && { item: preSelectedItem })
-        });
-
         // Send custom event to GTM for 100% accurate success tracking
         if (window.dataLayer) {
           window.dataLayer.push({
             event: 'enquiry_success'
           });
         }
+
+        // Optional gated file download (PDF/ZIP) then thank-you
+        if (successDownloadUrl) {
+          const link = document.createElement("a");
+          link.href = successDownloadUrl;
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.download = "";
+          document.body.appendChild(link);
+          link.click();
+          link.remove();
+
+          const queryParams = new URLSearchParams({
+            type: "brochure",
+            ...(formData.selectedItem && { item: formData.selectedItem }),
+            ...(!formData.selectedItem && preSelectedItem && { item: preSelectedItem }),
+          });
+          router.push(`/thank-you?${queryParams.toString()}`);
+          return;
+        }
+
+        // Optional post-submit redirect (e.g. product detail URL after Know More)
+        if (successRedirectUrl) {
+          window.location.href = successRedirectUrl;
+          return;
+        }
+
+        // Redirect to thank you page with context
+        const queryParams = new URLSearchParams({
+          type: type,
+          ...(formData.selectedItem && { item: formData.selectedItem }),
+          ...(!formData.selectedItem && preSelectedItem && { item: preSelectedItem })
+        });
 
         router.push(`/thank-you?${queryParams.toString()}`);
       } else {

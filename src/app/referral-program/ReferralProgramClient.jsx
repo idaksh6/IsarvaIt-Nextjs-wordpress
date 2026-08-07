@@ -193,7 +193,8 @@ export default function ReferralProgramClient() {
           subject: "Referral Program Registration",
           message: formData.message || "Request to join the Referral Program.",
           pageType: "Referral Program",
-          itemName: "Referral Program"
+          itemName: "Referral Program",
+          categoryId: 60
         })
       });
 
@@ -209,11 +210,37 @@ export default function ReferralProgramClient() {
         }, 1500);
       } else {
         setSubmitStatus("error");
-        setErrorMessage(
-          typeof data.error === "string"
-            ? data.error
-            : "Something went wrong. Please try again."
-        );
+        
+        let friendlyError = "Something went wrong. Please try again.";
+        if (typeof data.error === "string") {
+          try {
+            if (data.error.includes("{")) {
+              const jsonStr = data.error.substring(data.error.indexOf("{"));
+              const errorObj = JSON.parse(jsonStr);
+              if (errorObj.message) {
+                friendlyError = errorObj.message;
+                if (friendlyError.includes("already registered")) {
+                  friendlyError = "This Email or Mobile number is already registered for this request.";
+                }
+              }
+            } else if (data.error.toLowerCase().includes("mobile") || data.error.toLowerCase().includes("phone")) {
+              friendlyError = (data.error.toLowerCase().includes("registered") || data.error.toLowerCase().includes("taken")) 
+                ? "This phone number is already registered." 
+                : "Please enter a valid phone number.";
+            } else if (data.error.toLowerCase().includes("email")) {
+              friendlyError = (data.error.toLowerCase().includes("registered") || data.error.toLowerCase().includes("taken")) 
+                ? "This email address is already registered." 
+                : "Please enter a valid email address.";
+            } else {
+              friendlyError = data.error;
+            }
+          } catch (e) {
+            friendlyError = data.error;
+          }
+        }
+
+        friendlyError = friendlyError.replace(/CRM API error \(\d+\):\s*/g, "");
+        setErrorMessage(friendlyError);
       }
     } catch {
       setSubmitStatus("error");
@@ -385,8 +412,8 @@ export default function ReferralProgramClient() {
                     <label htmlFor="hero-name" className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1.5">
                       Full Name *
                     </label>
-                    <div className="relative">
-                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400">
+                    <div className="relative flex items-center">
+                      <span className="absolute left-3.5 text-gray-400 pointer-events-none">
                         <User className="w-4 h-4" />
                       </span>
                       <input
@@ -406,8 +433,8 @@ export default function ReferralProgramClient() {
                     <label htmlFor="hero-phone" className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1.5">
                       Phone Number *
                     </label>
-                    <div className="relative">
-                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400">
+                    <div className="relative flex items-center">
+                      <span className="absolute left-3.5 text-gray-400 pointer-events-none">
                         <Phone className="w-4 h-4" />
                       </span>
                       <input
@@ -425,17 +452,18 @@ export default function ReferralProgramClient() {
 
                   <div>
                     <label htmlFor="hero-company" className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1.5">
-                      Company Name (optional)
+                      Company Name *
                     </label>
-                    <div className="relative">
-                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400">
+                    <div className="relative flex items-center">
+                      <span className="absolute left-3.5 text-gray-400 pointer-events-none">
                         <Building2 className="w-4 h-4" />
                       </span>
                       <input
                         id="hero-company"
                         type="text"
                         name="company"
-                        placeholder="Optional"
+                        required
+                        placeholder="Company name"
                         value={formData.company}
                         onChange={handleChange}
                         className="w-full px-5 py-3.5 rounded-xl border border-slate-300 bg-white text-[#0f172a] outline-none transition-all duration-200 focus:border-purple-500 focus:ring-4 focus:ring-purple-500/15 pl-10"
@@ -447,8 +475,8 @@ export default function ReferralProgramClient() {
                     <label htmlFor="hero-message" className="block text-xs font-bold uppercase tracking-wider text-gray-500 mb-1.5">
                       Any specific requirements? (optional)
                     </label>
-                    <div className="relative">
-                      <span className="absolute left-3.5 top-3 text-gray-400">
+                    <div className="relative flex items-start">
+                      <span className="absolute left-3.5 top-[1.1rem] text-gray-400 pointer-events-none">
                         <MessageSquare className="w-4 h-4" />
                       </span>
                       <textarea

@@ -244,6 +244,7 @@ export default function TrainingProgramsPremium() {
       message: combinedMessage,
       pageType: "Training",
       itemName: formData.course || "",
+      categoryId: 62,
     };
 
     try {
@@ -263,17 +264,36 @@ export default function TrainingProgramsPremium() {
         // Redirect to thank-you page
         router.push("/thank-you?type=training&item=" + encodeURIComponent(formData.course || "Training Programs"));
       } else {
-        // Parse CRM error into a user-friendly message
-        let friendly = "Something went wrong. Please try again.";
+        setFormStatus("error");
+        
+        let friendlyError = "Something went wrong. Please try again.";
         if (typeof data.error === "string") {
-          if (data.error.includes("already registered")) {
-            friendly = "This email or mobile number is already registered.";
-          } else {
-            friendly = data.error.replace(/CRM API error \(\d+\):\s*/g, "");
+          try {
+            if (data.error.includes("{")) {
+              const jsonStr = data.error.substring(data.error.indexOf("{"));
+              const errorObj = JSON.parse(jsonStr);
+              if (errorObj.message) {
+                friendlyError = errorObj.message;
+                if (friendlyError.includes("already registered")) {
+                  friendlyError = "This Email or Mobile number is already registered for this request.";
+                }
+              }
+            } else if (data.error.toLowerCase().includes("mobile") || data.error.toLowerCase().includes("phone")) {
+              friendlyError = (data.error.toLowerCase().includes("registered") || data.error.toLowerCase().includes("taken")) 
+                ? "This phone number is already registered." 
+                : "Please enter a valid phone number.";
+            } else if (data.error.toLowerCase().includes("email")) {
+              friendlyError = (data.error.toLowerCase().includes("registered") || data.error.toLowerCase().includes("taken")) 
+                ? "This email address is already registered." 
+                : "Please enter a valid email address.";
+            } else {
+              friendlyError = data.error;
+            }
+          } catch (e) {
+            friendlyError = data.error;
           }
         }
-        setFormStatus("error");
-        setErrorMessage(friendly);
+        setErrorMessage(friendlyError);
         setTimeout(() => { setFormStatus(null); setErrorMessage(""); }, 7000);
       }
     } catch {
@@ -494,7 +514,7 @@ export default function TrainingProgramsPremium() {
                 <div className="absolute -inset-4 bg-gradient-to-br from-indigo-200/40 to-violet-200/40 blur-[60px] rounded-full" />
                 <div className="relative rounded-3xl overflow-hidden border border-indigo-100 shadow-[0_24px_80px_rgba(99,102,241,0.15)]">
                   <img
-                    src="/training_programs_hero_indian.png"
+                    src="/Services/Training/Banner-img.jpg"
                     alt="Training Programs at iSARVA Infotech"
                     className="w-full h-[480px] lg:h-[520px] object-cover"
                   />
@@ -538,7 +558,7 @@ export default function TrainingProgramsPremium() {
                 <div className="absolute -inset-4 bg-gradient-to-br from-indigo-100/60 to-violet-100/60 blur-[50px] rounded-3xl" />
                 <div className="relative rounded-3xl overflow-hidden border border-indigo-100 shadow-2xl">
                   <img
-                    src="/training_courses_grid.png"
+                    src="/Services/Training/training_courses_grid.png"
                     alt="Training Courses at iSARVA"
                     className="w-full object-cover rounded-3xl"
                   />
@@ -680,7 +700,7 @@ export default function TrainingProgramsPremium() {
             {/* Banner image + content */}
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
               <img
-                src="/training_mentors_team_indian.png"
+                src="/Services/Training/training_mentors_team_indian.png"
                 alt="iSARVA Training Mentors and Experts"
                 className="w-full h-[480px] object-cover"
               />
@@ -731,7 +751,7 @@ export default function TrainingProgramsPremium() {
               {/* Image */}
               <div className="relative rounded-3xl overflow-hidden border border-indigo-100 shadow-xl">
                 <img
-                  src="/training_benefits_banner_indian.png"
+                  src="/Services/Training/training_benefits_banner_indian.png"
                   alt="Training Benefits at iSARVA"
                   className="w-full h-72 lg:h-80 object-cover"
                 />

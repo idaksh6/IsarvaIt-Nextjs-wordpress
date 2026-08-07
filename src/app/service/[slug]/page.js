@@ -38,6 +38,10 @@ export async function generateMetadata({ params }) {
     };
   }
 
+
+
+
+
   return generateServiceMetadata(service);
 }
 
@@ -93,6 +97,10 @@ export default async function ServiceDetailPage({ params }) {
     return <NewsAndMagazinePortal service={service} servicesData={servicesData} />;
   }
 
+
+
+
+
   // ── Premium page for Custom Laravel Application Development ──────────────
   if (slug === "custom-laravel-application-development") {
     const serviceSchema = generateServiceSchema(service);
@@ -117,7 +125,7 @@ export default async function ServiceDetailPage({ params }) {
     );
   }
 
-  // Get related services (3 random services excluding current)
+  // Get related services (3 random services excluding current and hidden services)
   const relatedServices = servicesData
     .filter(s => s.slug !== service.slug)
     .sort(() => 0.5 - Math.random())
@@ -717,10 +725,10 @@ export default async function ServiceDetailPage({ params }) {
                 key={relatedService.slug}
                 href={`/service/${relatedService.slug}`}
                 prefetch={false}
-                className="relative"
+                className="group flex flex-col self-stretch"
               >
-                <div className="h-full rounded-3xl p-8 bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg transition-all duration-300">
-                  <div className="relative flex flex-col items-center text-center">
+                <div className="flex-1 flex flex-col rounded-3xl p-8 bg-white border-2 border-gray-100 hover:border-emerald-300 shadow-lg transition-all duration-300">
+                  <div className="relative flex-1 flex flex-col items-center text-center">
                     {/* Icon */}
                     <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center mx-auto mb-6 shadow-lg transition-all duration-300 relative overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-tr from-white/0 to-white/30"></div>
@@ -738,7 +746,7 @@ export default async function ServiceDetailPage({ params }) {
                     </p>
 
                     {/* CTA */}
-                    <div className="flex items-center justify-center gap-2 text-emerald-600 font-bold">
+                    <div className="mt-auto flex items-center justify-center gap-2 text-emerald-600 font-bold">
                       <span>Explore Service</span>
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />

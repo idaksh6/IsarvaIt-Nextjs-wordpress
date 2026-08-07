@@ -1,27 +1,15 @@
 import ErpSoftwareClient from './ErpSoftwareClient';
+import { generateMetadata as generateSEOMetadata } from '../../lib/utils/seo';
 
 // SEO Metadata — noindex/nofollow scoped to this page only
-export const metadata = {
-  title: 'ERP Software | Isarva Infotech',
-  description:
-    'ERP Software unifies CRM, HRMS, Inventory, Finance, Accounting, and Project Management into one intelligent platform.',
-  authors: [{ name: 'Isarva Infotech' }],
-  creator: 'Isarva Infotech',
-  publisher: 'Isarva Infotech',
-  robots: {
-    index: false,
-    follow: false,
-  },
-  openGraph: {
-    title: 'ERP Software | Isarva Infotech',
-    description:
-      'ERP Software unifies CRM, HRMS, Inventory, Finance, Accounting, and Project Management into one intelligent platform.',
-    url: 'https://www.isarvait.com/product/erp-software',
-    siteName: 'Isarva Infotech',
-    locale: 'en_US',
-    type: 'website',
-  },
-};
+export const metadata = generateSEOMetadata({
+  title: "ERP Software",
+  description: "ERP Software unifies CRM, HRMS, Inventory, Finance, Accounting, and Project Management into one intelligent platform.",
+  keywords: ["ERP software", "enterprise resource planning", "business management system", "ERP solution"],
+  url: "/product/erp-software",
+  image: "https://www.isarvait.com/products/erp-software/hero.png",
+  noIndex: false, // Make it indexable on search engines
+});
 
 // Force fully static rendering — no server-side data needed
 export const dynamic = 'force-static';
