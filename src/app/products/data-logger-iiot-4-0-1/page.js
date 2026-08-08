@@ -4,14 +4,6 @@ export const metadata = {
   title: "Data Logger IIoT 4.0 | Intelligent Industrial Data Logger | Isarva",
   description:
     "Intelligent Data Logger with isolated I/O, Modbus RTU/TCP, MQTT, JSON, FTP, 4G LTE, flame-proof & IP65 options. OEM, custom solutions, downloads & SDKs for industrial IoT.",
-  robots: {
-    index: false,
-    follow: false,
-    googleBot: {
-      index: false,
-      follow: false,
-    },
-  },
 };
 
 export default function RdlProductPage() {

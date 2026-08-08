@@ -79,20 +79,31 @@ const productsData = [
   { label: "POSH Compliance Software", href: "/product/posh-compliance-software", icon: "🛡️" },
 ];
 
+const iotProductsData = [
+  { label: "Data Logger IIoT 4.0", href: "/products/data-logger-iiot-4-0-1", icon: "📊" },
+];
+
 export default function Header() {
   const pathname = usePathname();
   const isScrollStablePage =
-    typeof pathname === "string" && pathname.includes("/products/rdl-product");
+    typeof pathname === "string" &&
+    (pathname.includes("/products/rdl-product") ||
+      pathname.includes("/products/data-logger-iiot-4-0-1") ||
+      pathname.includes("/products/cloud-plc-4-0-1") ||
+      pathname.includes("/products/biometric-authentication") ||
+      pathname.includes("/products/hmi-&-display-board"));
 
   const [scrolled, setScrolled] = useState(isScrollStablePage);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const [isIotProductsOpen, setIsIotProductsOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const [isMobileIndustriesOpen, setIsMobileIndustriesOpen] = useState(false);
   const [isMobileProductsOpen, setIsMobileProductsOpen] = useState(false);
+  const [isMobileIotProductsOpen, setIsMobileIotProductsOpen] = useState(false);
   const [isMobileAboutOpen, setIsMobileAboutOpen] = useState(false);
 
   useEffect(() => {
@@ -368,6 +379,74 @@ export default function Header() {
                         />
                       </svg>
                     </Link>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* IoT Products Dropdown Trigger */}
+          <div
+            className="relative"
+            onMouseEnter={() => setIsIotProductsOpen(true)}
+            onMouseLeave={() => setIsIotProductsOpen(false)}
+          >
+            <Link
+              href="/products/data-logger-iiot-4-0-1"
+              className="group text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1"
+            >
+              IoT Products
+              <svg
+                className={`w-4 h-4 transition-all duration-200 text-gray-600 group-hover:text-emerald-600 ${isIotProductsOpen ? "rotate-180" : ""
+                  }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </Link>
+
+            {/* IoT Products Dropdown */}
+            {isIotProductsOpen && (
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[400px]">
+                <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-100 p-6">
+                  <div className="mb-4">
+                    <h3 className="mb-1 text-sm font-bold text-gray-800">IoT Products</h3>
+                    <p className="text-gray-500 text-xs">Intelligent industrial hardware and monitoring solutions</p>
+                  </div>
+                  <div className="grid grid-cols-1 gap-2">
+                    {iotProductsData.map((product) => (
+                      <Link
+                        key={product.href}
+                        href={product.href}
+                        onClick={() => {
+                          setIsIotProductsOpen(false);
+                          if (window.dataLayer) {
+                            window.dataLayer.push({
+                              event: 'product_click',
+                              'product-name': product.label
+                            });
+                          }
+                        }}
+                        className="product-click-trigger group flex items-center gap-3 p-3 rounded-xl hover:bg-orange-50/80 transition-all duration-200 border border-transparent hover:border-orange-100"
+                        data-product-name={product.label}
+                      >
+                        <span className="text-xl group-hover:scale-110 transition-transform duration-200">
+                          {product.icon}
+                        </span>
+                        <div>
+                          <h4 className="group-hover:text-orange-600 transition-colors text-sm font-semibold text-gray-700">
+                            {product.label}
+                          </h4>
+                        </div>
+                      </Link>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -671,9 +750,10 @@ export default function Header() {
                             const nextState = !isMobileAboutOpen;
                             setIsMobileAboutOpen(nextState);
                             if (nextState) {
-                              setIsMobileProductsOpen(false);
-                              setIsMobileServicesOpen(false);
-                              setIsMobileIndustriesOpen(false);
+                               setIsMobileProductsOpen(false);
+                               setIsMobileServicesOpen(false);
+                               setIsMobileIndustriesOpen(false);
+                               setIsMobileIotProductsOpen(false);
                             }
                           }}
                           className="flex items-center justify-between w-full p-4 text-gray-800 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 transition-all duration-300"
@@ -778,6 +858,7 @@ export default function Header() {
                         setIsMobileAboutOpen(false);
                         setIsMobileServicesOpen(false);
                         setIsMobileIndustriesOpen(false);
+                        setIsMobileIotProductsOpen(false);
                       }
                     }}
                     className="flex items-center justify-between w-full p-4 text-gray-800 hover:bg-gradient-to-r hover:from-violet-50 hover:to-purple-50 transition-all duration-300"
@@ -857,6 +938,91 @@ export default function Header() {
                   </AnimatePresence>
                 </motion.div>
 
+                {/* IoT Products Accordion */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: (navLinks.length + 0.5) * 0.05 }}
+                  className="border-2 border-gray-100 rounded-2xl overflow-hidden bg-white shadow-sm mb-2"
+                >
+                  <button
+                    onClick={() => {
+                      const nextState = !isMobileIotProductsOpen;
+                      setIsMobileIotProductsOpen(nextState);
+                      if (nextState) {
+                        setIsMobileAboutOpen(false);
+                        setIsMobileProductsOpen(false);
+                        setIsMobileServicesOpen(false);
+                        setIsMobileIndustriesOpen(false);
+                      }
+                    }}
+                    className="flex items-center justify-between w-full p-4 text-gray-800 hover:bg-gradient-to-r hover:from-orange-50 hover:to-amber-50 transition-all duration-300"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-gradient-to-br from-orange-100 to-amber-100 rounded-xl flex items-center justify-center">
+                        <span className="text-lg">⚙️</span>
+                      </div>
+                      <span className="font-bold text-base">IoT Products</span>
+                    </div>
+                    <motion.svg
+                      animate={{ rotate: isMobileIotProductsOpen ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="w-5 h-5 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </motion.svg>
+                  </button>
+
+                  <AnimatePresence>
+                    {isMobileIotProductsOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="bg-gradient-to-b from-gray-50 to-white p-3 space-y-1 max-h-[300px] overflow-y-auto">
+                          {iotProductsData.map((product, idx) => (
+                            <motion.div
+                              key={product.href}
+                              initial={{ opacity: 0, y: 5 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ delay: idx * 0.03 }}
+                            >
+                              <Link
+                                href={product.href}
+                                onClick={() => {
+                                  setIsMobileMenuOpen(false);
+                                  if (window.dataLayer) {
+                                    window.dataLayer.push({
+                                      event: 'product_click',
+                                      'product-name': product.label
+                                    });
+                                  }
+                                }}
+                                className="product-click-trigger flex items-center gap-3 p-3 rounded-xl text-gray-700 hover:bg-white hover:shadow-sm transition-all duration-200"
+                                data-product-name={product.label}
+                              >
+                                <span className="text-xl">{product.icon}</span>
+                                <span className="text-sm font-medium">{product.label}</span>
+                              </Link>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+
                 {/* Services Accordion */}
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
@@ -872,6 +1038,7 @@ export default function Header() {
                         setIsMobileAboutOpen(false);
                         setIsMobileProductsOpen(false);
                         setIsMobileIndustriesOpen(false);
+                        setIsMobileIotProductsOpen(false);
                       }
                     }}
                     className="flex items-center justify-between w-full p-4 text-gray-800 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 transition-all duration-300"
@@ -957,6 +1124,7 @@ export default function Header() {
                         setIsMobileAboutOpen(false);
                         setIsMobileProductsOpen(false);
                         setIsMobileServicesOpen(false);
+                        setIsMobileIotProductsOpen(false);
                       }
                     }}
                     className="flex items-center justify-between w-full p-4 text-gray-800 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 transition-all duration-300"
