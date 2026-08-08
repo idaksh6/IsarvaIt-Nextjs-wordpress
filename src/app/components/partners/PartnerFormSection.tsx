@@ -118,7 +118,7 @@ export default function PartnerFormSection({
               if (errorObj.message) {
                 friendlyError = errorObj.message;
                 if (friendlyError.includes("already registered")) {
-                  friendlyError = "This Email or Mobile number is already registered for this request.";
+                  friendlyError = "This email address or mobile number is already registered for this request. Our team will contact you shortly.";
                 }
               }
             } else if (data.error.toLowerCase().includes("mobile") || data.error.toLowerCase().includes("phone")) {
