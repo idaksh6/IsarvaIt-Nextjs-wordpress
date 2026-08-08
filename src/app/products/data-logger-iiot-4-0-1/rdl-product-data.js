@@ -61,7 +61,6 @@ export const applications = [
   "District metering",
   "Water treatment",
   "Generator monitoring",
-  "Green House",
   "Warning message in case of calamities",
   "Standard SCADA Applications",
 ];

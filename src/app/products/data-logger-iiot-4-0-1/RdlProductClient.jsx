@@ -320,63 +320,45 @@ export default function RdlProductClient() {
             </p>
           </div>
 
-          <div className="w-full overflow-hidden rounded-2xl sm:rounded-[1.75rem] border border-slate-200 mb-5 sm:mb-6 leading-[0]">
+          {/* Full-width dashboard visual */}
+          <div className="rdl-apps-visual mb-8 sm:mb-10 overflow-hidden rounded-2xl sm:rounded-[1.75rem] border border-slate-200 leading-[0]">
             <img
               src="/products/rdl-product/data-logger-dashboard-apps.png"
               alt="Data Logger dashboards — Smart Grid, Smart Agriculture, Smart Pump Management, and Smart Utility Energy Management"
               width={1400}
               height={545}
-              className="block w-full h-auto max-w-none scale-[1.035] origin-center"
+              className="block w-full h-auto"
               loading="eager"
               decoding="async"
             />
           </div>
 
-          <div className="rounded-2xl sm:rounded-[1.75rem] border border-slate-200 bg-slate-50 p-4 sm:p-5 lg:p-6">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
-              <p className="text-[10px] sm:text-xs font-black tracking-[0.18em] text-blue-600 uppercase">
-                Where it fits
-              </p>
-              <p className="text-[11px] sm:text-xs font-semibold tracking-wide text-slate-400 uppercase">
-                Live monitoring dashboards across industries
-              </p>
-            </div>
-            <ul className="flex flex-wrap gap-2 sm:gap-2.5">
-              {applications.slice(0, -2).map((app) => (
-                <li
-                  key={app}
-                  className="inline-flex items-center gap-2 rounded-full bg-white border border-slate-100 px-3 py-2 sm:px-3.5 sm:py-2.5 shadow-[0_1px_2px_rgba(15,23,42,0.04)]"
-                >
-                  <span
-                    className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600 text-[10px] font-black"
-                    aria-hidden="true"
-                  >
-                    ✓
-                  </span>
-                  <span className="text-[13px] sm:text-sm font-semibold text-gray-700 leading-snug">
+          {/* Application cards */}
+          <div className="mb-5 sm:mb-6 text-center">
+            <p className="text-[10px] sm:text-xs font-black tracking-[0.18em] text-blue-600 uppercase">
+              Where it fits
+            </p>
+            <p className="mt-1 text-sm sm:text-base font-semibold text-gray-800">
+              Deploy across plant, utility, and SCADA environments
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+            {applications.map((app, idx) => (
+              <div
+                key={app}
+                className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 hover:border-blue-200 transition-colors"
+              >
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 text-xs font-black">
+                  {String(idx + 1).padStart(2, "0")}
+                </span>
+                <div className="min-w-0 pt-1">
+                  <p className="text-sm sm:text-[15px] font-semibold text-gray-800 leading-snug">
                     {app}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <ul className="mt-2 sm:mt-2.5 flex flex-wrap justify-center gap-2 sm:gap-2.5">
-              {applications.slice(-2).map((app) => (
-                <li
-                  key={app}
-                  className="inline-flex items-center gap-2 rounded-full bg-white border border-slate-100 px-3 py-2 sm:px-3.5 sm:py-2.5 shadow-[0_1px_2px_rgba(15,23,42,0.04)]"
-                >
-                  <span
-                    className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600 text-[10px] font-black"
-                    aria-hidden="true"
-                  >
-                    ✓
-                  </span>
-                  <span className="text-[13px] sm:text-sm font-semibold text-gray-700 leading-snug">
-                    {app}
-                  </span>
-                </li>
-              ))}
-            </ul>
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -427,7 +409,7 @@ export default function RdlProductClient() {
       </section>
 
       {/* Order Information */}
-      <section className="pt-8 pb-12 sm:py-12 lg:py-16 bg-white">
+      <section className="pt-8 pb-6 sm:py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-14">
             <h6 className="text-blue-600 mb-3">Partnership Ready</h6>
@@ -465,14 +447,14 @@ export default function RdlProductClient() {
           </div>
 
           {/* Order Information Table image */}
-          <div className="mt-10 sm:mt-14 lg:mt-16">
-            <div className="rdl-h-scroll rounded-xl sm:rounded-2xl border border-slate-200 bg-white">
+          <div className="mt-6 sm:mt-10 lg:mt-14">
+            <div className="rounded-xl sm:rounded-2xl border border-slate-200 bg-white overflow-hidden p-1.5 sm:p-4 leading-[0]">
               <img
                 src="/products/rdl-product/order-information-table.jpg"
                 alt="Order Information Table — RDL838A, RDL838B, and RDL838C feature comparison"
                 width={1240}
-                height={900}
-                className="w-full min-w-[560px] sm:min-w-0 h-auto object-contain block"
+                height={713}
+                className="w-full h-auto max-w-full object-contain object-top block align-top"
                 loading="lazy"
                 decoding="async"
               />
@@ -482,7 +464,7 @@ export default function RdlProductClient() {
       </section>
 
       {/* Data Logger Variants */}
-      <section className="pt-12 pb-8 sm:py-12 lg:pt-16 lg:pb-10 bg-white">
+      <section className="pt-6 pb-8 sm:py-12 lg:pt-16 lg:pb-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-14">
             <h6 className="text-blue-600 mb-3">Product Range</h6>
