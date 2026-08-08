@@ -79,6 +79,35 @@ export default function RdlProductClient() {
   const [successDownloadUrl, setSuccessDownloadUrl] = useState(null);
 
   const CRM_PRODUCT_ITEM = "Data Logger IIoT";
+  const DOWNLOAD_REGISTERED_KEY = "rdl_download_registered";
+
+  const triggerDownload = (url) => {
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.download = "";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  };
+
+  const isDownloadRegistered = () => {
+    if (typeof window === "undefined") return false;
+    try {
+      return window.sessionStorage.getItem(DOWNLOAD_REGISTERED_KEY) === "true";
+    } catch {
+      return false;
+    }
+  };
+
+  const markDownloadRegistered = () => {
+    try {
+      window.sessionStorage.setItem(DOWNLOAD_REGISTERED_KEY, "true");
+    } catch {
+      /* sessionStorage unavailable — fall back to always showing the form */
+    }
+  };
 
   const openDemoModal = () => {
     setSuccessRedirectUrl(null);
@@ -99,6 +128,12 @@ export default function RdlProductClient() {
   };
 
   const openDownloadModal = (file) => {
+    // Returning visitor in this session already registered — skip the form
+    // and download directly.
+    if (isDownloadRegistered()) {
+      triggerDownload(file.href);
+      return;
+    }
     setSuccessRedirectUrl(null);
     setSuccessDownloadUrl(file.href);
     setIsModalOpen(true);
@@ -637,6 +672,8 @@ export default function RdlProductClient() {
         preSelectedItem={CRM_PRODUCT_ITEM}
         successRedirectUrl={successRedirectUrl}
         successDownloadUrl={successDownloadUrl}
+        treatDuplicateAsSuccess={!!successDownloadUrl}
+        onSubmitSuccess={successDownloadUrl ? markDownloadRegistered : undefined}
       />
     </div>
   );

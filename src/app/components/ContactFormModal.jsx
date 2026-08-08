@@ -12,6 +12,8 @@ export default function ContactFormModal({
   allItems = [],
   successRedirectUrl = null,
   successDownloadUrl = null,
+  onSubmitSuccess = null,
+  treatDuplicateAsSuccess = false,
 }) {
   const router = useRouter();
   const [formData, setFormData] = useState({
@@ -241,7 +243,10 @@ export default function ContactFormModal({
 
       const data = await response.json();
 
-      if (data.success) {
+      // Shared "success" side effects — also reused when the CRM reports the
+      // lead is already registered (duplicate) and the caller opted into
+      // treating that as success (e.g. gated PDF/ZIP downloads).
+      const proceedAsSuccess = () => {
         // Determine page type for thank you page
         let type = 'contact';
         const pageTypeLower = (preSelectedType || '').toLowerCase();
@@ -264,6 +269,11 @@ export default function ContactFormModal({
           window.dataLayer.push({
             event: 'enquiry_success'
           });
+        }
+
+        // Let the caller persist state (e.g. remember registration for this session)
+        if (typeof onSubmitSuccess === 'function') {
+          onSubmitSuccess();
         }
 
         // Optional gated file download (PDF/ZIP) then thank-you
@@ -300,7 +310,26 @@ export default function ContactFormModal({
         });
 
         router.push(`/thank-you?${queryParams.toString()}`);
+      };
+
+      if (data.success) {
+        proceedAsSuccess();
       } else {
+        // If the lead is already registered, optionally treat as success so
+        // gated downloads still work for returning visitors on this page.
+        if (treatDuplicateAsSuccess) {
+          const rawError = typeof data.error === 'string' ? data.error.toLowerCase() : '';
+          const isDuplicate =
+            rawError.includes('already registered') ||
+            rawError.includes('already been taken') ||
+            rawError.includes('has already been') ||
+            rawError.includes('duplicate');
+          if (isDuplicate) {
+            proceedAsSuccess();
+            return;
+          }
+        }
+
         setSubmitStatus("error");
         setIsSubmitting(false);
 
@@ -316,7 +345,7 @@ export default function ContactFormModal({
                 friendlyError = errorObj.message;
                 // Clean up the specific "already registered" message
                 if (friendlyError.includes("already registered")) {
-                  friendlyError = "This Email or Mobile number is already registered for this request.";
+                  friendlyError = "This email address or mobile number is already registered for this request. Our team will contact you shortly.";
                 }
               } else {
                 // Handle field-specific validation errors (e.g., {"organization_name": ["..."]})
