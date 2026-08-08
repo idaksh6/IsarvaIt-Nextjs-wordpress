@@ -103,6 +103,11 @@ const nextConfig = {
         destination: "/products/data-logger-iiot-4-0-1",
         permanent: true,
       },
+      {
+        source: "/product/crm-application",
+        destination: "/product/crm-software",
+        permanent: true,
+      },
     ];
   },
   
