@@ -95,3 +95,17 @@ html.rdl-scroll-stable .rdl-product-page .press-illusion-btn {
     -webkit-backdrop-filter: none !important;
   }
 }
+
+/* Taller apps dashboard crop on very small phones */
+@media (max-width: 479px) {
+  .rdl-product-page .rdl-apps-visual {
+    min-height: 220px;
+  }
+
+  .rdl-product-page .rdl-apps-visual img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+  }
+}
