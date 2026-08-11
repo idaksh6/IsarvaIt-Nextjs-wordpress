@@ -53,6 +53,22 @@ const CASE_STUDIES = [
     hoverBg: "group-hover:bg-amber-600",
     buttonBorder: "border-amber-600/20",
     hoverShadow: "hover:shadow-amber-500/20"
+  },
+  {
+    id: 4,
+    title: "Migration of Gokarnanath Bank Domain from .com to .bank.in",
+    client: "Gokarnanath Bank",
+    industry: "Banking & Finance",
+    product: "Domain Migration & Compliance",
+    slug: "/case-studies/gokarnanath-bank-domain-migration",
+    tags: ["IDRBT Registration", "RBI Compliance", "DNSSEC", "DSC Setup", "Email Migration"],
+    color: "from-teal-400 to-blue-600",
+    bgLight: "bg-teal-50",
+    textDark: "text-teal-700",
+    hoverBorder: "group-hover:border-teal-500/50",
+    hoverBg: "group-hover:bg-teal-600",
+    buttonBorder: "border-teal-600/20",
+    hoverShadow: "hover:shadow-teal-500/20"
   }
 ];
 
