@@ -126,7 +126,7 @@ export default function RfidProductClient() {
   return (
     <div className="rdl-product-page min-h-screen bg-white">
       {/* ── HERO ── */}
-      <section className="relative pt-28 sm:pt-32 lg:pt-40 pb-10 sm:pb-12 lg:pb-16 bg-gradient-to-br from-[#F8FAFC] via-[#EFF6FF]/60 to-white border-b border-slate-100/80">
+      <section className="relative pt-28 sm:pt-32 lg:pt-40 pb-10 sm:pb-12 lg:pb-16 bg-gradient-to-br from-[#F8FAFC] via-[#EFF6FF]/60 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
             <div className="text-center lg:text-left min-w-0 flex flex-col h-full lg:col-span-6">
@@ -208,9 +208,9 @@ export default function RfidProductClient() {
       </section>
 
       {/* ── ZIG-ZAG FEATURES SECTION ── */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-slate-50">
+      <section className="py-8 sm:py-16 lg:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-12 lg:mb-16">
             <span className="text-blue-600 font-bold text-xs sm:text-sm tracking-wider uppercase mb-2 block">
               Core Capabilities
             </span>
@@ -255,9 +255,9 @@ export default function RfidProductClient() {
       </section>
 
       {/* ── RFID SYSTEM ARCHITECTURE & NETWORK DIAGRAM ── */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-slate-50 border-y border-slate-100">
+      <section className="pb-8 pt-0 sm:pb-16 lg:pb-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-12 lg:mb-16">
             <span className="text-blue-600 font-bold text-xs sm:text-sm tracking-wider uppercase mb-2 block">
               Network Architecture
             </span>
@@ -284,7 +284,7 @@ export default function RfidProductClient() {
       </section>
 
       {/* ── BENEFITS SECTION (ROBOTIC ARM CONVEYOR & BULLET POINTS) ── */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+      <section className="py-8 sm:py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-6">
@@ -323,7 +323,7 @@ export default function RfidProductClient() {
       </section>
 
       {/* ── RFID TAGS COMPATIBILITY SECTION ── */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-slate-50 border-y border-slate-100">
+      <section className="py-8 sm:py-16 lg:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-stretch">
             <div className="lg:col-span-6 lg:order-2 flex flex-col justify-center">
@@ -395,9 +395,9 @@ export default function RfidProductClient() {
       </section>
 
       {/* ── RFID PRODUCT MODELS ── */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-slate-50 border-t border-slate-100">
+      <section className="py-8 sm:py-16 lg:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-12 lg:mb-16">
             <span className="text-blue-600 font-bold text-xs sm:text-sm tracking-wider uppercase mb-2 block">
               Product Range
             </span>
@@ -419,9 +419,9 @@ export default function RfidProductClient() {
       </section>
 
       {/* ── ORDER INFORMATION & EXACT ORDER TABLE ── */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white border-t border-slate-100">
+      <section className="py-8 sm:py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-12 lg:mb-16">
             <span className="text-blue-600 font-bold text-xs sm:text-sm tracking-wider uppercase mb-2 block">
               Partnership & Custom Ordering
             </span>
@@ -509,7 +509,7 @@ export default function RfidProductClient() {
       </section>
 
       {/* ── MAKE IN INDIA & WE SHIP WORLDWIDE BANNER ── */}
-      <section className="py-6 sm:py-8 lg:py-10 bg-white border-t border-slate-100">
+      <section className="py-6 sm:py-8 lg:py-10 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <img
             src="/products/rdl-product/make-in-india.jpg"
@@ -524,9 +524,9 @@ export default function RfidProductClient() {
       </section>
 
       {/* ── WHERE IT FITS / USE CASES ── */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-slate-50 border-t border-slate-100">
+      <section className="py-8 sm:py-16 lg:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-12 lg:mb-16">
             <span className="text-blue-600 font-bold text-xs sm:text-sm tracking-wider uppercase mb-2 block">
               WHERE IT FITS
             </span>

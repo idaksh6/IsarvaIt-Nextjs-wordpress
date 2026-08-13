@@ -125,7 +125,7 @@ export default function RLiFiProductClient() {
   return (
     <div className="rdl-product-page min-h-screen bg-white">
       {/* ── HERO ── */}
-      <section className="relative pt-28 sm:pt-32 lg:pt-40 pb-10 sm:pb-12 lg:pb-16 bg-gradient-to-br from-[#F8FAFC] via-[#EFF6FF]/60 to-white border-b border-slate-100/80">
+      <section className="relative pt-28 sm:pt-32 lg:pt-40 pb-10 sm:pb-12 lg:pb-16 bg-gradient-to-br from-[#F8FAFC] via-[#EFF6FF]/60 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
             <div className="text-center lg:text-left min-w-0 flex flex-col h-full lg:col-span-6">
@@ -207,9 +207,9 @@ export default function RLiFiProductClient() {
       </section>
 
       {/* ── ZIG-ZAG FEATURES SECTION ── */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-slate-50">
+      <section className="py-8 sm:py-16 lg:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-12 lg:mb-16">
             <span className="text-blue-600 font-bold text-xs sm:text-sm tracking-wider uppercase mb-2 block">
               Core Capabilities
             </span>
@@ -254,8 +254,8 @@ export default function RLiFiProductClient() {
       </section>
 
       {/* ── VIDEO SECTIONS (Li-Phone & VL GLASS) ── */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-slate-50 border-t border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-20">
+      <section className="py-8 sm:py-16 lg:py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8 sm:space-y-16 lg:space-y-20">
           {videoSections.map((video) => (
             <div key={video.title} className="space-y-8">
               {/* Divider Header */}
@@ -296,9 +296,9 @@ export default function RLiFiProductClient() {
       </section>
 
       {/* ── SYSTEM ARCHITECTURE ── */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white border-y border-slate-100">
+      <section className="py-8 sm:py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-12 lg:mb-16">
             <span className="text-blue-600 font-bold text-xs sm:text-sm tracking-wider uppercase mb-2 block">
               Transmission Topology
             </span>
@@ -325,7 +325,7 @@ export default function RLiFiProductClient() {
       </section>
 
       {/* ── BENEFITS SECTION ── */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-slate-50">
+      <section className="py-8 sm:py-16 lg:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-6 text-left">
@@ -364,9 +364,9 @@ export default function RLiFiProductClient() {
       </section>
 
       {/* ── R-LIFI HARDWARE VARIANTS ── */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white border-t border-slate-100">
+      <section className="py-8 sm:py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-12 lg:mb-16">
             <span className="text-blue-600 font-bold text-xs sm:text-sm tracking-wider uppercase mb-2 block">
               Hardware Lineup
             </span>
@@ -388,9 +388,9 @@ export default function RLiFiProductClient() {
       </section>
 
       {/* ── ORDER INFORMATION & DATASHEET TABLE ── */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-slate-50 border-t border-slate-100">
+      <section className="py-8 sm:py-16 lg:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-12 lg:mb-16">
             <span className="text-blue-600 font-bold text-xs sm:text-sm tracking-wider uppercase mb-2 block">
               Ordering & Custom Engineering
             </span>
@@ -480,7 +480,7 @@ export default function RLiFiProductClient() {
       </section>
 
       {/* ── MAKE IN INDIA & WE SHIP WORLDWIDE BANNER ── */}
-      <section className="py-6 sm:py-8 lg:py-10 bg-white border-t border-slate-100">
+      <section className="py-6 sm:py-8 lg:py-10 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <img
             src="/products/rdl-product/make-in-india.jpg"
@@ -495,9 +495,9 @@ export default function RLiFiProductClient() {
       </section>
 
       {/* ── WHERE IT FITS / USE CASES ── */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-slate-50 border-t border-slate-100">
+      <section className="py-8 sm:py-16 lg:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-12 lg:mb-16">
             <span className="text-blue-600 font-bold text-xs sm:text-sm tracking-wider uppercase mb-2 block">
               WHERE IT FITS
             </span>

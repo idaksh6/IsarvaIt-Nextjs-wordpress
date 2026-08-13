@@ -81,6 +81,10 @@ const productsData = [
 
 const iotProductsData = [
   { label: "Data Logger IIoT 4.0", href: "/products/data-logger-iiot-4-0-1", icon: "📊" },
+  { label: "R-LiFi", href: "/products/r-lifi", icon: "📡" },
+  { label: "HMI & Display Board", href: "/products/hmi-&-display-board", icon: "🖥️" },
+  { label: "RFID Reader", href: "/products/rfid-reader", icon: "🏷️" },
+  { label: "Vibration Sensor", href: "/products/vibration-sensor", icon: "📈" },
 ];
 
 export default function Header() {
