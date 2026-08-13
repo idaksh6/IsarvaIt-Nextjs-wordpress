@@ -5,8 +5,8 @@ export const heroContent = {
   headline1: "Visible Light Communication",
   headline2: "Secure Optical Wireless Technology",
   description:
-    "R-LiFi (Light Fidelity) enables secure, high-speed, line-of-sight wireless optical communication using visible and infrared light spectrums. Immune to RF interference, electromagnetic noise, and unauthorized eavesdropping, R-LiFi is ideal for defense, healthcare, aviation, underwater robotics, cleanrooms, and RF-restricted industrial zones.",
-  image: "/products/r-lifi/RDL_LIFI_TX.png",
+    "R-LiFi enables secure, high-speed, line-of-sight optical communication immune to RF interference and eavesdropping — ideal for defense, healthcare, aviation, and RF-restricted industrial zones.",
+  image: "/products/r-lifi/rdl_lifi_1.jpg",
 };
 
 export const videoSections = [
@@ -211,5 +211,4 @@ export const applications = [
   "Smart Lighting & Visible Indoor Positioning",
   "High-Security Financial & Enterprise Offices",
   "Nuclear Power Plant Telemetry",
-  "Educational LiFi & Physics Research Kits",
 ];

@@ -89,6 +89,11 @@ export default function RfidProductClient() {
     setIsModalOpen(true);
   };
 
+  const openLinkedModal = (redirectUrl = null) => {
+    setSuccessRedirectUrl(redirectUrl);
+    setIsModalOpen(true);
+  };
+
   const closeModal = () => {
     setIsModalOpen(false);
     setSuccessRedirectUrl(null);
@@ -123,7 +128,7 @@ export default function RfidProductClient() {
       {/* ── HERO ── */}
       <section className="relative pt-28 sm:pt-32 lg:pt-40 pb-10 sm:pb-12 lg:pb-16 bg-gradient-to-br from-[#F8FAFC] via-[#EFF6FF]/60 to-white border-b border-slate-100/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
             <div className="text-center lg:text-left min-w-0 flex flex-col h-full lg:col-span-6">
               <div className="relative inline-flex max-w-full items-center justify-center gap-2 px-3 sm:px-4 py-2 rounded-xl bg-blue-50 border border-blue-100 mb-5 sm:mb-8 self-center lg:self-start">
                 <div className="w-2 h-2 rounded-full bg-blue-500 shrink-0" />
@@ -133,10 +138,10 @@ export default function RfidProductClient() {
               </div>
 
               <h1 className="mb-4 sm:mb-6 break-words">
-                <span className="block text-gray-900 text-2xl sm:text-3xl lg:text-4xl font-black leading-tight">
+                <span className="block text-gray-900">
                   {heroContent.headline1}
                 </span>
-                <span className="block mt-1 text-[clamp(1.35rem,6vw,3.5rem)] text-blue-650 font-bold leading-tight">
+                <span className="block mt-1 text-[clamp(1.35rem,6vw,3.5rem)] text-blue-600 font-bold leading-tight">
                   {heroContent.headline2}
                 </span>
               </h1>
@@ -159,12 +164,12 @@ export default function RfidProductClient() {
               </div>
             </div>
 
-            <div className="relative w-full min-w-0 flex flex-col h-full lg:col-span-6">
-              <div className="relative w-full overflow-hidden rounded-xl sm:rounded-2xl bg-white border border-slate-200 p-2 sm:p-4 shadow-sm">
+            <div className="relative w-full min-w-0 flex flex-col justify-center h-full lg:col-span-6">
+              <div className="relative w-full overflow-hidden rounded-2xl sm:rounded-3xl bg-[#fafafa] border border-slate-200 p-2 sm:p-6 shadow-md flex items-center justify-center">
                 <img
                   src={heroContent.image}
                   alt="UHF RFID Reader System Unit Banner"
-                  className="w-full h-auto object-contain rounded-lg"
+                  className="w-full h-[200px] sm:h-auto object-contain max-h-[200px] sm:max-h-[360px] lg:max-h-[400px] mx-auto rounded-xl"
                   loading="eager"
                   decoding="async"
                 />
@@ -203,50 +208,43 @@ export default function RfidProductClient() {
       </section>
 
       {/* ── ZIG-ZAG FEATURES SECTION ── */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+      <section className="py-16 sm:py-20 lg:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <span className="text-blue-600 font-bold text-xs sm:text-sm tracking-wider uppercase mb-2 block">
               Core Capabilities
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900">
-              Key Features & Performance Advantages
+              Key Features & Performance <span className="text-blue-600">Advantages</span>
             </h2>
           </div>
 
-          <div className="space-y-16 sm:space-y-20 lg:space-y-24">
+          <div className="flex flex-col gap-6 sm:gap-8 lg:gap-12">
             {zigZagFeatures.map((item, idx) => (
               <div
                 key={item.title}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-center"
+                className={`flex flex-col ${item.imageLeft ? "lg:flex-row" : "lg:flex-row-reverse"
+                  } items-center gap-5 sm:gap-8 lg:gap-12 p-4 sm:p-6 lg:p-10 rounded-2xl sm:rounded-[2rem] bg-white border border-slate-200 shadow-sm min-w-0`}
               >
-                <div
-                  className={`lg:col-span-6 ${
-                    item.imageLeft ? "lg:order-1" : "lg:order-2"
-                  }`}
-                >
-                  <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-slate-50 border border-slate-100 p-4 sm:p-6">
+                <div className="lg:w-1/2 w-full min-w-0">
+                  <div className="relative w-full h-64 sm:h-72 lg:h-80 rounded-xl sm:rounded-2xl bg-slate-50 border border-slate-100 p-3 sm:p-4 flex items-center justify-center overflow-hidden rdl-feature-media">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-auto object-contain max-h-[360px] mx-auto rounded-xl"
+                      className="max-h-full max-w-full w-auto h-auto object-contain mx-auto rounded-xl"
                       loading="lazy"
                     />
                   </div>
                 </div>
 
-                <div
-                  className={`lg:col-span-6 ${
-                    item.imageLeft ? "lg:order-2" : "lg:order-1"
-                  }`}
-                >
-                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-blue-100 text-blue-700 font-black text-sm mb-4">
+                <div className="lg:w-1/2 w-full text-center lg:text-left min-w-0">
+                  <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-blue-50 text-blue-600 font-black text-base sm:text-lg mb-4 sm:mb-6 border border-blue-100">
                     0{idx + 1}
                   </div>
-                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-4">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-3 sm:mb-4">
                     {item.title}
                   </h3>
-                  <p className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed">
+                  <p className="text-slate-600 text-sm sm:text-base lg:text-lg font-medium leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -264,7 +262,7 @@ export default function RfidProductClient() {
               Network Architecture
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 mb-4">
-              {systemArchitecture.title}
+              RFID System Architecture & Network Topology
             </h2>
             <p className="text-slate-600 text-sm sm:text-base lg:text-lg">
               {systemArchitecture.subtitle}
@@ -294,7 +292,7 @@ export default function RfidProductClient() {
                 Key Value
               </span>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 mb-6">
-                {benefitsData.title}
+                Operational Benefits
               </h2>
               <p className="text-slate-600 text-sm sm:text-base mb-6 font-medium">
                 {benefitsData.description}
@@ -327,13 +325,13 @@ export default function RfidProductClient() {
       {/* ── RFID TAGS COMPATIBILITY SECTION ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-slate-50 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-center">
-            <div className="lg:col-span-6 lg:order-2">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-stretch">
+            <div className="lg:col-span-6 lg:order-2 flex flex-col justify-center">
               <span className="text-blue-600 font-bold text-xs sm:text-sm tracking-wider uppercase mb-2 block">
                 Tag Compatibility
               </span>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 mb-4">
-                {rfidTagsData.title}
+                Industrial RFID Tag Compatibility
               </h2>
               <p className="text-slate-600 text-sm sm:text-base mb-6 font-medium">
                 {rfidTagsData.description}
@@ -352,12 +350,12 @@ export default function RfidProductClient() {
               </div>
             </div>
 
-            <div className="lg:col-span-6 lg:order-1">
-              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-white border border-slate-200 p-4 sm:p-6 shadow-sm">
+            <div className="lg:col-span-6 lg:order-1 flex flex-col h-full">
+              <div className="relative h-full min-h-full rounded-2xl sm:rounded-3xl overflow-hidden bg-white border border-slate-200 p-4 sm:p-6 shadow-sm flex items-center justify-center">
                 <img
                   src={rfidTagsData.image}
                   alt="Industrial RFID Tags Assortment Collection"
-                  className="w-full h-auto object-contain max-h-[400px] mx-auto rounded-xl"
+                  className="w-full h-full object-contain max-h-[480px] mx-auto rounded-xl"
                   loading="lazy"
                 />
               </div>
@@ -510,15 +508,30 @@ export default function RfidProductClient() {
         </div>
       </section>
 
-      {/* ── APPLICATIONS / USE CASES ── */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-slate-900 text-white">
+      {/* ── MAKE IN INDIA & WE SHIP WORLDWIDE BANNER ── */}
+      <section className="py-6 sm:py-8 lg:py-10 bg-white border-t border-slate-100">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <img
+            src="/products/rdl-product/make-in-india.jpg"
+            alt="Make in India — We Ship Worldwide — Shipping Partners & Payment Methods"
+            width={1240}
+            height={700}
+            className="w-full h-auto object-contain block mx-auto"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </section>
+
+      {/* ── WHERE IT FITS / USE CASES ── */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-slate-50 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <span className="text-blue-400 font-bold text-xs sm:text-sm tracking-wider uppercase mb-2 block">
-              Use Cases
+            <span className="text-blue-600 font-bold text-xs sm:text-sm tracking-wider uppercase mb-2 block">
+              WHERE IT FITS
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white">
-              Industrial Applications & Deployments
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900">
+              Deploy across warehouse, logistics, and industrial tracking environments
             </h2>
           </div>
 
@@ -526,14 +539,44 @@ export default function RfidProductClient() {
             {applications.map((app, idx) => (
               <div
                 key={app}
-                className={`flex items-center gap-3 p-4 sm:p-5 rounded-xl bg-slate-800/80 border border-slate-700/60 text-slate-200 text-sm sm:text-base font-semibold ${
-                  idx === applications.length - 1 ? "col-span-1 lg:col-span-3" : ""
-                }`}
+                className="flex items-center gap-3 sm:gap-4 p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 text-slate-900 text-sm sm:text-base font-bold shadow-xs hover:border-blue-300 transition-colors"
               >
-                <span className="h-2 w-2 rounded-full bg-blue-400 shrink-0" />
-                <span>{app}</span>
+                <span className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-blue-50 text-blue-600 font-extrabold text-xs sm:text-sm flex items-center justify-center border border-blue-100 shrink-0">
+                  {idx < 9 ? `0${idx + 1}` : idx + 1}
+                </span>
+                <span className="leading-snug">{app}</span>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FINAL CTA BANNER ── */}
+      <section className="py-12 lg:py-16 bg-blue-900 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="mb-4 sm:mb-6 text-white font-extrabold text-2xl sm:text-3xl lg:text-4xl">
+            Ready to Automate Your Asset & Inventory Tracking?
+          </h2>
+          <p className="text-sm sm:text-base lg:text-xl text-blue-100 font-medium leading-relaxed mb-8 sm:mb-10 max-w-2xl mx-auto">
+            Deploy long-range UHF RFID technology to gain real-time visibility across supply chain and warehouse facilities.
+          </p>
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
+            <button
+              type="button"
+              onClick={openDemoModal}
+              className="press-illusion-btn-orange text-white font-bold px-8 sm:px-10 py-3.5 sm:py-4 text-sm sm:text-base inline-flex items-center justify-center gap-2 w-full sm:w-auto cursor-pointer"
+            >
+              Contact Sales
+            </button>
+            <button
+              type="button"
+              onClick={() =>
+                openLinkedModal("https://rdltech.in/become-a-member")
+              }
+              className="bg-white text-blue-900 hover:bg-blue-50 font-bold py-3.5 sm:py-4 px-8 sm:px-10 rounded-lg transition-colors duration-200 w-full sm:w-auto text-sm sm:text-base cursor-pointer"
+            >
+              Become a Dealer
+            </button>
           </div>
         </div>
       </section>

@@ -5,8 +5,8 @@ export const heroContent = {
   headline1: "Human Machine Interface - HMI",
   headline2: "PLC & SCADA Control Solutions",
   description:
-    "Human Machine Interface (HMI) is an industrial device that enables line operators, managers, and supervisors to monitor and control machinery and manufacturing processes to improve product quality and efficiency. HMI supports .NET, QT, and Web-based applications for seamless IoT Application Integration.",
-  image: "https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/webbanner.png",
+    "Human Machine Interface (HMI) enables operators and managers to monitor and control machinery in real time — improving process efficiency with seamless PLC, SCADA, and IoT integration.",
+  image: "/products/hmi-display-board/hmi.webp",
 };
 
 export const zigZagFeatures = [
@@ -14,21 +14,21 @@ export const zigZagFeatures = [
     title: "Digital Log Book & Operator Assistance",
     description:
       "Real-time data capture for idle/breakdown reason selection, setup, machining, inspection, and rework. Includes smart forms comparing actual vs. standard hours, QR/barcode part tracking, and instant operator assistance calls to supervisors.",
-    image: "https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/HMI.png",
+    image: "/products/hmi-display-board/hmi-digital-logbook.png",
     imageLeft: true,
   },
   {
     title: "SCADA Runtime & WinCC / EXOR JMobile Support",
     description:
       "Support runtime applications designed by WinCC RT professionals and EXOR JMobile SCADA & HMI Software. Provides PC-based control, monitoring, visualization, and operator control for complex industrial processes.",
-    image: "https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/rs%3Dw_600%2Ccg_true-fee0e50.png",
+    image: "/products/hmi-display-board/hmi-scada-runtime.png",
     imageLeft: false,
   },
   {
     title: "Paperless Quality Inspection Checklist",
     description:
       "Go Green initiative replacing paper forms with digital checklists for preproduction, in-line, and final inspections. Delivers real-time inspection authenticity, improved quality control, and simplified audit passage.",
-    image: "https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/HMI2-7c61840.png",
+    image: "/products/hmi-display-board/hmi-paperless-checklist.png",
     imageLeft: true,
   },
 ];
@@ -36,7 +36,7 @@ export const zigZagFeatures = [
 export const hmiProductVariants = [
   {
     title: "Kiosk / Standee HMI",
-    image: "https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/RDL_HMI-DISPALY_5%20(1).png",
+    image: "/products/hmi-display-board/hmi-kiosk-standee.png",
     preview: [
       "Multi-Touch Capacitive Touchscreen HMI",
       "15-inch High-Definition HDMI Display",
@@ -53,7 +53,7 @@ export const hmiProductVariants = [
   },
   {
     title: "Panel Mount HMI",
-    image: "https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/RDL_HMI-DISPALY_4.png",
+    image: "/products/hmi-display-board/hmi-panel-mount.png",
     preview: [
       "Multi-Touch Capacitive Touchscreen HMI",
       "15-inch High-Definition HDMI Display",
@@ -74,32 +74,32 @@ export const displayBoards = [
   {
     title: "Production Monitoring Display",
     description: "Real-time visibility into target vs. actual production rates, cycle times, and shift progress.",
-    image: "https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/Production_Monitoring.jpg",
+    image: "/products/hmi-display-board/hmi-production-monitoring.jpg",
   },
   {
     title: "Andon Display Board",
     description: "Visual alert signaling system for instant line breakdown, maintenance, and supervisor calls.",
-    image: "https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/Andon.jpg",
+    image: "/products/hmi-display-board/hmi-andon-display.jpg",
   },
   {
     title: "Process Parameter Display",
     description: "Displays critical temperature, pressure, speed, and environmental sensor parameters live on plant floor.",
-    image: "https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/Process_Parameter_Display.jpg",
+    image: "/products/hmi-display-board/hmi-process-parameter.jpg",
   },
   {
     title: "KANBAN Display Board",
     description: "Digitized kanban board for inventory replenishment, work-in-progress (WIP) tracking, and material calls.",
-    image: "https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/KANBAN-fe0758e.jpg",
+    image: "/products/hmi-display-board/hmi-kanban-display.jpg",
   },
   {
     title: "SPQDC Display Board",
     description: "Safety, Productivity, Quality, Delivery, and Cost (SPQDC) industrial KPI dashboard.",
-    image: "https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/SPQ-8f02c9d.jpg",
+    image: "/products/hmi-display-board/hmi-spqdc-display.jpg",
   },
   {
     title: "Utilities Monitoring Display",
     description: "Monitors compressed air, water balancing, gas, and power consumption parameters across shop floor.",
-    image: "https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/utility.png",
+    image: "/products/hmi-display-board/hmi-utilities-display.png",
   },
 ];
 
@@ -108,19 +108,19 @@ export const orderInfo = [
     title: "OEM & White Label Service",
     description:
       "Custom branding, tailored hardware configurations, and white-label manufacturing for distributors, system integrators, and OEMs.",
-    image: "https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/5-2bf31c7.jpg",
+    image: "/products/hmi-display-board/hmi-oem-service.jpg",
   },
   {
     title: "Custom Solution Development",
     description:
       "Rapid custom engineering for hardware enclosures, custom display sizes, specialized SCADA integration, and proprietary communication protocols.",
-    image: "https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/MAKE_IN_INDIA.jpg",
+    image: "/products/rdl-product/make-in-india.jpg",
   },
   {
     title: "Dynamic Process Support",
     description:
       "Flexible IoT software integration for .NET, QT, Web apps, WinCC RT, and EXOR JMobile SCADA visualization engines.",
-    image: "https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/HMI.png",
+    image: "/products/hmi-display-board/hmi-digital-logbook.png",
   },
 ];
 
@@ -194,7 +194,6 @@ export const applications = [
   "Andon Alert & Operator Escalation",
   "CNC Drawing & Jobcard Access",
   "Barcode & QR Code Dispatch Tracking",
-  "Preproduction & In-line Inspection",
 ];
 
-export const partnershipImage = "https://img1.wsimg.com/isteam/ip/12461e14-346a-4dab-a0dd-f3b770f6c7ad/MAKE_IN_INDIA.jpg";
+export const partnershipImage = "/products/rdl-product/make-in-india.jpg";

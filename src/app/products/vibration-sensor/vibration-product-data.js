@@ -5,7 +5,7 @@ export const heroContent = {
   headline1: "3-Axis Industrial Vibration & Temperature Sensor",
   headline2: "Predictive Condition Monitoring",
   description:
-    "RDL Industrial Vibration Sensors continuously measure 3-axis acceleration (RMS/Peak Velocity, Acceleration, Displacement) and surface temperature to detect early bearing wear, shaft misalignment, mechanical unbalance, and equipment friction in motors, pumps, gearboxes, blowers, and CNC machinery before costly downtime occurs.",
+    "RDL Industrial 3-Axis Vibration Sensors continuously monitor acceleration, velocity, and surface temperature — detecting early bearing wear to eliminate costly machine downtime.",
   image: "/products/vibration-sensor/vibration-hero.png",
 };
 
@@ -204,5 +204,4 @@ export const applications = [
   "Conveyor Rollers & Mining Equipment",
   "Wind Turbines & Power Generation",
   "Oil & Gas Pipeline Pump Stations",
-  "Textile & Paper Mill Machinery",
 ];

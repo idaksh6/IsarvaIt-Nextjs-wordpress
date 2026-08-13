@@ -5,8 +5,8 @@ export const heroContent = {
   headline1: "UHF RFID READERS",
   headline2: "Connectivity Devices for Enterprise IoT Solutions",
   description:
-    "RDL UHF RFID Readers are equipped with high-performance processing chips and high-sensitivity antennas to continuously monitor, track, identify items, and pinpoint locations across large industrial areas. Features ultra-fast multi-tag reading (200 tags/sec), robust anti-collision algorithms, and IP65 weatherproof housing.",
-  image: "/products/rfid-reader/rfid-banner.svg",
+    "RDL UHF RFID Readers deliver high-speed automated asset tracking and inventory identification — featuring multi-tag reading (200 tags/sec) for logistics, warehousing, and access control.",
+  image: "/products/rfid-reader/RFID.jpg",
 };
 
 export const systemArchitecture = {
@@ -327,7 +327,6 @@ export const applications = [
   "Patient Location & Hospital Asset Tracking",
   "Retail Inventory & Cycle Counting",
   "Conveyor & Robotic Assembly Lines",
-  "Oil & Gas Harsh Environment Traceability",
 ];
 
 export const partnershipImage = "/products/rdl-product/make-in-india.jpg";

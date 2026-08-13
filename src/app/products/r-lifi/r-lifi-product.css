@@ -55,8 +55,12 @@ html.rdl-scroll-stable header.fixed img {
 
 .rdl-product-page img {
   max-width: 100%;
-  height: auto;
   display: block;
+}
+
+.rdl-product-page img.h-full,
+.rdl-product-page img[class*="h-full"] {
+  height: 100% !important;
 }
 
 .rdl-product-page .rdl-feature-media {

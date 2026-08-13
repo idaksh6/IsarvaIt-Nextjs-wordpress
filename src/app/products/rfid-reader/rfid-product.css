@@ -57,8 +57,12 @@ html.rdl-scroll-stable header.fixed img {
 
 .rdl-product-page img {
   max-width: 100%;
-  height: auto;
   display: block;
+}
+
+.rdl-product-page img.h-full,
+.rdl-product-page img[class*="h-full"] {
+  height: 100% !important;
 }
 
 /* Reserve card media height so lazy images don't reflow the page while scrolling */
