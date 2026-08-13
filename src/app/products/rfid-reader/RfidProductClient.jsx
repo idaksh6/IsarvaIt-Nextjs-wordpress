@@ -5,15 +5,18 @@ import Image from "next/image";
 import ContactFormModal from "../../components/ContactFormModal";
 import {
   heroContent,
+  systemArchitecture,
+  benefitsData,
+  rfidTagsData,
+  sdkLogos,
   zigZagFeatures,
-  hmiProductVariants,
-  displayBoards,
+  rfidVariants,
   orderInfo,
-  hmiOrderTable,
-  hmiOrderTableFooterNote,
+  rfidOrderTable,
+  rfidOrderTableFooterNote,
   applications,
-} from "./hmi-product-data";
-import "./hmi-product.css";
+} from "./rfid-product-data";
+import "./rfid-product.css";
 
 function VariantCard({ variant, onKnowMore }) {
   const [expanded, setExpanded] = useState(false);
@@ -70,21 +73,18 @@ function VariantCard({ variant, onKnowMore }) {
   );
 }
 
-export default function HmiProductClient() {
+export default function RfidProductClient() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [successRedirectUrl, setSuccessRedirectUrl] = useState(null);
-  const [successDownloadUrl, setSuccessDownloadUrl] = useState(null);
 
-  const PRODUCT_NAME = "HMI & Display Board";
+  const PRODUCT_NAME = "RFID Reader";
 
   const openDemoModal = () => {
     setSuccessRedirectUrl(null);
-    setSuccessDownloadUrl(null);
     setIsModalOpen(true);
   };
 
   const openKnowMoreModal = () => {
-    setSuccessRedirectUrl(null);
     setSuccessRedirectUrl(null);
     setIsModalOpen(true);
   };
@@ -92,7 +92,6 @@ export default function HmiProductClient() {
   const closeModal = () => {
     setIsModalOpen(false);
     setSuccessRedirectUrl(null);
-    setSuccessDownloadUrl(null);
   };
 
   useEffect(() => {
@@ -161,10 +160,10 @@ export default function HmiProductClient() {
             </div>
 
             <div className="relative w-full min-w-0 flex flex-col h-full lg:col-span-6">
-              <div className="relative w-full overflow-hidden rounded-xl sm:rounded-2xl bg-slate-50 border border-slate-200 p-2 sm:p-4">
+              <div className="relative w-full overflow-hidden rounded-xl sm:rounded-2xl bg-white border border-slate-200 p-2 sm:p-4 shadow-sm">
                 <img
                   src={heroContent.image}
-                  alt="HMI & Display Board System Unit"
+                  alt="UHF RFID Reader System Unit Banner"
                   className="w-full h-auto object-contain rounded-lg"
                   loading="eager"
                   decoding="async"
@@ -211,7 +210,7 @@ export default function HmiProductClient() {
               Core Capabilities
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900">
-              Key Features & Operational Advantages
+              Key Features & Performance Advantages
             </h2>
           </div>
 
@@ -257,20 +256,160 @@ export default function HmiProductClient() {
         </div>
       </section>
 
-      {/* ── HMI PRODUCT MODELS ── */}
+      {/* ── RFID SYSTEM ARCHITECTURE & NETWORK DIAGRAM ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-slate-50 border-y border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <span className="text-blue-600 font-bold text-xs sm:text-sm tracking-wider uppercase mb-2 block">
+              Network Architecture
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 mb-4">
+              {systemArchitecture.title}
+            </h2>
+            <p className="text-slate-600 text-sm sm:text-base lg:text-lg">
+              {systemArchitecture.subtitle}
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl sm:rounded-3xl border border-slate-200 p-4 sm:p-8 shadow-sm max-w-5xl mx-auto overflow-hidden">
+            <img
+              src={systemArchitecture.image}
+              alt="RFID System Architecture Network Topology Diagram"
+              className="w-full h-auto object-contain max-h-[550px] mx-auto rounded-xl"
+              loading="lazy"
+            />
+            <p className="mt-6 text-center text-xs sm:text-sm text-slate-500 font-medium max-w-3xl mx-auto">
+              {systemArchitecture.description}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── BENEFITS SECTION (ROBOTIC ARM CONVEYOR & BULLET POINTS) ── */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-center">
+            <div className="lg:col-span-6">
+              <span className="text-blue-600 font-bold text-xs sm:text-sm tracking-wider uppercase mb-2 block">
+                Key Value
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 mb-6">
+                {benefitsData.title}
+              </h2>
+              <p className="text-slate-600 text-sm sm:text-base mb-6 font-medium">
+                {benefitsData.description}
+              </p>
+
+              <ul className="space-y-3">
+                {benefitsData.points.map((point) => (
+                  <li key={point} className="flex items-start gap-3 text-slate-700 text-sm sm:text-base font-semibold">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-blue-600 shrink-0" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="lg:col-span-6">
+              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-slate-50 border border-slate-200 p-4 sm:p-6 shadow-sm">
+                <img
+                  src={benefitsData.image}
+                  alt="UHF RFID Reader Robotic Arm Conveyor Integration"
+                  className="w-full h-auto object-contain max-h-[420px] mx-auto rounded-xl"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── RFID TAGS COMPATIBILITY SECTION ── */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-slate-50 border-y border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 items-center">
+            <div className="lg:col-span-6 lg:order-2">
+              <span className="text-blue-600 font-bold text-xs sm:text-sm tracking-wider uppercase mb-2 block">
+                Tag Compatibility
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 mb-4">
+                {rfidTagsData.title}
+              </h2>
+              <p className="text-slate-600 text-sm sm:text-base mb-6 font-medium">
+                {rfidTagsData.description}
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {rfidTagsData.tagsList.map((tag) => (
+                  <div
+                    key={tag}
+                    className="flex items-center gap-2.5 p-3 rounded-xl bg-white border border-slate-200 text-slate-800 text-xs sm:text-sm font-bold shadow-xs"
+                  >
+                    <span className="h-2 w-2 rounded-full bg-blue-500 shrink-0" />
+                    <span>{tag}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="lg:col-span-6 lg:order-1">
+              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-white border border-slate-200 p-4 sm:p-6 shadow-sm">
+                <img
+                  src={rfidTagsData.image}
+                  alt="Industrial RFID Tags Assortment Collection"
+                  className="w-full h-auto object-contain max-h-[400px] mx-auto rounded-xl"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SDK LOGOS SECTION ── */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+          <span className="text-blue-600 font-bold text-xs sm:text-sm tracking-wider uppercase mb-2 block">
+            Developer Integration
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-10">
+            SDK's & Programming Languages
+          </h2>
+
+          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 lg:gap-16">
+            {sdkLogos.map((sdk) => (
+              <div key={sdk.name} className="flex flex-col items-center gap-2 group">
+                <div className="h-16 w-32 bg-slate-50 border border-slate-200 rounded-xl p-3 flex items-center justify-center group-hover:border-blue-300 transition-colors shadow-xs">
+                  <img
+                    src={sdk.logo}
+                    alt={`${sdk.name} SDK Integration`}
+                    className="max-h-full max-w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
+                    loading="lazy"
+                  />
+                </div>
+                <span className="text-xs font-bold text-slate-600 group-hover:text-blue-600 transition-colors">
+                  {sdk.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── RFID PRODUCT MODELS ── */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-slate-50 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <span className="text-blue-600 font-bold text-xs sm:text-sm tracking-wider uppercase mb-2 block">
               Product Range
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900">
-              HMI Controller Models & Specifications
+              UHF RFID Reader Models & Hardware Types
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {hmiProductVariants.map((variant) => (
+            {rfidVariants.map((variant) => (
               <VariantCard
                 key={variant.title}
                 variant={variant}
@@ -281,61 +420,18 @@ export default function HmiProductClient() {
         </div>
       </section>
 
-      {/* ── INDUSTRY GRADE DISPLAY BOARDS ── */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <span className="text-blue-600 font-bold text-xs sm:text-sm tracking-wider uppercase mb-2 block">
-              Plant Floor Visual Systems
-            </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900">
-              Industry Grade Display Boards
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {displayBoards.map((board) => (
-              <div
-                key={board.title}
-                className="flex flex-col bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
-              >
-                <div className="relative h-48 bg-slate-50 border-b border-slate-100 flex items-center justify-center p-4">
-                  <img
-                    src={board.image}
-                    alt={board.title}
-                    className="max-h-full max-w-full object-contain rounded"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">{board.title}</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed mb-4">{board.description}</p>
-                  <button
-                    type="button"
-                    onClick={openDemoModal}
-                    className="mt-auto inline-flex items-center text-sm font-bold text-blue-600 hover:text-blue-700 cursor-pointer"
-                  >
-                    Select & Inquire →
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── ORDER INFORMATION & EXACT ORDER TABLE ── */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-slate-50 border-t border-slate-100">
+      <section className="py-16 sm:py-20 lg:py-24 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <span className="text-blue-600 font-bold text-xs sm:text-sm tracking-wider uppercase mb-2 block">
-              Partnership & Ordering
+              Partnership & Custom Ordering
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 mb-4">
               Order Information & Model Comparison
             </h2>
             <p className="text-slate-600 text-sm sm:text-base lg:text-lg">
-              OEM, white-label, and custom development options tailored to your brand and process needs.
+              OEM, white-label, and custom development options tailored to your scan range and enclosure specifications.
             </p>
           </div>
 
@@ -359,7 +455,7 @@ export default function HmiProductClient() {
             ))}
           </div>
 
-          {/* EXACT DATASHEET ORDER TABLE */}
+          {/* DATASHEET ORDER TABLE */}
           <div className="bg-white rounded-2xl border-2 border-slate-300 overflow-hidden shadow-md max-w-6xl mx-auto">
             {/* Header Title Bar */}
             <div className="bg-[#1D5288] py-4 px-6 text-center">
@@ -370,41 +466,25 @@ export default function HmiProductClient() {
 
             {/* Table */}
             <div className="overflow-x-auto rdl-h-scroll">
-              <table className="w-full text-center text-xs sm:text-sm border-collapse min-w-[900px]">
+              <table className="w-full text-center text-xs sm:text-sm border-collapse min-w-[800px]">
                 <thead>
                   <tr className="bg-slate-200 text-slate-800 font-bold border-b border-slate-300">
-                    <th className="p-3 border-r border-slate-300">Model</th>
-                    <th className="p-3 border-r border-slate-300">Display Size</th>
-                    <th className="p-3 border-r border-slate-300">Display Type</th>
-                    <th className="p-3 border-r border-slate-300">CPU*</th>
-                    <th className="p-3 border-r border-slate-300">RAM*</th>
-                    <th className="p-3 border-r border-slate-300">Storage*</th>
-                    <th className="p-3 border-r border-slate-300">OS*</th>
-                    <th className="p-3 border-r border-slate-300">Wi-Fi, HDMI, USB, LAN, Audio</th>
-                    <th className="p-3 border-r border-slate-300">Capacitive Touch Screen with Protective Glass</th>
+                    <th className="p-3 border-r border-slate-300">Model Part #</th>
+                    <th className="p-3 border-r border-slate-300">Reading Range</th>
+                    <th className="p-3 border-r border-slate-300">Reader Type</th>
+                    <th className="p-3 border-r border-slate-300">Dimensions</th>
+                    <th className="p-3 border-r border-slate-300">Supported Interface / Connectivity</th>
                     <th className="p-3">Action</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-300 text-slate-700 font-medium">
-                  {hmiOrderTable.map((row) => (
+                  {rfidOrderTable.map((row) => (
                     <tr key={row.model} className="hover:bg-blue-50/60 transition-colors">
-                      <td className="p-3 font-bold text-slate-900 border-r border-slate-300">{row.model}</td>
-                      <td className="p-3 border-r border-slate-300">{row.displaySize}</td>
-                      <td className="p-3 border-r border-slate-300">{row.displayType}</td>
-                      <td className="p-3 border-r border-slate-300">{row.cpu}</td>
-                      <td className="p-3 border-r border-slate-300">{row.ram}</td>
-                      <td className="p-3 border-r border-slate-300">{row.storage}</td>
-                      <td className="p-3 border-r border-slate-300 leading-tight">{row.os}</td>
-                      <td className="p-3 border-r border-slate-300 text-center">
-                        <svg className="w-5 h-5 text-emerald-600 inline-block stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>
-                      </td>
-                      <td className="p-3 border-r border-slate-300 text-center">
-                        <svg className="w-5 h-5 text-emerald-600 inline-block stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>
-                      </td>
+                      <td className="p-3 font-mono font-bold text-blue-600 border-r border-slate-300">{row.model}</td>
+                      <td className="p-3 border-r border-slate-300 font-semibold">{row.range}</td>
+                      <td className="p-3 border-r border-slate-300">{row.type}</td>
+                      <td className="p-3 border-r border-slate-300">{row.dimension}</td>
+                      <td className="p-3 border-r border-slate-300 text-slate-800 font-medium">{row.interface}</td>
                       <td className="p-3">
                         <button
                           type="button"
@@ -423,14 +503,14 @@ export default function HmiProductClient() {
             {/* Footer Note */}
             <div className="p-4 bg-slate-50 border-t border-slate-200 text-left">
               <p className="text-xs sm:text-sm font-semibold text-slate-600 italic">
-                {hmiOrderTableFooterNote}
+                {rfidOrderTableFooterNote}
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── APPLICATIONS / USE CASES (ORIGINAL DESIGN WITH FULL WIDTH LAST POINT) ── */}
+      {/* ── APPLICATIONS / USE CASES ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
@@ -458,22 +538,13 @@ export default function HmiProductClient() {
         </div>
       </section>
 
-      {/* ── CONTACT MODAL WITH ALWAYS HMI & DISPLAY BOARD PRE-SELECTION ── */}
+      {/* ── CONTACT MODAL WITH ALWAYS RFID READER PRE-SELECTION ── */}
       <ContactFormModal
         isOpen={isModalOpen}
         onClose={closeModal}
         preSelectedType="Product"
         preSelectedItem={PRODUCT_NAME}
         successRedirectUrl={successRedirectUrl}
-        successDownloadUrl={successDownloadUrl}
-        onSuccess={() => {
-          if (successDownloadUrl) {
-            markDownloadRegistered();
-            triggerDownload(successDownloadUrl);
-          } else if (successRedirectUrl) {
-            window.location.href = successRedirectUrl;
-          }
-        }}
       />
     </div>
   );

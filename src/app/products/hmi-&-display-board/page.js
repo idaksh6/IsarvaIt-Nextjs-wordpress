@@ -3,13 +3,13 @@ import HmiProductClient from "./HmiProductClient";
 export const metadata = {
   title: "HMI & Display Board | Industrial Human Machine Interface | Isarva",
   description:
-    "HMI & Display Board solutions. Supports standee and panel mount HMI models, custom .net/QT/Web apps integration, Wincc RT and EXOR JMobile SCADA systems.",
+    "HMI & Display Board solutions for industrial control. Supports standee and panel mount HMI models, custom .NET, QT, Web apps integration, WinCC RT, EXOR JMobile SCADA, and plant floor display boards.",
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
     googleBot: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
     },
   },
 };

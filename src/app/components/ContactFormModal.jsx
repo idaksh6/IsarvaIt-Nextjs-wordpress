@@ -114,16 +114,28 @@ export default function ContactFormModal({
       let categoryList = [...categories];
       let matchedCategory = findMatchedCategory(categoryList, item);
 
-      setCategories(categoryList);
-
       if (matchedCategory) {
+        setCategories(categoryList);
         setFormData((prev) => ({
           ...prev,
           selectedItem: matchedCategory.category_name,
           selectedCategoryId: matchedCategory.id,
         }));
+      } else if (item) {
+        // Automatically add the pre-selected item to the categories dropdown list and select it
+        const customCategory = {
+          id: `custom_${item.toLowerCase().replace(/[^a-z0-9]/g, "_")}`,
+          category_name: item,
+        };
+        const updatedList = [customCategory, ...categoryList];
+        setCategories(updatedList);
+        setFormData((prev) => ({
+          ...prev,
+          selectedItem: item,
+          selectedCategoryId: customCategory.id,
+        }));
       } else {
-        console.warn(`[ContactFormModal] Product/Service "${item}" not found in CRM categories. Dropdown remains unselected.`);
+        setCategories(categoryList);
         setFormData((prev) => ({
           ...prev,
           selectedItem: "",

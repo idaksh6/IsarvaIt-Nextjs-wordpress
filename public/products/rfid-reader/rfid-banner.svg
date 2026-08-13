@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="50%" stop-color="#EFF6FF" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#1E40AF" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <rect width="1200" height="500" rx="16" fill="url(#bgGrad)" stroke="#CBD5E1" stroke-width="2"/>
+  
+  <!-- Background Warehouse Lines -->
+  <g opacity="0.15" stroke="#1E3A8A" stroke-width="2" fill="none">
+    <path d="M 600 0 L 1200 250 L 1200 500 L 600 250 Z" />
+    <path d="M 750 62.5 L 1200 300" />
+    <path d="M 900 125 L 1200 350" />
+    <line x1="600" y1="250" x2="600" y2="500" />
+    <line x1="750" y1="312.5" x2="750" y2="500" />
+    <line x1="900" y1="375" x2="900" y2="500" />
+    <line x1="1050" y1="437.5" x2="1050" y2="500" />
+  </g>
+
+  <!-- Left: RFID Reader Hardware Devices -->
+  <!-- Square Wall Mount Antenna Reader -->
+  <g transform="translate(60, 60)" filter="url(#shadow)">
+    <rect width="240" height="240" rx="20" fill="#FFFFFF" stroke="#94A3B8" stroke-width="4" />
+    <rect x="20" y="20" width="200" height="200" rx="12" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="2" />
+    <!-- Signal Waves -->
+    <path d="M 120 100 Q 120 80 140 80" stroke="#0284C7" stroke-width="4" fill="none" stroke-linecap="round" />
+    <path d="M 120 100 Q 120 60 160 60" stroke="#0284C7" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7" />
+    <path d="M 120 100 Q 120 40 180 40" stroke="#0284C7" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.4" />
+    <!-- Logo Badge -->
+    <rect x="40" y="160" width="70" height="24" rx="4" fill="#1E293B" />
+    <text x="75" y="176" fill="#FFFFFF" font-family="sans-serif" font-weight="bold" font-size="10" text-anchor="middle">RDL TECH</text>
+  </g>
+
+  <!-- Desktop Reader -->
+  <g transform="translate(320, 160)" filter="url(#shadow)">
+    <rect width="130" height="190" rx="14" fill="#1E293B" stroke="#475569" stroke-width="3" />
+    <rect x="12" y="12" width="106" height="166" rx="8" fill="#0F172A" />
+    <circle cx="65" cy="70" r="28" fill="none" stroke="#38BDF8" stroke-width="3" />
+    <path d="M 50 70 A 15 15 0 0 1 80 70" fill="none" stroke="#38BDF8" stroke-width="3" />
+    <rect x="35" y="120" width="60" height="30" rx="4" fill="#334155" />
+    <text x="65" y="139" fill="#94A3B8" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">RFID</text>
+  </g>
+
+  <!-- Handheld Reader -->
+  <g transform="translate(200, 270)" filter="url(#shadow)">
+    <rect width="90" height="160" rx="10" fill="#334155" stroke="#1E293B" stroke-width="3" />
+    <rect x="10" y="15" width="70" height="90" rx="6" fill="#38BDF8" opacity="0.8" />
+    <rect x="25" y="115" width="40" height="35" rx="4" fill="#EA580C" />
+    <text x="45" y="137" fill="#FFFFFF" font-family="sans-serif" font-weight="bold" font-size="12" text-anchor="middle">SCAN</text>
+  </g>
+
+  <!-- Right: Title Banner Header -->
+  <g transform="translate(520, 150)">
+    <text x="0" y="50" font-family="sans-serif" font-weight="900" font-size="52" fill="#1E3A8A" letter-spacing="2">UHF RFID READERS</text>
+    <rect x="0" y="70" width="580" height="4" fill="url(#blueGrad)" />
+    <text x="0" y="110" font-family="sans-serif" font-weight="600" font-size="24" fill="#475569">Connectivity Devices for Enterprise IoT Solutions</text>
+    
+    <!-- Badges -->
+    <g transform="translate(0, 160)">
+      <!-- CE Badge -->
+      <rect x="0" y="0" width="90" height="60" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" />
+      <text x="45" y="42" font-family="sans-serif" font-weight="900" font-size="34" fill="#1E293B" text-anchor="middle">CE</text>
+      <!-- RoHS Badge -->
+      <rect x="110" y="0" width="110" height="60" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" />
+      <path d="M 165 15 L 140 45 L 190 45 Z" fill="#16A34A" opacity="0.2" />
+      <text x="165" y="32" font-family="sans-serif" font-weight="900" font-size="16" fill="#16A34A" text-anchor="middle">RoHS</text>
+      <text x="165" y="48" font-family="sans-serif" font-weight="bold" font-size="10" fill="#475569" text-anchor="middle">COMPLIANT</text>
+    </g>
+  </g>
+</svg>

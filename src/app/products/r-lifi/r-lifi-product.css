@@ -1,4 +1,4 @@
-/* HMI & Display Board product page scroll stability and styles */
+/* R-LiFi 3.0 product page scroll stability and styles */
 
 html.rdl-scroll-stable {
   scroll-behavior: auto !important;
@@ -11,14 +11,12 @@ html.rdl-scroll-stable body {
   overflow-x: clip !important;
 }
 
-/* Kill global img content-visibility — it skips/repaints images mid-scroll and causes vibration */
 html.rdl-scroll-stable img,
 .rdl-product-page img {
   content-visibility: visible !important;
   contain: none !important;
 }
 
-/* Solid locked header — fixed height, no blur / padding morph / GPU thrash */
 html.rdl-scroll-stable header.fixed {
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
@@ -61,7 +59,6 @@ html.rdl-scroll-stable header.fixed img {
   display: block;
 }
 
-/* Reserve card media height so lazy images don't reflow the page while scrolling */
 .rdl-product-page .rdl-feature-media {
   min-height: 10rem;
 }
@@ -80,7 +77,6 @@ html.rdl-scroll-stable header.fixed img {
   -webkit-overflow-scrolling: touch;
 }
 
-/* Kill perspective transforms from press-illusion buttons on this page */
 html.rdl-scroll-stable .rdl-product-page .press-illusion-btn-orange,
 html.rdl-scroll-stable .rdl-product-page .press-illusion-btn-green,
 html.rdl-scroll-stable .rdl-product-page .press-illusion-btn {
@@ -93,18 +89,5 @@ html.rdl-scroll-stable .rdl-product-page .press-illusion-btn {
   .rdl-product-page * {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
-  }
-}
-
-@media (max-width: 479px) {
-  .rdl-product-page .rdl-apps-visual {
-    min-height: 220px;
-  }
-
-  .rdl-product-page .rdl-apps-visual img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    object-position: center;
   }
 }

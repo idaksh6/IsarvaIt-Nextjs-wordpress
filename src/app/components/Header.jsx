@@ -91,7 +91,10 @@ export default function Header() {
       pathname.includes("/products/data-logger-iiot-4-0-1") ||
       pathname.includes("/products/cloud-plc-4-0-1") ||
       pathname.includes("/products/biometric-authentication") ||
-      pathname.includes("/products/hmi-&-display-board"));
+      pathname.includes("/products/hmi-&-display-board") ||
+      pathname.includes("/products/rfid-reader") ||
+      pathname.includes("/products/r-lifi") ||
+      pathname.includes("/products/vibration-sensor"));
 
   const [scrolled, setScrolled] = useState(isScrollStablePage);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

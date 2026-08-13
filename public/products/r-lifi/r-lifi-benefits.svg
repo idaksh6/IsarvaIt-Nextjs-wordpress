@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <rect width="800" height="500" rx="16" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2" />
+  <circle cx="400" cy="250" r="180" fill="#E0F2FE" opacity="0.5" />
+  
+  <g transform="translate(400, 250)">
+    <!-- Light Cone Shield -->
+    <polygon points="0,-160 -140,120 140,120" fill="#0284C7" opacity="0.2" />
+    <!-- Shield Icon -->
+    <path d="M -40,-40 L 40,-40 L 40,20 C 40,60 0,90 0,90 C 0,90 -40,60 -40,20 Z" fill="#0284C7" stroke="#0369A1" stroke-width="4" />
+    <path d="M -15,0 L 0,15 L 20,-15" stroke="#FFFFFF" stroke-width="6" fill="none" stroke-linecap="round" />
+  </g>
+
+  <text x="400" y="420" font-family="sans-serif" font-size="20" font-weight="900" fill="#0F172A" text-anchor="middle">RF-FREE & ELECTROMAGNETIC IMMUNE</text>
+  <text x="400" y="450" font-family="sans-serif" font-size="14" font-weight="600" fill="#64748B" text-anchor="middle">Physical Security - Light Cannot Penetrate Walls</text>
+</svg>
