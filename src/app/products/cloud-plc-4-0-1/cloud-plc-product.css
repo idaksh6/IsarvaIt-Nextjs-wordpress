@@ -16,7 +16,6 @@ html.rdl-scroll-stable img,
 .rdl-product-page img {
   content-visibility: visible !important;
   contain: none !important;
-  object-fit: contain !important;
 }
 
 /* Solid locked header — fixed height, no blur / padding morph / GPU thrash */
@@ -81,7 +80,14 @@ html.rdl-scroll-stable header.fixed img {
   -webkit-overflow-scrolling: touch;
 }
 
-
+/* Kill perspective transforms from press-illusion buttons on this page */
+html.rdl-scroll-stable .rdl-product-page .press-illusion-btn-orange,
+html.rdl-scroll-stable .rdl-product-page .press-illusion-btn-green,
+html.rdl-scroll-stable .rdl-product-page .press-illusion-btn {
+  transform: none !important;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease !important;
+  will-change: auto !important;
+}
 
 @media (max-width: 1024px) {
   .rdl-product-page * {

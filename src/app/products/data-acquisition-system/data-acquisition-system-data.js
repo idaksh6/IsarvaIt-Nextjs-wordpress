@@ -1,3 +1,44 @@
+// Data Acquisition System (DAS) with Display Product Data
+
+export const heroContent = {
+  badge: "DATA ACQUISITION SYSTEM WITH DISPLAY",
+  headline1: "All-in-One Real-Time Monitoring",
+  headline2: "DAS with Display",
+  description:
+    "The Data Acquisition System (DAS) with Display is an all-in-one solution designed to collect, monitor, and visualize real-time data from multiple sensors and field devices. With an integrated display and industrial-grade design, it delivers instant insights on-site while seamlessly connecting to automation and IoT platforms.",
+};
+
+export const zigZagFeatures = [
+  {
+    title: "Industrial Grade PC & SAMSUNG Display",
+    description:
+      "Integrated 32\" to 85\" SAMSUNG Display powered by a 2.2GHz Industrial PC, 4GB RAM, 120GB SSD, pre-enabled Windows 11 OEM License, and customizable 8-screen dashboard system.",
+    image: "/products/rdl-product/das-display-pic2.jpg",
+    imageLeft: true,
+  },
+  {
+    title: "64 Configurable Data Logging Channels",
+    description:
+      "Supports up to 64 custom-configurable data channels with customizable channel labels, color-coded threshold alerts, and configurable polling intervals.",
+    image: "/products/rdl-product/DAS with Display.png",
+    imageLeft: false,
+  },
+  {
+    title: "High-Precision Isolated Analog & Digital I/O",
+    description:
+      "12x to 48x isolated 16-bit high-precision analog input channels, 4x to 16x digital inputs, and 1x to 4x industrial relay control modules.",
+    image: "/products/rdl-product/das-boiler-water.jpg",
+    imageLeft: true,
+  },
+  {
+    title: "Enterprise Security & Modbus Networking",
+    description:
+      "1x Isolated RS485 RTU, 1x Isolated Modbus TCP Ethernet port, custom configurable REST API integration, SSL, and AES-256 data encryption.",
+    image: "/products/rdl-product/das-architecture.jpg",
+    imageLeft: false,
+  },
+];
+
 export const dasFeatures = [
   {
     title: "64 Configurable Channels",
@@ -50,17 +91,58 @@ export const dasFeatures = [
 ];
 
 export const applications = [
-  "Production and process monitoring",
-  "Utilities monitoring",
-  "Condition monitoring",
-  "Environment monitoring",
-  "Industrial Smart grid",
-  "Solar grid",
-  "Cold storage monitoring",
-  "Water treatment",
-  "Generator monitoring",
-  "Green House",
-  "Warning message in case of calamities",
+  "Production and Process Monitoring",
+  "Utilities & Energy Monitoring",
+  "Machine Condition Monitoring",
+  "Environmental Air Quality Monitoring",
+  "Industrial Smart Grid Integration",
+  "Solar PV Array & Inverter Monitoring",
+  "Cold Storage & Refrigeration Logistics",
+  "Water & Wastewater Treatment Facilities",
+  "Industrial Generator & Backup Systems",
+  "Greenhouse & Agricultural Tech",
+  "Calamity & Emergency Warning Systems",
+  "Boiler, Steam & Furnace Process Systems",
+];
+
+export const dasVariants = [
+  {
+    id: "das-std",
+    title: "Data Acquisition System",
+    image: "/products/rdl-product/das-web-banner.jpg",
+    preview: [
+      "48 x Custom configurable Data Channels",
+      "Custom Configurable Dashboards & data channel Labels",
+      "Custom Configurable up to 8 Dashboard Screens",
+      "Safety and Instruction videos on set intervals",
+      "Custom configurable polling interval",
+      "Windows 11 OEM License Enabled",
+      "Threshold-based color labels & data settings",
+    ],
+    full: [
+      "32\" to 85\" SAMSUNG Industrial Display",
+      "Isolated RS485 Modbus RTU & Modbus TCP Ethernet",
+      "SSL & AES-256 Data Encryption",
+    ],
+    link: "https://researchdesignlab.com/process-parameter-monitoring-display-928.html",
+  },
+  {
+    id: "das-test-rig",
+    title: "Test Rig Data Acquisition System",
+    image: "/products/rdl-product/das-display-pic2.jpg",
+    preview: [
+      "Models: RDL926A – RDL926F",
+      "Up to 48X Isolated Analog Input Channels (16-bit)",
+      "Up to 16X Isolated Digital Inputs & 4X Relays",
+      "Optional 16X PT100 & K/J Temp Sensor Inputs",
+      "Inbuilt 80 GB SSD Datalogger & Edge Gateway",
+    ],
+    full: [
+      "Edge Gateway LTE / 4G / 5G / Wi-Fi",
+      "Customizable Multi-Channel Process Dashboards",
+    ],
+    link: "https://researchdesignlab.com/process-parameter-monitoring-display-928.html",
+  },
 ];
 
 export const testRigModels = [
