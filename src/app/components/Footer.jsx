@@ -131,6 +131,10 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { label: "Data Logger IIoT 4.0", href: "/products/data-logger-iiot-4-0-1" },
+                { label: "Cloud PLC 4.0", href: "/products/cloud-plc-4-0-1" },
+                { label: "DAS Datalogger", href: "/products/das-datalogger" },
+                { label: "Data Acquisition System", href: "/products/data-acquisition-system" },
+                { label: "Biometric Authentication", href: "/products/biometric-authentication" },
                 { label: "R-LiFi", href: "/products/r-lifi" },
                 { label: "HMI & Display Board", href: "/products/hmi-&-display-board" },
                 { label: "RFID Reader", href: "/products/rfid-reader" },

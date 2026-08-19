@@ -275,9 +275,8 @@ export default function BiometricProductClient() {
             {zigZagFeatures.map((feature, idx) => (
               <div
                 key={feature.title}
-                className={`flex flex-col ${
-                  feature.imageLeft ? "lg:flex-row" : "lg:flex-row-reverse"
-                } items-center gap-5 sm:gap-8 lg:gap-12 p-4 sm:p-6 lg:p-10 rounded-2xl sm:rounded-[2rem] bg-white border border-slate-200 min-w-0`}
+                className={`flex flex-col ${feature.imageLeft ? "lg:flex-row" : "lg:flex-row-reverse"
+                  } items-center gap-5 sm:gap-8 lg:gap-12 p-4 sm:p-6 lg:p-10 rounded-2xl sm:rounded-[2rem] bg-white border border-slate-200 min-w-0`}
               >
                 <div className="lg:w-1/2 w-full min-w-0">
                   <div className="rdl-feature-media relative w-full rounded-xl sm:rounded-2xl bg-slate-50 border border-slate-100 p-2 sm:p-3 lg:p-4">
@@ -399,47 +398,18 @@ export default function BiometricProductClient() {
       </section>
 
       {/* Order Information Table */}
-      <section className="pt-8 pb-6 sm:py-12 lg:py-16 bg-white">
+      <section className="pt-0 pb-6 sm:pt-12 lg:pt-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-
-          {/* Order Information Table */}
-          <div className="mt-8 sm:mt-12 lg:mt-16">
-            <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
-              <p className="text-xs font-bold tracking-[0.18em] text-blue-600 uppercase mb-2">Model Comparison</p>
-              <h3 className="text-xl sm:text-2xl font-black text-gray-900 uppercase">Order Information Table</h3>
-            </div>
-            <div className="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm bg-white max-w-3xl mx-auto">
-              <table className="w-full min-w-[500px] text-sm">
-                <thead>
-                  <tr className="bg-slate-900 text-white">
-                    <th className="text-left px-5 py-3.5 font-bold w-1/2">Model Feature</th>
-                    <th className="text-center px-4 py-3.5 font-bold">RDL810A</th>
-                    <th className="text-center px-4 py-3.5 font-bold">RDL810B</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {orderTableRows.map((row, i) => (
-                    <tr
-                      key={row.feature}
-                      className={i % 2 === 0 ? "bg-white" : "bg-slate-50/80"}
-                    >
-                      <td className="px-5 py-3 text-gray-700 font-medium border-t border-slate-100">{row.feature}</td>
-                      <td className="px-4 py-3 text-center border-t border-slate-100">{row.rdl810a ? <CHECK /> : <span className="font-bold text-gray-700 text-sm">NA</span>}</td>
-                      <td className="px-4 py-3 text-center border-t border-slate-100">{row.rdl810b ? <CHECK /> : <span className="font-bold text-gray-700 text-sm">NA</span>}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <div className="mt-4 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm text-gray-500 font-medium px-1">
-              <span className="inline-flex items-center gap-2">
-                <span className="text-green-600 font-black text-base">✓</span> — Available
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <span className="font-bold text-gray-700 text-sm">NA</span> — Not Applicable / Not Available
-              </span>
-            </div>
+          <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm bg-white max-w-3xl mx-auto p-2 sm:p-4">
+            <img
+              src="/products/biometric-authentication/biometric-table.webp"
+              alt="Biometric Model Comparison Order Information Table"
+              width={1200}
+              height={600}
+              className="w-full h-auto object-contain rounded-xl block mx-auto"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </section>

@@ -453,57 +453,17 @@ export default function RfidProductClient() {
             ))}
           </div>
 
-          {/* DATASHEET ORDER TABLE */}
-          <div className="bg-white rounded-2xl border-2 border-slate-300 overflow-hidden shadow-md max-w-6xl mx-auto">
-            {/* Header Title Bar */}
-            <div className="bg-[#1D5288] py-4 px-6 text-center">
-              <h3 className="text-xl sm:text-2xl font-black text-white tracking-widest uppercase">
-                ORDER TABLE
-              </h3>
-            </div>
-
-            {/* Table */}
-            <div className="overflow-x-auto rdl-h-scroll">
-              <table className="w-full text-center text-xs sm:text-sm border-collapse min-w-[800px]">
-                <thead>
-                  <tr className="bg-slate-200 text-slate-800 font-bold border-b border-slate-300">
-                    <th className="p-3 border-r border-slate-300">Model Part #</th>
-                    <th className="p-3 border-r border-slate-300">Reading Range</th>
-                    <th className="p-3 border-r border-slate-300">Reader Type</th>
-                    <th className="p-3 border-r border-slate-300">Dimensions</th>
-                    <th className="p-3 border-r border-slate-300">Supported Interface / Connectivity</th>
-                    <th className="p-3">Action</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-300 text-slate-700 font-medium">
-                  {rfidOrderTable.map((row) => (
-                    <tr key={row.model} className="hover:bg-blue-50/60 transition-colors">
-                      <td className="p-3 font-mono font-bold text-blue-600 border-r border-slate-300">{row.model}</td>
-                      <td className="p-3 border-r border-slate-300 font-semibold">{row.range}</td>
-                      <td className="p-3 border-r border-slate-300">{row.type}</td>
-                      <td className="p-3 border-r border-slate-300">{row.dimension}</td>
-                      <td className="p-3 border-r border-slate-300 text-slate-800 font-medium">{row.interface}</td>
-                      <td className="p-3">
-                        <button
-                          type="button"
-                          onClick={openDemoModal}
-                          className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg text-xs transition-colors cursor-pointer whitespace-nowrap shadow-sm"
-                        >
-                          Inquire Now
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            {/* Footer Note */}
-            <div className="p-4 bg-slate-50 border-t border-slate-200 text-left">
-              <p className="text-xs sm:text-sm font-semibold text-slate-600 italic">
-                {rfidOrderTableFooterNote}
-              </p>
-            </div>
+          {/* ORDER TABLE IMAGE */}
+          <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm bg-white p-2 sm:p-4 max-w-6xl mx-auto">
+            <img
+              src="/products/rfid-reader/RFID_READER.webp"
+              alt="UHF RFID Reader Order Table — Model Comparison"
+              width={1400}
+              height={700}
+              className="w-full h-auto object-contain rounded-xl block mx-auto"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </section>

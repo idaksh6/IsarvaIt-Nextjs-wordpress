@@ -81,6 +81,10 @@ const productsData = [
 
 const iotProductsData = [
   { label: "Data Logger IIoT 4.0", href: "/products/data-logger-iiot-4-0-1", icon: "📊" },
+  { label: "Cloud PLC 4.0", href: "/products/cloud-plc-4-0-1", icon: "☁️" },
+  { label: "DAS Datalogger", href: "/products/das-datalogger", icon: "💾" },
+  { label: "Data Acquisition System", href: "/products/data-acquisition-system", icon: "⚡" },
+  { label: "Biometric Authentication", href: "/products/biometric-authentication", icon: "🔒" },
   { label: "R-LiFi", href: "/products/r-lifi", icon: "📡" },
   { label: "HMI & Display Board", href: "/products/hmi-&-display-board", icon: "🖥️" },
   { label: "RFID Reader", href: "/products/rfid-reader", icon: "🏷️" },
@@ -94,6 +98,8 @@ export default function Header() {
     (pathname.includes("/products/rdl-product") ||
       pathname.includes("/products/data-logger-iiot-4-0-1") ||
       pathname.includes("/products/cloud-plc-4-0-1") ||
+      pathname.includes("/products/das-datalogger") ||
+      pathname.includes("/products/data-acquisition-system") ||
       pathname.includes("/products/biometric-authentication") ||
       pathname.includes("/products/hmi-&-display-board") ||
       pathname.includes("/products/rfid-reader") ||
@@ -419,15 +425,20 @@ export default function Header() {
               </svg>
             </Link>
 
-            {/* IoT Products Dropdown */}
+            {/* IoT Products Mega Menu Dropdown */}
             {isIotProductsOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[400px]">
-                <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-100 p-6">
-                  <div className="mb-4">
-                    <h3 className="mb-1 text-sm font-bold text-gray-800">IoT Products</h3>
-                    <p className="text-gray-500 text-xs">Intelligent industrial hardware and monitoring solutions</p>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-[920px]">
+                <div className="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-100 p-8">
+                  <div className="mb-6">
+                    <h3 className="mb-2 font-bold text-[#1e1e1e] text-2xl">
+                      IoT Products
+                    </h3>
+                    <p className="text-gray-600 font-medium text-sm">
+                      Intelligent industrial hardware and monitoring solutions
+                    </p>
                   </div>
-                  <div className="grid grid-cols-1 gap-2">
+
+                  <div className="grid grid-cols-3 gap-4">
                     {iotProductsData.map((product) => (
                       <Link
                         key={product.href}
@@ -441,14 +452,14 @@ export default function Header() {
                             });
                           }
                         }}
-                        className="product-click-trigger group flex items-center gap-3 p-3 rounded-xl hover:bg-orange-50/80 transition-all duration-200 border border-transparent hover:border-orange-100"
+                        className="product-click-trigger group flex items-center gap-3 p-4 rounded-xl hover:bg-emerald-50 transition-all duration-200"
                         data-product-name={product.label}
                       >
-                        <span className="text-xl group-hover:scale-110 transition-transform duration-200">
+                        <span className="text-2xl mt-0.5 group-hover:scale-110 transition-transform duration-200">
                           {product.icon}
                         </span>
                         <div>
-                          <h4 className="group-hover:text-orange-600 transition-colors text-sm font-semibold text-gray-700">
+                          <h4 className="group-hover:text-emerald-600 transition-colors text-sm font-bold text-gray-800">
                             {product.label}
                           </h4>
                         </div>

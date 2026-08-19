@@ -88,7 +88,7 @@ export default function CloudPlcProductClient() {
   const [successRedirectUrl, setSuccessRedirectUrl] = useState(null);
   const [successDownloadUrl, setSuccessDownloadUrl] = useState(null);
 
-  const CRM_PRODUCT_ITEM = "Cloud PLC 4.0";
+  const CRM_PRODUCT_ITEM = "Cloud PLC";
   const DOWNLOAD_REGISTERED_KEY = "cloud_plc_download_registered";
 
   const triggerDownload = (url) => {
@@ -279,9 +279,8 @@ export default function CloudPlcProductClient() {
             {zigZagFeatures.map((feature, idx) => (
               <div
                 key={feature.title}
-                className={`flex flex-col ${
-                  feature.imageLeft ? "lg:flex-row" : "lg:flex-row-reverse"
-                } items-center gap-5 sm:gap-8 lg:gap-12 p-4 sm:p-6 lg:p-10 rounded-2xl sm:rounded-[2rem] bg-white border border-slate-200 min-w-0`}
+                className={`flex flex-col ${feature.imageLeft ? "lg:flex-row" : "lg:flex-row-reverse"
+                  } items-center gap-5 sm:gap-8 lg:gap-12 p-4 sm:p-6 lg:p-10 rounded-2xl sm:rounded-[2rem] bg-white border border-slate-200 min-w-0`}
               >
                 <div className="lg:w-1/2 w-full min-w-0">
                   <div className="rdl-feature-media relative w-full rounded-xl sm:rounded-2xl bg-slate-50 border border-slate-100 p-2 sm:p-3 lg:p-4">
@@ -453,48 +452,20 @@ export default function CloudPlcProductClient() {
 
           {/* Order Information Table */}
           <div className="mt-8 sm:mt-12 lg:mt-16">
-            <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
+            {/* <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
               <p className="text-xs font-bold tracking-[0.18em] text-blue-600 uppercase mb-2">Model Comparison</p>
-              <h3 className="text-xl sm:text-2xl font-black text-gray-900 uppercase">Order Information Table</h3>
-            </div>
-            <div className="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm bg-white">
-              <table className="w-full min-w-[640px] text-sm">
-                <thead>
-                  <tr className="bg-slate-900 text-white">
-                    <th className="text-left px-5 py-3.5 font-bold w-1/2">Model Feature</th>
-                    <th className="text-center px-4 py-3.5 font-bold">RDL826A</th>
-                    <th className="text-center px-4 py-3.5 font-bold">RDL826B</th>
-                    <th className="text-center px-4 py-3.5 font-bold">RDL826C</th>
-                    <th className="text-center px-4 py-3.5 font-bold">RDL826D</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {orderTableRows.map((row, i) => (
-                    <tr
-                      key={row.feature}
-                      className={i % 2 === 0 ? "bg-white" : "bg-slate-50/80"}
-                    >
-                      <td className="px-5 py-3 text-gray-700 font-medium border-t border-slate-100">{row.feature}</td>
-                      <td className="px-4 py-3 text-center border-t border-slate-100">{row.rdl826a ? <CHECK /> : <CROSS />}</td>
-                      <td className="px-4 py-3 text-center border-t border-slate-100">{row.rdl826b ? <CHECK /> : <CROSS />}</td>
-                      <td className="px-4 py-3 text-center border-t border-slate-100">{row.rdl826c ? <CHECK /> : <CROSS />}</td>
-                      <td className="px-4 py-3 text-center border-t border-slate-100">{row.rdl826d ? <CHECK /> : <CROSS />}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <div className="mt-4 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm text-gray-500 font-medium px-1">
-              <span className="inline-flex items-center gap-2">
-                <span className="text-green-600 font-black text-base">✓</span> — Available
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <span className="text-slate-400 font-black text-base">*</span> — SD Card Not Included in package
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <span className="text-red-500 font-black text-base">✗</span> — Not Available
-              </span>
+             
+            </div> */}
+            <div className="overflow-hidden rounded-2xl border border-slate-200 shadow-sm bg-white p-2 sm:p-4">
+              <img
+                src="/products/cloud-plc/order-table.webp"
+                alt="Order Information Table — Model Comparison"
+                width={1200}
+                height={600}
+                className="w-full h-auto object-contain rounded-xl block"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           </div>
         </div>

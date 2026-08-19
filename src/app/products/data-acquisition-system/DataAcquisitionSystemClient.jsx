@@ -20,7 +20,7 @@ export default function DataAcquisitionSystemClient() {
   const [successRedirectUrl, setSuccessRedirectUrl] = useState(null);
   const [successDownloadUrl, setSuccessDownloadUrl] = useState(null);
 
-  const CRM_PRODUCT_ITEM = "DAS with Display";
+  const CRM_PRODUCT_ITEM = "Data Acquisition System";
 
   const openDemoModal = () => {
     setSuccessRedirectUrl(null);
