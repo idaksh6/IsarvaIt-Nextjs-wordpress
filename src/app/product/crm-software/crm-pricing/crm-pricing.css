@@ -1,0 +1,765 @@
+/* CRM Pricing — 3-column responsive comparison-matrix layout */
+
+.crm-pricing-page {
+  --primary-color: #0ea5e9;
+  --primary-hover: #0284c7;
+  --check-color: #10b981;
+  --uncheck-color: #94a3b8;
+  --accent-blue: #0ea5e9;
+  --accent-blue-soft: #e0f2fe;
+  --recommended-bg: #f0f9ff;
+  --section-bg: #f8fafc;
+  --text-dark: #0f172a;
+  --text-gray: #64748b;
+  --text-muted: #475569;
+  --border-color: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --bg-page: #ffffff;
+
+  font-family: var(--font-inter), "Inter", sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-dark);
+  line-height: 1.5;
+  min-height: 60vh;
+}
+
+.crm-pricing-page .main-header {
+  text-align: center;
+  background: var(--bg-page);
+}
+
+.crm-pricing-page .main-header .pricing-eyebrow {
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.75rem; /* text-xs */
+}
+
+.crm-pricing-page .pricing-demo-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.75rem;
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .pricing-demo-cta {
+    margin-top: 2rem;
+  }
+}
+
+.crm-pricing-page .pricing-section {
+  width: 100%;
+  max-width: 80rem; /* max-w-7xl */
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Shell — full header-aligned width */
+.crm-pricing-page .pricing-shell {
+  max-width: 100%;
+  margin: 0.85rem auto 0;
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  background: #fff;
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .pricing-shell {
+    border-radius: 1.5rem;
+  }
+}
+
+.crm-pricing-page .plans-header-row {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 1rem 1rem 0 0;
+  overflow: visible;
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .plans-header-row {
+    flex-direction: row;
+    align-items: stretch;
+    border-radius: 1.5rem 1.5rem 0 0;
+  }
+}
+
+.crm-pricing-page .plans-header-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+  padding: 1.75rem 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  background: #fff;
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .plans-header-intro {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 25%;
+    align-items: flex-start;
+    text-align: left;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 1.25rem 1.5rem 1.5rem;
+    border-bottom: none;
+    border-right: 1px solid var(--border-strong);
+    border-top-left-radius: 1.5rem;
+    min-height: 220px;
+  }
+}
+
+.crm-pricing-page .plans-intro-icon {
+  display: grid;
+  place-items: center;
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 9999px;
+  background: var(--primary-color);
+  color: #fff;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .plans-intro-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+.crm-pricing-page .plans-intro-icon svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .plans-intro-icon svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.crm-pricing-page .plans-intro-title {
+  margin: 0;
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 700;
+  line-height: 1.25;
+  text-transform: capitalize;
+  color: var(--text-dark);
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .plans-intro-title {
+    font-size: 1.5rem; /* text-2xl */
+  }
+}
+
+.crm-pricing-page .plans-intro-text {
+  margin: 0;
+  max-width: 100%;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .plans-intro-text {
+    font-size: 1rem; /* text-base */
+  }
+}
+
+.crm-pricing-page .plans-header-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .plans-header-cols {
+    display: flex;
+    width: auto;
+    flex: 3 1 0;
+    min-width: 0;
+  }
+}
+
+.crm-pricing-page .plan-header-col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.35rem 0.45rem 1.15rem;
+  border-bottom: none;
+  border-right: 1px solid var(--border-color);
+  background: #fff;
+  min-width: 0;
+}
+
+.crm-pricing-page .plan-header-col:last-child {
+  border-right: none;
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .plan-header-col {
+    width: auto;
+    flex: 1 1 0;
+    padding: 2rem 0.75rem 1.5rem;
+    border-right: 1px solid var(--border-strong);
+    min-height: 220px;
+  }
+
+  .crm-pricing-page .plan-header-col:last-child {
+    border-right: none;
+    border-top-right-radius: 1.5rem;
+  }
+}
+
+.crm-pricing-page .plan-header-col.recommended {
+  background: var(--recommended-bg);
+}
+
+.crm-pricing-page .recommended-pill {
+  position: absolute;
+  top: -0.55rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  white-space: nowrap;
+  border-radius: 9999px;
+  background: #fff7ed;
+  color: #ea580c;
+  border: 1px solid #fdba74;
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 700;
+  line-height: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.55rem;
+  pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .recommended-pill {
+    top: -0.75rem;
+    padding: 0.2rem 0.8rem;
+  }
+}
+
+.crm-pricing-page .plan-name {
+  margin: 0.25rem 0 0.4rem;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 800;
+  text-transform: capitalize;
+  color: var(--text-dark);
+  line-height: 1.25;
+}
+
+.crm-pricing-page .plan-name-full {
+  display: none;
+}
+
+.crm-pricing-page .plan-name-short {
+  display: inline;
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .plan-name {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 700;
+    line-height: 2rem;
+  }
+
+  .crm-pricing-page .plan-name-full {
+    display: inline;
+  }
+
+  .crm-pricing-page .plan-name-short {
+    display: none;
+  }
+}
+
+.crm-pricing-page .plan-desc {
+  display: none;
+  margin: 0 0 1rem;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--text-gray);
+  max-width: 14.5rem;
+  min-height: 2.8rem;
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .plan-desc {
+    display: block;
+  }
+}
+
+.crm-pricing-page .price-block {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.1rem;
+  color: var(--primary-color);
+  margin-bottom: 0.15rem;
+}
+
+.crm-pricing-page .currency-symbol {
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 700;
+  line-height: 1.5;
+  margin-top: 0.1rem;
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .currency-symbol {
+    font-size: 1.125rem; /* text-lg */
+    margin-top: 0.55rem;
+  }
+}
+
+.crm-pricing-page .price-value {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 800;
+  line-height: 1;
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .price-value {
+    font-size: 2.25rem; /* text-4xl */
+    line-height: 3.2rem;
+  }
+}
+
+.crm-pricing-page .price-period,
+.crm-pricing-page .employee-limit,
+.crm-pricing-page .additional-cost {
+  margin: 0 0 0.2rem;
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .price-period,
+  .crm-pricing-page .employee-limit,
+  .crm-pricing-page .additional-cost {
+    margin: 0 0 0.35rem;
+    font-size: 0.875rem; /* text-sm */
+  }
+}
+
+.crm-pricing-page .employee-limit {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.crm-pricing-page .additional-amount {
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* Feature matrix */
+.crm-pricing-page .features-matrix {
+  width: 100%;
+  position: relative;
+}
+
+/* Plan Switcher for Mobile View */
+.crm-pricing-page .mobile-plan-switcher {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .mobile-plan-switcher {
+    display: none;
+  }
+}
+
+.crm-pricing-page .mobile-switcher-btn {
+  flex: 1;
+  text-align: center;
+  padding: 0.75rem 0.35rem;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 750;
+  color: var(--text-gray);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.crm-pricing-page .mobile-switcher-btn.is-active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+  background: var(--recommended-bg);
+}
+
+.crm-pricing-page .mobile-switcher-btn.is-active.recommended {
+  color: #ea580c;
+  border-bottom-color: #ea580c;
+  background: #fff7ed;
+}
+
+.crm-pricing-page .feature-section-btn {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--text-dark);
+  text-align: left;
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .feature-block.depth-1 > .feature-section-btn {
+    background: var(--section-bg);
+    border-bottom: 1px solid var(--border-strong);
+    padding: 1.125rem 1.5rem;
+    flex-direction: row-reverse;
+  }
+}
+
+.crm-pricing-page .feature-section-title {
+  flex: 1;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 700;
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .feature-section-title {
+    font-size: 1rem; /* text-base */
+  }
+}
+
+.crm-pricing-page .section-chevron {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  transform: rotate(180deg);
+}
+
+.crm-pricing-page .section-chevron.open {
+  transform: rotate(0deg);
+}
+
+.crm-pricing-page .feature-block-children {
+  display: none;
+}
+
+.crm-pricing-page .feature-block-children.open {
+  display: block;
+}
+
+.crm-pricing-page .feature-block.depth-2 > .feature-section-btn,
+.crm-pricing-page .feature-block.depth-3 > .feature-section-btn {
+  padding-left: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .feature-block.depth-2 > .feature-section-btn {
+    background: #f9fafb;
+    border-bottom: 1px solid var(--border-color);
+    padding-left: 2.5rem;
+  }
+
+  .crm-pricing-page .feature-block.depth-3 > .feature-section-btn {
+    padding-left: 3.75rem;
+  }
+}
+
+/* Feature rows: name + check cells */
+.crm-pricing-page .feature-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.55rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .feature-row {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+    min-height: 4rem;
+    border-bottom: 1px solid var(--border-strong);
+  }
+}
+
+.crm-pricing-page .feature-name {
+  width: 100%;
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.4;
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .feature-name {
+    flex: 1 1 0;
+    max-width: 25%;
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500;
+    color: var(--text-muted);
+    border-right: 1px solid var(--border-strong);
+    padding: 0.65rem 1rem 0.65rem 1.5rem;
+  }
+
+  .crm-pricing-page .feature-row.depth-2 .feature-name {
+    padding-left: 2rem;
+  }
+
+  .crm-pricing-page .feature-row.depth-3 .feature-name {
+    padding-left: 2.75rem;
+  }
+
+  .crm-pricing-page .feature-row.depth-4 .feature-name {
+    padding-left: 3.5rem;
+  }
+}
+
+.crm-pricing-page .feature-marks {
+  display: flex;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .feature-marks {
+    width: auto;
+    flex: 3 1 0;
+    min-width: 0;
+  }
+}
+
+.crm-pricing-page .feature-mark-cell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  min-height: 2.75rem;
+  padding: 0.4rem 0.25rem;
+  border: 1px solid var(--border-color);
+  border-right: none;
+  background: #fff;
+}
+
+.crm-pricing-page .feature-mark-cell:first-child {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.crm-pricing-page .feature-mark-cell:last-child {
+  border-right: 1px solid var(--border-color);
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.crm-pricing-page .feature-mark-cell.recommended-col {
+  background: var(--recommended-bg);
+}
+
+.crm-pricing-page .mark-plan-label {
+  display: block;
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text-muted);
+  text-transform: capitalize;
+  letter-spacing: 0.01em;
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .mark-plan-label {
+    display: none;
+  }
+
+  .crm-pricing-page .feature-mark-cell {
+    width: auto;
+    flex: 1 1 0;
+    min-height: 100%;
+    border: none;
+    border-right: 1px solid var(--border-strong);
+    border-radius: 0 !important;
+    padding: 0.65rem 0.75rem;
+  }
+
+  .crm-pricing-page .feature-mark-cell:last-child {
+    border-right: none;
+  }
+}
+
+/* PagarBook-style filled check / cross marks */
+.crm-pricing-page .availability-mark {
+  display: inline-flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.35rem;
+}
+
+.crm-pricing-page .availability-mark.is-checked {
+  color: var(--check-color);
+}
+
+.crm-pricing-page .availability-mark.is-unchecked {
+  color: var(--uncheck-color);
+}
+
+.crm-pricing-page .mark-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.crm-pricing-page .cell-text {
+  display: block;
+  max-width: 100%;
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 0 0.25rem;
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .cell-text {
+    font-size: 0.875rem; /* text-sm */
+    max-width: 13rem;
+  }
+}
+
+.crm-pricing-page .cell-check-wrap {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.crm-pricing-page .cell-note {
+  display: block;
+  max-width: 11rem;
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .cell-note {
+    font-size: 0.75rem; /* text-xs */
+  }
+}
+
+.crm-pricing-page .badge-addon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  background: #fff7ed;
+  color: #ea580c;
+  border: 1px solid #fdba74;
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .badge-addon {
+    font-size: 0.75rem; /* text-xs */
+  }
+}
+
+/* Responsiveness overrides for Mobile View (max-width: 1023px) */
+@media (max-width: 1023px) {
+  .crm-pricing-page .hide-mobile-col {
+    display: none !important;
+  }
+
+  .crm-pricing-page .active-mobile-col {
+    display: flex !important;
+    width: 100% !important;
+    flex: 1 1 100% !important;
+  }
+
+  .crm-pricing-page .plans-header-cols {
+    display: flex !important;
+    width: 100% !important;
+  }
+
+  .crm-pricing-page .feature-marks {
+    display: flex !important;
+    width: 100% !important;
+  }
+
+  .crm-pricing-page .price-period,
+  .crm-pricing-page .employee-limit,
+  .crm-pricing-page .additional-cost {
+    font-size: 0.75rem; /* text-xs */
+    line-height: 1.25;
+  }
+
+  .crm-pricing-page .cell-text,
+  .crm-pricing-page .cell-note {
+    font-size: 0.75rem; /* text-xs */
+    line-height: 1.25;
+  }
+
+  .crm-pricing-page .badge-addon {
+    font-size: 0.75rem; /* text-xs */
+    padding: 0.15rem 0.45rem;
+  }
+
+  .crm-pricing-page .plan-header-col {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .crm-pricing-page .price-value {
+    font-size: 1.875rem; /* text-3xl */
+  }
+}
+
+@media (max-width: 480px) {
+  .crm-pricing-page .plan-header-col {
+    padding: 1.25rem 0.35rem;
+  }
+
+  .crm-pricing-page .price-value {
+    font-size: 1.5rem; /* text-2xl */
+  }
+
+  .crm-pricing-page .plans-intro-title {
+    font-size: 1.25rem; /* text-xl */
+  }
+}

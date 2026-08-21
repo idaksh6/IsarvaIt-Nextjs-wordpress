@@ -3,8 +3,9 @@
 import { useState } from "react";
 import Link from "../../../components/AppLink";
 import ContactFormModal from "../../../components/ContactFormModal";
-import { FEATURE_COMPARISON, PRICING_PLANS } from "./hrms-pricing-data";
-import "./hrms-pricing.css";
+import { productsData } from "../../../lib/data/products-data";
+import { FEATURE_COMPARISON, PRICING_PLANS } from "./crm-pricing-data";
+import "./crm-pricing.css";
 
 function CheckIcon({ className = "" }) {
   return (
@@ -84,7 +85,7 @@ function PlanCellValue({ value }) {
   return <span className="cell-text">{label}</span>;
 }
 
-function FeatureNode({ node, plans }) {
+function FeatureNode({ node, plans, activeTab }) {
   const [open, setOpen] = useState(true);
   const depth = node.depth || 1;
 
@@ -98,7 +99,7 @@ function FeatureNode({ node, plans }) {
 
         <div className={`feature-block-children${open ? " open" : ""}`}>
           {node.children?.map((child, idx) => (
-            <FeatureNode key={`${child.title}-${idx}`} node={child} plans={plans} />
+            <FeatureNode key={`${child.title}-${idx}`} node={child} plans={plans} activeTab={activeTab} />
           ))}
         </div>
       </div>
@@ -111,10 +112,11 @@ function FeatureNode({ node, plans }) {
       <div className="feature-marks">
         {plans.map((plan, i) => {
           const shortName = plan.name.replace(/\s*Plan$/i, "");
+          const isActive = plan.id === activeTab;
           return (
             <div
               key={plan.id}
-              className={`feature-mark-cell${plan.recommended ? " recommended-col" : ""}`}
+              className={`feature-mark-cell${plan.recommended ? " recommended-col" : ""}${isActive ? " active-mobile-col" : " hide-mobile-col"}`}
             >
               <span className="mark-plan-label">{shortName}</span>
               <PlanCellValue value={node.plans?.[i]} />
@@ -126,12 +128,13 @@ function FeatureNode({ node, plans }) {
   );
 }
 
-function PlanHeader({ plan }) {
+function PlanHeader({ plan, activeTab }) {
   const shortName = plan.name.replace(/\s*Plan$/i, "");
   const badgeText = plan.badge || "Recommended";
+  const isActive = plan.id === activeTab;
 
   return (
-    <div className={`plan-header-col${plan.recommended ? " recommended" : ""}`}>
+    <div className={`plan-header-col${plan.recommended ? " recommended" : ""}${isActive ? " active-mobile-col" : " hide-mobile-col"}`}>
       {plan.recommended && <span className="recommended-pill">{badgeText}</span>}
       <h3 className="plan-name">
         <span className="plan-name-full">{plan.name}</span>
@@ -140,8 +143,9 @@ function PlanHeader({ plan }) {
       <p className="plan-desc">{plan.description}</p>
 
       <div className="price-block">
-        <span className="currency-symbol">₹</span>
+        {plan.price !== "Custom" && <span className="currency-symbol">₹</span>}
         <span className="price-value">{plan.price}</span>
+        {plan.price !== "Custom" && <span className="text-xs font-semibold self-end mb-1 ml-0.5">/month</span>}
       </div>
       {plan.period && <p className="price-period">{plan.period}</p>}
       {plan.employeeLimit && <p className="employee-limit">{plan.employeeLimit}</p>}
@@ -154,23 +158,23 @@ function PlanHeader({ plan }) {
   );
 }
 
-export default function HrmsPricingClient() {
+export default function CrmPricingClient() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState("professional");
 
   return (
-    <div className="hrms-pricing-page">
+    <div className="crm-pricing-page">
       <header className="main-header pt-32 lg:pt-40 pb-8 lg:pb-10">
         <div className="max-w-7xl mx-auto px-6">
-          <h6 className="pricing-eyebrow">HRMS Software Pricing</h6>
+          <h6 className="pricing-eyebrow">CRM Software Pricing</h6>
           <h1 className="mb-4">
-            Choose the Right Plan for <span className="text-[#2563EB]">Your Team</span>
+            Simple &amp; <span className="text-[#0EA5E9]">Transparent Pricing</span>
           </h1>
           <p className="text-base lg:text-xl text-gray-500 font-medium leading-relaxed max-w-3xl mx-auto">
-            Flexible plans for payroll, attendance, and HR — start with a 14-day free trial, no credit card required.{" "}
-            <Link href="/contact" prefetch={false} id="contact" className="text-[#2563EB] font-medium hover:underline">
-              Contact us
-            </Link>{" "}
-            for custom pricing.
+            Everything your team needs to manage leads, deals, and customer relationships — from startups to enterprises.{" "}
+            <Link href="/contact" prefetch={false} id="contact" className="text-[#0EA5E9] font-medium hover:underline inline-flex items-center gap-1">
+              Got questions? Talk to sales &rarr;
+            </Link>
           </p>
 
           <div className="pricing-demo-cta">
@@ -210,29 +214,34 @@ export default function HrmsPricingClient() {
                   />
                 </svg>
               </div>
-              <h2 className="plans-intro-title">HR &amp; Payroll Features</h2>
+              <h2 className="plans-intro-title">CRM Features</h2>
               <p className="plans-intro-text">
-                Compare Professional and Enterprise side by side. Expand each section below for full feature details,
-                including optional add-ons.
+                Compare Starter, Professional, and Enterprise side by side. Expand each section below for full feature details,
+                including optional configurations.
               </p>
             </div>
             <div className="plans-header-cols">
               {PRICING_PLANS.map((plan) => (
-                <PlanHeader key={plan.id} plan={plan} />
+                <PlanHeader key={plan.id} plan={plan} activeTab={activeTab} />
               ))}
             </div>
           </div>
 
           <div className="features-matrix">
-            <div className="mobile-plan-legend" aria-hidden="true">
+            <div className="mobile-plan-switcher" aria-hidden="true">
               {PRICING_PLANS.map((plan) => (
-                <span key={plan.id} className={`mobile-plan-legend-item${plan.recommended ? " recommended" : ""}`}>
+                <button
+                  key={plan.id}
+                  type="button"
+                  onClick={() => setActiveTab(plan.id)}
+                  className={`mobile-switcher-btn${activeTab === plan.id ? " is-active" : ""}${plan.recommended ? " recommended" : ""}`}
+                >
                   {plan.name.replace(/\s*Plan$/i, "")}
-                </span>
+                </button>
               ))}
             </div>
             {FEATURE_COMPARISON.map((node, idx) => (
-              <FeatureNode key={`${node.title}-${idx}`} node={node} plans={PRICING_PLANS} />
+              <FeatureNode key={`${node.title}-${idx}`} node={node} plans={PRICING_PLANS} activeTab={activeTab} />
             ))}
           </div>
         </div>
@@ -242,8 +251,8 @@ export default function HrmsPricingClient() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         preSelectedType="Product"
-        preSelectedItem="HRMS Software"
-        allItems={[{ title: "HRMS Software", slug: "hrms-software" }]}
+        preSelectedItem="CRM Software"
+        allItems={productsData}
       />
     </div>
   );
