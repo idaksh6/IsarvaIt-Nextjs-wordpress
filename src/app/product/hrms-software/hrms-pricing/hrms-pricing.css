@@ -101,17 +101,18 @@
 
 @media (min-width: 768px) {
   .hrms-pricing-page .plans-header-intro {
-    flex: 1 1 0;
+    flex: 1.15 1 0;
     min-width: 0;
+    max-width: 34%;
     align-items: flex-start;
     text-align: left;
     justify-content: center;
     gap: 1rem;
-    padding: 2.25rem 1.75rem 1.75rem 2rem;
+    padding: 2rem 1.25rem 1.5rem 1.5rem;
     border-bottom: none;
     border-right: 1px solid var(--border-strong);
     border-top-left-radius: 1.5rem;
-    min-height: 244px;
+    min-height: 220px;
   }
 }
 
@@ -156,7 +157,7 @@
 
 .hrms-pricing-page .plans-intro-text {
   margin: 0;
-  max-width: 22rem;
+  max-width: 100%;
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.5;
@@ -179,7 +180,8 @@
   .hrms-pricing-page .plans-header-cols {
     display: flex;
     width: auto;
-    flex: 0 0 auto;
+    flex: 2 1 0;
+    min-width: 0;
   }
 }
 
@@ -202,11 +204,11 @@
 
 @media (min-width: 768px) {
   .hrms-pricing-page .plan-header-col {
-    width: 248px;
-    flex-shrink: 0;
-    padding: 2.25rem 1.25rem 1.75rem;
+    width: auto;
+    flex: 1 1 0;
+    padding: 2rem 1rem 1.5rem;
     border-right: 1px solid var(--border-strong);
-    min-height: 244px;
+    min-height: 220px;
   }
 
   .hrms-pricing-page .plan-header-col:last-child {
@@ -509,26 +511,27 @@
 
 @media (min-width: 768px) {
   .hrms-pricing-page .feature-name {
-    flex: 1 1 0;
+    flex: 1.15 1 0;
+    max-width: 34%;
     display: flex;
     align-items: center;
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--text-muted);
     border-right: 1px solid var(--border-strong);
-    padding: 0.65rem 1rem 0.65rem 3.75rem;
+    padding: 0.65rem 1rem 0.65rem 1.5rem;
   }
 
   .hrms-pricing-page .feature-row.depth-2 .feature-name {
-    padding-left: 2.5rem;
+    padding-left: 2rem;
   }
 
   .hrms-pricing-page .feature-row.depth-3 .feature-name {
-    padding-left: 3.75rem;
+    padding-left: 2.75rem;
   }
 
   .hrms-pricing-page .feature-row.depth-4 .feature-name {
-    padding-left: 4.75rem;
+    padding-left: 3.5rem;
   }
 }
 
@@ -540,7 +543,8 @@
 @media (min-width: 768px) {
   .hrms-pricing-page .feature-marks {
     width: auto;
-    flex: 0 0 auto;
+    flex: 2 1 0;
+    min-width: 0;
   }
 }
 
@@ -587,13 +591,13 @@
   }
 
   .hrms-pricing-page .feature-mark-cell {
-    width: 248px;
-    flex: 0 0 248px;
+    width: auto;
+    flex: 1 1 0;
     min-height: 100%;
     border: none;
     border-right: 1px solid var(--border-strong);
     border-radius: 0 !important;
-    padding: 0.65rem 0.5rem;
+    padding: 0.65rem 0.75rem;
   }
 
   .hrms-pricing-page .feature-mark-cell:last-child {
