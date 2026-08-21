@@ -4,7 +4,7 @@ import HrmsPricingClient from "./HrmsPricingClient";
 export const metadata = generateSEOMetadata({
   title: "HRMS Software Pricing — Plans for Every Team Size | Isarva Infotech",
   description:
-    "Compare HRMS software pricing plans: Free Trial, Professional, Enterprise & Custom. Payroll, attendance, leave management & biometric integration. Start your 14-day free trial today.",
+    "Compare HRMS software pricing plans: Professional and Enterprise. Payroll, attendance, leave management & biometric integration. Start your 14-day free trial today.",
   keywords: [
     "HRMS pricing",
     "HRMS software pricing India",

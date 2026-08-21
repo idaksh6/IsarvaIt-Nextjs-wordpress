@@ -337,13 +337,14 @@ export default function ProductDetailPremiumHRMS({
                 </p>
 
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start items-center">
-                  <button
-                    onClick={() => setIsModalOpen(true)}
+                  <Link
+                    href="/product/hrms-software/hrms-pricing"
+                    prefetch={false}
                     className={`${GLOBAL_BTN_ORANGE}`}
                   >
-                    <span>Request a Demo</span>
+                    <span>View Pricing Plans</span>
                     {GLOBAL_BTN_ARROW}
-                  </button>
+                  </Link>
                   <button
                     onClick={() => setIsBrochureModalOpen(true)}
                     className={`${GLOBAL_BTN_GREEN}`}
