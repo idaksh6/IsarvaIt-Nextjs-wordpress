@@ -584,16 +584,6 @@ export default function ProductDetailPremiumBillSoft({
                       <span>Request Free Demo</span>
                       {GLOBAL_BTN_ARROW}
                     </button>
-                    <Link
-                      href="/product/bill-soft/billsoft-pricing"
-                      prefetch={false}
-                      className="press-illusion-btn-purple text-white w-fit font-bold px-8 py-3.5 text-base flex cursor-pointer mt-2 no-underline items-center gap-2"
-                    >
-                      <span>VIEW PRICING PLANS</span>
-                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                      </svg>
-                    </Link>
                   </div>
 
                   <div className="mt-16 hidden lg:grid grid-cols-3 gap-4 sm:gap-8 justify-center lg:justify-start">
@@ -1000,21 +990,11 @@ export default function ProductDetailPremiumBillSoft({
                       <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                         <button
                           onClick={() => setIsModalOpen(true)}
-                          className={`${GLOBAL_BTN_ORANGE}`}
+                          className={`${GLOBAL_BTN_ORANGE} mx-auto`}
                         >
                           <span>Request Free Demo</span>
                           {GLOBAL_BTN_ARROW}
                         </button>
-                        <Link
-                          href="/product/bill-soft/billsoft-pricing"
-                          prefetch={false}
-                          className="press-illusion-btn-purple text-white w-fit font-bold px-8 py-3.5 text-base flex cursor-pointer no-underline items-center gap-2"
-                        >
-                          <span>VIEW PRICING PLANS</span>
-                          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                          </svg>
-                        </Link>
                       </div>
                     </div>
                   </section>

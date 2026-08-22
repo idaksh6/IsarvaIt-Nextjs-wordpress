@@ -635,17 +635,6 @@ export default function ProductDetailPremiumWooCommerce({ product, relatedProduc
                     </span>
                   </button>
 
-                  <Link
-                    href="/product/woocommerce-development/woocommerce-pricing"
-                    prefetch={false}
-                    className="relative inline-flex items-center justify-center gap-3 px-8 py-4 h-[56px] font-bold text-base text-white transition-all duration-300 rounded-full bg-[#a855f7] hover:bg-[#9333ea] shadow-sm hover:shadow-xl cursor-pointer"
-                  >
-                    <span>VIEW PRICING PLANS</span>
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </Link>
-
                   <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 h-[56px] rounded-full font-bold text-base border-2 transition-all hover:-translate-y-0.5 no-underline w-full sm:w-auto" style={{ color: CLR.purpleDeep, borderColor: CLR.purple + "66", background: CLR.white }}>
                     Contact Us
                   </Link>

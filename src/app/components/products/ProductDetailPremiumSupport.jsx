@@ -2170,17 +2170,6 @@ export default function ProductDetailPremiumSupportStaging({
                 </span>
               </button>
 
-              <Link
-                href="/product/support-software/support-pricing"
-                prefetch={false}
-                className="relative inline-flex items-center justify-center gap-3 px-10 py-5 font-black tracking-wider text-sm text-white transition-all duration-300 rounded-full bg-[#9333EA] hover:bg-[#7e22ce] shadow-sm hover:shadow-xl cursor-pointer"
-              >
-                <span>VIEW PRICING PLANS</span>
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </Link>
-
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
