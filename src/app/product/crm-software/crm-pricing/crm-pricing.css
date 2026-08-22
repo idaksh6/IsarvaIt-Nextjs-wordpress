@@ -64,7 +64,7 @@
   border: 1px solid var(--border-color);
   border-radius: 1rem;
   background: #fff;
-  overflow: hidden;
+  overflow: visible;
 }
 
 @media (min-width: 1024px) {
@@ -779,4 +779,51 @@
 .crm-pricing-page .feature-block:last-child .feature-row:last-child {
   border-bottom: none;
 }
+
+.crm-pricing-page .feature-block:last-child {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .crm-pricing-page .feature-block:last-child {
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+  }
+}
+
+
+/* Bottom CTA section additions for CRM */
+.crm-pricing-page .bottom-custom-cta {
+  background: var(--recommended-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.crm-pricing-page .bottom-custom-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.crm-pricing-page .bottom-custom-desc {
+  font-size: 0.9375rem;
+  color: var(--text-gray);
+  margin-bottom: 1.5rem;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.crm-pricing-page .bottom-cta-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
 

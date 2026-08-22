@@ -15,6 +15,7 @@ export const metadata = generateSEOMetadata({
   ],
   url: "/product/woocommerce-development/woocommerce-pricing",
   image: "https://www.isarvait.com/products/woocommerce/woocommerce-hero-staging.png",
+  noIndex: true,
 });
 
 export const dynamic = "force-static";

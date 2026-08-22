@@ -17,6 +17,7 @@ export const metadata = generateSEOMetadata({
   ],
   url: "/product/crm-software/crm-pricing",
   image: "https://www.isarvait.com/products/crm/CRM-dashboard-v3.png",
+  noIndex: true,
 });
 
 export const dynamic = "force-static";

@@ -16,6 +16,7 @@ export const metadata = generateSEOMetadata({
   ],
   url: "/product/support-software/support-pricing",
   image: "https://www.isarvait.com/products/support/support_dashboard_img_1.jpg",
+  noIndex: true,
 });
 
 export const dynamic = "force-static";
