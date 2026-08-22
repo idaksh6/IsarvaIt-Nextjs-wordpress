@@ -14,7 +14,7 @@ export const PRICING_PLANS = [
   },
   {
     id: "growth",
-    name: "Intermediate Plan — Growth",
+    name: "Professional Plan — Growth",
     description: "Best for growing support & delivery teams",
     price: "1,999",
     priceLabel: null,
@@ -28,7 +28,7 @@ export const PRICING_PLANS = [
   },
   {
     id: "complete",
-    name: "Advanced Plan — Complete",
+    name: "Enterprise Plan — Complete",
     description: "Best for full control & client transparency",
     price: "3,499",
     priceLabel: null,
