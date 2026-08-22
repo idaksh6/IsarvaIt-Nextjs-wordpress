@@ -4,8 +4,12 @@ import { useState } from "react";
 import Link from "../../../components/AppLink";
 import ContactFormModal from "../../../components/ContactFormModal";
 import { productsData } from "../../../lib/data/products-data";
-import { FEATURE_COMPARISON, PRICING_PLANS } from "./crm-pricing-data";
-import "./crm-pricing.css";
+import {
+  ADDON_SERVICES,
+  FEATURE_COMPARISON,
+  PRICING_PLANS,
+} from "./billsoft-pricing-data";
+import "./billsoft-pricing.css";
 
 function CheckIcon({ className = "" }) {
   return (
@@ -78,10 +82,6 @@ function PlanCellValue({ value }) {
     return <AvailabilityMark checked={false} />;
   }
 
-  if (type === "addon") {
-    return <span className="badge-addon">ADD ON</span>;
-  }
-
   return <span className="cell-text">{label}</span>;
 }
 
@@ -148,32 +148,24 @@ function PlanHeader({ plan, activeTab }) {
       </div>
       {plan.period && <p className="price-period">{plan.period}</p>}
       {plan.employeeLimit && <p className="employee-limit">{plan.employeeLimit}</p>}
-      {plan.additionalCost && (
-        <p className="additional-cost">
-          <span className="additional-amount">₹{plan.additionalCost.amount}</span> {plan.additionalCost.suffix}
-        </p>
-      )}
     </div>
   );
 }
 
-export default function CrmPricingClient() {
+export default function BillSoftPricingClient() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("professional");
 
   return (
-    <div className="crm-pricing-page">
+    <div className="billsoft-pricing-page">
       <header className="main-header pt-32 lg:pt-40 pb-8 lg:pb-10">
         <div className="max-w-7xl mx-auto px-6">
-          <h6 className="pricing-eyebrow">CRM Software Pricing</h6>
+          <h6 className="pricing-eyebrow">BillSoft Pricing</h6>
           <h1 className="mb-4">
-            Simple &amp; <span className="text-[#0EA5E9]">Transparent Pricing</span>
+            Plans for Every <span className="text-[#0284c7]">Business Size</span>
           </h1>
           <p className="text-base lg:text-xl text-gray-500 font-medium leading-relaxed max-w-3xl mx-auto">
-            Everything your team needs to manage leads, deals, and customer relationships — from startups to enterprises.{" "}
-            <Link href="/contact" prefetch={false} id="contact" className="text-[#0EA5E9] font-medium hover:underline inline-flex items-center gap-1">
-              Got questions? Talk to sales &rarr;
-            </Link>
+            Compare Starter, Professional, and Enterprise. Expand each section for full feature details, including optional add-ons.
           </p>
 
           <div className="pricing-demo-cta">
@@ -191,7 +183,7 @@ export default function CrmPricingClient() {
                     d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
                   />
                 </svg>
-                <span>Request Demo</span>
+                <span>Request Free Demo</span>
               </span>
             </button>
           </div>
@@ -213,10 +205,9 @@ export default function CrmPricingClient() {
                   />
                 </svg>
               </div>
-              <h2 className="plans-intro-title">CRM Features</h2>
+              <h2 className="plans-intro-title">BillSoft Features</h2>
               <p className="plans-intro-text">
-                Compare, Professional, and Enterprise side by side. Expand each section below for full feature details,
-                including optional configurations.
+                Compare Starter, Professional, and Enterprise side by side. Expand each section below for full feature details across your inventory and billing workflows.
               </p>
             </div>
             <div className="plans-header-cols">
@@ -242,6 +233,26 @@ export default function CrmPricingClient() {
             {FEATURE_COMPARISON.map((node, idx) => (
               <FeatureNode key={`${node.title}-${idx}`} node={node} plans={PRICING_PLANS} activeTab={activeTab} />
             ))}
+          </div>
+        </div>
+
+        {/* Add-on services */}
+        <div className="addons-timeline-section">
+          <div className="section-card-wrapper">
+            <div className="commercials-card">
+              <h3>Available Add-on Features</h3>
+              <div className="addons-list">
+                {ADDON_SERVICES.map((addon, idx) => (
+                  <div key={idx} className="addon-item">
+                    <div className="addon-title-wrap">
+                      <span className="addon-name">{addon.name}</span>
+                      <span className="addon-desc">{addon.description}</span>
+                    </div>
+                    <span className="addon-cost">{addon.cost}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -272,7 +283,7 @@ export default function CrmPricingClient() {
               className="press-illusion-btn-green bg-[#25D366] hover:bg-[#20ba5a] text-white px-8 py-3 rounded-full font-bold text-base inline-flex items-center gap-2 hover:scale-105 transition-all cursor-pointer"
             >
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
               </svg>
               Chat on WhatsApp
             </a>
@@ -284,7 +295,7 @@ export default function CrmPricingClient() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         preSelectedType="Product"
-        preSelectedItem="CRM Software"
+        preSelectedItem="BillSoft Software"
         allItems={productsData}
       />
     </div>

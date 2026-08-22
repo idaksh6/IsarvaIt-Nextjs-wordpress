@@ -111,8 +111,8 @@ export const FEATURE_COMPARISON = [
   ]),
 
   section("Reports Management", [
-    item("Leads Reports (Today's leads, By source, By Status, Converted leads)", cell("cross"), cell("check")),
-    item("Deals Reports (Today's Sales, By source, Open, Lost, Closing This Month)", cell("cross"), cell("check")),
+    item("Leads Reports (Today's leads, By source, By Status, Converted leads)", cell("check"), cell("check")),
+    item("Deals Reports (Today's Sales, By source, Open, Lost, Closing This Month)", cell("check"), cell("check")),
     item("User Reports (Daily, Monthly, Performance, Reminder, Task, Product-wise)", cell("cross"), cell("check")),
     item("Analytics Reports (Leads, Deals, Revenue, User Performance)", cell("cross"), cell("check")),
     item("Analytics Dashboard", cell("cross"), cell("check")),
