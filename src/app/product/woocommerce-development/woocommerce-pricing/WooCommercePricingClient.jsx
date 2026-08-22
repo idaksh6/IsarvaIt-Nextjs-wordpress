@@ -4,8 +4,13 @@ import { useState } from "react";
 import Link from "../../../components/AppLink";
 import ContactFormModal from "../../../components/ContactFormModal";
 import { productsData } from "../../../lib/data/products-data";
-import { FEATURE_COMPARISON, PRICING_PLANS } from "./crm-pricing-data";
-import "./crm-pricing.css";
+import {
+  ADDON_SERVICES,
+  FEATURE_COMPARISON,
+  PAYMENT_TERMS,
+  PRICING_PLANS,
+} from "./woocommerce-pricing-data";
+import "./woocommerce-pricing.css";
 
 function CheckIcon({ className = "" }) {
   return (
@@ -78,10 +83,6 @@ function PlanCellValue({ value }) {
     return <AvailabilityMark checked={false} />;
   }
 
-  if (type === "addon") {
-    return <span className="badge-addon">ADD ON</span>;
-  }
-
   return <span className="cell-text">{label}</span>;
 }
 
@@ -111,7 +112,7 @@ function FeatureNode({ node, plans, activeTab }) {
       <div className="feature-name">{node.title}</div>
       <div className="feature-marks">
         {plans.map((plan, i) => {
-          const shortName = plan.name.replace(/\s*Plan$/i, "");
+          const shortName = plan.name.split(" — ")[1] || plan.name;
           const isActive = plan.id === activeTab;
           return (
             <div
@@ -129,8 +130,8 @@ function FeatureNode({ node, plans, activeTab }) {
 }
 
 function PlanHeader({ plan, activeTab }) {
-  const shortName = plan.name.replace(/\s*Plan$/i, "");
-  const badgeText = plan.badge || "Recommended";
+  const shortName = plan.name.split(" — ")[1] || plan.name;
+  const badgeText = plan.badge || "Most Popular";
   const isActive = plan.id === activeTab;
 
   return (
@@ -143,37 +144,49 @@ function PlanHeader({ plan, activeTab }) {
       <p className="plan-desc">{plan.description}</p>
 
       <div className="price-block">
-        {plan.price !== "Custom" && <span className="currency-symbol">₹</span>}
-        <span className="price-value">{plan.price}</span>
+        {plan.price === "TBD" ? (
+          <span className="price-value">TBD</span>
+        ) : (
+          <>
+            <span className="currency-symbol">₹</span>
+            <span className="price-value">{plan.price}</span>
+            <span className="text-xs font-semibold self-end mb-1 ml-0.5">/month</span>
+          </>
+        )}
       </div>
       {plan.period && <p className="price-period">{plan.period}</p>}
       {plan.employeeLimit && <p className="employee-limit">{plan.employeeLimit}</p>}
-      {plan.additionalCost && (
-        <p className="additional-cost">
-          <span className="additional-amount">₹{plan.additionalCost.amount}</span> {plan.additionalCost.suffix}
-        </p>
+
+      {/* Package Specific Checklist Bullets from Page 1 */}
+      {plan.features && (
+        <ul className="text-left mt-5 space-y-2 border-t pt-4 border-gray-100 w-full">
+          {plan.features.map((feature, idx) => (
+            <li key={idx} className="flex items-start gap-2 text-xs font-medium text-slate-700 leading-snug">
+              <span className="text-[#a855f7] font-bold">✓</span>
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
       )}
     </div>
   );
 }
 
-export default function CrmPricingClient() {
+export default function WooCommercePricingClient() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState("professional");
+  const [activeTab, setActiveTab] = useState("growth");
 
   return (
-    <div className="crm-pricing-page">
+    <div className="woocommerce-pricing-page">
       <header className="main-header pt-32 lg:pt-40 pb-8 lg:pb-10">
         <div className="max-w-7xl mx-auto px-6">
-          <h6 className="pricing-eyebrow">CRM Software Pricing</h6>
+          <h6 className="pricing-eyebrow">WOOCOMMERCE / SOW / 2026</h6>
           <h1 className="mb-4">
-            Simple &amp; <span className="text-[#0EA5E9]">Transparent Pricing</span>
+            Three packages. One goal — <span className="text-[#a855f7]">commerce that works</span>
           </h1>
           <p className="text-base lg:text-xl text-gray-500 font-medium leading-relaxed max-w-3xl mx-auto">
-            Everything your team needs to manage leads, deals, and customer relationships — from startups to enterprises.{" "}
-            <Link href="/contact" prefetch={false} id="contact" className="text-[#0EA5E9] font-medium hover:underline inline-flex items-center gap-1">
-              Got questions? Talk to sales &rarr;
-            </Link>
+            From a clean launch store to a full commerce OS with wallets, 2-tier referrals, milestone rewards,
+            name-day discounts, smart delivery and multi-gateway checkout.
           </p>
 
           <div className="pricing-demo-cta">
@@ -205,7 +218,7 @@ export default function CrmPricingClient() {
               <div className="plans-intro-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
-                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
                     stroke="currentColor"
                     strokeWidth="1.8"
                     strokeLinecap="round"
@@ -213,10 +226,10 @@ export default function CrmPricingClient() {
                   />
                 </svg>
               </div>
-              <h2 className="plans-intro-title">CRM Features</h2>
+              <h2 className="plans-intro-title">Commerce Features</h2>
               <p className="plans-intro-text">
-                Compare Starter, Professional, and Enterprise side by side. Expand each section below for full feature details,
-                including optional configurations.
+                Compare Essential, Growth, and Advanced packages side by side. Expand each section below for full feature details,
+                including optional add-ons.
               </p>
             </div>
             <div className="plans-header-cols">
@@ -235,7 +248,7 @@ export default function CrmPricingClient() {
                   onClick={() => setActiveTab(plan.id)}
                   className={`mobile-switcher-btn${activeTab === plan.id ? " is-active" : ""}${plan.recommended ? " recommended" : ""}`}
                 >
-                  {plan.name.replace(/\s*Plan$/i, "")}
+                  {plan.name.split(" — ")[1] || plan.name}
                 </button>
               ))}
             </div>
@@ -244,13 +257,88 @@ export default function CrmPricingClient() {
             ))}
           </div>
         </div>
+
+        {/* Timelines, Add-ons & Payment Terms section */}
+        <div className="addons-timeline-section">
+          <div className="section-card-wrapper">
+            
+            {/* Timelines & Payment Terms */}
+            <div className="commercials-card">
+              <h3>Implementation Timeline</h3>
+              <div className="timelines-grid">
+                {PRICING_PLANS.map((plan) => (
+                  <div key={plan.id} className="timeline-box">
+                    <span className="timeline-value">{plan.timeline}</span>
+                    <span className="timeline-label">{plan.name.split(" — ")[1] || plan.name}</span>
+                  </div>
+                ))}
+              </div>
+
+              <h3 className="mt-8">Payment Terms</h3>
+              <div className="payment-terms-grid">
+                {PAYMENT_TERMS.map((term, idx) => (
+                  <div key={idx} className="payment-term-box">
+                    <span className="payment-term-percentage">{term.percentage}</span>
+                    <span className="payment-term-label">{term.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Add-ons list */}
+            <div className="commercials-card">
+              <h3>Add-on Services</h3>
+              <div className="addons-list">
+                {ADDON_SERVICES.map((addon, idx) => (
+                  <div key={idx} className="addon-item">
+                    <span>{addon.name}</span>
+                    <span className="addon-cost">
+                      {addon.cost.startsWith("Starting") ? addon.cost : `₹ ${addon.cost}`}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+
+          <div className="important-notes-box">
+            <h4 className="important-notes-title">Important Notes</h4>
+            <p className="important-notes-text">
+              Hosting, domain, ACF Pro, and third-party / premium plugin licenses (initial + renewals) are not included in the package price. 
+              Extra plugins for client-specific needs may incur additional cost. Feature availability depends on the selected package and approved scope.
+            </p>
+          </div>
+        </div>
+
+        {/* Bottom Custom CTA matches Page 6 exactly */}
+        <div className="bottom-custom-cta">
+          <h3 className="bottom-custom-title">Ready to pick Essential, Growth or Advanced?</h3>
+          <p className="bottom-custom-desc">
+            Share catalog size, delivery model and payment preference.
+          </p>
+          <div className="bottom-cta-btns">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="btn-premium-orange group !px-10 !py-5 cursor-pointer"
+            >
+              <div className="shimmer absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+              <span className="relative z-10 flex items-center gap-2 font-bold text-base">
+                <span>View live demos</span>
+                <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
       </main>
 
       <ContactFormModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         preSelectedType="Product"
-        preSelectedItem="CRM Software"
+        preSelectedItem="WooCommerce Development"
         allItems={productsData}
       />
     </div>

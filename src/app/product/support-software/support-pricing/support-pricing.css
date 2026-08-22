@@ -64,6 +64,7 @@
   border: 1px solid var(--border-color);
   border-radius: 1rem;
   background: #fff;
+  overflow: hidden;
 }
 
 @media (min-width: 1024px) {
@@ -755,6 +756,16 @@
     width: 100% !important;
   }
 
+  .support-pricing-page .feature-mark-cell {
+    border-right: 1px solid var(--border-color) !important;
+    border-radius: 0.5rem !important;
+  }
+
+  .support-pricing-page .plan-header-col {
+    border-right: 1px solid var(--border-color) !important;
+    border-radius: 0.5rem !important;
+  }
+
   .support-pricing-page .price-period,
   .support-pricing-page .employee-limit,
   .support-pricing-page .additional-cost {
@@ -795,3 +806,9 @@
     font-size: 1.25rem; /* text-xl */
   }
 }
+
+/* Remove double borders at the bottom of the grid */
+.support-pricing-page .feature-block:last-child .feature-row:last-child {
+  border-bottom: none;
+}
+

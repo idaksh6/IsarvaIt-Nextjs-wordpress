@@ -1,60 +1,44 @@
 export const PRICING_PLANS = [
   {
-    id: "starter",
-    name: "Starter Plan",
-    description: "Free core CRM — upgrade anytime",
-    price: "0",
-    priceLabel: null,
-    period: "Free forever · No credit card required",
-    employeeLimit: "Up to 5 active users",
-    additionalCost: null,
-    cta: "Start Free Trial",
-    ctaAction: "trial",
-    recommended: false,
-  },
-  {
     id: "professional",
     name: "Professional Plan",
-    description: "Everything your team needs to manage leads, deals, and relationships",
-    price: "2,500",
+    description: "Unlock advanced automation features and seamless sales management",
+    price: "110",
     priceLabel: null,
-    period: "per month (billed annually at ₹30,000/year)",
-    employeeLimit: "includes 50 employees",
-    additionalCost: {
-      amount: "50",
-      suffix: "per additional user / month"
-    },
-    cta: "Get Professional",
-    ctaAction: "trial",
-    recommended: true,
-    badge: "🔥 MOST POPULAR",
+    period: "per user / month",
+    employeeLimit: null,
+    additionalCost: null,
+    cta: "Choose Professional",
+    ctaAction: "contact",
+    recommended: false,
   },
   {
     id: "enterprise",
     name: "Enterprise Plan",
-    description: "Tailored for large teams and enterprise-grade SLA & security",
-    price: "Custom",
+    description: "Comprehensive plan designed to engage teams and take your organization to new heights.",
+    price: "250",
     priceLabel: null,
-    period: "On-premise deployment optional",
-    employeeLimit: "Dedicated support & SLA",
+    period: "per user / month",
+    employeeLimit: null,
     additionalCost: null,
-    cta: "Contact Sales",
+    cta: "Choose Enterprise",
     ctaAction: "contact",
-    recommended: false,
+    recommended: true,
+    badge: "RECOMMENDED",
   },
 ];
 
-/** @param {'check'|'cross'|'addon'|'text'} type */
+/** @param {'check'|'cross'|'text'} type */
 function cell(type, label = null) {
   return { type, label };
 }
 
-function item(title, starter, professional, enterprise, depth = 2) {
+function item(title, professional, enterprise, depth = 2) {
   return {
     type: "item",
     title,
     depth,
-    plans: [starter, professional, enterprise],
+    plans: [professional, enterprise],
   };
 }
 
@@ -68,99 +52,78 @@ function section(title, children, depth = 1) {
 }
 
 /**
- * Feature comparison for Isarva CRM pricing.
- * Cell types: check | cross | addon | text
+ * Feature comparison for CRM software pricing.
  */
 export const FEATURE_COMPARISON = [
-  section("Lead & Deal Management", [
-    item("Active Users", cell("text", "Up to 5 users"), cell("text", "50 users included"), cell("text", "Unlimited / Custom")),
-    item(
-      "Analytical Dashboard",
-      cell("text", "KPIs, charts, sales targets"),
-      cell("text", "Dashboard + Analytics"),
-      cell("text", "Advanced Performance & Revenue Analytics")
-    ),
-    item(
-      "Leads Management",
-      cell("text", "Filter, convert to deals"),
-      cell("text", "Filter, convert, call reports"),
-      cell("text", "Full control + manager permissions")
-    ),
-    item("Deals Management & Pipeline Stages", cell("check"), cell("check"), cell("check")),
-    item(
-      "Company & Contact Management",
-      cell("check"),
-      cell("text", "Filter, export, delete, bulk export"),
-      cell("text", "Manager + Admin controls")
-    ),
+  section("Login", [
+    item("Username & Password used to login", cell("check"), cell("check")),
+    item("Google Authentication Login", cell("cross"), cell("check")),
+    item("Two Factor Authentication", cell("cross"), cell("check")),
   ]),
 
-  section("Activity & Task Management", [
-    item(
-      "Task Management",
-      cell("text", "Overdue/Today/Upcoming"),
-      cell("text", "Role-based visibility (Manager sees team tasks)"),
-      cell("text", "Manager + Admin controls for all modules")
-    ),
-    item(
-      "Meeting Management",
-      cell("text", "Google Meet integration"),
-      cell("text", "Offline/online, calendar view, Meet links & reminders"),
-      cell("text", "Manager + Admin controls")
-    ),
+  section("Lead Management", [
+    item("Create, Edit, Delete Leads", cell("check"), cell("check")),
+    item("Lead Filter Options — Source / Status / Priority / Category / Owner", cell("check"), cell("check")),
+    item("Lead assignment to users", cell("check"), cell("check")),
+    item("Lead related Task / Meeting Reminder — Notification generated", cell("check"), cell("check")),
+    item("Lead Related Notes / File Attach Option", cell("check"), cell("check")),
+    item("Lead Convert into Deal / Opportunity", cell("check"), cell("check")),
+    item("Lead capture — web forms", cell("cross"), cell("check")),
+    item("Lead capture — social media, ads", cell("cross"), cell("check")),
   ]),
 
-  section("Quotation & Product Directory", [
-    item("Quotations Suite & Basic Reports", cell("check"), cell("check"), cell("check")),
-    item("Quotation PDF Generation", cell("cross"), cell("check"), cell("check")),
-    item("Product Management", cell("cross"), cell("text", "Create/edit/delete"), cell("text", "Create/edit/delete")),
+  section("Contact / Customer Management", [
+    item("Store customer details (name, phone, email, address)", cell("check"), cell("check")),
+    item("Related Company Links", cell("check"), cell("check")),
   ]),
 
-  section("Reports & Analytics", [
-    item(
-      "Reports & Analytics",
-      cell("text", "Quotations & reports suite"),
-      cell("text", "Leads/Deals reports, sales source, user perf, product & call logs"),
-      cell("text", "Advanced performance & revenue analytics")
-    ),
-    item(
-      "Advanced Analytics",
-      cell("cross"),
-      cell("text", "Revenue reports, lead comparison, deal analytics"),
-      cell("text", "Advanced performance & revenue analytics")
-    ),
+  section("Company Management", [
+    item("Manage company profiles", cell("check"), cell("check")),
+    item("Link contacts & deals to companies", cell("check"), cell("check")),
   ]),
 
-  section("Admin Settings & Security", [
-    item(
-      "Advanced User Management",
-      cell("cross"),
-      cell("cross"),
-      cell("text", "Roles, module permissions, Admin only access")
-    ),
-    item(
-      "Full Settings Suite",
-      cell("cross"),
-      cell("cross"),
-      cell("text", "Company branding, logo, role settings, change password")
-    ),
-    item("Data Backup & FY Closure", cell("cross"), cell("cross"), cell("check")),
-    item("Custom Security Policies & Audit Logs", cell("cross"), cell("cross"), cell("check")),
+  section("Deal / Opportunity Management", [
+    item("Manage deals with stages — Create, Edit, Delete", cell("check"), cell("check")),
+    item("Pipeline visualization", cell("check"), cell("check")),
+    item("Track deal value & closing probability", cell("check"), cell("check")),
+    item("Deal related Task Reminder / Meeting Reminder — Notification generated", cell("check"), cell("check")),
+    item("Deal Related Notes / File upload option", cell("check"), cell("check")),
   ]),
 
-  section("Deployment & Support", [
-    item(
-      "Deployment Options",
-      cell("text", "Cloud SaaS"),
-      cell("text", "Cloud SaaS"),
-      cell("text", "Cloud SaaS / On-premise deployment optional")
-    ),
-    item(
-      "Customer Support",
-      cell("text", "Standard email support"),
-      cell("text", "Standard support"),
-      cell("text", "Priority support with dedicated account manager")
-    ),
-    item("SLA Guarantee", cell("cross"), cell("cross"), cell("check", "Enterprise-grade SLA")),
+  section("Quotation Management", [
+    item("Deal related Quotation generate and Download Quotation", cell("cross"), cell("check")),
+    item("Quote send Mail Option", cell("cross"), cell("check")),
+    item("Quote listed in related deals", cell("cross"), cell("check")),
+  ]),
+
+  section("Product Management", [
+    item("Product Management (Create / Edit / Delete)", cell("cross"), cell("check")),
+  ]),
+
+  section("Call Logs", [
+    item("Daily Called list — Update it", cell("cross"), cell("check")),
+  ]),
+
+  section("User & Role Management", [
+    item("Admin / Manager / Employee roles", cell("check"), cell("check")),
+    item("Permissions control", cell("cross"), cell("check")),
+    item("Access-based modules", cell("cross"), cell("check")),
+  ]),
+
+  section("Reports Management", [
+    item("Leads Reports (Today's leads, By source, By Status, Converted leads)", cell("cross"), cell("check")),
+    item("Deals Reports (Today's Sales, By source, Open, Lost, Closing This Month)", cell("cross"), cell("check")),
+    item("User Reports (Daily, Monthly, Performance, Reminder, Task, Product-wise)", cell("cross"), cell("check")),
+    item("Analytics Reports (Leads, Deals, Revenue, User Performance)", cell("cross"), cell("check")),
+    item("Analytics Dashboard", cell("cross"), cell("check")),
+    item("Event Calendar", cell("cross"), cell("check")),
+  ]),
+
+  section("Admin & System", [
+    item("Data Backup Concept", cell("cross"), cell("check")),
+    item("Financial Year Setup", cell("check"), cell("check")),
+    item("Profile & Change Password Edit Option", cell("check"), cell("check")),
+    item("Company Details Updates", cell("check"), cell("check")),
+    item("Audit Logs", cell("cross"), cell("check")),
   ]),
 ];

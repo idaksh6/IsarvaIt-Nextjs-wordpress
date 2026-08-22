@@ -1,14 +1,14 @@
-/* CRM Pricing — 3-column responsive comparison-matrix layout */
+/* WooCommerce Pricing — 3-column responsive comparison-matrix layout with purple accents */
 
-.crm-pricing-page {
-  --primary-color: #0ea5e9;
-  --primary-hover: #0284c7;
+.woocommerce-pricing-page {
+  --primary-color: #a855f7;
+  --primary-hover: #9333ea;
   --check-color: #10b981;
   --uncheck-color: #94a3b8;
-  --accent-blue: #0ea5e9;
-  --accent-blue-soft: #e0f2fe;
-  --recommended-bg: #f0f9ff;
-  --section-bg: #f8fafc;
+  --accent-purple: #a855f7;
+  --accent-purple-soft: #fcf8ff;
+  --recommended-bg: #fcf8ff;
+  --section-bg: #faf7fc;
   --text-dark: #0f172a;
   --text-gray: #64748b;
   --text-muted: #475569;
@@ -23,12 +23,12 @@
   min-height: 60vh;
 }
 
-.crm-pricing-page .main-header {
+.woocommerce-pricing-page .main-header {
   text-align: center;
   background: var(--bg-page);
 }
 
-.crm-pricing-page .main-header .pricing-eyebrow {
+.woocommerce-pricing-page .main-header .pricing-eyebrow {
   color: var(--primary-color);
   margin-bottom: 0.75rem;
   font-weight: 700;
@@ -37,19 +37,19 @@
   font-size: 0.75rem; /* text-xs */
 }
 
-.crm-pricing-page .pricing-demo-cta {
+.woocommerce-pricing-page .pricing-demo-cta {
   display: flex;
   justify-content: center;
   margin-top: 1.75rem;
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .pricing-demo-cta {
+  .woocommerce-pricing-page .pricing-demo-cta {
     margin-top: 2rem;
   }
 }
 
-.crm-pricing-page .pricing-section {
+.woocommerce-pricing-page .pricing-section {
   width: 100%;
   max-width: 80rem; /* max-w-7xl */
   margin: 0 auto;
@@ -58,7 +58,7 @@
 }
 
 /* Shell — full header-aligned width */
-.crm-pricing-page .pricing-shell {
+.woocommerce-pricing-page .pricing-shell {
   max-width: 100%;
   margin: 0.85rem auto 0;
   border: 1px solid var(--border-color);
@@ -68,12 +68,12 @@
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .pricing-shell {
+  .woocommerce-pricing-page .pricing-shell {
     border-radius: 1.5rem;
   }
 }
 
-.crm-pricing-page .plans-header-row {
+.woocommerce-pricing-page .plans-header-row {
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid var(--border-color);
@@ -82,14 +82,14 @@
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .plans-header-row {
+  .woocommerce-pricing-page .plans-header-row {
     flex-direction: row;
     align-items: stretch;
     border-radius: 1.5rem 1.5rem 0 0;
   }
 }
 
-.crm-pricing-page .plans-header-intro {
+.woocommerce-pricing-page .plans-header-intro {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,7 +101,7 @@
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .plans-header-intro {
+  .woocommerce-pricing-page .plans-header-intro {
     flex: 1 1 0;
     min-width: 0;
     max-width: 25%;
@@ -117,7 +117,7 @@
   }
 }
 
-.crm-pricing-page .plans-intro-icon {
+.woocommerce-pricing-page .plans-intro-icon {
   display: grid;
   place-items: center;
   width: 3.75rem;
@@ -129,25 +129,25 @@
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .plans-intro-icon {
+  .woocommerce-pricing-page .plans-intro-icon {
     width: 2.5rem;
     height: 2.5rem;
   }
 }
 
-.crm-pricing-page .plans-intro-icon svg {
+.woocommerce-pricing-page .plans-intro-icon svg {
   width: 1.75rem;
   height: 1.75rem;
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .plans-intro-icon svg {
+  .woocommerce-pricing-page .plans-intro-icon svg {
     width: 1.25rem;
     height: 1.25rem;
   }
 }
 
-.crm-pricing-page .plans-intro-title {
+.woocommerce-pricing-page .plans-intro-title {
   margin: 0;
   font-size: 1.25rem; /* text-xl */
   font-weight: 700;
@@ -157,12 +157,12 @@
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .plans-intro-title {
+  .woocommerce-pricing-page .plans-intro-title {
     font-size: 1.5rem; /* text-2xl */
   }
 }
 
-.crm-pricing-page .plans-intro-text {
+.woocommerce-pricing-page .plans-intro-text {
   margin: 0;
   max-width: 100%;
   font-size: 0.875rem; /* text-sm */
@@ -172,19 +172,19 @@
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .plans-intro-text {
+  .woocommerce-pricing-page .plans-intro-text {
     font-size: 1rem; /* text-base */
   }
 }
 
-.crm-pricing-page .plans-header-cols {
+.woocommerce-pricing-page .plans-header-cols {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   width: 100%;
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .plans-header-cols {
+  .woocommerce-pricing-page .plans-header-cols {
     display: flex;
     width: auto;
     flex: 3 1 0;
@@ -192,7 +192,7 @@
   }
 }
 
-.crm-pricing-page .plan-header-col {
+.woocommerce-pricing-page .plan-header-col {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -205,12 +205,12 @@
   min-width: 0;
 }
 
-.crm-pricing-page .plan-header-col:last-child {
+.woocommerce-pricing-page .plan-header-col:last-child {
   border-right: none;
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .plan-header-col {
+  .woocommerce-pricing-page .plan-header-col {
     width: auto;
     flex: 1 1 0;
     padding: 2rem 0.75rem 1.5rem;
@@ -218,17 +218,17 @@
     min-height: 220px;
   }
 
-  .crm-pricing-page .plan-header-col:last-child {
+  .woocommerce-pricing-page .plan-header-col:last-child {
     border-right: none;
     border-top-right-radius: 1.5rem;
   }
 }
 
-.crm-pricing-page .plan-header-col.recommended {
+.woocommerce-pricing-page .plan-header-col.recommended {
   background: var(--recommended-bg);
 }
 
-.crm-pricing-page .recommended-pill {
+.woocommerce-pricing-page .recommended-pill {
   position: absolute;
   top: -0.55rem;
   left: 50%;
@@ -236,9 +236,9 @@
   z-index: 2;
   white-space: nowrap;
   border-radius: 9999px;
-  background: #fff7ed;
-  color: #ea580c;
-  border: 1px solid #fdba74;
+  background: #fdf4ff;
+  color: #c084fc;
+  border: 1px solid #e9d5ff;
   font-size: 0.75rem; /* text-xs */
   font-weight: 700;
   line-height: 1rem;
@@ -249,13 +249,13 @@
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .recommended-pill {
+  .woocommerce-pricing-page .recommended-pill {
     top: -0.75rem;
     padding: 0.2rem 0.8rem;
   }
 }
 
-.crm-pricing-page .plan-name {
+.woocommerce-pricing-page .plan-name {
   margin: 0.25rem 0 0.4rem;
   font-size: 0.875rem; /* text-sm */
   font-weight: 800;
@@ -264,31 +264,31 @@
   line-height: 1.25;
 }
 
-.crm-pricing-page .plan-name-full {
+.woocommerce-pricing-page .plan-name-full {
   display: none;
 }
 
-.crm-pricing-page .plan-name-short {
+.woocommerce-pricing-page .plan-name-short {
   display: inline;
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .plan-name {
-    font-size: 1.5rem; /* text-2xl */
+  .woocommerce-pricing-page .plan-name {
+    font-size: 1.35rem; /* text-2xl */
     font-weight: 700;
     line-height: 2rem;
   }
 
-  .crm-pricing-page .plan-name-full {
+  .woocommerce-pricing-page .plan-name-full {
     display: inline;
   }
 
-  .crm-pricing-page .plan-name-short {
+  .woocommerce-pricing-page .plan-name-short {
     display: none;
   }
 }
 
-.crm-pricing-page .plan-desc {
+.woocommerce-pricing-page .plan-desc {
   display: none;
   margin: 0 0 1rem;
   font-size: 0.875rem; /* text-sm */
@@ -300,12 +300,12 @@
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .plan-desc {
+  .woocommerce-pricing-page .plan-desc {
     display: block;
   }
 }
 
-.crm-pricing-page .price-block {
+.woocommerce-pricing-page .price-block {
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -314,7 +314,7 @@
   margin-bottom: 0.15rem;
 }
 
-.crm-pricing-page .currency-symbol {
+.woocommerce-pricing-page .currency-symbol {
   font-size: 0.875rem; /* text-sm */
   font-weight: 700;
   line-height: 1.5;
@@ -322,28 +322,28 @@
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .currency-symbol {
+  .woocommerce-pricing-page .currency-symbol {
     font-size: 1.125rem; /* text-lg */
     margin-top: 0.55rem;
   }
 }
 
-.crm-pricing-page .price-value {
+.woocommerce-pricing-page .price-value {
   font-size: 1.5rem; /* text-2xl */
   font-weight: 800;
   line-height: 1;
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .price-value {
+  .woocommerce-pricing-page .price-value {
     font-size: 2.25rem; /* text-4xl */
     line-height: 3.2rem;
   }
 }
 
-.crm-pricing-page .price-period,
-.crm-pricing-page .employee-limit,
-.crm-pricing-page .additional-cost {
+.woocommerce-pricing-page .price-period,
+.woocommerce-pricing-page .employee-limit,
+.woocommerce-pricing-page .additional-cost {
   margin: 0 0 0.2rem;
   font-size: 0.75rem; /* text-xs */
   font-weight: 500;
@@ -352,32 +352,32 @@
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .price-period,
-  .crm-pricing-page .employee-limit,
-  .crm-pricing-page .additional-cost {
+  .woocommerce-pricing-page .price-period,
+  .woocommerce-pricing-page .employee-limit,
+  .woocommerce-pricing-page .additional-cost {
     margin: 0 0 0.35rem;
     font-size: 0.875rem; /* text-sm */
   }
 }
 
-.crm-pricing-page .employee-limit {
+.woocommerce-pricing-page .employee-limit {
   font-weight: 600;
   color: var(--text-dark);
 }
 
-.crm-pricing-page .additional-amount {
+.woocommerce-pricing-page .additional-amount {
   font-weight: 700;
   color: var(--text-dark);
 }
 
 /* Feature matrix */
-.crm-pricing-page .features-matrix {
+.woocommerce-pricing-page .features-matrix {
   width: 100%;
   position: relative;
 }
 
 /* Plan Switcher for Mobile View */
-.crm-pricing-page .mobile-plan-switcher {
+.woocommerce-pricing-page .mobile-plan-switcher {
   position: sticky;
   top: 0;
   z-index: 5;
@@ -389,12 +389,12 @@
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .mobile-plan-switcher {
+  .woocommerce-pricing-page .mobile-plan-switcher {
     display: none;
   }
 }
 
-.crm-pricing-page .mobile-switcher-btn {
+.woocommerce-pricing-page .mobile-switcher-btn {
   flex: 1;
   text-align: center;
   padding: 0.75rem 0.35rem;
@@ -409,19 +409,19 @@
   outline: none;
 }
 
-.crm-pricing-page .mobile-switcher-btn.is-active {
+.woocommerce-pricing-page .mobile-switcher-btn.is-active {
   color: var(--primary-color);
   border-bottom-color: var(--primary-color);
   background: var(--recommended-bg);
 }
 
-.crm-pricing-page .mobile-switcher-btn.is-active.recommended {
-  color: #ea580c;
-  border-bottom-color: #ea580c;
-  background: #fff7ed;
+.woocommerce-pricing-page .mobile-switcher-btn.is-active.recommended {
+  color: #a855f7;
+  border-bottom-color: #a855f7;
+  background: #fcf8ff;
 }
 
-.crm-pricing-page .feature-section-btn {
+.woocommerce-pricing-page .feature-section-btn {
   display: flex;
   width: 100%;
   align-items: center;
@@ -436,7 +436,7 @@
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .feature-block.depth-1 > .feature-section-btn {
+  .woocommerce-pricing-page .feature-block.depth-1 > .feature-section-btn {
     background: var(--section-bg);
     border-bottom: 1px solid var(--border-strong);
     padding: 1.125rem 1.5rem;
@@ -444,19 +444,19 @@
   }
 }
 
-.crm-pricing-page .feature-section-title {
+.woocommerce-pricing-page .feature-section-title {
   flex: 1;
   font-size: 0.875rem; /* text-sm */
   font-weight: 700;
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .feature-section-title {
+  .woocommerce-pricing-page .feature-section-title {
     font-size: 1rem; /* text-base */
   }
 }
 
-.crm-pricing-page .section-chevron {
+.woocommerce-pricing-page .section-chevron {
   width: 1.5rem;
   height: 1.5rem;
   color: var(--text-muted);
@@ -465,37 +465,37 @@
   transform: rotate(180deg);
 }
 
-.crm-pricing-page .section-chevron.open {
+.woocommerce-pricing-page .section-chevron.open {
   transform: rotate(0deg);
 }
 
-.crm-pricing-page .feature-block-children {
+.woocommerce-pricing-page .feature-block-children {
   display: none;
 }
 
-.crm-pricing-page .feature-block-children.open {
+.woocommerce-pricing-page .feature-block-children.open {
   display: block;
 }
 
-.crm-pricing-page .feature-block.depth-2 > .feature-section-btn,
-.crm-pricing-page .feature-block.depth-3 > .feature-section-btn {
+.woocommerce-pricing-page .feature-block.depth-2 > .feature-section-btn,
+.woocommerce-pricing-page .feature-block.depth-3 > .feature-section-btn {
   padding-left: 1.25rem;
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .feature-block.depth-2 > .feature-section-btn {
+  .woocommerce-pricing-page .feature-block.depth-2 > .feature-section-btn {
     background: #f9fafb;
     border-bottom: 1px solid var(--border-color);
     padding-left: 2.5rem;
   }
 
-  .crm-pricing-page .feature-block.depth-3 > .feature-section-btn {
+  .woocommerce-pricing-page .feature-block.depth-3 > .feature-section-btn {
     padding-left: 3.75rem;
   }
 }
 
 /* Feature rows: name + check cells */
-.crm-pricing-page .feature-row {
+.woocommerce-pricing-page .feature-row {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
@@ -504,7 +504,7 @@
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .feature-row {
+  .woocommerce-pricing-page .feature-row {
     flex-direction: row;
     align-items: stretch;
     gap: 0;
@@ -514,7 +514,7 @@
   }
 }
 
-.crm-pricing-page .feature-name {
+.woocommerce-pricing-page .feature-name {
   width: 100%;
   font-size: 0.875rem; /* text-sm */
   font-weight: 600;
@@ -523,7 +523,7 @@
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .feature-name {
+  .woocommerce-pricing-page .feature-name {
     flex: 1 1 0;
     max-width: 25%;
     display: flex;
@@ -535,33 +535,33 @@
     padding: 0.65rem 1rem 0.65rem 1.5rem;
   }
 
-  .crm-pricing-page .feature-row.depth-2 .feature-name {
+  .woocommerce-pricing-page .feature-row.depth-2 .feature-name {
     padding-left: 2rem;
   }
 
-  .crm-pricing-page .feature-row.depth-3 .feature-name {
+  .woocommerce-pricing-page .feature-row.depth-3 .feature-name {
     padding-left: 2.75rem;
   }
 
-  .crm-pricing-page .feature-row.depth-4 .feature-name {
+  .woocommerce-pricing-page .feature-row.depth-4 .feature-name {
     padding-left: 3.5rem;
   }
 }
 
-.crm-pricing-page .feature-marks {
+.woocommerce-pricing-page .feature-marks {
   display: flex;
   width: 100%;
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .feature-marks {
+  .woocommerce-pricing-page .feature-marks {
     width: auto;
     flex: 3 1 0;
     min-width: 0;
   }
 }
 
-.crm-pricing-page .feature-mark-cell {
+.woocommerce-pricing-page .feature-mark-cell {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -575,20 +575,20 @@
   background: #fff;
 }
 
-.crm-pricing-page .feature-mark-cell:first-child {
+.woocommerce-pricing-page .feature-mark-cell:first-child {
   border-radius: 0.5rem 0 0 0.5rem;
 }
 
-.crm-pricing-page .feature-mark-cell:last-child {
+.woocommerce-pricing-page .feature-mark-cell:last-child {
   border-right: 1px solid var(--border-color);
   border-radius: 0 0.5rem 0.5rem 0;
 }
 
-.crm-pricing-page .feature-mark-cell.recommended-col {
+.woocommerce-pricing-page .feature-mark-cell.recommended-col {
   background: var(--recommended-bg);
 }
 
-.crm-pricing-page .mark-plan-label {
+.woocommerce-pricing-page .mark-plan-label {
   display: block;
   font-size: 0.75rem; /* text-xs */
   font-weight: 800;
@@ -599,11 +599,11 @@
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .mark-plan-label {
+  .woocommerce-pricing-page .mark-plan-label {
     display: none;
   }
 
-  .crm-pricing-page .feature-mark-cell {
+  .woocommerce-pricing-page .feature-mark-cell {
     width: auto;
     flex: 1 1 0;
     min-height: 100%;
@@ -613,33 +613,33 @@
     padding: 0.65rem 0.75rem;
   }
 
-  .crm-pricing-page .feature-mark-cell:last-child {
+  .woocommerce-pricing-page .feature-mark-cell:last-child {
     border-right: none;
   }
 }
 
-/* PagarBook-style filled check / cross marks */
-.crm-pricing-page .availability-mark {
+/* Check / cross marks */
+.woocommerce-pricing-page .availability-mark {
   display: inline-flex;
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 0.35rem;
 }
 
-.crm-pricing-page .availability-mark.is-checked {
+.woocommerce-pricing-page .availability-mark.is-checked {
   color: var(--check-color);
 }
 
-.crm-pricing-page .availability-mark.is-unchecked {
+.woocommerce-pricing-page .availability-mark.is-unchecked {
   color: var(--uncheck-color);
 }
 
-.crm-pricing-page .mark-icon {
+.woocommerce-pricing-page .mark-icon {
   width: 1.5rem;
   height: 1.5rem;
 }
 
-.crm-pricing-page .cell-text {
+.woocommerce-pricing-page .cell-text {
   display: block;
   max-width: 100%;
   font-size: 0.75rem; /* text-xs */
@@ -651,20 +651,20 @@
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .cell-text {
+  .woocommerce-pricing-page .cell-text {
     font-size: 0.875rem; /* text-sm */
     max-width: 13rem;
   }
 }
 
-.crm-pricing-page .cell-check-wrap {
+.woocommerce-pricing-page .cell-check-wrap {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   gap: 0.2rem;
 }
 
-.crm-pricing-page .cell-note {
+.woocommerce-pricing-page .cell-note {
   display: block;
   max-width: 11rem;
   font-size: 0.75rem; /* text-xs */
@@ -675,20 +675,20 @@
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .cell-note {
+  .woocommerce-pricing-page .cell-note {
     font-size: 0.75rem; /* text-xs */
   }
 }
 
-.crm-pricing-page .badge-addon {
+.woocommerce-pricing-page .badge-addon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 0.2rem 0.55rem;
   border-radius: 9999px;
-  background: #fff7ed;
-  color: #ea580c;
-  border: 1px solid #fdba74;
+  background: #fdf4ff;
+  color: #c084fc;
+  border: 1px solid #e9d5ff;
   font-size: 0.75rem; /* text-xs */
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -697,86 +697,275 @@
 }
 
 @media (min-width: 1024px) {
-  .crm-pricing-page .badge-addon {
+  .woocommerce-pricing-page .badge-addon {
     font-size: 0.75rem; /* text-xs */
   }
 }
 
+/* Custom Add-ons & Timelines layouts */
+.woocommerce-pricing-page .addons-timeline-section {
+  margin-top: 4rem;
+}
+
+.woocommerce-pricing-page .section-card-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .woocommerce-pricing-page .section-card-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.woocommerce-pricing-page .commercials-card {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+.woocommerce-pricing-page .commercials-card h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+  color: var(--text-dark);
+  border-bottom: 2px solid var(--accent-purple-soft);
+  padding-bottom: 0.5rem;
+}
+
+.woocommerce-pricing-page .addons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.woocommerce-pricing-page .addon-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.woocommerce-pricing-page .addon-item:last-child {
+  border-bottom: none;
+}
+
+.woocommerce-pricing-page .addon-cost {
+  color: var(--primary-color);
+  font-weight: 750;
+}
+
+.woocommerce-pricing-page .timelines-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 480px) {
+  .woocommerce-pricing-page .timelines-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.woocommerce-pricing-page .timeline-box {
+  background: var(--accent-purple-soft);
+  border: 1px solid #f3e8ff;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.woocommerce-pricing-page .timeline-value {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+.woocommerce-pricing-page .timeline-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  font-weight: 600;
+}
+
+.woocommerce-pricing-page .payment-terms-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+@media (min-width: 480px) {
+  .woocommerce-pricing-page .payment-terms-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.woocommerce-pricing-page .payment-term-box {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.woocommerce-pricing-page .payment-term-percentage {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--primary-color);
+}
+
+.woocommerce-pricing-page .payment-term-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.woocommerce-pricing-page .important-notes-box {
+  background: #fbfbfe;
+  border-left: 4px solid var(--primary-color);
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.woocommerce-pricing-page .important-notes-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.woocommerce-pricing-page .important-notes-text {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Bottom CTA section */
+.woocommerce-pricing-page .bottom-custom-cta {
+  background: var(--recommended-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.woocommerce-pricing-page .bottom-custom-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.woocommerce-pricing-page .bottom-custom-desc {
+  font-size: 0.9375rem;
+  color: var(--text-gray);
+  margin-bottom: 1.5rem;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.woocommerce-pricing-page .bottom-cta-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
 /* Responsiveness overrides for Mobile View (max-width: 1023px) */
 @media (max-width: 1023px) {
-  .crm-pricing-page .hide-mobile-col {
+  .woocommerce-pricing-page .hide-mobile-col {
     display: none !important;
   }
 
-  .crm-pricing-page .active-mobile-col {
+  .woocommerce-pricing-page .active-mobile-col {
     display: flex !important;
     width: 100% !important;
     flex: 1 1 100% !important;
   }
 
-  .crm-pricing-page .plans-header-cols {
+  .woocommerce-pricing-page .plans-header-cols {
     display: flex !important;
     width: 100% !important;
   }
 
-  .crm-pricing-page .feature-marks {
+  .woocommerce-pricing-page .feature-marks {
     display: flex !important;
     width: 100% !important;
   }
 
-  .crm-pricing-page .feature-mark-cell {
+  .woocommerce-pricing-page .feature-mark-cell {
     border-right: 1px solid var(--border-color) !important;
     border-radius: 0.5rem !important;
   }
 
-  .crm-pricing-page .plan-header-col {
+  .woocommerce-pricing-page .plan-header-col {
     border-right: 1px solid var(--border-color) !important;
     border-radius: 0.5rem !important;
   }
 
-  .crm-pricing-page .price-period,
-  .crm-pricing-page .employee-limit,
-  .crm-pricing-page .additional-cost {
+  .woocommerce-pricing-page .price-period,
+  .woocommerce-pricing-page .employee-limit,
+  .woocommerce-pricing-page .additional-cost {
     font-size: 0.75rem; /* text-xs */
     line-height: 1.25;
   }
 
-  .crm-pricing-page .cell-text,
-  .crm-pricing-page .cell-note {
+  .woocommerce-pricing-page .cell-text,
+  .woocommerce-pricing-page .cell-note {
     font-size: 0.75rem; /* text-xs */
     line-height: 1.25;
   }
 
-  .crm-pricing-page .badge-addon {
+  .woocommerce-pricing-page .badge-addon {
     font-size: 0.75rem; /* text-xs */
     padding: 0.15rem 0.45rem;
   }
 
-  .crm-pricing-page .plan-header-col {
+  .woocommerce-pricing-page .plan-header-col {
     padding: 1.5rem 0.5rem;
   }
 
-  .crm-pricing-page .price-value {
+  .woocommerce-pricing-page .price-value {
     font-size: 1.875rem; /* text-3xl */
   }
 }
 
 @media (max-width: 480px) {
-  .crm-pricing-page .plan-header-col {
+  .woocommerce-pricing-page .plan-header-col {
     padding: 1.25rem 0.35rem;
   }
 
-  .crm-pricing-page .price-value {
+  .woocommerce-pricing-page .price-value {
     font-size: 1.5rem; /* text-2xl */
   }
 
-  .crm-pricing-page .plans-intro-title {
+  .woocommerce-pricing-page .plans-intro-title {
     font-size: 1.25rem; /* text-xl */
   }
 }
 
 /* Remove double borders at the bottom of the grid */
-.crm-pricing-page .feature-block:last-child .feature-row:last-child {
+.woocommerce-pricing-page .feature-block:last-child .feature-row:last-child {
   border-bottom: none;
 }
 
