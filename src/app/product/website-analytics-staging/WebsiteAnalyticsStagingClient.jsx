@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "../../components/AppLink";
 import ContactFormModal from "../../components/ContactFormModal";
 import { productsData } from "../../lib/data/products-data";
@@ -120,6 +120,24 @@ const HERO_SLIDES = [
   { src: '/products/isarva-analytics/multi-site.png', label: 'Multi-Site Switch' },
 ];
 
+const ACCENT_STYLES = {
+  orange: { border: "rgba(234, 88, 12, 0.4)", shadow: "rgba(234, 88, 12, 0.18)" },
+  blue: { border: "rgba(29, 78, 216, 0.4)", shadow: "rgba(29, 78, 216, 0.18)" },
+  teal: { border: "rgba(15, 118, 110, 0.4)", shadow: "rgba(15, 118, 110, 0.18)" },
+  violet: { border: "rgba(109, 40, 217, 0.4)", shadow: "rgba(109, 40, 217, 0.18)" },
+  green: { border: "rgba(22, 101, 52, 0.4)", shadow: "rgba(22, 101, 52, 0.18)" },
+  slate: { border: "rgba(51, 65, 85, 0.4)", shadow: "rgba(51, 65, 85, 0.18)" },
+};
+
+const DOT_RINGS = {
+  orange: "#ea580c",
+  blue: "#1d4ed8",
+  teal: "#0f766e",
+  violet: "#6d28d9",
+  green: "#166534",
+  slate: "#334155"
+};
+
 const ACCENT_CAPTIONS = {
   orange: 'Glossy Orange — warm and energetic, great for marketing teams.',
   blue: 'Glossy Blue — professional and trustworthy, ideal for corporate clients.',
@@ -158,8 +176,20 @@ export default function WebsiteAnalyticsStagingClient() {
     return () => clearInterval(iv);
   }, []);
 
-  // Module Explorer state
   const [activeMod, setActiveMod] = useState(0);
+  const tabsContainerRef = useRef(null);
+
+  useEffect(() => {
+    if (!tabsContainerRef.current) return;
+    const activeBtn = tabsContainerRef.current.children[activeMod];
+    if (activeBtn) {
+      activeBtn.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center"
+      });
+    }
+  }, [activeMod]);
   const [isSwitching, setIsSwitching] = useState(false);
 
   const handleModuleChange = (idx) => {
@@ -257,18 +287,18 @@ export default function WebsiteAnalyticsStagingClient() {
               <p className="text-[#64748b] text-base sm:text-lg leading-relaxed mb-8 max-w-xl font-medium">
                 Live visitors, visitor maps, top pages, traffic sources, and trends — in a dashboard your clients understand. Assign multiple websites per client and send weekly WhatsApp summaries automatically.
               </p>
-              <div className="flex flex-wrap gap-4 items-center justify-center lg:justify-start mb-8 w-full sm:w-auto">
+              <div className="flex flex-wrap gap-3.5 items-center justify-center lg:justify-start mb-8 w-full sm:w-auto">
                 <a
                   href="#modules"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 h-[56px] font-bold text-base text-white bg-[#f97316] hover:bg-[#ea580c] hover:scale-[1.02] transition-all rounded-full shadow-[0_4px_14px_rgba(249,115,22,0.3)] hover:shadow-[0_6px_20px_rgba(249,115,22,0.4)] cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 px-[1.75rem] py-[0.85rem] font-bold text-[15.2px] text-white bg-[#f97316] shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_6px_0_#ea580c,0_8px_12px_rgba(234,88,12,0.3),0_12px_24px_rgba(234,88,12,0.15)] hover:bg-[#ea580c] hover:translate-y-[3px] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_3px_0_#ea580c,0_8px_12px_rgba(234,88,12,0.3)] transition-all duration-200 rounded-[8px] cursor-pointer select-none"
                 >
                   Explore all modules
                 </a>
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 h-[56px] font-bold text-base text-[#4338ca] hover:text-[#4f46e5] bg-white/80 hover:bg-white border border-[#e2e8f0] hover:border-[#4f46e5] transition-all rounded-full shadow-sm hover:shadow-md cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 font-semibold text-sm text-slate-600 hover:text-slate-800 bg-transparent hover:bg-slate-50 border border-slate-200 hover:border-slate-300 transition-all duration-200 rounded-[8px] cursor-pointer select-none"
                 >
-                  Request demo &rarr;
+                  Request a demo
                 </button>
               </div>
               <div className="flex flex-wrap gap-2.5 justify-center lg:justify-start">
@@ -333,21 +363,21 @@ export default function WebsiteAnalyticsStagingClient() {
           </div>
 
           {/* Stats Bar */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-12 border-t border-slate-200/60">
-            <div className="bg-white/60 backdrop-blur border border-white/80 rounded-2xl p-5 shadow-sm">
-              <strong className="block text-3xl font-black text-[#1a1f24] tracking-tight">15+</strong>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 sm:gap-6 mt-16 pt-12 border-t border-slate-200/60">
+            <div className="bg-white/60 backdrop-blur border border-white/80 rounded-2xl p-3.5 sm:p-5 shadow-sm">
+              <strong className="block text-2xl min-[375px]:text-3xl font-black text-[#1a1f24] tracking-tight">15+</strong>
               <span className="text-xs font-bold text-[#64748b] uppercase tracking-wider mt-1 block">Dashboard modules</span>
             </div>
-            <div className="bg-white/60 backdrop-blur border border-white/80 rounded-2xl p-5 shadow-sm">
-              <strong className="block text-3xl font-black text-[#1a1f24] tracking-tight">30s</strong>
+            <div className="bg-white/60 backdrop-blur border border-white/80 rounded-2xl p-3.5 sm:p-5 shadow-sm">
+              <strong className="block text-2xl min-[375px]:text-3xl font-black text-[#1a1f24] tracking-tight">30s</strong>
               <span className="text-xs font-bold text-[#64748b] uppercase tracking-wider mt-1 block">Live refresh</span>
             </div>
-            <div className="bg-white/60 backdrop-blur border border-white/80 rounded-2xl p-5 shadow-sm">
-              <strong className="block text-3xl font-black text-[#1a1f24] tracking-tight">Multi</strong>
+            <div className="bg-white/60 backdrop-blur border border-white/80 rounded-2xl p-3.5 sm:p-5 shadow-sm">
+              <strong className="block text-xl min-[375px]:text-2xl md:text-3xl font-black text-[#1a1f24] tracking-tight">Multi</strong>
               <span className="text-xs font-bold text-[#64748b] uppercase tracking-wider mt-1 block">Sites per client</span>
             </div>
-            <div className="bg-white/60 backdrop-blur border border-white/80 rounded-2xl p-5 shadow-sm border-emerald-100 bg-[#f0fdf4]">
-              <strong className="block text-3xl font-black text-emerald-600 tracking-tight">WhatsApp</strong>
+            <div className="bg-white/60 backdrop-blur border border-white/80 rounded-2xl p-3.5 sm:p-5 shadow-sm border-emerald-100 bg-[#f0fdf4]">
+              <strong className="block text-[16px] min-[375px]:text-xl md:text-3xl font-black text-emerald-600 tracking-tight">WhatsApp</strong>
               <span className="text-xs font-bold text-[#64748b] uppercase tracking-wider mt-1 block">Weekly reports</span>
             </div>
           </div>
@@ -364,14 +394,14 @@ export default function WebsiteAnalyticsStagingClient() {
 
       {/* ═══ PROBLEM ═══ */}
       <section
-        className="py-16 sm:py-20 lg:py-24 border-b border-[#e8ecf2]"
+        className="py-12 lg:py-16 border-b border-[#e8ecf2]"
         style={{ background: "#f1f5f9" }}
         id="problem"
       >
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="mb-12 lg:mb-16 text-center max-w-3xl mx-auto">
             <span className="text-xs font-extrabold uppercase tracking-widest text-[#4f46e5] mb-3 block">The Problem</span>
-            <h2 className="font-display font-bold text-[#1a1f24] leading-[1.12] text-[clamp(2rem,4.5vw,3.25rem)] mb-4 tracking-tight">
+            <h2 className="mb-6 capitalize text-[#1a1f24]">
               Website data is useful —<br />but hard for clients to follow
             </h2>
             <p className="text-[#64748b] text-base sm:text-lg leading-relaxed font-medium max-w-2xl mx-auto">
@@ -380,28 +410,28 @@ export default function WebsiteAnalyticsStagingClient() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <article className="bg-white border border-[#e8ecf2] rounded-2xl p-6 flex flex-col shadow-[0_2px_10px_rgba(15,23,42,0.04)] hover:shadow-[0_12px_32px_rgba(79,70,229,0.1)] transition-all duration-300 hover:-translate-y-1">
+            <article className="bg-white border border-[#e8ecf2] rounded-2xl p-6 flex flex-col items-center text-center shadow-[0_2px_10px_rgba(15,23,42,0.04)] hover:shadow-[0_12px_32px_rgba(79,70,229,0.1)] transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 rounded-xl flex items-center justify-center text-xl mb-5 bg-gradient-to-br from-indigo-50 to-purple-50 text-[#4f46e5] border border-indigo-100/50">
                 📊
               </div>
               <h3 className="font-bold text-[#1a1f24] text-base mb-2">Too complex for clients</h3>
               <p className="text-[#64748b] text-sm leading-relaxed">Raw analytics tools overwhelm non-technical stakeholders. Sharing insights means exports, screenshots, and long calls.</p>
             </article>
-            <article className="bg-white border border-[#e8ecf2] rounded-2xl p-6 flex flex-col shadow-[0_2px_10px_rgba(15,23,42,0.04)] hover:shadow-[0_12px_32px_rgba(79,70,229,0.1)] transition-all duration-300 hover:-translate-y-1">
+            <article className="bg-white border border-[#e8ecf2] rounded-2xl p-6 flex flex-col items-center text-center shadow-[0_2px_10px_rgba(15,23,42,0.04)] hover:shadow-[0_12px_32px_rgba(79,70,229,0.1)] transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 rounded-xl flex items-center justify-center text-xl mb-5 bg-gradient-to-br from-indigo-50 to-purple-50 text-[#4f46e5] border border-indigo-100/50">
                 ⏱️
               </div>
               <h3 className="font-bold text-[#1a1f24] text-base mb-2">No live visibility</h3>
               <p className="text-[#64748b] text-sm leading-relaxed">Standard reports are delayed. You can't easily see who's on the site right now or which pages they're viewing.</p>
             </article>
-            <article className="bg-white border border-[#e8ecf2] rounded-2xl p-6 flex flex-col shadow-[0_2px_10px_rgba(15,23,42,0.04)] hover:shadow-[0_12px_32px_rgba(79,70,229,0.1)] transition-all duration-300 hover:-translate-y-1">
+            <article className="bg-white border border-[#e8ecf2] rounded-2xl p-6 flex flex-col items-center text-center shadow-[0_2px_10px_rgba(15,23,42,0.04)] hover:shadow-[0_12px_32px_rgba(79,70,229,0.1)] transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 rounded-xl flex items-center justify-center text-xl mb-5 bg-gradient-to-br from-indigo-50 to-purple-50 text-[#4f46e5] border border-indigo-100/50">
                 🌐
               </div>
               <h3 className="font-bold text-[#1a1f24] text-base mb-2">One client, many websites</h3>
               <p className="text-[#64748b] text-sm leading-relaxed">Agencies manage multiple sites per client but have no simple branded portal to switch between them.</p>
             </article>
-            <article className="bg-white border border-[#e8ecf2] rounded-2xl p-6 flex flex-col shadow-[0_2px_10px_rgba(15,23,42,0.04)] hover:shadow-[0_12px_32px_rgba(79,70,229,0.1)] transition-all duration-300 hover:-translate-y-1">
+            <article className="bg-white border border-[#e8ecf2] rounded-2xl p-6 flex flex-col items-center text-center shadow-[0_2px_10px_rgba(15,23,42,0.04)] hover:shadow-[0_12px_32px_rgba(79,70,229,0.1)] transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 rounded-xl flex items-center justify-center text-xl mb-5 bg-gradient-to-br from-indigo-50 to-purple-50 text-[#4f46e5] border border-indigo-100/50">
                 📱
               </div>
@@ -414,7 +444,7 @@ export default function WebsiteAnalyticsStagingClient() {
 
       {/* ═══ MODULE EXPLORER ═══ */}
       <section
-        className="py-16 sm:py-20 lg:py-24 text-white relative overflow-hidden"
+        className="py-12 lg:py-16 text-white relative overflow-hidden"
         style={{ background: "linear-gradient(145deg, #2f2b6a 0%, #3d3885 42%, #334155 100%)" }}
         id="modules"
       >
@@ -434,7 +464,7 @@ export default function WebsiteAnalyticsStagingClient() {
 
           <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-8 items-start">
             {/* Sidebar list */}
-            <div className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-4 lg:sticky lg:top-[100px] flex overflow-x-auto lg:flex-col gap-2 max-w-full no-scrollbar">
+            <div ref={tabsContainerRef} className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-4 lg:sticky lg:top-[100px] flex overflow-x-auto lg:flex-col gap-2 max-w-full no-scrollbar">
               {MODULES.map((mod, i) => (
                 <button
                   key={i}
@@ -518,11 +548,11 @@ export default function WebsiteAnalyticsStagingClient() {
       </section>
 
       {/* ═══ CAPABILITIES ═══ */}
-      <section className="py-16 sm:py-20 lg:py-24 border-y border-slate-100" style={{ background: "linear-gradient(180deg, #fafbff 0%, #fff 100%)" }} id="capabilities">
+      <section className="py-12 lg:py-16 border-y border-slate-100" style={{ background: "linear-gradient(180deg, #fafbff 0%, #fff 100%)" }} id="capabilities">
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="mb-12 lg:mb-16 text-center max-w-3xl mx-auto">
             <span className="text-xs font-extrabold uppercase tracking-widest text-[#4f46e5] mb-3 block">Capabilities</span>
-            <h2 className="font-display font-bold text-slate-900 leading-[1.12] text-[clamp(2rem,4.5vw,3.25rem)] mb-4 tracking-tight">
+            <h2 className="mb-6 capitalize text-slate-900">
               Data your team can <span style={{ background: "linear-gradient(135deg, #4f46e5 0%, #8b5cf6 45%, #d946ef 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>act on</span>
             </h2>
             <p className="text-[#64748b] text-base sm:text-lg leading-relaxed font-medium max-w-2xl mx-auto">
@@ -602,14 +632,14 @@ export default function WebsiteAnalyticsStagingClient() {
 
       {/* ═══ WHATSAPP HIGHLIGHT ═══ */}
       <section
-        className="py-16 sm:py-20"
+        className="py-12 lg:py-16"
         style={{ background: "linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 50%, #fff 100%)" }}
         id="whatsapp"
       >
         <div className="max-w-7xl mx-auto px-6 w-full">
-          <div className="bg-white border border-[#25d366]/25 rounded-[1.25rem] p-9 lg:p-[2.25rem_2.5rem] shadow-[0_12px_40px_rgba(22,163,74,0.1)] grid grid-cols-1 lg:grid-cols-[auto_1fr_auto] gap-8 items-center max-w-5xl mx-auto">
+          <div className="bg-white border border-[#25d366]/25 rounded-[1.25rem] p-5 sm:p-9 lg:p-[2.25rem_2.5rem] shadow-[0_12px_40px_rgba(22,163,74,0.1)] grid grid-cols-1 lg:grid-cols-[auto_1fr_auto] gap-8 items-center max-w-5xl mx-auto">
             {/* WhatsApp Icon Circle */}
-            <div className="w-16 h-16 rounded-full bg-[#25d366] text-white flex items-center justify-center shrink-0 shadow-[0_8px_24px_rgba(37,211,102,0.35)]">
+            <div className="w-16 h-16 rounded-full bg-[#25d366] text-white flex items-center justify-center shrink-0 shadow-[0_8px_24px_rgba(37,211,102,0.35)] mx-auto lg:mx-0">
               <svg className="w-[34px] h-[34px]" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
               </svg>
@@ -640,11 +670,11 @@ export default function WebsiteAnalyticsStagingClient() {
       </section>
 
       {/* ═══ CLIENT EXPERIENCE ═══ */}
-      <section className="py-16 sm:py-20 lg:py-24 border-b border-slate-100" style={{ background: "#f8fafc" }} id="delivery">
+      <section className="py-12 lg:py-16 border-b border-slate-100" style={{ background: "#f8fafc" }} id="delivery">
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="mb-12 lg:mb-16 text-center max-w-3xl mx-auto">
             <span className="text-xs font-extrabold uppercase tracking-widest text-[#4f46e5] mb-3 block">Client Experience</span>
-            <h2 className="font-display font-bold text-[#1a1f24] leading-[1.12] text-[clamp(2rem,4.5vw,3.25rem)] mb-4 tracking-tight">
+            <h2 className="mb-6 capitalize text-[#1a1f24]">
               Your product.<br />Their simple login.
             </h2>
             <p className="text-[#64748b] text-base sm:text-lg leading-relaxed font-medium max-w-2xl mx-auto">
@@ -653,31 +683,31 @@ export default function WebsiteAnalyticsStagingClient() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <article className="bg-white border border-[#e8ecf2] rounded-3xl p-8 shadow-sm flex flex-col gap-4 hover:shadow-md transition-all">
+            <article className="bg-white border border-[#e8ecf2] rounded-3xl p-8 shadow-sm flex flex-col items-center text-center lg:items-start lg:text-left gap-4 hover:shadow-md transition-all">
               <span className="text-3xl font-black text-indigo-100">01</span>
               <h3 className="text-lg font-bold text-[#1a1f24]">Branded client login</h3>
               <p className="text-[#64748b] text-sm leading-relaxed">Clients sign in with username and password you give them — like any professional product portal.</p>
-              <ul className="text-slate-600 text-xs font-semibold flex flex-col gap-2 mt-2">
+              <ul className="text-slate-600 text-xs font-semibold flex flex-col items-center lg:items-start gap-2 mt-2">
                 <li className="flex gap-2 text-indigo-600"><span>•</span> <span className="text-slate-600">Split-screen login with highlights</span></li>
                 <li className="flex gap-2 text-indigo-600"><span>•</span> <span className="text-slate-600">Trial and paid access periods built in</span></li>
                 <li className="flex gap-2 text-indigo-600"><span>•</span> <span className="text-slate-600">Each client sees only assigned websites</span></li>
               </ul>
             </article>
-            <article className="bg-white border border-[#e8ecf2] rounded-3xl p-8 shadow-sm flex flex-col gap-4 hover:shadow-md transition-all">
+            <article className="bg-white border border-[#e8ecf2] rounded-3xl p-8 shadow-sm flex flex-col items-center text-center lg:items-start lg:text-left gap-4 hover:shadow-md transition-all">
               <span className="text-3xl font-black text-indigo-100">02</span>
               <h3 className="text-lg font-bold text-[#1a1f24]">Multi-site switching</h3>
               <p className="text-[#64748b] text-sm leading-relaxed">One client, many websites. They switch from the header dropdown — each site loads its own dashboard.</p>
-              <ul className="text-slate-600 text-xs font-semibold flex flex-col gap-2 mt-2">
+              <ul className="text-slate-600 text-xs font-semibold flex flex-col items-center lg:items-start gap-2 mt-2">
                 <li className="flex gap-2 text-indigo-600"><span>•</span> <span className="text-slate-600">Assign multiple websites per client</span></li>
                 <li className="flex gap-2 text-indigo-600"><span>•</span> <span className="text-slate-600">Active site banner confirms selection</span></li>
                 <li className="flex gap-2 text-indigo-600"><span>•</span> <span className="text-slate-600">Same date filters per website</span></li>
               </ul>
             </article>
-            <article className="bg-[#f0fdf4] border border-[#d1fae5] rounded-3xl p-8 shadow-sm flex flex-col gap-4 hover:shadow-md transition-all">
+            <article className="bg-[#f0fdf4] border border-[#d1fae5] rounded-3xl p-8 shadow-sm flex flex-col items-center text-center lg:items-start lg:text-left gap-4 hover:shadow-md transition-all">
               <span className="text-3xl font-black text-emerald-200">03</span>
               <h3 className="text-lg font-bold text-emerald-950">Weekly WhatsApp reports</h3>
               <p className="text-[#64748b] text-sm leading-relaxed">Add their mobile number — they get a weekly summary automatically. No need to open the dashboard to know how the week went.</p>
-              <ul className="text-slate-600 text-xs font-semibold flex flex-col gap-2 mt-2">
+              <ul className="text-slate-600 text-xs font-semibold flex flex-col items-center lg:items-start gap-2 mt-2">
                 <li className="flex gap-2 text-emerald-600"><span>•</span> <span className="text-slate-600">Sent every Monday morning</span></li>
                 <li className="flex gap-2 text-emerald-600"><span>•</span> <span className="text-slate-600">One WhatsApp per assigned website</span></li>
                 <li className="flex gap-2 text-emerald-600"><span>•</span> <span className="text-slate-600">Easy to read — built for business owners</span></li>
@@ -688,11 +718,11 @@ export default function WebsiteAnalyticsStagingClient() {
       </section>
 
       {/* ═══ ACCENT THEMES ═══ */}
-      <section className="py-16 sm:py-20 lg:py-24 border-b border-[#e8ecf2]" style={{ background: "#f8fafc" }} id="accent-themes">
+      <section className="py-12 lg:py-16 border-b border-[#e8ecf2]" style={{ background: "radial-gradient(ellipse 70% 50% at 50% 0%, rgba(79, 70, 229, 0.07), transparent 55%), #f8fafc" }} id="accent-themes">
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="mb-12 lg:mb-16 text-center max-w-3xl mx-auto">
             <span className="text-xs font-extrabold uppercase tracking-widest text-[#4f46e5] mb-3 block">Personalisation</span>
-            <h2 className="font-display font-bold text-[#1a1f24] leading-[1.12] text-[clamp(2rem,4.5vw,3.25rem)] mb-4 tracking-tight">
+            <h2 className="mb-6 capitalize text-[#1a1f24]">
               Pick your dashboard <span style={{ background: "linear-gradient(135deg, #4f46e5 0%, #8b5cf6 45%, #d946ef 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>accent colour</span>
             </h2>
             <p className="text-[#64748b] text-base sm:text-lg leading-relaxed font-medium max-w-2xl mx-auto">
@@ -705,12 +735,12 @@ export default function WebsiteAnalyticsStagingClient() {
 
             <div className="flex flex-wrap justify-center gap-4 mb-8 z-10">
               {[
-                { key: "orange", label: "Orange", color: "linear-gradient(145deg,#ea580c,#fb923c)" },
-                { key: "blue", label: "Blue", color: "linear-gradient(145deg,#1d4ed8,#60a5fa)" },
-                { key: "teal", label: "Teal", color: "linear-gradient(145deg,#0f766e,#2dd4bf)" },
-                { key: "violet", label: "Violet", color: "linear-gradient(145deg,#6d28d9,#c084fc)" },
-                { key: "green", label: "Green", color: "linear-gradient(145deg,#166534,#4ade80)" },
-                { key: "slate", label: "Slate", color: "linear-gradient(145deg,#334155,#94a3b8)" }
+                { key: "orange", label: "Glossy Orange", color: "linear-gradient(145deg,#ea580c,#fb923c)" },
+                { key: "blue", label: "Glossy Blue", color: "linear-gradient(145deg,#1d4ed8,#60a5fa)" },
+                { key: "teal", label: "Glossy Teal", color: "linear-gradient(145deg,#0f766e,#2dd4bf)" },
+                { key: "violet", label: "Glossy Violet", color: "linear-gradient(145deg,#6d28d9,#c084fc)" },
+                { key: "green", label: "Glossy Green", color: "linear-gradient(145deg,#166534,#4ade80)" },
+                { key: "slate", label: "Glossy Slate", color: "linear-gradient(145deg,#334155,#94a3b8)" }
               ].map((accent) => (
                 <button
                   key={accent.key}
@@ -725,30 +755,38 @@ export default function WebsiteAnalyticsStagingClient() {
             </div>
 
             {/* Accent mock header */}
-            <div className="h-[28px] border border-slate-200/80 bg-slate-50 rounded-lg px-4 flex items-center justify-between text-[9px] font-extrabold text-slate-400 max-w-[280px] w-full mb-6 relative z-10 shadow-inner">
-              <span>Accent Selected</span>
-              <div className="flex items-center gap-1">
+            <div className="inline-flex items-center gap-2.5 p-[0.55rem_0.85rem] mb-4 bg-slate-50 border border-[#e8ecf2] rounded-full z-10 relative">
+              <span className="text-[10px] font-bold tracking-widest uppercase text-slate-400">Accent</span>
+              <div className="flex items-center gap-1.5">
                 {["orange", "blue", "teal", "violet", "green", "slate"].map((color) => (
                   <span
                     key={color}
-                    className={`w-2.5 h-2.5 rounded-full border border-white shrink-0 transition-transform ${activeAccent === color ? "scale-125 shadow-sm ring-1 ring-slate-400" : "opacity-45"}`}
+                    className={`w-4 h-4 rounded-full shrink-0 transition-all duration-250 cursor-pointer ${activeAccent === color ? "opacity-100 scale-120" : "opacity-55"}`}
                     style={{
                       background: color === "orange" ? "linear-gradient(145deg,#ea580c,#fb923c)" :
                         color === "blue" ? "linear-gradient(145deg,#1d4ed8,#60a5fa)" :
                           color === "teal" ? "linear-gradient(145deg,#0f766e,#2dd4bf)" :
                             color === "violet" ? "linear-gradient(145deg,#6d28d9,#c084fc)" :
                               color === "green" ? "linear-gradient(145deg,#166534,#4ade80)" :
-                                "linear-gradient(145deg,#334155,#94a3b8)"
+                                "linear-gradient(145deg,#334155,#94a3b8)",
+                      boxShadow: activeAccent === color ? `0 0 0 2px #fff, 0 0 0 3px ${DOT_RINGS[color]}` : "none"
                     }}
+                    onClick={() => setActiveAccent(color)}
                   ></span>
                 ))}
               </div>
             </div>
 
             {/* Accent preview container */}
-            <div className="relative w-full max-w-[640px] aspect-[16/10] bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 shadow-md mb-6 z-10">
+            <div
+              className="relative w-full max-w-[768px] bg-[#f1f5f9] rounded-[14px] overflow-hidden transition-all duration-300 mb-6 z-10"
+              style={{
+                border: `2px solid ${ACCENT_STYLES[activeAccent].border}`,
+                boxShadow: `0 0 0 1px rgba(255, 255, 255, 0.8) inset, 0 20px 50px ${ACCENT_STYLES[activeAccent].shadow}`
+              }}
+            >
               <div
-                className="absolute -inset-[10%] opacity-20 blur-3xl rounded-full transition-all duration-700"
+                className="absolute -inset-[10%] opacity-20 blur-3xl rounded-full transition-all duration-700 pointer-events-none"
                 style={{
                   background: activeAccent === "orange" ? "radial-gradient(circle, #ea580c 0%, transparent 70%)" :
                     activeAccent === "blue" ? "radial-gradient(circle, #1d4ed8 0%, transparent 70%)" :
@@ -758,23 +796,23 @@ export default function WebsiteAnalyticsStagingClient() {
                             "radial-gradient(circle, #334155 0%, transparent 70%)"
                 }}
               ></div>
-              <img src="/products/isarva-analytics/dashboard-live.png" alt="Dashboard with selected accent colour" className="w-full h-full object-contain relative z-10" />
+              <img src="/products/isarva-analytics/dashboard-live.png" alt="Dashboard with selected accent colour" className="w-full h-auto block relative z-10" />
             </div>
 
-            <p className="text-sm font-bold text-slate-800 transition-all duration-300">{ACCENT_CAPTIONS[activeAccent]}</p>
+            <p className="text-[14.7px] font-semibold text-[#64748b] mt-4 max-w-xl text-center leading-relaxed transition-all duration-300">{ACCENT_CAPTIONS[activeAccent]}</p>
 
-            <div className="grid grid-cols-3 gap-4 border-t border-slate-100 pt-6 mt-8 w-full">
-              <div className="flex flex-col items-center">
-                <strong className="text-slate-900 text-xs font-black">Header picker</strong>
-                <span className="text-[10px] text-[#64748b] font-semibold mt-0.5">Same as live dashboard</span>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 border-t border-[#e8ecf2] pt-6 mt-6 w-full text-center">
+              <div className="p-[0.65rem_0.5rem] flex flex-col items-center">
+                <strong className="text-[13px] font-bold text-[#1a1f24] leading-tight mb-1">Header picker</strong>
+                <span className="text-[11.5px] text-[#64748b] font-normal leading-normal">Same as live dashboard</span>
               </div>
-              <div className="flex flex-col items-center">
-                <strong className="text-slate-900 text-xs font-black">Instant update</strong>
-                <span className="text-[10px] text-[#64748b] font-semibold mt-0.5">Nav, ring, bars &amp; charts</span>
+              <div className="p-[0.65rem_0.5rem] flex flex-col items-center">
+                <strong className="text-[13px] font-bold text-[#1a1f24] leading-tight mb-1">Instant update</strong>
+                <span className="text-[11.5px] text-[#64748b] font-normal leading-normal">Nav, ring, bars &amp; charts</span>
               </div>
-              <div className="flex flex-col items-center">
-                <strong className="text-slate-900 text-xs font-black">Per user</strong>
-                <span className="text-[10px] text-[#64748b] font-semibold mt-0.5">Saved in browser storage</span>
+              <div className="p-[0.65rem_0.5rem] flex flex-col items-center">
+                <strong className="text-[13px] font-bold text-[#1a1f24] leading-tight mb-1">Per user</strong>
+                <span className="text-[11.5px] text-[#64748b] font-normal leading-normal">Saved in browser storage</span>
               </div>
             </div>
           </div>
@@ -782,11 +820,11 @@ export default function WebsiteAnalyticsStagingClient() {
       </section>
 
       {/* ═══ FEATURES ═══ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white" id="features">
+      <section className="py-12 lg:py-16 bg-white" id="features">
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="mb-12 lg:mb-16 text-center max-w-3xl mx-auto">
             <span className="text-xs font-extrabold uppercase tracking-widest text-[#4f46e5] mb-3 block">Key Features</span>
-            <h2 className="font-display font-bold text-[#1a1f24] leading-[1.12] text-[clamp(2rem,4.5vw,3.25rem)] mb-4 tracking-tight">
+            <h2 className="mb-6 capitalize text-[#1a1f24]">
               Corporate dashboard,<br />zero analytics jargon
             </h2>
           </div>
@@ -800,8 +838,8 @@ export default function WebsiteAnalyticsStagingClient() {
               { icon: "🏆", title: "Page Leaderboard", desc: "Top pages ranked with views, sessions, traffic share, and engagement percentage." },
               { icon: "🎨", title: "Accent Themes", desc: "Six glossy accent colours — each user picks their favourite from the dashboard header." }
             ].map((feat, i) => (
-              <article key={i} className="bg-white border border-[#e8ecf2] rounded-[1.5rem] p-6 shadow-sm flex flex-col gap-4 hover:shadow-md transition-all">
-                <div className="w-11 h-11 rounded-xl flex items-center justify-center text-xl bg-slate-50 border border-slate-100/50">
+              <article key={i} className="bg-white border border-[#e8ecf2] rounded-[1.5rem] p-6 shadow-sm flex flex-col items-center text-center lg:items-start lg:text-left gap-4 hover:shadow-md transition-all">
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center text-xl bg-slate-50 border border-slate-100/50 shrink-0">
                   {feat.icon}
                 </div>
                 <div>
@@ -815,11 +853,11 @@ export default function WebsiteAnalyticsStagingClient() {
       </section>
 
       {/* ═══ COMPARE ═══ */}
-      <section className="py-16 sm:py-20 lg:py-24 border-y border-[#e8ecf2]" style={{ background: "#f1f5f9" }}>
+      <section className="py-12 lg:py-16 border-y border-[#e8ecf2]" style={{ background: "#f1f5f9" }}>
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="mb-12 lg:mb-16 text-center max-w-3xl mx-auto">
             <span className="text-xs font-extrabold uppercase tracking-widest text-[#4f46e5] mb-3 block">Why Isarva Analytics</span>
-            <h2 className="font-display font-bold text-[#1a1f24] leading-[1.12] text-[clamp(2rem,4.5vw,3.25rem)] mb-4 tracking-tight">
+            <h2 className="mb-6 capitalize text-[#1a1f24]">
               From scattered reports to clarity
             </h2>
           </div>
@@ -887,11 +925,11 @@ export default function WebsiteAnalyticsStagingClient() {
       </section>
 
       {/* ═══ HOW IT WORKS ═══ */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white" id="how-it-works">
+      <section className="py-12 lg:py-16 bg-white" id="how-it-works">
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="mb-12 lg:mb-16 text-center max-w-3xl mx-auto">
             <span className="text-xs font-extrabold uppercase tracking-widest text-[#4f46e5] mb-3 block">How It Works</span>
-            <h2 className="font-display font-bold text-[#1a1f24] leading-[1.12] text-[clamp(2rem,4.5vw,3.25rem)] mb-4 tracking-tight">
+            <h2 className="mb-6 capitalize text-[#1a1f24]">
               Simple for your client.<br />We handle the rest.
             </h2>
             <p className="text-[#64748b] text-base sm:text-lg leading-relaxed font-medium max-w-2xl mx-auto">
@@ -900,18 +938,18 @@ export default function WebsiteAnalyticsStagingClient() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <article className="bg-white border border-[#e8ecf2] rounded-3xl p-8 shadow-sm flex flex-col gap-4 hover:shadow-md transition-all">
-              <span className="w-10 h-10 rounded-full bg-indigo-50 text-[#4f46e5] flex items-center justify-center font-black text-base border border-[#e2e8f0]">1</span>
+            <article className="bg-white border border-[#e8ecf2] rounded-3xl p-8 shadow-sm flex flex-col items-center text-center lg:items-start lg:text-left gap-4 hover:shadow-md transition-all">
+              <span className="w-10 h-10 rounded-full bg-indigo-50 text-[#4f46e5] flex items-center justify-center font-black text-base border border-[#e2e8f0] shrink-0">1</span>
               <h3 className="text-lg font-bold text-[#1a1f24] mt-2">Client asks for access</h3>
               <p className="text-[#64748b] text-sm leading-relaxed">They contact you for website analytics. Share their name, website, and mobile number — that's all they need to do.</p>
             </article>
-            <article className="bg-white border border-[#e8ecf2] rounded-3xl p-8 shadow-sm flex flex-col gap-4 hover:shadow-md transition-all">
-              <span className="w-10 h-10 rounded-full bg-indigo-50 text-[#4f46e5] flex items-center justify-center font-black text-base border border-[#e2e8f0]">2</span>
+            <article className="bg-white border border-[#e8ecf2] rounded-3xl p-8 shadow-sm flex flex-col items-center text-center lg:items-start lg:text-left gap-4 hover:shadow-md transition-all">
+              <span className="w-10 h-10 rounded-full bg-indigo-50 text-[#4f46e5] flex items-center justify-center font-black text-base border border-[#e2e8f0] shrink-0">2</span>
               <h3 className="text-lg font-bold text-[#1a1f24] mt-2">We create their account</h3>
               <p className="text-[#64748b] text-sm leading-relaxed">We set up login details and assign their website(s). They receive username and password — ready to use.</p>
             </article>
-            <article className="bg-[#f0fdf4] border border-[#d1fae5] rounded-3xl p-8 shadow-sm flex flex-col gap-4 hover:shadow-md transition-all">
-              <span className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-black text-base border border-[#a7f3d0]">3</span>
+            <article className="bg-[#f0fdf4] border border-[#d1fae5] rounded-3xl p-8 shadow-sm flex flex-col items-center text-center lg:items-start lg:text-left gap-4 hover:shadow-md transition-all">
+              <span className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-black text-base border border-[#a7f3d0] shrink-0">3</span>
               <h3 className="text-lg font-bold text-emerald-950 mt-2">Dashboard + WhatsApp</h3>
               <p className="text-[#64748b] text-sm leading-relaxed">They open the dashboard anytime for live visitors, maps, and trends. Plus a weekly WhatsApp summary on their phone — no extra effort.</p>
             </article>
@@ -920,11 +958,11 @@ export default function WebsiteAnalyticsStagingClient() {
       </section>
 
       {/* ═══ INDUSTRIES ═══ */}
-      <section className="py-16 sm:py-20 lg:py-24 border-t border-slate-100" style={{ background: "linear-gradient(180deg, #fafbff 0%, #fff 100%)" }}>
+      <section className="py-12 lg:py-16 border-t border-slate-100" style={{ background: "linear-gradient(180deg, #fafbff 0%, #fff 100%)" }}>
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="mb-12 lg:mb-16 text-center max-w-3xl mx-auto">
             <span className="text-xs font-extrabold uppercase tracking-widest text-[#4f46e5] mb-3 block">Who It's For</span>
-            <h2 className="font-display font-bold text-[#1a1f24] leading-[1.12] text-[clamp(2rem,4.5vw,3.25rem)] mb-4 tracking-tight">
+            <h2 className="mb-6 capitalize text-[#1a1f24]">
               Built for teams that care about <span style={{ background: "linear-gradient(135deg, #4f46e5 0%, #8b5cf6 45%, #d946ef 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>website performance</span>
             </h2>
           </div>
@@ -949,12 +987,12 @@ export default function WebsiteAnalyticsStagingClient() {
       </section>
 
       {/* ═══ FAQ ═══ */}
-      <section className="py-16 sm:py-20 lg:py-24 border-t border-slate-100" style={{ background: "#f8fafc" }} id="faq">
+      <section className="py-12 lg:py-16 border-t border-slate-100" style={{ background: "#f8fafc" }} id="faq">
         <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="max-w-3xl mx-auto">
             <div className="mb-12 lg:mb-16 text-center">
               <span className="text-xs font-extrabold uppercase tracking-widest text-[#4f46e5] mb-3 block">FAQ</span>
-              <h2 className="font-display font-bold text-[#1a1f24] leading-[1.12] text-[clamp(2rem,4.5vw,3.25rem)] mb-4 tracking-tight">
+              <h2 className="mb-6 capitalize text-[#1a1f24]">
                 Everything you need to know
               </h2>
             </div>
@@ -972,9 +1010,14 @@ export default function WebsiteAnalyticsStagingClient() {
                       <path d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
-                  <div className="transition-all duration-300 ease-in-out" style={{ maxHeight: openFaq === idx ? "300px" : "0", overflow: "hidden" }}>
-                    <div className="px-6 pb-5 text-[#64748b] text-sm leading-relaxed border-t border-slate-50 pt-4">
-                      {faq.a}
+                  <div
+                    className="grid transition-all duration-300 ease-in-out"
+                    style={{ gridTemplateRows: openFaq === idx ? "1fr" : "0fr" }}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="px-6 pb-5 text-[#64748b] text-sm leading-relaxed border-t border-slate-50 pt-4">
+                        {faq.a}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -985,46 +1028,47 @@ export default function WebsiteAnalyticsStagingClient() {
       </section>
 
       {/* ═══ CTA ═══ */}
-      <section className="py-20 lg:py-24 text-white text-center relative overflow-hidden" style={{ background: "linear-gradient(155deg, #1e1b4b 0%, #312e81 50%, #1e293b 100%)" }} id="cta">
+      <section className="py-12 lg:py-16 text-white text-center relative overflow-hidden" style={{ background: "linear-gradient(155deg, #1e1b4b 0%, #312e81 50%, #1e293b 100%)" }} id="cta">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-indigo-500/10 blur-[120px] pointer-events-none rounded-full"></div>
         <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
-          <h2 className="font-display font-bold !text-white leading-[1.12] text-[clamp(2.25rem,4.5vw,3.25rem)] mb-4 tracking-tight">
+          <h2 className="mb-6 capitalize !text-white">
             Ready for website insights<br />your clients will love?
           </h2>
           <p className="!text-indigo-100/80 text-base sm:text-lg leading-relaxed font-medium max-w-2xl mx-auto mb-10">
             Live dashboard, multi-site access, and weekly WhatsApp reports — all under the Isarva Analytics brand.
           </p>
-          <div className="flex flex-wrap gap-4 items-center justify-center mb-16">
+
+          <div className="flex flex-wrap gap-[0.85rem] items-center justify-center mt-8 mb-12">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 h-[56px] font-bold text-base text-white bg-[#f97316] hover:bg-[#ea580c] hover:scale-[1.02] transition-all rounded-full shadow-[0_4px_14px_rgba(249,115,22,0.3)] hover:shadow-[0_6px_20px_rgba(249,115,22,0.4)] cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 px-[1.75rem] py-[0.85rem] font-bold text-[15.2px] text-white bg-[#f97316] shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_6px_0_#ea580c,0_8px_12px_rgba(234,88,12,0.3),0_12px_24px_rgba(234,88,12,0.15)] hover:bg-[#ea580c] hover:translate-y-[3px] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_3px_0_#ea580c,0_8px_12px_rgba(234,88,12,0.3)] transition-all duration-300 rounded-[8px] cursor-pointer select-none"
             >
-              Request Free Demo →
+              Request Free Demo
             </button>
             <button
               onClick={() => setIsModalOpen(true)}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 h-[56px] font-bold text-base text-white bg-white/10 hover:bg-white/15 border border-white/20 hover:border-white/30 transition-all rounded-full shadow-sm hover:shadow-md cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 px-[1.75rem] py-[0.85rem] font-bold text-[15.2px] text-[#1a1f24] bg-white shadow-[0_6px_0_#cbd5e1,0_8px_12px_rgba(0,0,0,0.15)] hover:bg-[#f8fafc] hover:translate-y-[3px] hover:shadow-[0_3px_0_#cbd5e1,0_8px_12px_rgba(0,0,0,0.15)] transition-all duration-300 rounded-[8px] cursor-pointer select-none"
             >
               Contact Sales
             </button>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto border-t border-white/10 pt-10">
-            <div className="flex flex-col items-center">
-              <strong className="text-2xl font-black text-white">15+</strong>
-              <span className="text-[10px] font-bold text-indigo-200/60 uppercase tracking-widest mt-1">Modules</span>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 md:gap-10 mt-12 pt-10 border-t border-white/10 max-w-4xl mx-auto w-full">
+            <div className="flex flex-col items-center text-center">
+              <strong className="block text-[21.5px] font-bold text-white leading-none">15+</strong>
+              <span className="text-[11.5px] font-normal text-white/50 mt-1.5">Dashboard modules</span>
             </div>
-            <div className="flex flex-col items-center">
-              <strong className="text-2xl font-black text-white">30s</strong>
-              <span className="text-[10px] font-bold text-indigo-200/60 uppercase tracking-widest mt-1">Live refresh</span>
+            <div className="flex flex-col items-center text-center">
+              <strong className="block text-[21.5px] font-bold text-white leading-none">30s</strong>
+              <span className="text-[11.5px] font-normal text-white/50 mt-1.5">Live refresh</span>
             </div>
-            <div className="flex flex-col items-center">
-              <strong className="text-2xl font-black text-white">WhatsApp</strong>
-              <span className="text-[10px] font-bold text-indigo-200/60 uppercase tracking-widest mt-1">Weekly reports</span>
+            <div className="flex flex-col items-center text-center">
+              <strong className="block text-[21.5px] font-bold text-white leading-none">WhatsApp</strong>
+              <span className="text-[11.5px] font-normal text-white/50 mt-1.5">Weekly reports</span>
             </div>
-            <div className="flex flex-col items-center">
-              <strong className="text-2xl font-black text-white">Multi</strong>
-              <span className="text-[10px] font-bold text-indigo-200/60 uppercase tracking-widest mt-1">Site clients</span>
+            <div className="flex flex-col items-center text-center">
+              <strong className="block text-[21.5px] font-bold text-white leading-none">Multi</strong>
+              <span className="text-[11.5px] font-normal text-white/50 mt-1.5">Sites per client</span>
             </div>
           </div>
         </div>
