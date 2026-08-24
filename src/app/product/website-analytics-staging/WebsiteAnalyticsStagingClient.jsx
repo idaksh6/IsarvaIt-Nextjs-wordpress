@@ -290,13 +290,13 @@ export default function WebsiteAnalyticsStagingClient() {
               <div className="flex flex-wrap gap-3.5 items-center justify-center lg:justify-start mb-8 w-full sm:w-auto">
                 <a
                   href="#modules"
-                  className="inline-flex items-center justify-center gap-2 px-[1.75rem] py-[0.85rem] font-bold text-[15.2px] text-white bg-[#f97316] shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_6px_0_#ea580c,0_8px_12px_rgba(234,88,12,0.3),0_12px_24px_rgba(234,88,12,0.15)] hover:bg-[#ea580c] hover:translate-y-[3px] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_3px_0_#ea580c,0_8px_12px_rgba(234,88,12,0.3)] transition-all duration-200 rounded-[8px] cursor-pointer select-none"
+                  className="press-illusion-btn-orange px-[1.75rem] py-[0.85rem] text-[15.2px] select-none"
                 >
                   Explore all modules
                 </a>
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 font-semibold text-sm text-slate-600 hover:text-slate-800 bg-transparent hover:bg-slate-50 border border-slate-200 hover:border-slate-300 transition-all duration-200 rounded-[8px] cursor-pointer select-none"
+                  className="press-illusion-btn-orange px-[1.75rem] py-[0.85rem] text-[15.2px] select-none"
                 >
                   Request a demo
                 </button>
@@ -385,9 +385,9 @@ export default function WebsiteAnalyticsStagingClient() {
         {/* Wave Divider */}
         <div className="w-full mt-10 lg:mt-16 -mb-[1px] leading-[0] block" aria-hidden="true">
           <svg className="w-full h-16 block" viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="1440" height="80" fill="transparent"/>
-            <path fill="#e8edf3" d="M0,36 C320,68 640,12 960,40 C1120,56 1280,28 1440,44 L1440,80 L0,80 Z"/>
-            <path fill="#f1f5f9" d="M0,48 C280,76 560,20 840,44 C1080,64 1280,32 1440,52 L1440,80 L0,80 Z"/>
+            <rect width="1440" height="80" fill="transparent" />
+            <path fill="#e8edf3" d="M0,36 C320,68 640,12 960,40 C1120,56 1280,28 1440,44 L1440,80 L0,80 Z" />
+            <path fill="#f1f5f9" d="M0,48 C280,76 560,20 840,44 C1080,64 1280,32 1440,52 L1440,80 L0,80 Z" />
           </svg>
         </div>
       </section>
@@ -1041,13 +1041,13 @@ export default function WebsiteAnalyticsStagingClient() {
           <div className="flex flex-wrap gap-[0.85rem] items-center justify-center mt-8 mb-12">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="inline-flex items-center justify-center gap-2 px-[1.75rem] py-[0.85rem] font-bold text-[15.2px] text-white bg-[#f97316] shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_6px_0_#ea580c,0_8px_12px_rgba(234,88,12,0.3),0_12px_24px_rgba(234,88,12,0.15)] hover:bg-[#ea580c] hover:translate-y-[3px] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_3px_0_#ea580c,0_8px_12px_rgba(234,88,12,0.3)] transition-all duration-300 rounded-[8px] cursor-pointer select-none"
+              className="press-illusion-btn-orange px-[1.75rem] py-[0.85rem] text-[15.2px] select-none"
             >
               Request Free Demo
             </button>
             <button
               onClick={() => setIsModalOpen(true)}
-              className="inline-flex items-center justify-center gap-2 px-[1.75rem] py-[0.85rem] font-bold text-[15.2px] text-[#1a1f24] bg-white shadow-[0_6px_0_#cbd5e1,0_8px_12px_rgba(0,0,0,0.15)] hover:bg-[#f8fafc] hover:translate-y-[3px] hover:shadow-[0_3px_0_#cbd5e1,0_8px_12px_rgba(0,0,0,0.15)] transition-all duration-300 rounded-[8px] cursor-pointer select-none"
+              className="press-illusion-btn-orange px-[1.75rem] py-[0.85rem] text-[15.2px] select-none"
             >
               Contact Sales
             </button>

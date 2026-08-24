@@ -526,7 +526,7 @@ body {
 .press-illusion-btn-orange {
   border: none;
   background: #f97316;
-  box-shadow: 0 6px #ea580c, 0 8px 12px #ea580c4d, 0 12px 24px #ea580c26;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 6px #ea580c, 0 8px 12px #ea580c4d, 0 12px 24px #ea580c26;
   cursor: pointer;
   text-align: center;
   border-radius: 8px;
@@ -547,7 +547,7 @@ body {
 .press-illusion-btn-orange:hover {
   transform: perspective(1000px) translateY(3px) translateZ(0);
   background: #ea580c;
-  box-shadow: 0 3px #ea580c, 0 8px 12px #ea580c4d, 0 12px 24px #ea580c26;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 3px #ea580c, 0 8px 12px #ea580c4d, 0 12px 24px #ea580c26;
 }
 
 .press-illusion-btn-green {
