@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "../AppLink";
-import ContactFormModal from "../ContactFormModal";
+import Link from "../../components/AppLink";
+import ContactFormModal from "../../components/ContactFormModal";
 import { productsData } from "../../lib/data/products-data";
 
 const MODULES = [
@@ -137,7 +137,7 @@ const FAQS = [
   { q: "Is this a separate product from my website?", a: "Yes. Isarva Analytics is its own product — a clean dashboard with your own login. You see live visitors, maps, trends, and top pages in plain English, plus optional weekly WhatsApp summaries." }
 ];
 
-export default function ProductDetailPremiumAnalytics({ product, relatedProducts, allProducts }) {
+export default function WebsiteAnalyticsStagingClient() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Hero slideshow state
