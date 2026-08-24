@@ -1020,17 +1020,6 @@ export const productsData = [
 ];
 
 export const getProductBySlug = (slug) => {
-  if (slug?.endsWith("-staging")) {
-    const baseSlug = slug.replace("-staging", "");
-    const baseProduct = productsData.find((product) => product.slug === baseSlug);
-    if (baseProduct) {
-      return {
-        ...baseProduct,
-        slug: slug,
-        title: baseProduct.title + " (Staging)"
-      };
-    }
-  }
   return productsData.find((product) => product.slug === slug);
 };
 
