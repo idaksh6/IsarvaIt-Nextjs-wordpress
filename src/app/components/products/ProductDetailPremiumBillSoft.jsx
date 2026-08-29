@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -1031,6 +1031,7 @@ export default function ProductDetailPremiumBillSoft({
 
         </div>
 
+        <EWayBillEInvoiceSection onImageClick={setSelectedImage} />
         <BillsoftUniqueFeatures />
         <BillsoftFeatureSection />
 
@@ -1243,6 +1244,395 @@ export default function ProductDetailPremiumBillSoft({
   );
 }
 
+// ─────────────────────────────────────────────
+// E-Way Bill & E-Invoice Section
+// ─────────────────────────────────────────────
+
+const EWAY_FEATURES = [
+  {
+    icon: "🔄",
+    title: "Sales Invoice to E-Way Bill",
+    desc: "Convert an existing sales invoice into an E-Way Bill without manually entering the invoice information again. Invoice details such as document number, date, taxable value, GST details, supplier, recipient, and item information are used to prepare the E-Way Bill.",
+    color: "from-sky-400 to-blue-500",
+    border: "border-sky-100",
+    hover: "hover:border-sky-300",
+    iconBg: "bg-sky-50",
+  },
+  {
+    icon: "⚡",
+    title: "E-Way Bill Generation",
+    desc: "Generate E-Way Bills electronically using the invoice and transportation details. The system validates the required information and communicates with the E-Way Bill system to generate the E-Way Bill number and associated document details.",
+    color: "from-indigo-400 to-violet-500",
+    border: "border-indigo-100",
+    hover: "hover:border-indigo-300",
+    iconBg: "bg-indigo-50",
+  },
+  {
+    icon: "📋",
+    title: "E-Way Bill Details & Status",
+    desc: "Retrieve and view complete E-Way Bill information, including document details, parties involved, goods and value details, transportation information, validity, and current status.",
+    color: "from-teal-400 to-emerald-500",
+    border: "border-teal-100",
+    hover: "hover:border-teal-300",
+    iconBg: "bg-teal-50",
+  },
+  {
+    icon: "🚚",
+    title: "Vehicle Details Update",
+    desc: "Update or change vehicle information associated with an active E-Way Bill when transportation details change. This can include updating the vehicle number and relevant transportation details while maintaining the E-Way Bill reference.",
+    color: "from-amber-400 to-orange-500",
+    border: "border-amber-100",
+    hover: "hover:border-amber-300",
+    iconBg: "bg-amber-50",
+  },
+  {
+    icon: "❌",
+    title: "E-Way Bill Cancellation",
+    desc: "Cancel an E-Way Bill when the underlying transaction or transportation is no longer valid. The system submits the cancellation request and reflects the updated status for proper tracking and compliance.",
+    color: "from-rose-400 to-red-500",
+    border: "border-rose-100",
+    hover: "hover:border-rose-300",
+    iconBg: "bg-rose-50",
+  },
+  {
+    icon: "⏳",
+    title: "E-Way Bill Validity Extension",
+    desc: "Extend the validity of an E-Way Bill when additional transportation time is required, subject to applicable rules and eligibility. The module allows the required extension information to be submitted and the updated validity to be tracked.",
+    color: "from-violet-400 to-purple-500",
+    border: "border-violet-100",
+    hover: "hover:border-violet-300",
+    iconBg: "bg-violet-50",
+  },
+  {
+    icon: "🔐",
+    title: "E-Way Bill Authentication",
+    desc: "Securely connect your business with the E-Way Bill system using the required credentials. User authentication details such as username, password, and other required configuration information can be maintained to enable authorized E-Way Bill operations.",
+    color: "from-slate-400 to-gray-600",
+    border: "border-slate-100",
+    hover: "hover:border-slate-300",
+    iconBg: "bg-slate-50",
+  },
+  {
+    icon: "🗂️",
+    title: "E-Way Bill Management",
+    desc: "Manage the complete E-Way Bill lifecycle from a single platform — from invoice conversion and generation to vehicle updates, validity extensions, cancellation, and retrieval of E-Way Bill details.",
+    color: "from-cyan-400 to-blue-500",
+    border: "border-cyan-100",
+    hover: "hover:border-cyan-300",
+    iconBg: "bg-cyan-50",
+  },
+];
+
+const EINVOICE_FEATURES = [
+  {
+    icon: "📄",
+    title: "E-Invoice Generation",
+    desc: "Generate an E-Invoice directly from the sales invoice available in the system. Relevant invoice, supplier, customer, item, tax, and transaction details are prepared and submitted electronically for validation.",
+    color: "from-emerald-400 to-teal-500",
+    border: "border-emerald-100",
+    hover: "hover:border-emerald-300",
+    iconBg: "bg-emerald-50",
+  },
+  {
+    icon: "🔑",
+    title: "IRN Generation",
+    desc: "Generate the Invoice Reference Number (IRN) for eligible invoices through the E-Invoice system. The module submits the required invoice information, processes the response, and stores the generated IRN and related acknowledgement details for future reference.",
+    color: "from-blue-400 to-indigo-500",
+    border: "border-blue-100",
+    hover: "hover:border-blue-300",
+    iconBg: "bg-blue-50",
+  },
+  {
+    icon: "🔍",
+    title: "Get IRN / E-Invoice Details",
+    desc: "Retrieve the details of an existing E-Invoice using the available reference information. Users can access important information such as IRN, acknowledgement number, acknowledgement date, invoice details, tax information, and current invoice status.",
+    color: "from-amber-400 to-yellow-500",
+    border: "border-amber-100",
+    hover: "hover:border-amber-300",
+    iconBg: "bg-amber-50",
+  },
+  {
+    icon: "🚫",
+    title: "IRN / E-Invoice Cancellation",
+    desc: "Cancel an IRN when an E-Invoice needs to be cancelled in accordance with applicable regulations and within the permitted time period. The cancellation request is submitted electronically and the updated status is maintained in the system.",
+    color: "from-rose-400 to-pink-500",
+    border: "border-rose-100",
+    hover: "hover:border-rose-300",
+    iconBg: "bg-rose-50",
+  },
+  {
+    icon: "🔒",
+    title: "E-Invoice Authentication",
+    desc: "Authenticate and securely connect the application with the E-Invoice system using the required credentials and authentication process. The module supports maintaining the required API credentials and authorization details to perform E-Invoice operations securely.",
+    color: "from-slate-400 to-gray-600",
+    border: "border-slate-100",
+    hover: "hover:border-slate-300",
+    iconBg: "bg-slate-50",
+  },
+  {
+    icon: "✅",
+    title: "Invoice Data Validation",
+    desc: "Before submitting an invoice for IRN generation, the system prepares the required invoice information, including supplier and recipient GST details, document information, item details, taxable values, GST rates, tax amounts, and applicable transaction information.",
+    color: "from-teal-400 to-emerald-600",
+    border: "border-teal-100",
+    hover: "hover:border-teal-300",
+    iconBg: "bg-teal-50",
+  },
+  {
+    icon: "💾",
+    title: "E-Invoice Response & Document Management",
+    desc: "Store and manage the response received after E-Invoice generation, including IRN and acknowledgement information. This provides businesses with a centralized record that can be used for invoice tracking, verification, and further processing.",
+    color: "from-violet-400 to-indigo-500",
+    border: "border-violet-100",
+    hover: "hover:border-violet-300",
+    iconBg: "bg-violet-50",
+  },
+  {
+    icon: "🔄",
+    title: "Complete E-Invoice Lifecycle",
+    desc: "Manage the E-Invoice process from authentication and invoice preparation through IRN generation, retrieval, verification, and cancellation, providing a streamlined workflow for electronic invoice compliance.",
+    color: "from-sky-400 to-blue-600",
+    border: "border-sky-100",
+    hover: "hover:border-sky-300",
+    iconBg: "bg-sky-50",
+  },
+];
+
+// Simple auto-sliding image carousel for each module
+function ModuleImageSlider({ images, accentColor, badgeText, badgeIcon, onImageClick }) {
+  const [idx, setIdx] = useState(0);
+  const timerRef = useRef(null);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    timerRef.current = setInterval(() => {
+      setIdx((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(timerRef.current);
+  }, [images.length]);
+
+  const goTo = (i) => {
+    clearInterval(timerRef.current);
+    setIdx(i);
+    timerRef.current = setInterval(() => {
+      setIdx((prev) => (prev + 1) % images.length);
+    }, 4000);
+  };
+
+  return (
+    <div className="relative w-full rounded-2xl overflow-hidden border-4 border-white shadow-2xl">
+      <div
+        className="cursor-zoom-in"
+        onClick={() => onImageClick && onImageClick(images[idx])}
+      >
+        <img
+          key={idx}
+          src={images[idx]}
+          alt={badgeText}
+          className="w-full h-auto object-contain"
+        />
+      </div>
+      {/* Badge */}
+      <div className={`absolute top-4 left-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-md shadow-md border ${accentColor.border}`}>
+        <span className="text-sm">{badgeIcon}</span>
+        <span className={`text-[10px] font-black tracking-widest ${accentColor.text}`}>{badgeText}</span>
+      </div>
+      {/* Dot indicators — only show if multiple images */}
+      {images.length > 1 && (
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-20">
+          {images.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goTo(i)}
+              className={`rounded-full transition-all duration-300 ${i === idx ? "w-6 h-2 bg-white" : "w-2 h-2 bg-white/50 hover:bg-white/80"}`}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function EWayBillEInvoiceSection({ onImageClick }) {
+  return (
+    <section className="py-12 lg:py-20 relative overflow-hidden bg-white">
+      {/* Background ambient blobs */}
+      <div className="absolute top-[-12%] left-[-6%] w-[45vw] h-[45vw] rounded-full bg-sky-200/20 mix-blend-multiply filter blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-[-12%] right-[-6%] w-[40vw] h-[40vw] rounded-full bg-emerald-200/20 mix-blend-multiply filter blur-[120px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+
+        {/* ── Shared Section Header ── */}
+        <div className="text-center mb-10">
+          <span className="block text-[14px] font-black text-sky-600 tracking-[0.28em] capitalize mb-2.5">
+            GST Compliance
+          </span>
+          <h2 className="text-gray-900 mb-3.5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
+            E-Way Bill &{" "}
+            <span className="bg-gradient-to-r from-sky-500 via-blue-500 to-emerald-500 bg-clip-text text-transparent">
+              E-Invoicing
+            </span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            End-to-end GST compliance — seamlessly generate, manage, and track E-Way Bills and electronic invoices from a single integrated platform.
+          </p>
+        </div>
+
+        {/* ══════════════════════════════════════
+            MODULE 1 — E-Way Bill
+        ══════════════════════════════════════ */}
+        <div className="mb-14 lg:mb-20">
+
+          {/* Module intro row: image LEFT + overview text RIGHT */}
+          <div className="relative rounded-[2.5rem] overflow-hidden border border-sky-100 shadow-xl bg-gradient-to-br from-sky-50 via-blue-50/50 to-white mb-6">
+            <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(rgba(14,165,233,0.05) 1.5px, transparent 1.5px)', backgroundSize: '26px 26px' }} />
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-0">
+
+              {/* Image panel */}
+              <div className="p-6 lg:p-10 flex items-center justify-center">
+                {/*
+                  📁 DROP YOUR E-WAY BILL SCREENSHOT(S) HERE:
+                  Put images in: /public/products/billsoft/
+                  Then update the array below, e.g.:
+                  ["/products/billsoft/eway-bill-1.jpg", "/products/billsoft/eway-bill-2.jpg"]
+                  For a single image, just use one item in the array.
+                */}
+                <ModuleImageSlider
+                  images={["/products/billsoft/Ewaybill.png"]}
+                  badgeText="E-WAY BILL"
+                  badgeIcon="🚚"
+                  accentColor={{ border: "border-sky-200", text: "text-sky-600" }}
+                  onImageClick={onImageClick}
+                />
+              </div>
+
+              {/* Overview text */}
+              <div className="flex flex-col justify-center p-6 lg:p-10 lg:pl-4">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-[10px] font-black tracking-[0.2em] mb-5 w-fit bg-sky-50 text-sky-600 border border-sky-200">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-500 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-600" />
+                  </span>
+                  E-WAY BILL MODULE
+                </div>
+                <h3 className="mb-4 capitalize">
+                  Complete E-Way Bill <span className="text-sky-600">Management</span>
+                </h3>
+                <p className="text-gray-600">
+                  Our E-Way Bill module simplifies the complete process of generating, managing, and tracking E-Way Bills directly from sales invoices. Businesses can seamlessly convert invoice information into E-Way Bills while maintaining accurate transaction and vehicle details throughout the transportation process.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* E-Way Bill sub-feature cards — full title + description */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {EWAY_FEATURES.map((f, i) => (
+              <div
+                key={i}
+                className={`group relative bg-white rounded-[1.5rem] p-5 border ${f.border} ${f.hover} shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col items-center text-center`}
+              >
+                {/* Top gradient bar */}
+                <div className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r ${f.color}`} />
+                {/* Icon */}
+                <div className={`w-11 h-11 rounded-xl mb-4 flex items-center justify-center text-xl ${f.iconBg} shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                  {f.icon}
+                </div>
+                {/* Title */}
+                <h4 className="mb-1.5">
+                  {f.title}
+                </h4>
+                {/* Description */}
+                <p className="text-gray-500 text-sm font-medium flex-1">
+                  {f.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ══════════════════════════════════════
+            MODULE 2 — E-Invoicing
+        ══════════════════════════════════════ */}
+        <div>
+
+          {/* Module intro row: overview text LEFT + image RIGHT */}
+          <div className="relative rounded-[2.5rem] overflow-hidden border border-emerald-100 shadow-xl bg-gradient-to-bl from-emerald-50 via-teal-50/50 to-white mb-6">
+            <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(rgba(16,185,129,0.05) 1.5px, transparent 1.5px)', backgroundSize: '26px 26px' }} />
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-0">
+
+              {/* Overview text — left on desktop, below image on mobile */}
+              <div className="flex flex-col justify-center p-6 lg:p-10 order-2 lg:order-1">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-[10px] font-black tracking-[0.2em] mb-5 w-fit bg-emerald-50 text-emerald-600 border border-emerald-200">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600" />
+                  </span>
+                  E-INVOICE MODULE
+                </div>
+                <h3 className="mb-4 capitalize">
+                  Complete E-Invoice <span className="text-emerald-600">Lifecycle</span>
+                </h3>
+                <p className="text-gray-600">
+                  Our E-Invoicing module enables businesses to generate and manage electronic invoices in accordance with applicable GST requirements. It provides an integrated workflow for invoice generation, IRN generation, invoice retrieval, cancellation, and authentication.
+                </p>
+              </div>
+
+              {/* Image panel */}
+              <div className="p-6 lg:p-10 flex items-center justify-center order-1 lg:order-2">
+                {/*
+                  📁 DROP YOUR E-INVOICE SCREENSHOT(S) HERE:
+                  Put images in: /public/products/billsoft/
+                  Then update the array below, e.g.:
+                  ["/products/billsoft/einvoice-1.jpg", "/products/billsoft/einvoice-2.jpg"]
+                  For a single image, just use one item in the array.
+                */}
+                <ModuleImageSlider
+                  images={["/products/billsoft/Einvoice.png"]}
+                  badgeText="E-INVOICING"
+                  badgeIcon="📄"
+                  accentColor={{ border: "border-emerald-200", text: "text-emerald-600" }}
+                  onImageClick={onImageClick}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* E-Invoice sub-feature cards — full title + description */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {EINVOICE_FEATURES.map((f, i) => (
+              <div
+                key={i}
+                className={`group relative bg-white rounded-[1.5rem] p-5 border ${f.border} ${f.hover} shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col items-center text-center`}
+              >
+                {/* Top gradient bar */}
+                <div className={`absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r ${f.color}`} />
+                {/* Icon */}
+                <div className={`w-11 h-11 rounded-xl mb-4 flex items-center justify-center text-xl ${f.iconBg} shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                  {f.icon}
+                </div>
+                {/* Title */}
+                <h4 className="mb-1.5">
+                  {f.title}
+                </h4>
+                {/* Description */}
+                <p className="text-gray-500 text-sm font-medium flex-1">
+                  {f.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+// ─────────────────────────────────────────────
+// End E-Way Bill & E-Invoice Section
+// ─────────────────────────────────────────────
 const billsoftFeatures = [
   {
     id: "branch",
@@ -1648,3 +2038,5 @@ function BillsoftFeatureSection() {
     </section>
   );
 }
+
+
