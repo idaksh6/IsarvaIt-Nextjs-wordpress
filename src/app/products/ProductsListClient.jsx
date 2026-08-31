@@ -10,9 +10,22 @@ export default function ProductsListClient({ productsData }) {
   // Filter products based on search query and exclude staging items
   const filteredProducts = useMemo(() => {
     // First, exclude any items that are meant for staging only
+    const IOT_SLUGS = [
+      "hmi-&-display-board",
+      "rfid-reader",
+      "r-lifi",
+      "vibration-sensor",
+      "data-logger-iiot-4-0-1",
+      "cloud-plc-4-0-1",
+      "das-datalogger",
+      "data-acquisition-system",
+      "biometric-authentication",
+    ];
+
     let baseProducts = productsData.filter(product => 
       !product.slug?.includes("staging") && 
-      !product.slug?.includes("-old")
+      !product.slug?.includes("-old") &&
+      !IOT_SLUGS.includes(product.slug)
     );
 
     if (searchQuery.trim()) {
