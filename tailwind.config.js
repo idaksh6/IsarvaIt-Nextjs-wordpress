@@ -13,7 +13,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'nav': '1094px',
+        'nav': '1200px',
         'cards': '1250px',
       },
       colors: {
