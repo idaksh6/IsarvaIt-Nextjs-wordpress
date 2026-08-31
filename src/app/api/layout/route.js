@@ -263,7 +263,7 @@ function buildHeader() {
     </button>
 
     <!-- CTA Button -->
-    <a class="press-illusion-btn-orange text-white w-fit font-bold px-8 py-3 text-base items-center space-x-2 !hidden nav:!flex transition-all duration-300" href="${SITE_URL}/contact">
+    <a class="press-illusion-btn-orange text-white w-fit font-bold px-8 py-3 text-base items-center space-x-2 inline-flex transition-all duration-300" href="${SITE_URL}/contact">
       <span>Contact Us</span>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 9" class="h-2 w-4">
         <path fill="currentColor" fill-rule="evenodd" d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z" clip-rule="evenodd"></path>
