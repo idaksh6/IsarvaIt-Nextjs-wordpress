@@ -100,7 +100,7 @@ function buildHeader() {
   // Products grid
   const productsGrid = productsData.map(p => gridItem(p.href, p.icon, p.label, "violet")).join("\n");
   // IoT Products grid
-  const iotProductsGrid = iotProductsData.map(p => gridItem(p.href, p.icon, p.label, "sky")).join("\n");
+  const iotProductsGrid = iotProductsData.map(p => gridItem(p.href, p.icon, p.label, "emerald")).join("\n");
   // Services grid
   const servicesGrid = servicesData.map(s => gridItem(s.href, s.icon, s.label, "emerald")).join("\n");
   // Industries grid
