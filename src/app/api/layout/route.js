@@ -22,15 +22,15 @@ const productsData = [
 ];
 
 const iotProductsData = [
-  { label: "Data Logger IIoT 4.0", href: "/products/data-logger-iiot-4-0-1", icon: "📡" },
+  { label: "Data Logger IIoT 4.0", href: "/products/data-logger-iiot-4-0-1", icon: "📊" },
   { label: "Cloud PLC 4.0", href: "/products/cloud-plc-4-0-1", icon: "☁️" },
-  { label: "DAS Datalogger", href: "/products/das-datalogger", icon: "📊" },
-  { label: "Data Acquisition System", href: "/products/data-acquisition-system", icon: "🖥️" },
-  { label: "Biometric Authentication", href: "/products/biometric-authentication", icon: "🔐" },
-  { label: "R-LiFi", href: "/products/r-lifi", icon: "💡" },
+  { label: "DAS Datalogger", href: "/products/das-datalogger", icon: "💾" },
+  { label: "Data Acquisition System", href: "/products/data-acquisition-system", icon: "⚡" },
+  { label: "Biometric Authentication", href: "/products/biometric-authentication", icon: "🔒" },
+  { label: "R-LiFi", href: "/products/r-lifi", icon: "📡" },
   { label: "HMI & Display Board", href: "/products/hmi-&-display-board", icon: "🖥️" },
-  { label: "RFID Reader", href: "/products/rfid-reader", icon: "📻" },
-  { label: "Vibration Sensor", href: "/products/vibration-sensor", icon: "📳" },
+  { label: "RFID Reader", href: "/products/rfid-reader", icon: "🏷️" },
+  { label: "Vibration Sensor", href: "/products/vibration-sensor", icon: "📈" },
 ];
 
 const servicesData = [
