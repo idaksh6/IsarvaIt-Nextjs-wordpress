@@ -135,7 +135,7 @@ function buildHeader() {
     </a>
 
     <!-- Desktop Navigation -->
-    <nav class="hidden nav:flex items-center gap-7">
+    <nav class="hidden min-[1200px]:flex items-center gap-7">
 
       <!-- Home -->
       <a class="text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600" href="${SITE_URL}/">Home</a>
@@ -256,7 +256,7 @@ function buildHeader() {
     </nav>
 
     <!-- Mobile Menu Button -->
-    <button class="nav:hidden mobile-menu-toggle relative w-8 h-8 flex flex-col justify-center items-center group self-end" aria-label="Open mobile menu">
+    <button class="min-[1200px]:hidden mobile-menu-toggle relative w-8 h-8 flex flex-col justify-center items-center group self-end" aria-label="Open mobile menu">
       <div class="w-6 h-0.5 bg-gray-800 rounded-full transition-all duration-300 group-hover:bg-green-500"></div>
       <div class="w-6 h-0.5 bg-gray-800 rounded-full mt-1.5 transition-all duration-300 group-hover:bg-green-500"></div>
       <div class="w-6 h-0.5 bg-gray-800 rounded-full mt-1.5 transition-all duration-300 group-hover:bg-green-500"></div>
