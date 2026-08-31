@@ -21,6 +21,18 @@ const productsData = [
   { label: "POSH Compliance Software", href: "/product/posh-compliance-software", icon: "🛡️" },
 ];
 
+const iotProductsData = [
+  { label: "Data Logger IIoT 4.0", href: "/products/data-logger-iiot-4-0-1", icon: "📡" },
+  { label: "Cloud PLC 4.0", href: "/products/cloud-plc-4-0-1", icon: "☁️" },
+  { label: "DAS Datalogger", href: "/products/das-datalogger", icon: "📊" },
+  { label: "Data Acquisition System", href: "/products/data-acquisition-system", icon: "🖥️" },
+  { label: "Biometric Authentication", href: "/products/biometric-authentication", icon: "🔐" },
+  { label: "R-LiFi", href: "/products/r-lifi", icon: "💡" },
+  { label: "HMI & Display Board", href: "/products/hmi-&-display-board", icon: "🖥️" },
+  { label: "RFID Reader", href: "/products/rfid-reader", icon: "📻" },
+  { label: "Vibration Sensor", href: "/products/vibration-sensor", icon: "📳" },
+];
+
 const servicesData = [
   { label: "Website Services", href: "/service/website-services", icon: "🌐" },
   { label: "WordPress Development", href: "/service/wordpress-development", icon: "📝" },
@@ -87,6 +99,8 @@ function gridItem(href, icon, label, hoverColor = "violet") {
 function buildHeader() {
   // Products grid
   const productsGrid = productsData.map(p => gridItem(p.href, p.icon, p.label, "violet")).join("\n");
+  // IoT Products grid
+  const iotProductsGrid = iotProductsData.map(p => gridItem(p.href, p.icon, p.label, "sky")).join("\n");
   // Services grid
   const servicesGrid = servicesData.map(s => gridItem(s.href, s.icon, s.label, "emerald")).join("\n");
   // Industries grid
@@ -177,6 +191,22 @@ function buildHeader() {
               <div class="mt-6 pt-6 border-t border-gray-200">
                 <a href="${SITE_URL}/products" class="inline-flex items-center gap-2 text-orange-600 font-semibold hover:gap-3 transition-all duration-200">View All Products ${arrowRight("w-4 h-4")}</a>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- IoT Products -->
+      <div class="relative nav-dropdown" data-menu-type="iot-products-static">
+        <a class="group text-black text-base font-semibold tracking-wide transition-colors duration-200 hover:text-emerald-600 flex items-center gap-1" href="${SITE_URL}/products/data-logger-iiot-4-0-1">IoT Products ${chevronDown()}</a>
+        <div class="mega-menu mega-menu-center pt-4">
+          <div class="w-[920px]">
+            <div class="bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-100 p-8">
+              <div class="mb-6">
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">IoT Products</h3>
+                <p class="text-gray-600">Industrial IoT solutions for smart operations</p>
+              </div>
+              <div class="grid grid-cols-3 gap-4">${iotProductsGrid}</div>
             </div>
           </div>
         </div>
