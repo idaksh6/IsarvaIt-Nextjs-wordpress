@@ -242,6 +242,53 @@ export default function ProductDetailPremiumHRMS({
   const contentTopRef = useRef(null);
   const isFirstRender = useRef(true);
 
+  const hasSubmittedRef = useRef(false);
+  const wasOpenedRef = useRef(false);
+
+  // Helper to check if user has already submitted the form in this session
+  const isFormSubmitted = () => {
+    try {
+      return (
+        hasSubmittedRef.current ||
+        sessionStorage.getItem("hrms_form_submitted") === "true"
+      );
+    } catch (e) {
+      return hasSubmittedRef.current;
+    }
+  };
+
+  // 1. Initial trigger: 3-second delay on page load (if not submitted)
+  useEffect(() => {
+    if (isFormSubmitted()) return;
+
+    const timer = setTimeout(() => {
+      if (!isFormSubmitted()) {
+        wasOpenedRef.current = true;
+        setIsModalOpen(true);
+      }
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // 2. Pure Time-based Re-trigger: re-opens 15 seconds after closing (if not submitted)
+  useEffect(() => {
+    if (isModalOpen) {
+      wasOpenedRef.current = true;
+      return;
+    }
+
+    if (!isModalOpen && wasOpenedRef.current && !isFormSubmitted()) {
+      const timer = setTimeout(() => {
+        if (!isFormSubmitted()) {
+          setIsModalOpen(true);
+        }
+      }, 15000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isModalOpen]);
+
   // Scroll to top of content area when tab changes
   useEffect(() => {
     if (isFirstRender.current) {
@@ -684,6 +731,12 @@ export default function ProductDetailPremiumHRMS({
       <ContactFormModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
+        onSubmitSuccess={() => {
+          hasSubmittedRef.current = true;
+          try {
+            sessionStorage.setItem("hrms_form_submitted", "true");
+          } catch (e) {}
+        }}
         preSelectedType="Product"
         preSelectedItem="HRMS Software"
         allItems={allProducts}

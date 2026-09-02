@@ -417,11 +417,11 @@ export default function ContactFormModal({
           <h2 className="text-white capitalize text-xl md:text-2xl font-bold tracking-tight">Request a Demo</h2>
           <button
             onClick={onClose}
-            className="text-white/80 hover:text-white transition-colors"
+            className="text-white/50 hover:text-white/90 p-1.5 rounded-full hover:bg-white/10 transition-colors focus:outline-none"
             aria-label="Close modal"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>

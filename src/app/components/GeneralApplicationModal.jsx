@@ -174,8 +174,9 @@ export default function GeneralApplicationModal({ isOpen, onClose }) {
           <h2 className="capitalize text-xl md:text-2xl font-bold tracking-tight">General Application</h2>
           <button
             onClick={onClose}
-            className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition-colors text-white"
+            className="w-8 h-8 flex-shrink-0 flex items-center justify-center rounded-full text-white/50 hover:text-white/90 hover:bg-white/10 transition-colors focus:outline-none"
             disabled={isSubmitting}
+            aria-label="Close modal"
           >
             <X className="w-5 h-5" />
           </button>

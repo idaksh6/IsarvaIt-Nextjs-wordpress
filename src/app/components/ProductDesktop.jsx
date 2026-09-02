@@ -1041,7 +1041,7 @@ const ProductDetailModal = ({ product, onClose }) => {
         </div>
         <button
           onClick={onClose}
-          className="text-gray-500 hover:text-gray-900 transition-colors"
+          className="text-gray-400 hover:text-gray-600 transition-colors focus:outline-none"
         >
           <svg
             className="w-6 h-6"
@@ -1204,7 +1204,7 @@ const MobileProductModal = ({ product, onClose }) => {
               </div>
               <button
                 onClick={onClose}
-                className="p-3 text-gray-400 hover:text-gray-600 transition-colors rounded-full hover:bg-gray-100 active:scale-95 flex-shrink-0"
+                className="p-3 text-gray-400 hover:text-gray-600 transition-colors rounded-full hover:bg-gray-100 active:scale-95 flex-shrink-0 focus:outline-none"
               >
                 <svg
                   className="w-5 h-5"
