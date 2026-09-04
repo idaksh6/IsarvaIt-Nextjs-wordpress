@@ -165,7 +165,12 @@ const TAB_CONTENT = {
     title: "Self Attendance & Portal Punch",
     subtitle: "Mark attendance from the self-service portal",
     description: "Empower employees to mark attendance from the self-service portal with check-in/out, monthly calendar view, and correction requests—reducing dependency on devices alone.",
-    image: "/products/hrms/Attendance.png",
+    image: "/products/hrms/HRMS-App-Dashboard.jpg",
+    images: [
+      "/products/hrms/HRMS-App-Dashboard.jpg",
+      "/products/hrms/HRMS-App-Attendance.jpg",
+    ],
+    imageVertical: true,
     features: [
       "Web-based check-in and check-out for employees",
       "Monthly attendance calendar view",
@@ -179,7 +184,12 @@ const TAB_CONTENT = {
     title: "Isarva Face Attendance",
     subtitle: "AI face recognition with GPS geofencing",
     description: "Android Mobile App Face Attendance empower on-the-go and on-site employees to mark attendance using AI facial recognition with GPS geofencing and offline auto-sync—eliminating proxy punches and dedicated hardware costs.",
-    image: "/products/hrms/Biometric.png",
+    image: "/products/hrms/HRMS-Face-Attendance.jpg",
+    images: [
+      "/products/hrms/HRMS-Face-Attendance.jpg",
+      "/products/hrms/HRMS-Face-Attendance-Register.jpg",
+    ],
+    imageVertical: true,
     features: [
       "AI-powered facial recognition check-in and check-out",
       "GPS geofencing and real-time location validation",
@@ -193,7 +203,7 @@ const TAB_CONTENT = {
     title: "GPS & Field Attendance",
     subtitle: "Track field teams with location-verified punches",
     description: "Track field and on-site employees with GPS-based attendance, so organizations can verify location while staff mark presence on the go.",
-    image: "/products/hrms/Attendance.png",
+    image: "/products/hrms/GPS-Tracking.png",
     features: [
       "GPS-based field check-in and check-out",
       "Live and historical location tracking for admins",
@@ -255,7 +265,7 @@ const TAB_CONTENT = {
     title: "Public Holiday Master Management",
     subtitle: "Flexible department-wise holiday configuration",
     description: "Easily configure and manage public holidays with flexible options, including department-wise customization to suit organizational needs.",
-    image: "/products/hrms/Leave-management.jpg",
+    image: "/products/hrms/public-holiday.png",
     features: [
       "Admin control to manage public holidays",
       "Department-wise holiday configuration",
@@ -283,7 +293,7 @@ const TAB_CONTENT = {
     title: "POSH Act Compliance",
     subtitle: "Workplace harassment compliance workflow",
     description: "Stay compliant with the Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013 through a dedicated POSH workflow—from policy acknowledgement to inquiry and reporting.",
-    image: "/products/hrms/Other-features.png",
+    image: "/products/hrms/posh.png",
     features: [
       "Digital POSH policy publish and employee acknowledgement",
       "Internal Committee (IC) setup with required members",
@@ -300,7 +310,7 @@ const TAB_CONTENT = {
     title: "DPDP Act Compliance",
     subtitle: "Data protection for HR and payroll",
     description: "Ensure full adherence to India's Digital Personal Data Protection (DPDP) Act & Rules across HR and payroll operations with automated consent workflows, employee privacy rights management, and encrypted data lifecycle governance.",
-    image: "/products/hrms/Other-features.png",
+    image: "/products/hrms/dpdp.png",
     features: [
       "Digital consent management with purpose tracking and opt-in/opt-out logs",
       "Employee Data Principal portal for data access, correction, and erasure requests",
@@ -356,7 +366,7 @@ export default function ProductDetailPremiumHRMS({
   allProducts,
 }) {
   // Toggle to re-enable CRM popup form later
-  const CRM_POPUP_ENABLED = true;
+  const CRM_POPUP_ENABLED = false;
 
   const [activeTab, setActiveTab] = useState("setup");
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -447,6 +457,13 @@ export default function ProductDetailPremiumHRMS({
   }, []);
 
   const activeContent = TAB_CONTENT[activeTab] || TAB_CONTENT["setup"];
+  const contentImages =
+    activeContent.images?.length > 0
+      ? activeContent.images
+      : activeContent.image
+        ? [activeContent.image]
+        : [];
+  const isVerticalGallery = Boolean(activeContent.imageVertical);
 
   return (
     <>
@@ -722,66 +739,85 @@ export default function ProductDetailPremiumHRMS({
                       transition={{ duration: 0.8 }}
                       className="relative mb-12"
                     >
-                      <div className="relative z-10 p-2 bg-white rounded-[2rem] border border-gray-100 shadow-xl cursor-pointer group overflow-hidden" onClick={() => setSelectedImage(activeContent.image)}>
-                        <div className="rounded-[1.5rem] overflow-hidden relative">
-                          <img
-                            src={activeContent.image}
-                            alt={activeContent.title}
-                            loading="lazy"
-                            className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-700 bg-white"
-                          />
-                        </div>
-                        <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/5 backdrop-blur-[2px]">
-                          <div className={`bg-white/90 backdrop-blur-sm ${TAB_THEMES[activeTab].text} p-3 rounded-full shadow-2xl`}>
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                      {isVerticalGallery && contentImages.length > 1 ? (
+                        <div className="relative z-10 w-full max-w-4xl mx-auto p-4 sm:p-6 lg:p-8 bg-white rounded-[1.75rem] sm:rounded-[2.5rem] border border-gray-100 shadow-xl">
+                          <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:gap-8 items-start justify-items-center">
+                            {contentImages.map((imgSrc, imgIdx) => (
+                              <div
+                                key={imgSrc}
+                                className="relative w-full flex justify-center cursor-pointer group overflow-hidden rounded-2xl"
+                                onClick={() => setSelectedImage(imgSrc)}
+                              >
+                                <img
+                                  src={imgSrc}
+                                  alt={`${activeContent.title} ${imgIdx + 1}`}
+                                  loading="lazy"
+                                  className="object-contain group-hover:scale-[1.03] transition-transform duration-700 h-[18rem] sm:h-[26rem] lg:h-[32rem] w-auto max-w-full"
+                                />
+                                <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/5 rounded-2xl">
+                                  <div className={`bg-white/90 backdrop-blur-sm ${TAB_THEMES[activeTab].text} p-3 rounded-full shadow-2xl`}>
+                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
                           </div>
                         </div>
-                      </div>
+                      ) : (
+                        <div
+                          className={`relative z-10 ${
+                            isVerticalGallery
+                              ? "mx-auto w-fit max-w-full"
+                              : "w-full"
+                          }`}
+                        >
+                          {contentImages.map((imgSrc, imgIdx) => (
+                            <div
+                              key={imgSrc}
+                              className="relative p-2 bg-white rounded-[1.5rem] sm:rounded-[2rem] border border-gray-100 shadow-xl cursor-pointer group overflow-hidden"
+                              onClick={() => setSelectedImage(imgSrc)}
+                            >
+                              <div className="rounded-[1.1rem] sm:rounded-[1.5rem] overflow-hidden relative flex justify-center bg-white">
+                                <img
+                                  src={imgSrc}
+                                  alt={`${activeContent.title} ${imgIdx + 1}`}
+                                  loading="lazy"
+                                  className={`object-contain group-hover:scale-105 transition-transform duration-700 bg-white ${
+                                    isVerticalGallery
+                                      ? "h-[18rem] sm:h-[24rem] lg:h-[28rem] w-auto max-w-full"
+                                      : "w-full h-auto"
+                                  }`}
+                                />
+                              </div>
+                              <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/5 backdrop-blur-[2px]">
+                                <div className={`bg-white/90 backdrop-blur-sm ${TAB_THEMES[activeTab].text} p-3 rounded-full shadow-2xl`}>
+                                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </motion.div>
 
                   </section>
 
-                  {/* 5. Feature Spotlight Section Integrated into Tab Content */}
+                  {/* 5. Key Features */}
                   <section>
-                    <div className="relative rounded-[3rem] bg-white p-8 lg:p-12 border border-gray-100 shadow-[0_15px_40px_rgba(0,0,0,0.03)] overflow-hidden">
-                      <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-                        <div className={`w-12 h-1 ${TAB_THEMES[activeTab].bg} rounded-full mb-6 mx-auto lg:mx-0`}></div>
-                        <h2 className="mb-4 capitalize">Deep Dive: {activeContent.title}</h2>
-                        <p className="text-base lg:text-lg text-gray-500 mb-4 lg:mb-10 font-medium leading-relaxed ">{activeContent.description}</p>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-12 w-full">
-                          {activeContent.features.map((f, i) => (
-                            <div
-                              key={i}
-                              className={`flex items-center gap-4 p-4 px-4  rounded-[20px] bg-white border ${TAB_THEMES[activeTab].hoverBorder} shadow-md`}
-                            >
-                              <div className="w-7 h-7 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 flex-shrink-0 aspect-square shadow-inner">
-                                <span className="text-[10px] font-black">✓</span>
-                              </div>
-
-                              <span className="text-[14px] font-extrabold text-gray-700 capitalize tracking-tight leading-tight">
-                                {f}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
-
-                        <div className="relative w-full cursor-pointer group" onClick={() => setSelectedImage(activeContent.image)}>
-                          <div className={`absolute -inset-10 ${TAB_THEMES[activeTab].bg}/5 blur-[80px] rounded-full`}></div>
-                          <div className="relative z-10 rounded-2xl shadow-xl border border-white overflow-hidden w-full">
-                            <img
-                              src={activeContent.image}
-                              alt={activeContent.title}
-                              className="w-full h-auto object-contain group-hover:scale-105 transition-all duration-700 bg-white"
-                            />
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {activeContent.features.map((f, i) => (
+                        <div
+                          key={i}
+                          className={`flex items-center gap-4 p-5 rounded-[24px] bg-white border border-gray-100 ${TAB_THEMES[activeTab].hoverBorder} transition-all group shadow-sm hover:shadow-md`}
+                        >
+                          <div className={`w-8 h-8 rounded-full ${TAB_THEMES[activeTab].lightBg || "bg-blue-50"} flex items-center justify-center ${TAB_THEMES[activeTab].text || "text-blue-600"} flex-shrink-0 shadow-inner`}>
+                            <span className="text-[10px] font-black">✓</span>
                           </div>
-                          <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <div className={`bg-white/90 backdrop-blur-sm ${TAB_THEMES[activeTab].text} p-4 rounded-full shadow-xl`}>
-                              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" /></svg>
-                            </div>
-                          </div>
+                          <span className="text-[14px] font-extrabold text-gray-700 capitalize tracking-tight leading-tight">
+                            {f}
+                          </span>
                         </div>
-                      </div>
+                      ))}
                     </div>
                   </section>
                 </motion.div>
@@ -887,33 +923,41 @@ export default function ProductDetailPremiumHRMS({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md cursor-zoom-out"
+            className="fixed inset-0 z-[999] flex items-center justify-center p-4 md:p-8 bg-black/90 backdrop-blur-md cursor-zoom-out"
             onClick={() => setSelectedImage(null)}
           >
+            <button
+              type="button"
+              aria-label="Close image preview"
+              onClick={() => setSelectedImage(null)}
+              className="fixed top-4 right-4 md:top-6 md:right-6 z-[1001] w-11 h-11 md:w-12 md:h-12 bg-white/15 hover:bg-white/25 border border-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all duration-300 hover:rotate-90 shadow-lg"
+            >
+              <svg className="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative w-full max-w-5xl h-auto flex flex-col items-center cursor-default"
+              className={`relative h-auto flex flex-col items-center cursor-default ${
+                isVerticalGallery ? "w-auto max-w-[min(100%,22rem)] sm:max-w-[min(100%,26rem)]" : "w-full max-w-5xl"
+              }`}
               onClick={(e) => e.stopPropagation()}
             >
-              <button
-                onClick={() => setSelectedImage(null)}
-                className="absolute -top-16 right-0 md:-right-12 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-all duration-300 hover:rotate-90 z-[1001]"
-              >
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" /></svg>
-              </button>
-
-              <div className="relative w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+              <div className="relative w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-white/20 flex justify-center">
                 <img
                   src={selectedImage}
                   alt="Enlarged view"
-                  className="w-full h-auto object-contain"
+                  className={`object-contain bg-white ${
+                    isVerticalGallery
+                      ? "max-h-[78vh] w-auto max-w-full"
+                      : "w-full h-auto max-h-[85vh]"
+                  }`}
                 />
               </div>
 
-              <div className="mt-6 text-white text-center">
+              <div className="mt-4 md:mt-6 text-white text-center px-2">
                 <h3 className="capitalize tracking-widest">{activeContent.title}</h3>
                 <p className="text-white/60 font-bold mt-1 capitalize text-sm tracking-widest">{activeContent.subtitle}</p>
               </div>
