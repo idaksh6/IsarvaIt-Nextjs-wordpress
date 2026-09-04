@@ -366,7 +366,7 @@ export default function ProductDetailPremiumHRMS({
   allProducts,
 }) {
   // Toggle to re-enable CRM popup form later
-  const CRM_POPUP_ENABLED = false;
+  const CRM_POPUP_ENABLED = true;
 
   const [activeTab, setActiveTab] = useState("setup");
   const [isModalOpen, setIsModalOpen] = useState(false);
