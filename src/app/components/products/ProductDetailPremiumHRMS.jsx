@@ -33,10 +33,16 @@ const TABS = [
   { id: "analytics", label: "Analytics" },
   { id: "ess", label: "ESS Portal" },
   { id: "shifts", label: "Shifts & Rosters" },
+  { id: "portalpunch", label: "Portal Punch" },
+  { id: "face", label: "Face Attendance" },
+  { id: "gps", label: "GPS Attendance" },
   { id: "attendance", label: "Attendance" },
   { id: "biometric", label: "Biometric" },
+  { id: "mobile", label: "Mobile App" },
   { id: "holidays", label: "Public Holidays" },
   { id: "leavepolicy", label: "Leave Policy" },
+  { id: "posh", label: "POSH" },
+  { id: "dpdp", label: "DPDP" },
   { id: "other", label: "Other Features" },
 ];
 
@@ -47,12 +53,16 @@ const TAB_CONTENT = {
     description: "Easily customize your departments, roles, and office locations to fit your business perfectly—no coding required.",
     image: "/products/hrms/Company-setup.png",
     features: [
-      "Salary & Statutory Setup",
-      "Department Management",
-      "Designation Control",
-      "Roles & Permissions",
-      "Employee Status",
-      "Document Types"
+      "Master setup for Salary and statutory components",
+      "Departments",
+      "Designations",
+      "Roles",
+      "Employee status",
+      "Employee document types",
+      "Office / work location master",
+      "Salary Settings",
+      "Financial Year Settings",
+      
     ]
   },
   "employee": {
@@ -61,12 +71,15 @@ const TAB_CONTENT = {
     description: "Create a comprehensive employee database with 360-degree profiles, organizational mapping, and role-based access controls for seamless workforce management.",
     image: "/products/hrms/Personnel-details.jpg",
     features: [
-      "Role-based access & permissions",
-      "Document vault management",
-      "360° Employee Profiles",
-      "Auto-Generated HR Letters",
-      "Week-off & Leave Mapping",
-      "Employee Self-Service"
+      "Role-based access and permissions",
+      "Document management and vault",
+      "Employee personal details",
+      "Employee salary structure",
+      "Employee level weekoff and leave mapping",
+      "Auto generated Joining form, Offer letter, Experience letter in case of exit",
+      "Employee self-service portal",
+      "Employee exit details and Experience letter",
+      "Increments and Promotion modules",
     ]
   },
   "payroll": {
@@ -75,26 +88,32 @@ const TAB_CONTENT = {
     description: "Process payroll with confidence using our automated engine, designed to handle multiple locations seamlessly. It also generates bank-ready formats for salary processing and provides portal upload-ready formats for EPF and ESIC.",
     image: "/products/hrms/Payroll-management.jpg",
     features: [
-      "Multi-Location Processing",
-      "Override Salary Components",
-      "Employee Advances/Loans",
-      "Comparison Dashboards",
-      "Bank Ready Formats",
-      "EPF & ESIC Portal Ready"
+      "Multi location payroll processing",
+      "Override salary components",
+      "Add/update employee advances",
+      "Comparison view for previous and current month salaries",
+      "Bank ready formats for salary process",
+      "EPF and ESIC portal upload-ready formats",
+      "One-click salary slip sending",
+      "TDS configuration with tax regime options",
+      "Option for early salary check box",
     ]
   },
   "reporting": {
     title: "Robust Reporting",
     subtitle: "Analyze and grow your organization",
-    description: "We offer different types of reports that helps organization to analyse their workforce performance and statutory compliance.",
+    description: "We offer different types of reports that helps organization to analyse",
     image: "/products/hrms/Reporting-&-analytics.jpg",
     features: [
-      "Payroll Reports",
-      "Payroll Analytics",
-      "Leave Insights",
-      "LOP Reports",
-      "Attendance Analysis",
-      "Comparison Reports"
+      "Payroll reports",
+      "Comparison reports for payroll",
+      "Payroll analytical reports",
+      "Employee leave reports",
+      "LOP reports",
+      "Attendance report",
+      "Overtime reports",
+      "Incentive reports",
+      "Combined payroll, OT & incentive reports",
     ]
   },
   "analytics": {
@@ -103,26 +122,29 @@ const TAB_CONTENT = {
     description: "HR Analytics & Insights delivers real-time dashboards and actionable workforce data to help you make smarter HR decisions.",
     image: "/products/hrms/Reporting-&-analytics.jpg",
     features: [
-      "Real-Time Dashboards",
-      "Attendance Insights",
-      "Payroll & Cost Analysis",
-      "Department Analytics",
-      "Quick Note HR Calendar",
-      "Headcount Tracking"
+      "Real-time dashboard",
+      "Attendance & leave insights",
+      "Payroll and cost analysis",
+      "Department-wise analytics",
+      "Quick note calendar for HR",
+      "Employee related information (Birthdays, anniversaries, etc)",
     ]
   },
   "ess": {
-    title: "Employee Self-Service Leave Application",
+    title: "Employee Self-Service Portal",
     subtitle: "Empower your workforce with self-service tools",
-    description: "Empower employees to easily apply for leaves through a self-service portal with accurate calculations and real-time leave availability.",
+    description: "Empower employees through a self-service portal for leave, payslips, tax documents, and advances—with accurate balances and real-time updates.",
     image: "/products/Emplyee self Service.png",
     features: [
-      "Single/Multi-Day Leave",
-      "Half-Day Customization",
-      "Auto Holiday Exclusion",
-      "Real-Time Leave Balance",
-      "Streamlined Approval Process",
-      "Automated Email Notifications"
+      "Apply for single-day or multiple-day leave",
+      "Half-day leave customization",
+      "Automatic exclusion of public holidays and weekly offs",
+      "Real-time leave balance based on payroll data",
+      "Streamlined leave request and approval process",
+      "Automated email notifications",
+      "View and download payslips",
+      "Download Form 16 by financial year",
+      "View salary advances",
     ]
   },
   "shifts": {
@@ -131,12 +153,54 @@ const TAB_CONTENT = {
     description: "Efficiently manage employee shifts and duty rosters with flexible scheduling and bulk assignment capabilities.",
     image: "/products/hrms/Shift-scheduling.jpg",
     features: [
-      "Duty Roster Management",
-      "Bulk Shift Assignment",
-      "Multi-Employee Date Ranges",
-      "Easy Workforce Planning",
-      "Scheduling Efficiency",
-      "Accurate Shift Allocation"
+      "Duty roster management with flexible scheduling",
+      "Bulk assignment of shifts across multiple employees and date ranges",
+      "Easy planning and allocation of workforce shifts",
+      "Improved scheduling efficiency and accuracy",
+      "Long-shift rules with comp-off / recovery days",
+      "Overtime planning linked to shift schedules",
+    ]
+  },
+  "portalpunch": {
+    title: "Self Attendance & Portal Punch",
+    subtitle: "Mark attendance from the self-service portal",
+    description: "Empower employees to mark attendance from the self-service portal with check-in/out, monthly calendar view, and correction requests—reducing dependency on devices alone.",
+    image: "/products/hrms/Attendance.png",
+    features: [
+      "Web-based check-in and check-out for employees",
+      "Monthly attendance calendar view",
+      "Attendance correction requests with review",
+      "Portal punch history for employees",
+      "Admin audit of all portal punches",
+      "Works alongside biometric and field attendance",
+    ]
+  },
+  "face": {
+    title: "Isarva Face Attendance",
+    subtitle: "AI face recognition with GPS geofencing",
+    description: "Android Mobile App Face Attendance empower on-the-go and on-site employees to mark attendance using AI facial recognition with GPS geofencing and offline auto-sync—eliminating proxy punches and dedicated hardware costs.",
+    image: "/products/hrms/Biometric.png",
+    features: [
+      "AI-powered facial recognition check-in and check-out",
+      "GPS geofencing and real-time location validation",
+      "Offline punch mode with automated background sync",
+      "Anti-spoofing and live face liveness detection",
+      "Mobile punch history with real-time shift status",
+      "Seamless integration with biometric, web, and payroll records",
+    ]
+  },
+  "gps": {
+    title: "GPS & Field Attendance",
+    subtitle: "Track field teams with location-verified punches",
+    description: "Track field and on-site employees with GPS-based attendance, so organizations can verify location while staff mark presence on the go.",
+    image: "/products/hrms/Attendance.png",
+    features: [
+      "GPS-based field check-in and check-out",
+      "Live and historical location tracking for admins",
+      "Office geofence support for valid punches",
+      "Route/timeline view of employee movement",
+      "Ideal for field sales, site, and remote workforce",
+      "Mobile-ready GPS punch support",
     ]
   },
   "attendance": {
@@ -145,12 +209,15 @@ const TAB_CONTENT = {
     description: "Easily manage and finalize employee attendance with accurate tracking and seamless integration with payroll systems.",
     image: "/products/hrms/Attendance.png",
     features: [
-      "Admin Attendance Management",
-      "Manual Attendance Updates",
-      "Save & Lock Monthly Finalization",
-      "Seamless Payroll API Integration",
-      "Data Accuracy Enforcement",
-      "Post-Finalization Change Prevention"
+      "Admin can select the attendance processing modes",
+      "Admins can view and manage attendance for all employees",
+      "Manual updates for attendance entries (Present, Leave, Holiday, etc.)",
+      "Save & Lock feature to finalize monthly attendance",
+      "Seamless integration with payroll via API for salary processing",
+      "Ensures data accuracy and prevents post-finalization changes",
+      "Manual punch entry for corrections",
+      "Preview, regenerate, and lock monthly attendance",
+      "Prevent changes after finalization",
     ]
   },
   "biometric": {
@@ -159,12 +226,29 @@ const TAB_CONTENT = {
     description: "Seamlessly manage employee attendance with biometric integration via the Timestation API, supporting both automated syncing and manual uploads for accurate and flexible processing.",
     image: "/products/hrms/Biometric.png",
     features: [
-      "Timestation API Integration",
-      "Manual Biometric Data Upload",
-      "Admin Attendance Override",
-      "Auto Leave & OT Calculation",
-      "Late Entry Detection",
-      "Centralized Attendance Management"
+      "Integration with Timestation API for real-time attendance tracking",
+      "Manual biometric data upload option",
+      "Admin control to override attendance data when required",
+      "Automatic calculation of leaves, late entries, and overtime",
+      "Accurate attendance processing based on in/out data",
+      "Centralized employee attendance management",
+      "Biometric policy for late, early, and half-day rules",
+      "Grace periods and monthly late penalties",
+      "Overtime calculation and approval workflow", 
+    ]
+  },
+  "mobile": {
+    title: "Mobile Workforce App",
+    subtitle: "Attendance, leave, and approvals on mobile",
+    description: "Give employees and managers a mobile-ready experience for daily attendance, leave, and approvals—so HR actions don’t wait for desktop access.",
+    image: "/products/Emplyee self Service.png",
+    features: [
+      "Secure mobile login for employees and managers",
+      "Mobile check-in / check-out and monthly attendance view",
+      "Apply leave and track leave status on mobile",
+      "Manager leave approve / reject / forward",
+      "GPS punch support for field staff",
+      "Real-time attendance and leave updates",
     ]
   },
   "holidays": {
@@ -173,12 +257,12 @@ const TAB_CONTENT = {
     description: "Easily configure and manage public holidays with flexible options, including department-wise customization to suit organizational needs.",
     image: "/products/hrms/Leave-management.jpg",
     features: [
-      "Admin Holiday Control",
-      "Department-wise Configuration",
-      "Restrict Holiday Eligibility",
-      "Flexible Policy Setup",
-      "Organization-specific Rules",
-      "Holiday Calendar Management"
+      "Admin control to manage public holidays",
+      "Department-wise holiday configuration",
+      "Restrict eligibility for applying public holidays",
+      "Flexible holiday setup based on organizational policies",
+      "Employees can apply for eligible public / flexible holidays",
+      "Financial year concept",
     ]
   },
   "leavepolicy": {
@@ -187,29 +271,60 @@ const TAB_CONTENT = {
     description: "Easily create and manage multiple leave policies by assigning leave types, days, and departments, ensuring employees can only apply for leaves applicable to them.",
     image: "/products/hrms/Leave-Policy.png",
     features: [
-      "Multiple Policy Creation",
-      "Leave Type & Days Assignment",
-      "Department-wise Mapping",
-      "Restricted Leave Application",
-      "Streamlined Leave Management",
-      "Multi-Level Leave Approval"
+      "Create and manage multiple leave policies",
+      "Assign leave types and number of days",
+      "Department-wise leave policy configuration",
+      "Employees can apply only for assigned leave types",
+      "Streamlined and controlled leave management",
+      "Multi level leave approval",
+    ]
+  },
+  "posh": {
+    title: "POSH Act Compliance",
+    subtitle: "Workplace harassment compliance workflow",
+    description: "Stay compliant with the Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013 through a dedicated POSH workflow—from policy acknowledgement to inquiry and reporting.",
+    image: "/products/hrms/Other-features.png",
+    features: [
+      "Digital POSH policy publish and employee acknowledgement",
+      "Internal Committee (IC) setup with required members",
+      "Complaint filing with evidence and anonymous option",
+      "Structured inquiry workflow till management action",
+      "Employer compliance checklist and prevention activities",
+      "Annual report generation for statutory submission",
+      "QR / public intake link for easy complaint access",
+      "Audit log and SLA alerts for overdue actions",
+      "POSH complaint status tracking and updates",
+    ]
+  },
+  "dpdp": {
+    title: "DPDP Act Compliance",
+    subtitle: "Data protection for HR and payroll",
+    description: "Ensure full adherence to India's Digital Personal Data Protection (DPDP) Act & Rules across HR and payroll operations with automated consent workflows, employee privacy rights management, and encrypted data lifecycle governance.",
+    image: "/products/hrms/Other-features.png",
+    features: [
+      "Digital consent management with purpose tracking and opt-in/opt-out logs",
+      "Employee Data Principal portal for data access, correction, and erasure requests",
+      "Automated retention schedules and rule-based ex-employee record purging",
+      "Encrypted storage and role-based access control (RBAC) for PII and biometrics",
+      "Built-in classification for statutory payroll, PF, ESI, and tax legitimate uses",
+      "Data breach incident logging with interactive HR compliance audit checklist",
     ]
   },
   "other": {
     title: "Other Features",
     subtitle: "Powerful extras built into Isarva HRMS",
-    description: "Isarva HRMS is not limited — it has many more useful features designed to handle every aspect of your HR operations.",
+    description: "Isarva HRMS is not limited it has many more useful features",
     image: "/products/hrms/Other-features.png",
     features: [
-      "Activity Logger & Security",
-      "Auto Realtime Attendance-Payroll Sync",
-      "Notification Center",
-      "OT & Incentive Calculations",
-      "Hold & Release Salary",
-      "Increments & Promotions History",
-      "Full & Final Settlement",
-      "Employee Birthday Reminders",
-      "Multi-Level Leave Approval Workflow"
+      "Activity logger for additional security",
+      "Auto realtime sync between attendance and payroll system",
+      "Notification center for company announcements",
+      "Separate OT and incentive calculations",
+      "Hold and release salary modules",
+      "Increments and promotions with history",
+      "Full and final settlement on employee exit",
+      "Employee birthday reminders",
+      "Adapts to diverse employee work schedules and regional practices",
     ]
   }
 };
@@ -222,10 +337,16 @@ const TAB_THEMES = {
   "analytics": { bg: "bg-sky-600", gradient: "from-[#0EA5E9] to-[#0284C7]", shadow: "shadow-sky-500/20", text: "text-sky-600", lightBg: "bg-sky-50", hoverBorder: "hover:border-sky-200", accent: "sky" },
   "ess": { bg: "bg-amber-500", gradient: "from-[#F59E0B] to-[#D97706]", shadow: "shadow-amber-500/20", text: "text-amber-600", lightBg: "bg-amber-50", hoverBorder: "hover:border-amber-200", accent: "amber" },
   "shifts": { bg: "bg-teal-600", gradient: "from-[#0D9488] to-[#0F766E]", shadow: "shadow-teal-500/20", text: "text-teal-600", lightBg: "bg-teal-50", hoverBorder: "hover:border-teal-200", accent: "teal" },
+  "portalpunch": { bg: "bg-lime-600", gradient: "from-[#65A30D] to-[#4D7C0F]", shadow: "shadow-lime-500/20", text: "text-lime-600", lightBg: "bg-lime-50", hoverBorder: "hover:border-lime-200", accent: "lime" },
+  "face": { bg: "bg-red-500", gradient: "from-[#EF4444] to-[#DC2626]", shadow: "shadow-red-500/20", text: "text-red-600", lightBg: "bg-red-50", hoverBorder: "hover:border-red-200", accent: "red" },
+  "gps": { bg: "bg-green-600", gradient: "from-[#16A34A] to-[#15803D]", shadow: "shadow-green-500/20", text: "text-green-600", lightBg: "bg-green-50", hoverBorder: "hover:border-green-200", accent: "green" },
   "attendance": { bg: "bg-orange-500", gradient: "from-[#F97316] to-[#EA580C]", shadow: "shadow-orange-500/20", text: "text-orange-600", lightBg: "bg-orange-50", hoverBorder: "hover:border-orange-200", accent: "orange" },
   "biometric": { bg: "bg-cyan-600", gradient: "from-[#0891B2] to-[#0E7490]", shadow: "shadow-cyan-500/20", text: "text-cyan-600", lightBg: "bg-cyan-50", hoverBorder: "hover:border-cyan-200", accent: "cyan" },
+  "mobile": { bg: "bg-slate-600", gradient: "from-[#475569] to-[#334155]", shadow: "shadow-slate-500/20", text: "text-slate-600", lightBg: "bg-slate-50", hoverBorder: "hover:border-slate-200", accent: "slate" },
   "holidays": { bg: "bg-pink-600", gradient: "from-[#DB2777] to-[#BE185D]", shadow: "shadow-pink-500/20", text: "text-pink-600", lightBg: "bg-pink-50", hoverBorder: "hover:border-pink-200", accent: "pink" },
   "leavepolicy": { bg: "bg-indigo-600", gradient: "from-[#4F46E5] to-[#4338CA]", shadow: "shadow-indigo-500/20", text: "text-indigo-600", lightBg: "bg-indigo-50", hoverBorder: "hover:border-indigo-200", accent: "indigo" },
+  "posh": { bg: "bg-purple-600", gradient: "from-[#9333EA] to-[#7E22CE]", shadow: "shadow-purple-500/20", text: "text-purple-600", lightBg: "bg-purple-50", hoverBorder: "hover:border-purple-200", accent: "purple" },
+  "dpdp": { bg: "bg-stone-600", gradient: "from-[#78716C] to-[#57534E]", shadow: "shadow-stone-500/20", text: "text-stone-600", lightBg: "bg-stone-50", hoverBorder: "hover:border-stone-200", accent: "stone" },
   "other": { bg: "bg-fuchsia-600", gradient: "from-[#D946EF] to-[#A21CAF]", shadow: "shadow-fuchsia-500/20", text: "text-fuchsia-600", lightBg: "bg-fuchsia-50", hoverBorder: "hover:border-fuchsia-200", accent: "fuchsia" }
 };
 
@@ -234,6 +355,9 @@ export default function ProductDetailPremiumHRMS({
   relatedProducts,
   allProducts,
 }) {
+  // Toggle to re-enable CRM popup form later
+  const CRM_POPUP_ENABLED = true;
+
   const [activeTab, setActiveTab] = useState("setup");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
@@ -244,6 +368,11 @@ export default function ProductDetailPremiumHRMS({
 
   const hasSubmittedRef = useRef(false);
   const wasOpenedRef = useRef(false);
+
+  const openCrmPopup = () => {
+    if (!CRM_POPUP_ENABLED) return;
+    setIsModalOpen(true);
+  };
 
   // Helper to check if user has already submitted the form in this session
   const isFormSubmitted = () => {
@@ -259,7 +388,7 @@ export default function ProductDetailPremiumHRMS({
 
   // 1. Initial trigger: 3-second delay on page load (if not submitted)
   useEffect(() => {
-    if (isFormSubmitted()) return;
+    if (!CRM_POPUP_ENABLED || isFormSubmitted()) return;
 
     const timer = setTimeout(() => {
       if (!isFormSubmitted()) {
@@ -273,6 +402,8 @@ export default function ProductDetailPremiumHRMS({
 
   // 2. Pure Time-based Re-trigger: re-opens 15 seconds after closing (if not submitted)
   useEffect(() => {
+    if (!CRM_POPUP_ENABLED) return;
+
     if (isModalOpen) {
       wasOpenedRef.current = true;
       return;
@@ -500,7 +631,7 @@ export default function ProductDetailPremiumHRMS({
 
                           <div className={`relative z-10 w-8 h-8 rounded-xl flex items-center justify-center transition-all duration-500 ${isActive ? "bg-white/20" : theme.lightBg + " " + theme.text}`}>
                             <span className="text-lg">
-                              {tab.id === 'setup' ? '🏢' : tab.id === 'employee' ? '👥' : tab.id === 'payroll' ? '💰' : tab.id === 'reporting' ? '📊' : tab.id === 'analytics' ? '📈' : tab.id === 'ess' ? '🔐' : tab.id === 'shifts' ? '📅' : tab.id === 'attendance' ? '⏰' : tab.id === 'biometric' ? '🖐️' : tab.id === 'holidays' ? '🎉' : tab.id === 'leavepolicy' ? '📋' : '✨'}
+                              {tab.id === 'setup' ? '🏢' : tab.id === 'employee' ? '👥' : tab.id === 'payroll' ? '💰' : tab.id === 'reporting' ? '📊' : tab.id === 'analytics' ? '📈' : tab.id === 'ess' ? '🔐' : tab.id === 'shifts' ? '📅' : tab.id === 'portalpunch' ? '🖥️' : tab.id === 'face' ? '😊' : tab.id === 'gps' ? '📍' : tab.id === 'attendance' ? '⏰' : tab.id === 'biometric' ? '🖐️' : tab.id === 'mobile' ? '📱' : tab.id === 'holidays' ? '🎉' : tab.id === 'leavepolicy' ? '📋' : tab.id === 'posh' ? '⚖️' : tab.id === 'dpdp' ? '🛡️' : '✨'}
                             </span>
                           </div>
 
@@ -576,7 +707,7 @@ export default function ProductDetailPremiumHRMS({
                         className="w-full flex justify-center lg:justify-start"
                       >
                         <button
-                          onClick={() => setIsModalOpen(true)}
+                          onClick={openCrmPopup}
                           className="press-illusion-btn-orange w-full sm:w-auto sm:min-w-[240px] px-8 py-4 capitalize flex items-center justify-center gap-3"
                         >
                           Get Started Free
@@ -713,7 +844,7 @@ export default function ProductDetailPremiumHRMS({
                     <h2 className="mb-6 capitalize">Build the <br /> future today.</h2>
                     <p className="text-lg lg:text-xl text-gray-500 font-medium leading-relaxed mb-10 max-w-2xl mx-auto">Join 10,000+ teams transforming their workplace.</p>
                     <button
-                      onClick={() => setIsModalOpen(true)}
+                      onClick={openCrmPopup}
                       className="press-illusion-btn-orange w-full sm:w-auto sm:min-w-[280px] px-12 py-6 capitalize flex items-center justify-center gap-3"
                     >
                       Request Free Access
@@ -728,19 +859,21 @@ export default function ProductDetailPremiumHRMS({
 
       <HrmsFeatureSection />
 
-      <ContactFormModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        onSubmitSuccess={() => {
-          hasSubmittedRef.current = true;
-          try {
-            sessionStorage.setItem("hrms_form_submitted", "true");
-          } catch (e) {}
-        }}
-        preSelectedType="Product"
-        preSelectedItem="HRMS Software"
-        allItems={allProducts}
-      />
+      {CRM_POPUP_ENABLED && (
+        <ContactFormModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          onSubmitSuccess={() => {
+            hasSubmittedRef.current = true;
+            try {
+              sessionStorage.setItem("hrms_form_submitted", "true");
+            } catch (e) {}
+          }}
+          preSelectedType="Product"
+          preSelectedItem="HRMS Software"
+          allItems={allProducts}
+        />
+      )}
 
       <HRMSBrochureModal
         isOpen={isBrochureModalOpen}
