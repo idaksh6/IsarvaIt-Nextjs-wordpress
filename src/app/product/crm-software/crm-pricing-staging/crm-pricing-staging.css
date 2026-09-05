@@ -304,6 +304,7 @@
 @media (min-width: 1024px) {
   .crm-pricing-staging-page .plan-desc {
     display: block;
+    min-height: 4.5rem;
   }
 }
 
@@ -313,6 +314,7 @@
   justify-content: center;
   gap: 0.1rem;
   color: var(--primary-color);
+  margin-top: auto;
   margin-bottom: 0.15rem;
 }
 

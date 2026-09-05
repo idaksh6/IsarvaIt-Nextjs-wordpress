@@ -74,18 +74,23 @@ export const FEATURE_COMPARISON = [
     item("Username & Password used to login", cell("check"), cell("check"), cell("check")),
     item("Google Authentication Login", cell("check"), cell("check"), cell("check")),
     item("Two Factor Authentication", cell("check"), cell("check"), cell("check")),
-    item("Lead Management", cell("check"), cell("check"), cell("check")),
-    item("Contact, company management", cell("check"), cell("check"), cell("check")),
-    item("Deal pipeline management", cell("check"), cell("check"), cell("check")),
-    item("Task management and activity feed", cell("check"), cell("check"), cell("check")),
-    item("Notification & Reminders", cell("cross"), cell("check"), cell("check")),
+  ]),
+
+  item("Lead Management", cell("check"), cell("check"), cell("check")),
+  item("Contact, company management", cell("check"), cell("check"), cell("check")),
+  item("Deal pipeline management", cell("check"), cell("check"), cell("check")),
+  item("Task management and activity feed", cell("check"), cell("check"), cell("check")),
+  item("Notification & Reminders", cell("cross"), cell("check"), cell("check")),
+
+  section("Quote Management", [
     item("Quote creation and management", cell("cross"), cell("check"), cell("check")),
     item("Deal related Quotation generate and Download Quotation", cell("cross"), cell("check"), cell("check")),
     item("Quote Send Email", cell("cross"), cell("cross"), cell("check")),
     item("Quote Send Via Whatsapp", cell("cross"), cell("cross"), cell("check")),
     item("Email and Whatsapp Logs", cell("cross"), cell("cross"), cell("check")),
-    item("Product Management", cell("cross"), cell("check"), cell("check")),
   ]),
+
+  item("Product Management", cell("cross"), cell("check"), cell("check")),
 
   section("Outreach Management", [
     item("Calls / Email / WhatsApp / LinkedIn / Meetings / Follow-ups", cell("cross"), cell("check"), cell("check")),
