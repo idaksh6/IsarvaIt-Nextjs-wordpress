@@ -50,7 +50,7 @@ const TAB_CONTENT = {
   "setup": {
     title: "Smart Company Setup",
     subtitle: "Customize your organization structure with ease",
-    description: "Easily customize your departments, roles, and office locations to fit your business perfectly—no coding required.",
+    description: "Easily customize your company structure to match your business needs—no coding required. Manage departments, designations, roles, employee details, and office locations from one centralized platform. Configure salary and statutory components along with essential salary and financial year settings. Build a flexible foundation for seamless and efficient HR and payroll management.",
     image: "/products/hrms/Company-setup.png",
     features: [
       "Master setup for Salary and statutory components",
@@ -68,7 +68,7 @@ const TAB_CONTENT = {
   "employee": {
     title: "Centralized Employee Management",
     subtitle: "360-degree view of your workforce",
-    description: "Create a comprehensive employee database with 360-degree profiles, organizational mapping, and role-based access controls for seamless workforce management.",
+    description: "Create and manage a comprehensive employee database with complete 360-degree profiles and organizational mapping. Control access with role-based permissions while securely managing employee documents and personal details. Configure salary structures, leave and week-off mappings, and automate joining forms and offer letters. Enable employee self-service, exit management, experience letters, increments, and promotions from one centralized platform.",
     image: "/products/hrms/Personnel-details.jpg",
     features: [
       "Role-based access and permissions",
@@ -76,7 +76,7 @@ const TAB_CONTENT = {
       "Employee personal details",
       "Employee salary structure",
       "Employee level weekoff and leave mapping",
-      "Auto generated Joining form, Offer letter, Experience letter in case of exit",
+      "Auto generated Joining form, Offer letter",
       "Employee self-service portal",
       "Employee exit details and Experience letter",
       "Increments and Promotion modules",
@@ -85,7 +85,7 @@ const TAB_CONTENT = {
   "payroll": {
     title: "Automated Payroll Processing",
     subtitle: "Process payroll with confidence and accuracy",
-    description: "Process payroll with confidence using our automated engine, designed to handle multiple locations seamlessly. It also generates bank-ready formats for salary processing and provides portal upload-ready formats for EPF and ESIC.",
+    description: "Process payroll accurately and efficiently with our automated payroll engine, designed to seamlessly manage multiple locations. Easily update salary components, employee advances, and compare current and previous month salaries. Generate bank-ready salary files and portal upload-ready formats for EPF and ESIC with ease. Simplify tax configuration, salary slip distribution, and early salary processing from one centralized platform.",
     image: "/products/hrms/Payroll-management.jpg",
     features: [
       "Multi location payroll processing",
@@ -102,7 +102,7 @@ const TAB_CONTENT = {
   "reporting": {
     title: "Robust Reporting",
     subtitle: "Analyze and grow your organization",
-    description: "We offer different types of reports that helps organization to analyse",
+    description: "Gain valuable insights into your workforce and payroll operations with comprehensive and easy-to-understand reports. Analyze payroll, attendance, leave, LOP, overtime, and incentive data in one place. Compare payroll data across different periods and access detailed analytical reports for better decision-making. Generate combined reports covering payroll, overtime, and incentives for a complete organizational overview.",
     image: "/products/hrms/Reporting-&-analytics.jpg",
     features: [
       "Payroll reports",
@@ -119,7 +119,7 @@ const TAB_CONTENT = {
   "analytics": {
     title: "HR Analytics & Insights",
     subtitle: "Data-driven decisions for your people",
-    description: "HR Analytics & Insights delivers real-time dashboards and actionable workforce data to help you make smarter HR decisions.",
+    description: "Gain real-time visibility into your workforce with insightful dashboards and actionable HR analytics. Track attendance, leave, payroll costs, and department-wise performance from one centralized platform. Stay organized with quick HR notes and calendar updates while keeping track of important employee information such as birthdays and work anniversaries. Make smarter and faster HR decisions with meaningful workforce insights.",
     image: "/products/hrms/Reporting-&-analytics.jpg",
     features: [
       "Real-time dashboard",
@@ -133,7 +133,7 @@ const TAB_CONTENT = {
   "ess": {
     title: "Employee Self-Service Portal",
     subtitle: "Empower your workforce with self-service tools",
-    description: "Empower employees through a self-service portal for leave, payslips, tax documents, and advances—with accurate balances and real-time updates.",
+    description: "Empower employees with a convenient self-service portal to manage leave, payslips, tax documents, and salary advances from one place. Apply for single-day, multiple-day, or customized half-day leave with accurate balance calculations and automatic holiday exclusions. Streamline leave requests and approvals with real-time updates and automated email notifications. Employees can also securely view and download payslips, Form 16, and salary advance details anytime.",
     image: "/products/Emplyee self Service.png",
     features: [
       "Apply for single-day or multiple-day leave",
@@ -150,7 +150,7 @@ const TAB_CONTENT = {
   "shifts": {
     title: "Shifts & Duty Rosters",
     subtitle: "Flexible shift scheduling and bulk assignment",
-    description: "Efficiently manage employee shifts and duty rosters with flexible scheduling and bulk assignment capabilities.",
+    description: "Efficiently manage employee shifts and duty rosters with flexible scheduling and simplified workforce planning. Assign shifts in bulk across multiple employees and date ranges to improve scheduling accuracy and efficiency. Configure long-shift rules with comp-off or recovery days based on your organizational policies. Plan and manage overtime seamlessly by linking it directly to employee shift schedules.",
     image: "/products/hrms/Shift-scheduling.jpg",
     features: [
       "Duty roster management with flexible scheduling",
@@ -164,7 +164,7 @@ const TAB_CONTENT = {
   "portalpunch": {
     title: "Self Attendance & Portal Punch",
     subtitle: "Mark attendance from the self-service portal",
-    description: "Empower employees to mark attendance from the self-service portal with check-in/out, monthly calendar view, and correction requests—reducing dependency on devices alone.",
+    description: "Empower employees to conveniently mark their attendance through the self-service portal with easy check-in and check-out options. View monthly attendance calendars, punch history, and submit correction requests whenever required. Enable administrators to review and audit all portal punches for better accuracy and transparency. Seamlessly works alongside biometric and field attendance systems for complete attendance management.",
     image: "/products/hrms/HRMS-App-Dashboard.jpg",
     images: [
       "/products/hrms/HRMS-App-Dashboard.jpg",
@@ -183,7 +183,7 @@ const TAB_CONTENT = {
   "face": {
     title: "Isarva Face Attendance",
     subtitle: "AI face recognition with GPS geofencing",
-    description: "Android Mobile App Face Attendance empower on-the-go and on-site employees to mark attendance using AI facial recognition with GPS geofencing and offline auto-sync—eliminating proxy punches and dedicated hardware costs.",
+    description: "Empower on-site and on-the-go employees to mark attendance securely using AI-powered facial recognition through the Android mobile app. Ensure accurate attendance with GPS geofencing, real-time location validation, anti-spoofing, and live face detection. Support offline punching with automatic background synchronization and real-time access to punch history and shift status. Seamlessly integrate face attendance with biometric devices, web attendance, and payroll records while reducing proxy punches and hardware costs.",
     image: "/products/hrms/HRMS-Face-Attendance.jpg",
     images: [
       "/products/hrms/HRMS-Face-Attendance.jpg",
@@ -202,7 +202,7 @@ const TAB_CONTENT = {
   "gps": {
     title: "GPS & Field Attendance",
     subtitle: "Track field teams with location-verified punches",
-    description: "Track field and on-site employees with GPS-based attendance, so organizations can verify location while staff mark presence on the go.",
+    description: "Track and manage field and on-site employees with GPS-based attendance and real-time location verification. Enable employees to check in and check out from anywhere using mobile-ready GPS punching. Monitor live and historical locations, employee routes, and movement timelines with ease. Configure office geofencing to ensure valid punches and improve attendance accuracy for field, site, and remote workforces.",
     image: "/products/hrms/GPS-Tracking.png",
     features: [
       "GPS-based field check-in and check-out",
@@ -216,7 +216,7 @@ const TAB_CONTENT = {
   "attendance": {
     title: "Attendance Processing",
     subtitle: "Accurate tracking with payroll integration",
-    description: "Easily manage and finalize employee attendance with accurate tracking and seamless integration with payroll systems.",
+    description: "Easily manage and finalize employee attendance with flexible processing modes and accurate tracking. Admins can view, update, and correct attendance records, including manual punches, leaves, holidays, and other entries. Preview, regenerate, and lock monthly attendance to ensure accuracy and prevent changes after finalization. Seamlessly integrate finalized attendance data with payroll through API for smooth and accurate salary processing.",
     image: "/products/hrms/Attendance.png",
     features: [
       "Admin can select the attendance processing modes",
@@ -233,7 +233,7 @@ const TAB_CONTENT = {
   "biometric": {
     title: "Biometric Connections",
     subtitle: "Real-time biometric attendance integration",
-    description: "Seamlessly manage employee attendance with biometric integration via the Timestation API, supporting both automated syncing and manual uploads for accurate and flexible processing.",
+    description: "Seamlessly manage employee attendance with biometric integration through the Timestation API, supporting automated syncing and manual data uploads. Accurately process attendance based on employee in/out records with automatic calculation of leaves, late entries, and overtime. Configure flexible biometric policies for late arrivals, early departures, half-days, grace periods, and monthly penalties. Manage overtime calculations, approval workflows, and attendance overrides from one centralized platform.",
     image: "/products/hrms/Biometric.png",
     features: [
       "Integration with Timestation API for real-time attendance tracking",
@@ -250,7 +250,7 @@ const TAB_CONTENT = {
   "mobile": {
     title: "Mobile Workforce App",
     subtitle: "Attendance, leave, and approvals on mobile",
-    description: "Give employees and managers a mobile-ready experience for daily attendance, leave, and approvals—so HR actions don’t wait for desktop access.",
+    description: "Give employees and managers a seamless mobile experience for managing daily attendance, leave, and approvals from anywhere. Enable secure mobile check-in and check-out, monthly attendance tracking, and real-time leave updates. Employees can apply for leave and track its status, while managers can approve, reject, or forward requests instantly. Support GPS punching for field staff and ensure HR actions continue without depending on desktop access.",
     image: "/products/Emplyee self Service.png",
     features: [
       "Secure mobile login for employees and managers",
@@ -264,7 +264,7 @@ const TAB_CONTENT = {
   "holidays": {
     title: "Public Holiday Master Management",
     subtitle: "Flexible department-wise holiday configuration",
-    description: "Easily configure and manage public holidays with flexible options, including department-wise customization to suit organizational needs.",
+    description: "Easily configure and manage public and flexible holidays based on your organization’s policies and requirements. Enable department-wise holiday configurations and control employee eligibility for applying selected holidays. Employees can conveniently apply for eligible public or flexible holidays through the system. Manage holiday calendars efficiently with financial year-based settings for better planning and administration.",
     image: "/products/hrms/public-holiday.png",
     features: [
       "Admin control to manage public holidays",
@@ -278,7 +278,7 @@ const TAB_CONTENT = {
   "leavepolicy": {
     title: "Leave Policy Management",
     subtitle: "Multi-level leave policies for every department",
-    description: "Easily create and manage multiple leave policies by assigning leave types, days, and departments, ensuring employees can only apply for leaves applicable to them.",
+    description: "Easily create and manage multiple leave policies based on your organization’s requirements. Configure leave types, number of days, and department-wise policies to ensure employees receive the correct leave entitlements. Allow employees to apply only for the leave types assigned to them, ensuring better control and accuracy. Streamline the entire leave process with flexible multi-level approval workflows for efficient leave management.",
     image: "/products/hrms/Leave-Policy.png",
     features: [
       "Create and manage multiple leave policies",
@@ -292,7 +292,7 @@ const TAB_CONTENT = {
   "posh": {
     title: "POSH Act Compliance",
     subtitle: "Workplace harassment compliance workflow",
-    description: "Stay compliant with the Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013 through a dedicated POSH workflow—from policy acknowledgement to inquiry and reporting.",
+    description: "Ensure compliance with the POSH Act, 2013 through a dedicated and structured workflow for managing workplace harassment prevention and complaints. Digitally publish policies, collect employee acknowledgements, and manage Internal Committee details with secure complaint filing options. Streamline the entire inquiry process with evidence management, status tracking, audit logs, SLA alerts, and management actions. Simplify compliance activities and statutory annual reporting while providing accessible complaint submission through QR codes or public links.",
     image: "/products/hrms/posh.png",
     features: [
       "Digital POSH policy publish and employee acknowledgement",
@@ -309,7 +309,7 @@ const TAB_CONTENT = {
   "dpdp": {
     title: "DPDP Act Compliance",
     subtitle: "Data protection for HR and payroll",
-    description: "Ensure full adherence to India's Digital Personal Data Protection (DPDP) Act & Rules across HR and payroll operations with automated consent workflows, employee privacy rights management, and encrypted data lifecycle governance.",
+    description: "Ensure compliance with India’s DPDP Act and Rules across HR and payroll operations with secure and automated data governance. Manage employee consent, privacy rights, and data access requests through streamlined digital workflows. Protect sensitive personal and biometric information with encrypted storage, role-based access, and automated data retention policies. Maintain compliance with built-in statutory data classifications, breach incident logging, and interactive compliance audit checklists.",
     image: "/products/hrms/dpdp.png",
     features: [
       "Digital consent management with purpose tracking and opt-in/opt-out logs",
@@ -323,7 +323,7 @@ const TAB_CONTENT = {
   "other": {
     title: "Other Features",
     subtitle: "Powerful extras built into Isarva HRMS",
-    description: "Isarva HRMS is not limited it has many more useful features",
+    description: "Isarva HRMS goes beyond core HR and payroll management with a range of additional features designed to simplify everyday operations. Enhance security with activity logs, real-time attendance and payroll synchronization, and centralized company notifications. Manage overtime, incentives, salary holds, increments, promotions, and full-and-final settlements with complete history. Stay connected with employee birthday reminders while adapting seamlessly to diverse work schedules and regional practices.",
     image: "/products/hrms/Other-features.png",
     features: [
       "Activity logger for additional security",
@@ -852,10 +852,10 @@ export default function ProductDetailPremiumHRMS({
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {[
-                      { title: "Endless Paperwork", icon: "📄", desc: "HR spends more time on forms than people.", color: "rose" },
-                      { title: "Disconnected Apps", icon: "🔌", desc: "Messy data spread across too many places.", color: "violet" },
-                      { title: "Frustrated Employees", icon: "😠", desc: "Hard-to-use software ruins productivity.", color: "amber" },
-                      { title: "Risky Security", icon: "🔓", desc: "Old ways leave you open to legal threats.", color: "slate" }
+                      { title: "Endless Paperwork", icon: "📄", desc: "HR spends more time filling out forms than helping people.", color: "rose" },
+                      { title: "Disconnected Apps", icon: "🔌", desc: "Data is spread across too many places, leading to messy mistakes.", color: "violet" },
+                      { title: "Frustrated Employees", icon: "😠", desc: "Hard-to-use software makes workers unhappy and less productive.", color: "amber" },
+                      { title: "Risky Security", icon: "🔓", desc: "Old ways of handling info leave you open to legal and tech threats.", color: "slate" }
                     ].map((item, idx) => (
                       <div key={idx} className="group flex flex-col items-center p-8 rounded-[32px] border border-gray-100 hover:shadow-xl transition-all duration-500 bg-white text-center">
                         <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 bg-${item.color}-50 text-${item.color}-600 font-bold text-2xl`}>
