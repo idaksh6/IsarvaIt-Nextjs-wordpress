@@ -640,6 +640,53 @@ export const productsData = [
     bgGradient: "from-teal-50 via-cyan-50 to-white",
   },
   {
+    slug: "restaurant-pos",
+    title: "Restaurant POS Software",
+    seoTitle: "Restaurant POS Software for Saudi Arabia | Floor, Kitchen & ZATCA Billing",
+    metaDescription:
+      "Restaurant POS software for Saudi Arabia: table & floor management, kitchen tickets, inventory, online orders (HungerStation, Jahez), and ZATCA-ready VAT billing. Book a demo.",
+    ogImage: "/products/mesa-pos/hero-clean.png",
+    category: "Restaurant & Hospitality",
+    icon: "🍽️",
+    tagline: "Restaurant POS Software",
+    shortDescription:
+      "Run your restaurant from seating to settlement: live floor plan, kitchen tickets, inventory, delivery orders, and VAT-ready receipts in one POS.",
+    description:
+      "One system for Saudi restaurants: see every table by area, send orders to the kitchen, accept HungerStation and Jahez deliveries, track stock, and print VAT-ready receipts — without switching between five different apps.",
+    keywords: [
+      "restaurant POS Saudi Arabia",
+      "restaurant management system",
+      "table management",
+      "kitchen display",
+      "ZATCA POS",
+      "dine-in POS",
+      "HungerStation integration",
+      "restaurant billing software",
+    ],
+    features: [
+      "Restaurant floor plan and table management",
+      "Kitchen order tickets (KOT)",
+      "Cashier billing and split bills",
+      "Inventory and stock alerts",
+      "Sales reports and day close",
+      "Online orders from HungerStation, Jahez, Keeta",
+      "ZATCA-minded VAT invoicing",
+      "Multi-branch restaurant management",
+      "Arabic and English interface",
+    ],
+    technologies: ["React", "Next.js", "Node.js", "PostgreSQL", "Cloud Infrastructure"],
+    benefits: [
+      "Live floor control",
+      "Faster kitchen service",
+      "ZATCA-ready billing",
+      "Omni-channel orders",
+      "Multi-branch visibility",
+    ],
+    color: "from-emerald-600 to-teal-700",
+    bgGradient: "from-emerald-50 via-teal-50 to-white",
+    noIndex: true,
+  },
+  {
     slug: "bill-soft",
     title: "Bill-Soft Software",
     ogImage: "/products/billsoft/Dashboard.jpg",
@@ -1032,7 +1079,8 @@ export const getProductsByCategory = (category) => {
   return productsData.filter((product) =>
     product.category === category &&
     !product.slug?.includes("staging") &&
-    !product.slug?.includes("-old")
+    !product.slug?.includes("-old") &&
+    !product.noIndex
   );
 };
 
@@ -1040,7 +1088,7 @@ export const getAllCategories = () => {
   const categories = [
     ...new Set(
       productsData
-        .filter(p => !p.slug?.includes("staging") && !p.slug?.includes("-old"))
+        .filter(p => !p.slug?.includes("staging") && !p.slug?.includes("-old") && !p.noIndex)
         .map((product) => product.category)
     ),
   ];

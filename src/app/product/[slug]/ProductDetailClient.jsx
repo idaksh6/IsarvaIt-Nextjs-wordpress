@@ -27,9 +27,21 @@ import ProductDetailPremiumPoshact from "../../components/products/ProductDetail
 import ProductDetailPremiumLMS from "../../components/products/ProductDetailPremiumLMS";
 import ProductDetailPremiumAnalytics from "../../components/products/ProductDetailPremiumAnalytics";
 import ProductDetailPremiumAssetFlow from "../../components/products/ProductDetailPremiumAssetFlow";
+import ProductDetailPremiumMesaPOS from "../../components/products/ProductDetailPremiumMesaPOS";
 
 export default function ProductDetailClient({ product, relatedProducts, allProducts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Restaurant POS (noindex — not listed in nav)
+  if (product.slug === "restaurant-pos") {
+    return (
+      <ProductDetailPremiumMesaPOS
+        product={product}
+        relatedProducts={[]}
+        allProducts={allProducts.filter((p) => !p.noIndex)}
+      />
+    );
+  }
 
   // Use Staging View for HRMS Software (Now Live)
   if (product.slug === 'hrms-software') {
