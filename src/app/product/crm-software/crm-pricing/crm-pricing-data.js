@@ -52,7 +52,7 @@ function section(title, children, depth = 1) {
 }
 
 /**
- * Feature comparison for CRM software pricing.
+ * Feature comparison matrix for CRM software pricing (Professional vs Enterprise).
  */
 export const FEATURE_COMPARISON = [
   section("Login", [
