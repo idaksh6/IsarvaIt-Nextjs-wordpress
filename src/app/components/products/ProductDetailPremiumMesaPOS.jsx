@@ -103,7 +103,7 @@ const SMART_BLOCKS = [
     badge: "01 · Floor plan",
     badgeClass: "bg-[#1f6b5c] text-[#ecfdf5]",
     mediaAccent: "#1f6b5c",
-    imageFit: "cover",
+    imageFit: "contain",
     imagePosition: "object-[center_42%]",
     title: "Live floor plan — know which tables are free, dining, or ready to pay",
     desc: "Step 1 of every dine-in service: open the floor view. Tables are grouped by dining area with color status — green free, amber occupied, rose billing — so hosts and managers never guess what is happening on the floor.",
@@ -126,7 +126,7 @@ const SMART_BLOCKS = [
     badge: "02 · Billing",
     badgeClass: "bg-[#1d4ed8] text-[#eff6ff]",
     mediaAccent: "#1d4ed8",
-    imageFit: "cover",
+    imageFit: "contain",
     title: "Counter billing — split checks, print receipts, VAT included",
     desc: "When guests are ready to leave, cashiers settle from the same order screen: full menu, split by guest or item, print the receipt, and show 15% VAT clearly on every total — ready for Saudi tax requirements.",
     chips: [
@@ -149,7 +149,7 @@ const SMART_BLOCKS = [
     badge: "03 · Inventory",
     badgeClass: "bg-[#c2410c] text-[#fff7ed]",
     mediaAccent: "#c2410c",
-    imageFit: "cover",
+    imageFit: "contain",
     title: "Inventory — catch low stock before service runs out",
     desc: "Kitchen and back-office staff see ingredient levels in real time. Low and critical alerts flag items before you run out mid-shift — and vendor records help you reorder before the weekend rush.",
     chips: [
@@ -171,7 +171,7 @@ const SMART_BLOCKS = [
     badge: "04 · Reports",
     badgeClass: "bg-[#15803d] text-[#ecfdf5]",
     mediaAccent: "#15803d",
-    imageFit: "cover",
+    imageFit: "contain",
     title: "Sales reports — today’s numbers before you close the shift",
     desc: "Owners and managers see the same figures cashiers collected: daily sales, table covers, top-selling dishes, and hourly trends — ready for finance at day close.",
     chips: [
@@ -193,7 +193,7 @@ const SMART_BLOCKS = [
     badge: "05 · Online orders",
     badgeClass: "bg-[#6d28d9] text-[#f5f3ff]",
     mediaAccent: "#6d28d9",
-    imageFit: "cover",
+    imageFit: "contain",
     title: "Online & delivery orders — HungerStation, Jahez, Keeta in one board",
     desc: "Delivery and app orders land on a single Kanban: New → Kitchen → Ready → Out. Accept or reject channel orders in one tap — no re-typing into your restaurant POS.",
     chips: [
@@ -462,11 +462,12 @@ const ZATCA_POINTS = [
   },
 ];
 
-function Reveal({ children, className = "", style }) {
+function Reveal({ children, className = "", style, motion = true }) {
   const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(!motion);
 
   useEffect(() => {
+    if (!motion) return;
     const el = ref.current;
     if (!el) return;
     if (typeof IntersectionObserver === "undefined") {
@@ -480,19 +481,19 @@ function Reveal({ children, className = "", style }) {
           io.unobserve(el);
         }
       },
-      { threshold: 0.14, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -24px 0px" }
     );
     io.observe(el);
     return () => io.disconnect();
-  }, []);
+  }, [motion]);
 
   return (
     <div
       ref={ref}
-      className={`transition-all duration-550 ease-out ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[18px]"
+      className={`transition-opacity duration-500 ease-out ${
+        visible ? "opacity-100" : "opacity-0"
       } ${className}`}
-      style={{ transitionDuration: "0.55s", ...style }}
+      style={style}
     >
       {children}
     </div>
@@ -525,13 +526,9 @@ function SectionHead({ eyebrow, title, children, compact = false, titleId }) {
 
 function SmartMedia({ block }) {
   const accent = block.mediaAccent || "#1f6b5c";
-  const fitClass =
-    block.imageFit === "contain"
-      ? "object-contain p-2 sm:p-3"
-      : `object-cover ${block.imagePosition || "object-center"}`;
 
   return (
-    <figure className="relative m-0 group">
+    <figure className="relative m-0">
       <div
         className="pointer-events-none absolute -inset-2 sm:-inset-3 rounded-[28px] opacity-80"
         style={{
@@ -545,23 +542,22 @@ function SmartMedia({ block }) {
         aria-hidden="true"
       />
 
-      <div className="relative overflow-hidden rounded-[22px] border border-white/90 bg-[#0b1f1a] shadow-[0_22px_50px_rgba(18,32,28,0.14)] ring-1 ring-[rgba(15,42,31,0.06)] transition-transform duration-500 ease-out group-hover:-translate-y-1 group-hover:shadow-[0_28px_60px_rgba(18,32,28,0.18)]">
+      {/* Fixed aspect box reserves height before image loads — prevents scroll jump */}
+      <div className="relative w-full overflow-hidden rounded-[22px] border border-white/90 bg-[#0f1f1a] shadow-[0_22px_50px_rgba(18,32,28,0.14)] ring-1 ring-[rgba(15,42,31,0.06)] aspect-[3/2]">
         <div
           className="absolute inset-x-0 top-0 z-[1] h-1"
           style={{ background: `linear-gradient(90deg, ${accent}, ${accent}88)` }}
           aria-hidden="true"
         />
-        <div className="relative aspect-[5/4] sm:aspect-[4/3]">
-          <img
-            src={block.image}
-            alt={block.alt}
-            width={1024}
-            height={768}
-            loading="lazy"
-            decoding="async"
-            className={`absolute inset-0 w-full h-full ${fitClass} transition-transform duration-700 ease-out group-hover:scale-[1.03]`}
-          />
-        </div>
+        <img
+          src={block.image}
+          alt={block.alt}
+          width={1024}
+          height={683}
+          loading="eager"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
       </div>
     </figure>
   );
@@ -577,18 +573,27 @@ export default function ProductDetailPremiumMesaPOS({ product, relatedProducts =
     const sections = SMART_NAV.map((n) => document.getElementById(n.id)).filter(Boolean);
     if (!sections.length || typeof IntersectionObserver === "undefined") return;
 
+    let frame = 0;
     const io = new IntersectionObserver(
       (entries) => {
         if (scrollingToRef.current) return;
         const visible = entries
           .filter((e) => e.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-        if (visible[0]) setActiveSmart(visible[0].target.id);
+        const nextId = visible[0]?.target?.id;
+        if (!nextId) return;
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(() => {
+          setActiveSmart((prev) => (prev === nextId ? prev : nextId));
+        });
       },
-      { rootMargin: "-35% 0px -50% 0px", threshold: [0, 0.2, 0.45] }
+      { rootMargin: "-40% 0px -45% 0px", threshold: [0, 0.25, 0.5] }
     );
     sections.forEach((s) => io.observe(s));
-    return () => io.disconnect();
+    return () => {
+      cancelAnimationFrame(frame);
+      io.disconnect();
+    };
   }, []);
 
   const scrollToSmartSection = (id, tabEl) => {
@@ -602,14 +607,13 @@ export default function ProductDetailPremiumMesaPOS({ product, relatedProducts =
       tabEl.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
     }
 
-    const isMobile = window.matchMedia("(max-width: 1023px)").matches;
-    const headerOffset = isMobile ? 168 : 176;
+    const headerOffset = window.matchMedia("(max-width: 1023px)").matches ? 168 : 176;
     const top = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
     window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
 
     window.setTimeout(() => {
       if (scrollingToRef.current === id) scrollingToRef.current = null;
-    }, 900);
+    }, 1100);
   };
 
   return (
@@ -677,26 +681,19 @@ export default function ProductDetailPremiumMesaPOS({ product, relatedProducts =
                 accept HungerStation and Jahez deliveries, track stock, and print VAT-ready receipts —
                 without switching between five different apps.
               </p>
-              <div className="flex flex-wrap gap-4 mt-6 items-end justify-center md:justify-start">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-5 mt-6 items-center justify-center md:justify-start">
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(true)}
-                  className="press-illusion-btn-orange bg-orange-500 text-white w-fit font-bold !px-8 !py-3 text-base items-center space-x-2 inline-flex cursor-pointer"
+                  className="btn-premium-orange group !px-10 !py-0 h-14 box-border cursor-pointer"
                 >
-                  <span>Book a demo</span>
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2.5}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
+                  <div className="shimmer absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+                  <span className="relative z-10 flex items-center gap-3 font-black tracking-wider text-sm uppercase">
+                    Book a demo
+                    <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </span>
                 </button>
                 <a
                   href="#smart-pos"
@@ -707,9 +704,12 @@ export default function ProductDetailPremiumMesaPOS({ product, relatedProducts =
                     const top = el.getBoundingClientRect().top + window.pageYOffset - 96;
                     window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
                   }}
-                  className="press-illusion-btn-white bg-white text-gray-800 w-fit font-bold !px-8 !py-3 text-base items-center inline-flex no-underline cursor-pointer"
+                  className="relative inline-flex items-center justify-center gap-3 px-10 h-14 box-border font-black tracking-wider text-sm uppercase text-gray-700 transition-all duration-300 rounded-full bg-white border-2 border-gray-100 hover:border-[#1f6b5c]/40 hover:text-[#0f4d3f] shadow-sm hover:shadow-xl hover:-translate-y-1 active:scale-95 no-underline cursor-pointer"
                 >
                   See how it works
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
                 </a>
               </div>
             </div>
@@ -771,24 +771,9 @@ export default function ProductDetailPremiumMesaPOS({ product, relatedProducts =
         {/* Smart POS features */}
         <section
           id="smart-pos"
-          className="relative py-12 lg:py-16"
-          style={{
-            backgroundImage:
-              "radial-gradient(1100px 520px at 12% -8%, rgba(42,163,95,0.14), transparent 52%), radial-gradient(900px 480px at 88% 12%, rgba(31,107,92,0.12), transparent 50%), radial-gradient(760px 420px at 50% 105%, rgba(22,122,67,0.1), transparent 55%), linear-gradient(180deg, #e8f2ed 0%, #dfece6 42%, #e9f1ec 100%)",
-          }}
+          className="relative py-12 lg:py-16 bg-[#eef4f1]"
           aria-labelledby="smart-pos-title"
         >
-          <div
-            className="pointer-events-none absolute inset-0 overflow-hidden opacity-40"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(31,107,92,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(31,107,92,0.045) 1px, transparent 1px)",
-              backgroundSize: "44px 44px",
-              maskImage: "linear-gradient(180deg, rgba(0,0,0,0.4), transparent 94%)",
-            }}
-            aria-hidden="true"
-          />
-
           <div className="relative z-[1] max-w-7xl mx-auto px-6">
             <Reveal>
               <SectionHead eyebrow="Restaurant POS features" title="One connected system — floor, kitchen, billing, stock, and reports">
@@ -799,14 +784,14 @@ export default function ProductDetailPremiumMesaPOS({ product, relatedProducts =
             </Reveal>
           </div>
 
-          {/* Sticky module tabs — full-width bar on mobile; centered pill on desktop */}
-          <div className="sticky top-[88px] sm:top-[102px] z-[60] mb-8 lg:mb-10 w-full bg-white/95 backdrop-blur-md border-y border-gray-100 shadow-sm lg:bg-transparent lg:backdrop-blur-none lg:border-0 lg:shadow-none">
+          {/* Sticky module tabs */}
+          <div className="sticky top-[88px] sm:top-[102px] z-40 mb-8 lg:mb-10 w-full pointer-events-none">
             <div
-              className="max-w-7xl mx-auto px-4 sm:px-6 py-2 lg:py-0 overflow-x-auto no-scrollbar w-full lg:flex lg:justify-center"
+              className="max-w-7xl mx-auto px-4 sm:px-6 h-[3.25rem] flex items-center w-full overflow-x-auto no-scrollbar lg:overflow-visible lg:justify-center bg-white/95 backdrop-blur-md border-y border-gray-100 lg:bg-transparent lg:backdrop-blur-none lg:border-0"
               style={{ scrollPaddingLeft: "1rem", scrollPaddingRight: "1rem" }}
             >
               <nav
-                className="flex items-center justify-start lg:justify-center gap-1 lg:gap-1.5 whitespace-nowrap min-w-min mx-auto lg:mx-0 lg:flex-wrap lg:bg-white lg:border lg:border-[#d5ddd8] lg:shadow-[0_10px_28px_rgba(18,32,28,0.08)] lg:rounded-full lg:p-1.5"
+                className="pointer-events-auto inline-flex items-center gap-1 lg:gap-1.5 whitespace-nowrap w-max mx-auto lg:mx-0 bg-transparent lg:bg-white lg:border lg:border-[#d5ddd8] lg:rounded-full lg:p-1.5"
                 aria-label="POS modules"
               >
                 {SMART_NAV.map((item) => {
@@ -818,7 +803,7 @@ export default function ProductDetailPremiumMesaPOS({ product, relatedProducts =
                       onClick={(e) => scrollToSmartSection(item.id, e.currentTarget)}
                       className={`relative shrink-0 px-4 sm:px-5 py-2.5 rounded-full font-bold text-[12px] sm:text-[0.88rem] tracking-wider transition-all duration-300 border cursor-pointer ${
                         isActive
-                          ? "text-white border-transparent bg-gradient-to-r from-[#1f6b5c] to-[#167a43] shadow-[0_4px_14px_rgba(31,107,92,0.3)]"
+                          ? "text-white border-transparent bg-gradient-to-r from-[#1f6b5c] to-[#167a43]"
                           : "text-gray-500 border-transparent hover:text-[#0f4d3f] hover:bg-[#e6f4ef] hover:border-[#cfe0d8]"
                       }`}
                     >
@@ -833,13 +818,13 @@ export default function ProductDetailPremiumMesaPOS({ product, relatedProducts =
           <div className="relative z-[1] max-w-7xl mx-auto px-6">
             <div className="flex flex-col gap-12 lg:gap-14">
               {SMART_BLOCKS.map((block) => (
-                <Reveal key={block.id}>
-                  <article
-                    id={block.id}
-                    className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center scroll-mt-[9.5rem] sm:scroll-mt-[10.5rem] ${
-                      block.reverse ? "lg:[&>*:first-child]:order-2" : ""
-                    }`}
-                  >
+                <article
+                  key={block.id}
+                  id={block.id}
+                  className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center scroll-mt-[9.5rem] sm:scroll-mt-[10.5rem] ${
+                    block.reverse ? "lg:[&>*:first-child]:order-2" : ""
+                  }`}
+                >
                     <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
                       <span className={`inline-flex items-center px-3 py-1.5 rounded-full text-[0.72rem] font-extrabold tracking-wider uppercase ${block.badgeClass}`}>
                         {block.badge}
@@ -874,8 +859,7 @@ export default function ProductDetailPremiumMesaPOS({ product, relatedProducts =
                       </ul>
                     </div>
                     <SmartMedia block={block} />
-                  </article>
-                </Reveal>
+                </article>
               ))}
             </div>
           </div>

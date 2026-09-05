@@ -7,7 +7,6 @@ export const productsData = [
   {
     slug: "hrms-software",
     title: "HRMS Software",
-    seoTitle: "Request a Demo of ISARVA HRMS – HR & Payroll Software",
     metaDescription: "Attendance, leave & payroll in one dashboard. Employee records, compliance-ready reports, and self-service portal for your staff.",
     ogImage: "https://www.isarvait.com/images/HRMS_OG.png",
     category: "Human Resources",

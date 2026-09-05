@@ -165,10 +165,10 @@ const TAB_CONTENT = {
     title: "Self Attendance & Portal Punch",
     subtitle: "Mark attendance from the self-service portal",
     description: "Empower employees to conveniently mark their attendance through the self-service portal with easy check-in and check-out options. View monthly attendance calendars, punch history, and submit correction requests whenever required. Enable administrators to review and audit all portal punches for better accuracy and transparency. Seamlessly works alongside biometric and field attendance systems for complete attendance management.",
-    image: "/products/hrms/HRMS-App-Dashboard.jpg",
+    image: "/products/hrms/Portal-Punch.png",
     images: [
-      "/products/hrms/HRMS-App-Dashboard.jpg",
-      "/products/hrms/HRMS-App-Attendance.jpg",
+      "/products/hrms/Portal-Punch.png",
+      "/products/hrms/prtal-punch.png",
     ],
     imageVertical: true,
     features: [
@@ -251,7 +251,12 @@ const TAB_CONTENT = {
     title: "Mobile Workforce App",
     subtitle: "Attendance, leave, and approvals on mobile",
     description: "Give employees and managers a seamless mobile experience for managing daily attendance, leave, and approvals from anywhere. Enable secure mobile check-in and check-out, monthly attendance tracking, and real-time leave updates. Employees can apply for leave and track its status, while managers can approve, reject, or forward requests instantly. Support GPS punching for field staff and ensure HR actions continue without depending on desktop access.",
-    image: "/products/Emplyee self Service.png",
+    image: "/products/hrms/HRMS-App-Dashboard.jpg",
+    images: [
+      "/products/hrms/HRMS-App-Dashboard.jpg",
+      "/products/hrms/HRMS-App-Attendance.jpg",
+    ],
+    imageVertical: true,
     features: [
       "Secure mobile login for employees and managers",
       "Mobile check-in / check-out and monthly attendance view",
@@ -672,7 +677,7 @@ export default function ProductDetailPremiumHRMS({
             </aside>
 
             {/* Main Content Area */}
-            <main className="flex-1 min-w-0 flex flex-col gap-10 lg:gap-16">
+            <main className="flex-1 min-w-0 flex flex-col gap-6 lg:gap-10">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeTab}
@@ -680,7 +685,7 @@ export default function ProductDetailPremiumHRMS({
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="flex flex-col gap-10 lg:gap-16"
+                  className="flex flex-col gap-6 lg:gap-10"
                 >
                   {/* 3. Module Dashboard Header + Visual + Feature Grid */}
                   <section className="pt-4">
@@ -737,7 +742,7 @@ export default function ProductDetailPremiumHRMS({
                       initial={{ opacity: 0, y: 30 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.8 }}
-                      className="relative mb-12"
+                      className="relative"
                     >
                       {isVerticalGallery && contentImages.length > 1 ? (
                         <div className="relative z-10 w-full max-w-4xl mx-auto p-4 sm:p-6 lg:p-8 bg-white rounded-[1.75rem] sm:rounded-[2.5rem] border border-gray-100 shadow-xl">
