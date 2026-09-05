@@ -85,7 +85,7 @@ function PlanCellValue({ value }) {
   return <span className="cell-text">{label}</span>;
 }
 
-function FeatureNode({ node, plans, activeTab }) {
+function FeatureNode({ node, plans, activeTab, isTopLevel = false }) {
   const [open, setOpen] = useState(true);
   const depth = node.depth || 1;
 
@@ -99,7 +99,7 @@ function FeatureNode({ node, plans, activeTab }) {
 
         <div className={`feature-block-children${open ? " open" : ""}`}>
           {node.children?.map((child, idx) => (
-            <FeatureNode key={`${child.title}-${idx}`} node={child} plans={plans} activeTab={activeTab} />
+            <FeatureNode key={`${child.title}-${idx}`} node={child} plans={plans} activeTab={activeTab} isTopLevel={false} />
           ))}
         </div>
       </div>
@@ -107,7 +107,7 @@ function FeatureNode({ node, plans, activeTab }) {
   }
 
   return (
-    <div className={`feature-row depth-${depth}`}>
+    <div className={`feature-row depth-${depth}${isTopLevel ? " standalone-row" : ""}`}>
       <div className="feature-name">{node.title}</div>
       <div className="feature-marks">
         {plans.map((plan, i) => {
@@ -240,7 +240,7 @@ export default function CrmPricingStagingClient() {
               ))}
             </div>
             {FEATURE_COMPARISON.map((node, idx) => (
-              <FeatureNode key={`${node.title}-${idx}`} node={node} plans={PRICING_PLANS} activeTab={activeTab} />
+              <FeatureNode key={`${node.title}-${idx}`} node={node} plans={PRICING_PLANS} activeTab={activeTab} isTopLevel={true} />
             ))}
           </div>
         </div>

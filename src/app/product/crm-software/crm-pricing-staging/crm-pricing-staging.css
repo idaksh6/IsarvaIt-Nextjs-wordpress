@@ -521,6 +521,27 @@
   }
 }
 
+/* Standalone top-level feature rows (Lead Management, Product Management, etc.) */
+.crm-pricing-staging-page .standalone-row,
+.crm-pricing-staging-page .features-matrix > .feature-row,
+.crm-pricing-staging-page .standalone-row .feature-name,
+.crm-pricing-staging-page .features-matrix > .feature-row .feature-name,
+.crm-pricing-staging-page .standalone-row .feature-mark-cell,
+.crm-pricing-staging-page .features-matrix > .feature-row .feature-mark-cell {
+  background-color: #f8fafc;
+}
+
+.crm-pricing-staging-page .standalone-row .feature-mark-cell.recommended-col,
+.crm-pricing-staging-page .features-matrix > .feature-row .feature-mark-cell.recommended-col {
+  background-color: var(--recommended-bg);
+}
+
+.crm-pricing-staging-page .standalone-row .feature-name,
+.crm-pricing-staging-page .features-matrix > .feature-row .feature-name {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
 .crm-pricing-staging-page .feature-name {
   width: 100%;
   font-size: 0.875rem; /* text-sm */
