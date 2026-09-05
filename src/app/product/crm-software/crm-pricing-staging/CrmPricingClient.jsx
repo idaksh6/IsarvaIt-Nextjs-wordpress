@@ -4,8 +4,8 @@ import { useState } from "react";
 import Link from "../../../components/AppLink";
 import ContactFormModal from "../../../components/ContactFormModal";
 import { productsData } from "../../../lib/data/products-data";
-import { FEATURE_COMPARISON, PRICING_PLANS } from "./crm-pricing-data";
-import "./crm-pricing.css";
+import { ADDON_CARD_DATA, FEATURE_COMPARISON, PRICING_PLANS } from "./crm-pricing-data";
+import "./crm-pricing-staging.css";
 
 function CheckIcon({ className = "" }) {
   return (
@@ -130,7 +130,7 @@ function FeatureNode({ node, plans, activeTab }) {
 
 function PlanHeader({ plan, activeTab }) {
   const shortName = plan.name.replace(/\s*Plan$/i, "");
-  const badgeText = plan.badge || "RECOMMENDED";
+  const badgeText = plan.badge || "Recommended";
   const isActive = plan.id === activeTab;
 
   return (
@@ -157,12 +157,12 @@ function PlanHeader({ plan, activeTab }) {
   );
 }
 
-export default function CrmPricingClient() {
+export default function CrmPricingStagingClient() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState("professional");
+  const [activeTab, setActiveTab] = useState("plus");
 
   return (
-    <div className="crm-pricing-page">
+    <div className="crm-pricing-staging-page">
       <header className="main-header pt-32 lg:pt-40 pb-8 lg:pb-10">
         <div className="max-w-7xl mx-auto px-6">
           <h6 className="pricing-eyebrow">CRM Software Pricing</h6>
@@ -215,7 +215,7 @@ export default function CrmPricingClient() {
               </div>
               <h2 className="plans-intro-title">CRM Features</h2>
               <p className="plans-intro-text">
-                Compare Professional and Enterprise side by side. Expand each section below for full feature details,
+                Compare Starter, Plus, and Enterprise side by side. Expand each section below for full feature details,
                 including optional configurations.
               </p>
             </div>
@@ -245,6 +245,80 @@ export default function CrmPricingClient() {
           </div>
         </div>
 
+        {/* Addon Features Showcase Section (styled to match page design & brand colors) */}
+        <div className="addon-showcase-wrapper">
+          <div className="addon-cards-grid">
+            <div className="addon-main-card">
+              <div className="addon-left-pane">
+                <div className="addon-left-content">
+                  <span className="addon-badge">{ADDON_CARD_DATA.primaryCard.badge}</span>
+                  <h3 className="addon-card-title">{ADDON_CARD_DATA.primaryCard.title}</h3>
+                  <p className="addon-card-desc">{ADDON_CARD_DATA.primaryCard.description}</p>
+                </div>
+
+                <div className="addon-btn-group">
+                  <button
+                    type="button"
+                    onClick={() => setIsModalOpen(true)}
+                    className="btn-addon-primary"
+                  >
+                    <span>{ADDON_CARD_DATA.primaryCard.primaryBtn}</span>
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </button>
+                  <Link
+                    href="/contact"
+                    prefetch={false}
+                    className="btn-addon-secondary"
+                  >
+                    {ADDON_CARD_DATA.primaryCard.secondaryBtn}
+                  </Link>
+                </div>
+              </div>
+
+              <div className="addon-right-pane">
+                <h4 className="addon-features-subtitle">{ADDON_CARD_DATA.primaryCard.subtitle}</h4>
+                <div className="addon-features-grid">
+                  {ADDON_CARD_DATA.primaryCard.features.map((feat, i) => (
+                    <div key={i} className="addon-feature-item">
+                      <span className="addon-check-icon-wrap">
+                        <CheckIcon className="addon-check-icon" />
+                      </span>
+                      <span className="addon-feature-label">
+                        {feat.includes("[") ? (
+                          <>
+                            {feat.split("[")[0]}
+                            <span className="whitespace-nowrap">[{feat.split("[")[1]}</span>
+                          </>
+                        ) : (
+                          feat
+                        )}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Side Card matching requested reference */}
+            <div className="addon-side-card">
+              <h3 className="addon-side-title">{ADDON_CARD_DATA.sideCard.title}</h3>
+              <p className="addon-side-sub">{ADDON_CARD_DATA.sideCard.subtitle}</p>
+              <div className="addon-side-callout">
+                {ADDON_CARD_DATA.sideCard.callout}
+              </div>
+              <Link
+                href={ADDON_CARD_DATA.sideCard.btnLink || "/contact"}
+                prefetch={false}
+                className="btn-addon-side"
+              >
+                {ADDON_CARD_DATA.sideCard.btnText}
+              </Link>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom Custom CTA */}
         <div className="bottom-custom-cta">
           <h3 className="bottom-custom-title">Need a custom plan?</h3>
@@ -253,7 +327,6 @@ export default function CrmPricingClient() {
           </p>
           <div className="bottom-cta-btns">
             <button
-              type="button"
               onClick={() => setIsModalOpen(true)}
               className="press-illusion-btn-orange bg-orange-600 text-white px-8 py-3 rounded-full font-bold text-base inline-flex items-center gap-2 hover:scale-105 transition-all cursor-pointer"
             >
