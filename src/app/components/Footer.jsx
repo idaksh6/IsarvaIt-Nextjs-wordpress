@@ -103,6 +103,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               {[
+                { label: "Cybersecurity Solutions", href: "/cybersecurity-solutions" },
                 { label: "Cloud Services", href: "/service/cloud" },
                 { label: "Consulting Services", href: "/service/consulting-services" },
                 { label: "Digital Marketing", href: "/service/digital-marketing" },

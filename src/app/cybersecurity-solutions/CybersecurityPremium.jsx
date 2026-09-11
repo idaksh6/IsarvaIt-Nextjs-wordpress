@@ -959,20 +959,17 @@ export default function CybersecurityPremium() {
               {additionalServices.map((s) => (
                 <div
                   key={s.id}
-                  className="cy-card-hover bg-white rounded-2xl p-7 border border-gray-200 flex flex-col justify-between"
+                  className="cy-card-hover bg-white rounded-2xl p-7 border border-gray-200 flex flex-col justify-between items-center text-center relative"
                 >
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-3xl p-2.5 rounded-xl bg-emerald-50 border border-emerald-100">
-                        {s.icon}
-                      </span>
-                      <span className="text-xs font-black text-gray-400">Service {s.id}</span>
+                  <div className="w-full flex flex-col items-center text-center">
+                    <div className="w-16 h-16 rounded-2xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-3xl mb-4 mx-auto shadow-sm">
+                      {s.icon}
                     </div>
 
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{s.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-6">{s.desc}</p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 text-center">{s.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 text-center">{s.desc}</p>
 
-                    <div className="flex flex-wrap gap-1.5 mb-6">
+                    <div className="flex flex-wrap justify-center gap-1.5 mb-6">
                       {s.items.map((item, i) => (
                         <span
                           key={i}
@@ -1047,17 +1044,17 @@ export default function CybersecurityPremium() {
               {process.map((step, idx) => (
                 <div
                   key={idx}
-                  className={`cy-card-hover bg-white rounded-2xl p-6 border border-gray-200 relative flex flex-col justify-between ${idx === 6 ? "md:col-span-2 lg:col-span-2" : ""}`}
+                  className={`cy-card-hover bg-white rounded-2xl p-6 border border-gray-200 relative flex flex-col items-center text-center justify-between ${idx === 6 ? "md:col-span-2 lg:col-span-2" : ""}`}
                 >
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
+                  <div className="w-full flex flex-col items-center text-center">
+                    <div className="flex flex-col items-center gap-2 mb-4">
                       <span className="text-xs font-black px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-800">
                         Step {step.step}
                       </span>
-                      <span className="text-2xl">{step.icon}</span>
+                      <span className="text-3xl mt-1 block">{step.icon}</span>
                     </div>
-                    <h3 className="text-lg font-black text-gray-900 mb-2">{step.title}</h3>
-                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{step.desc}</p>
+                    <h3 className="text-lg font-black text-gray-900 mb-2 text-center">{step.title}</h3>
+                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed text-center">{step.desc}</p>
                   </div>
                 </div>
               ))}
@@ -1084,13 +1081,13 @@ export default function CybersecurityPremium() {
               {whyUs.map((w, idx) => (
                 <div
                   key={idx}
-                  className="cy-card-hover bg-white rounded-2xl p-7 border border-gray-200 flex flex-col"
+                  className="cy-card-hover bg-white rounded-2xl p-7 border border-gray-200 flex flex-col items-center text-center"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-2xl mb-4">
+                  <div className="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-2xl mb-4 mx-auto shadow-sm">
                     {w.icon}
                   </div>
-                  <h3 className="text-lg font-black text-gray-900 mb-2">{w.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{w.desc}</p>
+                  <h3 className="text-lg font-black text-gray-900 mb-2 text-center">{w.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed text-center">{w.desc}</p>
                 </div>
               ))}
             </div>
@@ -1116,12 +1113,12 @@ export default function CybersecurityPremium() {
               {industries.map((ind, idx) => (
                 <div
                   key={idx}
-                  className="cy-card-hover bg-white rounded-2xl p-6 border border-gray-200 text-left flex flex-col justify-between"
+                  className="cy-card-hover bg-white rounded-2xl p-6 border border-gray-200 text-center flex flex-col items-center justify-between"
                 >
-                  <div>
-                    <span className="text-3xl mb-3 block">{ind.icon}</span>
-                    <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1.5">{ind.title}</h3>
-                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{ind.desc}</p>
+                  <div className="w-full flex flex-col items-center text-center">
+                    <span className="text-3xl mb-3 block mx-auto">{ind.icon}</span>
+                    <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1.5 text-center">{ind.title}</h3>
+                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed text-center">{ind.desc}</p>
                   </div>
                 </div>
               ))}
