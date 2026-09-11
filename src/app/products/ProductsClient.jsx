@@ -7,7 +7,7 @@ export default function ProductsClient({ productsData, categories }) {
 
   const filteredProducts = productsData.filter(product => {
     const matchesCategory = selectedCategory === "All" || product.category === selectedCategory;
-    const isNotStaging = !product.slug?.includes("staging");
+    const isNotStaging = !product.slug?.includes("staging") && !product.slug?.includes("-old") && !product.noIndex;
     return matchesCategory && isNotStaging;
   });
 

@@ -125,7 +125,8 @@ function SearchResults() {
       // Exclude staging and old products
       const isHidden = 
         item.slug?.includes("staging") || 
-        item.slug?.includes("-old");
+        item.slug?.includes("-old") ||
+        item.noIndex === true;
       if (isHidden) return false;
 
       return (

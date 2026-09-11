@@ -25,6 +25,7 @@ export default function ProductsListClient({ productsData }) {
     let baseProducts = productsData.filter(product => 
       !product.slug?.includes("staging") && 
       !product.slug?.includes("-old") &&
+      !product.noIndex &&
       !IOT_SLUGS.includes(product.slug)
     );
 

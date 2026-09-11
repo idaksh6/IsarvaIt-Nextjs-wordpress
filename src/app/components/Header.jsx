@@ -107,7 +107,13 @@ export default function Header() {
       pathname.includes("/products/r-lifi") ||
       pathname.includes("/products/vibration-sensor"));
 
-  const [scrolled, setScrolled] = useState(isScrollStablePage);
+  // Dark-hero product pages: keep header white so nav links stay readable
+  const forceWhiteHeader =
+    typeof pathname === "string" && pathname.includes("/product/restaurant-pos");
+
+  const useSolidHeader = isScrollStablePage || forceWhiteHeader;
+
+  const [scrolled, setScrolled] = useState(useSolidHeader);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
@@ -121,8 +127,8 @@ export default function Header() {
   const [isMobileAboutOpen, setIsMobileAboutOpen] = useState(false);
 
   useEffect(() => {
-    // RDL product page: never toggle header classes on scroll (causes vibration).
-    if (isScrollStablePage) {
+    // Keep solid white header on scroll-stable / dark-hero pages (no transparent toggle).
+    if (useSolidHeader) {
       setScrolled(true);
       return;
     }
@@ -140,7 +146,7 @@ export default function Header() {
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isScrollStablePage]);
+  }, [useSolidHeader]);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -157,7 +163,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 ${
-        isScrollStablePage
+        useSolidHeader
           ? "bg-white py-3 shadow-sm border-b border-gray-100"
           : `transition-all duration-300 ${
               scrolled
@@ -165,7 +171,7 @@ export default function Header() {
                 : "bg-transparent py-5"
             }`
       }`}
-      style={isScrollStablePage ? undefined : { willChange: scrolled ? "auto" : "transform" }}
+      style={useSolidHeader ? undefined : { willChange: scrolled ? "auto" : "transform" }}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
