@@ -38,7 +38,7 @@ const navLinks = [
 const servicesData = [
   { label: "Website Services", href: "/service/website-services", icon: "🌐" },
   { label: "WordPress Development", href: "/service/wordpress-development", icon: "📝" },
-  { label: "Cybersecurity Solutions", href: "/cybersecurity-solutions", icon: "🛡️" },
+  { label: "Cybersecurity Solutions", href: "/service/cybersecurity-solutions", icon: "🛡️" },
   { label: "AI & ML Consulting", href: "/service/ai-ml-consulting", icon: "🤖" },
   { label: "Website Maintenance AMC", href: "/service/website-maintenance-amc", icon: "🛠️" },
   { label: "Cloud Services", href: "/service/cloud", icon: "☁️" },

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Link from "../components/AppLink";
-import ContactFormModal from "../components/ContactFormModal";
+import Link from "../../components/AppLink";
+import ContactFormModal from "../../components/ContactFormModal";
 
 /* ─── Animated Counter ──────────────────────────────── */
 function AnimatedCounter({ end, suffix = "", duration = 2000 }) {
