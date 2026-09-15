@@ -80,6 +80,17 @@ export default function ContactForm({ pageType = "Contact Page", itemName = "" }
           });
         }
 
+        // Send Lead event to Meta Pixel (only for HRMS)
+        const isHrms = (itemName && itemName.toLowerCase().includes("hrms")) ||
+          (pageType && pageType.toLowerCase().includes("hrms"));
+
+        if (isHrms && typeof window !== "undefined" && typeof window.fbq === "function") {
+          window.fbq("track", "Lead", {
+            content_name: itemName || "HRMS Software",
+            content_category: pageType || "Product",
+          });
+        }
+
         router.push(`/thank-you?${queryParams.toString()}`);
       } else {
         setSubmitStatus("error");

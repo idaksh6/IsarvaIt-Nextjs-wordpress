@@ -283,6 +283,18 @@ export default function ContactFormModal({
           });
         }
 
+        // Send Lead event to Meta Pixel (for HRMS)
+        const isHrms =
+          (formData.selectedItem && formData.selectedItem.toLowerCase().includes("hrms")) ||
+          (preSelectedItem && preSelectedItem.toLowerCase().includes("hrms"));
+
+        if (isHrms && typeof window !== "undefined" && typeof window.fbq === "function") {
+          window.fbq("track", "Lead", {
+            content_name: formData.selectedItem || preSelectedItem || "HRMS Software",
+            content_category: preSelectedType || "Product",
+          });
+        }
+
         // Let the caller persist state (e.g. remember registration for this session)
         if (typeof onSubmitSuccess === 'function') {
           onSubmitSuccess();

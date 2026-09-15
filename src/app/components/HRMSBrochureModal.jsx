@@ -80,6 +80,14 @@ export default function HRMSBrochureModal({
 
       if (data.success) {
         setSubmitStatus('success');
+
+        // Trigger Meta Pixel Lead event
+        if (typeof window !== "undefined" && typeof window.fbq === "function") {
+          window.fbq("track", "Lead", {
+            content_name: "HRMS Software Brochure",
+            content_category: "Brochure Download",
+          });
+        }
         
         // Trigger PDF download
         const link = document.createElement('a');

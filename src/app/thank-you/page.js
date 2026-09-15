@@ -26,6 +26,17 @@ function ThankYouContent() {
     const item = searchParams.get("item") || "";
     setPageType(type);
     setItemName(item);
+
+    // Track Meta Pixel Lead event ONLY for HRMS form completions
+    const isHrms = (item && item.toLowerCase().includes("hrms")) ||
+      (typeof window !== "undefined" && window.location.search.toLowerCase().includes("hrms"));
+
+    if (isHrms && typeof window !== "undefined" && typeof window.fbq === "function") {
+      window.fbq("track", "Lead", {
+        content_name: item || "HRMS Software",
+        content_category: type || "product",
+      });
+    }
   }, [searchParams]);
 
   const getPageSpecificContent = () => {
