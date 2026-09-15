@@ -155,7 +155,9 @@ function SearchResults() {
 
     // Search Industries
     const industryResults = industries.filter((item) => {
+      if (item.hidden || item.noIndex) return false;
       return (
+        item.title?.toLowerCase().includes(term) ||
         item.name?.toLowerCase().includes(term) ||
         item.description?.toLowerCase().includes(term) ||
         item.content?.toLowerCase().includes(term)

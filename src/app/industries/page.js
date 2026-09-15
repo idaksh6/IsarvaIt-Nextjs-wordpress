@@ -11,5 +11,6 @@ export const metadata = generateSEOMetadata({
 });
 
 export default function IndustriesPage() {
-  return <IndustriesListClient industriesData={industriesData} />;
+  const visibleIndustries = industriesData.filter((i) => !i.hidden);
+  return <IndustriesListClient industriesData={visibleIndustries} />;
 }

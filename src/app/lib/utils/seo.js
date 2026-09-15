@@ -164,6 +164,7 @@ export function generateServiceMetadata(service) {
 }
 
 export function generateIndustryMetadata(industry) {
+  const isNoIndex = !!industry.noIndex;
   const ogImage = industry.ogImage
     ? industry.ogImage.startsWith("http")
       ? industry.ogImage
@@ -185,6 +186,7 @@ export function generateIndustryMetadata(industry) {
     ],
     url: `/industry/${industry.slug}`,
     image: ogImage,
+    noIndex: isNoIndex,
   });
 }
 

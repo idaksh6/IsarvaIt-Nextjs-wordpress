@@ -470,6 +470,125 @@ export const industriesData = [
       "Real-time performance insights"
     ],
     caseStudies: "Automated processes reducing handling time by 50%"
+  },
+  {
+    slug: "restaurant",
+    title: "Restaurant & Food Service",
+    icon: "🍽️",
+    heroImage: "/products/restaurant-pos/hero-clean.png",
+    color: "from-[#2aa35f] to-[#1f6b5c]",
+    softColor: "from-green-100 via-emerald-50 to-white",
+    accentColor: "emerald",
+    bgColor: "bg-emerald-50",
+    noIndex: true,
+    hidden: true,
+    preSelectedType: "Product",
+    preSelectedItem: "Restaurant POS Software",
+    productLink: "/product/restaurant-pos",
+    productLinkText: "Explore Restaurant POS",
+    shortDescription: "End-to-end technology solutions, cloud POS, table management, KDS, and ZATCA compliance for restaurants and cafes.",
+    description: "Streamline your dining room and kitchen operations with modern digital solutions. From interactive visual table seating and zero-delay kitchen display tickets to cloud cashier billing, online aggregator sync, and ZATCA Phase 2 compliance — empower your staff and delight your dining guests.",
+    challenges: [
+      "Table seating bottlenecks and slow turnover",
+      "Kitchen communication delays and order errors",
+      "Manual multi-aggregator order entry (HungerStation, Jahez, Keeta)",
+      "Uncontrolled raw ingredient wastage and food costs",
+      "Complex split billing and rush hour cashier queues",
+      "ZATCA Phase 2 e-invoicing and tax compliance"
+    ],
+    solutions: [
+      {
+        title: "Table Management & Dynamic Floor Plan",
+        description: "Interactive visual floor maps across Main Hall, Family, Outdoor, and VIP zones. Live color-coded statuses (Free, Occupied, Billing) eliminate host guesswork."
+      },
+      {
+        title: "Kitchen Display System (KDS) & Dispatch",
+        description: "Paperless KOD routing to designated prep stations. Instant order dispatch with visual countdowns and priority queues to reduce table wait times."
+      },
+      {
+        title: "Cloud Billing & Counter POS",
+        description: "Lightning-fast split billing, guest itemization, multiple payment gateways, and seamless offline cashier resilience during busy dinner rushes.",
+        link: "/product/restaurant-pos",
+        linkText: "Explore POS Engine"
+      },
+      {
+        title: "Online Food Aggregator Sync",
+        description: "Direct bi-directional integration with HungerStation, Jahez, Keeta, and delivery partners into a single centralized Kanban dispatch queue."
+      },
+      {
+        title: "Recipe & Raw Material Inventory Control",
+        description: "Automated stock depletion tied to recipe BOMs, ingredient-level tracking, real-time wastage alerts, and low-stock reordering."
+      },
+      {
+        title: "Multi-Branch Centralized Analytics",
+        description: "Live sales dashboards, top menu performers, food cost ratios, hourly footfall metrics, and branch comparison reports in real time."
+      },
+      {
+        title: "ZATCA Phase 2 E-Invoicing Compliance",
+        description: "Native bilingual (Arabic/English) 15% VAT receipts with compliant QR codes, tamper-proof logs, and simplified tax audit exports for Saudi Arabia."
+      },
+      {
+        title: "QR Digital Menu & Contactless Ordering",
+        description: "Self-service digital menus accessible via guest smartphones with instant kitchen ticket generation and optional digital payment checkout."
+      },
+      {
+        title: "Waiter Handheld Order Taking",
+        description: "Mobile tablet and smartphone order taking tableside with immediate kitchen dispatch, reducing server trips and accelerating service."
+      }
+    ],
+    segmentsTitle: "Food Service Segments We Empower",
+    segmentsSubtitle: "Specialized solutions tailored for every hospitality concept",
+    segments: [
+      {
+        title: "Fine Dining & Full-Service",
+        description: "Course-by-course firing, table reservations, guest dining histories, split billing by seat, and high-touch VIP guest preferences."
+      },
+      {
+        title: "Fast Casual & Quick Service (QSR)",
+        description: "Speed-optimized counter touchscreens, self-order kiosks, combo management, and rapid barcode/contactless payment workflows."
+      },
+      {
+        title: "Cafés, Bakeries & Coffee Shops",
+        description: "Modifier customization (milk types, sugar, toppings), quick barcode lookup for pastries, and integrated loyalty rewards for regulars."
+      },
+      {
+        title: "Cloud Kitchens & Ghost Kitchens",
+        description: "Multi-brand management from a single shared kitchen, aggregator unified order receiving, and centralized dispatch rider tracking."
+      }
+    ],
+    spotlight: {
+      badge: "Featured Flagship Software",
+      title: "Powered by Isarva Restaurant POS Software",
+      description: "Looking for the dedicated software suite? Explore live visual table floor maps, instant kitchen tickets, split billing, offline resilience, and bilingual ZATCA Phase 2 tax invoicing in one unified platform.",
+      link: "/product/restaurant-pos",
+      linkText: "View Product Page",
+      features: [
+        "Instant counter & waiter handheld mode",
+        "Live multi-area table occupancy map",
+        "HungerStation & Jahez unified Kanban",
+        "Automated ingredient depletion by recipe"
+      ]
+    },
+    technologies: ["React", "Next.js", "Node.js", "Tailwind CSS", "ZATCA Phase 2", "Cloud POS", "Offline SQLite Sync"],
+    benefits: [
+      {
+        title: "35% Faster Table Turnover",
+        description: "Speed up guest seating, kitchen prep coordination, and checkout times to serve more guests during peak rush hours."
+      },
+      {
+        title: "99.9% Order Accuracy",
+        description: "Eliminate handwritten order confusion with direct digital KDS tickets and real-time modifier transmission to kitchen stations."
+      },
+      {
+        title: "0% Untracked Wastage",
+        description: "Track every gram of raw ingredients with automated recipe-based depletion and precise variance reports on closing shifts."
+      },
+      {
+        title: "Real-Time Branch Oversight",
+        description: "Monitor live gross margins, cash drawer balances, and branch performance on any mobile device from anywhere."
+      }
+    ],
+    caseStudies: "Deployed cloud POS across leading dining outlets with zero downtime"
   }
 ];
 

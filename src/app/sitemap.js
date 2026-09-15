@@ -52,12 +52,14 @@ export default function sitemap() {
       priority: 0.9,
     }));
 
-  const industries = industriesData.map((industry) => ({
-    url: `${baseUrl}/industry/${industry.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly',
-    priority: 0.8,
-  }));
+  const industries = industriesData
+    .filter((industry) => !industry.noIndex && !industry.hidden)
+    .map((industry) => ({
+      url: `${baseUrl}/industry/${industry.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    }));
 
   // Dynamic career pages
   const careers = jobsData.map((job) => ({

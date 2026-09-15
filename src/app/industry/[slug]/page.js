@@ -34,15 +34,41 @@ export default async function IndustryDetailPage({ params }) {
     notFound();
   }
 
-  // Get related industries (3 random industries excluding current)
+  // Get related industries (3 random industries excluding current and hidden)
   const relatedIndustries = industriesData
-    .filter(i => i.slug !== industry.slug)
+    .filter(i => i.slug !== industry.slug && !i.hidden)
     .sort(() => 0.5 - Math.random())
     .slice(0, 3);
 
   // Function to get icon based on service title
   const getServiceIcon = (title) => {
     const titleLower = title.toLowerCase();
+
+    // Restaurant & Food Service
+    if (titleLower.includes('table management') || titleLower.includes('floor plan')) {
+      return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />;
+    }
+    if (titleLower.includes('kitchen') || titleLower.includes('kds')) {
+      return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />;
+    }
+    if (titleLower.includes('billing') || titleLower.includes('counter pos')) {
+      return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z" />;
+    }
+    if (titleLower.includes('aggregator') || titleLower.includes('online food') || titleLower.includes('hungerstation')) {
+      return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />;
+    }
+    if (titleLower.includes('recipe') || titleLower.includes('raw material') || titleLower.includes('inventory')) {
+      return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />;
+    }
+    if (titleLower.includes('e-invoicing') || titleLower.includes('zatca') || titleLower.includes('vat')) {
+      return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />;
+    }
+    if (titleLower.includes('qr') || titleLower.includes('contactless')) {
+      return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />;
+    }
+    if (titleLower.includes('waiter') || titleLower.includes('handheld') || titleLower.includes('fine dining') || titleLower.includes('fast casual') || titleLower.includes('café') || titleLower.includes('cloud kitchen')) {
+      return <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />;
+    }
 
     // Banking & Financial Services
     if (titleLower.includes('digital transformation')) {
@@ -232,7 +258,7 @@ export default async function IndustryDetailPage({ params }) {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           {/* Breadcrumb */}
           <div className="mb-8">
-            <div className="flex items-center gap-2 text-sm text-gray-600">
+            <div className="flex items-center justify-center lg:justify-start gap-2 text-sm text-gray-600">
               <Link href="/" prefetch={false} className="hover:text-emerald-600 transition-colors">
                 Home
               </Link>
@@ -250,18 +276,30 @@ export default async function IndustryDetailPage({ params }) {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full  backdrop-blur-md text-black font-semibold text-sm mb-6 border border-white/60 shadow-lg`}>
+            <div className="text-center lg:text-left">
+              <div className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full backdrop-blur-md text-black font-semibold text-sm mb-6 border border-white/60 shadow-lg mx-auto lg:mx-0`}>
                 <span className="text-2xl">{industry.icon}</span>
                 <span>Industry Expertise</span>
               </div>
               <h1 className="mb-6">
                 {industry.title}
               </h1>
-              <p className="text-base lg:text-xl text-gray-500 font-medium leading-relaxed mb-8">
+              <p className="text-base lg:text-xl text-gray-500 font-medium leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
                 {industry.description}
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                {industry.productLink && (
+                  <Link
+                    href={industry.productLink}
+                    prefetch={false}
+                    className={`press-illusion-btn-orange ${industry.slug === 'restaurant' ? 'bg-[#1f6b5c]' : 'bg-orange-600'} text-white w-fit font-bold px-8 py-4 text-base items-center space-x-2 flex cursor-pointer mx-auto lg:mx-0`}
+                  >
+                    <span>{industry.productLinkText || "Explore Product"}</span>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </Link>
+                )}
                 <IndustryDetailClient industry={industry} industriesData={industriesData} />
               </div>
             </div>
@@ -325,7 +363,7 @@ export default async function IndustryDetailPage({ params }) {
                           ? 'Elevate your creative workflow, streamline your operations, and deliver exceptional customer experiences with our tailored IT solutions. From content management to distribution, we offer a range of services designed to meet the unique needs of the media and entertainment industry. Our experts will work closely with you to understand your business goals and develop a customized solution that drives innovation and growth.'
                           : industry.slug === 'bpo-services-ites'
                             ? 'Isarva offers BPO solutions, including inbound and outbound call center services, to boost customer experience, cut costs, and support strategic business focus. We\'re expanding in Mangalore, creating new opportunities with a self-funded, innovative approach.'
-                            : 'Comprehensive technology solutions designed specifically for your industry'
+                            : industry.description
               }
             </p>
           </div>
@@ -336,16 +374,18 @@ export default async function IndustryDetailPage({ params }) {
               const isObject = typeof solution === 'object';
               const title = isObject ? solution.title : solution;
               const description = isObject ? solution.description : null;
+              const solutionLink = isObject ? solution.link : null;
+              const solutionLinkText = isObject ? solution.linkText : null;
 
               return (
                 <div
                   key={index}
-                  className="relative rounded-3xl p-8 bg-white/80 backdrop-blur-sm border border-white/60 shadow-lg hover:shadow-2xl transition-all duration-300 group"
+                  className="relative rounded-3xl p-8 bg-white/80 backdrop-blur-sm border border-white/60 shadow-lg hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between"
                 >
                   <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${industry.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
                   <div className="relative text-center">
-                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${industry.color} opacity-90 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 mx-auto`}>
-                      <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${industry.color} opacity-90 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 mx-auto text-white`}>
+                      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         {getServiceIcon(title)}
                       </svg>
                     </div>
@@ -358,6 +398,21 @@ export default async function IndustryDetailPage({ params }) {
                       </p>
                     )}
                   </div>
+
+                  {solutionLink && (
+                    <div className="relative text-center pt-4 mt-4 border-t border-gray-100">
+                      <Link
+                        href={solutionLink}
+                        prefetch={false}
+                        className={`inline-flex items-center gap-1 text-sm font-semibold text-emerald-700 hover:text-emerald-900 transition-colors`}
+                      >
+                        <span>{solutionLinkText || "Explore Solution"}</span>
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    </div>
+                  )}
                 </div>
               );
             })}
@@ -393,6 +448,47 @@ export default async function IndustryDetailPage({ params }) {
                       </svg>
                     </div>
                     <h3 className="mb-4 group-hover:text-blue-700 transition-colors duration-300">
+                      {segment.title}
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed text-[15px]">
+                      {segment.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Generic Segments Section (e.g. Restaurant Segments) */}
+      {industry.segments && (
+        <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
+          <div className="absolute inset-0 hero-noise-overlay opacity-[0.03]"></div>
+
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className="text-center mb-10">
+              <h2 className="mb-6 capitalize">
+                {industry.segmentsTitle || `Key Segments We Empower`}
+              </h2>
+              <p className="text-base lg:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                {industry.segmentsSubtitle || `Specialized solutions tailored for every concept`}
+              </p>
+            </div>
+
+            <div className={`grid grid-cols-1 md:grid-cols-2 ${industry.segments.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'} gap-8`}>
+              {industry.segments.map((segment, index) => (
+                <div
+                  key={index}
+                  className={`relative rounded-3xl p-8 bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-100 hover:border-emerald-300 shadow-lg hover:shadow-2xl transition-all duration-300 group`}
+                >
+                  <div className="relative text-center">
+                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${industry.color} flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 mx-auto text-white`}>
+                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        {getServiceIcon(segment.title)}
+                      </svg>
+                    </div>
+                    <h3 className={`mb-4 group-hover:text-emerald-700 transition-colors duration-300`}>
                       {segment.title}
                     </h3>
                     <p className="text-gray-700 leading-relaxed text-[15px]">
@@ -460,6 +556,59 @@ export default async function IndustryDetailPage({ params }) {
           </div>
         </div>
       </section>
+
+      {/* Product Spotlight Bridge (if defined) */}
+      {industry.spotlight && (
+        <section className="py-12 lg:py-16 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            <div className={`rounded-3xl p-8 lg:p-12 bg-gradient-to-br from-emerald-50 via-teal-50/50 to-white border-2 border-emerald-200 shadow-xl`}>
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-center lg:text-left">
+                <div className="lg:col-span-8">
+                  <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-emerald-300 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm mx-auto lg:mx-0`}>
+                    <svg className="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+                    <span>{industry.spotlight.badge}</span>
+                  </div>
+
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+                    {industry.spotlight.title}
+                  </h3>
+
+                  <p className="text-base text-gray-700 leading-relaxed mb-6 max-w-2xl mx-auto lg:mx-0">
+                    {industry.spotlight.description}
+                  </p>
+
+                  {industry.spotlight.features && (
+                    <div className="flex flex-wrap gap-2.5 justify-center lg:justify-start">
+                      {industry.spotlight.features.map((feat, fIdx) => (
+                        <span key={fIdx} className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-emerald-200 text-slate-800 text-xs sm:text-sm font-medium shadow-sm">
+                          <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+                          <span>{feat}</span>
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                <div className="lg:col-span-4 flex flex-col items-center lg:items-end justify-center">
+                  <Link
+                    href={industry.spotlight.link}
+                    prefetch={false}
+                    className={`press-illusion-btn-orange ${industry.slug === 'restaurant' ? 'bg-[#1f6b5c]' : 'bg-orange-600'} text-white w-fit font-bold px-8 py-4 text-base items-center space-x-2 flex cursor-pointer mx-auto lg:mx-0`}
+                  >
+                    <span>{industry.spotlight.linkText || "View Product Page"}</span>
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </Link>
+                  <span className="text-xs text-gray-500 mt-3 text-center lg:text-right w-full">
+                    Detailed specs, pricing & live tour
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Related Industries Section */}
       <section className="py-12 lg:py-16 bg-white relative overflow-hidden">
@@ -602,26 +751,42 @@ export default async function IndustryDetailPage({ params }) {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            {industry.productLink ? (
+              <Link
+                href={industry.productLink}
+                prefetch={false}
+                className={`press-illusion-btn-orange ${industry.slug === 'restaurant' ? 'bg-[#1f6b5c]' : 'bg-orange-600'} text-white group relative inline-flex items-center justify-center px-10 py-5 text-lg font-bold rounded-xl overflow-hidden shadow-xl`}
+              >
+                <span className="relative z-10 flex items-center gap-3">
+                  {industry.productLinkText || "Explore Product"}
+                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transform -skew-x-12 group-hover:translate-x-full transition-all duration-700"></div>
+              </Link>
+            ) : (
+              <Link
+                href="/contact"
+                prefetch={false}
+                className="press-illusion-btn-orange bg-orange-600 text-white group relative inline-flex items-center justify-center px-10 py-5 text-lg font-bold rounded-xl overflow-hidden shadow-xl"
+              >
+                <span className="relative z-10 flex items-center gap-3">
+                  Get Started Today
+                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transform -skew-x-12 group-hover:translate-x-full transition-all duration-700"></div>
+              </Link>
+            )}
+
             <Link
               href="/contact"
               prefetch={false}
-              className="press-illusion-btn-orange bg-orange-600 text-white group relative inline-flex items-center justify-center px-10 py-5 text-lg font-bold rounded-xl overflow-hidden shadow-xl"
-            >
-              <span className="relative z-10 flex items-center gap-3">
-                Get Started Today
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 transform -skew-x-12 group-hover:translate-x-full transition-all duration-700"></div>
-            </Link>
-
-            <Link
-              href="/industries"
-              prefetch={false}
               className="inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-gray-900 bg-white border-2 border-gray-300 rounded-xl hover:border-gray-400 hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
-              Browse All Industries
+              Contact Our Team
             </Link>
           </div>
 

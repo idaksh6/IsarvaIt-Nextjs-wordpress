@@ -10,7 +10,7 @@ export default function IndustryDetailClient({ industry, industriesData }) {
     <>
       <button
         onClick={() => setIsModalOpen(true)}
-        className="press-illusion-btn-orange bg-orange-500 text-white font-bold px-8 py-4 text-lg items-center space-x-2 inline-flex"
+        className="press-illusion-btn-orange bg-orange-500 text-white font-bold px-8 py-4 items-center space-x-2 inline-flex"
       >
         <span>Request Demo</span>
         <svg
@@ -31,9 +31,9 @@ export default function IndustryDetailClient({ industry, industriesData }) {
       <ContactFormModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        preSelectedType="Industry"
-        preSelectedItem={industry.title}
-        allItems={industriesData}
+        preSelectedType={industry.preSelectedType || "Industry"}
+        preSelectedItem={industry.preSelectedItem || industry.title}
+        allItems={industriesData?.filter((i) => !i.hidden)}
       />
     </>
   );
