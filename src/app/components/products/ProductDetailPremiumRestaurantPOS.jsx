@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "../AppLink";
 import ContactFormModal from "../ContactFormModal";
 
-const IMG = "/products/mesa-pos";
+const IMG = "/products/restaurant-pos";
 
 const FAQS = [
   {
@@ -464,16 +464,12 @@ const ZATCA_POINTS = [
 
 function Reveal({ children, className = "", style, motion = true }) {
   const ref = useRef(null);
-  const [visible, setVisible] = useState(!motion);
+  const [visible, setVisible] = useState(() => !motion || (typeof window !== "undefined" && typeof IntersectionObserver === "undefined"));
 
   useEffect(() => {
     if (!motion) return;
     const el = ref.current;
-    if (!el) return;
-    if (typeof IntersectionObserver === "undefined") {
-      setVisible(true);
-      return;
-    }
+    if (!el || typeof IntersectionObserver === "undefined") return;
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -563,7 +559,7 @@ function SmartMedia({ block }) {
   );
 }
 
-export default function ProductDetailPremiumMesaPOS({ product, relatedProducts = [], allProducts = [] }) {
+export default function ProductDetailPremiumRestaurantPOS({ product, relatedProducts = [], allProducts = [] }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeSmart, setActiveSmart] = useState("smart-floor");
   const [openFaq, setOpenFaq] = useState(null);
@@ -619,23 +615,19 @@ export default function ProductDetailPremiumMesaPOS({ product, relatedProducts =
   return (
     <>
       <style>{`
-        @keyframes mesaHeroZoom {
-          from { transform: scale(1.02); }
-          to { transform: scale(1.08); }
+        .restaurant-pos-hero-photo {
+          object-position: center center;
         }
-        .mesa-hero-photo {
-          object-position: 82% center;
-          transform-origin: 82% center;
-          animation: mesaHeroZoom 18s ease-in-out infinite alternate;
+        .restaurant-pos-hero-overlay {
+          background: linear-gradient(100deg, rgba(8,28,22,0.94) 0%, rgba(11,61,46,0.88) 28%, rgba(11,61,46,0.45) 46%, rgba(11,61,46,0.12) 58%, transparent 72%);
         }
         @media (max-width: 960px) {
-          .mesa-hero-photo { object-position: 88% center; }
-        }
-        @media (max-width: 760px) {
-          .mesa-hero-photo { object-position: 92% 30%; }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .mesa-hero-photo { animation: none !important; }
+          .restaurant-pos-hero-photo {
+            object-position: center center;
+          }
+          .restaurant-pos-hero-overlay {
+            background: linear-gradient(180deg, rgba(8,28,22,0.92) 0%, rgba(11,61,46,0.86) 30%, rgba(8,28,22,0.84) 65%, rgba(8,28,22,0.94) 100%);
+          }
         }
       `}</style>
 
@@ -647,22 +639,26 @@ export default function ProductDetailPremiumMesaPOS({ product, relatedProducts =
         }}
       >
         {/* Hero */}
-        <section className="relative min-h-[min(88vh,820px)] flex items-center overflow-hidden text-white" aria-labelledby="mesa-hero-title">
+        <section className="relative min-h-[min(88vh,820px)] flex items-center overflow-hidden text-white" aria-labelledby="restaurant-pos-hero-title">
           <div className="absolute inset-0 z-0" aria-hidden="true">
-            <img
-              className="mesa-hero-photo w-full h-full object-cover"
-              src={`${IMG}/hero-clean.png`}
-              alt="Waiter using restaurant POS tablet with live floor plan and table status on screen"
-              width={1600}
-              height={900}
-            />
-            <div
-              className="absolute inset-0 z-[1] max-[760px]:bg-[linear-gradient(180deg,rgba(8,28,22,0.55)_0%,rgba(11,61,46,0.72)_42%,rgba(8,28,22,0.88)_100%)]"
-              style={{
-                background:
-                  "linear-gradient(100deg, rgba(8,28,22,0.94) 0%, rgba(11,61,46,0.88) 28%, rgba(11,61,46,0.45) 46%, rgba(11,61,46,0.12) 58%, transparent 72%)",
-              }}
-            />
+            <picture className="w-full h-full block">
+              <source
+                media="(max-width: 768px)"
+                srcSet={`${IMG}/hero-clean-mobile.png`}
+              />
+              <source
+                media="(min-width: 769px)"
+                srcSet={`${IMG}/hero-clean.png`}
+              />
+              <img
+                className="restaurant-pos-hero-photo w-full h-full object-cover"
+                src={`${IMG}/hero-clean.png`}
+                alt="Waiter using restaurant POS tablet with live floor plan and table status on screen"
+                width={1600}
+                height={900}
+              />
+            </picture>
+            <div className="restaurant-pos-hero-overlay absolute inset-0 z-[1]" />
           </div>
 
           <div className="relative z-[2] w-full max-w-7xl mx-auto px-6 pt-32 lg:pt-40 pb-12 lg:pb-16">
@@ -671,7 +667,7 @@ export default function ProductDetailPremiumMesaPOS({ product, relatedProducts =
                 Restaurant POS Software
               </p>
               <h1
-                id="mesa-hero-title"
+                id="restaurant-pos-hero-title"
                 className="m-0 text-white text-[clamp(1.45rem,3vw,2rem)] font-semibold leading-[1.28] tracking-tight max-w-[18ch] mx-auto md:mx-0 drop-shadow-[0_6px_20px_rgba(0,0,0,0.25)]"
               >
                 Restaurant POS software that runs your floor — from seating guests to printing the bill

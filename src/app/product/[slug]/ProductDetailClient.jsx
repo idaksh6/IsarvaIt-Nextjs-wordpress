@@ -27,15 +27,27 @@ import ProductDetailPremiumPoshact from "../../components/products/ProductDetail
 import ProductDetailPremiumLMS from "../../components/products/ProductDetailPremiumLMS";
 import ProductDetailPremiumAnalytics from "../../components/products/ProductDetailPremiumAnalytics";
 import ProductDetailPremiumAssetFlow from "../../components/products/ProductDetailPremiumAssetFlow";
-import ProductDetailPremiumMesaPOS from "../../components/products/ProductDetailPremiumMesaPOS";
+import ProductDetailPremiumRestaurantPOS from "../../components/products/ProductDetailPremiumRestaurantPOS";
+import ProductDetailPremiumNethra from "../../components/products/ProductDetailPremiumNethra";
 
 export default function ProductDetailClient({ product, relatedProducts, allProducts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Isarva Nethra (AI Vision & Video Intelligence - Coming Soon - Unlinked)
+  if (product.slug === "isarva-nethra") {
+    return (
+      <ProductDetailPremiumNethra
+        product={product}
+        relatedProducts={[]}
+        allProducts={allProducts.filter((p) => !p.noIndex)}
+      />
+    );
+  }
+
   // Restaurant POS (noindex — not listed in nav)
   if (product.slug === "restaurant-pos") {
     return (
-      <ProductDetailPremiumMesaPOS
+      <ProductDetailPremiumRestaurantPOS
         product={product}
         relatedProducts={[]}
         allProducts={allProducts.filter((p) => !p.noIndex)}

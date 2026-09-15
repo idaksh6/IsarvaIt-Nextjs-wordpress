@@ -109,7 +109,7 @@ export default function Header() {
 
   // Dark-hero product pages: keep header white so nav links stay readable
   const forceWhiteHeader =
-    typeof pathname === "string" && pathname.includes("/product/restaurant-pos");
+    typeof pathname === "string" && (pathname.includes("/product/restaurant-pos") || pathname.includes("isarva-nethra"));
 
   const useSolidHeader = isScrollStablePage || forceWhiteHeader;
 
