@@ -3,7 +3,7 @@ export const PRICING_PLANS = [
     id: "professional",
     name: "Professional Plan",
     description: "Unlock advanced automation features and seamless HR management",
-    price: 200,
+    price: 250,
     priceLabel: null,
     period: "per employee per month",
     employeeLimit: null,
