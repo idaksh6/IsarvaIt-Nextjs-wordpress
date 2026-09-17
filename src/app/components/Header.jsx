@@ -63,6 +63,7 @@ const industriesData = [
   { label: "Education", href: "/industry/education", icon: "🎓" },
   { label: "Media & Entertainment", href: "/industry/media-entertainment", icon: "🎬" },
   { label: "BPO Services – ITES", href: "/industry/bpo-services-ites", icon: "💼" },
+  { label: "Restaurant", href: "/industry/restaurant", icon: "🍽️" },
 ];
 
 const productsData = [

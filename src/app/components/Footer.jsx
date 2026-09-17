@@ -148,6 +148,7 @@ export default function Footer() {
                 { label: "BillSoft Software", href: "/product/bill-soft" },
                 { label: "Marine Service Software", href: "/product/marine-service-software" },
                 { label: "Dispatcher Panel", href: "/product/dispatcher-panel" },
+                { label: "WhatsApp CRM", href: "/product/whatsapp-crm-software" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
@@ -175,6 +176,7 @@ export default function Footer() {
                 { label: "Manufacturing", href: "/industry/manufacturing" },
                 { label: "Insurance", href: "/industry/insurance" },
                 { label: "Media & Entertainment", href: "/industry/media-entertainment" },
+                { label: "Restaurant", href: "/industry/restaurant" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
@@ -202,6 +204,7 @@ export default function Footer() {
                 { label: "Industries", href: "/industries" },
                 { label: "White Label Partner", href: "/white-label-agency-partnerships" },
                 { label: "Partnership", href: "/partners" },
+                { label: "Testimonials", href: "/testimonial" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
