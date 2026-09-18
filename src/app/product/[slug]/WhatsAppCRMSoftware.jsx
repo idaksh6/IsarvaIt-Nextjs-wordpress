@@ -347,14 +347,14 @@ function WcrmFAQ({ onOpenModal }) {
         </div>
 
         {/* FAQ Accordion */}
-        <div className="flex flex-col gap-3">
+        <div className="wcrm-fade-up flex flex-col gap-3">
           {FAQ_ITEMS.map((item, i) => {
             const isOpen = openIndex === i;
             const isGold = item.color === "gold";
             return (
               <div
                 key={i}
-                className={`wcrm-fade-up rounded-2xl border-2 transition-all duration-300 overflow-hidden ${
+                className={`wcrm-faq-card rounded-2xl border-2 overflow-hidden ${
                   isGold
                     ? isOpen
                       ? "border-[rgba(212,175,55,0.70)] shadow-[0_8px_32px_rgba(212,175,55,0.22),0_2px_8px_rgba(212,175,55,0.12)] bg-white"
@@ -368,7 +368,7 @@ function WcrmFAQ({ onOpenModal }) {
                 <button
                   onClick={() => toggle(i)}
                   aria-expanded={isOpen}
-                  className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left cursor-pointer border-none bg-transparent"
+                  className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left cursor-pointer border-none bg-transparent select-none"
                 >
                   <div className="flex items-center gap-3 min-w-0">
                     {/* Tag pill */}
@@ -387,7 +387,7 @@ function WcrmFAQ({ onOpenModal }) {
                   </div>
                   {/* Chevron icon */}
                   <span
-                    className={`flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 ${
+                    className={`wcrm-faq-chevron flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full ${
                       isOpen
                         ? isGold
                           ? "bg-[rgba(212,175,55,0.15)] text-[#b8922a] rotate-180"
@@ -401,16 +401,16 @@ function WcrmFAQ({ onOpenModal }) {
                   </span>
                 </button>
 
-                {/* Answer panel */}
+                {/* Answer panel (zero-lag CSS grid animation) */}
                 <div
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-                  }`}
+                  className={`wcrm-faq-collapse ${isOpen ? "wcrm-faq-open" : ""}`}
                 >
-                  <div className={`px-6 pb-6 pt-0 border-t ${isGold ? "border-[rgba(212,175,55,0.2)]" : "border-emerald-100"}`}>
-                    <p className="text-[#475569] leading-[1.75] text-[0.95rem] mt-4 mb-0">
-                      {item.a}
-                    </p>
+                  <div className="wcrm-faq-inner">
+                    <div className={`px-6 pb-6 pt-0 border-t ${isGold ? "border-[rgba(212,175,55,0.2)]" : "border-emerald-100"}`}>
+                      <p className="text-[#475569] leading-[1.75] text-[0.95rem] mt-4 mb-0">
+                        {item.a}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -613,6 +613,28 @@ export default function WhatsAppCRMSoftware() {
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
+        }
+
+        /* ── FAQ Accordion hardware-accelerated grid transitions ── */
+        .wcrm-faq-card {
+          transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+        }
+        .wcrm-faq-chevron {
+          transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, color 0.2s ease;
+        }
+        .wcrm-faq-collapse {
+          display: grid;
+          grid-template-rows: 0fr;
+          opacity: 0;
+          transition: grid-template-rows 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.22s ease;
+        }
+        .wcrm-faq-collapse.wcrm-faq-open {
+          grid-template-rows: 1fr;
+          opacity: 1;
+        }
+        .wcrm-faq-inner {
+          overflow: hidden;
+          min-height: 0;
         }
       `}</style>
 
