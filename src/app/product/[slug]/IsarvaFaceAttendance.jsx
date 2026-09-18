@@ -916,15 +916,26 @@ export default function IsarvaFaceAttendance({ product, allProducts }) {
                 </div>
 
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-                  <a
-                    href="https://attendance.isarva.in"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 px-8 py-4 text-base font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  <button
+                    type="button"
+                    onClick={() => setIsModalOpen(true)}
+                    className="press-illusion-btn-orange bg-orange-500 text-white font-bold px-8 py-4 text-base items-center justify-center space-x-2 flex cursor-pointer rounded-xl"
                   >
-                    Open Isarva HRMS Portal
-                    <IconExternalLink />
-                  </a>
+                    <span>Connect with Isarva HRMS</span>
+                    <svg
+                      className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2.5}
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
+                      />
+                    </svg>
+                  </button>
                 </div>
               </div>
 
@@ -978,15 +989,16 @@ export default function IsarvaFaceAttendance({ product, allProducts }) {
                       <span className="w-2 h-2 rounded-full bg-emerald-500" />
                       <span>Isarva Attendance & Payroll Portal</span>
                     </span>
-                    <a
-                      href="https://attendance.isarva.in"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1 transition-colors"
+                    <button
+                      type="button"
+                      onClick={() => setIsModalOpen(true)}
+                      className="font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1 transition-colors cursor-pointer"
                     >
-                      <span>attendance.isarva.in</span>
-                      <IconExternalLink />
-                    </a>
+                      <span>Connect with HRMS</span>
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1114,19 +1126,10 @@ export default function IsarvaFaceAttendance({ product, allProducts }) {
                   Mount any Android phone at the entrance, eliminate buddy punching with AI blink detection, and sync live to your Isarva HRMS dashboard.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                  <a
-                    href="https://attendance.isarva.in"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-center"
-                  >
-                    <span>Access Isarva Web App</span>
-                    <IconExternalLink />
-                  </a>
+                <div className="flex justify-center items-center">
                   <button
                     onClick={() => setIsModalOpen(true)}
-                    className="w-full sm:w-auto press-illusion-btn-orange bg-orange-500 text-white font-bold px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base items-center justify-center space-x-2 flex cursor-pointer rounded-xl"
+                    className="w-full sm:w-auto press-illusion-btn-orange bg-orange-500 text-white font-bold px-8 py-4 text-base items-center justify-center space-x-2 flex cursor-pointer rounded-xl"
                   >
                     Request Callback
                   </button>
