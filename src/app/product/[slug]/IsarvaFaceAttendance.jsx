@@ -500,7 +500,7 @@ export default function IsarvaFaceAttendance({ product, allProducts }) {
                     onClick={() => setIsModalOpen(true)}
                     className="press-illusion-btn-orange bg-orange-500 text-white w-full sm:w-fit font-bold px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base items-center justify-center space-x-2 flex cursor-pointer rounded-xl"
                   >
-                    <span>Connect with Isarva HRMS</span>
+                    <span>Request a Demo</span>
                     <svg
                       className="w-5 h-5 group-hover:translate-x-1 transition-transform"
                       fill="none"
@@ -921,7 +921,7 @@ export default function IsarvaFaceAttendance({ product, allProducts }) {
                     onClick={() => setIsModalOpen(true)}
                     className="press-illusion-btn-orange bg-orange-500 text-white font-bold px-8 py-4 text-base items-center justify-center space-x-2 flex cursor-pointer rounded-xl"
                   >
-                    <span>Connect with Isarva HRMS</span>
+                    <span>Request Live Demo</span>
                     <svg
                       className="w-5 h-5 group-hover:translate-x-1 transition-transform"
                       fill="none"
@@ -994,7 +994,7 @@ export default function IsarvaFaceAttendance({ product, allProducts }) {
                       onClick={() => setIsModalOpen(true)}
                       className="font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1 transition-colors cursor-pointer"
                     >
-                      <span>Connect with HRMS</span>
+                      <span>Request Access</span>
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
