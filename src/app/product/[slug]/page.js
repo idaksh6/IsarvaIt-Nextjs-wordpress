@@ -3,6 +3,7 @@ import { getProductBySlug, getAllProductSlugs, productsData } from "../../lib/da
 import ProductDetailClient from "./ProductDetailClient";
 import MobileAppDevelopment from "./MobileAppDevelopment";
 import WhatsAppCRMSoftware from "./WhatsAppCRMSoftware";
+import IsarvaFaceAttendance from "./IsarvaFaceAttendance";
 import {
   generateProductMetadata,
   generateProductSchema,
@@ -47,6 +48,10 @@ export default async function ProductDetailPage({ params }) {
 
   if (slug === "whatsapp-crm-software") {
     return <WhatsAppCRMSoftware />;
+  }
+
+  if (slug === "isarva-face-attendance") {
+    return <IsarvaFaceAttendance product={product} allProducts={productsData} />;
   }
 
   // Get related products (3 random products excluding current, prioritizing same category)
