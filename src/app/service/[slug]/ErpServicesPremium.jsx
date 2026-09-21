@@ -830,38 +830,64 @@ export default function ErpServicesPremium({ service, servicesData }) {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.4fr] gap-6 rounded-[24px] bg-white border border-slate-900/10 shadow-sm overflow-hidden">
-              <aside className="p-8 bg-emerald-50/40 border-r border-slate-900/5 flex flex-col justify-center">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-500/20 text-[0.68rem] font-bold tracking-[0.08em] capitalize text-emerald-600 mb-5 w-fit">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                  </span>
-                  Live sync ready
+            <div className="grid grid-cols-1 lg:grid-cols-[1.08fr_1.22fr] rounded-[24px] bg-white border border-slate-900/10 shadow-sm overflow-hidden">
+              <aside className="p-6 sm:p-8 lg:p-10 bg-emerald-50/40 border-b lg:border-b-0 lg:border-r border-slate-900/5 flex flex-col justify-start">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100/70 border border-emerald-500/20 text-[0.7rem] font-extrabold tracking-[0.08em] uppercase text-emerald-700 mb-5 w-fit">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                  LIVE SYNC READY
                 </div>
 
-                <h3 className="text-slate-900 font-bold text-lg md:text-xl mb-3">Works with your stack</h3>
-                <p className="text-sm text-slate-500 leading-relaxed mb-6">
-                  Plug ERP Services into your existing enterprise software. Data stays secure, updates in real time, and your team keeps using familiar tools.
+                <h3 className="text-slate-900 font-extrabold text-2xl sm:text-3xl tracking-tight mb-4">
+                  Works with your stack
+                </h3>
+
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-4">
+                  Plug iSARVA ERP into the software your team already trusts. Payments clear into the ledger, store orders update stock, attendance feeds payroll, and reports stay current—securely, in near real time.
                 </p>
 
-                <ul className="list-none m-0 p-0 flex flex-col gap-3.5">
-                  <li className="flex items-start gap-3 text-sm text-slate-600 leading-relaxed">
-                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-50 border border-emerald-500/20 text-emerald-600 text-[10px] font-bold">✓</span>
-                    <span>Control who sees what—with a clear record of every change</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-sm text-slate-600 leading-relaxed">
-                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-50 border border-emerald-500/20 text-emerald-600 text-[10px] font-bold">✓</span>
-                    <span>Import and export spreadsheets for accounts, stock, and staff</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-sm text-slate-600 leading-relaxed">
-                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-50 border border-emerald-500/20 text-emerald-600 text-[10px] font-bold">✓</span>
-                    <span>Get alerts when orders, payroll, or stock levels change</span>
-                  </li>
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-6">
+                  You do not need to rip and replace every tool on day one. Start with one high-value connection—banking, ecommerce, or attendance—then expand when the first sync is stable and trusted by finance and operations.
+                </p>
+
+
+
+                <span className="text-xs font-extrabold uppercase tracking-wider text-emerald-600 mb-3.5 block">
+                  WHAT YOU KEEP UNDER CONTROL
+                </span>
+
+                <ul className="list-none m-0 p-0 flex flex-col gap-3 mb-6">
+                  {[
+                    "Control who sees what—with a clear record of every change",
+                    "Import and export spreadsheets for accounts, stock, and staff",
+                    "Get alerts when orders, payroll, or stock levels change",
+                    "Retry failed syncs and review connection health from one place",
+                    "Map fields once—customers, SKUs, and GL codes stay consistent",
+                    "Use REST APIs and webhooks when you need a custom link",
+                    "Encrypt credentials and limit each connection by role and module",
+                    "Pause or schedule syncs during month-end or peak seasons",
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex items-start gap-3 text-sm text-slate-700 leading-snug">
+                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100/90 text-emerald-700 mt-0.5">
+                        <svg className="w-3 h-3 text-emerald-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
                 </ul>
+
+                <div className="p-4 sm:p-5 rounded-2xl border border-dashed border-emerald-300 bg-white/60">
+                  <h4 className="text-xs font-extrabold uppercase tracking-wider text-emerald-700 mb-1.5">
+                    NEED SOMETHING CUSTOM?
+                  </h4>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-0">
+                    Use APIs and webhooks to link niche tools, partner portals, or internal apps—without leaving the same security and audit model.
+                  </p>
+                </div>
               </aside>
 
-              <div className="p-6 md:p-8 bg-white">
+              <div className="p-6 md:p-8 bg-white flex flex-col justify-center">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {integrationCards.map((card, idx) => (
                     <article

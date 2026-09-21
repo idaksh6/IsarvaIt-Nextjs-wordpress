@@ -222,8 +222,13 @@ export default function IsarvaFaceAttendance({ product, allProducts }) {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   const tabRefs = useRef([]);
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
     const activeTabEl = tabRefs.current[activeScreenIndex];
     if (activeTabEl) {
       activeTabEl.scrollIntoView({
@@ -284,7 +289,7 @@ export default function IsarvaFaceAttendance({ product, allProducts }) {
 
   const trendingSolutions = [
     "AI-Based Facial Recognition",
-    "Facial Recognition Tools",
+    <>Facial Recognition <br />Tools</>,
     "Eye Blink Liveness Detection",
     "Anti-Spoofing Attendance Software",
     "Android Biometric Face Kiosk",
@@ -1101,19 +1106,8 @@ export default function IsarvaFaceAttendance({ product, allProducts }) {
               {trendingSolutions.map((item, idx) => (
                 <div
                   key={idx}
-                  onClick={() => setIsModalOpen(true)}
-                  className="group p-4 rounded-xl bg-white border border-gray-200 hover:border-blue-400 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200 cursor-pointer flex flex-col justify-start"
+                  className="p-4 sm:p-5 rounded-xl bg-white border border-gray-200/90 shadow-sm flex items-center"
                 >
-                  <div className="flex items-center justify-between mb-2.5">
-                    <span className="text-xs font-bold text-blue-600 bg-blue-50 border border-blue-100 rounded-md px-2 py-0.5">
-                      {String(idx + 1).padStart(2, "0")}
-                    </span>
-                    <div className="w-6 h-6 rounded-md bg-gray-50 group-hover:bg-blue-50 text-gray-400 group-hover:text-blue-600 flex items-center justify-center transition-colors">
-                      <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  </div>
                   <h3 className="text-sm sm:text-base leading-snug mb-0">
                     {item}
                   </h3>
