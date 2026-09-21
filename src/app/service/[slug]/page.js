@@ -18,6 +18,7 @@ import {
   generateServiceBreadcrumbSchema,
 } from "../../lib/utils/seo";
 import NewsAndMagazinePortal from "./NewsAndMagazinePortal";
+import ErpServicesPremium from "./ErpServicesPremium";
 
 export async function generateStaticParams() {
   return getAllServiceSlugs().map((slug) => ({
@@ -95,6 +96,26 @@ export default async function ServiceDetailPage({ params }) {
   // ── Premium page for News and Magazine Portal ──────────────
   if (slug === "news-and-magazine-portal") {
     return <NewsAndMagazinePortal service={service} servicesData={servicesData} />;
+  }
+
+  // ── Premium page for ERP Services ───────────────────────────
+  if (slug === "erp-services") {
+    const serviceSchema = generateServiceSchema(service);
+    const breadcrumbSchema = generateServiceBreadcrumbSchema(service);
+
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+        <ErpServicesPremium service={service} servicesData={servicesData} />
+      </>
+    );
   }
 
 

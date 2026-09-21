@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useState, useRef } from "react";
+import Link from "../../components/AppLink";
+import ContactFormModal from "../../components/ContactFormModal";
 
 const integrationData = {
   crm: {
@@ -9,7 +11,7 @@ const integrationData = {
     theme: "text-[#7c3aed] bg-[#7c3aed]/10 border-[#7c3aed]/20",
     borderClass: "border-[#7c3aed] hover:shadow-[0_8px_24px_rgba(124,58,237,0.2)] focus-visible:outline-[#7c3aed]",
     textTheme: "text-[#7c3aed]",
-    desc: "Part of the ERP Software suite. Manage leads, pipelines, and customer relationships on one platform.",
+    desc: "Part of our ERP Services suite. Manage leads, pipelines, and customer relationships on one unified platform.",
     features: [
       "Sales pipeline and opportunity tracking",
       "Customer accounts and contact history",
@@ -22,7 +24,7 @@ const integrationData = {
     theme: "text-[#059669] bg-[#059669]/10 border-[#059669]/20",
     borderClass: "border-[#059669] hover:shadow-[0_8px_24px_rgba(5,150,105,0.2)] focus-visible:outline-[#059669]",
     textTheme: "text-[#059669]",
-    desc: "Part of the ERP Software suite. Handle staffing, attendance, and payroll in one place.",
+    desc: "Part of our ERP Services suite. Handle staffing, attendance, and payroll in one place.",
     features: [
       "Employee records and org structure",
       "Attendance, leave, and timesheets",
@@ -35,7 +37,7 @@ const integrationData = {
     theme: "text-[#2563eb] bg-[#2563eb]/10 border-[#2563eb]/20",
     borderClass: "border-[#2563eb] hover:shadow-[0_8px_24px_rgba(37,99,235,0.2)] focus-visible:outline-[#2563eb]",
     textTheme: "text-[#2563eb]",
-    desc: "Part of the ERP Software suite. Plan sprints, track tasks, and deliver projects on schedule.",
+    desc: "Part of our ERP Services suite. Plan sprints, track tasks, and deliver projects on schedule.",
     features: [
       "Sprint boards and kanban workflows",
       "Task assignments and milestone tracking",
@@ -48,7 +50,7 @@ const integrationData = {
     theme: "text-[#ea580c] bg-[#ea580c]/10 border-[#ea580c]/20",
     borderClass: "border-[#ea580c] hover:shadow-[0_8px_24px_rgba(234,88,12,0.2)] focus-visible:outline-[#ea580c]",
     textTheme: "text-[#ea580c]",
-    desc: "Part of the ERP Software suite. Control stock levels, warehousing, and procurement.",
+    desc: "Part of our ERP Services suite. Control stock levels, warehousing, and procurement.",
     features: [
       "Real-time stock and warehouse balances",
       "Purchase orders and supplier management",
@@ -61,7 +63,7 @@ const integrationData = {
     theme: "text-[#0891b2] bg-[#0891b2]/10 border-[#0891b2]/20",
     borderClass: "border-[#0891b2] hover:shadow-[0_8px_24px_rgba(8,145,178,0.2)] focus-visible:outline-[#0891b2]",
     textTheme: "text-[#0891b2]",
-    desc: "Part of the ERP Software suite. Monitor cash flow, budgets, and financial performance.",
+    desc: "Part of our ERP Services suite. Monitor cash flow, budgets, and financial performance.",
     features: [
       "Cash flow and treasury dashboards",
       "Budget planning and variance analysis",
@@ -74,7 +76,7 @@ const integrationData = {
     theme: "text-[#ca8a04] bg-[#ca8a04]/10 border-[#ca8a04]/20",
     borderClass: "border-[#ca8a04] hover:shadow-[0_8px_24px_rgba(202,138,4,0.2)] focus-visible:outline-[#ca8a04]",
     textTheme: "text-[#ca8a04]",
-    desc: "Part of the ERP Software suite. Maintain compliant double-entry books and financial audits.",
+    desc: "Part of our ERP Services suite. Maintain compliant double-entry books and financial audits.",
     features: [
       "General ledger and journal entries",
       "Accounts receivable and payable",
@@ -220,13 +222,22 @@ const integrationCards = [
   { icon: "🔗", title: "API & Webhooks", desc: "Build custom links with secure APIs and instant events." }
 ];
 
-export default function ErpSoftwareClient() {
+export default function ErpServicesPremium({ service, servicesData }) {
   const [activeModule, setActiveModule] = useState(null);
   const [inView, setInView] = useState(false);
   const [closeStat, setCloseStat] = useState(0);
   const [autoStat, setAutoStat] = useState(0);
   const [saveStat, setSaveStat] = useState(0);
   const [revenue, setRevenue] = useState(0);
+
+  // Modal State
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalTitle, setModalTitle] = useState("ERP Services Demo & Consultation");
+
+  const openDemoModal = (title = "ERP Services Demo & Consultation") => {
+    setModalTitle(title);
+    setIsModalOpen(true);
+  };
 
   // Interactive Module Dashboard state
   const [hubTab, setHubTab] = useState('hrms');
@@ -272,7 +283,6 @@ export default function ErpSoftwareClient() {
     if (!inView) return;
 
     // Count 1: 10x
-    let startClose = 0;
     const durClose = 1800;
     const t0Close = performance.now();
     function tickClose(now) {
@@ -376,6 +386,25 @@ export default function ErpSoftwareClient() {
           </div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
+            {/* Breadcrumb Navigation */}
+            <div className="mb-6">
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <Link href="/" prefetch={false} className="hover:text-emerald-600 transition-colors">
+                  Home
+                </Link>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+                <Link href="/services" prefetch={false} className="hover:text-emerald-600 transition-colors">
+                  Services
+                </Link>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+                <span className="text-emerald-600 font-medium">ERP Services</span>
+              </div>
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.12fr)_minmax(0,0.98fr)] gap-14 lg:gap-10 items-center overflow-visible">
               <div className="flex flex-col gap-0 min-w-0 max-w-full items-center text-center lg:items-start lg:text-left">
                 <p className={`inline-flex items-center flex-nowrap gap-2 px-4 py-[0.38rem] mb-4 sm:mb-6 bg-white/85 border border-[#10b981]/25 shadow-[0_1px_3px_rgba(0,0,0,0.05)] backdrop-blur-[8px] rounded-full whitespace-nowrap transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] delay-[50ms] ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[15px]'}`}>
@@ -383,30 +412,30 @@ export default function ErpSoftwareClient() {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                   </span>
-                  <span className="text-[11px] min-[375px]:text-xs sm:text-sm font-semibold tracking-wider text-[#064e3b] normal-case">Enterprise ERP · Built for Scale</span>
+                  <span className="text-[11px] min-[375px]:text-xs sm:text-sm font-semibold tracking-wider text-[#064e3b] normal-case">Enterprise ERP Services · Built for Scale</span>
                 </p>
 
                 <h1 className={`font-display text-[clamp(1.75rem,8vw,2.25rem)] lg:text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold leading-none tracking-tight mb-4 sm:mb-6 text-[#1a1f24] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] delay-[100ms] ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[15px]'}`}>
                   Run your business on
-                  <span className="block mt-[0.15rem] hero-title-gradient-flow">one intelligent ERP platform.</span>
+                  <span className="block mt-[0.15rem] hero-title-gradient-flow">one intelligent ERP ecosystem.</span>
                 </h1>
 
                 <div className={`max-w-[540px] mb-5 sm:mb-8 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] delay-[160ms] ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[15px]'}`}>
                   <p className="text-base lg:text-xl text-gray-600 leading-relaxed font-medium mb-8 max-w-xl">
-                    One platform for finance, HR, sales, inventory, and projects—enter data once, every team stays aligned.
+                    End-to-end ERP implementation, customization, and support for finance, HR, sales, inventory, and operations—every team stays aligned.
                   </p>
                   <ul className="list-none m-0 p-0 flex flex-col gap-[0.45rem] items-center lg:items-start">
                     <li className="flex items-start gap-[0.55rem] text-[0.9rem] leading-[1.45] text-slate-900 font-medium">
                       <span className="shrink-0 w-5 h-5 flex items-center justify-center rounded-[6px] text-[0.55rem] text-white bg-gradient-to-br from-[#0fb84e] to-[#06b6d4] shadow-[0_2px_8px_rgba(15,184,78,0.25)] mt-[0.1rem]" aria-hidden="true">⟡</span>
-                      <span>Real-time sync across all modules</span>
+                      <span>Real-time sync across SAP, Odoo, Oracle &amp; Custom ERPs</span>
                     </li>
                     <li className="flex items-start gap-[0.55rem] text-[0.9rem] leading-[1.45] text-slate-900 font-medium">
                       <span className="shrink-0 w-5 h-5 flex items-center justify-center rounded-[6px] text-[0.55rem] text-white bg-gradient-to-br from-[#0fb84e] to-[#06b6d4] shadow-[0_2px_8px_rgba(15,184,78,0.25)] mt-[0.1rem]" aria-hidden="true">⟡</span>
-                      <span>Approvals, audit trail &amp; role access</span>
+                      <span>Automated approvals, audit trail &amp; role-based access</span>
                     </li>
                     <li className="flex items-start gap-[0.55rem] text-[0.9rem] leading-[1.45] text-slate-900 font-medium">
                       <span className="shrink-0 w-5 h-5 flex items-center justify-center rounded-[6px] text-[0.55rem] text-white bg-gradient-to-br from-[#0fb84e] to-[#06b6d4] shadow-[0_2px_8px_rgba(15,184,78,0.25)] mt-[0.1rem]" aria-hidden="true">⟡</span>
-                      <span>Go live in weeks with guided setup</span>
+                      <span>Go live smoothly in weeks with our dedicated implementation team</span>
                     </li>
                   </ul>
                 </div>
@@ -429,16 +458,16 @@ export default function ErpSoftwareClient() {
                 <div className={`flex flex-col gap-5 sm:gap-7 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] delay-[280ms] ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[15px]'}`}>
                   <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-3">
                     <button
-                      onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                      onClick={() => openDemoModal("Request Live ERP Demo & Consultation")}
                       className="inline-flex items-center justify-center rounded-xl cursor-pointer px-9 py-[1.125rem] text-[1.05rem] border-none text-white w-auto relative isolate overflow-hidden hero-btn-primary-custom hover:-translate-y-[3px] hover:scale-[1.02] active:-translate-y-[1px] active:scale-[0.99] group transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] font-bold"
                     >
-                      <span>Request Demo</span>
+                      <span>Request a Demo</span>
                       <svg className="transition-transform duration-[350ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-[5px]" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                         <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
                       </svg>
                     </button>
                     <a href="#module-hub" className="inline-flex items-center justify-center rounded-xl cursor-pointer px-9 py-[1.125rem] text-[1.05rem] border-2 border-transparent text-slate-900 font-bold w-auto relative isolate overflow-hidden hero-btn-secondary-custom hover:-translate-y-[3px] hover:scale-[1.02] active:-translate-y-[1px] active:scale-[0.99] hover:text-[#047857] group transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]">
-                      <span>Explore More</span>
+                      <span>Explore Modules</span>
                       <svg className="transition-transform duration-[350ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-[5px]" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                         <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
                       </svg>
@@ -485,7 +514,6 @@ export default function ErpSoftwareClient() {
                   </div>
 
                   <div className="absolute left-1/2 top-1/2 w-[340px] h-[340px] -ml-[170px] -mt-[170px] md:w-[440px] md:h-[440px] md:-ml-[220px] md:-mt-[220px] lg:w-[560px] lg:h-[560px] lg:-ml-[280px] lg:-mt-[280px] animate-[hero-ring-spin_16s_linear_infinite] pointer-events-none z-0" aria-hidden="true">
-
                     <span className="absolute left-1/2 top-1/2 w-2 h-2 -ml-1 -mt-1 rounded-full bg-[#0fb84e] shadow-[0_0_14px_rgba(15,184,78,0.8)] hero-orbit-dot-0"></span>
                     <span className="absolute left-1/2 top-1/2 w-2 h-2 -ml-1 -mt-1 rounded-full bg-[#0fb84e] shadow-[0_0_14px_rgba(15,184,78,0.8)] hero-orbit-dot-1"></span>
                     <span className="absolute left-1/2 top-1/2 w-2 h-2 -ml-1 -mt-1 rounded-full bg-[#0fb84e] shadow-[0_0_14px_rgba(15,184,78,0.8)] hero-orbit-dot-2"></span>
@@ -528,7 +556,7 @@ export default function ErpSoftwareClient() {
                       <div className="p-[1.1rem] bg-white rounded-b-[18px] relative overflow-hidden">
                         <img
                           src="/products/erp-software/hero.png"
-                          alt="ERP Software dashboard with CRM, HRMS, inventory, finance, and projects"
+                          alt="ERP Services dashboard with CRM, HRMS, inventory, finance, and projects"
                           className="w-full h-auto rounded-[10px] shadow-[0_12px_32px_rgba(15,23,42,0.1)] block"
                           width="580"
                           height="360"
@@ -562,9 +590,9 @@ export default function ErpSoftwareClient() {
         >
           <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
             <div className="text-center mb-10">
-              <span className="text-xs capitalize font-extrabold tracking-[2px] text-[#088c3a] mb-3 inline-block">Unified Platform</span>
+              <span className="text-xs capitalize font-extrabold tracking-[2px] text-[#088c3a] mb-3 inline-block">Unified Architecture</span>
               <h2 className="mb-6 capitalize">
-                ERP Software Module Suite
+                Enterprise ERP Module Suite
               </h2>
               <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
                 Six integrated business modules on one Isarva platform—arranged around a single ERP core. Select any module to explore.
@@ -578,7 +606,7 @@ export default function ErpSoftwareClient() {
                 <div
                   className="ecosystem-canvas relative min-h-[138px] md:min-h-[500px] flex items-center justify-center md:p-10 md:px-3 bg-radial-gradient bg-[#c5ddd3] rounded-[18px] border border-[#08783a]/30 shadow-[inset_0_1px_0_rgba(255,255,255,0.28),inset_0_0_48px_rgba(15,23,42,0.05),0_0_0_1px_rgba(15,184,78,0.1),0_14px_40px_rgba(8,100,50,0.2)] group/canvas"
                   role="group"
-                  aria-label="ERP Software module suite"
+                  aria-label="Enterprise ERP Module Suite"
                   style={{
                     backgroundImage: 'radial-gradient(circle at 50% 40%, rgba(15, 184, 78, 0.2) 0%, transparent 44%), linear-gradient(155deg, #c5ddd3 0%, #b3d2c3 45%, #a3c7b5 100%)'
                   }}
@@ -706,7 +734,7 @@ export default function ErpSoftwareClient() {
                         <div className="text-4xl mb-4 animate-[pulse-gear_3s_infinite] select-none">⚡</div>
                         <h4 className="font-display text-base font-bold text-slate-800 mb-2">Pick a Module</h4>
                         <p className="text-xs leading-normal text-slate-500 max-w-[200px]">
-                          Hover or click a module card to see what it includes in the ERP Software suite.
+                          Hover or click a module card to see what it includes in our ERP Services suite.
                         </p>
                       </div>
                     )}
@@ -732,7 +760,7 @@ export default function ErpSoftwareClient() {
                 Built for Your Industry
               </h2>
               <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-                Whether you make products, run stores, deliver services, or move goods—ERP Software fits how your team works every day.
+                Whether you make products, run stores, deliver services, or move goods—our ERP Services fit how your team works every day.
               </p>
             </div>
 
@@ -795,7 +823,7 @@ export default function ErpSoftwareClient() {
               <p className="text-xs font-bold capitalize tracking-widest text-emerald-600 mb-3">Connectivity</p>
               <h2 className="mb-6 capitalize">Integrations &amp; Open Connectivity</h2>
               <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-                Connect the tools you already use—banks, shops, email, and reports—so data flows into ERP Software without double entry.
+                Connect the tools you already use—banks, shops, email, and reports—so data flows into our ERP systems without double entry.
               </p>
             </div>
 
@@ -811,7 +839,7 @@ export default function ErpSoftwareClient() {
 
                 <h3 className="text-slate-900 font-bold text-lg md:text-xl mb-3">Works with your stack</h3>
                 <p className="text-sm text-slate-500 leading-relaxed mb-6">
-                  Plug ERP Software into your existing software. Data stays secure, updates in real time, and your team keeps using familiar tools.
+                  Plug ERP Services into your existing enterprise software. Data stays secure, updates in real time, and your team keeps using familiar tools.
                 </p>
 
                 <ul className="list-none m-0 p-0 flex flex-col gap-3.5">
@@ -855,12 +883,11 @@ export default function ErpSoftwareClient() {
           style={{ background: 'linear-gradient(145deg, #fffef7 0%, #fffbeb 35%, #fef9c3 65%, #fde68a 100%)' }}>
 
           <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
-            {/* Header — POSH style */}
             <div className="text-center max-w-3xl mx-auto mb-10 lg:mb-14">
               <p className="text-xs font-bold capitalize tracking-widest text-amber-700 mb-3">Interactive Workspace</p>
               <h2 className="mb-6 capitalize">Interactive Module Dashboard Mockups</h2>
               <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-                Select a module to toggle its dedicated glass dashboard mockup. Interact with live sliders, calculators, and task components to see operational reactivity.
+                Select a module to toggle its dedicated dashboard mockup. Interact with live sliders, calculators, and task components to see operational reactivity.
               </p>
             </div>
 
@@ -1064,7 +1091,7 @@ export default function ErpSoftwareClient() {
                           <div className="bg-white rounded-xl border border-slate-900/[0.08] p-4 sm:p-6 shadow-sm">
                             <h3 className="mb-1">📊 Treasury &amp; Budget Allocations</h3>
                             <p className="text-sm text-gray-500 mb-5 leading-relaxed">Review cashflows derived from accounting ledgers automatically.</p>
-                            <div className="grid grid-cols-1  sm:grid-cols-2 gap-5 mb-5">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                               {[
                                 { label: 'Current Run-Rate:', val: '₹1.52M / yr', color: 'text-gray-900' },
                                 { label: 'Net Profit Margin:', val: '42.8%', color: 'text-emerald-700' },
@@ -1176,7 +1203,7 @@ export default function ErpSoftwareClient() {
           </div>
         </section>
 
-        {/* Implementation Section: How ERP Software Goes Live */}
+        {/* Implementation Section: How ERP Goes Live */}
         <section
           className="py-12 lg:py-16 relative overflow-hidden border-t border-slate-900/5"
           id="how-it-works"
@@ -1186,10 +1213,10 @@ export default function ErpSoftwareClient() {
         >
           <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
             <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-              <span className="text-xs font-extrabold capitalize tracking-widest text-[#059669] mb-3 block">Implementation</span>
-              <h2 className="mb-6 capitalize">How ERP Software Goes Live</h2>
+              <span className="text-xs font-extrabold capitalize tracking-widest text-[#059669] mb-3 block">Implementation Methodology</span>
+              <h2 className="mb-6 capitalize">How ERP Services Go Live</h2>
               <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-                Five clear steps from first meeting to daily use—most teams go live in <strong className="text-emerald-600 font-extrabold">4 to 12 weeks</strong>, depending on modules and data size.
+                Five clear steps from initial audit to daily operations—most teams go live in <strong className="text-emerald-600 font-extrabold">4 to 12 weeks</strong>, depending on modules and data size.
               </p>
             </div>
 
@@ -1201,11 +1228,11 @@ export default function ErpSoftwareClient() {
 
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-4 relative z-10">
                 {[
-                  { num: "01", icon: "🔍", title: "Understand your business", desc: "We learn how your team works—departments, branches, and the software you use today." },
-                  { num: "02", icon: "⚙️", title: "Set up your system", desc: "We configure accounts, approvals, user access, and workflows to fit how you operate." },
-                  { num: "03", icon: "📥", title: "Move your data", desc: "We import your records from spreadsheets or old systems—safely, in stages, with checks along the way." },
-                  { num: "04", icon: "🎓", title: "Train your team", desc: "Practical sessions for finance, HR, sales, warehouse staff, and managers—using real examples." },
-                  { num: "05", icon: "🚀", title: "Launch with support", desc: "We go live in phases, stay close during launch week, and help you improve after day one." }
+                  { num: "01", icon: "🔍", title: "Understand your business", desc: "We audit how your team works—departments, branches, data flows, and current software stacks." },
+                  { num: "02", icon: "⚙️", title: "Custom Architecture", desc: "We configure accounts, workflows, approvals, and user roles to fit your operational dynamics." },
+                  { num: "03", icon: "📥", title: "Data Migration", desc: "We securely migrate records from spreadsheets and legacy databases with precision validation." },
+                  { num: "04", icon: "🎓", title: "Role-Based Training", desc: "Hands-on training for leadership, finance, HR, warehouse teams, and operational managers." },
+                  { num: "05", icon: "🚀", title: "Go-Live & Support", desc: "Phased deployment with active launch week monitoring, continuous maintenance, and SLA support." }
                 ].map((step, idx, arr) => (
                   <article
                     key={idx}
@@ -1243,7 +1270,7 @@ export default function ErpSoftwareClient() {
               <span className="text-xs font-extrabold capitalize tracking-widest text-[#059669] mb-3 block">Savings Calculator</span>
               <h2 className="mb-6 capitalize">See how much time and money you could save</h2>
               <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-                If your team still copies data between spreadsheets, sales, stock, and accounts—this quick estimate shows what one connected system could free up.
+                If your enterprise still copies data between spreadsheets, sales, inventory, and accounting—see what a modern ERP integration delivers.
               </p>
             </div>
 
@@ -1264,7 +1291,7 @@ export default function ErpSoftwareClient() {
                     <strong className="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">
                       {roiHoursSaved.toLocaleString()} Hours
                     </strong>
-                    <span className="text-[10px] sm:text-xs text-slate-400 max-w-[160px] leading-relaxed">Less manual entry and fixing mistakes</span>
+                    <span className="text-[10px] sm:text-xs text-slate-400 max-w-[160px] leading-relaxed">Less manual entry and fixing errors</span>
                   </div>
 
                   {/* Money Saved Card */}
@@ -1274,7 +1301,7 @@ export default function ErpSoftwareClient() {
                     <strong className="font-display text-2xl sm:text-3xl font-extrabold text-emerald-600 leading-tight">
                       ₹{roiMoneySaved.toLocaleString('en-IN')}
                     </strong>
-                    <span className="text-[10px] sm:text-xs text-emerald-600/70 max-w-[160px] leading-relaxed">Based on your team size and pay rates</span>
+                    <span className="text-[10px] sm:text-xs text-emerald-600/70 max-w-[160px] leading-relaxed">Based on team size and operational pay rates</span>
                   </div>
                 </div>
               </div>
@@ -1289,10 +1316,10 @@ export default function ErpSoftwareClient() {
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#34d399] opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#34d399]"></span>
                     </span>
-                    Live estimate
+                    Live ROI Calculation
                   </span>
-                  <h4 className="font-display text-lg sm:text-xl font-extrabold text-slate-900 mb-1">Tell us about your business</h4>
-                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">Move the sliders to match your company—we'll update your savings instantly.</p>
+                  <h4 className="font-display text-lg sm:text-xl font-extrabold text-slate-900 mb-1">Configure your metrics</h4>
+                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">Move the sliders to match your enterprise setup—savings update automatically.</p>
                 </div>
 
                 {/* Slider 1 */}
@@ -1324,7 +1351,7 @@ export default function ErpSoftwareClient() {
                   <div className="flex flex-col items-start gap-1.5 mb-3">
                     <label htmlFor="roi-orders" className="flex items-center gap-[0.45rem] text-[0.88rem] font-semibold text-slate-600 leading-normal cursor-pointer">
                       <span className="text-base shrink-0 leading-none" aria-hidden="true">📦</span>
-                      How many customer orders do you handle per month?
+                      How many transactions / orders monthly?
                     </label>
                     <strong id="val-roi-orders" className="font-display text-[0.95rem] font-extrabold text-[#059669] transition-transform duration-200">{roiOrders.toLocaleString()} Orders</strong>
                   </div>
@@ -1348,9 +1375,9 @@ export default function ErpSoftwareClient() {
                   <div className="flex flex-col items-start gap-1.5 mb-3">
                     <label htmlFor="roi-labor" className="flex items-center gap-[0.45rem] text-[0.88rem] font-semibold text-slate-600 leading-normal cursor-pointer">
                       <span className="text-base shrink-0 leading-none" aria-hidden="true">💵</span>
-                      What is the average hourly pay for your team?
+                      Average team hourly rate?
                     </label>
-                    <strong id="val-roi-labor" className="font-display text-[0.95rem] font-extrabold text-[#059669] transition-transform duration-200">₹{roiLabor}/hr</strong>
+                    <strong id="val-roi-labor" className="font-display text-[0.95rem] font-extrabold text-[#059669] transition-transform duration-200">{roiLabor}/hr</strong>
                   </div>
                   <input
                     type="range"
@@ -1390,10 +1417,10 @@ export default function ErpSoftwareClient() {
           `}} />
           <div className="max-w-7xl mx-auto px-6 w-full">
             <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-              <span className="text-xs font-extrabold capitalize tracking-widest text-[#059669] mb-3 block">Trust</span>
+              <span className="text-xs font-extrabold capitalize tracking-widest text-[#059669] mb-3 block">Enterprise Trust</span>
               <h2 className="mb-6 capitalize">Your Business Data Stays Safe</h2>
               <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-                Payroll, sales, and accounts hold sensitive information. ERP Software builds security into every module—so your team can work confidently without extra IT overhead.
+                Payroll, sales, and accounts hold sensitive information. Our ERP Services build security into every module—so your team works confidently with full compliance.
               </p>
             </div>
 
@@ -1406,24 +1433,24 @@ export default function ErpSoftwareClient() {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-display text-base sm:text-lg font-extrabold text-slate-900 mb-1.5">Security runs in the background</h3>
-                  <p className="text-sm text-slate-500 leading-relaxed max-w-2xl mx-auto md:mx-0">Your team keeps working normally—permissions, logs, encryption, and approvals handle the rest without extra IT setup.</p>
+                  <p className="text-sm text-slate-500 leading-relaxed max-w-2xl mx-auto md:mx-0">Your team keeps working normally—permissions, logs, encryption, and multi-level approvals handle the rest seamlessly.</p>
                 </div>
                 <div className="flex flex-wrap gap-2 md:col-start-2 justify-center md:justify-start">
                   <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/75 border border-cyan-500/15 text-[0.78rem] text-slate-600 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-500/30 hover:shadow-[0_4px_12px_rgba(8,145,178,0.1)]"><em className="font-extrabold text-[#059669] not-italic mr-1">TLS 1.2+</em> Encrypted connections</span>
-                  <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/75 border border-cyan-500/15 text-[0.78rem] text-slate-600 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-500/30 hover:shadow-[0_4px_12px_rgba(8,145,178,0.1)]"><em className="font-extrabold text-[#059669] not-italic mr-1">24/7</em> Backup checks</span>
+                  <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/75 border border-cyan-500/15 text-[0.78rem] text-slate-600 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-500/30 hover:shadow-[0_4px_12px_rgba(8,145,178,0.1)]"><em className="font-extrabold text-[#059669] not-italic mr-1">24/7</em> Backup &amp; failover</span>
                   <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/75 border border-cyan-500/15 text-[0.78rem] text-slate-600 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-500/30 hover:shadow-[0_4px_12px_rgba(8,145,178,0.1)]"><em className="font-extrabold text-[#059669] not-italic mr-1">Multi-step</em> Approvals</span>
                 </div>
               </div>
 
-              {/* Grid showing borders via 1px gap on background */}
+              {/* Grid showing borders */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-900/[0.08]">
                 {[
                   { num: "01", icon: "🔐", title: "Control who sees what", desc: "Each role gets access only to the modules, branches, and records they need for their job.", accentColor: "#059669", accentBg: "rgba(5, 150, 105, 0.07)", accentBorder: "rgba(5, 150, 105, 0.2)" },
                   { num: "02", icon: "📋", title: "See every change made", desc: "Track who edited records, posted entries, or approved payments—with full date and time history.", accentColor: "#2563eb", accentBg: "rgba(37, 99, 235, 0.07)", accentBorder: "rgba(37, 99, 235, 0.2)" },
                   { num: "03", icon: "🔒", title: "Safe data in motion", desc: "Browser, app, and API traffic is encrypted so sensitive data cannot be read in transit.", accentColor: "#7c3aed", accentBg: "rgba(124, 58, 237, 0.07)", accentBorder: "rgba(124, 58, 237, 0.2)" },
-                  { num: "04", icon: "💾", title: "Your data is backed up", desc: "Scheduled backups and tested restore plans keep you running if hardware fails or files are lost.", accentColor: "#0d9488", accentBg: "rgba(13, 148, 136, 0.07)", accentBorder: "rgba(13, 148, 136, 0.2)" },
-                  { num: "05", icon: "✅", title: "Sign-off before it goes live", desc: "Purchases, payroll, and sensitive changes need manager approval before they take effect.", accentColor: "#16a34a", accentBg: "rgba(22, 163, 74, 0.07)", accentBorder: "rgba(22, 163, 74, 0.2)" },
-                  { num: "06", icon: "🌐", title: "Host data where you need it", desc: "Pick hosting options that match your region's rules and your industry's compliance needs.", accentColor: "#0891b2", accentBg: "rgba(8, 145, 178, 0.07)", accentBorder: "rgba(8, 145, 178, 0.2)" }
+                  { num: "04", icon: "💾", title: "Automated Data Backups", desc: "Scheduled backups and verified recovery protocols ensure business continuity.", accentColor: "#0d9488", accentBg: "rgba(13, 148, 136, 0.07)", accentBorder: "rgba(13, 148, 136, 0.2)" },
+                  { num: "05", icon: "✅", title: "Multi-level Sign-offs", desc: "Purchases, payroll, and sensitive changes require manager approvals before commitment.", accentColor: "#16a34a", accentBg: "rgba(22, 163, 74, 0.07)", accentBorder: "rgba(22, 163, 74, 0.2)" },
+                  { num: "06", icon: "🌐", title: "Flexible Cloud & On-Prem Hosting", desc: "Host on AWS, Azure, Google Cloud, private clouds, or on-premise infrastructure as per policy.", accentColor: "#0891b2", accentBg: "rgba(8, 145, 178, 0.07)", accentBorder: "rgba(8, 145, 178, 0.2)" }
                 ].map((item, idx) => (
                   <article
                     key={idx}
@@ -1434,12 +1461,8 @@ export default function ErpSoftwareClient() {
                       '--sec-accent-border': item.accentBorder
                     }}
                   >
-                    {/* Hover Top Border line */}
                     <div className="absolute top-0 left-0 right-0 h-[3px] bg-[var(--sec-accent-color)] scale-x-0 transition-transform duration-300 origin-center group-hover:scale-x-100" />
-
-                    {/* Hover Inner Shadow Overlay */}
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ boxShadow: 'inset 0 0 0 1px var(--sec-accent-border)', backgroundColor: 'var(--sec-accent-bg)' }} />
-
                     <span className="font-display text-[0.68rem] font-extrabold tracking-wider leading-none relative z-10 transition-colors duration-300" style={{ color: item.accentColor }}>{item.num}</span>
                     <span className="flex-shrink-0 w-12 h-12 flex items-center justify-center text-xl leading-none rounded-xl transition-transform duration-300 group-hover:scale-110 relative z-10" style={{ backgroundColor: item.accentBg, border: '1px solid var(--sec-accent-border)' }}>{item.icon}</span>
 
@@ -1464,10 +1487,10 @@ export default function ErpSoftwareClient() {
         >
           <div className="max-w-7xl mx-auto px-6 w-full">
             <div className="text-center max-w-3xl mx-auto mb-10 lg:mb-14">
-              <span className="text-xs font-extrabold capitalize tracking-widest text-[#0891b2] mb-3 block">Social Proof</span>
+              <span className="text-xs font-extrabold capitalize tracking-widest text-[#0891b2] mb-3 block">Client Stories</span>
               <h2 className="mb-6 capitalize">Trusted by Growing Operations Teams</h2>
               <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-                Leaders consolidate spreadsheets and disconnected tools into one ERP Software command center.
+                Leaders consolidate spreadsheets and disconnected tools into one ERP command center.
               </p>
             </div>
 
@@ -1482,7 +1505,7 @@ export default function ErpSoftwareClient() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
               {[
                 { quote: "Month-end close dropped from nine days to four. Finance, inventory, and HR finally share one source of truth.", author: "Priya Sharma", role: "CFO, Apex Manufacturing" },
-                { quote: "We replaced four disconnected apps with Isarva. Pipeline, stock, and billing updates stay in sync without manual exports.", author: "James Okonkwo", role: "COO, Meridian Distribution" },
+                { quote: "We replaced four disconnected apps with Isarva's ERP services. Pipeline, stock, and billing updates stay in sync without manual exports.", author: "James Okonkwo", role: "COO, Meridian Distribution" },
                 { quote: "Payroll and project costing used to live in spreadsheets. Now leadership sees margin and utilization in real time.", author: "Elena Vasquez", role: "HR Director, Northline Services" }
               ].map((test, idx) => (
                 <blockquote key={idx} className={`bg-white/80 border border-slate-900/[0.05] rounded-2xl p-7 flex flex-col justify-between gap-5 shadow-[0_4px_20px_rgba(15,23,42,0.03)] hover:bg-white/95 hover:border-slate-900/10 hover:shadow-[0_10px_30px_rgba(15,23,42,0.06)] hover:-translate-y-1 transition-all duration-300 text-center md:text-left items-center md:items-start ${idx === 2 ? 'sm:col-span-2 lg:col-span-1' : ''}`}>
@@ -1498,8 +1521,8 @@ export default function ErpSoftwareClient() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {[
                 { val: "40%", label: "Faster month-end close" },
-                { val: "6", label: "Modules, one platform" },
-                { val: "98%", label: "Automation accuracy target" }
+                { val: "6+", label: "Integrated modules" },
+                { val: "98%", label: "Process automation accuracy" }
               ].map((stat, idx) => (
                 <div key={idx} className="text-center p-6 bg-white border border-slate-900/5 rounded-2xl shadow-[0_8px_24px_rgba(180,83,9,0.08)]">
                   <strong className="block font-display text-4xl font-extrabold text-[#0fb84e] mb-1.5">{stat.val}</strong>
@@ -1517,9 +1540,9 @@ export default function ErpSoftwareClient() {
           <div className="max-w-7xl mx-auto px-6 w-full">
             <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
               <span className="text-xs font-extrabold capitalize tracking-widest text-[#059669] mb-3 block">Why Isarva</span>
-              <h2 className="mb-6 capitalize">One System vs. Many Disconnected Tools</h2>
+              <h2 className="mb-6 capitalize">One Unified ERP vs. Disconnected Tools</h2>
               <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-                Still running sales in one app, payroll in another, and stock in spreadsheets? Here is how a single ERP Software platform stacks up—side by side.
+                Still running sales in one app, payroll in another, and inventory in spreadsheets? Here is how our ERP Services compare.
               </p>
             </div>
 
@@ -1544,7 +1567,7 @@ export default function ErpSoftwareClient() {
                     <div className="flex flex-col items-center justify-center text-center gap-1.5 p-5 bg-gradient-to-b from-[#ecfdf5] to-[#d1fae5] relative border-r-0" role="columnheader">
                       <span className="absolute top-[0.65rem] right-[0.65rem] bg-emerald-500/15 border border-emerald-500/28 text-[#059669] text-[0.58rem] font-extrabold tracking-[0.06em] uppercase px-2 py-0.5 rounded-full shadow-sm">Best fit</span>
                       <span className="text-xl leading-none" aria-hidden="true">✨</span>
-                      <h3>ERP Software</h3>
+                      <h3>ERP Services</h3>
                       <span className="text-sm text-[#94a3b8] leading-tight">One connected platform</span>
                     </div>
                   </div>
@@ -1620,9 +1643,9 @@ export default function ErpSoftwareClient() {
                         </span>
                       </div>
 
-                      {/* ERP Software Cell */}
+                      {/* ERP Services Cell */}
                       <div className="flex flex-col lg:flex-row items-center justify-center gap-1.5 p-3.5 bg-emerald-500/[0.07] lg:bg-[#0fb84e]/[0.05] lg:p-5 text-center" role="cell">
-                        <span className="text-[0.68rem] font-extrabold tracking-[0.05em] uppercase text-emerald-600 lg:hidden">ERP Software</span>
+                        <span className="text-[0.68rem] font-extrabold tracking-[0.05em] uppercase text-emerald-600 lg:hidden">ERP Services</span>
                         <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[0.78rem] font-bold text-emerald-800 bg-emerald-500/12 border border-emerald-500/22 hover:scale-[1.04] transition-transform duration-250">
                           {row.Isarva.text}
                         </span>
@@ -1635,104 +1658,103 @@ export default function ErpSoftwareClient() {
           </div>
         </section>
 
-        {/* Section 4e: Pricing */}
+        {/* Section 4e: Pricing & Service Plans */}
         <section className="py-12 lg:py-16 relative overflow-hidden border-t border-b border-slate-900/5" id="pricing" style={{
           background: 'radial-gradient(ellipse 60% 45% at 50% 0%, rgba(15, 184, 78, 0.08), transparent 60%), linear-gradient(180deg, #ecfdf5 0%, #f8fafc 50%, #ffffff 100%)'
         }}>
           <div className="max-w-7xl mx-auto px-6 w-full">
             <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-              <span className="text-xs font-extrabold capitalize tracking-widest text-[#059669] mb-3 block">Plans</span>
-              <h2 className="mb-6 capitalize">Pick the Plan That Fits Your Team</h2>
+              <span className="text-xs font-extrabold capitalize tracking-widest text-[#059669] mb-3 block">Engagement Models</span>
+              <h2 className="mb-6 capitalize">Pick the Plan That Fits Your Organization</h2>
               <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-                Start small with the modules you need, or go all-in from day one. Every plan includes setup help, training, and secure hosting.
+                Start with essential modules or full enterprise transformation. Every service plan includes data migration, implementation, and ongoing SLA support.
               </p>
             </div>
 
-            <div className="grid grid-cols-1  lg:grid-cols-3 gap-[1.35rem] items-stretch mb-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-[1.35rem] items-stretch mb-8">
               {/* Starter Plan */}
               <article
                 className="group relative flex flex-col items-center text-center gap-5 p-8 bg-white border border-slate-900/[0.08] rounded-[20px] shadow-[0_10px_32px_rgba(15,23,42,0.06)] hover:border-[#0891b2]/25 hover:shadow-[0_20px_44px_rgba(15,23,42,0.1)] hover:-translate-y-2 transition-all duration-350"
-                style={{
-                  '--plan-accent-soft': 'rgba(8, 145, 178, 0.1)',
-                  '--plan-accent-border': 'rgba(8, 145, 178, 0.25)',
-                  '--plan-accent': '#0891b2'
-                }}
               >
                 <div className="flex flex-col items-center gap-[0.45rem] w-full">
                   <div className="w-[3.25rem] h-[3.25rem] flex items-center justify-center text-[1.55rem] leading-none rounded-[14px] bg-[#0891b2]/10 border border-[#0891b2]/25 mb-[0.25rem] group-hover:scale-108 transition-transform duration-350">🌱</div>
-                  <span className="text-[0.72rem] font-extrabold uppercase tracking-[0.1em] text-[#0891b2]">Starter</span>
-                  <h3>Just Getting Started</h3>
-                  <p className="text-sm text-[#64748b] leading-[1.6] max-w-[15rem]">Best for one location taking its first step away from spreadsheets.</p>
+                  <span className="text-[0.72rem] font-extrabold uppercase tracking-[0.1em] text-[#0891b2]">Standard</span>
+                  <h3>Core Operations</h3>
+                  <p className="text-sm text-[#64748b] leading-[1.6] max-w-[15rem]">Best for growing businesses moving away from disjointed spreadsheets.</p>
                 </div>
                 <ul className="flex flex-col gap-[0.55rem] w-full items-center flex-1">
-                  {["Up to 25 team members", "Any 2 modules you choose", "Email support", "Guided data import"].map((feat, i) => (
+                  {["Up to 25 team members", "Any 2 modules of your choice", "Standard SLA support", "Guided data import & setup"].map((feat, i) => (
                     <li key={i} className="inline-flex items-center justify-center gap-[0.45rem] text-[0.86rem] text-[#475569] leading-[1.45] text-center py-1.5 px-3.5 rounded-full bg-[#f8fafc] border border-slate-900/5 w-full max-w-[16.5rem] group-hover:bg-white group-hover:border-[#0891b2]/25 transition-all duration-250">
                       <span className="w-[1.1rem] h-[1.1rem] inline-flex items-center justify-center rounded-full bg-[#0891b2]/10 text-[#0891b2] text-[0.62rem] font-black shrink-0">✓</span>
                       {feat}
                     </li>
                   ))}
                 </ul>
-                <a href="#contact" className="w-full max-w-[16.5rem] text-center py-[0.85rem] px-6 rounded-xl border border-slate-900/15 hover:border-[#0891b2] hover:bg-[#0891b2]/3 text-slate-700 hover:text-[#0891b2] font-bold text-sm transition-all duration-300 mt-[0.25rem]">Request Quote</a>
+                <button
+                  onClick={() => openDemoModal("Request Quote — Standard ERP Services")}
+                  className="w-full max-w-[16.5rem] text-center py-[0.85rem] px-6 rounded-xl border border-slate-900/15 hover:border-[#0891b2] hover:bg-[#0891b2]/5 text-slate-700 hover:text-[#0891b2] font-bold text-sm transition-all duration-300 mt-[0.25rem] cursor-pointer"
+                >
+                  Request Quote
+                </button>
               </article>
 
               {/* Growth Plan (Featured) */}
               <article
                 className="group relative flex flex-col items-center text-center gap-5 p-8 bg-gradient-to-b from-white to-[#f0fdf4] border border-[#10b981]/25 rounded-[20px] shadow-[0_16px_40px_rgba(15,184,78,0.14)] hover:shadow-[0_24px_52px_rgba(15,184,78,0.18)] hover:-translate-y-2 transition-all duration-350 overflow-visible"
-                style={{
-                  '--plan-accent-soft': 'rgba(5, 150, 105, 0.12)',
-                  '--plan-accent-border': 'rgba(5, 150, 105, 0.3)',
-                  '--plan-accent': '#059669'
-                }}
               >
-                <span className="absolute top-[-0.65rem] left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#0fb84e] to-[#059669] text-white text-[0.65rem] font-extrabold tracking-[0.07em] uppercase px-3.5 py-1.5 rounded-full shadow-[0_4px_14px_rgba(15,184,78,0.35)] shrink-0 z-10">Most picked</span>
+                <span className="absolute top-[-0.65rem] left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#0fb84e] to-[#059669] text-white text-[0.65rem] font-extrabold tracking-[0.07em] uppercase px-3.5 py-1.5 rounded-full shadow-[0_4px_14px_rgba(15,184,78,0.35)] shrink-0 z-10">Most Popular</span>
                 <div className="flex flex-col items-center gap-[0.45rem] w-full">
                   <div className="w-[3.25rem] h-[3.25rem] flex items-center justify-center text-[1.55rem] leading-none rounded-[14px] bg-[#059669]/12 border border-[#059669]/30 mb-[0.25rem] group-hover:scale-108 transition-transform duration-350">🚀</div>
-                  <span className="text-[0.72rem] font-extrabold uppercase tracking-[0.1em] text-[#059669]">Growth</span>
-                  <h3>Ready to Scale</h3>
-                  <p className="text-sm text-[#64748b] leading-[1.6] max-w-[15rem]">For growing teams that want every module, branch, and integration connected.</p>
+                  <span className="text-[0.72rem] font-extrabold uppercase tracking-[0.1em] text-[#059669]">Professional</span>
+                  <h3>Full ERP Deployment</h3>
+                  <p className="text-sm text-[#64748b] leading-[1.6] max-w-[15rem]">For expanding enterprises that need complete end-to-end module integration.</p>
                 </div>
                 <ul className="flex flex-col gap-[0.55rem] w-full items-center flex-1">
-                  {["Up to 100 team members", "All 6 modules included", "Connect banks, shops & apps", "Priority setup support"].map((feat, i) => (
+                  {["Up to 100 team members", "All 6 ERP modules included", "Connect banking, e-com & APIs", "Priority onboarding & training"].map((feat, i) => (
                     <li key={i} className="inline-flex items-center justify-center gap-[0.45rem] text-[0.86rem] text-[#475569] leading-[1.45] text-center py-1.5 px-3.5 rounded-full bg-[#f8fafc] border border-slate-900/5 w-full max-w-[16.5rem] group-hover:bg-white group-hover:border-[#059669]/30 transition-all duration-250">
                       <span className="w-[1.1rem] h-[1.1rem] inline-flex items-center justify-center rounded-full bg-[#059669]/12 text-[#059669] text-[0.62rem] font-black shrink-0">✓</span>
                       {feat}
                     </li>
                   ))}
                 </ul>
-                <a href="#contact" className="w-full max-w-[16.5rem] text-center py-[0.85rem] px-6 rounded-xl bg-gradient-to-r from-[#0fb84e] to-[#088c3a] text-white font-bold text-sm shadow-[0_10px_20px_rgba(15,184,78,0.2)] hover:shadow-[0_15px_30px_rgba(15,184,78,0.35)] transition-all duration-300 mt-[0.25rem]">Book Demo</a>
+                <button
+                  onClick={() => openDemoModal("Book Demo — Professional ERP Services")}
+                  className="w-full max-w-[16.5rem] text-center py-[0.85rem] px-6 rounded-xl bg-gradient-to-r from-[#0fb84e] to-[#088c3a] text-white font-bold text-sm shadow-[0_10px_20px_rgba(15,184,78,0.2)] hover:shadow-[0_15px_30px_rgba(15,184,78,0.35)] transition-all duration-300 mt-[0.25rem] cursor-pointer"
+                >
+                  Book Demo
+                </button>
               </article>
 
               {/* Enterprise Plan */}
               <article
                 className="group relative flex flex-col items-center text-center gap-5 p-8 bg-white border border-slate-900/[0.08] rounded-[20px] shadow-[0_10px_32px_rgba(15,23,42,0.06)] hover:border-[#7c3aed]/25 hover:shadow-[0_20px_44px_rgba(15,23,42,0.1)] hover:-translate-y-2 transition-all duration-350"
-                style={{
-                  '--plan-accent-soft': 'rgba(124, 58, 237, 0.1)',
-                  '--plan-accent-border': 'rgba(124, 58, 237, 0.25)',
-                  '--plan-accent': '#7c3aed'
-                }}
               >
                 <div className="flex flex-col items-center gap-[0.45rem] w-full">
                   <div className="w-[3.25rem] h-[3.25rem] flex items-center justify-center text-[1.55rem] leading-none rounded-[14px] bg-[#7c3aed]/10 border border-[#7c3aed]/25 mb-[0.25rem] group-hover:scale-108 transition-transform duration-350">🏢</div>
                   <span className="text-[0.72rem] font-extrabold uppercase tracking-[0.1em] text-[#7c3aed]">Enterprise</span>
-                  <h3>Large &amp; Complex Teams</h3>
-                  <p className="text-sm text-[#64748b] leading-[1.6] max-w-[15rem]">For multi-branch businesses that need custom support and flexible hosting.</p>
+                  <h3>Custom Multi-Branch</h3>
+                  <p className="text-sm text-[#64748b] leading-[1.6] max-w-[15rem]">For large enterprises requiring multi-company setups and customized ERP stacks.</p>
                 </div>
                 <ul className="flex flex-col gap-[0.55rem] w-full items-center flex-1">
-                  {["Unlimited users (custom)", "Multiple companies & currencies", "Dedicated support team", "Cloud, on-prem, or hybrid"].map((feat, i) => (
+                  {["Unlimited team capacity", "Multi-company & multi-currency", "Dedicated technical account team", "Cloud, hybrid, or on-prem hosting"].map((feat, i) => (
                     <li key={i} className="inline-flex items-center justify-center gap-[0.45rem] text-[0.86rem] text-[#475569] leading-[1.45] text-center py-1.5 px-3.5 rounded-full bg-[#f8fafc] border border-slate-900/5 w-full max-w-[16.5rem] group-hover:bg-white group-hover:border-[#7c3aed]/25 transition-all duration-250">
                       <span className="w-[1.1rem] h-[1.1rem] inline-flex items-center justify-center rounded-full bg-[#7c3aed]/10 text-[#7c3aed] text-[0.62rem] font-black shrink-0">✓</span>
                       {feat}
                     </li>
                   ))}
                 </ul>
-                <a href="#contact" className="w-full max-w-[16.5rem] text-center py-[0.85rem] px-6 rounded-xl border border-slate-900/15 hover:border-[#7c3aed] hover:bg-[#7c3aed]/3 text-slate-700 hover:text-[#7c3aed] font-bold text-sm transition-all duration-300 mt-[0.25rem]">Talk to Sales</a>
+                <button
+                  onClick={() => openDemoModal("Talk to Sales — Enterprise ERP Services")}
+                  className="w-full max-w-[16.5rem] text-center py-[0.85rem] px-6 rounded-xl border border-slate-900/15 hover:border-[#7c3aed] hover:bg-[#7c3aed]/5 text-slate-700 hover:text-[#7c3aed] font-bold text-sm transition-all duration-300 mt-[0.25rem] cursor-pointer"
+                >
+                  Talk to Sales
+                </button>
               </article>
             </div>
 
-            <p className="text-center text-sm text-slate-400 max-w-2xl mx-auto">Final pricing depends on your team size, modules, and integrations. We will recommend the right fit during your first call.</p>
+            <p className="text-center text-sm text-slate-400 max-w-2xl mx-auto">Custom quotes provided based on team size, workflows, and integrations during your initial architecture consultation.</p>
           </div>
         </section>
-
 
         {/* Section 4f: FAQ */}
         <section className="py-12 lg:py-16 relative overflow-hidden border-t border-b border-slate-900/5" id="faq" style={{
@@ -1743,18 +1765,18 @@ export default function ErpSoftwareClient() {
               <span className="text-xs font-extrabold capitalize tracking-widest text-[#0891b2] mb-3 block">FAQ</span>
               <h2 className="mb-6 capitalize">Common Questions, Straight Answers</h2>
               <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-                Thinking about switching to ERP Software? Here are the things teams ask us most—explained in plain language.
+                Thinking about implementing or upgrading your ERP? Here are the questions teams ask us most.
               </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
               {[
-                { icon: "⏱️", question: "How long until we can go live?", answer: "Most teams go live in <strong>4 to 12 weeks</strong>. The timeline depends on how many modules you need, how many branches you run, and how much existing data we need to move over." },
-                { icon: "🧩", question: "Can we start with just a few modules?", answer: "Yes. Many teams begin with HR, inventory, or accounts—and add sales, finance, and projects later when everyone is comfortable with the system." },
-                { icon: "🌐", question: "Do you support multiple branches and currencies?", answer: "Yes. Manage different locations, warehouses, and currencies in one place—with combined reports your leadership and finance teams can trust." },
-                { icon: "📥", question: "How do we move our existing data in?", answer: "We give you simple import templates and walk you through uploading employees, customers, products, and opening balances—with checks before go-live so nothing is missed." },
-                { icon: "🔐", question: "How is our data kept secure?", answer: "Role-based access, a full history of every change, and encrypted connections work together to protect payroll and financial records across all modules." },
-                { icon: "🎓", question: "What training and support do we get?", answer: "Hands-on onboarding for each role, admin guides, and ongoing support during and after launch—with premium service levels available on enterprise plans." }
+                { icon: "⏱️", question: "How long until we can go live with ERP Services?", answer: "Most deployments go live in <strong>4 to 12 weeks</strong>. The timeline depends on how many modules you need, your branch structure, and legacy data migration complexity." },
+                { icon: "🧩", question: "Can we start with just a few modules?", answer: "Yes. Many teams begin with HRMS, Inventory, or Accounting—and expand into Sales CRM and Project Management as adoption grows." },
+                { icon: "🌐", question: "Do you support multi-branch and multi-currency operations?", answer: "Yes. Manage different business units, regional warehouses, and global currencies with consolidated financial reporting." },
+                { icon: "📥", question: "How is our existing historical data migrated?", answer: "We provide structured migration templates, data cleansing, and validation scripts to guarantee zero data loss during cutover." },
+                { icon: "🔐", question: "How is our enterprise data secured?", answer: "Role-based access controls, complete audit trails, and encrypted transmissions ensure your financial and employee data is safe." },
+                { icon: "🎓", question: "What post-launch training and SLA support is included?", answer: "We provide role-tailored user training, administrator documentation, and ongoing SLA maintenance with dedicated engineers." }
               ].map((faq, idx) => (
                 <details key={idx} name="erp-faq" className="group bg-gradient-to-b from-[#f8fafc] to-white border border-slate-900/[0.07] rounded-2xl [&_summary::-webkit-details-marker]:hidden hover:border-[#0891b2]/22 hover:shadow-[0_6px_20px_rgba(8,145,178,0.08)] open:bg-gradient-to-b open:from-[#f0fdfa] open:to-white open:border-[#0891b2]/28 open:shadow-[0_8px_24px_rgba(8,145,178,0.1)] transition-all duration-300">
                   <summary className="flex items-center justify-between gap-3.5 p-[1.1rem_1.25rem] font-bold text-slate-900 cursor-pointer list-none relative">
@@ -1763,7 +1785,6 @@ export default function ErpSoftwareClient() {
                       <span className="text-[0.98rem] text-[#0f172a] font-extrabold leading-[1.4] text-left">{faq.question}</span>
                     </div>
                     <span className="w-[1.75rem] h-[1.75rem] rounded-full bg-[#0891b2]/10 border border-[#0891b2]/20 flex items-center justify-center text-xs relative shrink-0 group-open:rotate-180 group-open:bg-[#0891b2]/18 transition-all duration-350">
-                      {/* Plus/minus chevron vector rendering */}
                       <span className="absolute w-[0.55rem] h-[2px] bg-[#0891b2] rounded" />
                       <span className="absolute w-[0.55rem] h-[2px] bg-[#0891b2] rounded rotate-90 group-open:rotate-0 group-open:opacity-0 transition-all duration-350" />
                     </span>
@@ -1794,22 +1815,25 @@ export default function ErpSoftwareClient() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-white"></span>
                 </span>
-                Let's get started
+                Let&apos;s get started
               </span>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-white mb-4">Ready to transform your business?</h2>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-white mb-4">Ready to transform your enterprise operations?</h2>
 
               <p className="text-white/88 text-lg max-w-[34rem] leading-relaxed mb-10">
-                Talk to our team and see how ERP Software brings sales, HR, stock, and accounts into one connected system—built for how you work.
+                Talk to our ERP architects and see how our ERP Services bring sales, HR, inventory, and accounts into one connected platform.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 items-center w-full justify-center mb-10">
-                <a href="https://wa.me/919902863697" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-extrabold text-base w-full sm:w-auto text-center justify-center relative overflow-hidden hero-btn-primary-custom hover:-translate-y-[3px] hover:scale-[1.02] active:-translate-y-[1px] active:scale-[0.99] transition-all duration-300">
-                  <span>Get started today</span>
+                <button
+                  onClick={() => openDemoModal("Schedule ERP Consultation")}
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-extrabold text-base w-full sm:w-auto text-center justify-center relative overflow-hidden hero-btn-primary-custom hover:-translate-y-[3px] hover:scale-[1.02] active:-translate-y-[1px] active:scale-[0.99] transition-all duration-300 cursor-pointer border-none"
+                >
+                  <span>Schedule Consultation</span>
                   <svg className="w-4 h-4 shrink-0 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
-                </a>
+                </button>
                 <a href="#module-hub" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-[#0f5c52] font-bold text-base shadow-[0_6px_20px_rgba(15,23,42,0.15)] hover:shadow-[0_10px_28px_rgba(15,23,42,0.2)] hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 w-full sm:w-auto text-center justify-center">
                   <span>Explore all modules</span>
                 </a>
@@ -1819,7 +1843,7 @@ export default function ErpSoftwareClient() {
                 {[
                   { strong: "6+", span: "Connected modules" },
                   { strong: "4–12", span: "Weeks to go live" },
-                  { strong: "24/7", span: "Expert support" }
+                  { strong: "24/7", span: "Expert SLA support" }
                 ].map((stat, idx) => (
                   <div key={idx} className="flex flex-col gap-1 items-center">
                     <strong className="text-3xl sm:text-4xl font-extrabold text-white leading-none mb-1">{stat.strong}</strong>
@@ -1831,6 +1855,13 @@ export default function ErpSoftwareClient() {
           </div>
         </section>
       </div>
+
+      {/* Demo / Inquiry Modal */}
+      <ContactFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        serviceName={modalTitle}
+      />
     </>
   );
 }

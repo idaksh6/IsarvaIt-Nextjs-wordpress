@@ -108,6 +108,16 @@ const nextConfig = {
         destination: "/product/crm-software",
         permanent: true,
       },
+      {
+        source: "/product/erp-software",
+        destination: "/service/erp-services",
+        permanent: true,
+      },
+      {
+        source: "/product/isarva-erp",
+        destination: "/service/erp-services",
+        permanent: true,
+      },
     ];
   },
   
