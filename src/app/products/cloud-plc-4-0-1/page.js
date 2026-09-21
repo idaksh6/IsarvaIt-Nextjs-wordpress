@@ -1,18 +1,22 @@
 import CloudPlcProductClient from "./CloudPlcProductClient";
+import { generateMetadata as generateSEOMetadata } from "../../lib/utils/seo";
 
-export const metadata = {
-  title: "Cloud PLC 4.0 | Programmable Industrial Edge Controller | Isarva",
+export const metadata = generateSEOMetadata({
+  title: "Cloud PLC 4.0 | Programmable Industrial Edge Controller",
   description:
     "Cloud PLC 4.0 — Programmable edge controller with isolated I/O, Modbus RTU/TCP, MQTT, JSON, RESTful, WiFi/BLE/4G, OPC support. OEM & custom solutions for industrial IoT and SCADA.",
-  robots: {
-    index: false,
-    follow: false,
-    googleBot: {
-      index: false,
-      follow: false,
-    },
-  },
-};
+  image: "/products/cloud-plc/cloud-plc-4-0.jpg",
+  url: "/products/cloud-plc-4-0-1",
+  keywords: [
+    "Cloud PLC",
+    "Industrial Edge Controller",
+    "PLC 4.0",
+    "Modbus RTU TCP",
+    "MQTT Controller",
+    "IIoT Gateway",
+    "Industrial Automation",
+  ],
+});
 
 export default function CloudPlcPage() {
   return (

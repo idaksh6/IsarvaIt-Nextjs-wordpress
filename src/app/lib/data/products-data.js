@@ -964,6 +964,7 @@ export const productsData = [
   {
     slug: "hmi-&-display-board",
     title: "HMI & Display Board",
+    ogImage: "/products/hmi-display-board/hmi-scada-runtime.png",
     category: "Industrial IoT",
     icon: "🖥️",
     tagline: "Human Machine Interface & Display Systems",
@@ -990,6 +991,7 @@ export const productsData = [
   {
     slug: "rfid-reader",
     title: "RFID Reader",
+    ogImage: "/products/rfid-reader/RFID.jpg",
     category: "Industrial IoT",
     icon: "📻",
     tagline: "Long-Range UHF RFID Readers & Antennas",
@@ -1016,6 +1018,7 @@ export const productsData = [
   {
     slug: "r-lifi",
     title: "R-LiFi",
+    ogImage: "/products/r-lifi/lifi-hardware.png",
     category: "Optical Wireless",
     icon: "💡",
     tagline: "Visible Light Communication & Optical Wireless Technology",
@@ -1041,6 +1044,7 @@ export const productsData = [
   {
     slug: "vibration-sensor",
     title: "Vibration Sensor",
+    ogImage: "/products/vibration-sensor/vibration-hero.png",
     category: "Condition Monitoring",
     icon: "📳",
     tagline: "3-Axis Industrial Vibration & Temperature Sensor",
@@ -1070,6 +1074,7 @@ export const productsData = [
     hidden: true,
     seoTitle: "Isarva Nethra — Next-Gen AI Vision & Video Intelligence Platform",
     metaDescription: "Autonomous AI Computer Vision for industrial safety, PPE compliance, conveyor defect inspection, perimeter defense, and footfall heatmaps with edge-native speed.",
+    ogImage: "/products/isarva-nethra/nethra-og.jpg",
     category: "AI & Computer Vision",
     icon: "👁️",
     tagline: "Intelligent Video Analytics & Computer Vision Platform",
@@ -1103,6 +1108,7 @@ export const productsData = [
     hidden: true,
     seoTitle: "Isarva Face Attendance — AI-Powered Facial Recognition Attendance System",
     metaDescription: "Contactless AI facial recognition attendance system with real-time biometric verification, anti-spoofing liveness detection, geo-fencing, and automated HRMS sync.",
+    ogImage: "/products/face-attendence/1. Home Dashboard - ISARVA.webp",
     category: "AI & Biometrics",
     icon: "👤",
     tagline: "Next-Gen AI Facial Recognition & Touchless Attendance",
