@@ -18,6 +18,8 @@ export function generateMetadata({
 }) {
   const fullTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
   const canonicalUrl = url.startsWith('http') ? url : `${SITE_URL}${url}`;
+  const rawImageUrl = image.startsWith('http') ? image : `${SITE_URL}${image.startsWith('/') ? image : `/${image}`}`;
+  const safeImageUrl = encodeURI(decodeURI(rawImageUrl));
 
   const defaultKeywords = [
     "web design",
@@ -53,7 +55,7 @@ export function generateMetadata({
       siteName: SITE_NAME,
       images: [
         {
-          url: image,
+          url: safeImageUrl,
           width: 1200,
           height: 630,
           alt: fullTitle,
@@ -66,7 +68,7 @@ export function generateMetadata({
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: [image],
+      images: [safeImageUrl],
     },
     robots: {
       index: !noIndex,
