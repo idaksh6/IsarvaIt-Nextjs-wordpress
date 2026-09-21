@@ -459,14 +459,17 @@ export default function ErpServicesPremium({ service, servicesData }) {
                   <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-3">
                     <button
                       onClick={() => openDemoModal("Request Live ERP Demo & Consultation")}
-                      className="inline-flex items-center justify-center rounded-xl cursor-pointer px-9 py-[1.125rem] text-[1.05rem] border-none text-white w-auto relative isolate overflow-hidden hero-btn-primary-custom hover:-translate-y-[3px] hover:scale-[1.02] active:-translate-y-[1px] active:scale-[0.99] group transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] font-bold"
+                      className="inline-flex items-center justify-center gap-2.5 rounded-xl cursor-pointer px-7 sm:px-8 h-[52px] text-[1.02rem] leading-none border-2 border-transparent text-white w-auto relative isolate overflow-hidden hero-btn-primary-custom hover:-translate-y-[3px] hover:scale-[1.02] active:-translate-y-[1px] active:scale-[0.99] group transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] font-bold"
                     >
                       <span>Request a Demo</span>
                       <svg className="transition-transform duration-[350ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-[5px]" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                         <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
                       </svg>
                     </button>
-                    <a href="#module-hub" className="inline-flex items-center justify-center rounded-xl cursor-pointer px-9 py-[1.125rem] text-[1.05rem] border-2 border-transparent text-slate-900 font-bold w-auto relative isolate overflow-hidden hero-btn-secondary-custom hover:-translate-y-[3px] hover:scale-[1.02] active:-translate-y-[1px] active:scale-[0.99] hover:text-[#047857] group transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                    <a
+                      href="#module-hub"
+                      className="inline-flex items-center justify-center gap-2.5 rounded-xl cursor-pointer px-7 sm:px-8 h-[52px] text-[1.02rem] leading-none border-2 border-transparent text-slate-900 font-bold w-auto relative isolate overflow-hidden hero-btn-secondary-custom hover:-translate-y-[3px] hover:scale-[1.02] active:-translate-y-[1px] active:scale-[0.99] hover:text-[#047857] group transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                    >
                       <span>Explore Modules</span>
                       <svg className="transition-transform duration-[350ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-[5px]" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                         <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
@@ -1658,103 +1661,105 @@ export default function ErpServicesPremium({ service, servicesData }) {
           </div>
         </section>
 
-        {/* Section 4e: Pricing & Service Plans */}
-        <section className="py-12 lg:py-16 relative overflow-hidden border-t border-b border-slate-900/5" id="pricing" style={{
-          background: 'radial-gradient(ellipse 60% 45% at 50% 0%, rgba(15, 184, 78, 0.08), transparent 60%), linear-gradient(180deg, #ecfdf5 0%, #f8fafc 50%, #ffffff 100%)'
-        }}>
-          <div className="max-w-7xl mx-auto px-6 w-full">
-            <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-              <span className="text-xs font-extrabold capitalize tracking-widest text-[#059669] mb-3 block">Engagement Models</span>
-              <h2 className="mb-6 capitalize">Pick the Plan That Fits Your Organization</h2>
-              <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
-                Start with essential modules or full enterprise transformation. Every service plan includes data migration, implementation, and ongoing SLA support.
-              </p>
+        {/* Section 4e: Pricing & Service Plans (Hidden per request) */}
+        {false && (
+          <section className="py-12 lg:py-16 relative overflow-hidden border-t border-b border-slate-900/5" id="pricing" style={{
+            background: 'radial-gradient(ellipse 60% 45% at 50% 0%, rgba(15, 184, 78, 0.08), transparent 60%), linear-gradient(180deg, #ecfdf5 0%, #f8fafc 50%, #ffffff 100%)'
+          }}>
+            <div className="max-w-7xl mx-auto px-6 w-full">
+              <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+                <span className="text-xs font-extrabold capitalize tracking-widest text-[#059669] mb-3 block">Engagement Models</span>
+                <h2 className="mb-6 capitalize">Pick the Plan That Fits Your Organization</h2>
+                <p className="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
+                  Start with essential modules or full enterprise transformation. Every service plan includes data migration, implementation, and ongoing SLA support.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-[1.35rem] items-stretch mb-8">
+                {/* Starter Plan */}
+                <article
+                  className="group relative flex flex-col items-center text-center gap-5 p-8 bg-white border border-slate-900/[0.08] rounded-[20px] shadow-[0_10px_32px_rgba(15,23,42,0.06)] hover:border-[#0891b2]/25 hover:shadow-[0_20px_44px_rgba(15,23,42,0.1)] hover:-translate-y-2 transition-all duration-350"
+                >
+                  <div className="flex flex-col items-center gap-[0.45rem] w-full">
+                    <div className="w-[3.25rem] h-[3.25rem] flex items-center justify-center text-[1.55rem] leading-none rounded-[14px] bg-[#0891b2]/10 border border-[#0891b2]/25 mb-[0.25rem] group-hover:scale-108 transition-transform duration-350">🌱</div>
+                    <span className="text-[0.72rem] font-extrabold uppercase tracking-[0.1em] text-[#0891b2]">Standard</span>
+                    <h3>Core Operations</h3>
+                    <p className="text-sm text-[#64748b] leading-[1.6] max-w-[15rem]">Best for growing businesses moving away from disjointed spreadsheets.</p>
+                  </div>
+                  <ul className="flex flex-col gap-[0.55rem] w-full items-center flex-1">
+                    {["Up to 25 team members", "Any 2 modules of your choice", "Standard SLA support", "Guided data import & setup"].map((feat, i) => (
+                      <li key={i} className="inline-flex items-center justify-center gap-[0.45rem] text-[0.86rem] text-[#475569] leading-[1.45] text-center py-1.5 px-3.5 rounded-full bg-[#f8fafc] border border-slate-900/5 w-full max-w-[16.5rem] group-hover:bg-white group-hover:border-[#0891b2]/25 transition-all duration-250">
+                        <span className="w-[1.1rem] h-[1.1rem] inline-flex items-center justify-center rounded-full bg-[#0891b2]/10 text-[#0891b2] text-[0.62rem] font-black shrink-0">✓</span>
+                        {feat}
+                      </li>
+                    ))}
+                  </ul>
+                  <button
+                    onClick={() => openDemoModal("Request Quote — Standard ERP Services")}
+                    className="w-full max-w-[16.5rem] text-center py-[0.85rem] px-6 rounded-xl border border-slate-900/15 hover:border-[#0891b2] hover:bg-[#0891b2]/5 text-slate-700 hover:text-[#0891b2] font-bold text-sm transition-all duration-300 mt-[0.25rem] cursor-pointer"
+                  >
+                    Request Quote
+                  </button>
+                </article>
+
+                {/* Growth Plan (Featured) */}
+                <article
+                  className="group relative flex flex-col items-center text-center gap-5 p-8 bg-gradient-to-b from-white to-[#f0fdf4] border border-[#10b981]/25 rounded-[20px] shadow-[0_16px_40px_rgba(15,184,78,0.14)] hover:shadow-[0_24px_52px_rgba(15,184,78,0.18)] hover:-translate-y-2 transition-all duration-350 overflow-visible"
+                >
+                  <span className="absolute top-[-0.65rem] left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#0fb84e] to-[#059669] text-white text-[0.65rem] font-extrabold tracking-[0.07em] uppercase px-3.5 py-1.5 rounded-full shadow-[0_4px_14px_rgba(15,184,78,0.35)] shrink-0 z-10">Most Popular</span>
+                  <div className="flex flex-col items-center gap-[0.45rem] w-full">
+                    <div className="w-[3.25rem] h-[3.25rem] flex items-center justify-center text-[1.55rem] leading-none rounded-[14px] bg-[#059669]/12 border border-[#059669]/30 mb-[0.25rem] group-hover:scale-108 transition-transform duration-350">🚀</div>
+                    <span className="text-[0.72rem] font-extrabold uppercase tracking-[0.1em] text-[#059669]">Professional</span>
+                    <h3>Full ERP Deployment</h3>
+                    <p className="text-sm text-[#64748b] leading-[1.6] max-w-[15rem]">For expanding enterprises that need complete end-to-end module integration.</p>
+                  </div>
+                  <ul className="flex flex-col gap-[0.55rem] w-full items-center flex-1">
+                    {["Up to 100 team members", "All 6 ERP modules included", "Connect banking, e-com & APIs", "Priority onboarding & training"].map((feat, i) => (
+                      <li key={i} className="inline-flex items-center justify-center gap-[0.45rem] text-[0.86rem] text-[#475569] leading-[1.45] text-center py-1.5 px-3.5 rounded-full bg-[#f8fafc] border border-slate-900/5 w-full max-w-[16.5rem] group-hover:bg-white group-hover:border-[#059669]/30 transition-all duration-250">
+                        <span className="w-[1.1rem] h-[1.1rem] inline-flex items-center justify-center rounded-full bg-[#059669]/12 text-[#059669] text-[0.62rem] font-black shrink-0">✓</span>
+                        {feat}
+                      </li>
+                    ))}
+                  </ul>
+                  <button
+                    onClick={() => openDemoModal("Book Demo — Professional ERP Services")}
+                    className="w-full max-w-[16.5rem] text-center py-[0.85rem] px-6 rounded-xl bg-gradient-to-r from-[#0fb84e] to-[#088c3a] text-white font-bold text-sm shadow-[0_10px_20px_rgba(15,184,78,0.2)] hover:shadow-[0_15px_30px_rgba(15,184,78,0.35)] transition-all duration-300 mt-[0.25rem] cursor-pointer"
+                  >
+                    Book Demo
+                  </button>
+                </article>
+
+                {/* Enterprise Plan */}
+                <article
+                  className="group relative flex flex-col items-center text-center gap-5 p-8 bg-white border border-slate-900/[0.08] rounded-[20px] shadow-[0_10px_32px_rgba(15,23,42,0.06)] hover:border-[#7c3aed]/25 hover:shadow-[0_20px_44px_rgba(15,23,42,0.1)] hover:-translate-y-2 transition-all duration-350"
+                >
+                  <div className="flex flex-col items-center gap-[0.45rem] w-full">
+                    <div className="w-[3.25rem] h-[3.25rem] flex items-center justify-center text-[1.55rem] leading-none rounded-[14px] bg-[#7c3aed]/10 border border-[#7c3aed]/25 mb-[0.25rem] group-hover:scale-108 transition-transform duration-350">🏢</div>
+                    <span className="text-[0.72rem] font-extrabold uppercase tracking-[0.1em] text-[#7c3aed]">Enterprise</span>
+                    <h3>Custom Multi-Branch</h3>
+                    <p className="text-sm text-[#64748b] leading-[1.6] max-w-[15rem]">For large enterprises requiring multi-company setups and customized ERP stacks.</p>
+                  </div>
+                  <ul className="flex flex-col gap-[0.55rem] w-full items-center flex-1">
+                    {["Unlimited team capacity", "Multi-company & multi-currency", "Dedicated technical account team", "Cloud, hybrid, or on-prem hosting"].map((feat, i) => (
+                      <li key={i} className="inline-flex items-center justify-center gap-[0.45rem] text-[0.86rem] text-[#475569] leading-[1.45] text-center py-1.5 px-3.5 rounded-full bg-[#f8fafc] border border-slate-900/5 w-full max-w-[16.5rem] group-hover:bg-white group-hover:border-[#7c3aed]/25 transition-all duration-250">
+                        <span className="w-[1.1rem] h-[1.1rem] inline-flex items-center justify-center rounded-full bg-[#7c3aed]/10 text-[#7c3aed] text-[0.62rem] font-black shrink-0">✓</span>
+                        {feat}
+                      </li>
+                    ))}
+                  </ul>
+                  <button
+                    onClick={() => openDemoModal("Talk to Sales — Enterprise ERP Services")}
+                    className="w-full max-w-[16.5rem] text-center py-[0.85rem] px-6 rounded-xl border border-slate-900/15 hover:border-[#7c3aed] hover:bg-[#7c3aed]/5 text-slate-700 hover:text-[#7c3aed] font-bold text-sm transition-all duration-300 mt-[0.25rem] cursor-pointer"
+                  >
+                    Talk to Sales
+                  </button>
+                </article>
+              </div>
+
+              <p className="text-center text-sm text-slate-400 max-w-2xl mx-auto">Custom quotes provided based on team size, workflows, and integrations during your initial architecture consultation.</p>
             </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-[1.35rem] items-stretch mb-8">
-              {/* Starter Plan */}
-              <article
-                className="group relative flex flex-col items-center text-center gap-5 p-8 bg-white border border-slate-900/[0.08] rounded-[20px] shadow-[0_10px_32px_rgba(15,23,42,0.06)] hover:border-[#0891b2]/25 hover:shadow-[0_20px_44px_rgba(15,23,42,0.1)] hover:-translate-y-2 transition-all duration-350"
-              >
-                <div className="flex flex-col items-center gap-[0.45rem] w-full">
-                  <div className="w-[3.25rem] h-[3.25rem] flex items-center justify-center text-[1.55rem] leading-none rounded-[14px] bg-[#0891b2]/10 border border-[#0891b2]/25 mb-[0.25rem] group-hover:scale-108 transition-transform duration-350">🌱</div>
-                  <span className="text-[0.72rem] font-extrabold uppercase tracking-[0.1em] text-[#0891b2]">Standard</span>
-                  <h3>Core Operations</h3>
-                  <p className="text-sm text-[#64748b] leading-[1.6] max-w-[15rem]">Best for growing businesses moving away from disjointed spreadsheets.</p>
-                </div>
-                <ul className="flex flex-col gap-[0.55rem] w-full items-center flex-1">
-                  {["Up to 25 team members", "Any 2 modules of your choice", "Standard SLA support", "Guided data import & setup"].map((feat, i) => (
-                    <li key={i} className="inline-flex items-center justify-center gap-[0.45rem] text-[0.86rem] text-[#475569] leading-[1.45] text-center py-1.5 px-3.5 rounded-full bg-[#f8fafc] border border-slate-900/5 w-full max-w-[16.5rem] group-hover:bg-white group-hover:border-[#0891b2]/25 transition-all duration-250">
-                      <span className="w-[1.1rem] h-[1.1rem] inline-flex items-center justify-center rounded-full bg-[#0891b2]/10 text-[#0891b2] text-[0.62rem] font-black shrink-0">✓</span>
-                      {feat}
-                    </li>
-                  ))}
-                </ul>
-                <button
-                  onClick={() => openDemoModal("Request Quote — Standard ERP Services")}
-                  className="w-full max-w-[16.5rem] text-center py-[0.85rem] px-6 rounded-xl border border-slate-900/15 hover:border-[#0891b2] hover:bg-[#0891b2]/5 text-slate-700 hover:text-[#0891b2] font-bold text-sm transition-all duration-300 mt-[0.25rem] cursor-pointer"
-                >
-                  Request Quote
-                </button>
-              </article>
-
-              {/* Growth Plan (Featured) */}
-              <article
-                className="group relative flex flex-col items-center text-center gap-5 p-8 bg-gradient-to-b from-white to-[#f0fdf4] border border-[#10b981]/25 rounded-[20px] shadow-[0_16px_40px_rgba(15,184,78,0.14)] hover:shadow-[0_24px_52px_rgba(15,184,78,0.18)] hover:-translate-y-2 transition-all duration-350 overflow-visible"
-              >
-                <span className="absolute top-[-0.65rem] left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#0fb84e] to-[#059669] text-white text-[0.65rem] font-extrabold tracking-[0.07em] uppercase px-3.5 py-1.5 rounded-full shadow-[0_4px_14px_rgba(15,184,78,0.35)] shrink-0 z-10">Most Popular</span>
-                <div className="flex flex-col items-center gap-[0.45rem] w-full">
-                  <div className="w-[3.25rem] h-[3.25rem] flex items-center justify-center text-[1.55rem] leading-none rounded-[14px] bg-[#059669]/12 border border-[#059669]/30 mb-[0.25rem] group-hover:scale-108 transition-transform duration-350">🚀</div>
-                  <span className="text-[0.72rem] font-extrabold uppercase tracking-[0.1em] text-[#059669]">Professional</span>
-                  <h3>Full ERP Deployment</h3>
-                  <p className="text-sm text-[#64748b] leading-[1.6] max-w-[15rem]">For expanding enterprises that need complete end-to-end module integration.</p>
-                </div>
-                <ul className="flex flex-col gap-[0.55rem] w-full items-center flex-1">
-                  {["Up to 100 team members", "All 6 ERP modules included", "Connect banking, e-com & APIs", "Priority onboarding & training"].map((feat, i) => (
-                    <li key={i} className="inline-flex items-center justify-center gap-[0.45rem] text-[0.86rem] text-[#475569] leading-[1.45] text-center py-1.5 px-3.5 rounded-full bg-[#f8fafc] border border-slate-900/5 w-full max-w-[16.5rem] group-hover:bg-white group-hover:border-[#059669]/30 transition-all duration-250">
-                      <span className="w-[1.1rem] h-[1.1rem] inline-flex items-center justify-center rounded-full bg-[#059669]/12 text-[#059669] text-[0.62rem] font-black shrink-0">✓</span>
-                      {feat}
-                    </li>
-                  ))}
-                </ul>
-                <button
-                  onClick={() => openDemoModal("Book Demo — Professional ERP Services")}
-                  className="w-full max-w-[16.5rem] text-center py-[0.85rem] px-6 rounded-xl bg-gradient-to-r from-[#0fb84e] to-[#088c3a] text-white font-bold text-sm shadow-[0_10px_20px_rgba(15,184,78,0.2)] hover:shadow-[0_15px_30px_rgba(15,184,78,0.35)] transition-all duration-300 mt-[0.25rem] cursor-pointer"
-                >
-                  Book Demo
-                </button>
-              </article>
-
-              {/* Enterprise Plan */}
-              <article
-                className="group relative flex flex-col items-center text-center gap-5 p-8 bg-white border border-slate-900/[0.08] rounded-[20px] shadow-[0_10px_32px_rgba(15,23,42,0.06)] hover:border-[#7c3aed]/25 hover:shadow-[0_20px_44px_rgba(15,23,42,0.1)] hover:-translate-y-2 transition-all duration-350"
-              >
-                <div className="flex flex-col items-center gap-[0.45rem] w-full">
-                  <div className="w-[3.25rem] h-[3.25rem] flex items-center justify-center text-[1.55rem] leading-none rounded-[14px] bg-[#7c3aed]/10 border border-[#7c3aed]/25 mb-[0.25rem] group-hover:scale-108 transition-transform duration-350">🏢</div>
-                  <span className="text-[0.72rem] font-extrabold uppercase tracking-[0.1em] text-[#7c3aed]">Enterprise</span>
-                  <h3>Custom Multi-Branch</h3>
-                  <p className="text-sm text-[#64748b] leading-[1.6] max-w-[15rem]">For large enterprises requiring multi-company setups and customized ERP stacks.</p>
-                </div>
-                <ul className="flex flex-col gap-[0.55rem] w-full items-center flex-1">
-                  {["Unlimited team capacity", "Multi-company & multi-currency", "Dedicated technical account team", "Cloud, hybrid, or on-prem hosting"].map((feat, i) => (
-                    <li key={i} className="inline-flex items-center justify-center gap-[0.45rem] text-[0.86rem] text-[#475569] leading-[1.45] text-center py-1.5 px-3.5 rounded-full bg-[#f8fafc] border border-slate-900/5 w-full max-w-[16.5rem] group-hover:bg-white group-hover:border-[#7c3aed]/25 transition-all duration-250">
-                      <span className="w-[1.1rem] h-[1.1rem] inline-flex items-center justify-center rounded-full bg-[#7c3aed]/10 text-[#7c3aed] text-[0.62rem] font-black shrink-0">✓</span>
-                      {feat}
-                    </li>
-                  ))}
-                </ul>
-                <button
-                  onClick={() => openDemoModal("Talk to Sales — Enterprise ERP Services")}
-                  className="w-full max-w-[16.5rem] text-center py-[0.85rem] px-6 rounded-xl border border-slate-900/15 hover:border-[#7c3aed] hover:bg-[#7c3aed]/5 text-slate-700 hover:text-[#7c3aed] font-bold text-sm transition-all duration-300 mt-[0.25rem] cursor-pointer"
-                >
-                  Talk to Sales
-                </button>
-              </article>
-            </div>
-
-            <p className="text-center text-sm text-slate-400 max-w-2xl mx-auto">Custom quotes provided based on team size, workflows, and integrations during your initial architecture consultation.</p>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Section 4f: FAQ */}
         <section className="py-12 lg:py-16 relative overflow-hidden border-t border-b border-slate-900/5" id="faq" style={{

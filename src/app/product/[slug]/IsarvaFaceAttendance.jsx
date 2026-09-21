@@ -219,6 +219,7 @@ export default function IsarvaFaceAttendance({ product, allProducts }) {
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
   const [activeScreenIndex, setActiveScreenIndex] = useState(0);
   const [previewImage, setPreviewImage] = useState(null);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   const tabRefs = useRef([]);
 
@@ -279,6 +280,19 @@ export default function IsarvaFaceAttendance({ product, allProducts }) {
       tag: "Live Command Center",
       gradient: "from-rose-500 to-pink-600",
     },
+  ];
+
+  const trendingSolutions = [
+    "AI-Based Facial Recognition",
+    "Facial Recognition Tools",
+    "Eye Blink Liveness Detection",
+    "Anti-Spoofing Attendance Software",
+    "Android Biometric Face Kiosk",
+    "HRMS Face Attendance Sync",
+    "Automated Payroll Attendance",
+    "Offline Biometric Attendance",
+    "Touchless Face Attendance Machine",
+    "Zero Buddy Punching Solution",
   ];
 
   return (
@@ -380,6 +394,18 @@ export default function IsarvaFaceAttendance({ product, allProducts }) {
         .ifa-faq-inner {
           overflow: hidden;
           min-height: 0;
+        }
+        @keyframes ifaMarquee {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-50%); }
+        }
+        .ifa-marquee-track {
+          display: flex;
+          width: max-content;
+          animation: ifaMarquee 38s linear infinite;
+        }
+        .ifa-marquee-track:hover {
+          animation-play-state: paused;
         }
       `}</style>
 
@@ -1053,17 +1079,155 @@ export default function IsarvaFaceAttendance({ product, allProducts }) {
           </div>
         </section>
 
-        {/* ─── 6. FREQUENTLY ASKED QUESTIONS ─────────────────────── */}
-        <section id="faq" className="py-12 lg:py-16 bg-white relative overflow-hidden">
-          <div className="max-w-4xl mx-auto px-6 relative z-10">
+        {/* ─── 6. TRENDING FACIAL RECOGNITION & HRMS BIOMETRIC SOLUTIONS (CAPABILITY MATRIX) ─── */}
+        <section className="py-12 lg:py-16 bg-gradient-to-b from-gray-50 via-white to-gray-50 border-t border-b border-gray-200/80 relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
+            {/* Section Header */}
             <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 font-semibold text-sm mb-6">
-                Support & FAQs
+                <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+                Enterprise Biometric Capabilities
               </div>
               <h2 className="mb-6 capitalize">
+                Trending Facial Recognition &amp; HRMS Biometric Solutions
+              </h2>
+              <p className="text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Explore our comprehensive suite of AI facial recognition, liveness fraud defense, and synchronized payroll attendance solutions.
+              </p>
+            </div>
+
+            {/* 10-Item Capability Matrix */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 sm:gap-4">
+              {trendingSolutions.map((item, idx) => (
+                <div
+                  key={idx}
+                  onClick={() => setIsModalOpen(true)}
+                  className="group p-4 rounded-xl bg-white border border-gray-200 hover:border-blue-400 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200 cursor-pointer flex flex-col justify-start"
+                >
+                  <div className="flex items-center justify-between mb-2.5">
+                    <span className="text-xs font-bold text-blue-600 bg-blue-50 border border-blue-100 rounded-md px-2 py-0.5">
+                      {String(idx + 1).padStart(2, "0")}
+                    </span>
+                    <div className="w-6 h-6 rounded-md bg-gray-50 group-hover:bg-blue-50 text-gray-400 group-hover:text-blue-600 flex items-center justify-center transition-colors">
+                      <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+                  <h3 className="text-sm sm:text-base leading-snug mb-0">
+                    {item}
+                  </h3>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ─── 6.5 VIDEO DEMONSTRATION ────────────────────────────── */}
+        <section id="video-demo" className="pt-10 pb-10 lg:pt-14 lg:pb-12 bg-gradient-to-b from-blue-50/60 via-indigo-50/40 to-blue-50/80 border-b border-blue-200/70 relative overflow-hidden">
+          {/* Ambient Mesh Glows */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none">
+            <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-200/40 rounded-full blur-[120px]" />
+            <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-indigo-200/40 rounded-full blur-[120px]" />
+          </div>
+
+          <div className="max-w-5xl mx-auto px-6 relative z-10">
+            {/* Section Header */}
+            <div className="text-center mb-7">
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-100 text-blue-800 border border-blue-200 font-semibold text-sm mb-5">
+                <span className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse" />
+                Live Product Walkthrough
+              </div>
+              <h2 className="mb-4 capitalize">
+                Watch Isarva Face Attendance in Action
+              </h2>
+              <p className="text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                See real-time biometric eye-blink detection, sub-200ms neural recognition, and automated cloud sync running on standard Android hardware.
+              </p>
+            </div>
+
+            {/* Video Container Frame */}
+            <div className="relative rounded-2xl sm:rounded-3xl p-2.5 sm:p-4 bg-white border border-blue-200/80 shadow-[0_20px_50px_rgba(37,99,235,0.10)] ring-1 ring-blue-500/5">
+              {/* Top Window Bar */}
+              <div className="flex items-center justify-between px-3 sm:px-4 py-2 mb-2 bg-slate-50 rounded-xl border border-slate-200/60">
+                <div className="flex items-center gap-2">
+                  <span className="w-3 h-3 rounded-full bg-rose-400 inline-block" />
+                  <span className="w-3 h-3 rounded-full bg-amber-400 inline-block" />
+                  <span className="w-3 h-3 rounded-full bg-emerald-400 inline-block" />
+                  <span className="text-xs text-gray-500 font-medium ml-2 hidden sm:inline">Isarva Biometric AI Kiosk Terminal Demo</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-blue-600 font-semibold">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+                  <span>1080p Full HD</span>
+                </div>
+              </div>
+
+              {/* 16:9 Video Embed with Crystal-Clear HD Thumbnail */}
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-black shadow-lg">
+                {!isVideoPlaying ? (
+                  <div
+                    onClick={() => setIsVideoPlaying(true)}
+                    className="relative w-full h-full cursor-pointer group flex items-center justify-center overflow-hidden"
+                  >
+                    <Image
+                      src="https://img.youtube.com/vi/dUy-Uu018hY/maxresdefault.jpg"
+                      alt="Isarva Face Attendance Demo"
+                      fill
+                      unoptimized
+                      priority
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                      sizes="(max-width: 1200px) 100vw, 1200px"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-black/30 group-hover:from-slate-950/50 transition-colors" />
+                    <div className="relative z-10 flex flex-col items-center gap-3">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl sm:rounded-3xl bg-red-600 group-hover:bg-red-500 text-white flex items-center justify-center shadow-[0_0_40px_rgba(220,38,38,0.7)] group-hover:scale-110 group-hover:shadow-[0_0_60px_rgba(220,38,38,0.9)] transition-all duration-300">
+                        <svg className="w-7 h-7 sm:w-9 sm:h-9 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                          <polygon points="5 3 19 12 5 21 5 3" />
+                        </svg>
+                      </div>
+                      <span className="px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-slate-700 text-white text-xs font-semibold backdrop-blur-md shadow-lg group-hover:bg-slate-800 transition-colors">
+                        ▶ Click to Watch Walkthrough (HD)
+                      </span>
+                    </div>
+                  </div>
+                ) : (
+                  <iframe
+                    src="https://www.youtube-nocookie.com/embed/dUy-Uu018hY?autoplay=1&rel=0&modestbranding=1"
+                    title="Isarva Facial Recognition & HRMS Biometric Attendance Demo"
+                    className="w-full h-full absolute inset-0 border-0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                )}
+              </div>
+            </div>
+
+
+            {/* Bottom Action */}
+            <div className="mt-6 text-center flex flex-col sm:flex-row items-center justify-center gap-3">
+              <button
+                type="button"
+                onClick={() => setIsModalOpen(true)}
+                className="press-illusion-btn-orange bg-orange-500 text-white font-bold px-8 py-3.5 text-sm sm:text-base items-center justify-center flex cursor-pointer rounded-xl"
+              >
+                Schedule Live Product Demo
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* ─── 7. FREQUENTLY ASKED QUESTIONS ─────────────────────── */}
+        <section id="faq" className="pt-10 pb-12 lg:pt-14 lg:pb-16 bg-white relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent" />
+          <div className="max-w-4xl mx-auto px-6 relative z-10">
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 font-semibold text-sm mb-5">
+                Support & FAQs
+              </div>
+              <h2 className="mb-4 capitalize">
                 Frequently Asked Questions
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto">
                 Everything you need to know
               </p>
             </div>
