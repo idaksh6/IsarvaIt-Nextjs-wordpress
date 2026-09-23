@@ -15,7 +15,7 @@ const productsData = [
   { label: "Dispatcher Panel", href: "/product/dispatcher-panel", icon: "💐" },
   { label: "WooCommerce Development", href: "/product/woocommerce-development", icon: "🛒" },
   { label: "Mobile App Development", href: "/product/mobile-app-development", icon: "📱" },
-  { label: "Retail Billing Software", href: "/product/retail-billing-software", icon: "🚚" },
+  { label: "Retail Billing Software", href: "/product/retail-billing-software", icon: "🛍️" },
   { label: "Dealer Management and Dealer Article Software", href: "/product/dealer-management-and-dealer-article-software", icon: "🤝" },
   { label: "Lawyer Legal Association Software", href: "/product/lawyer-legal-association-software", icon: "⚖️" },
   { label: "POSH Compliance Software", href: "/product/posh-compliance-software", icon: "🛡️" },

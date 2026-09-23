@@ -298,7 +298,7 @@ export const productsData = [
     title: "Retail Billing Software with Multi Branch and Multi Warehouse",
     ogImage: "/products/retail billing multi branch/Multibranch-dashboard.jpg",
     category: "Enterprise Retail",
-    icon: "🏬",
+    icon: "🛍️",
     tagline: "Enterprise Retail Management",
     shortDescription:
       "Advanced retail management for multiple branches and warehouses with centralized control.",
