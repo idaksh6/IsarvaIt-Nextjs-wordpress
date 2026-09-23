@@ -471,7 +471,7 @@ export const productsData = [
     title: "Dispatcher Panel",
     ogImage: "/products/dispatcher Panel/Dispatcher-dashboard.jpg",
     category: "Logistics Coordination",
-    icon: "🎯",
+    icon: "💐",
     tagline: "Delivery Dispatch Management",
     shortDescription:
       "Real-time dispatch management for delivery and field service operations.",

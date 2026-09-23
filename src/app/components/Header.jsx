@@ -72,7 +72,7 @@ const productsData = [
   { label: "Support Software", href: "/product/support-software", icon: "🎧" },
   { label: "BillSoft Software", href: "/product/bill-soft", icon: "🧾" },
   { label: "Marine Service Software", href: "/product/marine-service-software", icon: "🏬" },
-  { label: "Dispatcher Panel", href: "/product/dispatcher-panel", icon: "⛽" },
+  { label: "Dispatcher Panel", href: "/product/dispatcher-panel", icon: "💐" },
   { label: "WooCommerce Development", href: "/product/woocommerce-development", icon: "🛒" },
   { label: "Mobile App Development", href: "/product/mobile-app-development", icon: "📱" },
   { label: "Retail Billing Software", href: "/product/retail-billing-software", icon: "🚚" },
