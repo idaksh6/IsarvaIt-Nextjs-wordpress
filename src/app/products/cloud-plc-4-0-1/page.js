@@ -2,10 +2,10 @@ import CloudPlcProductClient from "./CloudPlcProductClient";
 import { generateMetadata as generateSEOMetadata } from "../../lib/utils/seo";
 
 export const metadata = generateSEOMetadata({
-  title: "Cloud PLC 4.0 | Programmable Industrial Edge Controller",
+  title: "Cloud PLC 4.0 | Industrial Edge Controller",
   description:
-    "Cloud PLC 4.0 — Programmable edge controller with isolated I/O, Modbus RTU/TCP, MQTT, JSON, RESTful, WiFi/BLE/4G, OPC support. OEM & custom solutions for industrial IoT and SCADA.",
-  image: "/products/cloud-plc/cloud-plc-4-0.jpg",
+    "Programmable Cloud PLC edge controller with isolated I/O, Modbus RTU/TCP, MQTT, WiFi/4G, and OPC support. OEM & custom SCADA solutions.",
+  image: "/products/cloud-plc/cloud-plc-og.jpg",
   url: "/products/cloud-plc-4-0-1",
   keywords: [
     "Cloud PLC",
