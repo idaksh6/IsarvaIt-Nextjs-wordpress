@@ -2,10 +2,10 @@ import RdlProductClient from "./RdlProductClient";
 import { generateMetadata as generateSEOMetadata } from "../../lib/utils/seo";
 
 export const metadata = generateSEOMetadata({
-  title: "Data Logger IIoT 4.0 | Intelligent Industrial Data Logger",
+  title: "Data Logger IIoT 4.0 | Industrial IoT Gateway",
   description:
-    "Intelligent Data Logger with isolated I/O, Modbus RTU/TCP, MQTT, JSON, FTP, 4G LTE, flame-proof & IP65 options. OEM, custom solutions, downloads & SDKs for industrial IoT.",
-  image: "/products/rdl-product/data-logger-hero.png",
+    "Intelligent Industrial Data Logger with isolated I/O, Modbus RTU/TCP, MQTT, 4G LTE & IP65 options. Custom OEM solutions, downloads & SDKs.",
+  image: "/products/rdl-product/data-logger-og.jpg",
   url: "/products/data-logger-iiot-4-0-1",
   keywords: [
     "Data Logger IIoT",
