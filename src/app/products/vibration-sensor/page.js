@@ -2,10 +2,10 @@ import VibrationProductClient from "./VibrationProductClient";
 import { generateMetadata as generateSEOMetadata } from "../../lib/utils/seo";
 
 export const metadata = generateSEOMetadata({
-  title: "Industrial 3-Axis Vibration Sensor & Temperature Probe",
+  title: "3-Axis Vibration Sensor | Industrial Condition Monitoring",
   description:
-    "3-Axis Industrial Vibration & Temperature Sensor for predictive maintenance and condition monitoring. Measures RMS velocity, peak acceleration, displacement, and temperature across Modbus RS485, Wi-Fi, and 4G LTE.",
-  image: "/products/vibration-sensor/vibration-hero.png",
+    "Industrial 3-Axis Vibration & Temperature Sensor for predictive maintenance, bearing monitoring, and machinery health with Modbus RS485 & 4G LTE.",
+  image: "/products/vibration-sensor/vibration-sensor-og.jpg",
   url: "/products/vibration-sensor",
   keywords: [
     "Vibration Sensor",
