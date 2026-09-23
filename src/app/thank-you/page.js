@@ -7,6 +7,7 @@ import {
   Mail,
   Phone,
   ArrowRight,
+  ArrowLeft,
   Home,
   Calendar,
   Clock,
@@ -117,6 +118,16 @@ function ThankYouContent() {
             "Our team will get back to you with the information you need"
           ]
         };
+    }
+  };
+
+  const handleGoBack = () => {
+    if (typeof window !== "undefined") {
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.href = "/";
+      }
     }
   };
 
@@ -263,21 +274,34 @@ function ThankYouContent() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-center"
         >
+          {/* 1. Return to Previous Page / Item */}
+          <button
+            type="button"
+            onClick={handleGoBack}
+            className="inline-flex items-center justify-center gap-3 bg-white text-[#1a1f24] px-7 py-4 rounded-xl font-bold text-base md:text-lg border-2 border-emerald-500/20 transition-all hover:border-emerald-500 hover:bg-emerald-50/60 hover:shadow-lg active:scale-95 cursor-pointer w-full sm:w-auto"
+          >
+            <ArrowLeft className="w-5 h-5 text-emerald-600" />
+            <span>
+              {itemName ? `Back to ${itemName}` : "Back to Previous Page"}
+            </span>
+          </button>
+
+          {/* 2. Back to Home */}
           <Link
             href="/"
-            className="inline-flex items-center justify-center gap-3 bg-[#10b981] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all hover:scale-105 hover:shadow-xl active:scale-95"
+            className="inline-flex items-center justify-center gap-3 bg-[#10b981] text-white px-7 py-4 rounded-xl font-bold text-base md:text-lg transition-all hover:scale-105 hover:shadow-xl active:scale-95 w-full sm:w-auto"
           >
             <Home className="w-5 h-5" />
             <span>Back to Home</span>
           </Link>
 
-          {/* Conditional second button based on form type */}
-          {pageType === "product" && (
+          {/* 3. Conditional Explorer button based on form type */}
+          {(pageType === "product" || pageType === "brochure") && (
             <Link
               href="/products"
-              className="inline-flex items-center justify-center gap-3 bg-white text-[#1a1f24] px-8 py-4 rounded-xl font-bold text-lg border-2 border-emerald-500/10 transition-all hover:border-emerald-500/30 hover:shadow-lg"
+              className="inline-flex items-center justify-center gap-3 bg-white text-[#1a1f24] px-7 py-4 rounded-xl font-bold text-base md:text-lg border-2 border-emerald-500/10 transition-all hover:border-emerald-500/30 hover:shadow-lg w-full sm:w-auto"
             >
               <span>Explore More Products</span>
               <ArrowRight className="w-5 h-5" />
@@ -287,7 +311,7 @@ function ThankYouContent() {
           {pageType === "service" && (
             <Link
               href="/services"
-              className="inline-flex items-center justify-center gap-3 bg-white text-[#1a1f24] px-8 py-4 rounded-xl font-bold text-lg border-2 border-emerald-500/10 transition-all hover:border-emerald-500/30 hover:shadow-lg"
+              className="inline-flex items-center justify-center gap-3 bg-white text-[#1a1f24] px-7 py-4 rounded-xl font-bold text-base md:text-lg border-2 border-emerald-500/10 transition-all hover:border-emerald-500/30 hover:shadow-lg w-full sm:w-auto"
             >
               <span>Explore More Services</span>
               <ArrowRight className="w-5 h-5" />
@@ -297,9 +321,19 @@ function ThankYouContent() {
           {pageType === "industry" && (
             <Link
               href="/industries"
-              className="inline-flex items-center justify-center gap-3 bg-white text-[#1a1f24] px-8 py-4 rounded-xl font-bold text-lg border-2 border-emerald-500/10 transition-all hover:border-emerald-500/30 hover:shadow-lg"
+              className="inline-flex items-center justify-center gap-3 bg-white text-[#1a1f24] px-7 py-4 rounded-xl font-bold text-base md:text-lg border-2 border-emerald-500/10 transition-all hover:border-emerald-500/30 hover:shadow-lg w-full sm:w-auto"
             >
               <span>Explore More Industries</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          )}
+
+          {pageType === "job-application" && (
+            <Link
+              href="/career"
+              className="inline-flex items-center justify-center gap-3 bg-white text-[#1a1f24] px-7 py-4 rounded-xl font-bold text-base md:text-lg border-2 border-emerald-500/10 transition-all hover:border-emerald-500/30 hover:shadow-lg w-full sm:w-auto"
+            >
+              <span>Explore More Careers</span>
               <ArrowRight className="w-5 h-5" />
             </Link>
           )}
