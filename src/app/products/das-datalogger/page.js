@@ -5,7 +5,7 @@ export const metadata = generateSEOMetadata({
   title: "DAS Datalogger | Data Acquisition System Data Logger",
   description:
     "Comprehensive Data Acquisition System (DAS) Data Logger for real-time data collection, monitoring, 64-channel parameter logging, and IoT integration.",
-  image: "/products/rdl-product/logger-das.jpg",
+  image: "/products/rdl-product/das-with-display-og.jpg",
   url: "/products/das-datalogger",
   keywords: [
     "DAS Datalogger",

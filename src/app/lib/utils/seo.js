@@ -7,6 +7,15 @@ const SITE_NAME = "Isarva Infotech";
 const SITE_URL = "https://www.isarvait.com";
 const DEFAULT_DESCRIPTION = "Premium web design, development, and software solutions. Specializing in Next.js, React, WordPress, ERP, CRM, HRMS, and custom software development.";
 
+const getMimeType = (imgUrl = "") => {
+  const clean = imgUrl.toLowerCase().split("?")[0];
+  if (clean.endsWith(".png")) return "image/png";
+  if (clean.endsWith(".webp")) return "image/webp";
+  if (clean.endsWith(".svg")) return "image/svg+xml";
+  if (clean.endsWith(".gif")) return "image/gif";
+  return "image/jpeg";
+};
+
 export function generateMetadata({
   title,
   description = DEFAULT_DESCRIPTION,
@@ -35,7 +44,16 @@ export function generateMetadata({
     "digital transformation",
   ];
 
-  const allKeywords = [...new Set([...keywords, ...defaultKeywords])].join(", ");
+  const allKeywords = [
+    ...new Set([
+      ...(Array.isArray(keywords)
+        ? keywords
+        : typeof keywords === "string"
+        ? keywords.split(",").map((s) => s.trim())
+        : []),
+      ...defaultKeywords,
+    ]),
+  ].join(", ");
 
   return {
     title: fullTitle,
@@ -56,9 +74,11 @@ export function generateMetadata({
       images: [
         {
           url: safeImageUrl,
+          secureUrl: safeImageUrl,
           width: 1200,
           height: 630,
           alt: fullTitle,
+          type: getMimeType(safeImageUrl),
         },
       ],
       locale: "en_US",
