@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useLayoutEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   motion,
   AnimatePresence,
@@ -491,72 +491,72 @@ export default function ProductDetailPremiumCRM({
 
               <div className="relative flex flex-col items-center gap-10 lg:flex-row lg:gap-16">
 
-              {/* Left Side: Images */}
-              <div className="relative flex w-full justify-center lg:w-1/2 lg:justify-center">
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                  className="relative z-10 w-full max-w-[500px]"
-                >
-                  <img
-                    src="/products/crm/mockups/CRM-mobile-mockup.png"
-                    alt="Isarva CRM Mobile App"
-                    className="h-auto w-full scale-105 object-contain drop-shadow-2xl"
-                  />
-                </motion.div>
-              </div>
+                {/* Left Side: Images */}
+                <div className="relative flex w-full justify-center lg:w-1/2 lg:justify-center">
+                  <motion.div
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="relative z-10 w-full max-w-[500px]"
+                  >
+                    <img
+                      src="/products/crm/mockups/CRM-mobile-mockup.png"
+                      alt="Isarva CRM Mobile App"
+                      className="h-auto w-full scale-105 object-contain drop-shadow-2xl"
+                    />
+                  </motion.div>
+                </div>
 
-              {/* Right Side: Content */}
-              <div className="flex w-full flex-col gap-6 lg:w-1/2">
-                <motion.h2
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                  className="text-3xl font-black leading-[1.15] text-sky-900 lg:text-4xl xl:text-5xl"
-                >
-                  Say hello with{" "}
-                  <span className="bg-gradient-to-r from-sky-600 to-violet-600 bg-clip-text text-transparent">
-                    Isarva CRM Mobile App
-                  </span>
-                </motion.h2>
+                {/* Right Side: Content */}
+                <div className="flex w-full flex-col gap-6 lg:w-1/2">
+                  <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="text-3xl font-black leading-[1.15] text-sky-900 lg:text-4xl xl:text-5xl"
+                  >
+                    Say hello with{" "}
+                    <span className="bg-gradient-to-r from-sky-600 to-violet-600 bg-clip-text text-transparent">
+                      Isarva CRM Mobile App
+                    </span>
+                  </motion.h2>
 
-                <motion.ul
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="space-y-4 text-base font-medium leading-relaxed text-slate-700 lg:text-xl xl:text-xl"
-                >
-                  {[
-                    "Get organized and take control every day",
-                    "Access and manage information anytime and anywhere",
-                    "Access deals, track conversations, and log activities directly from the app",
-                    "Track your daily schedule and achieve your goals",
-                    "Communicate seamlessly with your team and clients"
-                  ].map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <svg className="mt-1 h-5 w-5 flex-shrink-0 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
-                      </svg>
-                      <span className="leading-snug">{item}</span>
-                    </li>
-                  ))}
-                </motion.ul>
+                  <motion.ul
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="space-y-4 text-base font-medium leading-relaxed text-slate-700 lg:text-xl xl:text-xl"
+                  >
+                    {[
+                      "Get organized and take control every day",
+                      "Access and manage information anytime and anywhere",
+                      "Access deals, track conversations, and log activities directly from the app",
+                      "Track your daily schedule and achieve your goals",
+                      "Communicate seamlessly with your team and clients"
+                    ].map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <svg className="mt-1 h-5 w-5 flex-shrink-0 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+                        </svg>
+                        <span className="leading-snug">{item}</span>
+                      </li>
+                    ))}
+                  </motion.ul>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                  className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-stretch"
-                >
-                  <GooglePlayStoreBadge />
-                  <AppStoreBadge />
-                </motion.div>
-              </div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-stretch"
+                  >
+                    <GooglePlayStoreBadge />
+                    <AppStoreBadge />
+                  </motion.div>
+                </div>
 
               </div>
             </div>
@@ -1290,13 +1290,25 @@ const crmTabData = [
     id: "quotation",
     title: "Quotations & Sales Orders",
     subtitle: "Turn opportunities into revenue smoothly.",
-    description: "Turn opportunities into revenue smoothly using mobile-friendly sales tools. Create and track quotes and sales orders efficiently.",
+    description: "Create professional quotations in seconds and send them instantly via Email or WhatsApp. Simplify your sales process, engage customers faster, and turn more opportunities into successful deals. ",
     color: "from-[#10B981] to-[#059669]",
     points: [
       { label: "Quote & Order Tracking", text: "Create and track quotes and sales orders." },
-      { label: "Order Status Tracking", text: "Track order status from start to finish." }
+      { label: "Generate Quotation and Send it.", text: "Whatsapp Or Email Through send Quote It will change the deals stage Automatically" }
     ],
     image: "/products/crm/mockups/Quoatation-1.jpg"
+  },
+  {
+    id: "whatsapp-gmail",
+    title: "WhatsApp & Gmail Integration",
+    subtitle: "Connect CRM with WhatsApp and Gmail seamlessly.",
+    description: "Connect your CRM with WhatsApp and Gmail to send quotations, follow-ups, and customer updates instantly from one place.",
+    color: "from-[#25D366] to-[#2563EB]",
+    points: [
+      { label: "WhatsApp Integration", text: "Send quotations and follow-ups directly via WhatsApp." },
+      { label: "Gmail Integration", text: "Send professional quotations and emails directly through Gmail." }
+    ],
+    image: "/products/crm/mockups/whatsapp-gmail-integration.jpg"
   },
   {
     id: "tasks",
@@ -1314,11 +1326,11 @@ const crmTabData = [
     id: "reports",
     title: "Reports & Analytics",
     subtitle: "Access powerful dashboards and reports to track sales performance",
-    description: "Access powerful dashboards and reports to track sales performance, conversion rates, pipeline health, and revenue forecasts. Generate custom reports and export data for deeper analysis.",
+    description: "Get a clear view of your sales, performance, and business analytics with powerful dashboards and detailed reports. Track key metrics, identify trends, and make data-driven decisions with ease.",
     color: "from-[#06B6D4] to-[#0891B2]",
     points: [
-      { label: "Sales Reports", text: "Track deals progress, sales targets, and revenue performance." },
-      { label: "Performance Reports", text: "Monitor lead conversion, user activities, and team productivity." }
+      { label: "Sales & Performance Reports", text: "Track sales targets, revenue, deals, lead conversions, team activities, and overall performance." },
+      { label: "Analytics Dashboard", text: "Visualize sales trends, pipeline health, conversion rates, revenue insights, and team performance in real time." }
     ],
     image: "/products/crm/mockups/Leads-by-status.jpg"
   },
@@ -1349,41 +1361,7 @@ const mobileRightFeatures = [
 function CRMTabSection({ setSelectedImage }) {
   const [activeTab, setActiveTab] = useState(crmTabData[0].id);
   const [activeId, setActiveId] = useState(null);
-  const sidebarRef = useRef(null);
-  const contentCardRef = useRef(null);
   const currentTab = crmTabData.find(t => t.id === activeTab);
-
-  useLayoutEffect(() => {
-    const syncHeights = () => {
-      if (!sidebarRef.current || !contentCardRef.current) return;
-
-      if (window.innerWidth < 1024) {
-        contentCardRef.current.style.minHeight = "";
-        contentCardRef.current.style.maxHeight = "";
-        return;
-      }
-
-      const sidebarHeight = sidebarRef.current.offsetHeight;
-      contentCardRef.current.style.minHeight = `${sidebarHeight}px`;
-      contentCardRef.current.style.maxHeight = `${sidebarHeight}px`;
-    };
-
-    syncHeights();
-    window.addEventListener("resize", syncHeights);
-
-    const observer =
-      sidebarRef.current && typeof ResizeObserver !== "undefined"
-        ? new ResizeObserver(syncHeights)
-        : null;
-    if (sidebarRef.current && observer) {
-      observer.observe(sidebarRef.current);
-    }
-
-    return () => {
-      window.removeEventListener("resize", syncHeights);
-      observer?.disconnect();
-    };
-  }, [activeTab]);
 
   const scrollToTab = (tabId) => {
     setActiveTab(tabId);
@@ -1432,34 +1410,33 @@ function CRMTabSection({ setSelectedImage }) {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 lg:items-start">
           {/* Desktop Sidebar (Left Side) */}
-          <div ref={sidebarRef} className="hidden lg:block lg:col-span-4 w-full">
-            <div className="flex flex-col gap-6 w-full">
+          <div className="hidden lg:block lg:col-span-4 w-full">
+            <div className="flex flex-col gap-3.5 w-full">
               {crmTabData.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`text-left p-6 rounded-2xl transition-all duration-300 border-2 ${activeTab === tab.id
+                  className={`text-left p-4 lg:p-5 rounded-2xl transition-all duration-300 border cursor-pointer ${activeTab === tab.id
                     ? `bg-gradient-to-br ${tab.color} border-transparent shadow-xl translate-x-2`
-                    : "bg-white/40 border-transparent hover:bg-white/60"
+                    : "bg-white/70 border-slate-100 hover:bg-white hover:border-slate-200 shadow-sm"
                     }`}
                 >
-                  <h3 className={`lg:text-xl ${activeTab === tab.id ? "text-white" : "text-gray-900"}`}>
+                  <h3 className={`text-base lg:text-lg font-bold ${activeTab === tab.id ? "text-white" : "text-gray-900"}`}>
                     {tab.title}
                   </h3>
-                  <p className={`text-sm mt-1 line-clamp-1 ${activeTab === tab.id ? "text-white/80" : "text-gray-500"}`}>{tab.subtitle}</p>
+                  <p className={`text-xs lg:text-sm mt-1 line-clamp-1 ${activeTab === tab.id ? "text-white/80" : "text-gray-500"}`}>{tab.subtitle}</p>
                 </button>
               ))}
             </div>
           </div>
 
           {/* Right Side: Content Area */}
-          <div className="lg:col-span-8 relative lg:sticky lg:top-32 self-start h-max w-full mt-0">
+          <div className="lg:col-span-8 relative lg:sticky lg:top-32 self-start h-auto w-full mt-0">
             {/* Dynamic Gradient Glow Shadow */}
             <div className={`absolute -inset-4 bg-gradient-to-br ${currentTab.color} opacity-20 blur-2xl rounded-[40px] transition-all duration-700`}></div>
 
             <div
-              ref={contentCardRef}
-              className="bg-white rounded-[24px] lg:rounded-[32px] p-6 lg:p-10 lg:pt-8 shadow-xl border border-slate-100 relative overflow-hidden flex flex-col w-full mt-0 lg:h-full"
+              className="bg-white rounded-[24px] lg:rounded-[32px] p-6 lg:p-8 shadow-xl border border-slate-100 relative overflow-hidden flex flex-col w-full mt-0"
             >
               {/* Edge Shades / Decorative Blobs */}
               <div className={`absolute -top-20 -left-20 w-64 h-64 bg-gradient-to-br ${currentTab.color} opacity-[0.07] rounded-full blur-[80px]`}></div>
@@ -1472,17 +1449,17 @@ function CRMTabSection({ setSelectedImage }) {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.4 }}
-                  className="flex flex-col gap-3 items-center w-full relative z-10 lg:flex-1 lg:min-h-0"
+                  className="flex flex-col gap-6 items-center w-full relative z-10"
                 >
                   {/* Content */}
-                  <div className="order-2 md:order-1 flex flex-col items-center md:items-start text-center md:text-left shrink-0">
-                    <h3 className="lg:text-3xl mt-2 md:mt-0 mb-4 w-full">{currentTab.title}</h3>
-                    <p className="text-sm lg:text-base text-gray-600 mb-6 lg:mb-6 leading-relaxed w-full">{currentTab.description}</p>
+                  <div className="order-2 md:order-1 flex flex-col items-center md:items-start text-center md:text-left w-full">
+                    <h3 className="text-xl lg:text-3xl mt-2 md:mt-0 mb-3 w-full font-extrabold text-slate-900">{currentTab.title}</h3>
+                    <p className="text-sm lg:text-base text-gray-600 mb-5 leading-relaxed w-full">{currentTab.description}</p>
 
-                    <div className="space-y-4 lg:space-y-5 mb-0 lg:mb-6 w-full flex flex-col items-center md:items-start">
+                    <div className="space-y-3.5 w-full flex flex-col items-center md:items-start">
                       {currentTab.points.map((pt, i) => (
                         <div key={i} className="flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-4 text-center sm:text-left">
-                          <div className={`w-5 h-5 lg:w-6 lg:h-6 rounded-full bg-gradient-to-br ${currentTab.color} flex items-center justify-center flex-shrink-0 mt-1`}>
+                          <div className={`w-5 h-5 lg:w-6 lg:h-6 rounded-full bg-gradient-to-br ${currentTab.color} flex items-center justify-center flex-shrink-0 mt-0.5`}>
                             <svg className="w-3 h-3 lg:w-3.5 lg:h-3.5 text-white" fill="currentColor" viewBox="0 0 20 20">
                               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                             </svg>
@@ -1497,18 +1474,18 @@ function CRMTabSection({ setSelectedImage }) {
                   </div>
 
                   {/* Image with Popup trigger */}
-                  <div className="relative order-1 md:order-2 flex justify-center w-full lg:flex-1 lg:min-h-0">
+                  <div className="relative order-1 md:order-2 flex justify-center w-full">
                     <div className={`absolute inset-0 bg-gradient-to-br ${currentTab.color} opacity-10 blur-3xl rounded-full`}></div>
                     <motion.div
                       initial={{ scale: 0.95, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
                       transition={{ delay: 0.2 }}
-                      className="relative z-10 inline-block w-full h-full flex items-center justify-center"
+                      className="relative z-10 inline-block w-full flex items-center justify-center"
                     >
                       <img
                         src={currentTab.image}
                         alt={currentTab.title}
-                        className="w-full h-auto max-h-[350px] lg:max-h-full object-contain drop-shadow-2xl rounded-2xl"
+                        className="w-full h-auto max-h-[440px] object-contain drop-shadow-xl rounded-2xl"
                       />
                       {currentTab.id === "mobile" && (
                         <>
