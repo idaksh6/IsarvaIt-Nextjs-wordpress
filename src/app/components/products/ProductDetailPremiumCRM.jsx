@@ -1408,7 +1408,7 @@ function CRMTabSection({ setSelectedImage }) {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 lg:items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 lg:items-center">
           {/* Desktop Sidebar (Left Side) */}
           <div className="hidden lg:block lg:col-span-4 w-full">
             <div className="flex flex-col gap-3.5 w-full">
@@ -1431,7 +1431,7 @@ function CRMTabSection({ setSelectedImage }) {
           </div>
 
           {/* Right Side: Content Area */}
-          <div className="lg:col-span-8 relative lg:sticky lg:top-32 self-start h-auto w-full mt-0">
+          <div className="lg:col-span-8 relative self-center h-auto w-full mt-0">
             {/* Dynamic Gradient Glow Shadow */}
             <div className={`absolute -inset-4 bg-gradient-to-br ${currentTab.color} opacity-20 blur-2xl rounded-[40px] transition-all duration-700`}></div>
 
