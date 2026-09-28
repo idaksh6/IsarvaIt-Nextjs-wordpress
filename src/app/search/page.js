@@ -130,9 +130,11 @@ function SearchResults() {
       if (isHidden) return false;
 
       return (
+        item.title?.toLowerCase().includes(term) ||
         item.name?.toLowerCase().includes(term) ||
         item.description?.toLowerCase().includes(term) ||
         item.tagline?.toLowerCase().includes(term) ||
+        item.category?.toLowerCase().includes(term) ||
         item.features?.some((f) => f?.toLowerCase().includes(term))
       );
     });

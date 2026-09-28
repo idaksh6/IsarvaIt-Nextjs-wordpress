@@ -1070,8 +1070,6 @@ export const productsData = [
   {
     slug: "isarva-nethra",
     title: "Isarva Nethra",
-    noIndex: true,
-    hidden: true,
     seoTitle: "Isarva Nethra — Next-Gen AI Vision & Video Intelligence Platform",
     metaDescription: "Autonomous AI Computer Vision for industrial safety, PPE compliance, conveyor defect inspection, perimeter defense, and footfall heatmaps with edge-native speed.",
     ogImage: "/products/isarva-nethra/nethra-og.jpg",

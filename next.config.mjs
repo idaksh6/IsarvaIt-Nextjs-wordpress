@@ -118,6 +118,11 @@ const nextConfig = {
         destination: "/service/erp-services",
         permanent: true,
       },
+      {
+        source: "/isarva-nethra",
+        destination: "/product/isarva-nethra",
+        permanent: true,
+      },
     ];
   },
   

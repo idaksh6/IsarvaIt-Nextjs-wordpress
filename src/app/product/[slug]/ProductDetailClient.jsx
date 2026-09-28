@@ -33,13 +33,13 @@ import ProductDetailPremiumNethra from "../../components/products/ProductDetailP
 export default function ProductDetailClient({ product, relatedProducts, allProducts }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Isarva Nethra (AI Vision & Video Intelligence - Coming Soon - Unlinked)
+  // Isarva Nethra (AI Vision & Video Intelligence)
   if (product.slug === "isarva-nethra") {
     return (
       <ProductDetailPremiumNethra
         product={product}
-        relatedProducts={[]}
-        allProducts={allProducts.filter((p) => !p.noIndex)}
+        relatedProducts={relatedProducts}
+        allProducts={allProducts}
       />
     );
   }
