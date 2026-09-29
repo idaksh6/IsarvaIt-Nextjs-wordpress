@@ -401,39 +401,39 @@ export default function ProductDetailPremiumHRMS({
     }
   };
 
-  // 1. Initial trigger: 3-second delay on page load (if not submitted)
+  // 1. Initial trigger: 3-second delay on page load (if not submitted and brochure modal not open)
   useEffect(() => {
     if (!CRM_POPUP_ENABLED || isFormSubmitted()) return;
 
     const timer = setTimeout(() => {
-      if (!isFormSubmitted()) {
+      if (!isFormSubmitted() && !isBrochureModalOpen) {
         wasOpenedRef.current = true;
         setIsModalOpen(true);
       }
     }, 3000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [isBrochureModalOpen]);
 
-  // 2. Pure Time-based Re-trigger: re-opens 15 seconds after closing (if not submitted)
+  // 2. Pure Time-based Re-trigger: re-opens 15 seconds after closing (if not submitted and brochure modal not open)
   useEffect(() => {
     if (!CRM_POPUP_ENABLED) return;
 
-    if (isModalOpen) {
+    if (isModalOpen || isBrochureModalOpen) {
       wasOpenedRef.current = true;
       return;
     }
 
-    if (!isModalOpen && wasOpenedRef.current && !isFormSubmitted()) {
+    if (!isModalOpen && !isBrochureModalOpen && wasOpenedRef.current && !isFormSubmitted()) {
       const timer = setTimeout(() => {
-        if (!isFormSubmitted()) {
+        if (!isFormSubmitted() && !isBrochureModalOpen) {
           setIsModalOpen(true);
         }
       }, 15000);
 
       return () => clearTimeout(timer);
     }
-  }, [isModalOpen]);
+  }, [isModalOpen, isBrochureModalOpen]);
 
   // Scroll to top of content area when tab changes
   useEffect(() => {
