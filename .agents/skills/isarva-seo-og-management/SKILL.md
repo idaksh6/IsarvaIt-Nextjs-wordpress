@@ -21,12 +21,50 @@ All pages must leverage the centralized SEO generator helpers rather than defini
 - `generateServiceMetadata(service)`: Formats service metadata and maps `ogImage` $\rightarrow$ `heroImage` $\rightarrow$ `/isarva-og.jpg`.
 - `generateIndustryMetadata(industry)`: Formats industry metadata and maps `ogImage` $\rightarrow$ `heroImage`.
 
-### Safe Image URL Encoding Rule
+---
+
+## 2. Strict Image Standards for Social Previews (WhatsApp, LinkedIn, Twitter, Facebook)
+
+### A. Size & Dimension Requirements
+- **Max File Size:** **< 300 KB** (WhatsApp crawler hard limit: drops images > 300 KB).
+- **Target File Size:** **100 KB – 200 KB** (Ensures instant scraper downloads within 3-second timeout window).
+- **Dimensions:** **1200 × 630 px** (1.91:1 aspect ratio standard for Open Graph and Twitter `summary_large_image`).
+- **Format:** High-efficiency `.jpg` (MozJPEG ~80–85% quality) or `.webp`.
+
+### B. Safe Image URL Encoding Rule
 Always ensure URLs with spaces or special characters (e.g. `Banking & Financial`) are safely encoded using `encodeURI(decodeURI(rawImageUrl))` to prevent sharing card failures on WhatsApp, Twitter, LinkedIn, and Facebook scrapers.
+
+### C. Direct Canonical URLs vs Redirects
+Social crawlers (especially WhatsApp) frequently fail to resolve images across 307/308 HTTP redirects. Always share and link to direct canonical routes (e.g., `/product/isarva-nethra` rather than `/isarva-nethra`).
 
 ---
 
-## 2. Page Types & Patterns
+## 3. Image Optimization with Sharp
+
+Whenever adding or updating an OG banner image, compress and crop it to 1200×630 using `sharp`:
+
+```bash
+node -e "
+const sharp = require('sharp');
+const fs = require('fs');
+
+async function optimize(file) {
+  const temp = file.replace(/(\.[a-z]+)$/i, '-opt$1');
+  await sharp(file)
+    .resize(1200, 630, { fit: 'cover', position: 'center' })
+    .jpeg({ quality: 82, mozjpeg: true })
+    .toFile(temp);
+  fs.renameSync(temp, file);
+  console.log('Optimized:', file, (fs.statSync(file).size / 1024).toFixed(1) + ' KB');
+}
+
+optimize('./public/products/your-product/og-image.jpg');
+"
+```
+
+---
+
+## 4. Page Types & Patterns
 
 ### A. Dynamic Catalog Pages (`/product/[slug]`, `/service/[slug]`, `/industry/[slug]`)
 1. Add data attributes (`ogImage`, `metaDescription`, `seoTitle`, `keywords`) directly in data files:
@@ -57,19 +95,42 @@ In Next.js App Router, pages with `"use client"` cannot export `metadata`. Conve
 
 ---
 
-## 3. Audit & Verification Workflow
+## 5. Audit & Verification Workflow
 
-### Run Quick Node Audit
-To check whether any product, service, or static route lacks OG tags:
+### Run OG Tag & Size Audit
+To check whether any product, service, or static route has missing OG tags or images exceeding 300 KB:
+
 ```bash
 node -e "
 const fs = require('fs');
+const path = require('path');
 const { productsData } = require('./src/app/lib/data/products-data.js');
-const { generateProductMetadata } = require('./src/app/lib/utils/seo.js');
-productsData.forEach(p => {
-  const meta = generateProductMetadata(p);
-  console.log(p.slug, '->', meta.openGraph?.images?.[0]?.url);
-});
+const { servicesData } = require('./src/app/lib/data/services-data.js');
+const { industriesData } = require('./src/app/lib/data/industries-data.js');
+
+function audit(items, label) {
+  console.log('=== ' + label + ' ===');
+  items.forEach(item => {
+    const img = item.ogImage || item.heroImage || item.image;
+    if (!img) {
+      console.log('[NO IMAGE]', item.slug);
+      return;
+    }
+    const local = path.join('./public', img.replace(/^\//, ''));
+    if (!fs.existsSync(local)) {
+      console.log('[MISSING FILE]', item.slug, '->', img);
+    } else {
+      const kb = (fs.statSync(local).size / 1024).toFixed(1);
+      if (kb > 300) {
+        console.log('[OVER 300KB]', item.slug, '->', img, '(' + kb + ' KB)');
+      }
+    }
+  });
+}
+
+audit(productsData, 'PRODUCTS');
+audit(servicesData, 'SERVICES');
+audit(industriesData, 'INDUSTRIES');
 "
 ```
 
