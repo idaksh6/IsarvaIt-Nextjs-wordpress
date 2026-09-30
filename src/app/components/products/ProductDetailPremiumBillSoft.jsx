@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -24,10 +24,10 @@ const GLOBAL_BTN_GREEN = "press-illusion-btn-green text-white w-fit font-bold px
 
 function ThemeSlider({ onImageClick }) {
   const themes = [
-    { name: "Empire Emerald", img: "Vibrant-color-3.jpg", color: "from-emerald-500/20 to-teal-500/20" },
-    { name: "Sunset Glow", img: "Vibrant-color-2.jpg", color: "from-orange-500/20 to-rose-500/20" },
-    { name: "Vibrant Violet", img: "Vibrant-color-1.jpg", color: "from-violet-500/20 to-fuchsia-500/20" },
-    { name: "Yellow-Dashboard", img: "Yellow-Dashboard.jpg", color: "from-yellow-500/20 to-yellow-500/20" },
+    { name: "Empire Emerald", img: "Theme customi_1.png", color: "from-emerald-500/20 to-teal-500/20" },
+    { name: "Sunset Glow", img: "Theme customi_2.png", color: "from-orange-500/20 to-rose-500/20" },
+    { name: "Vibrant Violet", img: "Theme customi_3.png", color: "from-violet-500/20 to-fuchsia-500/20" },
+    { name: "Yellow Dashboard", img: "Theme customi_4.png", color: "from-yellow-500/20 to-yellow-500/20" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -82,9 +82,9 @@ function ThemeSlider({ onImageClick }) {
         <div className="relative w-full aspect-[16/9] md:aspect-[21/9]">
 
           {/* Current Slide */}
-          <div className="relative w-full h-full cursor-zoom-in" onClick={() => onImageClick(`/products/billsoft/${themes[currentIndex].img}`)}>
+          <div className="relative w-full h-full cursor-zoom-in" onClick={() => onImageClick(`/products/billsoft-v2/${themes[currentIndex].img}`)}>
             <img
-              src={`/products/billsoft/${themes[currentIndex].img}`}
+              src={`/products/billsoft-v2/${themes[currentIndex].img}`}
               alt={themes[currentIndex].name}
               className="w-full h-full object-cover"
               loading="eager"
@@ -194,7 +194,7 @@ const TAB_CONTENT = {
     title: "Smart Business Dashboard",
     subtitle: "Real-time AI insights for your business",
     description: "Get a bird’s-eye view of your business performance with real-time AI insights. The intelligent analytics section helps you understand your business performance with projected settlement values, AI-powered revenue insights, yearly revenue overview graphs, recent activity tracking, and top-selling product analysis. Key business statistics such as total revenue, active users, conversion rates, and average response time are also displayed clearly so you can monitor business growth at a glance.",
-    image: "/products/billsoft/Dashboard.jpg",
+    image: "/products/billsoft-v2/Dashboard.png",
     features: [
       "Quick Actions for Invoices",
       "Neural Intelligence Revenue Predictions",
@@ -209,7 +209,7 @@ const TAB_CONTENT = {
     title: "Professional Sales Invoices",
     subtitle: "Smooth and flexible billing workflow",
     description: "Create professional sales invoices quickly with a smooth and flexible workflow. Sales numbers are automatically generated, and you can select existing customers or create new customers instantly while creating the invoice. Products can be selected from your catalog or added on the spot. The system supports tax inclusive and exclusive pricing, GST configuration, warehouse selection, discounts before or after tax, item-wise discounts, additional charges, and payment adjustments.",
-    image: "/products/billsoft/Sales-invoice.jpg",
+    image: "/products/billsoft-v2/Sales.png",
     features: [
       "Auto-Generated Sales Numbers",
       "Instant Customer & Product Creation",
@@ -224,7 +224,7 @@ const TAB_CONTENT = {
     title: "Vendor Purchase Management",
     subtitle: "Organized records and outstanding dues",
     description: "Manage vendor purchases with the same smooth workflow used in Sales Invoices. Create purchase bills by selecting existing vendors or adding new vendors instantly during invoice creation. Add products, taxes, warehouse details, discounts, additional charges, payment details, notes, and signatures with full flexibility. The system helps you maintain organized purchase records, outstanding dues, and payment tracking while keeping inventory and accounts updated automatically.",
-    image: "/products/billsoft/Purchase-invoice.jpg",
+    image: "/products/billsoft-v2/Purchase.png",
     features: [
       "Instant Vendor Creation",
       "Warehouse-wise Stock Entry",
@@ -239,7 +239,7 @@ const TAB_CONTENT = {
     title: "Detailed Quotations",
     subtitle: "Convert estimations into invoices instantly",
     description: "Create detailed quotations for customers, vendors, or suppliers with flexible pricing and discount options. Quotations can be generated using existing party details or by creating new entries instantly. Add products, additional charges, item-wise discounts, overall discounts before or after tax, and include notes and signatures for professional presentation. When finalized, quotations can be directly converted into Sales Invoices or Purchase Invoices without re-entering data.",
-    image: "/products/billsoft/Quotation.jpg",
+    image: "/products/billsoft-v2/Quotation.png",
     features: [
       "Flexible Pricing & Discounts",
       "One-Click Invoice Conversion",
@@ -254,7 +254,7 @@ const TAB_CONTENT = {
     title: "Payment In & Payment Out",
     subtitle: "Accurate tracking of every transaction",
     description: "Track all incoming and outgoing payments accurately with dedicated modules. Payment In helps manage customer payment collections with due allocation against pending invoices, while Payment Out ensures accurate vendor payout tracking and complete history management. Receipts can be created by selecting customers, allocating outstanding dues, and recording payment details for organized collection tracking.",
-    image: "/products/billsoft/Payment-in.jpg",
+    image: "/products/billsoft-v2/PaymentIn.png",
     features: [
       "Due Allocation Against Invoices",
       "Payment Mode & Reference Tracking",
@@ -269,7 +269,7 @@ const TAB_CONTENT = {
     title: "Proforma Invoices",
     subtitle: "Formal pre-invoices for deal confirmation",
     description: "Proforma Invoices act as formal pre-invoices shared before a sale or purchase is finalized. They help businesses present estimated billing details professionally before confirming the transaction. You can create Proforma Invoices for both sales and purchases by selecting customers or vendors, adding products, taxes, discounts, and signatures. Once approved, they can be directly converted into Sales or Purchase Invoices.",
-    image: "/products/billsoft/Proforma-Invoice.jpg",
+    image: "/products/billsoft-v2/Proforma.png",
     features: [
       "Pre-billing Presentation",
       "Sales & Purchase Support",
@@ -284,7 +284,7 @@ const TAB_CONTENT = {
     title: "Daily Expense Tracking",
     subtitle: "Organized spending records by category",
     description: "Manage daily business expenses with proper categorization and tracking. Record details such as expense type, category, invoice references, payment mode, and additional notes. The manage page provides a clear summary of total debit/credit amounts and expense tracking by date range. Expenses are maintained branch-wise, making it easier to manage accounts for multiple business locations.",
-    image: "/products/billsoft/Manage-expense.jpg",
+    image: "/products/billsoft-v2/Expense.png",
     features: [
       "Categorized Expense Tracking",
       "Debit & Credit Summaries",
@@ -299,7 +299,7 @@ const TAB_CONTENT = {
     title: "Centralized Party Management",
     subtitle: "Complete customer and vendor profiles",
     description: "Manage both customers and vendors in one centralized location. Store complete business relationship details including contact information, GSTIN, addresses, opening balances, and multiple bank accounts. You can monitor transaction history, running balances, and generate detailed reports whenever needed including ledger statements from opening to closing balance.",
-    image: "/products/billsoft/Parties-module.jpg",
+    image: "/products/billsoft-v2/Parties.png",
     features: [
       "GSTIN & Address Management",
       "Multiple Bank Account Storage",
@@ -314,7 +314,7 @@ const TAB_CONTENT = {
     title: "Smart Product Catalog",
     subtitle: "Warehouse-wise inventory and pricing",
     description: "Maintain a complete product catalog with pricing, tax settings, and category management. Products can be managed warehouse-wise to understand stock availability across storage locations. Bulk price update functionality allows you to update sales and purchase prices for multiple products at once, making price management much faster and easier. Products can also be activated or deactivated as needed.",
-    image: "/products/billsoft/Product-management.jpg",
+    image: "/products/billsoft-v2/Products.png",
     features: [
       "Warehouse-wise Inventory",
       "Bulk Price Update Tool",
@@ -329,11 +329,7 @@ const TAB_CONTENT = {
     title: "Warehouse & Stock Transfer",
     subtitle: "Structured approval workflow for inventory",
     description: "Manage multiple warehouses and monitor stock availability across each location. The Stock Transfer module helps move products between warehouses while maintaining accurate inventory records through a structured approval workflow (Draft, Pending, Approved, In Transit, Received) ensuring complete visibility of stock movement.",
-    image: "/products/billsoft/Create-stock-transfer.jpg",
-    images: [
-      { src: "/products/billsoft/Create-stock-transfer.jpg", label: "Stock Transfer" },
-      { src: "/products/billsoft/Warehouse-management.jpg", label: "Warehouse Management" }
-    ],
+    image: "/products/billsoft-v2/Warehouse.png",
     features: [
       "Multi-Warehouse Monitoring",
       "Approval Workflow (Draft-Received)",
@@ -348,7 +344,7 @@ const TAB_CONTENT = {
     title: "Multi-Branch Concept",
     subtitle: "Independent workspaces under one platform",
     description: "Billsoft supports multi-branch business operations with separate workspaces for each branch. Every branch can maintain its own data, transactions, and records independently within the same system. Users can switch branches after login, while activities like sales, purchases, and reports remain limited to the selected branch, making it ideal for businesses operating across multiple locations.",
-    image: "/products/billsoft/Branch-Management.jpg",
+    image: "/products/billsoft-v2/Multi Branch.png",
     features: [
       "Separate Branch Workspaces",
       "Easy Branch Switching",
@@ -363,7 +359,7 @@ const TAB_CONTENT = {
     title: "Financial Year Management",
     subtitle: "Structured accounting periods",
     description: "Organize all accounting activities into structured yearly periods such as April to March. You can create, activate, close, or reopen financial years whenever required. The system prevents overlapping financial year dates, helping maintain clean and accurate accounting records during year-end processes and historical data audits.",
-    image: "/products/billsoft/Financial-Years.jpg",
+    image: "/products/billsoft-v2/Financial Year.png",
     features: [
       "Custom Accounting Periods",
       "Year-End Process Support",
@@ -405,8 +401,8 @@ export default function ProductDetailPremiumBillSoft({
   const [openFaq, setOpenFaq] = useState(null);
   const bannerImages = [
     {
-      desktop: "/products/billsoft/Yellow-Dashboard.jpg",
-      mobile: "/products/billsoft/Yellow-Dashboard.jpg"
+      desktop: "/products/billsoft-v2/herosection-image.png",
+      mobile: "/products/billsoft-v2/herosection-image.png"
     },
     {
       desktop: "/products/billsoft/billsoft-invoice-workflow-1.png",
@@ -649,7 +645,7 @@ export default function ProductDetailPremiumBillSoft({
                     {/* Floating Sales Invoice Dashboard */}
                     {bannerIdx === 0 && (
                       <div className="hidden lg:block absolute bottom-2 left-4 lg:-bottom-6 lg:-left-6 w-[55%] lg:w-[250px] h-[50%] lg:h-[280px] image-card wp-float2 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] border-2 sm:border-4 border-white transform -rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 bg-white z-20">
-                        <img src="/products/billsoft/Banner-child-image.jpg" alt="Sales Invoice Dashboard" className="w-full h-full object-cover" />
+                        <img src="/products/billsoft-v2/herosection_image_2.png" alt="Sales Invoice Dashboard" className="w-full h-full object-cover" />
                       </div>
                     )}
 
@@ -1640,7 +1636,7 @@ const billsoftFeatures = [
     icon: "🏢",
     color: "#0EA5E9",
     desc: "Manage multiple business locations and warehouses with separate stock and transaction tracking from a single system.",
-    image: "/products/billsoft/Branch-Management.jpg",
+    image: "/products/billsoft-v2/Multi Branch.png",
   },
   {
     id: "permissions",
@@ -1648,7 +1644,7 @@ const billsoftFeatures = [
     icon: "🔒",
     color: "#10B981",
     desc: "Control user permissions securely by assigning access based on employee roles and responsibilities.",
-    image: "/products/billsoft/Permissions.jpg",
+    image: "/products/billsoft-v2/User_Access.png",
   },
   {
     id: "billing",
@@ -1656,7 +1652,7 @@ const billsoftFeatures = [
     icon: "💰",
     color: "#F43F5E",
     desc: "Generate invoices faster with automatic tax, discount, total, and balance calculations.",
-    image: "/products/billsoft/Create-Sales.jpg",
+    image: "/products/billsoft-v2/Billing.png",
   },
   {
     id: "transfer",
@@ -1664,7 +1660,7 @@ const billsoftFeatures = [
     icon: "🏭",
     color: "#8B5CF6",
     desc: "Transfer inventory between warehouses using a structured approval and tracking process.",
-    image: "/products/billsoft/Create-stock-transfer.jpg",
+    image: "/products/billsoft-v2/Stock adjustment.png",
   },
   {
     id: "ledger",
@@ -1672,7 +1668,7 @@ const billsoftFeatures = [
     icon: "📊",
     color: "#F59E0B",
     desc: "Monitor complete payment history, balances, and transaction activities for every customer and vendor.",
-    image: "/products/billsoft/ledger-statement-1.jpg",
+    image: "/products/billsoft-v2/Ledger.png",
 
   },
   {
@@ -1681,7 +1677,7 @@ const billsoftFeatures = [
     icon: "🛒",
     color: "#3B82F6",
     desc: "Manage billing, purchases, receipts, and payouts together in one connected workflow.",
-    image: "/products/billsoft/Purchase-invoice.jpg",
+    image: "/products/billsoft-v2/Purchase.png",
   },
   {
     id: "expenses",
@@ -1689,7 +1685,7 @@ const billsoftFeatures = [
     icon: "📉",
     color: "#64748B",
     desc: "Organize accounts by financial year and keep track of all business expenses with proper records.",
-    image: "/products/billsoft/Manage-expense.jpg",
+    image: "/products/billsoft-v2/Expense.png",
   },
   {
     id: "themes",
@@ -1697,7 +1693,7 @@ const billsoftFeatures = [
     icon: "🎨",
     color: "#6366F1",
     desc: "Personalize the application appearance with theme options that match your business style.",
-    image: "/products/billsoft/Vibrant-color-3.jpg",
+    image: "/products/billsoft-v2/Theme customi_3.png",
   },
   {
     id: "direct-creation",
@@ -1705,7 +1701,7 @@ const billsoftFeatures = [
     icon: "➕",
     color: "#14B8A6",
     desc: "Create new customers, vendors, products, or warehouses instantly while generating invoices.",
-    image: "/products/billsoft/Add-Products.jpg",
+    image: "/products/billsoft-v2/direct_create.png",
   },
   {
     id: "reporting",
@@ -1713,7 +1709,7 @@ const billsoftFeatures = [
     icon: "📄",
     color: "#F97316",
     desc: "Access powerful reports including ledger statements, item-wise summaries, and transaction analysis.",
-    image: "/products/billsoft/Item-wise-report.jpg",
+    image: "/products/billsoft-v2/Reports.png",
   },
 ];
 

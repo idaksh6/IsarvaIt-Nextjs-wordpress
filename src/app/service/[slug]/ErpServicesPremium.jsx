@@ -1085,7 +1085,7 @@ export default function ErpServicesPremium({ service, servicesData }) {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
                           <div className="bg-white rounded-xl border border-slate-900/[0.08] flex justify-center">
                             <img
-                              src="/products/billsoft/Product-management.jpg"
+                              src="/Services/ERP-services/Products.png"
                               alt="Inventory dashboard preview"
                               className="w-full h-auto max-h-[420px] object-contain block rounded-xl"
                               loading="lazy"
@@ -1111,7 +1111,7 @@ export default function ErpServicesPremium({ service, servicesData }) {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
                           <div className="bg-white rounded-xl border border-slate-900/[0.08] flex justify-center">
                             <img
-                              src="/products/billsoft/Financial-Years.jpg"
+                              src="/Services/ERP-services/finance.png"
                               alt="Finance dashboard preview"
                               className="w-full h-auto max-h-[420px] object-contain block rounded-xl"
                               loading="lazy"
@@ -1146,7 +1146,7 @@ export default function ErpServicesPremium({ service, servicesData }) {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
                           <div className="bg-white rounded-xl border border-slate-900/[0.08] flex justify-center">
                             <img
-                              src="/products/billsoft/Legder-statement.jpg"
+                              src="/Services/ERP-services/accounts.png"
                               alt="Accounting dashboard preview"
                               className="w-full h-auto max-h-[420px] object-contain block rounded-xl"
                               loading="lazy"
