@@ -620,7 +620,7 @@ export default function ProductDetailPremiumBillSoft({
                     ))}
                   </div>
                   <div className="relative h-[300px] sm:h-[450px] lg:h-[600px] w-full px-4 sm:px-0">
-                    <div className={`absolute top-0 right-0 lg:right-0 w-full h-[100%] p-6 z-10 flex items-center justify-center transition-all duration-500 hover:scale-[1.02] overflow-hidden
+                    <div className={`absolute top-0 right-0 lg:right-0 w-full h-[100%] p-2 sm:p-4 z-10 flex items-center justify-center transition-all duration-500 hover:scale-[1.02] overflow-hidden
   ${bannerIdx === 0
                         ? "image-card border-4 sm:border-8 border-white shadow-2xl bg-white"
                         : "border border-sky-100 bg-white/80 backdrop-blur-sm shadow-[0_0_30px_6px_rgba(14,165,233,0.4)] rounded-2xl"
@@ -631,21 +631,21 @@ export default function ProductDetailPremiumBillSoft({
                         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#0ea5e9 2.5px, transparent 2.5px)', backgroundSize: '30px 30px', opacity: 0.15 }}></div>
                       )}
 
-                      <picture className="w-full h-full block relative z-10">
+                      <picture className="w-full h-full block relative z-10 flex items-center justify-center">
                         <source media="(max-width: 639px)" srcSet={bannerImages[bannerIdx].mobile} />
                         <img
                           src={bannerImages[bannerIdx].desktop}
                           alt="Isarva BillSoft Banner"
-                          className={`w-full h-full transition-all duration-500 relative z-10 ${bannerIdx === 0 ? "object-cover" : "object-contain"}`}
+                          className="w-full h-full transition-all duration-500 relative z-10 object-contain"
                         />
                       </picture>
-                      {bannerIdx === 0 && <div className="absolute inset-0 bg-gradient-to-tr from-sky-900/10 to-transparent" />}
+                      {bannerIdx === 0 && <div className="absolute inset-0 bg-gradient-to-tr from-sky-900/5 to-transparent pointer-events-none" />}
                     </div>
 
                     {/* Floating Sales Invoice Dashboard */}
                     {bannerIdx === 0 && (
-                      <div className="hidden lg:block absolute bottom-2 left-4 lg:-bottom-6 lg:-left-6 w-[55%] lg:w-[250px] h-[50%] lg:h-[280px] image-card wp-float2 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] border-2 sm:border-4 border-white transform -rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 bg-white z-20">
-                        <img src="/products/billsoft-v2/herosection_image_2.png" alt="Sales Invoice Dashboard" className="w-full h-full object-cover" />
+                      <div className="hidden lg:block absolute bottom-2 left-4 lg:-bottom-6 lg:-left-6 w-[55%] lg:w-[280px] h-[50%] lg:h-[280px] image-card wp-float2 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] border-2 sm:border-4 border-white transform -rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 bg-white z-20 p-2">
+                        <img src="/products/billsoft-v2/herosection_image_2.png" alt="Sales Invoice Dashboard" className="w-full h-full object-contain" />
                       </div>
                     )}
 
