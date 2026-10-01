@@ -619,12 +619,16 @@ export default function ProductDetailPremiumBillSoft({
                       </button>
                     ))}
                   </div>
-                  <div className="relative h-[300px] sm:h-[450px] lg:h-[600px] w-full px-4 sm:px-0">
-                    <div className={`absolute top-0 right-0 lg:right-0 w-full h-[100%] p-2 sm:p-4 z-10 flex items-center justify-center transition-all duration-500 hover:scale-[1.02] overflow-hidden
-  ${bannerIdx === 0
-                        ? "image-card border-4 sm:border-8 border-white shadow-2xl bg-white"
-                        : "border border-sky-100 bg-white/80 backdrop-blur-sm shadow-[0_0_30px_6px_rgba(14,165,233,0.4)] rounded-2xl"
-                      }`}>
+                  <div className={`relative w-full px-4 sm:px-0 ${
+                    bannerIdx === 0
+                      ? "aspect-[1151/858] max-h-[600px]"
+                      : "h-[300px] sm:h-[450px] lg:h-[600px]"
+                  }`}>
+                    <div className={`w-full h-full z-10 flex items-center justify-center transition-all duration-500 hover:scale-[1.02] overflow-hidden ${
+                      bannerIdx === 0
+                        ? "image-card border-4 sm:border-8 border-white shadow-2xl bg-white p-0 rounded-2xl"
+                        : "absolute top-0 right-0 lg:right-0 border border-sky-100 bg-white/80 backdrop-blur-sm shadow-[0_0_30px_6px_rgba(14,165,233,0.4)] rounded-2xl p-2 sm:p-4"
+                    }`}>
 
                       {/* Decorative Dot Pattern inside the box */}
                       {bannerIdx === 1 && (

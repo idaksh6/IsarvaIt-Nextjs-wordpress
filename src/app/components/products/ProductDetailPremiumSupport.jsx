@@ -1,6 +1,7 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import {
   motion,
   AnimatePresence,
@@ -2105,19 +2106,21 @@ function IntegratedWhatsAppCrmSection() {
   const [remindersEnabled, setRemindersEnabled] = useState(true);
 
   const keyBenefits = [
-    "Automated Follow-ups",
-    "Stage Based Reminders",
-    "Direct Client Communication",
-    "Less Manual Work",
+    { line1: "Automated", line2: "Follow-ups" },
+    { line1: "Stage Based", line2: "Reminders" },
+    { line1: "Direct Client", line2: "Communication" },
+    { line1: "Less Manual", line2: "Work" },
   ];
 
   const steps = [
     {
-      number: "1",
+      number: "01",
+      tag: "Configuration",
       title: "Centralized Client & Stage Setup",
-      desc: "Easily input key details for each project—including Client Name, Phone Number, and optional WhatsApp Group Links.",
-      iconBg: "bg-emerald-100 text-[#107C41]",
-      numBg: "bg-emerald-100 text-emerald-800 border-emerald-200",
+      desc: "Easily configure project parameters—including Client Name, Phone Number, and optional WhatsApp Group Links.",
+      accent: "from-emerald-500 to-teal-600",
+      iconBg: "bg-emerald-50 text-emerald-600 border border-emerald-200/60",
+      badge: "bg-emerald-50 text-emerald-700 border-emerald-200",
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
@@ -2125,11 +2128,13 @@ function IntegratedWhatsAppCrmSection() {
       ),
     },
     {
-      number: "2",
-      title: "Custom Staging & Reminders",
-      desc: "Create stage milestones with custom titles and descriptions. Select flexible reminder frequencies (e.g., Daily, Twice a week, Weekly) configured in your master settings to keep clients informed automatically.",
-      iconBg: "bg-purple-100 text-purple-700",
-      numBg: "bg-purple-100 text-purple-800 border-purple-200",
+      number: "02",
+      tag: "Automation",
+      title: "Custom Staging & Automated Reminders",
+      desc: "Create stage milestones with custom frequencies (Daily, Twice a week, Weekly) to notify clients automatically.",
+      accent: "from-teal-500 to-cyan-600",
+      iconBg: "bg-teal-50 text-teal-600 border border-teal-200/60",
+      badge: "bg-teal-50 text-teal-700 border-teal-200",
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -2137,13 +2142,13 @@ function IntegratedWhatsAppCrmSection() {
       ),
     },
     {
-      number: "3",
-      title: "Smart Dynamic Call-to-Action Buttons",
-      isComplex: true,
-      withGroupText: "With WhatsApp Group Link: The message includes a direct Join WhatsApp Group button for instant team collaboration.",
-      withoutGroupText: "Without WhatsApp Group Link: The message dynamically attaches a direct button link to your dedicated sales team member's contact number, opening a direct chat instantly.",
-      iconBg: "bg-sky-100 text-sky-700",
-      numBg: "bg-sky-100 text-sky-800 border-sky-200",
+      number: "03",
+      tag: "Engagement",
+      title: "Smart Dynamic Call-to-Actions",
+      desc: "Messages automatically include dynamic action buttons—a direct Join WhatsApp Group link or 1-on-1 chat with your sales team.",
+      accent: "from-sky-500 to-blue-600",
+      iconBg: "bg-sky-50 text-sky-600 border border-sky-200/60",
+      badge: "bg-sky-50 text-sky-700 border-sky-200",
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -2151,16 +2156,13 @@ function IntegratedWhatsAppCrmSection() {
       ),
     },
     {
-      number: "4",
-      title: "One-Click Automated Stop",
-      desc: (
-        <>
-          Once the required feedback, approval, or asset is received, simply check the{" "}
-          <strong className="font-extrabold text-slate-800">Is Received</strong> box to immediately pause automated reminder messages.
-        </>
-      ),
-      iconBg: "bg-purple-100 text-purple-700",
-      numBg: "bg-purple-100 text-purple-800 border-purple-200",
+      number: "04",
+      tag: "Completion",
+      title: "One-Click Instant Automated Stop",
+      desc: "Once required feedback or approval is received, simply check \"Is Received\" to instantly pause all reminder messages.",
+      accent: "from-indigo-500 to-purple-600",
+      iconBg: "bg-indigo-50 text-indigo-600 border border-indigo-200/60",
+      badge: "bg-indigo-50 text-indigo-700 border-indigo-200",
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -2174,7 +2176,7 @@ function IntegratedWhatsAppCrmSection() {
   const waPath2 = "M12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.981-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.063c-1.637 0-3.154-.471-4.437-1.282l-.318-.202-2.969.778.792-2.894-.221-.351A8.026 8.026 0 013.938 12C3.938 7.555 7.555 3.938 12 3.938s8.063 3.617 8.063 8.062c0 4.446-3.618 8.063-8.063 8.063z";
 
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-b from-white via-[#f4faf7]/40 to-white border-b border-gray-200 relative overflow-hidden">
+    <section className="py-12 lg:py-16 bg-gradient-to-b from-white via-[#f4faf7]/40 to-white border-b border-gray-200 relative overflow-hidden">
       {/* Ambient background glows */}
       <div className="absolute top-10 right-10 w-[500px] h-[500px] bg-emerald-400/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-[400px] h-[400px] bg-sky-400/5 rounded-full blur-3xl pointer-events-none" />
@@ -2182,12 +2184,12 @@ function IntegratedWhatsAppCrmSection() {
       <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
 
         {/* ── SECTION HEADER (Left-aligned text + badges) ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center mb-16 lg:mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center mb-10 lg:mb-12">
 
           {/* Left: Heading column */}
           <div className="lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100/80 border border-emerald-300/80 text-[#107C41] font-bold text-xs sm:text-sm mb-5 shadow-2xs">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#dcfce7] border border-[#bbf7d0] text-[#15803d] font-bold text-xs sm:text-sm mb-4 shadow-2xs">
               <svg className="w-4 h-4 fill-current text-[#25D366]" viewBox="0 0 24 24">
                 <path d={waPath1} /><path d={waPath2} />
               </svg>
@@ -2195,579 +2197,112 @@ function IntegratedWhatsAppCrmSection() {
             </div>
 
             {/* Heading */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0b2545] tracking-tight leading-[1.1] mb-5">
-              Integrated Isarva{" "}
-              <br className="hidden sm:block" />
-              <span className="text-[#25D366]">WhatsApp CRM</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[52px] font-black text-[#0b2545] tracking-tight leading-[1.1] mb-5">
+              <span className="block">Integrated Isarva</span>
+              <span className="text-[#00a884] sm:text-[#25D366] block">WhatsApp CRM</span>
             </h2>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal mb-8 max-w-lg">
               Streamline client follow-ups and automated staging reminders directly from your support workflow with our deeply integrated Isarva WhatsApp CRM. Built to keep projects moving forward, it automates stage updates and client communication without manual hassle.
             </p>
 
-            {/* 4 feature checkmarks */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full max-w-md">
+            {/* 4 feature checkmarks (centered 2x2 grid on mobile, single row on sm+) */}
+            <div className="grid grid-cols-2 sm:flex sm:flex-nowrap items-center justify-center lg:justify-start gap-x-4 gap-y-3.5 sm:gap-3.5 xl:gap-4.5 w-full max-w-[320px] sm:max-w-lg mx-auto lg:mx-0 pt-1">
               {keyBenefits.map((benefit, idx) => (
-                <div key={idx} className="flex items-center gap-2.5">
-                  <div className="w-5 h-5 rounded-full bg-[#107C41] text-white flex items-center justify-center shrink-0">
+                <div key={idx} className="flex items-center gap-2 shrink-0 justify-start">
+                  <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-full bg-[#00a884] text-white flex items-center justify-center shrink-0 shadow-2xs">
                     <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="text-xs sm:text-sm font-semibold text-slate-800">{benefit}</span>
+                  <div className="flex flex-col text-[11px] sm:text-xs xl:text-[13px] font-semibold text-[#0b2545] leading-tight text-left whitespace-nowrap">
+                    <span>{benefit.line1}</span>
+                    <span>{benefit.line2}</span>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right: Workflow canvas */}
-          <div className="lg:col-span-7 flex items-center justify-center">
-            {/*
-              ┌─────────────────────────────────────────────────────────────┐
-              │  OUTER CANVAS  — soft radial mint-white gradient container   │
-              └─────────────────────────────────────────────────────────────┘
-            */}
-            <div
-              className="relative w-full max-w-[720px]"
-              style={{
-                background: "radial-gradient(ellipse at 50% 40%, #e8faf4 0%, #f0fdfb 40%, #f8fffd 70%, #ffffff 100%)",
-                borderRadius: "28px",
-                padding: "48px 24px 32px",
-              }}
-            >
-
-              {/* ── ROBOT + AUTOMATED PILL (absolute top-center) ── */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-3 z-30">
-                {/* Robot Circle */}
-                <div className="relative">
-                  {/* Outer green glow ring */}
-                  <div
-                    className="absolute inset-0 rounded-full"
-                    style={{
-                      background: "radial-gradient(circle, rgba(34,197,94,0.35) 0%, rgba(34,197,94,0.1) 50%, transparent 70%)",
-                      transform: "scale(1.8)",
-                    }}
-                  />
-                  {/* White circle with cyan border */}
-                  <div
-                    className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white flex items-center justify-center"
-                    style={{ border: "2.5px solid #22d3ee", boxShadow: "0 4px 20px rgba(34,211,238,0.3)" }}
-                  >
-                    {/* Robot face SVG */}
-                    <svg viewBox="0 0 64 64" className="w-10 h-10 sm:w-12 sm:h-12" fill="none">
-                      {/* Antenna */}
-                      <line x1="32" y1="6" x2="32" y2="16" stroke="#22d3ee" strokeWidth="2.5" strokeLinecap="round"/>
-                      <circle cx="32" cy="5" r="3" fill="#22d3ee"/>
-                      {/* Head body */}
-                      <rect x="12" y="16" width="40" height="30" rx="8" fill="#0b2545"/>
-                      {/* Left eye */}
-                      <circle cx="22" cy="31" r="6" fill="#22d3ee" opacity="0.9"/>
-                      <circle cx="22" cy="31" r="3.5" fill="#0b2545"/>
-                      <circle cx="22" cy="31" r="1.5" fill="#22d3ee"/>
-                      {/* Right eye */}
-                      <circle cx="42" cy="31" r="6" fill="#22d3ee" opacity="0.9"/>
-                      <circle cx="42" cy="31" r="3.5" fill="#0b2545"/>
-                      <circle cx="42" cy="31" r="1.5" fill="#22d3ee"/>
-                      {/* Ear bumps */}
-                      <rect x="8" y="25" width="5" height="10" rx="2.5" fill="#22d3ee"/>
-                      <rect x="51" y="25" width="5" height="10" rx="2.5" fill="#22d3ee"/>
-                    </svg>
-                  </div>
-                </div>
-
-                {/* Automated pill */}
-                <div className="relative">
-                  <div
-                    className="flex items-center gap-1.5 px-4 py-2 rounded-full text-white font-extrabold text-sm"
-                    style={{ background: "#22c55e", boxShadow: "0 4px 14px rgba(34,197,94,0.4)" }}
-                  >
-                    <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                      <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                    </svg>
-                    Automated
-                  </div>
-                  {/* Celebration burst lines */}
-                  <div className="absolute -top-3 -right-1 flex flex-col gap-0.5 items-center" style={{ transform: "rotate(15deg)" }}>
-                    <div className="w-0.5 h-3 bg-[#22c55e] rounded-full"/>
-                    <div className="w-0.5 h-2 bg-[#22c55e] rounded-full"/>
-                  </div>
-                  <div className="absolute -top-2 right-2 flex flex-col gap-0.5 items-center" style={{ transform: "rotate(-10deg)" }}>
-                    <div className="w-0.5 h-2.5 bg-[#22c55e] rounded-full"/>
-                  </div>
-                </div>
-              </div>
-
-              {/* ── CURVED DASHED SVG ARROWS ── */}
-              <svg
-                className="absolute inset-0 w-full h-full pointer-events-none z-10"
-                viewBox="0 0 720 420"
-                preserveAspectRatio="none"
-                fill="none"
-              >
-                <defs>
-                  <marker id="wa-arrow-green" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-                    <path d="M0,0 L8,4 L0,8 Z" fill="#22c55e"/>
-                  </marker>
-                  <marker id="wa-arrow-gray" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-                    <path d="M0,0 L8,4 L0,8 Z" fill="#94a3b8"/>
-                  </marker>
-                </defs>
-                {/* Left card top → Robot (curved green) */}
-                <path
-                  d="M 245 100 C 245 40, 310 20, 345 18"
-                  stroke="#22c55e" strokeWidth="2" strokeDasharray="6 4"
-                  markerEnd="url(#wa-arrow-green)"
-                />
-                {/* Robot → Phone top (curved green) */}
-                <path
-                  d="M 400 18 C 450 18, 490 40, 500 85"
-                  stroke="#22c55e" strokeWidth="2" strokeDasharray="6 4"
-                  markerEnd="url(#wa-arrow-green)"
-                />
-                {/* Middle horizontal gray dashed → Phone */}
-                <path
-                  d="M 255 230 L 450 230"
-                  stroke="#94a3b8" strokeWidth="2" strokeDasharray="6 4"
-                  markerEnd="url(#wa-arrow-gray)"
-                />
-              </svg>
-
-              {/* ── MAIN LAYOUT: App Card LEFT | Phone RIGHT ── */}
-              <div className="relative z-20 flex flex-col md:flex-row items-stretch gap-5 lg:gap-6">
-
-                {/* ── LEFT: APP CARD ── */}
-                <div
-                  className="flex-1 rounded-2xl overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.10)]"
-                  style={{ minWidth: 0 }}
-                >
-                  <div className="flex h-full min-h-[340px]">
-
-                    {/* Dark Navy Sidebar */}
-                    <div className="bg-[#0b2545] w-[110px] sm:w-[120px] shrink-0 flex flex-col p-3 gap-0.5">
-                      {/* Logo */}
-                      <div className="flex items-center gap-1.5 mb-5 px-1 pt-1">
-                        <div className="w-5 h-5 rounded-md bg-gradient-to-tr from-cyan-400 to-blue-500 flex items-center justify-center shrink-0">
-                          <svg className="w-3 h-3 text-white" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                          </svg>
-                        </div>
-                        <span className="text-white font-black text-[13px] tracking-wide">Isarva</span>
-                      </div>
-
-                      {/* Nav Items */}
-                      {[
-                        { icon: "🏠", label: "Dashboard", active: false },
-                        { icon: "📁", label: "Projects", active: false },
-                        { icon: "🎧", label: "Support", active: true },
-                        { icon: "👤", label: "Clients", active: false },
-                        { icon: "⚙️", label: "Automation", active: false },
-                        { icon: "🔧", label: "Settings", active: false },
-                      ].map((item) => (
-                        <div
-                          key={item.label}
-                          className={`flex items-center gap-2 px-2 py-2 rounded-lg text-[10.5px] font-semibold transition-colors ${
-                            item.active
-                              ? "bg-[#1877F2] text-white"
-                              : "text-slate-300 hover:text-white"
-                          }`}
-                        >
-                          <span className="text-sm leading-none shrink-0">{item.icon}</span>
-                          <span className="leading-tight">{item.label}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* White content pane */}
-                    <div className="bg-white flex-1 flex flex-col p-4 min-w-0">
-                      <h4 className="text-sm sm:text-[15px] font-black text-slate-900 mb-4 leading-tight">
-                        Project Stages
-                      </h4>
-
-                      {/* Vertical stepper */}
-                      <div className="flex flex-col gap-0 flex-1">
-                        {[
-                          { label: "Proposal", status: "Completed", state: "done" },
-                          { label: "Design", status: "Completed", state: "done" },
-                          { label: "Development", status: "In Progress", state: "active" },
-                          { label: "Testing", status: "Pending", state: "pending" },
-                          { label: "Go Live", status: "Pending", state: "pending" },
-                        ].map((stage, i, arr) => (
-                          <div key={stage.label} className="flex items-stretch gap-3">
-                            {/* Track + dot column */}
-                            <div className="flex flex-col items-center w-5 shrink-0">
-                              {/* Top line segment */}
-                              <div
-                                className="w-[2px] flex-1"
-                                style={{
-                                  backgroundColor: i === 0 ? "transparent" : (i <= 2 ? "#22c55e" : "#e2e8f0"),
-                                  minHeight: i === 0 ? 0 : 6,
-                                }}
-                              />
-                              {/* Circle dot */}
-                              {stage.state === "done" ? (
-                                <div className="w-5 h-5 rounded-full bg-[#22c55e] flex items-center justify-center shrink-0 shadow-sm">
-                                  <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/>
-                                  </svg>
-                                </div>
-                              ) : stage.state === "active" ? (
-                                <div className="w-5 h-5 rounded-full bg-[#1877F2] flex items-center justify-center shrink-0 shadow-sm">
-                                  <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/>
-                                  </svg>
-                                </div>
-                              ) : (
-                                <div className="w-5 h-5 rounded-full bg-white border-2 border-slate-300 shrink-0"/>
-                              )}
-                              {/* Bottom line segment */}
-                              <div
-                                className="w-[2px] flex-1"
-                                style={{
-                                  backgroundColor: i >= arr.length - 1 ? "transparent" : (i < 2 ? "#22c55e" : "#e2e8f0"),
-                                  minHeight: i === arr.length - 1 ? 0 : 6,
-                                }}
-                              />
-                            </div>
-
-                            {/* Label + badge */}
-                            <div className="flex items-center justify-between flex-1 py-2.5 min-w-0">
-                              <span
-                                className={`text-[11px] sm:text-xs font-semibold leading-tight ${
-                                  stage.state === "active"
-                                    ? "text-[#1877F2]"
-                                    : stage.state === "done"
-                                    ? "text-slate-800"
-                                    : "text-slate-500"
-                                }`}
-                              >
-                                {stage.label}
-                              </span>
-                              <span
-                                className="text-[9px] sm:text-[10px] font-bold px-2 py-0.5 rounded-full ml-2 shrink-0 leading-tight"
-                                style={
-                                  stage.state === "done"
-                                    ? { background: "#dcfce7", color: "#16a34a" }
-                                    : stage.state === "active"
-                                    ? { background: "#dbeafe", color: "#1d4ed8" }
-                                    : { background: "#f1f5f9", color: "#64748b" }
-                                }
-                              >
-                                {stage.status}
-                              </span>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Automated Reminders toggle card */}
-                      <div
-                        className="mt-3 flex items-center justify-between rounded-xl px-3 py-2.5"
-                        style={{ background: "#f8fafb", border: "1px solid #e2e8f0" }}
-                      >
-                        <div className="flex items-center gap-2">
-                          <span className="text-base">🔔</span>
-                          <span className="text-[11px] sm:text-xs font-bold text-slate-800 leading-tight">
-                            Automated Reminders
-                          </span>
-                        </div>
-                        {/* Toggle switch */}
-                        <button
-                          type="button"
-                          onClick={() => setRemindersEnabled(!remindersEnabled)}
-                          className="shrink-0 cursor-pointer"
-                          style={{
-                            width: 40,
-                            height: 22,
-                            borderRadius: 11,
-                            background: remindersEnabled ? "#22c55e" : "#cbd5e1",
-                            position: "relative",
-                            border: "none",
-                            transition: "background 0.2s",
-                            display: "flex",
-                            alignItems: "center",
-                            padding: "2px",
-                          }}
-                        >
-                          <div
-                            style={{
-                              width: 18,
-                              height: 18,
-                              borderRadius: "50%",
-                              background: "white",
-                              boxShadow: "0 1px 4px rgba(0,0,0,0.2)",
-                              transform: remindersEnabled ? "translateX(18px)" : "translateX(0)",
-                              transition: "transform 0.2s",
-                            }}
-                          />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* ── RIGHT: SMARTPHONE ── */}
-                <div className="flex flex-col items-center justify-center relative shrink-0">
-                  {/* Phone outer frame — teal/mint border */}
-                  <div
-                    className="relative"
-                    style={{
-                      width: 210,
-                      background: "#ffffff",
-                      borderRadius: 36,
-                      border: "3px solid #5eead4",
-                      boxShadow: "0 16px 48px rgba(20,184,166,0.2), 0 4px 16px rgba(0,0,0,0.08)",
-                      overflow: "hidden",
-                    }}
-                  >
-                    {/* WhatsApp top header */}
-                    <div
-                      style={{
-                        background: "#075E54",
-                        padding: "10px 12px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        gap: 8,
-                      }}
-                    >
-                      <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                        {/* Back arrow */}
-                        <span style={{ color: "white", fontSize: 14, fontWeight: "bold", lineHeight: 1, cursor: "pointer" }}>←</span>
-                        {/* WA Icon circle */}
-                        <div
-                          style={{
-                            width: 28, height: 28,
-                            borderRadius: "50%",
-                            background: "#25D366",
-                            display: "flex", alignItems: "center", justifyContent: "center",
-                            flexShrink: 0,
-                          }}
-                        >
-                          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="white">
-                            <path d={waPath1}/><path d={waPath2}/>
-                          </svg>
-                        </div>
-                        <div style={{ lineHeight: 1.2 }}>
-                          <div style={{ color: "white", fontWeight: 800, fontSize: 11 }}>Isarva Support</div>
-                          <div style={{ color: "#a7f3d0", fontSize: 8.5, fontWeight: 400 }}>Business Account</div>
-                        </div>
-                      </div>
-                      <span style={{ color: "white", fontSize: 16, fontWeight: 800 }}>⋮</span>
-                    </div>
-
-                    {/* Chat area */}
-                    <div
-                      style={{
-                        background: "#efeae2",
-                        padding: "10px 8px",
-                        minHeight: 240,
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: 8,
-                      }}
-                    >
-                      {/* Chat bubble */}
-                      <div
-                        style={{
-                          background: "white",
-                          borderRadius: 12,
-                          padding: "10px 10px 6px",
-                          boxShadow: "0 1px 4px rgba(0,0,0,0.08)",
-                          display: "flex",
-                          flexDirection: "column",
-                          gap: 6,
-                        }}
-                      >
-                        <p style={{ margin: 0, fontSize: 10, fontWeight: 800, color: "#0f172a" }}>
-                          Hi ABC Technologies,
-                        </p>
-                        <p style={{ margin: 0, fontSize: 9.5, lineHeight: 1.4, color: "#334155" }}>
-                          This is a reminder for the current stage –{" "}
-                          <strong style={{ fontWeight: 800, color: "#0f172a" }}>Design Approval</strong>.
-                        </p>
-                        <p style={{ margin: 0, fontSize: 9.5, lineHeight: 1.4, color: "#475569" }}>
-                          Please share the required details at your earliest convenience.
-                        </p>
-
-                        {/* CTA Buttons */}
-                        <div style={{ display: "flex", flexDirection: "column", gap: 6, marginTop: 4 }}>
-                          {/* Green WA button */}
-                          <button
-                            type="button"
-                            style={{
-                              background: "#25D366",
-                              border: "none",
-                              borderRadius: 8,
-                              padding: "8px 10px",
-                              color: "white",
-                              fontWeight: 800,
-                              fontSize: 10,
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              gap: 6,
-                              cursor: "pointer",
-                              width: "100%",
-                            }}
-                          >
-                            <svg style={{ width: 13, height: 13 }} viewBox="0 0 24 24" fill="white">
-                              <path d={waPath1}/><path d={waPath2}/>
-                            </svg>
-                            Join WhatsApp Group
-                          </button>
-
-                          {/* Outline phone button */}
-                          <button
-                            type="button"
-                            style={{
-                              background: "white",
-                              border: "1.5px solid #128C7E",
-                              borderRadius: 8,
-                              padding: "8px 10px",
-                              color: "#128C7E",
-                              fontWeight: 800,
-                              fontSize: 10,
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              gap: 6,
-                              cursor: "pointer",
-                              width: "100%",
-                            }}
-                          >
-                            <svg style={{ width: 12, height: 12 }} fill="none" stroke="#128C7E" strokeWidth="2.5" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                            </svg>
-                            Chat with Sales Team
-                          </button>
-                        </div>
-
-                        <p style={{ margin: 0, fontSize: 8, color: "#94a3b8", textAlign: "right", marginTop: 2 }}>
-                          10:30 AM
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Input bar */}
-                    <div
-                      style={{
-                        background: "#f0f2f5",
-                        borderTop: "1px solid #e2e8f0",
-                        padding: "7px 8px",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 5,
-                      }}
-                    >
-                      <span style={{ fontSize: 14, color: "#94a3b8" }}>😊</span>
-                      <div
-                        style={{
-                          flex: 1,
-                          background: "white",
-                          borderRadius: 20,
-                          padding: "4px 10px",
-                          fontSize: 8.5,
-                          color: "#94a3b8",
-                          border: "1px solid #e2e8f0",
-                        }}
-                      >
-                        Type a message...
-                      </div>
-                      <span style={{ fontSize: 12, color: "#94a3b8" }}>📎</span>
-                      <span style={{ fontSize: 12, color: "#94a3b8" }}>📷</span>
-                      <div
-                        style={{
-                          width: 24, height: 24,
-                          borderRadius: "50%",
-                          background: "#128C7E",
-                          display: "flex", alignItems: "center", justifyContent: "center",
-                          color: "white",
-                          fontSize: 10,
-                          flexShrink: 0,
-                        }}
-                      >
-                        ➤
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Stage Updates floating pill — below the phone */}
-                  <div
-                    className="flex items-center gap-3 mt-4"
-                    style={{
-                      background: "white",
-                      borderRadius: 50,
-                      padding: "8px 16px 8px 8px",
-                      boxShadow: "0 8px 24px rgba(0,0,0,0.10)",
-                      alignSelf: "flex-start",
-                      marginLeft: 8,
-                    }}
-                  >
-                    {/* Blue circle with paper plane */}
-                    <div
-                      style={{
-                        width: 36, height: 36,
-                        borderRadius: "50%",
-                        background: "linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%)",
-                        display: "flex", alignItems: "center", justifyContent: "center",
-                        flexShrink: 0,
-                      }}
-                    >
-                      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
-                      </svg>
-                    </div>
-                    <div style={{ lineHeight: 1.3 }}>
-                      <div style={{ fontSize: 11, fontWeight: 800, color: "#0f172a" }}>Stage Updates</div>
-                      <div style={{ fontSize: 10, fontWeight: 700, color: "#22c55e" }}>→ Client Notified</div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
+          {/* Right: Workflow canvas image */}
+          <div className="lg:col-span-7 w-full flex items-center justify-center lg:justify-end">
+            <Image
+              src="/images/whatsapp-crm-workflow.png"
+              alt="Integrated Isarva WhatsApp CRM Workflow – Project Stages Automated Reminders"
+              width={1515}
+              height={887}
+              className="w-full h-auto object-contain max-w-full"
+              priority
+            />
           </div>
         </div>
 
         {/* ── HOW IT WORKS ── */}
-        <div className="bg-gradient-to-b from-[#f8fafc] to-[#f1f5f9]/80 border border-slate-200/90 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xs">
-          <div className="mb-8">
-            <h3 className="text-2xl sm:text-3xl font-black text-[#0b2545] tracking-tight leading-tight">
-              How It Works
-            </h3>
-            <div className="w-10 h-1 bg-[#25D366] rounded-full mt-2" />
+        <div className="bg-gradient-to-br from-slate-50/90 via-white to-emerald-50/20 border border-slate-200/90 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-sm relative overflow-hidden">
+          {/* Subtle background ambient blob */}
+          <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-300/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-sky-300/10 rounded-full blur-3xl pointer-events-none" />
+
+          {/* Section Header */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-3 md:gap-4 mb-8 relative z-10">
+            <div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100/70 border border-emerald-300/60 text-[#107C41] font-bold text-xs uppercase tracking-wider mb-2.5 whitespace-nowrap shrink-0">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse" />
+                Step-by-Step Flow
+              </div>
+              <h3 className="text-2xl sm:text-3xl lg:text-[32px] font-black text-[#0b2545] tracking-tight leading-tight">
+                How It Works
+              </h3>
+            </div>
+            <p className="text-xs sm:text-sm text-slate-500 max-w-md font-medium md:text-right">
+              Automated client communication and milestone follow-ups in 4 effortless steps.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 relative">
+          {/* Step Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 relative z-10">
             {steps.map((step, idx) => {
               const isLast = idx === steps.length - 1;
               return (
-                <div key={idx} className="relative flex flex-col justify-between">
-                  <div className="pr-0 lg:pr-3">
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className={`w-11 h-11 rounded-full ${step.iconBg} flex items-center justify-center shrink-0 shadow-2xs`}>
+                <div
+                  key={idx}
+                  className="bg-white/95 backdrop-blur-xs rounded-2xl p-5 sm:p-6 border border-slate-200/70 hover:border-emerald-500/40 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between relative group"
+                >
+                  {/* Top gradient hover bar */}
+                  <div className={`absolute top-0 left-6 right-6 h-1 bg-gradient-to-r ${step.accent} rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+
+                  <div>
+                    {/* Top Row: Icon + Step Badge */}
+                    <div className="flex items-center justify-between gap-2 mb-4">
+                      <div className={`w-11 h-11 rounded-xl ${step.iconBg} flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-105 transition-transform duration-300`}>
                         {step.icon}
                       </div>
-                      <span className={`inline-flex items-center justify-center font-black text-xs px-2.5 py-0.5 rounded-full border ${step.numBg}`}>
+                      <span className={`inline-flex items-center justify-center font-black text-xs px-2.5 py-0.5 rounded-full border ${step.badge}`}>
                         {step.number}
                       </span>
                     </div>
-                    <h4 className="text-base sm:text-[17px] font-extrabold text-slate-900 mb-2 leading-snug">
+
+                    {/* Step Tag */}
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-1">
+                      {step.tag}
+                    </span>
+
+                    {/* Step Title (2-line balanced height) */}
+                    <h4 className="text-base sm:text-[17px] font-extrabold text-[#0b2545] mb-2.5 leading-snug min-h-[44px] sm:min-h-[48px] flex items-start">
                       {step.title}
                     </h4>
-                    {step.isComplex ? (
-                      <div className="text-xs sm:text-[13px] text-slate-600 leading-relaxed space-y-2">
-                        <p><strong className="font-extrabold text-slate-800">With WhatsApp Group Link:</strong> {step.withGroupText.replace("With WhatsApp Group Link: ", "")}</p>
-                        <p><strong className="font-extrabold text-slate-800">Without WhatsApp Group Link:</strong> {step.withoutGroupText.replace("Without WhatsApp Group Link: ", "")}</p>
-                      </div>
-                    ) : (
-                      <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-normal">{step.desc}</p>
-                    )}
+
+                    {/* Step Description */}
+                    <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-normal break-normal">
+                      {step.desc}
+                    </p>
                   </div>
+
+                  {/* Flow arrow on desktop */}
                   {!isLast && (
-                    <div className="hidden lg:flex absolute top-12 -right-2 text-slate-300 pointer-events-none">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/>
+                    <div className="hidden lg:flex absolute top-1/2 -right-3 -translate-y-1/2 w-6 h-6 rounded-full bg-white border border-slate-200 shadow-2xs text-slate-400 items-center justify-center z-20 pointer-events-none group-hover:text-emerald-600 group-hover:border-emerald-200 transition-colors">
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                       </svg>
                     </div>
                   )}
