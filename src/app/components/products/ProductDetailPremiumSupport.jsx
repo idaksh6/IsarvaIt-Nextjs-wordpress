@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect, useRef } from "react";
 import {
@@ -2098,6 +2098,690 @@ function AmcModuleOverviewSection() {
   );
 }
 
+/* ─────────────────────────────────────────────────────────────
+   INTEGRATED ISARVA WHATSAPP CRM AUTOMATION SECTION
+───────────────────────────────────────────────────────────── */
+function IntegratedWhatsAppCrmSection() {
+  const [remindersEnabled, setRemindersEnabled] = useState(true);
+
+  const keyBenefits = [
+    "Automated Follow-ups",
+    "Stage Based Reminders",
+    "Direct Client Communication",
+    "Less Manual Work",
+  ];
+
+  const steps = [
+    {
+      number: "1",
+      title: "Centralized Client & Stage Setup",
+      desc: "Easily input key details for each project—including Client Name, Phone Number, and optional WhatsApp Group Links.",
+      iconBg: "bg-emerald-100 text-[#107C41]",
+      numBg: "bg-emerald-100 text-emerald-800 border-emerald-200",
+      icon: (
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+        </svg>
+      ),
+    },
+    {
+      number: "2",
+      title: "Custom Staging & Reminders",
+      desc: "Create stage milestones with custom titles and descriptions. Select flexible reminder frequencies (e.g., Daily, Twice a week, Weekly) configured in your master settings to keep clients informed automatically.",
+      iconBg: "bg-purple-100 text-purple-700",
+      numBg: "bg-purple-100 text-purple-800 border-purple-200",
+      icon: (
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+      ),
+    },
+    {
+      number: "3",
+      title: "Smart Dynamic Call-to-Action Buttons",
+      isComplex: true,
+      withGroupText: "With WhatsApp Group Link: The message includes a direct Join WhatsApp Group button for instant team collaboration.",
+      withoutGroupText: "Without WhatsApp Group Link: The message dynamically attaches a direct button link to your dedicated sales team member's contact number, opening a direct chat instantly.",
+      iconBg: "bg-sky-100 text-sky-700",
+      numBg: "bg-sky-100 text-sky-800 border-sky-200",
+      icon: (
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+      ),
+    },
+    {
+      number: "4",
+      title: "One-Click Automated Stop",
+      desc: (
+        <>
+          Once the required feedback, approval, or asset is received, simply check the{" "}
+          <strong className="font-extrabold text-slate-800">Is Received</strong> box to immediately pause automated reminder messages.
+        </>
+      ),
+      iconBg: "bg-purple-100 text-purple-700",
+      numBg: "bg-purple-100 text-purple-800 border-purple-200",
+      icon: (
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.2} viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+    },
+  ];
+
+  /* WhatsApp icon path */
+  const waPath1 = "M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.54 1.861.815 2.796.815 3.182 0 5.768-2.586 5.768-5.766 0-3.18-2.586-5.767-5.768-5.767zm3.391 8.243c-.144.405-.837.774-1.17.824-.312.045-.63.076-1.859-.446-1.572-.667-2.581-2.28-2.66-2.385-.078-.106-.639-.851-.639-1.624 0-.773.405-1.153.549-1.309.144-.156.315-.195.42-.195.106 0 .211.001.303.006.098.005.229-.037.358.273.131.315.446 1.088.485 1.167.039.079.066.171.013.276-.053.106-.079.171-.157.263-.079.092-.165.205-.236.276-.079.079-.161.165-.069.323.092.158.409.675.877 1.092.603.537 1.111.704 1.269.783.158.079.25.066.342-.039.092-.106.394-.46.499-.618.106-.158.211-.132.355-.079s.918.433 1.076.512c.158.079.263.118.303.184.039.066.039.381-.105.786z";
+  const waPath2 = "M12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.981-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.063c-1.637 0-3.154-.471-4.437-1.282l-.318-.202-2.969.778.792-2.894-.221-.351A8.026 8.026 0 013.938 12C3.938 7.555 7.555 3.938 12 3.938s8.063 3.617 8.063 8.062c0 4.446-3.618 8.063-8.063 8.063z";
+
+  return (
+    <section className="py-16 lg:py-24 bg-gradient-to-b from-white via-[#f4faf7]/40 to-white border-b border-gray-200 relative overflow-hidden">
+      {/* Ambient background glows */}
+      <div className="absolute top-10 right-10 w-[500px] h-[500px] bg-emerald-400/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-[400px] h-[400px] bg-sky-400/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+
+        {/* ── SECTION HEADER (Left-aligned text + badges) ── */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center mb-16 lg:mb-20">
+
+          {/* Left: Heading column */}
+          <div className="lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100/80 border border-emerald-300/80 text-[#107C41] font-bold text-xs sm:text-sm mb-5 shadow-2xs">
+              <svg className="w-4 h-4 fill-current text-[#25D366]" viewBox="0 0 24 24">
+                <path d={waPath1} /><path d={waPath2} />
+              </svg>
+              <span>Automation</span>
+            </div>
+
+            {/* Heading */}
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0b2545] tracking-tight leading-[1.1] mb-5">
+              Integrated Isarva{" "}
+              <br className="hidden sm:block" />
+              <span className="text-[#25D366]">WhatsApp CRM</span>
+            </h2>
+
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal mb-8 max-w-lg">
+              Streamline client follow-ups and automated staging reminders directly from your support workflow with our deeply integrated Isarva WhatsApp CRM. Built to keep projects moving forward, it automates stage updates and client communication without manual hassle.
+            </p>
+
+            {/* 4 feature checkmarks */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full max-w-md">
+              {keyBenefits.map((benefit, idx) => (
+                <div key={idx} className="flex items-center gap-2.5">
+                  <div className="w-5 h-5 rounded-full bg-[#107C41] text-white flex items-center justify-center shrink-0">
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="text-xs sm:text-sm font-semibold text-slate-800">{benefit}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right: Workflow canvas */}
+          <div className="lg:col-span-7 flex items-center justify-center">
+            {/*
+              ┌─────────────────────────────────────────────────────────────┐
+              │  OUTER CANVAS  — soft radial mint-white gradient container   │
+              └─────────────────────────────────────────────────────────────┘
+            */}
+            <div
+              className="relative w-full max-w-[720px]"
+              style={{
+                background: "radial-gradient(ellipse at 50% 40%, #e8faf4 0%, #f0fdfb 40%, #f8fffd 70%, #ffffff 100%)",
+                borderRadius: "28px",
+                padding: "48px 24px 32px",
+              }}
+            >
+
+              {/* ── ROBOT + AUTOMATED PILL (absolute top-center) ── */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-3 z-30">
+                {/* Robot Circle */}
+                <div className="relative">
+                  {/* Outer green glow ring */}
+                  <div
+                    className="absolute inset-0 rounded-full"
+                    style={{
+                      background: "radial-gradient(circle, rgba(34,197,94,0.35) 0%, rgba(34,197,94,0.1) 50%, transparent 70%)",
+                      transform: "scale(1.8)",
+                    }}
+                  />
+                  {/* White circle with cyan border */}
+                  <div
+                    className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white flex items-center justify-center"
+                    style={{ border: "2.5px solid #22d3ee", boxShadow: "0 4px 20px rgba(34,211,238,0.3)" }}
+                  >
+                    {/* Robot face SVG */}
+                    <svg viewBox="0 0 64 64" className="w-10 h-10 sm:w-12 sm:h-12" fill="none">
+                      {/* Antenna */}
+                      <line x1="32" y1="6" x2="32" y2="16" stroke="#22d3ee" strokeWidth="2.5" strokeLinecap="round"/>
+                      <circle cx="32" cy="5" r="3" fill="#22d3ee"/>
+                      {/* Head body */}
+                      <rect x="12" y="16" width="40" height="30" rx="8" fill="#0b2545"/>
+                      {/* Left eye */}
+                      <circle cx="22" cy="31" r="6" fill="#22d3ee" opacity="0.9"/>
+                      <circle cx="22" cy="31" r="3.5" fill="#0b2545"/>
+                      <circle cx="22" cy="31" r="1.5" fill="#22d3ee"/>
+                      {/* Right eye */}
+                      <circle cx="42" cy="31" r="6" fill="#22d3ee" opacity="0.9"/>
+                      <circle cx="42" cy="31" r="3.5" fill="#0b2545"/>
+                      <circle cx="42" cy="31" r="1.5" fill="#22d3ee"/>
+                      {/* Ear bumps */}
+                      <rect x="8" y="25" width="5" height="10" rx="2.5" fill="#22d3ee"/>
+                      <rect x="51" y="25" width="5" height="10" rx="2.5" fill="#22d3ee"/>
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Automated pill */}
+                <div className="relative">
+                  <div
+                    className="flex items-center gap-1.5 px-4 py-2 rounded-full text-white font-extrabold text-sm"
+                    style={{ background: "#22c55e", boxShadow: "0 4px 14px rgba(34,197,94,0.4)" }}
+                  >
+                    <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                      <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                    Automated
+                  </div>
+                  {/* Celebration burst lines */}
+                  <div className="absolute -top-3 -right-1 flex flex-col gap-0.5 items-center" style={{ transform: "rotate(15deg)" }}>
+                    <div className="w-0.5 h-3 bg-[#22c55e] rounded-full"/>
+                    <div className="w-0.5 h-2 bg-[#22c55e] rounded-full"/>
+                  </div>
+                  <div className="absolute -top-2 right-2 flex flex-col gap-0.5 items-center" style={{ transform: "rotate(-10deg)" }}>
+                    <div className="w-0.5 h-2.5 bg-[#22c55e] rounded-full"/>
+                  </div>
+                </div>
+              </div>
+
+              {/* ── CURVED DASHED SVG ARROWS ── */}
+              <svg
+                className="absolute inset-0 w-full h-full pointer-events-none z-10"
+                viewBox="0 0 720 420"
+                preserveAspectRatio="none"
+                fill="none"
+              >
+                <defs>
+                  <marker id="wa-arrow-green" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0,0 L8,4 L0,8 Z" fill="#22c55e"/>
+                  </marker>
+                  <marker id="wa-arrow-gray" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                    <path d="M0,0 L8,4 L0,8 Z" fill="#94a3b8"/>
+                  </marker>
+                </defs>
+                {/* Left card top → Robot (curved green) */}
+                <path
+                  d="M 245 100 C 245 40, 310 20, 345 18"
+                  stroke="#22c55e" strokeWidth="2" strokeDasharray="6 4"
+                  markerEnd="url(#wa-arrow-green)"
+                />
+                {/* Robot → Phone top (curved green) */}
+                <path
+                  d="M 400 18 C 450 18, 490 40, 500 85"
+                  stroke="#22c55e" strokeWidth="2" strokeDasharray="6 4"
+                  markerEnd="url(#wa-arrow-green)"
+                />
+                {/* Middle horizontal gray dashed → Phone */}
+                <path
+                  d="M 255 230 L 450 230"
+                  stroke="#94a3b8" strokeWidth="2" strokeDasharray="6 4"
+                  markerEnd="url(#wa-arrow-gray)"
+                />
+              </svg>
+
+              {/* ── MAIN LAYOUT: App Card LEFT | Phone RIGHT ── */}
+              <div className="relative z-20 flex flex-col md:flex-row items-stretch gap-5 lg:gap-6">
+
+                {/* ── LEFT: APP CARD ── */}
+                <div
+                  className="flex-1 rounded-2xl overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.10)]"
+                  style={{ minWidth: 0 }}
+                >
+                  <div className="flex h-full min-h-[340px]">
+
+                    {/* Dark Navy Sidebar */}
+                    <div className="bg-[#0b2545] w-[110px] sm:w-[120px] shrink-0 flex flex-col p-3 gap-0.5">
+                      {/* Logo */}
+                      <div className="flex items-center gap-1.5 mb-5 px-1 pt-1">
+                        <div className="w-5 h-5 rounded-md bg-gradient-to-tr from-cyan-400 to-blue-500 flex items-center justify-center shrink-0">
+                          <svg className="w-3 h-3 text-white" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                          </svg>
+                        </div>
+                        <span className="text-white font-black text-[13px] tracking-wide">Isarva</span>
+                      </div>
+
+                      {/* Nav Items */}
+                      {[
+                        { icon: "🏠", label: "Dashboard", active: false },
+                        { icon: "📁", label: "Projects", active: false },
+                        { icon: "🎧", label: "Support", active: true },
+                        { icon: "👤", label: "Clients", active: false },
+                        { icon: "⚙️", label: "Automation", active: false },
+                        { icon: "🔧", label: "Settings", active: false },
+                      ].map((item) => (
+                        <div
+                          key={item.label}
+                          className={`flex items-center gap-2 px-2 py-2 rounded-lg text-[10.5px] font-semibold transition-colors ${
+                            item.active
+                              ? "bg-[#1877F2] text-white"
+                              : "text-slate-300 hover:text-white"
+                          }`}
+                        >
+                          <span className="text-sm leading-none shrink-0">{item.icon}</span>
+                          <span className="leading-tight">{item.label}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* White content pane */}
+                    <div className="bg-white flex-1 flex flex-col p-4 min-w-0">
+                      <h4 className="text-sm sm:text-[15px] font-black text-slate-900 mb-4 leading-tight">
+                        Project Stages
+                      </h4>
+
+                      {/* Vertical stepper */}
+                      <div className="flex flex-col gap-0 flex-1">
+                        {[
+                          { label: "Proposal", status: "Completed", state: "done" },
+                          { label: "Design", status: "Completed", state: "done" },
+                          { label: "Development", status: "In Progress", state: "active" },
+                          { label: "Testing", status: "Pending", state: "pending" },
+                          { label: "Go Live", status: "Pending", state: "pending" },
+                        ].map((stage, i, arr) => (
+                          <div key={stage.label} className="flex items-stretch gap-3">
+                            {/* Track + dot column */}
+                            <div className="flex flex-col items-center w-5 shrink-0">
+                              {/* Top line segment */}
+                              <div
+                                className="w-[2px] flex-1"
+                                style={{
+                                  backgroundColor: i === 0 ? "transparent" : (i <= 2 ? "#22c55e" : "#e2e8f0"),
+                                  minHeight: i === 0 ? 0 : 6,
+                                }}
+                              />
+                              {/* Circle dot */}
+                              {stage.state === "done" ? (
+                                <div className="w-5 h-5 rounded-full bg-[#22c55e] flex items-center justify-center shrink-0 shadow-sm">
+                                  <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/>
+                                  </svg>
+                                </div>
+                              ) : stage.state === "active" ? (
+                                <div className="w-5 h-5 rounded-full bg-[#1877F2] flex items-center justify-center shrink-0 shadow-sm">
+                                  <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/>
+                                  </svg>
+                                </div>
+                              ) : (
+                                <div className="w-5 h-5 rounded-full bg-white border-2 border-slate-300 shrink-0"/>
+                              )}
+                              {/* Bottom line segment */}
+                              <div
+                                className="w-[2px] flex-1"
+                                style={{
+                                  backgroundColor: i >= arr.length - 1 ? "transparent" : (i < 2 ? "#22c55e" : "#e2e8f0"),
+                                  minHeight: i === arr.length - 1 ? 0 : 6,
+                                }}
+                              />
+                            </div>
+
+                            {/* Label + badge */}
+                            <div className="flex items-center justify-between flex-1 py-2.5 min-w-0">
+                              <span
+                                className={`text-[11px] sm:text-xs font-semibold leading-tight ${
+                                  stage.state === "active"
+                                    ? "text-[#1877F2]"
+                                    : stage.state === "done"
+                                    ? "text-slate-800"
+                                    : "text-slate-500"
+                                }`}
+                              >
+                                {stage.label}
+                              </span>
+                              <span
+                                className="text-[9px] sm:text-[10px] font-bold px-2 py-0.5 rounded-full ml-2 shrink-0 leading-tight"
+                                style={
+                                  stage.state === "done"
+                                    ? { background: "#dcfce7", color: "#16a34a" }
+                                    : stage.state === "active"
+                                    ? { background: "#dbeafe", color: "#1d4ed8" }
+                                    : { background: "#f1f5f9", color: "#64748b" }
+                                }
+                              >
+                                {stage.status}
+                              </span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Automated Reminders toggle card */}
+                      <div
+                        className="mt-3 flex items-center justify-between rounded-xl px-3 py-2.5"
+                        style={{ background: "#f8fafb", border: "1px solid #e2e8f0" }}
+                      >
+                        <div className="flex items-center gap-2">
+                          <span className="text-base">🔔</span>
+                          <span className="text-[11px] sm:text-xs font-bold text-slate-800 leading-tight">
+                            Automated Reminders
+                          </span>
+                        </div>
+                        {/* Toggle switch */}
+                        <button
+                          type="button"
+                          onClick={() => setRemindersEnabled(!remindersEnabled)}
+                          className="shrink-0 cursor-pointer"
+                          style={{
+                            width: 40,
+                            height: 22,
+                            borderRadius: 11,
+                            background: remindersEnabled ? "#22c55e" : "#cbd5e1",
+                            position: "relative",
+                            border: "none",
+                            transition: "background 0.2s",
+                            display: "flex",
+                            alignItems: "center",
+                            padding: "2px",
+                          }}
+                        >
+                          <div
+                            style={{
+                              width: 18,
+                              height: 18,
+                              borderRadius: "50%",
+                              background: "white",
+                              boxShadow: "0 1px 4px rgba(0,0,0,0.2)",
+                              transform: remindersEnabled ? "translateX(18px)" : "translateX(0)",
+                              transition: "transform 0.2s",
+                            }}
+                          />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* ── RIGHT: SMARTPHONE ── */}
+                <div className="flex flex-col items-center justify-center relative shrink-0">
+                  {/* Phone outer frame — teal/mint border */}
+                  <div
+                    className="relative"
+                    style={{
+                      width: 210,
+                      background: "#ffffff",
+                      borderRadius: 36,
+                      border: "3px solid #5eead4",
+                      boxShadow: "0 16px 48px rgba(20,184,166,0.2), 0 4px 16px rgba(0,0,0,0.08)",
+                      overflow: "hidden",
+                    }}
+                  >
+                    {/* WhatsApp top header */}
+                    <div
+                      style={{
+                        background: "#075E54",
+                        padding: "10px 12px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        gap: 8,
+                      }}
+                    >
+                      <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                        {/* Back arrow */}
+                        <span style={{ color: "white", fontSize: 14, fontWeight: "bold", lineHeight: 1, cursor: "pointer" }}>←</span>
+                        {/* WA Icon circle */}
+                        <div
+                          style={{
+                            width: 28, height: 28,
+                            borderRadius: "50%",
+                            background: "#25D366",
+                            display: "flex", alignItems: "center", justifyContent: "center",
+                            flexShrink: 0,
+                          }}
+                        >
+                          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="white">
+                            <path d={waPath1}/><path d={waPath2}/>
+                          </svg>
+                        </div>
+                        <div style={{ lineHeight: 1.2 }}>
+                          <div style={{ color: "white", fontWeight: 800, fontSize: 11 }}>Isarva Support</div>
+                          <div style={{ color: "#a7f3d0", fontSize: 8.5, fontWeight: 400 }}>Business Account</div>
+                        </div>
+                      </div>
+                      <span style={{ color: "white", fontSize: 16, fontWeight: 800 }}>⋮</span>
+                    </div>
+
+                    {/* Chat area */}
+                    <div
+                      style={{
+                        background: "#efeae2",
+                        padding: "10px 8px",
+                        minHeight: 240,
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: 8,
+                      }}
+                    >
+                      {/* Chat bubble */}
+                      <div
+                        style={{
+                          background: "white",
+                          borderRadius: 12,
+                          padding: "10px 10px 6px",
+                          boxShadow: "0 1px 4px rgba(0,0,0,0.08)",
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: 6,
+                        }}
+                      >
+                        <p style={{ margin: 0, fontSize: 10, fontWeight: 800, color: "#0f172a" }}>
+                          Hi ABC Technologies,
+                        </p>
+                        <p style={{ margin: 0, fontSize: 9.5, lineHeight: 1.4, color: "#334155" }}>
+                          This is a reminder for the current stage –{" "}
+                          <strong style={{ fontWeight: 800, color: "#0f172a" }}>Design Approval</strong>.
+                        </p>
+                        <p style={{ margin: 0, fontSize: 9.5, lineHeight: 1.4, color: "#475569" }}>
+                          Please share the required details at your earliest convenience.
+                        </p>
+
+                        {/* CTA Buttons */}
+                        <div style={{ display: "flex", flexDirection: "column", gap: 6, marginTop: 4 }}>
+                          {/* Green WA button */}
+                          <button
+                            type="button"
+                            style={{
+                              background: "#25D366",
+                              border: "none",
+                              borderRadius: 8,
+                              padding: "8px 10px",
+                              color: "white",
+                              fontWeight: 800,
+                              fontSize: 10,
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              gap: 6,
+                              cursor: "pointer",
+                              width: "100%",
+                            }}
+                          >
+                            <svg style={{ width: 13, height: 13 }} viewBox="0 0 24 24" fill="white">
+                              <path d={waPath1}/><path d={waPath2}/>
+                            </svg>
+                            Join WhatsApp Group
+                          </button>
+
+                          {/* Outline phone button */}
+                          <button
+                            type="button"
+                            style={{
+                              background: "white",
+                              border: "1.5px solid #128C7E",
+                              borderRadius: 8,
+                              padding: "8px 10px",
+                              color: "#128C7E",
+                              fontWeight: 800,
+                              fontSize: 10,
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              gap: 6,
+                              cursor: "pointer",
+                              width: "100%",
+                            }}
+                          >
+                            <svg style={{ width: 12, height: 12 }} fill="none" stroke="#128C7E" strokeWidth="2.5" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            Chat with Sales Team
+                          </button>
+                        </div>
+
+                        <p style={{ margin: 0, fontSize: 8, color: "#94a3b8", textAlign: "right", marginTop: 2 }}>
+                          10:30 AM
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Input bar */}
+                    <div
+                      style={{
+                        background: "#f0f2f5",
+                        borderTop: "1px solid #e2e8f0",
+                        padding: "7px 8px",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 5,
+                      }}
+                    >
+                      <span style={{ fontSize: 14, color: "#94a3b8" }}>😊</span>
+                      <div
+                        style={{
+                          flex: 1,
+                          background: "white",
+                          borderRadius: 20,
+                          padding: "4px 10px",
+                          fontSize: 8.5,
+                          color: "#94a3b8",
+                          border: "1px solid #e2e8f0",
+                        }}
+                      >
+                        Type a message...
+                      </div>
+                      <span style={{ fontSize: 12, color: "#94a3b8" }}>📎</span>
+                      <span style={{ fontSize: 12, color: "#94a3b8" }}>📷</span>
+                      <div
+                        style={{
+                          width: 24, height: 24,
+                          borderRadius: "50%",
+                          background: "#128C7E",
+                          display: "flex", alignItems: "center", justifyContent: "center",
+                          color: "white",
+                          fontSize: 10,
+                          flexShrink: 0,
+                        }}
+                      >
+                        ➤
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Stage Updates floating pill — below the phone */}
+                  <div
+                    className="flex items-center gap-3 mt-4"
+                    style={{
+                      background: "white",
+                      borderRadius: 50,
+                      padding: "8px 16px 8px 8px",
+                      boxShadow: "0 8px 24px rgba(0,0,0,0.10)",
+                      alignSelf: "flex-start",
+                      marginLeft: 8,
+                    }}
+                  >
+                    {/* Blue circle with paper plane */}
+                    <div
+                      style={{
+                        width: 36, height: 36,
+                        borderRadius: "50%",
+                        background: "linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%)",
+                        display: "flex", alignItems: "center", justifyContent: "center",
+                        flexShrink: 0,
+                      }}
+                    >
+                      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                      </svg>
+                    </div>
+                    <div style={{ lineHeight: 1.3 }}>
+                      <div style={{ fontSize: 11, fontWeight: 800, color: "#0f172a" }}>Stage Updates</div>
+                      <div style={{ fontSize: 10, fontWeight: 700, color: "#22c55e" }}>→ Client Notified</div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ── HOW IT WORKS ── */}
+        <div className="bg-gradient-to-b from-[#f8fafc] to-[#f1f5f9]/80 border border-slate-200/90 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xs">
+          <div className="mb-8">
+            <h3 className="text-2xl sm:text-3xl font-black text-[#0b2545] tracking-tight leading-tight">
+              How It Works
+            </h3>
+            <div className="w-10 h-1 bg-[#25D366] rounded-full mt-2" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 relative">
+            {steps.map((step, idx) => {
+              const isLast = idx === steps.length - 1;
+              return (
+                <div key={idx} className="relative flex flex-col justify-between">
+                  <div className="pr-0 lg:pr-3">
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className={`w-11 h-11 rounded-full ${step.iconBg} flex items-center justify-center shrink-0 shadow-2xs`}>
+                        {step.icon}
+                      </div>
+                      <span className={`inline-flex items-center justify-center font-black text-xs px-2.5 py-0.5 rounded-full border ${step.numBg}`}>
+                        {step.number}
+                      </span>
+                    </div>
+                    <h4 className="text-base sm:text-[17px] font-extrabold text-slate-900 mb-2 leading-snug">
+                      {step.title}
+                    </h4>
+                    {step.isComplex ? (
+                      <div className="text-xs sm:text-[13px] text-slate-600 leading-relaxed space-y-2">
+                        <p><strong className="font-extrabold text-slate-800">With WhatsApp Group Link:</strong> {step.withGroupText.replace("With WhatsApp Group Link: ", "")}</p>
+                        <p><strong className="font-extrabold text-slate-800">Without WhatsApp Group Link:</strong> {step.withoutGroupText.replace("Without WhatsApp Group Link: ", "")}</p>
+                      </div>
+                    ) : (
+                      <p className="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-normal">{step.desc}</p>
+                    )}
+                  </div>
+                  {!isLast && (
+                    <div className="hidden lg:flex absolute top-12 -right-2 text-slate-300 pointer-events-none">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/>
+                      </svg>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
 export default function ProductDetailPremiumSupportStaging({
   product,
   relatedProducts,
@@ -2438,7 +3122,7 @@ export default function ProductDetailPremiumSupportStaging({
       <ReportsSection onImageClick={setLightboxImage} />
       <AnalyticsSection onImageClick={setLightboxImage} />
       <AmcModuleOverviewSection />
-      <AutomationSection />
+      <IntegratedWhatsAppCrmSection />
       <SafetyManagementSection />
 
       {/* 3. ISS Interactive Feature Section */}
