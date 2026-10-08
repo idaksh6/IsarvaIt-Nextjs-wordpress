@@ -645,7 +645,7 @@ export const productsData = [
     metaDescription:
       "Restaurant POS software for Saudi Arabia: table & floor management, kitchen tickets, inventory, online orders (HungerStation, Jahez), and ZATCA-ready VAT billing. Book a demo.",
     ogImage: "/products/restaurant-pos/hero-clean.png",
-    category: "Restaurant & Hospitality",
+    category: "Restaurant",
     icon: "🍽️",
     tagline: "Restaurant POS Software",
     shortDescription:
