@@ -683,7 +683,6 @@ export const productsData = [
     ],
     color: "from-emerald-600 to-teal-700",
     bgGradient: "from-emerald-50 via-teal-50 to-white",
-    noIndex: true,
   },
   {
     slug: "bill-soft",
