@@ -44,13 +44,13 @@ export default function ProductDetailClient({ product, relatedProducts, allProdu
     );
   }
 
-  // Restaurant POS (noindex — not listed in nav)
+  // Restaurant POS
   if (product.slug === "restaurant-pos") {
     return (
       <ProductDetailPremiumRestaurantPOS
         product={product}
-        relatedProducts={[]}
-        allProducts={allProducts.filter((p) => !p.noIndex)}
+        relatedProducts={relatedProducts}
+        allProducts={allProducts}
       />
     );
   }
