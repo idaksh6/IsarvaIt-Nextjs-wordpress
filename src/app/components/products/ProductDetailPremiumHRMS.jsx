@@ -401,12 +401,25 @@ export default function ProductDetailPremiumHRMS({
     }
   };
 
-  // 1. Initial trigger: 3-second delay on page load (if not submitted and brochure modal not open)
+  // Helper to check if popup was already auto-triggered or closed in this session
+  const isPopupDismissedOrHandled = () => {
+    try {
+      return (
+        isFormSubmitted() ||
+        wasOpenedRef.current ||
+        sessionStorage.getItem("hrms_popup_dismissed") === "true"
+      );
+    } catch (e) {
+      return isFormSubmitted() || wasOpenedRef.current;
+    }
+  };
+
+  // Initial trigger: 3-second delay on page load (runs only once per session)
   useEffect(() => {
-    if (!CRM_POPUP_ENABLED || isFormSubmitted()) return;
+    if (!CRM_POPUP_ENABLED || isPopupDismissedOrHandled()) return;
 
     const timer = setTimeout(() => {
-      if (!isFormSubmitted() && !isBrochureModalOpen) {
+      if (!isPopupDismissedOrHandled() && !isBrochureModalOpen) {
         wasOpenedRef.current = true;
         setIsModalOpen(true);
       }
@@ -414,26 +427,6 @@ export default function ProductDetailPremiumHRMS({
 
     return () => clearTimeout(timer);
   }, [isBrochureModalOpen]);
-
-  // 2. Pure Time-based Re-trigger: re-opens 15 seconds after closing (if not submitted and brochure modal not open)
-  useEffect(() => {
-    if (!CRM_POPUP_ENABLED) return;
-
-    if (isModalOpen || isBrochureModalOpen) {
-      wasOpenedRef.current = true;
-      return;
-    }
-
-    if (!isModalOpen && !isBrochureModalOpen && wasOpenedRef.current && !isFormSubmitted()) {
-      const timer = setTimeout(() => {
-        if (!isFormSubmitted() && !isBrochureModalOpen) {
-          setIsModalOpen(true);
-        }
-      }, 15000);
-
-      return () => clearTimeout(timer);
-    }
-  }, [isModalOpen, isBrochureModalOpen]);
 
   // Scroll to top of content area when tab changes
   useEffect(() => {
@@ -903,7 +896,13 @@ export default function ProductDetailPremiumHRMS({
       {CRM_POPUP_ENABLED && (
         <ContactFormModal
           isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
+          onClose={() => {
+            setIsModalOpen(false);
+            wasOpenedRef.current = true;
+            try {
+              sessionStorage.setItem("hrms_popup_dismissed", "true");
+            } catch (e) {}
+          }}
           onSubmitSuccess={() => {
             hasSubmittedRef.current = true;
             try {
