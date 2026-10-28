@@ -121,7 +121,7 @@ function buildHeader() {
   const aboutCol1Html = aboutCol1.map(buildAboutLinkHtml).join("\n");
   const aboutCol2Html = aboutCol2.map(buildAboutLinkHtml).join("\n");
 
-  return `<header id="isarva-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent py-5" style="will-change:transform">
+  return `<header id="isarva-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white py-5" style="will-change:transform">
   <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
 
     <!-- Logo -->
