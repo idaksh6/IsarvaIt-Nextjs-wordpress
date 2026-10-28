@@ -116,7 +116,7 @@ export default function Header() {
   const isHomePage =
     typeof pathname === "string" && (pathname === "/" || pathname === "/home-clone");
 
-  const useSolidHeader = isScrollStablePage || forceWhiteHeader || isHomePage;
+  const useSolidHeader = true;
 
   const [scrolled, setScrolled] = useState(useSolidHeader);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -173,7 +173,7 @@ export default function Header() {
           : `transition-all duration-300 ${
               scrolled
                 ? "bg-white/90 backdrop-blur-md py-3 shadow-sm border-b border-gray-100"
-                : "bg-transparent py-5"
+                : "bg-white py-3 shadow-sm border-b border-gray-100"
             }`
       }`}
       style={useSolidHeader ? undefined : { willChange: scrolled ? "auto" : "transform" }}

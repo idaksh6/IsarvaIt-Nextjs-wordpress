@@ -91,7 +91,7 @@ export default async function HomePage() {
   async function getWordPressBlogPosts() {
     try {
       const wpPosts = await fetchPosts({
-        perPage: 4,
+        perPage: 3,
         fields: "id,title,slug,excerpt,date,featured_media,categories,link,_links",
         embed: true,
         revalidate: 300,
@@ -119,7 +119,7 @@ export default async function HomePage() {
       // Silently fall back to static posts
     }
     // Fallback to static posts
-    return getBlogPosts({ perPage: 4 });
+    return getBlogPosts({ perPage: 3 });
   }
 
   // Parallelize the rest of the fetching to eliminate waterfalls

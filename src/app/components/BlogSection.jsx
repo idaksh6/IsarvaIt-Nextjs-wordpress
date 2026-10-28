@@ -51,7 +51,7 @@ function BlogSection({ posts }) {
 
         {/* Blog Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {posts.map((post, index) => {
+          {posts.slice(0, 3).map((post, index) => {
             const isExternal = !!post.link;
             const href = post.link || `/blog/${post.slug}`;
             return (
