@@ -112,7 +112,11 @@ export default function Header() {
   const forceWhiteHeader =
     typeof pathname === "string" && (pathname.includes("/product/restaurant-pos") || pathname.includes("isarva-nethra"));
 
-  const useSolidHeader = isScrollStablePage || forceWhiteHeader;
+  // Separate solid header for home pages so hero background image does not bleed into header
+  const isHomePage =
+    typeof pathname === "string" && (pathname === "/" || pathname === "/home-clone");
+
+  const useSolidHeader = isScrollStablePage || forceWhiteHeader || isHomePage;
 
   const [scrolled, setScrolled] = useState(useSolidHeader);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

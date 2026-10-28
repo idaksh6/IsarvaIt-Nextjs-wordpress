@@ -117,38 +117,21 @@ const defaultTestimonials = [
 
 function TestimonialsSection({ data }) {
   const sectionRef = useRef(null);
-  const trackRef = useRef(null);
   const testimonials = data?.testimonials || defaultTestimonials;
+  const loopedTestimonials = [
+    ...testimonials,
+    ...testimonials,
+    ...testimonials,
+  ];
   const sectionTitle = data?.title || "What Our Clients Say";
   const sectionSub =
     data?.subtitle || "Trusted by industry leaders across the globe";
-
-  const [dragConstraints, setDragConstraints] = useState({ left: 0, right: 0 });
-  const dragX = useMotionValue(0);
-
-  // Calculate constraints based on track width vs container width
-  useLayoutEffect(() => {
-    const updateConstraints = () => {
-      if (trackRef.current && sectionRef.current) {
-        const trackWidth = trackRef.current.scrollWidth;
-        const containerWidth = sectionRef.current.offsetWidth;
-        setDragConstraints({
-          left: -(trackWidth - containerWidth + 100), // Buffer for padding
-          right: 0,
-        });
-      }
-    };
-
-    updateConstraints();
-    window.addEventListener("resize", updateConstraints);
-    return () => window.removeEventListener("resize", updateConstraints);
-  }, [testimonials]);
 
   // ── GSAP scroll-driven ───────────────────────────────────────────────────────
   useGSAP(
     () => {
       // Header entrance
-      gsap.from(".ts-label, .ts-title, .ts-sub, .ts-hint", {
+      gsap.from(".ts-label, .ts-title, .ts-sub", {
         scrollTrigger: { trigger: ".ts-header", start: "top 88%" },
         y: 30,
         opacity: 0,
@@ -157,12 +140,11 @@ function TestimonialsSection({ data }) {
         ease: "power3.out",
       });
 
-      // Cards fade-in only — no y offset so cards never appear displaced
-      gsap.from(".ts-card", {
-        scrollTrigger: { trigger: sectionRef.current, start: "top 80%" },
+      // Wrapper fade in
+      gsap.from(".testimonial-marquee-wrapper", {
+        scrollTrigger: { trigger: sectionRef.current, start: "top 85%" },
         opacity: 0,
-        duration: 1.1,
-        stagger: 0.07,
+        duration: 1,
         ease: "power2.out",
       });
     },
@@ -172,12 +154,12 @@ function TestimonialsSection({ data }) {
   return (
     <section
       ref={sectionRef}
-      className="relative lg:py-16 py-10 overflow-hidden"
+      className="relative py-8 sm:py-16 lg:py-20 overflow-hidden"
       style={{
-        background: "#f8f9eb",
+        background: "#fff",
       }}
     >
-      {/* ── Soft decorative blobs ── */}
+      {/* ── Soft decorative warm blobs ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
           style={{
@@ -188,7 +170,7 @@ function TestimonialsSection({ data }) {
             height: 500,
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(245,158,11,0.05) 0%, transparent 70%)",
             filter: "blur(50px)",
           }}
         />
@@ -201,21 +183,8 @@ function TestimonialsSection({ data }) {
             height: 450,
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(139,92,246,0.08) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(16,185,129,0.05) 0%, transparent 70%)",
             filter: "blur(50px)",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            top: "35%",
-            left: "45%",
-            width: 300,
-            height: 300,
-            borderRadius: "50%",
-            background:
-              "radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%)",
-            filter: "blur(40px)",
           }}
         />
       </div>
@@ -228,16 +197,16 @@ function TestimonialsSection({ data }) {
               display: "block",
               height: 1,
               width: 32,
-              background: "linear-gradient(90deg,transparent,#6366f1)",
+              background: "linear-gradient(90deg,transparent,#00A86B)",
             }}
           />
           <span
             style={{
-              fontSize: 11,
+              fontSize: 12,
               fontWeight: 700,
-              letterSpacing: "0.22em",
-              color: "#3b8d4d",
-              textTransform: "capitalize",
+              letterSpacing: "0.2em",
+              color: "#00A86B",
+              textTransform: "uppercase",
             }}
           >
             Client Testimonials
@@ -247,31 +216,25 @@ function TestimonialsSection({ data }) {
               display: "block",
               height: 1,
               width: 32,
-              background: "linear-gradient(90deg,#6366f1,transparent)",
+              background: "linear-gradient(90deg,#00A86B,transparent)",
             }}
           />
         </div>
 
         <h2
-          className="ts-title mb-5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize"
-          style={{
-            background:
-              "linear-gradient(135deg, #1e1b4b 0%, #1e1b4b 50%, #1e1b4b 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-          }}
+          className="ts-title mb-5 text-3xl lg:text-[44px] font-black leading-[1.2] tracking-tight text-[#102A43]"
         >
           {sectionTitle}
         </h2>
 
-        <p className="ts-sub text-gray-500 text-lg max-w-xl mx-auto font-medium leading-relaxed">
+        <p className="ts-sub text-slate-600 text-base md:text-lg max-w-xl mx-auto font-normal leading-relaxed">
           {sectionSub}
         </p>
       </div>
 
       {/* ── Row wrapper with edge fades ── */}
       <div className="relative z-10">
-        {/* Left fade - hide on mobile */}
+        {/* Left fade - clean white to transparent */}
         <div
           className="hidden md:block"
           style={{
@@ -279,13 +242,13 @@ function TestimonialsSection({ data }) {
             left: 0,
             top: 0,
             bottom: 0,
-            width: 120,
+            width: 140,
             zIndex: 20,
             pointerEvents: "none",
-            background: "linear-gradient(90deg, #f0f4ff 0%, transparent 100%)",
+            background: "linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.85) 40%, transparent 100%)",
           }}
         />
-        {/* Right fade - hide on mobile */}
+        {/* Right fade - clean white to transparent */}
         <div
           className="hidden md:block"
           style={{
@@ -293,196 +256,248 @@ function TestimonialsSection({ data }) {
             right: 0,
             top: 0,
             bottom: 0,
-            width: 120,
+            width: 140,
             zIndex: 20,
             pointerEvents: "none",
-            background: "linear-gradient(270deg, #f0f4ff 0%, transparent 100%)",
+            background: "linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0.85) 40%, transparent 100%)",
           }}
         />
 
-        {/* ── The draggable track ── */}
-        <motion.div
-          ref={trackRef}
-          drag="x"
-          dragConstraints={dragConstraints}
-          dragElastic={0.06} // Clean edge feel
-          dragMomentum={true} // High quality momentum physics
-          style={{ x: dragX }}
-          className="flex gap-7 px-6 md:px-20 cursor-grab active:cursor-grabbing"
-        >
-          {testimonials.map((t) => (
-            <article
-              key={t.id}
-              className="ts-card flex-shrink-0 select-none snap-center"
-              style={{
-                width: "calc(100vw - 4rem)", // Slightly more padding for mobile
-                maxWidth: 380, // Max width on desktop
-                background: "#ffffff",
-                borderRadius: 28,
-                padding: "36px 36px 32px",
-                boxShadow:
-                  "0 4px 24px rgba(79,70,229,0.07), 0 1px 4px rgba(0,0,0,0.04)",
-                border: "1px solid rgba(99,102,241,0.1)",
-                transition:
-                  "box-shadow 0.35s ease, transform 0.35s ease, border-color 0.35s ease",
-                position: "relative",
-                overflow: "hidden",
-                display: "flex",
-                flexDirection: "column",
-              }}
-              onMouseEnter={(e) => {
-                const el = e.currentTarget;
-                el.style.boxShadow =
-                  "0 12px 40px rgba(79,70,229,0.14), 0 4px 12px rgba(0,0,0,0.05)";
-                el.style.transform = "translateY(-4px)";
-                el.style.borderColor = "rgba(99,102,241,0.25)";
-              }}
-              onMouseLeave={(e) => {
-                const el = e.currentTarget;
-                el.style.boxShadow =
-                  "0 4px 24px rgba(79,70,229,0.07), 0 1px 4px rgba(0,0,0,0.04)";
-                el.style.transform = "translateY(0)";
-                el.style.borderColor = "rgba(99,102,241,0.1)";
-              }}
-            >
-              {/* Decorative corner accent */}
-              <div
+        {/* ── Continuous Auto-Sliding Marquee Track (Pauses on Hover) ── */}
+        <div className="testimonial-marquee-wrapper">
+          <div className="testimonial-marquee-track">
+            {loopedTestimonials.map((t, idx) => (
+              <article
+                key={`${t.id}-${idx}`}
+                className="ts-card flex-shrink-0 select-none group"
                 style={{
-                  position: "absolute",
-                  top: 0,
-                  right: 0,
-                  width: 100,
-                  height: 100,
-                  background:
-                    "linear-gradient(225deg, rgba(99,102,241,0.06) 0%, transparent 65%)",
-                  borderRadius: "0 28px 0 100%",
-                  pointerEvents: "none",
-                }}
-              />
-
-              {/* Big decorative quote */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: 24,
-                  right: 28,
-                  fontSize: 70,
-                  lineHeight: 1,
-                  fontFamily: "Georgia, serif",
-                  color: "rgba(99,102,241,0.09)",
-                  pointerEvents: "none",
-                  userSelect: "none",
-                }}
-              >
-                "
-              </div>
-
-              {/* Stars */}
-              <div style={{ display: "flex", gap: 3, marginBottom: 20 }}>
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <svg
-                    key={i}
-                    style={{ width: 16, height: 16 }}
-                    viewBox="0 0 20 20"
-                    fill={i < t.rating ? "#f59e0b" : "#e5e7eb"}
-                  >
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-
-              {/* Testimonial text */}
-              <p className=""
-                style={{
-                  color: "#374151",
-                  fontSize: 15,
-                  lineHeight: 1.75,
-                  fontWeight: 500,
-                  marginBottom: 28,
+                  width: "calc(100vw - 4rem)",
+                  maxWidth: 400,
+                  background: "#ffffff",
+                  borderRadius: 28,
+                  padding: "36px 32px 28px",
+                  boxShadow:
+                    "0 4px 20px rgba(16,42,67,0.04), 0 1px 3px rgba(0,0,0,0.02)",
+                  border: "1px solid #EAEFEA",
+                  transition:
+                    "box-shadow 0.35s ease, transform 0.35s ease, border-color 0.35s ease",
                   position: "relative",
-                  zIndex: 1,
+                  overflow: "hidden",
+                  display: "flex",
+                  flexDirection: "column",
+                  cursor: "pointer",
+                }}
+                onMouseEnter={(e) => {
+                  const el = e.currentTarget;
+                  el.style.boxShadow =
+                    "0 14px 34px rgba(16,42,67,0.08), 0 2px 6px rgba(0,0,0,0.03)";
+                  el.style.transform = "translateY(-4px)";
+                  el.style.borderColor = "#A7F3D0";
+                }}
+                onMouseLeave={(e) => {
+                  const el = e.currentTarget;
+                  el.style.boxShadow =
+                    "0 4px 20px rgba(16,42,67,0.04), 0 1px 3px rgba(0,0,0,0.02)";
+                  el.style.transform = "translateY(0)";
+                  el.style.borderColor = "#EAEFEA";
                 }}
               >
-                "{t.text}"
-              </p>
-
-              {/* Footer container pushed to the bottom */}
-              <div style={{ marginTop: "auto" }}>
-                {/* Divider */}
+                {/* Subtle pale-mint corner radial glow matching the reference image */}
                 <div
                   style={{
-                    height: 1,
-                    marginBottom: 24,
+                    position: "absolute",
+                    top: 0,
+                    right: 0,
+                    width: 140,
+                    height: 140,
                     background:
-                      "linear-gradient(90deg, rgba(99,102,241,0.2) 0%, rgba(99,102,241,0.03) 80%, transparent 100%)",
+                      "radial-gradient(circle at top right, rgba(209, 250, 229, 0.45) 0%, transparent 70%)",
+                    borderRadius: "0 28px 0 100%",
+                    pointerEvents: "none",
                   }}
                 />
 
-                {/* Author */}
-                <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                {/* Mint Green Double Quote Icon in top-right matching reference image */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 26,
+                    right: 28,
+                    pointerEvents: "none",
+                    userSelect: "none",
+                    color: "#86EFAC",
+                  }}
+                >
+                  <svg
+                    style={{ width: 28, height: 28 }}
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M7.17 6.17A4.2 4.2 0 0 0 3 10.37c0 1.96 1.18 3.48 2.8 3.93-.32 1.62-1.3 3.12-2.8 4.2l1.6 1.5c2.6-1.8 4.4-4.5 4.4-7.8 0-.58-.06-1.14-.17-1.68a4.17 4.17 0 0 0-1.66-4.35zm11 0A4.2 4.2 0 0 0 14 10.37c0 1.96 1.18 3.48 2.8 3.93-.32 1.62-1.3 3.12-2.8 4.2l1.6 1.5c2.6-1.8 4.4-4.5 4.4-7.8 0-.58-.06-1.14-.17-1.68a4.17 4.17 0 0 0-1.66-4.35z" />
+                  </svg>
+                </div>
+
+                {/* 5 Bright Golden/Amber Stars matching reference image */}
+                <div style={{ display: "flex", gap: 5, marginBottom: 20 }}>
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <svg
+                      key={i}
+                      style={{ width: 18, height: 18 }}
+                      viewBox="0 0 20 20"
+                      fill={i < t.rating ? "#F59E0B" : "#E5E7EB"}
+                    >
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+
+                {/* Testimonial Quote Text matching reference image */}
+                <p
+                  style={{
+                    color: "#1E293B",
+                    fontSize: 15.5,
+                    lineHeight: 1.68,
+                    fontWeight: 500,
+                    marginBottom: 24,
+                    position: "relative",
+                    zIndex: 1,
+                  }}
+                >
+                  &ldquo;{t.text}&rdquo;
+                </p>
+
+                {/* Footer container pushed to bottom */}
+                <div style={{ marginTop: "auto" }}>
+                  {/* Subtle Horizontal Divider Line */}
                   <div
                     style={{
-                      width: 48,
-                      height: 48,
-                      borderRadius: 16,
-                      flexShrink: 0,
-                      background: t.gradient,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontSize: 14,
-                      fontWeight: 800,
-                      color: "#fff",
-                      boxShadow: `0 6px 20px rgba(0,0,0,0.12)`,
+                      height: 1,
+                      marginBottom: 20,
+                      background: "#F1F5F9",
                     }}
-                  >
-                    {t.initials}
-                  </div>
-                  <div>
-                    <p
+                  />
+
+                  {/* Author Info Row */}
+                  <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                    {/* Rounded Squircle Avatar with bold white initials */}
+                    <div
                       style={{
-                        color: "#111827",
-                        fontWeight: 700,
-                        fontSize: 14,
-                        marginBottom: 2,
+                        width: 48,
+                        height: 48,
+                        borderRadius: 16,
+                        flexShrink: 0,
+                        background:
+                          t.gradient ||
+                          "linear-gradient(135deg, #1E293B 0%, #0F172A 100%)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        fontSize: 15,
+                        fontWeight: 800,
+                        color: "#ffffff",
+                        boxShadow: "0 4px 12px rgba(15,23,42,0.12)",
                       }}
                     >
-                      {t.name}
-                    </p>
-                    <p
-                      style={{ color: "#9ca3af", fontSize: 12, fontWeight: 500 }}
+                      {t.initials}
+                    </div>
+
+                    {/* Name and Designation */}
+                    <div>
+                      <p
+                        style={{
+                          color: "#0F172A",
+                          fontWeight: 700,
+                          fontSize: 15,
+                          lineHeight: 1.25,
+                          marginBottom: 3,
+                        }}
+                      >
+                        {t.name}
+                      </p>
+                      <p
+                        style={{
+                          color: "#94A3B8",
+                          fontSize: 13,
+                          fontWeight: 500,
+                          lineHeight: 1.2,
+                        }}
+                      >
+                        {t.role} &middot; {t.company}
+                      </p>
+                    </div>
+
+                    {/* Verified Checkmark Badge in light indigo circle matching reference */}
+                    <div
+                      style={{
+                        marginLeft: "auto",
+                        width: 24,
+                        height: 24,
+                        borderRadius: "50%",
+                        background: "#EEF2FF",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexShrink: 0,
+                      }}
                     >
-                      {t.role} &middot; {t.company}
-                    </p>
-                  </div>
-                  {/* Verified badge */}
-                  <div style={{ marginLeft: "auto" }}>
-                    <svg
-                      style={{ width: 22, height: 22 }}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <circle
-                        cx="12"
-                        cy="12"
-                        r="12"
-                        fill="rgba(99,102,241,0.1)"
-                      />
-                      <path
-                        d="M9 12l2 2 4-4"
-                        stroke="#6366f1"
-                        strokeWidth="2"
+                      <svg
+                        style={{ width: 13, height: 13 }}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#4F46E5"
+                        strokeWidth="2.8"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                      />
-                    </svg>
+                      >
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </article>
-          ))}
-        </motion.div>
+              </article>
+            ))}
+          </div>
+        </div>
       </div>
+
+      <style jsx>{`
+        .testimonial-marquee-wrapper {
+          display: flex;
+          overflow: hidden;
+          user-select: none;
+          padding-top: 10px;
+          padding-bottom: 24px;
+        }
+
+        .testimonial-marquee-track {
+          display: flex;
+          gap: 1.75rem;
+          width: max-content;
+          will-change: transform;
+          animation: testimonialMarquee 140s linear infinite;
+          padding: 8px 0;
+        }
+
+        .testimonial-marquee-track:hover {
+          animation-play-state: paused;
+        }
+
+        @keyframes testimonialMarquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-33.333333%);
+          }
+        }
+
+        @media (max-width: 768px) {
+          .testimonial-marquee-track {
+            gap: 1.25rem;
+            animation-duration: 110s;
+          }
+        }
+      `}</style>
     </section>
   );
 }

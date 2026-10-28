@@ -1,236 +1,168 @@
 "use client";
 
-import Link from "./AppLink";
+import { memo } from "react";
 import Image from "next/image";
+import { Users, Layers, Building2, TrendingUp } from "lucide-react";
 
-export default function AboutSection() {
+const ABOUT_STATS = [
+  {
+    id: "experience",
+    number: "15+",
+    label: "Years of Experience",
+    Icon: Users,
+  },
+  {
+    id: "projects",
+    number: "500+",
+    label: "Projects Delivered",
+    Icon: Layers,
+  },
+  {
+    id: "clients",
+    number: "300+",
+    label: "Happy Clients",
+    Icon: Building2,
+  },
+  {
+    id: "satisfaction",
+    number: "99%",
+    label: "Client Satisfaction",
+    Icon: TrendingUp,
+  },
+];
+
+function AboutSection() {
   return (
     <section
-      className="relative py-24 px-6 overflow-hidden"
-      style={{ background: "#f8fffe" }}
+      id="about-us"
+      className="relative py-10 sm:py-20 lg:py-28 bg-[#F5FBF7] bg-[linear-gradient(180deg,#F8FCFA_0%,#F5FBF7_160px,#F5FBF7_100%)] overflow-hidden"
+      aria-labelledby="about-us-heading"
     >
-      {/* ── Soft gradient mesh background (aurora blobs, no noise) ── */}
-      {/* Top-left warm teal blob */}
-      <div
-        className="absolute pointer-events-none z-0"
-        style={{
-          top: "-120px",
-          left: "-100px",
-          width: "600px",
-          height: "600px",
-          background:
-            "radial-gradient(circle, rgba(16,185,129,0.13) 0%, rgba(52,211,153,0.06) 45%, transparent 70%)",
-          filter: "blur(60px)",
-        }}
-      />
-      {/* Bottom-right lime blob */}
-      <div
-        className="absolute pointer-events-none z-0"
-        style={{
-          bottom: "-80px",
-          right: "-80px",
-          width: "500px",
-          height: "500px",
-          background:
-            "radial-gradient(circle, rgba(132,204,22,0.11) 0%, rgba(16,185,129,0.06) 50%, transparent 72%)",
-          filter: "blur(55px)",
-        }}
-      />
-      {/* Center subtle sky tint */}
-      <div
-        className="absolute pointer-events-none z-0 inset-0"
-        style={{
-          background:
-            "linear-gradient(135deg, rgba(237, 253, 238, 1) 0%, rgba(255,255,255,0.4) 50%, rgba(240,253,244,0.6) 100%)",
-        }}
-      />
-      {/* Soft diagonal lines (CSS only, no SVG, no noise) */}
-      <div
-        className="absolute inset-0 pointer-events-none z-0 opacity-[0.05]"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(120deg, #10b981 0px, #10b981 1px, transparent 1px, transparent 60px)",
-        }}
-      />
+      {/* Subtle ambient background soft glow positioned below top boundary */}
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[460px] h-[460px] bg-emerald-100/25 rounded-full blur-[120px] pointer-events-none select-none z-0" />
+      <div className="absolute top-28 right-0 w-[500px] h-[500px] bg-emerald-100/25 rounded-full blur-[130px] pointer-events-none select-none z-0" />
 
-      {/* Green accent line at top-center */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-[2px] bg-gradient-to-r from-transparent via-emerald-500 to-transparent rounded-full" />
-
-      {/* Two-column layout */}
-      <div className="relative z-10 max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
-        {/* ── LEFT: Circular image ── */}
-        <div className="relative flex-shrink-0 flex items-center justify-center w-72 h-72 lg:w-96 lg:h-96">
-          {/* ── Glow layers around the image ── */}
-          {/* Outermost large diffused glow — heartbeat outer pulse */}
-          <div
-            className="absolute rounded-full pointer-events-none glow-pulse-outer"
-            style={{
-              inset: "-60px",
-              background:
-                "radial-gradient(circle, rgba(16,185,129,0.22) 0%, rgba(52,211,153,0.10) 50%, transparent 70%)",
-              filter: "blur(28px)",
-            }}
-          />
-          {/* Mid glow — double-beat heartbeat */}
-          <div
-            className="absolute rounded-full pointer-events-none glow-pulse-mid"
-            style={{
-              inset: "-28px",
-              background:
-                "radial-gradient(circle, rgba(16,185,129,0.28) 0%, rgba(132,204,22,0.10) 55%, transparent 75%)",
-              filter: "blur(16px)",
-            }}
-          />
-          {/* Inner tight glow — fast sharp heartbeat flash */}
-          <div
-            className="absolute rounded-full pointer-events-none glow-pulse-inner"
-            style={{
-              inset: "-10px",
-              background:
-                "radial-gradient(circle, rgba(16,185,129,0.38) 0%, rgba(52,211,153,0.12) 50%, transparent 65%)",
-              filter: "blur(8px)",
-            }}
-          />
-
-          {/* Spinning dashed ring (on top of glow) */}
-          <div
-            className="absolute inset-[-18px] rounded-full border border-dashed border-emerald-400/40"
-            style={{ animation: "spin 30s linear infinite" }}
-          />
-          {/* Subtle solid ring */}
-          <div className="absolute inset-[-6px] rounded-full border border-emerald-400/20" />
-
-          {/* Circle image */}
-          <div className="w-full h-full rounded-full overflow-hidden relative shadow-[0_0_0_6px_white,0_25px_60px_rgba(0,0,0,0.12),0_8px_20px_rgba(16,185,129,0.12)] bg-gradient-to-br from-sky-100 via-emerald-100 to-green-50">
-            <img
-              src="/about-team.jpg"
-              alt="Isarva team at work"
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                e.currentTarget.style.display = "none";
-              }}
-            />
-
-            {/* Brand "Z" mark overlay */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <Image src="/Isarva-logo copy.png" width={200} height={78} alt="Isarva Logo" loading="lazy" />
-            </div>
-          </div>
-
-          {/* Floating years badge */}
-          <div className="absolute -bottom-3 -right-3 bg-emerald-500 text-white rounded-2xl px-5 py-3 flex flex-col items-center shadow-[0_12px_32px_rgba(16,185,129,0.4)] border-[3px] border-white z-10">
-            <span className="text-2xl font-extrabold leading-none tracking-tight">
-              12+
-            </span>
-            <span className="text-[10px] font-semibold capitalize tracking-widest opacity-90 mt-0.5 whitespace-nowrap">
-              Years of Excellence
-            </span>
-          </div>
-        </div>
-
-        {/* ── RIGHT: Text content ── */}
-        <div className="flex-1 lg:text-left text-center">
-          {/* Eyebrow label */}
-          <div className="flex items-center gap-3 mb-4 lg:justify-start justify-center">
-            <div className="w-7 h-0.5 bg-emerald-500 rounded-full" />
-            <p className="text-xs font-bold capitalize tracking-[0.1em] text-emerald-500">
-              Who We Are
-            </p>
-          </div>
-
-          {/* Headline */}
-          <h2 className="text-slate-900 mb-5 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
-            We craft{" "}
-            <span className="bg-gradient-to-r from-emerald-500 to-lime-500 bg-clip-text text-transparent">
-              awesome websites
-            </span>{" "}
-            and dynamic digital solutions to grow your business.
-          </h2>
-
-          {/* Body copy */}
-          <p className="text-base leading-relaxed text-slate-500 font-[450] max-w-[480px] mx-auto lg:mx-0 mb-9">
-            Based in our studio, we work with companies like yours around the
-            globe — ensuring the highest quality delivery of creativity that
-            converts. From strategy to execution, we&apos;re your end-to-end
-            digital partner.
-          </p>
-
-          {/* Stats strip */}
-          <div className="flex items-center bg-slate-50 border border-slate-200 rounded-2xl px-7 py-6 mb-10">
-            <div className="flex flex-col items-center flex-1 gap-1">
-              <span className="text-2xl font-extrabold text-slate-900 tracking-tight">
-                150+
-              </span>
-              <span className="text-[10px] font-semibold capitalize tracking-widest text-slate-400 text-center">
-                Projects Delivered
+      {/* Main Container */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 xl:gap-12 items-center">
+          {/* Left Column: Content + Stats (Columns 1-7) */}
+          <div className="lg:col-span-7 flex flex-col justify-center items-center sm:items-start text-center sm:text-left">
+            {/* Eyebrow Label with Solid Green Dot */}
+            <div className="flex items-center justify-center sm:justify-start gap-2.5 mb-4">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#00A86B]" />
+              <span className="text-[#00A86B] text-xs sm:text-sm font-extrabold tracking-[0.2em] uppercase">
+                ABOUT US
               </span>
             </div>
-            <div className="w-px h-9 bg-slate-200" />
-            <div className="flex flex-col items-center flex-1 gap-1">
-              <span className="text-2xl font-extrabold text-slate-900 tracking-tight">
-                100+
-              </span>
-              <span className="text-[10px] font-semibold capitalize tracking-widest text-slate-400 text-center">
-                Happy Clients
-              </span>
-            </div>
-            <div className="w-px h-9 bg-slate-200" />
-            <div className="flex flex-col items-center flex-1 gap-1">
-              <span className="text-2xl font-extrabold text-slate-900 tracking-tight">
-                100%
-              </span>
-              <span className="text-[10px] font-semibold capitalize tracking-widest text-slate-400 text-center">
-                Satisfaction Rate
-              </span>
-            </div>
-          </div>
 
-          {/* CTA row */}
-          <div className="flex items-center gap-7 flex-wrap lg:justify-start justify-center">
-            {/* Yellow CTA button — matches reference design */}
-            <Link href="/about" className="press-illusion-btn-orange text-white w-fit font-bold px-8 py-4 text-base items-center space-x-2 flex">
-              <span>About Us</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 17 9"
-                className="h-2 w-4"
-              >
-                <path
-                  fill="currentColor"
-                  fillRule="evenodd"
-                  d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-            </Link>
-
-            {/* Phone link */}
-            <a
-              href="tel:+911234567890"
-              className="group flex items-center gap-3 text-slate-800 hover:opacity-70 transition-opacity duration-200 no-underline"
+            {/* Main Headline */}
+            <h2
+              id="about-us-heading"
+              className="text-3xl sm:text-4xl lg:text-[46px] font-black text-[#102A43] tracking-tight leading-[1.28] sm:leading-[1.32] lg:leading-[1.36] mb-5 sm:mb-6 text-center sm:text-left"
             >
-              <span className="w-9 h-9 rounded-full border border-slate-200 bg-slate-50 group-hover:bg-emerald-500 group-hover:border-emerald-500 group-hover:text-white text-slate-500 flex items-center justify-center transition-all duration-200">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="w-4 h-4"
+              Building Technology
+              <br />
+              <span className="text-[#00A86B]">for a Brighter Tomorrow</span>
+            </h2>
+
+            {/* Body Copy */}
+            <div className="space-y-4 text-slate-700 text-sm sm:text-[15.5px] leading-relaxed mb-8 sm:mb-10 max-w-2xl font-normal text-center sm:text-left mx-auto sm:mx-0">
+              <p>
+                ISARVA Infotech is a technology company focused on building
+                scalable software solutions and digital platforms that help
+                businesses innovate, streamline operations and achieve
+                sustainable growth.
+              </p>
+              <p>
+                With a team of experienced professionals, we combine deep
+                technical expertise with a client-first approach to deliver
+                reliable, future-ready solutions across industries.
+              </p>
+            </div>
+
+            {/* 4 Stat Cards in a Single Row / Responsive Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-4 w-full">
+              {ABOUT_STATS.map((stat) => (
+                <div
+                  key={stat.id}
+                  className="group bg-white rounded-2xl border border-[#E4EDE7] p-4 sm:p-5 flex flex-col items-center sm:items-start text-center sm:text-left justify-between shadow-[0_4px_16px_rgba(16,42,67,0.03)] hover:shadow-[0_12px_28px_rgba(16,42,67,0.07)] hover:border-emerald-300 hover:-translate-y-1 transition-all duration-300 ease-out"
                 >
-                  <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.26.2 2.47.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z" />
-                </svg>
-              </span>
-              <span className="flex flex-col gap-0.5">
-                <span className="text-[10px] font-semibold capitalize tracking-widest text-slate-400">
-                  Call our team today
-                </span>
-                <span className="text-sm font-bold text-slate-900">
-                  +91 12345 67890
-                </span>
-              </span>
-            </a>
+                  {/* Icon Badge */}
+                  <div className="w-12 h-12 rounded-full bg-[#EAF8F0] border border-[#d2f3e3] flex items-center justify-center text-[#00A86B] mb-3.5 group-hover:scale-105 group-hover:bg-[#dff5ea] transition-all duration-300">
+                    <stat.Icon className="w-5 h-5 stroke-[2.2]" />
+                  </div>
+
+                  {/* Value and Label */}
+                  <div className="w-full flex flex-col items-center sm:items-start text-center sm:text-left">
+                    <div className="text-xl sm:text-2xl font-black text-[#102A43] tracking-tight mb-1 group-hover:text-[#00A86B] transition-colors text-center sm:text-left">
+                      {stat.number}
+                    </div>
+                    <div className="text-xs sm:text-[13px] text-slate-600 font-medium leading-tight text-center sm:text-left">
+                      {stat.label}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column: Office Desk with Laptop & Framing (Columns 8-12) */}
+          <div className="lg:col-span-5 relative flex items-center justify-center lg:justify-end mt-6 lg:mt-0">
+            <div className="relative w-full max-w-[560px] h-[360px] sm:h-[420px] lg:h-[480px] flex items-center justify-center">
+              {/* Soft ambient green backlight behind the image */}
+              <div className="absolute -top-6 -right-6 w-[360px] h-[360px] bg-emerald-200/35 rounded-full blur-[90px] pointer-events-none select-none z-0" />
+
+              {/* Vector Curved Arc and Glowing Orb matching reference design */}
+              <svg
+                viewBox="0 0 560 480"
+                className="absolute inset-0 w-full h-full pointer-events-none select-none z-20 overflow-visible hidden sm:block"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                {/* Secondary faint outer sweep */}
+                <path
+                  d="M 40 20 C -10 140, -10 320, 60 460"
+                  stroke="rgba(0, 168, 107, 0.2)"
+                  strokeWidth="1.2"
+                />
+                {/* Primary green arc */}
+                <path
+                  d="M 90 30 C 35 150, 45 310, 115 450"
+                  stroke="#00A86B"
+                  strokeWidth="1.8"
+                  strokeDasharray="5 5"
+                  className="opacity-80"
+                />
+                {/* Glowing Green Orb along the upper arc matching reference */}
+                <circle
+                  cx="54"
+                  cy="110"
+                  r="18"
+                  fill="#00A86B"
+                  fillOpacity="0.22"
+                  className="animate-pulse"
+                />
+                <circle cx="54" cy="110" r="7.5" fill="#00A86B" />
+                <circle cx="54" cy="110" r="2.5" fill="#ffffff" />
+              </svg>
+
+              {/* Framed Image with consistent rounding */}
+              <div className="relative w-full h-full rounded-2xl lg:rounded-l-[180px] lg:rounded-r-2xl overflow-hidden shadow-[0_16px_40px_rgba(16,42,67,0.06)] border border-[#E4EDE7] z-10 group bg-white">
+                <img
+                  src="/images/about-office-laptop-hd.jpg"
+                  alt="ISARVA Infotech - Building Technology for a Brighter Tomorrow"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+                {/* Subtle soft gradient sheen on image */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-emerald-950/10 via-transparent to-transparent pointer-events-none" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
 }
+
+export default memo(AboutSection);

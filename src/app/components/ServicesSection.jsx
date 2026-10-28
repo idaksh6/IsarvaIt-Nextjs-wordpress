@@ -1,234 +1,228 @@
 "use client";
 
-import Link from "./AppLink";
-import Image from "next/image";
 import { memo } from "react";
+import Image from "next/image";
+import Link from "./AppLink";
+import {
+  Globe,
+  Smartphone,
+  Cloud,
+  Palette,
+  ShoppingCart,
+  Wrench,
+  CheckCircle2,
+  ArrowRight,
+} from "lucide-react";
 
-// Server-side safe HTML entity decoder
-function decodeHTMLEntities(text) {
-  if (!text) return "";
-  return text
-    .replace(/&#038;/g, "&")
-    .replace(/&amp;/g, "&")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
-    .replace(/&#039;/g, "'");
-}
+// Curated 6 services matching the enterprise reference design
+const SERVICES = [
+  {
+    id: 1,
+    title: "Web Development",
+    slug: "web-development",
+    link: "/service/website-services",
+    description:
+      "Custom web applications built with modern technologies for optimal performance and scalability.",
+    features: [
+      "PHP & Laravel Development",
+      "React & Next.js",
+      "WordPress Development",
+    ],
+    image: "/images/service-web-development.jpg",
+    Icon: Globe,
+    badgeBg: "bg-blue-50",
+    badgeBorder: "border-blue-100",
+    iconColor: "text-blue-600",
+  },
+  {
+    id: 2,
+    title: "Mobile Apps",
+    slug: "mobile-apps",
+    link: "/service/offshore-development",
+    description:
+      "Native and cross-platform mobile applications designed for seamless user experiences.",
+    features: ["iOS & Android", "React Native", "Progressive Web Apps"],
+    image: "/images/service-mobile-apps.jpg",
+    Icon: Smartphone,
+    badgeBg: "bg-emerald-50",
+    badgeBorder: "border-emerald-100",
+    iconColor: "text-emerald-600",
+  },
+  {
+    id: 3,
+    title: "Cloud Solutions",
+    slug: "cloud-solutions",
+    link: "/service/cloud",
+    description:
+      "Scalable cloud infrastructure and deployment solutions for modern applications.",
+    features: ["AWS & Azure", "DevOps", "Serverless Architecture"],
+    image: "/images/service-cloud-infrastructure.jpg",
+    Icon: Cloud,
+    badgeBg: "bg-sky-50",
+    badgeBorder: "border-sky-100",
+    iconColor: "text-sky-600",
+  },
+  {
+    id: 4,
+    title: "UI/UX Design",
+    slug: "ui-ux-design",
+    link: "/service/website-design",
+    description:
+      "Beautiful, intuitive interfaces that enhance user engagement and satisfaction.",
+    features: ["User Research", "Prototyping", "Design Systems"],
+    image: "/images/service-ui-ux-design.jpg",
+    Icon: Palette,
+    badgeBg: "bg-orange-50",
+    badgeBorder: "border-orange-100",
+    iconColor: "text-orange-600",
+  },
+  {
+    id: 5,
+    title: "E-Commerce",
+    slug: "ecommerce",
+    link: "/product/woocommerce-development",
+    description:
+      "Complete e-commerce solutions with secure payment processing and inventory management.",
+    features: ["Shopping Cart", "Payment Gateway", "Admin Dashboard"],
+    image: "/images/service-ecommerce.jpg",
+    Icon: ShoppingCart,
+    badgeBg: "bg-pink-50",
+    badgeBorder: "border-pink-100",
+    iconColor: "text-pink-600",
+  },
+  {
+    id: 6,
+    title: "Maintenance & Support",
+    slug: "maintenance-support",
+    link: "/service/website-maintenance-amc",
+    description:
+      "Ongoing support and maintenance to keep your applications running smoothly.",
+    features: ["24/7 Monitoring", "Bug Fixes", "Performance Optimization"],
+    image: "/images/service-maintenance-support.jpg",
+    Icon: Wrench,
+    badgeBg: "bg-amber-50",
+    badgeBorder: "border-amber-100",
+    iconColor: "text-amber-600",
+  },
+];
 
 function ServicesSection({ data }) {
-  const services = data?.services || [];
-  const heading = data?.heading || "";
-  const description = data?.description || "";
-  const stripData = data?.stripData || "";
-  const buttonText = data?.buttonText || "";
-  const buttonLink = data?.buttonLink || "";
-
   return (
     <section
-      className="relative py-10 lg:py-16 overflow-hidden bg-gradient-to-b from-[#d4f4dd] via-[#defae4] to-[#f2fff5]"
-      style={{
-        contain: "layout style paint",
-      }}
+      id="services"
+      className="relative py-10 sm:py-20 lg:py-24 bg-[#F5FBF7] bg-[linear-gradient(180deg,#F8FCFA_0%,#F5FBF7_160px,#F5FBF7_100%)] overflow-hidden"
+      aria-labelledby="services-heading"
     >
-      {/* Premium Background Layers - Optimized */}
-      <div
-        className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none"
-        style={{ transform: "translateZ(0)" }}
-      >
-        {/* 1. Large Subtle Technical Mesh */}
-        <div className="absolute inset-0 bg-mesh-green opacity-40"></div>
+      {/* 2. Container */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          {/* Eyebrow Pill */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/90 border border-emerald-200 text-[#00A86B] text-xs font-bold tracking-[0.15em] uppercase mb-4 shadow-xs">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00A86B]" />
+            <span>WHAT WE OFFER</span>
+          </div>
 
-        {/* 2. Brand Auras (Glows) - Reduced blur for performance */}
-        <div className="services-glow-left"></div>
-        <div className="services-glow-right"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/30 blur-[80px] rounded-full"></div>
+          {/* Main Heading */}
+          <h2
+            id="services-heading"
+            className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#102A43] tracking-tight leading-[1.2] mb-3.5"
+          >
+            Digital Solutions{" "}
+            <span className="text-[#00A86B]">Built for Your Growth</span>
+          </h2>
 
-        {/* 3. The "Shaky" High-Fidelity Noise Texture */}
-        <div className="hero-noise-overlay opacity-[0.15]"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Section Heading */}
-        <div className="services-heading text-center mb-16 lg:mb-20">
-
-          {heading && (
-            <h2 className="text-gray-900 mb-4 text-3xl lg:text-5xl font-black leading-[1.25] lg:leading-[1.25] tracking-tighter capitalize">
-              {decodeHTMLEntities(heading)}
-            </h2>
-          )}
-          {description && (
-            <div
-              className="text-lg lg:text-xl text-gray-700 max-w-3xl mb-6 mx-auto prose prose-slate"
-              dangerouslySetInnerHTML={{ __html: description }}
-            />
-          )}
-          {stripData && (
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/40 backdrop-blur-md text-emerald-800 font-semibold text-sm  border border-white/60 shadow-lg">
-              <span className="w-2 h-2 bg-emerald-600 rounded-full animate-pulse"></span>
-              {decodeHTMLEntities(stripData)}
-            </div>
-          )}
+          {/* Subtitle */}
+          <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal max-w-2xl mx-auto">
+            From idea to implementation, we provide end-to-end digital solutions
+            to help your business build, scale, and succeed in the modern world.
+          </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
-          {services.map((service, index) => (
-            <div
-              key={service.id || index}
-              className="service-card group relative rounded-3xl p-8 transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-2xl bg-white/90 border border-white/60 shadow-lg md:bg-white/40 md:backdrop-blur-md md:shadow-[0_8px_32px_0_rgba(0,255,136,0.15)]"
-              style={{
-                backfaceVisibility: "hidden",
-                WebkitBackfaceVisibility: "hidden",
-              }}
+        {/* 3. Services Grid (3 columns on desktop, 2 on tablet, 1 on mobile) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          {SERVICES.map((service) => (
+            <Link
+              key={service.slug}
+              href={service.link}
+              className="group relative bg-white rounded-2xl border border-[#E4EDE7] shadow-sm hover:shadow-[0_16px_36px_rgba(16,42,67,0.08)] hover:border-emerald-300 transition-all duration-300 hover:-translate-y-1.5 p-5 sm:p-6 flex flex-row items-stretch justify-between gap-4 overflow-hidden focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
             >
-              {/* Glass Effect Inner Glow - Desktop only */}
-              <div className="absolute inset-0 rounded-3xl bg-white group-hover:opacity-70 transition-opacity duration-300 hidden md:block"></div>
-
-              {/* Content */}
-              <div className="relative flex flex-col md:items-start items-center md:text-left text-center">
-                {/* Icon/Image and Title side by side */}
-                <div className="flex lg:flex-row flex-col items-center lg:justify-start justify-center gap-4 mb-6">
-                  {/* Icon/Image - Display featured image or fallback to icon */}
-                  <div className="service-icon w-16 h-16 flex-shrink-0 rounded-2xl border border-emerald-300 md:from-emerald-400/60 md:to-green-500/60 md:backdrop-blur-sm md:border-white/50 flex items-center justify-center group-hover:from-emerald-500/70 group-hover:to-green-600/70 transition-all duration-300 shadow-lg overflow-hidden">
-                    {service.featuredImage ? (
-                      <img
-                        src={service.featuredImage}
-                        alt={`${service.title} icon`}
-                        className="w-full h-full object-contain rounded-xl"
-                        loading="lazy"
-                        onError={(e) => {
-                          // Fallback to emoji if image fails to load
-                          e.target.style.display = "none";
-                          e.target.nextSibling.style.display = "flex";
-                        }}
-                      />
-                    ) : null}
-                    <span
-                      className={`text-4xl ${service.featuredImage ? "hidden" : "block"}`}
-                      style={{ display: service.featuredImage ? "none" : "flex" }}
+              {/* Left Column: Content */}
+              <div className="flex-1 flex flex-col justify-between min-w-0 pr-1">
+                <div>
+                  {/* Icon + Title Header */}
+                  <div className="flex items-center gap-3.5 mb-2.5">
+                    <div
+                      className={`w-11 h-11 rounded-full ${service.badgeBg} border ${service.badgeBorder} flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105`}
                     >
-                      {service.icon || "🔧"}
-                    </span>
+                      <service.Icon className={`w-5 h-5 ${service.iconColor}`} />
+                    </div>
+                    <h3 className="text-[#102A43] font-bold text-base sm:text-[17px] leading-snug group-hover:text-[#00A86B] transition-colors">
+                      {service.title}
+                    </h3>
                   </div>
 
-                  {/* Title */}
-                  <h3 className="group-hover:text-emerald-700 transition-colors duration-300">
-                    {decodeHTMLEntities(service.title)}
-                  </h3>
+                  {/* Description */}
+                  <p className="text-slate-600 text-xs sm:text-[13px] leading-relaxed mb-3.5 line-clamp-2 font-normal">
+                    {service.description}
+                  </p>
+
+                  {/* Feature Bullets with Green Checkmarks */}
+                  <ul className="space-y-1.5 mb-4">
+                    {service.features.map((feature, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-center gap-2 text-slate-700 text-xs sm:text-[12.5px] font-medium"
+                      >
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 fill-emerald-50" />
+                        <span className="truncate">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
-                {/* Description */}
-                <div
-                  className="text-gray-700 leading-relaxed prose prose-slate max-w-none mb-4"
-                  dangerouslySetInnerHTML={{ __html: service.description }}
+                {/* Bottom Action Link */}
+                <div className="pt-1 mt-auto">
+                  <span className="text-[#00A86B] font-bold text-xs sm:text-[13px] inline-flex items-center gap-1 group-hover:gap-1.5 transition-all">
+                    <span>Learn More</span>
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
+                  </span>
+                </div>
+              </div>
+
+              {/* Right Column: Rounded Vertical Image Container */}
+              <div className="relative w-[115px] sm:w-[130px] md:w-[125px] lg:w-[135px] xl:w-[145px] self-stretch rounded-2xl overflow-hidden shrink-0 bg-slate-100 shadow-inner">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  sizes="(max-width: 640px) 120px, 150px"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                  loading="lazy"
                 />
 
-                {/* Technology Used - Handle both HTML and array formats */}
-                {service.technology_used && (
-                  <div className="space-y-2.5">
-                    {typeof service.technology_used === "string" ? (
-                      <div
-                        className="prose prose-slate max-w-none [&>ul]:list-none [&>ul]:space-y-2.5 [&>ul>li]:flex [&>ul>li]:items-center [&>ul>li]:gap-2 [&>ul>li]:text-sm [&>ul>li]:text-gray-600"
-                        dangerouslySetInnerHTML={{
-                          __html: service.technology_used.replace(
-                            /<li>/g,
-                            '<li><svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>',
-                          ),
-                        }}
-                      />
-                    ) : Array.isArray(service.technology_used) ? (
-                      <ul className="space-y-2.5">
-                        {service.technology_used.map((tech, idx) => (
-                          <li
-                            key={idx}
-                            className="flex items-center gap-2 text-sm text-gray-600"
-                          >
-                            <svg
-                              className="w-4 h-4 text-emerald-600 flex-shrink-0"
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                            {tech}
-                          </li>
-                        ))}
-                      </ul>
-                    ) : null}
-                  </div>
-                )}
-
-                {/* Fallback to features for default services */}
-                {!service.technology_used &&
-                  service.features &&
-                  service.features.length > 0 && (
-                    <ul className="space-y-2.5">
-                      {service.features.map((feature, idx) => (
-                        <li
-                          key={idx}
-                          className="flex items-center gap-2 text-sm text-gray-600"
-                        >
-                          <svg
-                            className="w-4 h-4 text-emerald-600 flex-shrink-0"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                {/* Floating White Circular Arrow Button at bottom-right */}
+                <div className="absolute bottom-2.5 right-2.5 z-10 w-8 h-8 rounded-full bg-white shadow-md border border-slate-200/90 flex items-center justify-center text-slate-700 group-hover:border-emerald-500 group-hover:bg-[#00A86B] group-hover:text-white transition-all duration-300">
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
-        {/* CTA Section */}
-        {buttonText && buttonLink && (
-          <div className="text-center mt-16 lg:mt-20">
-            <p className="text-gray-700 mb-6 text-lg font-medium">
-              Can't find what you're looking for?
-            </p>
-
-            <Link
-              href={buttonLink}
-              target={data?.buttonTarget || ""}
-              className="press-illusion-btn-orange bg-orange-400 text-white font-bold px-6 py-2 text-base w-fit mx-auto items-center space-x-2  inline-flex"
-            >
-              <span>{decodeHTMLEntities(buttonText)}</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 17 9"
-                className="h-2 w-4"
-              >
-                <path
-                  fill="currentColor"
-                  fillRule="evenodd"
-                  d="m12.495 0 4.495 4.495-4.495 4.495-.99-.99 2.805-2.805H0v-1.4h14.31L11.505.99z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-            </Link>
-          </div>
-        )}
+        {/* 4. Bottom Action CTA */}
+        <div className="mt-12 sm:mt-14 text-center">
+          <Link
+            href="/services"
+            className="group inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-[#f97316] hover:bg-[#ea580c] text-white font-semibold text-sm sm:text-base transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-orange-500/25 hover:-translate-y-0.5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+          >
+            <span>Explore More Services</span>
+            <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+          </Link>
+        </div>
       </div>
     </section>
   );
 }
 
-// Memoize component to prevent unnecessary re-renders
-export default memo(ServicesSection, (prevProps, nextProps) => {
-  return JSON.stringify(prevProps.data) === JSON.stringify(nextProps.data);
-});
+export default memo(ServicesSection);

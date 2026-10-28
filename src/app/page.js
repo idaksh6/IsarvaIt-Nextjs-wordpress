@@ -1,8 +1,9 @@
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
 import ClientsSection from "./components/ClientsSection";
+// import WhyChooseUsSection from "./components/WhyChooseUsSection";
 import ServicesSection from "./components/ServicesSection";
-import ProductDesktop from "./components/ProductDesktop";
+import ProductsSection from "./components/ProductsSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 import ContactSection from "./components/ContactSection";
 import BlogSection from "./components/BlogSection";
@@ -156,16 +157,17 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <main>
+      <div className="relative">
         <HeroSection data={heroData} />
-        {/* <AboutSection /> */}
+        <ProductsSection />
+        <AboutSection />
         <ClientsSection data={techStackData} />
+        {/* <WhyChooseUsSection /> */}
         <ServicesSection data={servicesData} />
-        <ProductDesktop />
         <TestimonialsSection />
         <BlogSection posts={blogPosts} />
         <CtaSection />
-      </main>
+      </div>
     </div>
   );
 }
