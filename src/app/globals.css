@@ -400,7 +400,8 @@ body {
   }
 
   h1 {
-    @apply text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold tracking-tight leading-none text-gray-900;
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    @apply font-extrabold tracking-tight leading-none text-gray-900;
   }
 
   h2 {
@@ -2131,4 +2132,317 @@ img {
 /* Ensure the reCAPTCHA badge is always on top of scrolling content */
 .grecaptcha-badge {
   z-index: 99999 !important;
+}
+
+
+/* ============================================================
+   ISARVA TESTIMONIALS CONTINUOUS MARQUEE SECTION (FROM ALPU)
+   ============================================================ */
+.isarva-testimonials-section {
+  width: 100%;
+  padding: 40px 0 50px;
+  background: #ffffff !important;
+  overflow: hidden;
+  position: relative;
+}
+
+.isarva-testimonials-marquee-wrap {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding: 0.75rem 0 1.75rem;
+  background: transparent !important;
+}
+
+.isarva-marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background: transparent !important;
+}
+
+.isarva-marquee-track .marquee-group {
+  display: flex;
+  gap: 2rem;
+  padding-right: 2rem;
+  flex-shrink: 0;
+  animation: isarvaInfiniteMarquee 75s linear infinite;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.isarva-testimonials-marquee-wrap:hover .marquee-group,
+.isarva-marquee-track.is-paused .marquee-group {
+  animation-play-state: paused !important;
+}
+
+@keyframes isarvaInfiniteMarquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.isarva-customer-card {
+  flex: 0 0 320px !important;
+  width: 320px !important;
+  height: 500px !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  position: relative !important;
+  background: #111827 !important;
+  box-shadow: none !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  user-select: none;
+}
+
+.isarva-customer-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: none !important;
+}
+
+.customer-card-bg {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.isarva-customer-card:hover .customer-card-bg {
+  transform: scale(1.06);
+}
+
+.customer-card-gradient {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.35) 45%, rgba(0, 0, 0, 0.65) 100%) !important;
+  opacity: 0.6 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+.customer-header {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 2 !important;
+  text-align: center !important;
+  padding: 1.75rem 1.25rem 0 !important;
+}
+
+.customer-name {
+  font-family: inherit !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  letter-spacing: -0.01em !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7) !important;
+}
+
+.customer-company {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin-top: 0.35rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7) !important;
+}
+
+.customer-video-play-btn {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 58px !important;
+  height: 58px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  z-index: 5 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.65)) !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease !important;
+}
+
+.customer-video-play-btn svg {
+  width: 58px !important;
+  height: 58px !important;
+  display: block !important;
+  margin: 0 auto !important;
+  transition: transform 0.3s ease !important;
+}
+
+.customer-video-play-btn svg path {
+  fill: #ffffff !important;
+}
+
+.customer-video-play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.1) !important;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.85)) !important;
+}
+
+.card-inline-video-layer {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 10 !important;
+  background: #000000 !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 0.35s ease !important;
+}
+
+.card-inline-video-layer.is-playing {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.card-inline-video-inner {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  border-radius: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #000000 !important;
+}
+
+.card-inline-video-inner iframe {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  width: 888px !important;
+  height: 500px !important;
+  border: none !important;
+  max-width: none !important;
+}
+
+.card-inline-close-btn {
+  position: absolute !important;
+  top: 1rem !important;
+  right: 1rem !important;
+  z-index: 20 !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border-radius: 50% !important;
+  width: 36px !important;
+  height: 36px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  backdrop-filter: blur(8px) !important;
+  transition: all 0.2s ease !important;
+}
+
+.card-inline-close-btn:hover {
+  background: #ffce00 !important;
+  color: #111827 !important;
+  border-color: #ffce00 !important;
+  transform: scale(1.1) !important;
+}
+
+.customer-quote-box {
+  position: absolute !important;
+  bottom: calc(1.75rem + 34px + 30px) !important;
+  left: 1.5rem !important;
+  right: 1.5rem !important;
+  z-index: 3 !important;
+  text-align: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.customer-quote-text {
+  font-size: 0.88rem !important;
+  line-height: 1.55 !important;
+  color: #f8fafc !important;
+  margin: 0 !important;
+  font-weight: 500 !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85) !important;
+}
+
+.customer-logo-badge {
+  position: absolute !important;
+  bottom: 1.75rem !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 4 !important;
+  margin: 0 auto !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.customer-logo-badge img {
+  max-height: 45px !important;
+  max-width: 180px !important;
+  width: auto !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.75)) !important;
+}
+
+@media (max-width: 768px) {
+  .isarva-testimonials-section {
+    padding: 24px 0 32px !important;
+  }
+
+  .isarva-customer-card {
+    flex: 0 0 280px !important;
+    width: 280px !important;
+    height: 440px !important;
+  }
+
+  .isarva-marquee-track .marquee-group {
+    gap: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .isarva-customer-card {
+    flex: 0 0 250px !important;
+    width: 250px !important;
+    height: 400px !important;
+  }
 }

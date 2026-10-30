@@ -1,197 +1,200 @@
 "use client";
-// Fixed: Removed momentumRef references
 
-import { useRef, memo, useState, useLayoutEffect } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Link from "./AppLink";
-import { motion, useMotionValue } from "framer-motion";
+import { memo, useState, useEffect } from "react";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
-const defaultTestimonials = [
+const REAL_ALPU_TESTIMONIALS = [
   {
-    id: 11,
-    name: "Mr. Jayakar Shettigar",
-    role: "Founder & CEO",
-    company: "Gurucharan Industries",
-    initials: "JS",
-    gradient: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
-    rating: 5,
-    text: "The transformation of our digital presence is remarkable. Our new website now matches the precision of the machinery we build. We’ve seen a direct increase in high-quality international inquiries and a much more professional response from global clients.",
-  },
-  {
-    id: 9,
-    name: "Prajwal Shetty",
-    role: "Secretory",
-    company: "Vidvath Education Foundation",
-    initials: "PS",
-    gradient: "linear-gradient(135deg, #065f46 0%, #10b981 100%)",
-    rating: 5,
-    text: "The redesign has completely transformed our digital presence. We’ve seen a significant increase in online admissions and talent test registrations.",
-  },
-  {
-    id: 1,
+    id: 170,
     name: "Jagdish Bhat",
-    role: "CEO",
     company: "FTR",
-    initials: "JB",
-    gradient: "linear-gradient(135deg, #1e293b 0%, #334155 100%)",
-    rating: 5,
-    text: "Outstanding experience from start to finish. Exceptional professionalism, attention to detail, and delivered a clean, intuitive design that exceeded our expectations.",
+    quote:
+      "Working with Alpu Infotech was an excellent experience. The team was professional, attentive, and delivered a clean, intuitive design that exceeded our expectations. Their clear communication and dedication made the entire project smooth and efficient. We’re very happy with the final result.",
+    video: "",
+    videoType: "none",
+    photo: "/isarva-testimonials/customer-jagdish-bhat.webp",
+    logoImg: "/isarva-testimonials/Logo-1.png",
   },
   {
-    id: 2,
-    name: "David Richards",
-    role: "Director",
-    company: "Glue Creative Prod. Solutions, UK",
-    initials: "DR",
-    gradient: "linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)",
-    rating: 5,
-    text: "Working with Isarva for over a decade. A valued and trusted partner who consistently goes above and beyond to deliver exceptional results.",
-  },
-  {
-    id: 3,
-    name: "Mohithpal Kunder",
-    role: "Global Head Bus. Dev",
-    company: "Atlaspoint Tech Pvt Ltd",
-    initials: "MK",
-    gradient: "linear-gradient(135deg, #0c4a6e 0%, #0ea5e9 100%)",
-    rating: 5,
-    text: "Fantastic job bringing our vision to life. They combined creativity with functionality, delivering results that exceeded expectations.",
-  },
-  {
-    id: 4,
+    id: 173,
     name: "Jitin",
-    role: "Owner",
-    company: "Highlands Estates",
-    initials: "JT",
-    gradient: "linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%)",
-    rating: 5,
-    text: "Exceptional experience from start to finish. Incredibly professional and creative team. The website is visually appealing, user-friendly, and fast.",
+    company: "HIGHLANDS ESTATES",
+    quote:
+      "The experience was exceptional from start to finish. The website is visually appealing, user-friendly, and fast, greatly enhancing our digital presence and earning wonderful feedback from guests. Special thanks to Mr. Deep Kiran for his guidance and commitment.",
+    video: "",
+    videoType: "none",
+    photo: "/isarva-testimonials/customer-jitin.webp",
+    logoImg: "/isarva-testimonials/Highland-Estate-Logo.png",
   },
   {
-    id: 5,
-    name: "Chandrabhushan Pandey",
-    role: "Director",
-    company: "Tentoro Technologies",
-    initials: "CP",
-    gradient: "linear-gradient(135deg, #065f46 0%, #10b981 100%)",
-    rating: 5,
-    text: "Excellent work on our pitch deck. Quick understanding of requirements and delivered a professional, visually impressive presentation.",
+    id: 146,
+    name: "Prajwal Shetty",
+    company: "VIDVATH EDUCATION FOUNDATION",
+    quote:
+      "The website redesign has transformed our digital presence, increasing online admissions and talent test registrations. It’s now faster, mobile-friendly, and truly reflects Vidvath PU College’s standards. ISarva Infotech delivered exactly what we needed.",
+    video: "",
+    videoType: "none",
+    photo: "/isarva-testimonials/customer-prajwal-shetty.webp",
+    logoImg: "/isarva-testimonials/vidvath-ogo.png",
   },
   {
-    id: 6,
-    name: "George Thomas",
-    role: "Owner",
-    company: "Beth Lifestyle Private Limited",
-    initials: "GT",
-    gradient: "linear-gradient(135deg, #164e63 0%, #06b6d4 100%)",
-    rating: 5,
-    text: "Seamless and insightful experience. They translated our premium brand identity into a sleek, high-performing website with excellent attention to detail.",
+    id: 154,
+    name: "Gunashree",
+    company: "IRIS EVENT DECOR",
+    quote: "",
+    video: "https://youtu.be/HBQ3JHfqUhI?si=HeukSmXpge9BYkfz",
+    videoType: "youtube",
+    photo: "/isarva-testimonials/customer-gunashree.webp",
+    logoImg: "/isarva-testimonials/Iris-logo.png",
   },
   {
-    id: 7,
-    name: "Dev Prakash",
-    role: "Owner",
-    company: "Meraki Beach Resort",
-    initials: "DP",
-    gradient: "linear-gradient(135deg, #9a3412 0%, #f97316 100%)",
-    rating: 5,
-    text: "Absolute pleasure working with the team. They understood our vision and created a beautiful, functional website that perfectly captures our brand.",
+    id: 162,
+    name: "Mr. Jayakar Shettigar",
+    company: "GURUCHARAN INDUSTRIES",
+    quote:
+      "Our new website has transformed our digital presence, helping us attract more high-quality international inquiries and present a more professional image to global clients. Alpu Infotech has provided a powerful platform for our global growth.",
+    video: "",
+    videoType: "none",
+    photo: "/isarva-testimonials/customer-jayakar-shettigar.webp",
+    logoImg: "/isarva-testimonials/gurucharan-logo.png",
   },
   {
-    id: 8,
-    name: "Charulata",
-    role: "Owner",
-    company: "Charus Cuisines",
-    initials: "CH",
-    gradient: "linear-gradient(135deg, #581c87 0%, #a855f7 100%)",
-    rating: 5,
-    text: "Captured the essence of our brand perfectly. Clean, inviting website that beautifully showcases our offerings and makes ordering effortless.",
+    id: 169,
+    name: "David Richards",
+    company: "GLUE CREATIVE SOLUTIONS",
+    quote:
+      "We’ve worked with Alpu for over a decade and consider them a trusted partner. Their team consistently delivers high-quality work, provides excellent support, and often goes above and beyond to meet our needs.",
+    video: "",
+    videoType: "none",
+    photo: "/isarva-testimonials/customer-david-richards.webp",
+    logoImg: "/isarva-testimonials/glue-logo.png",
   },
 ];
 
-function TestimonialsSection({ data }) {
-  const sectionRef = useRef(null);
-  const testimonials = data?.testimonials || defaultTestimonials;
-  const loopedTestimonials = [
-    ...testimonials,
-    ...testimonials,
-    ...testimonials,
-  ];
-  const sectionTitle = data?.title || "What Our Clients Say";
-  const sectionSub =
-    data?.subtitle || "Trusted by industry leaders across the globe";
+function getYouTubeEmbedUrl(url) {
+  let videoId = "";
+  if (!url) return "";
+  if (url.includes("watch?v=")) {
+    videoId = url.split("watch?v=")[1]?.split("&")[0];
+  } else if (url.includes("youtu.be/")) {
+    videoId = url.split("youtu.be/")[1]?.split("?")[0];
+  } else if (url.includes("embed/")) {
+    videoId = url.split("embed/")[1]?.split("?")[0];
+  }
+  return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0&rel=0&controls=1`;
+}
 
-  // ── GSAP scroll-driven ───────────────────────────────────────────────────────
-  useGSAP(
-    () => {
-      // Header entrance
-      gsap.from(".ts-label, .ts-title, .ts-sub", {
-        scrollTrigger: { trigger: ".ts-header", start: "top 88%" },
-        y: 30,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.12,
-        ease: "power3.out",
-      });
+function TestimonialsSection() {
+  const [activeVideoItem, setActiveVideoItem] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
 
-      // Wrapper fade in
-      gsap.from(".testimonial-marquee-wrapper", {
-        scrollTrigger: { trigger: sectionRef.current, start: "top 85%" },
-        opacity: 0,
-        duration: 1,
-        ease: "power2.out",
-      });
-    },
-    { scope: sectionRef },
-  );
+  // Lock body scroll and handle Escape key when video modal is open
+  useEffect(() => {
+    if (!activeVideoItem) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setActiveVideoItem(null);
+      }
+    };
+
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [activeVideoItem]);
+
+  // Build minimum 8 cards per group for seamless continuous loop (6 * 2 = 12 cards)
+  let groupCards = [...REAL_ALPU_TESTIMONIALS];
+  while (groupCards.length < 8) {
+    groupCards = [...groupCards, ...REAL_ALPU_TESTIMONIALS];
+  }
+
+  const isPaused = isHovered || activeVideoItem !== null;
+
+  const renderCard = (item, cardIdx, groupPrefix) => {
+    const cardKey = `${groupPrefix}-${item.id || cardIdx}-${cardIdx}`;
+    const hasVideo = Boolean(item.video);
+
+    return (
+      <div
+        key={cardKey}
+        className={`isarva-customer-card ${hasVideo ? "cursor-pointer" : ""}`}
+        onClick={hasVideo ? () => setActiveVideoItem(item) : undefined}
+      >
+        {/* Background photo */}
+        <img
+          src={item.photo}
+          className="customer-card-bg"
+          alt={item.name}
+          loading="lazy"
+        />
+
+        {/* Gradient Overlay */}
+        <div className="customer-card-gradient" />
+
+        {/* Client Header Info */}
+        <div className="customer-header">
+          <h3 className="customer-name">{item.name}</h3>
+          {item.company && (
+            <div className="customer-company">{item.company}</div>
+          )}
+        </div>
+
+        {/* Centered Play Button (for cards with video) */}
+        {hasVideo && (
+          <div
+            className="customer-video-play-btn js-play-card-video"
+            onClick={(e) => {
+              e.stopPropagation();
+              setActiveVideoItem(item);
+            }}
+            aria-label={`Play ${item.name} video testimonial`}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="58"
+              height="58"
+              viewBox="0 0 83 83"
+              fill="none"
+            >
+              <path
+                d="M57.4122 42.8193L31.2416 57.8864C30.7455 58.4791 29.8919 58.6273 29.225 58.2343C28.5582 57.8413 28.2715 57.023 28.5485 56.3014V26.1681C28.2715 25.4465 28.5582 24.6283 29.225 24.2352C29.8918 23.8422 30.7456 23.9904 31.2416 24.5832L57.4122 39.6502C58.0308 39.9337 58.427 40.5522 58.427 41.2352C58.427 41.9181 58.0308 42.5358 57.4122 42.8193ZM82.4687 41.2344C82.4687 52.1714 78.123 62.6597 70.3912 70.3912C62.6593 78.1226 52.1705 82.4687 41.2344 82.4687C30.2982 82.4687 19.809 78.123 12.0775 70.3912C4.3461 62.6593 0 52.1705 0 41.2344C0 30.2982 4.34569 19.809 12.0775 12.0775C19.8094 4.3461 30.2982 0 41.2344 0C52.1705 0 62.6597 4.34569 70.3912 12.0775C78.1226 19.8094 82.4687 30.2982 82.4687 41.2344ZM76.1257 41.2344C76.1257 31.9822 72.4501 23.1077 65.907 16.5614C59.3611 10.0186 50.4862 6.34267 41.234 6.34267C31.9819 6.34267 23.1074 10.0183 16.561 16.5614C10.0183 23.1073 6.34234 31.9822 6.34234 41.2344C6.34234 50.4865 10.018 59.361 16.561 65.9073C23.107 72.4501 31.9819 76.126 41.234 76.126C50.4862 76.126 59.3607 72.4504 65.907 65.9073C72.4498 59.3614 76.1257 50.4865 76.1257 41.2344Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+        )}
+
+        {/* Testimonial Quote Text (Positioned exactly 30px ABOVE the company logo) */}
+        {!hasVideo && item.quote && (
+          <div className="customer-quote-box">
+            <p className="customer-quote-text">{item.quote}</p>
+          </div>
+        )}
+
+        {/* Pinned Bottom Client Logo Badge */}
+        <div className="customer-logo-badge">
+          {item.logoImg && (
+            <img
+              src={item.logoImg}
+              alt={item.company || item.name}
+              loading="lazy"
+            />
+          )}
+        </div>
+      </div>
+    );
+  };
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative py-8 sm:py-16 lg:py-20 overflow-hidden"
-      style={{
-        background: "#fff",
-      }}
-    >
-      {/* ── Soft decorative warm blobs ── */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div
-          style={{
-            position: "absolute",
-            top: "-8%",
-            left: "-5%",
-            width: 500,
-            height: 500,
-            borderRadius: "50%",
-            background:
-              "radial-gradient(circle, rgba(245,158,11,0.05) 0%, transparent 70%)",
-            filter: "blur(50px)",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            bottom: "-5%",
-            right: "-5%",
-            width: 450,
-            height: 450,
-            borderRadius: "50%",
-            background:
-              "radial-gradient(circle, rgba(16,185,129,0.05) 0%, transparent 70%)",
-            filter: "blur(50px)",
-          }}
-        />
-      </div>
-
-      {/* ── Section Header ── */}
-      <div className="ts-header relative z-10 text-center mb-16 px-6">
-        <div className="ts-label inline-flex items-center gap-2 mb-4">
+    <section className="isarva-testimonials-section reveal-section bg-white" id="testimonials">
+      {/* ── Section Header (Old Exact Title) ── */}
+      <div className="relative z-10 text-center mb-10 sm:mb-12 px-6">
+        <div className="inline-flex items-center gap-2 mb-3">
           <span
             style={{
               display: "block",
@@ -202,14 +205,14 @@ function TestimonialsSection({ data }) {
           />
           <span
             style={{
-              fontSize: 12,
+              fontSize: "0.75rem",
               fontWeight: 700,
-              letterSpacing: "0.2em",
-              color: "#00A86B",
+              letterSpacing: "0.15em",
               textTransform: "uppercase",
+              color: "#00A86B",
             }}
           >
-            Client Testimonials
+            CLIENT TESTIMONIALS
           </span>
           <span
             style={{
@@ -222,282 +225,120 @@ function TestimonialsSection({ data }) {
         </div>
 
         <h2
-          className="ts-title mb-5 text-3xl lg:text-[44px] font-black leading-[1.2] tracking-tight text-[#102A43]"
+          style={{
+            fontSize: "clamp(2.2rem, 4.5vw, 3.25rem)",
+            fontWeight: 800,
+            color: "#0F2B48",
+            letterSpacing: "-0.03em",
+            marginBottom: "0.75rem",
+            lineHeight: 1.15,
+          }}
         >
-          {sectionTitle}
+          What Our Clients Say
         </h2>
 
-        <p className="ts-sub text-slate-600 text-base md:text-lg max-w-xl mx-auto font-normal leading-relaxed">
-          {sectionSub}
+        <p
+          style={{
+            fontSize: "1.0625rem",
+            color: "#64748b",
+            maxWidth: 480,
+            margin: "0 auto",
+          }}
+        >
+          Trusted by industry leaders across the globe
         </p>
       </div>
 
-      {/* ── Row wrapper with edge fades ── */}
-      <div className="relative z-10">
-        {/* Left fade - clean white to transparent */}
-        <div
-          className="hidden md:block"
-          style={{
-            position: "absolute",
-            left: 0,
-            top: 0,
-            bottom: 0,
-            width: 140,
-            zIndex: 20,
-            pointerEvents: "none",
-            background: "linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.85) 40%, transparent 100%)",
-          }}
-        />
-        {/* Right fade - clean white to transparent */}
-        <div
-          className="hidden md:block"
-          style={{
-            position: "absolute",
-            right: 0,
-            top: 0,
-            bottom: 0,
-            width: 140,
-            zIndex: 20,
-            pointerEvents: "none",
-            background: "linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0.85) 40%, transparent 100%)",
-          }}
-        />
+      {/* Full-Width Truly Continuous Infinite Loop Marquee (Pauses on Hover, Zero Blank Space) */}
+      <div
+        className="isarva-testimonials-marquee-wrap"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <div className={`isarva-marquee-track ${isPaused ? "is-paused" : ""}`}>
+          {/* Group 1 */}
+          <div className="marquee-group">
+            {groupCards.map((item, idx) => renderCard(item, idx, "grp1"))}
+          </div>
 
-        {/* ── Continuous Auto-Sliding Marquee Track (Pauses on Hover) ── */}
-        <div className="testimonial-marquee-wrapper">
-          <div className="testimonial-marquee-track">
-            {loopedTestimonials.map((t, idx) => (
-              <article
-                key={`${t.id}-${idx}`}
-                className="ts-card flex-shrink-0 select-none group"
-                style={{
-                  width: "calc(100vw - 4rem)",
-                  maxWidth: 400,
-                  background: "#ffffff",
-                  borderRadius: 28,
-                  padding: "36px 32px 28px",
-                  boxShadow:
-                    "0 4px 20px rgba(16,42,67,0.04), 0 1px 3px rgba(0,0,0,0.02)",
-                  border: "1px solid #EAEFEA",
-                  transition:
-                    "box-shadow 0.35s ease, transform 0.35s ease, border-color 0.35s ease",
-                  position: "relative",
-                  overflow: "hidden",
-                  display: "flex",
-                  flexDirection: "column",
-                  cursor: "pointer",
-                }}
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget;
-                  el.style.boxShadow =
-                    "0 14px 34px rgba(16,42,67,0.08), 0 2px 6px rgba(0,0,0,0.03)";
-                  el.style.transform = "translateY(-4px)";
-                  el.style.borderColor = "#A7F3D0";
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget;
-                  el.style.boxShadow =
-                    "0 4px 20px rgba(16,42,67,0.04), 0 1px 3px rgba(0,0,0,0.02)";
-                  el.style.transform = "translateY(0)";
-                  el.style.borderColor = "#EAEFEA";
-                }}
-              >
-                {/* Subtle pale-mint corner radial glow matching the reference image */}
-                <div
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    right: 0,
-                    width: 140,
-                    height: 140,
-                    background:
-                      "radial-gradient(circle at top right, rgba(209, 250, 229, 0.45) 0%, transparent 70%)",
-                    borderRadius: "0 28px 0 100%",
-                    pointerEvents: "none",
-                  }}
-                />
-
-                {/* Mint Green Double Quote Icon in top-right matching reference image */}
-                <div
-                  style={{
-                    position: "absolute",
-                    top: 26,
-                    right: 28,
-                    pointerEvents: "none",
-                    userSelect: "none",
-                    color: "#86EFAC",
-                  }}
-                >
-                  <svg
-                    style={{ width: 28, height: 28 }}
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M7.17 6.17A4.2 4.2 0 0 0 3 10.37c0 1.96 1.18 3.48 2.8 3.93-.32 1.62-1.3 3.12-2.8 4.2l1.6 1.5c2.6-1.8 4.4-4.5 4.4-7.8 0-.58-.06-1.14-.17-1.68a4.17 4.17 0 0 0-1.66-4.35zm11 0A4.2 4.2 0 0 0 14 10.37c0 1.96 1.18 3.48 2.8 3.93-.32 1.62-1.3 3.12-2.8 4.2l1.6 1.5c2.6-1.8 4.4-4.5 4.4-7.8 0-.58-.06-1.14-.17-1.68a4.17 4.17 0 0 0-1.66-4.35z" />
-                  </svg>
-                </div>
-
-                {/* 5 Bright Golden/Amber Stars matching reference image */}
-                <div style={{ display: "flex", gap: 5, marginBottom: 20 }}>
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <svg
-                      key={i}
-                      style={{ width: 18, height: 18 }}
-                      viewBox="0 0 20 20"
-                      fill={i < t.rating ? "#F59E0B" : "#E5E7EB"}
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-
-                {/* Testimonial Quote Text matching reference image */}
-                <p
-                  style={{
-                    color: "#1E293B",
-                    fontSize: 15.5,
-                    lineHeight: 1.68,
-                    fontWeight: 500,
-                    marginBottom: 24,
-                    position: "relative",
-                    zIndex: 1,
-                  }}
-                >
-                  &ldquo;{t.text}&rdquo;
-                </p>
-
-                {/* Footer container pushed to bottom */}
-                <div style={{ marginTop: "auto" }}>
-                  {/* Subtle Horizontal Divider Line */}
-                  <div
-                    style={{
-                      height: 1,
-                      marginBottom: 20,
-                      background: "#F1F5F9",
-                    }}
-                  />
-
-                  {/* Author Info Row */}
-                  <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-                    {/* Rounded Squircle Avatar with bold white initials */}
-                    <div
-                      style={{
-                        width: 48,
-                        height: 48,
-                        borderRadius: 16,
-                        flexShrink: 0,
-                        background:
-                          t.gradient ||
-                          "linear-gradient(135deg, #1E293B 0%, #0F172A 100%)",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        fontSize: 15,
-                        fontWeight: 800,
-                        color: "#ffffff",
-                        boxShadow: "0 4px 12px rgba(15,23,42,0.12)",
-                      }}
-                    >
-                      {t.initials}
-                    </div>
-
-                    {/* Name and Designation */}
-                    <div>
-                      <p
-                        style={{
-                          color: "#0F172A",
-                          fontWeight: 700,
-                          fontSize: 15,
-                          lineHeight: 1.25,
-                          marginBottom: 3,
-                        }}
-                      >
-                        {t.name}
-                      </p>
-                      <p
-                        style={{
-                          color: "#94A3B8",
-                          fontSize: 13,
-                          fontWeight: 500,
-                          lineHeight: 1.2,
-                        }}
-                      >
-                        {t.role} &middot; {t.company}
-                      </p>
-                    </div>
-
-                    {/* Verified Checkmark Badge in light indigo circle matching reference */}
-                    <div
-                      style={{
-                        marginLeft: "auto",
-                        width: 24,
-                        height: 24,
-                        borderRadius: "50%",
-                        background: "#EEF2FF",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        flexShrink: 0,
-                      }}
-                    >
-                      <svg
-                        style={{ width: 13, height: 13 }}
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="#4F46E5"
-                        strokeWidth="2.8"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            ))}
+          {/* Group 2 (Clone for 100% seamless infinite loop without blank gaps) */}
+          <div className="marquee-group" aria-hidden="true">
+            {groupCards.map((item, idx) => renderCard(item, idx, "grp2"))}
           </div>
         </div>
       </div>
 
-      <style jsx>{`
-        .testimonial-marquee-wrapper {
-          display: flex;
-          overflow: hidden;
-          user-select: none;
-          padding-top: 10px;
-          padding-bottom: 24px;
-        }
+      {/* ── Video Modal Popup ── */}
+      {activeVideoItem && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-6 md:p-8"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${activeVideoItem.name} video testimonial`}
+        >
+          {/* Backdrop with click-to-close */}
+          <div
+            className="fixed inset-0 bg-black/85 backdrop-blur-md transition-opacity"
+            onClick={() => setActiveVideoItem(null)}
+          />
 
-        .testimonial-marquee-track {
-          display: flex;
-          gap: 1.75rem;
-          width: max-content;
-          will-change: transform;
-          animation: testimonialMarquee 140s linear infinite;
-          padding: 8px 0;
-        }
+          {/* Modal Container */}
+          <div className="relative w-full max-w-4xl bg-[#111827] rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden border border-white/10 z-10 flex flex-col">
+            {/* Header bar inside modal */}
+            <div className="flex items-center justify-between px-4 sm:px-6 py-3.5 bg-black/50 border-b border-white/10">
+              <div className="flex items-center gap-3">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                <div>
+                  <h4 className="text-white font-bold text-sm sm:text-base leading-tight">
+                    {activeVideoItem.name}
+                  </h4>
+                  {activeVideoItem.company && (
+                    <p className="text-[11px] sm:text-xs text-white/70 font-semibold uppercase tracking-wider">
+                      {activeVideoItem.company}
+                    </p>
+                  )}
+                </div>
+              </div>
 
-        .testimonial-marquee-track:hover {
-          animation-play-state: paused;
-        }
+              {/* Close Button */}
+              <button
+                type="button"
+                onClick={() => setActiveVideoItem(null)}
+                className="w-9 h-9 rounded-full bg-white/10 hover:bg-white text-white hover:text-black flex items-center justify-center transition-all duration-200 cursor-pointer"
+                aria-label="Close video"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
 
-        @keyframes testimonialMarquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-33.333333%);
-          }
-        }
-
-        @media (max-width: 768px) {
-          .testimonial-marquee-track {
-            gap: 1.25rem;
-            animation-duration: 110s;
-          }
-        }
-      `}</style>
+            {/* Responsive 16:9 Video Player */}
+            <div className="relative w-full aspect-video bg-black flex items-center justify-center">
+              {activeVideoItem.videoType === "local" ||
+                activeVideoItem.video?.match(/\.(mp4|webm|mov|ogg)(\?.*)?$/i) ? (
+                <video
+                  controls
+                  autoPlay
+                  playsInline
+                  className="w-full h-full object-contain"
+                >
+                  <source src={activeVideoItem.video} type="video/mp4" />
+                  Your browser does not support HTML5 video.
+                </video>
+              ) : (
+                <iframe
+                  src={getYouTubeEmbedUrl(activeVideoItem.video)}
+                  title={activeVideoItem.name}
+                  className="w-full h-full border-none"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

@@ -5,28 +5,28 @@ import Image from "next/image";
 import Link from "./AppLink";
 import {
   Globe,
-  Smartphone,
-  Cloud,
-  Palette,
-  ShoppingCart,
+  Code2,
+  Bot,
   Wrench,
+  Megaphone,
+  Building2,
   CheckCircle2,
   ArrowRight,
 } from "lucide-react";
 
-// Curated 6 services matching the enterprise reference design
+// Curated services: Website Development + requested added services
 const SERVICES = [
   {
     id: 1,
-    title: "Web Development",
-    slug: "web-development",
+    title: "Website Development",
+    slug: "website-development",
     link: "/service/website-services",
     description:
-      "Custom web applications built with modern technologies for optimal performance and scalability.",
+      "Custom web applications built with modern technologies for optimal performance, responsiveness, and scalability.",
     features: [
+      "Next.js & React Frameworks",
       "PHP & Laravel Development",
-      "React & Next.js",
-      "WordPress Development",
+      "Custom Enterprise Architecture",
     ],
     image: "/images/service-web-development.jpg",
     Icon: Globe,
@@ -36,73 +36,93 @@ const SERVICES = [
   },
   {
     id: 2,
-    title: "Mobile Apps",
-    slug: "mobile-apps",
-    link: "/service/offshore-development",
+    title: "WordPress Development",
+    slug: "wordpress-development",
+    link: "/service/wordpress-development",
     description:
-      "Native and cross-platform mobile applications designed for seamless user experiences.",
-    features: ["iOS & Android", "React Native", "Progressive Web Apps"],
-    image: "/images/service-mobile-apps.jpg",
-    Icon: Smartphone,
-    badgeBg: "bg-emerald-50",
-    badgeBorder: "border-emerald-100",
-    iconColor: "text-emerald-600",
+      "Bespoke WordPress theme creation, custom plugins, and enterprise CMS development built for speed and security.",
+    features: [
+      "Custom Themes & Plugins",
+      "WooCommerce Integration",
+      "Speed & Security Hardening",
+    ],
+    image: "/Services/Wordpress-development/Banner-img.jpg",
+    Icon: Code2,
+    badgeBg: "bg-indigo-50",
+    badgeBorder: "border-indigo-100",
+    iconColor: "text-indigo-600",
   },
   {
     id: 3,
-    title: "Cloud Solutions",
-    slug: "cloud-solutions",
-    link: "/service/cloud",
+    title: "AI & ML Consulting",
+    slug: "ai-ml-consulting",
+    link: "/service/ai-ml-consulting",
     description:
-      "Scalable cloud infrastructure and deployment solutions for modern applications.",
-    features: ["AWS & Azure", "DevOps", "Serverless Architecture"],
-    image: "/images/service-cloud-infrastructure.jpg",
-    Icon: Cloud,
-    badgeBg: "bg-sky-50",
-    badgeBorder: "border-sky-100",
-    iconColor: "text-sky-600",
+      "Cutting-edge artificial intelligence and machine learning solutions to empower automation and business intelligence.",
+    features: [
+      "AI Strategy & Use Case Audit",
+      "Custom ML Model Development",
+      "Predictive Analytics & NLP",
+    ],
+    image: "/Services/Ai consulting/Home-img.jpg",
+    Icon: Bot,
+    badgeBg: "bg-purple-50",
+    badgeBorder: "border-purple-100",
+    iconColor: "text-purple-600",
   },
   {
     id: 4,
-    title: "UI/UX Design",
-    slug: "ui-ux-design",
-    link: "/service/website-design",
-    description:
-      "Beautiful, intuitive interfaces that enhance user engagement and satisfaction.",
-    features: ["User Research", "Prototyping", "Design Systems"],
-    image: "/images/service-ui-ux-design.jpg",
-    Icon: Palette,
-    badgeBg: "bg-orange-50",
-    badgeBorder: "border-orange-100",
-    iconColor: "text-orange-600",
-  },
-  {
-    id: 5,
-    title: "E-Commerce",
-    slug: "ecommerce",
-    link: "/product/woocommerce-development",
-    description:
-      "Complete e-commerce solutions with secure payment processing and inventory management.",
-    features: ["Shopping Cart", "Payment Gateway", "Admin Dashboard"],
-    image: "/images/service-ecommerce.jpg",
-    Icon: ShoppingCart,
-    badgeBg: "bg-pink-50",
-    badgeBorder: "border-pink-100",
-    iconColor: "text-pink-600",
-  },
-  {
-    id: 6,
-    title: "Maintenance & Support",
-    slug: "maintenance-support",
+    title: "Website Maintenance (AMC)",
+    slug: "website-maintenance-amc",
     link: "/service/website-maintenance-amc",
     description:
-      "Ongoing support and maintenance to keep your applications running smoothly.",
-    features: ["24/7 Monitoring", "Bug Fixes", "Performance Optimization"],
+      "Ongoing support and comprehensive annual maintenance to keep your applications secure, fast, and always online.",
+    features: [
+      "Security Audits & Patch Updates",
+      "24/7 Uptime & Speed Monitoring",
+      "Priority Bug Fixes & Backups",
+    ],
     image: "/images/service-maintenance-support.jpg",
     Icon: Wrench,
     badgeBg: "bg-amber-50",
     badgeBorder: "border-amber-100",
     iconColor: "text-amber-600",
+  },
+  {
+    id: 5,
+    title: "Digital Marketing",
+    slug: "digital-marketing",
+    link: "/service/digital-marketing",
+    description:
+      "Results-driven digital marketing strategies that boost online visibility, qualified leads, and measurable ROI.",
+    features: [
+      "Search Engine Optimization (SEO)",
+      "Targeted PPC & Google Ads",
+      "Social Media & Content Strategy",
+    ],
+    image: "/Services/Digital-marketing/Banner-img.jpg",
+    Icon: Megaphone,
+    badgeBg: "bg-rose-50",
+    badgeBorder: "border-rose-100",
+    iconColor: "text-rose-600",
+  },
+  {
+    id: 6,
+    title: "ERP Services",
+    slug: "erp-services",
+    link: "/service/erp-services",
+    description:
+      "Transformative enterprise resource planning solutions tailored to streamline operations, finance, and productivity.",
+    features: [
+      "Custom ERP Implementation",
+      "Finance & Accounts Management",
+      "Seamless Workflow Integration",
+    ],
+    image: "/Services/ERP-services/Banner-img.jpg",
+    Icon: Building2,
+    badgeBg: "bg-emerald-50",
+    badgeBorder: "border-emerald-100",
+    iconColor: "text-emerald-600",
   },
 ];
 
@@ -139,7 +159,7 @@ function ServicesSection({ data }) {
           </p>
         </div>
 
-        {/* 3. Services Grid (3 columns on desktop, 2 on tablet, 1 on mobile) */}
+        {/* 3. Services Grid (6 cards: 3 cols desktop, 2 cols tablet, 1 col mobile) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
           {SERVICES.map((service) => (
             <Link

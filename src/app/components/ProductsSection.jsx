@@ -22,7 +22,7 @@ const PRODUCTS = [
     slug: "hrms-software",
     link: "/product/hrms-software",
     description: "Complete HR management solutions for modern workplaces.",
-    image: "/images/product-hrms-software-v3.jpg",
+    image: "/images/product-hrms-software-v2.jpg",
     Icon: Users,
     badgeBg: "bg-emerald-50",
     badgeBorder: "border-emerald-100",
@@ -33,7 +33,7 @@ const PRODUCTS = [
     slug: "crm-software",
     link: "/product/crm-software",
     description: "Manage leads, customer relationships, and sales efficiently.",
-    image: "/images/product-crm-software-v3.jpg",
+    image: "/images/product-crm-software-v2.jpg",
     Icon: Handshake,
     badgeBg: "bg-blue-50",
     badgeBorder: "border-blue-100",
@@ -44,7 +44,7 @@ const PRODUCTS = [
     slug: "support-software",
     link: "/product/support-software",
     description: "Streamline customer support and ticket management.",
-    image: "/images/product-support-software-v3.jpg",
+    image: "/images/product-support-software-v2.jpg",
     Icon: Headphones,
     badgeBg: "bg-purple-50",
     badgeBorder: "border-purple-100",
@@ -55,7 +55,7 @@ const PRODUCTS = [
     slug: "bill-soft",
     link: "/product/bill-soft",
     description: "Simplify billing, invoicing, and business transactions.",
-    image: "/images/product-bill-soft-v3.jpg",
+    image: "/images/product-bill-soft-v2.jpg",
     Icon: Receipt,
     badgeBg: "bg-amber-50",
     badgeBorder: "border-amber-100",
@@ -115,7 +115,7 @@ function ProductsSection() {
       aria-labelledby="products-heading"
     >
       {/* 2. Main Content Container */}
-      <div className="relative z-10 max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Section Heading & Action Button Row */}
         <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between gap-6 mb-10 sm:mb-12 text-center lg:text-left">
           <div className="max-w-3xl flex flex-col items-center lg:items-start">
