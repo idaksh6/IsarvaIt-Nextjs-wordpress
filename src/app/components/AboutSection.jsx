@@ -1,35 +1,97 @@
 "use client";
 
-import { memo } from "react";
+import { memo, useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Users, Layers, Building2, TrendingUp } from "lucide-react";
 
 const ABOUT_STATS = [
   {
     id: "experience",
-    number: "15+",
+    target: 15,
+    suffix: "+",
     label: "Years of Experience",
     Icon: Users,
   },
   {
     id: "projects",
-    number: "500+",
+    target: 500,
+    suffix: "+",
     label: "Projects Delivered",
     Icon: Layers,
   },
   {
     id: "clients",
-    number: "300+",
+    target: 300,
+    suffix: "+",
     label: "Happy Clients",
     Icon: Building2,
   },
   {
     id: "satisfaction",
-    number: "99%",
+    target: 99,
+    suffix: "%",
     label: "Client Satisfaction",
     Icon: TrendingUp,
   },
 ];
+
+// Smooth Animated Counter Component with IntersectionObserver
+function AnimatedStatCounter({ target, suffix = "+", duration = 1800 }) {
+  const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    const node = elementRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    let startTime = null;
+    let animationFrameId;
+
+    const updateCounter = (currentTime) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      // easeOutExpo / easeOutCubic curve for a natural, snappy finish
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      const currentVal = Math.round(easeOut * target);
+
+      setCount(currentVal);
+
+      if (progress < 1) {
+        animationFrameId = requestAnimationFrame(updateCounter);
+      } else {
+        setCount(target);
+      }
+    };
+
+    animationFrameId = requestAnimationFrame(updateCounter);
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [isVisible, target, duration]);
+
+  return (
+    <span ref={elementRef} className="inline-block tabular-nums">
+      {isVisible ? count : 0}
+      {suffix}
+    </span>
+  );
+}
 
 function AboutSection() {
   return (
@@ -80,7 +142,7 @@ function AboutSection() {
               </p>
             </div>
 
-            {/* 4 Stat Cards in a Single Row / Responsive Grid */}
+            {/* 4 Animated Counter Stat Cards in a Single Row / Responsive Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-4 w-full">
               {ABOUT_STATS.map((stat) => (
                 <div
@@ -95,7 +157,10 @@ function AboutSection() {
                   {/* Value and Label */}
                   <div className="w-full flex flex-col items-center sm:items-start text-center sm:text-left">
                     <div className="text-xl sm:text-2xl font-black text-[#102A43] tracking-tight mb-1 group-hover:text-[#00A86B] transition-colors text-center sm:text-left">
-                      {stat.number}
+                      <AnimatedStatCounter
+                        target={stat.target}
+                        suffix={stat.suffix}
+                      />
                     </div>
                     <div className="text-xs sm:text-[13px] text-slate-600 font-medium leading-tight text-center sm:text-left">
                       {stat.label}

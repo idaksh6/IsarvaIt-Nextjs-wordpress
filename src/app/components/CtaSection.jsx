@@ -49,8 +49,8 @@ function CtaSection() {
             <div
               className="absolute right-[-10px] lg:right-[-15px] xl:right-0 top-0 bottom-0 w-[310px] lg:w-[350px] xl:w-[410px] pointer-events-none hidden lg:block select-none overflow-hidden"
               style={{
-                maskImage: "linear-gradient(to right, transparent 0%, black 20%)",
-                WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 20%)",
+                maskImage: "linear-gradient(to right, transparent 11%, black 20%)",
+                WebkitMaskImage: "linear-gradient(to right, transparent 11%, black 20%)",
               }}
             >
               <img
