@@ -2,13 +2,13 @@
 
 import { memo, useState, useEffect } from "react";
 
-const REAL_ALPU_TESTIMONIALS = [
+const REAL_Isarva_TESTIMONIALS = [
   {
     id: 170,
     name: "Jagdish Bhat",
     company: "FTR",
     quote:
-      "Working with Alpu Infotech was an excellent experience. The team was professional, attentive, and delivered a clean, intuitive design that exceeded our expectations. Their clear communication and dedication made the entire project smooth and efficient. We’re very happy with the final result.",
+      "Working with Isarva Infotech was an excellent experience. The team was professional, attentive, and delivered a clean, intuitive design that exceeded our expectations. Their clear communication and dedication made the entire project smooth and efficient. We’re very happy with the final result.",
     video: "",
     videoType: "none",
     photo: "/isarva-testimonials/customer-jagdish-bhat.webp",
@@ -51,7 +51,7 @@ const REAL_ALPU_TESTIMONIALS = [
     name: "Mr. Jayakar Shettigar",
     company: "GURUCHARAN INDUSTRIES",
     quote:
-      "Our new website has transformed our digital presence, helping us attract more high-quality international inquiries and present a more professional image to global clients. Alpu Infotech has provided a powerful platform for our global growth.",
+      "Our new website has transformed our digital presence, helping us attract more high-quality international inquiries and present a more professional image to global clients. Isarva Infotech has provided a powerful platform for our global growth.",
     video: "",
     videoType: "none",
     photo: "/isarva-testimonials/customer-jayakar-shettigar.webp",
@@ -62,7 +62,7 @@ const REAL_ALPU_TESTIMONIALS = [
     name: "David Richards",
     company: "GLUE CREATIVE SOLUTIONS",
     quote:
-      "We’ve worked with Alpu for over a decade and consider them a trusted partner. Their team consistently delivers high-quality work, provides excellent support, and often goes above and beyond to meet our needs.",
+      "We’ve worked with Isarva for over a decade and consider them a trusted partner. Their team consistently delivers high-quality work, provides excellent support, and often goes above and beyond to meet our needs.",
     video: "",
     videoType: "none",
     photo: "/isarva-testimonials/customer-david-richards.webp",
@@ -108,9 +108,9 @@ function TestimonialsSection() {
   }, [activeVideoItem]);
 
   // Build minimum 8 cards per group for seamless continuous loop (6 * 2 = 12 cards)
-  let groupCards = [...REAL_ALPU_TESTIMONIALS];
+  let groupCards = [...REAL_Isarva_TESTIMONIALS];
   while (groupCards.length < 8) {
-    groupCards = [...groupCards, ...REAL_ALPU_TESTIMONIALS];
+    groupCards = [...groupCards, ...REAL_Isarva_TESTIMONIALS];
   }
 
   const isPaused = isHovered || activeVideoItem !== null;
