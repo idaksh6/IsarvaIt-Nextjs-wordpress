@@ -81,6 +81,7 @@ export async function POST(request) {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
+          'X-Api-Key': process.env.CRM_API_KEY || '82a5b93bbb3e774daedb1267eeeeb9aae9272d2e7f43fa5a',
         },
         body: JSON.stringify(crmData),
         signal: controller.signal,
@@ -113,8 +114,13 @@ export async function POST(request) {
       let errorMessage = responseText;
       try {
         const errorData = JSON.parse(responseText);
+        if (errorData.duplicate && errorData.lead) {
+          return NextResponse.json({ success: true, duplicate: true, data: errorData });
+        }
         if (errorData.errors) {
           errorMessage = JSON.stringify(errorData.errors);
+        } else if (errorData.message) {
+          errorMessage = errorData.message;
         }
       } catch (e) {
         // Use raw text if not JSON
