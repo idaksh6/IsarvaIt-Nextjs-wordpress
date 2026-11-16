@@ -345,6 +345,8 @@ export default function ContactFormModal({
         if (treatDuplicateAsSuccess) {
           const rawError = typeof data.error === 'string' ? data.error.toLowerCase() : '';
           const isDuplicate =
+            data.isDuplicate ||
+            data.duplicate ||
             rawError.includes('already registered') ||
             rawError.includes('already been taken') ||
             rawError.includes('has already been') ||

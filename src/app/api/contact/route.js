@@ -1,5 +1,42 @@
 import { NextResponse } from 'next/server';
 
+// Map category name/type to CRM category ID when numeric ID is missing or invalid
+function resolveCategoryId(formData) {
+  const numericId = Number(formData.categoryId);
+  if (Number.isInteger(numericId) && numericId > 0) {
+    return numericId;
+  }
+
+  const searchStr = `${formData.itemName || ''} ${formData.selectedItem || ''} ${formData.subject || ''} ${formData.pageType || ''}`.toLowerCase();
+
+  if (searchStr.includes('hrms')) return 1;
+  if (searchStr.includes('crm')) return 2;
+  if (searchStr.includes('wms') || searchStr.includes('godown')) return 7;
+  if (searchStr.includes('woocommerce')) return 8;
+  if (searchStr.includes('lodge')) return 11;
+  if (searchStr.includes('retail') || searchStr.includes('multi branch')) return 12;
+  if (searchStr.includes('document') || searchStr.includes('dms')) return 13;
+  if (searchStr.includes('support')) return 29;
+  if (searchStr.includes('petro')) return 30;
+  if (searchStr.includes('fleet')) return 31;
+  if (searchStr.includes('dealer')) return 32;
+  if (searchStr.includes('expense')) return 39;
+  if (searchStr.includes('dispatcher')) return 40;
+  if (searchStr.includes('marine')) return 41;
+  if (searchStr.includes('mobile service') || searchStr.includes('mobile care')) return 42;
+  if (searchStr.includes('lms')) return 51;
+  if (searchStr.includes('data logger')) return 64;
+  if (searchStr.includes('pos')) return 73;
+  if (searchStr.includes('billsoft') || searchStr.includes('bill soft')) return 77;
+  if (searchStr.includes('wordpress')) return 20;
+  if (searchStr.includes('ai') || searchStr.includes('ml')) return 18;
+  if (searchStr.includes('cloud')) return 16;
+  if (searchStr.includes('erp')) return 38;
+  if (searchStr.includes('digital marketing')) return 33;
+
+  return 6; // default Website Redesign / General
+}
+
 export async function POST(request) {
   try {
     const formData = await request.json();
@@ -63,7 +100,7 @@ export async function POST(request) {
       full_name: formData.name || '',
       email: formData.email || '',
       mobile: mobileNumber,
-      categories: formData.categoryId || 6,
+      categories: resolveCategoryId(formData),
       lead_source: 11
     };
 
@@ -109,6 +146,18 @@ export async function POST(request) {
         statusText: response.statusText,
         body: responseText,
       });
+
+      // 409 Conflict: Lead already registered in CRM with this email/phone
+      if (response.status === 409) {
+        return NextResponse.json(
+          {
+            success: false,
+            isDuplicate: true,
+            error: 'This email address or mobile number is already registered for this request. Our team will contact you shortly.',
+          },
+          { status: 409 }
+        );
+      }
 
       // Try to parse error response
       let errorMessage = responseText;

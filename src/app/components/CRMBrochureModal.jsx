@@ -20,9 +20,11 @@ export default function CRMBrochureModal({ isOpen, onClose }) {
           const crmCategory = data.categories.find(
             (cat) =>
               cat.category_name.toLowerCase() === "crm application" ||
+              cat.category_name.toLowerCase() === "crm software" ||
               cat.category_name.toLowerCase() === "crm" ||
               (cat.category_name.toLowerCase().includes("crm") &&
-                cat.category_name.toLowerCase().includes("application"))
+                (cat.category_name.toLowerCase().includes("application") ||
+                  cat.category_name.toLowerCase().includes("software")))
           );
           setCategoryId(crmCategory ? crmCategory.id : 2);
         }

@@ -178,7 +178,15 @@ export default function BrochureFormModal({
 
       const data = await response.json();
 
-      if (data.success) {
+      const isDuplicate =
+        data.isDuplicate ||
+        data.duplicate ||
+        (typeof data.error === "string" &&
+          (data.error.toLowerCase().includes("already registered") ||
+            data.error.toLowerCase().includes("already been taken") ||
+            data.error.toLowerCase().includes("duplicate")));
+
+      if (data.success || isDuplicate) {
         if (typeof onBeforeDownload === "function") {
           await onBeforeDownload(formData, brochureUrl);
         }
